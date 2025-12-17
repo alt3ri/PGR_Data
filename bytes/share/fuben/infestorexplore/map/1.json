@@ -1,0 +1,197 @@
+[
+    {
+        "Id": 1,
+        "GroupId": 1,
+        "FrontId": null
+    },
+    {
+        "Id": 2,
+        "GroupId": 1112,
+        "FrontId": "[1]"
+    },
+    {
+        "Id": 3,
+        "GroupId": 1112,
+        "FrontId": "[1]"
+    },
+    {
+        "Id": 4,
+        "GroupId": 11114,
+        "FrontId": "[2]"
+    },
+    {
+        "Id": 5,
+        "GroupId": 1112,
+        "FrontId": "[1, 2, 3]"
+    },
+    {
+        "Id": 6,
+        "GroupId": 11114,
+        "FrontId": "[3]"
+    },
+    {
+        "Id": 7,
+        "GroupId": 1112,
+        "FrontId": "[2, 4, 5]"
+    },
+    {
+        "Id": 8,
+        "GroupId": 1112,
+        "FrontId": "[3, 5, 6]"
+    },
+    {
+        "Id": 9,
+        "GroupId": 11114,
+        "FrontId": "[4, 7]"
+    },
+    {
+        "Id": 10,
+        "GroupId": 1112,
+        "FrontId": "[5, 7, 8]"
+    },
+    {
+        "Id": 11,
+        "GroupId": 11114,
+        "FrontId": "[6, 8]"
+    },
+    {
+        "Id": 12,
+        "GroupId": 1112,
+        "FrontId": "[7, 9, 10]"
+    },
+    {
+        "Id": 13,
+        "GroupId": 1112,
+        "FrontId": "[8, 10, 11]"
+    },
+    {
+        "Id": 14,
+        "GroupId": 11114,
+        "FrontId": "[9, 12]"
+    },
+    {
+        "Id": 15,
+        "GroupId": 1112,
+        "FrontId": "[10, 12, 13]"
+    },
+    {
+        "Id": 16,
+        "GroupId": 11114,
+        "FrontId": "[11, 13]"
+    },
+    {
+        "Id": 17,
+        "GroupId": 1112,
+        "FrontId": "[12, 14, 15]"
+    },
+    {
+        "Id": 18,
+        "GroupId": 1112,
+        "FrontId": "[13, 15, 16]"
+    },
+    {
+        "Id": 19,
+        "GroupId": 11114,
+        "FrontId": "[14, 17]"
+    },
+    {
+        "Id": 20,
+        "GroupId": 1112,
+        "FrontId": "[15, 17, 18]"
+    },
+    {
+        "Id": 21,
+        "GroupId": 11114,
+        "FrontId": "[16, 18]"
+    },
+    {
+        "Id": 22,
+        "GroupId": 1119,
+        "FrontId": "[17, 19, 20]"
+    },
+    {
+        "Id": 23,
+        "GroupId": 1119,
+        "FrontId": "[18, 20, 21]"
+    },
+    {
+        "Id": 24,
+        "GroupId": 11114,
+        "FrontId": "[19, 22]"
+    },
+    {
+        "Id": 25,
+        "GroupId": 1119,
+        "FrontId": "[20, 22, 23]"
+    },
+    {
+        "Id": 26,
+        "GroupId": 11114,
+        "FrontId": "[21, 23]"
+    },
+    {
+        "Id": 27,
+        "GroupId": 1119,
+        "FrontId": "[22, 24, 25]"
+    },
+    {
+        "Id": 28,
+        "GroupId": 1119,
+        "FrontId": "[23, 25, 26]"
+    },
+    {
+        "Id": 29,
+        "GroupId": 11114,
+        "FrontId": "[24, 27]"
+    },
+    {
+        "Id": 30,
+        "GroupId": 1119,
+        "FrontId": "[25, 27, 28]"
+    },
+    {
+        "Id": 31,
+        "GroupId": 11114,
+        "FrontId": "[26, 28]"
+    },
+    {
+        "Id": 32,
+        "GroupId": 1119,
+        "FrontId": "[27, 29, 30]"
+    },
+    {
+        "Id": 33,
+        "GroupId": 1119,
+        "FrontId": "[28, 30, 31]"
+    },
+    {
+        "Id": 34,
+        "GroupId": 11114,
+        "FrontId": "[29, 32]"
+    },
+    {
+        "Id": 35,
+        "GroupId": 1119,
+        "FrontId": "[30, 32, 33]"
+    },
+    {
+        "Id": 36,
+        "GroupId": 11114,
+        "FrontId": "[31, 33]"
+    },
+    {
+        "Id": 37,
+        "GroupId": 2,
+        "FrontId": "[32, 34, 35]"
+    },
+    {
+        "Id": 38,
+        "GroupId": 2,
+        "FrontId": "[33, 35, 36]"
+    },
+    {
+        "Id": 39,
+        "GroupId": 1999,
+        "FrontId": "[37, 38, 35]"
+    }
+]

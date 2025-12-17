@@ -1,0 +1,222 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Cost": 50,
+        "EffectGroupId": 10001,
+        "Condition": null,
+        "PreIds": null,
+        "Name": "\u78e8\u5c16\u62ed\u9510",
+        "Desc": "\u653b\u51fb\u529b+50",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon001.png"
+    },
+    {
+        "Id": 2,
+        "Type": 1,
+        "Cost": 50,
+        "EffectGroupId": 10002,
+        "Condition": null,
+        "PreIds": "[1]",
+        "Name": "\u5f3a\u8eab\u5065\u4f53",
+        "Desc": "\u751f\u547d\u503c+500",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon006.png"
+    },
+    {
+        "Id": 3,
+        "Type": 1,
+        "Cost": 50,
+        "EffectGroupId": 10003,
+        "Condition": null,
+        "PreIds": "[2]",
+        "Name": "\u4ee5\u534a\u51fb\u500d",
+        "Desc": "\u653b\u51fb\u529b+10%",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon002.png"
+    },
+    {
+        "Id": 4,
+        "Type": 1,
+        "Cost": 50,
+        "EffectGroupId": 10004,
+        "Condition": null,
+        "PreIds": "[3]",
+        "Name": "\u5168\u822c\u7cbe\u901a",
+        "Desc": "\u5168\u5c5e\u6027\u4f24\u5bb3+15%",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon008.png"
+    },
+    {
+        "Id": 5,
+        "Type": 1,
+        "Cost": 100,
+        "EffectGroupId": 10005,
+        "Condition": null,
+        "PreIds": "[4]",
+        "Name": "\u52bf\u4e0d\u53ef\u6321",
+        "Desc": "\u989d\u5916\u4f24\u5bb3\u52a0\u6210+15%",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon031.png"
+    },
+    {
+        "Id": 6,
+        "Type": 2,
+        "Cost": 50,
+        "EffectGroupId": 10011,
+        "Condition": null,
+        "PreIds": null,
+        "Name": "\u542f\u52a8\u8d44\u91d1",
+        "Desc": "\u521d\u59cb\u65b0\u82cf\u83f2\u4e9a\u5e01+20",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BuouxiongSSS1.png"
+    },
+    {
+        "Id": 7,
+        "Type": 2,
+        "Cost": 50,
+        "EffectGroupId": 10012,
+        "Condition": null,
+        "PreIds": "[6]",
+        "Name": "\u4ea4\u6613\u8865\u8d34",
+        "Desc": "\u8fdb\u5165\u5546\u5e97\u65f6\u83b7\u5f9750\u65b0\u82cf\u83f2\u4e9a\u5e01",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon021.png"
+    },
+    {
+        "Id": 8,
+        "Type": 2,
+        "Cost": 50,
+        "EffectGroupId": 10013,
+        "Condition": null,
+        "PreIds": "[7]",
+        "Name": "\u5bcc\u88d5\u8d44\u4ea7",
+        "Desc": "\u521d\u59cb\u65b0\u82cf\u83f2\u4e9a\u5e01+40",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2SufeiyaS1.png"
+    },
+    {
+        "Id": 9,
+        "Type": 2,
+        "Cost": 50,
+        "EffectGroupId": 10014,
+        "Condition": null,
+        "PreIds": "[8]",
+        "Name": "\u8c08\u5224\u624b\u8155",
+        "Desc": "\u5546\u5e97\u4e2d\u5546\u54c1\u4ef7\u683c\u964d\u4f4e10%",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill05.png"
+    },
+    {
+        "Id": 10,
+        "Type": 2,
+        "Cost": 100,
+        "EffectGroupId": 10015,
+        "Condition": null,
+        "PreIds": "[9]",
+        "Name": "\u64cd\u76d8\u5927\u624b",
+        "Desc": "\u5229\u606f\u4e0a\u9650+10",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4luxiyaSS1.png"
+    },
+    {
+        "Id": 11,
+        "Type": 3,
+        "Cost": 50,
+        "EffectGroupId": 10021,
+        "Condition": null,
+        "PreIds": null,
+        "Name": "\u767d\u624b\u8d77\u5bb6",
+        "Desc": "\u521d\u59cb\u83b7\u5f971\u4e2a\u65bd\u5de5\u8bb8\u53ef",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4KalieninaExqiu1.png"
+    },
+    {
+        "Id": 12,
+        "Type": 3,
+        "Cost": 50,
+        "EffectGroupId": 10022,
+        "Condition": null,
+        "PreIds": "[11]",
+        "Name": "\u591a\u6837\u51b3\u7b56",
+        "Desc": "\u6bcf\u6b21\u8425\u5730\u652f\u63f4\u5237\u65b0\u4ef7\u683c-10",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33031.png"
+    },
+    {
+        "Id": 13,
+        "Type": 3,
+        "Cost": 50,
+        "EffectGroupId": 10023,
+        "Condition": null,
+        "PreIds": "[12]",
+        "Name": "\u4e00\u5e94\u4ff1\u5168",
+        "Desc": "\u521d\u59cb\u83b7\u5f972\u4e2a\u65bd\u5de5\u8bb8\u53ef",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4KalieninaExhexin2.png"
+    },
+    {
+        "Id": 14,
+        "Type": 3,
+        "Cost": 50,
+        "EffectGroupId": 10024,
+        "Condition": null,
+        "PreIds": "[13]",
+        "Name": "\u7cbe\u6253\u7ec6\u7b97",
+        "Desc": "\u6bcf\u6b21\u8425\u5730\u652f\u63f4\u5237\u65b0\u4ef7\u683c-15",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33032.png"
+    },
+    {
+        "Id": 15,
+        "Type": 3,
+        "Cost": 100,
+        "EffectGroupId": 10025,
+        "Condition": null,
+        "PreIds": "[14]",
+        "Name": "\u6df1\u8ba1\u8fdc\u8651",
+        "Desc": "\u8425\u5730\u652f\u63f4\u9996\u6b21\u5237\u65b0\u514d\u8d39",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2KamuZhongjieji1.png"
+    },
+    {
+        "Id": 16,
+        "Type": 4,
+        "Cost": 50,
+        "EffectGroupId": 46,
+        "Condition": 1020770.0,
+        "PreIds": null,
+        "Name": "\u8327\u4e2d\u521d\u9192",
+        "Desc": "\u53ef\u5728\u5c40\u5185\u83b7\u5f97\u89c9\u9192\u503c",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX01.png"
+    },
+    {
+        "Id": 17,
+        "Type": 4,
+        "Cost": 50,
+        "EffectGroupId": 47,
+        "Condition": null,
+        "PreIds": "[16]",
+        "Name": "\u9006\u6d41\u91cd\u6784",
+        "Desc": "\u89e3\u9501\u6c99\u76d8\u91cd\u6784\uff1a\u4f7f\u7528\u540e\u53ef\u56de\u52303\u5929\u524d\u5e76\u8fd4\u8fd8\u671f\u95f4\u6d88\u8017\u7684\u90e8\u5206\u8d44\u6e90\uff0c\u6bcf\u7ae0\u53ef\u4f7f\u75281\u6b21\u4e14\u6b21\u6570\u65e0\u6cd5\u7d2f\u8ba1\uff0c\u8fdb\u5165\u5f53\u524d\u5730\u56fe3\u5929\u540e\u624d\u53ef\u4f7f\u7528",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX03.png"
+    },
+    {
+        "Id": 18,
+        "Type": 4,
+        "Cost": 50,
+        "EffectGroupId": 10037,
+        "Condition": null,
+        "PreIds": "[17]",
+        "Name": "\u62df\u5408\u9012\u5f52",
+        "Desc": "\u6c99\u76d8\u91cd\u6784\u540e\u989d\u5916\u83b7\u5f97100\u94f6\u5e01",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX04.png"
+    },
+    {
+        "Id": 19,
+        "Type": 4,
+        "Cost": 50,
+        "EffectGroupId": 10038,
+        "Condition": null,
+        "PreIds": "[18]",
+        "Name": "\u6eaf\u6d04\u6c99\u6f0f",
+        "Desc": "\u6c99\u76d8\u91cd\u6784\u540e\u989d\u5916\u83b7\u5f97\u884c\u52a8\u70b9+1",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX05.png"
+    },
+    {
+        "Id": 20,
+        "Type": 4,
+        "Cost": 100,
+        "EffectGroupId": 10039,
+        "Condition": null,
+        "PreIds": "[19]",
+        "Name": "\u6a0a\u5916\u7aa5\u68a6",
+        "Desc": "\u83b7\u5f97\u7684\u89c9\u9192\u503c\u989d\u5916\u589e\u52a050%",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX02.png"
+    }
+]

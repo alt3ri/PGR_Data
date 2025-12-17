@@ -1,0 +1,65 @@
+[
+    {
+        "Id": 1,
+        "Name": "\u6307\u6325\u5c40\u6392\u540d",
+        "TabType": "BtnFirstHasSnd",
+        "FatherTab": null,
+        "RankingTarget": null,
+        "Params": null,
+        "RoundId": null
+    },
+    {
+        "Id": 2,
+        "Name": "\u6307\u6325\u5c40\u6392\u540d",
+        "TabType": "BtnSecondAll",
+        "FatherTab": 1.0,
+        "RankingTarget": 1.0,
+        "Params": "[1, 0]",
+        "RoundId": null
+    },
+    {
+        "Id": 3,
+        "Name": "\u6307\u6325\u5c40\u6c47\u62a5",
+        "TabType": "BtnFirstHasSnd",
+        "FatherTab": null,
+        "RankingTarget": null,
+        "Params": null,
+        "RoundId": null
+    },
+    {
+        "Id": 4,
+        "Name": "\u7d2f\u8ba1\u6c47\u62a5",
+        "TabType": "BtnSecondTop",
+        "FatherTab": 3.0,
+        "RankingTarget": 2.0,
+        "Params": "[2, 0]",
+        "RoundId": null
+    },
+    {
+        "Id": 5,
+        "Name": "\u9996\u8f6e\u6c47\u62a5",
+        "TabType": "BtnSecond",
+        "FatherTab": 3.0,
+        "RankingTarget": 2.0,
+        "Params": "[2, 1]",
+        "RoundId": 1.0
+    },
+    {
+        "Id": 6,
+        "Name": "\u6b21\u8f6e\u6c47\u62a5",
+        "TabType": "BtnSecond",
+        "FatherTab": 3.0,
+        "RankingTarget": 2.0,
+        "Params": "[2, 2]",
+        "RoundId": 2.0
+    },
+    {
+        "Id": 7,
+        "Name": "\u4e09\u8f6e\u6c47\u62a5",
+        "TabType": "BtnSecondBottom",
+        "FatherTab": 3.0,
+        "RankingTarget": 2.0,
+        "Params": "[2, 3]",
+        "RoundId": 3.0
+    }
+]

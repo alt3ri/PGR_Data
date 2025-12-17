@@ -1,0 +1,263 @@
+[
+    {
+        "Id": 1,
+        "StageId": 20131,
+        "ActionRange": "[1, 1]",
+        "BlockLength": "[3]",
+        "BlockType": "[1]",
+        "Weight": "[100]",
+        "ActionCd": 1
+    },
+    {
+        "Id": 2,
+        "StageId": 20131,
+        "ActionRange": "[3, 20]",
+        "BlockLength": "[2, 3, 1]",
+        "BlockType": "[1, 1, 1]",
+        "Weight": "[100, 100, 50]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 3,
+        "StageId": 20131,
+        "ActionRange": "[21, 9999]",
+        "BlockLength": "[1, 2, 3]",
+        "BlockType": "[1, 1, 1]",
+        "Weight": "[100, 100, 100]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 4,
+        "StageId": 20132,
+        "ActionRange": "[1, 50]",
+        "BlockLength": "[2, 3, 1]",
+        "BlockType": "[1, 1, 1]",
+        "Weight": "[150, 150, 50]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 5,
+        "StageId": 20132,
+        "ActionRange": "[51, 100]",
+        "BlockLength": "[2, 3, 4, 1]",
+        "BlockType": "[1, 1, 1, 1]",
+        "Weight": "[100, 200, 50, 50]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 6,
+        "StageId": 20132,
+        "ActionRange": "[101, 9999]",
+        "BlockLength": "[3, 4, 2, 1]",
+        "BlockType": "[1, 1, 1, 1]",
+        "Weight": "[200, 100, 50, 100]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 7,
+        "StageId": 30132,
+        "ActionRange": "[1, 8]",
+        "BlockLength": "[1, 2]",
+        "BlockType": "[1, 1]",
+        "Weight": "[200, 100]",
+        "ActionCd": 8
+    },
+    {
+        "Id": 8,
+        "StageId": 30132,
+        "ActionRange": "[9, 29]",
+        "BlockLength": "[1, 2, 3]",
+        "BlockType": "[1, 1, 1]",
+        "Weight": "[100, 200, 100]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 9,
+        "StageId": 30132,
+        "ActionRange": "[30, 55]",
+        "BlockLength": "[2, 3, 4]",
+        "BlockType": "[1, 1, 1]",
+        "Weight": "[100, 200, 100]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 10,
+        "StageId": 30132,
+        "ActionRange": "[56, 9999]",
+        "BlockLength": "[1, 2, 3, 4]",
+        "BlockType": "[1, 1, 1, 1]",
+        "Weight": "[100, 100, 300, 200]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 11,
+        "StageId": 30142,
+        "ActionRange": "[1, 10]",
+        "BlockLength": "[1, 2]",
+        "BlockType": "[1, 1]",
+        "Weight": "[200, 100]",
+        "ActionCd": 10
+    },
+    {
+        "Id": 12,
+        "StageId": 30142,
+        "ActionRange": "[11, 46]",
+        "BlockLength": "[1, 2, 3]",
+        "BlockType": "[1, 1, 1]",
+        "Weight": "[100, 200, 100]",
+        "ActionCd": 8
+    },
+    {
+        "Id": 13,
+        "StageId": 30142,
+        "ActionRange": "[47, 100]",
+        "BlockLength": "[2, 3, 4]",
+        "BlockType": "[1, 1, 1]",
+        "Weight": "[100, 200, 100]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 14,
+        "StageId": 30142,
+        "ActionRange": "[101, 300]",
+        "BlockLength": "[1, 2, 3, 4]",
+        "BlockType": "[1, 1, 1, 1]",
+        "Weight": "[100, 200, 300, 100]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 15,
+        "StageId": 30142,
+        "ActionRange": "[301, 9999]",
+        "BlockLength": "[1, 2, 3, 4]",
+        "BlockType": "[1, 1, 1, 1]",
+        "Weight": "[100, 100, 100, 100]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 16,
+        "StageId": 3012,
+        "ActionRange": "[1, 1]",
+        "BlockLength": "[3]",
+        "BlockType": "[2]",
+        "Weight": "[100]",
+        "ActionCd": 1
+    },
+    {
+        "Id": 17,
+        "StageId": 3012,
+        "ActionRange": "[5, 9999]",
+        "BlockLength": "[1, 2]",
+        "BlockType": "[1, 1]",
+        "Weight": "[400, 400]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 18,
+        "StageId": 3014,
+        "ActionRange": "[1, 50]",
+        "BlockLength": "[2, 3, 1]",
+        "BlockType": "[1, 1, 1]",
+        "Weight": "[150, 150, 50]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 19,
+        "StageId": 3014,
+        "ActionRange": "[51, 100]",
+        "BlockLength": "[2, 3, 4, 1]",
+        "BlockType": "[1, 1, 1, 1]",
+        "Weight": "[100, 200, 50, 50]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 20,
+        "StageId": 3014,
+        "ActionRange": "[101, 9999]",
+        "BlockLength": "[3, 4, 2, 1]",
+        "BlockType": "[1, 1, 1, 1]",
+        "Weight": "[200, 100, 50, 100]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 21,
+        "StageId": 3021,
+        "ActionRange": "[1, 1]",
+        "BlockLength": "[1]",
+        "BlockType": "[5]",
+        "Weight": "[100]",
+        "ActionCd": 1
+    },
+    {
+        "Id": 22,
+        "StageId": 3021,
+        "ActionRange": "[2, 9999]",
+        "BlockLength": "[1]",
+        "BlockType": "[5]",
+        "Weight": "[100]",
+        "ActionCd": 3
+    },
+    {
+        "Id": 23,
+        "StageId": 3022,
+        "ActionRange": "[1, 1]",
+        "BlockLength": "[1]",
+        "BlockType": "[5]",
+        "Weight": "[100]",
+        "ActionCd": 1
+    },
+    {
+        "Id": 24,
+        "StageId": 3022,
+        "ActionRange": "[2, 9999]",
+        "BlockLength": "[1]",
+        "BlockType": "[5]",
+        "Weight": "[100]",
+        "ActionCd": 4
+    },
+    {
+        "Id": 25,
+        "StageId": 3023,
+        "ActionRange": "[1, 1]",
+        "BlockLength": "[1]",
+        "BlockType": "[5]",
+        "Weight": "[100]",
+        "ActionCd": 1
+    },
+    {
+        "Id": 26,
+        "StageId": 3023,
+        "ActionRange": "[2, 9999]",
+        "BlockLength": "[1]",
+        "BlockType": "[5]",
+        "Weight": "[100]",
+        "ActionCd": 4
+    },
+    {
+        "Id": 27,
+        "StageId": 3032,
+        "ActionRange": "[1, 9999]",
+        "BlockLength": "[1, 2]",
+        "BlockType": "[5, 1]",
+        "Weight": "[100, 100]",
+        "ActionCd": 4
+    },
+    {
+        "Id": 28,
+        "StageId": 3033,
+        "ActionRange": "[1, 9999]",
+        "BlockLength": "[1, 2]",
+        "BlockType": "[5, 1]",
+        "Weight": "[100, 100]",
+        "ActionCd": 4
+    },
+    {
+        "Id": 29,
+        "StageId": 3034,
+        "ActionRange": "[1, 9999]",
+        "BlockLength": "[2, 3]",
+        "BlockType": "[1, 1]",
+        "Weight": "[100, 100]",
+        "ActionCd": 4
+    }
+]

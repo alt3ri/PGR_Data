@@ -1,0 +1,2602 @@
+[
+    {
+        "Id": 1,
+        "PoolId": 999,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[50]",
+        "Description": "\u5168\u961f\u56de\u590d50%\u751f\u547d",
+        "Name": "\u751f\u547d\u56de\u590d",
+        "Icon": "Assets/Product/Texture/Image/UiInfestorExplore/UiInfestorExploreEventShop01.png"
+    },
+    {
+        "Id": 2,
+        "PoolId": 999,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[7]",
+        "Description": "\u83b7\u5f971\u4e2a\u968f\u673a\u63d2\u4ef6\u5355\u5143",
+        "Name": "\u63d2\u4ef6\u5355\u5143",
+        "Icon": "Assets/Product/Texture/Image/UiInfestorExplore/UiInfestorExploreEventShop02.png"
+    },
+    {
+        "Id": 3,
+        "PoolId": 999,
+        "Weight": 100,
+        "Type": 502,
+        "Params": "[99]",
+        "Description": "\u79fb\u9664\u5168\u90e8\u8d1f\u9762\u6548\u679c",
+        "Name": "\u51c0\u5316",
+        "Icon": "Assets/Product/Texture/Image/UiInfestorExplore/UiInfestorExploreEventShop03.png"
+    },
+    {
+        "Id": 4,
+        "PoolId": 10001,
+        "Weight": 80,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:80%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 5,
+        "PoolId": 10001,
+        "Weight": 15,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\u5931\u53bb60\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:15%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 6,
+        "PoolId": 10001,
+        "Weight": 5,
+        "Type": 302,
+        "Params": "[53]",
+        "Description": "\u83b7\u5f9753\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:5%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 7,
+        "PoolId": 10002,
+        "Weight": 55,
+        "Type": 303,
+        "Params": "[32, 53]",
+        "Description": "\u83b7\u5f9732~53\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:55%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 8,
+        "PoolId": 10002,
+        "Weight": 40,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u7578\u53d8\u65b9\u5757[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 9,
+        "PoolId": 10002,
+        "Weight": 5,
+        "Type": 302,
+        "Params": "[-45]",
+        "Description": "\u5931\u53bb45\u7578\u53d8\u65b9\u5757[\u6982\u7387:5%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 10,
+        "PoolId": 10003,
+        "Weight": 30,
+        "Type": 301,
+        "Params": "[100]",
+        "Description": "\u5df2\u6709\u7578\u53d8\u65b9\u5757\u6570\u91cfx2[\u6982\u7387:30%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 11,
+        "PoolId": 10003,
+        "Weight": 70,
+        "Type": 301,
+        "Params": "[-100]",
+        "Description": "\u5931\u53bb\u6240\u6709\u7578\u53d8\u65b9\u5757[\u6982\u7387:70%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 12,
+        "PoolId": 10004,
+        "Weight": 60,
+        "Type": 502,
+        "Params": "[1]",
+        "Description": "\u968f\u673a\u79fb\u96641\u4e2a\u8d1f\u9762\u6548\u679c[\u6982\u7387:60%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 13,
+        "PoolId": 10004,
+        "Weight": 30,
+        "Type": 502,
+        "Params": "[99]",
+        "Description": "\u79fb\u9664\u5168\u90e8\u8d1f\u9762\u6548\u679c[\u6982\u7387:30%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 14,
+        "PoolId": 10004,
+        "Weight": 10,
+        "Type": 501,
+        "Params": "[1]",
+        "Description": "\u83b7\u5f971\u4e2a\u8d1f\u9762\u6548\u679c[\u6982\u7387:10%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 15,
+        "PoolId": 10005,
+        "Weight": 70,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:70%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 16,
+        "PoolId": 10005,
+        "Weight": 20,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\u5931\u53bb60\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:20%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 17,
+        "PoolId": 10005,
+        "Weight": 10,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:10%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 18,
+        "PoolId": 10006,
+        "Weight": 70,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:70%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 19,
+        "PoolId": 10006,
+        "Weight": 20,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\u5931\u53bb75\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:20%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 20,
+        "PoolId": 10006,
+        "Weight": 10,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:10%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 21,
+        "PoolId": 10007,
+        "Weight": 65,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:65%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 22,
+        "PoolId": 10007,
+        "Weight": 30,
+        "Type": 201,
+        "Params": "[-50]",
+        "Description": "\u5168\u961f\u5931\u53bb50%\u751f\u547d[\u6982\u7387:30%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 23,
+        "PoolId": 10007,
+        "Weight": 5,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:5%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 24,
+        "PoolId": 10008,
+        "Weight": 65,
+        "Type": 302,
+        "Params": "[42]",
+        "Description": "\u83b7\u5f9742\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:65%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 25,
+        "PoolId": 10008,
+        "Weight": 30,
+        "Type": 201,
+        "Params": "[-60]",
+        "Description": "\u5168\u961f\u5931\u53bb60%\u751f\u547d[\u6982\u7387:30%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 26,
+        "PoolId": 10008,
+        "Weight": 5,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:5%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 27,
+        "PoolId": 10009,
+        "Weight": 65,
+        "Type": 302,
+        "Params": "[42]",
+        "Description": "\u83b7\u5f9742\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:65%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 28,
+        "PoolId": 10009,
+        "Weight": 30,
+        "Type": 401,
+        "Params": "[-1]",
+        "Description": "\u5931\u53bb1\u70b9\u884c\u52a8\u529b[\u6982\u7387:30%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 29,
+        "PoolId": 10009,
+        "Weight": 5,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:5%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 30,
+        "PoolId": 10010,
+        "Weight": 80,
+        "Type": 201,
+        "Params": "[-80]",
+        "Description": "\u5168\u961f\u5931\u53bb80%\u751f\u547d[\u6982\u7387:80%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 31,
+        "PoolId": 10010,
+        "Weight": 15,
+        "Type": 401,
+        "Params": "[-3]",
+        "Description": "\u5931\u53bb3\u70b9\u884c\u52a8\u529b[\u6982\u7387:15%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 32,
+        "PoolId": 10010,
+        "Weight": 5,
+        "Type": 101,
+        "Params": "[4]",
+        "Description": "\u83b7\u5f971\u4e2a\u6ee1\u7ea7\u7684\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:5%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 33,
+        "PoolId": 10011,
+        "Weight": 80,
+        "Type": 301,
+        "Params": "[-100]",
+        "Description": "\u5931\u53bb\u6240\u6709\u7578\u53d8\u65b9\u5757[\u6982\u7387:80%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 34,
+        "PoolId": 10011,
+        "Weight": 15,
+        "Type": 401,
+        "Params": "[-3]",
+        "Description": "\u5931\u53bb3\u70b9\u884c\u52a8\u529b[\u6982\u7387:15%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 35,
+        "PoolId": 10011,
+        "Weight": 5,
+        "Type": 101,
+        "Params": "[4]",
+        "Description": "\u83b7\u5f971\u4e2a\u6ee1\u7ea7\u7684\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:5%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 36,
+        "PoolId": 10012,
+        "Weight": 50,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 37,
+        "PoolId": 10012,
+        "Weight": 30,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:30%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 38,
+        "PoolId": 10012,
+        "Weight": 20,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:20%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 39,
+        "PoolId": 10013,
+        "Weight": 50,
+        "Type": 202,
+        "Params": "[50]",
+        "Description": "\u5c0f\u961f\u968f\u673a1\u4eba\u56de\u590d50%\u751f\u547d[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 40,
+        "PoolId": 10013,
+        "Weight": 40,
+        "Type": 201,
+        "Params": "[30]",
+        "Description": "\u5168\u961f\u56de\u590d30%\u751f\u547d[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 41,
+        "PoolId": 10013,
+        "Weight": 10,
+        "Type": 201,
+        "Params": "[-10]",
+        "Description": "\u5168\u961f\u5931\u53bb10%\u751f\u547d[\u6982\u7387:10%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 42,
+        "PoolId": 10014,
+        "Weight": 60,
+        "Type": 301,
+        "Params": "[-50]",
+        "Description": "\u5931\u53bb\u5f53\u524d50%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757[\u6982\u7387:60%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 43,
+        "PoolId": 10014,
+        "Weight": 30,
+        "Type": 401,
+        "Params": "[1]",
+        "Description": "\u83b7\u5f971\u70b9\u884c\u52a8\u529b[\u6982\u7387:30%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 44,
+        "PoolId": 10014,
+        "Weight": 10,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:10%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 45,
+        "PoolId": 10015,
+        "Weight": 60,
+        "Type": 201,
+        "Params": "[30]",
+        "Description": "\u5168\u961f\u56de\u590d30%\u751f\u547d[\u6982\u7387:60%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 46,
+        "PoolId": 10015,
+        "Weight": 20,
+        "Type": 401,
+        "Params": "[-1]",
+        "Description": "\u5931\u53bb1\u70b9\u884c\u52a8\u529b[\u6982\u7387:20%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 47,
+        "PoolId": 10015,
+        "Weight": 20,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:20%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 48,
+        "PoolId": 10016,
+        "Weight": 30,
+        "Type": 201,
+        "Params": "[50]",
+        "Description": "\u5168\u961f\u56de\u590d50%\u751f\u547d[\u6982\u7387:30%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 49,
+        "PoolId": 10016,
+        "Weight": 30,
+        "Type": 401,
+        "Params": "[-1]",
+        "Description": "\u5931\u53bb1\u70b9\u884c\u52a8\u529b[\u6982\u7387:30%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 50,
+        "PoolId": 10016,
+        "Weight": 40,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 51,
+        "PoolId": 10017,
+        "Weight": 60,
+        "Type": 202,
+        "Params": "[80]",
+        "Description": "\u5c0f\u961f\u968f\u673a1\u4eba\u56de\u590d80%\u751f\u547d[\u6982\u7387:60%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 52,
+        "PoolId": 10017,
+        "Weight": 40,
+        "Type": 201,
+        "Params": "[50]",
+        "Description": "\u5168\u961f\u56de\u590d50%\u751f\u547d[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 53,
+        "PoolId": 10018,
+        "Weight": 40,
+        "Type": 201,
+        "Params": "[-50]",
+        "Description": "\u5168\u961f\u5931\u53bb50%\u751f\u547d[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 54,
+        "PoolId": 10018,
+        "Weight": 40,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\u5931\u53bb60\u7578\u53d8\u65b9\u5757[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 55,
+        "PoolId": 10018,
+        "Weight": 20,
+        "Type": 301,
+        "Params": "[50]",
+        "Description": "\u83b7\u5f97\u5df2\u670950%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757[\u6982\u7387:20%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 56,
+        "PoolId": 10019,
+        "Weight": 40,
+        "Type": 202,
+        "Params": "[-50]",
+        "Description": "\u5c0f\u961f\u968f\u673a1\u4eba\u5931\u53bb50%\u751f\u547d[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 57,
+        "PoolId": 10019,
+        "Weight": 40,
+        "Type": 302,
+        "Params": "[42]",
+        "Description": "\u83b7\u5f9742\u7578\u53d8\u65b9\u5757[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 58,
+        "PoolId": 10019,
+        "Weight": 20,
+        "Type": 401,
+        "Params": "[1]",
+        "Description": "\u83b7\u5f971\u70b9\u884c\u52a8\u529b[\u6982\u7387:20%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 59,
+        "PoolId": 10020,
+        "Weight": 50,
+        "Type": 303,
+        "Params": "[40, 42]",
+        "Description": "\u83b7\u5f9740~42\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 60,
+        "PoolId": 10020,
+        "Weight": 40,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 61,
+        "PoolId": 10020,
+        "Weight": 10,
+        "Type": 501,
+        "Params": "[1]",
+        "Description": "\u83b7\u5f971\u4e2a\u8d1f\u9762\u6548\u679c[\u6982\u7387:10%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 62,
+        "PoolId": 10021,
+        "Weight": 50,
+        "Type": 303,
+        "Params": "[35, 53]",
+        "Description": "\u83b7\u5f9735~53\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 63,
+        "PoolId": 10021,
+        "Weight": 40,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 64,
+        "PoolId": 10021,
+        "Weight": 10,
+        "Type": 501,
+        "Params": "[1]",
+        "Description": "\u83b7\u5f971\u4e2a\u8d1f\u9762\u6548\u679c[\u6982\u7387:10%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 65,
+        "PoolId": 10022,
+        "Weight": 50,
+        "Type": 303,
+        "Params": "[42, 60]",
+        "Description": "\u83b7\u5f9742~60\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 66,
+        "PoolId": 10022,
+        "Weight": 40,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143[\u6982\u7387:40%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 67,
+        "PoolId": 10022,
+        "Weight": 10,
+        "Type": 501,
+        "Params": "[1]",
+        "Description": "\u83b7\u5f971\u4e2a\u8d1f\u9762\u6548\u679c[\u6982\u7387:10%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 68,
+        "PoolId": 20001,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u66b4\u529b\u62c6\u5378</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 69,
+        "PoolId": 20001,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-10]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb10%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 70,
+        "PoolId": 20001,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u5355\u4eba\u7834\u89e3</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 71,
+        "PoolId": 20001,
+        "Weight": 100,
+        "Type": 202,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5c0f\u961f\u968f\u673a1\u4eba\u5931\u53bb20%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 72,
+        "PoolId": 20002,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u66b4\u529b\u62c6\u5378</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 73,
+        "PoolId": 20002,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb20%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 74,
+        "PoolId": 20002,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u5355\u4eba\u7834\u89e3</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 75,
+        "PoolId": 20002,
+        "Weight": 100,
+        "Type": 202,
+        "Params": "[-30]",
+        "Description": "\\n\u2192\u5c0f\u961f\u968f\u673a1\u4eba\u5931\u53bb30%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 76,
+        "PoolId": 20003,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u66b4\u529b\u62c6\u5378</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 77,
+        "PoolId": 20003,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb60%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 78,
+        "PoolId": 20003,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u5355\u4eba\u7834\u89e3</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 79,
+        "PoolId": 20003,
+        "Weight": 100,
+        "Type": 202,
+        "Params": "[-80]",
+        "Description": "\\n\u2192\u5c0f\u961f\u968f\u673a1\u4eba\u5931\u53bb80%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 80,
+        "PoolId": 20004,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u6577\u884d\u7684\u4ed8\u51fa</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 81,
+        "PoolId": 20004,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670920%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 82,
+        "PoolId": 20004,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u5e73\u5eb8\u7684\u4ed8\u51fa</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 83,
+        "PoolId": 20004,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-40]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670940%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 84,
+        "PoolId": 20004,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u5145\u5206\u7684\u4ed8\u51fa</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 85,
+        "PoolId": 20004,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670960%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 86,
+        "PoolId": 20005,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u6577\u884d\u7684\u4ed8\u51fa</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 87,
+        "PoolId": 20005,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-45]",
+        "Description": "\\n\u2192\u5931\u53bb45\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 88,
+        "PoolId": 20005,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u5e73\u5eb8\u7684\u4ed8\u51fa</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 89,
+        "PoolId": 20005,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 90,
+        "PoolId": 20005,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u5145\u5206\u7684\u4ed8\u51fa</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 91,
+        "PoolId": 20005,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 92,
+        "PoolId": 20006,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u62c6\u5378</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 93,
+        "PoolId": 20006,
+        "Weight": 100,
+        "Type": 501,
+        "Params": "[1]",
+        "Description": "\\n\u2192\u83b7\u5f971\u4e2a\u8d1f\u9762\u6548\u679c",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 94,
+        "PoolId": 20006,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u62c6\u5378</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 95,
+        "PoolId": 20006,
+        "Weight": 100,
+        "Type": 401,
+        "Params": "[-1]",
+        "Description": "\\n\u2192\u5931\u53bb1\u70b9\u884c\u52a8\u529b",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 96,
+        "PoolId": 20007,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u62c6\u5378</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 97,
+        "PoolId": 20007,
+        "Weight": 100,
+        "Type": 501,
+        "Params": "[1]",
+        "Description": "\\n\u2192\u83b7\u5f971\u4e2a\u8d1f\u9762\u6548\u679c",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 98,
+        "PoolId": 20007,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u62c6\u5378</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 99,
+        "PoolId": 20007,
+        "Weight": 100,
+        "Type": 401,
+        "Params": "[-1]",
+        "Description": "\\n\u2192\u5931\u53bb1\u70b9\u884c\u52a8\u529b",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 100,
+        "PoolId": 20008,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[50]",
+        "Description": "<color=#34AFF9><size=20>\u5b8c\u7f8e\u7ef4\u4fee</size></color>\\n\u2192\u5168\u961f\u56de\u590d50%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 101,
+        "PoolId": 20008,
+        "Weight": 100,
+        "Type": 401,
+        "Params": "[-1]",
+        "Description": "\\n\u2192\u5931\u53bb1\u70b9\u884c\u52a8\u529b",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 102,
+        "PoolId": 20008,
+        "Weight": 100,
+        "Type": 202,
+        "Params": "[50]",
+        "Description": "<color=#34AFF9><size=20>\u5355\u72ec\u7ef4\u4fee</size></color>\\n\u2192\u5c0f\u961f\u968f\u673a1\u4eba\u56de\u590d50%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 103,
+        "PoolId": 20008,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670920%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 104,
+        "PoolId": 20009,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[20]",
+        "Description": "<color=#34AFF9><size=20>\u6577\u884d\u7684\u4ed8\u51fa</size></color>\\n\u2192\u5168\u961f\u56de\u590d20%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 105,
+        "PoolId": 20009,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670920%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 106,
+        "PoolId": 20009,
+        "Weight": 100,
+        "Type": 202,
+        "Params": "[50]",
+        "Description": "<color=#34AFF9><size=20>\u5e73\u5eb8\u7684\u4ed8\u51fa</size></color>\\n\u2192\u5c0f\u961f\u968f\u673a1\u4eba\u56de\u590d50%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 107,
+        "PoolId": 20009,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670920%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 108,
+        "PoolId": 20009,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[50]",
+        "Description": "<color=#34AFF9><size=20>\u5145\u5206\u7684\u4ed8\u51fa</size></color>\\n\u2192\u5168\u961f\u56de\u590d50%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 109,
+        "PoolId": 20009,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-50]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670950%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 110,
+        "PoolId": 20010,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[30]",
+        "Description": "<color=#34AFF9><size=20>\u4ed8\u51fa\u91d1\u94b1</size></color>\\n\u2192\u5168\u961f\u56de\u590d30%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 111,
+        "PoolId": 20010,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670920%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 112,
+        "PoolId": 20010,
+        "Weight": 100,
+        "Type": 303,
+        "Params": "[40, 42]",
+        "Description": "<color=#34AFF9><size=20>\u4ed8\u51fa\u4f24\u75db</size></color>\\n\u2192\u83b7\u5f9740~42\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 113,
+        "PoolId": 20010,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-30]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb30%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 114,
+        "PoolId": 20010,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u627f\u53d7\u6291\u5236</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 115,
+        "PoolId": 20010,
+        "Weight": 100,
+        "Type": 202,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5c0f\u961f\u968f\u673a1\u4eba\u5931\u53bb20%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 116,
+        "PoolId": 20011,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[30]",
+        "Description": "<color=#34AFF9><size=20>\u4ed8\u51fa\u91d1\u94b1</size></color>\\n\u2192\u5168\u961f\u56de\u590d30%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 117,
+        "PoolId": 20011,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-30]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670930%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 118,
+        "PoolId": 20011,
+        "Weight": 100,
+        "Type": 303,
+        "Params": "[35, 53]",
+        "Description": "<color=#34AFF9><size=20>\u4ed8\u51fa\u4f24\u75db</size></color>\\n\u2192\u83b7\u5f9735~53\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 119,
+        "PoolId": 20011,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-30]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb30%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 120,
+        "PoolId": 20011,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u627f\u53d7\u6291\u5236</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 121,
+        "PoolId": 20011,
+        "Weight": 100,
+        "Type": 202,
+        "Params": "[-30]",
+        "Description": "\\n\u2192\u5c0f\u961f\u968f\u673a1\u4eba\u5931\u53bb30%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 122,
+        "PoolId": 20012,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[50]",
+        "Description": "<color=#34AFF9><size=20>\u4ed8\u51fa\u91d1\u94b1</size></color>\\n\u2192\u5168\u961f\u56de\u590d50%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 123,
+        "PoolId": 20012,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-50]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670950%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 124,
+        "PoolId": 20012,
+        "Weight": 100,
+        "Type": 303,
+        "Params": "[42, 60]",
+        "Description": "<color=#34AFF9><size=20>\u4ed8\u51fa\u4f24\u75db</size></color>\\n\u2192\u83b7\u5f9742~60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 125,
+        "PoolId": 20012,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-50]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb50%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 126,
+        "PoolId": 20012,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u627f\u53d7\u6291\u5236</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 127,
+        "PoolId": 20012,
+        "Weight": 100,
+        "Type": 202,
+        "Params": "[-80]",
+        "Description": "\\n\u2192\u5c0f\u961f\u968f\u673a1\u4eba\u5931\u53bb80%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 128,
+        "PoolId": 20013,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[35]",
+        "Description": "<color=#34AFF9><size=20>\u8bd5\u63a2\u6027\u7684\u8ba9\u5176\u62bd\u53d6</size></color>\\n\u2192\u83b7\u5f9735\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 129,
+        "PoolId": 20013,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb20%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 130,
+        "PoolId": 20013,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[40]",
+        "Description": "<color=#34AFF9><size=20>\u8ba9\u5176\u5b8c\u6574\u62bd\u53d6\u4e00\u6b21</size></color>\\n\u2192\u83b7\u5f9740\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 131,
+        "PoolId": 20013,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-30]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb30%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 132,
+        "PoolId": 20013,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[49]",
+        "Description": "<color=#34AFF9><size=20>\u8ba9\u5176\u5b8c\u6574\u62bd\u53d6\u591a\u6b21</size></color>\\n\u2192\u83b7\u5f9749\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 133,
+        "PoolId": 20013,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-40]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb40%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 134,
+        "PoolId": 20014,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[50]",
+        "Description": "<color=#34AFF9><size=20>\u8981\u6c42\u7ef4\u4fee\u5907\u54c1</size></color>\\n\u2192\u5168\u961f\u56de\u590d50%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 135,
+        "PoolId": 20014,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-50]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670950%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 136,
+        "PoolId": 20014,
+        "Weight": 100,
+        "Type": 401,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u8981\u6c42\u80fd\u91cf\u8865\u5145</size></color>\\n\u2192\u83b7\u5f971\u70b9\u884c\u52a8\u529b",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 137,
+        "PoolId": 20014,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-50]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670950%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 138,
+        "PoolId": 20014,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8981\u6c42\u88c5\u5907</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 139,
+        "PoolId": 20014,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-50]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670950%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 140,
+        "PoolId": 20015,
+        "Weight": 100,
+        "Type": 502,
+        "Params": "[99]",
+        "Description": "<color=#34AFF9><size=20>\u5168\u9762\u6d17\u6d88</size></color>\\n\u2192\u79fb\u9664\u5168\u90e8\u8d1f\u9762\u6548\u679c",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 141,
+        "PoolId": 20015,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-50]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670950%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 142,
+        "PoolId": 20015,
+        "Weight": 100,
+        "Type": 502,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u5feb\u901f\u6d17\u6d88</size></color>\\n\u2192\u79fb\u9664\u968f\u673a1\u4e2a\u8d1f\u9762\u6548\u679c",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 143,
+        "PoolId": 20015,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5931\u53bb\u5df2\u670920%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 144,
+        "PoolId": 20016,
+        "Weight": 100,
+        "Type": 502,
+        "Params": "[99]",
+        "Description": "<color=#34AFF9><size=20>\u5168\u9762\u6d17\u6d88</size></color>\\n\u2192\u79fb\u9664\u5168\u90e8\u8d1f\u9762\u6548\u679c",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 145,
+        "PoolId": 20016,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-50]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb50%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 146,
+        "PoolId": 20016,
+        "Weight": 100,
+        "Type": 502,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u5feb\u901f\u6d17\u6d88</size></color>\\n\u2192\u79fb\u9664\u968f\u673a1\u4e2a\u8d1f\u9762\u6548\u679c",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 147,
+        "PoolId": 20016,
+        "Weight": 100,
+        "Type": 202,
+        "Params": "[-30]",
+        "Description": "\\n\u2192\u5c0f\u961f\u968f\u673a1\u4eba\u5931\u53bb30%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 148,
+        "PoolId": 20017,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 149,
+        "PoolId": 20017,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-20]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb20%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 150,
+        "PoolId": 20017,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 151,
+        "PoolId": 20017,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-45]",
+        "Description": "\\n\u2192\u5931\u53bb45\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 152,
+        "PoolId": 20017,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u65e0\u8c0b\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 153,
+        "PoolId": 20017,
+        "Weight": 100,
+        "Type": 401,
+        "Params": "[-1]",
+        "Description": "\\n\u2192\u5931\u53bb1\u70b9\u884c\u52a8\u529b",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 154,
+        "PoolId": 20018,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 155,
+        "PoolId": 20018,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-30]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb30%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 156,
+        "PoolId": 20018,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 157,
+        "PoolId": 20018,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 158,
+        "PoolId": 20018,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u65e0\u8c0b\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 159,
+        "PoolId": 20018,
+        "Weight": 100,
+        "Type": 401,
+        "Params": "[-1]",
+        "Description": "\\n\u2192\u5931\u53bb1\u70b9\u884c\u52a8\u529b",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 160,
+        "PoolId": 20019,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 161,
+        "PoolId": 20019,
+        "Weight": 100,
+        "Type": 201,
+        "Params": "[-50]",
+        "Description": "\\n\u2192\u5168\u961f\u5931\u53bb50%\u751f\u547d",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 162,
+        "PoolId": 20019,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 163,
+        "PoolId": 20019,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 164,
+        "PoolId": 20019,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u65e0\u8c0b\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 165,
+        "PoolId": 20019,
+        "Weight": 100,
+        "Type": 401,
+        "Params": "[-1]",
+        "Description": "\\n\u2192\u5931\u53bb1\u70b9\u884c\u52a8\u529b",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 166,
+        "PoolId": 20020,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[10]",
+        "Description": "<color=#34AFF9><size=20>\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u5df2\u670910%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 167,
+        "PoolId": 20020,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[38]",
+        "Description": "<color=#34AFF9><size=20>\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f9738\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 168,
+        "PoolId": 20020,
+        "Weight": 100,
+        "Type": 303,
+        "Params": "[36, 42]",
+        "Description": "<color=#34AFF9><size=20>\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f9736~42\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 169,
+        "PoolId": 20021,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[10]",
+        "Description": "<color=#34AFF9><size=20>\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u5df2\u670910%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 170,
+        "PoolId": 20021,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[44]",
+        "Description": "<color=#34AFF9><size=20>\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f9744\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 171,
+        "PoolId": 20021,
+        "Weight": 100,
+        "Type": 303,
+        "Params": "[35, 53]",
+        "Description": "<color=#34AFF9><size=20>\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f9735~53\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 172,
+        "PoolId": 20022,
+        "Weight": 100,
+        "Type": 301,
+        "Params": "[10]",
+        "Description": "<color=#34AFF9><size=20>\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u5df2\u670910%\u6570\u91cf\u7684\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 173,
+        "PoolId": 20022,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[49]",
+        "Description": "<color=#34AFF9><size=20>\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f9749\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 174,
+        "PoolId": 20022,
+        "Weight": 100,
+        "Type": 303,
+        "Params": "[42, 56]",
+        "Description": "<color=#34AFF9><size=20>\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f9742~56\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 175,
+        "PoolId": 10023,
+        "Weight": 50,
+        "Type": 103,
+        "Params": "[1]",
+        "Description": "\u968f\u673a\u5347\u7ea71\u4e2a\u5df2\u6709\u63d2\u4ef6\u5355\u5143[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 176,
+        "PoolId": 10023,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\u5931\u53bb60\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 177,
+        "PoolId": 10024,
+        "Weight": 50,
+        "Type": 103,
+        "Params": "[1]",
+        "Description": "\u968f\u673a\u5347\u7ea71\u4e2a\u5df2\u6709\u63d2\u4ef6\u5355\u5143[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 178,
+        "PoolId": 10024,
+        "Weight": 50,
+        "Type": 102,
+        "Params": null,
+        "Description": "\u968f\u673a\u5931\u53bb1\u4e2a\u5df2\u6709\u63d2\u4ef6\u5355\u5143[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 179,
+        "PoolId": 20023,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4f4e\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 180,
+        "PoolId": 20023,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-45]",
+        "Description": "\\n\u2192\u5931\u53bb45\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 181,
+        "PoolId": 20023,
+        "Weight": 100,
+        "Type": 103,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u968f\u673a\u5347\u7ea71\u4e2a\u5df2\u6709\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 182,
+        "PoolId": 20023,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 183,
+        "PoolId": 20024,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 184,
+        "PoolId": 20024,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 185,
+        "PoolId": 20024,
+        "Weight": 100,
+        "Type": 103,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u968f\u673a\u5347\u7ea71\u4e2a\u5df2\u6709\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 186,
+        "PoolId": 20024,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 187,
+        "PoolId": 20025,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 188,
+        "PoolId": 20025,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 189,
+        "PoolId": 20025,
+        "Weight": 100,
+        "Type": 103,
+        "Params": "[1]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u968f\u673a\u5347\u7ea71\u4e2a\u5df2\u6709\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 190,
+        "PoolId": 20025,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 191,
+        "PoolId": 11001,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[2001]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u71c3\u6599\u7eaf\u5316(\u706b\u5c5e\u6027\u589e\u4f24)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 192,
+        "PoolId": 11001,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-45]",
+        "Description": "\u5931\u53bb45\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 193,
+        "PoolId": 11001,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 194,
+        "PoolId": 11002,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[2002]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u7535\u8def\u6539\u826f(\u96f7\u5c5e\u6027\u589e\u4f24)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 195,
+        "PoolId": 11002,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-45]",
+        "Description": "\u5931\u53bb45\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 196,
+        "PoolId": 11002,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 197,
+        "PoolId": 11003,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[2003]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u6563\u70ed\u683c\u6805(\u51b0\u5c5e\u6027\u589e\u4f24)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 198,
+        "PoolId": 11003,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-45]",
+        "Description": "\u5931\u53bb45\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 199,
+        "PoolId": 11003,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 200,
+        "PoolId": 11004,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[2004]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u8f90\u5c04\u589e\u5e45(\u6697\u5c5e\u6027\u589e\u4f24)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 201,
+        "PoolId": 11004,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-45]",
+        "Description": "\u5931\u53bb45\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 202,
+        "PoolId": 11004,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 203,
+        "PoolId": 11005,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[2005]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u5f3a\u5316\u91cd\u51fb(\u7269\u7406\u589e\u4f24)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 204,
+        "PoolId": 11005,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-45]",
+        "Description": "\u5931\u53bb45\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 205,
+        "PoolId": 11005,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 206,
+        "PoolId": 11006,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[3008]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u62a4\u76fe\u6218\u672f(\u6709\u62a4\u76fe\u65f6\u589e\u4f24)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 207,
+        "PoolId": 11006,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\u5931\u53bb60\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 208,
+        "PoolId": 11006,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 209,
+        "PoolId": 11007,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[3010]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u4fe1\u53f7Mk.1(\u6d88\u7403\u589e\u4f24)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 210,
+        "PoolId": 11007,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\u5931\u53bb60\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 211,
+        "PoolId": 11007,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 212,
+        "PoolId": 11008,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[3017]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u51b2\u51fb\u6ce2\u5f15\u7ebf(qte\u8303\u56f4\u4f24\u5bb3)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 213,
+        "PoolId": 11008,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\u5931\u53bb60\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 214,
+        "PoolId": 11008,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 215,
+        "PoolId": 11009,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[2010]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u6837\u672c\u8865\u6b63(\u51fb\u6740\u56de\u7403)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 216,
+        "PoolId": 11009,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\u5931\u53bb60\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 217,
+        "PoolId": 11009,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 218,
+        "PoolId": 11010,
+        "Weight": 25,
+        "Type": 101,
+        "Params": "[3006]",
+        "Description": "\u83b7\u5f97\u63d2\u4ef6:\u52bf\u80fd\u63a7\u5236(\u95ea\u907f\u589e\u4f24)[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 219,
+        "PoolId": 11010,
+        "Weight": 25,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\u5931\u53bb60\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:25%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 220,
+        "PoolId": 11010,
+        "Weight": 50,
+        "Type": 302,
+        "Params": "[32]",
+        "Description": "\u83b7\u5f9732\u4e2a\u7578\u53d8\u65b9\u5757[\u6982\u7387:50%]",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 221,
+        "PoolId": 21001,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 222,
+        "PoolId": 21001,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 223,
+        "PoolId": 21001,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2014]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u8854\u63a5Mk.2(\u8fde\u51fb\u589e\u4f24)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 224,
+        "PoolId": 21001,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 225,
+        "PoolId": 21002,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 226,
+        "PoolId": 21002,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 227,
+        "PoolId": 21002,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2013]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u9ad8\u901f\u5904\u7406\u5668(\u51cf\u5c11qte\u51b7\u5374)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 228,
+        "PoolId": 21002,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 229,
+        "PoolId": 21003,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 230,
+        "PoolId": 21003,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 231,
+        "PoolId": 21003,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2006]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u51fa\u529b\u589e\u5f3a(\u666e\u653b\u589e\u4f24)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 232,
+        "PoolId": 21003,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 233,
+        "PoolId": 21004,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u4e2d\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 234,
+        "PoolId": 21004,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-60]",
+        "Description": "\\n\u2192\u5931\u53bb60\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 235,
+        "PoolId": 21004,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[2018]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u60c5\u62a5\u5171\u4eab(\u5207\u4eba\u56de\u7403)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 236,
+        "PoolId": 21004,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 237,
+        "PoolId": 21005,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 238,
+        "PoolId": 21005,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 239,
+        "PoolId": 21005,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3021]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u5c0f\u961f\u63a9\u62a4(\u5207\u4eba\u589e\u4f24)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 240,
+        "PoolId": 21005,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-90]",
+        "Description": "\\n\u2192\u5931\u53bb90\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 241,
+        "PoolId": 21006,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 242,
+        "PoolId": 21006,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 243,
+        "PoolId": 21006,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3004]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u9644\u7740\u70b8\u5f39(\u8303\u56f4\u706b\u4f24)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 244,
+        "PoolId": 21006,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-90]",
+        "Description": "\\n\u2192\u5931\u53bb90\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 245,
+        "PoolId": 21007,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 246,
+        "PoolId": 21007,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 247,
+        "PoolId": 21007,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3008]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u62a4\u76fe\u6218\u672f(\u6709\u62a4\u76fe\u65f6\u589e\u4f24)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 248,
+        "PoolId": 21007,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-90]",
+        "Description": "\\n\u2192\u5931\u53bb90\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 249,
+        "PoolId": 21008,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 250,
+        "PoolId": 21008,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 251,
+        "PoolId": 21008,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3019]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u8f90\u5c04\u5c18(\u8ffd\u52a0\u6697\u4f24)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 252,
+        "PoolId": 21008,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-90]",
+        "Description": "\\n\u2192\u5931\u53bb90\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 253,
+        "PoolId": 21009,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 254,
+        "PoolId": 21009,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 255,
+        "PoolId": 21009,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3019]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u8f90\u5c04\u5c18(\u8ffd\u52a0\u6697\u4f24)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 256,
+        "PoolId": 21009,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-90]",
+        "Description": "\\n\u2192\u5931\u53bb90\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 257,
+        "PoolId": 21010,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3]",
+        "Description": "<color=#34AFF9><size=20>\u8c28\u614e\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f971\u4e2a\u9ad8\u7ea7\u63d2\u4ef6\u5355\u5143",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 258,
+        "PoolId": 21010,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-75]",
+        "Description": "\\n\u2192\u5931\u53bb75\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 259,
+        "PoolId": 21010,
+        "Weight": 100,
+        "Type": 101,
+        "Params": "[3013]",
+        "Description": "<color=#34AFF9><size=20>\u7c97\u66b4\u7684\u6253\u5f00</size></color>\\n\u2192\u83b7\u5f97\u63d2\u4ef6:\u9ad8\u538b\u7535\u5f27(\u8303\u56f4\u96f7\u4f24)",
+        "Name": null,
+        "Icon": null
+    },
+    {
+        "Id": 260,
+        "PoolId": 21010,
+        "Weight": 100,
+        "Type": 302,
+        "Params": "[-90]",
+        "Description": "\\n\u2192\u5931\u53bb90\u7578\u53d8\u65b9\u5757",
+        "Name": null,
+        "Icon": null
+    }
+]

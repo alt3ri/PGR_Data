@@ -1,0 +1,46 @@
+[
+    {
+        "Id": 1,
+        "MutualExclusionIds": "[2]"
+    },
+    {
+        "Id": 2,
+        "MutualExclusionIds": "[1, 3]"
+    },
+    {
+        "Id": 3,
+        "MutualExclusionIds": "[2]"
+    },
+    {
+        "Id": 101,
+        "MutualExclusionIds": null
+    },
+    {
+        "Id": 102,
+        "MutualExclusionIds": "[103]"
+    },
+    {
+        "Id": 103,
+        "MutualExclusionIds": "[102]"
+    },
+    {
+        "Id": 111,
+        "MutualExclusionIds": "[112]"
+    },
+    {
+        "Id": 112,
+        "MutualExclusionIds": "[111]"
+    },
+    {
+        "Id": 150,
+        "MutualExclusionIds": "[151, 153]"
+    },
+    {
+        "Id": 151,
+        "MutualExclusionIds": "[150]"
+    },
+    {
+        "Id": 153,
+        "MutualExclusionIds": "[150]"
+    }
+]
