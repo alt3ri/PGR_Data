@@ -20,7 +20,12 @@ function XUiTheatre5PopupNewSeason:Update()
     self.TxtTips2.text = XMVCA.XTheatre5:GetClientConfig("PvpPopUpContent2", 2)
     self.TxtName3.text = XMVCA.XTheatre5:GetClientConfig("PvpPopUpContent3", 1)
     self.TxtTips3.text = XMVCA.XTheatre5:GetClientConfig("PvpPopUpContent3", 2)
-    self.ImgNameplate:SetSprite(XMVCA.XTheatre5:GetClientConfig("PvpPopUpImgNameplate", 1))
+    
+    local nameplateIcon = XMVCA.XTheatre5:GetClientConfig("PvpPopUpImgNameplate", 1)
+
+    if not string.IsNilOrEmpty(nameplateIcon) then
+        self.ImgNameplate:SetSprite(nameplateIcon)
+    end
     self.RImgRune:SetRawImage(XMVCA.XTheatre5:GetClientConfig("PvpPopUpImgRune", 1))
 end
 

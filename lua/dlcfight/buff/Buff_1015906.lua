@@ -26,7 +26,7 @@ function XBuffScript1015906:Init()
         [3] = 20920
     }
     --增强Buff[2]配置
-    self.enhDurTime = 5                 --延长时间
+    self.enhDurTime = 4                 --延长时间
     --增强Buff[3]配置
     self.enhBuff3SignalId = 1015921              --标记buffID
     self.enhBuff3AddTime = 0.5                 --触发后增加的时长/秒

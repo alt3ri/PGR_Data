@@ -339,7 +339,7 @@ XPurchaseManagerCreator = function()
             for id, discountPrice in pairs(subPackageDiscounts) do
                 totalAmount = totalAmount + 1
                 local purchaseInfo = XPurchaseManager.GetPurchaseInfoDataById(id)
-                if purchaseInfo.BuyLimitTimes then
+                if purchaseInfo and purchaseInfo.BuyLimitTimes then
                     if purchaseInfo.BuyLimitTimes > 0 and purchaseInfo.BuyTimes >= purchaseInfo.BuyLimitTimes then
                         soldOutAmount = soldOutAmount + 1
                     end
@@ -396,7 +396,8 @@ XPurchaseManagerCreator = function()
 
     -- 普通采购请求
     -- public List<XRewardGoods> RewardList;
-    function XPurchaseManager.PurchaseRequest(id, cb, count, discountId, uiTypeList, randomSelectGoodsIds, selectGroups, selectGroupGoodsIds)
+    ---@param cbAfterPopup function 在所有弹框关闭后调用
+    function XPurchaseManager.PurchaseRequest(id, cb, count, discountId, uiTypeList, randomSelectGoodsIds, selectGroups, selectGroupGoodsIds, cbAfterPopup)
         if not discountId then
             -- 等于 -1 为不使用打折券
             discountId = -1
@@ -439,6 +440,18 @@ XPurchaseManagerCreator = function()
             local commonRewardCount = XTool.GetTableCount(res.RewardList)
             local specialRewardCount = XTool.GetTableCount(res.RewardGoodsListByType)
 
+            local popQueue = {}
+            local DoPopQueue = function()
+                table.remove(popQueue, 1)
+                if not XTool.IsTableEmpty(popQueue) then
+                    popQueue[1]()
+                else
+                    if cbAfterPopup then
+                        cbAfterPopup(res)
+                    end
+                end
+            end
+
             if commonRewardCount >= 1 or specialRewardCount > 0 then
                 -- 福袋道具和其他道具分开两个弹窗
                 if not XTool.IsTableEmpty(res.RewardGoodsListByType) then
@@ -462,18 +475,11 @@ XPurchaseManagerCreator = function()
 
                     local commonList = XTool.MergeArray(otherRewardList, res.RewardList)
 
-                    local popQueue = {}
-
                     if not XTool.IsTableEmpty(randomDrawRewardList) then
                         table.insert(popQueue, function()
-
                             XLuaUiManager.OpenWithCloseCallback("UiPurchaseRandomObtain", function()
-                                table.remove(popQueue, 1)
-                                if not XTool.IsTableEmpty(popQueue) then
-                                    popQueue[1]()
-                                end
+                                DoPopQueue()
                             end, randomDrawRewardList, afterSendRewardList)
-
                         end)
                     end
 
@@ -482,24 +488,22 @@ XPurchaseManagerCreator = function()
                             XUiManager.OpenUiObtain(commonList, nil, function()
                                 XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
                                 XPurchaseManager.OnBuyPurchasePackageCheckSkip(id)
-                                table.remove(popQueue, 1)
-                                if not XTool.IsTableEmpty(popQueue) then
-                                    popQueue[1]()
-                                end
+                                DoPopQueue()
                             end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
                         end)
                     end
 
-                    if not XTool.IsTableEmpty(popQueue) then
-                        popQueue[1]()
-                    else
+                    if XTool.IsTableEmpty(popQueue) then
                         XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
                     end
                 else
-                    XUiManager.OpenUiObtain(res.RewardList, nil, function()
-                        XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
-                        XPurchaseManager.OnBuyPurchasePackageCheckSkip(id)
-                    end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
+                    table.insert(popQueue, function()
+                        XUiManager.OpenUiObtain(res.RewardList, nil, function()
+                            XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                            XPurchaseManager.OnBuyPurchasePackageCheckSkip(id)
+                            DoPopQueue()
+                        end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
+                    end)
                 end
             else
                 XUiManager.TipText("PurchaseLBBuySuccessTips")
@@ -509,6 +513,14 @@ XPurchaseManagerCreator = function()
 
             if cb then
                 cb(res.RewardList)
+            end
+
+            if XTool.IsTableEmpty(popQueue) then
+                if cbAfterPopup then
+                    cbAfterPopup(res)
+                end
+            else
+                popQueue[1]()
             end
 
             XEventManager.DispatchEvent(XEventId.EVENT_LB_UPDATE)

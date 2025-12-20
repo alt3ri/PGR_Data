@@ -23,6 +23,11 @@ end
 
 --当前界面内的刷新
 function XUiTheatre5CharacterTeaching:UpdateStoryLineProcess(storyLineId, contentId)
+    -- 如果在事件中被踢出，它所注册的方法将会延后注销，导致界面销毁了但监听还在，需要特判
+    if not self:IsValidState() or self._Control == nil then
+        return
+    end
+    
     local teachingStoryLineId = self._Control.PVEControl:GetTeachingStoryLineId()
     if storyLineId == teachingStoryLineId then
         if contentId and contentId <= 0 then --教学关结束

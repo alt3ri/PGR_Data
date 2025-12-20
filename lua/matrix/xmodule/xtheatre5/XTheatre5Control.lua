@@ -492,6 +492,11 @@ function XTheatre5Control:GetClientConfigBattleLoseLifeChangeDelay()
     return self._Model:GetTheatre5ClientConfigNum('BattleLoseLifeChangeDelay')
 end
 
+--- 商店任务页签因过时等原因整体刷新的提示
+function XTheatre5Control:GetClientConfigTaskShopUpdateTips()
+    return self._Model:GetTheatre5ClientConfigText('TaskShopUpdateTips')
+end
+
 --endregion
 
 --endregion
@@ -1089,6 +1094,29 @@ end
 
 function XTheatre5Control:HasEnoughExpToAutoUpgrade()
     return self._Model:HasEnoughExpToAutoUpgrade()
+end
+
+function XTheatre5Control:GetUiPrefabPathByType(type)
+    local curPriority = 0
+    local curPath = nil
+    
+    local cfgs = self._Model:GetTheatre5UiStyleCfgs()
+
+    if cfgs then
+        for i, v in pairs(cfgs) do
+            if v.UiType == type then
+                -- 优先级大于当前才考虑
+                if v.Priority > curPriority and not string.IsNilOrEmpty(v.UiPrefabPath) then
+                    if not XTool.IsNumberValidEx(v.ShowCondition) or XConditionManager.CheckCondition(v.ShowCondition) then
+                        curPriority = v.Priority
+                        curPath = v.UiPrefabPath
+                    end
+                end
+            end
+        end 
+    end
+    
+    return curPath
 end
 
 return XTheatre5Control

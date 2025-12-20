@@ -4,6 +4,7 @@ local mathFloor = math.floor
 local tableInsert = table.insert
 local tableRemove = table.remove
 local next = next
+local tableRemove = table.remove
 local CSMovieXMovieManagerInstance = CS.Movie.XMovieManager.Instance
 
 local UI_MOVIE = "UiMovie"
@@ -186,13 +187,12 @@ XMovieManagerCreator = function()
 
     -- 从startActionId开始播剧情，获取前面播放过的Action列表
     local function GetPassedActions(startActionId, optionDic)
-        optionDic = optionDic or {}
         local delaySelectionDic = {} -- 延迟做出选择的选项
         local result = {}
         local isSuccess = false
         local index = 1
         local allActionCnt = #WaitToPlayList
-        while index < allActionCnt do
+        while index <= allActionCnt do
             ---@type XMovieActionBase
             local action = WaitToPlayList[index]
             local actionId = action:GetActionId()
@@ -264,13 +264,14 @@ XMovieManagerCreator = function()
         IsPause = false
         XDataCenter.MovieManager.SetStageId(stageId)
         SelectionDataDic = {} -- 选项的
+        optionDic = optionDic or {}
 
         -- 从startActionId开始播
         if XTool.IsNumberValid(startActionId) then
             local isSuccess = false
             PassedActions, isSuccess = GetPassedActions(startActionId, optionDic)
             if isSuccess then
-                PassedOptionDic = optionDic or {}
+                PassedOptionDic = optionDic
                 CurPlayingActionIndex = GetActionIndexById(CurPlayingMovieId, startActionId)
             else
                 XLog.Error(string.format("剧情%s无法定位到ActionId:%s，从头开始播放", movieId, startActionId))
@@ -292,6 +293,7 @@ XMovieManagerCreator = function()
                     table.remove(PassedActions, i)
                 end
                 CurPlayingActionIndex = GetActionIndexById(CurPlayingMovieId, advanceActionId)
+                XLog.Debug(string.format("剧情提前到ActionIndex = %s开始播放", CurPlayingActionIndex))
             end
         end
         
@@ -668,7 +670,7 @@ XMovieManagerCreator = function()
         DoAction()
     end
 
-    function XMovieManager.PushInReviewDialogList(roleName, dialogContent,cueId)
+    function XMovieManager.PushInReviewDialogList(roleName, dialogContent, cueId, actionType)
         roleName = roleName and roleName ~= "" and roleName .. ":  " or ""
         if not string.IsNilOrEmpty(roleName) then
             dialogContent = dialogContent and dialogContent ~= "" and dialogContent or ""
@@ -677,9 +679,27 @@ XMovieManagerCreator = function()
         local data = {
             RoleName = roleName,
             Content = dialogContent,
-            CueId = cueId
+            CueId = cueId,
+            ActionType = actionType
         }
         tableInsert(ReviewDialogList, data)
+    end
+    
+    -- 移除并返回最后一个回顾
+    function XMovieManager.PopLastReviewDialog(actionType)
+        local reviewDialogCnt = #ReviewDialogList
+        if reviewDialogCnt == 0 then return end
+        
+        if actionType then
+            for i = reviewDialogCnt, 1, -1 do
+                if ReviewDialogList[i].ActionType == actionType then
+                    local dialog = tableRemove(ReviewDialogList, i)
+                    return dialog
+                end
+            end
+        else
+            return tableRemove(ReviewDialogList)
+        end
     end
 
     function XMovieManager.RemoveFromReviewDialogList()

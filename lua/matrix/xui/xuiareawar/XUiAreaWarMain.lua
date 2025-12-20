@@ -1,4 +1,4 @@
-local XUiPanelArea = require("XUi/XUiMission/XUiPanelArea")
+local XUiPanelArea = require("XUi/XUiMission/XUiPanelArea")
 ---@class XUiAreaWarMain : XLuaUi
 ---@field Canvas UnityEngine.Canvas
 ---@field Canvas3D UnityEngine.Canvas
@@ -9,6 +9,7 @@ local XUiPanelArea = require("XUi/XUiMission/XUiPanelArea")
 ---@field AllGrids UnityEngine.Transform[]
 ---@field BtnBuff XUiComponent.XUiButton
 ---@field Trail UnityEngine.Transform
+---@field _Control XAreaWarControl
 local XUiAreaWarMain = XLuaUiManager.Register(XLuaUi, "UiAreaWarMain")
 
 local AUTO_REQ_ACTIVITY_DATA_INTERVAL = 2 * 60 * 1000 --界面打开后自动请求最新活动数据时间间隔(ms)
@@ -27,7 +28,8 @@ function XUiAreaWarMain:OnAwake()
     self:InitCb()
 end
 
-function XUiAreaWarMain:OnStart()
+function XUiAreaWarMain:OnStart(skipBlockId)
+    self.SkipBlockId = skipBlockId
     self:InitView()
     -- 等待开始动画播放完
     XScheduleManager.ScheduleOnce(function()
@@ -164,6 +166,7 @@ function XUiAreaWarMain:InitUi()
     --3D场景
     local root = self.UiModelGo.transform
     local panelRank = root:FindTransform("PanelRank")
+    local panelReward = root:FindTransform("PanelReward")
     local stageList = root:FindTransform("PanelStageList")
     local dynamic = self.UiSceneInfo.Transform:FindTransform("GroupDynamic")
 
@@ -238,7 +241,8 @@ function XUiAreaWarMain:InitUi()
     ---@type XUiPanelAreaWarMainRank3D
     self.RankPanel = require("XUi/XUiAreaWar/XUiPanelAreaWarMainRank3D").New(panelRank)
     self.RankPanel:Hide()
-
+    self.RewardPanel =  require("XUi/XUiAreaWar/XUiPanelAreaWarMainReward3D").New(panelReward) 
+    self.RewardPanel:Hide()
     CS.XAreaWarManager.Instance:InitCamera(self.UiModel.UiNearCamera, self.UiModel.UiFarCamera)
     ---@type XUiPanelAreaWarMainBlockList3D
     self.BlockList3DPanel = require("XUi/XUiAreaWar/XUiPanelAreaWarMainBlockList3D").New(stageList, self)
@@ -302,6 +306,8 @@ function XUiAreaWarMain:InitCb()
         self:BtnRescueClick()
     end
 
+    self:RegisterClickEvent(self.BtnCollection, self.OnBtnCollectionClick)
+
     --self.OnUnlockAnimEndCb = handler(self, self.OnBlockUnlockAnimEnd)
 
     self.OnPlayUnlockAnim = handler(self, self.PlayBlockUnlock)
@@ -320,6 +326,7 @@ function XUiAreaWarMain:InitView()
     self.ScaleSlider.value = self:CalSliderPercent(self.NearFraming.m_CameraDistance)
 
     self.AssetActivityPanel = XUiHelper.NewPanelActivityAssetSafe({
+        XDataCenter.ItemManager.ItemId.AreaWarAuctionCoin,
         XDataCenter.ItemManager.ItemId.AreaWarCoin,
         XDataCenter.ItemManager.ItemId.AreaWarActionPoint
     }, self.PanelSpecialTool, self, nil, nil, {
@@ -366,6 +373,7 @@ function XUiAreaWarMain:UpdateView()
     self:UpdatePurificationLevel()
     self:CheckPopups()
     self:UpdatePersonal()
+    self:UpdateBtnCollection()
 end
 
 --板块
@@ -522,6 +530,7 @@ function XUiAreaWarMain:UpdateBlocks()
     self.Canvas3D.sortingOrder = self.Canvas.sortingOrder + 1
 
     self.RankPanel:Refresh()
+    self.RewardPanel:Refresh()
     self.BlockList3DPanel:Refresh(self.IsRepeatChallenge)
     --更新区块详情
 
@@ -577,15 +586,18 @@ function XUiAreaWarMain:CheckPopups()
 
         --挂机收益功能解锁弹窗
         if XDataCenter.AreaWarManager.CheckHangUpUnlockPopUp() and isGuide then
+            self:UpdateHangUp()
             asyncOpenUi("UiAreaWarHangUpJs")
             XDataCenter.AreaWarManager.SetHangUpUnlockPopUpCookie()
             popped = true
         end
 
+        --[[
         if XDataCenter.AreaWarManager.CheckNeedPopReward() and isGuide then
             asyncOpenUi("UiAreaWarGift")
             XDataCenter.AreaWarManager.MarkPopReward()
         end
+        ]]
 
         if XDataCenter.AreaWarManager.GetPersonal():IsLevelUp() and isGuide then
             asyncOpenUi("UiAreaWarCheckLvUp")
@@ -598,8 +610,20 @@ function XUiAreaWarMain:CheckPopups()
             XDataCenter.AreaWarManager.AreaWarPopupRequest()
         end
 
-        --如果正在播放上升动画，则不播解锁动画
-        self:TryFocusBlock(playId, ids, asyncPlayUnlock)
+        -- 跳转区块
+        if self.SkipBlockId then
+            self.IsFocusAnim = true
+            asynWaitSecond(1)
+            local duration = self.BlockList3DPanel:GetFocusBlockDuration(self.SkipBlockId)
+            self.BlockList3DPanel:FocusTargetBlock(self.SkipBlockId)
+            asynWaitSecond(duration + 0.5)
+            self.IsFocusAnim = false
+            self:OnClickBlock(self.SkipBlockId)
+            self.SkipBlockId = nil
+        else
+            --如果正在播放上升动画，则不播解锁动画
+            self:TryFocusBlock(playId, ids, asyncPlayUnlock)
+        end
 
         --更新新解锁区块的状态
         self.BlockList3DPanel:RefreshNewUnlockBlocks()
@@ -687,6 +711,20 @@ function XUiAreaWarMain:UpdatePersonal()
     local personal = XDataCenter.AreaWarManager.GetPersonal()
     self.BtnBuff:SetFillAmount(personal:GetExpProgress())
     self.BtnBuff:SetNameByGroup(1, personal:GetLevelName())
+end
+
+function XUiAreaWarMain:UpdateBtnCollection()
+    local conditionId = XAreaWarConfigs.GetBtnCollectionUnlockConditionId()
+    local isUnlock, desc = true, nil
+    if XTool.IsNumberValidEx(conditionId) then
+        isUnlock, desc = XConditionManager.CheckCondition(conditionId)
+    end
+    
+    local isShowBubble = self._Control:GetItemRoom():IsExitOrderSellSuccess()
+    self.ImgCollectionBubble.gameObject:SetActiveEx(isShowBubble)
+    local isRed = self._Control:IsRedCollection()
+    self.BtnCollection:ShowReddot(isRed)
+    self.BtnCollection:SetDisable(not isUnlock)
 end
 
 function XUiAreaWarMain:OnExpChanged()
@@ -806,6 +844,20 @@ function XUiAreaWarMain:BtnRescueClick()
     end)
 end
 
+function XUiAreaWarMain:OnBtnCollectionClick()
+    local conditionId = XAreaWarConfigs.GetBtnCollectionUnlockConditionId()
+    local isUnlock, desc = true, nil
+    if XTool.IsNumberValidEx(conditionId) then
+        isUnlock, desc = XConditionManager.CheckCondition(conditionId)
+    end
+    if not isUnlock then
+        XUiManager.TipError(desc)
+        return
+    end
+    
+    XLuaUiManager.Open("UiAreaWarCollection")
+end
+
 function XUiAreaWarMain:OnClickBtnChat()
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.SocialChat) then
         return
@@ -834,9 +886,13 @@ function XUiAreaWarMain:OnOpenStageDetail(blockId, hideRankPanel)
 
     if not hideRankPanel then
         --更新区块排行榜, 并挂载到对应区块父节点上，然后打开
+        self.BlockList3DPanel:SetAsBlockChild(self.RewardPanel.Transform, blockId)
         self.RankPanel:Refresh(blockId)
         self.BlockList3DPanel:SetAsBlockChild(self.RankPanel.Transform, blockId)
         self.RankPanel:Show()
+        self.RewardPanel:Refresh(blockId)
+        self.RewardPanel:Show()
+        
     end
 
     --隐藏2DUI
@@ -852,6 +908,7 @@ function XUiAreaWarMain:OnCloseStageDetail(blockId)
 
     --关闭区块排行榜
     self.RankPanel:Hide()
+    self.RewardPanel:Hide()
 
     --相机恢复
     self:UpdateVirtualCamera(self.VirtualCameraMap.Normal)
@@ -904,6 +961,11 @@ end
 
 --区域被点击
 function XUiAreaWarMain:OnClickBlock(blockId)
+    -- 防止定位块的过程中玩家点击块触发弹窗
+    if self.IsFocusAnim then
+        return
+    end
+    
     if CS.XAreaWarManager.Instance.IsUnlockPlaying then
         return
     end
@@ -919,6 +981,10 @@ function XUiAreaWarMain:OnClickBlock(blockId)
                     asynPlayAnimation("DarkEnable")
                     asynOpenUi(blockId)
                     asynWaitSecond(0) --等待UI完全重新打开之后再播放动画
+
+                    -- 进战斗后还会继续跑协程
+                    if not self.GameObject then return end
+                    
                     self:OnCloseStageDetail(blockId)
                     asynPlayAnimation("DarkDisable")
                     self:StartActivityDataTimer()
@@ -930,7 +996,7 @@ function XUiAreaWarMain:OnClickBlock(blockId)
         XDataCenter.MovieManager.PlayMovie(movieId)
     else
         --打开区块详情界面
-        XLuaUiManager.Open("UiAreaWarStageDetail", false, blockId, self.IsRepeatChallenge, handler(self, self
+        XLuaUiManager.OpenSingleUi("UiAreaWarStageDetail", false, blockId, self.IsRepeatChallenge, handler(self, self
                 .OnCloseStageDetail))
         self:OnOpenStageDetail(blockId)
     end
@@ -942,7 +1008,7 @@ function XUiAreaWarMain:OnClickQuest(questId)
         return
     end
     --打开区块详情界面
-    XLuaUiManager.Open("UiAreaWarStageDetail", true, questId, handler(self, self.OnCloseQuestDetail))
+    XLuaUiManager.OpenSingleUi("UiAreaWarStageDetail", true, questId, handler(self, self.OnCloseQuestDetail))
     self:OnOpenQuestDetail(questId)
 end
 
@@ -1106,6 +1172,9 @@ function XUiAreaWarMain:OnCheckActivity(isClose)
         countDown = self.TomorrowFreshTime - timeOfNow
     end
     self.TxtRefreshTime.text = XUiHelper.GetTime(countDown, XUiHelper.TimeFormatType.CHATEMOJITIMER)
+    
+    -- 收藏室气泡提示
+    self:UpdateBtnCollection()
 end
 
 function XUiAreaWarMain:StartActivityDataTimer()
@@ -1211,7 +1280,7 @@ function XUiAreaWarMain:RandomQuest(questCount, isRescue, exclude)
     local instance = CS.XAreaWarManager.Instance
     local plateIds = XAreaWarConfigs.GetPlateIdsByBlockIds(randomBlockIds)
     local questTransformList = instance:RandomBlock(randomBlockIds, plateIds, questCount, randomSeed, radius, exclude)
-    while (questTransformList.Count < questCount) do
+    while (questTransformList and questTransformList.Count < questCount) do
         local preIds = {}
         for _, blockId in ipairs(randomBlockIds) do
             preIds = XTool.MergeArray(preIds, XAreaWarConfigs.GetAllPreBlockIds(blockId))
@@ -1373,4 +1442,6 @@ function XUiAreaWarMain:OnTrailArrived(cb)
         end
         self.BtnBuff:ShowTag(false)
     end, 2100)
-end
+end
+
+return XUiAreaWarMain

@@ -1,4 +1,4 @@
-local XUiPanelArea = require("XUi/XUiMission/XUiPanelArea")
+local XUiPanelArea = require("XUi/XUiMission/XUiPanelArea")
 
 local CsVector3 = CS.UnityEngine.Vector3
 local CsQuaternion = CS.UnityEngine.Quaternion
@@ -185,6 +185,19 @@ function XUiPanelAreaWarMainBlockList3D:FocusTargetBlock(blockId)
     end
     self:DoFocusBlock(grid)
     self.FocusDetailBlockId = nil
+end
+
+-- 获取聚焦区块的时间
+function XUiPanelAreaWarMainBlockList3D:GetFocusBlockDuration(blockId)
+    local grid = self.GridBlocks[blockId]
+    local dis = CsDistance(grid.Transform.position, self.CameraFollowPoint.transform.position)
+    -- y = kx + b, 距离小于 0.5时， 不移动
+    local duration =  0.0125 * dis - 0.00625
+    if duration > 0 then
+        return duration
+    else
+        return 0
+    end
 end
 
 function XUiPanelAreaWarMainBlockList3D:FocusBlockDetail(blockId)

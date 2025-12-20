@@ -8,6 +8,10 @@ end
 ---@param data XUiBountyChallengeChapterDetailCharacterData
 function XUiBountyChallengeChapterDetailCharacter:Update(data)
     self.RImgHead:SetRawImage(data.Icon)
+
+    if self.ImgTag then
+        self.ImgTag.gameObject:SetActiveEx(data.IsRobot or false)
+    end
 end
 
 return XUiBountyChallengeChapterDetailCharacter

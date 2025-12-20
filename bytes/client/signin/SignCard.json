@@ -1,22 +1,32 @@
 [
     {
         "Id": 1,
-        "Name": "\u6708\u5361",
+        "Name": "Monthly Pass A",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignCard.prefab",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMonthlyPass.png",
         "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelMonthlyPass.png",
         "CanBuyDay": 30,
-        "Description": "\u6708\u5361\u8d2d\u4e70\u540e\uff0c\u6301\u7eed30\u65e5\uff0c\u6bcf\u65e55:00\uff0c\u53ef\u9886\u53d6100\u9ed1\u5361\u3002\\n\u6708\u5361\u6700\u591a\u8d2d\u4e702\u5f20\uff0c\u65f6\u95f4\u53e0\u52a0\uff0c\u6bcf\u5929\u53ea\u80fd\u9886\u53d6\u4e00\u6b21100\u9ed1\u5361\u5956\u52b1\u3002\\n\u8d2d\u4e70\u540e\u53ef\u7acb\u5373\u83b7\u53d6300\u9ed1\u5361\u3002",
-        "Param": "{2: 10000}"
+        "Description": "1. Purchase the Monthly Pass A to claim 100 Black Cards at 05:00 UTC every day for 30 days.\\n2. You may purchase up to 2 Monthly Pass A only. Cannot own Monthly Pass A & Monthly Pass C in a same period.\\n3. Once you have purchased a Monthly Pass A, you will receive 300 Black Cards immediately.",
+        "Param": "{1: 2, 2: 83028}"
     },
     {
         "Id": 2,
-        "Name": "S2\u6708\u5361",
+        "Name": "Season 2 Monthly Pass",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignCard.prefab",
         "FullScreenBg": "Assets/Product/Texture/Image/DrawCoating/DrawCoating02.png",
         "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelBg2.png",
         "CanBuyDay": 60,
-        "Description": "\u6d4b\u8bd5\u4f18\u60e0\u793c\u5305\u3010\u6d4b\u8bd5\u7528\u3011",
-        "Param": null
+        "Description": "Test Discount Pack [Test Only]",
+        "Param": "{1: 0, 2: 0}"
+    },
+    {
+        "Id": 3,
+        "Name": "Monthly Pass C",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignCard1.prefab",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMonthlyPass.png",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelMonthlyPassC.png",
+        "CanBuyDay": 30,
+        "Description": "1. Purchase the Monthly Pass C to claim 90 Black Cards at 05:00 UTC every day for 30 days.\\n2. You may purchase up to 2 Monthly Pass C only. Cannot own Monthly Pass A and Monthly Pass C in a same period.\\n3. Once you have purchased a Monthly Pass C, you will receive 300 Black Cards immediately.",
+        "Param": "{1: 2, 2: 90032}"
     }
 ]

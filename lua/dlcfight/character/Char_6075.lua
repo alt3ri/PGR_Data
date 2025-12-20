@@ -15,6 +15,7 @@ function XNPC_Lucia:Init()
         [600018] = true,
         [600021] = true,
         [700004] = true,
+        [900002] = true,
     }
     -- 参数1:QuestId, 参数2:开始ObjectiveId, 参数3:Objective状态, 参数4:结束ObjectiveId, 参数5:Objective状态,
     -- 在任务2002下，开始的目标2002014，目标状态开始，结束的目标2002063，目标状态结束

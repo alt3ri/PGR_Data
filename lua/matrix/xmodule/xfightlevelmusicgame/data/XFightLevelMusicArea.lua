@@ -1,9 +1,9 @@
 ---@class XFightLevelMusicArea
 local XFightLevelMusicArea = XClass(nil, "XFightLevelMusicArea")
-XFightLevelMusicArea.Uid = 1
+local XFightLevelMusicAreaUid = 1
 
 function XFightLevelMusicArea:Ctor(type, pos, speed, faultTolerance)
-    self._Uid = XFightLevelMusicArea.Uid
+    self._Uid = XFightLevelMusicAreaUid
     self._MoveType = type
     self._InitPos = pos
     --- 逻辑层移动速度(格/s)
@@ -20,7 +20,7 @@ function XFightLevelMusicArea:Ctor(type, pos, speed, faultTolerance)
     self._RLMoveDirection = 0
     self._RLInTriggerIndex = 0
 
-    XFightLevelMusicArea.Uid = XFightLevelMusicArea.Uid + 1
+    XFightLevelMusicAreaUid = XFightLevelMusicAreaUid + 1
 end
 
 --region Setter

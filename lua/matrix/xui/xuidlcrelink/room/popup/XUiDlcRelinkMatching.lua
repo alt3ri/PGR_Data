@@ -2,14 +2,13 @@
 ---@field private _Control XDlcRelinkControl
 local XUiDlcRelinkMatching = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkMatching")
 
-local UI_ROOM = "UiDlcRelinkRoom"
-
 function XUiDlcRelinkMatching:OnAwake()
     self:RegisterUiEvents()
 end
 
 function XUiDlcRelinkMatching:OnStart()
     self.ElapsedSeconds = 0
+    self.IsMatchSuccess = false
     self:BeginMatching()
 end
 
@@ -27,6 +26,14 @@ end
 
 function XUiDlcRelinkMatching:OnDisable()
     self:StopMatchingTimer()
+    self.IsMatchSuccess = false
+end
+
+function XUiDlcRelinkMatching:OnClose()
+    if self.IsMatchSuccess then
+        return
+    end
+    self:Close()
 end
 
 function XUiDlcRelinkMatching:BeginMatching()
@@ -50,19 +57,16 @@ function XUiDlcRelinkMatching:StopMatchingTimer()
     end
 end
 
-function XUiDlcRelinkMatching:OpenOrReturnRoom()
-    if XLuaUiManager.IsStackUiOpen(UI_ROOM) then
-        XLuaUiManager.CloseAllUpperUi(UI_ROOM)
-    else
-        XLuaUiManager.Open(UI_ROOM)
-    end
-end
-
 function XUiDlcRelinkMatching:OnMatchSuccess()
+    self.IsMatchSuccess = true
     self:StopMatchingTimer()
     self.TxtTime.text = self._Control:GetClientConfig("MatchSuccessTips") or ""
     XScheduleManager.ScheduleOnce(function()
-        self:OpenOrReturnRoom()
+        if XTool.UObjIsNil(self.GameObject) then
+            return
+        end
+        self._Control:OpenOrReturnRoom()
+        self:Close()
     end, 1000)
 end
 
@@ -71,7 +75,7 @@ function XUiDlcRelinkMatching:RegisterUiEvents()
 end
 
 function XUiDlcRelinkMatching:OnBtnMatchingClick()
-    self:OpenOrReturnRoom()
+    self._Control:OpenOrReturnRoom()
 end
 
 return XUiDlcRelinkMatching

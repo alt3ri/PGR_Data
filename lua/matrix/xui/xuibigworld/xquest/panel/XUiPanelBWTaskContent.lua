@@ -31,6 +31,7 @@ end
 ---@field Transform UnityEngine.Transform
 ---@field Parent XUiBigWorldTaskMain
 ---@field _Control XBigWorldQuestControl
+---@field _StepGrid XUiGridBWObjective
 local XUiPanelBWTaskContent = XClass(XUiNode, "XUiPanelBWTaskContent")
 
 local XUiGridBWItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
@@ -38,6 +39,12 @@ local XUiGridBWItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 function XUiPanelBWTaskContent:OnStart()
     self:InitCb()
     self:InitView()
+end
+
+function XUiPanelBWTaskContent:OnDisable()
+    if self._StepGrid then
+        self._StepGrid:Close()
+    end
 end
 
 function XUiPanelBWTaskContent:InitCb()

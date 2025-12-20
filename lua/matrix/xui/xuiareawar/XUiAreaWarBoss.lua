@@ -1,11 +1,15 @@
-local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local AUTO_REQ_ACTIVITY_DATA_INTERVAL = 2 * 60 * 1000 --界面打开后自动请求最新活动数据时间间隔(ms)
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
+local XUiPanelAreaWarDetailTips = require("XUi/XUiAreaWar/XUiPanel/XUiPanelAreaWarDetailTips")
+local XUiPanelAreaWarUseItem = require("XUi/XUiAreaWar/XUiPanel/XUiPanelAreaWarUseItem")
 local ColorEnum = {
     Enough = XUiHelper.Hexcolor2Color("ffffff"),
     NotEnough = XUiHelper.Hexcolor2Color("ff0000")
 }
+
+
 
 local XUiAreaWarBoss = XLuaUiManager.Register(XLuaUi, "UiAreaWarBoss")
 
@@ -27,6 +31,7 @@ function XUiAreaWarBoss:OnStart(blockId, closeCb)
     self.AssetActivityPanel:Open()
     self.GridCommon.gameObject:SetActiveEx(false)
     self.PanelTime = self.Transform:FindTransform("PanelTime")
+    self.UiSceneInfo.Transform:FindTransform("FxScene05003aTianmu01").gameObject:SetActiveEx(true)
 
     self:AutoAddListener()
     self:InitView()
@@ -51,6 +56,7 @@ function XUiAreaWarBoss:OnDisable()
 end
 
 function XUiAreaWarBoss:OnDestroy()
+    self.UseItemPanel:OnDestory()
     self:DisposeReqActivityDataTimer()
     if self.CloseCb then
         self.CloseCb(self.BlockId)
@@ -154,6 +160,20 @@ function XUiAreaWarBoss:InitView()
 
         :: CONTINUE ::
     end
+    self.GridPorbabilityItem ={}
+    XTool.InitUiObjectByUi(self.GridPorbabilityItem,self.GridCollection)
+    self.PanelTips = XUiPanelAreaWarDetailTips.New(self.UiAreaWarPanelTips, self,{self.EmptyClick,self.GridPorbabilityItem})
+    self.UseItemPanel = XUiPanelAreaWarUseItem.New(self.PanelUseItem, self)
+    self:RegisterClickEvent(self.GridPorbabilityItem.BtnClick, function ()
+        self.PanelTips:RefreshToggleGroup(self.GridPorbabilityItem)
+        self.CurSelectProbabilityItem = self.GridPorbabilityItem
+        self.PanelTips:Show()
+    end)
+
+
+    local rewardItemId = XDataCenter.AreaWarManager.GetCoinItemId()
+    self.FightRewardGrid = self.FightRewardGrid or XUiGridCommon.New(self.Parent, self.Grid128Fight)
+    self.FightRewardGrid:Refresh(rewardItemId)
 end
 
 function XUiAreaWarBoss:UpdateAssets()
@@ -326,10 +346,19 @@ function XUiAreaWarBoss:OnClickBtnList()
 end
 
 function XUiAreaWarBoss:OnClickBtnFight()
+    self.UseItemPanel:GetUsingItem()
     if not self.ChallengeCount then
         self.ChallengeCount = 1
     end
     self.ChallengeCount = math.max(1, self.ChallengeCount)
+
+    local minItemNum = XDataCenter.AreaWarManager.GetUsingProbabilityItemsMinNum()
+    if minItemNum > 0 and minItemNum < self.ChallengeCount then
+        local tips = XAreaWarConfigs.GetUseItemNumNoEnoughTips()
+        XUiManager.TipError(tips)
+        return
+    end
+    
     local personal = XDataCenter.AreaWarManager.GetPersonal()
     if personal:IsOpenMultiChallenge() then
         personal:SetSelectLocal(self.ChallengeCount)
@@ -389,5 +418,7 @@ function XUiAreaWarBoss:OnClickBtnMax()
     XDataCenter.AreaWarManager.GetPersonal():MarkMaxRedPoint()
     self:RefreshCount()
 end
+
+
 
 return XUiAreaWarBoss

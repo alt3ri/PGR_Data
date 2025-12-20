@@ -14,6 +14,10 @@ function XUiTheatre5Loading:OnStart(enemyData)
     end        
 end
 
+function XUiTheatre5Loading:OnDisable()
+    self:StopCheckTimeDelayTimer()
+end
+
 function XUiTheatre5Loading:RefreshEnemyInfo(enemyData)
     if not enemyData then
         return
@@ -91,11 +95,43 @@ function XUiTheatre5Loading:RefreshPVEEnemyInfo(enemyData)
 end
 
 function XUiTheatre5Loading:PVPLoading()
-     -- 允许延时一定时间再请求和进入战斗，确保前半段有一小段时间流程播放匹配动画
+    self._CheckTimeTimerId = XScheduleManager.ScheduleOnce(function()
+        self._Control.PVPControl:StartPVPTimer(function()
+            CsXUiManager.Instance:SetRevertAllLock(false)
+            self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_PVP_END_IN_MATCH)
+            self:Close()
+        end)
+    end, XScheduleManager.SECOND)
+    
+    -- 允许延时一定时间再请求和进入战斗，确保前半段有一小段时间流程播放匹配动画
     local delayTime = self._Control:GetClientConfigMatchLoadingDelay(false)
     
     local func = function()
-        XMVCA.XTheatre5.BattleCom:RequestDlcSingleEnterFight()
+        self._Control.PVPControl:StopPVPTimer()
+        self:StopCheckTimeDelayTimer()
+        
+        -- 请求前再补检查一次时间
+        if self._Control.PVPControl:CheckPVPInTime() then
+            XMVCA.XTheatre5.BattleCom:RequestDlcSingleEnterFight(nil, nil, nil, nil, function()
+                CsXUiManager.Instance:SetRevertAllLock(false)
+                self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_PVP_END_IN_MATCH)
+                if not self._Control.PVPControl:CheckPVPInTime() then
+                    self._Control.PVPControl:DoTickoutCallBack()
+                else
+                    XLuaUiManager.CloseAllUpperUiWithCallback('UiTheatre5Main')
+                    self:Close()
+                end
+            end)
+        else
+            CsXUiManager.Instance:SetRevertAllLock(false)
+            self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_PVP_END_IN_MATCH)
+            if not self._Control.PVPControl:CheckPVPInTime() then
+                self._Control.PVPControl:DoTickoutCallBack()
+            else
+                XLuaUiManager.CloseAllUpperUiWithCallback('UiTheatre5Main')
+                self:Close()
+            end
+        end
     end
 
     if XTool.IsNumberValid(delayTime) then
@@ -113,7 +149,6 @@ function XUiTheatre5Loading:OnDestroy()
         self._DelayTimeId = nil
     end
 end
-
 
 function XUiTheatre5Loading:OnFinishFightEnter()
     -- 先暂停战斗
@@ -155,6 +190,13 @@ end
 function XUiTheatre5Loading:_ResumeFight()
     if CS.StatusSyncFight.XFightClient.FightInstance then
         CS.StatusSyncFight.XFightClient.FightInstance:OnResumeForClient()
+    end
+end
+
+function XUiTheatre5Loading:StopCheckTimeDelayTimer()
+    if self._CheckTimeTimerId then
+        XScheduleManager.UnSchedule(self._CheckTimeTimerId)
+        self._CheckTimeTimerId = nil
     end
 end
 

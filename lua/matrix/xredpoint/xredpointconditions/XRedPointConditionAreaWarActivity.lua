@@ -34,6 +34,11 @@ function XRedPointConditionAreaWarActivity.Check()
     --if XRedPointConditions.Check(XRedPointConditions.Types.XRedPointConditionAreaWarCanBuy) then
     --    return true
     --end
+
+    if XMVCA.XAreaWar:IsRedCollection() then
+        return true
+    end
+    
     return false
 end
 

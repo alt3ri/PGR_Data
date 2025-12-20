@@ -12,9 +12,13 @@ function XUiBountyChallengePopupBossDetail:OnAwake()
     self._PageGrids = { self.GameObject }
 end
 
-function XUiBountyChallengePopupBossDetail:OnStart()
-    local detail = self._Control:GetUiBossDetail()
-    detail.Index = 1
+function XUiBountyChallengePopupBossDetail:OnStart(detail)
+    if not detail then
+        detail = self._Control:GetUiBossDetail()
+        detail.Index = 1
+    end
+    
+    self._Detail = detail
 end
 
 function XUiBountyChallengePopupBossDetail:OnEnable()
@@ -26,17 +30,14 @@ function XUiBountyChallengePopupBossDetail:OnDisable()
 end
 
 function XUiBountyChallengePopupBossDetail:Update()
-    local detail = self._Control:GetUiBossDetail()
-    self.TxtName.text = detail.Name
     self:UpdateDetail()
     self:UpdateArrowVisible()
     self:UpdatePage()
 end
 
 function XUiBountyChallengePopupBossDetail:UpdateDetail()
-    local detail = self._Control:GetUiBossDetail()
-    local index = detail.Index
-    local data = detail.List[index]
+    local index = self._Detail.Index
+    local data = self._Detail.List[index]
     if data then
         self.TxtDesc.text = data.Desc
         if self.Video then
@@ -46,40 +47,39 @@ function XUiBountyChallengePopupBossDetail:UpdateDetail()
             end
         end
     end
+
+    self.TxtName.text = self._Detail.Names[index]
 end
 
 function XUiBountyChallengePopupBossDetail:OnClickLeft()
-    local detail = self._Control:GetUiBossDetail()
-    local index = math.max(detail.Index - 1, 1)
-    if index == detail.Index then
+    local index = math.max(self._Detail.Index - 1, 1)
+    if index == self._Detail.Index then
         return
     end
-    detail.Index = index
+    self._Detail.Index = index
     self:UpdateDetail()
     self:UpdateArrowVisible()
     self:UpdatePage()
 end
 
 function XUiBountyChallengePopupBossDetail:OnClickRight()
-    local detail = self._Control:GetUiBossDetail()
-    local index = math.min(detail.Index + 1, #detail.List)
-    if index == detail.Index then
+    local index = math.min(self._Detail.Index + 1, #self._Detail.List)
+    if index == self._Detail.Index then
         return
     end
-    detail.Index = index
+    self._Detail.Index = index
     self:UpdateDetail()
     self:UpdateArrowVisible()
     self:UpdatePage()
 end
 
 function XUiBountyChallengePopupBossDetail:UpdateArrowVisible()
-    local detail = self._Control:GetUiBossDetail()
-    if detail.Index == 1 then
+    if self._Detail.Index == 1 then
         self.BtnLeft:SetButtonState(CS.UiButtonState.Disable)
     else
         self.BtnLeft:SetButtonState(CS.UiButtonState.Normal)
     end
-    if detail.Index == #detail.List then
+    if self._Detail.Index == #self._Detail.List then
         self.BtnRight:SetButtonState(CS.UiButtonState.Disable)
     else
         self.BtnRight:SetButtonState(CS.UiButtonState.Normal)
@@ -87,8 +87,7 @@ function XUiBountyChallengePopupBossDetail:UpdateArrowVisible()
 end
 
 function XUiBountyChallengePopupBossDetail:UpdatePage()
-    local detail = self._Control:GetUiBossDetail()
-    local pageAmount = #detail.List
+    local pageAmount = #self._Detail.List
     for i = 1, pageAmount do
         local grid = self._PageGrids[i]
         if not grid then
@@ -97,7 +96,7 @@ function XUiBountyChallengePopupBossDetail:UpdatePage()
         end
         grid.gameObject:SetActive(i <= pageAmount)
 
-        if i == detail.Index then
+        if i == self._Detail.Index then
             grid:Find("On").gameObject:SetActiveEx(true)
             grid:Find("Off").gameObject:SetActiveEx(false)
         else

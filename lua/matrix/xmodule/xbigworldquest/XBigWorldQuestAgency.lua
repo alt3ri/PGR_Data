@@ -562,6 +562,7 @@ function XBigWorldQuestAgency:TrackQuest(questId, cb)
     --当前追踪的Id与服务器Id一致，仅通知战斗
     if serverTrackId == questId then
         self:NotifyFightTrackQuest(questId, true, cb)
+        XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestTrack, questId, 0, 0)
     else
         self._SyncTracking = true
         local req = {
@@ -576,9 +577,9 @@ function XBigWorldQuestAgency:TrackQuest(questId, cb)
             end
             self._Model:SetTrackQuestId(category, questId)
             self:NotifyFightTrackQuest(questId, true, cb)
+            XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestTrack, questId, 0, 0)
         end)
     end
-    XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestTrack, questId, 0, 0)
 end
 
 --- 取消追踪

@@ -110,9 +110,9 @@ function XUiRpgMakerGameMain:RefreshActivityTime()
 end
 
 function XUiRpgMakerGameMain:UpdateTitle()
-    local prefabPath = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupTitlePrefab(self.CurChapterGroupId)
-    local ui = self.PanelMainlineChapter.gameObject:LoadPrefab(prefabPath)
-    self.PanelTitle = XUiPanelTitle.New(ui)
+    self.PanelTitleLove = self.PanelTitleLove or self.Transform:Find("SafeAreaContentPane/PanelMainlineChapter/PanelTitleLove")
+    self.PanelTitleLove.gameObject:SetActiveEx(true)
+    self.PanelTitle = XUiPanelTitle.New(self.PanelTitleLove)
     self:RefreshActivityTime()
 end
 

@@ -4,33 +4,39 @@
 local XUiPanelDlcRelinkBoss = XClass(XUiNode, "XUiPanelDlcRelinkBoss")
 
 function XUiPanelDlcRelinkBoss:OnStart()
-    XUiHelper.RegisterClickEvent(self, self.BtnBoss, self.OnBtnBossClick, true)
+    self.Icon.gameObject:SetActiveEx(false)
+    XUiHelper.RegisterClickEvent(self, self.BtnBoss, self.OnBtnBossClick, true, true)
+    ---@type UiObject[]
+    self.OccupationGridList = {}
 end
 
 function XUiPanelDlcRelinkBoss:Refresh()
     self.ChapterId = self._Control:GetCurrentSelectChapterId()
     self.LevelId = self._Control:GetCurrentSelectLevelId()
     self:RefreshInfo()
-    self:RefreshCareerMatchingTips()
+    self:RefreshRedPoint()
 end
 
 function XUiPanelDlcRelinkBoss:RefreshInfo()
     local isHaveBoss = XTool.IsNumberValid(self.ChapterId) and XTool.IsNumberValid(self.LevelId)
     self.PanelLv.gameObject:SetActiveEx(isHaveBoss)
+    self.PanelChooseNormal.gameObject:SetActiveEx(isHaveBoss)
+    self.PanelNotChooseNormal.gameObject:SetActiveEx(not isHaveBoss)
+    self.PanelChoosePress.gameObject:SetActiveEx(isHaveBoss)
+    self.PanelNotChoosePress.gameObject:SetActiveEx(not isHaveBoss)
+
     if isHaveBoss then
-        local chapterName = self._Control:GetChapterName(self.ChapterId)
-        local levelName = self._Control:GetLevelName(self.LevelId)
-        self.BtnBoss:SetNameByGroup(0, string.format("%s-%s", levelName, chapterName))
-        local chapterIcon = self._Control:GetChapterIcon(self.ChapterId)
-        if not string.IsNilOrEmpty(chapterIcon) then
-            self.BtnBoss:SetSprite(chapterIcon)
-        end
+        self.BtnBoss:SetNameByGroup(0, self._Control:GetChapterName(self.ChapterId))
+        self.BtnBoss:SetRawImageEx(self._Control:GetChapterRoomIcon(self.ChapterId))
+        self:RefreshType(self._Control:GetLevelType(self.LevelId))
+
         local levelLimit = self._Control:GetLevelLevelLimit(self.LevelId)
         self.TxtTitle.gameObject:SetActiveEx(levelLimit > 0)
         self.TxtLv.text = string.format(self._Control:GetClientConfig("RoomBossLevelLimit"), levelLimit)
+
+        self:RefreshCareerMatchingTips()
     else
-        self.BtnBoss:SetNameByGroup(0, self._Control:GetClientConfig("RoomBossDefaultName"))
-        self.BtnBoss:SetSprite(self._Control:GetClientConfig("RoomBossDefaultBgIcon"))
+        self:RefreshType(0)
     end
 
     local isInRoom = XMVCA.XDlcRoom:IsInRoom()
@@ -43,15 +49,75 @@ function XUiPanelDlcRelinkBoss:RefreshInfo()
     self.PressIconChange.gameObject:SetActiveEx(not isInRoom or isSelfLeader)
 end
 
+function XUiPanelDlcRelinkBoss:RefreshType(levelType)
+    for i = 1, 4 do
+        local typeObj = self[string.format("PanelDif0%s", i)]
+        if typeObj then
+            typeObj.gameObject:SetActiveEx(i == levelType)
+        end
+    end
+end
+
 function XUiPanelDlcRelinkBoss:RefreshCareerMatchingTips()
-    local isInRoom = XMVCA.XDlcRoom:IsInRoom()
     self.PanelCondition.gameObject:SetActiveEx(false)
+    local isInRoom = XMVCA.XDlcRoom:IsInRoom()
     if not isInRoom then
         return
     end
-    -- TODO 职业搭配提示
-    --1、当队伍职业不满足配置时,需要显示缺少(文本)+缺少的的职业icon(最多2个)
-    --2、当队伍职业满足配置,显示【阵容合理】
+    local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
+    if not team then
+        return
+    end
+
+    self.PanelCondition.gameObject:SetActiveEx(true)
+    local occupationMap = {}
+    local amount = team:GetMemberNumber()
+    for pos = 1, amount do
+        local member = team:GetMember(pos)
+        if member then
+            occupationMap[member:GetOccupationType()] = true
+        end
+    end
+
+    local trueOccupationList = self._Control:GetChapterTrueOccupations(self.ChapterId)
+    local isSuccess = true
+    local lackOccupationList = {}
+    for _, occupation in ipairs(trueOccupationList) do
+        if not occupationMap[occupation] then
+            isSuccess = false
+            table.insert(lackOccupationList, occupation)
+        end
+    end
+
+    self.TxtRational.gameObject:SetActiveEx(isSuccess)
+    self.PanelMiss.gameObject:SetActiveEx(not isSuccess)
+    if not isSuccess then
+        for index, occupation in ipairs(lackOccupationList) do
+            local grid = self.OccupationGridList[index]
+            if not grid then
+                grid = XUiHelper.Instantiate(self.Icon, self.PanelMiss)
+                self.OccupationGridList[index] = grid
+            end
+
+            grid.gameObject:SetActiveEx(true)
+            local occupationIcon = self._Control:GetClientConfig("CharacterOccupationIcon", occupation) or ""
+            grid:GetObject("RawImage"):SetRawImageEx(occupationIcon)
+            grid.transform:SetAsLastSibling()
+        end
+
+        for i = #lackOccupationList + 1, #self.OccupationGridList do
+            local grid = self.OccupationGridList[i]
+            if grid then
+                grid.gameObject:SetActiveEx(false)
+            end
+        end
+    end
+end
+
+-- 刷新红点
+function XUiPanelDlcRelinkBoss:RefreshRedPoint()
+    local isShowRedPoint = XMVCA.XDlcRelink:CheckAllLevelHasNewUnlock()
+    self.BtnBoss:ShowReddot(isShowRedPoint)
 end
 
 function XUiPanelDlcRelinkBoss:OnBtnBossClick()
@@ -64,7 +130,7 @@ function XUiPanelDlcRelinkBoss:OnBtnBossClick()
     if team and team:IsSelfLeader() then
         XLuaUiManager.Open("UiDlcRelinkChooseBoss")
     else
-        XUiManager.TipText("MultiplayerRoomOnlyHomeownerTip")
+        self._Control:OpenCommonTipMsg(XUiHelper.GetText("MultiplayerRoomOnlyHomeownerTip"))
     end
 end
 

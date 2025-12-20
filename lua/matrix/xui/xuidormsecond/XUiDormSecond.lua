@@ -477,6 +477,10 @@ function XUiDormSecond:OnRecordSelfDormId()
 end
 
 function XUiDormSecond:OnEnable()
+    self._LastSimulateMouseWithTouches = CS.UnityEngine.Input.simulateMouseWithTouches
+    if not self._LastSimulateMouseWithTouches then
+        CS.UnityEngine.Input.simulateMouseWithTouches = true
+    end
     self.BtnPanelTask.CallBack = self.OnBtnTaskTipsClickCb
     self:SetScore()
     XDataCenter.DormManager.GetNextShowEvent()
@@ -560,6 +564,7 @@ function XUiDormSecond:OnCheckBuildFurniture(count)
 end
 
 function XUiDormSecond:OnDisable()
+    CS.UnityEngine.Input.simulateMouseWithTouches = self._LastSimulateMouseWithTouches
     self.BtnPanelTask.CallBack = nil
     XDataCenter.DormManager.StopDormRedTimer()
     self.CurHostelNamesState = false

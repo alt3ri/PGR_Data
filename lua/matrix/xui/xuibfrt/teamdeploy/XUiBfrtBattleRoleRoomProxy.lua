@@ -93,19 +93,24 @@ function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIdsCallback(teamInfoD
         if XTool.IsNumberValid(charId) then
             local otherTeamIdx, otherTeamPos = self:_CheckCharacterSameToOtherTeam(charId)
             if otherTeamIdx > 0 then
-                table.insert(indexList, {Pos = charPos, CharId = charId, OtherTeamIdx = otherTeamIdx, OtherTeamPos = otherTeamPos})
+                table.insert(indexList, {
+                    Pos = charPos,
+                    CharId = charId,
+                    OtherTeamIdx = otherTeamIdx,
+                    OtherTeamPos = otherTeamPos
+                })
             end
         end
     end
 
-    -- 如果没有冲突，直接完成
+    -- 没有冲突，直接完成
     if #indexList == 0 then
         return
     end
 
-    ------------------------------------------------------------
-    -- 有冲突：递归弹窗处理
-    ------------------------------------------------------------
+    -------------------------------------------------------------------
+    -- 递归处理冲突角色：每次弹一个对话框，用户选择后进入下一个
+    -------------------------------------------------------------------
     local function ShowNextConflict(idx)
         if idx > #indexList then
             -- 所有弹窗处理完，更新队伍并回调
@@ -127,25 +132,49 @@ function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIdsCallback(teamInfoD
         local title = CsXTextManager.GetText("BfrtDeployTipTitle")
         local content = CsXTextManager.GetText("BfrtDeployTipContent", characterName, oldTeamName, newTeamName)
 
-        -- 打开提示弹窗（纯回调）
-        XUiManager.DialogTip(title, content,
-            XUiManager.DialogType.Normal,
-            function() -- 取消
+        ---------------------------------------------------------------
+        -- 弹出提示对话框
+        ---------------------------------------------------------------
+        XUiManager.DialogTip(title, content, XUiManager.DialogType.Normal,
+            -- 取消回调
+            function()
+                -- 用户选择不替换，清空当前位置
                 teamData[info.Pos] = 0
                 self.Team:UpdateEntityIds(teamData)
                 XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
                 ShowNextConflict(idx + 1)
             end,
-            function() -- 确定
+            -- 确定回调
+            function()
+                local inEchelonIndex, inEchelonType = XDataCenter.BfrtManager.CheckIsInTeamList(info.CharId)
+                if inEchelonIndex and inEchelonType then
+                    local groupId = XDataCenter.BfrtManager.GetViewGroupId()
+                    local stageIdList = XDataCenter.BfrtManager.GetStageIdList(groupId)
+
+                    -- ⚠️ 若该队伍已通关，不允许移动角色
+                    if XDataCenter.BfrtManager.CheckIsGroupStageRecordStage(groupId, stageIdList[inEchelonIndex]) then
+                        self:_CloseCallback(teamData, info.Pos)
+                        XDataCenter.BfrtManager.TipStageIsPass()
+                        ShowNextConflict(idx + 1)
+                        return
+                    end
+                end
+
+                -------------------------------------------------------
+                -- ✅ 可以替换：清空原队伍的该位置，并更新新队伍
+                -------------------------------------------------------
                 XDataCenter.BfrtManager.SetViewGroupFightTeamData(info.OtherTeamIdx, info.OtherTeamPos, 0)
-                -- 同步被替换的队伍对象，确保逻辑层数据一致
-                local replacedTeam = XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam and 
-                XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam(info.OtherTeamIdx)
+
+                -- 同步被替换的队伍对象（如果存在缓存）
+                local replacedTeam = XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam and
+                    XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam(info.OtherTeamIdx)
                 if replacedTeam then
                     replacedTeam:UpdateEntityTeamPos(info.CharId, info.OtherTeamPos, false)
                 else
                     XLog.Warning(string.format("[BfrtProxy] 未找到被替换队伍：%s", tostring(info.OtherTeamIdx)))
                 end
+
+                -- 更新当前队伍数据
                 self.Team:UpdateEntityIds(teamData)
                 XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
                 ShowNextConflict(idx + 1)
@@ -153,6 +182,7 @@ function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIdsCallback(teamInfoD
         )
     end
 
+    -- 开始第一个弹窗
     ShowNextConflict(1)
 end
 

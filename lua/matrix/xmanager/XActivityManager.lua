@@ -35,7 +35,7 @@ XActivityManagerCreator = function()
         local sortFunc = function(l, r)
             return l.SortId < r.SortId
         end
-        
+
         local dictActivityGroup = {}
 
         local activityGroupTemplates = XActivityConfigs.GetActivityGroupTemplates()
@@ -177,9 +177,9 @@ XActivityManagerCreator = function()
                 end
             end
         end
-        
+
         XDataCenter.TaskManager.SortTaskDatas(taskList)
-        
+
         return taskList
     end
 
@@ -194,6 +194,9 @@ XActivityManagerCreator = function()
     end
 
     function XActivityManager.CheckRedPointByActivityId(activityId)
+        if true then
+            return false
+        end
         if not XActivityManager.IsActivityOpen(activityId) then
             return false
         end
@@ -209,14 +212,14 @@ XActivityManagerCreator = function()
                     return true
                 end
             end
-            
+
             local skipId = 0
             if activityCfg.ActivityType == XActivityConfigs.ActivityType.Task then
                 skipId = activityCfg.Params[1]
             else
                 skipId = activityCfg.Params[2]
             end
-            
+
             if skipId and skipId ~= 0 then -- 存在可跳转的任务面板
                 return XActivityManager.CheckTaskSkipRedPoint(activityCfg.Params[2])
             end
@@ -251,7 +254,7 @@ XActivityManagerCreator = function()
             end
 
             local redPointType = activityCfg.ActivityType == XActivityConfigs.ActivityType.Link and activityCfg.Params[3] or activityCfg.Params[4]
-            
+
             if redPointType == 1 then
                 return not HaveReadActivityIds[activityId]
             end
@@ -264,7 +267,7 @@ XActivityManagerCreator = function()
                 return currentTime ~= SavedTimeDataDic[activityId]
             end
         -- 跳转活动需要特殊红点显示时
-        elseif activityCfg.ActivityType == XActivityConfigs.ActivityType.Skip then 
+        elseif activityCfg.ActivityType == XActivityConfigs.ActivityType.Skip then
             local redPointCondition = XActivityBriefConfigs.GetRedPointConditionsBySkipId(activityCfg.Params[1])
             local redPointParam = XActivityBriefConfigs.GetRedPointParamBySkipId(activityCfg.Params[1])
             if redPointCondition then
@@ -298,7 +301,7 @@ XActivityManagerCreator = function()
                     return XRedPointManager.SafeCheckSingleRedCondition(redPointCondition)
                 end
             end
-            
+
             return false
         -- GachaCanLiver卡池红点
         elseif activityCfg.ActivityType ==  XActivityConfigs.ActivityType.GachaCanLiver then
@@ -345,13 +348,13 @@ XActivityManagerCreator = function()
         if not CSUnityEnginePlayerPrefs.HasKey(XActivityManager.GetTodayTimeKeyStr()) then
             return
         end
-        
+
         local dataStr = CSUnityEnginePlayerPrefs.GetString(XActivityManager.GetTodayTimeKeyStr())
         local msgTab = stringSplit(dataStr, '\t')
         if not msgTab or #msgTab <= 0 then
             return
         end
-        
+
         for _, timeStr in ipairs(msgTab) do
             local timeCfg = stringSplit(timeStr, '|')
             local activityId = tonumber(timeCfg[1])
@@ -417,13 +420,13 @@ XActivityManagerCreator = function()
             return XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_INVERTCARDGAME_RED)
         end
     end
-    
+
     --链接类型的公告红点需要特殊处理 存在两种类型1.只显示一次的类型  2.每天都显示一次的类型
     function XActivityManager.HandleLinkActivityRedPoint(activityId)
         if not XActivityManager.IsActivityOpen(activityId) then
             return
         end
-        
+
         local activityCfg = XActivityConfigs.GetActivityTemplate(activityId)
         local redPointType = activityCfg.ActivityType == XActivityConfigs.ActivityType.Link and activityCfg.Params[3] or activityCfg.Params[4]
         --只显示一次的类型，按照以前的方式处理
@@ -499,7 +502,7 @@ XActivityManagerCreator = function()
         end
     end
     -- ]
-    
+
     --回流问卷结束时间
     function XActivityManager.SetBackFlowEndTime(data)
         if not data then
@@ -507,7 +510,7 @@ XActivityManagerCreator = function()
         end
         BackFlowEndTime = data.BackFlowEndTime or 0
     end
-    
+
     function XActivityManager.GetBackFlowEndTime()
         return BackFlowEndTime
     end

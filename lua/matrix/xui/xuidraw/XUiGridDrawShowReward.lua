@@ -195,6 +195,10 @@ function XUiGridDrawShowModel:OnShow(rewardInfo)
     self.RootUi.BtnClick.gameObject:SetActiveEx(false)
     -- 播放进入动画
     self.GridModelCaseEnable:PlayTimelineAnimation(function()
+        if not self.RootUi or XTool.UObjIsNil(self.RootUi.Transform) then
+            return
+        end
+
         --根据Type创建模型
         self:CreateModel(id, Type)
         self.RootUi.BtnClick.gameObject:SetActiveEx(true)

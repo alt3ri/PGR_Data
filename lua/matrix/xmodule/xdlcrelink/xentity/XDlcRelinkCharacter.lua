@@ -14,6 +14,10 @@ function XDlcRelinkCharacter:NotifyCharacterData(data)
     self.Equip = data.Equip or {}
 end
 
+function XDlcRelinkCharacter:SetOccupationType(occupationType)
+    self.OccupationType = occupationType
+end
+
 function XDlcRelinkCharacter:GetCharacterId()
     return self.CharacterId
 end
@@ -30,6 +34,16 @@ function XDlcRelinkCharacter:GetEquipBySlot(slotId)
     return self.Equip[slotId] or 0
 end
 
+-- 根据装备Uid获取装备栏位
+function XDlcRelinkCharacter:GetEquipSlotId(equipUid)
+    for k, v in pairs(self.Equip) do
+        if v == equipUid then
+            return k
+        end
+    end
+    return 0
+end
+
 -- 检查装备是否已穿戴
 function XDlcRelinkCharacter:IsEquipWorn(equipUid)
     for _, v in pairs(self.Equip) do
@@ -38,6 +52,11 @@ function XDlcRelinkCharacter:IsEquipWorn(equipUid)
         end
     end
     return false
+end
+
+-- 卸下装备
+function XDlcRelinkCharacter:UnWearEquip(equipSlotIndex)
+    self.Equip[equipSlotIndex] = nil
 end
 
 return XDlcRelinkCharacter

@@ -230,15 +230,25 @@ function XSignBoardCamAnimNew:_ControlTime(isPlay)
         if not XTool.UObjIsNil(self.ChargeTimeLine) then
             self.ChargeTimeLine.gameObject:SetActiveEx(false)
         end
-        self.AnimEnableLong.gameObject:SetActiveEx(true)
-    else
-        self.AnimEnableLong.transform:StopTimelineAnimation()
-        self.AnimEnableLong.gameObject:SetActiveEx(false)
+        
+        if not XTool.UObjIsNil(self.AnimEnableLong) then
+            self.AnimEnableLong.gameObject:SetActiveEx(true)
+        end
+
         if not XTool.UObjIsNil(self.AnimEnableLoop) then
-            self.AnimEnableLoop.gameObject:SetActiveEx(true)
-            self.AnimEnableLoop.gameObject:PlayTimelineAnimation()
+            self.AnimEnableLoop.gameObject:StopTimelineAnimation()
+        end
+    else
+        if not XTool.UObjIsNil(self.AnimEnableLong) then
+            self.AnimEnableLong.transform:StopTimelineAnimation()
+            self.AnimEnableLong.gameObject:SetActiveEx(false)
         end
         XScheduleManager.ScheduleNextFrame(function()
+            if not XTool.UObjIsNil(self.AnimEnableLoop) then
+                self.AnimEnableLoop.gameObject:SetActiveEx(true)
+                self.AnimEnableLoop.gameObject:PlayTimelineAnimation()
+            end
+            
             if XTool.UObjIsNil(self.FullTimeLine) or XTool.UObjIsNil(self.ChargeTimeLine) then
                 return
             end
@@ -330,6 +340,13 @@ function XSignBoardCamAnimNew:_SetAnimPlayableSpeed(speed)
     for i = 0, self.AnimPlayer.playableGraph:GetRootPlayableCount() - 1 do
         setSpeed(self.AnimPlayer.playableGraph:GetRootPlayable(i), speed)
     end
+
+    local graph = self.AnimEnableLong.playableGraph
+    if not graph or not graph:IsValid() then
+        XLog.Warning("XSignBoardCamAnimNew: playableGraph is invalid, skip SetSpeed")
+        return
+    end
+
     if not XTool.UObjIsNil(self.AnimEnableLong) then
         for i = 0, self.AnimEnableLong.playableGraph:GetRootPlayableCount() - 1 do
             setSpeed(self.AnimEnableLong.playableGraph:GetRootPlayable(i), speed)

@@ -10,6 +10,7 @@ local TableKey =
     MainLine2ClientConfig = { CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.String, DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key" },
     MainLine2ExhibitionModule = { CacheType = XConfigUtil.CacheType.Normal, DirPath = XConfigUtil.DirectoryType.Client },
     MainLine2ExhibitionChapter = { CacheType = XConfigUtil.CacheType.Normal },
+    MainLine2EggsTreasure = { },
 }
 
 ---@class XMainLine2Model : XModel
@@ -36,6 +37,7 @@ function XMainLine2Model:ResetAll()
     self.ChapterDataDic = nil
     self.LastPassStage = nil
     self.FirstPassTime = nil
+    self.EggsTreasureDistributeData = nil
 
     if self.MainDic then
         for _, main in pairs(self.MainDic) do
@@ -68,6 +70,7 @@ function XMainLine2Model:OnLoginNotify(fubenMainLine2Data)
             self.ChapterDataDic[chapterData.Id] = chapterData
         end
     end
+    self:RefreshEggsData(fubenMainLine2Data.EggsTreasureDistributeData)
 end
 
 -- 收到主章节成就
@@ -140,6 +143,26 @@ function XMainLine2Model:IsMainTreasureGet(mainId, index)
     else
         return false
     end
+end
+
+-- 刷新彩蛋数据
+function XMainLine2Model:RefreshEggsData(eggIds)
+    self.EggsTreasureDistributeData = {}
+    if eggIds and #eggIds > 0 then
+        for _, eggId in pairs(eggIds) do
+            self.EggsTreasureDistributeData[eggId] = true
+        end
+    end
+end
+
+-- 添加已获得彩蛋数据
+function XMainLine2Model:AddEggData(eggId)
+    self.EggsTreasureDistributeData[eggId] = true
+end
+
+-- 彩蛋是否已获得
+function XMainLine2Model:IsEggGet(eggId)
+    return self.EggsTreasureDistributeData[eggId] == true
 end
 
 --#endregion ---------------------------------------------------------------------------------------------------------
@@ -307,6 +330,11 @@ end
 function XMainLine2Model:GetChapterTreasureId(chapterId)
     local config = self:GetConfigChapter(chapterId)
     return config and config.TreasureId or 0
+end
+
+function XMainLine2Model:GetChapterEggIds(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.EggIds or {}
 end
 
 function XMainLine2Model:GetChapterLastStageId(chapterId)
@@ -543,6 +571,44 @@ function XMainLine2Model:GetConfigExhibitionChapter(id)
     else
         return cfgs
     end
+end
+
+function XMainLine2Model:GetConfigMainLine2EggsTreasure(id)
+    local cfgs = self._ConfigUtil:GetByTableKey(TableKey.MainLine2EggsTreasure)
+    if id then
+        if cfgs[id] then
+            return cfgs[id]
+        else
+            XLog.Error("请检查配置表Share/Fuben/MainLine2/MainLine2EggsTreasure.tab，未配置行Id = " .. tostring(id))
+        end
+    else
+        return cfgs
+    end
+end
+
+function XMainLine2Model:GetEggConditionId(eggId)
+    local config = self:GetConfigMainLine2EggsTreasure(eggId)
+    return config and config.ConditionId or nil
+end
+
+function XMainLine2Model:GetEggTipsText(eggId)
+    local config = self:GetConfigMainLine2EggsTreasure(eggId)
+    return config and config.TipsText or ""
+end
+
+function XMainLine2Model:GetEggTitle(eggId)
+    local config = self:GetConfigMainLine2EggsTreasure(eggId)
+    return config and config.Title or ""
+end
+
+function XMainLine2Model:GetEggDesc(eggId)
+    local config = self:GetConfigMainLine2EggsTreasure(eggId)
+    return config and config.Desc or ""
+end
+
+function XMainLine2Model:GetEggRewardId(eggId)
+    local config = self:GetConfigMainLine2EggsTreasure(eggId)
+    return config and config.RewardId or nil
 end
 
 --#endregion 配置表 -----------------------------------------------------------------------------------------------

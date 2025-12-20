@@ -267,7 +267,11 @@ function XUiDrawRecord:RefreshRecordShow()
                 quality = quality or 1
                 name = Goods.Name
                 if Goods.TradeName then
-                    name = name .. "." .. Goods.TradeName
+                    if XOverseaManager.IsENRegion() then
+                        name = string.format("%s:%s", name, Goods.TradeName)
+                    else
+                        name = name .. "." .. Goods.TradeName
+                    end
                 end
                 time = TimestampToGameDateTimeString(reward.DrawTime)
                 self:_SetLogData(name, reward.RewardGoods.TemplateId, nil, time, quality)

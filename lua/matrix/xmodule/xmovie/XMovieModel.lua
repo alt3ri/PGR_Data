@@ -163,7 +163,7 @@ function XMovieModel:GetBookmarkData()
         int StageId
         string MovieId
         int ActionId
-        Dictionary<int, int> OptionDic
+        Dictionary<int, int> OptionInfos
     ]]
     return self.BookmarkData, self.IsRequestBookmarkData
 end

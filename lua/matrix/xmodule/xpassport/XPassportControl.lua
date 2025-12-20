@@ -693,7 +693,7 @@ function XPassportControl:CheckStopToBuyBeforeTheEnd()
     endTime = endTime - time
     local nowTime = XTime.GetServerNowTimestamp()
     if nowTime > endTime then
-        XUiManager.TipText("ActivityMainLineEnd")
+        XUiManager.TipText("PassportBuyTimeAlreadyEnd")
         return false
     end
     return true

@@ -17,7 +17,7 @@ XAreaWarManagerCreator = function()
     local _RandomSeed = 1 --随机种子，由服务端下发，用于生成地块
 
     local MAIN_UI_NEWBIE_GUIDE_ID = 0 --主界面新手引导Id
-
+    local _UsingProbabilityItems = nil
     local function UpdateActivityId(activityId)
         XCountDown.RemoveTimer(XCountDown.GTimerName.AreaWar)
 
@@ -222,6 +222,7 @@ XAreaWarManagerCreator = function()
             else
                 XLuaUiManager.Open("UiAreaWarMain")
             end
+            XMVCA.XAreaWar:CheckFirstEnter()
         end)
     end
 
@@ -255,6 +256,7 @@ XAreaWarManagerCreator = function()
     -----------------活动道具 begin------------------
     local _ActionPointItemId = XDataCenter.ItemManager.ItemId.AreaWarActionPoint --体力
     local _CoinItemId = XDataCenter.ItemManager.ItemId.AreaWarCoin --货币
+    local _AuctionCoitemId = XDataCenter.ItemManager.ItemId.AreaWarAuctionCoin --货币
     local _MaxActionPoint = CS.XGame.Config:GetInt("AreaWarMaxActionPoint") --自然恢复最大体力
     local _ToChallengeActionPoint = CS.XGame.ClientConfig:GetInt("AreaWarToChallengeActionPoint") --体力超过此值后活动入口显示可挑战标签
     local _CanBuyCoin = CS.XGame.ClientConfig:GetInt("AreaWarCanBuyCoin") --货币达到此值后显示红点
@@ -351,7 +353,9 @@ XAreaWarManagerCreator = function()
     function XAreaWarManager.GetCoinItemId()
         return _CoinItemId
     end
-
+    function XAreaWarManager.GetAuctionCoinItemId()
+        return _AuctionCoitemId
+    end
     --获取活动货币图标
     function XAreaWarManager.GetCoinItemIcon()
         return XItemConfigs.GetItemIconById(_CoinItemId)
@@ -1130,6 +1134,20 @@ XAreaWarManagerCreator = function()
         end
 
         return true
+    end
+
+    -- 获取最新解锁的区块
+    function XAreaWarManager.GetLastUnlockBlockId()
+        local blockId = nil
+        local configs = XAreaWarConfigs.GetBlockConfigs()
+        for id, _ in pairs(configs) do
+            if XAreaWarManager.IsBlockUnlock(id) then
+                if blockId == nil or id > blockId then
+                    blockId = id
+                end
+            end
+        end
+        return blockId
     end
 
     --获取区块前置区块未解锁提示文本
@@ -1942,7 +1960,7 @@ XAreaWarManagerCreator = function()
 
     --请求派遣(robotIds为上阵特攻角色对应的robotId，characterIds为上阵的自己拥有成员的characterId)
     function XAreaWarManager.AreaWarDetachRequest(blockId, characterIds, robotIds, multiple, cb)
-        local req = {BlockId = blockId, CardIds = characterIds, RobotIds = robotIds, Multiple = multiple}
+        local req = {BlockId = blockId, CardIds = characterIds, RobotIds = robotIds, Multiple = multiple,ChooseItemIds = XAreaWarManager.GetUsingProbabilityItems()}
         XNetwork.Call(
                 "AreaWarDetachRequest",
                 req,
@@ -1955,7 +1973,7 @@ XAreaWarManagerCreator = function()
                     UpdateDispatchCondition(blockId, nil)
 
                     if cb then
-                        cb(res.RewardGoodsList)
+                        cb(res.RewardGoodsList,res.GainItems)
                     end
                 end
         )
@@ -2053,6 +2071,11 @@ XAreaWarManagerCreator = function()
             preFight.FirstFightPos = team:GetFirstFightPos()
             preFight.CaptainPos = team:GetCaptainPos()
             preFight.GeneralSkill = team:GetCurGeneralSkill()
+            preFight.EnterCgIndex = team:GetEnterCgIndex()
+            preFight.SettleCgIndex = team:GetSettleCgIndex()
+        
+            preFight.AreaWar4PreFightInfo ={ChooseItemIds =XAreaWarManager.GetUsingProbabilityItems()} 
+
         else
             XLog.Error("获取队伍数据失败, 关卡Id = " .. tostring(stage.StageId) .. ", 队伍Id = " .. teamId)
         end
@@ -2169,14 +2192,43 @@ XAreaWarManagerCreator = function()
             end
             
             local rewardGoods = res.RewardGoods
+            local areaWarItems = res.AreaWarItems
             if cb then
-                cb(rewardGoods)
+                cb(rewardGoods,areaWarItems)
             end
         end
         )
     end
 
+    function XAreaWarManager.SetUsingProbabilityItems(itemIds)
+        _UsingProbabilityItems = itemIds
+    end
 
+    function XAreaWarManager.GetUsingProbabilityItems()
+        local result = {}
+        if _UsingProbabilityItems then
+            for _, itemId in pairs(_UsingProbabilityItems) do
+                local num = XMVCA.XAreaWar:GetItemRoom():GetItemNum(itemId)
+                if num > 0 then
+                    table.insert(result, itemId)
+                end
+            end
+        end
+        return result
+    end
+    
+    function XAreaWarManager.GetUsingProbabilityItemsMinNum()
+        local minItemNum = 0
+        if _UsingProbabilityItems then
+            for _, itemId in pairs(_UsingProbabilityItems) do
+                local itemNum = XMVCA.XAreaWar:GetItemRoom():GetItemNum(itemId)
+                if minItemNum == 0 or itemNum < minItemNum then
+                    minItemNum = itemNum
+                end
+            end
+        end
+        return minItemNum
+    end
     --endregion------------------副本相关 finish------------------
 
 
@@ -2713,6 +2765,8 @@ XAreaWarManagerCreator = function()
         --更新随机种子
         _RandomSeed = data.RandomSeed
         UpdateLikeCount(data.LikeCount, 0)
+        -- v4.0收藏室
+        XMVCA.XAreaWar:NotifyAreaWarActivityData(data)
         
         XEventManager.DispatchEvent(XEventId.EVENT_AREA_WAR_QUEST_REFRESH, XAreaWarConfigs.RefreshQuestType.All, listDaily, listRescue)
     end

@@ -330,14 +330,31 @@ function XTheatre5PVPControl:UpdatePVPTimer()
     end
 end
 
+function XTheatre5PVPControl:CheckPVPInTime()
+    local endTime = XFunctionManager.GetEndTimeByTimeId(self.PVPTimeId)
+
+    if endTime <= 0 then
+        return false
+    end
+
+    local now = XTime.GetServerNowTimestamp()
+    local leftTime = math.max(endTime - now, 0)
+
+    if leftTime <= 0 then
+        return false
+    end
+    
+    return true
+end
+
 function XTheatre5PVPControl:DoTickoutCallBack()
     if self._TickoutCallBack then
         self._TickoutCallBack()
         self._TickoutCallBack = nil
     end
     
-    -- 目前统一踢出看板主界面即可
-    XLuaUiManager.RunMain()
+    XLuaUiManager.CloseAllUpperUiWithCallback('UiTheatre5Main')
+
     XUiManager.TipText('ActivityMainLineEnd')
 end
 --endregion

@@ -119,6 +119,8 @@ XFunctionEventManagerCreator = function()
             FunctionState = FunctionEvenState.PLAYING
         elseif XDataCenter.ItemManager.CheckAutoGiftRewardShow() then -- 自开型礼包弹窗
             FunctionState = FunctionEvenState.PLAYING    
+        elseif InMainUi and XMVCA.XRadioSign:Popup() then    -- 空花1.5预热活动
+            FunctionState = FunctionEvenState.PLAYING
         end
 
         if FunctionState ~= FunctionEvenState.PLAYING then

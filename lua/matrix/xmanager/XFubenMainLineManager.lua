@@ -759,14 +759,15 @@ XFubenMainLineManagerCreator = function()
         if teleportFight then
             -- 在速通模式下，在连续挑战时，把上一关的队伍信息复制到这一关的队伍里
             if speedrunStageId then
-                -- 这里是速通关卡id
-                local team = XDataCenter.TeamManager.GetXTeamByStageId(stageId)
+                -- 使用原始stageId获取速通队伍
+                local team = XDataCenter.TeamManager.GetXTeamSpeedrun(winData.StageId)
                 -- 这里也是速通关卡id
                 local nextStageId = teleportFight and teleportFight.StageCfg.StageId or 0
                 if nextStageId then
                     local nextSpeedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(nextStageId)
                     if nextSpeedrunStageId then
-                        local nextStageTeam = XDataCenter.TeamManager.GetXTeamByStageId(nextSpeedrunStageId)
+                        -- 使用原始nextStageId获取速通队伍
+                        local nextStageTeam = XDataCenter.TeamManager.GetXTeamSpeedrun(nextStageId)
                         if team and nextStageTeam then
                             nextStageTeam:CopyData(team)
                         else
@@ -1377,7 +1378,7 @@ XFubenMainLineManagerCreator = function()
         -- 连战
         local team
         if speedrunStageId then
-            team = XDataCenter.TeamManager.GetXTeamByStageId(speedrunStageId)
+            team = XDataCenter.TeamManager.GetXTeamSpeedrun(teleportStageId)
         else
             team = XDataCenter.TeamManager.GetMainLineTeam()
         end

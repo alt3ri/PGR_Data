@@ -18,15 +18,17 @@ XRelinkMonsterBase.FightMode = { --无、非战斗、战斗、目标丢失
     CombatTargetLosing = 3
 }
 ---OD状态管理
-XRelinkMonsterBase.ODState = {
+XRelinkMonsterBase.OverDriveState = {
     --- 无激活OD状态
     None = 0,
     --- 普通
     Normal = 1,
     --- 狂暴
     ODState = 2,
-    --- 虚弱
-    Breaking = 3,
+    --- 虚弱开始
+    BreakStart = 3,
+    --- 虚弱循环
+    BreakLoop = 4,
 }
 ---行为筛选和执行时的类型
 XRelinkMonsterBase.ActionType = {--待机、追逐移动、攻击、游荡、巡逻、连招
@@ -44,13 +46,17 @@ XRelinkMonsterBase.ActionType = {--待机、追逐移动、攻击、游荡、巡
     Combo = 5,
 }
 ---切换阶段条件
-XRelinkMonsterBase.PhaseSwitchType = { --不切阶段、Hp、时间轴
+XRelinkMonsterBase.SwitchPhaseType = { --不切阶段、Hp、时间轴
     ---没有切换阶段
     None = 0,
-    ---按照血量切换阶段
-    Hp = 1,
-    ---根据时间切换阶段
-    TimeLine = 2,
+    ---进入OD时切阶段
+    EnterOverDrive = 1,
+    ---退出Break时切阶段
+    ExitBreak = 2,
+    ---添加BUFF时(TODO:暂不支持，占位)
+    AddBuff = 3,
+    ---移除Buff时(TODO:暂无支持，占位)
+    RemoveBuff = 4,
 }
 ---距离类型
 XRelinkMonsterBase.DistanceType = { --近、中、远、超远
@@ -116,6 +122,18 @@ XRelinkMonsterBase.SkillGroup = { --技能组结构
     GroupConditionType = 1, --组判断类型，乱选还是顺序选
     SkillList = 2, --组对应的技能列表。
 }
+---OD后特殊技能释放模式
+XRelinkMonsterBase.OverDriveSpecialSkillCastMode = {
+    None = 0,--没有OD特殊技能
+    Config = 1, --配置的OD特殊技能（暂不支持）
+    Custom =2,--自定义
+}
+---处理自定义事件类型
+XRelinkMonsterBase.HandleCustomEventType = {
+    None = 0,--无
+    Latest = 1, --检查是否等于最新的，执行后删除所有
+    All =2,--检查所有，执行后删除所有
+}
 --endregion
 
 --region 函数: 脚本生命周期
@@ -132,6 +150,11 @@ end
 ---@param dt number @ delta time 
 function XRelinkMonsterBase:Update(dt)
     Base.Update(self, dt)
+    if dt == 0 then
+        return
+    end --暂停的时候AI不跑
+    self:UpdateSelfBaseInfo(dt) --更新怪物自己的基础信息
+    self:UpdateFightModeBefore()--战斗模式逻辑前
     if self.isSkillTestOpen then
         self:UpdateSkillTest(dt) --技能测试逻辑
         return
@@ -140,22 +163,21 @@ function XRelinkMonsterBase:Update(dt)
         --AI总开关
         return
     end
-
-    self:UpdateSelfBaseInfo(dt) --更新怪物自己的基础信息
-
-    --self:UpdateGamePlayLogic(dt)--AiGamePlay相关的逻辑，现在暂时不需要
-
     self:UpdateFightMode(dt) --战斗模式逻辑
 end
 
 ---怪物配置主入口，除了Main其他配置都是空，用于MonsterBase自带的各种功能组件配置，类似读表。
 function XRelinkMonsterBase:MonsterConfigMain()
-    
+    self:SkillConfig() --技能配置
+    self:PhaseConfig()     --阶段配置
     self:OverDriveConfig()  --OD系统配置
     self:BreakGaugeConfig()   --韧性系统配置
     self:SkillCastConfig()  --技能释放配置
     self:SkillTestConfig()  --技能测试配置
-    
+end
+
+---阶段配置
+function XRelinkMonsterBase:PhaseConfig()
 end
 
 ---OverDrive配置
@@ -187,7 +209,7 @@ function XRelinkMonsterBase:MonsterRunVarAwake()
     self:OverDriveAwake() --OD初始变量设置
     self:BreakGaugeAwake() --韧性初始变量设置
     self:FightModeAwake() --战斗模式初始变量设置
-    self:PhaseControlAwake() --阶段管理初始化变量
+    self:PhaseAwake() --阶段控制初始化变量
     self:TargetAwake() --目标相关初始化变量
     self:FollowComponentAwake() --跟随组件初始化变量
     self:SkillTestAwake() --技能测试变量初始化
@@ -199,20 +221,28 @@ function XRelinkMonsterBase:SelfInfoAwake()
     self.Pos = nil       --自己的位置
     self.fightTime = self._proxy:GetFightTime() --当前战斗时间
     self.npcTime = self._proxy:GetNpcTime(self._uuid) --当前Npc时间
+    self.customEventList={}--保存获得帧事件的列表
+    self.levelCenterPoint = self._proxy:GetSpot(2) --获取场景中心点
+    self.timerList={}
 end
 
 ---OverDrive变量激活
 function XRelinkMonsterBase:OverDriveAwake()
     self.isOverDriveActive = true --是否开启Od系统，默认开启。
     self.isODValueFull = false --OD值是否满
+    self.enterOverDriveMagics={8052034}--进入OD时要Magic的列表
+    self.exitOverDriveMagics={8052035}--退出OD时要Magic的列表
     -------OD系统:OD-----------------------------------------
-    self.curODState = XRelinkMonsterBase.ODState.None
+    self.curODState = XRelinkMonsterBase.OverDriveState.None
     self.enterOverDriveSkill = nil --配置：进入OD的技能
     self.spSkill = nil --配置：Sp技能，进入OD后优先释放的。
     --OD系统:Breaking状态-----------------------------------------
     self.breakStartSkill = nil --配置：进入虚弱技能
     self.breakLoopSkill = nil --配置：虚弱循环技能
     self.breakEndSkill = nil --配置：退出虚弱时技能
+    self.breakStartEnterLoopDelayTime = 0 --BreakStart多久后切到BreakLoop
+    self.overDriveSpecialSkillSwitch = false --OD后要释放特殊技能的开关
+    self.overDriveSpecialSkillCastMode = XRelinkMonsterBase.OverDriveSpecialSkillCastMode.None --默认OD后没有要特殊释放的技能
 end
 
 ---设置OverDrive开启状态（目前只能在配置里调用生效）
@@ -223,7 +253,11 @@ end
 ---韧性变量激活
 function XRelinkMonsterBase:BreakGaugeAwake()
     self.isBreakGaugeActive = true --是否开启破韧系统，默认开启
-    self.brokenSkill = nil --被破韧时释放的技能
+    self.brokenSkillDefault = nil --被破韧时默认释放的技能,现在没有用 TODO:之后用来设置默认的破韧技能，简单破韧技能。
+    self.brokenSkillFront = nil --被前面破韧时技能
+    self.brokenSkillBack = nil --被破韧时释放的技能
+    self.brokenSkillLeft = nil --被破韧时释放的技能
+    self.brokenSkillRight = nil --被破韧时释放的技能
     self.brokenRange = 40 --被破韧时多少米范围内的玩家可以使用破韧技能
 end
 
@@ -336,7 +370,7 @@ function XRelinkMonsterBase:FightModeAwake()
     self.skillInfoConfigList = {}
     self.selectSkillType = XRelinkMonsterBase.SelectSkillType.None --默认不放技能
     self.skillLayer = XRelinkMonsterBase.SkillLayer.Normal --普通层技能释放
-    self.lockedSkillList = {} --锁定技能列表，被锁定的技能无法释放
+    self.skillLockedList = {} --锁定技能列表，被锁定的技能无法释放
 
     self.AllSkillList = {} --自己的所有技能列表，到时候遍历赋值。
     --normal技能释放列表
@@ -385,33 +419,17 @@ function XRelinkMonsterBase:TargetAwake()
     self.targetSpaceType = nil --目标在自己当前哪个方位
 
     ------- 周围敌人列表相关 --------------------------------
-    self.vigilantRange = 20 --索敌用的范围。
-    self.vigilantRangeEnemyList = {} --警戒范围内的敌人列表
-    self.vigilantRangeEnemyListUpdateTimeOnCombatMode = 10 --战斗模式下更新敌人列表频率
-    self.vigilantRangeEnemyListUpdateTimer = self.fightTime --更新敌人列表的计时器
+    self.vigilantRange = 50 --警戒范围。
+    self.vigilantRangePlayerList = {} --警戒范围内的敌人列表
+    self.vigilantRangePlayerListUpdateTimeOnCombatMode = 10 --战斗模式下更新敌人列表频率
+    self.vigilantRangePlayerListUpdateTimer = self.fightTime --更新敌人列表的计时器
 end
 
 ---阶段管理变量激活
-function XRelinkMonsterBase:PhaseControlAwake()
+function XRelinkMonsterBase:PhaseAwake()
     self.curPhase = 1 --当前阶段
-    self.phaseSwitchType = XRelinkMonsterBase.PhaseSwitchType.None --切阶段类型，Nonc就是不切阶段。
-    self.PhaseHpConditon = { --血量切阶段配置，少于等于这个比例时切换阶段
-        [1] = 70,
-        [2] = 50,
-        [3] = 30,
-    }
-    self.PhaseHpConditon = { --血量切阶段配置，少于等于这个比例时切换阶段
-        [1] = 70,
-        [2] = 50,
-        [3] = 30,
-    }
-    self.PhaseTimeLineConditon = { --根据TimeLine切阶段，按照FightTime来切阶段。
-        [1] = 999,
-        [2] = 9999,
-        [3] = 30,
-    }
-    self.phaseSwitchSkillList = { --根据不同阶段使用切阶段技能，有切阶段技能的需要等切阶段的技能释放后才算切阶段成功。
-    }
+    self.maxPhase = 3 --阶段上限
+    self.switchPhaseType = XRelinkMonsterBase.SwitchPhaseType.None --切阶段类型，None就是没有切阶段，所以会一直停留在一阶段。
 end
 
 ---整个AI控制变量激活
@@ -419,19 +437,20 @@ function XRelinkMonsterBase:AiControlAwake()
     self.isAiOpen = true --总AI开关
     self.isCombatModeAiOpen = true  --是否调用战斗模式逻辑
     self.isCombatLogicAiOpen = true --是否调用战斗逻辑
+    self.isCombatLogicMainOpen = true --Main逻辑是否跑
 end
 
 ---根据技能配置初始化技能Cd
 function XRelinkMonsterBase:SkillCdAwake()
-    self.SkillCds = {} --初始化技能CD保存用
-    local fightTime = self._proxy:GetFightTime() --获取战斗时间
-    for skill, config in pairs(SkillConfigs) do
-        --如果有配置初始化Cd的就设置cd
-        local cd = config.InitCd
-        if cd then
-            self.SkillCds[skill] = fightTime + cd
-        end
-    end
+    self.SkillCds = {} --保存技能CD
+    --local fightTime = self._proxy:GetFightTime() --获取战斗时间
+    --for skill, config in pairs(SkillConfigs) do
+    --    --如果有配置初始化Cd的就设置cd
+    --    local cd = config.InitCd
+    --    if cd then
+    --        self.SkillCds[skill] = fightTime + cd
+    --    end
+    --end
 end
 
 ---跟随组件变量激活
@@ -450,6 +469,7 @@ end
 
 ---怪物运行前初始化，根据构造变量和配置进行初始化
 function XRelinkMonsterBase:MonsterRunInit()
+    
     self:OverDriveInit() --OD初始化
     self:BreakGaugeInit() --韧性初始化
     self:SkillTestInit()--技能测试初始化
@@ -470,6 +490,10 @@ function XRelinkMonsterBase:OverDriveInit()
     self._proxy:RegisterEvent(EWorldEvent.NpcODBreakBefore)   --NpcODBreak前
     self._proxy:RegisterEvent(EWorldEvent.NpcODBreakAfter)   --NpcODBreak后
     self._proxy:RegisterEvent(EWorldEvent.NpcODExitBreakAfter)-- NpcOD退出Break
+end
+
+---阶段初始化
+function XRelinkMonsterBase:PhaseInit()
 end
 
 ---韧性系统初始化
@@ -493,53 +517,73 @@ end
 
 ---战斗模块主流程,负责分发所有战斗流程.
 function XRelinkMonsterBase:UpdateCombatMode(dt)
-
-    --TODO 受击也会执行
-    --1：战斗逻辑开始前，不包括目标选择，状态检查也没有,一般就不要在这里写逻辑了。
-    self:BeforeCombatLogic(dt)
-    
     --战斗模块
     if not self.isCombatModeAiOpen then
-        --战斗逻辑总开关
-        --XLog.Warning("1")
         return
     end
     
-    self:SelectTargetByThreat(dt) --根据仇恨选择目标
+    --1：战斗逻辑启用前。
+    self:CombatLogicBefore(dt)
+    if not self.isCombatLogicAiOpen then --未开启战斗逻辑，以下内容不执行
+        return
+    end
+    
+    self:CombatLogicSelectTarget(dt) --战斗逻辑选择目标，默认一仇
 
-    if not self:CheckTargetValid() then
-        --目标有效性检查，无效则不执行后续逻辑
-        --XLog.Warning("2")
+    if not self:CheckTargetValid() then--检查有没有目标
         return
     end
 
     self:UpdateTargetInfo()  --更新目标相关信息
 
     --2：战斗前置逻辑，当前已有目标，但行为是不确定的
-    self:PreCombatLogic(dt)
-
+    self:CombatLogicTargetLocked(dt)
+    
     if not self:CheckSelfActionValid() then
         --行为有效性检查
         return
+    end--行动有效性判断
+    --3：优先战斗逻辑
+    self:CombatLogicPriority(dt)
+    if not self:CheckSelfActionValid() then
+        --行为有效性检查
+        return
+    end--行动有效性判断
+    --4：自定义战斗逻辑
+    self:CombatLogicCustom(dt)
+    if not self.isCombatLogicMainOpen then
+        return
     end
-
-    --3：确保了目标、行为都是有效的，正式进入战斗逻辑流程
-    self:MainCombatLogic(dt) --核心战斗逻辑
-
-end
-
----战斗逻辑执行前，不包括任何状态或条件检测，默认空逻辑
-function XRelinkMonsterBase:BeforeCombatLogic(dt)
-    
-end
-
----战斗前置逻辑，通常为空，自定义编辑的地方。
-function XRelinkMonsterBase:PreCombatLogic(dt)
+    if not self:CheckSelfActionValid() then
+        --行为有效性检查
+        return
+    end--行动有效性判断
+    --5:核心底层运行的核心战斗逻辑
+    self:CombatLogicMain(dt) --核心战斗逻辑
 
 end
 
----核心战斗逻辑，里面的逻辑都跟配置绑定。
-function XRelinkMonsterBase:MainCombatLogic(dt)
+---1：战斗逻辑执行前，不包括任何状态或条件检测，默认空逻辑
+function XRelinkMonsterBase:CombatLogicBefore(dt)
+end
+
+---2：战斗流程：前置战斗逻辑（已有目标）
+function XRelinkMonsterBase:CombatLogicTargetLocked(dt)
+
+end
+
+---3：战斗流程：优先战斗逻辑
+function XRelinkMonsterBase:CombatLogicPriority(dt)
+    self:CombatModeTryCastOverDriveSpecialSkill()--尝试释放OD机制技能
+    self:CombatModeTryEnterOverDrive()--尝试进入OD
+end
+
+---4：战斗流程：自定义战斗逻辑
+function XRelinkMonsterBase:CombatLogicCustom(dt)
+end
+
+---5：战斗流程：核心底层运行的核心战斗逻辑
+function XRelinkMonsterBase:CombatLogicMain(dt)
     self:SelectAction() --行为筛选，处理好要做的事情。
     self:DoAction(dt) --行为执行，根据行为筛选出来的事情去执行，用来处理执行前和执行后的逻辑。
 end
@@ -547,11 +591,11 @@ end
 
 --region 战斗模式
 
-
 ---检查自己是不是通常意义上的可行动
 function XRelinkMonsterBase:CheckSelfActionValid()
+    
     if self._proxy:CheckNpcAction(self._uuid, ENpcAction.Skill) then--正在释放技能
-        if not self._proxy:CheckNpcCurSkillIsDone(self._uuid)then--自己技能没有完成时，无效。
+        if not self._proxy:CheckNpcCurActionIsDone(self._uuid)then--自己技能没有完成时，无效。
             return false
         end
     end
@@ -568,18 +612,29 @@ function XRelinkMonsterBase:CheckSelfActionValid()
         return false
     end
 
+    if not self._proxy:CheckCanCastSkill(self._uuid) then--当前不可释放技能，无效
+        return false
+    end
+
+    if self._proxy:CheckNpcFullActionState(self._uuid,ENpcAction.Born) then --出生时也不算
+        return false
+    end
+    
     return true--以上无效判断都不通过时，
 end
---非战斗模式逻辑
+
+---非战斗模式逻辑
 function XRelinkMonsterBase:UpdateNonCombatMode(dt)
     --非战斗模块
     return --非战斗下现在啥也不干
 end
---GamePlay逻辑
+
+---GamePlay逻辑
 function XRelinkMonsterBase:UpdateGamePlayLogic(dt)
     self:UpdatePhaseSystem(dt) --阶段管理系统，Update检测自己是否要转阶段了
 end
---更新自己相关的基础信息
+
+---更新自己相关的基础信息
 function XRelinkMonsterBase:UpdateSelfBaseInfo()
     ---生命百分比
     local maxHp = self._proxy:GetNpcAttribMaxValue(self._uuid, ENpcAttrib.Life)
@@ -589,79 +644,88 @@ function XRelinkMonsterBase:UpdateSelfBaseInfo()
     self.fightTime = self._proxy:GetFightTime() --更新战斗时间
     self.npcTime = self._proxy:GetNpcTime(self._uuid) --更新Npc时间
     self.Pos = self._proxy:GetNpcPosition(self._uuid) --更新位置
-    self:UpdateVigilantRangeEnemyList() --更新警戒范围内敌人列表
+    self:UpdateVigilantRangePlayerList() --更新警戒范围内敌人列表
+    self.curAction =nil --当前释放中的Action
 end
 
 ---更新警戒范围内敌人列表
-function XRelinkMonsterBase:UpdateVigilantRangeEnemyList()
-    if self.fightTime < self.vigilantRangeEnemyListUpdateTimer then
+function XRelinkMonsterBase:UpdateVigilantRangePlayerList()
+    if self.fightTime < self.vigilantRangePlayerListUpdateTimer then
         --CD控制器
         return
     end
     --搜索周围敌人列表
-    self.vigilantRangeEnemyList = {}--清空周围敌人列表
-    self.vigilantRangeEnemyList = self:GetEnemyListInRange(self.vigilantRange)--设置为警戒范围内的敌人
+    self.vigilantRangePlayerList = {}--清空周围敌人列表
+    self.vigilantRangePlayerList = self:GetPlayerListInRange(self.vigilantRange)--设置为警戒范围内的敌人
     if self.curFightMode == XRelinkMonsterBase.FightMode.Combat then
         --设置刷新警戒范围内敌人列表的时间，战斗模式下的CD
-        self.vigilantRangeEnemyListUpdateTimer = self.fightTime + self.vigilantRangeEnemyListUpdateTimeOnCombatMode --战斗时更新警戒范围敌人列表的CD
+        self.vigilantRangePlayerListUpdateTimer = self.fightTime + self.vigilantRangePlayerListUpdateTimeOnCombatMode --战斗时更新警戒范围敌人列表的CD
     end
 end
 
----获取范围内的敌人列表
-function XRelinkMonsterBase:GetEnemyListInRange(range)
-    local npcList = self._proxy:GetNpcList()
+---在范围内获取随机的敌人
+function XRelinkMonsterBase:GetRandomPlayerInRange(near,far)
+    local npcList = self._proxy:GetPlayerNpcList()
     local tempNpcList = {}
-
+    local player = nil
     for i, npc in pairs(npcList) do
         local distance = self._proxy:CalcNpcDistance(self._uuid, npc) --计算和目标的距离
-        if distance < range and self:IsEnemy(npc) then --在范围内的敌人
+        if distance>=near and distance<=far then --在范围内的敌人
             table.insert(tempNpcList, npc) --插入Npc
         end
     end
-    --XLog.Warning(tempNpcList)
+    if #tempNpcList>0 then --随机返回一个
+        player = tempNpcList[self._proxy:Random(1,#tempNpcList)]
+    end
+    return player
+end
+
+---获取范围内的玩家列表
+function XRelinkMonsterBase:GetPlayerListInRange(range)
+    local npcList = self._proxy:GetPlayerNpcList()
+    local tempNpcList = {}
+    for i, npc in pairs(npcList) do
+        local distance = self._proxy:CalcNpcDistance(self._uuid, npc) --计算和目标的距离
+        if distance < range then --在范围内的敌人
+            table.insert(tempNpcList, npc) --插入Npc
+        end
+    end
     return tempNpcList
 end
 
---判断Npc是否是敌人
-function XRelinkMonsterBase:IsEnemy(npc)
-    if npc == self._uuid then
-        --自己就跳过
-        return false
+---战斗逻辑选择目标。根据仇恨选择目标（包括强仇和仇恨值）
+function XRelinkMonsterBase:CombatLogicSelectTarget(dt)
+    local target = self:CombatLogicCustomSelectTarget()--自定义返回目标
+    if target then --有自定义的目标优先用自定义的目标
+        self:SetTarget(target)
+        return
     end
-    if self._proxy:CompareNpcCamp(self._uuid, npc) then
-        --同阵营也跳过
-        return false
-    end
-    return true
-end
-
---根据仇恨选择目标
-function XRelinkMonsterBase:SelectTargetByThreat(dt)
-    --根据仇恨选择目标
-
-    if not self._proxy:CheckThreatList(self._uuid) then
-        --仇恨列表为空时，清空目标。
+    if not self._proxy:CheckThreatList(self._uuid) then--仇恨列表为空，清空目标
         self:ClearTarget() --清空目标
         return
     end
-
-    --仇恨列表有Npc的时候就选择最大仇恨值的目标为战斗目标。
-    self.target = self._proxy:GetMaxThreatNpc(self._uuid) --默认选择最大仇恨值目标作为目标
-    self._proxy:SetFightTarget(self._uuid, self.target)
+    target = self._proxy:GetMaxThreatNpc(self._uuid) --从仇恨列表里找到一仇作为目标
+    self:SetTarget(target)
 end
 
---清除目标信息
+---自定义返回目标
+function XRelinkMonsterBase:CombatLogicCustomSelectTarget()
+    return nil
+end
+
+---清除目标信息
 function XRelinkMonsterBase:ClearTarget()
     self.target = nil
     self._proxy:RemoveFightTarget(self._uuid)
 end
 
---更新战斗模式的战斗信息
+---更新战斗模式的战斗信息
 function XRelinkMonsterBase:UpdateFightInfo()
     --更新战斗信息
 
 end
---检查目标有效性
+
+---检查目标有效性
 function XRelinkMonsterBase:CheckTargetValid()
 
     if (self.target == 0) or (not self.target) then
@@ -674,8 +738,12 @@ function XRelinkMonsterBase:CheckTargetValid()
 
     return true
 end
+
 ---更新和战斗目标相关信息
 function XRelinkMonsterBase:UpdateTargetInfo()
+    if not self.target then
+        return
+    end
     self.targetHpPercent = self._proxy:GetNpcAttribRate(self.target, ENpcAttrib.Life)
     self.targetPos = self._proxy:GetNpcPosition(self.target)
     self.targetDistance = self._proxy:CalcNpcDistance(self._uuid, self.target) --获取距离
@@ -694,24 +762,30 @@ function XRelinkMonsterBase:UpdateTargetInfo()
         self.targetDistanceType = XRelinkMonsterBase.DistanceType.SoFar  --超远距离
     end
 end
+
 --检查和更新战斗模式
 function XRelinkMonsterBase:UpdateFightMode(dt)
     if self.curFightMode == XRelinkMonsterBase.FightMode.Combat then
-        --战斗模块
-        if self:OutCombatCheck() then
+        if self:OutCombatCheck(dt) then --更新战斗模块逻辑前脱战逻辑
             --检查退出战斗成功
             return
         end
-        self:UpdateCombatMode(dt) --战斗模块逻辑
+        self:UpdateCombatMode(dt)
     elseif (self.curFightMode == XRelinkMonsterBase.FightMode.NonCombat) then
         --非战斗模块
-        if self:EnterCombatCheck() then
+        if self:EnterCombatCheck(dt) then
             --检查进入战斗
             return
         end
         self:UpdateNonCombatMode(dt) --运行非战斗模块逻辑
     end
 end
+
+---Update战斗模式前
+function XRelinkMonsterBase:UpdateFightModeBefore(dt)
+    self:FightModeTryEnterODBreakLoop()--尝试进入ODBreakLoop
+end
+
 ---找到最近的敌人触发战斗
 function XRelinkMonsterBase:EnterCombatCheck()
     --进入战斗检测
@@ -723,12 +797,12 @@ function XRelinkMonsterBase:EnterCombatCheck()
     end
 
     -------------------靠近触发战斗-----------------------------------
-    if #self.vigilantRangeEnemyList < 1 then
+    if #self.vigilantRangePlayerList < 1 then
         --周围没有敌人时进入战斗失败
         return false
     end
-    local nearestEnemy = self:FindNearestEnemy()--从警戒列表里找到最近的目标
-    self:EnterCombatByNpc(nearestEnemy) --触发战斗方式为被Npc触发了
+    local nearestPlayer = self:GetNearestPlayer()--从警戒列表里找到最近的目标
+    self:EnterCombatByNpc(nearestPlayer) --触发战斗方式为被Npc触发了
     return true
 end
 
@@ -750,34 +824,36 @@ function XRelinkMonsterBase:EnterCombatByNpc(triggerNpc)
         self._proxy:CastActionToTarget(self._uuid, self.enterCombatSkill, triggerNpc)
     end
     if not self._proxy:CheckNpcInThreatList(self._uuid, triggerNpc) then
-        self._proxy:ApplyMagic(self._uuid, triggerNpc, 8052000, 1) --触发的Npc给自己添加1仇恨，用来添加进仇恨列表
+        self:AddNpcToThreatValueList(triggerNpc)--把触发的Npc添加进仇恨列表
     end
     -----进入战斗时把其他玩家一起拉进战斗---------------------------------------
-    local npcList = self._proxy:GetNpcList()
+    local npcList = self._proxy:GetPlayerNpcList()
     for i, npcUUID in pairs(npcList) do
-        --把所有敌人拉进仇恨列表
-        if self:IsEnemy(npcUUID) and (not self._proxy:CheckNpcInThreatList(self._uuid, npcUUID)) then
-            --所有不在仇恨列表的敌人都存进仇恨列表
-            self._proxy:ApplyMagic(self._uuid, npcUUID, 8052000, 1)
+        --把没有在仇恨列表的玩家拉进仇恨列表
+        if not self._proxy:CheckNpcInThreatList(self._uuid, npcUUID)then
+            self:AddNpcToThreatValueList(npcUUID)--添加进仇恨列表
         end
     end
     self:SetTarget(triggerNpc) --将目标设置为触发战斗的Npc
 end
 
 ---寻找最近目标
-function XRelinkMonsterBase:FindNearestEnemy()
+function XRelinkMonsterBase:GetNearestPlayer(range)
     local target = nil
     local lastDistance = 0
-
-    if #self.vigilantRangeEnemyList < 1 then
+    
+    if #self.vigilantRangePlayerList < 1 then
         --没有Npc了
         return nil
     end
-    for i, npc in pairs(self.vigilantRangeEnemyList) do
+    for i, npc in pairs(self.vigilantRangePlayerList) do
         --遍历警戒范围内的敌人，找到最近的
-
         local distance = self._proxy:CalcNpcDistance(self._uuid, npc) --计算和目标的距离
-
+        if range then --如果有范围需求，检查是否在范围内
+            if distance > range then
+                break
+            end
+        end
         if lastDistance == 0 then
             --初始第一个
             lastDistance = distance
@@ -794,7 +870,7 @@ function XRelinkMonsterBase:FindNearestEnemy()
 end
 
 ---根据位置寻找最近的敌人
-function XRelinkMonsterBase:FindNearestEnemyByPos(pos)
+function XRelinkMonsterBase:GetNearestPlayerByPos(pos)
     local target = nil
     local lastDistance = 0
     local playerList = self._proxy:GetPlayerNpcList() --获取玩家列表
@@ -821,6 +897,10 @@ end
 
 --设置怪物目标
 function XRelinkMonsterBase:SetTarget(npc)
+    if (not npc) or (npc == 0)then
+        XLog.Warning("设置目标非法")
+        return
+    end
     self.target = npc
     self._proxy:SetFightTarget(self._uuid, npc)
 
@@ -829,6 +909,11 @@ function XRelinkMonsterBase:SetTarget(npc)
     local followTargetMMaxDis = self.followTargetMaxDis
     local followTargetHeartBeat = self.followTargetHeartBeat
     self._followController:SetFollowTargetNpcNoNavMesh(self.target, followTargetMinDis, followTargetMMaxDis, followTargetHeartBeat)  --跟随目标设置成当前目标
+end
+
+--获取怪物目标
+function XRelinkMonsterBase:GetTarget()
+   return self.target 
 end
 --移除怪物目标
 function XRelinkMonsterBase:RemoveMonsterTarget()
@@ -1094,8 +1179,7 @@ function XRelinkMonsterBase:NormalSequenceSelectSkill()
         return nil
     end
     for index, skill in pairs(self.sequenceSkillList) do
-        if self:CheckSkillCondition(skill) then
-            --检查技能条件
+        if self:CheckSkillCondition(skill) then--是否能释放该技能
             return skill
         end
     end
@@ -1128,79 +1212,149 @@ end
 
 --region 阶段管理
 
----更新阶段管理系统
-function XRelinkMonsterBase:UpdatePhaseSystem(dt)
-
-    if self.phaseSwitchType == XRelinkMonsterBase.PhaseSwitchType.None then
-        --没有切阶段逻辑
-        return
-    end
-
-    if self:SwitchPhaseCondition() then
-        --满足切阶段条件时
-        self:TrySwitchPhase() --尝试切换阶段
+---尝试提升当前阶段
+function XRelinkMonsterBase:TryRiseCurPhase()
+    if self:CheckRiseCurPhaseCondition() then---判断提升当前阶段的条件
+    self:RiseCurPhase()
     end
 end
 
---判断阶段切换条件
-function XRelinkMonsterBase:SwitchPhaseCondition()
-    local hpCondition = self.PhaseHpConditons[self.curPhase]
-    local fightTime = self.fightTime
-    local timeLineCondition = self.PhaseTimeLineConditons[self.curPhase]
+---尝试在进入OD时提升阶段
+function XRelinkMonsterBase:TryRiseCurPhaseOnEnterOverDrive()
+    if self:GetSwitchPhaseType() == XRelinkMonsterBase.SwitchPhaseType.EnterOverDrive then---判断切换阶段的条件是否是进入OverDrive时
+        self:RiseCurPhase()
+    end
+end
 
-    if (self.phaseSwitchType == XRelinkMonsterBase.PhaseSwitchType.Hp) and (hpCondition) and (self.hpRate <= hpCondition) then
-        --根据血量切换阶段
+---尝试在退出BK时提升阶段
+function XRelinkMonsterBase:TryRiseCurPhaseOnExitODBreak()
+    if self:GetSwitchPhaseType() == XRelinkMonsterBase.switchPhaseType.ExitODBreak then---判断条件是否是进入OD
+    self:RiseCurPhase()
+    end
+end
+
+--判断提升当前阶段的条件
+function XRelinkMonsterBase:CheckRiseCurPhaseCondition()
+
+    if (self.switchPhaseType == XRelinkMonsterBase.SwitchPhaseType.None)  then
+        --不切换阶段
+        return true
+    end
+    
+    if (self.switchPhaseType == XRelinkMonsterBase.SwitchPhaseType.EnterOverDrive)  then
+        --进入OD时切阶段
         return true
     end
 
-    if (self.phaseSwitchType == XRelinkMonsterBase.PhaseSwitchType.TimeLine) and (timeLineCondition) and (self.fightTime >= fightTime) then
-        --根据关卡时间切换阶段
+    if (self.switchPhaseType == XRelinkMonsterBase.SwitchPhaseType.ExitBreak)  then
+        --退出Break时切阶段
         return true
     end
-
     return false
 end
 
---尝试切换阶段
-function XRelinkMonsterBase:TrySwitchPhase()
-
-    if self.phaseSwitchSkillList[self.curPhase] then
-        --有切换阶段技能。
-        if self._proxy:CastAction(self._uuid, self.phaseSwitchSkillList[self.curPhase]) then
-            self.curPhase = self.curPhase + 1 --阶段+1
-        end
-    else
-        self.curPhase = self.curPhase + 1 --没有技能，直接切换阶段
+---提升当前阶段
+function XRelinkMonsterBase:RiseCurPhase()
+    if self:TrySetCurPhase(self:GetCurPhase()+1) then --当前阶段+1
+        self:RiseCurPhaseAfter()
     end
-
 end
+
+---提升当前阶段后
+function XRelinkMonsterBase:RiseCurPhaseAfter()
+end
+
+---获取切换阶段的类型
+function XRelinkMonsterBase:GetSwitchPhaseType()
+    return self.switchPhaseType
+end
+
+---设置切换阶段的类型
+function XRelinkMonsterBase:SetSwitchPhaseType(type)
+    self.switchPhaseType = type
+end
+
+---尝试设置当前阶段，不允许超过阶段上限
+function XRelinkMonsterBase:TrySetCurPhase(phase)
+    if phase > self:GetMaxPhase() then--要设置的值超过上限，设置失败。
+        return false
+    end
+    self.curPhase = phase
+    return true
+    
+end
+
+---获取当前阶段
+function XRelinkMonsterBase:GetCurPhase()
+    return self.curPhase
+end
+
+---设置上限阶段
+function XRelinkMonsterBase:SetMaxPhase(num)
+    self.maxPhase = num
+end
+
+---获取上限阶段
+function XRelinkMonsterBase:GetMaxPhase()
+    return self.maxPhase
+end
+
 --endregion
 
 --region 韧性系统
 
+---清空韧性值
+function XRelinkMonsterBase:SetBreakGaugeClear()
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000476,1)--清空OD值
+end
+
 ---当自己受伤时处理韧性系统
-function XRelinkMonsterBase:HandleBrokenGaugeOnGetDamage(magicId)
+function XRelinkMonsterBase:HandleBrokenGaugeOnGetDamage(triggerNpc,magicId)
     if magicId ~= 10519201 then --QTE伤害Magic
         return
     end
     if not self._proxy:CheckBuffByKind(self._uuid,8005901) then--判断自己是否不存在破韧可QTE的标记
         return
     end
-    self:BeBrokenHit() --破韧受击
+    XLog.Warning("破韧测试")
+    self:BeHitBroken(triggerNpc) --被触发破韧受击
 end
 
 ---被破韧后
 function XRelinkMonsterBase:OnNpcBrokenAfter(launcherUUID, targetUUID, magicId)
-    self:BeBrokenHit() --破韧受击
+    if targetUUID ~=self._uuid then
+        return
+    end
     self._proxy:ApplyMagic(self._uuid,self._uuid,8005901,1) --给自己上破韧畏缩状态
-    self:ApplyMagicToEnemyInRange(8005902,1,self.brokenRange)--给周围玩家上可释放QTEMagic
+    self:ApplyMagicToPlayerInRange(8005902,1,self.brokenRange)--给周围玩家上可释放QTEMagic4秒
+    self:BeHitBroken(launcherUUID) --破韧受击
 end
 
----破韧受击
-function XRelinkMonsterBase:BeBrokenHit()
-    self:ForceSkill(self.brokenSkill) --释放破韧技能
+---被破韧受击了，向被破韧时的Npc位置释放技能
+function XRelinkMonsterBase:BeHitBroken(triggerNpc)
+    local triggerNpcAngle = self:GetNpcTargetAngle(self._uuid,triggerNpc)--角度判断
+    local triggerDirection = self:GetNpcTargetDirection(self._uuid,triggerNpc) --左右方位判断
+    local triggerPos = self._proxy:GetNpcPosition(triggerNpc)
+    if triggerNpcAngle < 45 and self.brokenSkillFront then --正面破韧
+        self:ForceSkillToPosition(self.brokenSkillFront,triggerPos)
+    elseif triggerNpcAngle > 135 and self.brokenSkillBack then--背面受击
+        self:ForceSkillToPosition(self.brokenSkillBack,triggerPos)
+    elseif triggerDirection =="right"  and self.brokenSkillLeft then --右面受击
+        self:ForceSkillToPosition(self.brokenSkillLeft,triggerPos)
+    elseif self.brokenSkillRight then--左面受击
+        self:ForceSkillToPosition(self.brokenSkillRight,triggerPos)
+    end
 end
 
+---锁定削韧
+function XRelinkMonsterBase:LockBroken()
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000469,1)
+end
+
+---解除锁定削韧
+function XRelinkMonsterBase:UnLockBroken()
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000470,1)
+end
 
 --endregion
 
@@ -1208,40 +1362,120 @@ end
 
 ---设置OverDrive值直接变满
 function XRelinkMonsterBase:SetOverDriveValueFull()
-    local maxValue = self._proxy:GetNpcAttribMaxValue(self._uuid,ENpcAttrib.OverDrive)
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000473,1)--满上OD值
+    self.isODValueFull =true
+end
+
+---设置OverDrive值直接99%
+function XRelinkMonsterBase:SetOverDriveValueAlmostFull()
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000481,1)--满上OD值
 end
 
 ---清空OverDrive值
-function XRelinkMonsterBase:ClearOverDriveValue()
-
+function XRelinkMonsterBase:SetOverDriveValueClear()
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000474,1)--清空OD值
 end
 
----当自己受伤时处理OD系统
-function XRelinkMonsterBase:HandleOverDriveOnGetDamage()
-    --XLog.Warning("受伤检查OD系统")
-    if not self:CheckCanOverDrive() then--检查是否满足进入OD条件
+---锁定OD值
+function XRelinkMonsterBase:LockOverDriveValue()
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000465,1)
+end
+
+---解除锁定OD值
+function XRelinkMonsterBase:UnLockOverDriveValue()
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000466,1)
+end
+
+---尝试释放OD机制技能
+function XRelinkMonsterBase:CombatModeTryCastOverDriveSpecialSkill()
+    if not self:CheckOverDriveSpecialSkillSwitch() then --判断释放机会
+        return
+    end
+    local mode = self:GetOverDriveSpecialSkillMode()
+    if mode == XRelinkMonsterBase.OverDriveSpecialSkillCastMode.None then--无特殊释放模式，直接消耗掉释放的机会。
+        self:SetOverDriveSpecialSkillSwitch(false)
+    end
+
+    if mode == XRelinkMonsterBase.OverDriveSpecialSkillCastMode.Custom then--特殊机制技能要自己写，返回False表示等一等，不然直接就消耗掉了
+        local isSuccess = self:OnCustomCastOverDriveSpecialSkill()
+        if isSuccess or (isSuccess == nil) then--没有返回值或True那么表示成功，消耗掉。
+            self:SetOverDriveSpecialSkillSwitch(false)
+        end
+    end
+    
+end
+
+---自定义释放OD机制技能
+function XRelinkMonsterBase:OnCustomCastOverDriveSpecialSkill()
+    --XLog.Warning("OD机制要放一个试试")
+end
+
+---战斗模式里尝试进入Overdrive
+function XRelinkMonsterBase:CombatModeTryEnterOverDrive()
+    if not self.enterOverDriveSkill then --没配OD技能不进OD
         return false
     end
-    self:EnterOverDriveState()--进入OD
+    self.isODValueFull = self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.OverDrive) >= self._proxy:GetNpcAttribMaxValue(self._uuid,ENpcAttrib.OverDrive)
+    
+    if not self.isODValueFull then--OD值没有满不进OD
+        return false
+    end
+    self:ForceSkill(self.enterOverDriveSkill)--强制释放OD技能,注意这里还不是真正的进OD
+end
+
+---退出ODBreak
+function XRelinkMonsterBase:ExitODBreak()
+    if not self.breakStartSkill then
+        return false
+    end
+    XLog.Warning("退出BK，这时候破防了")
+    self:ForceSkill(self.breakLoopSkill)
+    self:SetCurOverDriveState(XRelinkMonsterBase.OverDriveState.BreakStart)
+end
+
+---战斗模式里尝试进入Break循环技能
+function XRelinkMonsterBase:FightModeTryEnterODBreakLoop()
+    if not self:CheckCurOverDriveState(XRelinkMonsterBase.OverDriveState.BreakStart) then --检查是否在BreakStart
+        return false
+    end
+    if not self.breakLoopSkill then --没有配置这个技能就不生效
+        return false
+    end
+    local isSuccess , skillTime = self._proxy:TryGetNpcCurrentActionElapsedTime(self._uuid)
+    if isSuccess then
+        if skillTime<= self.breakStartEnterLoopDelayTime then--没到时间
+            return
+        end
+    end
+    self:MonsterEnterBreakLoop()
 end
    
 ---检查自己当前是否可以进入OD    
 function XRelinkMonsterBase:CheckCanOverDrive()
-    
-    if not self.isODValueFull then--OD值没满不可以进入OD
-        return false
-    end
-
     if not self:CheckSelfActionValid() then --检查行动有效性
         return false
     end
-    
     return true
 end
 
----当进入OD时
-function XRelinkMonsterBase:OnOverDrive()
-    
+---检查OD特殊技能开关
+function XRelinkMonsterBase:CheckOverDriveSpecialSkillSwitch()
+    return self.overDriveSpecialSkillSwitch
+end
+
+---设置OD后特殊技能开关
+function XRelinkMonsterBase:SetOverDriveSpecialSkillSwitch(isOpen)
+    self.overDriveSpecialSkillSwitch = isOpen
+end
+
+---设置OD后特殊技能的释放模式
+function XRelinkMonsterBase:SetOverDriveSpecialSkillMode(mode)
+    self.overDriveSpecialSkillCastMode = mode
+end
+
+---获取OverDrive特殊机制释放模式
+function XRelinkMonsterBase:GetOverDriveSpecialSkillMode()
+    return self.overDriveSpecialSkillCastMode
 end
 
 ---当虚弱时
@@ -1257,17 +1491,40 @@ function XRelinkMonsterBase:OnNpcOverDriveFull(targetUUID)
     self.isODValueFull = true --设置自己OD值是满的。
 end
 
----当进入Break后
+---进入Break。
 function XRelinkMonsterBase:OnNpcODBreakAfter(targetUUID)
-    self:ForceSkill(self.breakStartSkill) --强制释放BreakStart技能
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052040,1) --去掉OD的通用特效
-    self._proxy:ApplyMagic(self._uuid,self._uuid,1000469,1) --锁定削韧
+    if targetUUID ~=self._uuid then
+        return
+    end
+    self:OnMonsterExitOverDrive()--怪物先退出Overdrive
+    self:MonsterEnterBreak(targetUUID) --进入Break
 end
 
 ---当退出Break后
 function XRelinkMonsterBase:OnNpcODExitBreakAfter(targetUUID)
-    self:OnExitBreak()--退出Break
+    self:OnMonsterExitBreak()--退出Break
 end
+
+---设置OD状态
+function XRelinkMonsterBase:SetOverDriveState(state)
+    self.curODState = state
+end
+
+---获取当前的ODState
+function XRelinkMonsterBase:GetCurOverDriveState()
+    return self.curODState
+end
+
+---检查当前的OverDriveState是否等于传进来的状态
+function XRelinkMonsterBase:CheckCurOverDriveState(state)
+    return self.curODState == state
+end
+
+---获取当前的ODState
+function XRelinkMonsterBase:SetCurOverDriveState(state)
+    self.curODState =state
+end
+
 
 --检查是否要进入OD吧
 function XRelinkMonsterBase:UpdateODNormalState(dt)
@@ -1286,41 +1543,59 @@ function XRelinkMonsterBase:UpdateODBreakingState(dt)
     --BreakingUpdate
 end
 
----进入OD状态
-function XRelinkMonsterBase:EnterOverDriveState()
-    if not self.enterOverDriveSkill then --没有配置OD技能
-        XLog.Warning("未配置进入OD技能，目前暂不支持无OD技能进入OD。")
-        return false
+---FightBase的事件，NpcEnterOverDrive
+function XRelinkMonsterBase:OnNpcEnterOverDrive(targetUUID)
+    if targetUUID ~= self._uuid then
+        return
     end
-    
-    if self:ForceSkillToTarget(self.enterOverDriveSkill) then--对战斗目标强制释放OD技能
-        self.isODValueFull = false
-        return true
-    end
-    
-    if self:ForceSkill(self.enterOverDriveSkill) then--无战斗目标强制释放
-        self.isODValueFull = false
-        return true
-    end
-    self:OnEnterOverDrive() --进入OverDrive
+    self:OnMonsterEnterOverDrive()
 end
 
----进入OD状态
-function XRelinkMonsterBase:OnEnterOverDrive()
-    --正常退出OD
-    self.curPhase = self.curPhase + 1
-    --怪物阶段+1
+---进入OverDrive时
+function XRelinkMonsterBase:OnMonsterEnterOverDrive()
+    self.isODValueFull = false
+    self:SetOverDriveSpecialSkillSwitch(true)--将OD特殊技能开启。
+    self:TryRiseCurPhaseOnEnterOverDrive()--尝试进OD时提升阶段
+    self:SetOverDriveState(XRelinkMonsterBase.OverDriveState.ODState)--进入OD
+    self:ApplyMagicsToSelf(self.enterOverDriveMagics)--给自己挂上进入时的Magic列表
+    self:LockBroken() --锁定削韧
+    self:MonsterEnterOverDriveAfter()--自定义编辑的地方
 end
 
----进入虚弱状态
-function XRelinkMonsterBase:OnEnterBreak()
-    self:ForceSkill(self.breakEndSkill)  --释放退出Break技能
-    self._proxy:ApplyMagic(self._uuid,self._uuid,1000470,1) --移除锁定削韧
-    --进入进入虚弱
+---怪物进入OD后，自定义要做的东西
+function XRelinkMonsterBase:MonsterEnterOverDriveAfter()
+end
+
+---进入OverDrive时
+function XRelinkMonsterBase:OnMonsterExitOverDrive()
+    self:ApplyMagicsToSelf(self.exitOverDriveMagics)--给自己退出时的Magic列表
+end
+
+---怪物进入Break状态
+function XRelinkMonsterBase:MonsterEnterBreak(targetUUID)
+    if not self:ForceSkillToNpc(self.breakStartSkill,targetUUID) then --优先对触发的目标释放该技能
+        self:ForceSkill(self.breakStartSkill) --强制释放BreakStart技能
+    end
+    self:SetCurOverDriveState(XRelinkMonsterBase.OverDriveState.BreakStart) --OD状态切换到BreakStart
+    --XLog.Warning("释放BreakStart，进入BKS阶段")
+    self._proxy:ApplyMagic(self._uuid,self._uuid,8052035,1) --去掉OD的通用特效
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000469,1) --锁定削韧
+    self:ApplyMagicToPlayerInRange(8005201,1,999) ---给敌人上特效
+    self:ApplyMagicToPlayerInRange(8052070,1,999) ---999范围内的敌人上卡肉
+end
+
+---怪物进入Break循环
+function XRelinkMonsterBase:MonsterEnterBreakLoop()
+    self:ForceSkill(self.breakLoopSkill) --强制放BreakLoop技能
+    self:SetCurOverDriveState(XRelinkMonsterBase.OverDriveState.BreakLoop)--切换状态到循环
 end
 
 ---退出虚弱状态
-function XRelinkMonsterBase:OnExitBreak()
+function XRelinkMonsterBase:OnMonsterExitBreak()
+    XLog.Warning("退出Break")
+    self:ForceSkill(self.breakEndSkill)
+    self:SetOverDriveState(XRelinkMonsterBase.OverDriveState.None)--切换到没有任何OD的状态
+    self:UnLockBroken()--解除削韧
     --退出虚弱
 end
 
@@ -1328,13 +1603,28 @@ end
 
 --region AI控制
 
+---设置是否开启技能测试
+function XRelinkMonsterBase:SetSkillTestActive(isActive)
+    self.isSkillTestOpen = isActive
+end
+
 ---是否关闭Ai总开关，不包括测试技能AI
 function XRelinkMonsterBase:SetAiActive(isActive)
     self.isAiOpen = isActive   --是否关闭战斗Ai：指会对玩家造成威胁的Ai
 end
 
+---设置战斗逻辑Main是否跑
+function XRelinkMonsterBase:SetCombatLogicMainActive(isActive)
+    self.isCombatLogicMainOpen = isActive
+end
+
+---设置战斗模式下的战斗逻辑AI是否开启
+function XRelinkMonsterBase:SetCombatLogicAiActive(isActive)
+    self.isCombatLogicAiOpen = isActive
+end
+
 ---设置战斗模式AI
-function XRelinkMonsterBase:CombatModeAiSwitch(isActive)
+function XRelinkMonsterBase:SetCombatModeAiActive(isActive)
     --Ai战斗模式开关，入战和退出都不会走
     self.isCombatModeAiOpen = isActive
 end
@@ -1346,7 +1636,7 @@ function XRelinkMonsterBase:InitEventCallBackRegister()
     ------全局事件-----------------------------------
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)           -- 添加buff时
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- Npc受伤伤害时
-    self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)            -- 退出Action时
+    --self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)            -- 退出Action时
     self._proxy:RegisterEvent(EWorldEvent.NpcDie)            -- Npc死亡时
     self._proxy:RegisterEvent(EWorldEvent.NpcRevive)            -- Npc复活时
 end
@@ -1356,11 +1646,69 @@ end
 
 function XRelinkMonsterBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
     XLog.Warning(npcUUID.."死亡了")
-    
 end
 
+---Npc复活时
 function XRelinkMonsterBase:OnNpcReviveEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
-    XLog.Warning(npcUUID.."复活了")
+    self:TryAddNpcToThreatValueList(npcUUID)
+end
+
+---尝试执行事件，默认执行了一次就清空事件列表
+function XRelinkMonsterBase:HandleCustomEvent(eventName,type)
+    if #self.customEventList == 0 then
+        return false
+    end
+
+    for i,event in pairs(self.customEventList) do
+        if event == eventName then
+            self:TryRunFunctionByString(eventName)
+            self:CustomEventListClear()--清空事件列表
+            return true
+        end
+    end
+        
+end
+
+---处理动作帧事件最新事件，尝试执行事件列表最新的事件。
+function XRelinkMonsterBase:HandleActionKeyFrameEventLatest()
+    if #self.customEventList == 0 then
+        return false
+    end
+    for i,eventName in pairs(self.customEventList) do --遍历事件列表尝试执行函数，不管成功与否
+        self:TryRunFunctionByString(eventName)
+    end
+    self:ActionKeyFrameEventListClear()--尝试执行完毕后清空列表
+end
+
+---尝试执行对应事件名字的函数
+function XRelinkMonsterBase:HandleActionKeyFrameEventName(eventName)
+    if #self.customEventList == 0 then
+        return false
+    end
+    if self:TryRunFunctionByString(eventName) then
+        self:ActionKeyFrameEventListClear()
+        return true
+    end
+    return false
+end
+
+---尝试执行最新的事件
+function XRelinkMonsterBase:CheckCustomEventInList(eventName)
+
+end
+
+---客户端事件列表添加
+function XRelinkMonsterBase:ActionKeyFrameEventListAdd(eventName)
+    table.insert(self.customEventList,eventName)
+end
+
+---客户端事件列表移除
+function XRelinkMonsterBase:ActionKeyFrameEventListRemove(eventName)
+end
+
+---客户端事件列表清空
+function XRelinkMonsterBase:ActionKeyFrameEventListClear()
+    self.customEventList = {}--清空自定义事件列表
 end
 
 ---添加buff时事件
@@ -1387,24 +1735,17 @@ function XRelinkMonsterBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind
     if targetId ~= self._uuid then --只监听自己受到的伤害
         return
     end
-    self:HandleOverDriveOnGetDamage() --受伤时处理OD系统
-    self:HandleBrokenGaugeOnGetDamage(magicId) --受伤时处理破韧系统
-end
-
----退出Action时事件
-function XRelinkMonsterBase:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
-    if launcherId ~= self._uuid then
-        return
-    end
-    
-    if skillId == self.breakStartSkill then --结束的是不是虚弱开始技能
-        self:ForceSkill(self.breakLoopSkill) --释放虚弱循环技能
-    end
+    self:HandleBrokenGaugeOnGetDamage(launcherId,magicId) --受伤时处理破韧系统
 end
 
 --endregion
 
 --region 怪物本身脚本的工具函数
+---获取关卡场景中心点
+function XRelinkMonsterBase:GetLevelCenterPoint()
+    return self.levelCenterPoint
+end
+
 ---概率成功，输入概率，返回是否成功
 function XRelinkMonsterBase:GetRandomSuccess(maybe)
     local isSuccess = false
@@ -1415,44 +1756,94 @@ function XRelinkMonsterBase:GetRandomSuccess(maybe)
 end
 
 ---Magic给范围内的敌人
-function XRelinkMonsterBase:ApplyMagicToEnemyInRange(magicId,level,range)
-    local npcList = self:GetEnemyListInRange(range)
-    XLog.Warning(npcList)
+function XRelinkMonsterBase:ApplyMagicToPlayerInRange(magicId,level,range)
+    local tempLevel = 1
+    if level then
+        tempLevel = level
+    end
+    local npcList = self:GetPlayerListInRange(range)
     for i, npc in pairs(npcList) do
-        XLog.Warning("周围敌人"..npc)
-        self._proxy:ApplyMagic(self._uuid,npc,magicId,level)
+        self._proxy:ApplyMagic(self._uuid,npc,magicId,tempLevel)
+    end
+end
+
+---ApplyMagic给所有玩家
+function XRelinkMonsterBase:ApplyMagicAllPlayer(magicId,level)
+    local tempLevel = 1
+    local npcList = self:GetPlayerListInRange(99999)
+    if level then
+        tempLevel = level
+    end
+    for i, npc in pairs(npcList) do
+        self._proxy:ApplyMagic(self._uuid,npc,magicId,tempLevel)
+    end
+end
+
+---ApplyMagic给所有玩家
+function XRelinkMonsterBase:ApplyMagicOtherAllNpc(magicId,level)
+    local tempLevel = 1
+    local npcList = self._proxy:GetNpcList()
+    if level then
+        tempLevel = level
+    end
+    for i, npc in pairs(npcList) do
+        if not npc ~= self._uuid then
+            self._proxy:ApplyMagic(self._uuid,npc,magicId,tempLevel)
+        end 
+    end
+end
+
+---给自己Magic一个列表
+function XRelinkMonsterBase:ApplyMagicsToSelf(magics)
+    for i,magicId in pairs(magics)do
+        self._proxy:ApplyMagic(self._uuid,self._uuid,magicId,1)
     end
 end
 
 ---判断值是否在table中
-function XRelinkMonsterBase:IsInTable(table, value)
+function XRelinkMonsterBase:ValueIsInTable(value,table)
     if #table < 0 then
         return false
     end
-
-    for i = 1, #table do
-        --在表格内
-        if table[i] == value then
+    for i,v in pairs(table) do
+        if v == value then
             return true
         end
     end
-
     return false
 end
 
----技能锁定有效性判断
-function XRelinkMonsterBase:IsSkillLockedValid(skill)
-    if not self:IsInTable(self.lockedSkillList, skill) then
-        --是否在锁定列表里
+---检查是否锁定技能
+function XRelinkMonsterBase:CheckSkillLockedValid(skill)
+    if self.skillLockedList[skill] then
+        return false
+    else
         return true
     end
-    return false --在列表返回False
+end
+
+---设置技能锁定，不能释放
+function XRelinkMonsterBase:SetSkillLocked(skill)
+    self.skillLockedList[skill] = true
+end
+
+---设置技能解锁，允许释放。
+function XRelinkMonsterBase:SetSkillUnLocked(skill)
+    self.skillLockedList[skill] = false
+end
+
+---把技能添加进锁定列表
+function XRelinkMonsterBase:AddSkillLocked(skill)
+    table.insert(self.skillLockedList,skill)
 end
 
 ---通常的检查技能条件,目标是按照Ai的战斗目标去判断
-function XRelinkMonsterBase:CheckSkillCondition(skill)
+function XRelinkMonsterBase:CheckSkillCondition(skill,target)
+    if not self._proxy:CheckNpcCurActionIsDone(self._uuid) then --需要等上一个技能放完
+        return false
+    end
     --技能锁定有效性判断
-    if not self:IsSkillLockedValid(skill) then
+    if not self:CheckSkillLockedValid(skill) then
         --是否在锁定列表里
         return false
     end
@@ -1473,7 +1864,7 @@ function XRelinkMonsterBase:CheckSkillCondition(skill)
         return false
     end
     --释放距离有效性判断
-    if not self:IsSkillDistanceValid(skill) then
+    if not self:IsSkillDistanceValid(skill,target) then
         return false
     end
     --释放角度有效性判断
@@ -1484,39 +1875,40 @@ function XRelinkMonsterBase:CheckSkillCondition(skill)
     return true
 end
 
----检查怪物配置的技能条件,目标是判断传入的目标
-function XRelinkMonsterBase:CheckSkillConditionByNpc(skill, npc)
+---检查怪物配置的技能条件,目标是判断传入的目标，不检查当前动作
+function XRelinkMonsterBase:CheckSkillConditionByNpc(skill,npc)
     --技能锁定有效性判断
-    if not self:IsSkillLockedValid(skill) then
-        return false
+    if not self:CheckSkillLockedValid(skill) then
+    return false
     end
+
     --检查技能CD好了没有
     if not self:CheckSkillCdDone(skill) then
-        return false
+    return false
     end
     --OD状态有效性判断
     if not self:IsSkillODStateValid(skill) then
-        return false
+    return false
     end
     --阶段有效性判断
     if not self:IsSkillPhaseValid(skill) then
-        return false
+    return false
     end
     --血量有效性判断
     if not self:IsSkillHpValid(skill) then
-        return false
+    return false
     end
     --对传入的Npc进行距离判断
     if not self:CheckSkillDisByNpc(skill, npc) then
-        return false
+    return false
     end
     --释放角度有效性判断
     if not self:IsSkillAngleValid(skill) then
-        --只是不满足角度的话，还有一丝丝希望
-        return false
+    --只是不满足角度的话，还有一丝丝希望
+    return false
     end
     return true
-end
+    end
 
 ---对自己OD状态有效性判断
 function XRelinkMonsterBase:IsSkillODStateValid(skill)
@@ -1524,21 +1916,10 @@ function XRelinkMonsterBase:IsSkillODStateValid(skill)
     if not config then
         return true
     end
-    local need = config.ODStateNeed
-    if not need then
+    if not config.IsNeedODState then --不需要OD限制，怎么都能放
         return true
     end
-    if #need < 1 then
-        return true
-    end
-    for i, state in pairs(need) do
-        --当前状态在里面
-        if state == self.curODState then
-            return true
-        end
-    end
-
-    return false
+    return self.curODState == XRelinkMonsterBase.OverDriveState.ODState--返回当前是不是在OD状态
 end
 
 ---对自己阶段有效性判断
@@ -1551,12 +1932,12 @@ function XRelinkMonsterBase:IsSkillPhaseValid(skill)
     if not needs then
         return true
     end
-    if #config[PhaseNeed] < 1 then
+    
+    if #needs < 1 then
         return true
     end
 
-    for i, phase in pairs(needs) do
-        --里面有状态和自己状态是一样的
+    for i, phase in pairs(needs) do--里面有和自己当前阶段状态一样的
         if phase == self.curPhase then
             return true
         end
@@ -1588,17 +1969,21 @@ function XRelinkMonsterBase:IsSkillHpValid(skill)
 end
 
 ---对当前已筛选到的目标释放距离有效性判断
-function XRelinkMonsterBase:IsSkillDistanceValid(skill)
-    XLog.Warning("技能距离")
-    XLog.Warning(self.targetDistance)
-    return self:CheckSkillDistance(skill, self.targetDistance) --传入目标距离去检查
+function XRelinkMonsterBase:IsSkillDistanceValid(skill,target)
+    if not target then
+        return true
+    end
+
+    if not target.x then --不是位置，那就是Npc
+        return self:CheckSkillDistance(skill, self._proxy:GetNpcDistance(self._uuid,target,true)) --传入目标距离去检查
+    end
+    
+    return self:CheckSkillDistance(skill, self._proxy:GetNpcToPositionDistance(self._uuid,target,true)) --传入目标距离去检查
 end
 
 --传入技能和距离检查距离是否满足技能配置的释放条件
 function XRelinkMonsterBase:CheckSkillDistance(skill, distances)
-    --if skill == 805221 then
-    --    XLog.Warning(skill)
-    --end
+    
     local config = SkillConfigs[skill]
     if not config then
         --没有这个技能配置
@@ -1613,11 +1998,17 @@ function XRelinkMonsterBase:CheckSkillDistance(skill, distances)
         --距离要求为空
         return true
     end
+    
     if #needs == 1 then
         return distances <= needs[1]--是否小于等于距离要求
     end
     --是否大于等于最小And小于等于最大
     return (distances >= needs[1]) and (distances <= needs[2])
+end
+
+--返回与目标距离是否在范围内
+function XRelinkMonsterBase:CheckTargetDistance(distance)
+    return self.targetDistance <= distance
 end
 
 ---检查Npc的距离
@@ -1627,7 +2018,7 @@ function XRelinkMonsterBase:CheckSkillDisByNpc(skill, npc)
         return false
     end
     local dis = self._proxy:CalcNpcDistance(self._uuid, npc)
-    return self:CheckSkillDistance(skill, dis)
+    return self:CheckSkillDistance(skill,dis)
 end
 
 ---检查和目标距离是否在范围内
@@ -1679,6 +2070,177 @@ function XRelinkMonsterBase:IsSkillTurnFixValid(skill)
     end
     return false
 end
+
+---通过字符串检查是否存在某个函数
+function XRelinkMonsterBase:CheckHaveFunctionByString(funcName)
+    if not self[funcName] then
+        return false
+    end
+    if type(self[funcName]) ~= "function" then
+        return false
+    end
+    return true
+end
+
+---尝试通过字符串执行函数，仅适用于不传参+不回参需求的函数。
+function XRelinkMonsterBase:TryRunFunctionByString(funcName)
+    if self:CheckHaveFunctionByString(funcName) then
+        self[funcName](self)--存在这个名字的函数，直接运行函数
+        return true
+    else
+        return false
+    end
+end
+
+---尝试把Npc送进仇恨值列表
+function XRelinkMonsterBase:TryAddNpcToThreatValueList(npc)
+    if self:CheckNpcIsPlayer(npc) and (not self._proxy:CheckNpcInThreatList(self._uuid,npc)) then
+        self:AddNpcToThreatValueList(npc)
+    end
+end
+
+---Npc添加进仇恨列表
+function XRelinkMonsterBase:AddNpcToThreatValueList(npc)
+    self._proxy:ApplyMagic(self._uuid, npc, 8052000, 1) --触发的Npc给自己添加1仇恨，用来添加进仇恨列表
+end
+
+---检查Npc是不是玩家
+function XRelinkMonsterBase:CheckNpcIsPlayer(npc)
+    local playerList = self._proxy:GetPlayerNpcList()
+    return self:ValueIsInTable(npc,playerList)--返回是否在玩家列表
+end
+
+---获取场景中心点
+function XRelinkMonsterBase:GetCenterPoint()
+    return self._proxy
+end
+
+---获取NpcA向前朝向和NpcB的夹角
+function XRelinkMonsterBase:GetNpcTargetAngle(npc,target)
+    local npcAPos = self._proxy:GetNpcPosition(npc)
+    XLog.Warning("获取目标的朝向2")
+    XLog.Warning("npc1是："..npc)
+    XLog.Warning("目标是："..target)
+    local npcAFace = self._proxy:GetNpcOffsetPositionByFacing(npc,{x=0,y=0,z=0},1) - npcAPos --NpcA的朝向
+    XLog.Warning(npcAFace)
+    XLog.Warning("获取完毕")
+    local npcBPos =self._proxy:GetNpcPosition(target)
+    return self:GetAngleByPosFace(npcAPos,npcAFace,npcBPos)
+end
+
+---获取目标方位根据Npc的朝向
+function XRelinkMonsterBase:GetNpcTargetDirection(npc,target)
+    local npcAPos = self._proxy:GetNpcPosition(npc)
+    
+    local npcAFace = self._proxy:GetNpcOffsetPositionByFacing(self._uuid, { x=0,y=0,z=0 },1) - npcAPos --NpcA的朝向
+    local npcBPos =self._proxy:GetNpcPosition(target)
+    return self:GetDirectionRelativePosFace(npcAPos,npcAFace,npcBPos)
+end
+
+---根据A点的朝向
+function XRelinkMonsterBase:GetAngleByPosFace(pointA, orientationA, pointB)
+    -- 将点A的朝向向量投影到XZ平面（忽略Y轴）
+    local dirVectorX = orientationA.x
+    local dirVectorZ = orientationA.z
+
+    -- 计算从点A到点B的向量，并投影到XZ平面
+    local toBVectorX = pointB.x - pointA.x
+    local toBVectorZ = pointB.z - pointA.z
+
+    -- 计算两个向量的模长
+    local dirMagnitude = math.sqrt(dirVectorX * dirVectorX + dirVectorZ * dirVectorZ)
+    local toBMagnitude = math.sqrt(toBVectorX * toBVectorX + toBVectorZ * toBVectorZ)
+
+    -- 如果任一向量长度为0，则无法计算夹角
+    if dirMagnitude == 0 or toBMagnitude == 0 then
+        return 0
+    end
+
+    -- 计算两个向量的点积
+    local dotProduct = dirVectorX * toBVectorX + dirVectorZ * toBVectorZ
+
+    -- 计算夹角的余弦值
+    local cosAngle = dotProduct / (dirMagnitude * toBMagnitude)
+
+    -- 处理浮点数精度问题，确保cosAngle在[-1, 1]范围内
+    cosAngle = math.max(-1, math.min(1, cosAngle))
+
+    -- 计算夹角（弧度）并转换为角度
+    local angleRad = math.acos(cosAngle)
+    local angleDeg = math.deg(angleRad)
+
+    -- 返回0到180度之间的角度
+    return angleDeg
+end
+
+--获取坐标B相对于坐标A和坐标A朝向的方位（left、right、front）
+function XRelinkMonsterBase:GetDirectionRelativePosFace(pointA, orientationA, pointB)
+    -- 将点A的朝向向量投影到XZ平面（忽略Y轴）
+    local forwardX = orientationA.x
+    local forwardZ = orientationA.z
+
+    -- 计算从点A到点B的向量，并投影到XZ平面
+    local toB_X = pointB.x - pointA.x
+    local toB_Z = pointB.z - pointA.z
+
+    -- 计算两个向量的叉积（只取Y分量）
+    local crossProduct = forwardX * toB_Z - forwardZ * toB_X
+
+    -- 根据叉积的正负判断左右
+    if crossProduct > 0 then
+        return "left"  -- B在A的左侧
+    elseif crossProduct < 0 then
+        return "right" -- B在A的右侧
+    else
+        return "front" -- B在A的正前方或正后方
+    end
+end
+
+---设置玩家强锁自己
+function XRelinkMonsterBase:SetPlayerHardLockSelf()
+    for i , playerUUID in pairs(self._proxy:GetPlayerNpcList()) do
+        self._proxy:SetHardLock(playerUUID,self._uuid)
+    end
+end
+
+---检查位置到位置的距离忽略Y轴是否在范围内
+function XRelinkMonsterBase:CheckNpcToPosDistanceIgnoreY(npcUUID,pos,dis)
+    return self:GetNpcToPosDistanceIgnoreY(npcUUID,pos)<= dis
+end
+
+---检查位置到位置的距离忽略Y轴是否在范围内
+function XRelinkMonsterBase:GetNpcToPosDistanceIgnoreY(npcUUID,pos2)
+    local pos1= self._proxy:GetNpcPosition(npcUUID)
+    local dx = pos2.x-pos1.x
+    local dz = pos2.z-pos1.z
+    return math.sqrt(dx*dx + dz *dz)
+end
+
+---检查位置到位置的距离忽略Y轴是否在范围内
+function XRelinkMonsterBase:CheckPosToPosDistanceIgnoreY(pos1,pos2,dis)
+    return self:GetPosToPosDistanceIgnore(pos1,pos2)<= dis
+end
+
+---获取位置1到位置2的忽略Y轴距离
+function XRelinkMonsterBase:GetPosToPosDistanceIgnoreY(pos1,pos2)
+    local dx = pos2.x-pos1.x
+    local dz = pos2.z-pos1.z
+    return math.sqrt(dx*dx + dz *dz)
+end
+
+--TODO:可能要判断是否死亡，现在没有包括死亡判断
+---获取位置半径范围内玩家数量（）
+function XRelinkMonsterBase:GetPlayerCountByPosRadiusIgnoreY(pos,radius)
+    local playerList = self._proxy:GetPlayerNpcList()
+    local count = 0
+    for i,player in pairs(playerList) do
+        if self:CheckNpcToPosDistanceIgnoreY(player,pos,radius) then
+            count = count + 1 
+        end
+    end
+    return count
+end
+
 --endregion
 
 --region 技能测试
@@ -1694,8 +2256,8 @@ end
 ---技能测试初始化
 function XRelinkMonsterBase:SkillTestInit()
     self.skillTestTimer = self._proxy:GetFightTime() + self.skillTestInitialCd --设置初始CD
-    self:UpdateVigilantRangeEnemyList()--更新警戒范围敌人列表
-    self:SetTarget(self:FindNearestEnemy()) --找到最近的敌人作为战斗目标
+    self:UpdateVigilantRangePlayerList()--更新警戒范围敌人列表
+    self:SetTarget(self:GetNearestPlayer()) --找到最近的敌人作为战斗目标
 end
 
 ---技能配置测试模块
@@ -1704,6 +2266,7 @@ function XRelinkMonsterBase:UpdateSkillTest()
         --没有配置测试ID
         return
     end
+    
     if self.skillTestTimer > self._proxy:GetFightTime() then
         --测试CD用的
         return
@@ -1716,6 +2279,64 @@ function XRelinkMonsterBase:UpdateSkillTest()
     local pos  ={x=83,y= 1.87,z= 54.44}
     self.skillTestTimer = self._proxy:GetFightTime() + self.skillTestCd --释放成功，设置测试CD
 end
+--endregion
+
+--region NpcTimer
+
+--初始化NpcTimer
+function XRelinkMonsterBase:InitNpcTimer(index,initCd,cd)
+    if not self.timerList[index] then
+        self.timerList[index]={
+        }
+    end
+    self.timerList[index].initCd = initCd
+    self:SetNpcTimerCd(index,cd)
+    self:SetNpcTimerTime(index,initCd)
+end
+
+--设置NpcTimer的Cd
+function XRelinkMonsterBase:SetNpcTimerCd(index,cd)
+    self.timerList[index].cd = cd
+end
+
+--设置Timer时间
+function XRelinkMonsterBase:SetNpcTimerTime(index,time)
+    if time then
+        self.timerList[index].time = self.npcTime + time
+    end
+end
+
+--重置Timer
+function XRelinkMonsterBase:EnterNpcTimer(index)
+    local cd = self.timerList[index].cd
+    if not cd then
+        self.timerList[index].cd = 0
+    end
+    self.timerList[index].time = self.npcTime + self.timerList[index].cd
+end
+
+--获取TimerCd
+function XRelinkMonsterBase:GetNpcTimerRemainTime(index)
+    local time =  self.npcTime-self.timerList[index].time
+    if time <0 then
+        return 0
+    end
+    return time
+end
+    
+--检查Timer好了没有
+function XRelinkMonsterBase:CheckNpcTimer(index)
+    if not self.timerList[index] then
+        return true
+    end
+    return self.npcTime >= self.timerList[index].time
+end
+
+--设置对应Index的Timer清空时间
+function XRelinkMonsterBase:ClearNpcTimer(index)
+    self.timerList[index].time = self.npcTime
+end
+
 --endregion
 
 --region 技能释放处理工具
@@ -1737,7 +2358,6 @@ end
 
 ---无目标强制释放技能
 function XRelinkMonsterBase:ForceSkill(skill)
-    XLog.Warning("强制释放技能:"..skill)
     self._proxy:AbortAction(self._uuid, true) --强制打断当前技能
     local isSuccess = self._proxy:CastAction(self._uuid,skill)--强制释放这个技能
     return isSuccess
@@ -1789,7 +2409,7 @@ function XRelinkMonsterBase:ForceSkillToNpc(skill, npc)
 end
 
 ---获得权重组里对Npc可以放的技能
-function XRelinkMonsterBase:GetAbleSkillByWeightsToNpc(skills, npc)
+function XRelinkMonsterBase:GetAbleSkillByWeightsToNpc(skills,npc)
     local newGroup = {}
     local totalW = 0 --总权重
     for skill, w in pairs(skills) do
@@ -1813,11 +2433,11 @@ function XRelinkMonsterBase:GetKeyByWeights(skills)
     return self:GetWeightsKeyByTotalWeight(skills, totalW)--直接从技能组里随机一个出去
 end
 
----对战斗目标根据权重组放技能（会判断怪物技能配置的释放条件）
-function XRelinkMonsterBase:CastSkillToTargetByWeights(skills)
+---对战斗目标根据权重组放技能（技能组，是否忽略技能完成）
+function XRelinkMonsterBase:TryCastSkillToTargetByWeights(skills)
     local target = self.target
-    local skill = self:GetAbleSkillByWeightsToNpc(skills, target) --从权重组里找到适合可以放的技能
-    XLog.Warning(skill)
+    local isSuccess = false
+    local skill = self:GetAbleSkillByWeightsToNpc(skills,target) --从权重组里找到适合可以放的技能
     if not skill then
         return false
     end
@@ -1844,6 +2464,17 @@ function XRelinkMonsterBase:ForceSkillToPosition(skill, pos)
     self:HandleAfterCastSkill(skill, isSuccess)--处理释放技能之后
 end
 
+---尝试对位置释放技能
+function XRelinkMonsterBase:CastSkillToPosition(skill, pos)
+    if not self:CheckSkillCondition(skill,pos) then --TODO:不是只有对目标，位置或Npc一样需要。
+        return
+    end
+    self._proxy:AbortAction(self._uuid, true)--打断当前技能
+    local isSuccess = self._proxy:CastActionToPosition(self._uuid, skill, pos)--对位置释放技能
+    self:HandleAfterCastSkill(skill, isSuccess)--处理释放技能之后
+end
+
+
 ---输入权重组和总权重获得Key
 function XRelinkMonsterBase:GetWeightsKeyByTotalWeight(weights, total)
     --传入权重Table，和总权重，返回Key
@@ -1863,40 +2494,55 @@ function XRelinkMonsterBase:HandleAfterCastSkill(skill, isSuccess)
         --技能没有成功就不管了
         return
     end
-    self:SkillEnterConfigCd(skill) --技能尝试进入配置Cd
-    --释放成功时间处理
+    self:EnterSkillCd(skill) --技能进入CD
 end
 
----技能进入配置Cd的接口
-function XRelinkMonsterBase:SkillEnterConfigCd(skill)
-    local cd = SkillConfigs[skill].Cd
-    if not cd then
-        return
-    end
-    self:SetSkillCd(skill, cd)--设置技能Cd
-end
 ---设置技能CD直接完成
 function XRelinkMonsterBase:SetSkillCdDone(skill)
     local cd = SkillConfigs[skill].Cd
     if not cd then
         return
     end
-    self.SkillCds[skill] = self.fightTime
+    self.SkillCds[skill].time = self.fightTime
 end
 
----设置技能CD(当前战斗时间+额外时间)
-function XRelinkMonsterBase:SetSkillCd(skill, time)
-    self.SkillCds[skill] = self.fightTime + time
+---初始化技能cd。
+function XRelinkMonsterBase:InitSkillCd(skill,initCd,cd)
+    self.SkillCds[skill] = {}
+    self.SkillCds[skill].initCd = initCd
+    self.SkillCds[skill].cd = cd
+    self.SkillCds[skill].time = self.fightTime + initCd 
+end
+
+---重置技能CD
+function XRelinkMonsterBase:EnterSkillCd(skill)
+    if not self.SkillCds[skill] then
+        self:InitSkillCd(skill,0,0)
+        return
+    end
+    self.SkillCds[skill].time = self.fightTime + self.SkillCds[skill].cd
 end
 
 ---检查技能Cd好了没有
 function XRelinkMonsterBase:CheckSkillCdDone(skill)
-    local cd = self.SkillCds[skill]
-    if cd then
-        return self.fightTime >= cd
+    local info = self.SkillCds[skill]
+    if not info then
+        return true
     end
-    return true--表里没有记录Cd的说明没有Cd
+    return self.fightTime >= info.time--当前战斗时间是否大于配置的cd时间
 end
+
+---获取技能CD剩余时间
+function XRelinkMonsterBase:GetSkillCdRemainTime(skill)
+    local info = self.SkillCds[skill]
+    local remain =  info.time - self.fightTime
+    if remain <= 0 then
+        return 0
+    else 
+        return remain
+    end
+end
+
 
 --endregion
 
@@ -1909,6 +2555,11 @@ end
 ---设置释放组
 function XRelinkMonsterBase:SetCastGroup(castList)
     self.castGroup = castList
+end
+
+---获取释放组
+function XRelinkMonsterBase:GetCastGroup()
+    return self.castGroup
 end
 
 ---添加技能组进释放组
@@ -1925,13 +2576,13 @@ end
 function XRelinkMonsterBase:GetAbleSkillToTargetByNpcCastGroup()
     for skillsId, skills in pairs(self.castGroup) do
         --遍历释放组去获得技能权重组
-        local skill = self:GetAbleSkillByWeightsToNpc(skills, self.target) --从当前技能组里获得可以对当前目标放的技能
+        local skill = self:GetAbleSkillByWeightsToNpc(skills,self.target) --从当前技能组里获得可以对当前目标放的技能
         if skill then
             --如果获得了技能就返回这个技能
             return skill
         end
     end
-    return --如果没有技能就不放技能了。
+    return nil --如果没有技能就不放技能了。
 end
 
 ---从脚本变量释放组里对Npc获得可以释放的技能(npc)
@@ -1973,18 +2624,16 @@ function XRelinkMonsterBase:GetAbleSkillToNpcByCastGroup(group,npc)
 end
 
 ---对战斗目标尝试从CastGroup里释放一个满足条件的技能
-function XRelinkMonsterBase:CastSkillToTargetByCastSkillGroup()
+function XRelinkMonsterBase:CastSkillToTargetIgnoreSkillDoneByCastSkillGroup()
     for skillsId, skills in pairs(self.castGroup) do
         --遍历释放组去获得技能权重组
         local skill = self:GetAbleSkillByWeightsToNpc(skills, self.target) --从当前技能组里获得可以对当前目标放的技能
         if skill then
-            --如果获得了技能就返回这个技能
-            return skill
+            self:ForceSkillToTarget(skill)
         end
     end
     return --如果没有技能就不放技能了。
 end
-
 
 --endregion
 

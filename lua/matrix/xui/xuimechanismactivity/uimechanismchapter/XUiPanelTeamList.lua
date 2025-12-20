@@ -27,8 +27,8 @@ function XUiPanelTeamList:Refresh()
             end
         end
     else
-        for i, v in ipairs(self._CharaGrids[i]) do
-            self._CharaGrids[i]:Refresh(0)
+        for i, v in pairs(self._CharaGrids) do
+            v:Refresh(0)
         end
     end
 end

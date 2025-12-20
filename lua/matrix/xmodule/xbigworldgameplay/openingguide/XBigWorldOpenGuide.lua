@@ -15,6 +15,7 @@ local ActionTypePath = {
 ---@class XBigWorldOpenGuide 开场引导
 ---@field _ActionDict table<number, XGuideAction>
 ---@field _Queue XQueue
+---@field _RunningAction XGuideAction
 local XBigWorldOpenGuide = XClass(nil, "XBigWorldOpenGuide")
 
 function XBigWorldOpenGuide:Ctor()
@@ -63,8 +64,6 @@ end
 function XBigWorldOpenGuide:Finish()
     -- 关闭按键检测冲突
     CS.XInputManager.InputMapper:SetIsOpenInputMapSectionCheck(false)
-    self._Queue:Clear()
-    self._Queue = nil
     if self._IsUpdateEnterData then
         XMVCA.XBigWorldGamePlay:RequestGetEnterBigWorldData(function()
             self:OnFinish()
@@ -85,8 +84,6 @@ function XBigWorldOpenGuide:PreLaunch()
     if self.IsPreLaunch then
         return
     end
-    ----预先初始化开场需要的系统
-    --CS.XWorldEngine.PreLaunch()
     --初始化输入后系统
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():InitInputMapStack()
     --设置大世界状态
@@ -98,8 +95,7 @@ function XBigWorldOpenGuide:PreExit()
     if not self.IsPreLaunch then
         return
     end
-    ----移除掉开场的系统，交由正式流程去控制
-    --CS.XWorldEngine.PreExit()
+    self:ClearAction()
     --设置大世界状态
     XMVCA.XBigWorldGamePlay:DeinitCurrentBigWorldType()
     self.IsPreLaunch = false
@@ -115,6 +111,7 @@ function XBigWorldOpenGuide:RunNext()
         return self:Finish()
     end
     action:Begin()
+    self._RunningAction = action
 end
 
 ---@param template XTableBigWorldOpenGuide
@@ -132,6 +129,25 @@ function XBigWorldOpenGuide:__CreateAction(template)
         ActionTypeClass[actionType] = cls
     end
     return cls.New(template, self)
+end
+
+function XBigWorldOpenGuide:ClearAction()
+    if self._RunningAction then
+        self._RunningAction:Clear()
+        self._RunningAction = nil
+    end
+    if not self._Queue or self._Queue:IsEmpty() then
+        return
+    end
+    while not self._Queue:IsEmpty() do
+        ---@type XGuideAction
+        local action = self._Queue:Dequeue()
+        if not action then
+            break
+        end
+        action:Clear()
+    end
+    self._Queue:Clear()
 end
 
 return XBigWorldOpenGuide

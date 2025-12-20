@@ -45,6 +45,31 @@ XQualityManagerCreator = function()
         end
     end
 
+    XQualityManager.CloseBigWorldHighFrameSettings = function()
+        -- 手机才需要设置
+        local curPlatform = CS.UnityEngine.Application.platform
+        if curPlatform == CS.UnityEngine.RuntimePlatform.Android or curPlatform == CS.UnityEngine.RuntimePlatform.IPhonePlayer then
+            -- 单一次标记
+            local closeBigWorldHighFrameSettings = CS.UnityEngine.PlayerPrefs.GetInt("CloseBigWorldHighFrameSettings", 0)
+            if closeBigWorldHighFrameSettings == 1 then
+                return
+            end
+
+            -- 设置自定义的设置
+            local curLevel = CSXQualityManager:GetCurQualitySettings()
+            local customQuality = CSXQualityManager:GetQualitySettings(0)
+            customQuality.BigWorldFrameRateLevel = 0
+            CSXQualityManager:SetQualitySettings(0, customQuality)
+
+            -- 设置回不是自定义的设置
+            if curLevel ~= 0 then
+                local curQuality = CSXQualityManager:GetQualitySettings(curLevel)
+                CSXQualityManager:SetQualitySettings(curLevel, curQuality)
+            end
+            CS.UnityEngine.PlayerPrefs.SetInt("CloseBigWorldHighFrameSettings", 1)
+        end
+    end
+
     XQualityManager.Init()
     return XQualityManager
 end

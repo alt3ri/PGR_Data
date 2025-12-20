@@ -39,7 +39,7 @@ end
 
 function XUiDlcRelinkPopupPlayerInvite:OnInviteClick(friendId)
     XDataCenter.ChatManager.SendChat(self:GetSendChat(friendId), function()
-        XUiManager.TipText("OnlineSendWorldSuccess")
+        self._Control:OpenCommonTipMsg(XUiHelper.GetText("OnlineSendWorldSuccess"))
     end, true)
 end
 

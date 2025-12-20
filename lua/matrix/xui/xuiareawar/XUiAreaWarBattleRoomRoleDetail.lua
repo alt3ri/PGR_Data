@@ -13,7 +13,10 @@ function XUiAreaWarBattleRoomRoleDetail:Ctor(blockId)
 end
 
 function XUiAreaWarBattleRoomRoleDetail:AOPOnStartBefore(rootUi)
-    rootUi.PanelAsset.gameObject:SetActiveEx(false)
+    local childCount = rootUi.PanelAsset.childCount
+    for i = 1, childCount do
+        rootUi.PanelAsset:GetChild(i-1).gameObject:SetActiveEx(false)
+    end
     rootUi.BtnFilter.gameObject:SetActiveEx(false)
 end
 
@@ -21,15 +24,17 @@ function XUiAreaWarBattleRoomRoleDetail:GetEntities(characterType)
     if self.Entities == nil then
         self.Entities = {}
     end
-    
-    characterType = characterType or 1
+
     local result = {}
-    if XTool.IsTableEmpty(self.Entities[characterType]) then
-        self.Entities[characterType] = XDataCenter.AreaWarManager.GetCanFightEntities(characterType)
-    end
-    for _, entity in ipairs(self.Entities[characterType]) do
-        if entity:GetCharacterViewModel():GetCharacterType() == characterType then
-            tableInsert(result, entity)
+    local characterTypes = characterType and 1 or { XEnumConst.CHARACTER.CharacterType.Normal, XEnumConst.CHARACTER.CharacterType.Isomer }
+    for _, cType in ipairs(characterTypes) do
+        if XTool.IsTableEmpty(self.Entities[cType]) then
+            self.Entities[cType] = XDataCenter.AreaWarManager.GetCanFightEntities(cType)
+        end
+        for _, entity in ipairs(self.Entities[cType]) do
+            if entity:GetCharacterViewModel():GetCharacterType() == cType then
+                tableInsert(result, entity)
+            end
         end
     end
     return result

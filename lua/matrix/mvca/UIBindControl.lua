@@ -357,6 +357,8 @@ local UIBindControl = {
     UiMainLine2Settlement = ModuleId.XMainLine2,
     UiMainLine2DetailAchievement = ModuleId.XMainLine2,
     UiMainLine2PopupChooseGender = ModuleId.XMainLine2,
+    UiMainLine2EggsTreasureTips = ModuleId.XMainLine2,
+    UiMainLine2EggsTreasureMail = ModuleId.XMainLine2,
     --endregion
 
     --region 幻痛囚笼
@@ -940,6 +942,8 @@ local UIBindControl = {
     UiTheatre5Story = ModuleId.XTheatre5,
     UiTheatre5PopupHandBook = ModuleId.XTheatre5,
     UiTheatre5PopupStrengthen = ModuleId.XTheatre5,
+    UiTheatre5PopupBacktrack = ModuleId.XTheatre5,
+    UiTheatre5PopupChoose = ModuleId.XTheatre5,
     UiTheatre5PopupNewSeason = ModuleId.XTheatre5,
     --endregion
     
@@ -962,10 +966,37 @@ local UIBindControl = {
     UiDlcRelinkPopupPlayerInvite = ModuleId.XDlcRelink,
     UiDlcRelinkChooseBoss = ModuleId.XDlcRelink,
     UiDlcRelinkCharacter = ModuleId.XDlcRelink,
+    UiDlcRelinkCharacterOther = ModuleId.XDlcRelink,
     UiDlcRelinkEquipBag = ModuleId.XDlcRelink,
     UiDlcRelinkEquipReform = ModuleId.XDlcRelink,
+    UiDlcRelinkEquipDecompose = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupEquipDecomposeResult = ModuleId.XDlcRelink,
     UiDlcRelinkPopupFilter = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupEquipCompose = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupEquipComposeResult = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupEquipAttributeDetail = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupEquipReformResult = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupEquipPresets = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupCharacterAttributeDetail = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupRename = ModuleId.XDlcRelink,
     UiDlcRelinkMatching = ModuleId.XDlcRelink,
+    UiDlcRelinkBubbleEquipDetail = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupCommon = ModuleId.XDlcRelink,
+    UiDlcRelinkToastCommon = ModuleId.XDlcRelink,
+    UiDlcRelinkToastCommonSmall = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupItemDetail = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupInvitation = ModuleId.XDlcRelink,
+    UiDlcRelinkSettlementNew = ModuleId.XDlcRelink,
+    UiDlcRelinkLoadingNew = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupResearch = ModuleId.XDlcRelink,
+    UiDlcRelinkToastResearchUp = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupSwitchCareer = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupExchangeWheel = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupSkillDetail = ModuleId.XDlcRelink,
+    UiDlcRelinkRank = ModuleId.XDlcRelink,
+    UiDlcRelinkLvReward = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupGetReward = ModuleId.XDlcRelink,
+    UiDlcRelinkShopItem = ModuleId.XDlcRelink,
     --endregion
 
     --region mini改造
@@ -1035,6 +1066,36 @@ local UIBindControl = {
     UiPlotExhibitionMain = ModuleId.XPlotExhibition,
     UiPlotExhibitionPopupPower = ModuleId.XPlotExhibition,
     --endregion
+    
+    --region 涂装套装
+    UiFashionSuitMain = ModuleId.XFashionSuit,
+    UiFashionSuitDetail = ModuleId.XFashionSuit,
+    UiFashionSuitPopupPic = ModuleId.XFashionSuit,
+    --endregion
+    
+    --region 全境特遣
+    UiAreaWarMain = ModuleId.XAreaWar,
+    UiAreaWarCollection = ModuleId.XAreaWar,
+    UiAreaWarPopupCollectionTip = ModuleId.XAreaWar,
+    UiAreaWarPopupSell = ModuleId.XAreaWar,
+    UiAreaWarPopupSellAll = ModuleId.XAreaWar,
+    UiAreaWarAuction = ModuleId.XAreaWar,
+    UiAreaWarStageDetail =  ModuleId.XAreaWar,
+    UiAreaWarPopupRecord = ModuleId.XAreaWar,
+    UiAreaWarPopupBuy = ModuleId.XAreaWar,
+    UiAreaWarRare = ModuleId.XAreaWar,
+    UiAreaWarFightResult = ModuleId.XAreaWar,
+    UiAreaWarDispatch = ModuleId.XAreaWar,
+    UiAreaWarBoss = ModuleId.XAreaWar,
+    UiAreaWarBossSpecial = ModuleId.XAreaWar,
+    UiAreaWarObtain = ModuleId.XAreaWar,
+    --endregion
+    
+    --region 空花签到
+    UiRadioSignMain = ModuleId.XRadioSign,
+    UiRadioSignPopupHall = ModuleId.XRadioSign,
+    --endregion
+
 }
 
 return UIBindControl

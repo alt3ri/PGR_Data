@@ -240,12 +240,18 @@ function XRaceAgency:IsRunninghMatch()
 end
 
 function XRaceAgency:NotifyRaceRoundStart(data)
+    if not self:GetIsOpen(true) then
+        return
+    end
     self._IsRunningMatch = true
     self._Model:NotifyRaceRoundStart(data)
     XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_START)
 end
 
 function XRaceAgency:NotifyRaceRoundEnd(data)
+    if not self:GetIsOpen(true) then
+        return
+    end
     self._IsRunningMatch = false
     self._Model:SetRoleRandomSite(nil)
     if self:IsEnterScene() then

@@ -141,6 +141,7 @@ function XBountyChallengeModel:SetServerData(data)
     end
 end
 
+---@return XTableBountyChallengeCharacterGroup
 function XBountyChallengeModel:GetCharacterGroup(characterGroupId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.BountyChallengeCharacterGroup, characterGroupId, true)
 end
@@ -159,6 +160,17 @@ function XBountyChallengeModel:GetTaskList(taskGroupId)
     for _, config in pairs(taskConfigs) do
         if config.TaskGroupId == taskGroupId then
             tasks[#tasks + 1] = config.TaskId
+        end
+    end
+    return tasks
+end
+
+function XBountyChallengeModel:GetTaskCfgList(taskGroupId)
+    local taskConfigs = self._ConfigUtil:GetByTableKey(TableKey.BountyChallengeTask)
+    local tasks = {}
+    for _, config in pairs(taskConfigs) do
+        if config.TaskGroupId == taskGroupId then
+            tasks[#tasks + 1] = config
         end
     end
     return tasks
@@ -275,7 +287,12 @@ function XBountyChallengeModel:GetCharacters(bossId, level)
     end
 
     local characterGroupConfig = self:GetCharacterGroup(characterGroupId)
-    return characterGroupConfig.CharacterIdList
+
+    if not XTool.IsTableEmpty(characterGroupConfig.RobotIds) then
+        return characterGroupConfig.RobotIds, true
+    end
+    
+    return characterGroupConfig.CharacterIdList, false
 end
 
 function XBountyChallengeModel:GetDefaultOpenStage()
@@ -284,6 +301,18 @@ function XBountyChallengeModel:GetDefaultOpenStage()
         return 1
     end
     return tonumber(config.Values[1]) or 1
+end
+
+function XBountyChallengeModel:GetConfigStr(key, index)
+    index = index or 1
+
+
+    local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.BountyChallengeConfig, key)
+    if config then
+        return config.Values[index] or ''
+    end
+    
+    return ''
 end
 
 function XBountyChallengeModel:SetTaskState(taskId, taskState)

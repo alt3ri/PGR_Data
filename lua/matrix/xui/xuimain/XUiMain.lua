@@ -79,6 +79,9 @@ function XUiMain:OnAwake()
 
     --self.Down.GameObject:SetActiveEx(not XUiManager.IsHideFunc)
     self.PanelLeftBottom.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
+
+    -- 设置修复-设置关掉空花高帧（开启游戏调用一次）
+    XDataCenter.XQualityManager.CloseBigWorldHighFrameSettings()
 end
 
 function XUiMain:OnStart()
@@ -160,7 +163,8 @@ function XUiMain:OnEnable()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
-    CS.XUwaGpmLuaAgent.ChangeScene("UiMain")
+    XUiHelper.SetSceneAnimHandler(self)
+    --CS.XUwaGpmLuaAgent.ChangeScene("UiMain")
 
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_ENABLE)
 end

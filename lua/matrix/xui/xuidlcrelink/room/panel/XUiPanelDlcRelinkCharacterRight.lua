@@ -1,5 +1,6 @@
-local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 local XUiGridDlcRelinkEquipment = require("XUi/XUiDlcRelink/Equip/Grid/XUiGridDlcRelinkEquipment")
+local XUiGridDlcRelinkCharacterProperty = require("XUi/XUiDlcRelink/Room/Grid/XUiGridDlcRelinkCharacterProperty")
+local XUiGridDlcRelinkCharacterSkill = require("XUi/XUiDlcRelink/Room/Grid/XUiGridDlcRelinkCharacterSkill")
 ---@class XUiPanelDlcRelinkCharacterRight : XUiNode
 ---@field private _Control XDlcRelinkControl
 ---@field Parent XUiDlcRelinkCharacter
@@ -10,15 +11,17 @@ function XUiPanelDlcRelinkCharacterRight:OnStart()
     self.PropertyItem.gameObject:SetActiveEx(false)
     self.GridEquipment.gameObject:SetActiveEx(false)
     self.GridSkill.gameObject:SetActiveEx(false)
-    self.RoleModelUi = self.Parent.UiModelGo.transform:FindTransform("PanelRoleModel")
-    ---@type XUiPanelRoleModel
-    self.RoleModel = XUiPanelRoleModel.New(self.RoleModelUi, self.Parent.Name, nil, true)
     self:RegisterUiEvents()
     self:InitBtnTab()
-    self.CurSelectIndex = 1
 
     ---@type XUiGridDlcRelinkEquipment[]
     self.EquipmentGridList = {}
+    ---@type XUiGridDlcRelinkCharacterProperty[]
+    self.PropertyGridList = {}
+    ---@type XUiGridDlcRelinkCharacterSkill[]
+    self.SkillGridList = {}
+    self.CurSelectSkillId = 0
+    self.CurSelectSkillGrid = nil
 end
 
 function XUiPanelDlcRelinkCharacterRight:Refresh(characterId)
@@ -26,9 +29,29 @@ function XUiPanelDlcRelinkCharacterRight:Refresh(characterId)
     self.OccupationType = self._Control:GetOccupationTypeByCharacterId(characterId)
     self:RefreshInfo()
     self:RefreshAttributes()
-    self.BtnTab:SelectIndex(self.CurSelectIndex)
-    self:RefreshModel()
+    self.BtnTab:SelectIndex(1)
     self:RefreshBtn()
+end
+
+function XUiPanelDlcRelinkCharacterRight:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_DLC_RELINK_USE_EQUIP_PRESET,
+        XEventId.EVENT_DLC_RELINK_SWITCH_OCCUPATION,
+    }
+end
+
+function XUiPanelDlcRelinkCharacterRight:OnNotify(event, ...)
+    local args = { ... }
+    if event == XEventId.EVENT_DLC_RELINK_USE_EQUIP_PRESET then
+        if args[1] == self.CharacterId then
+            self:RefreshAttributes()
+            self:RefreshPanelEquipment()
+        end
+    elseif event == XEventId.EVENT_DLC_RELINK_SWITCH_OCCUPATION then
+        if args[1] == self.CharacterId then
+            self:RefreshAttributes()
+        end
+    end
 end
 
 function XUiPanelDlcRelinkCharacterRight:InitBtnTab()
@@ -37,24 +60,27 @@ function XUiPanelDlcRelinkCharacterRight:InitBtnTab()
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnTabClick(index)
-    self.CurSelectIndex = index
     if index == 1 then
         self.PanelEquipment.gameObject:SetActiveEx(true)
         self.PanelSkill.gameObject:SetActiveEx(false)
         self:RefreshPanelEquipment()
+        self:CloseSkillGrid()
     elseif index == 2 then
         self.PanelEquipment.gameObject:SetActiveEx(false)
         self.PanelSkill.gameObject:SetActiveEx(true)
         self:RefreshPanelSkill()
+        self:CloseEquipmentGrid()
     end
 end
 
 function XUiPanelDlcRelinkCharacterRight:RefreshPanelEquipment()
-    -- 装备总等级
-    local totalLv = self._Control:GetEquipTotalAbilityByCharacterId(self.CharacterId)
-    self.TxtLv.text = string.format(self._Control:GetClientConfig("EquipLevelDesc"), totalLv)
+    -- 装备总战力
+    local totalAbility = self._Control:GetEquipTotalAbilityByCharacterId(self.CharacterId)
+    self.TxtLv.text = string.format(self._Control:GetClientConfig("EquipLevelDesc"), totalAbility)
     -- 装备槽位
-    for index = 1, XEnumConst.DlcRelink.EquipSlotCount do
+    local isShowRedDot = false
+    local equipSlotIndexMap = self._Control:GetEquipSlotIndexMap()
+    for index, slotIndex in ipairs(equipSlotIndexMap) do
         local grid = self.EquipmentGridList[index]
         if not grid then
             local parent = self[string.format("GridEquipment0%d", index)]
@@ -67,25 +93,92 @@ function XUiPanelDlcRelinkCharacterRight:RefreshPanelEquipment()
             self.EquipmentGridList[index] = grid
         end
         grid:Open()
-        local equipUId = self._Control:GetEquipUIdByCharacterId(self.CharacterId, index)
-        local isUnLock = true -- TODO 装备槽位是否解锁
-        grid:Refresh(equipUId, index)
+        local equipUid = self._Control:GetEquipUidByCharacterId(self.CharacterId, slotIndex)
+        local isUnLock = self._Control:CheckEquipSlotIsUnlocked(self.CharacterId, slotIndex)
+        grid:Refresh(equipUid, slotIndex)
         grid:SetLock(not isUnLock)
-        grid:SetAdd(isUnLock and not XTool.IsNumberValid(equipUId))
-        -- TODO 当装备有空槽,并且有可穿戴装备时,需要有蓝点,穿戴后消失
+        grid:SetAdd(isUnLock and not XTool.IsNumberValid(equipUid))
+        local unWeareEquipUids = self._Control:GetUnWearEquipUidListBySlot(slotIndex)
+        local hasRedDot = isUnLock and not XTool.IsNumberValid(equipUid) and not XTool.IsTableEmpty(unWeareEquipUids)
+        grid:SetRedDot(hasRedDot)
+        isShowRedDot = isShowRedDot or hasRedDot
     end
+    self.BtnEquipment:ShowReddot(isShowRedDot)
 end
 
 ---@param grid XUiGridDlcRelinkEquipment
 function XUiPanelDlcRelinkCharacterRight:OnEquipGridCallBack(grid)
-    -- TODO 未解锁的装备槽需要显示上锁标识,点击出现toast:xxx后可解锁该槽位
-    -- TODO 未装备任何装备,并且库存也无任何装备时,点击无法进入详情,并且出现toast:暂未获得任何装备哦
-    -- TODO 打开15界面-装备详情,并且选中对应位置
-    XLuaUiManager.Open("UiDlcRelinkEquipBag", self.CharacterId, grid:GetIndex())
+    -- 检查槽位是否解锁
+    local slotIndex = grid:GetSlotIndex()
+    local isUnLock, unlockDesc = self._Control:CheckEquipSlotIsUnlocked(self.CharacterId, slotIndex)
+    if not isUnLock then
+        self._Control:OpenCommonTipMsg(unlockDesc)
+        return
+    end
+    -- 打开装备背包
+    local curCount, _ = self._Control:GetEquipBagCurCountAndMaxCount()
+    if curCount <= 0 then
+        self._Control:OpenCommonTipText("EquipBagEmpty")
+        return
+    end
+    XLuaUiManager.Open("UiDlcRelinkEquipBag", self.CharacterId, slotIndex)
 end
 
 function XUiPanelDlcRelinkCharacterRight:RefreshPanelSkill()
+    local originalSkillIds = self._Control:GetCharacterSkillIds(self.CharacterId, self.OccupationType)
+    local curSkillIds = self._Control:GetCharacterSkillIdsByCharacterId(self.CharacterId, self.OccupationType)
+    for index, skillId in pairs(curSkillIds) do
+        local grid = self.SkillGridList[index]
+        if not grid then
+            local go = XUiHelper.Instantiate(self.GridSkill, self.PanelSkill)
+            grid = XUiGridDlcRelinkCharacterSkill.New(go, self, handler(self, self.OnSkillGridCallBack))
+            self.SkillGridList[index] = grid
+        end
+        grid:Open()
+        grid:Refresh(skillId, self.CharacterId, skillId ~= originalSkillIds[index])
+    end
+    for i = #curSkillIds + 1, #self.SkillGridList do
+        self.SkillGridList[i]:Close()
+    end
+end
 
+---@param grid XUiGridDlcRelinkCharacterSkill
+function XUiPanelDlcRelinkCharacterRight:OnSkillGridCallBack(grid)
+    local skillId = grid:GetSkillId()
+    if not XTool.IsNumberValid(skillId) then
+        return
+    end
+    if self.CurSelectSkillId == skillId then
+        return
+    end
+    if self.CurSelectSkillGrid then
+        self.CurSelectSkillGrid:SetSelect(false)
+    end
+    grid:SetSelect(true)
+    self.CurSelectSkillId = skillId
+    self.CurSelectSkillGrid = grid
+    -- 打开技能详情
+    XLuaUiManager.Open("UiDlcRelinkPopupSkillDetail", skillId, self.CharacterId, grid:GetIsRemodel(), handler(self, self.OnSkillDetailClose))
+end
+
+function XUiPanelDlcRelinkCharacterRight:OnSkillDetailClose()
+    if self.CurSelectSkillGrid then
+        self.CurSelectSkillGrid:SetSelect(false)
+    end
+    self.CurSelectSkillId = 0
+    self.CurSelectSkillGrid = nil
+end
+
+function XUiPanelDlcRelinkCharacterRight:CloseEquipmentGrid()
+    for _, grid in pairs(self.EquipmentGridList) do
+        grid:Close()
+    end
+end
+
+function XUiPanelDlcRelinkCharacterRight:CloseSkillGrid()
+    for _, grid in pairs(self.SkillGridList) do
+        grid:Close()
+    end
 end
 
 function XUiPanelDlcRelinkCharacterRight:RefreshInfo()
@@ -98,22 +191,46 @@ function XUiPanelDlcRelinkCharacterRight:RefreshInfo()
 end
 
 function XUiPanelDlcRelinkCharacterRight:RefreshAttributes()
-    -- TODO 刷新属性
-end
+    local curPlayerLevel = self._Control:GetCurrentPlayerLevel()
+    local equipUids = self._Control:GetWearEquipUidsByCharacterId(self.CharacterId)
+    local totalAttributes = self._Control:GetTotalAttributes(self.CharacterId, curPlayerLevel, equipUids)
 
-function XUiPanelDlcRelinkCharacterRight:RefreshModel()
-    self.RoleModel:ShowRoleModel()
-    self.RoleModel:UpdateCharacterModel(self.CharacterId, self.RoleModelUi, self.Parent.Name, function(model)
-        self.Parent.PanelDrag.Target = model.transform
-    end, nil)
+    local maxCount = XEnumConst.DlcRelink.MaxAttributeCount
+    local showCount = 0
+    local totalLen = #totalAttributes
+    local loopCount = math.min(totalLen, maxCount)
+
+    for index = 1, loopCount do
+        local attribute = totalAttributes[index]
+        local grid = self.PropertyGridList[index]
+        if not grid then
+            local go = XUiHelper.Instantiate(self.PropertyItem, self.Properties)
+            grid = XUiGridDlcRelinkCharacterProperty.New(go, self)
+            self.PropertyGridList[index] = grid
+        end
+        grid:Open()
+        local attrValue = attribute.CharacterValue + attribute.PlayerValue + attribute.EquipValue
+        grid:Refresh(attribute.AttrStr, attrValue)
+        grid:SetBg(index % 2 ~= 0)
+        showCount = index
+    end
+
+    for i = showCount + 1, #self.PropertyGridList do
+        self.PropertyGridList[i]:Close()
+    end
 end
 
 function XUiPanelDlcRelinkCharacterRight:RefreshBtn()
+    -- 切换职业按钮
     local occupationIcon = self._Control:GetClientConfig("CharacterOccupationIcon", self.OccupationType)
     if not string.IsNilOrEmpty(occupationIcon) then
         self.BtnSwitch:SetRawImage(occupationIcon)
     end
+    -- 红点
+    local isShowRedPoint = self._Control:CheckCharacterHasAnyNewOccupation(self.CharacterId)
+    self.BtnSwitch:ShowReddot(isShowRedPoint)
 
+    -- 出战按钮
     local isOriginal = self.CharacterId == self.Parent.OriginalCharacterId
     local btnDesc = self._Control:GetClientConfig("CharacterBtnBattleDesc", isOriginal and 2 or 1)
     self.BtnBattle:SetNameByGroup(0, btnDesc)
@@ -121,23 +238,26 @@ function XUiPanelDlcRelinkCharacterRight:RefreshBtn()
 end
 
 function XUiPanelDlcRelinkCharacterRight:RegisterUiEvents()
-    XUiHelper.RegisterClickEvent(self, self.BtnSwitch, self.OnBtnSwitchClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnMore, self.OnBtnMoreClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnPresets, self.OnBtnPresetsClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnBattle, self.OnBtnBattleClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnLv, self.OnBtnLvClick, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnSwitch, self.OnBtnSwitchClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnMore, self.OnBtnMoreClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnPresets, self.OnBtnPresetsClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnBattle, self.OnBtnBattleClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnLv, self.OnBtnLvClick, true, true)
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnSwitchClick()
-    -- TODO 打开10弹窗-切换职业 固定显示5条
+    XLuaUiManager.Open("UiDlcRelinkPopupSwitchCareer", self.CharacterId, self.OccupationType, function()
+        self.OccupationType = self._Control:GetOccupationTypeByCharacterId(self.CharacterId)
+        self:RefreshBtn()
+    end)
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnMoreClick()
-    -- TODO 打开11弹窗·属性总览
+    XLuaUiManager.Open("UiDlcRelinkPopupCharacterAttributeDetail", self.CharacterId)
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnPresetsClick()
-    -- TODO 打开13弹窗·装备预设
+    XLuaUiManager.Open("UiDlcRelinkPopupEquipPresets", self.CharacterId)
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnBattleClick()
@@ -145,24 +265,18 @@ function XUiPanelDlcRelinkCharacterRight:OnBtnBattleClick()
         return
     end
 
-    if XMVCA.XDlcRoom:IsInRoom() then
-        XMVCA.XDlcRoom:SelectCharacter(self.CharacterId)
+    if not self._Control:AbleSyncDataToMatchServer() then
         return
     end
-
-    if XMVCA.XDlcRoom:IsMatching() then
-        XUiManager.TipCode(XCode.MatchPlayerIsMatching)
-        return
-    end
-
-    local configId = self._Control:GetCharacterConfigId(self.CharacterId, self.OccupationType)
-    self._Control:RequestSwitchBattleCharacter(configId, function()
-        self.Parent:EndSelectingAndClose()
-    end)
+    self._Control:RequestSwitchBattleCharacter(self.CharacterId)
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnLvClick()
-    -- TODO 打开11弹窗-属性总览
+    local equipDict = self._Control:GetWearEquipUidsByCharacterId(self.CharacterId)
+    if XTool.IsTableEmpty(equipDict) then
+        return
+    end
+    XLuaUiManager.Open("UiDlcRelinkPopupEquipAttributeDetail", XTool.CloneEx(equipDict), self.CharacterId)
 end
 
 return XUiPanelDlcRelinkCharacterRight

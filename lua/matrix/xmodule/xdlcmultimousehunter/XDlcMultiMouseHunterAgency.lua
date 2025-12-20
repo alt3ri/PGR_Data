@@ -58,6 +58,7 @@ end
 function XDlcMultiMouseHunterAgency:InitEvent()
     -- 实现跨Agency事件注册
     -- self:AddAgencyEvent()
+    XMVCA.XDlcHelper:AddDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.MouseHunter, self)
 end
 
 function XDlcMultiMouseHunterAgency:OpenMainUi()
@@ -514,6 +515,10 @@ end
 
 function XDlcMultiMouseHunterAgency:GetFinishStageCount()
     return self._Model:GetFinishStageCount()
+end
+
+function XDlcMultiMouseHunterAgency:ExGetDlcModelIdByCharacterData(characterData)
+    return ""
 end
 
 return XDlcMultiMouseHunterAgency

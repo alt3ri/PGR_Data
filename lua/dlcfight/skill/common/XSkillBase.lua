@@ -294,19 +294,25 @@ end
 
 ---@desc 对索敌目标(敌人)释放技能，若无索敌目标，则对Npc面前10米处释放
 function XSkillBase:CastActionBySearchEnemy(actionId)
-    self._proxy:AbortAction(self._uuid, true)
+    -- self._proxy:AbortAction(self._uuid, true, false)
     local LauncherId = self._uuid
     local searchId = self._proxy:GetFirstSearchTarget(self._uuid, ENpcTargetType.Enemy)
-    if not (searchId == 0) then
-        self._proxy:SetSoftLock(searchId) --直接使用新索敌获得目标设置为软锁目标，新索敌获得的id不可读，为组合生成内容
+    local curTarId = self._proxy:GetLockTarget(LauncherId)
+    if searchId ~= 0 and searchId ~= curTarId then
+        self._proxy:SetSoftLock(LauncherId, searchId) --直接使用新索敌获得目标设置为软锁目标，新索敌获得的id不可读，为组合生成内容
         local locktargetid, npcid = self._proxy:GetLockTarget()--转换新索敌目标为搜索目标id，npcuuid
         self._proxy:SetNpcFocusTarget(LauncherId, npcid)  --镜头锁定
-        return self._proxy:CastSkillActionToSearchTargetNotCheck(self._uuid, actionId, searchId)
+        curTarId = searchId
     end
-    local pos = self._proxy:GetNpcPosition(self._uuid)
-    local facing = self._proxy:GetNpcRotation(self._uuid)
-    local tarPos = pos + facing * 10
-    return self._proxy:CastSkillActionToPositionNotCheck(self._uuid, actionId, tarPos)
+
+    if curTarId ~= 0 then
+        return self._proxy:CastSkillActionToSearchTargetNotCheck(self._uuid, actionId, searchId)
+    else
+        local pos = self._proxy:GetNpcPosition(self._uuid)
+        local facing = self._proxy:GetNpcRotation(self._uuid)
+        local tarPos = pos + facing * 10
+        return self._proxy:CastSkillActionToPositionNotCheck(self._uuid, actionId, tarPos)
+    end
 end
 
 ---@desc 检查输入是否通过

@@ -1451,6 +1451,24 @@ XNoticeManagerCreator = function()
                 return false
             end
         end
+        
+        local pkgInfoList = notice.PkgInfoList
+
+        if pkgInfoList then
+            local myPkgId = XHeroSdkManager.GetCurPkgId()
+            local isMyPkgIdInclude = false
+            for i = 1, #pkgInfoList do
+                local pkgId = pkgInfoList[i]
+                if pkgId == myPkgId then
+                    isMyPkgIdInclude = true
+                    break
+                end
+            end
+
+            if not isMyPkgIdInclude then
+                return false
+            end
+        end
 
         local appChannelInfoList = notice.AppChannelInfoList
         if appChannelInfoList then

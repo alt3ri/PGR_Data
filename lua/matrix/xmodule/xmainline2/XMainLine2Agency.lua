@@ -184,6 +184,15 @@ function XMainLine2Agency:ReceiveMainTreasureRequest(mainId, cb)
         if cb then cb() end
     end)
 end
+
+--- 请求领取彩蛋奖励
+function XMainLine2Agency:RequestMainLine2ReceiveEggsTreasure(chapterId, eggId, cb)
+    local req = { ChapterId = chapterId, EggId = eggId }
+    XNetwork.CallWithAutoHandleErrorCode("MainLine2ReceiveEggsTreasureRequest", req, function(res)
+        self._Model:AddEggData(eggId)
+        if cb then cb(res.RewardGoodsList) end
+    end)
+end
 --endregion
 
 
@@ -1160,5 +1169,26 @@ function XMainLine2Agency:RecordEnterChapterWay(way)
     dict["way"] = way
     CS.XRecord.Record(dict, "200023", "EnterChapterWay")
 end
+
+--region 彩蛋功能
+-- 检测是否打开彩蛋弹窗功能
+function XMainLine2Agency:CheckOpenUiEggsTreasureTips(chapterId)
+    if XLuaUiManager.IsUiLoad("UiMainLine2EggsTreasureTips") or XLuaUiManager.IsUiLoad("UiMainLine2EggsTreasureMail") then
+        return
+    end
+    
+    local eggIds = self._Model:GetChapterEggIds(chapterId)
+    for _, eggId in pairs(eggIds) do
+        if not self._Model:IsEggGet(eggId) then
+            local conditionId = self._Model:GetEggConditionId(eggId)
+            local isReach, desc = XConditionManager.CheckCondition(conditionId)
+            if isReach then
+                XLuaUiManager.Open("UiMainLine2EggsTreasureTips", chapterId, eggId)
+                return
+            end
+        end
+    end
+end
+--endregion
 
 return XMainLine2Agency

@@ -24,6 +24,7 @@ function XUiSceneTip:OnEnable()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiSceneTip:OnDisable()

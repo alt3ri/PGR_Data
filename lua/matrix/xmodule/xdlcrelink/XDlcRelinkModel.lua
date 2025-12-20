@@ -8,9 +8,15 @@
 --=============
 local DlcRelinkTableKey = {
     DlcRelinkActivity = { CacheType = XConfigUtil.CacheType.Normal },
-    DlcRelinkChapter = { Identifier = "ChapterId", },
+    DlcRelinkChapter = {
+        Identifier = "ChapterId",
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
     DlcRelinkCharacter = {},
-    DlcRelinkLevel = { Identifier = "LevelId", },
+    DlcRelinkLevel = {
+        Identifier = "LevelId",
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
     DlcRelinkDropGroup = {},
     DlcRelinkRewardGroup = {},
     DlcRelinkPlayerLevel = { Identifier = "Level", },
@@ -21,6 +27,7 @@ local DlcRelinkTableKey = {
     DlcRelinkCompose = {},
     DlcRelinkComposePool = {},
     DlcRelinkBreak = { Identifier = "BreakEquipId", },
+    DlcRelinkTextEmoji = {},
     DlcRelinkConfig = {
         ReadFunc = XConfigUtil.ReadType.String,
         Identifier = "Key",
@@ -29,6 +36,24 @@ local DlcRelinkTableKey = {
     DlcRelinkEquipSkillFactor = { DirPath = XConfigUtil.DirectoryType.Client, },
     DlcRelinkWorld = {
         ReadFunc = XConfigUtil.ReadType.String,
+        DirPath = XConfigUtil.DirectoryType.Client,
+    },
+    DlcRelinkMedalTag = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+    },
+    DlcRelinkCharacterAttrib = {
+        ReadFunc = XConfigUtil.ReadType.String,
+        DirPath = XConfigUtil.DirectoryType.Client,
+        Identifier = "Key",
+    },
+    DlcRelinkSkillDesc = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+    },
+    DlcRelinkShopTask = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
+    DlcRelinkShowLevelDrop = {
         DirPath = XConfigUtil.DirectoryType.Client,
     },
     DlcRelinkClientConfig = {
@@ -46,6 +71,13 @@ function XDlcRelinkModel:OnInit()
     --初始化内部变量
     --这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
     self._ConfigUtil:InitConfigByTableKey("DlcWorld/DlcRelink", DlcRelinkTableKey)
+
+    -- 通用弹框-本次登录不再提醒 [key] = true/false
+    self.CommonTipNoRemindMap = {}
+
+    -- 结算缓存数据
+    ---@type XDlcRelinkSettlementCache
+    self.SettlementCacheData = nil
 end
 
 function XDlcRelinkModel:ClearPrivate()
@@ -55,15 +87,31 @@ end
 function XDlcRelinkModel:ResetAll()
     --这里执行重登数据清理
     self.ActivityData = nil
+    self.CommonTipNoRemindMap = {}
+    self.SettlementCacheData = nil
 end
 
 --region 服务端信息更新和获取
 
 function XDlcRelinkModel:NotifyActivityData(data)
+    if not XTool.IsNumberValid(data.ActivityId) then
+        return
+    end
+
     if not self.ActivityData then
         self.ActivityData = require("XModule/XDlcRelink/XEntity/XDlcRelinkActivity").New()
     end
     self.ActivityData:NotifyActivityData(data)
+end
+
+--- 检查关卡是否通关
+---@param levelId number 关卡Id
+---@return boolean 是否通关
+function XDlcRelinkModel:CheckLevelPassed(levelId)
+    if not XTool.IsNumberValid(levelId) or not self.ActivityData then
+        return false
+    end
+    return self.ActivityData:IsLevelPassed(levelId)
 end
 
 --endregion
@@ -82,10 +130,16 @@ function XDlcRelinkModel:GetActivityConfig()
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkActivity, curActivityId)
 end
 
--- 获取活动时间Id
+--- 获取活动时间Id
 function XDlcRelinkModel:GetActivityTimeId()
     local config = self:GetActivityConfig()
     return config and config.TimeId or 0
+end
+
+--- 获取活动章节Ids
+function XDlcRelinkModel:GetActivityChapterIds()
+    local config = self:GetActivityConfig()
+    return config and config.ChapterIds or {}
 end
 
 --endregion
@@ -101,6 +155,11 @@ function XDlcRelinkModel:GetChapterConfig(chapterId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkChapter, chapterId)
 end
 
+function XDlcRelinkModel:GetChapterLevelIds(chapterId)
+    local config = self:GetChapterConfig(chapterId)
+    return config and config.LevelIds or {}
+end
+
 --endregion
 
 --region 角色表相关
@@ -111,8 +170,8 @@ function XDlcRelinkModel:GetCharacterConfigs()
 end
 
 ---@return XTableDlcRelinkCharacter
-function XDlcRelinkModel:GetCharacterConfig(id)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkCharacter, id)
+function XDlcRelinkModel:GetCharacterConfig(id, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkCharacter, id, noTips)
 end
 
 --endregion
@@ -127,6 +186,46 @@ end
 ---@return XTableDlcRelinkLevel
 function XDlcRelinkModel:GetLevelConfig(levelId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkLevel, levelId)
+end
+
+function XDlcRelinkModel:GetLevelPreLevelId(levelId)
+    local config = self:GetLevelConfig(levelId)
+    return config and config.PreLevelId or 0
+end
+
+function XDlcRelinkModel:GetLevelTimeId(levelId)
+    local config = self:GetLevelConfig(levelId)
+    return config and config.TimeId or 0
+end
+
+function XDlcRelinkModel:GetLevelConditionIds(levelId)
+    local config = self:GetLevelConfig(levelId)
+    return config and config.Condition or {}
+end
+
+--- 检查等级是否解锁
+function XDlcRelinkModel:CheckLevelUnlock(levelId)
+    if not XTool.IsNumberValid(levelId) then
+        return false
+    end
+
+    local preLevelId = self:GetLevelPreLevelId(levelId)
+    if preLevelId > 0 and not self:CheckLevelPassed(preLevelId) then
+        return false
+    end
+
+    local timeId = self:GetLevelTimeId(levelId)
+    if timeId > 0 and not XFunctionManager.CheckInTimeByTimeId(timeId) then
+        return false
+    end
+
+    local conditionIds = self:GetLevelConditionIds(levelId)
+    for _, conditionId in ipairs(conditionIds) do
+        if conditionId > 0 and not XConditionManager.CheckCondition(conditionId) then
+            return false
+        end
+    end
+    return true
 end
 
 --endregion
@@ -271,16 +370,16 @@ end
 
 --endregion
 
---region 配置表相关
+--region 表情表相关
 
----@return XTableDlcRelinkConfig[]
-function XDlcRelinkModel:GetConfigConfigs()
-    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkConfig)
+---@return XTableDlcRelinkTextEmoji[]
+function XDlcRelinkModel:GetTextEmojiConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkTextEmoji)
 end
 
----@return XTableDlcRelinkConfig
-function XDlcRelinkModel:GetConfigConfig(key)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkConfig, key)
+---@return XTableDlcRelinkTextEmoji
+function XDlcRelinkModel:GetTextEmojiConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkTextEmoji, id)
 end
 
 --endregion
@@ -362,6 +461,88 @@ end
 
 --endregion
 
+--region 勋章标签表相关
+
+---@return XTableDlcRelinkMedalTag[]
+function XDlcRelinkModel:GetMedalTagConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkMedalTag)
+end
+
+---@return XTableDlcRelinkMedalTag
+function XDlcRelinkModel:GetMedalTagConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkMedalTag, id)
+end
+
+--endregion
+
+--region 角色属性表相关
+
+---@return XTableDlcRelinkCharacterAttrib[]
+function XDlcRelinkModel:GetCharacterAttribConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkCharacterAttrib)
+end
+
+---@return XTableDlcRelinkCharacterAttrib
+function XDlcRelinkModel:GetCharacterAttribConfig(key, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkCharacterAttrib, key, noTips)
+end
+
+--endregion
+
+--region 技能描述表相关
+
+---@return XTableDlcRelinkSkillDesc[]
+function XDlcRelinkModel:GetSkillDescConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkSkillDesc)
+end
+
+---@return XTableDlcRelinkSkillDesc
+function XDlcRelinkModel:GetSkillDescConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkSkillDesc, id)
+end
+
+--endregion
+
+--region 商店任务表相关
+
+---@return XTableDlcRelinkShopTask[]
+function XDlcRelinkModel:GetShopTaskConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkShopTask)
+end
+
+---@return XTableDlcRelinkShopTask
+function XDlcRelinkModel:GetShopTaskConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkShopTask, id)
+end
+
+--endregion
+
+--region 展示关卡掉落表相关
+
+---@return XTableDlcRelinkShowLevelDrop[]
+function XDlcRelinkModel:GetShowLevelDropConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkShowLevelDrop)
+end
+
+---@return XTableDlcRelinkShowLevelDrop
+function XDlcRelinkModel:GetShowLevelDropConfig(id, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkShowLevelDrop, id, noTips)
+end
+
+--endregion
+
+--region 配置表相关
+
+function XDlcRelinkModel:GetConfig(key, index)
+    local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkConfig, key)
+    if not config then
+        return nil
+    end
+    return config.Param and config.Param[index]
+end
+
+--endregion
+
 --region 客户端配置表相关
 
 function XDlcRelinkModel:GetClientConfig(key, index)
@@ -378,6 +559,86 @@ function XDlcRelinkModel:GetClientConfigParams(key)
         return nil
     end
     return config.Params
+end
+
+--endregion
+
+--region 结算相关
+
+--- 记录研发等级和研发经验
+---@param level number 当前等级
+---@param exp number 当前经验
+function XDlcRelinkModel:RecordSettlementLevelAndExp(level, exp)
+    self.SettlementCacheData = self.SettlementCacheData or {}
+    self.SettlementCacheData.CurLevel = level or 0
+    self.SettlementCacheData.CurExp = exp or 0
+    self.SettlementCacheData.LastLevel = self.ActivityData:GetLevel()
+    self.SettlementCacheData.LastExp = self.ActivityData:GetExp()
+end
+
+--endregion
+
+--region 本地信息相关
+
+--- 获取关卡查看状态的存储Key
+function XDlcRelinkModel:GetLevelViewedKey(levelId)
+    local activityId = self.ActivityData and self.ActivityData:GetActivityId() or 0
+    return string.format("DlcRelinkLevelViewed_%s_%s_%s", XPlayer.Id, activityId, levelId)
+end
+
+--- 检查关卡是否已查看
+function XDlcRelinkModel:CheckLevelViewed(levelId)
+    if not XTool.IsNumberValid(levelId) then
+        return true
+    end
+    local key = self:GetLevelViewedKey(levelId)
+    return XSaveTool.GetData(key) or false
+end
+
+--- 记录关卡为已查看
+function XDlcRelinkModel:RecordLevelViewed(levelId)
+    if not XTool.IsNumberValid(levelId) then
+        return
+    end
+    local key = self:GetLevelViewedKey(levelId)
+    if not XSaveTool.GetData(key) then
+        XSaveTool.SaveData(key, true)
+    end
+end
+
+--endregion
+
+--region 红点相关
+
+--- 检查关卡是否有新解锁的红点
+function XDlcRelinkModel:CheckLevelHasNewUnlock(levelId)
+    if not XTool.IsNumberValid(levelId) then
+        return false
+    end
+    -- 如果关卡未解锁，不显示红点
+    if not self:CheckLevelUnlock(levelId) then
+        return false
+    end
+    -- 如果关卡已查看过，不显示红点
+    if self:CheckLevelViewed(levelId) then
+        return false
+    end
+    return true
+end
+
+--- 检查章节下是否有任何新解锁的关卡
+function XDlcRelinkModel:CheckChapterHasAnyNewLevel(chapterId)
+    if not XTool.IsNumberValid(chapterId) then
+        return false
+    end
+
+    local levelIds = self:GetChapterLevelIds(chapterId)
+    for _, levelId in ipairs(levelIds) do
+        if self:CheckLevelHasNewUnlock(levelId) then
+            return true
+        end
+    end
+    return false
 end
 
 --endregion

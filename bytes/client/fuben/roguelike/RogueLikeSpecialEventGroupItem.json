@@ -1,1722 +1,1722 @@
 [
     {
         "Id": 1,
-        "Title": "\u8be1\u5f02\u7684\u8f66\u8f86",
+        "Title": "Strange Vehicle",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5728\u8def\u8fb9\u627e\u5230\u4e00\u8f86\u8f66\uff0c\u770b\u8d77\u6765\u53ea\u9700\u8981\u52a0\u6cb9\u5c31\u53ef\u4ee5\u542f\u52a8\u3002",
+        "Description": "You find a car on the shoulder of the road. Its engine seems to need a bit of fuel to get it going.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[2, 3, 4]",
-        "OptionDesc": "['\u53bb\u9644\u8fd1\u7684\u52a0\u6cb9\u7ad9\u770b\u770b', '\u5728\u62a5\u5e9f\u7684\u8f66\u4e0a\u78b0\u78b0\u8fd0\u6c14', '\u52a0\u70b9\u5faa\u73af\u6db2\u8fdb\u53bb\u8bd5\u8bd5\uff1f']"
+        "OptionDesc": "['Check the nearby gas station.', 'Try to start the abandoned car anyway.', 'Fill the fuel tank with vital fluid.']"
     },
     {
         "Id": 2,
-        "Title": "\u8be1\u5f02\u7684\u8f66\u8f86",
+        "Title": "Strange Vehicle",
         "Icon": null,
-        "Description": "\u52a0\u6cb9\u7ad9\u5df2\u7ecf\u6ca1\u6709\u6cb9\u4e86\uff0c\u4f60\u4eec\u53ea\u627e\u5230\u4e86\u4e00\u4e9b\u8865\u7ed9\uff0c\u8fd8\u9047\u5230\u4e86\u5728\u9644\u8fd1\u6e38\u8361\u7684\u75af\u5b50\u3002",
+        "Description": "There is no petrol left in the gas station. You only find some supplies and a bunch of wandering lunatics.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 3,
-        "Title": "\u8be1\u5f02\u7684\u8f66\u8f86",
+        "Title": "Strange Vehicle",
         "Icon": null,
-        "Description": "\u901a\u8fc7\u8f6f\u7ba1\u5438\u53d6\u5230\u4e86\u4e00\u4e9b\u6cb9\uff0c\u8db3\u591f\u652f\u6301\u63a5\u4e0b\u6765\u7684\u4e00\u6bb5\u8def\u7a0b\u3002",
+        "Description": "A little petrol flows into the fuel tank. It should now be able to run for a while.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 4,
-        "Title": "\u8be1\u5f02\u7684\u8f66\u8f86",
+        "Title": "Strange Vehicle",
         "Icon": null,
-        "Description": "\u2026\u2026\u4f60\u5728\u60f3\u4ec0\u4e48\u5462\uff1f",
+        "Description": "...What is on your mind?",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 5,
-        "Title": "\u8ddf\u8e2a\u8005",
+        "Title": "Stalker",
         "Icon": null,
-        "Description": "\u6447\u66f3\u7684\u6811\u5f71\uff0c\u95ea\u70c1\u7684\u706f\u5149\uff0c\u4f34\u968f\u7740\u524d\u884c\u7684\u811a\u6b65\u4e0d\u65ad\u51fa\u73b0\u7684\u7ec6\u5fae\u58f0\u54cd\u2026\u2026\u4f60\u603b\u89c9\u5f97\u6709\u4eba\u5728\u8ddf\u7740\u4f60\u3002",
+        "Description": "The trees rustle and the light flickers. You hear stealthy footsteps behind you... It feels like someone is following you.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[6, 7, 8]",
-        "OptionDesc": "['\u4e0d\u7ba1\u662f\u8c01\u548c\u4ed6\u62fc\u4e86', '\u7ed5\u8def\u7529\u5f00', '\u8f6c\u79fb\u6ce8\u610f']"
+        "OptionDesc": "['Fight whoever it is.', 'Try to get rid of it.', 'Distract the stalker.']"
     },
     {
         "Id": 6,
-        "Title": "\u8ddf\u8e2a\u8005",
+        "Title": "Stalker",
         "Icon": null,
-        "Description": "\u4f60\u679c\u7136\u5728\u8def\u706f\u540e\u53d1\u73b0\u4e86\u9b3c\u9b3c\u795f\u795f\u7684\u4eba\u5f71\uff0c\u4f60\u4eec\u6253\u4e86\u4e00\u67b6\u3002",
+        "Description": "You notice a figure hiding behind a streetlight and decide to teach him a lesson.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 7,
-        "Title": "\u8ddf\u8e2a\u8005",
+        "Title": "Stalker",
         "Icon": null,
-        "Description": "\u867d\u7136\u7ed5\u4e86\u8fdc\u8def\uff0c\u4f46\u8fd9\u662f\u6700\u7a33\u59a5\u7684\u9009\u62e9\u3002",
+        "Description": "A longer route, but the safest play.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 8,
-        "Title": "\u8ddf\u8e2a\u8005",
+        "Title": "Stalker",
         "Icon": null,
-        "Description": "\u4f60\u5411\u8eab\u540e\u6492\u4e86\u4e00\u628a\u94b1\uff0c\u7136\u540e\u62d4\u817f\u5c31\u8dd1\uff0c\u8fd9\u6b21\u6ca1\u6709\u4eba\u518d\u8ffd\u4e0a\u6765\u3002",
+        "Description": "You throw some money behind you and run away instantly. The figure does not come after you.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 9,
-        "Title": "\u7834\u65e7\u8d29\u5356\u673a",
+        "Title": "Wrecked Vending Machine",
         "Icon": null,
-        "Description": "\u5728\u8def\u4e0a\u53d1\u73b0\u4e86\u4e00\u53f0\u7834\u65e7\u7684\u81ea\u52a8\u8d29\u5356\u673a\u3002",
+        "Description": "You happen on a wrecked vending machine at the roadside.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[10, 11, 12]",
-        "OptionDesc": "['\u8bd5\u8bd5\u6295\u5e01', '\u75af\u72c2\u6447\u6643', '\u770b\u770b\u5468\u56f4']"
+        "OptionDesc": "['Put a coin into it.', 'Shake it roughly.', 'Look around.']"
     },
     {
         "Id": 10,
-        "Title": "\u7834\u65e7\u8d29\u5356\u673a",
+        "Title": "Wrecked Vending Machine",
         "Icon": null,
-        "Description": "\u53ee\u549a\uff01\u8d29\u5356\u673a\u5c45\u7136\u8fd8\u80fd\u7528\uff01\u4f60\u83b7\u5f97\u4e86\u4e00\u4e9b\u98df\u7269\u3002",
+        "Description": "Ding-dong! The vending machine still works! You get some food from it.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 11,
-        "Title": "\u7834\u65e7\u8d29\u5356\u673a",
+        "Title": "Wrecked Vending Machine",
         "Icon": null,
-        "Description": "\u88ab\u5012\u4e0b\u7684\u8d29\u5356\u673a\u7838\u4e2d\u4e86\u811a\uff0c\u4e0d\u8fc7\u83b7\u5f97\u4e86\u4e0d\u5c11\u4e1c\u897f\u3002",
+        "Description": "The vending machine falls and hits your foot, but you manage to get many supplies.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 12,
-        "Title": "\u7834\u65e7\u8d29\u5356\u673a",
+        "Title": "Wrecked Vending Machine",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5728\u8349\u4e1b\u91cc\u6361\u5230\u4e86\u4e00\u4e9b\u786c\u5e01\u3002",
+        "Description": "You pick up some coins in the grass.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 13,
-        "Title": "\u9648\u65e7\u73a9\u5177\u7bb1",
+        "Title": "Dusty Toy Box",
         "Icon": null,
-        "Description": "\u89d2\u843d\u6709\u4e00\u4e2a\u9648\u65e7\u73a9\u5177\u7bb1\uff0c\u770b\u8d77\u6765\u5355\u7eaf\u65e0\u5bb3\uff0c\u5927\u6982\u4e0d\u4f1a\u6709\u4ec0\u4e48\u5947\u602a\u7684\u4e1c\u897f\u8e66\u51fa\u6765\u3002",
+        "Description": "A dusty toy box lies in the corner. It looks like a normal box that nothing will burst out of it.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[14, 15, 16]",
-        "OptionDesc": "['\u7ffb\u627e\u3002', '\u4e0d\u7ffb\u3002', '\u5c0f\u5fc3\u5730\u7ffb\u3002']"
+        "OptionDesc": "['Search.', 'Ignore.', 'Search carefully.']"
     },
     {
         "Id": 14,
-        "Title": "\u9648\u65e7\u73a9\u5177\u7bb1",
+        "Title": "Dusty Toy Box",
         "Icon": null,
-        "Description": "\u5373\u4f7f\u8eab\u5904\u9669\u5883\uff0c\u4e5f\u4e0d\u653e\u8fc7\u4e00\u9488\u4e00\u7ebf\u3002",
+        "Description": "It might be a trap, but you cannot give up any chances to get extra supplies.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 15,
-        "Title": "\u9648\u65e7\u73a9\u5177\u7bb1",
+        "Title": "Dusty Toy Box",
         "Icon": null,
-        "Description": "\u4e00\u5207\u53ef\u7591\u7684\u7bb1\u5b50\u90fd\u4e0d\u80fd\u7ffb\uff0c\u8fd9\u662f\u4fdd\u547d\u5b88\u5219\uff01",
+        "Description": "The first rule of survival is you never touch a suspicious box.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 16,
-        "Title": "\u9648\u65e7\u73a9\u5177\u7bb1",
+        "Title": "Dusty Toy Box",
         "Icon": null,
-        "Description": "\u4f60\u53d1\u73b0\u4e86\u4e00\u4e9b\u9648\u65e7\u7684\u9996\u9970\u3002",
+        "Description": "You find some old jewelry.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 17,
-        "Title": "\u53e4\u602a\u7684\u8eab\u5f71",
+        "Title": "Strange Figure",
         "Icon": null,
-        "Description": "\u524d\u65b9\u51fa\u73b0\u4e86\u4e00\u4e2a\u9b3c\u5f71\uff0c\u4f60\u770b\u4e0d\u6e05\u4ed6\u7684\u9762\u5bb9\uff0c\u53ea\u770b\u5230\u4ed6\u6b63\u5728\u75af\u72c2\u6316\u6d1e\uff0c\u5634\u91cc\u8fd8\u5ff5\u5ff5\u6709\u8bcd\u3002",
+        "Description": "A dark figure appears ahead of you. You cannot see his face, but he is clearly digging a hole, mumbling to himself.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[18, 19, 20]",
-        "OptionDesc": "['\u53bb\u62cd\u4ed6\u7684\u80a9\u3002', '\u6211\u4ec0\u4e48\u90fd\u6ca1\u770b\u89c1\uff0c\u7ed5\u8def\u5427\u3002', '\u56e0\u4e3a\u60ca\u5413\u800c\u5750\u5012\u5728\u5730\u4e0a\u3002']"
+        "OptionDesc": "['Pat him on the shoulder.', 'Pretend not to see anything and take another route.', 'You are startled and fall to the ground.']"
     },
     {
         "Id": 18,
-        "Title": "\u53e4\u602a\u7684\u8eab\u5f71",
+        "Title": "Strange Figure",
         "Icon": null,
-        "Description": "\u9b3c\u5f71\u88ab\u4f60\u5413\u4e86\u4e00\u5927\u8df3\uff0c\u4e00\u62f3\u63cd\u5728\u4e86\u4f60\u7684\u8138\u4e0a\uff0c\u4e3a\u8868\u6b49\u610f\uff0c\u9b3c\u5f71\u51b3\u5b9a\u4e3a\u4f60\u63d0\u4f9b\u5e2e\u52a9\u3002",
+        "Description": "A punch is thrown at your face as you scare him out of his wits. He then offers you help, as a token of apology.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 19,
-        "Title": "\u53e4\u602a\u7684\u8eab\u5f71",
+        "Title": "Strange Figure",
         "Icon": null,
-        "Description": "\u867d\u7136\u591a\u8d70\u4e86\u4e00\u6bb5\u8def\uff0c\u4f46\u662f\u5f88\u6709\u5b89\u5fc3\u611f\uff0c\u800c\u4e14\u5728\u8def\u4e0a\u53d1\u73b0\u4e86\u4e00\u4e9b\u8865\u7ed9\u3002",
+        "Description": "Although it costs you extra time to bypass him, you feel much safer and find some supplies on your way.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 20,
-        "Title": "\u53e4\u602a\u7684\u8eab\u5f71",
+        "Title": "Strange Figure",
         "Icon": null,
-        "Description": "\u4f60\u6446\u51fa\u4e86\u6050\u6016\u7247\u4e2d\u5e38\u89c1\u7684\u5938\u5f20\u53cd\u5e94\uff0c\u9b3c\u5f71\u6ee1\u610f\u5730\u70b9\u4e86\u70b9\u5934\uff0c\u800c\u4f60\u7684\u5c41\u80a1\u88ab\u6454\u5f97\u5f88\u75db\u3002",
+        "Description": "Your dramatic reaction typically seen in horror movies makes him nod in satisfaction. Your butt hurts so bad.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 21,
-        "Title": "\u7981\u5fcc\u7684\u6cd5\u9635",
+        "Title": "Forbidden Magic Circle",
         "Icon": null,
-        "Description": "\u8fd9\u91cc\u6709\u4e00\u4e2a\u5de8\u5927\u7684\u9b54\u6cd5\u9635\uff0c\u65c1\u8fb9\u6446\u653e\u7740\u4e00\u672c\u7834\u65e7\u7684\u9b54\u6cd5\u4e66\uff0c\u4e0a\u9762\u4f3c\u4e4e\u8bb0\u8f7d\u7740\u7981\u5fcc\u7684\u5492\u8bed\u3002",
+        "Description": "An ancient magic book lies quietly next to a huge magic circle. It seems that the book records some taboo spells.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[22, 23, 24]",
-        "OptionDesc": "['\u67e5\u770b\u6cbb\u6108\u7cfb\u5492\u8bed\u3002', '\u67e5\u770b\u70bc\u91d1\u672f\u7684\u5492\u8bed', '\u67e5\u770b\u53ec\u5524\u9b54\u738b\u7684\u5492\u8bed\u3002']"
+        "OptionDesc": "['View the healing spell.', 'View the alchemy spell.', 'View the demon king summoning spell.']"
     },
     {
         "Id": 22,
-        "Title": "\u7981\u5fcc\u7684\u6cd5\u9635",
+        "Title": "Forbidden Magic Circle",
         "Icon": null,
-        "Description": "\u4e00\u4e2a\u767d\u53d1\u7684\u5c0f\u7cbe\u7075\u4ece\u9b54\u6cd5\u9635\u73b0\u8eab\uff0c\u6cbb\u6108\u4e86\u4f60\u4eec\u7684\u4f24\u52bf\uff0c\u7136\u540e\u9762\u65e0\u8868\u60c5\u5730\u95ee\u4f60\u4eec\u8981\u94b1\uff0c\u4f60\u89c9\u5f97\u5979\u6709\u70b9\u773c\u719f\uff0c\u5e94\u8be5\u662f\u9519\u89c9\u3002",
+        "Description": "A white-haired fairy appears from the magic circle. She heals your injuries and, with an impassive expression, charges you for her services. She looks like someone you know, or is it just a feeling of d\u00e9j\u00e0 vu?",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 23,
-        "Title": "\u7981\u5fcc\u7684\u6cd5\u9635",
+        "Title": "Forbidden Magic Circle",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u83b7\u5f97\u4e86\u9ec4\u91d1\uff0c\u8fd9\u4e2a\u5492\u8bed\u662f\u771f\u7684\uff0c\u867d\u7136\u53ea\u80fd\u7528\u4e00\u6b21\u3002",
+        "Description": "You obtain some gold from the magic circle. The spell is real, but it can be used once only.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 24,
-        "Title": "\u7981\u5fcc\u7684\u6cd5\u9635",
+        "Title": "Forbidden Magic Circle",
         "Icon": null,
-        "Description": "\u4ed8\u51fa\u9c9c\u8840\u7684\u4ee3\u4ef7\u540e\uff0c\u9b54\u6cd5\u9635\u53d1\u51fa\u4e00\u9635\u5f3a\u70c8\u7684\u5149\u8292\u2014\u2014\u4f60\u4eec\u83b7\u5f97\u4e86\u9b54\u738b\u7684\u81f3\u5b9d",
+        "Description": "You offer your bright red blood to the magic circle, and the treasure of the demon king appears instantly with a burst of light.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 25,
-        "Title": "\u795e\u7236\u7684\u51dd\u89c6",
+        "Title": "A Priest's Gaze",
         "Icon": null,
-        "Description": "\u64e6\u80a9\u800c\u8fc7\u7684\u795e\u7236\u5fe7\u5fc3\u5fe1\u5fe1\u6ce8\u89c6\u7740\u4f60\uff0c\u4ed6\u8ba4\u4e3a\u4f60\u88ab\u4ec0\u4e48\u4e0d\u6d01\u7684\u4e1c\u897f\u7f20\u4e0a\u4e86\u3002",
+        "Description": "A priest passes you by and stares at you worriedly. He thinks you are possessed by something unholy.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[26, 27, 28]",
-        "OptionDesc": "['\u8bf7\u6c42\u9a71\u6563', '\u8bf7\u6c42\u5e87\u4f51', '\u76f8\u4fe1\u6211\u4eec\u5427\uff0c\u6211\u4eec\u662f\u4e3b\u89d2\u3002']"
+        "OptionDesc": "['Plead for an exorcism.', 'Plead for blessing.', 'You are the protagonist. You believe you will be all right.']"
     },
     {
         "Id": 26,
-        "Title": "\u795e\u7236\u7684\u51dd\u89c6",
+        "Title": "A Priest's Gaze",
         "Icon": null,
-        "Description": "\u795e\u7236\u627e\u6765\u4e00\u5bf9\u770b\u8d77\u6765\u5f88\u5389\u5bb3\u7684\u592b\u59bb\u4e3a\u4f60\u8fdb\u884c\u4e86\u9a71\u9b54\u4eea\u5f0f\u3002",
+        "Description": "The priest sends for a professional exorcist couple to perform a rite of exorcism.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 27,
-        "Title": "\u795e\u7236\u7684\u51dd\u89c6",
+        "Title": "A Priest's Gaze",
         "Icon": null,
-        "Description": "\u795e\u7236\u4ea4\u7ed9\u4f60\u4e00\u4e2a\u770b\u8d77\u6765\u4ef7\u503c\u4e0d\u83f2\u7684\u94f6\u8272\u9879\u94fe\u3002",
+        "Description": "The priest gives you a silver necklace that looks remarkably expensive.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 28,
-        "Title": "\u795e\u7236\u7684\u51dd\u89c6",
+        "Title": "A Priest's Gaze",
         "Icon": null,
-        "Description": "\u795e\u7236\u770b\u4e0a\u53bb\u6709\u70b9\u8ff7\u60d1\uff0c\u4f46\u51fa\u4e8e\u5bf9\u4f60\u4eec\u7684\u62c5\u5fc3\uff0c\u4ed6\u4e3a\u4f60\u4eec\u589e\u52a0\u4e86\u4e00\u4efd\u795d\u798f\u3002",
+        "Description": "Although bewildered, the priest still casts blessing on you out of concern for your safety.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 29,
-        "Title": "\u8840\u8165\u827a\u672f",
+        "Title": "Bloody Art",
         "Icon": null,
-        "Description": "\u75af\u72c2\u827a\u672f\u5bb6\u624b\u4e2d\u7684\u7535\u952f\u6b63\u5728\u55e1\u55e1\u4f5c\u54cd\uff0c\u4ed6\u7684\u201c\u5b8c\u7f8e\u4f5c\u54c1\u201d\u8fd8\u5dee\u4e00\u6761\u80f3\u818a\u3002",
+        "Description": "The mad artist is holding a rumbling chainsaw. He needs one more arm to complete his \"masterwork.\"",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[30, 31, 32]",
-        "OptionDesc": "['\u6b63\u9762\u5bf9\u6297', '\u8eb2\u8fdb\u67dc\u5b50', '\u58f0\u4e1c\u51fb\u897f']"
+        "OptionDesc": "['Confront him head-on.', 'Hide in the cabinet.', 'Create a diversion.']"
     },
     {
         "Id": 30,
-        "Title": "\u8840\u8165\u827a\u672f",
+        "Title": "Bloody Art",
         "Icon": null,
-        "Description": "\u7ecf\u8fc7\u4e00\u756a\u7f20\u6597\uff0c\u4f60\u4eec\u6253\u8d25\u4e86\u75af\u72c2\u827a\u672f\u5bb6\u3002",
+        "Description": "You manage to take down the mad artist in a tough fight.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 31,
-        "Title": "\u8840\u8165\u827a\u672f",
+        "Title": "Bloody Art",
         "Icon": null,
-        "Description": "\u75af\u72c2\u827a\u672f\u5bb6\u627e\u904d\u4e86\u9664\u4f60\u4eec\u6240\u5728\u7684\u6bcf\u4e00\u4e2a\u67dc\u5b50\uff0c\u7136\u540e\u9a82\u9a82\u54a7\u54a7\u5730\u79bb\u5f00\u4e86\uff0c\u4f60\u5728\u67dc\u5b50\u7684\u89d2\u843d\u53d1\u73b0\u4e86\u4e00\u4e9b\u4e1c\u897f\u3002",
+        "Description": "Grumbling to himself, the mad artist searches every cabinet except the ones you are hiding in. You notice something in the corner of your cabinet after the artist has left.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 32,
-        "Title": "\u8840\u8165\u827a\u672f",
+        "Title": "Bloody Art",
         "Icon": null,
-        "Description": "\u4e00\u5757\u7838\u5728\u5899\u4e0a\u7684\u677f\u7816\u6210\u529f\u5438\u5f15\u4e86\u75af\u72c2\u827a\u672f\u5bb6\u7684\u6ce8\u610f\uff0c\u4f60\u4eec\u5728\u8d81\u673a\u9003\u8131\u7684\u540c\u65f6\u8fd8\u53d1\u73b0\u4e86\u6389\u843d\u4e00\u65c1\u7684\u7269\u8d44\uff0c\u677f\u7816\u4e07\u5c81\uff01",
+        "Description": "A brick thrown at the wall draws the mad artist's attention. You take this chance to grab the supplies left aside and leave.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 33,
-        "Title": "\u503e\u76c6\u5927\u96e8",
+        "Title": "Heavy Rain",
         "Icon": null,
-        "Description": "\u8d76\u8def\u7684\u9014\u4e2d\u7a81\u7136\u7535\u95ea\u96f7\u9e23\uff0c\u503e\u76c6\u5927\u96e8\u963b\u6321\u4e86\u4f60\u4eec\u524d\u8fdb\u7684\u6b65\u4f10\uff0c\u4f60\u51b3\u5b9a\u2014\u2014",
+        "Description": "A heavy rain suddenly pours down on you with flashes of lightning. You decide to\u2014",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[34, 35, 36]",
-        "OptionDesc": "['\u7a0d\u5fae\u4f11\u606f\u4e00\u4e0b\u5427', '\u4e34\u65f6\u627e\u5730\u65b9\u907f\u96e8', '\u7ee7\u7eed\u524d\u8fdb']"
+        "OptionDesc": "['Get some rest.', 'Find a place to wait out the rain.', 'Keep moving on.']"
     },
     {
         "Id": 34,
-        "Title": "\u503e\u76c6\u5927\u96e8",
+        "Title": "Heavy Rain",
         "Icon": null,
-        "Description": "\u8fd9\u573a\u96e8\u4e0b\u4e86\u5f88\u4e45\uff0c\u4f60\u4eec\u83b7\u5f97\u4e86\u5145\u8db3\u7684\u4f11\u606f\u65f6\u95f4\u3002",
+        "Description": "The rain lasts for a long while. You earn sufficient resting time.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 35,
-        "Title": "\u503e\u76c6\u5927\u96e8",
+        "Title": "Heavy Rain",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u7b49\u4e86\u5f88\u4e45\u96e8\u90fd\u6ca1\u6709\u505c\uff0c\u597d\u5fc3\u7684\u8001\u4eba\u9080\u8bf7\u4f60\u4eec\u8fdb\u5c4b\u907f\u96e8\u3002",
+        "Description": "You have waited for a long while, but the rain shows no signs of letting up. A hospitable old man invites you to his house until the rain ends.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 36,
-        "Title": "\u503e\u76c6\u5927\u96e8",
+        "Title": "Heavy Rain",
         "Icon": null,
-        "Description": "\u53ea\u8981\u4e00\u76f4\u524d\u884c\uff0c\u9053\u8def\u5c31\u4f1a\u4e0d\u65ad\u5ef6\u4f38\uff01",
+        "Description": "No matter how bad is the weather, it will not stop you from going forward!",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 37,
-        "Title": "\u4e0d\u6d01\u7684\u5360\u535c",
+        "Title": "Ominous Precognition",
         "Icon": null,
-        "Description": "\u795e\u79d8\u7684\u5360\u535c\u5e08\u629a\u6478\u7740\u4ed6\u7684\u6c34\u6676\u7403\uff0c\u4ed6\u53ef\u4ee5\u56de\u7b54\u4f60\u4e00\u4e2a\u95ee\u9898\u3002",
+        "Description": "A mysterious fortune teller holds a crystal ball, waiting for a question from you.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[38, 39, 40]",
-        "OptionDesc": "['\u8be2\u95ee\u8fc7\u53bb', '\u8be2\u95ee\u672a\u6765', '\u8be2\u95ee\u8d22\u5bcc\u5bc6\u7801']"
+        "OptionDesc": "['Ask about the past.', 'Ask about the future.', 'Ask about financial tips.']"
     },
     {
         "Id": 38,
-        "Title": "\u4e0d\u6d01\u7684\u5360\u535c",
+        "Title": "Ominous Precognition",
         "Icon": null,
-        "Description": "\u5360\u535c\u5e08\u770b\u7740\u6c34\u6676\u7403\u6c89\u541f\u4e86\u4e00\u4f1a\uff0c\u7136\u540e\u7a81\u7136\u795e\u8272\u5927\u53d8\uff1a\u201c\u4f60\u2026\u2026\u4f60\u5e94\u8be5\u5df2\u7ecf\u6b7b\u4e86\uff0c\u4f60\u4e3a\u4ec0\u4e48\u8fd8\u6d3b\u7740\uff1f\u201d",
+        "Description": "The fortune-teller looks at the crystal ball and starts mumbling. All of a sudden, his jaw drops open. \"You... you should've been dead. How come you...\"",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 39,
-        "Title": "\u4e0d\u6d01\u7684\u5360\u535c",
+        "Title": "Ominous Precognition",
         "Icon": null,
-        "Description": "\u4e5f\u8bb8\u662f\u5728\u4f60\u8eab\u4e0a\u770b\u5230\u7684\u672a\u6765\u5df2\u7ecf\u8d85\u51fa\u4e86\u8ba4\u77e5\uff0c\u6c34\u6676\u7403\u5728\u5360\u535c\u5e08\u624b\u4e2d\u70b8\u88c2\u5f00\u6765\u3002",
+        "Description": "Perhaps your future has overloaded the crystal ball. It breaks in the fortune-teller's hands.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 40,
-        "Title": "\u4e0d\u6d01\u7684\u5360\u535c",
+        "Title": "Ominous Precognition",
         "Icon": null,
-        "Description": "\u5360\u535c\u5e08\u544a\u8bc9\u4e86\u4f60\u4e00\u4e9b\u751f\u8d22\u4e4b\u9053\u2014\u2014\u5f88\u9057\u61be\uff0c\u9ec4\u91d1\u65f6\u4ee3\u7684\u6280\u5de7\u5bf9\u4f60\u6765\u8bf4\u5df2\u7ecf\u6ca1\u7528\u4e86\u3002",
+        "Description": "The fortune-teller gives you some tips for earning money. Unfortunately, these tips belong to the Golden Age. They do not work anymore.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 41,
-        "Title": "\u5b69\u5b50\u4eec",
+        "Title": "Children",
         "Icon": null,
-        "Description": "\u201c\u4e0d\u7ed9\u7cd6\u5c31\u6363\u86cb\uff01\u201d\u7a7f\u7740\u4e07\u5723\u670d\u9970\u7684\u5b69\u5b50\u4eec\u5c06\u4f60\u4eec\u56e2\u56e2\u56f4\u4f4f\u3002",
+        "Description": "Trick or treat! You are surrounded by a bunch of kids in a Halloween costume.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[42, 43, 44]",
-        "OptionDesc": "['\u7ed9\u7cd6', '\u4e0d\u7ed9\u7cd6', '\u201c\u4e0d\u7ed9\u7cd6\u5c31\u6363\u86cb\uff01\u201d']"
+        "OptionDesc": "['Give out candy.', 'Refuse to give candy.', 'Trick or treat!']"
     },
     {
         "Id": 42,
-        "Title": "\u5b69\u5b50\u4eec",
+        "Title": "Children",
         "Icon": null,
-        "Description": "\u5b69\u5b50\u4eec\u62ff\u7740\u7cd6\u679c\u6ee1\u610f\u5730\u79bb\u5f00\u4e86\u3002",
+        "Description": "The kids grab their candy and leave with great joy.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 43,
-        "Title": "\u5b69\u5b50\u4eec",
+        "Title": "Children",
         "Icon": null,
-        "Description": "\u60f3\u8981\u6446\u8131\u5b69\u5b50\u4eec\u7684\u7ea0\u7f20\u4e0d\u662f\u4e00\u4ef6\u5bb9\u6613\u7684\u4e8b\u60c5\uff0c\u4f60\u4eec\u6df1\u523b\u5730\u8ba4\u8bc6\u5230\u4e86\u8fd9\u4e00\u70b9\u3002",
+        "Description": "You learn a lesson that getting rid of a bunch of kids is as difficult as nailing jelly to a tree.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 44,
-        "Title": "\u5b69\u5b50\u4eec",
+        "Title": "Children",
         "Icon": null,
-        "Description": "\u62ab\u4e0a\u6316\u4e86\u4e24\u4e2a\u6d1e\u7684\u5e8a\u5355\uff0c\u4f60\u4eec\u4e5f\u52a0\u5165\u4e86\u8981\u7cd6\u7684\u6e38\u884c\u961f\u4f0d\u4e2d\u3002",
+        "Description": "You put on a sheet with two eye holes and join the kids' trick-or-treat parade.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 45,
-        "Title": "\u6740\u622e\u51fa\u7b3c",
+        "Title": "The Killing Begins",
         "Icon": null,
-        "Description": "\u9762\u524d\u7ad9\u7740\u62ff\u7740\u780d\u5200\u7684\u6740\u624b\uff0c\u8eab\u540e\u4e27\u5c38\u6b65\u6b65\u7d27\u903c\uff0c\u4f60\u7edd\u5bf9\u6ca1\u6709\u6bd4\u73b0\u5728\u66f4\u72fc\u72c8\u7684\u65f6\u523b\u4e86\u3002",
+        "Description": "A killer, armed with a machete, stands ahead of you and a horde of zombies are chasing behind. No time to hesitate anymore!",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[46, 47, 48]",
-        "OptionDesc": "['\u8df3\u5165\u4e0b\u6c34\u9053', '\u6b8a\u6b7b\u4e00\u640f', '\u5168\u529b\u9003\u8dd1']"
+        "OptionDesc": "['Jump into a sewer.', 'Fight until the bitter end.', 'Run away as fast as you can.']"
     },
     {
         "Id": 46,
-        "Title": "\u6740\u622e\u51fa\u7b3c",
+        "Title": "The Killing Begins",
         "Icon": null,
-        "Description": "\u201c\u597d\u5de7\uff0c\u4f60\u4eec\u4e5f\u5728\u8fd9\u91cc\u8eb2\u554a\u3002\u201d\u4e00\u4e2a\u6d51\u8eab\u810f\u516e\u516e\u7684\u8bb0\u8005\u671d\u7740\u4f60\u4eec\u9732\u51fa\u4e86\u201c\u548c\u5584\u201d\u7684\u7b11\u5bb9\u3002",
+        "Description": "Gee, never thought I would meet someone here. A scruffy journalist beams at you with \"sincere\" joy.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 47,
-        "Title": "\u6740\u622e\u51fa\u7b3c",
+        "Title": "The Killing Begins",
         "Icon": null,
-        "Description": "\u867d\u7136\u4ed8\u51fa\u4e86\u4e0d\u5c0f\u7684\u4ee3\u4ef7\uff0c\u4f46\u4e0d\u7ba1\u600e\u6837\uff0c\u4f60\u4eec\u8fd8\u662f\u6d3b\u4e86\u4e0b\u6765\u3002",
+        "Description": "You survive, but at a cost.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 48,
-        "Title": "\u6740\u622e\u51fa\u7b3c",
+        "Title": "The Killing Begins",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u4e22\u5f03\u4e86\u4e00\u4e9b\u884c\u674e\uff0c\u7136\u540e\u8dd1\u5f97\u98de\u5feb\u3002",
+        "Description": "You toss away some of your belongings to increase your speed.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 49,
-        "Title": "\u5e72\u67af\u7684\u6bcd\u4eb2",
+        "Title": "A Scraggy Mother",
         "Icon": null,
-        "Description": "\u5f62\u5bb9\u67af\u69c1\u7684\u6bcd\u4eb2\u62b1\u7740\u4e00\u4e2a\u5c0f\u5c0f\u7684\u8941\u8913\u3002\u5979\u8bf7\u6c42\u4f60\u4eec\u5e2e\u52a9\u5979\u75c5\u91cd\u7684\u5b69\u5b50\u3002",
+        "Description": "A scraggy mother cradles a swaddled baby in her arms. Her baby is sick and she pleads for help.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[50, 51, 52]",
-        "OptionDesc": "['\u67e5\u770b\u5b69\u5b50\u7684\u8eab\u4f53\u72b6\u51b5', '\u7559\u4e0b\u8eab\u4e0a\u7684\u7269\u8d44', '\u5f84\u76f4\u79bb\u5f00']"
+        "OptionDesc": "['Check on the baby.', 'Leave her some supplies.', 'Leave immediately.']"
     },
     {
         "Id": 50,
-        "Title": "\u5e72\u67af\u7684\u6bcd\u4eb2",
+        "Title": "A Scraggy Mother",
         "Icon": null,
-        "Description": "\u8941\u8913\u4e2d\u5305\u88f9\u7740\u4e00\u5177\u5c0f\u5c0f\u7684\u67af\u9aa8\uff0c\u800c\u6bcd\u4eb2\u53ea\u662f\u5583\u5583\u5730\u5531\u7740\u4e0d\u77e5\u540d\u7684\u7ae5\u8c23\u3002",
+        "Description": "The baby is already dead, but the mother keeps mumbling an unknown nursery rhyme.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 51,
-        "Title": "\u5e72\u67af\u7684\u6bcd\u4eb2",
+        "Title": "A Scraggy Mother",
         "Icon": null,
-        "Description": "\u5979\u611f\u6fc0\u5730\u5bf9\u7740\u4f60\u4eec\u7b11\u4e86\u3002",
+        "Description": "A smile creeps across the mother's face. She appreciates your kindness.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 52,
-        "Title": "\u5e72\u67af\u7684\u6bcd\u4eb2",
+        "Title": "A Scraggy Mother",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5f84\u76f4\u79bb\u5f00\u4e86",
+        "Description": "You leave without doing anything.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 53,
-        "Title": "\u9c7c\u9975\u533a",
+        "Title": "Feeding Ground",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5e0c\u671b\u501f\u7740\u5929\u5149\u672a\u4eae\u5feb\u901f\u901a\u8fc7\u5371\u9669\u533a\uff0c\u4f46\u524d\u65b9\u533a\u57df\u51fa\u73b0\u5927\u91cf\u9ed1\u5f71\uff0c\u5230\u5e95\u662f\u4ec0\u4e48\u5438\u5f15\u4e86\u5b83\u4eec\u2026\uff1f",
+        "Description": "You decide to hurry through a dangerous area before dusk falls. But many dark figures are wandering around ahead. What attracted them?",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[54, 55, 56]",
-        "OptionDesc": "['\u5f3a\u884c\u7a81\u7834', '\u5bfb\u627e\u5b89\u5168\u8def\u7ebf', '\u4e0d\u5f15\u4eba\u6ce8\u610f\u7684\u7a7f\u8fc7\u53bb']"
+        "OptionDesc": "['Force your way through.', 'Find a safe route.', 'Sneak past them.']"
     },
     {
         "Id": 54,
-        "Title": "\u9c7c\u9975\u533a",
+        "Title": "Feeding Ground",
         "Icon": null,
-        "Description": "\u5929\u5c31\u8981\u4eae\u4e86\uff0c\u54ea\u6015\u63a5\u53d7\u4e00\u4e9b\u635f\u5931\uff0c\u4f60\u4eec\u4e5f\u8ba4\u4e3a\u4e0d\u80fd\u62d6\u5230\u672a\u77e5\u7684\u9ed1\u5f71\u53d1\u73b0\u4f60\u4eec\u3002",
+        "Description": "Dawn is about to break. You have to break through this area before all the dark figures become drawn to you.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 55,
-        "Title": "\u9c7c\u9975\u533a",
+        "Title": "Feeding Ground",
         "Icon": null,
-        "Description": "\u524d\u8def\u8fd8\u957f\uff0c\u5b81\u613f\u5728\u5bfb\u627e\u5b89\u5168\u8def\u7ebf\u4e0a\u591a\u8017\u4e00\u5929\uff0c\u4f60\u4e5f\u5e0c\u671b\u5927\u5bb6\u5168\u987b\u5168\u5c3e\u7684\u901a\u8fc7\u8fd9\u7bc7\u533a\u57df\u3002",
+        "Description": "You still have a long way to go. If you can avoid danger, it is worth spending even a day to find a safer route.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 56,
-        "Title": "\u9c7c\u9975\u533a",
+        "Title": "Feeding Ground",
         "Icon": null,
-        "Description": "\u611f\u8c22\u963f\u897f\u83ab\u592b\uff0c\u4f60\u4eec\u7684\u5730\u5f62\u611f\u77e5\u96f7\u8fbe\u548c\u6fc0\u5149\u63a2\u8def\u96f7\u8fbe\u90fd\u5f88\u597d\u7684\u53d1\u6325\u4e86\u4f5c\u7528\u2026\u4f60\u4eec\u4e0d\u4ec5\u7a7f\u4e86\u8fc7\u6765\uff0c\u8fd8\u6361\u5230\u4e86\u4e00\u4e2a\u5176\u4ed6\u4eba\u4e22\u5f03\u7684\u8865\u7ed9\u7bb1\u3002",
+        "Description": "Thanks to Asimov's topographic radar and laser sensors, you manage to get through and find an abandoned supply crate.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 57,
-        "Title": "\u522b\u4eba\u7684\u8db3\u8ff9",
+        "Title": "Footprints",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u987a\u7740\u70df\u96fe\u7a7f\u8fc7\u57ce\u5e02\u5e9f\u589f\uff0c\u627e\u5230\u4e86\u4e00\u4e2a\u5e9f\u5f03\u7684\u5546\u5e97\uff0c\u53ea\u662f\u8fd9\u4e2a\u8865\u7ed9\u70b9\u4f3c\u4e4e\u5df2\u7ecf\u88ab\u5176\u4ed6\u4eba\u5149\u987e\u8fc7\u2026",
+        "Description": "You follow the smoke and find an abandoned store. The only issue is that it seems like it has already seen visitors.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[58, 59, 60]",
-        "OptionDesc": "['\u641c\u7d22\u8865\u7ed9\u7bb1', '\u8c03\u67e5\u5176\u4ed6\u4eba\u7684\u75d5\u8ff9', '\u65e0\u89c6\u8fd9\u4e2a\u8865\u7ed9\u70b9']"
+        "OptionDesc": "['Search the supply crates.', 'Investigate the trails of the visitors.', 'Leave it behind.']"
     },
     {
         "Id": 58,
-        "Title": "\u522b\u4eba\u7684\u8db3\u8ff9",
+        "Title": "Footprints",
         "Icon": null,
-        "Description": "\u5546\u5e97\u91cc\u4f3c\u4e4e\u8fd8\u6709\u4e9b\u6ca1\u6765\u5f97\u53ca\u62ff\u8d70\u7684\u4e1c\u897f\uff0c\u770b\u6765\u4ed6\u4eec\u8d70\u7684\u5f88\u5306\u5fd9\u3002",
+        "Description": "Judging by the supplies they left in the store, they must have gone in a rush.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 59,
-        "Title": "\u522b\u4eba\u7684\u8db3\u8ff9",
+        "Title": "Footprints",
         "Icon": null,
-        "Description": "\u6709\u4eba\u5148\u4f60\u4eec\u4e00\u6b65\u6765\u8fc7\u8fd9\u91cc\u3002",
+        "Description": "Someone got here ahead of you.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 60,
-        "Title": "\u522b\u4eba\u7684\u8db3\u8ff9",
+        "Title": "Footprints",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u51b3\u5b9a\u52a0\u5feb\u811a\u6b65\u524d\u5f80\u4e0b\u4e00\u4e2a\u3002",
+        "Description": "You decide to hasten to the next destination.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 61,
-        "Title": "\u5371\u9669\u7684\u51dd\u89c6",
+        "Title": "A Chilling Gaze",
         "Icon": null,
-        "Description": "\u523b\u610f\u7559\u4e0b\u7684\u7a84\u5c0f\u901a\u9053\uff0c\u65e0\u4eba\u7684\u89d2\u843d\u83ab\u540d\u51fa\u73b0\u7684\u5783\u573e\u5806\uff0c\u5728\u6668\u96fe\u95f4\u95ea\u52a8\u7684\u4e1d\u4e1d\u767d\u5149\u2026\u4f60\u603b\u89c9\u5f97\u4e0d\u77e5\u9053\u54ea\u91cc\u6709\u4eba\u5728\u76ef\u7740\u4f60\u3002",
+        "Description": "The intentionally left tunnel, a pile of rubbish in the corner, the glimmering light in the mist... Someone is probably watching you.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[62, 63, 64]",
-        "OptionDesc": "['\u5f84\u76f4\u8d70\u8fc7\u53bb\u3002', '\u60f3\u529e\u6cd5\u7ed5\u8fc7\u53bb\u3002', '\u62c6\u89e3\u5c1d\u8bd5']"
+        "OptionDesc": "['Walk right through it.', 'Try to walk around it.', 'Try to disassemble it.']"
     },
     {
         "Id": 62,
-        "Title": "\u5371\u9669\u7684\u51dd\u89c6",
+        "Title": "A Chilling Gaze",
         "Icon": null,
-        "Description": "\u4e8b\u5b9e\u8bc1\u660e\u4f60\u7684\u62c5\u5fc3\u4e0d\u65e0\u6765\u7531\uff0c\u4f46\u662f\u4f60\u4eec\u610f\u5916\u7684\u9047\u5230\u4e86\u540c\u8e29\u4e00\u4e2a\u5751\u7684\u540c\u4f34\uff0c\u4e8e\u662f\u4f60\u4eec\u867d\u7136\u53d7\u5230\u4e86\u4e00\u4e9b\u4f24\u5bb3\uff0c\u4f46\u662f\u59d1\u4e14\u8131\u4e86\u9669\u3002",
+        "Description": "Your worries are not unfound. An ally has also stepped into the same trap. You both took some damage, but at least you are alive.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 63,
-        "Title": "\u5371\u9669\u7684\u51dd\u89c6",
+        "Title": "A Chilling Gaze",
         "Icon": null,
-        "Description": "\u867d\u7136\u4f60\u5bf9\u7ed5\u9053\u8fd9\u79cd\u6d6a\u8d39\u4f53\u529b\u548c\u65f6\u95f4\u7684\u4e8b\u60c5\u7565\u6709\u5fae\u8bcd\uff0c\u4f46\u662f\u4e3a\u4e86\u5927\u5bb6\u7684\u5b89\u5168\uff0c\u8fd9\u4e5f\u662f\u5fc5\u987b\u505a\u7684\u51b3\u5b9a\u3002",
+        "Description": "Taking the long route is a waste of time and resources, but for the safety of your team, you decide to do it anyway.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 64,
-        "Title": "\u5371\u9669\u7684\u51dd\u89c6",
+        "Title": "A Chilling Gaze",
         "Icon": null,
-        "Description": "\u8bd5\u7740\u62c6\u89e3\u7684\u8fc7\u7a0b\u51fa\u4e86\u4e9b\u5c94\u5b50\u2026\u4f46\u662f\u6784\u6210\u9677\u9631\u7684\u6750\u6599\u6070\u597d\u53ef\u4ee5\u88ab\u4f60\u4eec\u6240\u7528\u3002",
+        "Description": "Disassembling it took a longer amount of time than you expected... But the materials you gained from the trap seem to be useful.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 65,
-        "Title": "\u81ea\u52a8\u8d29\u5356\u673a",
+        "Title": "Vending Machine",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u770b\u5230\u8fdc\u5904\u6709\u4e00\u4e2a\u7834\u65e7\u7684\u81ea\u52a8\u8d29\u5356\u673a\uff0c\u673a\u4f53\u6761\u4ef6\u5f88\u5dee\uff0c\u5982\u679c\u7a0d\u5fae\u7ef4\u4fee\u4e00\u4e0b\u7684\u8bdd\u2026\u2026",
+        "Description": "You see a wrecked vending machine far away. A little repair might make it work again...",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[66, 67, 68]",
-        "OptionDesc": "['\u8e39\u4e0a\u4e00\u811a', '\u7ef4\u4fee\u4e00\u4e0b', '\u79bb\u5f00']"
+        "OptionDesc": "['Kick it.', 'Repair it.', 'Leave.']"
     },
     {
         "Id": 66,
-        "Title": "\u81ea\u52a8\u8d29\u5356\u673a",
+        "Title": "Vending Machine",
         "Icon": null,
-        "Description": "\u8fd9\u4e00\u811a\u628a\u8d29\u5356\u673a\u8e39\u6210\u4e86\u534a\u574f\u4e0d\u574f\u7684\u72b6\u6001\u3002\u4f60\u4eec\u53ea\u80fd\u82b1\u66f4\u591a\u7684\u5de5\u5177\u5c06\u5176\u5f7b\u5e95\u62c6\u89e3\uff0c\u624d\u80fd\u53d6\u51fa\u5f53\u4e2d\u80fd\u7528\u7684\u4e1c\u897f\u3002",
+        "Description": "Your kick seems to have made matters worse. Now you have to disassemble the vending machine to take out the supplies inside.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 67,
-        "Title": "\u81ea\u52a8\u8d29\u5356\u673a",
+        "Title": "Vending Machine",
         "Icon": null,
-        "Description": "\u7ecf\u8fc7\u7b80\u5355\u7684\u7ef4\u4fee\uff0c\u8d29\u5356\u673a\u5f88\u5feb\u5c31\u6389\u51fa\u4e86\u4e00\u4e9b\u770b\u8d77\u6765\u53ef\u7528\u7684\u4e1c\u897f\u3002",
+        "Description": "It only takes a couple of minutes to repair the vending machine. It dispenses something that might come in useful.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 68,
-        "Title": "\u81ea\u52a8\u8d29\u5356\u673a",
+        "Title": "Vending Machine",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5f84\u76f4\u79bb\u5f00\u4e86",
+        "Description": "You leave without doing anything.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 69,
-        "Title": "\u7a81\u88ad",
+        "Title": "Strike",
         "Icon": null,
-        "Description": "\u53ef\u6076\uff01\u5230\u5e95\u662f\u4ec0\u4e48\u65f6\u5019\u5f00\u59cb\u88ab\u5305\u56f4\u7684\u2026\u96be\u9053\u662f\u9707\u52a8\u611f\u5e94\u5668\u51fa\u4e86\u95ee\u9898\uff1f",
+        "Description": "How could it be? You were surrounded all of a sudden! Your movement sensors must be malfunctioning.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[70, 71, 72]",
-        "OptionDesc": "['\u96c6\u4e2d\u7a81\u7834', '\u6536\u7f29\u9632\u7ebf', '\u5168\u9762\u51fa\u51fb']"
+        "OptionDesc": "['Break through the encirclement.', 'Gather up and defend.', 'Full frontal assault.']"
     },
     {
         "Id": 70,
-        "Title": "\u7a81\u88ad",
+        "Title": "Strike",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5411\u7740\u654c\u4eba\u6700\u8584\u5f31\u7684\u533a\u57df\u53d1\u8d77\u4e86\u7a81\u51fb\u3002",
+        "Description": "You attack the weakest-looking section of the enemy.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 71,
-        "Title": "\u7a81\u88ad",
+        "Title": "Strike",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u51b3\u5b9a\u6536\u7f29\u9632\u7ebf\u56fa\u5b88\uff0c\u5e76\u5927\u58f0\u547c\u6551\uff0c\u5e0c\u671b\u6709\u80fd\u542c\u5230\u7684\u4eba\u6765\u5e2e\u52a9\u4f60\u4eec\u3002",
+        "Description": "You decide to gather up and defend, crying out for help.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 72,
-        "Title": "\u7a81\u88ad",
+        "Title": "Strike",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u51b3\u5b9a\u7528\u538b\u5012\u6027\u7684\u6b66\u529b\u56db\u9762\u51fa\u51fb\uff0c\u6253\u4e71\u4e0d\u53ef\u77e5\u7684\u654c\u4eba\u9635\u578b\u3002",
+        "Description": "You decide to go full frontal to mess up the enemy formation.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 73,
-        "Title": "\u75af\u72c2\u4fe1\u5f92",
+        "Title": "Religious Fanatics",
         "Icon": null,
-        "Description": "\u75af\u72c2\u7684\u4fe1\u5f92\u56f4\u4f4f\u4e86\u4f60\u4eec\u3002",
+        "Description": "A group of religious fanatics surrounds you.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[74, 75, 76]",
-        "OptionDesc": "['\u6ee1\u8db3\u4ed6\u4eec', '\u51fb\u9000\u4ed6\u4eec', '\u606b\u5413\u4ed6\u4eec']"
+        "OptionDesc": "['Satisfy them.', 'Fend them off.', 'Scare them off.']"
     },
     {
         "Id": 74,
-        "Title": "\u75af\u72c2\u4fe1\u5f92",
+        "Title": "Religious Fanatics",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u628a\u8eab\u4e0a\u80fd\u7ed9\u7684\u4e1c\u897f\u90fd\u7ed9\u4e86\u4ed6\u4eec\u3002",
+        "Description": "You give all you have to them.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 75,
-        "Title": "\u75af\u72c2\u4fe1\u5f92",
+        "Title": "Religious Fanatics",
         "Icon": null,
-        "Description": "\u5728\u4f60\u4eec\u7684\u9ad8\u70ed\u5200\u5203\u548c\u67aa\u5f39\u9762\u524d\u4ed6\u4eec\u6700\u7ec8\u843d\u8352\u800c\u9003\uff0c\u4ed6\u4eec\u7684\u8f8e\u91cd\u4e71\u4e03\u516b\u7cdf\u7684\u6492\u4e86\u4e00\u5730\u3002",
+        "Description": "Brandishing your heat sabers and guns, you manage to fend them off. They drop some of their resources while running away.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 76,
-        "Title": "\u75af\u72c2\u4fe1\u5f92",
+        "Title": "Religious Fanatics",
         "Icon": null,
-        "Description": "\u5728\u4f60\u4eec\u7684\u9ad8\u70ed\u5200\u5203\u548c\u67aa\u5f39\u9762\u524d\u4ed6\u4eec\u6700\u7ec8\u59a5\u534f\uff0c\u751a\u81f3\u9001\u4e0a\u4e86\u4f9b\u54c1\u2026\u5443\uff0c\u4ed6\u4eec\u662f\u4e0d\u662f\u641e\u9519\u4e86\u4ec0\u4e48\uff1f",
+        "Description": "You brandish your firearms, and they give you some of their resources straightaway. They must have mistaken you for something else...",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 77,
-        "Title": "\u7070\u767d\u8eab\u5f71",
+        "Title": "A Gray Shade",
         "Icon": null,
-        "Description": "\u4e0d\u8fdc\u5904\u6709\u4e00\u4e2a\u7070\u767d\u8272\u7684\uff0c\u8dea\u5728\u5730\u4e0a\u4f3c\u4e4e\u6b63\u5728\u54ed\u6ce3\u7684\u5973\u4eba\u8eab\u5f71\u2026\u2026",
+        "Description": "There seems to be a lady with pale skin curling up on the ground, sobbing, not that far away...",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[78, 79, 80]",
-        "OptionDesc": "['\u4e0a\u524d\u8be2\u95ee', '\u7a81\u7136\u88ad\u51fb', '\u5f84\u76f4\u79bb\u5f00']"
+        "OptionDesc": "['Approach and ask if she is all right.', 'Ambush.', 'Leave immediately.']"
     },
     {
         "Id": 78,
-        "Title": "\u7070\u767d\u8eab\u5f71",
+        "Title": "A Gray Shade",
         "Icon": null,
-        "Description": "\u90a3\u4e2a\u7070\u767d\u8272\u7684\u5973\u4eba\u5411\u4f60\u4eec\u8f6c\u8fc7\u8138\u6765\u2014\u2014\u4f46\u5979\u6ca1\u6709\u8138\uff0c\u4f60\u4eec\u611f\u89c9\u81ea\u5df1\u4f3c\u4e4e\u7f6e\u8eab\u51b0\u7a9f\uff0c\u751a\u81f3\u6ca1\u6709\u610f\u8bc6\u5230\u5979\u662f\u600e\u4e48\u4e0d\u89c1\u7684\u3002",
+        "Description": "The pale lady turns to you\u2014but she has no face! It sends a chill down your spine, and she disappears before you even know it.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 79,
-        "Title": "\u7070\u767d\u8eab\u5f71",
+        "Title": "A Gray Shade",
         "Icon": null,
-        "Description": "\u5979\u5486\u54ee\u7740\uff0c\u62ab\u5934\u6563\u53d1\u5730\u5411\u4f60\u4eec\u51b2\u8fc7\u6765\u2014\u2014\u5e78\u597d\u5b50\u5f39\u548c\u5200\u5203\u5bf9\u5979\u6709\u6548\uff0c\u4f60\u4eec\u5f97\u7f13\u4e00\u4f1a\uff0c\u4f46\u6ca1\u4eba\u53d7\u4f24\u3002",
+        "Description": "She pounces on you with a piercing wail. Luckily bullets and blades can deal damage to her. No one gets hurt in the end.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 80,
-        "Title": "\u7070\u767d\u8eab\u5f71",
+        "Title": "A Gray Shade",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5f84\u76f4\u79bb\u5f00\u4e86",
+        "Description": "You leave without doing anything.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 81,
-        "Title": "\u8ffd\u8e2a\u8005",
+        "Title": "Tracker",
         "Icon": null,
-        "Description": "\u4e0d\u7ba1\u8eab\u540e\u7684\u662f\u4ec0\u4e48\uff0c\u5b83\u6b63\u5728\u5bf9\u4f60\u4eec\u7a77\u8ffd\u4e0d\u820d\uff0c\u800c\u4f60\u4eec\u9762\u524d\u6ca1\u6709\u591a\u5c11\u9009\u62e9\u3002",
+        "Description": "Whoever it is, it is closely chasing you. You have to make a choice now.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[82, 83, 84]",
-        "OptionDesc": "['\u8d70\u901a\u98ce\u7ba1', '\u8d70\u7535\u68af', '\u8d70\u697c\u68af']"
+        "OptionDesc": "['Enter a ventilation pipe.', 'Take an elevator.', 'Take stairway.']"
     },
     {
         "Id": 82,
-        "Title": "\u8ffd\u8e2a\u8005",
+        "Title": "Tracker",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u7f13\u6162\u5730\u5728\u901a\u98ce\u7ba1\u95f4\u722c\u884c\uff0c\u7136\u540e\u9047\u5230\u4e86\u5c94\u8def\u3002",
+        "Description": "You are crawling through a ventilation pipe, but there are two split paths.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[85, 86]",
-        "OptionDesc": "['\u5411\u5de6', '\u5411\u53f3']"
+        "OptionDesc": "['Turn left.', 'Turn right.']"
     },
     {
         "Id": 83,
-        "Title": "\u8ffd\u8e2a\u8005",
+        "Title": "Tracker",
         "Icon": null,
-        "Description": "\u6ca1\u4eba\u77e5\u9053\u4e3a\u4ec0\u4e48\u7535\u68af\u91cc\u4f1a\u4e00\u4e0b\u5b50\u6d8c\u51fa\u8fd9\u4e48\u591a\u963f\u5446\u86d9\u73a9\u5076\uff0c\u4f60\u4eec\u82b1\u4e86\u5f88\u957f\u65f6\u95f4\u4ece\u73a9\u5076\u5806\u91cc\u722c\u51fa\u6765\uff0c\u8fd8\u987a\u4fbf\u627e\u5230\u4e86\u4e00\u4e2a\u91d1\u8272\u9650\u91cf\u7248\u3002",
+        "Description": "A large number of frog plushies sprout up in the elevator all of a sudden. It takes a long while to crawl out of them, but you find a golden limited edition plushie.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 84,
-        "Title": "\u8ffd\u8e2a\u8005",
+        "Title": "Tracker",
         "Icon": null,
-        "Description": "\u697c\u68af\u95f4\u5f88\u5b89\u9759\uff0c\u4f60\u4eec\u5f88\u5feb\u5230\u8fbe\u4e86\u5b89\u5168\u7684\u5730\u65b9\uff0c\u7136\u540e\u53d1\u73b0\u4e86\u5f62\u6210\u62d6\u75d5\u7684\u8840\u8ff9\u548c\u2026\u2026\u4e00\u4e2a\u8840\u6dcb\u6dcb\u7684\u4e0b\u5df4\u3002",
+        "Description": "You climb the quiet stairway to a safe place, where you, out of the blue, discover bloodstains and... a jaw covered with blood.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 85,
-        "Title": "\u8ffd\u8e2a\u8005",
+        "Title": "Tracker",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5728\u901a\u98ce\u53e3\u4e2d\u9047\u5230\u4e86\u4e00\u4e2a\u8eb2\u907f\u8ffd\u6740\u7684\u8bb0\u8005\uff0c\u773c\u795e\u4ea4\u6d41\u540e\uff0c\u4f60\u4eec\u51b3\u5b9a\u4e00\u8d77\u884c\u52a8\u3002",
+        "Description": "You are met with a journalist hiding in the ventilation pipe. Looking him in the eye, you decide to let him join your crew.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 86,
-        "Title": "\u8ffd\u8e2a\u8005",
+        "Title": "Tracker",
         "Icon": null,
-        "Description": "\u8fd9\u6761\u7ba1\u9053\u901a\u5411\u4ed3\u5e93\uff0c\u4f60\u4eec\u5728\u91cc\u9762\u627e\u5230\u4e86\u4e0d\u5c11\u597d\u4e1c\u897f\u3002",
+        "Description": "This pipe leads to a warehouse, where you find many useful supplies.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[4]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 87,
-        "Title": "\u5730\u677f\u4e4b\u4e0b",
+        "Title": "Below the Floor",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u7528\u6765\u6682\u65f6\u6b47\u811a\u7684\u5e9f\u5f03\u5c0f\u6728\u5c4b\u5730\u4e0b\u4f20\u6765\u7684\u5947\u602a\u7684\u58f0\u97f3\u3002",
+        "Description": "When you are resting in an abandoned hut, you hear something strange under the floor.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[88, 91]",
-        "OptionDesc": "['\u4e0b\u53bb\u770b\u770b', '\u65e0\u89c6']"
+        "OptionDesc": "['Check it out.', 'Ignore.']"
     },
     {
         "Id": 88,
-        "Title": "\u5730\u677f\u4e4b\u4e0b",
+        "Title": "Below the Floor",
         "Icon": null,
-        "Description": "\u65ad\u65ad\u7eed\u7eed\u7684\u58f0\u54cd\u4ee4\u4eba\u4e0d\u5b89\uff0c\u4f60\u4eec\u51b3\u5b9a\u4e0b\u53bb\u4e00\u63a2\u7a76\u7adf\u3002",
+        "Description": "Disturbing sounds are coming from below. You decide to get to its source.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[89, 90]",
-        "OptionDesc": "['\u5c0f\u5fc3\u7ffc\u7ffc\u5730\u63a2\u7d22', '\u58f0\u52bf\u6d69\u5927\u5730\u51b2\u5411\u5730\u4e0b\u5ba4']"
+        "OptionDesc": "['Approach with caution.', 'Storm the basement.']"
     },
     {
         "Id": 89,
-        "Title": "\u5730\u677f\u4e4b\u4e0b",
+        "Title": "Below the Floor",
         "Icon": null,
-        "Description": "\u5730\u4e0b\u5ba4\u7a7a\u65e0\u4e00\u4eba\uff0c\u5947\u602a\u7684\u58f0\u97f3\u4f3c\u4e4e\u6765\u81ea\u5899\u89d2\u7684\u8001\u9f20\u6d1e\u3002",
+        "Description": "The basement is empty. It appears that those sounds are from a mouse hole in the corner.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 90,
-        "Title": "\u5730\u677f\u4e4b\u4e0b",
+        "Title": "Below the Floor",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5728\u6df7\u4e71\u4e2d\u89e6\u53d1\u4e86\u673a\u5173\u8fdb\u5165\u4e0b\u4e00\u5c42\uff0c\u770b\u5230\u4e86\u88ab\u7ed1\u5728\u6905\u5b50\u4e0a\u660f\u8ff7\u7684\u5c11\u5973\uff0c\u65c1\u8fb9\u653e\u7740\u4e00\u53f0\u6b63\u5728\u5f55\u5236\u7684\u6444\u5f71\u673a\uff0c\u800c\u6444\u5f71\u673a\u7684\u4e3b\u4eba\u4e0d\u77e5\u6240\u8e2a\u3002",
+        "Description": "A stairway appears as you accidentally trigger some kind of mechanism. Going downstairs, you see a camcorder recording an unconscious girl tied on a chair. The camcorder owner is nowhere to be found.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 91,
-        "Title": "\u5730\u677f\u4e4b\u4e0b",
+        "Title": "Below the Floor",
         "Icon": null,
-        "Description": "\u4fd7\u8bdd\u8bf4\u5f97\u597d\uff0c\u4e0d\u4f5c\u6b7b\u5c31\u4e0d\u4f1a\u6b7b\u3002",
+        "Description": "As the saying goes, \"You've made your bed, now lie in it.\"",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 92,
-        "Title": "\u60ca\u614c\u7684\u5b66\u751f",
+        "Title": "Panicking Students",
         "Icon": null,
-        "Description": "\u770b\u8d77\u6765\u5728\u8fdb\u884c\u516c\u8def\u65c5\u884c\u7684\u5927\u5b66\u751f\u6b63\u5728\u5bfb\u627e\u4ed6\u4eec\u5931\u8e2a\u7684\u540c\u4f34\uff0c\u4ed6\u4eec\u5728\u5411\u4f60\u6c42\u52a9\u3002",
+        "Description": "You are met with a group of college students who are on their road trip, but one of their friends seems to have gone missing. They plead for your help.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[93, 96]",
-        "OptionDesc": "['\u5e2e\u52a9\u5bfb\u627e\u3002', '\u6211\u4eec\u6ca1\u6709\u65f6\u95f4\u3002']"
+        "OptionDesc": "['Help them search.', 'There is no time to waste.']"
     },
     {
         "Id": 93,
-        "Title": "\u60ca\u614c\u7684\u5b66\u751f",
+        "Title": "Panicking Students",
         "Icon": null,
-        "Description": "\u611f\u89c9\u6ca1\u6cd5\u7f6e\u4e4b\u4e0d\u7406\uff0c\u4f46\u662f\u4f60\u4eec\u9700\u8981\u4e00\u4e2a\u8ba1\u5212\u3002",
+        "Description": "You cannot leave them alone, but you will need a plan.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[94, 95]",
-        "OptionDesc": "['\u5730\u6bef\u5f0f\u641c\u7d22', '\u5206\u961f\u8ffd\u8e2a']"
+        "OptionDesc": "['Scour the place.', 'Split up to search.']"
     },
     {
         "Id": 94,
-        "Title": "\u60ca\u614c\u7684\u5b66\u751f",
+        "Title": "Panicking Students",
         "Icon": null,
-        "Description": "\u516c\u8def\u5468\u8fb9\u5f88\u5927\uff0c\u5bfb\u627e\u82b1\u8d39\u4e86\u4f60\u4eec\u5f88\u957f\u65f6\u95f4\uff0c\u6700\u7ec8\u4f60\u4eec\u5728\u68ee\u6797\u7684\u89d2\u843d\u627e\u5230\u4e86\u4e00\u540d\u5944\u5944\u4e00\u606f\u7684\u5b66\u751f\u3002",
+        "Description": "You have spent a lot of time searching around. Fortunately, your effort pays off. You find the student critically injured in the forest.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 95,
-        "Title": "\u60ca\u614c\u7684\u5b66\u751f",
+        "Title": "Panicking Students",
         "Icon": null,
-        "Description": "\u961f\u5458\u8bad\u7ec3\u6709\u7d20\u5206\u5de5\u660e\u786e\uff0c\u5728\u4f60\u7684\u6307\u6325\u4e0b\u5f88\u5feb\u5c31\u901a\u8fc7\u884c\u8ff9\u627e\u5230\u4e86\u8eb2\u5728\u68ee\u6797\u4e2d\u745f\u745f\u53d1\u6296\u7684\u4e24\u4e2a\u5b66\u751f\u3002",
+        "Description": "Your members split up to perform an organized search. Under your command, you soon find the student in the forest.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 96,
-        "Title": "\u60ca\u614c\u7684\u5b66\u751f",
+        "Title": "Panicking Students",
         "Icon": null,
-        "Description": "\u79bb\u5f00\u4e0d\u4e45\u540e\uff0c\u201c\u67d0\u6837\u4e1c\u897f\u201d\u6321\u5728\u4e86\u4f60\u4eec\u7684\u9762\u524d\uff0c\u4f60\u4eec\u660e\u767d\u4e86\u5b66\u751f\u5931\u8e2a\u7684\u771f\u76f8\uff0c\u4f46\u662f\u4e3a\u65f6\u5df2\u665a\u3002",
+        "Description": "Back on your way, \"something\" suddenly appears, and you figure out the truth of the student's disappearance. But it is already too late.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 97,
-        "Title": "\u987a\u98ce\u8f66",
+        "Title": "Hitchhike",
         "Icon": null,
-        "Description": "\u79bb\u4e0b\u4e00\u4e2a\u76ee\u7684\u5730\u8fd8\u6709\u5f88\u8fdc\uff0c\u6b63\u5728\u4f60\u4eec\u70e6\u607c\u65f6\u4e00\u4e2a\u8def\u8fc7\u7684\u9752\u5e74\u9080\u8bf7\u4f60\u4eec\u4e58\u5750\u4ed6\u7684\u5361\u8f66",
+        "Description": "You are still far away from your next destination. When you are worrying about whether you can make it or not, a young man comes and offers you a ride in his own truck.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[98, 101]",
-        "OptionDesc": "['\u4e58\u8f66', '\u62d2\u7edd']"
+        "OptionDesc": "['Accept.', 'Decline.']"
     },
     {
         "Id": 98,
-        "Title": "\u987a\u98ce\u8f66",
+        "Title": "Hitchhike",
         "Icon": null,
-        "Description": "\u5728\u4e0e\u9752\u5e74\u4ea4\u8c08\u7684\u8fc7\u7a0b\u4e2d\uff0c\u4e3d\u8299\u53d1\u73b0\u4e86\u5f02\u6837\u2014\u2014\u9752\u5e74\u4f3c\u4e4e\u6709\u522b\u7684\u76ee\u7684\u3002",
+        "Description": "Liv notices something when she talks to the young man. It seems that he has his own schemes up his sleeve.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[99, 100]",
-        "OptionDesc": "['\u6309\u5175\u4e0d\u52a8', '\u5f3a\u884c\u8df3\u8f66']"
+        "OptionDesc": "['Wait and see.', 'Jump out of the truck.']"
     },
     {
         "Id": 99,
-        "Title": "\u987a\u98ce\u8f66",
+        "Title": "Hitchhike",
         "Icon": null,
-        "Description": "\u9752\u5e74\u5c06\u4f60\u4eec\u5e26\u5f80\u4e86\u4ed6\u7684\u5927\u672c\u8425\uff0c\u8fd9\u91cc\u6709\u5176\u4ed6\u540c\u6837\u88ab\u6293\u7684\u4eba\uff0c\u7ecf\u8fc7\u4e00\u573a\u6218\u6597\uff0c\u4f60\u4eec\u89e3\u6551\u4e86\u6240\u6709\u4eba\u3002",
+        "Description": "The young man takes you to a base camp where he holds his victims all together. In the end, you defeat the young man and his henchmen, getting all of his victims out of this camp.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 100,
-        "Title": "\u987a\u98ce\u8f66",
+        "Title": "Hitchhike",
         "Icon": null,
-        "Description": "\u91cc\u7684\u67aa\u53e3\u62b5\u5728\u4e86\u9752\u5e74\u7684\u5934\u4e0a\uff0c\u9752\u5e74\u8baa\u7b11\u7740\u653e\u4f60\u4eec\u4e0b\u8f66\uff0c\u4e3d\u8299\u6253\u6389\u4e86\u9752\u5e74\u85cf\u5728\u8eab\u540e\u7684\u5315\u9996\uff0c\u795e\u5a01\u6572\u6655\u4e86\u9752\u5e74\u653e\u5728\u8def\u8fb9\u2014\u2014\u603b\u4e4b\uff0c\u4f60\u4eec\u73b0\u5728\u6709\u8f66\u4e86\u3002",
+        "Description": "Lee points his gun at the young man's head. He smirks and lets you get off his truck, but Liv notices him hiding a dagger behind his back. She knocks it out of his hand, the Kamui stuns him with one blow, tossing him on the roadside. Anyway, you have a vehicle now.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 101,
-        "Title": "\u987a\u98ce\u8f66",
+        "Title": "Hitchhike",
         "Icon": null,
-        "Description": "\u8c28\u614e\u4e00\u4e9b\u603b\u6ca1\u9519\u3002",
+        "Description": "It never hurts to act cautiously.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 102,
-        "Title": "\u9ed1\u4e4b\u5323",
+        "Title": "Black Box",
         "Icon": null,
-        "Description": "\u53d1\u73b0\u4e86\u4e00\u4e2a\u795e\u79d8\u7684\u9ed1\u5323\u5b50\uff0c\u4e0a\u9762\u8be1\u5f02\u7684\u82b1\u7eb9\u6563\u53d1\u7740\u4e0d\u7965\u7684\u6c14\u606f\u3002",
+        "Description": "You find a strange black box that is covered with an ominous pattern.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[103, 106]",
-        "OptionDesc": "['\u6253\u5f00\u7bb1\u5b50', '\u653e\u5f03']"
+        "OptionDesc": "['Open the box.', 'Abandon.']"
     },
     {
         "Id": 103,
-        "Title": "\u9ed1\u4e4b\u5323",
+        "Title": "Black Box",
         "Icon": null,
-        "Description": "\u83b7\u5f97\u4e86\u4e00\u4e9b\u7269\u8d44\uff0c\u7ee7\u7eed\u7ffb\u627e\u5417\uff1f",
+        "Description": "You find some supplies. Should you continue rummaging in it?",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[104, 105]",
-        "OptionDesc": "['\u7ee7\u7eed\u7ffb\u627e', '\u653e\u5f03']"
+        "OptionDesc": "['Continue.', 'Abandon.']"
     },
     {
         "Id": 104,
-        "Title": "\u9ed1\u4e4b\u5323",
+        "Title": "Black Box",
         "Icon": null,
-        "Description": "\u7ffb\uff01\u8d4c\u5230\u6700\u540e\u56e0\u6709\u5c3d\u6709\uff01",
+        "Description": "Let's get to the bottom of this!",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 105,
-        "Title": "\u9ed1\u4e4b\u5323",
+        "Title": "Black Box",
         "Icon": null,
-        "Description": "\u8fd9\u4e9b\u5c31\u8db3\u591f\u4e86\u3002",
+        "Description": "This should be enough.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 106,
-        "Title": "\u9ed1\u4e4b\u5323",
+        "Title": "Black Box",
         "Icon": null,
-        "Description": "\u4fdd\u9669\u8d77\u89c1\uff0c\u8fd8\u662f\u4e0d\u7ffb\u4e86\u3002",
+        "Description": "Let's not take the risk.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 107,
-        "Title": "\u4e0d\u5b89\u7684\u6c14\u5473",
+        "Title": "Disturbing Smells",
         "Icon": null,
-        "Description": "\u7a7a\u6c14\u4e2d\u98d8\u6765\u4e86\u6d53\u91cd\u7684\u8840\u8165\u5473\uff0c\u4f60\u53d1\u73b0\u662f\u4ece\u8def\u8fb9\u7684\u4e00\u680b\u623f\u5b50\u91cc\u4f20\u51fa\u6765\u7684\u3002",
+        "Description": "A strong smell of blood rushes toward you. It comes from a house by the road.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[108, 111]",
-        "OptionDesc": "['\u8fdb\u53bb\u8c03\u67e5', '\u65e0\u89c6']"
+        "OptionDesc": "['Go in.', 'Ignore.']"
     },
     {
         "Id": 108,
-        "Title": "\u4e0d\u5b89\u7684\u6c14\u5473",
+        "Title": "Disturbing Smells",
         "Icon": null,
-        "Description": "\u5bdf\u89c9\u5230\u5f88\u53ef\u80fd\u6709\u4e8b\u4ef6\u53d1\u751f\uff0c\u4f60\u4eec\u51b3\u5b9a\u4e00\u63a2\u7a76\u7adf\u3002",
+        "Description": "Something must have happened. You cannot turn a blind eye to it.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[109, 110]",
-        "OptionDesc": "['\u4ece\u4fa7\u7a97\u7ffb\u8fdb\u53bb\u3002', '\u4ece\u6b63\u95e8\u8fdb\u5165\u3002']"
+        "OptionDesc": "['Get in through a window.', 'Get in through the front door.']"
     },
     {
         "Id": 109,
-        "Title": "\u4e0d\u5b89\u7684\u6c14\u5473",
+        "Title": "Disturbing Smells",
         "Icon": null,
-        "Description": "\u5c4b\u5185\u51c4\u60e8\u7684\u666f\u8c61\u4ee4\u4f60\u4eec\u5012\u5438\u4e00\u53e3\u51c9\u6c14\uff0c\u51f6\u624b\u6ca1\u6709\u5bdf\u89c9\u5230\u4f60\u4eec\u7684\u52a8\u4f5c\uff0c\u4ece\u6b63\u95e8\u79bb\u5f00\u4e86\u3002",
+        "Description": "Inside the house is a terrifying scene that almost makes you throw up. The killer does not notice you and leaves through the front door.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 110,
-        "Title": "\u4e0d\u5b89\u7684\u6c14\u5473",
+        "Title": "Disturbing Smells",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u649e\u4e0a\u4e86\u6b63\u6b32\u51fa\u95e8\u7684\u51f6\u624b\uff0c\u4ed6\u770b\u5230\u4f60\u4eec\u9762\u9732\u51f6\u5149\uff0c\u6218\u6597\u5728\u6240\u96be\u514d\u3002",
+        "Description": "You encounter the killer the moment you open the door. It seems a tough battle is unavoidable.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 111,
-        "Title": "\u4e0d\u5b89\u7684\u6c14\u5473",
+        "Title": "Disturbing Smells",
         "Icon": null,
-        "Description": "\u8fd8\u6709\u66f4\u91cd\u8981\u7684\u4e8b\u60c5\u8981\u505a\u3002",
+        "Description": "You have more important things to do.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 112,
-        "Title": "\u9690\u5c45\u8005",
+        "Title": "Hermit",
         "Icon": null,
-        "Description": "\u9690\u5c45\u7684\u5deb\u5e08\u4f3c\u4e4e\u5e76\u4e0d\u610f\u5916\u4f60\u4eec\u7684\u8d38\u7136\u95ef\u5165\uff0c\u4ed6\u5411\u4f60\u4eec\u8be2\u95ee\u6765\u610f\u3002",
+        "Description": "It seems the hermetic wizard is not surprised by your uninvited visit. He asks what you are seeking.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[113, 116]",
-        "OptionDesc": "['\u6e34\u6c42\u529b\u91cf', '\u5bf9\u4e0d\u8d77\u6572\u9519\u95e8\u4e86']"
+        "OptionDesc": "['Seek power.', 'Apologize for entering a wrong house.']"
     },
     {
         "Id": 113,
-        "Title": "\u9690\u5c45\u8005",
+        "Title": "Hermit",
         "Icon": null,
-        "Description": "\u5deb\u5e08\u6307\u5411\u684c\u5b50\u4e0a\u7684\u796d\u54c1\uff0c\u4f60\u8981\u6311\u9009\u4e00\u4e2a\u4f5c\u4e3a\u53ec\u5524\u7684\u5a92\u4ecb\u3002",
+        "Description": "The wizard gestures you toward the offerings on the table. You have to select one as a summoning medium.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[114, 115]",
-        "OptionDesc": "['\u9ed1\u8272\u7684\u5c71\u7f8a\u9885\u9aa8', '\u7834\u788e\u7684\u516b\u97f3\u76d2']"
+        "OptionDesc": "['Black goat skull.', 'Broken music box.']"
     },
     {
         "Id": 114,
-        "Title": "\u9690\u5c45\u8005",
+        "Title": "Hermit",
         "Icon": null,
-        "Description": "\u5deb\u5e08\u9001\u7ed9\u4f60\u4eec\u4e09\u4e2a\u53e4\u8463\u4eba\u5076\uff0c\u5e76\u4e14\u62ff\u53d6\u4e86\u4ed6\u5e94\u5f97\u7684\u62a5\u916c\u3002",
+        "Description": "The wizard gives you three antique dolls and receives something he deserves in return.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 115,
-        "Title": "\u9690\u5c45\u8005",
+        "Title": "Hermit",
         "Icon": null,
-        "Description": "\u4e0d\u5e78\u7684\u662f\uff0c\u4ec0\u4e48\u90fd\u6ca1\u6709\u53d1\u751f\uff0c\u4e5f\u8bb8\u8fd9\u662f\u53e6\u4e00\u79cd\u5e78\u8fd0\uff1f",
+        "Description": "Unfortunately, nothing has happened... Or fortunately instead?",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 116,
-        "Title": "\u9690\u5c45\u8005",
+        "Title": "Hermit",
         "Icon": null,
-        "Description": "\u4e5f\u8bb8\u662f\u4eba\u5076\u5e08\u5916\u8c8c\u8fc7\u4e8e\u8be1\u5f02\uff0c\u4f60\u4eec\u611f\u5230\u4e00\u9635\u5bd2\u610f\uff0c\u8fde\u5fd9\u627e\u501f\u53e3\u79bb\u5f00\u3002",
+        "Description": "Fearful of the doll's creepiness, you make up an excuse to leave instantly.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 117,
-        "Title": "\u544a\u793a\u724c",
+        "Title": "Strange Sign",
         "Icon": null,
-        "Description": "\u5728\u4f60\u4eec\u9762\u524d\u7684\u662f\u4e00\u5ea7\u53e4\u4e95\uff0c\u4e95\u67b6\u4e0a\u6302\u7740\u4e00\u4e2a\u724c\u5b50\uff0c\u5199\u7740\u201c\u62c9\u6211\u4e0a\u6765\u201d\u3002",
+        "Description": "In front of you is an old water well with a sign that says \"PULL THE ROPE\".",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[118, 121]",
-        "OptionDesc": "['\u62c9\uff01', '\u4e0d\u62c9']"
+        "OptionDesc": "['Pull.', 'Ignore.']"
     },
     {
         "Id": 118,
-        "Title": "\u544a\u793a\u724c",
+        "Title": "Strange Sign",
         "Icon": null,
-        "Description": "\u8fd9\u5ea7\u4e95\u770b\u8d77\u6765\u5f88\u4e45\u90fd\u6ca1\u6709\u88ab\u4f7f\u7528\u8fc7\u4e86\u3002",
+        "Description": "The well seems to have been abandoned for a long time.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[119, 120]",
-        "OptionDesc": "['\u76f4\u63a5\u62c9\u7ef3\u5b50', '\u4f7f\u7528\u8f6e\u8f74']"
+        "OptionDesc": "['Pull the rope with bare hands.', 'Use the pulley.']"
     },
     {
         "Id": 119,
-        "Title": "\u544a\u793a\u724c",
+        "Title": "Strange Sign",
         "Icon": null,
-        "Description": "\u867d\u7136\u6709\u4e9b\u8d39\u529b\uff0c\u4f46\u662f\u4f60\u6210\u529f\u5730\u62c9\u4e0a\u6765\u4e00\u4e2a\u7bb1\u5b50\u3002",
+        "Description": "It exhausts your muscles, but at least you have pulled a chest up.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 120,
-        "Title": "\u544a\u793a\u724c",
+        "Title": "Strange Sign",
         "Icon": null,
-        "Description": "\u5e74\u4e45\u5931\u4fee\u7684\u624b\u67c4\u65ad\u5728\u4e86\u4f60\u7684\u624b\u91cc\uff0c\u4f60\u542c\u5230\u4e86\u4e95\u5185\u91cd\u7269\u843d\u5730\u7684\u58f0\u97f3",
+        "Description": "The dilapidated handle suddenly cracks. Something falls to the bottom of the well with a dull thump.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 121,
-        "Title": "\u544a\u793a\u724c",
+        "Title": "Strange Sign",
         "Icon": null,
-        "Description": "\u4e0d\u77e5\u4e3a\u4f55\u8fd9\u5ea7\u4e95\u4ee4\u4f60\u6bdb\u9aa8\u609a\u7136\uff0c\u4f60\u51b3\u5b9a\u79bb\u5b83\u8fdc\u4e00\u70b9\u3002",
+        "Description": "You have a feeling that something is wrong with this well. You decide to leave it alone.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 122,
-        "Title": "\u60b2\u54c0\u7684\u7236\u6bcd",
+        "Title": "A Pair of Heartbroken Parents",
         "Icon": null,
-        "Description": "\u60b2\u54c0\u7684\u7236\u6bcd\u6b63\u5728\u5bfb\u627e\u5931\u6563\u7684\u5b69\u5b50\uff0c\u8def\u8fc7\u7684\u4f60\u4eec\u4e5f\u8bb8\u662f\u4ed6\u4eec\u6700\u540e\u7684\u5e0c\u671b\u3002",
+        "Description": "A pair of heartbroken parents is looking for their lost child. You meet with them by chance... You might be their last hope.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[123, 126]",
-        "OptionDesc": "['\u5e2e\u52a9\u5bfb\u627e', '\u79bb\u5f00']"
+        "OptionDesc": "['Help them search.', 'Leave.']"
     },
     {
         "Id": 123,
-        "Title": "\u60b2\u54c0\u7684\u7236\u6bcd",
+        "Title": "A Pair of Heartbroken Parents",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u611f\u89c9\u6ca1\u6cd5\u7f6e\u4e4b\u4e0d\u7406\uff0c\u4f46\u662f\u4f60\u4eec\u9700\u8981\u4e00\u4e2a\u8ba1\u5212\u3002",
+        "Description": "You cannot leave them alone, but you will need a plan.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[124, 125]",
-        "OptionDesc": "['\u5730\u6bef\u5f0f\u641c\u7d22', '\u5bfb\u627e\u5f02\u5e38\u7684\u75d5\u8ff9']"
+        "OptionDesc": "['Scour the place.', 'Search for clues.']"
     },
     {
         "Id": 124,
-        "Title": "\u60b2\u54c0\u7684\u7236\u6bcd",
+        "Title": "A Pair of Heartbroken Parents",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u7684\u4eba\u529b\u4e0d\u8db3\uff0c\u5bfb\u627e\u82b1\u8d39\u4e86\u5f88\u957f\u7684\u65f6\u95f4\uff0c\u4f46\u662f\u6700\u540e\u4f60\u4eec\u4ece\u67d0\u4e2a\u5e9f\u5f03\u7684\u85cf\u8eab\u5904\u6df1\u5904\u627e\u5230\u4e86\u90a3\u4e2a\u5b69\u5b50",
+        "Description": "Your numbers are few, so scouring the place took you a long time. But finally, you find the child deep in an abandoned shelter.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 125,
-        "Title": "\u60b2\u54c0\u7684\u7236\u6bcd",
+        "Title": "A Pair of Heartbroken Parents",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u53d1\u73b0\u4e86\u4f7f\u7528\u6784\u9020\u4f53\u7684\u7ea2\u5916\u4f20\u611f\u5668\u548c\u5316\u5b66\u4f20\u611f\u5668\u6765\u8ffd\u8e2a\u5b69\u5b50\u7559\u4e0b\u7684\u7ec6\u5fae\u5370\u8bb0\u7684\u65b9\u6cd5\uff0c\u4e8e\u662f\u5f88\u5feb\u8ffd\u8e2a\u5230\u4e86\u5b69\u5b50\u3002\u96be\u6c11\u5bb6\u5ead\u5bf9\u6b64\u5341\u5206\u611f\u8c22\u3002",
+        "Description": "You decide to use the thermographic sensors and bio sensors to look for traces. You succeed. The parents are grateful for that.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 126,
-        "Title": "\u60b2\u54c0\u7684\u7236\u6bcd",
+        "Title": "A Pair of Heartbroken Parents",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5f53\u665a\u88ab\u4e0d\u77e5\u4ece\u4f55\u800c\u6765\u7684\u5bc6\u96c6\u9ed1\u5f71\u88ad\u51fb\u4e86\uff0c\u8425\u5730\u88ab\u5f04\u5f97\u4e71\u4e03\u516b\u7cdf\u3002",
+        "Description": "Your camp is raided by unknown dark figures at night.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 127,
-        "Title": "\u6076\u52a3\u5929\u6c14",
+        "Title": "Inclement Weather",
         "Icon": null,
-        "Description": "\u5728\u8d76\u8def\u7684\u9014\u4e2d\u906d\u9047\u4e86\u6076\u52a3\u5929\u6c14\uff0c\u4f60\u51b3\u5b9a\u2026",
+        "Description": "The weather begins to act up while you are hurrying to your next target point. You decide to...",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[128, 131]",
-        "OptionDesc": "['\u4f18\u5148\u5bfb\u627e\u907f\u96be\u6240', '\u51b2\u8fc7\u6076\u52a3\u5929\u6c14\u533a\u57df']"
+        "OptionDesc": "['Seek shelter first.', 'Keep moving despite the weather.']"
     },
     {
         "Id": 128,
-        "Title": "\u6076\u52a3\u5929\u6c14",
+        "Title": "Inclement Weather",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u52c9\u5f3a\u627e\u5230\u4e00\u4e2a\u80fd\u8eb2\u907f\u7684\u5730\u65b9\uff0c\u4f46\u6076\u52a3\u5929\u6c14\u4e00\u65f6\u534a\u523b\u6ca1\u6709\u6d88\u6563\u7684\u8ff9\u8c61\u3002",
+        "Description": "You find a place that barely fits the definition of a shelter. Looks like the weather is not calming down in a short while, though...",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[129, 130]",
-        "OptionDesc": "['\u7b49\u5f85\u6076\u52a3\u5929\u6c14\u5b8c\u5168\u8fc7\u53bb', '\u5728\u6076\u52a3\u5929\u6c14\u7a0d\u663e\u5e73\u590d\u7684\u65f6\u5019\u51fa\u53d1']"
+        "OptionDesc": "['Wait for the storm to pass.', 'Move on when the storm shows signs of it waning.']"
     },
     {
         "Id": 129,
-        "Title": "\u6076\u52a3\u5929\u6c14",
+        "Title": "Inclement Weather",
         "Icon": null,
-        "Description": "\u6076\u52a3\u5929\u6c14\u6301\u7eed\u4e86\u5f88\u4e45\uff0c\u6240\u4ee5\u4f60\u4eec\u51fa\u53d1\u4e4b\u524d\u5f97\u5230\u4e86\u597d\u597d\u7684\u4f11\u606f\u3002",
+        "Description": "The storm continues for a long time. Your team was forced to get enough rest.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 130,
-        "Title": "\u6076\u52a3\u5929\u6c14",
+        "Title": "Inclement Weather",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u53d1\u73b0\u4f60\u4eec\u4e0d\u662f\u552f\u4e00\u7b49\u5f85\u6076\u52a3\u5929\u6c14\u7f13\u548c\u7684\u4eba\uff0c\u4e8e\u662f\u4f60\u4eec\u51b3\u5b9a\u7ed3\u4f34\u51fa\u53d1\u3002",
+        "Description": "You are not the only ones who are waiting out the bad weather. Your teams join together and go on when the sun comes out again.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 131,
-        "Title": "\u6076\u52a3\u5929\u6c14",
+        "Title": "Inclement Weather",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u5728\u533a\u57df\u4e2d\u53d1\u73b0\u4e86\u4e00\u4e2a\u524d\u4eba\u9057\u843d\u7684\u5b9d\u7bb1",
+        "Description": "You find an abandoned chest.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 132,
-        "Title": "\u7bb1\u541f",
+        "Title": "Sounds in a Box",
         "Icon": null,
-        "Description": "\u8eab\u65c1\u7684\u7bb1\u5b50\u91cc\u4f20\u6765\u4e86\u53ef\u7591\u7684\u545c\u54bd\u58f0\u2026",
+        "Description": "You hear choking sobs coming from a box next to you...",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[133, 136]",
-        "OptionDesc": "['\u68c0\u67e5\u7bb1\u5b50', '\u65e0\u89c6']"
+        "OptionDesc": "['Investigate the box.', 'Ignore.']"
     },
     {
         "Id": 133,
-        "Title": "\u7bb1\u541f",
+        "Title": "Sounds in a Box",
         "Icon": null,
-        "Description": "\u7bb1\u5b50\u7684\u5916\u58c1\u9690\u9690\u7684\u6e17\u51fa\u8840\u8ff9\u2026",
+        "Description": "You find some bloodstains on the box...",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[134, 135]",
-        "OptionDesc": "['\u7528\u6b66\u5668\u5207\u5f00\u7bb1\u5b50', '\u6253\u5f00\u7bb1\u5b50']"
+        "OptionDesc": "['Use your weapon to cut the box open.', 'Open the box.']"
     },
     {
         "Id": 134,
-        "Title": "\u7bb1\u541f",
+        "Title": "Sounds in a Box",
         "Icon": null,
-        "Description": "\u968f\u7740\u950b\u5203\u5207\u5f00\u7bb1\u5b50\uff0c\u4e00\u4e2a\u9ed1\u8272\u7684\u5f71\u5b50\u731b\u5730\u51b2\u51fa\u3002\u5f85\u4e00\u5207\u6563\u53bb\uff0c\u4f60\u4eec\u53ea\u89c9\u5f97\u624b\u8155\u9ebb\u75f9\u3002",
+        "Description": "A dark shade pops out the moment you cut the box open. Your limbs become paralyzed until it dissipates.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 135,
-        "Title": "\u7bb1\u541f",
+        "Title": "Sounds in a Box",
         "Icon": null,
-        "Description": "\u4e00\u4e2a\u9ed1\u8272\u7684\u5f71\u5b50\u731b\u5730\u51b2\u51fa\uff0c\u8fd9\u9884\u6599\u4e4b\u5916\u7684\u60c5\u51b5\u8ba9\u4f60\u4eec\u4e00\u65f6\u65e0\u6cd5\u4f5c\u51fa\u53cd\u5e94\u3002",
+        "Description": "A dark shade pops out, totally catching you off guard and unprepared.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 136,
-        "Title": "\u7bb1\u541f",
+        "Title": "Sounds in a Box",
         "Icon": null,
-        "Description": "\u4f60\u5feb\u901f\u79bb\u5f00\u4e86\u8fd9\u4e2a\u5730\u65b9",
+        "Description": "You rush out of this place instantly.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 137,
-        "Title": "\u5f98\u5f8a\u7684\u9634\u5f71",
+        "Title": "A Wandering Shade",
         "Icon": null,
-        "Description": "\u4e00\u4e2a\u9ed1\u5f71\u5728\u4e0d\u8fdc\u5904\u8d70\u52a8\uff0c\u53ea\u662f\u770b\u8d77\u6765\u59ff\u6001\u6709\u4e9b\u5947\u602a\u2026\u662f\u88ab\u611f\u67d3\u4e86\u5417\uff1f",
+        "Description": "A dark figure is wandering around somewhere nearby. He looks a bit strange... Could it be the virus?",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[138, 141]",
-        "OptionDesc": "['\u60f3\u60f3\u529e\u6cd5', '\u75db\u4e0b\u6740\u624b']"
+        "OptionDesc": "['Try to think of a solution.', 'Put him down.']"
     },
     {
         "Id": 138,
-        "Title": "\u5f98\u5f8a\u7684\u9634\u5f71",
+        "Title": "A Wandering Shade",
         "Icon": null,
-        "Description": "\u4ee5\u4ed6\u7684\u611f\u67d3\u7a0b\u5ea6\uff0c\u770b\u8d77\u6765\u6ca1\u6551\u4e86",
+        "Description": "There is nothing you can do to cure such severe corruption.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[139, 140]",
-        "OptionDesc": "['\u7ed3\u675f\u4ed6\u7684\u75db\u82e6', '\u5411\u4e0a\u7ea7\u6c42\u63f4']"
+        "OptionDesc": "['End his suffering.', 'Request support from the superiors.']"
     },
     {
         "Id": 139,
-        "Title": "\u5f98\u5f8a\u7684\u9634\u5f71",
+        "Title": "A Wandering Shade",
         "Icon": null,
-        "Description": "\u4ed6\u5012\u4e0b\u4e86\uff0c\u4e5f\u8bb8\u4f60\u4eec\u505a\u7684\u6ca1\u9519\uff0c\u4e5f\u8bb8\u2026\u8c01\u77e5\u9053\u5462\uff1f",
+        "Description": "He falls. Did you do the right thing...? Who knows?",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 140,
-        "Title": "\u5f98\u5f8a\u7684\u9634\u5f71",
+        "Title": "A Wandering Shade",
         "Icon": null,
-        "Description": "\u4e0a\u7ea7\u901a\u77e5\u4f60\u4f1a\u6d3e\u9063\u5176\u4ed6\u4eba\u6765\u63a5\u624b\u8fd9\u4ef6\u4e8b\u3002",
+        "Description": "You are ordered to pass him on to other squads.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 141,
-        "Title": "\u5f98\u5f8a\u7684\u9634\u5f71",
+        "Title": "A Wandering Shade",
         "Icon": null,
-        "Description": "\u4ed6\u770b\u5230\u4f60\u4eec\u5c31\u53d1\u52a8\u4e86\u653b\u51fb\uff0c\u8fd9\u8ba9\u4f60\u4eec\u4e0d\u5f97\u4e0d\u6d88\u706d\u4ed6\u3002\u4e5f\u8bb8\u4f60\u4eec\u505a\u4e86\u6b63\u786e\u7684\u4e8b\u2026\u4e5f\u8bb8\u5427\u3002",
+        "Description": "Upon seeing you, he attacks immediately. You have no choice but to defeat him... Was it the correct thing to do?",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 142,
-        "Title": "\u5947\u602a\u7684\u7bb1\u5b50",
+        "Title": "Strange Box",
         "Icon": null,
-        "Description": "\u53d1\u73b0\u4e86\u5947\u602a\u7684\u7bb1\u5b50\uff0c\u7bb1\u5b50\u770b\u8d77\u6765\u5df2\u7ecf\u7834\u88c2\u4e86\u3002",
+        "Description": "You find a strange box with a couple of cracks outside.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[143, 146]",
-        "OptionDesc": "['\u6253\u5f00\u7bb1\u5b50', '\u653e\u5f03']"
+        "OptionDesc": "['Open the box.', 'Abandon.']"
     },
     {
         "Id": 143,
-        "Title": "\u5947\u602a\u7684\u7bb1\u5b50",
+        "Title": "Strange Box",
         "Icon": null,
-        "Description": "\u5feb\u8981\u5230\u5e95\u4e86\u2026\u7ee7\u7eed\u5417\uff1f",
+        "Description": "Almost to the bottom... Continue?",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[144, 145]",
-        "OptionDesc": "['\u7ee7\u7eed\u7ffb\u627e\uff1f', '\u653e\u5f03']"
+        "OptionDesc": "['Continue.', 'Abandon.']"
     },
     {
         "Id": 144,
-        "Title": "\u5947\u602a\u7684\u7bb1\u5b50",
+        "Title": "Strange Box",
         "Icon": null,
-        "Description": "\u4f60\u627e\u5230\u4e86\u4e0d\u9519\u7684\u4e1c\u897f",
+        "Description": "You find some useful supplies.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 145,
-        "Title": "\u5947\u602a\u7684\u7bb1\u5b50",
+        "Title": "Strange Box",
         "Icon": null,
-        "Description": "\u4f60\u627e\u5230\u4e86\u4e00\u4e9b\u4e1c\u897f",
+        "Description": "You find some supplies.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 146,
-        "Title": "\u5947\u602a\u7684\u7bb1\u5b50",
+        "Title": "Strange Box",
         "Icon": null,
-        "Description": "\u4f60\u627e\u5230\u4e86\u5f88\u5c11\u7684\u4e1c\u897f",
+        "Description": "You find a small amount of supplies.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 147,
-        "Title": "\u9ed1\u96fe",
+        "Title": "Black Mist",
         "Icon": null,
-        "Description": "\u9ed1\u96fe\u9aa4\u7136\u4ece\u8eab\u8fb9\u7684\u5730\u9762\u5347\u8d77\u3002",
+        "Description": "A cloud of black mist suddenly billows from the ground nearby.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[148, 149]",
-        "OptionDesc": "['\u5c0f\u5fc3\u524d\u8fdb', '\u5f3a\u884c\u51b2\u950b']"
+        "OptionDesc": "['Move carefully.', 'Break it through.']"
     },
     {
         "Id": 148,
-        "Title": "\u9ed1\u96fe",
+        "Title": "Black Mist",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u9632\u5907\u7740\u53ef\u80fd\u7684\u88ad\u51fb\uff0c\u5c0f\u5fc3\u8d70\u8fc7\u4e86\u8fd9\u7247\u533a\u57df\u3002",
+        "Description": "You get through this area while keeping your guard up.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 149,
-        "Title": "\u9ed1\u96fe",
+        "Title": "Black Mist",
         "Icon": null,
-        "Description": "\u5728\u51b2\u51fa\u9ed1\u96fe\u533a\u57df\u4e4b\u540e\uff0c\u4f60\u4eec\u53d1\u73b0\u8eab\u4e0a\u7559\u4e0b\u4e86\u4e0d\u77e5\u540d\u602a\u7269\u7684\u4f24\u75d5\u3002",
+        "Description": "After breaking through this area, you notice that you have some fresh scratches made by unknown creatures.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 152,
-        "Title": "\u626d\u66f2\u7684\u5149\u666f",
+        "Title": "Illusory Sight",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u611f\u89c9\u773c\u524d\u7684\u666f\u8c61\u4f3c\u4e4e\u6709\u7565\u5fae\u7684\u626d\u66f2\u3002",
+        "Description": "You suddenly feel that the things ahead are somehow blurred.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[153, 154]",
-        "OptionDesc": "['\u524d\u8fdb', '\u7ed5\u8def']"
+        "OptionDesc": "['Advance.', 'Bypass.']"
     },
     {
         "Id": 153,
-        "Title": "\u626d\u66f2\u7684\u5149\u666f",
+        "Title": "Illusory Sight",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u649e\u4e0a\u4e86\u4e00\u5c42\u900f\u660e\u7684\u4e1c\u897f\uff0c\u8fd9\u73a9\u610f\u5c45\u7136\u4f1a\u5f80\u5173\u8282\u91cc\u6e17\u3002",
+        "Description": "You bump into an invisible gelatinous wall, and it starts crawling to your joints along your skin.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 154,
-        "Title": "\u626d\u66f2\u7684\u5149\u666f",
+        "Title": "Illusory Sight",
         "Icon": null,
-        "Description": "\u4e3a\u4e86\u4fdd\u8bc1\u5b89\u5168\uff0c\u4f60\u4eec\u9009\u62e9\u4e86\u7ed5\u8def\u3002",
+        "Description": "You take another path for safety's sake.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 155,
-        "Title": "\u5206\u5c94\u8def",
+        "Title": "Split Paths",
         "Icon": null,
-        "Description": "\u4fd7\u8bdd\u8bf4\u8f66\u5230\u5c71\u524d\u5fc5\u6709\u8def\uff0c\u4f46\u662f\u53ef\u6ca1\u4eba\u544a\u8bc9\u8fc7\u4f60\u9762\u524d\u51fa\u73b0\u5730\u56fe\u4e0a\u6ca1\u6709\u7684\u4e00\u6761\u5927\u8def\u5206\u4e24\u8fb9\u7684\u60c5\u51b5\u8be5\u600e\u4e48\u9009\u3002",
+        "Description": "You have to cross the bridge when you come to it, but what to do if you see several bridges? Now the road branches into two...",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[156, 157]",
-        "OptionDesc": "['\u5de6', '\u53f3']"
+        "OptionDesc": "['Left.', 'Right.']"
     },
     {
         "Id": 156,
-        "Title": "\u5206\u5c94\u8def",
+        "Title": "Split Paths",
         "Icon": null,
-        "Description": "\u8fd9\u6761\u8def\u4f3c\u4e4e\u5411\u7740\u76ee\u7684\u5730\u7684\u53cd\u65b9\u5411\u53bb\u4e86\u2026\u65f6\u673a\u5df2\u7ecf\u803d\u8bef\u4e86\uff0c\u5e72\u8106\u539f\u5730\u624e\u8425\uff0c\u6574\u88c5\u4f11\u606f\u5427\u3002",
+        "Description": "This road seems to be going in the wrong direction... You have wasted enough time. You decide to camp and rest for the day.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 157,
-        "Title": "\u5206\u5c94\u8def",
+        "Title": "Split Paths",
         "Icon": null,
-        "Description": "\u8ddf\u805a\u96c6\u7684\u9ed1\u5f71\u4eec\u72ed\u8def\u76f8\u9022\uff0c\u4f60\u4eec\u88ab\u5413\u4f4f\u4e86\uff0c\u4f46\u662f\u5b83\u4eec\u88ab\u5413\u8dd1\u4e86\u3002",
+        "Description": "You encounter a group of dark figures. You freeze at the shock, but they are scared away.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 158,
-        "Title": "\u8be1\u5f02\u7684\u901a\u8baf",
+        "Title": "Strange Comms",
         "Icon": null,
-        "Description": "\u901a\u8baf\u9891\u9053\u91cc\u5c45\u7136\u4f20\u6765\u4e86\u4e0d\u8be5\u5728\u6b64\u7684\u4eba\u7684\u58f0\u97f3\u2026\u2026\uff1f\uff01",
+        "Description": "A person that is not supposed to exist contacts you through the comms...",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[159, 160]",
-        "OptionDesc": "['\u8d28\u95ee', '\u9080\u8bf7\u52a0\u5165']"
+        "OptionDesc": "['Question him.', 'Invite him to join you.']"
     },
     {
         "Id": 159,
-        "Title": "\u8be1\u5f02\u7684\u901a\u8baf",
+        "Title": "Strange Comms",
         "Icon": null,
-        "Description": "\u5bf9\u65b9\u5e76\u6ca1\u6709\u7406\u4f1a\u5e76\u544a\u8bc9\u4f60\u4eec\u9644\u8fd1\u7684\u4e00\u4e2a\u5750\u6807\uff0c\u5728\u90a3\u91cc\u4f60\u4eec\u627e\u5230\u4e86\u6709\u5c11\u91cf\u7269\u8d44\u7684\u7bb1\u5b50\u3002",
+        "Description": "Ignoring your words, he only tells you a nearby coordinate, where you find a few supply crates.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 160,
-        "Title": "\u8be1\u5f02\u7684\u901a\u8baf",
+        "Title": "Strange Comms",
         "Icon": null,
-        "Description": "\u5bf9\u65b9\u53cd\u8fc7\u6765\u8bf1\u5bfc\u4f60\u4eec\u5f53\u4e2d\u7684\u4e00\u4e2a\u8d70\u5411\u4e86\u9ed1\u5f71\u4e1b\u751f\u7684\u5730\u65b9\uff0c\u5728\u8270\u96be\u7684\u9a71\u6563\u9ed1\u5f71\u4e4b\u540e\uff0c\u4f60\u4eec\u53d1\u73b0\u8fd9\u91cc\u662f\u4e2a\u5e9f\u5f03\u7684\u7269\u8d44\u4ed3\u5e93\u3002",
+        "Description": "He leads you to a place filled with dark shades. After fending them off, you find an abandoned warehouse.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 161,
-        "Title": "\u5e9f\u589f\u533b\u9662",
+        "Title": "Abandoned Hospital",
         "Icon": null,
-        "Description": "\u6765\u5230\u4e86\u4e00\u5ea7\u770b\u8d77\u6765\u5df2\u7ecf\u88ab\u5e9f\u5f03\u5f88\u4e45\u7684\u533b\u9662\uff0c\u91cc\u9762\u53ef\u80fd\u4f1a\u6709\u4e00\u4e9b\u533b\u7597\u7528\u54c1\uff0c\u662f\u5426\u8fdb\u5165\uff1f",
+        "Description": "A long-abandoned hospital stands in front of you. You might find some medical supplies here. Go in?",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[162, 163]",
-        "OptionDesc": "['\u8fdb\u5165', '\u4e0d\u8fdb']"
+        "OptionDesc": "['Enter.', 'Leave.']"
     },
     {
         "Id": 162,
-        "Title": "\u5e9f\u589f\u533b\u9662",
+        "Title": "Abandoned Hospital",
         "Icon": null,
-        "Description": "\u8d70\u8fdb\u4e00\u770b\uff0c\u5927\u95e8\u88ab\u7d27\u7d27\u5173\u4f4f\uff0c\u4e0a\u9762\u7528\u6cb9\u6f06\u5199\u7740\u201c\u5185\u6709\u6b7b\u4eba\uff0c\u8bef\u5165\u3002\u201d",
+        "Description": "As you approach, you notice the entrance is locked and a warning \"DEAD BODY INSIDE NO ENTRY\" is painted on it.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[164, 165]",
-        "OptionDesc": "['\u627e\u5c0f\u95e8\u8fdb\u5165\u3002', '\u76f4\u63a5\u7834\u95e8\u8fdb\u53bb\u3002']"
+        "OptionDesc": "['Find another entrance.', 'Breach the entrance.']"
     },
     {
         "Id": 163,
-        "Title": "\u5e9f\u589f\u533b\u9662",
+        "Title": "Abandoned Hospital",
         "Icon": null,
-        "Description": "\u770b\u8d77\u6765\u5f88\u5371\u9669\uff0c\u8fd8\u662f\u4e0d\u8fdb\u53bb\u4e86\u3002",
+        "Description": "It looks dangerous. You would rather not go inside.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[166, 167]",
-        "OptionDesc": "['\u5728\u5468\u8fb9\u5bfb\u627e\u8865\u7ed9\u3002', '\u6700\u597d\u79bb\u8fd9\u91cc\u8fdc\u4e00\u70b9\u3002']"
+        "OptionDesc": "['Find supplies nearby.', 'It would be better to stay away from it.']"
     },
     {
         "Id": 164,
-        "Title": "\u5e9f\u589f\u533b\u9662",
+        "Title": "Abandoned Hospital",
         "Icon": null,
-        "Description": "\u504c\u5927\u7684\u533b\u9662\u5982\u4eca\u7a7a\u65e0\u4e00\u4eba\uff0c\u867d\u7136\u8d39\u4e86\u4e00\u756a\u529f\u592b\uff0c\u4f46\u4f60\u4eec\u6700\u7ec8\u627e\u5230\u4e86\u4e00\u4e9b\u533b\u7597\u7528\u54c1\u3002",
+        "Description": "There is not a living soul in this huge hospital. You have spent some time finding a few medical supplies.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 165,
-        "Title": "\u5e9f\u589f\u533b\u9662",
+        "Title": "Abandoned Hospital",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u53d7\u5230\u4e86\u6570\u5341\u4f4d\u4e27\u5c38\u7684\u5939\u9053\u6b22\u8fce\uff0c\u548c\u4ed6\u4eec\u70ed\u60c5\u4ea4\u6d41\u540e\u4f60\u4eec\u5e26\u7740\u4f24\u62ff\u5230\u4e86\u90e8\u5206\u8865\u7ed9\u3002",
+        "Description": "You are ambushed by several zombies. Although slightly wounded, you manage to fend them off and retrieve some supplies.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 166,
-        "Title": "\u5e9f\u589f\u533b\u9662",
+        "Title": "Abandoned Hospital",
         "Icon": null,
-        "Description": "\u4e0d\u8fdc\u5904\u4f20\u6765\u4e86\u8be1\u5f02\u7684\u58f0\u54cd\uff0c\u4f60\u4eec\u8fde\u5fd9\u9003\u8dd1\uff0c\u614c\u5f20\u4e2d\u4e22\u4e0b\u4e86\u4e00\u888b\u884c\u674e\u3002",
+        "Description": "You hear some strange sounds not far away. Without hesitation, you rush out of the hospital, but some of your belongings are lost halfway.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 167,
-        "Title": "\u5e9f\u589f\u533b\u9662",
+        "Title": "Abandoned Hospital",
         "Icon": null,
-        "Description": "\u4f60\u4eec\u7684\u9009\u62e9\u662f\u660e\u667a\u7684\uff0c\u533b\u9662\u5468\u56f4\u8eba\u7740\u51e0\u5177\u9762\u76ee\u5168\u975e\u7684\u5c38\u4f53\uff0c\u4f60\u4eec\u5728\u4e0d\u8fdc\u5904\u627e\u5230\u4e86\u4ed6\u4eec\u7684\u884c\u674e\u3002",
+        "Description": "You have made a wise choice. Several disfigured corpses lie around the hospital. You find their belongings not far away.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[4]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 168,
-        "Title": "\u5377\u5e18\u95e8",
+        "Title": "Roller Shutter",
         "Icon": null,
-        "Description": "\u7a81\u7136\u964d\u4e0b\u7684\u5377\u5e18\u95e8\u5c06\u4f60\u548c\u540c\u4f34\u5206\u5f00\uff0c\u4f60\u88ab\u5173\u5728\u4e86\u4e00\u7247\u6f06\u9ed1\u7684\u767e\u8d27\u5546\u573a\u4e2d\uff0c\u8fd9\u65f6\u4f60\u2026\u2026",
+        "Description": "A roller shutter suddenly descends, separating you from your companions. You are now locked in a pitch-black shopping mall...",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[169, 170]",
-        "OptionDesc": "['\u60f3\u529e\u6cd5\u6253\u5f00\u95e8', '\u53e6\u5bfb\u51fa\u8def']"
+        "OptionDesc": "['Try to open the shutter.', 'Find another way.']"
     },
     {
         "Id": 169,
-        "Title": "\u5377\u5e18\u95e8",
+        "Title": "Roller Shutter",
         "Icon": null,
-        "Description": "\u4f60\u53d1\u73b0\u5377\u5e18\u95e8\u65e0\u6cd5\u8f7b\u6613\u7684\u6253\u5f00",
+        "Description": "It is an impossible mission to open this shutter with your bare hands.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[171, 172]",
-        "OptionDesc": "['\u627e\u5c0f\u95e8\u8fdb\u5165\u3002', '\u76f4\u63a5\u7834\u95e8\u8fdb\u53bb\u3002']"
+        "OptionDesc": "['Find another entrance.', 'Breach the entrance.']"
     },
     {
         "Id": 170,
-        "Title": "\u5377\u5e18\u95e8",
+        "Title": "Roller Shutter",
         "Icon": null,
-        "Description": "\u4f60\u53d1\u73b0\u5ba4\u5185\u7684\u706f\u5149\u592a\u8fc7\u9634\u6697\uff0c\u770b\u4e0d\u6e05\u524d\u65b9\u7684\u9053\u8def",
+        "Description": "It is too dark for you to find a way out.",
         "IsEnd": null,
         "HasLeave": null,
         "OptionId": "[173, 174]",
-        "OptionDesc": "['\u5728\u5468\u8fb9\u5bfb\u627e\u8865\u7ed9\u3002', '\u6700\u597d\u79bb\u8fd9\u91cc\u8fdc\u4e00\u70b9\u3002']"
+        "OptionDesc": "['Find supplies nearby.', 'It would be better to stay away from it.']"
     },
     {
         "Id": 171,
-        "Title": "\u5377\u5e18\u95e8",
+        "Title": "Roller Shutter",
         "Icon": null,
-        "Description": "\u7206\u70b8\u4ea7\u751f\u7684\u4f59\u6ce2\u4e0d\u53ef\u907f\u514d\u5730\u6ce2\u53ca\u5230\u4e86\u4f60\uff0c\u8fd8\u5f15\u6765\u4e86\u85cf\u5728\u6697\u5904\u7684\u67d0\u4e9b\u201c\u4e1c\u897f\u201d\u3002",
+        "Description": "The explosion shockwave seems to have awoken \"something\" in the dark.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[1]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 172,
-        "Title": "\u5377\u5e18\u95e8",
+        "Title": "Roller Shutter",
         "Icon": null,
-        "Description": "\u91cc\u7684\u901f\u5ea6\u5f88\u5feb\uff0c\u4f60\u53ea\u662f\u5750\u7740\u7b49\u4e86\u4e00\u4f1a\u3002",
+        "Description": "Lee is very fast. You have only waited for a while.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[2]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 173,
-        "Title": "\u5377\u5e18\u95e8",
+        "Title": "Roller Shutter",
         "Icon": null,
-        "Description": "\u4f60\u51ed\u501f\u76f4\u89c9\u627e\u5230\u4e86\u603b\u7535\u95f8\uff0c\u603b\u7b97\u53ef\u4ee5\u6253\u5f00\u5377\u5e18\u95e8\u4e86\u3002",
+        "Description": "You find the main switch by intuition and open the roller shutter.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[3]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     },
     {
         "Id": 174,
-        "Title": "\u5377\u5e18\u95e8",
+        "Title": "Roller Shutter",
         "Icon": null,
-        "Description": "\u7a97\u6237\u4e0a\u7684\u788e\u73bb\u7483\u5212\u7834\u4e86\u4f60\u7684\u8863\u670d\uff0c\u867d\u7136\u6ca1\u6709\u53d7\u4f24\uff0c\u4f46\u662f\u4e3d\u8299\u8fd8\u662f\u4e3a\u4f60\u505a\u4e86\u5168\u5957\u68c0\u67e5\u3002",
+        "Description": "Your clothes are ripped by shards of window glass. Liv gives you a full body check-up even though you insist you are not hurt.",
         "IsEnd": 1.0,
         "HasLeave": null,
         "OptionId": "[4]",
-        "OptionDesc": "['\u7ee7\u7eed']"
+        "OptionDesc": "['Continue.']"
     }
 ]

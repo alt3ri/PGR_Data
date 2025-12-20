@@ -1010,6 +1010,16 @@ PlayerCondition = {
         local ret = XDataCenter.AreaWarManager.IsBlockClear(blockId)
         return ret, condition.Desc
     end,
+    [64322] = function(condition)
+        -- 藏品室是否有道具
+        local isExit = XMVCA.XAreaWar:GetItemRoom():IsExitItem()
+        return isExit, condition.Desc
+    end,
+    [64323] = function(condition)
+        -- 藏品室是否获得过道具
+        local isObtained = XMVCA.XAreaWar:GetItemRoom():IsObtainedItem()
+        return isObtained, condition.Desc
+    end,
     --全服决战 end
     -- 肉鸽 begin
     [17000] = function(condition)
@@ -2191,6 +2201,73 @@ PlayerCondition = {
     end,
     -- 自选Lotto卡池 结束
 
+    -- 检测当期的可肝卡池Coin的Item是否达到上限
+    [10341] = function(condition)
+        -- 固定使用 Type，不再用 Params[1]
+        local typeId = condition.Params[1]
+        local judgeType = condition.Params[2]
+
+        if not judgeType then
+            return false, condition.Desc
+        end
+
+        -----------------------------------------------------------------------
+        -- 解析 indexList（从 Params[3] 开始）
+        -----------------------------------------------------------------------
+        local indexList = {}
+        if condition.Params and #condition.Params > 2 then
+            for i = 3, #condition.Params do
+                local targetItemIndex = condition.Params[i]
+                if XTool.IsNumberValid(targetItemIndex) then
+                    table.insert(indexList, targetItemIndex)
+                end
+            end
+        end
+
+        if XTool.IsTableEmpty(indexList) then
+            return false, condition.Desc
+        end
+
+        -----------------------------------------------------------------------
+        -- judgeType = 1
+        -- 需求：所有指定 index 的道具数量 都已达到最大上限
+        -----------------------------------------------------------------------
+        if judgeType == 1 then
+            for _, index in ipairs(indexList) do
+                if not XMVCA.XItemRestrict:IsItemReachMaxByIndex(typeId, index) then
+                    return false, condition.Desc
+                end
+            end
+            return true, condition.Desc
+        end
+
+        -----------------------------------------------------------------------
+        -- judgeType = 2
+        -- 需求：所有指定 index 的道具数量 都未达到最大上限
+        -----------------------------------------------------------------------
+        if judgeType == 2 then
+            local gainList = XMVCA.XItemRestrict:GetGainItemCountList(typeId) or {}
+            local maxList  = XMVCA.XItemRestrict:GetItemMaxCountList(typeId) or {}
+
+            for _, index in ipairs(indexList) do
+                local gainCount = gainList[index] or 0
+                local maxCount  = maxList[index] or 0
+
+                -- 达到/超过最大 → 未满足 judgeType=2
+                if gainCount >= maxCount then
+                    return false, condition.Desc
+                end
+            end
+
+            return true, condition.Desc
+        end
+
+        -----------------------------------------------------------------------
+        -- 其他 judgeType → 默认失败
+        -----------------------------------------------------------------------
+        return false, condition.Desc
+    end,
+
     -- 肉鸽4-本局内【持有/未持有】指定天赋
     [17401] = function(condition)
         ---@type XTheatre4Agency
@@ -2598,6 +2675,12 @@ PlayerCondition = {
     [17450] = function(condition)
         -- 比赛是否未进行
         return not XMVCA.XRace:IsGamePlaying(), condition.Desc
+    end,
+    --endregion
+
+    --region 涂装套装
+    [17460] = function(condition)
+        return XMVCA.XFashionSuit:IsRed(), condition.Desc
     end,
     --endregion
 }

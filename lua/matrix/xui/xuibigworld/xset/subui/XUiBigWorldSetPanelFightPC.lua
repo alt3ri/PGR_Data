@@ -135,9 +135,9 @@ end
 
 function XUiBigWorldSetPanelFightPC:OnTogEnableJoystickClick(value)
     if value ~= nil then
-        self:SetEnableInputJoystick(value)
+        self:SetEnableInputJoystick(value == 1)
     else
-        self:SetEnableInputJoystick(self.TogEnableJoystick:GetToggleState())
+        self:SetEnableInputJoystick(self.TogEnableJoystick:GetToggleState() == XUiButtonState.Select)
     end
 
     if XInputManager.EnableInputJoystick and not XDataCenter.UiPcManager.IsPc() then

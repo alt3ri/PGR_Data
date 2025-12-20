@@ -62,7 +62,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u5b88\u536bA', 3: 'B\u533a\u88ab\u7a81\u7834\u4e86\uff0c\u7acb\u523b\u542f\u52a8\u76f8\u5173\u7684\u5c01\u9501\u95e8\uff01', 4: '1'}"
+        "Params": "{1: '1', 2: 'Guard A', 3: \"They've broken through Section B! Seal all relevant gates!\", 4: '1'}"
     },
     {
         "Id": 6,
@@ -75,7 +75,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5b88\u536bB', 3: '\u5b88\u536b\u673a\u68b0\u5462\uff01', 4: '2'}"
+        "Params": "{2: 'Guard B', 3: 'Where are the guard bots?', 4: '2'}"
     },
     {
         "Id": 7,
@@ -88,7 +88,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5b88\u536bA', 3: '\u5728\u542f\u52a8\u4e4b\u524d\u88ab\u5207\u65ad\u4e86\u8fde\u7ebf\uff0c\u540c\u65f6\u533a\u57df\u88ab\u5360\u9886\uff0c\u6682\u65f6\u5230\u4e0d\u4e86\u91cc\u9762\u62a2\u4fee\uff01', 4: '1'}"
+        "Params": "{2: 'Guard A', 3: \"The connection was cut before we could activate them. They've already occupied the area. We can't get inside to fix the machines!\", 4: '1'}"
     },
     {
         "Id": 8,
@@ -101,7 +101,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5b88\u536bA', 3: '\u5730\u4e0b\u5c42\u7684\u51fa\u5165\u53e3\u4e5f\u88ab\u6467\u6bc1\u4e86\uff0c\u4e00\u90e8\u5206\u4eba\u5458\u5b8c\u5168\u88ab\u56f0\u5728\u4e86\u5176\u4e2d\uff01', 4: '1'}"
+        "Params": "{2: 'Guard A', 3: 'The basement exit has been totally destroyed. Some of our own are trapped in there!', 4: '1'}"
     },
     {
         "Id": 9,
@@ -140,7 +140,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6bdb\u9547', 3: '\u8fd8\u771f\u662f\u4e00\u56e2\u7cdf\u554a\u3002', 4: '1'}"
+        "Params": "{1: '1', 2: 'Mao Zhen', 3: 'What a mess.', 4: '1'}"
     },
     {
         "Id": 12,
@@ -153,7 +153,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5b88\u536bB', 3: '\u4f60\u662f\u2026\u2026\u7279\u6b8a\u4fdd\u5b89\u90e8\u7684\u2026\u2026', 4: '2'}"
+        "Params": "{2: 'Guard B', 3: \"You're... from the Special Security Department...\", 4: '2'}"
     },
     {
         "Id": 13,
@@ -166,7 +166,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6bdb\u9547', 3: '\u8fd9\u4e2a\u73b0\u573a\u73b0\u5728\u7531\u6211\u6765\u8d1f\u8d23\uff0c\u76d1\u89c6\u6444\u50cf\u5934\u5e94\u8be5\u90fd\u6709\u8fd0\u4f5c\u5427\u3002', 4: '1'}"
+        "Params": "{2: 'Mao Zhen', 3: \"I'll be in charge of this situation from now on. The security cameras are working, right?\", 4: '1'}"
     },
     {
         "Id": 14,
@@ -179,7 +179,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5b88\u536bB', 3: '\u662f\u7684\uff0c\u611f\u67d3\u4f53\u4eec\u8fd8\u6ca1\u6709\u5bdf\u89c9\u5230\u6444\u50cf\u5934\u7684\u5b58\u5728\uff0c\u4ed6\u4eec\u73b0\u5728\u805a\u5408\u5728AB\u4e24\u533a\uff0c\u4e4b\u540e\u5927\u6982\u5c31\u4f1a\u5f80\u9876\u5c42\u8fd9\u8fb9\u51b2\u6765\u3002', 4: '2'}"
+        "Params": "{2: 'Guard B', 3: \"Yeah. The Corrupted haven't noticed the cameras yet. They're gathered in sections A and B right now and will probably make their way up here soon.\", 4: '2'}"
     },
     {
         "Id": 15,
@@ -192,7 +192,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6bdb\u9547\u51b7\u9759\u7684\u6307\u6325\u7740\u73b0\u573a\u614c\u4e71\u7684\u9ed1\u91ce\u58eb\u5175\uff0c\u4ed6\u4eec\u56e0\u4e3a\u611f\u67d3\u4f53\u7684\u7a81\u7136\u51b2\u5165\u800c\u4e71\u4e86\u9635\u811a\u3002'}"
+        "Params": "{3: 'With an impassive face, Mao Zhen gives orders to the panicking Kurono soldiers who lost their head when the \"Corrupted\" charged in.'}"
     },
     {
         "Id": 16,
@@ -205,7 +205,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5728\u6210\u529f\u7a33\u5b9a\u519b\u5fc3\u4ee5\u540e\u4ed6\u628a\u89c6\u7ebf\u653e\u5230\u5c4f\u5e55\u4e4b\u4e0a\uff0c\u5728\u5c4f\u5e55\u4e2d\u6620\u51fa\u5927\u6279\u62ff\u7740\u6b66\u5668\u7684\u2018\u611f\u67d3\u4f53\u2019\uff0c\u5176\u4e2d\u9886\u5934\u8005\u5361\u7a46\u624b\u4e0a\u62ff\u7740\u7684\u5927\u5251\u66f4\u662f\u5f15\u4eba\u6ce8\u76ee\u3002'}"
+        "Params": "{3: 'After calming the guards down, he trains his gaze onto the screen, which shows a horde of armed \"Corrupted\". Their leader Camu\\'s greatsword is especially eye-catching.'}"
     },
     {
         "Id": 17,
@@ -218,7 +218,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6bdb\u9547', 3: '\u73b0\u72b6\u4e0b\u4e0d\u80fd\u6307\u671b\u603b\u90e8\u4f1a\u8c03\u6d3e\u4ec0\u4e48\u5730\u9762\u90e8\u961f\uff0c\u4f60\u4eec\u51e0\u4e2a\u7ee7\u7eed\u7559\u5728\u8fd9\u91cc\u62a5\u544a\u573a\u5730\u72b6\u51b5\uff0c\u5176\u4f59\u5b89\u4fdd\u4eba\u5458\u968f\u6211\u53bb\u8fce\u6218\u611f\u67d3\u4f53\u3002', 4: '1'}"
+        "Params": "{2: 'Mao Zhen', 3: \"With the current situation, we can't expect the headquarters to send any ground troops. The few of you should stay here and report to me. The rest of you, come with me. We'll take down the Corrupted.\", 4: '1'}"
     },
     {
         "Id": 18,
@@ -244,7 +244,7 @@
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5b88\u536b\u4eec', 3: '\u662f\uff01'}"
+        "Params": "{2: 'Guards', 3: 'Roger!'}"
     },
     {
         "Id": 20,
@@ -309,7 +309,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u58eb\u5175A', 3: '\u5361\u7a46\uff0c\u8fdb\u884c\u5f97\u5f88\u987a\u5229\uff0c\u9ed1\u91ce\u90a3\u4e9b\u6df7\u8d26\u679c\u7136\u6ca1\u60f3\u5230\u6211\u4eec\u4f1a\u76f4\u63a5\u51b2\u8fc7\u6765\u3002', 4: '2'}"
+        "Params": "{1: '1', 2: 'Soldier A', 3: \"Things are going well, Camu. Those bastards at Kurono sure didn't expect us to barge right in.\", 4: '2'}"
     },
     {
         "Id": 25,
@@ -322,7 +322,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5361\u7a46', 3: '\u90a3\u662f\u5f53\u7136\uff0c\u7ed9\u6211\u8bb0\u4f4f\uff0c\u4ec0\u4e48\u90fd\u4e0d\u8981\u653e\u8fc7\uff0c\u8981\u8ba9\u4ed6\u4eec\u77e5\u9053\u4ec0\u4e48\u624d\u53eb\u505a\u4e00\u7c92\u5c18\u57c3\u4e5f\u4e0d\u5269\uff01', 4: '1'}"
+        "Params": "{2: 'Camu', 3: \"Of course they wouldn't. Remember, don't let any of them slip by. Show them what it really means to not leave behind a single speck of dust!\", 4: '1'}"
     },
     {
         "Id": 26,
@@ -348,7 +348,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u88ab\u4ec7\u6068\u6240\u9a71\u4f7f\uff0c\u5361\u7a46\u7b49\u4eba\u5c31\u5982\u540c\u89e3\u5f00\u67b7\u9501\u7684\u602a\u7269\u4e00\u6837\u4e0d\u65ad\u7834\u574f\u773c\u524d\u7684\u4e00\u5207\uff0c\u65e0\u8bba\u7528\u4f5c\u4fdd\u5b89\u7684\u673a\u68b0\uff0c\u4e4b\u540e\u8981\u9001\u5f80\u57ce\u5e02\u7684\u8865\u7ed9\u3002'}"
+        "Params": "{3: \"Spurred on by hatred, Camu's squad goes on a destructive rampage like unchained monsters, smashing all the guard bots and supplies in the way.\"}"
     },
     {
         "Id": 28,
@@ -361,7 +361,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u8fd8\u662f\u5b58\u50a8\u7740\u91cd\u8981\u6570\u636e\u7684\u7535\u8111\uff0c\u6291\u6216\u662f\u80fd\u6551\u67d0\u4eba\u4e00\u547d\u7684\u4e1c\u897f\uff0c\u4ed6\u4eec\u90fd\u76f4\u63a5\u78be\u788e\uff0c\u6beb\u4e0d\u7559\u60c5\u3002'}"
+        "Params": "{3: 'The computers storing important data, too, and life-saving equipment. They crush them all without a second thought.'}"
     },
     {
         "Id": 29,
@@ -400,7 +400,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u5b88\u536b', 3: '\u4e0d\u8981\u2026\u2026\u4e0d\u8981\uff01', 4: '1'}"
+        "Params": "{1: '1', 2: 'Guard', 3: 'No... No!', 4: '1'}"
     },
     {
         "Id": 32,
@@ -439,7 +439,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5728\u8fd9\u4e2a\u7834\u574f\u4e4b\u4e2d\u81ea\u7136\u4e5f\u5305\u62ec\u4e86\u9ed1\u91ce\u7684\u5458\u5de5\uff0c\u56e0\u4e3a\u6050\u60e7\u800c\u8dcc\u5012\u7684\u65f6\u5019\u5c31\u5df2\u7ecf\u6ce8\u5b9a\u4e86\u4ed6\u7684\u7ed3\u5c40\u3002'}"
+        "Params": "{3: 'They crush the Kurono employee they come across too. His fate has been sealed the moment he tripped in a panic.'}"
     },
     {
         "Id": 35,
@@ -465,7 +465,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u5361\u7a46', 3: '\u8fd9\u6837\u5c31\u597d\uff0c\u7ee7\u7eed\u5411\u524d\uff01', 4: '1'}"
+        "Params": "{1: '1', 2: 'Camu', 3: \"That's enough. Continue forward!\", 4: '1'}"
     },
     {
         "Id": 37,
@@ -478,7 +478,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5c31\u7b97\u51fa\u73b0\u4e86\u4f24\u4ea1\u4e5f\u4e0d\u8981\u7d27\uff0c\u53cd\u6b63\u4ece\u4e00\u5f00\u59cb\u8c01\u4e5f\u6ca1\u60f3\u8fc7\u80fd\u5168\u8eab\u800c\u9000\uff0c\u6240\u4ee5\u5361\u7a46\u7b49\u4eba\u4e0d\u65ad\u5411\u524d\u3002'}"
+        "Params": "{3: 'They no longer care about casualties in their group\u2014none of them had expected to leave alive anyway. They plough on.'}"
     },
     {
         "Id": 38,
@@ -491,7 +491,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5361\u7a46', 3: '\u76ee\u6807\u53ea\u6709\u4e00\u4e2a\uff0c\u53bb\u9876\u697c\u7684\u63a7\u5236\u5ba4\uff0c\u7136\u540e\u627e\u5230\u89e3\u4f53\u7684\u65b9\u6cd5\u76f4\u63a5\u6467\u6bc1\u8fd9\u4e2a\u5730\u65b9\uff01', 4: '1'}"
+        "Params": "{2: 'Camu', 3: 'We have just one goal: the control room on the top level. Get there, find a way to destroy this place, and then do it!', 4: '1'}"
     },
     {
         "Id": 39,
@@ -530,7 +530,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u58eb\u5175A', 3: '\u5361\u7a46\uff0c\u6709\u4e9b\u4fdd\u5b89\u673a\u68b0\u4ece\u9876\u697c\u51b2\u4e0b\u6765\u4e86\uff01', 4: '2'}"
+        "Params": "{1: '1', 2: 'Soldier A', 3: 'Camu! Some guard bots are coming down from upstairs!', 4: '2'}"
     },
     {
         "Id": 42,
@@ -543,6 +543,6 @@
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5361\u7a46', 3: '\u54fc\uff0c\u522b\u60f3\u62e6\u6211\uff01', 4: '1'}"
+        "Params": "{2: 'Camu', 3: 'Out of my way!', 4: '1'}"
     }
 ]

@@ -169,9 +169,7 @@ function XDlcRoomModel:UpdatePlayerInfo(playerInfoList)
             if player then
                 player:SetIsLeader(playerInfo.Leader)
                 player:SetState(playerInfo.State)
-                player:SetCharacterListBySource({
-                    playerInfo.WorldNpcData,
-                })
+                player:SetCharacterListBySource({ playerInfo.WorldNpcData, })
             end
         end
 

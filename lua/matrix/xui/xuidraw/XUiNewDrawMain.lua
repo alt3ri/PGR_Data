@@ -1,11 +1,11 @@
 local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 local XDrawTabBtnEntity = require("XEntity/XDrawMianButton/XDrawTabBtnEntity")
 local XNormalDrawGroupBtnEntity = require("XEntity/XDrawMianButton/XNormalDrawGroupBtnEntity")
-local XLottoDrawGroupBtnEntity = require("XEntity/XDrawMianButton/XLottoDrawGroupBtnEntity")
 local XUiDrawControl = require("XUi/XUiDraw/XUiDrawControl")
 local XUiDrawScene = require("XUi/XUiDraw/XUiDrawScene")
 local XUiNewGridDrawBanner = require("XUi/XUiDraw/XUiNewGridDrawBanner")
 local XUiDrawPanelLbItem = require("XUi/XUiDraw/XUiDrawPanelLbItem")
+local XUiDrawPanelCanLiverJourneyReward = require("XUi/XUiDraw/XUiDrawPanelCanLiverJourneyReward")
 local XModelHX = require("XModule/XModel/XModelHX")
 
 ---@class XUiNewDrawMain:XLuaUi
@@ -43,7 +43,10 @@ function XUiNewDrawMain:OnStart(ruleType, groupId, defaultDrawId, groupIdPool)
     self.DefaultDrawId = defaultDrawId
     self.IsFirstIn = true
     self.CurrentSelectTemplateId = false
+    ---@type XUiDrawPanelLbItem
     self.CurPanelLbItem = XUiDrawPanelLbItem.New(self.PanelLbItem, self)
+    ---@type XUiDrawPanelCanLiverJourneyReward
+    self.CurPanelCanLiverJourneyReward = XUiDrawPanelCanLiverJourneyReward.New(self.PanelCanLiverReward, self)
 
     --2.7处理多卡池情况
     self:FindDrawGroupId()
@@ -97,6 +100,7 @@ function XUiNewDrawMain:Refresh()
     self:UpdateBtnDiscount()
     self:RefreshNormalUiShow()
     self.CurPanelLbItem:Refresh(self.DrawInfo)
+    self.CurPanelCanLiverJourneyReward:CheckToShow(self.DrawInfo)
 end
 
 function XUiNewDrawMain:RefreshNormalUiShow()
@@ -389,17 +393,23 @@ function XUiNewDrawMain:CreateBanner(data)
     local groupActivityTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.GroupId)
     local activeTargetId = groupActivityTargetData and groupActivityTargetData:GetActivityId()
     local drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(data:GetId())
+
+    -- 切换创建新的banner要销毁上一个
+    if self.CurBanner then
+        self.CurBanner:UnBindParent()
+    end
+
     if XTool.IsNumberValid(activeTargetId) and not string.IsNilOrEmpty(XDrawConfigs.GetDrawActivityTargetShowBannerPrefab(activeTargetId)) then
         local prefab = self.PanelBanner:LoadPrefab(XDrawConfigs.GetDrawActivityTargetShowBannerPrefab(activeTargetId))
-        self.CurBanner = XUiNewGridDrawBanner.New(prefab, data, self)
+        self.CurBanner = XUiNewGridDrawBanner.New(prefab, self, data)
         self.CurBanner.GameObject.name = data:GetId()
     elseif drawInfo.Banner then
         local prefab = self.PanelBanner:LoadPrefab(drawInfo.Banner)
-        self.CurBanner = XUiNewGridDrawBanner.New(prefab, data, self)
+        self.CurBanner = XUiNewGridDrawBanner.New(prefab, self, data)
         self.CurBanner.GameObject.name = data:GetId()
     else
         local prefab = self.PanelBanner:LoadPrefab(data:GetBanner())
-        self.CurBanner = XUiNewGridDrawBanner.New(prefab, data, self)
+        self.CurBanner = XUiNewGridDrawBanner.New(prefab, self, data)
         self.CurBanner.GameObject.name = data:GetId()
     end
 
@@ -1006,6 +1016,19 @@ function XUiNewDrawMain:OnSelectUp(drawId)
     self.Effect2.gameObject:SetActive(false)
     self.Effect2.gameObject:SetActive(true)
 
+    -- 可肝卡池商店跳转按钮
+
+    local cId = 770400 -- 临时写死
+    local isCurDrawIsOpenCanLiverDraw = XConditionManager.CheckCondition(cId) and drawInfo.IsShowShop
+    self.BtnShop.gameObject:SetActiveEx(isCurDrawIsOpenCanLiverDraw)
+    --==============================
+    -- 可肝卡池商店按钮红点逻辑
+    --==============================
+    local key = string.format("NewDraw_ShopRedDot_%s", tostring(drawId))
+    local hasClicked = XSaveTool.GetData(key)
+    -- 未点击过 → 显示红点
+    self.BtnShop:ShowReddot(not hasClicked)
+
     self.CurBanner:UpdateNewDrawChar(self.GoodsShowParams.Icon, isShowQuality, self.GoodsShowParams.QualityIcon)
 end
 --endregion
@@ -1047,6 +1070,9 @@ function XUiNewDrawMain:AddBtnListener()
     end
     self.BtnDrawRecord.CallBack = function()
         self:OnBtnDrawRecordClick()
+    end
+    self.BtnShop.CallBack = function()
+        self:OnBtnShopClick()
     end
 
     self.PanelTwoForOne:GetObject("BtnReceive").CallBack = function()
@@ -1103,6 +1129,14 @@ function XUiNewDrawMain:OnBtnDrawRecordClick()
     XDataCenter.DrawManager.RequestDrawGetHistoryGroupList(function(historyGroupInfos)
         XLuaUiManager.Open('UiDrawRecord', self.GroupId, historyGroupInfos)
     end)
+end
+
+function XUiNewDrawMain:OnBtnShopClick()
+    local skipToShopId = 90055 -- 临时写死
+    XFunctionManager.SkipInterface(skipToShopId) 
+    local curDrawId = self.DrawInfo.Id
+    local key = string.format("NewDraw_ShopRedDot_%s", tostring(curDrawId))
+    XSaveTool.SaveData(key, true)
 end
 
 function XUiNewDrawMain:OnBtnActivityTargetClick()

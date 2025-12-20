@@ -63,8 +63,12 @@ function XUiComTheatre5PVEChooseCharacter:OnSelectCharacter(index, BtnName)
     if not entranceCfg then
         return false
     end
+    
+    ---@type XTableTheatre5PveStoryLine
+    local storyLineCfg = self._Control.PVEControl:GetStoryLineCfg(entranceCfg.StoryLine)
+
     --点击的是角色
-    if XTool.IsNumberValid(index) then
+    if XTool.IsNumberValid(index) and storyLineCfg.StoryLineType == XMVCA.XTheatre5.EnumConst.PVEStoryLineType.Normal then
         local isUnlock = self._Control.PVEControl:IsCharacterAndStoryLineUnlock(index,self._EntranceName)
         if not isUnlock then
            XUiManager.TipMsg(self._Control:GetCharacterLock()) 
@@ -72,7 +76,6 @@ function XUiComTheatre5PVEChooseCharacter:OnSelectCharacter(index, BtnName)
         end    
     end    
     local teachingStoryLineId = self._Control.PVEControl:GetTeachingStoryLineId()
-    local storyLineCfg = self._Control.PVEControl:GetStoryLineCfg(entranceCfg.StoryLine)
     local isTeaching = entranceCfg.StoryLine == teachingStoryLineId 
         and storyLineCfg.StoryLineType == XMVCA.XTheatre5.EnumConst.PVEStoryLineType.Guide
     if isTeaching then
@@ -119,6 +122,13 @@ end
 function XUiComTheatre5PVEChooseCharacter:OnBtnStartClickEvent()
     local isUnlock = self._Control.PVEControl:IsCharacterAndStoryLineUnlock(self._CharacterId,self._EntranceName)
     if not isUnlock then
+        return
+    end
+    
+    -- 判断是否是当前节点禁用的角色
+    local isCanSelect, tips = self._Control:IsCharacterCanSelect(self._CharacterId)
+    if not isCanSelect then
+        XUiManager.TipMsg(tips)
         return
     end
    
@@ -238,6 +248,38 @@ end
 
 function XUiComTheatre5PVEChooseCharacter:GetCurrentCharacterId()
     return self._CharacterId
+end
+
+-- 检查是否需要隐藏角色模型及其交互
+function XUiComTheatre5PVEChooseCharacter:CheckHideCharacterAndBoard()
+    local isNeedHide = self._Control.PVEControl:CheckEnterContentInCharaChoose()
+
+    if isNeedHide then
+        self:SetModelVisible(false)
+        self:SetInteractUIVisible(false)
+    end
+end
+
+--设置模型显隐
+function XUiComTheatre5PVEChooseCharacter:SetModelVisible(enable)
+    --目前只隐藏角色模型，物品模型保留显示，通过隐藏按钮规避交互
+    local characterCfgs = self._Control:GetTheatre5CharacterCfgs()
+    for i = 1, #characterCfgs do
+        local model = self._UiModelGo['PanelRoleModel'..characterCfgs[i].Id]
+        if model then
+            model.gameObject:SetActiveEx(enable)
+        end
+    end
+end
+
+-- 设置交互UI显隐
+function XUiComTheatre5PVEChooseCharacter:SetInteractUIVisible(enable)
+    --设置按钮显隐
+    local childCount = self.PanelFirst.transform.childCount
+    for i = 0, childCount - 1 do
+        local child = self.PanelFirst.transform:GetChild(i)
+        child.gameObject:SetActiveEx(false)
+    end
 end
 
 return XUiComTheatre5PVEChooseCharacter

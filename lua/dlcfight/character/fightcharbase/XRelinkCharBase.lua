@@ -14,6 +14,11 @@ function XRelinkCharBase:Init() --初始化
     self:JumpWeaponHidShowCheckInit()
     --- 弹刀无敌通用buff id
     self._counterImmortalMagicId = 1000479
+    self:RebootCheckInit()--复活初始化
+    --- 初始化隐藏qte按钮
+    self._proxy:SetPlayerButtonOpEnabled(ENpcOperationKey.RelinkBreakQte,self._uuid,false)
+    --- 破韧通知buff
+    self._BreakQteBuff = 8005902
 end
 
 ---@param dt number @ delta time 
@@ -27,6 +32,7 @@ function XRelinkCharBase:Update(dt)
     self:ProcessResetSprintMoveTypeOnJump()
     self:ProcessHandleJumpTurnSpeed()
     self:ProcessChangeJumpState()
+    self:RebootCheckUpdate()
 end
 
 ---@param eventType number
@@ -82,6 +88,42 @@ function XRelinkCharBase:OnExitJumpWeaponShow()
 
 end
 
+--region 复活系统
+---复活检查初始化
+function XRelinkCharBase:RebootCheckInit()
+    self.rebootCount = 1 --第几次复活
+    self.lastDead = false --默认存活
+end
+
+---复活系统Update检查
+function XRelinkCharBase:RebootCheckUpdate()
+    
+    local isDead = self._proxy:IsNpcDead(self._uuid)
+    
+    if self.lastDead and (not isDead) then
+        self.lastDead = false
+        if self.rebootCount< 3 then --小于3次才处理
+            if self.rebootCount == 1 then
+                self._proxy:ApplyMagic(self._uuid,self._uuid,1000482,1)--下次复活值加1500
+                self.rebootCount = 2
+            elseif self.rebootCount == 2  then
+                self._proxy:ApplyMagic(self._uuid,self._uuid,1000483,1)--下次复活值加3000
+                self.rebootCount = 3
+            end
+        end
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1000485)--去除支援特效
+    end
+
+    if (not self.lastDead) and isDead then
+        self.lastDead = true
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1000484)--挂上支援特效
+    end
+    
+end
+
+
+--endregion
+
 ---FullChain开启连锁
 ---@param gameplayActive number 是否开启玩法
 ---@param isInChain number 是否在连锁状态
@@ -132,7 +174,6 @@ end
 --region AttackTarget 索敌
 
 --endregion
-
 
 --region ChangeMoveState 空花角色移动状态逻辑
 function XRelinkCharBase:ProcessChangeMoveState()
@@ -263,7 +304,7 @@ function XRelinkCharBase:ProcessChangeJumpState()
         return false
     end
     
-    if not (self._proxy:CheckCanCastSkill(self._uuid) and self._proxy:CheckNpcCurSkillIsDone(self._uuid)) then --技能状态时需要在技能完成时跳
+    if not (self._proxy:CheckCanCastSkill(self._uuid) and self._proxy:CheckNpcCurActionIsDone(self._uuid)) then --技能状态时需要在技能完成时跳
         return false
     end
     -- Select Do What
@@ -289,6 +330,7 @@ function XRelinkCharBase:InitEventCallBackRegister()
     --self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)         -- OnNpcExitActionEvent
     self._proxy:RegisterEvent(EWorldEvent.NpcDie)               -- OnNpcDieEvent
     self._proxy:RegisterEvent(EWorldEvent.NpcRevive)            -- OnNpcReviveEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcWaitReboot)        -- OnNpcWaitRebootEvent
     --self._proxy:RegisterEvent(EWorldEvent.NpcLoadComplete)      -- OnNpcLoadCompleteEvent
     self._proxy:RegisterEvent(EWorldEvent.NpcDodge)               --OnNpcDodge
     --self._proxy:RegisterEvent(EWorldEvent.Behavior2ScriptMsg)   -- OnBehavior2ScriptMsgEvent
@@ -344,7 +386,7 @@ function XRelinkCharBase:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetI
         if searchtarget == 0 then
             return
         end
-        self._proxy:SetSoftLock(searchtarget) --直接使用新索敌获得目标设置为软锁目标，新索敌获得的id不可读，为组合生成内容
+        self._proxy:SetSoftLock(LauncherId,searchtarget) --直接使用新索敌获得目标设置为软锁目标，新索敌获得的id不可读，为组合生成内容
         local locktargetid, npcid = self._proxy:GetLockTarget()--转换新索敌目标为搜索目标id，npcuuid
         self._proxy:SetNpcFocusTarget(LauncherId, npcid)  --镜头锁定
     end
@@ -357,7 +399,24 @@ function XRelinkCharBase:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetI
     end
 end
 
-function XRelinkCharBase:OnNpcDodge(AttackerUUID, Type)
+function XRelinkCharBase:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if buffId == self._BreakQteBuff  then
+        self._proxy:SetPlayerButtonOpEnabled(ENpcOperationKey.RelinkBreakQte,self._uuid,true)
+    end
+end
+
+function XRelinkCharBase:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if buffId == self._BreakQteBuff  then
+        self._proxy:SetPlayerButtonOpEnabled(ENpcOperationKey.RelinkBreakQte,self._uuid,false)
+    end
+end
+
+function XRelinkCharBase:OnNpcDodge(SourceUUID, AttackerUUID, Type)
+    
+    if (SourceUUID ~= self._uuid) then
+        return
+    end
+
     if (Type == 1) then 
         if not self._DodgeIsNotCd then
             return
@@ -389,49 +448,57 @@ function XRelinkCharBase:HardLockInput() -- tab键手动锁定
                 return
             elseif locktargettype == ELockTargetType.HardLock then    --硬锁定，执行切换锁定目标逻辑
                 local searchtargetlist = self._proxy:GetSearchTargetList(self._uuid, ENpcTargetType.Enemy)
-                for index, target in pairs(searchtargetlist) do
+                if searchtargetlist == nil then
+                    return
+                end
+                for _ , target in pairs(searchtargetlist) do
+                    if target == nil then
+                        return
+                    end
                     if target ~= locktarget then
-                        self._proxy:SetHardLock(target)
+                        self._proxy:SetHardLock(self._uuid,target)
                         break
                     end
                 end
             else
-                self._proxy:SetHardLock(locktarget)
+                self._proxy:SetHardLock(self._uuid,locktarget)
             end
         else
             local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
             if searchtarget == 0 then
                 return
             end
-            self._proxy:SetHardLock(searchtarget)
+            self._proxy:SetHardLock(self._uuid,searchtarget)
             local _, npc = self._proxy:GetLockTarget()
-            self._proxy:SetNpcFocusTarget(self._uuid, npc)
-            self._proxy:ApplyMagic(self._uuid,self._uuid,105296,1)  --限制镜头拖动输入
+            --self._proxy:SetNpcFocusTarget(self._uuid, npc)
+            --self._proxy:ApplyMagic(self._uuid,self._uuid,105296,1)  --限制镜头拖动输入
         end
     end
     local iskeyhold,holdtime = self._proxy:IsKeyHold(8)
     if iskeyhold and holdtime >= 0.5 then --长按tab键手动取消
-        self._proxy:ApplyMagic(self._uuid,self._uuid,105297,1)  --移除限制镜头拖动输入
-        self._proxy:CancelHardLockTarget()
-        self._proxy:CancelSoftLockTarget()
-        self._proxy:RemoveNpcFocusTarget(self._uuid)
+        --self._proxy:ApplyMagic(self._uuid,self._uuid,105297,1)  --移除限制镜头拖动输入
+        self._proxy:CancelHardLockTarget(self._uuid)
+        self._proxy:CancelSoftLockTarget(self._uuid)
+        --self._proxy:RemoveNpcFocusTarget(self._uuid)
     end
 end
 
 function XRelinkCharBase:OnLockTargetChanged(CurTargetUID,LastTargetUID,LockTargetType) --监听锁定变更事件
+    --[[
     local locktarget,_ = self._proxy:GetLockTarget()
     if locktarget == 0 then --无锁定时移除镜头维持逻辑
         self._proxy:RemoveNpcFocusTarget(self._uuid)
     end
+    --]]
 end
 
 function XRelinkCharBase:CheckFocusTarget() --若当前有锁定，但是通过拖动镜头移除了镜头维持目标，重新设置
     local focustargetid = self._proxy:GetNpcFocusTarget(self._uuid)
     local _,locknpc = self._proxy:GetLockTarget()
-    XLog.Warning("确认镜头维持目标"..focustargetid)
-    XLog.Warning("确认"..locknpc)
+    --XLog.Warning("确认镜头维持目标"..focustargetid)
+    --XLog.Warning("确认"..locknpc)
     if focustargetid == 0 and locknpc ~= 0 then
-        XLog.Warning("重锁")
+        --XLog.Warning("重锁")
         self._proxy:SetNpcFocusTarget(self._uuid, locknpc)
     end
 end
@@ -450,6 +517,7 @@ function XRelinkCharBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
     if npcUUID ~= self._uuid then
         return  
     end
+    XLog.Warning("我死了"..self._uuid)
     self._proxy:ApplyMagic(self._uuid,self._uuid,1000480,1)--死亡次数标记buff，每次一次都加一层
 end
 

@@ -122,9 +122,13 @@ ModuleId = {
   XRpgMakerGame = "XRpgMakerGame",
   XRace = "XRace",
   XFunction = "XFunction",
+  XAreaWar = "XAreaWar",
 
   -- #203409 多次尝试后, 还是写在这里最稳妥
   XPassportComb = "XPassportComb",
   XAccumulateExpendL = "XAccumulateExpendL",
   XPlotExhibition = "XPlotExhibition",
+  XFashionSuit = "XFashionSuit",
+  XRadioSign = "XRadioSign",
+  XItemRestrict = "XItemRestrict",
 }

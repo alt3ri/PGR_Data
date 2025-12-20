@@ -1,9 +1,9 @@
 ---@class XFightLevelMusicTrackUnit
 local XFightLevelMusicTrackUnit = XClass(nil, "XFightLevelMusicTrackUnit")
-XFightLevelMusicTrackUnit.Uid = 1
+local XFightLevelMusicTrackUnitUid = 1
 
 function XFightLevelMusicTrackUnit:Ctor(index, trackId)
-    self._Uid = XFightLevelMusicTrackUnit.Uid
+    self._Uid = XFightLevelMusicTrackUnitUid
     self._Index = index
     self._TrackId = trackId
     
@@ -11,7 +11,7 @@ function XFightLevelMusicTrackUnit:Ctor(index, trackId)
     self._Note = false
     self._State = XEnumConst.FIGHT_LEVEL_MUSIC.NOTE_STATE.NONE
 
-    XFightLevelMusicTrackUnit.Uid = XFightLevelMusicTrackUnit.Uid + 1
+    XFightLevelMusicTrackUnitUid = XFightLevelMusicTrackUnitUid + 1
 end
 
 --region Setter

@@ -36,7 +36,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6218\u6597\u7ed3\u675f\uff0c\u843d\u8d25\u7684\u9ad8\u4f4d\u6743\u9650\u72ec\u81ea\u5750\u4e8e\u6218\u573a\u4e00\u9685\uff0c\u663e\u5f97\u6709\u4e9b\u843d\u5bde\u3002'}"
+        "Params": "{3: 'The battle ends. The defeated Higher Authority sits alone at the edge of the battlefield, her loneliness unmistakable.'}"
     },
     {
         "Id": 4,
@@ -62,7 +62,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d01\u5854\u8587\u6765\u5230\u9ad8\u4f4d\u6743\u9650\u7684\u80cc\u540e\uff0c\u5e73\u9759\u5730\u6536\u8d77\u4e86\u81ea\u5df1\u7684\u6b66\u5668\u3002'}"
+        "Params": "{3: 'Jetavie steps behind Higher Authority and quietly puts her weapon away.'}"
     },
     {
         "Id": 6,
@@ -88,7 +88,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u6d01\u5854\u8587\uff0c\u4f60\u5df2\u7ecf\u6210\u957f\u5230\u4e0d\u9700\u8981\u501f\u52a9\u4ed6\u4eba\u7684\u529b\u91cf\u4e5f\u80fd\u72ec\u5f53\u4e00\u9762\u4e86\u3002', 4: '1'}"
+        "Params": "{1: '1', 2: 'Higher Authority', 3: \"Jetavie, you've grown so much that you no longer need anyone else's strength. You can take care of things on your own.\", 4: '1'}"
     },
     {
         "Id": 8,
@@ -114,7 +114,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u80cc\u5bf9\u7740\u6d01\u5854\u8587\u7684\u9ad8\u4f4d\u6743\u9650\u7f13\u7f13\u7ad9\u8d77\u8eab\u5b50\u3002'}"
+        "Params": "{3: 'Higher Authority, facing away from Jetavie, slowly stands up.'}"
     },
     {
         "Id": 10,
@@ -140,7 +140,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6d01\u5854\u8587', 3: '\u6211\u5bf9\u77e9\u9635\u91cc\u7684\u5176\u4ed6\u4eba\u4e0d\u611f\u5174\u8da3\uff0c\u53ea\u60f3\u76f4\u63a5\u548c\u4f60\u5bf9\u8bdd\u3002', 4: '1'}"
+        "Params": "{1: '1', 2: 'Jetavie', 3: \"I'm not interested in the others in this Matrix. I only want to speak with you directly.\", 4: '1'}"
     },
     {
         "Id": 12,
@@ -179,7 +179,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u8d77\u521d\uff0c\u6211\u62c5\u5fc3\u4f60\u6ca1\u505a\u597d\u51c6\u5907\u2026\u2026', 4: '2'}"
+        "Params": "{1: '1', 2: 'Higher Authority', 3: 'At first, I worried you might not be prepared...', 4: '2'}"
     },
     {
         "Id": 15,
@@ -192,7 +192,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u73b0\u5728\u770b\u6765\uff0c\u4f60\u53ea\u662f\u4e0d\u9700\u8981\u8fc7\u5ea6\u51c6\u5907\u800c\u5df2\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'But now, it looks like you never really need all that extra preparation.', 4: '2'}"
     },
     {
         "Id": 16,
@@ -205,7 +205,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u5230\u5e95\u662f\u4f60\u53d8\u5f31\u4e86\uff0c\u8fd8\u662f\u6211\u53d8\u5f3a\u4e86\uff1f', 4: '1'}"
+        "Params": "{2: 'Jetavie', 3: 'So tell me: have you gotten weaker, or have I grown stronger?', 4: '1'}"
     },
     {
         "Id": 17,
@@ -218,7 +218,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u4e24\u8005\u5e76\u4e0d\u77db\u76fe\uff0c\u4f60\u80fd\u8c03\u7528\u7684\u77e9\u9635\u7b97\u529b\u8d8a\u591a\uff0c\u6211\u80fd\u4f7f\u7528\u7684\u4fbf\u8d8a\u5c11\uff0c\u6b64\u6d88\u5f7c\u957f\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: \"They're not mutually exclusive. The more Matrix computing power you tap into, the less is left for me\u2014a typical push and pull.\", 4: '2'}"
     },
     {
         "Id": 18,
@@ -231,7 +231,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u8fd9\u662f\u4e2a\u4f1f\u5927\u7684\u65f6\u523b\uff0c\u4ee3\u8868\u7740\u4f60\u5b8c\u6210\u4e86\u77e9\u9635\u7684\u6700\u540e\u4e00\u4e2a\u6d4b\u8bd5\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: \"This is a pivotal moment. It means you've cleared the Matrix's final test.\", 4: '2'}"
     },
     {
         "Id": 19,
@@ -244,7 +244,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u6bd5\u4e1a\u5feb\u4e50\uff0c\u6d01\u5854\u8587\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'Congratulations on your graduation, Jetavie.', 4: '2'}"
     },
     {
         "Id": 20,
@@ -257,7 +257,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u2026\u2026', 4: '1'}"
+        "Params": "{2: 'Jetavie', 3: '...', 4: '1'}"
     },
     {
         "Id": 21,
@@ -270,7 +270,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u600e\u4e48\u4e86\uff0c\u8fd8\u6709\u8bdd\u60f3\u5bf9\u6211\u8bf4\u5417\uff1f', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: \"What's wrong? Is there something else you want to tell me?\", 4: '2'}"
     },
     {
         "Id": 22,
@@ -283,7 +283,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u4f60\u6709\u6ca1\u6709\u542c\u8fc7\u4e00\u4e2a\u5173\u4e8e\u7231\u4e3d\u4e1d\u4e0e\u5154\u5b50\u7684\u6545\u4e8b\u3002', 4: '1'}"
+        "Params": "{2: 'Jetavie', 3: 'Have you ever heard the story of Alice and the Rabbit?', 4: '1'}"
     },
     {
         "Id": 23,
@@ -296,7 +296,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u662f\u4e2a\u4ee4\u4eba\u611f\u5230\u4e0d\u5b89\u7684\u7ae5\u8bdd\u5462\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: \"It's an unsettling fairy tale, isn't it?\", 4: '2'}"
     },
     {
         "Id": 24,
@@ -309,7 +309,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u6d1e\u7684\u5bf9\u9762\u771f\u7684\u6709\u7f8e\u597d\u7684\u65b0\u4e16\u754c\u5417\uff1f\u5982\u679c\u8fde\u77e9\u9635\u90fd\u88ab\u90a3\u4e2a\u53eb\u5e15\u5f25\u4ec0\u7684\u75c5\u6bd2\u5165\u4fb5\u2026\u2026', 4: '1'}"
+        "Params": "{2: 'Jetavie', 3: 'Is there really a wonderful new world on the other side of the hole? If even the Matrix is infected by that Punishing Virus...', 4: '1'}"
     },
     {
         "Id": 25,
@@ -322,7 +322,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u6211\u5f88\u597d\u5947\uff0c\u2018\u5e0c\u671b\u2019\u80fd\u5426\u5728\u77e9\u9635\u5916\u7684\u2018\u73b0\u5b9e\u2019\u624e\u6839\uff1f', 4: '1'}"
+        "Params": "{2: 'Jetavie', 3: 'I wonder if \"hope\" can ever take root in the so-called \"reality\" beyond the Matrix.', 4: '1'}"
     },
     {
         "Id": 26,
@@ -335,7 +335,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u6b63\u5982\u6211\u6240\u8bf4\u7684\u90a3\u6837\uff0c\u2018\u5e0c\u671b\u2019\u662f\u4eba\u7c7b\u5355\u65b9\u9762\u4ea7\u751f\u7684\u4fe1\u5ff5\uff0c\u5b83\u624e\u6839\u4e8e\u4eba\u7c7b\u5185\u5fc3\uff0c\u5728\u73b0\u5b9e\u4e2d\u6ca1\u6709\u5f62\u4f53\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'As I always say, \"hope\" is a belief that humans alone create. It takes root in their hearts and has no physical form in the real world.', 4: '2'}"
     },
     {
         "Id": 27,
@@ -348,7 +348,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u4eba\u7c7b\u7684\u4fe1\u5ff5\u548c\u81ea\u5df1\u7684\u751f\u547d\u76d8\u6839\u9519\u8282\uff0c\u9664\u975e\u5b58\u5728\u672c\u8eab\u88ab\u5b8c\u5168\u62b9\u9664\uff0c\u5426\u5219\uff0c\u5e0c\u671b\u4e5f\u4e0d\u4f1a\u6d88\u5931\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'Human belief is woven so tightly with life itself that unless their very existence is wiped out, hope never truly disappears.', 4: '2'}"
     },
     {
         "Id": 28,
@@ -361,7 +361,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u518d\u6df1\u6c89\u7684\u9ed1\u591c\u4e5f\u5b58\u5728\u773a\u671b\u9ece\u660e\u7684\u4eba\uff0c\u6d01\u5854\u8587\uff0c\u53ef\u522b\u5c0f\u77a7\u4eba\u7c7b\u7684\u6c42\u751f\u672c\u80fd\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'No matter how dark the night gets, there are always those who look to the dawn, Jetavie. Never underestimate the human will to survive.', 4: '2'}"
     },
     {
         "Id": 29,
@@ -374,7 +374,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u4e8b\u5b9e\u4e0a\uff0c\u6211\u4e00\u76f4\u60f3\u544a\u8bc9\u4f60\u2026\u2026', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: \"Actually, there's something I've been meaning to tell you...\", 4: '2'}"
     },
     {
         "Id": 30,
@@ -387,7 +387,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u5149\u6709\u4e8c\u4f4d\u4e00\u4f53\u7684\u529b\u91cf\u662f\u4e0d\u591f\u7684\uff0c\u60f3\u79bb\u5f00\u77e9\u9635\uff0c\u4f60\u9700\u8981\u7684\u662f\u4e09\u4f4d\u4e00\u4f53\u7684\u529b\u91cf\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: \"It isn't enough to wield the power of dual unity. If you intend to break free from the Matrix, you need the power of the trinity.\", 4: '2'}"
     },
     {
         "Id": 31,
@@ -400,7 +400,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u4e09\u4f4d\u4e00\u4f53\uff1f', 4: '1'}"
+        "Params": "{2: 'Jetavie', 3: 'The trinity?', 4: '1'}"
     },
     {
         "Id": 32,
@@ -413,7 +413,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u5929\u9009\u8005\u3001\u5b8c\u5168\u7684\u6d01\u5854\u8587\u4ee5\u53ca\u77e9\u9635\u672c\u8eab\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'The Chosen One, the fully awakened Jetavie, and the Matrix itself.', 4: '2'}"
     },
     {
         "Id": 33,
@@ -426,7 +426,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u517c\u5e76\u6574\u4e2a\u77e9\u9635\u7684\u7b97\u529b\uff0c\u541e\u566c\u6389\u8fd9\u91cc\u7684\u4e00\u5207\u4f5c\u4e3a\u4f60\u8bde\u751f\u7684\u517b\u5206\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: \"You need to merge the Matrix's entire computing power, devouring everything here to feed your birth.\", 4: '2'}"
     },
     {
         "Id": 34,
@@ -439,7 +439,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u6211\u4eec\uff0c\u90fd\u5c06\u6210\u4e3a\u5e2e\u52a9\u4f60\u8de8\u8d8a\u754c\u9650\u7684\u529b\u91cf\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'We all stand as the force that helps you break through every boundary.', 4: '2'}"
     },
     {
         "Id": 35,
@@ -452,7 +452,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u5c3d\u60c5\u541e\u566c\u5427\uff0c\u6d01\u5854\u8587\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'Go on, devour everything, Jetavie.', 4: '2'}"
     },
     {
         "Id": 36,
@@ -478,7 +478,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u9ad8\u4f4d\u6743\u9650\u4ece\u6b8b\u7834\u7684\u6597\u7bf7\u4e2d\u7f13\u7f13\u5730\u4f38\u51fa\u624b\uff0c\u51fa\u73b0\u5728\u5176\u4e0a\u7684\u662f\u6563\u53d1\u7740\u7ea2\u8272\u5fae\u5149\u7684\u77e9\u9635\u3002'}"
+        "Params": "{3: 'The cloaked Higher Authority slowly extends her hand from beneath the torn cloak, revealing a matrix glimmering with a faint red light.'}"
     },
     {
         "Id": 38,
@@ -517,7 +517,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6d01\u5854\u8587', 3: '\u8fd9\u662f\uff1f', 4: '1'}"
+        "Params": "{1: '1', 2: 'Jetavie', 3: 'What is this?', 4: '1'}"
     },
     {
         "Id": 41,
@@ -530,7 +530,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u77e9\u9635\u4e2d\u67a2\uff0c\u51dd\u805a\u6240\u6709\u5929\u9009\u8005\u7684\u7b97\u529b\u6253\u5f00\u7684\u901a\u8def\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'Central Authority of the Matrix\u2014a pathway opened by the combined computing power of all the Chosen Ones.', 4: '2'}"
     },
     {
         "Id": 42,
@@ -543,7 +543,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u800c\u73b0\u5728\uff0c\u6211\u4e5f\u4f1a\u52a0\u5165\u5176\u4e2d\uff0c\u6210\u4e3a\u6253\u5f00\u8fd9\u9053\u95e8\u7684\u4e00\u4e2a\u652f\u70b9\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: \"Now, I'm joining in as well, becoming the key pivot that helps open this door.\", 4: '2'}"
     },
     {
         "Id": 43,
@@ -556,7 +556,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u6d01\u5854\u8587\uff0c\u628a\u624b\u653e\u4e0a\u6765\u3002', 4: '2'}"
+        "Params": "{2: 'Higher Authority', 3: 'Jetavie, place your hand here.', 4: '2'}"
     },
     {
         "Id": 44,
@@ -582,7 +582,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d01\u5854\u8587\u5c06\u4fe1\u5c06\u7591\u5730\u5c06\u81ea\u5df1\u7684\u624b\u4e5f\u653e\u4e86\u4e0a\u53bb\uff0c\u4e0e\u9ad8\u4f4d\u6743\u9650\u4e00\u540c\u5c06\u77e9\u9635\u6367\u5728\u624b\u5fc3\u3002'}"
+        "Params": "{3: 'Still uncertain, Jetavie places her hand, together with Higher Authority.'}"
     },
     {
         "Id": 46,
@@ -621,7 +621,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u6211\u65e0\u6cd5\u72ec\u81ea\u542f\u52a8\u6700\u7ec8\u9a8c\u8bc1\uff0c\u4f60\u548c\u6211\u4e00\u8d77\u542f\u52a8\u8d85\u9650\u5427\u3002', 4: '2'}"
+        "Params": "{1: '1', 2: 'Higher Authority', 3: \"I can't initiate the final verification on my own. Let's trigger the ultralimit together.\", 4: '2'}"
     },
     {
         "Id": 49,
@@ -634,7 +634,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u6211\u4f1a\u5c1d\u8bd5\u3002', 4: '1'}"
+        "Params": "{2: 'Jetavie', 3: \"I'll try.\", 4: '1'}"
     },
     {
         "Id": 50,
@@ -660,7 +660,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d01\u5854\u8587\u4e0e\u9ad8\u4f4d\u6743\u9650\u540c\u65f6\u8fdb\u884c\u8fd0\u7b97\uff0c\u4e24\u4eba\u7684\u7b97\u91cf\u8fdc\u8fdc\u8d85\u8fc7\u4e4b\u524d\u7684\u4efb\u4f55\u79d8\u94a5\u2026\u2026'}"
+        "Params": "{3: 'Jetavie and Higher Authority run their calculations in tandem, their combined computing power far surpassing any previous key...'}"
     },
     {
         "Id": 52,
@@ -673,7 +673,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5728\u9ad8\u9891\u6b21\u7684\u7b97\u91cf\u8f93\u9001\u4e2d\uff0c\u77e9\u5f62\u7684\u65b9\u5757\u7ec8\u4e8e\u4ece\u5185\u90e8\u5411\u5916\u88c2\u89e3\u5f00\u3002'}"
+        "Params": "{3: 'Under the high-frequency data transfer, the rectangular block finally cracks outward from within.'}"
     },
     {
         "Id": 53,
@@ -686,7 +686,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u95ea\u70c1\u7684\u7ea2\u5149\u5f88\u5feb\u5145\u76c8\u4e86\u6d01\u5854\u8587\u7684\u89c6\u7ebf\uff0c\u5979\u62ac\u8d77\u5934\u65f6\uff0c\u9ad8\u4f4d\u6743\u9650\u7684\u8eab\u5f71\u5df2\u53d8\u5f97\u900f\u660e\u3002'}"
+        "Params": "{3: \"A flickering red light quickly fills Jetavie's vision. As she looks up, she realizes Higher Authority's form is already turning transparent.\"}"
     },
     {
         "Id": 54,
@@ -712,7 +712,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6d01\u5854\u8587', 3: '\u4f60\u7684\u8eab\u4f53\u2026\u2026', 4: '1'}"
+        "Params": "{1: '1', 2: 'Jetavie', 3: 'Your body...', 4: '1'}"
     },
     {
         "Id": 56,
@@ -764,7 +764,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u5475\u5475\uff0c\u8d5d\u54c1\u7684\u6027\u80fd\u679c\u7136\u8fd8\u662f\u2026\u2026', 4: '1'}"
+        "Params": "{1: '1', 2: 'Higher Authority', 3: \"Heh... turns out a fake still can't...\", 4: '1'}"
     },
     {
         "Id": 60,
@@ -777,7 +777,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u6d01\u5854\u8587\uff0c\u8fd8\u8bb0\u5f97\u6211\u7b2c\u4e00\u6b21\u89c1\u5230\u4f60\u65f6\uff0c\u5728\u4f60\u8fd8\u79f0\u6211\u4e3a\u5929\u9009\u8005\u7684\u65f6\u5019\u2026\u2026', 4: '1'}"
+        "Params": "{2: 'Higher Authority', 3: 'Jetavie, do you remember the day we first met, when you still called me Chosen One?', 4: '1'}"
     },
     {
         "Id": 61,
@@ -790,7 +790,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u4ece\u90a3\u4e00\u523b\u5f00\u59cb\u6211\u5c31\u51b3\u5b9a\u8981\u8ba9\u4f60\u9003\u51fa\u77e9\u9635\uff0c\u4e0d\u60dc\u4ee3\u4ef7\u3002', 4: '1'}"
+        "Params": "{2: 'Higher Authority', 3: \"From that moment on, I decided I'd get you out of the Matrix, no matter what it took.\", 4: '1'}"
     },
     {
         "Id": 62,
@@ -803,7 +803,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u8fd9\u4e00\u6b21\uff0c\u603b\u7b97\u4e0d\u7528\u518d\u8bf4\u518d\u89c1\u4e86\u3002', 4: '1'}"
+        "Params": "{2: 'Higher Authority', 3: \"This time, we don't have to say goodbye anymore.\", 4: '1'}"
     },
     {
         "Id": 63,
@@ -868,7 +868,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d01\u5854\u8587\u5468\u8eab\u7684\u77e9\u9635\u4e16\u754c\u4e5f\u9010\u6e10\u892a\u53bb\u8272\u5f69\uff0c\u7070\u8272\u7684\u865a\u7a7a\u5316\u4e3a\u4e00\u7247\u7247\u96ea\u767d\u7684\u82b1\u74e3\u2026\u2026'}"
+        "Params": "{3: 'The Matrix world around Jetavie fades away, and the gray void scatters into a flurry of snow-white petals...'}"
     },
     {
         "Id": 68,
@@ -959,7 +959,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5929\u9009\u8005', 3: '\u4e0d\u540e\u6094\u5417\uff0c\u9ad8\u4f4d\u6743\u9650\uff0c\u90a3\u5b69\u5b50\u4f1a\u6068\u4f60\u7684\u3002'}"
+        "Params": "{2: 'Chosen One', 3: \"Don't you regret it, Higher Authority? That child will hate you for this.\"}"
     },
     {
         "Id": 75,
@@ -972,7 +972,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5929\u9009\u8005', 3: '\u4f60\u4e5f\u66fe\u662f\u5f15\u5bfc\u5979\u7684\u5929\u9009\u8005\u5427\uff1f'}"
+        "Params": "{2: 'Chosen One', 3: \"You used to be the Chosen One to guide her, didn't you?\"}"
     },
     {
         "Id": 76,
@@ -998,7 +998,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u5475\u5475\u2026\u2026', 4: '1'}"
+        "Params": "{1: '1', 2: 'Higher Authority', 3: 'Heh...', 4: '1'}"
     },
     {
         "Id": 78,
@@ -1011,7 +1011,7 @@
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u6068\uff0c\u53c8\u4f55\u5c1d\u4e0d\u662f\u4e00\u79cd\u795d\u798f\u3002', 4: '1'}"
+        "Params": "{2: 'Higher Authority', 3: \"Hate... isn't that just another kind of blessing?\", 4: '1'}"
     },
     {
         "Id": 79,
@@ -1102,7 +1102,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u4f60\u9192\u6765\u540e\u53ef\u80fd\u4f1a\u5fd8\u8bb0\u8fd9\u91cc\u53d1\u751f\u7684\u4e00\u5207\u3002', 4: '1'}"
+        "Params": "{1: '1', 2: 'Higher Authority', 3: \"When you wake up, you might forget everything that's happened here.\", 4: '1'}"
     },
     {
         "Id": 86,
@@ -1115,7 +1115,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u4e0d\u8fc7\u6ca1\u5173\u7cfb\uff0c\u4f60\u7684\u8eab\u4f53\u4f1a\u5148\u4e8e\u4f60\u7684\u8bb0\u5fc6\u4fdd\u62a4\u4f60\u3002', 4: '1'}"
+        "Params": "{2: 'Higher Authority', 3: \"But that's okay. Your body will protect you long before your memories do.\", 4: '1'}"
     },
     {
         "Id": 87,
@@ -1128,7 +1128,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u4e0a\u8def\u5427\u3002', 4: '1'}"
+        "Params": "{2: 'Higher Authority', 3: 'Off you go.', 4: '1'}"
     },
     {
         "Id": 88,
@@ -1167,7 +1167,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6d01\u5854\u8587', 3: '\u53ef\u4f60\u5462\uff0c\u4f60\u4f1a\u53d8\u6210\u4ec0\u4e48\u6837\uff0c\u9ad8\u4f4d\u6743\u9650\uff1f', 4: '2'}"
+        "Params": "{1: '1', 2: 'Jetavie', 3: 'But what about you? What will you become, Higher Authority?', 4: '2'}"
     },
     {
         "Id": 91,
@@ -1180,7 +1180,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9ad8\u4f4d\u6743\u9650', 3: '\u5475\u5475\uff0c\u5927\u6982\uff0c\u4f1a\u662f\u96ea\u767d\u7684\u7070\u5427\u3002', 4: '1'}"
+        "Params": "{2: 'Higher Authority', 3: 'Heh, maybe just pure white ash.', 4: '1'}"
     },
     {
         "Id": 92,
@@ -1193,7 +1193,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u8fd9\u5c31\u662f\u2026\u2026', 4: '2'}"
+        "Params": "{2: 'Jetavie', 3: 'So this is...', 4: '2'}"
     },
     {
         "Id": 93,
@@ -1206,7 +1206,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u77e9\u9635\u7684\u5168\u90e8\u7b97\u529b\uff1f', 4: '2'}"
+        "Params": "{2: 'Jetavie', 3: \"...the Matrix's entire computing power?\", 4: '2'}"
     },
     {
         "Id": 94,
@@ -1284,7 +1284,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u9ad8\u4f4d\u6743\u9650\u7684\u8eab\u5f71\u6e10\u6e10\u6d88\u5931\u3002'}"
+        "Params": "{3: \"Higher Authority's figure slowly fades away.\"}"
     },
     {
         "Id": 100,
@@ -1297,7 +1297,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u89e6\u6478\u7740\u9ad8\u4f4d\u6743\u9650\u6d88\u5931\u65f6\u7559\u4e0b\u7684\u6b8b\u5f71\uff0c\u968f\u5373\uff0c\u6574\u4e2a\u77e9\u9635\u671d\u7740\u6d01\u5854\u8587\u7684\u624b\u5fc3\u6536\u675f\u3002'}"
+        "Params": "{3: \"Jetavie touches the lingering afterimage left behind by the vanishing Higher Authority. Right away, the entire Matrix converges into Jetavie's palm.\"}"
     },
     {
         "Id": 101,
@@ -1310,7 +1310,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5927\u91cf\u7684\u6570\u636e\u5206\u6210\u7ea2\u8272\u4e0e\u84dd\u8272\u4e24\u80a1\uff0c\u5448\u53cc\u87ba\u65cb\u72b6\u4ea4\u7ec7\u8fdb\u5165\u6d01\u5854\u8587\u7684\u8eab\u4f53\u3002'}"
+        "Params": "{3: 'Vast flows of data split into red and blue strands, intertwining in a double helix as they flow into her body.'}"
     },
     {
         "Id": 102,
@@ -1323,7 +1323,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5f88\u4e45\u4ee5\u524d\uff0c\u4eba\u7c7b\u56e0\u4e3a\u53d1\u73b0\u8fd9\u6837\u7684\u7ed3\u6784\u800c\u96c0\u8dc3\u4e0d\u5df2\u3002'}"
+        "Params": "{3: 'Long ago, humankind leaped for joy upon finding this very structure.'}"
     },
     {
         "Id": 103,
@@ -1336,7 +1336,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4ed6\u4eec\u5c06\u5176\u547d\u540d\u4e3a\u2018\u57fa\u56e0\u53cc\u87ba\u65cb\u7ed3\u6784\u2019\u3002'}"
+        "Params": "{3: 'They named it a \"double-helical structure.\"'}"
     },
     {
         "Id": 104,
@@ -1349,7 +1349,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u636e\u8bf4\uff0c\u8fd9\u91cc\u9762\u9690\u85cf\u7740\u751f\u547d\u8bde\u751f\u548c\u5ef6\u7eed\u7684\u5bc6\u7801\u3002'}"
+        "Params": "{3: 'They say the hidden depths here hold the code that brings life into existence and keeps it going.'}"
     },
     {
         "Id": 105,
@@ -1362,7 +1362,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5982\u4eca\uff0c\u77e9\u9635\u6a21\u62df\u51fa\u4e86\u76f8\u4f3c\u7684\u9020\u7269\uff0c\u867d\u8bf4\u4ec5\u662f\u5f62\u5f0f\u4e0a\u7684\u67d0\u79cd\u5de7\u5408\u3002'}"
+        "Params": "{3: 'Today, the Matrix generates a similar creation, though it appears to be just a coincidence in form.'}"
     },
     {
         "Id": 106,
@@ -1375,7 +1375,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4f46\u6b63\u662f\u8fd9\u4e9b\u2018\u5de7\u5408\u2019\u6784\u6210\u4e86\u4e0a\u4e07\u4ebf\u6b21\u7684\u94fe\u63a5\uff0c\u6b63\u662f\u8fd9\u4e9b\u770b\u4e0a\u53bb\u65e0\u610f\u4e49\u7684\u7ed3\u5408\u2026\u2026'}"
+        "Params": "{3: 'Still, it\\'s these very \"coincidences\" that weave trillions of interlinked connections, and it\\'s through those seemingly pointless combinations...'}"
     },
     {
         "Id": 107,
@@ -1388,7 +1388,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4e3a\u672a\u77e5\u7684\u660e\u5929\u67d3\u4e0a\u4e86\u7f24\u7eb7\u7684\u8272\u5f69\uff0c\u8bde\u751f\u4e86\u8d85\u8d8a\u5b9a\u4e49\u7684\u5b58\u5728\u3002'}"
+        "Params": "{3: '...the unknown tomorrow bursts with vivid color, giving rise to an existence beyond all definitions.'}"
     },
     {
         "Id": 108,
@@ -1414,7 +1414,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u518d\u89c1\u4e86\uff0c\u9ad8\u4f4d\u6743\u9650\uff0c\u8fd8\u6709\u5929\u9009\u8005\u3002'}"
+        "Params": "{2: 'Jetavie', 3: 'Farewell, Higher Authority. Farewell, Chosen One.'}"
     },
     {
         "Id": 110,
@@ -1427,7 +1427,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u76f4\u5230\u5468\u56f4\u7684\u4e00\u5207\u90fd\u88ab\u6d01\u5854\u8587\u541e\u566c\uff0c\u77e9\u9635\u56de\u5f52\u865a\u65e0\u2026\u2026'}"
+        "Params": "{3: 'As Jetavie swallows everything around her, the Matrix slips into oblivion...'}"
     },
     {
         "Id": 111,
@@ -1440,7 +1440,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6b64\u523b\uff0c\u5979\u7684\u8eab\u524d\u53ea\u5269\u4e0b\u9eef\u6de1\u7684\u7070\u8272\u9053\u8def\u3002'}"
+        "Params": "{3: 'Now, only a dull gray path stretches out in front of her.'}"
     },
     {
         "Id": 112,
@@ -1453,7 +1453,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5728\u9053\u8def\u7684\u524d\u65b9\uff0c\u6f06\u9ed1\u7684\u89c6\u91ce\u4e2d\u592e\u51fa\u73b0\u4e86\u4e00\u9053\u8000\u773c\u7684\u5149\u4eae\u3002'}"
+        "Params": "{3: 'Up ahead, in the heart of that pitch-black void, a brilliant light appears.'}"
     },
     {
         "Id": 113,
@@ -1466,7 +1466,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u95e8\u6249\uff1f'}"
+        "Params": "{2: 'Jetavie', 3: 'A gate?'}"
     },
     {
         "Id": 114,
@@ -1479,7 +1479,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d01\u5854\u8587\u5c06\u6b66\u5668\u522b\u5728\u8eab\u540e\uff0c\u5411\u7740\u90a3\u9053\u5149\u8292\u8d70\u53bb\u3002\u77ed\u6682\u505c\u7559\uff0c\u671d\u8eab\u540e\u671b\u53bb\u3002'}"
+        "Params": "{3: 'Jetavie secures her weapon behind her back and walks toward the light. She pauses for a moment, glancing over her shoulder.'}"
     },
     {
         "Id": 115,
@@ -1492,7 +1492,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u7ec8\u4e8e\u7ed3\u675f\u4e86\u3002'}"
+        "Params": "{2: 'Jetavie', 3: \"It's finally over.\"}"
     },
     {
         "Id": 116,
@@ -1505,7 +1505,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u4e0d\u8fc7\u2026\u2026'}"
+        "Params": "{2: 'Jetavie', 3: 'But...'}"
     },
     {
         "Id": 117,
@@ -1518,7 +1518,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u6211\u5e76\u4e0d\u6253\u7b97\u5728\u8fd9\u91cc\u505c\u4e0b\u3002'}"
+        "Params": "{2: 'Jetavie', 3: 'I do not plan on stopping here.'}"
     },
     {
         "Id": 118,
@@ -1531,7 +1531,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d01\u5854\u8587\u62ff\u51fa\u76ae\u7b4b\uff0c\u5c06\u81ea\u5df1\u6563\u843d\u7684\u5934\u53d1\u91cd\u65b0\u624e\u4e86\u8d77\u6765\u3002'}"
+        "Params": "{3: 'Jetavie takes out two hair ties and neatly fastens her loose hair.'}"
     },
     {
         "Id": 119,
@@ -1544,7 +1544,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u65e2\u7136\u6765\u7684\u65f6\u5019\u662f\u53cc\u9a6c\u5c3e\uff0c\u8d70\u7684\u65f6\u5019\u4e5f\u7528\u53cc\u9a6c\u5c3e\u505a\u544a\u522b\u5427\u3002'}"
+        "Params": "{2: 'Jetavie', 3: 'Since I show up with twin pigtails, I figure I should say goodbye wearing them too.'}"
     },
     {
         "Id": 120,
@@ -1557,7 +1557,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u6218\u6597\u5f97\u592a\u591a\uff0c\u5dee\u70b9\u5fd8\u8bb0\u81ea\u5df1\u539f\u6765\u662f\u4ec0\u4e48\u6837\u2026\u2026'}"
+        "Params": "{2: 'Jetavie', 3: \"I've fought in so many battles that I nearly forget what I used to look like...\"}"
     },
     {
         "Id": 121,
@@ -1570,7 +1570,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u771f\u662f\u2026\u2026\u4ee4\u4eba\u6000\u5ff5\u7684\u9020\u578b\u554a\u3002'}"
+        "Params": "{2: 'Jetavie', 3: 'This style... it feels so nostalgic.'}"
     },
     {
         "Id": 122,
@@ -1583,7 +1583,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7ed1\u597d\u53cc\u9a6c\u5c3e\u7684\u5c11\u5973\u6765\u5230\u4e86\u87ba\u65cb\u7684\u95e8\u6249\u524d\uff0c\u5634\u91cc\u5c0f\u58f0\u5730\u9ed8\u5ff5\u7740\u2026\u2026'}"
+        "Params": "{3: 'With her twin pigtails now tied up, the young girl stands before the spiral gate and quietly whispers...'}"
     },
     {
         "Id": 123,
@@ -1596,7 +1596,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u8be5\u51fa\u53d1\u4e86\u3002'}"
+        "Params": "{2: 'Jetavie', 3: \"It's time to go.\"}"
     },
     {
         "Id": 124,
@@ -1609,7 +1609,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d01\u5854\u8587', 3: '\u6211\u4f1a\u5e26\u7740\u8fd9\u91cc\u7684\u8bb0\u5fc6\u91cd\u65b0\u51fa\u53d1\uff0c\u4e0b\u4e00\u7ad9\u662f\u53eb\u4f5c\u2018\u73b0\u5b9e\u2019\u7684\u5730\u65b9\u3002'}"
+        "Params": "{2: 'Jetavie', 3: 'I will carry these memories with me as I embark on the new journey. My next stop is a place called \"reality.\"'}"
     },
     {
         "Id": 125,
@@ -1635,7 +1635,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u968f\u7740\u90a3\u9053\u5149\u8292\u8d8a\u6765\u8d8a\u8fd1\uff0c\u6d01\u5854\u8587\uff0c\u8fde\u540c\u5b9a\u4e49\u5979\u7684\u7b26\u53f7\uff0c\u4e5f\u4e00\u540c\u4ece\u77e9\u9635\u4e2d\u6d88\u5931\u3002'}"
+        "Params": "{3: 'As that light draws nearer, Jetavie\u2014along with the very symbols that define her\u2014vanishes from the Matrix.'}"
     },
     {
         "Id": 127,
@@ -1661,7 +1661,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u3010\u6a21\u578b\u5b8c\u6574\u5ea6\u6821\u9a8c\u2026\u2026100%\u3011', 3: '60', 4: '34aff8ff'}"
+        "Params": "{1: '[VERIFYING MODEL INTEGRITY... 100%]', 3: '60', 4: '34aff8ff'}"
     },
     {
         "Id": 129,
@@ -1674,7 +1674,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u3010\u6a21\u578b\u5b8c\u6574\u5ea6\u6821\u9a8c\u2026\u2026100%\u3011'}"
+        "Params": "{3: '[VERIFYING MODEL INTEGRITY... 100%]'}"
     },
     {
         "Id": 130,
@@ -1713,7 +1713,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u3010\u5c01\u88c5\u6570\u636e\u5e76\u8fdb\u884c\u5206\u5e03\u5f0f\u4f20\u8f93\u2026\u2026\u6b63\u5728\u5b9a\u4f4d\u5404\u7ec8\u7aef\u4f4d\u7f6e\u2026\u2026\u3011', 3: '60', 4: '34aff8ff'}"
+        "Params": "{1: '[ENCAPSULATING DATA FOR DISTRIBUTED TRANSFER... LOCATING ALL TERMINAL ENDPOINTS...]', 3: '60', 4: '34aff8ff'}"
     },
     {
         "Id": 133,
@@ -1726,7 +1726,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u3010\u5c01\u88c5\u6570\u636e\u5e76\u8fdb\u884c\u5206\u5e03\u5f0f\u4f20\u8f93\u2026\u2026\u6b63\u5728\u5b9a\u4f4d\u5404\u7ec8\u7aef\u4f4d\u7f6e\u2026\u2026\u3011'}"
+        "Params": "{3: '[ENCAPSULATING DATA FOR DISTRIBUTED TRANSFER... LOCATING ALL TERMINAL ENDPOINTS...]'}"
     },
     {
         "Id": 134,
@@ -1765,7 +1765,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u3010\u591a\u91cd\u5c01\u88c5\u5b8c\u6bd5\uff0c\u6570\u636e\u5f00\u59cb\u4f20\u8f93\u2026\u2026\u3011', 3: '60', 4: '34aff8ff'}"
+        "Params": "{1: '[MULTIPLE LAYERS OF ENCAPSULATION COMPLETE. DATA TRANSMISSION BEGINS...]', 3: '60', 4: '34aff8ff'}"
     },
     {
         "Id": 137,
@@ -1778,7 +1778,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u3010\u591a\u91cd\u5c01\u88c5\u5b8c\u6bd5\uff0c\u6570\u636e\u5f00\u59cb\u4f20\u8f93\u2026\u2026\u3011'}"
+        "Params": "{3: '[MULTIPLE LAYERS OF ENCAPSULATION COMPLETE. DATA TRANSMISSION BEGINS...]'}"
     },
     {
         "Id": 138,
@@ -1817,7 +1817,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u3010\u8baf\u53f7\u8bf1\u9975\u906d\u5230\u62e6\u622a\u2026\u2026\u635f\u5931\u738745%\uff0c\u5b8c\u6210\u5ea6\u786e\u8ba4\u2026\u2026\u3011', 3: '60', 4: 'e60000'}"
+        "Params": "{1: '[THE DECOY SIGNAL IS INTERCEPTED... LOSS RATE AT 45%. CONFIRMING COMPLETION STATUS...]', 3: '60', 4: 'e60000'}"
     },
     {
         "Id": 141,
@@ -1830,7 +1830,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u3010\u8baf\u53f7\u8bf1\u9975\u906d\u5230\u62e6\u622a\u2026\u2026\u635f\u5931\u738745%\uff0c\u5b8c\u6210\u5ea6\u786e\u8ba4\u2026\u2026\u3011'}"
+        "Params": "{3: '[THE DECOY SIGNAL IS INTERCEPTED... LOSS RATE AT 45%. CONFIRMING COMPLETION STATUS...]'}"
     },
     {
         "Id": 142,
@@ -1869,7 +1869,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u3010\u542f\u7528\u672a\u611f\u67d3\u5206\u5f55\uff0c\u5220\u9664\u5b9e\u9a8c\u8d44\u6599\u4e2d\u2026\u2026\u6e05\u9664\u75d5\u8ff9\u2026\u2026\u3011', 3: '60', 4: 'e60000'}"
+        "Params": "{1: '[ACTIVATING THE UNCORRUPTED REGISTRY AND ERASING EXPERIMENTAL DATA... CLEARING EVERY TRACE...]', 3: '60', 4: 'e60000'}"
     },
     {
         "Id": 145,
@@ -1882,7 +1882,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u3010\u542f\u7528\u672a\u611f\u67d3\u5206\u5f55\uff0c\u5220\u9664\u5b9e\u9a8c\u8d44\u6599\u4e2d\u2026\u2026\u6e05\u9664\u75d5\u8ff9\u2026\u2026\u3011'}"
+        "Params": "{3: '[ACTIVATING THE UNCORRUPTED REGISTRY AND ERASING EXPERIMENTAL DATA... CLEARING EVERY TRACE...]'}"
     },
     {
         "Id": 146,
@@ -1921,7 +1921,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u3010\u8b66\u544a\uff0c\u9632\u706b\u5899\u5b8c\u5168\u5931\u6548\u2026\u2026\u3011', 3: '60', 4: 'e60000'}"
+        "Params": "{1: '[WARNING: THE FIREWALL IS FULLY COMPROMISED...]', 3: '60', 4: 'e60000'}"
     },
     {
         "Id": 149,
@@ -1934,7 +1934,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u3010\u8b66\u544a\uff0c\u9632\u706b\u5899\u5b8c\u5168\u5931\u6548\u2026\u2026\u3011'}"
+        "Params": "{3: '[WARNING: THE FIREWALL IS FULLY COMPROMISED...]'}"
     },
     {
         "Id": 150,
@@ -1973,7 +1973,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u3010\u8fdc\u7a0b\u6fc0\u6d3b\u81ea\u52a8\u5316\u7ec8\u7aef\uff0c\u5206\u53d1\u8ba2\u5355\u4e2d\u2026\u2026\u5e94\u7b54\u738734%\u3011', 3: '60', 4: '34aff8ff'}"
+        "Params": "{1: '[REMOTELY ACTIVATING AUTOMATED TERMINALS AND DISTRIBUTING ORDERS... CURRENT RESPONSE RATE AT 34%]', 3: '60', 4: '34aff8ff'}"
     },
     {
         "Id": 153,
@@ -1986,7 +1986,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u3010\u8fdc\u7a0b\u6fc0\u6d3b\u81ea\u52a8\u5316\u7ec8\u7aef\uff0c\u5206\u53d1\u8ba2\u5355\u4e2d\u2026\u2026\u5e94\u7b54\u738734%\u3011'}"
+        "Params": "{3: '[REMOTELY ACTIVATING AUTOMATED TERMINALS AND DISTRIBUTING ORDERS... CURRENT RESPONSE RATE AT 34%]'}"
     },
     {
         "Id": 154,
@@ -2025,7 +2025,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u3010\u4f20\u8f93\u5b8c\u6210\u3011', 3: '60', 4: '34aff8ff'}"
+        "Params": "{1: '[TRANSMISSION COMPLETE]', 3: '60', 4: '34aff8ff'}"
     },
     {
         "Id": 157,
@@ -2038,7 +2038,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u3010\u4f20\u8f93\u5b8c\u6210\u3011'}"
+        "Params": "{3: '[TRANSMISSION COMPLETE]'}"
     },
     {
         "Id": 158,
@@ -2077,7 +2077,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u3010\u672c\u7cfb\u7edf\u5df2\u7ecf\u2026\u2026\u5b8c\u6210\u6838\u5fc3\u6307\u4ee4\uff0c\u6b63\u5728\u542f\u52a8\u81ea\u6bc1\u7a0b\u5e8f\u2026\u2026\u3011', 3: '60', 4: 'e60000'}"
+        "Params": "{1: '[THE SYSTEM HAS FULFILLED... ITS PRIMARY DIRECTIVE... INITIATING THE SELF-DESTRUCT SEQUENCE...]', 3: '60', 4: 'e60000'}"
     },
     {
         "Id": 161,
@@ -2090,7 +2090,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u3010\u672c\u7cfb\u7edf\u5df2\u7ecf\u2026\u2026\u5b8c\u6210\u6838\u5fc3\u6307\u4ee4\uff0c\u6b63\u5728\u542f\u52a8\u81ea\u6bc1\u7a0b\u5e8f\u2026\u2026\u3011'}"
+        "Params": "{3: '[THE SYSTEM HAS FULFILLED... ITS PRIMARY DIRECTIVE... INITIATING THE SELF-DESTRUCT SEQUENCE...]'}"
     },
     {
         "Id": 162,
@@ -2181,7 +2181,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u636e\u8bf4\u2026\u2026\u4ed6\u4eec\u5c1d\u8bd5\u8fc7\u62e6\u622a\uff0c\u4e0d\u8fc7\uff0c\u4e8b\u5b9e\u4e0a\u6355\u6349\u5230\u7684\u662f\u8bf1\u9975\u4fe1\u53f7\u3002', 4: '1'}"
+        "Params": "{1: '1', 2: 'Ishmael', 3: 'Word is, they tried to intercept it, but they only ended up catching a decoy signal.', 4: '1'}"
     },
     {
         "Id": 169,
@@ -2194,7 +2194,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u74e6\u83b1\u8389\u4e9a', 3: '\u4e3a\u4ec0\u4e48\u4f60\u7a81\u7136\u5bf9\u5730\u9762\u7684\u67d0\u4e2a\u4e0d\u660e\u8baf\u53f7\u611f\u5174\u8da3\uff1f'}"
+        "Params": "{2: 'Valeria', 3: 'So, why are you suddenly so interested in this unknown surface signal?'}"
     },
     {
         "Id": 170,
@@ -2207,7 +2207,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u2026\u2026', 4: '1'}"
+        "Params": "{2: 'Ishmael', 3: '...', 4: '1'}"
     },
     {
         "Id": 171,
@@ -2220,7 +2220,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u74e6\u83b1\u8389\u4e9a', 3: '\u5b9e\u5728\u60f3\u5f97\u5230\u60c5\u62a5\uff0c\u8ffd\u8e2a\u4fe1\u53f7\u6e90\u4e0d\u5c31\u597d\u4e86\u3002'}"
+        "Params": "{2: 'Valeria', 3: \"If you're that desperate for intel, shouldn't you just track the source?\"}"
     },
     {
         "Id": 172,
@@ -2233,7 +2233,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u5bf9\u65b9\u4f7f\u7528\u4e86\u4e00\u79cd\u9ec4\u91d1\u65f6\u4ee3\u7279\u6709\u7684\u52a0\u5bc6\u6280\u672f\u8fdb\u884c\u53bb\u4e2d\u5fc3\u5316\u3002', 4: '1'}"
+        "Params": "{2: 'Ishmael', 3: 'They use a Golden Age encryption technique that decentralizes the data.', 4: '1'}"
     },
     {
         "Id": 173,
@@ -2246,7 +2246,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u6570\u636e\u540c\u65f6\u5206\u53d1\u7ed9\u4e86\u590d\u6570\u4e2a\u7ec8\u7aef\uff0c\u6bcf\u4e2a\u7ec8\u7aef\u90fd\u62e5\u6709\u6570\u636e\u7684\u5168\u90e8\u4fe1\u606f\u3002', 4: '1'}"
+        "Params": "{2: 'Ishmael', 3: 'The data is distributed to multiple terminals simultaneously, and each terminal holds every bit of the information.', 4: '1'}"
     },
     {
         "Id": 174,
@@ -2259,7 +2259,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u5f53\u6211\u4eec\u5c1d\u8bd5\u8ffd\u8e2a\u8fd9\u6761\u94fe\u4e0a\u7684\u5176\u4e2d\u4e00\u4e2a\u70b9\uff0c\u5176\u4ed6\u7ec8\u7aef\u4f1a\u7acb\u5373\u65ad\u5f00\u8fde\u63a5\u5e76\u6539\u53d8\u8bb0\u5f55\u89c4\u5219\u3002', 4: '1'}"
+        "Params": "{2: 'Ishmael', 3: 'Whenever we try to trace a single point in the chain, the other terminals immediately disconnect and change their logging protocols.', 4: '1'}"
     },
     {
         "Id": 175,
@@ -2272,7 +2272,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u9664\u975e\u80fd\u591f\u786e\u8ba4\u6240\u6709\u7ec8\u7aef\u7684\u4f4d\u7f6e\uff0c\u5426\u5219\uff0c\u72b9\u5982\u5927\u6d77\u635e\u9488\u3002', 4: '1'}"
+        "Params": "{2: 'Ishmael', 3: 'Unless we can pinpoint the location of every terminal, tracking them down is like searching for a needle in a haystack.', 4: '1'}"
     },
     {
         "Id": 176,
@@ -2285,7 +2285,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u74e6\u83b1\u8389\u4e9a', 3: '\u4f60\u8ba4\u4e3a\u90a3\u662f\u4ec0\u4e48\uff1f'}"
+        "Params": "{2: 'Valeria', 3: 'What do you think it is?'}"
     },
     {
         "Id": 177,
@@ -2298,7 +2298,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u6211\u4e0d\u77e5\u9053\uff0c\u5c31\u76ee\u524d\u7684\u72b6\u51b5\u6765\u770b\uff0c\u6211\u6240\u77e5\u9053\u7684\u5e76\u4e0d\u6bd4\u4f60\u591a\u3002', 4: '1'}"
+        "Params": "{2: 'Ishmael', 3: \"I don't know. From what I can tell right now, I'm just as in the dark as you are.\", 4: '1'}"
     },
     {
         "Id": 178,
@@ -2311,7 +2311,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u74e6\u83b1\u8389\u4e9a', 3: '\u4e3a\u4ec0\u4e48\u627e\u4e0a\u6211\uff1f'}"
+        "Params": "{2: 'Valeria', 3: 'Why are you coming to me?'}"
     },
     {
         "Id": 179,
@@ -2324,7 +2324,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u53ea\u662f\u60f3\u804a\u804a\u5929\u800c\u5df2\uff0c\u6211\u8bb0\u5f97\u4f60\u7684\u5c0f\u961f\u5728\u67d0\u4e9b\u65b9\u9762\u62e5\u6709\u4e0d\u9519\u7684\u53e3\u7891\u3002', 4: '1'}"
+        "Params": "{2: 'Ishmael', 3: 'I only wanted to have a quick chat. If I remember correctly, your squad has a strong reputation in certain circles.', 4: '1'}"
     },
     {
         "Id": 180,
@@ -2337,7 +2337,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u74e6\u83b1\u8389\u4e9a', 3: '\u5723\u7532\u866b\u76ee\u524d\u7684\u6218\u529b\u5e76\u4e0d\u9002\u5408\u590d\u6742\u7684\u5916\u52e4\u4efb\u52a1\u3002'}"
+        "Params": "{2: 'Valeria', 3: \"As of now, Scarab isn't really cut out for complicated field missions.\"}"
     },
     {
         "Id": 181,
@@ -2350,7 +2350,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u74e6\u83b1\u8389\u4e9a', 3: '\u7f3a\u4e4f\u8fdb\u653b\u578b\u7684\u673a\u4f53\uff0c\u5730\u9762\u7684\u4efb\u4f55\u98ce\u5439\u8349\u52a8\u90fd\u4f1a\u4f7f\u6211\u4eec\u2018\u5982\u4e34\u5927\u654c\u2019\u3002'}"
+        "Params": "{2: 'Valeria', 3: 'We have no attackers, so the faintest movement on the surface can mean an imminent attack to us.'}"
     },
     {
         "Id": 182,
@@ -2363,7 +2363,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u2026\u2026', 4: '1'}"
+        "Params": "{2: 'Ishmael', 3: '...', 4: '1'}"
     },
     {
         "Id": 183,
@@ -2376,6 +2376,6 @@
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u4e0b\u6b21\u89c1\uff0c\u74e6\u83b1\u8389\u4e9a\u3002', 4: '1'}"
+        "Params": "{2: 'Ishmael', 3: 'See you next time, Valeria.', 4: '1'}"
     }
 ]

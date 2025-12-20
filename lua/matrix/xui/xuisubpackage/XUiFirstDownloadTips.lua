@@ -7,6 +7,10 @@ function XUiFirstDownloadTips:OnAwake()
     self.BtnNoDownload:AddEventListener(handler(self, self.Close))
     self.BtnDownLoading:AddEventListener(handler(self, self.OnBtnDownloadingClickEvent))
     self.BtnBack:AddEventListener(handler(self, self.Close))
+
+    if self.BtnGetAward then
+        self.BtnGetAward:AddEventListener(handler(self, self.OnBtnGetRewardClickEvent))
+    end
     
     self.BtnDownload.gameObject:SetActiveEx(false)
     self.BtnNoDownload.gameObject:SetActiveEx(false)
@@ -72,6 +76,9 @@ function XUiFirstDownloadTips:RefreshStateShow()
     self.BtnNoDownload.gameObject:SetActiveEx(false)
     self.BtnDownLoading.gameObject:SetActiveEx(false)
     self.SliderDownload.gameObject:SetActiveEx(false)
+    if self.BtnGetAward then
+        self.BtnGetAward.gameObject:SetActiveEx(false)
+    end
     
     self:StopProgressTimer()
     
@@ -81,6 +88,12 @@ function XUiFirstDownloadTips:RefreshStateShow()
         self.BtnDownLoading.gameObject:SetActiveEx(true)
         self.BtnDownLoading:SetButtonState(CS.UiButtonState.Disable)
         self._IsComplete = true
+
+        local isShowRewardGet = XMVCA.XSubPackage:CheckNecessaryTaskState(XDataCenter.TaskManager.TaskState.Achieved)
+        
+        if self.BtnGetAward then
+            self.BtnGetAward.gameObject:SetActiveEx(isShowRewardGet)
+        end
     elseif XMVCA.XSubPackage:CheckNecessaryIsPaused() then
         self.BtnDownLoading.gameObject:SetActiveEx(true)
         self.SliderDownload.gameObject:SetActiveEx(true)
@@ -117,6 +130,22 @@ function XUiFirstDownloadTips:OnBtnDownloadingClickEvent()
     end
     
     self._IsPause = not self._IsPause
+end
+
+function XUiFirstDownloadTips:OnBtnGetRewardClickEvent()
+    local taskId = CS.XGame.ClientConfig:GetInt("SubpackageNecessaryTaskId")
+    if not taskId then
+        return
+    end
+    local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
+    if taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
+        XDataCenter.TaskManager.FinishTask(taskId, function(rewardGoodsList)
+            if not XTool.IsTableEmpty(rewardGoodsList) then
+                XUiManager.OpenUiObtain(rewardGoodsList)
+            end
+            self:RefreshStateShow()
+        end)
+    end
 end
 
 function XUiFirstDownloadTips:GetDownloadPercent()

@@ -118,14 +118,23 @@ end
 
 --章节完成，回到选择界面
 function XTheatre5PVEBattleNode:ChapterCompleted()
-    XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_STORY_LINE_PROCESS_UPDATE)
     local uiTheatre5ChooseCharacter = "UiTheatre5ChooseCharacter"
     local isOpen = XLuaUiManager.IsStackUiOpen(uiTheatre5ChooseCharacter)
     if isOpen then
         XLuaUiManager.CloseAllUpperUi(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameMode.PVE) 
     else
-        XLuaUiManager.PopThenOpen(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameMode.PVE)
-    end        
+        ---@type XTableTheatre5PveStoryLineContent
+        local cfg = self._MainModel:GetStoryLineContentCfg(self._StoryLineContentId)
+
+        if cfg and cfg.IsTickOutToTitle then
+            -- 如果本来就要踢出选人界面，那就不用再打开了
+            XLuaUiManager.SafeClose('UiTheatre5Settlement')
+        else
+            XLuaUiManager.PopThenOpen(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameMode.PVE)
+        end
+    end
+
+    XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_STORY_LINE_PROCESS_UPDATE, self._StoryLineId, nil, self._StoryLineContentId)
 end
 
 --章节结束再次战斗

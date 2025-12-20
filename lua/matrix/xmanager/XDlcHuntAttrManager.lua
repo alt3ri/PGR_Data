@@ -35,6 +35,7 @@ XDlcHuntAttrManagerCreator = function()
         [XDlcNpcAttribType.SprintSpeedCOE] = true,
         [XDlcNpcAttribType.BreakGauge] = true,
         [XDlcNpcAttribType.OverDrive] = true,
+        [XDlcNpcAttribType.RebootValue] = true,
     }
 
     local function ToXAttrib(attrTable)

@@ -120,6 +120,9 @@ function XUiTheatre5PVEClueBoard:OnClickClueBoardTag(index, playAnimation)
     else
         self:RefreshClueBoardShow(clueBoardCfg.Id, index)
     end
+    
+    -- 选项移动
+    self._DynamicTable:ScrollToIndex(index, 0.2)
 end
 
 function XUiTheatre5PVEClueBoard:OnSwitchClueShow(isSwitchToDetails)

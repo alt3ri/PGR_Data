@@ -87,12 +87,12 @@ function XUiGridMovieBg:SetAlpha(alpha, duration)
 end
 
 -- 设置灰度值
-function XUiGridMovieBg:SetGrayScale(value)
+function XUiGridMovieBg:SetGrayScale(value, time)
     local component = self.RImgBg:GetComponent(typeof(CS.XUiMaterialController))
     if not component then
         component = self.RImgBg.gameObject:AddComponent(typeof(CS.XUiMaterialController))
     end
-    component:SetGrayScale(value)
+    component:SetGrayScale(value, time)
 end
 
 function XUiGridMovieBg:GetXAspectRatioFitter()

@@ -53,6 +53,7 @@ function XDlcRoomAgency:InitRpc()
     XRpc.DlcRefreshLoadProcessNotify = Handler(self, self.OnDlcRefreshLoadProcessNotify)
     XRpc.DlcRebuildRoomAfterFight = Handler(self, self.OnDlcRebuildRoomAfterFight)
     XRpc.RoomGuidNotify = Handler(self, self.OnRoomGuidNotify)
+    XRpc.DlcRoomRemoveNotify = Handler(self, self.OnDlcRoomRemoveNotify)
 end
 
 function XDlcRoomAgency:InitEvent()
@@ -542,12 +543,13 @@ end
 ---@param nodeId string
 ---@param worldId number
 ---@param createTime number
-function XDlcRoomAgency:ClickEnterRoomHref(roomId, nodeId, worldId, createTime)
+---@param callback function
+function XDlcRoomAgency:ClickEnterRoomHref(roomId, nodeId, worldId, createTime, callback)
     if not self:_CheckAgencyClickHrefCanEnter(roomId, nodeId, worldId, createTime) then
         return
     end
 
-    self:ReqEnterTargetWorld(roomId, nodeId, false, worldId, true)
+    self:ReqEnterTargetWorld(roomId, nodeId, false, worldId, true, callback)
 end
 
 function XDlcRoomAgency:CancelReconnectToWorld(callback)
@@ -834,11 +836,11 @@ function XDlcRoomAgency:ReqReconnectRoom(callback)
     end)
 end
 
-function XDlcRoomAgency:ReqEnterTargetWorld(roomId, nodeId, isRejoin, worldId, isInvite)
+function XDlcRoomAgency:ReqEnterTargetWorld(roomId, nodeId, isRejoin, worldId, isInvite, callback)
     if not XMVCA.XSubPackage:CheckSubpackage() then
         return
     end
-    if self:__CheckHasChangeProtocol("ReqEnterTargetWorld", roomId, nodeId, isRejoin, worldId, isInvite) then
+    if self:__CheckHasChangeProtocol("ReqEnterTargetWorld", roomId, nodeId, isRejoin, worldId, isInvite, callback) then
         return
     end
 
@@ -854,6 +856,9 @@ function XDlcRoomAgency:ReqEnterTargetWorld(roomId, nodeId, isRejoin, worldId, i
             return
         end
         self:_OnCreateRoom(res.RoomData, false)
+        if callback then
+            callback()
+        end
     end)
 end
 
@@ -1621,6 +1626,10 @@ function XDlcRoomAgency:OnDlcRebuildRoomAfterFight(response)
             self:_OnRebuildRoom(response.RoomData)
         end
     end
+end
+
+function XDlcRoomAgency:OnDlcRoomRemoveNotify()
+    self:Close()
 end
 
 -- endregion

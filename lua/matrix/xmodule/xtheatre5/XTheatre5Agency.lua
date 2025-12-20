@@ -846,6 +846,7 @@ end
 
 --endregion
 
+---@return XTableTheatre5TaskShop[]
 function XTheatre5Agency:GetValidShopOrTaskList(type)
     local validTaskShopCfgs = {}
     local taskShopCfgs = self._Model:GetTaskOrShopCfgs(type)
@@ -1120,6 +1121,13 @@ function XTheatre5Agency:TriggerInterruptEvent(callback)
         self._TimerCheckInterrupt = nil
         --print("检查额外流程")
         
+        -- 如果确定是PVP，则执行需要检查时间
+        if self:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
+            if not self:CheckInPVPActivityTime() then
+                return
+            end
+        end
+        
         -- pvp没有做流程, 只能在商店界面插入
         if XMVCA.XTheatre5:HasRelicToSelect() then
             --print("弹出选择饰品")
@@ -1181,10 +1189,6 @@ end
 
 function XTheatre5Agency:GetData()
     return self._Data
-end
-
-function XTheatre5Agency:ResetNewSeason()
-    self._Model:ResetNewSeason()
 end
 
 return XTheatre5Agency

@@ -2,43 +2,43 @@
     {
         "Id": 1,
         "Key": "Life",
-        "Name": "\u5f53\u524d\u751f\u547d\u503c",
+        "Name": "Current HP",
         "Desc": null
     },
     {
         "Id": 2,
         "Key": "MaxLife",
-        "Name": "\u751f\u547d\u503c",
-        "Desc": "\u751f\u547d\u503c\u4e3a0\u7684\u5355\u4f4d\u5c06\u4f1a\u9000\u573a"
+        "Name": "HP",
+        "Desc": "Units with 0 HP will leave the battlefield"
     },
     {
         "Id": 3,
         "Key": "Attack",
-        "Name": "\u653b\u51fb",
-        "Desc": "\u653b\u51fb\u80fd\u9020\u6210\u7684\u4f24\u5bb3"
+        "Name": "ATK",
+        "Desc": "The amount of damage an attack deals"
     },
     {
         "Id": 4,
         "Key": "Defense",
-        "Name": "\u9632\u5fa1",
-        "Desc": "\u51cf\u5c11\u53d7\u5230\u7684\u4f24\u5bb3"
+        "Name": "DEF",
+        "Desc": "Reduces the damage taken"
     },
     {
         "Id": 5,
         "Key": "CriticalChance",
-        "Name": "\u66b4\u51fb\u7387",
-        "Desc": "\u653b\u51fb\u89e6\u53d1\u66b4\u51fb\u7684\u51e0\u7387"
+        "Name": "CRIT Rate",
+        "Desc": "The chance to trigger a critical hit"
     },
     {
         "Id": 6,
         "Key": "CriticalDamage",
-        "Name": "\u66b4\u51fb\u52a0\u6210",
-        "Desc": "\u89e6\u53d1\u66b4\u51fb\u540e\u989d\u5916\u63d0\u9ad8\u7684\u4f24\u5bb3"
+        "Name": "CRIT Bonus",
+        "Desc": "The extra damage provided by the critical hit triggered"
     },
     {
         "Id": 7,
         "Key": "AttackSpeed",
-        "Name": "\u901f\u5ea6\u52a0\u6210",
-        "Desc": "\u901f\u5ea6\u52a0\u6210\u8d8a\u9ad8\uff0c\u653b\u51fb\u9891\u7387\u8d8a\u9ad8"
+        "Name": "Speed Bonus",
+        "Desc": "The higher the Speed Bonus, the higher the attack frequency"
     }
 ]

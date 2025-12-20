@@ -20,6 +20,7 @@ local pairs = pairs
 local ipairs = ipairs
 local stringFormat = string.format
 
+local DebugForceOpenSubpackage = false
 local IsDebugBuild = CS.XApplication.Debug
 local CsLog = CS.XLog
 
@@ -29,7 +30,6 @@ local DownloadType = DOWNLOAD_SOURCE.SUBPACKAGE
 local CsXApplication = CS.XApplication
 
 function XSubPackageAgency:OnInit()
-    self.DebugForceOpenSubpackage = false
     self.DefaultSkipVideoPreloadDownloadTip = false
     self._SubpackageWaitDnLdQueue = {}
     self._ResWaitDnLdQueue = {}
@@ -120,11 +120,11 @@ function XSubPackageAgency:SetDebugForceOpenSubpackage(value)
         return
     end
 
-    self.DebugForceOpenSubpackage = value
+    DebugForceOpenSubpackage = value
 end
 
 function XSubPackageAgency:IsOpen()
-    if self.DebugForceOpenSubpackage then
+    if DebugForceOpenSubpackage then
         return true
     end
     return self._LaunchDlcManager.CheckSubpackageOpen()
@@ -936,30 +936,12 @@ function XSubPackageAgency:CheckAllComplete()
     return complete
 end
 
-function XSubPackageAgency:CheckResDownloadByFunctionType(enterType, param)
-    if self.DebugForceOpenSubpackage then
-        return false, nil
-    end
-
-    if not self:IsOpen() then
-        return true, nil
-    end
-
-    local resIds = self._Model:GetAllSubpackageIds(enterType, param)
-    if XTool.IsTableEmpty(resIds) then
-        return true, nil
-    end
-
-    for _, resId in pairs(resIds) do
-        local complete = self:CheckResDownloadComplete(resId)
-        if not complete then
-            return false, resId
-        end
-    end
-
-    return true, nil
+--- 检查指定功能类型所需的分包是否已经全部下载完成
+--- @param enterType any 功能入口类型，例如 XFunctionManager.FunctionName.MainLine
+--- @param param any 附加参数，例如关卡id、角色id等
+function XSubPackageAgency:CheckSubpackageDownloadByFunctionType(enterType, param)
+    return self:CheckSubpackage(enterType, param, true)
 end
-
 
 function XSubPackageAgency:CheckSubpackage(enterType, param, ignorePopUi)
     if not self:IsOpen() then

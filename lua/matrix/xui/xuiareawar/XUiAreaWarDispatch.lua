@@ -1,6 +1,6 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiAreaWarBattleRoomRoleDetail = require("XUi/XUiAreaWar/XUiAreaWarBattleRoomRoleDetail")
-
+local XUiPanelAreaWarDetailTips = require("XUi/XUiAreaWar/XUiPanel/XUiPanelAreaWarDetailTips")
 local XUiAreaWarDispatch = XLuaUiManager.Register(XLuaUi, "UiAreaWarDispatch")
 
 local ColorEnum = {
@@ -132,11 +132,16 @@ function XUiAreaWarDispatch:InitView()
         self.TxtCost.text = costCount * self.DispatchCount
         self.RImgCost:SetRawImage(icon)
     end
+
     self:RefreshReward(rewardItems)
     if isShowChangeNum then
         self:RefreshSelectCount()
     end
+
+    
+    self:InitProbabilityView()
 end
+
 
 function XUiAreaWarDispatch:RefreshReward(rewardItems)
     for index, item in ipairs(rewardItems) do
@@ -213,6 +218,13 @@ function XUiAreaWarDispatch:OnClickBtnDispatch()
         return
     end
 
+    local minItemNum = XDataCenter.AreaWarManager.GetUsingProbabilityItemsMinNum()
+    if minItemNum > 0 and minItemNum < self.DispatchCount then
+        local tips = XAreaWarConfigs.GetUseItemNumNoEnoughTips()
+        XUiManager.TipError(tips)
+        return
+    end
+
     if self.IsQuest then
         self:DoDispatchQuest()
     else
@@ -231,12 +243,12 @@ function XUiAreaWarDispatch:DoDispatchBlock()
     end
 
     local characterIds, robotIds = self.Team:SpiltCharacterAndRobotIds()
-    XDataCenter.AreaWarManager.AreaWarDetachRequest(blockId, characterIds, robotIds, self.DispatchCount, function(rewardGoodsList)
+    XDataCenter.AreaWarManager.AreaWarDetachRequest(blockId, characterIds, robotIds, self.DispatchCount, function(rewardGoodsList,areaWarItems)
         local personal = XDataCenter.AreaWarManager.GetPersonal()
         if personal:IsOpenMultiChallenge() then
             personal:SetSelectLocal(self.DispatchCount)
         end
-        self:SyncWhenResponse(rewardGoodsList, false)
+        self:SyncWhenResponse(rewardGoodsList,areaWarItems, false)
     end
     )
 end
@@ -245,21 +257,25 @@ function XUiAreaWarDispatch:DoDispatchQuest()
     local questId = self.Id
     local characterIds, robotIds = self.Team:SpiltCharacterAndRobotIds()
     XDataCenter.AreaWarManager.RequestQuestDetach(questId, characterIds, robotIds, function(rewardGoodsList)
-        self:SyncWhenResponse(rewardGoodsList, true)
+        self:SyncWhenResponse(rewardGoodsList,nil, true)
     end)
 end
 
-function XUiAreaWarDispatch:SyncWhenResponse(rewardGoodsList, isCloseDetail)
+function XUiAreaWarDispatch:SyncWhenResponse(rewardGoodsList,areaWarItems, isCloseDetail)
     local closeUi = asynTask(function(cb)
         XLuaUiManager.CloseWithCallback("UiAreaWarDispatch", cb)
     end)
     RunAsyn(function()
         closeUi()
-        if not XTool.IsTableEmpty(rewardGoodsList) then
+        if not XTool.IsTableEmpty(areaWarItems) then
             local openObtain = asynTask(function(cb)
-                XUiManager.OpenUiObtain(rewardGoodsList, nil, cb)
+                XMVCA.XAreaWar:OpenUiAreaWarObtain(rewardGoodsList, areaWarItems, nil, cb)
             end)
-
+            openObtain()
+        elseif not XTool.IsTableEmpty(rewardGoodsList) then
+            local openObtain = asynTask(function(cb)
+                XUiManager.OpenUiObtain(rewardGoodsList,nil, cb)
+            end)
             openObtain()
         end
 
@@ -305,4 +321,33 @@ function XUiAreaWarDispatch:OnClickBtnMax()
     XDataCenter.AreaWarManager.GetPersonal():MarkMaxRedPoint()
     self:RefreshSelectCount()
 end
+function XUiAreaWarDispatch:InitProbabilityView()
+   self.PanelBuff.gameObject:SetActiveEx(not self.IsQuest)
+   self.GridCollection.gameObject:SetActiveEx(not self.IsQuest)
+    if  self.IsQuest then 
+       return
+    end
+    local curProbability = 100
+    for _,itemId in pairs(XDataCenter.AreaWarManager.GetUsingProbabilityItems()) do
+        local itemConfig = self._Control:GetConfig():GetConfigItem(itemId)
+        curProbability = math.floor(itemConfig.EffectProbability/100)+curProbability
+    end
+ local bindObj = function(grid)
+        local obj = {}
+        XTool.InitUiObjectByUi(obj,grid)
+        obj.TxtNum.text ="x".. curProbability.."%"
+        obj.TxtNum.transform.parent.gameObject:SetActiveEx(curProbability ~= 100)
+        self:RegisterClickEvent(obj.BtnClick, function ()
+            self.PanelTips:RefreshToggleGroup(obj)
+            self.PanelTips:Show()
+        end)
+        return obj
 
+    end
+    self.GridCollection.gameObject:SetActiveEx(false)
+    local gridPrefab = CS.UnityEngine.GameObject.Instantiate(self.GridCollection.gameObject, self.GridCollection.transform.parent)
+    self.GridPorbabilityItem = bindObj(gridPrefab)
+    gridPrefab:SetActiveEx(true)
+    self.PanelTips = XUiPanelAreaWarDetailTips.New(self.UiAreaWarPanelTips, self,{self.EmptyClick,self.GridPorbabilityItem},curProbability)
+
+end

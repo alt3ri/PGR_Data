@@ -12,22 +12,41 @@ function XUiShopFashionFilter:OnAwake()
     self:RegisterClickEvent(self.BtnConfirm, self.OnSubmitFliter)
 end
 
-function XUiShopFashionFilter:OnStart(shopId, careerTags, elementTags, characterId, cb)
-    self.ShopId = shopId
-    self.CallBack = cb
+function XUiShopFashionFilter:OnStart(SelectData, dataProvider, selectCallBack,screenGroupCfg)
+    self.DataProvider = dataProvider
+    self.OrginDataProvider = dataProvider
+    self.SelectCallBack = selectCallBack
+    self.CurData = SelectData
+    self.GroupCfgExtendData = screenGroupCfg
     self:InitTagGroups()
-    
-    self.PanelFliterCareer = XUiPanelFilterCareer.New(self.PanelCareer, self, self._FliterTagGroupList[CharacterFilterTagTypeNum.Career], careerTags)
-    self.PanelFliterElement = XUiPanelFilterElement.New(self.PanelElement, self, self._FliterTagGroupList[CharacterFilterTagTypeNum.Element], elementTags)
-    self.PanelFliterCharacterList = XUiPanelFilterCharacterList.New(self.PanelCharacterList, self, characterId)
-    
+
+    self.PanelFliterCareer = XUiPanelFilterCareer.New(self.PanelCareer, self,
+        self._FliterTagGroupList[CharacterFilterTagTypeNum.Career], SelectData.careerTags)
+    self.PanelFliterElement = XUiPanelFilterElement.New(self.PanelElement, self,
+        self._FliterTagGroupList[CharacterFilterTagTypeNum.Element], SelectData.elementTags)
+    self.PanelFliterCharacterList = XUiPanelFilterCharacterList.New(self.PanelCharacterList, self, SelectData
+        .selectId)
+
     self.PanelFliterCareer:Open()
     self.PanelFliterElement:Open()
     self.PanelFliterCharacterList:Open()
-    
     self:RefreshCharacterListShow()
 end
 
+function XUiShopFashionFilter:RefreshViewUI()
+    self.TxtSelectTitle.gameObject:SetActiveEx(self.GroupCfgExtendData )
+    if not self.GroupCfgExtendData then
+        return
+    end
+    local characterId = self.PanelFliterCharacterList:GetCurSelectedCharacterId()
+    if not characterId or not  XTool.IsNumberValid(characterId) or not self.GroupCfgExtendData[characterId] then 
+      self.TxtSelectState.text = CS.XTextManager.GetText("UnChoose")
+      return
+    end
+    
+    self.TxtSelectState.text = self.GroupCfgExtendData[characterId]
+
+end
 function XUiShopFashionFilter:InitTagGroups()
     -- 拿到该筛选类型要显示的所有标签
     local allTags = XRoomCharFilterTipsConfigs.GetFilterTagCommonGroupTags(CharacterFilterGroupType.FashionShop)
@@ -50,111 +69,104 @@ function XUiShopFashionFilter:InitTagGroups()
             groupTagDic[currTagGroupId] = {}
         end
         if currTagGroupId then
-            table.insert(groupTagDic[currTagGroupId], {TagId = tagId, Order = currTagOrder})
+            table.insert(groupTagDic[currTagGroupId], { TagId = tagId, Order = currTagOrder })
         end
     end
-    
+
     self._FliterTagGroupList = groupTagDic
 end
 
 function XUiShopFashionFilter:RefreshCharacterListShow()
     local careerTags = self.PanelFliterCareer:GetSelectedTags()
     local elementTags = self.PanelFliterElement:GetSelectedTags()
-    
-    local goodsList = XShopManager.GetShopGoodsList(self.ShopId, true, true)
-    
-    local characterIds = {}
-    local characterMap = {}
-    
-    -- 获取商品里对应的角色Id
-    if not XTool.IsTableEmpty(goodsList) then
-        for i, goods in pairs(goodsList) do
-            local characterId = XDataCenter.FashionManager.GetCharacterId(goods.RewardGoods.TemplateId)
-
-            if not characterMap[characterId] then
-                table.insert(characterIds, characterId)
-                characterMap[characterId] = true
-            end
-        end
-    end
-
-    if not XTool.IsTableEmpty(characterIds) then
-        -- 剔除非选中职业的角色
+    local tempList = {}
+    local tempMap = {}
+ 
+    local isCareerTags = function(characterId)
         if not XTool.IsTableEmpty(careerTags) then
-            for i = #characterIds, 1, -1 do
-                local characterId = characterIds[i]
-                local charaCareer = XMVCA.XCharacter:GetCharacterCareer(characterId)
-                local isSatisfyAnyCareer = false
-                for careerTag, _ in pairs(careerTags) do
-                    local career = XRoomCharFilterTipsConfigs.GetFilterTagValue(careerTag)
-                    if charaCareer == career then
-                        isSatisfyAnyCareer = true
-                    end
-                end
-
-                if not isSatisfyAnyCareer then
-                    table.remove(characterIds, i)
+            local charaCareer = XMVCA.XCharacter:GetCharacterCareer(characterId)
+            local isSatisfyAnyCareer = true
+            for careerTag, _ in pairs(careerTags) do
+                local career = XRoomCharFilterTipsConfigs.GetFilterTagValue(careerTag)
+                if charaCareer == career then
+                    isSatisfyAnyCareer = false
                 end
             end
+            return isSatisfyAnyCareer
         end
-        
-        -- 剔除非选中元素的角色
+        return false
+    end
+    -- 剔除非选中元素的角色
+    local isElementTags = function(characterId)
         if not XTool.IsTableEmpty(elementTags) then
-            for i = #characterIds, 1, -1 do
-                local characterId = characterIds[i]
-                local charaElement = XMVCA.XCharacter:GetCharacterElement(characterId)
-                local isSatisfyAnyElementr = false
-                for elementTag, _ in pairs(elementTags) do
-                    local element = XRoomCharFilterTipsConfigs.GetFilterTagValue(elementTag)
-                    if charaElement == element then
-                        isSatisfyAnyElementr = true
-                    end
+            local charaElement = XMVCA.XCharacter:GetCharacterElement(characterId)
+            local isSatisfyAnyElementr = true
+            for elementTag, _ in pairs(elementTags) do
+                local element = XRoomCharFilterTipsConfigs.GetFilterTagValue(elementTag)
+                if charaElement == element then
+                    isSatisfyAnyElementr = false
                 end
-
-                if not isSatisfyAnyElementr then
-                    table.remove(characterIds, i)
-                end
+            end
+            return isSatisfyAnyElementr
+        end
+        return false
+    end
+    for i, data in ipairs(self.DataProvider) do
+        if data.characterId~= 0 and not tempMap[data.characterId] then
+            tempMap[data.characterId] = true
+            if not isCareerTags(data.characterId) and not isElementTags(data.characterId)then 
+                table.insert(tempList,data)
             end
         end
     end
-    
-    table.sort(characterIds, function(a, b) 
-        local priorityA = XMVCA.XCharacter:GetCharacterPriority(a)
-        local priorityB = XMVCA.XCharacter:GetCharacterPriority(b)
+
+    table.sort(tempList, function(a, b)
+        local priorityA = XMVCA.XCharacter:GetCharacterPriority(a.characterId)
+        local priorityB = XMVCA.XCharacter:GetCharacterPriority(b.characterId)
 
         if priorityA ~= priorityB then
             return priorityA > priorityB
         end
-        
-        return a > b
-    end)
-    
-    self.PanelFliterCharacterList:RefreshList(characterIds)
 
+        return a.characterId > b.characterId
+    end)
+
+    self.PanelFliterCharacterList:RefreshList(tempList)
     self:RefreshSubmitBtnState()
+
 end
 
 function XUiShopFashionFilter:RefreshSubmitBtnState()
     local characterId = self.PanelFliterCharacterList:GetCurSelectedCharacterId()
-    
+
     self._IsCanSubmit = XTool.IsNumberValid(characterId)
 
     self.BtnConfirm:SetButtonState(self._IsCanSubmit and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
+    self:RefreshViewUI()
 end
 
 function XUiShopFashionFilter:OnCancelFliter()
     self:Close()
-    if self.CallBack then
-        self.CallBack()
+    if self.SelectCallBack then
+         local resultData ={
+                selectId = nil,
+                careerTags = nil,
+                elementTags = nil
+            }
+        self.SelectCallBack(resultData)
     end
 end
 
 function XUiShopFashionFilter:OnSubmitFliter()
-
     if self._IsCanSubmit then
         self:Close()
-        if self.CallBack then
-            self.CallBack(self.PanelFliterCareer:GetSelectedTags(), self.PanelFliterElement:GetSelectedTags(), self.PanelFliterCharacterList:GetCurSelectedCharacterId())
+        if self.SelectCallBack then
+            local resultData ={
+                selectId = self.PanelFliterCharacterList:GetCurSelectedCharacterId(),
+                careerTags = self.PanelFliterCareer:GetSelectedTags(),
+                elementTags = self.PanelFliterElement:GetSelectedTags()
+            }
+            self.SelectCallBack(resultData)
         end
     else
         XUiManager.TipText('UiShopFashionFilterSubmitFaultTips')

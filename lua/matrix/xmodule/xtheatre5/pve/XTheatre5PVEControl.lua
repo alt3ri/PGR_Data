@@ -631,4 +631,35 @@ function XTheatre5PVEControl:OnRelease()
 
 end
 
+--- 判断进入角色选择界面后是否立刻进入故事线
+function XTheatre5PVEControl:CheckEnterContentInCharaChoose()
+    -- 判断是否有故事线处于分支、回溯节点
+    local storyLines = self._Model.PVERougeData:GetPveStoryLines()
+    if XTool.IsTableEmpty(storyLines) then
+        return
+    end
+    
+    for _, storyLineData in pairs(storyLines) do
+        if XTool.IsNumberValid(storyLineData.CurContentId) then
+            local storyLineContentCfg = self._Model:GetStoryLineContentCfg(storyLineData.CurContentId)
+            if storyLineContentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVENodeType.Branch
+                    or storyLineContentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVENodeType.Backtrack then
+                return storyLineData.StoryLineId
+            end
+        end
+    end
+end
+
+--region Config
+
+function XTheatre5PVEControl:GetClientConfigCrowModelOutLineShowCondition()
+    return self._Model:GetTheatre5ClientConfigNum('CrowModelOutLineShowCondition')
+end
+
+function XTheatre5PVEControl:GetClientConfigCrowModelOutLineHideCondition()
+    return self._Model:GetTheatre5ClientConfigNum('CrowModelOutLineHideCondition')
+end
+
+--endregion
+
 return XTheatre5PVEControl

@@ -1,6 +1,6 @@
-local XUiPanelTask = require("XUi/XUiMoneyReward/XUiPanelTask")
-local XDynamicGridTask = require("XUi/XUiTask/XDynamicGridTask")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiPanelTask = require("XUi/XUiMoneyReward/XUiPanelTask")
+local XDynamicGridTask = require("XUi/XUiTask/XDynamicGridTask")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 ---@class XUiPanelTaskActivity
 local XUiPanelTaskActivity = XClass(nil, "XUiPanelTaskActivity")
 local IsMulting = false
@@ -18,16 +18,16 @@ function XUiPanelTaskActivity:Ctor(ui, parent)
 end
 
 function XUiPanelTaskActivity:ShowPanel()
-    self.GameObject:SetActive(true)
+    self.GameObject:SetActiveEx(true)
 
     self.ActivityTasks = self:GetTasks()
-    self.PanelNoneActivityTask.gameObject:SetActive(#self.ActivityTasks <= 0)
+    self.PanelNoneActivityTask.gameObject:SetActiveEx(#self.ActivityTasks <= 0)
     self.DynamicTable:SetDataSource(self.ActivityTasks)
     self.DynamicTable:ReloadDataASync(1)
 end
 
 function XUiPanelTaskActivity:HidePanel()
-    self.GameObject:SetActive(false)
+    self.GameObject:SetActiveEx(false)
 end
 
 function XUiPanelTaskActivity:CheckRefreshLeftNewTask()
@@ -65,7 +65,7 @@ function XUiPanelTaskActivity:Refresh(isMulti)
     end
 
     self.ActivityTasks = self:GetTasks()
-    self.PanelNoneActivityTask.gameObject:SetActive(#self.ActivityTasks <= 0)
+    self.PanelNoneActivityTask.gameObject:SetActiveEx(#self.ActivityTasks <= 0)
     self.DynamicTable:SetDataSource(self.ActivityTasks)
     self.DynamicTable:ReloadDataASync()
 end
@@ -111,6 +111,6 @@ function XUiPanelTaskActivity:OnDynamicTableEvent(event, index, grid)
         grid.RootUi = self.Parent
         grid:ResetData(data)
     end
-end
-
+end
+
 return XUiPanelTaskActivity

@@ -2139,6 +2139,13 @@ function XEquipAgency:GetEquipSuitSuitType(id)
     return self._Model:GetConfigEquipSuit(id).SuitType
 end
 
+function XEquipAgency:GetEquipSuitEquipType(id)
+    return self._Model:GetConfigEquipSuit(id).EquipType
+end
+
+function XEquipAgency:GetEquipSuitRecomChar(id)
+    return self._Model:GetConfigEquipSuit(id).RecommendCharacterId
+end
 --- 获取套装对应装备Id字典，key是装备的site位置
 function XEquipAgency:GetSuitEquipIds(suitId)
     return self._Model:GetSuitEquipIds(suitId)
@@ -2694,6 +2701,37 @@ end
 
 function XEquipAgency:GetSuitActiveSkillDesList(suitId, count, isOverrun, isAddOverrunTips)
     return self._Model:GetSuitActiveSkillDesList(suitId, count, isOverrun, isAddOverrunTips)
+end
+
+function XEquipAgency:GetSuitFilterProvider(Text, suitId)
+    local suitCfg = self._Model:GetConfigEquipSuit(suitId)
+    local equipTypeStr = suitCfg.EquipType
+    local equipTypes = {}
+    if equipTypeStr then
+        local equipTypeGroup = string.Split(equipTypeStr, "|")
+        for _, k in pairs(equipTypeGroup) do
+            equipTypes[tonumber(k)] = true
+        end
+    end
+
+    local recommendCharacterIdStr = self:GetEquipSuitRecomChar(suitId)
+    local recomChars = {}
+    if recommendCharacterIdStr then
+        local recomCharsGroup = string.Split(recommendCharacterIdStr, "|")
+        for _, k in pairs(recomCharsGroup) do
+            table.insert(recomChars, tonumber(k))
+        end
+    end
+    local result = {
+        text =Text,
+        icon = self._Model:GetSuitIconPath(suitId),
+        description = suitCfg.Description,
+        suitQualityIcon = self._Model:GetSuitQualityIcon(suitId),
+        equipType = equipTypes,
+        recomCharIds = recomChars
+    }
+   return result
+    
 end
 --============================================================== #endregion 其他 ==============================================================
 

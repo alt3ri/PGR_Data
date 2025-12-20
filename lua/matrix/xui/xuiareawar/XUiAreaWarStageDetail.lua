@@ -1,5 +1,5 @@
-local XUiPanelArea = require("XUi/XUiMission/XUiPanelArea")
-local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
+local XUiPanelArea = require("XUi/XUiMission/XUiPanelArea")
+local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 --关卡详情界面
 local XUiAreaWarStageDetail = XLuaUiManager.Register(XLuaUi, "UiAreaWarStageDetail")
 

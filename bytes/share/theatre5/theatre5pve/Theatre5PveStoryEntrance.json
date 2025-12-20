@@ -40,10 +40,20 @@
         "RepeatChapter": "[508]"
     },
     {
+        "Id": 5,
+        "SceneObject": "BtnCommonStory",
+        "BtnOpenCondition": 1050238.0,
+        "BtnCloseCondition": 1050355.0,
+        "StoryIsOpen": true,
+        "StoryLine": 6,
+        "RepeatChapterCondition": null,
+        "RepeatChapter": null
+    },
+    {
         "Id": 6,
         "SceneObject": "BtnTeaching",
         "BtnOpenCondition": null,
-        "BtnCloseCondition": null,
+        "BtnCloseCondition": 1050356.0,
         "StoryIsOpen": true,
         "StoryLine": 1,
         "RepeatChapterCondition": null,

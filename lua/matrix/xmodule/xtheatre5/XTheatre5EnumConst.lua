@@ -142,6 +142,8 @@ local Theatre5EnumConst = {
         Event = 4, --事件
         BattleChapterMain = 5, --战斗章节
         Shop = 6, --商店节点
+        Branch = 7, -- 选择分支
+        Backtrack = 8, -- 回溯
 
         -- 客户端自定义的枚举从1000开始
         Battle = 1000, --战斗
@@ -334,6 +336,12 @@ local Theatre5EnumConst = {
         AutoSellRune = 10, --出售指定位置的符纹(不对技能操作)
         AutoReplaceRune = 11, --将指定位置的符纹删除,并根据删除符纹的稀有度抽取对应的RandomGroup(不对技能操作)
         ChangeHp = 12, --心数增加、减少
+    },
+    
+    -- UI风格的UI类型
+    UITypeInStyles = {
+        UiMain = 1, -- 主界面
+        UiBattleEventSelection = 2, -- 事件选择界面
     }
 }
 

@@ -277,7 +277,18 @@ function XUiAnnouncement:OnBtnHrefClick(str)
     if skipId then
         XFunctionManager.SkipInterface(skipId)
     else
-        CS.UnityEngine.Application.OpenURL(str)
+        -- 判断特殊传参
+        if string.find(str, 'urlId=.+') then
+            local urlIdStr = string.match(str, 'urlId=(.+)')
+
+            if string.IsNumeric(urlIdStr) then
+                local urlId = tonumber(urlIdStr)
+                
+                XMVCA.XUrl:SkipByUrlId(urlId)
+            end
+        else
+            CS.UnityEngine.Application.OpenURL(str)
+        end
     end
 end
 

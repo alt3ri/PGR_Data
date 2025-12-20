@@ -62,7 +62,7 @@ function XUiActivityBriefShop:OnDisable()
     if XTool.IsNumberValid(ActivityBriefShopNeedMarkScrollPosId) and ActivityBriefShopNeedMarkScrollPosId == self:GetCurShopId() then
         self._StartIndexCache = self.DynamicTable:GetStartIndex()
     end
-    
+
     self:ClearCountDown()
     self:StopTabTimer()
     for _, grid in ipairs(self.XUiGridShopList) do
@@ -89,24 +89,26 @@ end
 
 function XUiActivityBriefShop:OnBtnShaiXuanClick()
     local callBack = function(data)
-        if data then
-            self.SelectTag = data.text
+        if data.WaferData then
+            self.SelectTag = data.WaferData.text
+         
         else
-            self.SelectTag = nil    
+            self.SelectTag = nil
         end
         self:UpdateGoodList()
+        self.SelectTagId = data.TagId
     end
 
     local dataProvider = self:GetSuitScreenDataProvider()
-    local selectData = nil
+    local selectWafer = nil
     for i = 1, #dataProvider do
         local data = dataProvider[i]
         if data.text == self.SelectTag then
-            selectData = data
+            selectWafer = data
             break
         end
     end
-
+    local selectData = {TagId = self.SelectTagId,WaferData = selectWafer}
     XLuaUiManager.Open('UiShopWaferSelect', selectData, dataProvider, callBack)
 end
 
@@ -115,7 +117,7 @@ function XUiActivityBriefShop:InitShopTabList(selectedShopId, screenId)
     for i, shopId in ipairs(self.ShopIdList) do
         local go = CSInstantiate(self.BtnTong1, self.BtnTong1.transform.parent)
         go.gameObject:SetActiveEx(true)
-        go.gameObject.name = 'BtnTong'..tostring(shopId)
+        go.gameObject.name = 'BtnTong' .. tostring(shopId)
         local btn = go:GetComponent("XUiButton")
         local shopName = XShopManager.GetShopName(shopId)
         btn:SetNameByGroup(0, shopName)
@@ -140,11 +142,11 @@ function XUiActivityBriefShop:SelectShop(index, force)
     if XTool.IsNumberValid(ActivityBriefShopNeedMarkScrollPosId) and ActivityBriefShopNeedMarkScrollPosId == self:GetCurShopId() then
         self._StartIndexCache = self.DynamicTable:GetStartIndex()
     end
-    
+
     self.CurIndex = index
 
-    
-    
+
+
     self:PlayAnimation("QieHuan")
     self:UpdatePanel()
     self.SortGroupContent.anchoredPosition = CS.UnityEngine.Vector2(0, 0)
@@ -263,7 +265,7 @@ function XUiActivityBriefShop:UpdateGoodList()
         self:UpdateGoodListWithMultiGroup(sortGroupInfoList)
     elseif #sortGroupInfoList == 1 then
         self.PanelItemList2.gameObject:SetActiveEx(true)
-        
+
         local startIndex = nil
         if XTool.IsNumberValid(ActivityBriefShopNeedMarkScrollPosId) and ActivityBriefShopNeedMarkScrollPosId == shopId then
             startIndex = self._StartIndexCache
@@ -296,7 +298,9 @@ function XUiActivityBriefShop:GetSortGroupInfoList(shopGoods, shopId)
     for i, sortId in ipairs(shopInfo.GoodsSortIds) do
         local sortcfg = XActivityBriefConfigs.GetActivityShopGoodsSortById(sortId)
         if sortcfg.ShopId ~= shopId then
-            XLog.Error(string.format("请策划老师检查配置：ActivityBriefShop.tab的ShopId %s，GoodsSortIds[%s]对应到ActivityBriefShopGoodsSort.tab配置的商店ShopId为%s", shopId, i, sortcfg.ShopId))
+            XLog.Error(string.format(
+                "请策划老师检查配置：ActivityBriefShop.tab的ShopId %s，GoodsSortIds[%s]对应到ActivityBriefShopGoodsSort.tab配置的商店ShopId为%s",
+                shopId, i, sortcfg.ShopId))
         end
 
         local targetIdDic = {}
@@ -312,7 +316,10 @@ function XUiActivityBriefShop:GetSortGroupInfoList(shopGoods, shopId)
                 shopGoodDic[targetId] = nil
             else
                 if targetIdDic[targetId] then
-                    XLog.Error(string.format("请策划老师检查配置：ActivityBriefShopGoodsSort.tab表，Id = %s，TargetIds[%s] = %s，商店里配置了相同的商品id", sortId, index, targetId))
+                    XLog.Error(string.format(
+                        "请策划老师检查配置：ActivityBriefShopGoodsSort.tab表，Id = %s，TargetIds[%s] = %s，商店里配置了相同的商品id", sortId,
+                        index,
+                        targetId))
                 end
             end
         end
@@ -489,13 +496,8 @@ function XUiActivityBriefShop:GetSuitScreenDataProvider()
                 local firstGood = goodsList[1]
                 local templateId = firstGood.RewardGoods.TemplateId
                 local suitId = XMVCA.XEquip:GetEquipSuitId(templateId)
-                local suitCfg = XMVCA.XEquip:GetConfigEquipSuit(suitId)
-                dataProvider[#dataProvider + 1] = {
-                    text = v.Text,
-                    icon = XMVCA.XEquip:GetEquipSuitIconPath(suitId),
-                    description = suitCfg.Description,
-                    suitQualityIcon = XMVCA.XEquip:GetSuitQualityIcon(suitId)
-                }
+                dataProvider[#dataProvider + 1] =XMVCA.XEquip:GetSuitFilterProvider(v.Text,suitId)
+              
             end
         end
     end
@@ -675,4 +677,4 @@ function XUiActivityBriefShop:TabTimerUpdater()
             self:Close()
         end
     end
-end 
+end

@@ -210,6 +210,9 @@ function XBigWorldGamePlayAgency:RequestGetEnterBigWorldData(callback)
 end
 
 function XBigWorldGamePlayAgency:EnterGameError()
+    if not self:IsInGame() then
+        return
+    end
     --函数异常
     self:DisposeConfig()
     --移除掉MVCA

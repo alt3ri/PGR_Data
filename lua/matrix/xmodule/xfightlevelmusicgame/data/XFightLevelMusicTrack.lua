@@ -1,16 +1,16 @@
 ---@class XFightLevelMusicTrack
 local XFightLevelMusicTrack = XClass(nil, "XFightLevelMusicTrack")
-XFightLevelMusicTrack.Uid = 1
+local XFightLevelMusicTrackUid = 1
 
 function XFightLevelMusicTrack:Ctor(trackId, length)
-    self._Uid = XFightLevelMusicTrack.Uid
+    self._Uid = XFightLevelMusicTrackUid
     self._TrackId = trackId
     self._Length = length
     
     ---@type XFightLevelMusicTrackUnit[]
     self._TrackUnitList = {}
 
-    XFightLevelMusicTrack.Uid = XFightLevelMusicTrack.Uid + 1
+    XFightLevelMusicTrackUid = XFightLevelMusicTrackUid + 1
 end
 
 --region Getter

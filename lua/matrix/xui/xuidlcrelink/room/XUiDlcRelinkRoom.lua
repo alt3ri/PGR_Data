@@ -39,7 +39,12 @@ function XUiDlcRelinkRoom:OnAwake()
     self.GridMultiPlayerChar = {}
 
     self:RegisterUiEvents()
-    self.AssetPanel = XUiHelper.XUiPanelAsset(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.DlcRelinkCoin)
+
+    local itemIds = { XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin, XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin }
+    self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe(itemIds, self.PanelSpecialTool, self, nil, function(data, index)
+        local itemId = itemIds[index]
+        XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", itemId)
+    end)
 end
 
 function XUiDlcRelinkRoom:OnStart()
@@ -50,6 +55,7 @@ function XUiDlcRelinkRoom:OnStart()
         end
     end)
 
+    self:InitSceneModel()
     self:InitMultiPlayerChar()
 
     if XMVCA.XDlcRoom:IsInRoom() then
@@ -62,6 +68,8 @@ function XUiDlcRelinkRoom:OnEnable()
     self:RefreshMultiPlayerChar()
     self:RefreshButtonState()
     self:RefreshPanelBoss()
+    self:RefreshPanelExp()
+    self:RefreshBtnTask()
 end
 
 function XUiDlcRelinkRoom:OnGetLuaEvents()
@@ -74,7 +82,6 @@ function XUiDlcRelinkRoom:OnGetLuaEvents()
         XEventId.EVENT_DLC_ROOM_PLAYER_LEAVE, -- 玩家离开房间
         XEventId.EVENT_DLC_ROOM_PLAYER_REFRESH, -- 玩家信息刷新
         XEventId.EVENT_DLC_ROOM_INFO_CHANGE, -- 房间信息变更
-        XEventId.EVENT_DLC_ROOM_STATE_CHANGE, -- 房间状态变更
         XEventId.EVENT_DLC_ROOM_MATCH, -- 开始匹配
         XEventId.EVENT_DLC_ROOM_CANCEL_MATCH, -- 取消匹配
     }
@@ -98,8 +105,6 @@ function XUiDlcRelinkRoom:OnNotify(event, ...)
         self:OnPlayerRefresh(args[1])
     elseif event == XEventId.EVENT_DLC_ROOM_INFO_CHANGE then
         self:OnRoomInfoChange(args[1], args[2])
-    elseif event == XEventId.EVENT_DLC_ROOM_STATE_CHANGE then
-        self:OnRoomStateChange(args[1], args[2])
     elseif event == XEventId.EVENT_DLC_ROOM_MATCH then
         self:OnBeginMatching()
     elseif event == XEventId.EVENT_DLC_ROOM_CANCEL_MATCH then
@@ -112,6 +117,14 @@ function XUiDlcRelinkRoom:OnDisable()
 end
 
 --region 初始化
+
+function XUiDlcRelinkRoom:InitSceneModel()
+    ---@type UnityEngine.Transform
+    local root = self.UiModelGo.transform
+    self.PanelRoleModel1 = XUiHelper.TryGetComponent(root, "UiNearRoot/PanelRoleModel1")
+    self.PanelRoleModel2 = XUiHelper.TryGetComponent(root, "UiNearRoot/PanelRoleModel2")
+    self.PanelRoleModel3 = XUiHelper.TryGetComponent(root, "UiNearRoot/PanelRoleModel3")
+end
 
 function XUiDlcRelinkRoom:InitMultiPlayerChar()
     for index = 1, MAX_ROLE_COUNT do
@@ -156,7 +169,7 @@ function XUiDlcRelinkRoom:RefreshButtonState()
             self:SwitchButtonRightState(isReady and ButtonRightState.CancelReady or ButtonRightState.Ready)
         end
         self.BtnOpen.gameObject:SetActiveEx(isLeader)
-        self.BtnOpen:SetButtonState(XMVCA.XDlcRoom:IsRoomAutoMatch() and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+        self.BtnOpen:SetButtonState(XMVCA.XDlcRoom:IsRoomAutoMatch() and CS.UiButtonState.Normal or CS.UiButtonState.Select)
     else
         local isMatching = XMVCA.XDlcRoom:IsMatching()
         self:SwitchButtonRightState(isMatching and ButtonRightState.Matching or ButtonRightState.Match)
@@ -187,6 +200,34 @@ function XUiDlcRelinkRoom:RefreshPanelBoss()
         self.PanelBossNode:Open()
     end
     self.PanelBossNode:Refresh()
+end
+
+function XUiDlcRelinkRoom:RefreshPanelExp()
+    local curLevel = self._Control:GetCurrentPlayerLevel()
+    local isMaxLevel = self._Control:GetPlayerLevelIsMax(curLevel)
+    if isMaxLevel then
+        self.ImgExp.fillAmount = 1
+        self.TxtExpLevel.text = self._Control:GetClientConfig("RoomMaxPlayerLevelTips")
+    else
+        local curExp = self._Control:GetCurrentPlayerExp()
+        local nextLevelExp = self._Control:GetNextPlayerLevelExp(curLevel)
+        self.ImgExp.fillAmount = nextLevelExp > 0 and (curExp / nextLevelExp) or 0
+        self.TxtExpLevel.text = curLevel
+    end
+    self.ExpRed.gameObject:SetActiveEx(false)
+end
+
+function XUiDlcRelinkRoom:RefreshBtnTask()
+    local taskId = self._Control:GetFirstUnCompleteTaskId()
+    local isValid = XTool.IsNumberValid(taskId)
+    self.BtnTask:SetDisable(not isValid)
+    if isValid then
+        local taskConfig = XDataCenter.TaskManager.GetTaskTemplate(taskId)
+        self.BtnTask:SetNameByGroup(0, taskConfig and taskConfig.Desc or "")
+    end
+    -- 红点
+    local isShowRedPoint = XMVCA.XDlcRelink:CheckAllTaskRedPoint()
+    self.BtnTask:ShowReddot(isShowRedPoint)
 end
 
 --endregion
@@ -287,6 +328,7 @@ function XUiDlcRelinkRoom:OnPlayerEnterRoom(playerId)
 
     grid:Refresh()
     self:RefreshButtonState()
+    self:RefreshPanelBoss()
 end
 
 function XUiDlcRelinkRoom:OnPlayerLeaveRoom(playerIds)
@@ -299,6 +341,7 @@ function XUiDlcRelinkRoom:OnPlayerLeaveRoom(playerIds)
         end
     end
     self:RefreshButtonState()
+    self:RefreshPanelBoss()
 end
 
 function XUiDlcRelinkRoom:OnPlayerRefresh(playerIds)
@@ -309,6 +352,7 @@ function XUiDlcRelinkRoom:OnPlayerRefresh(playerIds)
         end
     end
     self:RefreshButtonState()
+    self:RefreshPanelBoss()
 end
 
 ---@param roomData XDlcRoomData
@@ -318,16 +362,56 @@ function XUiDlcRelinkRoom:OnRoomInfoChange(roomData, changeFlags)
     self:RefreshButtonState()
 end
 
-function XUiDlcRelinkRoom:OnRoomStateChange(nowState, changeTime)
-    -- TODO
-end
-
 function XUiDlcRelinkRoom:OnBeginMatching()
     self:RefreshButtonState()
 end
 
 function XUiDlcRelinkRoom:OnCancelMatching()
     self:RefreshButtonState()
+end
+
+--endregion
+
+--region 检查相关
+
+-- 检查当队伍职业配置是否合理
+---@param team XDlcTeam
+function XUiDlcRelinkRoom:CheckTeamOccupationRational(team)
+    local chapterId = self._Control:GetCurrentSelectChapterId()
+    local occupationMap = {}
+    local amount = team:GetMemberNumber()
+    for pos = 1, amount do
+        local member = team:GetMember(pos)
+        if member then
+            occupationMap[member:GetOccupationType()] = true
+        end
+    end
+
+    local trueOccupationList = self._Control:GetChapterTrueOccupations(chapterId)
+    for _, occupation in ipairs(trueOccupationList) do
+        if not occupationMap[occupation] then
+            return false
+        end
+    end
+    return true
+end
+
+-- 检查当队伍装备战力是否满足推荐
+---@param team XDlcTeam
+function XUiDlcRelinkRoom:CheckTeamEquipAbilityRational(team)
+    local levelId = self._Control:GetCurrentSelectLevelId()
+    local levelLimit = self._Control:GetLevelLevelLimit(levelId)
+    local amount = team:GetMemberNumber()
+    for pos = 1, amount do
+        local member = team:GetMember(pos)
+        if member then
+            local totalAbility = member:GetRelinkEquipTotalAbility()
+            if totalAbility < levelLimit then
+                return false
+            end
+        end
+    end
+    return true
 end
 
 --endregion
@@ -347,15 +431,16 @@ function XUiDlcRelinkRoom:RegisterUiEvents()
     self:RegisterClickEvent(self.BtnCancelReady, self.OnBtnCancelReadyClick)
     self:RegisterClickEvent(self.BtnLeave, self.OnBtnLeaveClick)
     self:RegisterClickEvent(self.BtnCreate, self.OnBtnCreateClick)
+    self:RegisterClickEvent(self.BtnExp, self.OnBtnExpClick)
     self:BindHelpBtn(self.BtnHelp, self._Control:GetClientConfig("HelpKey"))
 end
 
 function XUiDlcRelinkRoom:OnBtnBackClick()
-    self:Close()
+    XLuaUiManager.CloseAllUpperUi("UiDlcRelinkMain")
 end
 
 function XUiDlcRelinkRoom:OnBtnTaskClick()
-    -- TODO 打开任务界面
+    XLuaUiManager.Open("UiDlcRelinkLvReward")
 end
 
 function XUiDlcRelinkRoom:OnBtnChatClick()
@@ -386,7 +471,7 @@ function XUiDlcRelinkRoom:OnBtnOpenClick()
     local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
     local isSelfLeader = team and team:IsSelfLeader()
     if not isSelfLeader then
-        XUiManager.TipText("MultiplayerRoomOnlyHomeownerTip")
+        self._Control:OpenCommonTipMsg(XUiHelper.GetText("MultiplayerRoomOnlyHomeownerTip"))
         return
     end
     XMVCA.XDlcRoom:SetAutoMatch(not XMVCA.XDlcRoom:IsRoomAutoMatch())
@@ -398,34 +483,93 @@ function XUiDlcRelinkRoom:OnBtnFightClick()
     end
 
     local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
-    -- TODO 按钮状态分为以下几种情况:
-    -- 1当房间中有玩家未准备时,按钮置灰,点击出现toast:等待队准备
-    -- 2当队伍职业不满足配置时
-    --   如果此时队友都准备了,点击开始作战需要有二次确认弹窗:"当前队伍职业不合理,挑战关卡难度较高,是否继续挑战",取消/继续挑战。需要有本次登陆不再提示控件
-    -- 3当队伍职业满足配置,且队友都准备完毕,点击进入对战
-    -- 4当队伍中有角色装备等级低于推荐时,点击需要有有二次确认弹单窗:"当前队伍中有成员装备等级低于推荐,是否继续",取消/继续挑战。需要有本次登陆不再提示控件
-    if not (team and team:IsAllReady() and team:IsSelfLeader()) then
+    if not team or not team:IsSelfLeader() then
         return
     end
+
+    -- 队伍未全部准备
+    if not team:IsAllReady() then
+        self._Control:OpenCommonTipText("RoomWaitAllReadyTips")
+        return
+    end
+
+    -- 职业不合理 & 装备战力不满足推荐
+    local isOccupationRational = self:CheckTeamOccupationRational(team)
+    local isEquipAbilityRational = self:CheckTeamEquipAbilityRational(team)
+    if not isOccupationRational then
+        if not isEquipAbilityRational then
+            self:OpenOccupationTipDialog(function()
+                self:OpenEquipAbilityTipDialog(function()
+                    XMVCA.XDlcRoom:Enter()
+                end)
+            end)
+        else
+            self:OpenOccupationTipDialog(function()
+                XMVCA.XDlcRoom:Enter()
+            end)
+        end
+        return
+    end
+    if not isEquipAbilityRational then
+        self:OpenEquipAbilityTipDialog(function()
+            XMVCA.XDlcRoom:Enter()
+        end)
+        return
+    end
+    -- 直接进入
     XMVCA.XDlcRoom:Enter()
 end
 
+-- 二次确认弹窗:队伍职业不合理
+function XUiDlcRelinkRoom:OpenOccupationTipDialog(callback)
+    local title = self._Control:GetClientConfig("TipTitle")
+    local data = self._Control:GetClientConfigParams("RoomTeamOccupationNotRationalTipContent")
+    local content = data[1] or ""
+    local extraData = { ConfirmText = data[2] or "", CancelText = data[3] or "", TipsKey = "RoomTeamOccupationNotRationalTip", }
+    self._Control:OpenCommonTipDialog(title, content, nil, callback, extraData)
+end
+
+-- 二次确认弹窗:队伍装备战力不满足推荐
+function XUiDlcRelinkRoom:OpenEquipAbilityTipDialog(callback)
+    local title = self._Control:GetClientConfig("TipTitle")
+    local data = self._Control:GetClientConfigParams("RoomTeamEquipAbilityNotRationalTipContent")
+    local content = data[1] or ""
+    local extraData = { ConfirmText = data[2] or "", CancelText = data[3] or "", TipsKey = "RoomTeamEquipAbilityNotRationalTip", }
+    self._Control:OpenCommonTipDialog(title, content, nil, callback, extraData)
+end
+
 function XUiDlcRelinkRoom:OnBtnMatchClick()
-    -- TODO 当玩家当前装备库存已满时,需要出现二次确认弹窗:"当前装备库存已满,继续挑战无法获得装备,是否继续匹配",分解装备/继续挑战 
-    -- TODO 点击分解装备打开20界面-分解装备,点击继续挑战进入匹配流罐
     local characterId = self._Control:GetFightCharacterId()
     if not XTool.IsNumberValid(characterId) then
-        XUiManager.TipMsg(self._Control:GetClientConfig("RoomNotSelectRoleTips"))
+        self._Control:OpenCommonTipText("RoomNotSelectRoleTips")
         return
     end
 
     local worldId = self._Control:GetActivityWorldId()
     local levelId = self._Control:GetCurrentSelectLevelId()
     if not XTool.IsNumberValid(levelId) then
-        XUiManager.TipMsg(self._Control:GetClientConfig("RoomNotSelectLevelTips"))
+        self._Control:OpenCommonTipText("RoomNotSelectLevelTips")
         return
     end
 
+    local curCount, maxCount = self._Control:GetEquipBagCurCountAndMaxCount()
+    if curCount >= maxCount then
+        local title = self._Control:GetClientConfig("TipTitle")
+        local data = self._Control:GetClientConfigParams("EquipBagFullMatchTipContent")
+        local content = data[1] or ""
+        local extraData = { ConfirmText = data[2] or "", CancelText = data[3] or "", TipsKey = "EquipBagFullMatchTip", }
+        self._Control:OpenCommonTipDialog(title, content, function()
+            XLuaUiManager.Open("UiDlcRelinkEquipDecompose")
+        end, function()
+            self:OnReqMatchConfirm(worldId, levelId)
+        end, extraData)
+        return
+    end
+
+    self:OnReqMatchConfirm(worldId, levelId)
+end
+
+function XUiDlcRelinkRoom:OnReqMatchConfirm(worldId, levelId)
     if XTool.IsNumberValid(worldId) and XTool.IsNumberValid(levelId) then
         XMVCA.XDlcRoom:ReqMatch(worldId, levelId, true)
     end
@@ -463,25 +607,31 @@ end
 function XUiDlcRelinkRoom:OnBtnCreateClick()
     local characterId = self._Control:GetFightCharacterId()
     if not XTool.IsNumberValid(characterId) then
-        XUiManager.TipMsg(self._Control:GetClientConfig("RoomNotSelectRoleTips"))
+        self._Control:OpenCommonTipText("RoomNotSelectRoleTips")
         return
     end
 
     if XMVCA.XDlcRoom:IsMatching() then
-        XUiManager.TipCode(XCode.MatchPlayerIsMatching)
+        self._Control:OpenCommonTipCode(XCode.MatchPlayerIsMatching)
         return
     end
 
     local worldId = self._Control:GetActivityWorldId()
     local levelId = self._Control:GetCurrentSelectLevelId()
     if not XTool.IsNumberValid(levelId) then
-        XUiManager.TipMsg(self._Control:GetClientConfig("RoomNotSelectLevelTips"))
+        self._Control:OpenCommonTipText("RoomNotSelectLevelTips")
         return
     end
 
     if XTool.IsNumberValid(worldId) and XTool.IsNumberValid(levelId) then
         XMVCA.XDlcRoom:CreateRoom(worldId, levelId, 1, true)
     end
+end
+
+function XUiDlcRelinkRoom:OnBtnExpClick()
+    XLuaUiManager.Open("UiDlcRelinkPopupResearch", function()
+        self:RefreshPanelExp()
+    end)
 end
 
 --endregion

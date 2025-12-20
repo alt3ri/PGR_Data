@@ -23,6 +23,7 @@ end
 function XUiSceneSettingMain:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnBack, self.Close)
     XUiHelper.RegisterClickEvent(self, self.ToggleRandomScene, self.OnToggleRandomSceneClick)
+    self.ToggleRandomScene.gameObject:SetActiveEx(CS.XGame.ClientConfig:GetInt("SetToggleRandomSceneVisible") == 1)
 
     -- 打开助理面板
     self.BtnAssistant.CallBack = function()
@@ -814,6 +815,7 @@ function XUiSceneSettingMain:ReStartClockTime()
     self:StopClockTime()
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiSceneSettingMain:StopClockTime()

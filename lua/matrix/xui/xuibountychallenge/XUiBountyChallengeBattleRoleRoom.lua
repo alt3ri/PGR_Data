@@ -36,6 +36,13 @@ function XUiBountyChallengeBattleRoleRoom:AOPOnStartAfter(ui)
     if XMVCA.XBountyChallenge:HasCharactersLimit() then
         ui.BtnTeamPrefab.gameObject:SetActiveEx(false)
     end
+
+    local playerAmount = XMVCA.XBountyChallenge:GetCharacterCanSelectAmount()
+
+    if playerAmount == 1 then
+        ui.PanelTeamLeader.gameObject:SetActiveEx(false)
+        ui.BtnLeader.gameObject:SetActiveEx(false)
+    end
 end
 
 ---@param ui XUiBattleRoleRoom
@@ -66,6 +73,21 @@ function XUiBountyChallengeBattleRoleRoom:AOPOnStartBefore(ui)
                 button.GameObject:SetActiveEx(false)
             end
         end
+        
+        -- 修复首发位和队长位的缓存
+        local captainPos = math.min(team:GetCaptainPos(), playerAmount)
+        local firstFightPos = math.min(team:GetFirstFightPos(), playerAmount)
+
+        team:UpdateCaptainPosAndFirstFightPos(captainPos, firstFightPos)
+    end
+    
+    -- 判断是否纯机器人队伍
+    if XMVCA.XBountyChallenge:HasRobotsLimit() then
+        ---@type XTeam
+        local team = ui.Team
+        
+        team:Clear()
+        team:UpdateEntityIds(XMVCA.XBountyChallenge:GetCharacterIds())
     end
 end
 --
@@ -110,9 +132,10 @@ end
 --    return teamData
 --end
 --
---function XUiBountyChallengeBattleRoleRoom:CheckShowAnimationSet()
---    return false
---end
+
+function XUiBountyChallengeBattleRoleRoom:CheckShowAnimationSet()
+    return XMVCA.XBountyChallenge:GetCharacterCanSelectAmount() > 1
+end
 
 -- 进入战斗
 -- team : XTeam
@@ -121,5 +144,19 @@ end
 --    local stageConfig = XDataCenter.FubenManager.GetStageCfg(stageId)
 --    XMVCA.XFuben:EnterStageWithRobot(stageConfig, team)
 --end
+
+-- 检查是否能够编辑队伍，关卡若是配置了固定机器人为不可编辑
+function XUiBountyChallengeBattleRoleRoom:CheckIsCanEditorTeam(stageId, showTip)
+    if showTip == nil then showTip = true end
+
+    if XMVCA.XBountyChallenge:HasRobotsLimit() then
+        if showTip then
+            XUiManager.TipError(XUiHelper.GetText("NewRoomSingleCannotSetRobot"))
+        end
+        return false
+    end
+    
+    return true
+end
 
 return XUiBountyChallengeBattleRoleRoom

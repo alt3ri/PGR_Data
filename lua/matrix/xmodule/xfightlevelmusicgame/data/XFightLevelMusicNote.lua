@@ -1,16 +1,16 @@
 ---@class XFightLevelMusicNote
 local XFightLevelMusicNote = XClass(nil, "XFightLevelMusicNote")
-XFightLevelMusicNote.Uid = 1
+local XFightLevelMusicNoteUid = 1
 
 function XFightLevelMusicNote:Ctor(noteId, type, length, noteIndex, trackUnitIndex)
-    self._Uid = XFightLevelMusicNote.Uid
+    self._Uid = XFightLevelMusicNoteUid
     self._NoteId = noteId
     self._NoteIndex = noteIndex
     self._TrackUnitIndex = trackUnitIndex
     self._Type = type
     self._Length = length
     self._State = XEnumConst.FIGHT_LEVEL_MUSIC.NOTE_STATE.NONE
-    XFightLevelMusicNote.Uid = XFightLevelMusicNote.Uid + 1
+    XFightLevelMusicNoteUid = XFightLevelMusicNoteUid + 1
 end
 
 --region Setter

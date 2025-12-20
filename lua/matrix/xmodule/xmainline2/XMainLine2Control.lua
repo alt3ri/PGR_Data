@@ -186,6 +186,22 @@ function XMainLine2Control:GetAchievementIconLock(achievementId)
     return self._Model:GetAchievementIconLock(achievementId)
 end
 
+function XMainLine2Control:GetEggTipsText(eggId)
+    return self._Model:GetEggTipsText(eggId)
+end
+
+function XMainLine2Control:GetEggTitle(eggId)
+    return self._Model:GetEggTitle(eggId)
+end
+
+function XMainLine2Control:GetEggDesc(eggId)
+    return self._Model:GetEggDesc(eggId)
+end
+
+function XMainLine2Control:GetEggRewardId(eggId)
+    return self._Model:GetEggRewardId(eggId)
+end
+
 function XMainLine2Control:IsClientConfigExit(key)
     return self._Model:IsClientConfigExit(key)
 end

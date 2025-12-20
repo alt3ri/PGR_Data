@@ -3,7 +3,7 @@ local XMovieActionCenterTips = XClass(XMovieActionBase, "XMovieActionCenterTips"
 function XMovieActionCenterTips:OnInit(actionData)
     local params = actionData.Params
 
-    self.Content = params[1]
+    self.Content = XMVCA.XMovie:FormatContent(params[1])
     self.IsHide = params[2] == "1"
     self.FontSize = params[3]
     self.FontColor = params[4]

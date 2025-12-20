@@ -285,17 +285,6 @@ end
 
 function XUiModelDisplayController:CombineParts(id, componentId, urls)
     self.Controller:CombineParts(id, componentId, urls)
-    --4.0 临时解决方案
-    local component = self:GetModelComponent(id, componentId)
-    local model = component.Model
-    if model then
-        local binders = model.transform.parent.gameObject:GetComponentsInChildren(typeof(CS.XBoneBinder))
-        if binders and binders.Length > 0 then
-            for i = 0, binders.Length - 1 do
-                binders[i]:SetTarget(model.transform)
-            end
-        end
-    end
 end
 
 return XUiModelDisplayController

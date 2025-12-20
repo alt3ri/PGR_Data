@@ -265,6 +265,11 @@ function XUiPanelRace3DCamera:OnClickRole(index)
     if info.State ~= XEnumConst.Race.RoundState.Guess then
         return
     end
+    local dontGainRoundId = self._Control:GetDontViewedRoundId()
+    if dontGainRoundId then
+        --有预测奖励没领取
+        return
+    end
     XLuaUiManager.Open("UiRacePredict", roleId)
 end
 

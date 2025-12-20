@@ -322,12 +322,23 @@ function XUiGridEchelonMember:OnOpenBattleRoleRoomDetail()
             self.RootUi:UpdateTeamInfo(team)
         end,
     }
+
+    -- ✅ 关键：用当前梯队缓存的那支 Team，而不是全局 _TeamData
+    local team = XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam(self.EchelonIndex)
+    if not team then
+        local createTeamData = {
+            EchelonIndex = self.EchelonIndex,
+            BfrtGroupId = self.GroupId,
+            EchelonId = self.EchelonId,
+            TeamCharacterIdList = self.TeamList[self.EchelonIndex],
+        }
+        team = XDataCenter.BfrtManager.GetTeam(createTeamData)
+        XDataCenter.BfrtManager.SetGirdEchelonIndexTempTeam(team, self.EchelonIndex)
+    end
+
     RunAsyn(function()
-        XLuaUiManager.Open("UiBattleRoomRoleDetail", self.StageId
-        , XDataCenter.BfrtManager.GetTeam()
-        , self.MemberIndex
         -- 硬编码，这个界面过度依赖页面数据
-        , self:GetProxyInstance(viewData))
+        XLuaUiManager.Open("UiBattleRoomRoleDetail", self.StageId, team, self.MemberIndex, self:GetProxyInstance(viewData))
     end)
 end
 

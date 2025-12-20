@@ -6,11 +6,11 @@ local HotfixBase = require("Common/XObjHotfixBase")
 --- 该Id需要同步写进XDlcScriptManager的HotfixObjectiveIds中，hotfix才会生效
 local scriptId = 250425181 -- 该脚本的ID，不能和其他脚本冲突
 
----@class QuestObjectiveHotfix250425181
+---@class QuestObjectiveHotfix250425181 : HotfixBase
 local ObjectiveHotfixCls = XDlcScriptManager.RegQuestObjectiveHotfixScript(scriptId, "QuestObjectiveHotfix250425181", HotfixBase)
 
 
----@class QuestObjectiveHotfix250425181 : HotfixBase
+---@type QuestObjectiveHotfix250425181
 local HotfixDefine = {
     ---@type number
     ScriptId = scriptId,

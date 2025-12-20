@@ -17,6 +17,10 @@ function XUiMovieBg:OnDestroy()
     self.BgDic = nil
 end
 
+function XUiMovieBg:GetBgDic()
+    return self.BgDic
+end
+
 -- 获取背景
 ---@return XUiGridMovieBg
 function XUiMovieBg:GetBg(index)

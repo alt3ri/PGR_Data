@@ -1,37 +1,37 @@
 [
     {
         "Key": "StageAchievementUnlockDesc",
-        "Note": "\u5173\u5361\u6210\u5c31\u672a\u89e3\u9501\u63cf\u8ff0",
-        "Params": "['\uff1f\uff1f\uff1f']"
+        "Note": "Stage achievement locked description",
+        "Params": "['???']"
     },
     {
         "Key": "AchievementProgress",
-        "Note": "\u7ae0\u8282\u6210\u5c31\u8fdb\u5ea6",
+        "Note": "Chapter Achievement Progress",
         "Params": "['<color=#0a82de><size=60>%s</size></color> /%s']"
     },
     {
         "Key": "SwitchEffectMainId",
-        "Note": "\u5207\u6362\u7ae0\u8282\u64ad\u7279\u6548\u7684MainId",
+        "Note": "Switch Chapter Play Effect MainId",
         "Params": "['1031']"
     },
     {
         "Key": "SwitchChapterEffect",
-        "Note": "\u5207\u6362\u7ae0\u8282\u64ad\u7279\u6548",
+        "Note": "Switch Chapter Play Effect",
         "Params": "['Assets/Product/Ui/Prefab/UiEffect/UiMainLine2Chapter/FxUiMainLine2ChapterHudie215.prefab']"
     },
     {
         "Key": "FirstEnterEffectMainId",
-        "Note": "\u7b2c\u4e00\u6b21\u8fdb\u7ae0\u8282\u64ad\u7279\u6548\u7684MainId",
+        "Note": "1st Time Chapter Start Effect MainId",
         "Params": "['1031']"
     },
     {
         "Key": "FirstEnterPrefab",
-        "Note": "\u7b2c\u4e00\u6b21\u8fdb\u7ae0\u8282\u52a0\u8f7d\u7684\u5047\u7ae0\u8282\u9884\u7f6e",
+        "Note": "1st Time Chapter Start Fake Chapter Loaded Preset",
         "Params": "['Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor31A.prefab']"
     },
     {
         "Key": "FirstEnterSwitchEffect",
-        "Note": "\u7b2c\u4e00\u6b21\u8fdb\u7ae0\u8282\u5047\u7ae0\u8282\u5207\u6362\u771f\u7ae0\u8282\u64ad\u7279\u6548",
+        "Note": "1st Time Chapter Fake Chapter Switch to Real Chapter Play Effect",
         "Params": "['Assets/Product/Ui/Prefab/UiEffect/UiMainLine2Chapter/FxUiMainLine2ChapterHudie215.prefab']"
     },
     {
@@ -46,78 +46,78 @@
     },
     {
         "Key": "BgUnlockCueId1036",
-        "Note": "1036\u7ae0\u7684\u80cc\u666f\u56fe\u89e3\u9501\u97f3\u6548",
+        "Note": "Chapter 1036 Background Image Unlock Sound",
         "Params": "['5825', '1000']"
     },
     {
         "Key": "NewbieMainLineLockCondition",
-        "Note": "\u65b0\u624b\u4e3b\u7ebf\u9501\u5b9a\u6587\u672c\u663e\u793a\u7684condition",
+        "Note": "Beginner main storyline lock text display condition",
         "Params": "['770412']"
     },
     {
         "Key": "NewbiePreChapterSkipParams",
-        "Note": "\u52a8\u6001\u6f2b\u8df3\u8f6c\u4f20\u53c2\uff1a\u7d22\u5f151\u56fa\u5b9a\u8868\u793a\u8df3\u4e3b\u7ebf\uff0c\u7d22\u5f152\u8868\u793a\u7ae0\u8282\u7ec4\uff0c\u7d22\u5f153\u8868\u793a\u7ec4\u5185\u7b2c\u51e0\u4e2a\u7ae0\u8282",
+        "Note": "Dynamic Manga Jump Parameters: Index 1 = main story jump, Index 2 = chapter group, Index 3 = chapter within the group.",
         "Params": "['0', '1', '3']"
     },
     {
         "Key": "NewbiePreChapterCGLinkCharacterIds",
-        "Note": "\u52a8\u6001\u6f2b\u5173\u8054\u89d2\u8272Id",
+        "Note": "Dynamic Manga Associated Character ID",
         "Params": "['1021001', '1011002', '1031001']"
     },
     {
         "Key": "NewbiePreChapterExStageNameFormat",
-        "Note": "\u5e8f\u7ae0\u52a8\u6001\u6f2b\u540d\u79f0\u683c\u5f0f",
+        "Note": "Prologue Chapter Dynamic Manga Name Format",
         "Params": "['{0}']"
     },
     {
         "Key": "NewbiePreChapterExStageName",
-        "Note": "\u5e8f\u7ae0\u52a8\u6001\u6f2b\u5165\u53e3\u540d\u79f0",
-        "Params": "['\u5408\u96c6']"
+        "Note": "Prologue Chapter Dynamic Manga Entry Name",
+        "Params": "['Collection']"
     },
     {
         "Key": "NoBookmarkTips",
-        "Note": "\u6ca1\u6709\u5267\u60c5\u4e66\u7b7e\u65f6\u70b9\u51fb\u63d0\u793a",
-        "Params": "['\u5f53\u524d\u672a\u5bf9\u5173\u5361\u6807\u8bb0\u4e66\u7b7e\uff0c\u65e0\u6cd5\u4f7f\u7528']"
+        "Note": "Tap prompt when no story bookmark set",
+        "Params": "['No stage bookmark set. Unable to use.']"
     },
     {
         "Key": "NewbiePreChapterExStageLabels",
-        "Note": "\u5e8f\u7ae0\u52a8\u6001\u6f2b\u6807\u7b7e\uff0c\u53ef\u914d\u7f6e\u591a\u4e2a",
-        "Params": "['\u52a8\u6001\u6f2b']"
+        "Note": "Prologue dynamic comic tags, multiple configurable",
+        "Params": "['Motion Comic']"
     },
     {
         "Key": "NewbiePreChapterExStageImg",
-        "Note": "\u5e8f\u7ae0\u52a8\u6001\u6f2b\u5165\u53e3\u5e95\u56fe",
+        "Note": "Prologue dynamic comic entrance background image",
         "Params": "['Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabNormal06.png']"
     },
     {
         "Key": "NewbiePreChapterSkipCondition",
-        "Note": "\u53c2\u65701:MainLine2ExhibitionChapter.tab\u7684\u7ae0\u8282Id\uff0c\u53c2\u65702:ConditionId\uff0c\u53c2\u65703\u4e3a\u52a8\u6001\u6f2b\u5bf9\u5e94\u5173\u5361Id\u3002\u8fdb\u5165\u7ae0\u8282\u524d\u6ee1\u8db3\u6761\u4ef6\u65f6\u6253\u5f00\u52a8\u6001\u6f2b\u8df3\u8f6c\u754c\u9762",
+        "Note": "Parameter 1: Chapter ID of MainLine2ExhibitionChapter.tab. Parameter 2: ConditionId. Parameter 3: Stage ID of dynamic comic. Opens dynamic comic transition interface when conditions are met before entering chapter.",
         "Params": "['3', '863081', '10010005']"
     },
     {
         "Key": "DownloadEntranceRewardTips",
-        "Note": "\u4e0b\u8f7d\u5165\u53e3\u5956\u52b1\u63d0\u793a",
-        "Params": "['\u53ef\u9886\u53d6\u5fc5\u8981\u8d44\u6e90\u4e0b\u8f7d\u5956\u52b1']"
+        "Note": "Download entry reward notification",
+        "Params": "['Required resource download reward available']"
     },
     {
         "Key": "DownloadingEntranceTips",
-        "Note": "\u4e0b\u8f7d\u5165\u53e3\u4e0b\u8f7d\u4e2d\u7684\u63d0\u793a",
-        "Params": "['\u4e0b\u8f7d\u4e2d: {0}%']"
+        "Note": "Download entry in-progress notification",
+        "Params": "['Downloading: {0}%']"
     },
     {
         "Key": "DownloadEntrancePauseTips",
-        "Note": "\u4e0b\u8f7d\u5165\u53e3\u6682\u505c\u65f6\u7684\u663e\u793a",
-        "Params": "['\u5df2\u6682\u505c\u4e0b\u8f7d: {0}%']"
+        "Note": "Download entry paused display",
+        "Params": "['Download paused: {0}%']"
     },
     {
         "Key": "DownloadBg",
-        "Note": "\u4e0b\u8f7d\u754c\u9762\u80cc\u666f\u56fe",
+        "Note": "Download interface background image",
         "Params": "['Assets/Product/Texture/Image/UiloginBg/LoginBg.png']"
     },
     {
         "Key": "DownloadTipsGroup",
-        "Note": "\u4e0b\u8f7d\u754c\u9762\u4e0a\u65b9\u63d0\u793a\u6587\u672c\uff0c\u6bcf\u4e2a\u53c2\u6570\u5bf9\u5e94\u6bcf\u4e00\u884c",
-        "Params": "['\u7b2c\u4e00\u7ae0\u901a\u5173\u540e\u53ef\u89e3\u9501\u6240\u6709\u4e3b\u7ebf\u5267\u60c5\u5185\u5bb9\uff0c\u53ef\u4e0d\u6309\u7ebf\u6027\u6d41\u7a0b\u6311\u6218', '\u7b2c\u56db\u7ae0\u53ca\u540e\u7eed\u4e3b\u7ebf\u9700\u8981\u4e0b\u8f7d\u5fc5\u8981\u7684\u4e3b\u7ebf\u5305\uff0c\u4e0b\u8f7d\u53ef\u83b7\u5f97<color=#00a1ff>\u6d3b\u52a8\u7814\u53d1\u5238*250</color>']"
+        "Note": "Prompt text above download interface. Each parameter corresponds to one line.",
+        "Params": "['After clearing Chapter 1, all Main Story chapters will be unlocked and can be played in any order.', 'Corresponding Main Story packs are required for Chapters 4 and beyond. Download to obtain <color=#00a1ff>Event R&D Ticket x250</color>.']"
     },
     {
         "Key": "DownloadTotalSizeLabel",
@@ -126,12 +126,12 @@
     },
     {
         "Key": "DownloadProgressLabel",
-        "Note": "\u4e0b\u8f7d\u754c\u9762\u663e\u793a\u7684\u8fdb\u5ea6",
+        "Note": "Download interface progress display",
         "Params": "['{0}%']"
     },
     {
         "Key": "DownloadEntranceShowCondition",
-        "Note": "\u4e0b\u8f7d\u5165\u53e3\u663e\u793a\u6761\u4ef6",
-        "Params": "['1007142']"
+        "Note": "Download entry condition display",
+        "Params": null
     }
 ]

@@ -98,4 +98,6 @@ XDlcNpcAttribType = {
     OverDriveRaiseLimit = 94, -- OD累计上限
     OverDriveDecreaseLimit = 95, -- OD衰减上限
     CauseDamageThreatCoe = 96, -- 造成仇恨系数
+    RebootValue = 97, -- 复活值
+    DmgAmplification = 98, -- 易伤
 }

@@ -14,7 +14,12 @@ function XUiPanelRecommendLuna:SetData(data, skipFunc, buyFinished)
         if btn then
             btn:SetNameByGroup(0, string.format("x%s", v.Count))
             btn.CallBack = function()
-                XLuaUiManager.Open("UiTip", v.TemplateId)
+                if v.RewardType == XRewardManager.XRewardType.Character then
+                    XLuaUiManager.Open("UiCharacterDetail", v.TemplateId)
+                else
+                    XLuaUiManager.Open("UiTip", v.TemplateId)
+                end
+                
             end
         end
     end

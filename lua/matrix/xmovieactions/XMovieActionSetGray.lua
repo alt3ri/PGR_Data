@@ -2,6 +2,8 @@ local pairs = pairs
 local tableInsert = table.insert
 local SPINE_INDEX_OFFSET = 100 -- spine位置的偏移值
 local ALL_BG_INDEX = 999
+local START_INDEX = 2
+local END_INDEX = 7
 
 ---@class XMovieActionSetGray
 ---@field UiRoot XUiMovie
@@ -13,13 +15,17 @@ function XMovieActionSetGray:OnInit(actionData)
 
     self.Value = XMath.Clamp(paramToNumber(params[1]), 0, 1)
     self.IndexList = {}
-    local maxParamNum = XMovieConfigs.MAX_ACTOR_NUM + 1
-    for i = 1, maxParamNum do
-        local index = paramToNumber(params[i + 1])
-        if index ~= 0 then
-            tableInsert(self.IndexList, index)
+
+    -- params[2]-params[7]
+    for i = START_INDEX, END_INDEX do
+        local id = paramToNumber(params[i])
+        if id ~= 0 then
+            tableInsert(self.IndexList, id)
         end
     end
+    
+    -- 灰度值变化时间
+    self.Time = paramToNumber(params[8])
 end
 
 function XMovieActionSetGray:OnRunning()
@@ -31,63 +37,59 @@ function XMovieActionSetGray:OnRunning()
     for _, index in pairs(indexList) do
         if index > 0 and index <= maxActorNum then
             local actor = self.UiRoot:GetActor(index)
-            actor:SetGrayScale(value)
+            actor:SetGrayScale(value, self.Time)
             setValue = true
         elseif index > SPINE_INDEX_OFFSET and index <= SPINE_INDEX_OFFSET + maxActorNum then
             local actor = self.UiRoot:GetSpineActor(index - SPINE_INDEX_OFFSET)
-            actor:SetGrayScale(value)
+            actor:SetGrayScale(value, self.Time)
             setValue = true
         else
-            self:SetBgGray(index, value)
-            self:SetLeftTitleGray(value)
+            self:SetBgGray(index, value, self.Time)
+            self:SetLeftTitleGray(value, self.Time)
             setValue = true
         end
     end
 
     if not setValue then
-        self:SetAllBgGray(value)
-        self:SetLeftTitleGray(value)
+        self:SetAllBgGray(value, self.Time)
+        self:SetLeftTitleGray(value, self.Time)
         for index = 1, maxActorNum do
             local actor = self.UiRoot:GetActor(index)
-            actor:SetGrayScale(value)
+            actor:SetGrayScale(value, self.Time)
         end
 
         for index = 1, XMovieConfigs.MAX_SPINE_ACTOR_NUM do
             local actor = self.UiRoot:GetSpineActor(index)
-            actor:SetGrayScale(value)
+            actor:SetGrayScale(value, self.Time)
         end
     end
 end
 
 -- 设置左边标题的灰度
-function XMovieActionSetGray:SetLeftTitleGray(value)
+function XMovieActionSetGray:SetLeftTitleGray(value, time)
     local controllerComponents = self.UiRoot.PanelLeftTitle:GetComponentsInChildren(typeof(CS.XUiMaterialController))
     for i = 0, controllerComponents.Length - 1 do
         local controller = controllerComponents[i]
-        controller:SetGrayScale(value)
+        controller:SetGrayScale(value, time)
     end
 end
 
 -- 设置背景的灰度值
-function XMovieActionSetGray:SetBgGray(index, value)
+function XMovieActionSetGray:SetBgGray(index, value, time)
     if index == ALL_BG_INDEX then
-        self:SetAllBgGray(value)
+        self:SetAllBgGray(value, time)
     else
         local bgIndex = index % 1000
         local rImgBg = self.UiRoot.UiMovieBg:GetBg(bgIndex)
-        rImgBg:SetGrayScale(value)
+        rImgBg:SetGrayScale(value, time)
     end
 end
 
 -- 设置所有背景的灰度值
-function XMovieActionSetGray:SetAllBgGray(value)
-    local index = 1
-    while(true) do
-        local bg = self.UiRoot.UiMovieBg:GetBg(index)
-        if not bg then break end
-        
-        bg:SetGrayScale(value)
-        index = index + 1
+function XMovieActionSetGray:SetAllBgGray(value, time)
+    local bgDic = self.UiRoot.UiMovieBg:GetBgDic()
+    for _, bg in pairs(bgDic) do
+        bg:SetGrayScale(value, time)
     end
 end
 

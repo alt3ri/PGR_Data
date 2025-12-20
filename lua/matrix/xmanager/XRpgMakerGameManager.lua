@@ -1583,7 +1583,7 @@ XRpgMakerGameManagerCreator = function()
     --进入活动请求
     function XRpgMakerGameManager.RequestRpgMakerGameEnter()
         if not XDataCenter.RpgMakerGameManager.CheckActivityCondition() then
-            return
+            return false
         end
 
         XNetwork.Call("RpgMakerGameEnterRequest", {}, function(res)
@@ -1597,6 +1597,7 @@ XRpgMakerGameManagerCreator = function()
                 XLuaUiManager.Open("UiRpgMakerGameMain")
             end
         end)
+        return true
     end
 
     --玩家移动

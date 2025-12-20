@@ -1,1277 +1,1277 @@
 [
     {
         "Id": 1,
-        "Name": "\u6548\u679c1",
+        "Name": "Effect 1",
         "Type": 1,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u6bcf\u56de\u5408\u9996\u6b21\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9",
+        "ShowDesc": "The first movement in each round costs no Action Points.",
         "ShowOnPointTypes": "[1, 2, 3, 4]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill001.png",
-        "Desc": "\u6bcf\u56de\u5408\u524d1\u6b21\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9-\u8587\u62c9"
+        "Desc": "The first movement in each round costs no Action Points - Vera"
     },
     {
         "Id": 2,
-        "Name": "\u6548\u679c2",
+        "Name": "Effect 2",
         "Type": 15,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u7b49\u7ea7\uff0c\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80175\u70b9\u989c\u6599",
+        "ShowDesc": "Increasing Exhibition Level only costs 5 Paints in this round.",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[5]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill003.png",
-        "Desc": "\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80175\u4e2a\u7814\u7a76\u70b9-\u91cc"
+        "Desc": "Increasing Research Level only costs 5 Research Points now - Lee"
     },
     {
         "Id": 3,
-        "Name": "\u6548\u679c3",
+        "Name": "Effect 3",
         "Type": 18,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u4ece\u989c\u6599\u5de5\u574a\u83b7\u53d6\u7684\u989c\u6599\u6570\u91cf+2",
+        "ShowDesc": "Quantity of Paint obtained from Paint Workshop +2",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill004.png",
-        "Desc": "\u4ece\u80fd\u91cf\u70b9\u83b7\u53d6\u7684\u6570\u636e\u6570\u91cf+2-\u827e\u62c9"
+        "Desc": "Quantity of Data obtained from Energy Point +2 - Ayla"
     },
     {
         "Id": 4,
-        "Name": "\u6548\u679c4",
+        "Name": "Effect 4",
         "Type": 3,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u50a8\u5b58\u65e0\u4e0a\u9650",
+        "ShowDesc": "Three-Color Paints have no storage limit",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[999]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill005.png",
-        "Desc": "\u4e09\u8272\u6570\u636e\u50a8\u5b58\u65e0\u4e0a\u9650-\u5361\u5217"
+        "Desc": "Three-Color Paints have no storage limit - Karenina"
     },
     {
         "Id": 5,
-        "Name": "\u6548\u679c5",
+        "Name": "Effect 5",
         "Type": 22,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u529b\u4f5c\u5448\u73b0\u3001\u7075\u611f\u7206\u53d1\u4e0d\u8fdb\u884c\u968f\u673a\uff0c\u6539\u4e3a\u63d0\u5347\u89d2\u8272\u6240\u5728\u989c\u8272\u7684\u5927\u5e08\u7b49\u7ea7",
+        "ShowDesc": "Masterpiece and Burst of Inspiration are no longer randomized, but increase the Master Level of the same color as the character's area instead.",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": null,
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill007.png",
-        "Desc": "\u5e38\u89c4&\u7206\u53d1\u4e0d\u8fdb\u884c\u968f\u673a\uff0c\u6539\u4e3a\u63d0\u5347\u89d2\u8272\u6240\u5728\u989c\u8272\u7684BOSS\u5f3a\u5ea6-\u6307\u6325\u5b98"
+        "Desc": "Regular & Outbreak are no longer randomized but upgrade the Boss of the character's color - Commandant"
     },
     {
         "Id": 6,
-        "Name": "\u6548\u679c6",
+        "Name": "Effect 6",
         "Type": 2,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u5728\u7eff\u8272\u533a\u57df\u4e0a\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u529b",
+        "ShowDesc": "Movement in Green area costs no Action Points in this round",
         "ShowOnPointTypes": "[1, 2, 3]",
         "ShowOnColors": "[2]",
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u5728\u7eff\u8272\u533a\u57df\u4e0a\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u529b\uff08\u8d77\u70b9\u5224\u65ad\uff09"
+        "Desc": "Movement in Green area costs no Action Points in this round (determined by starting point)"
     },
     {
         "Id": 7,
-        "Name": "\u6548\u679c7",
+        "Name": "Effect 7",
         "Type": 4,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u5173\u5361-\u65b9\u5757\u7b49\u7ea7\u4ece3\u7ea7\u5f00\u59cb",
+        "ShowDesc": "Stage - Cube Level starts from 3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3]",
         "Icon": null,
-        "Desc": "\u5173\u5361-\u65b9\u5757\u7b49\u7ea7\u4ece3\u7ea7\u5f00\u59cb"
+        "Desc": "Stage - Cube Level starts from 3"
     },
     {
         "Id": 8,
-        "Name": "\u6548\u679c8",
+        "Name": "Effect 8",
         "Type": 5,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u5173\u5361-\u65b9\u5757\u7b49\u7ea7\u63d0\u5347\u65f6\uff0c\u63d0\u5347\u6570\u503c+1",
+        "ShowDesc": "Stage - When upgrading the Cube, the level increment +1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1]",
         "Icon": null,
-        "Desc": "\u5173\u5361-\u65b9\u5757\u7b49\u7ea7\u63d0\u5347\u65f6\uff0c\u63d0\u5347\u6570\u503c+1"
+        "Desc": "Stage - When upgrading the Cube, the level increment +1"
     },
     {
         "Id": 9,
-        "Name": "\u6548\u679c9",
+        "Name": "Effect 9",
         "Type": 6,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\u6cbb\u7597\u65f6\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d391\u70b9\u989c\u6599",
+        "ShowDesc": "Healing in this round costs 1 more Paint",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u6bcf\u6b21\u6cbb\u7597\u65f6\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d391\u70b9\u5bf9\u5e94\u989c\u8272\u7684\u6570\u636e"
+        "Desc": "Each Healing will cost 1 more Data of the corresponding color in this round"
     },
     {
         "Id": 10,
-        "Name": "\u6548\u679c10",
+        "Name": "Effect 10",
         "Type": 6,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u6bcf\u6b21\u6cbb\u7597\u65f6\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d391\u70b9\u989c\u6599",
+        "ShowDesc": "Each Healing will cost 1 more Paint",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1]",
         "Icon": null,
-        "Desc": "\u5173\u5361-\u6bcf\u6b21\u6cbb\u7597\u65f6\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d391\u70b9\u5bf9\u5e94\u989c\u8272\u7684\u6570\u636e"
+        "Desc": "Stage - Each Healing will cost 1 more Data of the corresponding color in this round"
     },
     {
         "Id": 11,
-        "Name": "\u6548\u679c11",
+        "Name": "Effect 11",
         "Type": 7,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u7981\u6b62\u4f7f\u7528\u7ea2\u8272\u6cbb\u7597",
+        "ShowDesc": "Unable to heal with Red in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1]",
         "Params": "[1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u7981\u6b62\u4f7f\u7528\u7ea2\u8272\u6cbb\u7597"
+        "Desc": "Unable to heal with Red in this round"
     },
     {
         "Id": 12,
-        "Name": "\u6548\u679c12",
+        "Name": "Effect 12",
         "Type": 7,
         "LifeType": 3,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u7981\u6b62\u4f7f\u7528\u7ea2\u8272\u6cbb\u7597",
+        "ShowDesc": "Unable to heal with Red in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1]",
         "Params": "[1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7981\u6b62\u4f7f\u7528\u7ea2\u8272\u6cbb\u7597"
+        "Desc": "Unable to heal with Red in the next round"
     },
     {
         "Id": 13,
-        "Name": "\u6548\u679c13",
+        "Name": "Effect 13",
         "Type": 8,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u7ea2\u8272\u53ea\u80fd\u6cbb\u75971\u6b21",
+        "ShowDesc": "You can only heal with Red 1 time in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1]",
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u7ea2\u8272\u53ea\u80fd\u6cbb\u75971\u6b21"
+        "Desc": "You can only heal with Red 1 time in this round"
     },
     {
         "Id": 14,
-        "Name": "\u6548\u679c14",
+        "Name": "Effect 14",
         "Type": 8,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u7eff\u8272\u53ea\u80fd\u6cbb\u75971\u6b21",
+        "ShowDesc": "You can only heal with Green 1 time in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[2]",
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u7eff\u8272\u53ea\u80fd\u6cbb\u75971\u6b21"
+        "Desc": "You can only heal with Green 1 time in this round"
     },
     {
         "Id": 15,
-        "Name": "\u6548\u679c15",
+        "Name": "Effect 15",
         "Type": 8,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u84dd\u8272\u53ea\u80fd\u6cbb\u75971\u6b21",
+        "ShowDesc": "You can only heal with Blue 1 time in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[3]",
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u84dd\u8272\u53ea\u80fd\u6cbb\u75971\u6b21"
+        "Desc": "You can only heal with Blue 1 time in this round"
     },
     {
         "Id": 16,
-        "Name": "\u6548\u679c16",
+        "Name": "Effect 16",
         "Type": 9,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u5168\u90e8\u989c\u8272\u53ea\u80fd\u5408\u8ba1\u6cbb\u75973\u6b21",
+        "ShowDesc": "Out of all colors, you can only heal 3 times in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[3]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u5168\u90e8\u989c\u8272\u53ea\u80fd\u5408\u8ba1\u6cbb\u75973\u6b21"
+        "Desc": "Out of all colors, you can only heal 3 times in this round"
     },
     {
         "Id": 17,
-        "Name": "\u6548\u679c17",
+        "Name": "Effect 17",
         "Type": 9,
         "LifeType": 3,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u5168\u90e8\u989c\u8272\u53ea\u80fd\u5408\u8ba1\u6cbb\u75973\u6b21",
+        "ShowDesc": "Out of all colors, you can only heal 3 times in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[3]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u5168\u90e8\u989c\u8272\u53ea\u80fd\u5408\u8ba1\u6cbb\u75973\u6b21"
+        "Desc": "Out of all colors, you can only heal 3 times in the next round"
     },
     {
         "Id": 18,
-        "Name": "\u6548\u679c18",
+        "Name": "Effect 18",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u7ea2\u8272\u989c\u6599+3",
+        "ShowDesc": "Red Paint +3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 3]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u6570\u636e\u63d0\u53473"
+        "Desc": "Red Data increases by 3"
     },
     {
         "Id": 19,
-        "Name": "\u6548\u679c19",
+        "Name": "Effect 19",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u7eff\u8272\u989c\u6599+3",
+        "ShowDesc": "Green Paint +3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 3]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u6570\u636e\u63d0\u53473"
+        "Desc": "Green Data increases by 3"
     },
     {
         "Id": 20,
-        "Name": "\u6548\u679c20",
+        "Name": "Effect 20",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u84dd\u8272\u989c\u6599+3",
+        "ShowDesc": "Blue Paint +3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 3]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u6570\u636e\u63d0\u53473"
+        "Desc": "Blue Data increases by 3"
     },
     {
         "Id": 21,
-        "Name": "\u6548\u679c21",
+        "Name": "Effect 21",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u4e0b\u56de\u5408\uff0c\u7ea2\u8272BOSS\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "Red Boss Level increases by 1 in the next round",
         "ShowOnPointTypes": "[101]",
         "ShowOnColors": "[1]",
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7ea2\u8272BOSS\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Red Boss Level increases by 1 in the next round"
     },
     {
         "Id": 22,
-        "Name": "\u6548\u679c22",
+        "Name": "Effect 22",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u4e0b\u56de\u5408\uff0c\u7eff\u8272BOSS\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "Green Boss Level increases by 1 in the next round",
         "ShowOnPointTypes": "[101]",
         "ShowOnColors": "[2]",
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7eff\u8272BOSS\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Green Boss Level increases by 1 in the next round"
     },
     {
         "Id": 23,
-        "Name": "\u6548\u679c23",
+        "Name": "Effect 23",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u4e0b\u56de\u5408\uff0c\u84dd\u8272BOSS\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "Blue Boss Level increases by 1 in the next round",
         "ShowOnPointTypes": "[101]",
         "ShowOnColors": "[3]",
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u84dd\u8272BOSS\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Blue Boss Level increases by 1 in the next round"
     },
     {
         "Id": 24,
-        "Name": "\u6548\u679c24",
+        "Name": "Effect 24",
         "Type": 12,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u6240\u6709\u989c\u8272\u989c\u6599\u53d8\u62107",
+        "ShowDesc": "All colors of Paint become 7 in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[7]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u6240\u6709\u989c\u8272\u6570\u636e\u53d8\u62107"
+        "Desc": "All colors of Data become 7 in this round"
     },
     {
         "Id": 25,
-        "Name": "\u6548\u679c25",
+        "Name": "Effect 25",
         "Type": 12,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u4e0b\u56de\u5408\uff0c\u6240\u6709\u989c\u8272\u989c\u6599\u53d8\u62107",
+        "ShowDesc": "All colors of Paint become 7 in the next round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[7]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u6240\u6709\u989c\u8272\u6570\u636e\u53d8\u62107"
+        "Desc": "All colors of Data become 7 in the next round"
     },
     {
         "Id": 26,
-        "Name": "\u6548\u679c26",
+        "Name": "Effect 26",
         "Type": 13,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u7ea2\u8272\u7814\u7a76\u7b49\u7ea7+1",
+        "ShowDesc": "Red Research Level +1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u7814\u7a76\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Red Research Level increases by 1"
     },
     {
         "Id": 27,
-        "Name": "\u6548\u679c27",
+        "Name": "Effect 27",
         "Type": 13,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u7eff\u8272\u7814\u7a76\u7b49\u7ea7+1",
+        "ShowDesc": "Green Research Level +1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u7814\u7a76\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Green Research Level increases by 1"
     },
     {
         "Id": 28,
-        "Name": "\u6548\u679c28",
+        "Name": "Effect 28",
         "Type": 13,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u84dd\u8272\u7814\u7a76\u7b49\u7ea7+1",
+        "ShowDesc": "Blue Research Level +1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u7814\u7a76\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Blue Research Level increases by 1"
     },
     {
         "Id": 29,
-        "Name": "\u6548\u679c29",
+        "Name": "Effect 29",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u884c\u52a8\u70b9+3",
+        "ShowDesc": "+3 Action Points in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u884c\u52a8\u70b9\u589e\u52a03\u70b9"
+        "Desc": "Action Points increase by 3 in this round"
     },
     {
         "Id": 30,
-        "Name": "\u6548\u679c30",
+        "Name": "Effect 30",
         "Type": 15,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80174\u4e2a\u7814\u7a76\u989c\u6599",
+        "ShowDesc": "Increasing Research Level only costs 4 Research Paint in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[4]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80174\u4e2a\u7814\u7a76\u6570\u636e"
+        "Desc": "Increasing Research Level only costs 4 Research Data in this round"
     },
     {
         "Id": 31,
-        "Name": "\u6548\u679c31",
+        "Name": "Effect 31",
         "Type": 17,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u5173\u5361-\u6bcf\u56de\u5408\u9996\u6b21\u6267\u884c\u5730\u70b9\u884c\u52a8\u540e\uff0c\u6263\u9664\u8be5\u533a\u57df\u989c\u8272\u76841\u70b9\u989c\u6599",
+        "ShowDesc": "Stage - In every round, deduct 1 Paint of the area's color after making the first area action",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u5173\u5361-\u6bcf\u56de\u5408\u9996\u6b21\u6267\u884c\u5730\u70b9\u884c\u52a8\u540e\uff0c\u6263\u9664\u8be5\u533a\u57df\u989c\u8272\u76841\u70b9\u6570\u636e"
+        "Desc": "Stage - In every round, deduct 1 Data of the area's color after making the first area action"
     },
     {
         "Id": 32,
-        "Name": "\u6548\u679c32",
+        "Name": "Effect 32",
         "Type": 17,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u9996\u6b21\u6267\u884c\u5730\u70b9\u884c\u52a8\u540e\uff0c\u6263\u9664\u8be5\u533a\u57df\u989c\u8272\u76841\u70b9\u989c\u6599",
+        "ShowDesc": "In this round, deduct 1 Paint of the area's color after making the first area action",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u9996\u6b21\u6267\u884c\u5730\u70b9\u884c\u52a8\u540e\uff0c\u6263\u9664\u8be5\u533a\u57df\u989c\u8272\u76841\u70b9\u6570\u636e"
+        "Desc": "In this round, deduct 1 Data of the area's color after making the first area action"
     },
     {
         "Id": 33,
-        "Name": "\u6548\u679c33",
+        "Name": "Effect 33",
         "Type": 18,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\u9996\u6b21\u83b7\u5f97\u989c\u6599\u65f6\uff0c\u83b7\u5f97\u91cf+2",
+        "ShowDesc": "Get +2 Paint upon obtaining Paint for the first time in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 2]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\u9996\u6b21\u83b7\u5f97\u6570\u636e\u65f6\uff0c\u83b7\u5f97\u91cf+2"
+        "Desc": "Get +2 Data upon obtaining Data for the first time in this round"
     },
     {
         "Id": 34,
-        "Name": "\u6548\u679c34",
+        "Name": "Effect 34",
         "Type": 19,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u7eff\u8272\u53ef\u989d\u5916\u83b7\u5f971\u6b21\u989c\u6599\uff08\u80fd\u91cf\u70b9\uff09",
+        "ShowDesc": "Get Green Paint (Energy Point) 1 more time in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u7eff\u8272\u53ef\u989d\u5916\u83b7\u5f971\u6b21\u6570\u636e\uff08\u80fd\u91cf\u70b9\uff09"
+        "Desc": "Get Green Data (Energy Point) 1 more time in this round"
     },
     {
         "Id": 35,
-        "Name": "\u6548\u679c35",
+        "Name": "Effect 35",
         "Type": 20,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u5173\u5361-\u65e0\u6cd5\u6267\u884c\u7eff\u8272\u5730\u5757\u884c\u52a8\uff0c\u7eff\u8272\u75c5\u6bd2\u7206\u53d1\u540e\uff0c\u5176\u7b49\u7ea7\u8c03\u6574\u4e3a4",
+        "ShowDesc": "Stage - Unable to take action in Green blocks. After Green Virus Outbreak, set its level to 4",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 4]",
         "Icon": null,
-        "Desc": "\u5173\u5361-\u65e0\u6cd5\u6267\u884c\u7eff\u8272\u5730\u5757\u884c\u52a8\uff0c\u7eff\u8272\u75c5\u6bd2\u7206\u53d1\u540e\uff0c\u5176\u7b49\u7ea7\u8c03\u6574\u4e3a4"
+        "Desc": "Stage - Unable to take action in Green blocks. After Green Virus Outbreak, set its level to 4"
     },
     {
         "Id": 36,
-        "Name": "\u6548\u679c36",
+        "Name": "Effect 36",
         "Type": 21,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\u7ed3\u7b97\u65f6\uff0c\u4e0d\u8d70\u65f6\u95f4\u8f74\u7ed3\u7b97\uff0c\u4f46\u8fdb\u5ea6\u7167\u5e38",
+        "ShowDesc": "At the end of this round, the timeline is not tallied but the progress will continue to move forward normally",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": null,
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\u7ed3\u7b97\u65f6\uff0c\u4e0d\u8d70\u65f6\u95f4\u8f74\u7ed3\u7b97\uff0c\u4f46\u8fdb\u5ea6\u7167\u5e38"
+        "Desc": "At the end of this round, the timeline is not tallied but the progress will continue to move forward normally"
     },
     {
         "Id": 37,
-        "Name": "\u6548\u679c37",
+        "Name": "Effect 37",
         "Type": 23,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\u9996\u6b21\u7ad9\u7acb\u6216\u7ecf\u8fc7\u4e2d\u592e\u533a\u57df\u65f6\uff0c\u83b7\u5f971\u70b9\u7ea2\u8272\u8d44\u6e90",
+        "ShowDesc": "Get 1 Red Resource when staying in or passing the Central area for the first time in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\u9996\u6b21\u7ad9\u7acb\u6216\u7ecf\u8fc7\u4e2d\u592e\u533a\u57df\u65f6\uff0c\u83b7\u5f971\u70b9\u7ea2\u8272\u8d44\u6e90"
+        "Desc": "Get 1 Red Resource when staying in or passing the Central area for the first time in this round"
     },
     {
         "Id": 38,
-        "Name": "\u6548\u679c38",
+        "Name": "Effect 38",
         "Type": 23,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\u9996\u6b21\u7ad9\u7acb\u6216\u7ecf\u8fc7\u4e2d\u592e\u533a\u57df\u65f6\uff0c\u83b7\u5f971\u70b9\u7eff\u8272\u8d44\u6e90",
+        "ShowDesc": "Get 1 Green Resource when staying in or passing the Central area for the first time in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\u9996\u6b21\u7ad9\u7acb\u6216\u7ecf\u8fc7\u4e2d\u592e\u533a\u57df\u65f6\uff0c\u83b7\u5f971\u70b9\u7eff\u8272\u8d44\u6e90"
+        "Desc": "Get 1 Green Resource when staying in or passing the Central area for the first time in this round"
     },
     {
         "Id": 39,
-        "Name": "\u6548\u679c39",
+        "Name": "Effect 39",
         "Type": 23,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\u9996\u6b21\u7ad9\u7acb\u6216\u7ecf\u8fc7\u4e2d\u592e\u533a\u57df\u65f6\uff0c\u83b7\u5f971\u70b9\u84dd\u8272\u8d44\u6e90",
+        "ShowDesc": "Get 1 Blue Resource when staying in or passing the Central area for the first time in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\u9996\u6b21\u7ad9\u7acb\u6216\u7ecf\u8fc7\u4e2d\u592e\u533a\u57df\u65f6\uff0c\u83b7\u5f971\u70b9\u84dd\u8272\u8d44\u6e90"
+        "Desc": "Get 1 Blue Resource when staying in or passing the Central area for the first time in this round"
     },
     {
         "Id": 40,
-        "Name": "\u6548\u679c40",
+        "Name": "Effect 40",
         "Type": 24,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\u7ed3\u7b97\u65f6\uff0c\u65f6\u95f4\u8f74\u7ed3\u7b97\u4e8b\u4ef6\u6267\u884c2\u6b21",
+        "ShowDesc": "The timeline tally event will be executed 2 times during this round's tally",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\u7ed3\u7b97\u65f6\uff0c\u65f6\u95f4\u8f74\u7ed3\u7b97\u4e8b\u4ef6\u6267\u884c2\u6b21"
+        "Desc": "The timeline tally event will be executed 2 times during this round's tally"
     },
     {
         "Id": 41,
-        "Name": "\u6548\u679c41",
+        "Name": "Effect 41",
         "Type": 25,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u4e0b\u56de\u5408\u5f00\u59cb\u65f6\uff0c\u89d2\u8272\u6240\u5728\u989c\u8272\u7684BOSS\uff0c\u7b49\u7ea7\u4e0b\u964d1",
+        "ShowDesc": "At the start of the next round, the Boss of the color that your character is currently staying will lose 1 level",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\u5f00\u59cb\u65f6\uff0c\u89d2\u8272\u6240\u5728\u989c\u8272\u7684BOSS\uff0c\u7b49\u7ea7\u4e0b\u964d1"
+        "Desc": "At the start of the next round, the Boss of the color that your character is currently staying will lose 1 level"
     },
     {
         "Id": 42,
-        "Name": "\u6548\u679c42",
+        "Name": "Effect 42",
         "Type": 26,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u5173\u5361-\u73b0\u5728\u7814\u7a76\u53ea\u80fd\u83b7\u5f973\u62164\u70b9",
+        "ShowDesc": "Stage - Research only yields 3 or 4 points",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 3, 3, 4, 4, 4]",
         "Icon": null,
-        "Desc": "\u5173\u5361-\u73b0\u5728\u7814\u7a76\u53ea\u80fd\u83b7\u5f973\u62164\u70b9"
+        "Desc": "Stage - Research only yields 3 or 4 points"
     },
     {
         "Id": 43,
-        "Name": "\u6548\u679c43",
+        "Name": "Effect 43",
         "Type": 27,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u6267\u884c\u7814\u7a76\u65f6\uff0c\u53ef\u91cd\u65b0roll2\u6b21\u9ab0\u5b50",
+        "ShowDesc": "You can reroll 2 times when performing research in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u6267\u884c\u7814\u7a76\u65f6\uff0c\u53ef\u91cd\u65b0roll2\u6b21\u9ab0\u5b50"
+        "Desc": "You can reroll 2 times when performing research in this round"
     },
     {
         "Id": 44,
-        "Name": "\u6548\u679c44",
+        "Name": "Effect 44",
         "Type": 28,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u524d2\u6b21\u6cbb\u7597\uff0c\u6548\u679c+1",
+        "ShowDesc": "The first 2 healings in this round get +1 effect",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u524d2\u6b21\u6cbb\u7597\uff0c\u6548\u679c+1"
+        "Desc": "The first 2 healings in this round get +1 effect"
     },
     {
         "Id": 45,
-        "Name": "\u6548\u679c45",
+        "Name": "Effect 45",
         "Type": 29,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u7814\u7a76\u6216\u6cbb\u7597\u53ef\u6df7\u5408\u4f7f\u7528\u7ea2\u3001\u7eff\u989c\u6599",
+        "ShowDesc": "Red and Green Paint can be used together in Research or Healing in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 2]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u7814\u7a76\u6216\u6cbb\u7597\u53ef\u6df7\u5408\u4f7f\u7528\u7ea2\u3001\u7eff\u6570\u636e"
+        "Desc": "Red and Green Data can be used together in Research or Healing in this round"
     },
     {
         "Id": 46,
-        "Name": "\u6548\u679c46",
+        "Name": "Effect 46",
         "Type": 29,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u7814\u7a76\u6216\u6cbb\u7597\u53ef\u6df7\u5408\u4f7f\u7528\u7eff\u3001\u84dd\u989c\u6599",
+        "ShowDesc": "Green and Blue Paint can be used together in Research or Healing in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 3]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u7814\u7a76\u6216\u6cbb\u7597\u53ef\u6df7\u5408\u4f7f\u7528\u7eff\u3001\u84dd\u6570\u636e"
+        "Desc": "Green and Blue Data can be used together in Research or Healing in this round"
     },
     {
         "Id": 47,
-        "Name": "\u6548\u679c47",
+        "Name": "Effect 47",
         "Type": 29,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u7814\u7a76\u6216\u6cbb\u7597\u53ef\u6df7\u5408\u4f7f\u7528\u7ea2\u3001\u84dd\u989c\u6599",
+        "ShowDesc": "Red and Blue Paint can be used together in Research or Healing in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 3]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u7814\u7a76\u6216\u6cbb\u7597\u53ef\u6df7\u5408\u4f7f\u7528\u7ea2\u3001\u84dd\u6570\u636e"
+        "Desc": "Red and Blue Data can be used together in Research or Healing in this round"
     },
     {
         "Id": 48,
-        "Name": "\u6548\u679c48",
+        "Name": "Effect 48",
         "Type": 5,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u5173\u5361-\u65b9\u5757\u7b49\u7ea7\u63d0\u5347\u65f6\uff0c\u63d0\u5347\u6570\u503c+2",
+        "ShowDesc": "Stage - When upgrading the Cube, the level increment +2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u5173\u5361-\u65b9\u5757\u7b49\u7ea7\u63d0\u5347\u65f6\uff0c\u63d0\u5347\u6570\u503c+2"
+        "Desc": "Stage - When upgrading the Cube, the level increment +2"
     },
     {
         "Id": 49,
-        "Name": "\u77ac\u79fb\u2160",
+        "Name": "Teleport I",
         "Type": 1,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u6bcf\u56de\u5408\u9996\u6b21\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9",
+        "ShowDesc": "The first movement in each round costs no Action Points.",
         "ShowOnPointTypes": "[1, 2, 3, 4]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\u524d1\u6b21\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9\uff08\u6ce8\u610f\u68c0\u67e5\u8ddf\u961f\u957f\u6280\u662f\u5426\u53e0\u52a0\uff09"
+        "Desc": "The first movement in this round costs no Action Points (check if this is stacking with the Leader Skill)"
     },
     {
         "Id": 50,
-        "Name": "\u77ac\u79fb\u2161",
+        "Name": "Teleport II",
         "Type": 1,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u6bcf\u56de\u5408\u524d2\u6b21\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9",
+        "ShowDesc": "The first 2 movements in each round cost no Action Points",
         "ShowOnPointTypes": "[1, 2, 3, 4]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\u524d2\u6b21\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9\uff08\u6ce8\u610f\u68c0\u67e5\u8ddf\u961f\u957f\u6280\u662f\u5426\u53e0\u52a0\uff09"
+        "Desc": "The first 2 movements in this round cost no Action Points (check if this is stacking with the Leader Skill)"
     },
     {
         "Id": 51,
-        "Name": "\u77ac\u79fb\u2162",
+        "Name": "Teleport III",
         "Type": 1,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u6bcf\u56de\u5408\u524d3\u6b21\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9",
+        "ShowDesc": "The first 3 movements in each round cost no Action Points",
         "ShowOnPointTypes": "[1, 2, 3, 4]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\u524d3\u6b21\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9\uff08\u6ce8\u610f\u68c0\u67e5\u8ddf\u961f\u957f\u6280\u662f\u5426\u53e0\u52a0\uff09"
+        "Desc": "The first 3 movements in this round cost no Action Points (check if this is stacking with the Leader Skill)"
     },
     {
         "Id": 52,
-        "Name": "\u989d\u5916\u6570\u636e1",
+        "Name": "Additional Data 1",
         "Type": 18,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u53ef\u989d\u5916\u83b7\u5f972\u70b9",
+        "ShowDesc": "Get a bonus 2 Paint when obtaining Paint in this round",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\u83b7\u53d6\u6570\u636e\u65f6\uff0c\u989d\u5916\u83b7\u5f972\u70b9\u6570\u636e"
+        "Desc": "Get a bonus 2 Data when obtaining Data in this round"
     },
     {
         "Id": 53,
-        "Name": "\u989d\u5916\u6570\u636e2",
+        "Name": "Additional Data 2",
         "Type": 18,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u53ef\u989d\u5916\u83b7\u5f973\u70b9",
+        "ShowDesc": "Get a bonus 3 Paint when obtaining Paint in this round",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\u83b7\u53d6\u6570\u636e\u65f6\uff0c\u989d\u5916\u83b7\u5f973\u70b9\u6570\u636e"
+        "Desc": "Get a bonus 3 Data when obtaining Data in this round"
     },
     {
         "Id": 54,
-        "Name": "\u989d\u5916\u6570\u636e3",
+        "Name": "Additional Data 3",
         "Type": 18,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u53ef\u989d\u5916\u83b7\u5f974\u70b9",
+        "ShowDesc": "Get a bonus 4 Paint when obtaining Paint in this round",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 4]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\u83b7\u53d6\u6570\u636e\u65f6\uff0c\u989d\u5916\u83b7\u5f974\u70b9\u6570\u636e"
+        "Desc": "Get a bonus 4 Data when obtaining Data in this round"
     },
     {
         "Id": 55,
-        "Name": "\u5f3a\u6548\u6cbb\u75971",
+        "Name": "Enhanced Healing 1",
         "Type": 28,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u8bae\u8bba\u53ef\u989d\u5916\u964d\u4f4e\u5927\u5e081\u7ea7",
+        "ShowDesc": "Comment can further reduce the Master's level by 1 in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\u6cbb\u7597\u6548\u679c\u63d0\u53471"
+        "Desc": "Healing effect increases by 1 in this round"
     },
     {
         "Id": 56,
-        "Name": "\u5f3a\u6548\u6cbb\u75972",
+        "Name": "Enhanced Healing 2",
         "Type": 28,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u8bae\u8bba\u53ef\u989d\u5916\u964d\u4f4e\u5927\u5e082\u7ea7",
+        "ShowDesc": "Comment can further reduce the Master's level by 2 in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\u6cbb\u7597\u6548\u679c\u63d0\u53472"
+        "Desc": "Healing effect increases by 2 in this round"
     },
     {
         "Id": 57,
-        "Name": "\u5f3a\u6548\u6cbb\u75973",
+        "Name": "Enhanced Healing 3",
         "Type": 28,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u8bae\u8bba\u53ef\u989d\u5916\u964d\u4f4e\u5927\u5e083\u7ea7",
+        "ShowDesc": "Comment can further reduce the Master's level by 3 in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\u6cbb\u7597\u6548\u679c\u63d0\u53473"
+        "Desc": "Healing effect increases by 3 in this round"
     },
     {
         "Id": 58,
-        "Name": "\u5f88\u591a\u6570\u636e1",
+        "Name": "Data Abundance 1",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f972\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 2 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 2]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u6570\u636e\u63d0\u53472"
+        "Desc": "Red Data increases by 2"
     },
     {
         "Id": 59,
-        "Name": "\u5f88\u591a\u6570\u636e1",
+        "Name": "Data Abundance 1",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u5f972\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 2 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 2]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u6570\u636e\u63d0\u53472"
+        "Desc": "Green Data increases by 2"
     },
     {
         "Id": 60,
-        "Name": "\u5f88\u591a\u6570\u636e1",
+        "Name": "Data Abundance 1",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u5f972\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 2 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 2]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u6570\u636e\u63d0\u53472"
+        "Desc": "Blue Data increases by 2"
     },
     {
         "Id": 61,
-        "Name": "\u5f88\u591a\u6570\u636e2",
+        "Name": "Data Abundance 2",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f974\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 4 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 4]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u6570\u636e\u63d0\u53474"
+        "Desc": "Red Data increases by 4"
     },
     {
         "Id": 62,
-        "Name": "\u5f88\u591a\u6570\u636e2",
+        "Name": "Data Abundance 2",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u5f974\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 4 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 4]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u6570\u636e\u63d0\u53474"
+        "Desc": "Green Data increases by 4"
     },
     {
         "Id": 63,
-        "Name": "\u5f88\u591a\u6570\u636e2",
+        "Name": "Data Abundance 2",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u5f974\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 4 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 4]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u6570\u636e\u63d0\u53474"
+        "Desc": "Blue Data increases by 4"
     },
     {
         "Id": 64,
-        "Name": "\u5f88\u591a\u6570\u636e3",
+        "Name": "Data Abundance 3",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f977\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 7 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 7]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u6570\u636e\u63d0\u53477"
+        "Desc": "Red Data increases by 7"
     },
     {
         "Id": 65,
-        "Name": "\u5f88\u591a\u6570\u636e3",
+        "Name": "Data Abundance 3",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u5f977\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 7 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 7]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u6570\u636e\u63d0\u53477"
+        "Desc": "Green Data increases by 7"
     },
     {
         "Id": 66,
-        "Name": "\u5f88\u591a\u6570\u636e3",
+        "Name": "Data Abundance 3",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u5f977\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 7 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 7]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u6570\u636e\u63d0\u53477"
+        "Desc": "Blue Data increases by 7"
     },
     {
         "Id": 67,
-        "Name": "\u9ad8\u6548\u7814\u7a761",
+        "Name": "Efficient Research 1",
         "Type": 15,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u53ea\u97005\u70b9\u989c\u6599",
+        "ShowDesc": "Upgrading Exhibition only costs 5 Paint in this round",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[5]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80175\u4e2a\u7814\u7a76\u6570\u636e\uff08\u6ce8\u610f\u68c0\u67e5\u4e0e\u961f\u957f\u6280\u53e0\u52a0\uff0c\u662f\u5426\u53d6\u6700\u4f4e\uff09"
+        "Desc": "Increasing Research Level only costs 5 Research Data in this round (check if this is stacking with the Leader Skill, and whether the lower value should be used)"
     },
     {
         "Id": 68,
-        "Name": "\u9ad8\u6548\u7814\u7a762",
+        "Name": "Efficient Research 2",
         "Type": 15,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u53ea\u97003\u70b9\u989c\u6599",
+        "ShowDesc": "Increasing Exhibition only costs 3 Paint in this round.",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[4]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80173\u4e2a\u7814\u7a76\u6570\u636e\uff08\u6ce8\u610f\u68c0\u67e5\u4e0e\u961f\u957f\u6280\u53e0\u52a0\uff0c\u662f\u5426\u53d6\u6700\u4f4e\uff09"
+        "Desc": "Increasing Research Level only costs 3 Research Data in this round (check if this is stacking with the Leader Skill, and whether the lower value should be used)"
     },
     {
         "Id": 69,
-        "Name": "\u9ad8\u6548\u7814\u7a763",
+        "Name": "Efficient Research 3",
         "Type": 15,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u53ea\u97002\u70b9\u989c\u6599",
+        "ShowDesc": "Increasing Exhibition only costs 2 Paint in this round.",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80172\u4e2a\u7814\u7a76\u6570\u636e\uff08\u6ce8\u610f\u68c0\u67e5\u4e0e\u961f\u957f\u6280\u53e0\u52a0\uff0c\u662f\u5426\u53d6\u6700\u4f4e\uff09"
+        "Desc": "Increasing Research Level only costs 2 Research Data in this round (check if this is stacking with the Leader Skill, and whether the lower value should be used)"
     },
     {
         "Id": 70,
-        "Name": "\u65f6\u95f4\u9759\u6b62",
+        "Name": "Time Stop",
         "Type": 21,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u672c\u56de\u5408\u7ed3\u7b97\u65f6\uff0c\u5927\u5e08\u4e0d\u4f1a\u63d0\u5347\u7b49\u7ea7",
+        "ShowDesc": "Master will not level up during this round's tally",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": null,
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\u7ed3\u7b97\u65f6\uff0c\u4e0d\u8d70\u65f6\u95f4\u8f74\u7ed3\u7b97\uff0c\u4f46\u8fdb\u5ea6\u7167\u5e38"
+        "Desc": "At the end of this round, the timeline is not tallied but the progress will continue to move forward normally"
     },
     {
         "Id": 71,
-        "Name": "\u75c5\u6bd2\u4e0b\u964d1",
+        "Name": "Virus Reduction 1",
         "Type": 11,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u6240\u6709\u6d3e\u7cfb\u5927\u5e08\u4e0b\u964d1\u7ea7",
+        "ShowDesc": "All School Masters' level decreases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, -1]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272BOSS\u7b49\u7ea7\u4e0b\u964d1"
+        "Desc": "Red Boss Level decreases by 1"
     },
     {
         "Id": 72,
-        "Name": "\u75c5\u6bd2\u4e0b\u964d1",
+        "Name": "Virus Reduction 1",
         "Type": 11,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u6d3e\u7cfb\u5927\u5e08\u4e0b\u964d1\u7ea7",
+        "ShowDesc": "All School Masters' level decreases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -1]",
         "Icon": null,
-        "Desc": "\u7eff\u8272BOSS\u7b49\u7ea7\u4e0b\u964d1"
+        "Desc": "Green Boss Level decreases by 1"
     },
     {
         "Id": 73,
-        "Name": "\u75c5\u6bd2\u4e0b\u964d1",
+        "Name": "Virus Reduction 1",
         "Type": 11,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u6d3e\u7cfb\u5927\u5e08\u4e0b\u964d1\u7ea7",
+        "ShowDesc": "All School Masters' level decreases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, -1]",
         "Icon": null,
-        "Desc": "\u84dd\u8272BOSS\u7b49\u7ea7\u4e0b\u964d1"
+        "Desc": "Blue Boss Level decreases by 1"
     },
     {
         "Id": 74,
-        "Name": "\u75c5\u6bd2\u4e0b\u964d2",
+        "Name": "Virus Reduction 2",
         "Type": 11,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u6240\u6709\u6d3e\u7cfb\u5927\u5e08\u4e0b\u964d3\u7ea7",
+        "ShowDesc": "All School Masters' level decreases by 3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, -3]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272BOSS\u7b49\u7ea7\u4e0b\u964d3"
+        "Desc": "Red Boss Level decreases by 3"
     },
     {
         "Id": 75,
-        "Name": "\u75c5\u6bd2\u4e0b\u964d2",
+        "Name": "Virus Reduction 2",
         "Type": 11,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u6d3e\u7cfb\u5927\u5e08\u4e0b\u964d3\u7ea7",
+        "ShowDesc": "All School Masters' level decreases by 3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -3]",
         "Icon": null,
-        "Desc": "\u7eff\u8272BOSS\u7b49\u7ea7\u4e0b\u964d3"
+        "Desc": "Green Boss Level decreases by 3"
     },
     {
         "Id": 76,
-        "Name": "\u75c5\u6bd2\u4e0b\u964d2",
+        "Name": "Virus Reduction 2",
         "Type": 11,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u6d3e\u7cfb\u5927\u5e08\u4e0b\u964d3\u7ea7",
+        "ShowDesc": "All School Masters' level decreases by 3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, -3]",
         "Icon": null,
-        "Desc": "\u84dd\u8272BOSS\u7b49\u7ea7\u4e0b\u964d3"
+        "Desc": "Blue Boss Level decreases by 3"
     },
     {
         "Id": 77,
-        "Name": "\u7814\u7a76\u63d0\u53471",
+        "Name": "Research Boost 1",
         "Type": 13,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u6240\u6709\u4f5c\u54c1\u5c55\u89c8\u63d0\u53471\u7ea7",
+        "ShowDesc": "Increase the level of all Exhibitions by 1.",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u7814\u7a76\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Red Research Level increases by 1"
     },
     {
         "Id": 78,
-        "Name": "\u7814\u7a76\u63d0\u53471",
+        "Name": "Research Boost 1",
         "Type": 13,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u4f5c\u54c1\u5c55\u89c8\u63d0\u53471\u7ea7",
+        "ShowDesc": "Increase the level of all Exhibitions by 1.",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u7814\u7a76\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Green Research Level increases by 1"
     },
     {
         "Id": 79,
-        "Name": "\u7814\u7a76\u63d0\u53471",
+        "Name": "Research Boost 1",
         "Type": 13,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u4f5c\u54c1\u5c55\u89c8\u63d0\u53471\u7ea7",
+        "ShowDesc": "Increase the level of all Exhibitions by 1.",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u7814\u7a76\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Blue Research Level increases by 1"
     },
     {
         "Id": 80,
-        "Name": "\u7ea2\u7eff\u6df7\u5408",
+        "Name": "Red-Green Mixture",
         "Type": 29,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u8bae\u8bba\u6216\u63d0\u5347\u5c55\u89c8\u53ef\u6df7\u5408\u4f7f\u7528\u7ea2\u3001\u7eff\u989c\u6599",
+        "ShowDesc": "Red and Green Paint can be used together in Comment or upgrading Exhibition in this round",
         "ShowOnPointTypes": "[1, 2]",
         "ShowOnColors": "[1, 2]",
         "Params": "[1, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\uff0c\u7814\u7a76\u6216\u6cbb\u7597\u53ef\u6df7\u5408\u4f7f\u7528\u7ea2\u3001\u7eff\u6570\u636e"
+        "Desc": "Red and Green Data can be used together in Research or Healing in this round"
     },
     {
         "Id": 81,
-        "Name": "\u7eff\u84dd\u6df7\u5408",
+        "Name": "Green-Blue Mixture",
         "Type": 29,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u8bae\u8bba\u6216\u63d0\u5347\u5c55\u89c8\u53ef\u6df7\u5408\u4f7f\u7528\u7eff\u3001\u84dd\u989c\u6599",
+        "ShowDesc": "Green and Blue Paint can be used together in Comment or upgrading Exhibition in this round",
         "ShowOnPointTypes": "[1, 2]",
         "ShowOnColors": "[2, 3]",
         "Params": "[2, 3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\uff0c\u7814\u7a76\u6216\u6cbb\u7597\u53ef\u6df7\u5408\u4f7f\u7528\u7eff\u3001\u84dd\u6570\u636e"
+        "Desc": "Green and Blue Data can be used together in Research or Healing in this round"
     },
     {
         "Id": 82,
-        "Name": "\u7ea2\u84dd\u6df7\u5408",
+        "Name": "Red-Blue Mixture",
         "Type": 29,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u8bae\u8bba\u6216\u63d0\u5347\u5c55\u89c8\u53ef\u6df7\u5408\u4f7f\u7528\u7ea2\u3001\u84dd\u989c\u6599",
+        "ShowDesc": "Red and Blue Paint can be used together in Comment or upgrading Exhibition in this round",
         "ShowOnPointTypes": "[1, 2]",
         "ShowOnColors": "[1, 3]",
         "Params": "[1, 3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\uff0c\u7814\u7a76\u6216\u6cbb\u7597\u53ef\u6df7\u5408\u4f7f\u7528\u7ea2\u3001\u84dd\u6570\u636e"
+        "Desc": "Red and Blue Data can be used together in Research or Healing in this round"
     },
     {
         "Id": 83,
-        "Name": "\u6c89\u91cd\u7684\u6cbb\u75971",
+        "Name": "Costly Healing 1",
         "Type": 6,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u6bcf\u6b21\u8bae\u8bba\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d391\u70b9\u989c\u6599",
+        "ShowDesc": "Each Comment will cost 1 more Paint in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u672c\u56de\u5408\u6bcf\u6b21\u6cbb\u7597\u65f6\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d391\u70b9\u5bf9\u5e94\u989c\u8272\u7684\u6570\u636e"
+        "Desc": "Each Healing will cost 1 more Data of the corresponding color in this round"
     },
     {
         "Id": 84,
-        "Name": "\u6c89\u91cd\u7684\u6cbb\u75972",
+        "Name": "Costly Healing 2",
         "Type": 6,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u6bcf\u6b21\u8bae\u8bba\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d392\u70b9\u989c\u6599",
+        "ShowDesc": "Each Comment will cost 2 more Paint in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u672c\u56de\u5408\u6bcf\u6b21\u6cbb\u7597\u65f6\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d392\u70b9\u5bf9\u5e94\u989c\u8272\u7684\u6570\u636e"
+        "Desc": "Each Healing will cost 2 more Data of the corresponding color in this round"
     },
     {
         "Id": 85,
-        "Name": "\u6c89\u91cd\u7684\u6cbb\u75973",
+        "Name": "Costly Healing 3",
         "Type": 6,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u6bcf\u6b21\u8bae\u8bba\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d393\u70b9\u989c\u6599",
+        "ShowDesc": "Each Comment will cost 3 more Paint in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u672c\u56de\u5408\u6bcf\u6b21\u6cbb\u7597\u65f6\uff0c\u9700\u8981\u989d\u5916\u82b1\u8d393\u70b9\u5bf9\u5e94\u989c\u8272\u7684\u6570\u636e"
+        "Desc": "Each Healing will cost 3 more Data of the corresponding color in this round"
     },
     {
         "Id": 86,
-        "Name": "\u6709\u9650\u6cbb\u75971",
+        "Name": "Limited Healing 1",
         "Type": 9,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u603b\u5171\u53ea\u80fd\u8bae\u8bba2\u6b21",
+        "ShowDesc": "You can only Comment 2 times in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u672c\u56de\u5408\uff0c\u5168\u90e8\u989c\u8272\u53ea\u80fd\u5408\u8ba1\u6cbb\u75972\u6b21"
+        "Desc": "Out of all colors, you can only heal 2 times in this round"
     },
     {
         "Id": 87,
-        "Name": "\u6709\u9650\u6cbb\u75972",
+        "Name": "Limited Healing 2",
         "Type": 9,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u603b\u5171\u53ea\u80fd\u8bae\u8bba1\u6b21",
+        "ShowDesc": "You can only Comment 1 time in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u672c\u56de\u5408\uff0c\u5168\u90e8\u989c\u8272\u53ea\u80fd\u5408\u8ba1\u6cbb\u75971\u6b21"
+        "Desc": "Out of all colors, you can only heal 1 time in this round"
     },
     {
         "Id": 88,
-        "Name": "\u6570\u636e\u6563\u59311",
+        "Name": "Data Loss 1",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u5168\u90e8\u51cf\u5c111\u70b9",
+        "ShowDesc": "Lose 1 Three-Color Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, -1]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u6570\u636e\u51cf\u5c111"
+        "Desc": "Lose 1 Red Data"
     },
     {
         "Id": 89,
-        "Name": "\u6570\u636e\u6563\u59311",
+        "Name": "Data Loss 1",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u5168\u90e8\u51cf\u5c111\u70b9",
+        "ShowDesc": "Lose 1 Three-Color Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -1]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u6570\u636e\u51cf\u5c111"
+        "Desc": "Lose 1 Green Data"
     },
     {
         "Id": 90,
-        "Name": "\u6570\u636e\u6563\u59311",
+        "Name": "Data Loss 1",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u5168\u90e8\u51cf\u5c111\u70b9",
+        "ShowDesc": "Lose 1 Three-Color Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, -1]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u6570\u636e\u51cf\u5c111"
+        "Desc": "Lose 1 Blue Data"
     },
     {
         "Id": 91,
-        "Name": "\u6570\u636e\u6563\u59312",
+        "Name": "Data Loss 2",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u5168\u90e8\u51cf\u5c112\u70b9",
+        "ShowDesc": "Lose 2 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, -2]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u6570\u636e\u51cf\u5c112"
+        "Desc": "Lose 2 Red Data"
     },
     {
         "Id": 92,
-        "Name": "\u6570\u636e\u6563\u59312",
+        "Name": "Data Loss 2",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u5168\u90e8\u51cf\u5c112\u70b9",
+        "ShowDesc": "Lose 2 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -2]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u6570\u636e\u51cf\u5c112"
+        "Desc": "Lose 2 Green Data"
     },
     {
         "Id": 93,
-        "Name": "\u6570\u636e\u6563\u59312",
+        "Name": "Data Loss 2",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u5168\u90e8\u51cf\u5c112\u70b9",
+        "ShowDesc": "Lose 2 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, -2]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u6570\u636e\u51cf\u5c112"
+        "Desc": "Lose 2 Blue Data"
     },
     {
         "Id": 94,
-        "Name": "\u6570\u636e\u6563\u59313",
+        "Name": "Data Loss 3",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u5168\u90e8\u51cf\u5c114\u70b9",
+        "ShowDesc": "Lose 4 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, -4]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u6570\u636e\u51cf\u5c114"
+        "Desc": "Lose 4 Red Data"
     },
     {
         "Id": 95,
-        "Name": "\u6570\u636e\u6563\u59313",
+        "Name": "Data Loss 3",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u5168\u90e8\u51cf\u5c114\u70b9",
+        "ShowDesc": "Lose 4 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -4]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u6570\u636e\u51cf\u5c114"
+        "Desc": "Lose 4 Green Data"
     },
     {
         "Id": 96,
-        "Name": "\u6570\u636e\u6563\u59313",
+        "Name": "Data Loss 3",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u4e09\u8272\u989c\u6599\u5168\u90e8\u51cf\u5c114\u70b9",
+        "ShowDesc": "Lose 4 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, -4]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u6570\u636e\u51cf\u5c114"
+        "Desc": "Lose 4 Blue Data"
     },
     {
         "Id": 97,
-        "Name": "\u4f4e\u6548\u83b7\u53d61",
+        "Name": "Inefficiency 1",
         "Type": 32,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u83b7\u53d6\u6570\u91cf-1",
+        "ShowDesc": "Quantity of Paint obtained in this round -1",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u672c\u56de\u5408\u83b7\u53d6\u6570\u636e\u65f6\uff0c\u4e22\u59311\u4e2a\u5bf9\u5e94\u989c\u8272\u6570\u636e"
+        "Desc": "Lose 1 Paint of the corresponding color when obtaining Data in this round"
     },
     {
         "Id": 98,
-        "Name": "\u4f4e\u6548\u83b7\u53d62",
+        "Name": "Inefficiency 2",
         "Type": 32,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u83b7\u53d6\u6570\u91cf-2",
+        "ShowDesc": "Quantity of Paint obtained in this round -2",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u672c\u56de\u5408\u83b7\u53d6\u6570\u636e\u65f6\uff0c\u4e22\u59312\u4e2a\u5bf9\u5e94\u989c\u8272\u6570\u636e"
+        "Desc": "Lose 2 Paint of the corresponding color when obtaining Data in this round"
     },
     {
         "Id": 99,
@@ -1279,12 +1279,12 @@
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u5931\u53bb\u6240\u6709\u989c\u6599",
+        "ShowDesc": "Lose all Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, -999]",
         "Icon": null,
-        "Desc": "\u7ea2\u8272\u6570\u636e\u51cf\u5c11999"
+        "Desc": "Lose 999 Red Data"
     },
     {
         "Id": 100,
@@ -1292,12 +1292,12 @@
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u5931\u53bb\u6240\u6709\u989c\u6599",
+        "ShowDesc": "Lose all Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -999]",
         "Icon": null,
-        "Desc": "\u7eff\u8272\u6570\u636e\u51cf\u5c11999"
+        "Desc": "Lose 999 Green Data"
     },
     {
         "Id": 101,
@@ -1305,211 +1305,211 @@
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
-        "ShowDesc": "\u5931\u53bb\u6240\u6709\u989c\u6599",
+        "ShowDesc": "Lose all Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, -999]",
         "Icon": null,
-        "Desc": "\u84dd\u8272\u6570\u636e\u51cf\u5c11999"
+        "Desc": "Lose 999 Blue Data"
     },
     {
         "Id": 102,
-        "Name": "\u7ea2\u8272\u5f3a\u53161",
+        "Name": "Red Enhancement 1",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u7ea2)\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "School Master (Red)'s level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7ea2\u8272BOSS\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Red Boss Level increases by 1 in the next round"
     },
     {
         "Id": 103,
-        "Name": "\u7ea2\u8272\u5f3a\u53162",
+        "Name": "Red Enhancement 2",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u7ea2)\u7b49\u7ea7\u63d0\u53472",
+        "ShowDesc": "School Master (Red)'s level increases by 2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 2]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7ea2\u8272BOSS\u7b49\u7ea7\u63d0\u53472"
+        "Desc": "Red Boss Level increases by 2 in the next round"
     },
     {
         "Id": 104,
-        "Name": "\u7ea2\u8272\u5f3a\u53163",
+        "Name": "Red Enhancement 3",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u7ea2)\u7b49\u7ea7\u63d0\u53473",
+        "ShowDesc": "School Master (Red)'s level increases by 3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 3]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7ea2\u8272BOSS\u7b49\u7ea7\u63d0\u53473"
+        "Desc": "Red Boss Level increases by 3 in the next round"
     },
     {
         "Id": 105,
-        "Name": "\u7eff\u8272\u5f3a\u53161",
+        "Name": "Green Enhancement 1",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u7eff)\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "School Master (Green)'s level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7eff\u8272BOSS\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Green Boss Level increases by 1 in the next round"
     },
     {
         "Id": 106,
-        "Name": "\u7eff\u8272\u5f3a\u53162",
+        "Name": "Green Enhancement 2",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u7eff)\u7b49\u7ea7\u63d0\u53472",
+        "ShowDesc": "School Master (Green)'s level increases by 2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 2]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7eff\u8272BOSS\u7b49\u7ea7\u63d0\u53472"
+        "Desc": "Green Boss Level increases by 2 in the next round"
     },
     {
         "Id": 107,
-        "Name": "\u7eff\u8272\u5f3a\u53163",
+        "Name": "Green Enhancement 3",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u7eff)\u7b49\u7ea7\u63d0\u53473",
+        "ShowDesc": "School Master (Green)'s level increases by 3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 3]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7eff\u8272BOSS\u7b49\u7ea7\u63d0\u53473"
+        "Desc": "Green Boss Level increases by 3 in the next round"
     },
     {
         "Id": 108,
-        "Name": "\u84dd\u8272\u5f3a\u53161",
+        "Name": "Blue Enhancement 1",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u84dd)\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "School Master (Blue)'s level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u84dd\u8272BOSS\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Blue Boss Level increases by 1 in the next round"
     },
     {
         "Id": 109,
-        "Name": "\u84dd\u8272\u5f3a\u53162",
+        "Name": "Blue Enhancement 2",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u84dd)\u7b49\u7ea7\u63d0\u53472",
+        "ShowDesc": "School Master (Blue)'s level increases by 2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 2]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u84dd\u8272BOSS\u7b49\u7ea7\u63d0\u53472"
+        "Desc": "Blue Boss Level increases by 2 in the next round"
     },
     {
         "Id": 110,
-        "Name": "\u84dd\u8272\u5f3a\u53163",
+        "Name": "Blue Enhancement 3",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u84dd)\u7b49\u7ea7\u63d0\u53473",
+        "ShowDesc": "School Master (Blue)'s level increases by 3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 3]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u84dd\u8272BOSS\u7b49\u7ea7\u63d0\u53473"
+        "Desc": "Blue Boss Level increases by 3 in the next round"
     },
     {
         "Id": 111,
-        "Name": "\u7ea2\u8272\u5f3a\u53161",
+        "Name": "Red Enhancement 1",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6240\u6709\u5927\u5e08\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "All Masters' level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7ea2\u8272BOSS\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Red Boss Level increases by 1 in the next round"
     },
     {
         "Id": 112,
-        "Name": "\u7eff\u8272\u5f3a\u53161",
+        "Name": "Green Enhancement 1",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u5927\u5e08\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "All Masters' level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7eff\u8272BOSS\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Green Boss Level increases by 1 in the next round"
     },
     {
         "Id": 113,
-        "Name": "\u84dd\u8272\u5f3a\u53161",
+        "Name": "Blue Enhancement 1",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u5927\u5e08\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "All Masters' level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u84dd\u8272BOSS\u7b49\u7ea7\u63d0\u53471"
+        "Desc": "Blue Boss Level increases by 1 in the next round"
     },
     {
         "Id": 114,
-        "Name": "\u7ea2\u8272\u5f3a\u53162",
+        "Name": "Red Enhancement 2",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6240\u6709\u5927\u5e08\u7b49\u7ea7\u63d0\u53472",
+        "ShowDesc": "All Masters' level increases by 2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 2]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7ea2\u8272BOSS\u7b49\u7ea7\u63d0\u53472"
+        "Desc": "Red Boss Level increases by 2 in the next round"
     },
     {
         "Id": 115,
-        "Name": "\u7eff\u8272\u5f3a\u53162",
+        "Name": "Green Enhancement 2",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u5927\u5e08\u7b49\u7ea7\u63d0\u53472",
+        "ShowDesc": "All Masters' level increases by 2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 2]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u7eff\u8272BOSS\u7b49\u7ea7\u63d0\u53472"
+        "Desc": "Green Boss Level increases by 2 in the next round"
     },
     {
         "Id": 116,
-        "Name": "\u84dd\u8272\u5f3a\u53162",
+        "Name": "Blue Enhancement 2",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
-        "ShowDesc": "\u6240\u6709\u5927\u5e08\u7b49\u7ea7\u63d0\u53472",
+        "ShowDesc": "All Masters' level increases by 2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 2]",
         "Icon": null,
-        "Desc": "\u4e0b\u56de\u5408\uff0c\u84dd\u8272BOSS\u7b49\u7ea7\u63d0\u53472"
+        "Desc": "Blue Boss Level increases by 2 in the next round"
     },
     {
         "Id": 117,
-        "Name": "\u7ed3\u7b97\u5f3a\u5316",
+        "Name": "Enhanced Tally",
         "Type": 31,
         "LifeType": 2,
         "ShowType": null,
@@ -1518,115 +1518,115 @@
         "ShowOnColors": null,
         "Params": null,
         "Icon": null,
-        "Desc": "\u56de\u5408\u7ed3\u7b97\u65f6\uff0c\u666e\u901a\u3001\u7206\u53d1\u3001\u5927\u6d41\u884c\u5bfc\u81f4\u7684\u75c5\u6bd2\u7b49\u7ea7\u989d\u5916+1"
+        "Desc": "At round tally, Virus Level from Normal, Outbreak and Pandemic +1"
     },
     {
         "Id": 118,
-        "Name": "\u884c\u52a8\u524a\u5f311",
+        "Name": "Crippled Action 1",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u5931\u53bb1\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Lose 1 Action Point",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[-1]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u884c\u52a8\u70b9\u964d\u4f4e1\u70b9"
+        "Desc": "Lose 1 Action Point in this round"
     },
     {
         "Id": 119,
-        "Name": "\u884c\u52a8\u524a\u5f312",
+        "Name": "Crippled Action 2",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u5931\u53bb2\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Lose 2 Action Points",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[-2]",
         "Icon": null,
-        "Desc": "\u672c\u56de\u5408\uff0c\u884c\u52a8\u70b9\u964d\u4f4e2\u70b9"
+        "Desc": "Lose 2 Action Points in this round"
     },
     {
         "Id": 120,
-        "Name": "\u5730\u70b9\u5ef6\u7f131",
+        "Name": "Stagnant Area 1",
         "Type": 17,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u6267\u884c\u5730\u70b9\u884c\u52a8\u540e\uff0c\u6263\u9664\u8be5\u533a\u57df2\u70b9\u540c\u8272\u989c\u6599",
+        "ShowDesc": "In this round, deduct 2 Paint of the area's color after making an area action",
         "ShowOnPointTypes": "[1, 2, 3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u672c\u56de\u5408\u6267\u884c\u5730\u70b9\u884c\u52a8\u540e\uff0c\u6263\u9664\u8be5\u533a\u57df\u989c\u8272\u76842\u70b9\u6570\u636e"
+        "Desc": "In this round, deduct 2 Data of the area's color after making an area action"
     },
     {
         "Id": 121,
-        "Name": "\u5730\u70b9\u5ef6\u7f132",
+        "Name": "Stagnant Area 2",
         "Type": 17,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u6267\u884c\u5730\u70b9\u884c\u52a8\u540e\uff0c\u6263\u9664\u8be5\u533a\u57df3\u70b9\u540c\u8272\u989c\u6599",
+        "ShowDesc": "In this round, deduct 3 Paint of the area's color after making an area action",
         "ShowOnPointTypes": "[1, 2, 3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u672c\u56de\u5408\u6267\u884c\u5730\u70b9\u884c\u52a8\u540e\uff0c\u6263\u9664\u8be5\u533a\u57df\u989c\u8272\u76843\u70b9\u6570\u636e"
+        "Desc": "In this round, deduct 3 Data of the area's color after making an area action"
     },
     {
         "Id": 122,
-        "Name": "\u9ad8\u6548\u7814\u7a764",
+        "Name": "Efficient Research 4",
         "Type": 15,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u7b49\u7ea7\u53ea\u9700\u8981\u6d88\u80171\u70b9\u989c\u6599",
+        "ShowDesc": "Increasing Exhibition Level only costs 1 Paint in this round",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80171\u4e2a\u7814\u7a76\u6570\u636e"
+        "Desc": "Increasing Research Level only costs 1 Research Data in this round"
     },
     {
         "Id": 123,
-        "Name": "\u77ac\u79fb\u2162",
+        "Name": "Teleport III",
         "Type": 1,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9",
+        "ShowDesc": "Movement costs no Action Points in this round",
         "ShowOnPointTypes": "[1, 2, 3, 4]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c9\u65f6\u95f4\u8f742-\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9"
+        "Desc": "Vera Timeline 2 - Movement costs no Action Points in this round"
     },
     {
         "Id": 124,
-        "Name": "\u4f5c\u6218\u63d0\u5347",
+        "Name": "Combat Boost I",
         "Type": 28,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u8bae\u8bba\u53ef\u989d\u5916\u964d\u4f4e\u5927\u5e081\u7ea7",
+        "ShowDesc": "Comment can further reduce the Master's level by 1 in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c9\u65f6\u95f4\u8f742-\u672c\u56de\u5408\u6cbb\u7597\u6548\u679c+1"
+        "Desc": "Vera Timeline 2 - Healing effect +1 in this round"
     },
     {
         "Id": 125,
-        "Name": "BOSS\u5f3a\u5316",
+        "Name": "Boss Enhancement",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08\u7b49\u7ea7\u63d0\u53473",
+        "ShowDesc": "School Master's level increases by 3",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c94-\u4e0b\u56de\u5408BOSS\u7b49\u7ea7+3"
+        "Desc": "Vera 4 - Boss Level +3 in the next round"
     },
     {
         "Id": 126,
-        "Name": "BOSS\u5f3a\u5316",
+        "Name": "Boss Enhancement",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -1635,11 +1635,11 @@
         "ShowOnColors": null,
         "Params": "[2, 3]",
         "Icon": null,
-        "Desc": "\u8587\u62c94-\u4e0b\u56de\u5408BOSS\u7b49\u7ea7+3"
+        "Desc": "Vera 4 - Boss Level +3 in the next round"
     },
     {
         "Id": 127,
-        "Name": "BOSS\u5f3a\u5316",
+        "Name": "Boss Enhancement",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -1648,37 +1648,37 @@
         "ShowOnColors": null,
         "Params": "[3, 3]",
         "Icon": null,
-        "Desc": "\u8587\u62c94-\u4e0b\u56de\u5408BOSS\u7b49\u7ea7+3"
+        "Desc": "Vera 4 - Boss Level +3 in the next round"
     },
     {
         "Id": 128,
-        "Name": "\u4f5c\u6218\u63d0\u5347\u2161",
+        "Name": "Combat Boost II",
         "Type": 28,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u8bae\u8bba\u6548\u679c+2",
+        "ShowDesc": "Comment Effect +2 in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c94-\u672c\u56de\u5408\u6cbb\u7597\u6548\u679c+2"
+        "Desc": "Vera 4 - Healing effect +2 in this round"
     },
     {
         "Id": 129,
-        "Name": "\u4f5c\u6218\u63d0\u5347\u2162",
+        "Name": "Combat Boost III",
         "Type": 28,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u8bae\u8bba\u6548\u679c+3",
+        "ShowDesc": "Comment Effect +3 in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c96-\u672c\u56de\u5408\u6cbb\u7597\u6548\u679c+3"
+        "Desc": "Vera 6 - Healing effect +3 in this round"
     },
     {
         "Id": 130,
-        "Name": "\u5371\u9669\u7684\u7ed3\u7b97",
+        "Name": "Dangerous Tally",
         "Type": 24,
         "LifeType": 2,
         "ShowType": null,
@@ -1687,50 +1687,50 @@
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u8587\u62c96\u672c\u56de\u5408\u65f6\u95f4\u8f74\u7ed3\u7b97\u5c06\u6267\u884c2\u6b21"
+        "Desc": "Vera 6 - The timeline tally will be executed 2 times in this round"
     },
     {
         "Id": 131,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f972\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 2 Action Point",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u91cc2-\u884c\u52a8\u70b9+2"
+        "Desc": "Lee 2 - Action Point +2"
     },
     {
         "Id": 132,
-        "Name": "\u5f3a\u6548\u83b7\u53d6",
+        "Name": "Empowered Extraction",
         "Type": 18,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u83b7\u53d6\u6570\u91cf+1",
+        "ShowDesc": "Quantity of Paint obtained in this round +1",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u91cc2-\u672c\u56de\u5408\u83b7\u53d6\u80fd\u91cf\u6548\u679c+1"
+        "Desc": "Lee 2 - Energy obtained +1 in this round"
     },
     {
         "Id": 133,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f973\u70b9\u884c\u52a8\u70b9\uff0c\u83b7\u5f977\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 3 Action Points and 7 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3]",
         "Icon": null,
-        "Desc": "\u91cc4-\u884c\u52a8\u70b9+3"
+        "Desc": "Lee 4 - Action Point +3"
     },
     {
         "Id": 134,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -1739,11 +1739,11 @@
         "ShowOnColors": null,
         "Params": "[1, 7]",
         "Icon": null,
-        "Desc": "\u91cc4-\u4e09\u8272\u6570\u636e+7"
+        "Desc": "Lee 4 - Three-Color Paints +7"
     },
     {
         "Id": 135,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -1752,11 +1752,11 @@
         "ShowOnColors": null,
         "Params": "[2, 7]",
         "Icon": null,
-        "Desc": "\u91cc4-\u4e09\u8272\u6570\u636e+7"
+        "Desc": "Lee 4 - Three-Color Paints +7"
     },
     {
         "Id": 136,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -1765,76 +1765,76 @@
         "ShowOnColors": null,
         "Params": "[3, 7]",
         "Icon": null,
-        "Desc": "\u91cc4-\u4e09\u8272\u6570\u636e+7"
+        "Desc": "Lee 4 - Three-Color Paints +7"
     },
     {
         "Id": 137,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 5 Action Points",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u91cc6-\u884c\u52a8\u70b9+5"
+        "Desc": "Lee 6 - Action Point +5"
     },
     {
         "Id": 138,
-        "Name": "\u80fd\u91cf\u6b21\u6570\u4e0d\u9650",
+        "Name": "Unlimited Energy",
         "Type": 19,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u6b21\u6570\u4e0d\u9650\u5236",
+        "ShowDesc": "No limit on the quantity of Paint obtained in this round",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1, 999]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u91cc6-\u672c\u56de\u5408\u83b7\u53d6\u80fd\u91cf\u6b21\u6570\u4e0d\u9650\u5236"
+        "Desc": "Lee 6 - No limit on the quantity of Energy obtained in this round"
     },
     {
         "Id": 139,
-        "Name": "\u80fd\u91cf\u6b21\u6570\u4e0d\u9650",
+        "Name": "Unlimited Energy",
         "Type": 19,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u6b21\u6570\u4e0d\u9650\u5236",
+        "ShowDesc": "No limit on the quantity of Paint obtained in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 999]",
         "Icon": null,
-        "Desc": "\u91cc6-\u672c\u56de\u5408\u83b7\u53d6\u80fd\u91cf\u6b21\u6570\u4e0d\u9650\u5236"
+        "Desc": "Lee 6 - No limit on the quantity of Energy obtained in this round"
     },
     {
         "Id": 140,
-        "Name": "\u80fd\u91cf\u6b21\u6570\u4e0d\u9650",
+        "Name": "Unlimited Energy",
         "Type": 19,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u6b21\u6570\u4e0d\u9650\u5236",
+        "ShowDesc": "No limit on the quantity of Paint obtained in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 999]",
         "Icon": null,
-        "Desc": "\u91cc6-\u672c\u56de\u5408\u83b7\u53d6\u80fd\u91cf\u6b21\u6570\u4e0d\u9650\u5236"
+        "Desc": "Lee 6 - No limit on the quantity of Energy obtained in this round"
     },
     {
         "Id": 141,
-        "Name": "\u84dd\u8272\u63d0\u5347",
+        "Name": "Blue Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u84dd)\u7b49\u7ea7+3\uff0c\u7ea2\u3001\u7eff\u5927\u5e08\u7b49\u7ea7-1",
+        "ShowDesc": "School Master (Blue) Level +3, Red & Green Level -1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 3]",
         "Icon": null,
-        "Desc": "\u827e\u62c92-\u4e0b\u56de\u5408\u84dd\u8272\u75c5\u6bd2\u7b49\u7ea7+3"
+        "Desc": "Ayla 2 - Blue Virus Level +3 in the next round"
     },
     {
         "Id": 142,
-        "Name": "\u7ea2\u8272\u4e0b\u964d",
+        "Name": "Red Reduction",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -1843,11 +1843,11 @@
         "ShowOnColors": null,
         "Params": "[1, -1]",
         "Icon": null,
-        "Desc": "\u827e\u62c92-\u4e0b\u56de\u5408\u7ea2\u8272\u75c5\u6bd2\u7b49\u7ea7-1"
+        "Desc": "Ayla 2 - Red Virus Level -1 in the next round"
     },
     {
         "Id": 143,
-        "Name": "\u7eff\u8272\u4e0b\u964d",
+        "Name": "Green Reduction",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -1856,11 +1856,11 @@
         "ShowOnColors": null,
         "Params": "[2, -1]",
         "Icon": null,
-        "Desc": "\u827e\u62c92-\u4e0b\u56de\u5408\u7eff\u8272\u75c5\u6bd2\u7b49\u7ea7-1"
+        "Desc": "Ayla 2 - Green Virus Level -1 in the next round"
     },
     {
         "Id": 144,
-        "Name": "\u65f6\u95f4\u8f74\u7ed3\u7b97",
+        "Name": "Timeline Tally",
         "Type": 24,
         "LifeType": 2,
         "ShowType": null,
@@ -1869,24 +1869,24 @@
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u827e\u62c94-\u65f6\u95f4\u8f74\u7ed3\u7b97\u6267\u884c2\u6b21"
+        "Desc": "Ayla 4 - Timeline tally executed 2 times"
     },
     {
         "Id": 145,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f977\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 7 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 7]",
         "Icon": null,
-        "Desc": "\u827e\u62c94-\u4e09\u8272\u6570\u636e+7"
+        "Desc": "Ayla 4 - Three-Color Paints +7"
     },
     {
         "Id": 146,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -1895,11 +1895,11 @@
         "ShowOnColors": null,
         "Params": "[2, 7]",
         "Icon": null,
-        "Desc": "\u827e\u62c94-\u4e09\u8272\u6570\u636e+7"
+        "Desc": "Ayla 4 - Three-Color Paints +7"
     },
     {
         "Id": 147,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -1908,76 +1908,76 @@
         "ShowOnColors": null,
         "Params": "[3, 7]",
         "Icon": null,
-        "Desc": "\u827e\u62c94-\u4e09\u8272\u6570\u636e+7"
+        "Desc": "Ayla 4 - Three-Color Paints +7"
     },
     {
         "Id": 148,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 5 Action Points",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u827e\u62c96-\u884c\u52a8\u70b9+5"
+        "Desc": "Ayla 6 - Action Point +5"
     },
     {
         "Id": 149,
-        "Name": "\u9ad8\u6548\u7814\u7a76",
+        "Name": "Efficient Research",
         "Type": 15,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u53ea\u97005\u70b9\u989c\u6599",
+        "ShowDesc": "Upgrading Exhibition only costs 5 Paint in this round",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[5]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u827e\u62c96-\u672c\u56de\u5408\uff0c\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80175\u4e2a\u7814\u7a76\u6570\u636e"
+        "Desc": "Ayla 6 - Increasing Research Level only costs 5 Research Data in this round"
     },
     {
         "Id": 150,
-        "Name": "\u5f3a\u6548\u83b7\u53d6",
+        "Name": "Empowered Extraction",
         "Type": 18,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u83b7\u53d6\u6570\u91cf+2",
+        "ShowDesc": "Quantity of Paint obtained in this round +2",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u5361\u52172-\u672c\u56de\u5408\u83b7\u53d6\u80fd\u91cf\u6548\u679c+2"
+        "Desc": "Karenina 2 - Energy obtained +2 in this round"
     },
     {
         "Id": 151,
-        "Name": "\u91cdroll",
+        "Name": "Reroll",
         "Type": 27,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u53ef\u91cdROLL2\u6b21",
+        "ShowDesc": "Can reroll 2 times when obtaining Paint",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u5361\u52172-\u83b7\u53d6\u80fd\u91cf\u65f6roll2\u6b21\u9ab0\u5b50"
+        "Desc": "Karenina 2 - Can roll 2 times when obtaining Energy"
     },
     {
         "Id": 152,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 5 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 5]",
         "Icon": null,
-        "Desc": "\u5361\u52174-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Karenina 4 - Three-Color Paints +5"
     },
     {
         "Id": 153,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -1986,11 +1986,11 @@
         "ShowOnColors": null,
         "Params": "[2, 5]",
         "Icon": null,
-        "Desc": "\u5361\u52174-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Karenina 4 - Three-Color Paints +5"
     },
     {
         "Id": 154,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -1999,128 +1999,128 @@
         "ShowOnColors": null,
         "Params": "[3, 5]",
         "Icon": null,
-        "Desc": "\u5361\u52174-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Karenina 4 - Three-Color Paints +5"
     },
     {
         "Id": 155,
-        "Name": "\u91cdroll",
+        "Name": "Reroll",
         "Type": 27,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u53d6\u80fd\u91cf\u65f6\uff0c\u53ef\u91cdROLL3\u6b21",
+        "ShowDesc": "Can reroll 3 times when obtaining Energy",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u5361\u52174-\u83b7\u53d6\u80fd\u91cf\u65f6roll3\u6b21\u9ab0\u5b50"
+        "Desc": "Karenina 4 - Can reroll 3 times when obtaining Energy"
     },
     {
         "Id": 156,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 5 Action Points",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u5361\u52176-\u884c\u52a8\u70b9+5"
+        "Desc": "Karenina 6 - Action Point +5"
     },
     {
         "Id": 157,
-        "Name": "\u591a\u6b21\u83b7\u5f97",
+        "Name": "Acquired Multiple Times",
         "Type": 19,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u6b21\u6570+2",
+        "ShowDesc": "Get Paint 2 more times in this round",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u5361\u52176-\u4e09\u8272\u5404\u53ef\u989d\u5916\u83b7\u53d62\u6b21\u80fd\u91cf"
+        "Desc": "Karenina 6 - Get bonus 2 Energy from each of the three colors"
     },
     {
         "Id": 158,
-        "Name": "\u591a\u6b21\u83b7\u5f97",
+        "Name": "Acquired Multiple Times",
         "Type": 19,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u6b21\u6570+2",
+        "ShowDesc": "Get Paint 2 more times in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, 2]",
         "Icon": null,
-        "Desc": "\u5361\u52176-\u4e09\u8272\u5404\u53ef\u989d\u5916\u83b7\u53d62\u6b21\u80fd\u91cf"
+        "Desc": "Karenina 6 - Get bonus 2 Energy from each of the three colors"
     },
     {
         "Id": 159,
-        "Name": "\u591a\u6b21\u83b7\u5f97",
+        "Name": "Acquired Multiple Times",
         "Type": 19,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u6b21\u6570+2",
+        "ShowDesc": "Get Paint 2 more times in this round",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 2]",
         "Icon": null,
-        "Desc": "\u5361\u52176-\u4e09\u8272\u5404\u53ef\u989d\u5916\u83b7\u53d62\u6b21\u80fd\u91cf"
+        "Desc": "Karenina 6 - Get bonus 2 Energy from each of the three colors"
     },
     {
         "Id": 160,
-        "Name": "\u80fd\u91cf\u9650\u5236",
+        "Name": "Energy Limit",
         "Type": 33,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u672c\u5173\u65e0\u6cd5\u83b7\u53d6\u989c\u6599",
+        "ShowDesc": "Unable to obtain Paint in this stage",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[0, 3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u8587\u62c9\u56f0\u96be-\u65e0\u6cd5\u83b7\u53d6\u80fd\u91cf"
+        "Desc": "Vera Hard - Unable to obtain Energy"
     },
     {
         "Id": 161,
-        "Name": "\u80fd\u91cf\u9650\u5236",
+        "Name": "Energy Limit",
         "Type": 36,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u6bcf\u6b21\u79fb\u52a8\u540e\uff0c\u53ef\u83b7\u5f97\u8be5\u533a\u57df\u540c\u8272\u989c\u65991\u70b9",
+        "ShowDesc": "Get 1 Paint of the same color in the area after each movement",
         "ShowOnPointTypes": "[1, 2, 3, 4]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[1, 999]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c9\u56f0\u96be-\u6bcf\u6b21\u79fb\u52a8\u90fd\u80fd\u83b7\u5f97\u5bf9\u5e94\u989c\u8272\u6570\u636e1\u70b9"
+        "Desc": "Vera Hard - Each movement yields 1 point of the corresponding color"
     },
     {
         "Id": 162,
-        "Name": "\u9ad8\u6548\u7814\u7a76",
+        "Name": "Efficient Research",
         "Type": 34,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u7684\u989c\u6599\u9700\u6c42\u91cf\uff0c\u6bcf\u56de\u5408-1\uff0c\u63d0\u5347\u540e\u91cd\u7f6e",
+        "ShowDesc": "-1 to the Paint cost to upgrade Exhibition in every round. Resets after upgrade.",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": null,
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u91cc\u56f0\u96be-\u6bcf\u56de\u5408\u7814\u7a76\u6240\u9700\u6570\u636e-1\uff0c\u7814\u7a76\u540e\u91cd\u7f6e\uff08\u6ce8\u610f\u68c0\u67e5\u91cc\u54e5\u6280\u80fd\u6df7\u5408\uff0c\u5e94\u8be5\u8981\u4ece6\u70b9\u5f80\u4e0b\u6263\uff09"
+        "Desc": "Lee Hard - Data required for Research -1 in each round; reset after Research (check if this is stacking with Lee's skill; the Data required should start from 6 and lower)"
     },
     {
         "Id": 163,
-        "Name": "\u7814\u7a76\u9650\u5236",
+        "Name": "Research Limit",
         "Type": 33,
         "LifeType": 1,
         "ShowType": null,
-        "ShowDesc": "\u65e0\u6cd5\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u7b49\u7ea7",
+        "ShowDesc": "Unable to increase Exhibition Level",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[0, 1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
-        "Desc": "\u827e\u62c9\u56f0\u96be-\u65e0\u6cd5\u6267\u884c\u7814\u7a76"
+        "Desc": "Ayla Hard - Unable to research"
     },
     {
         "Id": 164,
-        "Name": "\u6362\u4e00\u79cd\u65b9\u5f0f\u7814\u7a76",
+        "Name": "Use another research method",
         "Type": 35,
         "LifeType": 1,
         "ShowType": null,
@@ -2129,11 +2129,11 @@
         "ShowOnColors": null,
         "Params": "[6, 1]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u56f0\u96be-\u56de\u5408\u5f00\u59cb\u65f6\uff0c\u75c5\u6bd2\u7b49\u7ea7\u7b49\u4e8e6\uff0c\u63d0\u5347\u5bf9\u5e94\u989c\u8272\u7814\u7a76\u7b49\u7ea71"
+        "Desc": "Ayla Hard - At the start of the round, set Virus Level at 6 and increase the Research Level of the corresponding color by 1"
     },
     {
         "Id": 165,
-        "Name": "\u75db\u82e6\u7684\u7ed3\u7b97\u2160",
+        "Name": "Painful Tally I",
         "Type": 30,
         "LifeType": 1,
         "ShowType": null,
@@ -2142,11 +2142,11 @@
         "ShowOnColors": null,
         "Params": null,
         "Icon": null,
-        "Desc": "\u666e\u901a\u3001\u7206\u53d1\u5bfc\u81f4\u7684\u75c5\u6bd2\u7b49\u7ea7\u63d0\u5347\u6548\u679c+1"
+        "Desc": "Virus Level increase from Normal and Outbreak +1"
     },
     {
         "Id": 166,
-        "Name": "\u75db\u82e6\u7684\u7ed3\u7b97\u2161",
+        "Name": "Painful Tally II",
         "Type": 31,
         "LifeType": 1,
         "ShowType": null,
@@ -2155,63 +2155,63 @@
         "ShowOnColors": null,
         "Params": null,
         "Icon": null,
-        "Desc": "\u666e\u901a\u3001\u7206\u53d1\u3001\u5927\u6d41\u884c\u5bfc\u81f4\u7684\u75c5\u6bd2\u7b49\u7ea7\u63d0\u5347\u6548\u679c+1"
+        "Desc": "Virus Level increase from Normal, Outbreak and Pandemic +1"
     },
     {
         "Id": 167,
-        "Name": "\u4f5c\u6218\u63d0\u5347",
+        "Name": "Combat Boost I",
         "Type": 28,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u8bae\u8bba\u53ef\u989d\u5916\u964d\u4f4e\u5927\u5e081\u7ea7",
+        "ShowDesc": "Comment can further reduce the Master's level by 1 in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c9\u7b80\u53551-\u672c\u56de\u5408\u6cbb\u7597\u6548\u679c+1"
+        "Desc": "Vera Easy 1 - Healing effect +1 in this round"
     },
     {
         "Id": 168,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f971\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 1 Action Point",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1]",
         "Icon": null,
-        "Desc": "\u8587\u62c9\u7b80\u53551-\u884c\u52a8\u70b9+1"
+        "Desc": "Vera Easy 1 - Action Point +1"
     },
     {
         "Id": 169,
-        "Name": "\u77ac\u79fb\u2162",
+        "Name": "Teleport III",
         "Type": 1,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9",
+        "ShowDesc": "Movement costs no Action Points in this round",
         "ShowOnPointTypes": "[1, 2, 3, 4]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c9\u7b80\u53552-\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9"
+        "Desc": "Vera Easy 2 - Movement costs no Action Points in this round"
     },
     {
         "Id": 170,
-        "Name": "BOSS\u5f3a\u5316",
+        "Name": "Boss Enhancement",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6240\u6709\u5927\u5e08\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "All Masters' level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u8587\u62c9\u56f0\u96be1-\u4e0b\u56de\u5408BOSS\u7b49\u7ea7+1"
+        "Desc": "Vera Hard 1 - Boss Level +1 in the next round"
     },
     {
         "Id": 171,
-        "Name": "BOSS\u5f3a\u5316",
+        "Name": "Boss Enhancement",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2220,11 +2220,11 @@
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u8587\u62c9\u56f0\u96be1-\u4e0b\u56de\u5408BOSS\u7b49\u7ea7+1"
+        "Desc": "Vera Hard 1 - Boss Level +1 in the next round"
     },
     {
         "Id": 172,
-        "Name": "BOSS\u5f3a\u5316",
+        "Name": "Boss Enhancement",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2233,50 +2233,50 @@
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u8587\u62c9\u56f0\u96be1-\u4e0b\u56de\u5408BOSS\u7b49\u7ea7+1"
+        "Desc": "Vera Hard 1 - Boss Level +1 in the next round"
     },
     {
         "Id": 173,
-        "Name": "\u4f5c\u6218\u63d0\u5347\u2161",
+        "Name": "Combat Boost II",
         "Type": 28,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u8bae\u8bba\u53ef\u989d\u5916\u964d\u4f4e\u5927\u5e081\u7ea7",
+        "ShowDesc": "Comment can further reduce the Master's level by 1 in this round",
         "ShowOnPointTypes": "[2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c9\u56f0\u96be1-\u672c\u56de\u5408\u6cbb\u7597\u6548\u679c+2"
+        "Desc": "Vera Hard 1 - Healing effect +2 in this round"
     },
     {
         "Id": 174,
-        "Name": "\u77ac\u79fb\u2162",
+        "Name": "Teleport III",
         "Type": 1,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9",
+        "ShowDesc": "Movement costs no Action Points in this round",
         "ShowOnPointTypes": "[1, 2, 3, 4]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u8587\u62c9\u56f0\u96be2-\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9"
+        "Desc": "Vera Hard 2 - Movement costs no Action Points in this round"
     },
     {
         "Id": 175,
-        "Name": "BOSS\u5f3a\u5316",
+        "Name": "Boss Enhancement",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6240\u6709\u5927\u5e08\u7b49\u7ea7\u63d0\u53472",
+        "ShowDesc": "All Masters' level increases by 2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 2]",
         "Icon": null,
-        "Desc": "\u8587\u62c9\u56f0\u96be2-\u4e0b\u56de\u5408BOSS\u7b49\u7ea7+2"
+        "Desc": "Vera Hard 2 - Boss Level +2 in the next round"
     },
     {
         "Id": 176,
-        "Name": "BOSS\u5f3a\u5316",
+        "Name": "Boss Enhancement",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2285,11 +2285,11 @@
         "ShowOnColors": null,
         "Params": "[2, 2]",
         "Icon": null,
-        "Desc": "\u8587\u62c9\u56f0\u96be2-\u4e0b\u56de\u5408BOSS\u7b49\u7ea7+2"
+        "Desc": "Vera Hard 2 - Boss Level +2 in the next round"
     },
     {
         "Id": 177,
-        "Name": "BOSS\u5f3a\u5316",
+        "Name": "Boss Enhancement",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2298,50 +2298,50 @@
         "ShowOnColors": null,
         "Params": "[3, 2]",
         "Icon": null,
-        "Desc": "\u8587\u62c9\u56f0\u96be2-\u4e0b\u56de\u5408BOSS\u7b49\u7ea7+2"
+        "Desc": "Vera Hard 2 - Boss Level +2 in the next round"
     },
     {
         "Id": 178,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f972\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 2 Action Point",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u91cc\u7b80\u53551-\u884c\u52a8\u70b9+2"
+        "Desc": "Lee Easy 1 - Action Point +2"
     },
     {
         "Id": 179,
-        "Name": "\u5f3a\u6548\u83b7\u53d6",
+        "Name": "Empowered Extraction",
         "Type": 18,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u83b7\u53d6\u6570\u91cf+1",
+        "ShowDesc": "Quantity of Paint obtained in this round +1",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 1]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u91cc\u7b80\u53551-\u672c\u56de\u5408\u83b7\u53d6\u80fd\u91cf\u6548\u679c+1"
+        "Desc": "Lee Easy 1 - Energy obtained +1 in this round"
     },
     {
         "Id": 180,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9\uff0c5\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 5 Action Points and 5 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u91cc\u7b80\u53552-\u884c\u52a8\u70b9+5"
+        "Desc": "Lee Easy 2 - Action Point +5"
     },
     {
         "Id": 181,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2350,11 +2350,11 @@
         "ShowOnColors": null,
         "Params": "[1, 5]",
         "Icon": null,
-        "Desc": "\u91cc\u7b80\u53552-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Lee Easy 2 - Three-Color Paints +5"
     },
     {
         "Id": 182,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2363,11 +2363,11 @@
         "ShowOnColors": null,
         "Params": "[2, 5]",
         "Icon": null,
-        "Desc": "\u91cc\u7b80\u53552-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Lee Easy 2 - Three-Color Paints +5"
     },
     {
         "Id": 183,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2376,50 +2376,50 @@
         "ShowOnColors": null,
         "Params": "[3, 5]",
         "Icon": null,
-        "Desc": "\u91cc\u7b80\u53552-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Lee Easy 2 - Three-Color Paints +5"
     },
     {
         "Id": 184,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f972\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 2 Action Point",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u91cc\u56f0\u96be1-\u884c\u52a8\u70b9+2"
+        "Desc": "Lee Hard 1 - Action Point +2"
     },
     {
         "Id": 185,
-        "Name": "\u5f3a\u6548\u83b7\u53d6",
+        "Name": "Empowered Extraction",
         "Type": 18,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u83b7\u53d6\u6570\u91cf+2",
+        "ShowDesc": "Quantity of Paint obtained in this round +2",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u91cc\u56f0\u96be1-\u672c\u56de\u5408\u83b7\u53d6\u80fd\u91cf\u6548\u679c+2"
+        "Desc": "Lee Hard 1 - Energy obtained +2 in this round"
     },
     {
         "Id": 186,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9\uff0c5\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 5 Action Points and 5 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u91cc\u56f0\u96be2-\u884c\u52a8\u70b9+5"
+        "Desc": "Lee Hard 2 - Action Point +5"
     },
     {
         "Id": 187,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2428,11 +2428,11 @@
         "ShowOnColors": null,
         "Params": "[1, 5]",
         "Icon": null,
-        "Desc": "\u91cc\u56f0\u96be2-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Lee Hard 2 - Three-Color Paints +5"
     },
     {
         "Id": 188,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2441,11 +2441,11 @@
         "ShowOnColors": null,
         "Params": "[2, 5]",
         "Icon": null,
-        "Desc": "\u91cc\u56f0\u96be2-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Lee Hard 2 - Three-Color Paints +5"
     },
     {
         "Id": 189,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2454,24 +2454,24 @@
         "ShowOnColors": null,
         "Params": "[3, 5]",
         "Icon": null,
-        "Desc": "\u91cc\u56f0\u96be2-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Lee Hard 2 - Three-Color Paints +5"
     },
     {
         "Id": 190,
-        "Name": "\u84dd\u8272\u63d0\u5347",
+        "Name": "Blue Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u84dd)\u7b49\u7ea7+3\uff0c\u7ea2\u3001\u7eff\u5927\u5e08\u7b49\u7ea7-1",
+        "ShowDesc": "School Master (Blue) Level +3, Red & Green Level -1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u7b80\u53551-\u4e0b\u56de\u5408\u84dd\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Ayla Easy 1 - Blue Virus Level +1 in the next round"
     },
     {
         "Id": 191,
-        "Name": "\u7ea2\u8272\u4e0b\u964d",
+        "Name": "Red Reduction",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2480,11 +2480,11 @@
         "ShowOnColors": null,
         "Params": "[1, -1]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u7b80\u53551-\u4e0b\u56de\u5408\u7ea2\u8272\u75c5\u6bd2\u7b49\u7ea7-1"
+        "Desc": "Ayla Easy 1 - Red Virus Level -1 in the next round"
     },
     {
         "Id": 192,
-        "Name": "\u7eff\u8272\u4e0b\u964d",
+        "Name": "Green Reduction",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2493,50 +2493,50 @@
         "ShowOnColors": null,
         "Params": "[2, -1]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u7b80\u53551-\u4e0b\u56de\u5408\u7eff\u8272\u75c5\u6bd2\u7b49\u7ea7-1"
+        "Desc": "Ayla Easy 1 - Green Virus Level -1 in the next round"
     },
     {
         "Id": 193,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 5 Action Points",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u7b80\u53552-\u884c\u52a8\u70b9+5"
+        "Desc": "Ayla Easy 2 - Action Point +5"
     },
     {
         "Id": 194,
-        "Name": "\u9ad8\u6548\u7814\u7a76",
+        "Name": "Efficient Research",
         "Type": 15,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u53ea\u97005\u70b9\u989c\u6599",
+        "ShowDesc": "Upgrading Exhibition only costs 5 Paint in this round",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[5]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u827e\u62c9\u7b80\u53552-\u672c\u56de\u5408\uff0c\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80175\u4e2a\u7814\u7a76\u6570\u636e"
+        "Desc": "Ayla Easy 2 - Increasing Research Level only costs 5 Research Data in this round"
     },
     {
         "Id": 195,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f974\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 4 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 4]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u56f0\u96be1-\u4e09\u8272\u6570\u636e+4"
+        "Desc": "Ayla Hard 1 - Three-Color Paints +4"
     },
     {
         "Id": 196,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2545,11 +2545,11 @@
         "ShowOnColors": null,
         "Params": "[2, 4]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u56f0\u96be1-\u4e09\u8272\u6570\u636e+4"
+        "Desc": "Ayla Hard 1 - Three-Color Paints +4"
     },
     {
         "Id": 197,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2558,24 +2558,24 @@
         "ShowOnColors": null,
         "Params": "[3, 4]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u56f0\u96be1-\u4e09\u8272\u6570\u636e+4"
+        "Desc": "Ayla Hard 1 - Three-Color Paints +4"
     },
     {
         "Id": 198,
-        "Name": "\u84dd\u8272\u63d0\u5347",
+        "Name": "Blue Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6240\u6709\u5927\u5e08\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "All Masters' level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u56f0\u96be1-\u4e0b\u56de\u5408\u84dd\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Ayla Hard 1 - Blue Virus Level +1 in the next round"
     },
     {
         "Id": 199,
-        "Name": "\u7ea2\u8272\u63d0\u5347",
+        "Name": "Red Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2584,11 +2584,11 @@
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u56f0\u96be1-\u4e0b\u56de\u5408\u7ea2\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Ayla Hard 1 - Red Virus Level +1 in the next round"
     },
     {
         "Id": 200,
-        "Name": "\u7eff\u8272\u63d0\u5347",
+        "Name": "Green Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2597,102 +2597,102 @@
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u56f0\u96be1-\u4e0b\u56de\u5408\u7eff\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Ayla Hard 1 - Green Virus Level +1 in the next round"
     },
     {
         "Id": 201,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 5 Action Points",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u827e\u62c9\u56f0\u96be2-\u884c\u52a8\u70b9+5"
+        "Desc": "Ayla Hard 2 - Action Point +5"
     },
     {
         "Id": 202,
-        "Name": "\u9ad8\u6548\u7814\u7a76",
+        "Name": "Efficient Research",
         "Type": 15,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\uff0c\u63d0\u5347\u4f5c\u54c1\u5c55\u89c8\u53ea\u97005\u70b9\u989c\u6599",
+        "ShowDesc": "Upgrading Exhibition only costs 5 Paint in this round",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[5]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u827e\u62c9\u56f0\u96be2-\u672c\u56de\u5408\uff0c\u63d0\u5347\u7814\u7a76\u7b49\u7ea7\u73b0\u5728\u53ea\u9700\u8981\u6d88\u80175\u4e2a\u7814\u7a76\u6570\u636e"
+        "Desc": "Ayla Hard 2 - Increasing Research Level only costs 5 Research Data in this round"
     },
     {
         "Id": 203,
-        "Name": "\u5f3a\u6548\u83b7\u53d6",
+        "Name": "Empowered Extraction",
         "Type": 18,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u83b7\u53d6\u6570\u91cf+2",
+        "ShowDesc": "Quantity of Paint obtained in this round +2",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999, 2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u5361\u5217\u7b80\u53551-\u672c\u56de\u5408\u83b7\u53d6\u80fd\u91cf\u6548\u679c+2"
+        "Desc": "Karenina Easy 1 - Energy obtained +2 in this round"
     },
     {
         "Id": 204,
-        "Name": "\u91cdroll",
+        "Name": "Reroll",
         "Type": 27,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u53ef\u91cdROLL2\u6b21",
+        "ShowDesc": "Can reroll 2 times when obtaining Paint",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u5361\u5217\u7b80\u53551-\u6267\u884c\u7814\u7a76\u53efroll2\u6b21\u9ab0\u5b50"
+        "Desc": "Karenina Easy 1 - Can roll the die 2 times in research"
     },
     {
         "Id": 205,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 5 Action Points",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u5361\u5217\u7b80\u53552-\u884c\u52a8\u70b9+5"
+        "Desc": "Karenina Easy 2 - Action Point +5"
     },
     {
         "Id": 206,
-        "Name": "\u591a\u6b21\u83b7\u5f97",
+        "Name": "Acquired Multiple Times",
         "Type": 26,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u989c\u6599\u7684\u6570\u91cf\u4e00\u5b9a\u4e3a\u6700\u5927\u503c",
+        "ShowDesc": "Guaranteed to obtain the maximum quantity of Paint in this round",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[5, 5, 5, 5, 5, 5]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u5361\u5217\u7b80\u53552-\u672c\u56de\u5408\u901a\u8fc7\u80fd\u91cf\u70b9\u83b7\u53d6\u7684\u6570\u636e\u4e00\u5b9a\u4e3a\u6700\u5927\u503c"
+        "Desc": "Karenina Easy 2 - In this round, Data obtained from Energy Point is guaranteed to be maximum"
     },
     {
         "Id": 207,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f973\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 3 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 3]",
         "Icon": null,
-        "Desc": "\u5361\u5217\u56f0\u96be1-\u4e09\u8272\u6570\u636e+3"
+        "Desc": "Karenina Hard 1 - Three-Color Paints +3"
     },
     {
         "Id": 208,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2701,11 +2701,11 @@
         "ShowOnColors": null,
         "Params": "[2, 3]",
         "Icon": null,
-        "Desc": "\u5361\u5217\u56f0\u96be1-\u4e09\u8272\u6570\u636e+3"
+        "Desc": "Karenina Hard 1 - Three-Color Paints +3"
     },
     {
         "Id": 209,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2714,89 +2714,89 @@
         "ShowOnColors": null,
         "Params": "[3, 3]",
         "Icon": null,
-        "Desc": "\u5361\u5217\u56f0\u96be1-\u4e09\u8272\u6570\u636e+3"
+        "Desc": "Karenina Hard 1 - Three-Color Paints +3"
     },
     {
         "Id": 210,
-        "Name": "\u91cdroll",
+        "Name": "Reroll",
         "Type": 27,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u83b7\u53d6\u989c\u6599\u65f6\uff0c\u53ef\u91cdROLL2\u6b21",
+        "ShowDesc": "Can reroll 2 times when obtaining Paint",
         "ShowOnPointTypes": "[1]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[3]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u5361\u5217\u56f0\u96be1-\u6267\u884c\u7814\u7a76\u53efroll3\u6b21\u9ab0\u5b50"
+        "Desc": "Karenina Hard 1 - Can roll the die 3 times in research"
     },
     {
         "Id": 211,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9",
+        "ShowDesc": "Obtain 5 Action Points",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u5361\u5217\u56f0\u96be2-\u884c\u52a8\u70b9+5"
+        "Desc": "Karenina Hard 2 - Action Point +5"
     },
     {
         "Id": 212,
-        "Name": "\u591a\u6b21\u83b7\u5f97",
+        "Name": "Acquired Multiple Times",
         "Type": 26,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u83b7\u53d6\u7684\u989c\u6599\u4e00\u5b9a\u4e3a\u6700\u5927\u503c",
+        "ShowDesc": "Guaranteed to obtain the maximum Paint in this round",
         "ShowOnPointTypes": "[3]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[5, 5, 5, 5, 5, 5]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u5361\u5217\u56f0\u96be2-\u672c\u56de\u5408\u901a\u8fc7\u80fd\u91cf\u70b9\u83b7\u53d6\u7684\u6570\u636e\u4e00\u5b9a\u4e3a\u6700\u5927\u503c"
+        "Desc": "Karenina Hard 2 - In this round, Data obtained from Energy Point is guaranteed to be maximum"
     },
     {
         "Id": 213,
-        "Name": "\u7eff\u8272\u4e0b\u964d",
+        "Name": "Green Reduction",
         "Type": 11,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u7eff)\u4e0b\u964d1\u7ea7",
+        "ShowDesc": "School Master (Green)'s level decreases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b981\u7b80\u53551-\u7eff\u8272BOSS\u7b49\u7ea7-1"
+        "Desc": "Commandant 1 Easy 1 - Green Boss Level -1"
     },
     {
         "Id": 214,
-        "Name": "\u65e0\u9700\u884c\u52a8",
+        "Name": "No Action Needed",
         "Type": 2,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u5728\u7eff\u8272\u533a\u57df\u4e0a\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u529b",
+        "ShowDesc": "Movement in Green area costs no Action Points in this round",
         "ShowOnPointTypes": "[1, 2, 3]",
         "ShowOnColors": "[2]",
         "Params": "[2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u6307\u6325\u5b981\u7b80\u53551-\u672c\u56de\u5408\u5728\u7eff\u8272\u533a\u57df\u4e0a\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u529b"
+        "Desc": "Commandant 1 Easy 1 - Movement in Green area costs no Action Points in this round"
     },
     {
         "Id": 215,
-        "Name": "\u6570\u636e\u4e22\u5931",
+        "Name": "Data Loss",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u5931\u53bb5\u70b9\u7eff\u8272\u989c\u6599",
+        "ShowDesc": "Lose 5 Green Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b981\u7b80\u53552-\u7eff\u8272\u6570\u636e-5"
+        "Desc": "Commandant 1 Easy 2 - Green Data -5"
     },
     {
         "Id": 216,
-        "Name": "\u65f6\u95f4\u9759\u6b62",
+        "Name": "Time Stop",
         "Type": 21,
         "LifeType": 2,
         "ShowType": null,
@@ -2805,24 +2805,24 @@
         "ShowOnColors": null,
         "Params": null,
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b981\u7b80\u53552-\u672c\u56de\u5408\u7ed3\u7b97\u65f6\uff0c\u4e0d\u8d70\u65f6\u95f4\u8f74\u7ed3\u7b97\uff0c\u4f46\u8fdb\u5ea6\u7167\u5e38"
+        "Desc": "Commandant 1 Easy 2 - At the end of this round, the timeline is not tallied but the progress will continue to move forward normally"
     },
     {
         "Id": 217,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f973\u70b9\u884c\u52a8\u70b9\uff0c\u5931\u53bb1\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 3 Action Points but lost 1 Three-Color Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u7b80\u53551-\u884c\u52a8\u70b9+3"
+        "Desc": "Commandant 2 Easy 1 - Action Point +3"
     },
     {
         "Id": 218,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2831,11 +2831,11 @@
         "ShowOnColors": null,
         "Params": "[1, -1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u7b80\u53551-\u4e09\u8272\u6570\u636e-1"
+        "Desc": "Commandant 2 Easy 1 - Three-Color Paints -1"
     },
     {
         "Id": 219,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2844,11 +2844,11 @@
         "ShowOnColors": null,
         "Params": "[2, -1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u7b80\u53551-\u4e09\u8272\u6570\u636e-1"
+        "Desc": "Commandant 2 Easy 1 - Three-Color Paints -1"
     },
     {
         "Id": 220,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2857,24 +2857,24 @@
         "ShowOnColors": null,
         "Params": "[3, -1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u7b80\u53551-\u4e09\u8272\u6570\u636e-1"
+        "Desc": "Commandant 2 Easy 1 - Three-Color Paints -1"
     },
     {
         "Id": 221,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9\uff0c\u83b7\u5f975\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 5 Action Points and 5 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u7b80\u53552-\u884c\u52a8\u70b9+5"
+        "Desc": "Commandant 2 Easy 2 - Action Point +5"
     },
     {
         "Id": 222,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2883,11 +2883,11 @@
         "ShowOnColors": null,
         "Params": "[1, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u7b80\u53552-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 2 Easy 2 - Three-Color Paints +5"
     },
     {
         "Id": 223,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2896,11 +2896,11 @@
         "ShowOnColors": null,
         "Params": "[2, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u7b80\u53552-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 2 Easy 2 - Three-Color Paints +5"
     },
     {
         "Id": 224,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -2909,37 +2909,37 @@
         "ShowOnColors": null,
         "Params": "[3, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u7b80\u53552-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 2 Easy 2 - Three-Color Paints +5"
     },
     {
         "Id": 225,
-        "Name": "\u77ac\u79fb\u2162",
+        "Name": "Teleport III",
         "Type": 1,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9",
+        "ShowDesc": "Movement costs no Action Points in this round",
         "ShowOnPointTypes": "[1, 2, 3, 4]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53551-\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9"
+        "Desc": "Commandant 3 Easy 1 - Movement costs no Action Points in this round"
     },
     {
         "Id": 226,
-        "Name": "\u84dd\u8272\u63d0\u5347",
+        "Name": "Blue Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "School Master's level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53551-\u4e0b\u56de\u5408\u84dd\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Commandant 3 Easy 1 - Blue Virus Level +1 in the next round"
     },
     {
         "Id": 227,
-        "Name": "\u7ea2\u8272\u63d0\u5347",
+        "Name": "Red Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2948,11 +2948,11 @@
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53551-\u4e0b\u56de\u5408\u7ea2\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Commandant 3 Easy 1 - Red Virus Level +1 in the next round"
     },
     {
         "Id": 228,
-        "Name": "\u7eff\u8272\u63d0\u5347",
+        "Name": "Green Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -2961,24 +2961,24 @@
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53551-\u4e0b\u56de\u5408\u7eff\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Commandant 3 Easy 1 - Green Virus Level +1 in the next round"
     },
     {
         "Id": 229,
-        "Name": "\u84dd\u8272\u63d0\u5347",
+        "Name": "Blue Boost",
         "Type": 11,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08\u7b49\u7ea7\u4e0b\u964d2",
+        "ShowDesc": "School Master's level decreases by 2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, -2]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53552-\u84dd\u8272\u75c5\u6bd2\u7b49\u7ea7-2"
+        "Desc": "Commandant 3 Easy 2 - Blue Virus Level -2"
     },
     {
         "Id": 230,
-        "Name": "\u7ea2\u8272\u63d0\u5347",
+        "Name": "Red Boost",
         "Type": 11,
         "LifeType": 4,
         "ShowType": null,
@@ -2987,11 +2987,11 @@
         "ShowOnColors": null,
         "Params": "[1, -2]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53552-\u7ea2\u8272\u75c5\u6bd2\u7b49\u7ea7-2"
+        "Desc": "Commandant 3 Easy 2 - Red Virus Level -2"
     },
     {
         "Id": 231,
-        "Name": "\u7eff\u8272\u63d0\u5347",
+        "Name": "Green Boost",
         "Type": 11,
         "LifeType": 4,
         "ShowType": null,
@@ -3000,24 +3000,24 @@
         "ShowOnColors": null,
         "Params": "[2, -2]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53552-\u7eff\u8272\u75c5\u6bd2\u7b49\u7ea7-2"
+        "Desc": "Commandant 3 Easy 2 - Green Virus Level -2"
     },
     {
         "Id": 232,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 5 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53552-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 3 Easy 2 - Three-Color Paints +5"
     },
     {
         "Id": 233,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3026,11 +3026,11 @@
         "ShowOnColors": null,
         "Params": "[2, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53552-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 3 Easy 2 - Three-Color Paints +5"
     },
     {
         "Id": 234,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3039,50 +3039,50 @@
         "ShowOnColors": null,
         "Params": "[3, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u7b80\u53552-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 3 Easy 2 - Three-Color Paints +5"
     },
     {
         "Id": 235,
-        "Name": "\u7eff\u8272\u4e0b\u964d",
+        "Name": "Green Reduction",
         "Type": 11,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08(\u7eff)\u4e0b\u964d1\u7ea7",
+        "ShowDesc": "School Master (Green)'s level decreases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b981\u56f0\u96be1-\u7eff\u8272BOSS\u7b49\u7ea7-1"
+        "Desc": "Commandant 1 Hard 1 - Green Boss Level -1"
     },
     {
         "Id": 236,
-        "Name": "\u65e0\u9700\u884c\u52a8",
+        "Name": "No Action Needed",
         "Type": 2,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u5728\u7eff\u8272\u533a\u57df\u4e0a\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u529b",
+        "ShowDesc": "Movement in Green area costs no Action Points in this round",
         "ShowOnPointTypes": "[1, 2]",
         "ShowOnColors": "[2]",
         "Params": "[2]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u6307\u6325\u5b981\u56f0\u96be1-\u672c\u56de\u5408\u5728\u7eff\u8272\u533a\u57df\u4e0a\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u529b"
+        "Desc": "Commandant 1 Hard 1 - Movement in Green area costs no Action Points in this round"
     },
     {
         "Id": 237,
-        "Name": "\u6570\u636e\u4e22\u5931",
+        "Name": "Data Loss",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u5931\u53bb5\u70b9\u7eff\u8272\u989c\u6599",
+        "ShowDesc": "Lose 5 Green Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[2, -5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b981\u56f0\u96be2-\u7eff\u8272\u6570\u636e-5"
+        "Desc": "Commandant 1 Hard 2 - Green Data -5"
     },
     {
         "Id": 238,
-        "Name": "\u65f6\u95f4\u9759\u6b62",
+        "Name": "Time Stop",
         "Type": 21,
         "LifeType": 2,
         "ShowType": null,
@@ -3091,24 +3091,24 @@
         "ShowOnColors": null,
         "Params": null,
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b981\u56f0\u96be2-\u672c\u56de\u5408\u7ed3\u7b97\u65f6\uff0c\u4e0d\u8d70\u65f6\u95f4\u8f74\u7ed3\u7b97\uff0c\u4f46\u8fdb\u5ea6\u7167\u5e38"
+        "Desc": "Commandant 1 Hard 2 - At the end of this round, the timeline is not tallied but the progress will continue to move forward normally"
     },
     {
         "Id": 239,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f973\u70b9\u884c\u52a8\u70b9\uff0c\u5931\u53bb1\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 3 Action Points but lost 1 Three-Color Paint",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be1-\u884c\u52a8\u70b9+3"
+        "Desc": "Commandant 2 Hard 1 - Action Points +3"
     },
     {
         "Id": 240,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3117,11 +3117,11 @@
         "ShowOnColors": null,
         "Params": "[1, -1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be1-\u4e09\u8272\u6570\u636e-1"
+        "Desc": "Commandant 2 Hard 1 - Three-Color Paints -1"
     },
     {
         "Id": 241,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3130,11 +3130,11 @@
         "ShowOnColors": null,
         "Params": "[2, -1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be1-\u4e09\u8272\u6570\u636e-1"
+        "Desc": "Commandant 2 Hard 1 - Three-Color Paints -1"
     },
     {
         "Id": 242,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3143,24 +3143,24 @@
         "ShowOnColors": null,
         "Params": "[3, -1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be1-\u4e09\u8272\u6570\u636e-1"
+        "Desc": "Commandant 2 Hard 1 - Three-Color Paints -1"
     },
     {
         "Id": 243,
-        "Name": "\u884c\u52a8\u529b",
+        "Name": "Action Points",
         "Type": 14,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u884c\u52a8\u70b9\uff0c\u83b7\u5f975\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 5 Action Points and 5 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be2-\u884c\u52a8\u70b9+5"
+        "Desc": "Commandant 2 Hard 2 - Action Points +5"
     },
     {
         "Id": 244,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3169,11 +3169,11 @@
         "ShowOnColors": null,
         "Params": "[1, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be2-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 2 Hard 2 - Three-Color Paints +5"
     },
     {
         "Id": 245,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3182,11 +3182,11 @@
         "ShowOnColors": null,
         "Params": "[2, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be2-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 2 Hard 2 - Three-Color Paints +5"
     },
     {
         "Id": 246,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3195,37 +3195,37 @@
         "ShowOnColors": null,
         "Params": "[3, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be2-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 2 Hard 2 - Three-Color Paints +5"
     },
     {
         "Id": 247,
-        "Name": "\u77ac\u79fb\u2162",
+        "Name": "Teleport III",
         "Type": 1,
         "LifeType": 2,
         "ShowType": null,
-        "ShowDesc": "\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9",
+        "ShowDesc": "Movement costs no Action Points in this round",
         "ShowOnPointTypes": "[1, 2]",
         "ShowOnColors": "[1, 2, 3]",
         "Params": "[999]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u6307\u6325\u5b983\u56f0\u96be1-\u672c\u56de\u5408\u79fb\u52a8\u4e0d\u6d88\u8017\u884c\u52a8\u70b9"
+        "Desc": "Commandant 3 Hard 1 - Movement costs no Action Points in this round"
     },
     {
         "Id": 248,
-        "Name": "\u84dd\u8272\u63d0\u5347",
+        "Name": "Blue Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08\u7b49\u7ea7\u63d0\u53471",
+        "ShowDesc": "School Master's level increases by 1",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u56f0\u96be1-\u4e0b\u56de\u5408\u84dd\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Commandant 3 Hard 1 - Blue Virus Level +1 in the next round"
     },
     {
         "Id": 249,
-        "Name": "\u7ea2\u8272\u63d0\u5347",
+        "Name": "Red Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -3234,11 +3234,11 @@
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u56f0\u96be1-\u4e0b\u56de\u5408\u7ea2\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Commandant 3 Hard 1 - Red Virus Level +1 in the next round"
     },
     {
         "Id": 250,
-        "Name": "\u7eff\u8272\u63d0\u5347",
+        "Name": "Green Boost",
         "Type": 11,
         "LifeType": 6,
         "ShowType": null,
@@ -3247,24 +3247,24 @@
         "ShowOnColors": null,
         "Params": "[2, 1]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u56f0\u96be1-\u4e0b\u56de\u5408\u7eff\u8272\u75c5\u6bd2\u7b49\u7ea7+1"
+        "Desc": "Commandant 3 Hard 1 - Green Virus Level +1 in the next round"
     },
     {
         "Id": 251,
-        "Name": "\u84dd\u8272\u63d0\u5347",
+        "Name": "Blue Boost",
         "Type": 11,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u6d3e\u7cfb\u5927\u5e08\u7b49\u7ea7\u4e0b\u964d2",
+        "ShowDesc": "School Master's level decreases by 2",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[3, -2]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u56f0\u96be2-\u84dd\u8272\u75c5\u6bd2\u7b49\u7ea7-2"
+        "Desc": "Commandant 3 Hard 2 - Blue Virus Level -2"
     },
     {
         "Id": 252,
-        "Name": "\u7ea2\u8272\u63d0\u5347",
+        "Name": "Red Boost",
         "Type": 11,
         "LifeType": 4,
         "ShowType": null,
@@ -3273,11 +3273,11 @@
         "ShowOnColors": null,
         "Params": "[1, -2]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u56f0\u96be2-\u7ea2\u8272\u75c5\u6bd2\u7b49\u7ea7-2"
+        "Desc": "Commandant 3 Hard 2 - Red Virus Level -2"
     },
     {
         "Id": 253,
-        "Name": "\u7eff\u8272\u63d0\u5347",
+        "Name": "Green Boost",
         "Type": 11,
         "LifeType": 4,
         "ShowType": null,
@@ -3286,24 +3286,24 @@
         "ShowOnColors": null,
         "Params": "[2, -2]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b983\u56f0\u96be2-\u7eff\u8272\u75c5\u6bd2\u7b49\u7ea7-2"
+        "Desc": "Commandant 3 Hard 2 - Green Virus Level -2"
     },
     {
         "Id": 254,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": 1.0,
-        "ShowDesc": "\u83b7\u5f975\u70b9\u4e09\u8272\u989c\u6599",
+        "ShowDesc": "Obtain 5 Three-Color Paints",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[1, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be2-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 2 Hard 2 - Three-Color Paints +5"
     },
     {
         "Id": 255,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3312,11 +3312,11 @@
         "ShowOnColors": null,
         "Params": "[2, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be2-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 2 Hard 2 - Three-Color Paints +5"
     },
     {
         "Id": 256,
-        "Name": "\u6570\u636e\u83b7\u5f97",
+        "Name": "Data Acquired",
         "Type": 10,
         "LifeType": 4,
         "ShowType": null,
@@ -3325,11 +3325,11 @@
         "ShowOnColors": null,
         "Params": "[3, 5]",
         "Icon": null,
-        "Desc": "\u6307\u6325\u5b982\u56f0\u96be2-\u4e09\u8272\u6570\u636e+5"
+        "Desc": "Commandant 2 Hard 2 - Three-Color Paints +5"
     },
     {
         "Id": 257,
-        "Name": "\u7ea2\u8272\u884c\u52a8\u7981\u6b62",
+        "Name": "Red Ban",
         "Type": 20,
         "LifeType": 1,
         "ShowType": null,
@@ -3338,11 +3338,11 @@
         "ShowOnColors": null,
         "Params": "[1, 1]",
         "Icon": null,
-        "Desc": "\u65b0\u624b\u4e13\u7528\uff0c\u7981\u6b62\u7ea2\u8272\u533a\u5757\u884c\u52a8"
+        "Desc": "For beginner only: movement in Red areas is forbidden"
     },
     {
         "Id": 258,
-        "Name": "\u84dd\u8272\u884c\u52a8\u7981\u6b62",
+        "Name": "Blue Ban",
         "Type": 20,
         "LifeType": 1,
         "ShowType": null,
@@ -3351,63 +3351,63 @@
         "ShowOnColors": null,
         "Params": "[3, 1]",
         "Icon": null,
-        "Desc": "\u65b0\u624b\u4e13\u7528\uff0c\u7981\u6b62\u84dd\u8272\u533a\u5757\u884c\u52a8"
+        "Desc": "For beginner only: movement in Blue areas is forbidden"
     },
     {
         "Id": 259,
-        "Name": "\u4e2d\u592e\u533a\u57df\u7ea2\u5956\u52b1",
+        "Name": "Central Area Reward - Red",
         "Type": 23,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u7ecf\u8fc7\u6216\u7ad9\u7acb\u5728\u6838\u5fc3\u533a\u57df\u65f6\uff0c\u83b7\u5f977\u70b9\u7ea2\u8272\u989c\u6599",
+        "ShowDesc": "Get 7 Red Paint when passing or staying in the Core area",
         "ShowOnPointTypes": "[4]",
         "ShowOnColors": "[1]",
         "Params": "[1, 7]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u4e2d\u592e\u533a\u57df\u7ea2\u5956\u52b1"
+        "Desc": "Central Area Reward - Red"
     },
     {
         "Id": 260,
-        "Name": "\u4e2d\u592e\u533a\u57df\u7eff\u5956\u52b1",
+        "Name": "Central Area Reward - Green",
         "Type": 23,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u7ecf\u8fc7\u6216\u7ad9\u7acb\u5728\u6838\u5fc3\u533a\u57df\u65f6\uff0c\u83b7\u5f977\u70b9\u7eff\u8272\u989c\u6599",
+        "ShowDesc": "Get 7 Green Paint when passing or staying in the Core area",
         "ShowOnPointTypes": "[4]",
         "ShowOnColors": "[2]",
         "Params": "[2, 7]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u4e2d\u592e\u533a\u57df\u84dd\u5956\u52b1"
+        "Desc": "Central Area Reward - Blue"
     },
     {
         "Id": 261,
-        "Name": "\u4e2d\u592e\u533a\u57df\u84dd\u5956\u52b1",
+        "Name": "Central Area Reward - Blue",
         "Type": 23,
         "LifeType": 2,
         "ShowType": 1.0,
-        "ShowDesc": "\u7ecf\u8fc7\u6216\u7ad9\u7acb\u5728\u6838\u5fc3\u533a\u57df\u65f6\uff0c\u83b7\u5f977\u70b9\u84dd\u8272\u989c\u6599",
+        "ShowDesc": "Get 7 Blue Paint when passing or staying in the Core area",
         "ShowOnPointTypes": "[4]",
         "ShowOnColors": "[3]",
         "Params": "[3, 7]",
         "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
-        "Desc": "\u4e2d\u592e\u533a\u57df\u7eff\u5956\u52b1"
+        "Desc": "Central Area Reward - Green"
     },
     {
         "Id": 262,
-        "Name": "\u65b0\u624b\u7b2c\u4e00\u5173",
+        "Name": "Novice Stage 1",
         "Type": 26,
         "LifeType": 3,
         "ShowType": null,
-        "ShowDesc": "\u65b0\u624b\u7b2c\u4e00\u5173\u7b2c\u4e8c\u56de\u5408\u4e13\u7528\u6548\u679c\uff0croll\u70b9\u9501\u5b9a\u4e3a5",
+        "ShowDesc": "For Novice Stage 1 Round 2 only: Guaranteed to roll 5",
         "ShowOnPointTypes": null,
         "ShowOnColors": null,
         "Params": "[5, 5, 5, 5, 5, 5]",
         "Icon": null,
-        "Desc": "\u65b0\u624b\u7b2c\u4e00\u5173\u7b2c\u4e8c\u56de\u5408\u4e13\u7528\u6548\u679c\uff0croll\u70b9\u9501\u5b9a\u4e3a5\uff0c\u7b2c\u4e00\u56de\u5408\u6302\uff0c\u4e0b\u56de\u5408\u6301\u7eed"
+        "Desc": "For Novice Stage 1 Round 2 only: Guaranteed to roll 5. Continue in the next round if not used in the first round"
     },
     {
         "Id": 263,
-        "Name": "\u65b0\u624b\u7b2c\u4e00\u5173\u5173\u5361",
+        "Name": "Novice Stage 1",
         "Type": 37,
         "LifeType": 1,
         "ShowType": null,
@@ -3416,11 +3416,11 @@
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u5173\u5361\u6548\u679c\uff0c\u5e38\u89c4\u7206\u53d1\u4e0d\u8fdb\u884c\u968f\u673a\uff0c\u9501\u5b9a\u63d0\u5347\u7eff\u8272BOSS\u7684\u7b49\u7ea7"
+        "Desc": "Stage effect. Regular Outbreak is not randomized but is guaranteed to increase the level of Green Boss"
     },
     {
         "Id": 264,
-        "Name": "\u65b0\u624b\u7b2c\u4e8c\u5173\u5173\u5361",
+        "Name": "Novice Stage 2",
         "Type": 37,
         "LifeType": 2,
         "ShowType": null,
@@ -3429,6 +3429,6 @@
         "ShowOnColors": null,
         "Params": "[2]",
         "Icon": null,
-        "Desc": "\u4e00\u56de\u5408\u6709\u6548\u7684\u5173\u5361\u6548\u679c\uff0c\u7528\u4e8e\u6307\u5b9a\u63d0\u5347\u7eff\u8272boss\u7b49\u7ea7"
+        "Desc": "An stage effect that lasts only 1 round and increases the level of Green Boss"
     }
 ]

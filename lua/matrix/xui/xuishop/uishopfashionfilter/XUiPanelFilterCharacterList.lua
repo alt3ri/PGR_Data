@@ -15,12 +15,12 @@ function XUiPanelFilterCharacterList:OnStart(defaultSelectCharacterId)
     
 end
 
-function XUiPanelFilterCharacterList:RefreshList(characterIds)
+function XUiPanelFilterCharacterList:RefreshList(characterData)
     --- 刷新时，如果之前有选择，新的列表要判断还有没有，有就照常选中，没有需要清空角色选择
     local hasOriginSelectedCharacter = false
-    if not XTool.IsTableEmpty(characterIds) then
-        for i, v in pairs(characterIds) do
-            if self._SelectedCharacterId == v then
+    if not XTool.IsTableEmpty(characterData) then
+        for i, v in pairs(characterData) do
+            if self._SelectedCharacterId == v.characterId then
                 hasOriginSelectedCharacter = true
                 break
             end
@@ -32,7 +32,7 @@ function XUiPanelFilterCharacterList:RefreshList(characterIds)
     end
     
     self.DynamicTable:RecycleAllTableGrid()
-    self.DynamicTable:SetDataSource(characterIds)
+    self.DynamicTable:SetDataSource(characterData)
     -- 异步刷新, 会出现格子显隐状态错误的问题, 但是具体原因还没查明
     --self.DynamicTable:ReloadDataASync()
     self.DynamicTable:ReloadDataSync()
@@ -56,7 +56,7 @@ function XUiPanelFilterCharacterList:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_INIT then
         grid:Close()
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-        grid:RefreshData(self.DynamicTable.DataSource[index])
+        grid:RefreshData(self.DynamicTable.DataSource[index].characterId)
         grid:RefreshSelectedState()
         grid:Open()
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then

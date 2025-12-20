@@ -343,6 +343,19 @@ function XUiFightCommonInterBtnList:SetCommonInterBtn(...)
     if XTool.UObjIsNil(self.GameObject) then
         XLog.Error("UiFight未显示，行为节点-设置列表型交互按钮显示UI失败")
     end
+
+    local fight = CS.XFight.Instance
+    if not fight then
+        return
+    end
+
+    local maxKey = CS.System.Convert.ToInt32(CS.XNpcOperationClickKey.Max)
+    if data[2] > maxKey then
+        XLog.Error(string.format("按键Key不能超过上限%d，当前设置的Id：%d、Key：%d", maxKey, id, data[2]))
+        return
+    end
+
+    fight.InputControl:SetOpState(data[2], true)
 end
 
 function XUiFightCommonInterBtnList:SetFollowNpc(...)

@@ -24,6 +24,16 @@ function XUiPanelRecommendBase:SetUi(ui)
     XUiHelper.InitUiClass(self, ui)
 end
 
+function XUiPanelRecommendBase:AddEditableTextComponent(btn, index, package)
+    local recommendItem = self["RecommendItem" .. index]
+    if not recommendItem then
+        local XUiPanelRecommendItem = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendItem/XUiPanelRecommendItem")
+        recommendItem = XUiPanelRecommendItem.New(btn)
+        self["RecommendItem" .. index] = recommendItem
+    end
+    recommendItem:Update(package)
+end
+
 function XUiPanelRecommendBase:SetData(data, skipFunc, buyFinished)
     ---@type XPurchaseRecommend
     self.Recommend = data
@@ -40,6 +50,9 @@ function XUiPanelRecommendBase:SetData(data, skipFunc, buyFinished)
             local package = self.Recommend:GetPurchasePackage()[index]
             local btnName = "BtnGiftBuy" .. index
             local btn = self[btnName]
+            
+            self:AddEditableTextComponent(btn, index, package)
+            
             if not XTool.UObjIsNil(btn) then
                 if package == nil then
                     -- 页签显示时间内但找不到礼包数据则不显示
@@ -123,19 +136,19 @@ function XUiPanelRecommendBase:ShowBuyBtnSoldOutOrOwned(btn, isSoldOut)
         return
     end
 
-    local txtSoldOut = uiObject:GetObject("TxtSoldOut")
+    local txtSoldOut = uiObject:GetObject("TxtSoldOut", false)
     if txtSoldOut then
         txtSoldOut.gameObject:SetActiveEx(isSoldOut)
     end
-    local rImgSoldOut = uiObject:GetObject("RImgSoldOut")
+    local rImgSoldOut = uiObject:GetObject("RImgSoldOut", false)
     if rImgSoldOut then
         rImgSoldOut.gameObject:SetActiveEx(isSoldOut)
     end
-    local txtOwned = uiObject:GetObject("TxtOwned")
+    local txtOwned = uiObject:GetObject("TxtOwned", false)
     if txtOwned then
         txtOwned.gameObject:SetActiveEx(not isSoldOut)
     end
-    local rImgOwned = uiObject:GetObject("RImgOwned")
+    local rImgOwned = uiObject:GetObject("RImgOwned", false)
     if rImgOwned then
         rImgOwned.gameObject:SetActiveEx(not isSoldOut)
     end

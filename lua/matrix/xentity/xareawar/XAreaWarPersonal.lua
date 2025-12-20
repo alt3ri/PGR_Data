@@ -158,7 +158,7 @@ function XAreaWarPersonal:GetExp()
 end
 
 function XAreaWarPersonal:GetSkipNum()
-    return XAreaWarConfigs.GetGrowSkilNum(self:GetLevel())
+    return XMVCA.XAreaWar:GetConfig():GetConfigItemRoomLevel(XMVCA.XAreaWar:GetItemRoom():GetLv()).SkipNum
 end
 
 function XAreaWarPersonal:GetAddSkipNum()

@@ -167,6 +167,13 @@ function XSgContainerFurnitureData:IsEmpty()
     return XTool.IsTableEmpty(self._PhotoDict)
 end
 
+function XSgContainerFurnitureData:GetFurnitureCount()
+    if XTool.IsTableEmpty(self._FurnitureDict) then
+        return 0
+    end
+    return XTool.GetTableCount(self._FurnitureDict)
+end
+
 ---@return XSgContainerFurnitureData
 function XSgContainerFurnitureData:Clone()
     ---@type XSgContainerFurnitureData

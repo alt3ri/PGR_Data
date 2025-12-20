@@ -38,6 +38,10 @@ function XRedPointConditionMainTask.Check()
         return true
     end
 
+    -- 勤务任务
+    if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_TASK_CANLIVER) then
+        return true
+    end
 
     return false
 end

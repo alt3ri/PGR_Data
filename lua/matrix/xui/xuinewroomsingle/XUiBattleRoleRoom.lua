@@ -114,7 +114,7 @@ function XUiBattleRoleRoom:OnStart(stageId, team, proxy, challengeCount, isReadA
             -- 速通关卡使用不同的队伍
             local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
             if speedrunStageId then
-                team = self.TeamManager.GetXTeamByStageId(speedrunStageId)
+                team = self.TeamManager.GetXTeamSpeedrun(stageId)
             else
                 team = self.TeamManager.GetMainLineTeam()
             end
@@ -482,7 +482,7 @@ function XUiBattleRoleRoom:OnBtnTeamPrefabClicked()
             end)
         end
 
-    end, self.Team)
+    end, self.Team, nil, self.Proxy:IsTeamPrefabHideBtnCover())
 end
 
 function XUiBattleRoleRoom:OnBeginBattleAutoRemove()

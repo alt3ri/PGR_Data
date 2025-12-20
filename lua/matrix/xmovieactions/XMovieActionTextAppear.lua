@@ -7,7 +7,7 @@ function XMovieActionTextAppear:OnInit(actionData)
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     
     self.TextId = params[1]
-    self.TextContent = XDataCenter.MovieManager.ReplacePlayerName(params[2])
+    self.TextContent = XMVCA.XMovie:FormatContent(params[2])
     self.PosX = paramToNumber(params[3])
     self.PosY = paramToNumber(params[4])
     self.Rotation = paramToNumber(params[5])

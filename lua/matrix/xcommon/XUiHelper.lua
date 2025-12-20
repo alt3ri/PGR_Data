@@ -206,6 +206,60 @@ function XUiHelper.TryAddComponent(gameObject, type)
     return component
 end
 
+-- ==========================================================
+-- 抽象方法（仅负责路径层级结构匹配，不处理单段名称）
+-- root: Transform
+-- pathStr: "a/b/c"
+-- 返回：找到的 Transform 或 nil
+-- ==========================================================
+function XUiHelper.FindTransformByStructure(root, pathStr)
+    if not root or XTool.UObjIsNil(root) then return nil end
+    if not pathStr or pathStr == "" then return nil end
+
+    local parts = string.Split(pathStr, "/")
+    local depth = #parts
+
+    -- 单段情况不属于“结构匹配”，业务层处理
+    if depth <= 1 then
+        return nil
+    end
+
+    local lastName = parts[depth]
+
+    -- 找所有名字匹配最后一段的 transform
+    local candidates = root:GetComponentsInChildren(typeof(CS.UnityEngine.Transform), true)
+    local matched = {}
+
+    for i = 0, candidates.Length - 1 do
+        local t = candidates[i]
+        if t.name == lastName then
+            table.insert(matched, t)
+        end
+    end
+
+    if #matched == 0 then return nil end
+
+    -- 从下往上验证父结构 a/b/c
+    for _, node in ipairs(matched) do
+        local cur = node
+        local ok = true
+
+        for idx = depth - 1, 1, -1 do
+            cur = cur.parent
+            if not cur or XTool.UObjIsNil(cur) or cur.name ~= parts[idx] then
+                ok = false
+                break
+            end
+        end
+
+        if ok then
+            return node
+        end
+    end
+
+    return nil
+end
+
 ---@param rootUi XLuaUi
 function XUiHelper.SetQualityIcon(rootUi, imgQuality, quality)
     local spriteName = XArrangeConfigs.GeQualityPath(quality)
@@ -767,7 +821,11 @@ function XUiHelper.GetTime(second, timeFormatType)
         end
         if days >= 1 or weeks >= 1 then
             local dayOfWeek = 7
-            return stringFormat("%d%s", days + weeks * dayOfWeek, STR_DAY)
+            if XOverseaManager.IsENRegion() then
+                return stringFormat("%d %s", days + weeks * dayOfWeek, STR_DAY)
+            else
+                return stringFormat("%d%s", days + weeks * dayOfWeek, STR_DAY)
+            end
         end
         return stringFormat("%02d:%02d:%02d", hours, minutes, seconds)
     end
@@ -910,18 +968,25 @@ function XUiHelper.GetBagTimeLimitTimeStrAndBg(second)
     local days = mathFloor((second % W) / D)
     local hours = mathFloor((second % D) / H)
     local minutes = mathFloor((second % H) / S)
+    
+    local format
+    if XOverseaManager.IsENRegion() then
+        format = "%d %s"
+    else
+        format = "%d%s"
+    end
     if weeks >= 1 then
-        timeStr = stringFormat("%d%s", weeks, STR_WEEK)
+        timeStr = stringFormat(format, weeks, STR_WEEK)
         bgPath = XUiHelper.TagBgPath.Green
     elseif days >= 1 then
-        timeStr = stringFormat("%d%s", days, STR_DAY)
+        timeStr = stringFormat(format, days, STR_DAY)
         bgPath = XUiHelper.TagBgPath.Yellow
     elseif hours >= 1 then
-        timeStr = stringFormat("%d%s", hours, STR_HOUR)
+        timeStr = stringFormat(format, hours, STR_HOUR)
         bgPath = XUiHelper.TagBgPath.Red
     else
         local notZeroMin = minutes > 0 and minutes or 1
-        timeStr = stringFormat("%d%s", notZeroMin, STR_MINUTE)
+        timeStr = stringFormat(format, notZeroMin, STR_MINUTE)
         bgPath = XUiHelper.TagBgPath.Red
     end
 
@@ -2109,6 +2174,15 @@ function XUiHelper.StopClockTimeTempFun(Ui, timer)
     XScheduleManager.UnSchedule(timer)
     XEventManager.RemoveEventListener(XEventId.EVENT_ACTION_HIDE_UI, TempClockFun)
     TimeStopTrans = nil
+end
+
+function XUiHelper.SetSceneAnimHandler(Ui)
+    local sceneTrans = Ui.UiSceneInfo.Transform
+    local animEanbleLoop = sceneTrans:Find("Animations/AnimEnableLoop")
+    if not animEanbleLoop then
+        return
+    end
+    animEanbleLoop:PlayTimelineAnimation()
 end
 
 -- 设置场景类型

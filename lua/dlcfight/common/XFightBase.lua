@@ -24,7 +24,7 @@ end
 function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcDamage then
         self:OnNpcDamageEvent(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.MagicId, eventArgs.Kind,
-                eventArgs.PhysicalDamage, eventArgs.ElementDamage, eventArgs.ElementType, eventArgs.RealDamage, eventArgs.IsCritical)
+                eventArgs.PhysicalDamage, eventArgs.ElementDamage, eventArgs.ElementType, eventArgs.RealDamage, eventArgs.IsCritical, eventArgs.SkillId, eventArgs.MagicTags)
     end
     if eventType == EWorldEvent.NpcCastActionBefore then
         self:OnNpcCastActionBeforeEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
@@ -35,8 +35,17 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcExitAction then
         self:OnNpcExitActionEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
     end
+    if eventType == EWorldEvent.NpcGoingDie then
+        self:OnNpcGoingDieEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.KillerUUID, eventArgs.MagicId, eventArgs.DeathType, eventArgs.DeathId, eventArgs.RebootType, eventArgs.RebootId)
+    end
+    if eventType == EWorldEvent.NpcDying then
+        self:OnNpcDyingEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.KillerUUID, eventArgs.MagicId, eventArgs.DeathType, eventArgs.DeathId, eventArgs.RebootType, eventArgs.RebootId)
+    end
     if eventType == EWorldEvent.NpcDie then
-        self:OnNpcDieEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer)
+        self:OnNpcDieEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.KillerUUID, eventArgs.MagicId, eventArgs.DeathType, eventArgs.DeathId, eventArgs.RebootType, eventArgs.RebootId)
+    end
+    if eventType == EWorldEvent.NpcWaitReboot then
+        self:OnNpcWaitRebootEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.KillerUUID, eventArgs.MagicId, eventArgs.DeathType, eventArgs.DeathId, eventArgs.RebootType, eventArgs.RebootId)
     end
     if eventType == EWorldEvent.NpcRevive then
         self:OnNpcReviveEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer)
@@ -81,7 +90,7 @@ function XFightBase:HandleEvent(eventType, eventArgs)
         self:XNpcChangeProtectorArgs(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.Value, eventArgs.TotalValue)
     end
     if eventType == EWorldEvent.NpcDodge then
-        self:OnNpcDodge(eventArgs.AttackerUUID, eventArgs.Type)
+        self:OnNpcDodge(eventArgs.SourceUUID, eventArgs.AttackerUUID, eventArgs.Type)
     end
     if eventType == EWorldEvent.NpcBrokenBefore then
         self:OnNpcBrokenBefore(eventArgs.LauncherUUID, eventArgs.TargetUUID, eventArgs.MagicId)
@@ -113,6 +122,9 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcSkillActionEnd then
         self:OnNpcSkillActionEnd(eventArgs.SourceUUID, eventArgs.SkillId, eventArgs.SkillActionId, eventArgs.IsAbort)
     end
+    if eventType == EWorldEvent.NpcSkillActionKeyframeSendEvent then
+        self:OnNpcSkillActionKeyframeSendEvent(eventArgs.LauncherUUID,eventArgs.EventName,eventArgs.SkillActionId,eventArgs.KeyframeId,eventArgs.SkillId)
+    end
     if eventType == EWorldEvent.NpcTeamWorkSkillCast then
         self:OnNpcTeamWorkSkillCast(eventArgs.SourceUUID, eventArgs.Camp, eventArgs.SkillId, eventArgs.ChainCount)
     end
@@ -132,7 +144,7 @@ function XFightBase:HandleEvent(eventType, eventArgs)
         self:OnNpcAfterTriggerCounter(eventArgs.TriggerNpcUUID, eventArgs.CounterNpcUUID, eventArgs.TriggerTag, eventArgs.CounterTag)
     end
     if eventType == EWorldEvent.NpcWrestleStart then
-        self:OnNpcWrestleStart(eventArgs.LauncherUUID, eventArgs.TargetUUID)
+        self:OnNpcWrestleStart(eventArgs.LauncherUUID, eventArgs.TargetUUID, eventArgs.Succeed)
     end
     if eventType == EWorldEvent.NpcWrestleLocked then
         self:OnNpcWrestleLocked(eventArgs.LauncherUUID, eventArgs.TargetUUID)
@@ -144,7 +156,7 @@ function XFightBase:HandleEvent(eventType, eventArgs)
         self:OnNpcWrestlePursuit(eventArgs.LauncherUUID, eventArgs.TargetUUID)
     end
     if eventType == EWorldEvent.NpcMultiParryStart then
-        self:OnNpcMultiParryStart(eventArgs.LauncherUUID, eventArgs.TargetUUID)
+        self:OnNpcMultiParryStart(eventArgs.LauncherUUID, eventArgs.TargetUUID, eventArgs.Succeed)
     end
     if eventType == EWorldEvent.NpcMultiParrySucceed then
         self:OnNpcMultiParrySucceed(eventArgs.LauncherUUID, eventArgs.TargetUUID)
@@ -180,7 +192,9 @@ end
 ---@param elementType number 元素伤害类型
 ---@param realDamage number 真实伤害
 ---@param isCritical boolean 是否暴击
-function XFightBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)
+---@param skillId number 技能Id
+---@param MagicTags table Magic配置的Tags
+function XFightBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
 end
 
 ---Npc释放技能前
@@ -210,12 +224,60 @@ end
 function XFightBase:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
 end
 
+---Npc将要死亡前
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param killerUUID number
+---@param magicId number
+---@param deathType number
+---@param deathId number
+---@param rebootType number
+---@param rebootId number
+function XFightBase:OnNpcGoingDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
+end
+
+---Npc濒死
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param killerUUID number
+---@param magicId number
+---@param deathType number
+---@param deathId number
+---@param rebootType number
+---@param rebootId number
+function XFightBase:OnNpcDyingEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
+end
+
 ---Npc死亡
 ---@param npcUUID number
 ---@param npcPlaceId number
 ---@param npcKind number
 ---@param isPlayer boolean
-function XFightBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
+---@param killerUUID number
+---@param magicId number
+---@param deathType number
+---@param deathId number
+---@param rebootType number
+---@param rebootId number
+function XFightBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
+end
+
+---Npc等待复活
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param killerUUID number
+---@param magicId number
+---@param deathType number
+---@param deathId number
+---@param rebootType number
+---@param rebootId number
+function XFightBase:OnNpcWaitRebootEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
 end
 
 ---Npc复活
@@ -363,11 +425,12 @@ function XFightBase:XNpcChangeProtectorArgs(LauncherId, TargetId, Value, TotalVa
 end
 
 ---@class XNpcDodgeEventArgs
+---@field SourceUUID number 触发闪避目标
 ---@field AttackerUUID number 被闪避目标
 ---@field Type number 闪避窗口类型
 ---触发闪避成功
 ---@param eventArgs XNpcDodgeEventArgs
-function XFightBase:OnNpcDodge(AttackerUUID, Type)
+function XFightBase:OnNpcDodge(SourceUUID, AttackerUUID, Type)
 
 end
 
@@ -432,6 +495,15 @@ end
 function XFightBase:OnNpcSkillActionEnd(sourceUUID, skillId, skillActionId, isAbort)
 end
 
+---Npc技能帧事件里发送事件
+---@param launcher number 发送的Npc
+---@param eventName string 事件的名字
+---@param skillActionId number 技能ActionId
+---@param keyFrameId number 技能帧事件Id
+---@param skillId number 技能Id（可能为空）
+function XFightBase:OnNpcSkillActionKeyframeSendEvent(launcher,eventName,skillActionId,keyFrameId,skillId)
+end
+
 ---Npc团队极限技释放成功
 ---@param sourceUUID number 来源UUID
 ---@param camp number 阵营
@@ -491,7 +563,8 @@ end
 ---Npc角力开始
 ---@param launcherNpcUUID number 被弹刀NpcUUID
 ---@param targetNpcUUID number 弹刀NpcUUID
-function XFightBase:OnNpcWrestleStart(launcherNpcUUID, targetNpcUUID)
+---@param succeed boolean 是否成功
+function XFightBase:OnNpcWrestleStart(launcherNpcUUID, targetNpcUUID, succeed)
 end
 
 ---Npc角力僵持
@@ -517,7 +590,8 @@ end
 ---Npc多人弹刀开始
 ---@param launcherNpcUUID number 被弹刀NpcUUID
 ---@param targetNpcUUID number 弹刀NpcUUID
-function XFightBase:OnNpcMultiParryStart(launcherNpcUUID, targetNpcUUID)
+---@param succeed boolean 是否成功
+function XFightBase:OnNpcMultiParryStart(launcherNpcUUID, targetNpcUUID, succeed)
 end
 
 ---Npc多人弹刀成功

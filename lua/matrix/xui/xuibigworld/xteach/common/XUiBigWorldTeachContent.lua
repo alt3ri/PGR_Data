@@ -105,17 +105,15 @@ function XUiBigWorldTeachContent:_RefreshButton()
         self.BtnNext.gameObject:SetActiveEx(false)
         self.BtnLast.gameObject:SetActiveEx(false)
     else
-        self.BtnNext.gameObject:SetActiveEx(true)
-        self.BtnLast.gameObject:SetActiveEx(true)
         if self._CurrentIndex < self._DotCount then
-            self.BtnNext:SetDisable(false)
+            self.BtnNext.gameObject:SetActiveEx(true)
         else
-            self.BtnNext:SetDisable(true, false)
+            self.BtnNext.gameObject:SetActiveEx(false)
         end
         if self._CurrentIndex > 1 then
-            self.BtnLast:SetDisable(false)
+            self.BtnLast.gameObject:SetActiveEx(true)
         else
-            self.BtnLast:SetDisable(true, false)
+            self.BtnLast.gameObject:SetActiveEx(false)
         end
     end
 end

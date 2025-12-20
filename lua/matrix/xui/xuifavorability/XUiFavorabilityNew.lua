@@ -69,6 +69,7 @@ function XUiFavorabilityNew:OnEnable()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 
     --刷新主题
     self:UpdateTheme()

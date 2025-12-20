@@ -30,6 +30,17 @@ function XTheatre5Model:MarkHasNoEnterReddot()
     self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_LONGTERM, 'NoEnterActivityMark', true)
 end
 
+function XTheatre5Model:IsNewSeason()
+    local oldPopUpversion = self._SaveUtil:GetDataByBlockKey(SAVE_KEY_LONGTERM, "PopUpversion") or 0
+    local newPopUpversion = self:GetTheatre5ClientConfigNum('PopUpversion')
+
+    if newPopUpversion > oldPopUpversion then
+        self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_LONGTERM, "PopUpversion", newPopUpversion)
+        return true
+    end
+    return false
+end
+
 --endregion
 
 --region PVP

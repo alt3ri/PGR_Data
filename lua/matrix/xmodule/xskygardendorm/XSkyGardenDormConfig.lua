@@ -32,6 +32,9 @@ local TableKey = {
         ReadFunc = XConfigUtil.ReadType.IntAll,
         DirPath = XConfigUtil.DirectoryType.Client,
         Identifier = "Type"
+    },
+    SgDormArea = {
+        Identifier = "AreaType",
     }
 }
 
@@ -322,6 +325,15 @@ function XSkyGardenDormConfig:GetHandBookFurnitureListByType(type)
     self._HandBookType2FurnitureList = dict
     
     return dict[type]
+end
+
+function XSkyGardenDormConfig:GetDormAreaMaxFurnitureCount(areaType)
+    ---@type XTableSgDormArea
+    local t = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.SgDormArea, areaType)
+    if not t then
+        return 0
+    end
+    return t.MaxFurnitureCount
 end
 
 return XSkyGardenDormConfig

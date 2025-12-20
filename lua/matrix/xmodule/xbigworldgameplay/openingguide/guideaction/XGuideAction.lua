@@ -22,20 +22,31 @@ function XGuideAction:Finish()
     end
     local openGuide = self._OpenGuide
     local id = self._Template.Id
+    if XMVCA.XBigWorldGamePlay:GetCurrentAgency():CheckOpenGuideFinish(id) then
+        if XMVCA.XBigWorldGamePlay:IsInGame() and XLoginManager.IsLogin() then
+            self:OnFinish()
+            openGuide:RunNext()
+        end
+        return
+    end
     XNetwork.Call("BigWorldGuideOpenRequest", { GuideId = id }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
+            XMVCA.XBigWorldGamePlay:EnterGameError()
         else
             XMVCA.XBigWorldGamePlay:GetCurrentAgency():AddFinishGuideDict(id)
+            self:OnFinish()
+            openGuide:RunNext()
         end
-        self:OnFinish()
-        openGuide:RunNext()
     end, function()
         XMVCA.XBigWorldGamePlay:EnterGameError()
     end)
 end
 
 function XGuideAction:OnFinish()
+end
+
+function XGuideAction:Clear()
 end
 
 return XGuideAction

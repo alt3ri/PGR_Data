@@ -3,11 +3,11 @@ local XMovieActionLeftTitleAppear = XClass(XMovieActionBase, "XMovieActionLeftTi
 function XMovieActionLeftTitleAppear:OnInit(actionData)
     local params = actionData.Params
 
-    self.Title = params[1] or ""
-    self.Subtitle = params[2] or ""
-    self.TitleEn = params[3] or ""
-    self.Subtitle2 = params[4] or ""
-    self.Subtitle3 = params[5] or ""
+    self.Title = XMVCA.XMovie:FormatContent(params[1])
+    self.Subtitle = XMVCA.XMovie:FormatContent(params[2])
+    self.TitleEn = XMVCA.XMovie:FormatContent(params[3])
+    self.Subtitle2 = XMVCA.XMovie:FormatContent(params[4])
+    self.Subtitle3 = XMVCA.XMovie:FormatContent(params[5])
 end
 
 function XMovieActionLeftTitleAppear:OnRunning()

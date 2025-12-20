@@ -13,6 +13,9 @@ function XUiBigWorldBlackMaskLoading:OnAwake()
     if self:IsSetMask() then
         XMVCA.XBigWorldUI:SetMaskActive(true)
     end
+    
+    self._PopupBegin = XMVCA.XBigWorldQuest.QuestOpType.PopupBegin
+    self._PopupEnd = XMVCA.XBigWorldQuest.QuestOpType.PopupEnd
 end
 
 function XUiBigWorldBlackMaskLoading:OnStart(enableFinishCb, disableFinishCb, enableStartCb, disableStartCb, immediateFadeOut)
@@ -43,11 +46,11 @@ function XUiBigWorldBlackMaskLoading:OnEnable()
     else
         self.DarkEnable:PlayTimelineAnimation(self._EnableFinishCb, self._EnableStartCb)
     end
-    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, XMVCA.XBigWorldQuest.QuestOpType.PopupBegin)
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self._PopupBegin)
 end
 
 function XUiBigWorldBlackMaskLoading:OnDisable()
-    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, XMVCA.XBigWorldQuest.QuestOpType.PopupEnd)
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self._PopupEnd)
 end
 
 function XUiBigWorldBlackMaskLoading:OnFadeOut()

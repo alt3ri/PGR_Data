@@ -64,7 +64,7 @@ function XRaceScene:InitMatch(uiCallback)
     self._XRaceViewManager:SetLuaCallback(uiCallback)
     self._XRaceViewManager:InitCamera(self._MapCfg.CameraConfigPath)
     self._XRaceViewManager:Init(false)
-    self._XRaceViewManager:Enter(self._SceneType, self._RoundId, self._ReportName, false)
+    self._XRaceViewManager:Enter(self._SceneType, self._RoundId, self._ReportName)
 end
 
 function XRaceScene:PlayTrackAnim(isPlay)

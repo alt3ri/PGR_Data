@@ -14,17 +14,61 @@ end
 function XPacMan2Agency:OpenMain()
     ---@type XTablePacMan2Activity
     local activityConfig = self._Model:GetActivityConfig()
+    
+    -- 如果没有服务端的 activityId，从配置表获取最后一条配置来做时间判断，然后返回 false
     if not activityConfig then
-        XUiManager.TipText("ActivityBranchNotOpen")
+        local allConfigs = self._Model:GetAllActivityConfigs()
+        if allConfigs and not XTool.IsTableEmpty(allConfigs) then
+            -- 找到 Id 最大的配置（最后一条）
+            local lastConfig = nil
+            local maxId = 0
+            for _, config in pairs(allConfigs) do
+                if config and config.Id and config.Id > maxId then
+                    maxId = config.Id
+                    lastConfig = config
+                end
+            end
+            if lastConfig and lastConfig.TimeId then
+                -- 使用配置表的配置进行时间判断
+                self:_ShowTimeTip(lastConfig.TimeId)
+            else
+                -- 如果仍然没有配置，直接提示未开放
+                XUiManager.TipText("ActivityBranchNotOpen")
+            end
+        else
+            -- 配置表为空，直接提示未开放
+            XUiManager.TipText("ActivityBranchNotOpen")
+        end
         return false
     end
+    
     local timeId = activityConfig.TimeId
     if not XFunctionManager.CheckInTimeByTimeId(timeId) then
-        XUiManager.TipText("ActivityBranchNotOpen")
+        -- 判断是活动未开始还是已结束
+        self:_ShowTimeTip(timeId)
         return false
     end
     XLuaUiManager.Open("UiPacMan2Main")
     return true
+end
+
+--- 显示时间提示（活动未开始或已结束）
+---@param timeId number 时间ID
+function XPacMan2Agency:_ShowTimeTip(timeId)
+    local nowTime = XTime.GetServerNowTimestamp()
+    local startTime = XFunctionManager.GetStartTimeByTimeId(timeId)
+    local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+    
+    if startTime > 0 and nowTime < startTime then
+        -- 活动未开始
+        XUiManager.TipText("ActivityBranchNotOpen")
+    elseif endTime > 0 and nowTime >= endTime then
+        -- 活动已结束
+        XUiManager.TipText("ActivityBranchOver")
+    else
+        -- 其他情况（可能时间配置有问题）
+        XUiManager.TipText("ActivityBranchNotOpen")
+    end
 end
 
 function XPacMan2Agency:NotifyPacMan2Activity(data)

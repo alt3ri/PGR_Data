@@ -1,40 +1,42 @@
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@class XUiPanelDlcRelinkChooseBossDetail : XUiNode
 ---@field private _Control XDlcRelinkControl
 ---@field Parent XUiDlcRelinkChooseBoss
 ---@field VideoPlayer XVideoPlayerUGUI
 local XUiPanelDlcRelinkChooseBossDetail = XClass(XUiNode, "XUiPanelDlcRelinkChooseBossDetail")
 
-local SkillStatus = {
-    Normal = 1, -- 正常
-    Anger = 2, -- 愤怒
-}
-
 function XUiPanelDlcRelinkChooseBossDetail:OnStart()
     self.GridTag.gameObject:SetActiveEx(false)
     self.GridDot.gameObject:SetActiveEx(false)
     self.GridReform.gameObject:SetActiveEx(false)
     self.GridReward.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnClose, self.OnBtnCloseClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnChange, self.OnBtnChangeClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnSure, self.OnBtnSureClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnRight, self.OnBtnRightClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnLeft, self.OnBtnLeftClick, true)
+    self.GridDrop.gameObject:SetActiveEx(false)
+    XUiHelper.RegisterClickEvent(self, self.BtnClose, self.OnBtnCloseClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnChange, self.OnBtnChangeClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnSure, self.OnBtnSureClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnRight, self.OnBtnRightClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnLeft, self.OnBtnLeftClick, true, true)
 
     ---@type UiObject[]
     self.TagGridList = {}
     ---@type UiObject[]
     self.DotGridList = {}
 
-    self.CurSkillStatus = SkillStatus.Normal
+    self.IsSkillAngerStatus = false
     self.SkillCount = 0
     self.CurSelectSkillIdIndex = 1
     self.CurSkillIds = {}
-    self.CurrentVideoUrl = nil
+    self.IsVideoPlaying = false
 
     ---@type UiObject[]
     self.LevelGridList = {}
     self.LevelIds = {}
     self.LevelCount = 0
+
+    ---@type XUiGridCommon[]
+    self.RewardGridList = {}
+    ---@type UiObject[]
+    self.DropGridList = {}
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:Refresh(chapterId, levelId)
@@ -42,14 +44,13 @@ function XUiPanelDlcRelinkChooseBossDetail:Refresh(chapterId, levelId)
     self.LevelId = levelId
 
     self.TxtTitle.text = self._Control:GetChapterName(self.ChapterId)
-    self.CurSkillStatus = SkillStatus.Normal
+    self.IsSkillAngerStatus = false
     self.CurSelectSkillIdIndex = 1
     self:RefreshSkills()
 
     self.LevelIds = self._Control:GetChapterLevelIds(self.ChapterId)
     self.LevelCount = #self.LevelIds
     self:RefreshLevelIds()
-    self:RefreshReward()
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:OnDisable()
@@ -93,10 +94,10 @@ function XUiPanelDlcRelinkChooseBossDetail:_NavigateSkill(offset)
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:GetSkillIds()
-    if self.CurSkillStatus == SkillStatus.Normal then
-        return self._Control:GetChapterSkills(self.ChapterId)
-    else
+    if self.IsSkillAngerStatus then
         return self._Control:GetChapterOdSkills(self.ChapterId)
+    else
+        return self._Control:GetChapterSkills(self.ChapterId)
     end
 end
 
@@ -206,16 +207,16 @@ function XUiPanelDlcRelinkChooseBossDetail:PlayVideo(videoUrl)
 
     self.VideoPlayer.gameObject:SetActiveEx(true)
     self.VideoPlayer:SetVideoFromRelateUrl(videoUrl)
-    if self.CurrentVideoUrl then
+    if self.IsVideoPlaying then
         self.VideoPlayer:RePlay()
     else
         self.VideoPlayer:Play()
     end
-    self.CurrentVideoUrl = videoUrl
+    self.IsVideoPlaying = true
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:StopVideo()
-    if self.VideoPlayer and self.CurrentVideoUrl then
+    if self.VideoPlayer and self.IsVideoPlaying then
         self.VideoPlayer:Pause()
         self.VideoPlayer.gameObject:SetActiveEx(false)
     end
@@ -236,10 +237,13 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshLevelIds()
         grid.gameObject:SetActiveEx(true)
         local levelId = self.LevelIds[index]
         grid:GetObject("BtnReform"):SetNameByGroup(0, self._Control:GetLevelName(levelId))
+        local levelLimit = self._Control:GetLevelLevelLimit(levelId)
+        local levelLimitDesc = levelLimit > 0 and string.format(self._Control:GetClientConfig("RoomBossLevelLimit"), levelLimit) or ""
+        grid:GetObject("BtnReform"):SetNameByGroup(1, levelLimitDesc)
         grid:GetObject("BtnReform").CallBack = function()
             local isUnlockNow = self._Control:CheckLevelUnlock(levelId)
             if not isUnlockNow then
-                XUiManager.TipMsg(self._Control:GetLevelUnlockDesc(levelId))
+                self._Control:OpenCommonTipMsg(self._Control:GetLevelUnlockDesc(levelId))
                 return
             end
             if self.LevelId ~= levelId then
@@ -270,6 +274,11 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshLevelLockStates()
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:RefreshLevelGrid()
+    -- 记录关卡点击
+    self._Control:RecordLevelViewed(self.LevelId)
+    -- 刷新章节红点
+    self.Parent:RefreshRedPoint()
+    -- 刷新关卡选中状态和红点
     for index = 1, self.LevelCount do
         local grid = self.LevelGridList[index]
         if grid then
@@ -277,30 +286,93 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshLevelGrid()
             local isSelected = self.LevelId == levelId
             grid:GetObject("SelectOn").gameObject:SetActiveEx(isSelected)
             grid:GetObject("NormalOn").gameObject:SetActiveEx(not isSelected)
+            -- 红点
+            local isShowRedPoint = self._Control:CheckLevelHasNewUnlock(levelId)
+            grid:GetObject("BtnReform"):ShowReddot(isShowRedPoint)
         end
     end
-
     -- 作战场次
-    local finishCount = self._Control:GetLevelFinishCount(self.LevelId)
-    self.TxtFight.text = string.format(self._Control:GetClientConfig("LevelFinishCountDesc"), finishCount)
-
+    self.TxtFight.text = self._Control:GetLevelPassTime(self.LevelId)
     -- 作战时间
     local isPass = self._Control:CheckLevelPassed(self.LevelId)
     if isPass then
         local finishTime = self._Control:GetLevelFinishTime(self.LevelId)
-        local timeStr = XUiHelper.GetTime(finishTime, XUiHelper.TimeFormatType.CHALLENGE)
-        self.TxtTime.text = string.format(self._Control:GetClientConfig("LevelFinishTimeDesc", 1), timeStr)
+        self.TxtTime.text = XUiHelper.GetTime(finishTime, XUiHelper.TimeFormatType.DAY_HOUR)
     else
-        self.TxtTime.text = self._Control:GetClientConfig("LevelFinishTimeDesc", 2)
+        self.TxtTime.text = "00:00:00"
     end
+    -- 奖励
+    self:RefreshReward()
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:RefreshReward()
-    -- TODO 显示奖励
+    local isPass = self._Control:CheckLevelPassed(self.LevelId)
+    local rewardGoods, showRewardIds
+    if isPass then
+        rewardGoods, showRewardIds = self._Control:GetShowLevelRewardGoods(self.LevelId)
+    else
+        rewardGoods, showRewardIds = self._Control:GetShowLevelFirstRewardGoods(self.LevelId)
+    end
+    local rewardCount = #rewardGoods
+    local showRewardCount = #showRewardIds
+    self.ListReward.gameObject:SetActiveEx(rewardCount > 0 or showRewardCount > 0)
+    if rewardCount == 0 and showRewardCount == 0 then
+        return
+    end
+    -- 常规奖励
+    for index = 1, rewardCount do
+        local grid = self.RewardGridList[index]
+        if not grid then
+            local go = XUiHelper.Instantiate(self.GridReward, self.ListReward)
+            grid = XUiGridCommon.New(self.Parent, go)
+            self.RewardGridList[index] = grid
+        end
+        grid:Refresh(rewardGoods[index])
+        grid:SetProxyClickFunc(function()
+            XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", grid.TemplateId)
+        end)
+        grid.GameObject:SetActiveEx(true)
+        grid.Transform:SetAsLastSibling()
+    end
+    for index = rewardCount + 1, #self.RewardGridList do
+        local grid = self.RewardGridList[index]
+        if grid then
+            grid.GameObject:SetActiveEx(false)
+        end
+    end
+    -- 展示奖励
+    for index = 1, showRewardCount do
+        local grid = self.DropGridList[index]
+        if not grid then
+            grid = XUiHelper.Instantiate(self.GridDrop, self.ListReward)
+            self.DropGridList[index] = grid
+        end
+        local showRewardId = showRewardIds[index]
+        grid:GetObject("RImgIcon"):SetRawImageEx(self._Control:GetShowLevelDropIcon(showRewardId))
+        grid:GetObject("BtnClick").CallBack = function()
+            local icon = self._Control:GetShowLevelDropIcon(showRewardId)
+            local name = self._Control:GetShowLevelDropName(showRewardId)
+            local desc = self._Control:GetShowLevelDropDesc(showRewardId)
+            XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", {
+                IsTempItemData = true,
+                Name = name,
+                Icon = icon,
+                Description = desc,
+            })
+        end
+        grid.gameObject:SetActiveEx(true)
+        grid.transform:SetAsLastSibling()
+    end
+    for index = showRewardCount + 1, #self.DropGridList do
+        local grid = self.DropGridList[index]
+        if grid then
+            grid.gameObject:SetActiveEx(false)
+        end
+    end
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:RefreshBtnChange()
-    self.BtnChange:SetNameByGroup(0, self._Control:GetClientConfig("BossDetailBtnChangeDesc", self.CurSkillStatus))
+    self.BtnChange:SetButtonState(self.IsSkillAngerStatus and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:OnBtnCloseClick()
@@ -308,18 +380,14 @@ function XUiPanelDlcRelinkChooseBossDetail:OnBtnCloseClick()
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:OnBtnChangeClick()
-    if self.CurSkillStatus == SkillStatus.Normal then
-        self.CurSkillStatus = SkillStatus.Anger
-    else
-        self.CurSkillStatus = SkillStatus.Normal
-    end
+    self.IsSkillAngerStatus = not self.IsSkillAngerStatus
     self.CurSelectSkillIdIndex = 1
     self:RefreshSkills()
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:OnBtnSureClick()
     if XMVCA.XDlcRoom:IsMatching() then
-        XUiManager.TipCode(XCode.MatchPlayerIsMatching)
+        self._Control:OpenCommonTipCode(XCode.MatchPlayerIsMatching)
         return
     end
 

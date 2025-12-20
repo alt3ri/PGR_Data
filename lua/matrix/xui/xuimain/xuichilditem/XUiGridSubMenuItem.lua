@@ -28,9 +28,19 @@ function XUiGridSubMenuItem:OnRefresh(data)
     self.BtnType1.gameObject:SetActiveEx(true)
     self.BtnType2.gameObject:SetActiveEx(false)
     self.Btn = self.BtnType1
-    
-    self.Btn:SetNameByGroup(0, data.Title)
-    self.Btn:SetNameByGroup(1, data.SubTitle)
+    local title = ""
+    local subtips = ""
+    if XOverseaManager.IsJPRegion()  then
+        title = XUiHelper.ConvertLineBreakSymbol(data.Title)
+        subtips = XUiHelper.ConvertLineBreakSymbol(data.SubTitle)
+    else 
+        title = data.Title
+        subtips = data.SubTitle
+    end
+
+    self.Btn:SetNameByGroup(0, title)
+    self.Btn:SetNameByGroup(1, subtips)
+
     self.Btn.CallBack = function() self:OnBtn() end
 
     --设置图片

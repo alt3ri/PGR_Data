@@ -105,9 +105,9 @@ end
 --region 按钮相关
 
 function XUiGridRelinkMultiPlayerChar:RegisterUiEvents()
-    XUiHelper.RegisterClickEvent(self, self.BtnExchange, self.OnBtnExchangeClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnKick, self.OnBtnKickClick, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnInfo, self.OnBtnInfoClick, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnExchange, self.OnBtnExchangeClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnKick, self.OnBtnKickClick, true, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnInfo, self.OnBtnInfoClick, true, true)
 end
 
 function XUiGridRelinkMultiPlayerChar:OnBtnExchangeClick()

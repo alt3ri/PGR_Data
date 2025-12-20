@@ -195,6 +195,7 @@ function XMovieActionBase:ChangeStatus(delay, animName)
         local anim = self.UiRoot:GetUiAnimation(animName)
         if not anim then
             XLog.Error("animName配置错误，找不到" .. animName .. "对应的动画，请检查节点: " .. self.ActionId)
+            animCb()
             return
         end
 

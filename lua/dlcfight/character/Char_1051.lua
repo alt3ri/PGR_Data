@@ -40,11 +40,16 @@ function XChar1051:Init()
     self._canCastSkill = false
 
     self._proxy:AddBuff(self._uuid, 1051001)
+
+    --注册技能事件
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcSkillActionKeyframeSendEvent,self._uuid)
 end
 
 ---@param dt number @ delta time
 function XChar1051:Update(dt)
     Base.Update(self, dt)
+    --镜头测试
+
     if (self._addDenglongBuff == true) then
         if (self._proxy:GetNpcAttribValue(self._uuid, 48) == 200) then
             self._proxy:AddBuff(self._uuid, 1051006)
@@ -91,10 +96,10 @@ function XChar1051:Update(dt)
                 local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
                 --无目标释放技能
                 if searchtarget == 0 then
-                    self._proxy:CastAction(self._uuid, 1051063)
+                    self._proxy:CastAction(self._uuid, 1051062)
                     return
                 end
-                self._proxy:CastActionToSearchTarget(self._uuid, 1051063,searchtarget)
+                self._proxy:CastActionToSearchTarget(self._uuid, 1051062,searchtarget)
                 
                 self._DenglongX = true
                 self._addDenglongBuff = true
@@ -109,12 +114,12 @@ function XChar1051:Update(dt)
         self._NpcPosition = self._proxy:GetSearchTargetPosition(self._Searchtarget)
 
         if self._proxy:CheckActionTiming(self._uuid,20) then
-            if self._proxy:IsKeyDown(ENpcOperationKey.Attack) then
+            -- if self._proxy:IsKeyDown(ENpcOperationKey.Attack) then
                 self._CastDenglongX = true
                 -- self._proxy:AddTimerTask(  0.5,  function()
                 --     self._CastDenglongX = false
                 -- end)
-            end
+            -- end
         end
 
         if self._proxy:CheckActionTiming(self._uuid,19) then
@@ -156,7 +161,9 @@ function XChar1051:Update(dt)
 
             self._proxy:AbortAction(self._uuid, true)
             local targetNpc = self._proxy:SearchNpc(self._uuid, ENpcCampType.Camp2, 4, 15, -1)
+            XLog.Warning("释放技能")
             self._proxy:CastActionToTarget(self._uuid, 1051026, targetNpc)
+            XLog.Warning("释放成功")
             self._GPJuhe = false
         end
     end
@@ -260,62 +267,6 @@ function XChar1051:HandleEvent(eventType, eventArgs)
     Base.HandleEvent(self, eventType, eventArgs)
 end
 
-function XChar1051:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-    if (buffId == 10513101) then
-        self._proxy:SetNpcAnimationLayer(self._uuid, 1)
-        self._proxy:SetNpcInputActionGroup(self._uuid, 105151)
-        self._JianqiSkillGroup[1] = 1051047
-        self._JianqiSkillGroup[2] = 1051046
-        self._JianqiSkillGroup[3] = 1051048
-        self._JianqiSkillGroup[4] = 1051049
-    end
-
-    if (buffId == 10514001) then
-        self._proxy:AddBuff(self._uuid, 10514106)
-        self._proxy:AddBuff(self._uuid, 10514107)
-        self._canUseJianqi = true
-    end
-
-    if (buffId == 10510704) then
-        self._DodgeJianqi = true
-    end
-end
-
-function XChar1051:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId) --寻找一个攻击目标
-    if (buffId == 10513101) then
-        if (self._useShenglong == false) then
-            self._proxy:AbortAction(self._uuid, true)
-
-            local targetNpc = self._proxy:SearchNpc(self._uuid, ENpcCampType.Camp2, 4, 20, -1)
-            -- --无战斗目标释放技能
-            if (targetNpc == 0) or (not targetNpc) then
-                self._proxy:CastAction(self._uuid, 1051061)
-                return
-            end
-
-            --有战斗目标释放技能
-            self._proxy:CastActionToTarget(self._uuid, 1051061, targetNpc)
-        end
-        
-        self._JianqiSkillGroup[1] = 1051042
-        self._JianqiSkillGroup[2] = 1051041
-        self._JianqiSkillGroup[3] = 1051043
-        self._JianqiSkillGroup[4] = 1051045
-    end
-
-    if (buffId == 10510704) then
-        XLog.Warning("弹刀结束")
-        self._DodgeJianqi = false
-        self._CastJianqi = false
-    end
-
-    if(buffId == 10514001) then
-        self._jianqiCounter = 0
-        self._canUseJianqi = false
-        self._proxy:RemoveBuff(self._uuid, 10514106)
-        self._proxy:RemoveBuff(self._uuid, 10514107)
-    end
-end
 function XChar1051:OnNpcCastActionByInputActionBeforeEvent(args)      
     local launcher = args.LauncherUUID
     local contextId = args.ContextId
@@ -353,7 +304,7 @@ function XChar1051:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, Tar
         if (SkillId == 1051061) then
             if(self._proxy:CheckBuffByKind(self._uuid, 10513101)) then
                 -- self._canCastSkill = true
-                self._canCastSkillX = true
+                self._canCastSkill = true
             else
                 self._canCastSkill = true
             end
@@ -362,7 +313,10 @@ function XChar1051:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, Tar
 
         if(SkillId == 1051062 or SkillId == 1051068) then
             self._proxy:SetNpcAnimationLayer(self._uuid, 0)
-            self._proxy:SetNpcInputActionGroup(self._uuid, 105101)
+            -- self._proxy:SetNpcInputActionGroup(self._uuid, 105101)
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,105104)
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105105)
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball3,105106)
             self._proxy:RemoveBuff(self._uuid, 10513101)
             self._useShenglong = false
         end
@@ -371,11 +325,11 @@ function XChar1051:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, Tar
             self._DenglongX = false
             self._proxy:RemoveBuff(self._uuid, 1051006)
         end
-
-        if (SkillId == 1051007) then
+        --excastskill测试
+        if (SkillId == 1051007 or SkillId == 1051009) then
             self._proxy:AddBuff(self._uuid, 10510704)
         end
-
+        --QTE双镜头
         if (SkillId == 1051092 or SkillId == 1051093) then
             local locktaregetid,npcid = self._proxy:GetLockTarget()--转换新索敌目标为npcuuid
             if npcid == 0 and locktaregetid == 0 then
@@ -384,6 +338,20 @@ function XChar1051:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, Tar
             local targertangle,cameraAngle = self._proxy:GetCameraPosInfo(self._uuid,npcid)
             XLog.Warning("角度" ..cameraAngle)
             if cameraAngle <= 180 then
+                self._proxy:ApplyMagic(self._uuid,self._uuid,10519210)
+            else
+                self._proxy:ApplyMagic(self._uuid,self._uuid,10519209)
+            end
+        end
+        --剑气双镜头
+        if (SkillId == 1051041 or SkillId == 1051046) then
+            local locktaregetid,npcid = self._proxy:GetLockTarget()--转换新索敌目标为npcuuid
+            if npcid == 0 and locktaregetid == 0 then
+                 return
+            end
+            local targertangle,cameraAngle = self._proxy:GetCameraPosInfo(self._uuid,npcid)
+            XLog.Warning("角度" ..cameraAngle)
+            if cameraAngle <= 188 then
                 self._proxy:ApplyMagic(self._uuid,self._uuid,10519210)
             else
                 self._proxy:ApplyMagic(self._uuid,self._uuid,10519209)
@@ -437,9 +405,121 @@ function XChar1051:OnNpcCastActionAfterEvent(SkillId, LauncherId, TargetId, Targ
     end
 end
 
+function XChar1051:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    Base.OnNpcAddBuffEvent(self,casterNpcUUID,npcUUID,buffId,buffKinds,buffUUId)
+    if (buffId == 10513101) then
+        self._proxy:SetNpcAnimationLayer(self._uuid, 1)
+        -- self._proxy:SetNpcInputActionGroup(self._uuid, 105151)
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,-1)
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,-1)
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball3,-1)
+        self._JianqiSkillGroup[1] = 1051047
+        self._JianqiSkillGroup[2] = 1051046
+        self._JianqiSkillGroup[3] = 1051048
+        self._JianqiSkillGroup[4] = 1051049
+    end
+
+    if (buffId == 10514001) then
+        self._canUseJianqi = true
+        if self._proxy:CheckBuffByKind(self._uuid,10513101) then
+            self._proxy:AddBuff(self._uuid, 10514108)
+            if self._proxy:CheckBuffByKind(self._uuid,10519210) then
+                self._proxy:AddBuff(self._uuid, 10514111)
+                self._proxy:AddBuff(self._uuid, 10514112)
+                return
+            end
+            self._proxy:AddBuff(self._uuid, 10514113)
+            self._proxy:AddBuff(self._uuid, 10514114)   
+            return
+        end
+
+        self._proxy:AddBuff(self._uuid, 10514108)
+        if self._proxy:CheckBuffByKind(self._uuid,10519210) then
+            self._proxy:AddBuff(self._uuid, 10514106)
+            self._proxy:AddBuff(self._uuid, 10514107)
+            return
+        end
+        self._proxy:AddBuff(self._uuid, 10514109)
+        self._proxy:AddBuff(self._uuid, 10514110)        
+    end
+
+    if (buffId == 10510704) then
+        self._DodgeJianqi = true
+    end
+
+    if(buffId == 10519210) then
+        self._cameraOnRight = true
+    end
+end
+
+function XChar1051:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId) --寻找一个攻击目标
+    Base.OnNpcRemoveBuffEvent(self,casterNpcUUID,npcUUID,buffId,buffKinds,buffUUId)
+    if (buffId == 10513101) then
+        if (self._useShenglong == false) then
+            self._proxy:AbortAction(self._uuid, true)
+
+            local targetNpc = self._proxy:SearchNpc(self._uuid, ENpcCampType.Camp2, 4, 20, -1)
+            -- --无战斗目标释放技能
+            if (targetNpc == 0) or (not targetNpc) then
+                self._proxy:CastAction(self._uuid, 1051061)
+                return
+            end
+
+            --有战斗目标释放技能
+            self._proxy:CastActionToTarget(self._uuid, 1051061, targetNpc)
+        end
+        
+        self._JianqiSkillGroup[1] = 1051042
+        self._JianqiSkillGroup[2] = 1051041
+        self._JianqiSkillGroup[3] = 1051043
+        self._JianqiSkillGroup[4] = 1051045
+    end
+
+    if (buffId == 10510704) then
+        XLog.Warning("弹刀结束")
+        self._DodgeJianqi = false
+        self._CastJianqi = false
+    end
+
+    if(buffId == 10514001) then
+        self._jianqiCounter = 0
+        self._canUseJianqi = false
+        self._proxy:RemoveBuff(self._uuid, 10514108)
+        self._proxy:RemoveBuff(self._uuid, 10514106)
+        self._proxy:RemoveBuff(self._uuid, 10514107)
+        self._proxy:RemoveBuff(self._uuid, 10514111)
+        self._proxy:RemoveBuff(self._uuid, 10514112)
+        self._proxy:RemoveBuff(self._uuid, 10514109)
+        self._proxy:RemoveBuff(self._uuid, 10514110)
+        self._proxy:RemoveBuff(self._uuid, 10514113)
+        self._proxy:RemoveBuff(self._uuid, 10514114)
+    end
+
+    -- if not self._proxy:CheckNpcCurrentAction(self._uuid, 1051068) then
+    --     if(buffId == 10516317) then
+    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516321)
+    --     end
+    --     if(buffId == 10516319) then
+    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516322)
+    --     end
+    --     if(buffId == 10516321) then
+    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516323)
+    --     end
+    --     if(buffId == 10516322) then
+    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516324)
+    --     end
+    --     if(buffId == 10516323) then
+    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516325)
+    --     end
+    --     if(buffId == 10516324) then
+    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516326)
+    --     end
+    -- end
+end
+
 --极限闪避处理
-function XChar1051:OnNpcDodge(AttackerUUID, Type)
-    Base.OnNpcDodge(self, AttackerUUID, Type) 
+function XChar1051:OnNpcDodge(SourceUUID, AttackerUUID, Type)
+    Base.OnNpcDodge(self, SourceUUID, AttackerUUID, Type) 
     
     if (Type == 1) then 
         self._proxy:AddBuff(self._uuid, 10510704)
@@ -464,6 +544,46 @@ function XChar1051:OnNpcCounterSuccess(triggerNpcUUID,counterNpcUUID, triggerTag
         return
     end
 end
+
+function XChar1051:OnNpcSkillActionKeyframeSendEvent(launcher,eventName,skillActionId,keyFrameId,skillId)
+    if(launcher == self._uuid) then
+        if(eventName == "CastFinalJuhe") then
+            --XLog.Warning("蓄力全满")
+            local targetNpc = self._proxy:GetLockTarget()
+            
+            if (targetNpc == 0) or (not targetNpc) then
+                XLog.Warning("无目标释放居合final")
+                -- self._proxy:AbortAction(self._uuid, true)
+                self._proxy:CastAction(self._uuid,1051026)
+                return
+            end
+            XLog.Warning("有目标释放居合final")
+            -- self._proxy:AbortAction(self._uuid, true)
+            self._proxy:CastActionToSearchTarget(self._uuid, 1051026, targetNpc)
+        end
+
+        if(eventName == "castNextCounter") then
+            XLog.Warning("释放衔接")
+            local targetNpc = self._proxy:GetLockTarget()
+            if(self._proxy:CheckBuffByKind(self._uuid, 10513101)) then
+                self._counterSkill = 1051086
+            else
+                self._counterSkill = 1051085
+            end
+            
+            if (targetNpc == 0) or (not targetNpc) then
+                XLog.Warning("无目标释放居合final")
+                -- self._proxy:AbortAction(self._uuid, true)
+                self._proxy:CastAction(self._uuid,self._counterSkill)
+                return
+            end
+            XLog.Warning("有目标释放居合final")
+            -- self._proxy:AbortAction(self._uuid, true)
+            self._proxy:CastActionToSearchTarget(self._uuid, self._counterSkill, targetNpc)
+        end
+    end
+end
+
 
 function XChar1051:ProcessFirstJianqi()
     if (self._firstJianqi == true) then

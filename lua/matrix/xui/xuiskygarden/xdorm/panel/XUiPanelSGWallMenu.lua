@@ -61,26 +61,19 @@ function XUiPanelSGWallMenu:OnTypeIdChanged(typeId, selectId)
     else
         list = self._Control:GetFurnitureListByTypeId(typeId)
         if not XTool.IsTableEmpty(list) then
-            local temp
+            local tempList = {}
             --需求：未解锁 && 未配置解锁文案
             for i, configId in pairs(list) do
-                if not self._Control:CheckFurnitureUnlockByConfigId(configId)
-                        and string.IsNilOrEmpty(self._Control:GetFurnitureLockDesc(configId)) then
-                    if not temp then temp = {} end
-                    temp[#temp + 1] = i
+                if not (not self._Control:CheckFurnitureUnlockByConfigId(configId)
+                        and string.IsNilOrEmpty(self._Control:GetFurnitureLockDesc(configId))) then
+                    tempList[#tempList + 1] = configId
                 end
             end
-
-            if temp then
-                for i = #temp, 1, -1 do
-                    local index = temp[i]
-                    table.remove(list, index)
-                end
-            end
-
-            self._TypeId2List[typeId] = list
             
-            list = self:SortFurnitureDataList(list)
+
+            self._TypeId2List[typeId] = tempList
+            
+            list = self:SortFurnitureDataList(tempList)
         end
         gridType = GridType.Furniture
     end

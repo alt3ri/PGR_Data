@@ -39,6 +39,10 @@ function XPurchasePackage:GetSkipId()
     return self.Data.SkipId
 end
 
+function XPurchasePackage:GetTag()
+    return self.Data.Tag
+end
+
 -- 获取购买次数限制
 function XPurchasePackage:GetBuyLimitTime()
     return self.Data.BuyLimitTimes
@@ -67,6 +71,10 @@ end
 
 function XPurchasePackage:GetConsumeCount()
     return self.Data.ConsumeCount
+end
+
+function XPurchasePackage:GetDiscount()
+    return self.Data.NormalDiscounts
 end
 
 function XPurchasePackage:GetConsumeId()

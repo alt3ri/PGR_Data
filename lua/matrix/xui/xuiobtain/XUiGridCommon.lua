@@ -76,6 +76,7 @@ function XUiGridCommon:AutoInitUi()
     self.ImgQualityTag = XUiHelper.TryGetComponent(self.Transform, "ImgQualityTag", "Image")
     self.TxtStock = XUiHelper.TryGetComponent(self.Transform, "TxtStock", "Text")
     self.ImgNone = XUiHelper.TryGetComponent(self.Transform, "ImgNone", nil)
+    self.ImgServerGiveMaxCount = XUiHelper.TryGetComponent(self.Transform, "ImgServerGiveMaxCount", nil)
     -- 特殊标记
     self.PanelTag = XUiHelper.TryGetComponent(self.Transform, "PanelTag")
     self.PanelDrawTag = XUiHelper.TryGetComponent(self.Transform, "PanelDrawTag")
@@ -89,6 +90,13 @@ end
 
 function XUiGridCommon:SetBtnNotClick(statue)
     self.BtnNotClick = statue
+end
+
+function XUiGridCommon:SetBtnActive(statue)
+    if not self.BtnClick then
+        return
+    end
+    self.BtnClick.gameObject:SetActiveEx(statue)
 end
 
 -- auto
@@ -219,6 +227,7 @@ function XUiGridCommon:ResetUi()
     self:SetUiActive(self.TxtHave, false)
     self:SetUiActive(self.TxtStock, false)
     self:SetUiActive(self.ImgNone, false)
+    self:SetUiActive(self.ImgServerGiveMaxCount, false)
 end
 
 -- data支持数据结构： XEquipData XItemData XCharacterData

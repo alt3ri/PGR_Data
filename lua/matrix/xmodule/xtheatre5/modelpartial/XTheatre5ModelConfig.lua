@@ -34,9 +34,12 @@ local TablePrivate = {
     Theatre5ItemBox = {},
     Theatre5Story = { DirPath = XConfigUtil.DirectoryType.Client },
     Theatre5StoryGroup = { DirPath = XConfigUtil.DirectoryType.Client },
+    Theatre5Story = { DirPath = XConfigUtil.DirectoryType.Client },
 
     Theatre5RelicEffect = { DirPath = XConfigUtil.DirectoryType.Share, },
     Theatre5ItemRelic = { DirPath = XConfigUtil.DirectoryType.Share, },
+
+    Theatre5UiStyle =  { DirPath = XConfigUtil.DirectoryType.Client },
 }
 
 local PVETableKey = {
@@ -334,6 +337,11 @@ end
 
 --endregion
 
+---@return XTableTheatre5UiStyle[]
+function XTheatre5Model:GetTheatre5UiStyleCfgs()
+    return self._ConfigUtil:GetByTableKey(TablePrivate.Theatre5UiStyle)
+end
+
 function XTheatre5Model:GetTheatre5ShopNpcCfg(shopNpcId, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5ShopNpc, shopNpcId, notips)
 end
@@ -570,6 +578,13 @@ function XTheatre5Model:GetStoryGroup()
 end
 
 function XTheatre5Model:GetPveStoryEntranceCfg(entranceName)
+    -- 4.1 开始，优先进入共通线
+    local commonCfg = self:_TryGetPveCommonStoryEntranceCfg()
+
+    if commonCfg then
+        return commonCfg, true
+    end
+
     -- 从3.8开始，同一个入口根据角色进度不同，实现不同的功能
     local allCfgs = self._ConfigUtil:GetByTableKey(PVETableKey.Theatre5PveStoryEntrance)
     local isValid = false
@@ -604,6 +619,58 @@ function XTheatre5Model:GetPveStoryEntranceCfg(entranceName)
     --    end
     --end
     --return self._StoryEntranceCfgsDic[entranceName]
+end
+
+function XTheatre5Model:_TryGetPveCommonStoryEntranceCfg()
+    local allCfgs = self._ConfigUtil:GetByTableKey(PVETableKey.Theatre5PveStoryEntrance)
+
+    local selectCfg = nil
+
+    for _, cfg in pairs(allCfgs) do
+        -- 获取对应故事线配置
+        if XTool.IsNumberValidEx(cfg.StoryLine) then
+            ---@type XTableTheatre5PveStoryLine
+            local storyLineCfg = self:GetStoryLineCfg(cfg.StoryLine)
+
+            -- 如果对应故事线是共通线
+            if storyLineCfg and storyLineCfg.StoryLineType == XMVCA.XTheatre5.EnumConst.PVEStoryLineType.Together then
+                local isOpen = true
+
+                if XTool.IsNumberValidEx(cfg.BtnOpenCondition) then
+                    isOpen = XConditionManager.CheckCondition(cfg.BtnOpenCondition)
+                end
+
+                if isOpen then
+                    if XTool.IsNumberValidEx(cfg.BtnCloseCondition) then
+                        if XConditionManager.CheckCondition(cfg.BtnCloseCondition) then
+                            isOpen = false
+                        end
+                    end
+                end
+
+                if isOpen then
+                    selectCfg = cfg
+                    break
+                end
+            end
+        end
+    end
+
+    -- 如果有解锁的共通线，判断是否结束
+    if selectCfg then
+        local storyLines = self.PVERougeData:GetPveStoryLines()
+        if not XTool.IsTableEmpty(storyLines) then
+            for _, storyLineData in pairs(storyLines) do
+                if storyLineData.StoryLineId == selectCfg.StoryLine then
+                    if not XTool.IsNumberValid(storyLineData.CurContentId) then
+                        selectCfg = nil
+                    end
+                end
+            end
+        end
+    end
+
+    return selectCfg
 end
 
 --获取角色自己的故事线
@@ -954,20 +1021,6 @@ function XTheatre5Model:GetRelicEffectConfigs(relicId)
     else
         XLog.Error("[XTheatre5Model] 找不到对应的饰品配置:" .. tostring(relicId))
     end
-end
-
-function XTheatre5Model:IsNewSeason()
-    local oldActivityId = self._SaveUtil:GetData("ActivityId")
-    local newActivityId = self:GetActivityId()
-    if oldActivityId ~= newActivityId then
-        self._SaveUtil:SaveData("ActivityId", newActivityId)
-        return true
-    end
-    return false
-end
-
-function XTheatre5Model:ResetNewSeason()
-    self._SaveUtil:SaveData("ActivityId", 0)
 end
 
 return XTheatre5Model

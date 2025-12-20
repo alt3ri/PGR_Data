@@ -1,22 +1,22 @@
 [
     {
         "Key": "ScreenshotEffect",
-        "Note": "\u9700\u8981\u622a\u56fe\u7684\u7279\u6548",
+        "Note": "Effect that requires a screenshot",
         "Params": "['Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab', 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingCiYuanZhanV350.prefab', 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai.prefab', 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai01.prefab', 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieCai02.prefab']"
     },
     {
         "Key": "BookmarkSuccessTips",
-        "Note": "\u52a0\u5165\u4e66\u7b7e\u63d0\u793a",
-        "Params": "['\u6210\u529f\u52a0\u5165\u4e66\u7b7e']"
+        "Note": "Bookmark Notice",
+        "Params": "['Added to bookmarks']"
     },
     {
         "Key": "BookmarkCoverTips",
-        "Note": "\u4e66\u7b7e\u8986\u76d6\u63d0\u793a",
-        "Params": "['\u6e29\u99a8\u63d0\u793a', '\u5f53\u524d\u5df2\u6709\u4e66\u7b7e\u3010%s\u3011\\\\n\u7ee7\u7eed\u64cd\u4f5c\u5c06\u8986\u76d6\u5df2\u6709\u4e66\u7b7e\uff0c\u662f\u5426\u786e\u8ba4\uff1f']"
+        "Note": "Bookmark Overwrite Prompt",
+        "Params": "['Warm Reminder', 'A bookmark named [%s] already exists.\\\\nContinuing will overwrite the existing bookmark. Are you sure?']"
     },
     {
         "Key": "BookmarkEnterTips",
-        "Note": "\u4e66\u7b7e\u8fdb\u5165\u64ad\u653e\u63d0\u793a",
-        "Params": "['\u6e29\u99a8\u63d0\u793a', '\u662f\u5426\u786e\u8ba4\u8fdb\u5165\u3010%s\u3011\u7ee7\u7eed\u4f53\u9a8c\u5267\u60c5\uff1f']"
+        "Note": "Bookmark Playback Prompt",
+        "Params": "['Warm Reminder', 'Are you ready to enter [%s] and continue the story?']"
     }
 ]

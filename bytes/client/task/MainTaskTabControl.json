@@ -1,7 +1,7 @@
 [
     {
         "Id": 100,
-        "TagName": "\u65b0\u624b",
+        "TagName": "Beginner",
         "TagType": null,
         "ShowCondition": 770419,
         "UnlockCondition": null,
@@ -12,7 +12,7 @@
     },
     {
         "Id": 101,
-        "TagName": "\u5165\u95e8",
+        "TagName": "Novice",
         "TagType": 4.0,
         "ShowCondition": 770420,
         "UnlockCondition": null,
@@ -23,7 +23,7 @@
     },
     {
         "Id": 102,
-        "TagName": "\u76ee\u6807",
+        "TagName": "Target",
         "TagType": 5.0,
         "ShowCondition": 770421,
         "UnlockCondition": null,
@@ -34,7 +34,7 @@
     },
     {
         "Id": 200,
-        "TagName": "\u6bcf\u65e5",
+        "TagName": "Daily",
         "TagType": 1.0,
         "ShowCondition": 770425,
         "UnlockCondition": null,
@@ -45,7 +45,7 @@
     },
     {
         "Id": 300,
-        "TagName": "\u6bcf\u5468",
+        "TagName": "Weekly",
         "TagType": 2.0,
         "ShowCondition": 770411,
         "UnlockCondition": null,
@@ -56,7 +56,7 @@
     },
     {
         "Id": 400,
-        "TagName": "\u6d3b\u52a8",
+        "TagName": "Event",
         "TagType": 3.0,
         "ShowCondition": 770417,
         "UnlockCondition": null,
@@ -64,5 +64,16 @@
         "ShowTypeInHideFunc": 1,
         "RedPointConditions": "['CONDITION_TASK_TYPE']",
         "RedPointArgs": "[5]"
+    },
+    {
+        "Id": 500,
+        "TagName": "Service",
+        "TagType": 6.0,
+        "ShowCondition": 1060018,
+        "UnlockCondition": null,
+        "FunctionId": null,
+        "ShowTypeInHideFunc": 1,
+        "RedPointConditions": "['CONDITION_TASK_CANLIVER']",
+        "RedPointArgs": null
     }
 ]

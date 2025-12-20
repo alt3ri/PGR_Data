@@ -185,4 +185,8 @@ function XUiGuildWarBattleRoleRoom:CheckShowAnimationSet()
     return false
 end
 
+function XUiGuildWarBattleRoleRoom:IsTeamPrefabHideBtnCover()
+    return true
+end
+
 return XUiGuildWarBattleRoleRoom

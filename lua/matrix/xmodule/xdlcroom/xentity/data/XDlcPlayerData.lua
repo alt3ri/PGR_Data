@@ -18,6 +18,8 @@ function XDlcPlayerData:Ctor(worldType, roomData, worldData)
     self._Camp = nil
     self._CatSkillId = nil
     self._MouseSkillId = nil
+    self._HeadPortraitId = nil
+    self._HeadFrameId = nil
 
     self:_InitCustomData(worldType)
     self:_InitWithRoomData(roomData)
@@ -81,6 +83,54 @@ function XDlcPlayerData:GetCharacterId(pos)
     return nil
 end
 
+function XDlcPlayerData:GetOccupationType(pos)
+    local character = self._CharacterDataList[pos or 1]
+    if character then
+        return character:GetOccupationType()
+    end
+    return nil
+end
+
+function XDlcPlayerData:GetRelinkPlayerLevel(pos)
+    local character = self._CharacterDataList[pos or 1]
+    if character then
+        return character:GetLevel()
+    end
+    return 0
+end
+
+function XDlcPlayerData:GetRelinkEquips(pos)
+    local character = self._CharacterDataList[pos or 1]
+    if character then
+        return character:GetRelinkEquips()
+    end
+    return {}
+end
+
+function XDlcPlayerData:GetRelinkEquipBySlot(slot, pos)
+    local character = self._CharacterDataList[pos or 1]
+    if character then
+        return character:GetRelinkEquipBySlot(slot)
+    end
+    return nil
+end
+
+function XDlcPlayerData:GetRelinkEquipByEquipUid(equipUid, pos)
+    local character = self._CharacterDataList[pos or 1]
+    if character then
+        return character:GetRelinkEquipByEquipUid(equipUid)
+    end
+    return nil
+end
+
+function XDlcPlayerData:GetRelinkEquLevel(pos)
+    local character = self._CharacterDataList[pos or 1]
+    if character then
+        return character:GetRelinkEquLevel()
+    end
+    return 0
+end
+
 function XDlcPlayerData:GetCharacterAmount()
     return self._CharacterDataList and #self._CharacterDataList or 0
 end
@@ -91,6 +141,14 @@ end
 
 function XDlcPlayerData:GetNickname()
     return self._NickName or "???"
+end
+
+function XDlcPlayerData:GetHeadPortraitId()
+    return self._HeadPortraitId
+end
+
+function XDlcPlayerData:GetHeadFrameId()
+    return self._HeadFrameId
 end
 
 function XDlcPlayerData:SetCustomData(data)
@@ -131,6 +189,8 @@ function XDlcPlayerData:Clone(other)
     self._Camp = other._Camp
     self._CatSkillId = other._CatSkillId
     self._MouseSkillId = other._MouseSkillId
+    self._HeadPortraitId = other._HeadPortraitId
+    self._HeadFrameId = other._HeadFrameId
 
     if other:HasCustomData() then
         if not self:HasCustomData() then
@@ -172,6 +232,8 @@ function XDlcPlayerData:Clear()
     self._Camp = nil
     self._CatSkillId = nil
     self._MouseSkillId = nil
+    self._HeadPortraitId = nil
+    self._HeadFrameId = nil
     if self:HasCustomData() then
         self._CustomData:Clear()
     end
@@ -188,6 +250,8 @@ function XDlcPlayerData:_InitWithRoomData(data)
         self._IsLeader = data.Leader
         self._Level = data.Level
         self._IsClear = false
+        self._HeadPortraitId = data.HeadPortraitId
+        self._HeadFrameId = data.HeadFrameId
 
         if not characterData then
             self._CharacterDataList[1] = XDlcCharacterData.New(data.WorldNpcData)
@@ -209,6 +273,8 @@ function XDlcPlayerData:_InitWithWorldData(data)
         self._NickName = XDataCenter.SocialManager.GetPlayerRemark(self:GetPlayerId(), self:GetName())
         self._IsLeader = data.IsLeader
         self._IsClear = false
+        self._HeadPortraitId = data.HeadPortraitId
+        self._HeadFrameId = data.HeadFrameId
 
         if not XTool.IsTableEmpty(multiplayerData) then
             self._Camp = multiplayerData.Camp

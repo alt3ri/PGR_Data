@@ -49,6 +49,7 @@ XItemManagerCreator = function()
         BountyTaskExp = 18,
         DormCoin = 30,
         FurnitureCoin = 31,
+        PaintingDesign = 32, --涂装设计图
         DormEnterIcon = 36,
         BaseEquipCoin = 300,
         InfestorActionPoint = 50,
@@ -78,6 +79,7 @@ XItemManagerCreator = function()
         SuperTowerBagItemId = 62801, --超级爬塔背包扩容道具Id
         AreaWarActionPoint = 62901, --全服决战-行动点
         AreaWarCoin = 62902, --全服决战-货币
+        AreaWarAuctionCoin = 62936, -- 全服决战-拍卖行货币
         AreaWarPersonalExp = 97021, --全服决战-个人经验
         RpgMakerGameHintCoin = 63300, --推箱子游戏-提示货币
         DoubleTower = 60850, --动作塔防代币
@@ -118,8 +120,10 @@ XItemManagerCreator = function()
         DlcMultiplayerCoin = 97020,  --DLC多人联机玩法货币
         DlcMultiplayerBpExp = 97045, --DLC多人联机玩法Bp经验
         ScoreTowerCoin = 96203, -- 新矿区代币
-        DlcRelinkCoin = 96203, -- DLC联机共斗玩法货币
         Theatre5Coin = 97054, -- 肉鸽5货币
+        DlcRelinkStoreCoin = 97070, -- DLC联机共斗商店货币
+        DlcRelinkExpCoin = 97071, -- DLC联机共斗经验货币
+        DlcRelinkGameplayCoin = 97072, -- DLC联机共斗局内货币
     }
 
     --时效性道具初始时间计算方式

@@ -1,4 +1,7 @@
----@class XNpcFollowToSectorController @Npc寻路跟随组件，目标点从一个扇形中取点
+---@class XNpcFollowToSectorController @Npc寻路跟随组件，目标点从一个扇形中取点（警告：已停止维护，请不要使用！）
+-- 警告：已停止维护，请不要使用！
+-- 警告：已停止维护，请不要使用！
+-- 警告：已停止维护，请不要使用！
 local XNpcFollowToSectorController = XClass(nil, "XNpcFollowToSectorController")
 
 ---寻路跟随状态

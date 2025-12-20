@@ -304,6 +304,20 @@
         "Role": "R2BuouxiongMd019141",
         "Layer": null,
         "State": null,
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": null,
+        "State": null,
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": null,
+        "State": null,
         "Target": "Attack01",
         "TransitionDuration": 0.1
     },
@@ -431,20 +445,6 @@
         "Layer": null,
         "State": null,
         "Target": "Attack96",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "R2BuouxiongMd019141",
-        "Layer": null,
-        "State": null,
-        "Target": "WalkStart",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "R2BuouxiongMd019141",
-        "Layer": null,
-        "State": null,
-        "Target": "WalkStop",
         "TransitionDuration": 0.1
     },
     {
@@ -591,14 +591,14 @@
         "Role": "R2BuouxiongMd019141",
         "Layer": null,
         "State": "Walk",
-        "Target": "Stand2",
+        "Target": "WalkStop",
         "TransitionDuration": 0.1
     },
     {
         "Role": "R2BuouxiongMd019141",
         "Layer": null,
         "State": "Walk",
-        "Target": "WalkStop",
+        "Target": "Stand1",
         "TransitionDuration": 0.1
     },
     {
@@ -933,6 +933,20 @@
     {
         "Role": "R2BuouxiongMd019141",
         "Layer": null,
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": null,
+        "State": "WalkStop",
+        "Target": "Stand1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": null,
         "State": "Attack01",
         "Target": "Attack51",
         "TransitionDuration": null
@@ -1097,20 +1111,6 @@
         "State": "Attack45",
         "Target": "Attack52",
         "TransitionDuration": null
-    },
-    {
-        "Role": "R2BuouxiongMd019141",
-        "Layer": null,
-        "State": "WalkStart",
-        "Target": "Walk",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "R2BuouxiongMd019141",
-        "Layer": null,
-        "State": "WalkStop",
-        "Target": "Stand1",
-        "TransitionDuration": 0.1
     },
     {
         "Role": "R2BuouxiongMd019141",
@@ -1417,6 +1417,20 @@
         "Role": "R2BuouxiongMd019141",
         "Layer": 1.0,
         "State": null,
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
         "Target": "Attack01",
         "TransitionDuration": 0.1
     },
@@ -1550,14 +1564,238 @@
         "Role": "R2BuouxiongMd019141",
         "Layer": 1.0,
         "State": null,
-        "Target": "WalkStart",
+        "Target": "Attack111",
         "TransitionDuration": 0.1
     },
     {
         "Role": "R2BuouxiongMd019141",
         "Layer": 1.0,
         "State": null,
-        "Target": "WalkStop",
+        "Target": "Attack112",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack113",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack114",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack115",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack116",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack117",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack118",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack119",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack120",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack121",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack122",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack123",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack124",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack125",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack126",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack127",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack128",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack129",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack130",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack131",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack132",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack133",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack134",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack135",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack136",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack137",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack138",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack139",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack140",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack141",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack142",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack143",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack144",
         "TransitionDuration": 0.1
     },
     {
@@ -1704,14 +1942,14 @@
         "Role": "R2BuouxiongMd019141",
         "Layer": 1.0,
         "State": "Walk",
-        "Target": "Stand2",
+        "Target": "WalkStop",
         "TransitionDuration": 0.1
     },
     {
         "Role": "R2BuouxiongMd019141",
         "Layer": 1.0,
         "State": "Walk",
-        "Target": "WalkStop",
+        "Target": "Stand1",
         "TransitionDuration": 0.1
     },
     {
@@ -2046,6 +2284,20 @@
     {
         "Role": "R2BuouxiongMd019141",
         "Layer": 1.0,
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "WalkStop",
+        "Target": "Stand1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
         "State": "Attack01",
         "Target": "Attack51",
         "TransitionDuration": null
@@ -2214,15 +2466,127 @@
     {
         "Role": "R2BuouxiongMd019141",
         "Layer": 1.0,
-        "State": "WalkStart",
-        "Target": "Walk",
+        "State": "Attack122",
+        "Target": "Stand2",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack123",
+        "Target": "Stand2",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack124",
+        "Target": "Stand2",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack125",
+        "Target": "Stand2",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack129",
+        "Target": "Attack130",
         "TransitionDuration": 0.1
     },
     {
         "Role": "R2BuouxiongMd019141",
         "Layer": 1.0,
-        "State": "WalkStop",
-        "Target": "Stand1",
+        "State": "Attack130",
+        "Target": "Attack131",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack131",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack132",
+        "Target": "Attack133",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack133",
+        "Target": "Attack134",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack134",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack135",
+        "Target": "Attack136",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack136",
+        "Target": "Attack137",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack137",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack138",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack139",
+        "Target": "Attack140",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack140",
+        "Target": "Attack141",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack141",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd019141",
+        "Layer": 1.0,
+        "State": "Attack142",
+        "Target": "Attack143",
         "TransitionDuration": 0.1
     }
 ]

@@ -53,6 +53,7 @@ local type = {
     CONDITION_TASK_COURSE = "XRedPointConditionTaskCourse", --是否有历程任务奖励
     CONDITION_TASK_WEEK_ACTIVE = "XRedPointConditionTaskWeekActive", --是否有周活跃任务奖励
     CONDITION_TASK_LIMIT_TYPE = "XRedPointConditionTaskLimited",
+    CONDITION_TASK_CANLIVER = "XRedPointConditionTaskCanLiver",
     --赏金任务
     --CONDITION_BOUNTYTASK = "XRedPointConditionBountyTask", --是否有赏金任务奖励
     --竞技
@@ -681,6 +682,12 @@ local type = {
     CONDITION_RACE_TASK = "XRedPointRaceTask", --任务红点
     CONDITION_RACE_ROUND_GUESS = "XRedPointRaceRoundGuess", --单场预测红点
     CONDITION_RACE_MATCH_GUESS = "XRedPointRaceMatchGuess", --赛事预测红点
+    
+    --涂装套装
+    CONDITION_FASHION_SUIT_MAIN_RED = "XRedPointFashionSuitMainRed",
+
+    -- 空花签到
+    CONDITION_RADIO_SIGN = "XRedPointConditionRadioSign",
 }
 XRedPointConditions.Conditions = type
 

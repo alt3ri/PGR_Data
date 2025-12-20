@@ -546,8 +546,8 @@ function XStrongholdTeam:GetOrCreateTempTeam()
         local members = XTool.Clone(self:GetAllMembers())
         for pos, id in pairs(xTeam.EntitiyIds) do
             local newMember = nil
-            for _, member in pairs(members) do
-                if member:GetRoleId() == id then
+            for pos2, member in pairs(members) do
+                if XTool.IsNumberValid(id) and member:GetRoleId() == id and pos == pos2 then
                     newMember = member
                     break
                 end

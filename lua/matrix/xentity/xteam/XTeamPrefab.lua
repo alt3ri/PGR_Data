@@ -602,8 +602,8 @@ function XTeamPrefab:CoverToRealTeamData(xTeam)
     xTeam:SetEnterCgIndex(self.EnterCgIndex)
     xTeam:SetSettleCgIndex(self.SettleCgIndex)
     xTeam:RefreshGeneralSkills(true, true)  -- 假设此方法本身不需要上行
-    if XTool.IsNumberValid(xTeam.SelectedGeneralSkill) then -- 必须要判断，因为有可能是0
-        xTeam.SelectedGeneralSkill = self.SelectedGeneralSkill
+    if XTool.IsNumberValid(xTeam.SelectedGeneralSkill) then -- 必须要判断，因为有可能是0，因为如果它自动刷了一遍还是0 说明它就没有效应角色，不能随意赋值给它
+        xTeam:UpdateSelectGeneralSkill(self.SelectedGeneralSkill)
     end
 end
 

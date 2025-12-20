@@ -103,20 +103,12 @@ function XNpcInteraction:StartInteraction(targetId, time, type, callback)
         return false
     end
 
-    if type == EInteractType.Rescue then
-        self._proxy:SetNpcRescuedState(self._npc, targetId, true)
-    end
-
     XLog.Debug(string.format("XNpcInteraction.StartInteraction launcher:%d target:%d", self._npc, targetId))
     return true
 end
 
 function XNpcInteraction:StopInteraction()
     --self._proxy:SetInteractionProgress(0) --交互进度清零
-    if self._type == EInteractType.Rescue then
-        self._proxy:SetNpcRescuedState(self._npc, self._targetId, false) --关闭被救者的被救援UI
-    end
-
     self:Reset()
 end
 
@@ -125,10 +117,6 @@ function XNpcInteraction:CompleteInteraction()
     self._proxy:AbortAction(self._npc, true) --打断交互技能（交互技能统一配置了非常长的CastTime，以保证交互过程中不会被移动打断，故此处需要强制打断。
     --self._proxy:SetInteractionProgress(0) --交互进度清零
     --self._proxy:NpcInteractComplete(self._npc) --发送消息给关卡逻辑
-
-    if self._type == EInteractType.Rescue then
-        self._proxy:SetNpcRescuedState(self._npc, self._targetId, false) --关闭被救者的被救援UI
-    end
 
     if self._callback then
         self._callback()

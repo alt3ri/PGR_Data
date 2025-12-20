@@ -367,6 +367,7 @@ function XUiEquipAwarenessSuitPrefab:UpdateSavePanel()
     end
 
     local isShowBtnSave = not (self.IsFromTeamPrefabUi and self.CurPrefabIndex == CUR_SUIT_PREFAB_INDEX)
+    self.BtnSetName.gameObject:SetActiveEx(isShowBtnSave)
     self.BtnSave.gameObject:SetActiveEx(isShowBtnSave)
     self.BtnEquip.gameObject:SetActiveEx(isShowBtnSave)
 end

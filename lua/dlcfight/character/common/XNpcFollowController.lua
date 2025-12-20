@@ -1,4 +1,7 @@
----@class XNpcFollowController @Npc寻路跟随组件
+---@class XNpcFollowController @Npc寻路跟随组件（警告：已停止维护，请使用 C# 接口！）
+-- 警告：已停止维护，请使用 C# 接口！
+-- 警告：已停止维护，请使用 C# 接口！
+-- 警告：已停止维护，请使用 C# 接口！
 local XNpcFollowController = XClass(nil, "XNpcFollowController")
 
 ---寻路跟随状态

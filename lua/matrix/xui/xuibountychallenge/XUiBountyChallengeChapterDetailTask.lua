@@ -4,37 +4,18 @@ local XUiBountyChallengeChapterDetailTask = XClass(XUiNode, "XUiBountyChallengeC
 
 function XUiBountyChallengeChapterDetailTask:OnStart()
     self._GridRewards = {}
-    XUiHelper.RegisterClickEvent(self, self.Button, self.OnClick)
     self._Tweener = false
+    
+    self.BtnReceive:AddEventListener(handler(self, self.OnClick))
+    self.BtnTaskHelp:AddEventListener(handler(self, self.OnBtnTaskHelpClick))
 end
 
 ---@param data XUiBountyChallengeChapterDetailTaskData
 function XUiBountyChallengeChapterDetailTask:UpdateContent(data)
     --self.Grid256New
     self._Data = data
-
-    -- 无数据，显示空白格
-    if not data then
-        self.Detail.gameObject:SetActive(false)
-        self.ImgBg1.gameObject:SetActive(false)
-        self.ImgBg2.gameObject:SetActive(false)
-        self.ImgBg3.gameObject:SetActive(true)
-        return
-    end
-
-    self.Detail.gameObject:SetActive(true)
-    if data.IsCanFinish or data.IsClear then
-        self.ImgBg1.gameObject:SetActive(false)
-        self.ImgBg2.gameObject:SetActive(true)
-        self.ImgBg3.gameObject:SetActive(false)
-    else
-        self.ImgBg1.gameObject:SetActive(true)
-        self.ImgBg2.gameObject:SetActive(false)
-        self.ImgBg3.gameObject:SetActive(false)
-    end
-
-    self.TxtTitle.text = data.Name
-    self.TxtDetail.text = data.Desc
+    
+    self.TxtDesc.text = data.Desc
 
     XTool.UpdateDynamicGridCommon(self._GridRewards, data.Rewards, self.Grid256New, self.Parent)
 
@@ -44,12 +25,24 @@ function XUiBountyChallengeChapterDetailTask:UpdateContent(data)
             local grid = self._GridRewards[i]
             grid:SetReceived(true)
         end
+        
+        self.ImgMask.gameObject:SetActive(true)
     else
         for i = 1, #self._GridRewards do
             ---@type XUiGridCommon
             local grid = self._GridRewards[i]
             grid:SetReceived(false)
         end
+        
+        self.ImgMask.gameObject:SetActive(false)
+    end
+
+    if self.ImgBgComplete then
+        self.ImgBgComplete.gameObject:SetActiveEx(data.IsCanFinish)
+    end
+
+    if self.ImgBgNormal then
+        self.ImgBgNormal.gameObject:SetActiveEx(not data.IsCanFinish)
     end
 
     -- 可领取特效
@@ -62,7 +55,7 @@ function XUiBountyChallengeChapterDetailTask:UpdateContent(data)
                 imgCanReceive.gameObject:SetActive(true)
             end
         end
-        self.Button.gameObject:SetActive(true)
+        self.BtnReceive.gameObject:SetActive(true)
     else
         for i = 1, #self._GridRewards do
             ---@type XUiGridCommon
@@ -72,8 +65,13 @@ function XUiBountyChallengeChapterDetailTask:UpdateContent(data)
                 imgCanReceive.gameObject:SetActive(false)
             end
         end
-        self.Button.gameObject:SetActive(false)
+        self.BtnReceive.gameObject:SetActive(false)
     end
+    
+    -- 视频入口
+    local hasVideo = XTool.IsNumberValidEx(data.Config.StageDescId)
+    
+    self.BtnTaskHelp.gameObject:SetActiveEx(hasVideo)
 end
 
 ---@param data XUiBountyChallengeChapterDetailTaskData
@@ -109,13 +107,38 @@ end
 function XUiBountyChallengeChapterDetailTask:OnClick()
     if self._Data then
         if XDataCenter.TaskManager.CheckTaskAchieved(self._Data.Id) then
-            XDataCenter.TaskManager.FinishTask(self._Data.Id, function(goodsList)
+            self._Control:ReceiveAllTask(function(goodsList)
                 XUiManager.OpenUiObtain(goodsList)
                 self.Parent:Update()
             end)
-            --else do nothing
         end
     end
 end
+
+function XUiBountyChallengeChapterDetailTask:OnBtnTaskHelpClick()
+    local data = self._Control:GetUiBossDetailByDescId(self._Data.Config.StageDescId)
+
+    if data then
+        data.Index = self._Data.Config.StageDescIndex
+
+        XLuaUiManager.Open('UiBountyChallengePopupBossDetail', data)
+    end
+    
+end
+
+function XUiBountyChallengeChapterDetailTask:PlayStartAnimation(index)
+    local delayTime = self._Control:GetConfigNum('UiTaskAnimDelayTime', 1)
+    local interval = self._Control:GetConfigNum('UiTaskAnimIntervalTime', 1)
+    
+    local fixDelayTime = math.floor((delayTime + index * interval) * XScheduleManager.SECOND)
+    
+    self:StopAnimation('Enable')
+    local animTimeId = XScheduleManager.ScheduleOnce(function()
+        self:PlayAnimation('Enable')
+    end, fixDelayTime)
+    
+    self._TweenAnimationAgency:_AddTimerId(animTimeId)
+end
+
 
 return XUiBountyChallengeChapterDetailTask

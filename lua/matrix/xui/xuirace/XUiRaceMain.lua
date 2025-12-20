@@ -248,7 +248,8 @@ end
 function XUiRaceMain:OnBtnPredictAllClick()
     if self._Control:IsAllMatchFinish() then
         self._Control:RequestGuessGlobalResult(function()
-            if not self._IsMatchResultCheck then
+            local isCanGain = self._Control:HasJoinGuess() and not self._Control:IsAllGuessRewardGain()
+            if isCanGain or not self._IsMatchResultCheck then
                 --比赛全部结束+有赛事预测奖励没领取=打开结算界面
                 self._Control:SetSettleParam(false)
                 XLuaUiManager.Open("UiRaceFightPredictSettlement", nil)

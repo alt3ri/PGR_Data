@@ -277,6 +277,7 @@ XFunctionManager.FunctionName = {
     
     SkyGarden = 20000, --空中花园
     Race = 10354, --赛马
+    FashionSuit = 10496 --涂装套装
 }   
 
 XFunctionManager.FunctionType = {

@@ -192,10 +192,9 @@ function XUiLogin:InitUiView()
     self.BtnMenu.gameObject:SetActiveEx(false)
     if XOverseaManager.IsOverSeaRegion() then
         self.IsUserAgree = true
-        
         if XOverseaManager.IsENRegion() then
-			local showBtn = not XUiManager.IsHideFunc
-           	self.BtnMenu.gameObject:SetActiveEx(showBtn)
+            local showBtn = not XUiManager.IsHideFunc
+            self.BtnMenu.gameObject:SetActiveEx(showBtn)
         else
             self.BtnMenu.gameObject:SetActiveEx(XOverseaManager.IsJP_KRRegion())
         end
@@ -723,8 +722,8 @@ function XUiLogin:DoLogin()
     self.IsLoginingGameServer = true
     --CS.XPerfSightAgent.MarkLoadlevel("Login")
     --登录时长
-    CS.XUwaGpmLuaAgent.ChangeScene("Login")
-    CS.XUwaGpmLuaAgent.BeginSceneLoad("Login")
+    --CS.XUwaGpmLuaAgent.ChangeScene("Login")
+    --CS.XUwaGpmLuaAgent.BeginSceneLoad("Login")
     XLuaUiManager.SetAnimationMask("DoLogin", true)
     local loginProfiler = CS.XProfiler.Create("login")
     loginProfiler:Start()
@@ -751,8 +750,8 @@ function XUiLogin:DoLogin()
 
         XDataCenter.PurchaseManager.YKInfoDataReq(function()
             --CS.XPerfSightAgent.MarkLevelFin()
-            CS.XUwaGpmLuaAgent.EndScene()
-            CS.XUwaGpmLuaAgent.EndSceneLoad()
+            --CS.XUwaGpmLuaAgent.EndScene()
+            --CS.XUwaGpmLuaAgent.EndSceneLoad()
             
             self.BlackMask.color = CS.UnityEngine.Color(0, 0, 0, 0)
             self.BlackMask.gameObject:SetActiveEx(true)

@@ -8,7 +8,6 @@ function XMovieActionSelection:OnInit(actionData)
 
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
-    local replacePlayerName = XDataCenter.MovieManager.ReplacePlayerName
 
     self.DelaySelectKey = paramToNumber(params[1])
     self.IsLeft = params[11] == "1" -- 是否使用左边的UI显示，默认是用右边的UI显示
@@ -30,7 +29,7 @@ function XMovieActionSelection:OnInit(actionData)
         if content and content ~= "" then
             local data = {}
             data.Index = i
-            data.DialogContent = replacePlayerName(content)
+            data.DialogContent = XMVCA.XMovie:FormatContent(content)
             data.ActionId = paramToNumber(params[idIndex])
             data.BtnType = params[btnTypeIndex]
             data.Setting = params[settingIndex]

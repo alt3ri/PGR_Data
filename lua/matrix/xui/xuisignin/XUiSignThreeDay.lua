@@ -52,7 +52,9 @@ function XUiSignThreeDay:Refresh(signId, isShow, data)
     self.SignId = signId
     self.IsPurchaseEnter = data ~= nil
     self.Purchase = XDataCenter.PurchaseManager.GetPurchasePackageBySignId(signId)
-    self.PurchaseData = self.Purchase:GetRawData()
+    if self.Purchase then
+        self.PurchaseData = self.Purchase:GetRawData()
+    end
     self.BetterIndexDic = {}
 
     self.BetterIndexDic = {}

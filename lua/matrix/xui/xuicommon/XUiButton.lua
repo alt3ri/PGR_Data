@@ -59,4 +59,17 @@ function XUiButton:ShowReddot(value)
     self._Button:ShowReddot(value)
 end
 
+function XUiButton:SetName(value)
+    self._Button:SetName(value)
+end
+
+function XUiButton:SetButtonState(state)
+    if state == XUiButtonState.Disable then
+        self._Button:SetDisable(true)
+    else
+        self._Button:SetDisable(false)
+    end
+    self._Button:SetButtonState(state)
+end
+
 return XUiButton

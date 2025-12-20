@@ -3,25 +3,26 @@ local XDlcRoom = require("XModule/XDlcRoom/XEntity/XDlcRoom")
 local XDlcRelinkRoom = XClass(XDlcRoom, "XDlcRelinkRoom")
 
 function XDlcRelinkRoom:OpenMultiplayerRoom()
-    --XLuaUiManager.Open("UiDlcRelinkRoom")
-    --XLuaUiManager.Remove("UiRelinkPopupChooseRoom")
 end
 
 function XDlcRelinkRoom:PopThenOpenMultiplayerRoom()
-    --XLuaUiManager.PopThenOpen("UiDlcRelinkRoom")
 end
 
 function XDlcRelinkRoom:OpenFightUiLoading()
-    XLuaUiManager.Open("UiRelinkLoading")
+    XLuaUiManager.Open("UiDlcRelinkLoadingNew")
 end
 
 function XDlcRelinkRoom:CloseFightUiLoading()
-    XLuaUiManager.Close("UiRelinkLoading")
+    XLuaUiManager.Close("UiDlcRelinkLoadingNew")
 end
 
 function XDlcRelinkRoom:OnDisconnect()
-    XLuaUiManager.Open("UiDlcSettleLose")
-    XLuaUiManager.SafeClose("UiDlcRelinkRoom")
+    local uiName = "UiDlcRelinkRoom"
+    if XLuaUiManager.IsStackUiOpen(uiName) then
+        XLuaUiManager.CloseAllUpperUi(uiName)
+    else
+        XLuaUiManager.Open(uiName)
+    end
 end
 
 function XDlcRelinkRoom:OnRoomLeaderTimeOut()
@@ -34,19 +35,8 @@ function XDlcRelinkRoom:OnKickOut(code)
     if code == XCode.DlcMultiplayerClose then
         XLuaUiManager.RunMain(true)
     else
-        --XLuaUiManager.SafeClose("UiRelinkPopupChooseRoom")
-        --if not XUiManager.CheckTopUi(CsXUiType.Normal, "UiDlcRelinkRoom") then
-        --    XLuaUiManager.Remove("UiDlcRelinkRoom")
-        --end
+        -- TODO 被踢出房间后的处理
     end
-end
-
-function XDlcRelinkRoom:OnCreateRoom()
-    --XLuaUiManager.SafeClose("UiDialog")
-end
-
-function XDlcRelinkRoom:OnEnterWorld()
-    --XLuaUiManager.SafeClose("UiDlcRelinkRoom")
 end
 
 return XDlcRelinkRoom

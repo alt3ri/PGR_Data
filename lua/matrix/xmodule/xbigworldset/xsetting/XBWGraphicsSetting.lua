@@ -370,9 +370,11 @@ function XBWGraphicsSetting:_InitGraphicsQualityValue()
         ---@type XBWSettingValue
         self._GraphicsQualityValue = XBWSettingValue.New(defaultQuality, graphicsQuality)
         self._GraphicsQualityValue:RegisterValueChangedEvent(function(value)
-            if value ~= XEnumConst.BWSetting.GraphicsQuality.Custom then
-                self:_InitQualityValue(value)
-            end
+            -- if value ~= XEnumConst.BWSetting.GraphicsQuality.Custom then
+            --     self:_InitQualityValue(value)
+            -- end
+            -- 和主线功能保持一致
+            self:_InitQualityValue(value)
         end)
     else
         self._GraphicsQualityValue:Init(defaultQuality, graphicsQuality)

@@ -164,4 +164,6 @@ function XUiTipLayer:OnDestroy()
         XScheduleManager.UnSchedule(self.Timer)
         self.Timer = nil
     end
-end
+end
+
+return XUiTipLayer

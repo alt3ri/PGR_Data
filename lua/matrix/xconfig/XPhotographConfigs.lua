@@ -77,7 +77,7 @@ function XPhotographConfigs.Init()
     end
 
     SceneTemplates = XTableManager.ReadByIntKey(TABLE_BACK_GROUND, XTable.XTableBackground, "Id")
-    ShareInfo = XTableManager.ReadByIntKey(TABLE_PHOTOMODE_SHARE_INFO, XTable.XTablePhotoModeShareInfo, "Id")
+    ShareInfo = XTableManager.ReadByStringKey(TABLE_PHOTOMODE_SHARE_INFO, XTable.XTablePhotoModeShareInfo, "Id")
 end
 
 function XPhotographConfigs.GetSceneTemplates()

@@ -56,4 +56,11 @@ function XSgDormLayout:IsEmpty()
     return not self._ContainerData or self._ContainerData:IsEmpty()
 end
 
+function XSgDormLayout:GetFurnitureCount()
+    if not self._ContainerData then
+        return 0
+    end
+    return self._ContainerData:GetFurnitureCount()
+end
+
 return XSgDormLayout

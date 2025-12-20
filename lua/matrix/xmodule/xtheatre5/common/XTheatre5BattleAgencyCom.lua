@@ -387,7 +387,7 @@ function XTheatre5BattleAgencyCom:OpenMatchLoadingUi(...)
 end
 
 --- 请求进入战斗
-function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, successCb, delayEnterTime)
+function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, successCb, delayEnterTime, errorCb)
     -- 获取当前活动的worldId
     local worldId = self._Model:GetTheatre5WorldIdByActivityId(self._Model:GetActivityId())
 
@@ -446,6 +446,12 @@ function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, s
                 XScheduleManager.ScheduleOnce(function()
                     enterFunc()
                 end, delayEnterTime)
+            end
+        else
+            CsXUiManager.Instance:SetRevertAllLock(false)
+            self:_CheckPVPTimeEndInSettle(false)
+            if errorCb then
+                errorCb()
             end
         end
     end)

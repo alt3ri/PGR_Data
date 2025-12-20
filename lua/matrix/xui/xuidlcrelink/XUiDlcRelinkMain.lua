@@ -1,3 +1,4 @@
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@class XUiDlcRelinkMain : XLuaUi
 ---@field private _Control XDlcRelinkControl
 ---@field VideoPlayer XVideoPlayerUGUI
@@ -6,7 +7,13 @@ local XUiDlcRelinkMain = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkMain")
 
 function XUiDlcRelinkMain:OnAwake()
     self:RegisterUiEvents()
-    self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe({ XDataCenter.ItemManager.ItemId.DlcRelinkCoin }, self.PanelSpecialTool, self)
+    self.GridReward.gameObject:SetActiveEx(false)
+
+    local itemIds = { XDataCenter.ItemManager.ItemId.DlcRelinkStoreCoin }
+    self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe(itemIds, self.PanelSpecialTool, self, nil, function(data, index)
+        local itemId = itemIds[index]
+        XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", itemId)
+    end)
 end
 
 function XUiDlcRelinkMain:OnStart()
@@ -24,6 +31,7 @@ function XUiDlcRelinkMain:OnStart()
     self.TipSwitchInterval = tonumber(self._Control:GetClientConfig("MainTipsSwitchInterval"))
     self.CurrentTipIndex = -1
     self:InitVideo()
+    self:InitRewardPreview()
     -- TODO 战斗初始化，先临时放在这里，后续等战斗那边优化后在调整。
     XMVCA.XDlcRelink:DlcInitFight()
 end
@@ -31,16 +39,29 @@ end
 function XUiDlcRelinkMain:OnEnable()
     self.Super.OnEnable(self)
     self:RefreshTime()
-    self:RefreshName()
     self:StartTipsTimer()
     self:PlayVideo()
     self:RefreshBtnEnter()
+    self:RefreshBtnTask()
+    self:RefreshBtnBox()
 end
 
 function XUiDlcRelinkMain:OnDisable()
     self.Super.OnDisable(self)
     self:StopTipsTimer()
     self:StopVideo()
+end
+
+function XUiDlcRelinkMain:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_DLC_ROOM_KICKOUT,
+    }
+end
+
+function XUiDlcRelinkMain:OnNotify(evet, ...)
+    if evet == XEventId.EVENT_DLC_ROOM_KICKOUT then
+        self:RefreshBtnEnter()
+    end
 end
 
 function XUiDlcRelinkMain:InitVideo()
@@ -53,8 +74,26 @@ function XUiDlcRelinkMain:InitVideo()
     self.VideoPlayer:SetVideoFromRelateUrl(videoUrl)
 end
 
-function XUiDlcRelinkMain:RefreshName()
-    self.TxtTitle.text = self._Control:GetActivityName()
+function XUiDlcRelinkMain:InitRewardPreview()
+    local rewardId = tonumber(self._Control:GetClientConfig("MainPreviewRewardId"))
+    if not XTool.IsNumberValid(rewardId) then
+        self.PanelReward.gameObject:SetActiveEx(false)
+        return
+    end
+
+    self.PanelReward.gameObject:SetActiveEx(true)
+    local rewardList = XRewardManager.GetRewardList(rewardId)
+    local rewardCount = #rewardList
+    for i = 1, rewardCount do
+        local go = XUiHelper.Instantiate(self.GridReward, self.PanelReward)
+        ---@type XUiGridCommon
+        local grid = XUiGridCommon.New(self, go)
+        grid:Refresh(rewardList[i])
+        grid:SetProxyClickFunc(function()
+            XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", grid.TemplateId)
+        end)
+        grid.GameObject:SetActiveEx(true)
+    end
 end
 
 function XUiDlcRelinkMain:RefreshTime()
@@ -65,7 +104,7 @@ function XUiDlcRelinkMain:RefreshTime()
     if timeLeft < 0 then
         timeLeft = 0
     end
-    local timeStr = XUiHelper.GetTime(timeLeft, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME)
+    local timeStr = XUiHelper.GetTime(timeLeft, XUiHelper.TimeFormatType.DEFAULT)
     self.TxtTime.text = string.format(self._Control:GetClientConfig("MainCountDownDesc"), timeStr)
 end
 
@@ -128,12 +167,32 @@ function XUiDlcRelinkMain:RefreshBtnEnter()
     self.BtnEnter:SetNameByGroup(0, self._Control:GetClientConfig("MainBtnEnterDesc", isInRoom and 2 or 1))
 end
 
+function XUiDlcRelinkMain:RefreshBtnTask()
+    local taskId = self._Control:GetFirstUnCompleteTaskId()
+    local isValid = XTool.IsNumberValid(taskId)
+    self.BtnTask:SetDisable(not isValid)
+    if isValid then
+        local taskConfig = XDataCenter.TaskManager.GetTaskTemplate(taskId)
+        self.BtnTask:SetNameByGroup(0, taskConfig and taskConfig.Desc or "")
+    end
+    -- 红点
+    local isShowRedPoint = XMVCA.XDlcRelink:CheckAllTaskRedPoint()
+    self.BtnTask:ShowReddot(isShowRedPoint)
+end
+
+function XUiDlcRelinkMain:RefreshBtnBox()
+    local isSign = self._Control:CheckDailySign()
+    self.BtnBox:ShowReddot(not isSign)
+    self.IconBox.gameObject:SetActiveEx(not isSign)
+end
+
 function XUiDlcRelinkMain:RegisterUiEvents()
     self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnTask, self.OnBtnTaskClick)
     self:RegisterClickEvent(self.BtnRank, self.OnBtnRankClick)
     self:RegisterClickEvent(self.BtnEnter, self.OnBtnEnterClick)
+    self:RegisterClickEvent(self.BtnBox, self.OnBtnBoxClick)
     self:BindHelpBtn(self.BtnHelp, self._Control:GetClientConfig("HelpKey"))
 end
 
@@ -160,28 +219,42 @@ function XUiDlcRelinkMain:OnBtnBackClick()
 end
 
 function XUiDlcRelinkMain:OnBtnMainUiClick()
-    local isNotDialogTip = true
-    if XMVCA.XDlcRoom:IsInRoom() then
-        local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
-        if team then
-            isNotDialogTip = team:GetMemberAmount() == 1
-        end
-    else
-        if XMVCA.XDlcRoom:IsMatching() then
-            isNotDialogTip = false
-        end
-    end
-    XLuaUiManager.RunMain(isNotDialogTip)
+    self._Control:CommonRunMainUiHandle()
 end
 
 function XUiDlcRelinkMain:OnBtnTaskClick()
+    XLuaUiManager.Open("UiDlcRelinkLvReward")
 end
 
 function XUiDlcRelinkMain:OnBtnRankClick()
+    XLuaUiManager.Open("UiDlcRelinkRank")
 end
 
 function XUiDlcRelinkMain:OnBtnEnterClick()
     XLuaUiManager.Open("UiDlcRelinkRoom")
+end
+
+function XUiDlcRelinkMain:OnBtnBoxClick()
+    if self._Control:CheckDailySign() then
+        return
+    end
+    self._Control:RequestSign(function(rewardList)
+        self:RefreshBtnBox()
+        if XTool.IsTableEmpty(rewardList) then
+            return
+        end
+        local rewardGoodsList = {}
+        local equipUidList = {}
+        for _, reward in ipairs(rewardList) do
+            if not XTool.IsTableEmpty(reward.RewardGoods) then
+                table.insert(rewardGoodsList, reward.RewardGoods)
+            end
+            if XTool.IsNumberValid(reward.EquipUid) then
+                table.insert(equipUidList, reward.EquipUid)
+            end
+        end
+        XLuaUiManager.Open("UiDlcRelinkPopupGetReward", rewardGoodsList, equipUidList)
+    end)
 end
 
 return XUiDlcRelinkMain

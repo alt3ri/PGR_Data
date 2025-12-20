@@ -16,10 +16,7 @@ function XUiBountyChallengeChapterDetail:OnAwake()
     self._GridCharacters = {}
 
     ---@type XUiBountyChallengeChapterDetailTask[]
-    self._GridTasks = {
-        XUiBountyChallengeChapterDetailTask.New(self.GridTask1, self),
-        XUiBountyChallengeChapterDetailTask.New(self.GridTask2, self),
-    }
+    self._GridTasks = {}
 
     ---@type XUiBountyChallengeChapterDetailDifficulty[]
     self._GridDifficulty = {}
@@ -53,17 +50,32 @@ function XUiBountyChallengeChapterDetail:Update()
     local data = self._Control:GetUiChapterDetail()
     self._Data = data
     self.TxtName.text = data.Name
-    self.TxtDetail1.text = data.Description
+    --self.TxtDetail1.text = data.Description
+
+    if self.TxtTitle then
+        self.TxtTitle.gameObject:SetActiveEx(not self._Data.IsRobot)
+    end
+
+    if self.TxtTitleDifficulty4 then
+        self.TxtTitleDifficulty4.gameObject:SetActiveEx(self._Data.IsRobot)
+    end
 
     -- 限定角色
     if #data.Characters > 0 then
-        self.ListCharacter.gameObject:SetActive(true)
+        if self.PanelMember then
+            self.PanelMember.gameObject:SetActiveEx(true)
+        end
+        self.ListCharacter.gameObject:SetActiveEx(true)
         XTool.UpdateDynamicItem(self._GridCharacters, data.Characters, self.GridCharacter, XUiBountyChallengeChapterDetailCharacter, self)
     else
         for i = 1, #self._GridCharacters do
             self._GridCharacters[i]:Close()
         end
-        self.ListCharacter.gameObject:SetActive(false)
+        self.ListCharacter.gameObject:SetActiveEx(false)
+
+        if self.PanelMember then
+            self.PanelMember.gameObject:SetActiveEx(false)
+        end
     end
 
     -- 难度
@@ -89,11 +101,17 @@ function XUiBountyChallengeChapterDetail:Update()
     end
 
     -- 任务
-    -- 因为ui设计上，确保要有3格，不够的，用空格填充，所以这里需要把taskList扩充到至少3格
-    for i = #data.TaskList + 1, 2 do
-        table.insert(data.TaskList, false)
-    end
     XTool.UpdateDynamicItem(self._GridTasks, data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
+    
+    -- 任务序列动画
+    if not self._HadPlayTaskUiAnim then
+        self._HadPlayTaskUiAnim = true
+        if not XTool.IsTableEmpty(self._GridTasks) then
+            for i, v in ipairs(self._GridTasks) do
+                v:PlayStartAnimation(i)
+            end
+        end
+    end
 
     if self.RImgBoss then
         self.RImgBoss:SetRawImage(data.Icon)

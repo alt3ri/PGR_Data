@@ -13,6 +13,8 @@ local NodeTypeToClass = {
     [XMVCA.XTheatre5.EnumConst.PVENodeType.ItemBoxSelect] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5ItemBoxSelectNode"),
     [XMVCA.XTheatre5.EnumConst.PVENodeType.BattleChapterInit] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5BattleChapterInitNode"),
     --[XMVCA.XTheatre5.EnumConst.PVENodeType.SelectRelic] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5SelectRelicNode"),
+    [XMVCA.XTheatre5.EnumConst.PVENodeType.Branch] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5BranchNode"),
+    [XMVCA.XTheatre5.EnumConst.PVENodeType.Backtrack] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5PVEBacktrackNode"),
 }
 
 function XTheatre5PVELink:Ctor()
@@ -98,6 +100,10 @@ function XTheatre5PVELink:_AddStartNode(storyLineId, storyEntranceId, characterI
         self:AddChapterBattleInitNode(characterId)
     elseif contentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVEChapterType.NormalBattle then
         self:AddChapterBattleInitNode(characterId)
+    elseif contentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVENodeType.Branch then
+        self:AddBranchNode()
+    elseif contentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVENodeType.Backtrack then
+        self:AddBacktrackNode()
     end
 end
 
@@ -150,6 +156,16 @@ end
 --章节战斗初始化
 function XTheatre5PVELink:AddChapterBattleInitNode(storyEntranceId, characterId)
     self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.BattleChapterInit, storyEntranceId, characterId)
+end
+
+-- 选择分支
+function XTheatre5PVELink:AddBranchNode()
+    self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.Branch)
+end
+
+-- 回溯
+function XTheatre5PVELink:AddBacktrackNode()
+    self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.Backtrack)
 end
 
 function XTheatre5PVELink:AddCurNodeCompletedCallback(nodeType, cb)

@@ -48,7 +48,7 @@ XPartnerTeachingManagerCreator = function()
 
         local lockTip
         local isUnlock = true
-        if conditionList or next(conditionList) then
+        if not XTool.IsTableEmpty(conditionList) then
             for _, conditionId in ipairs(conditionList) do
                 local result, desc = XConditionManager.CheckCondition(conditionId)
                 if not result then

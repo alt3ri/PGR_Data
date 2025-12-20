@@ -630,7 +630,7 @@ function XLoginManager.DoLogin(cb)
     if XUserManager.Channel == nil or XUserManager.UserId == nil then
         return
     end
-    CS.XUwaGpmLuaAgent.SetUserId(XUserManager.UserId)
+    --CS.XUwaGpmLuaAgent.SetUserId(XUserManager.UserId)
     --第一次登录，初始化
     InitServerFullProtectConfig()
     --XLog.Debug("登录保护：", "（服务器繁忙/爆满）重登失败次数：" .. ServerFullRetryLoginCount, 
@@ -1099,6 +1099,8 @@ XRpc.NotifyLogin = function(data)
     XNetwork.SetShieldedProtocolList(data.ShieldedProtocolList)
     -- 登录答题列表
     InitLimitLoginData(data.LimitedLoginData)
+    --涂装套装
+    XMVCA.XFashionSuit:SetFashionSuitData(data.FashionSuitList)
     XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_DATA_LOAD_COMPLETE)
 
     local onloginProfiler = loginProfiler:CreateChild("OnLogin")

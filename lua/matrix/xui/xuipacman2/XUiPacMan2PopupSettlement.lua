@@ -23,14 +23,15 @@ function XUiPacMan2PopupSettlement:OnStart(data)
         self.PanelWin.gameObject:SetActive(true)
         self.PanelLost.gameObject:SetActive(false)
         self.TxtScore.text = data.Score
-        self.TxtNodeCount1.text = data.Orbs
-        self.TxtNodeScore1.text = data.OrbScore
+        
+        --self.TxtNodeCount1.text = data.Orbs
+        --self.TxtNodeScore1.text = data.OrbScore
         self.TxtNodeCount2.text = data.Kills
         self.TxtNodeScore2.text = data.KillScore
         self.TxtNodeCount3.text = data.Hp
         self.TxtNodeScore3.text = data.HpScore
-        self.TxtNodeCount4.text = data.ShoeCount
-        self.TxtNodeScore4.text = data.ShoeScore
+        self.TxtNodeCount4.text = data.OrbsPayback
+        self.TxtNodeScore4.text = data.OrbsPayback
     else
         self.PanelWin.gameObject:SetActive(false)
         self.PanelLost.gameObject:SetActive(true)

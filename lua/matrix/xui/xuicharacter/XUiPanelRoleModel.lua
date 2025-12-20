@@ -2482,7 +2482,16 @@ showDefaultFx)
     end
 
     if not liberationFx then
-        local rootTransform = model.transform:FindTransform(rootName)
+
+        local rootTransform = nil
+        if string.find(rootName, "/", 1, true) then
+            -- 多层路径 → 使用结构匹配抽象方法
+            rootTransform = XUiHelper.FindTransformByStructure(model.transform, rootName)
+        else
+            -- 单个点名 → 保留原 FindTransform 行为
+            rootTransform = model.transform:FindTransform(rootName)
+        end
+
         if XTool.UObjIsNil(rootTransform) then
             XLog.Error(
             "XUiPanelRoleModel:UpdateCharacterLiberationLevelEffect Error:can Not find rootTransform in this model, rootName is:" ..
@@ -2492,6 +2501,11 @@ showDefaultFx)
         end
         modelInfo.LiberationFx = rootTransform.gameObject:LoadPrefab(fxPath, false)
         modelInfo.AureoleId = aureoleId
+
+        local proxy = self:GetRenderingProxy()
+        if proxy then
+            proxy:ReplaceWeaponPart(fxPath, modelInfo.LiberationFx)
+        end
         -- self:FixAurolePos(modelInfo.LiberationFx, characterId, modelInfo)
     else
         liberationFx:SetActiveEx(true)
@@ -2607,11 +2621,26 @@ function XUiPanelRoleModel:BindEffect(effect)
     if XTool.UObjIsNil(effect) then
         return
     end
-    if self.CurRoleName and self.RoleModelPool[self.CurRoleName] and self.RoleModelPool[self.CurRoleName].RenderingProxy then
-        self.RoleModelPool[self.CurRoleName].RenderingProxy:BindEffect(effect)
+
+    local renderingProxy = self:GetRenderingProxy()
+    if renderingProxy then
+        renderingProxy:BindEffect(effect)
         effect.gameObject:SetActiveEx(false)
         effect.gameObject:SetActiveEx(true)
     end
+end
+
+function XUiPanelRoleModel:GetRenderingProxy()
+    if not self.CurRoleName then
+        return nil
+    end
+
+    local roleModel = self.RoleModelPool[self.CurRoleName]
+    if not roleModel then
+        return nil
+    end
+
+    return roleModel.RenderingProxy
 end
 
 function XUiPanelRoleModel:BindEffectByModel(model)

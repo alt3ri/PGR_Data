@@ -446,6 +446,11 @@ function XUiEquipStrengthenV2P6:DoSingleLevelUp(templateId, breakthrough, curLev
             --记录消耗
             local count = 0
             if consume:IsEquip() then
+                -- 🚫 阻止吃掉 TeamPrefab 装备
+                if XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(id) then
+                    goto CONTINUE_ONE
+                end
+
                 count = 1
                 operation.UseEquipIdDic[id] = true
             else
@@ -662,6 +667,12 @@ function XUiEquipStrengthenV2P6:GetAllConsumeItems(isConsumeItem, consumeStarDic
 
     local equipIds = XMVCA.XEquip:GetCanEatEquipIds(self.EquipId)
     for _, equipId in pairs(equipIds) do
+        
+        -- 🚫 不允许吃 TeamPrefab 的装备（关键补丁）
+        if XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(equipId) then
+            goto CONTINUE
+        end
+
         if CheckStar(equipId) then
             -- 是否可被自动选取
             local canAutoSelect = XMVCA.XEquip:IsEquipRecomendedToBeEat(self.EquipId, equipId, true)
@@ -670,6 +681,8 @@ function XUiEquipStrengthenV2P6:GetAllConsumeItems(isConsumeItem, consumeStarDic
             obj:InitEquip(equipId, canAutoSelect)
             table.insert(result, obj)
         end
+
+        ::CONTINUE::
     end
     return result
 end

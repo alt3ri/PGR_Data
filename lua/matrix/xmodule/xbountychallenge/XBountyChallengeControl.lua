@@ -24,7 +24,7 @@ function XBountyChallengeControl:OnInit()
     self._BossDetail = {
         ---@type XUiBountyChallengeBossDetailData[]
         List = {},
-        Name = "",
+        Names = {},
         Index = 1,
         BossId = 0,
     }
@@ -108,26 +108,30 @@ function XBountyChallengeControl:GetUiMain()
     local data = self._Main
     if not data.IsInit then
         data.IsInit = true
-        local bossConfigs = self._Model:GetAllBossConfigs()
-        for _, config in pairs(bossConfigs) do
-            local bossId = config.Id
-            local name = config.Name
-            ---@class XUiBountyChallengeMainGridData
-            local boss = {
-                BossId = bossId,
-                Name = name,
-                IsClear = false,
-                IsMaxLevel = false,
-                IsLock4Time = false,
-                TimeId = config.TimeId,
-                Progress = 0,
-                ProgressMax = 0,
-                DifficultyLevel = 0,
-                Red = false,
-                DifficultyName = "",
-                Icon = false,
-            }
-            data.BossList[#data.BossList + 1] = boss
+        local activityCfg = self._Model:GetActivityConfig()
+
+        if activityCfg then
+            for _, monsterId in ipairs(activityCfg.MonsterIdList) do
+                local config = self._Model:GetBossConfig(monsterId)
+                local bossId = config.Id
+                local name = config.Name
+                ---@class XUiBountyChallengeMainGridData
+                local boss = {
+                    BossId = bossId,
+                    Name = name,
+                    IsClear = false,
+                    IsMaxLevel = false,
+                    IsLock4Time = false,
+                    TimeId = config.TimeId,
+                    Progress = 0,
+                    ProgressMax = 0,
+                    DifficultyLevel = 0,
+                    Red = false,
+                    DifficultyName = "",
+                    Icon = false,
+                }
+                data.BossList[#data.BossList + 1] = boss
+            end
         end
     end
 
@@ -211,6 +215,10 @@ function XBountyChallengeControl:SetPlayAnimationSync()
     self._ChapterDetail.IsPlayAnimationSync = true
 end
 
+function XBountyChallengeControl:GetCurStageIsRobot()
+    return self._ChapterDetail.IsRobot
+end
+
 function XBountyChallengeControl:GetUiChapterDetail()
     local data = self._ChapterDetail
     local bossConfig = self._Model:GetBossConfig(self._SelectedBossId)
@@ -225,7 +233,7 @@ function XBountyChallengeControl:GetUiChapterDetail()
 
     -- 可上阵角色
     data.Characters = {}
-    local characters = self._Model:GetCharacters(self._SelectedBossId, self._DifficultyLevel)
+    local characters, isRobot = self._Model:GetCharacters(self._SelectedBossId, self._DifficultyLevel)
     if characters then
         for i = 1, #characters do
             local characterId = characters[i]
@@ -233,12 +241,15 @@ function XBountyChallengeControl:GetUiChapterDetail()
             ---@class XUiBountyChallengeChapterDetailCharacterData
             local character = {
                 Icon = icon,
+                IsRobot = isRobot,
             }
             data.Characters[#data.Characters + 1] = character
         end
         --else
         -- 没有限制角色
     end
+
+    data.IsRobot = isRobot or false
 
     -- 难度
     data.Difficulties = {}
@@ -291,39 +302,62 @@ function XBountyChallengeControl:GetUiChapterDetail()
     -- 任务
     local oldTaskList = data.TaskList
     data.TaskList = {}
-    local difficulty = difficulties[self._DifficultyLevel]
-    if difficulty then
-        local taskList = self._Model:GetTaskList(difficulty.TaskGroupId)
-        for i = 1, #taskList do
-            local taskId = taskList[i]
-            local config = XDataCenter.TaskManager.GetTaskTemplate(taskId)
-            local rewards = XRewardManager.GetRewardList(config.RewardId)
-            ---@class XUiBountyChallengeChapterDetailTaskData
-            local task = {
-                Id = taskId,
-                Name = config.Title,
-                Desc = config.Desc,
-                IsClear = XDataCenter.TaskManager.CheckTaskFinished(taskId),
-                IsCanFinish = XDataCenter.TaskManager.CheckTaskAchieved(taskId),
-                Rewards = rewards,
-                IsPlayAnimation = false,
-            }
-            local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
-            if taskData then
-                local state = taskData.State
-                if state == XDataCenter.TaskManager.TaskState.Achieved then
-                    local oldState = self._Model:GetTaskState(taskId)
-                    if oldState then
-                        if oldState ~= state then
-                            task.IsPlayAnimation = true
+    
+    for i, difficulty in pairs(difficulties) do
+        if not XTool.IsTableEmpty(difficulty) then
+            local taskList = self._Model:GetTaskCfgList(difficulty.TaskGroupId)
+            for i = 1, #taskList do
+                ---@type XTableBountyChallengeTask
+                local cfg = taskList[i]
+                local taskId = cfg.TaskId
+                local config = XDataCenter.TaskManager.GetTaskTemplate(taskId)
+                local rewards = XRewardManager.GetRewardList(config.RewardId)
+                ---@class XUiBountyChallengeChapterDetailTaskData
+                local task = {
+                    Id = taskId,
+                    Name = config.Title,
+                    Desc = config.Desc,
+                    IsClear = XDataCenter.TaskManager.CheckTaskFinished(taskId),
+                    IsCanFinish = XDataCenter.TaskManager.CheckTaskAchieved(taskId),
+                    Rewards = rewards,
+                    IsPlayAnimation = false,
+                    Priority = cfg.Priority,
+                    Config = cfg,
+                }
+                local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
+                if taskData then
+                    local state = taskData.State
+                    if state == XDataCenter.TaskManager.TaskState.Achieved then
+                        local oldState = self._Model:GetTaskState(taskId)
+                        if oldState then
+                            if oldState ~= state then
+                                task.IsPlayAnimation = true
+                            end
                         end
                     end
                 end
+                self._Model:SetTaskState(taskId, taskData.State)
+                data.TaskList[#data.TaskList + 1] = task
             end
-            self._Model:SetTaskState(taskId, taskData.State)
-            data.TaskList[#data.TaskList + 1] = task
         end
     end
+    
+    --任务排序
+    table.sort(data.TaskList, function(a, b)
+        if a.IsClear ~= b.IsClear then
+            -- 已领取奖励的置底
+            return not a.IsClear
+        end
+
+        if a.IsCanFinish ~= b.IsCanFinish then
+            --可领取奖励的置顶
+            return a.IsCanFinish
+        end
+        
+        -- 按优先级大小升序
+        return a.Priority > b.Priority
+    end)
+    
 
     return data
 end
@@ -399,7 +433,33 @@ function XBountyChallengeControl:GetUiBossDetail()
         }
         data.List[#data.List + 1] = desc
     end
-    data.Name = stageDescConfig.StageDescription
+    data.Names = stageDescConfig.StageDescriptions
+    return data
+end
+
+function XBountyChallengeControl:GetUiBossDetailByDescId(descId)
+    local stageDescConfig = self._Model:GetStageDescConfig(descId)
+    if not stageDescConfig then
+        XLog.Error("[XBountyChallengeControl] 找不到对应的stage描述", descId)
+        return
+    end
+    
+    local data = {}
+    data.BossId = self._SelectedBossId
+    data.List = {}
+    for i = 1, #stageDescConfig.GameplayDescription do
+        local videoConfigId
+        if stageDescConfig.VideoConfigId then
+            videoConfigId = stageDescConfig.VideoConfigId[i]
+        end
+        ---@type XUiBountyChallengeBossDetailData
+        local desc = {
+            VideoConfigId = videoConfigId,
+            Desc = stageDescConfig.GameplayDescription[i],
+        }
+        data.List[#data.List + 1] = desc
+    end
+    data.Names = stageDescConfig.StageDescriptions
     return data
 end
 
@@ -414,8 +474,42 @@ function XBountyChallengeControl:OpenRoom()
         local stageId = self:GetCurrentStageId()
         local battleRoom = require("XUi/XUiBountyChallenge/XUiBountyChallengeBattleRoleRoom")
         local team = XDataCenter.TeamManager.GetXTeamByTypeId(XEnumConst.TeamTypeId.BountyChallenge)
+        
         XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, battleRoom)
     end)
+end
+
+--- 一键领取章节下所有任务奖励
+function XBountyChallengeControl:ReceiveAllTask(cb)
+    local data = self._ChapterDetail
+
+    if not XTool.IsTableEmpty(data.TaskList) then
+        local canFinishTaskList = {}
+
+        for i, v in pairs(data.TaskList) do
+            if v.IsCanFinish then
+                table.insert(canFinishTaskList, v.Id)
+            end
+        end
+
+        if not XTool.IsTableEmpty(canFinishTaskList) then
+            XDataCenter.TaskManager.FinishMultiTaskRequest(canFinishTaskList, cb)
+        end
+    end
+end
+
+function XBountyChallengeControl:GetConfigStr(key, index)
+    return self._Model:GetConfigStr(key, index)
+end
+
+function XBountyChallengeControl:GetConfigNum(key, index)
+    local numStr = self._Model:GetConfigStr(key, index)
+
+    if string.IsFloatNumber(numStr) then
+        return tonumber(numStr)
+    end
+    
+    return 0
 end
 
 return XBountyChallengeControl

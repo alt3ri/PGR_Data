@@ -191,7 +191,14 @@ XExhibitionManagerCreator = function()
     end
 
     function XExhibitionManager.GetCollectionRate(IsNotSelf, exhibitionType)
-        local totalTaskNum = XExhibitionConfigs.GetGrowUpLevelMax() * XExhibitionManager.GetTotalCharacterNum(exhibitionType)
+        -- 角色数量从旧的剧情系统，改为从角色表获取，并且从V4.0开始，不再维护Exhibition.tab
+        local characterAmount
+        if exhibitionType == nil then
+            characterAmount = XMVCA.XCharacter:GetCharacterTemplatesCount()
+        else
+            characterAmount = XExhibitionManager.GetTotalCharacterNum(exhibitionType)
+        end
+        local totalTaskNum = XExhibitionConfigs.GetGrowUpLevelMax() * characterAmount
         if totalTaskNum == 0 then return 1 end
         local curTaskNum = 0
         local tempData = {}

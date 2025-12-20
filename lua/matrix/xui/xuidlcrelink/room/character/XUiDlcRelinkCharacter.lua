@@ -1,3 +1,4 @@
+local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 local XUiGridDlcRelinkCharacter = require("XUi/XUiDlcRelink/Room/Grid/XUiGridDlcRelinkCharacter")
 local XUiPanelDlcRelinkCharacterRight = require("XUi/XUiDlcRelink/Room/Panel/XUiPanelDlcRelinkCharacterRight")
 ---@class XUiDlcRelinkCharacter : XLuaUi
@@ -11,7 +12,6 @@ function XUiDlcRelinkCharacter:OnAwake()
     self.PanelRight.gameObject:SetActiveEx(false)
     self.GridCharacter.gameObject:SetActiveEx(false)
     self:RegisterUiEvents()
-    self.AssetPanel = XUiHelper.XUiPanelAsset(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.DlcRelinkCoin)
 end
 
 function XUiDlcRelinkCharacter:OnStart(characterId)
@@ -22,17 +22,19 @@ function XUiDlcRelinkCharacter:OnStart(characterId)
         end
     end)
 
-    self:InitDynamicTable()
     self.OriginalCharacterId = characterId
 
-    self.CurSelectCharacterId = 0
+    ---@type XUiGridDlcRelinkCharacter[]
+    self.CharacterGridList = {}
+    self.CurSelectCharacterId = self.OriginalCharacterId
     self.CurSelectGrid = nil
+
+    self:InitSceneModel()
 end
 
 function XUiDlcRelinkCharacter:OnEnable()
     self.Super.OnEnable(self)
-    self:SetupDynamicTable()
-    self:RefreshPlayer()
+    self:RefreshCharacterList()
 end
 
 function XUiDlcRelinkCharacter:OnGetLuaEvents()
@@ -48,75 +50,91 @@ end
 
 function XUiDlcRelinkCharacter:OnDisable()
     self.Super.OnDisable(self)
-    self.CurSelectCharacterId = 0
     self.CurSelectGrid = nil
 end
 
-function XUiDlcRelinkCharacter:InitDynamicTable()
-    local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-    self.DynamicTable = XDynamicTableNormal.New(self.GridCharacterList)
-    self.DynamicTable:SetProxy(XUiGridDlcRelinkCharacter, self)
-    self.DynamicTable:SetDelegate(self)
+function XUiDlcRelinkCharacter:InitSceneModel()
+    ---@type UnityEngine.Transform
+    local root = self.UiModelGo.transform
+    self.PanelRoleModel1 = XUiHelper.TryGetComponent(root, "UiNearRoot/PanelRoleModel1")
+    self.UiCamFarCharacter = XUiHelper.TryGetComponent(root, "UiFarRoot/UiCamFarCharacter")
+    self.UiCamNearCharacter = XUiHelper.TryGetComponent(root, "UiNearRoot/UiCamNearCharacter")
+    if self.UiCamFarCharacter then
+        self.UiCamFarCharacter.gameObject:SetActiveEx(true)
+    end
+    if self.UiCamNearCharacter then
+        self.UiCamNearCharacter.gameObject:SetActiveEx(true)
+    end
 end
 
-function XUiDlcRelinkCharacter:SetupDynamicTable()
+function XUiDlcRelinkCharacter:RefreshCharacterList()
     self.CharacterIds = self._Control:GetCharacterIdList()
     local isEmpty = XTool.IsTableEmpty(self.CharacterIds)
     self.PanelEmptyList.gameObject:SetActiveEx(isEmpty)
+    self.PanelCharacter.gameObject:SetActiveEx(not isEmpty)
     if isEmpty then
         return
     end
 
-    local index = 1
-    for i, id in ipairs(self.CharacterIds) do
-        if id == self.OriginalCharacterId then
-            index = i
-            break
+    for index, characterId in ipairs(self.CharacterIds) do
+        local grid = self.CharacterGridList[index]
+        if not grid then
+            local parent = self[string.format("Character%s", index)]
+            if not parent then
+                XLog.Error(string.format("XUiDlcRelinkCharacter:RefreshPanelCharacter error: not find Character%s", index))
+                return
+            end
+            local go = XUiHelper.Instantiate(self.GridCharacter, parent)
+            grid = XUiGridDlcRelinkCharacter.New(go, self, handler(self, self.OnCharacterGridClick))
+            self.CharacterGridList[index] = grid
         end
-    end
-    self.CurSelectCharacterId = self.CharacterIds[index]
-
-    self.DynamicTable:SetDataSource(self.CharacterIds)
-    self.DynamicTable:ReloadDataASync(index)
-end
-
----@param grid XUiGridDlcRelinkCharacter
-function XUiDlcRelinkCharacter:OnDynamicTableEvent(event, index, grid)
-    local characterId = self.CharacterIds[index]
-    if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
+        grid:Open()
         grid:Refresh(characterId)
         local isSelected = characterId == self.CurSelectCharacterId
         grid:SetSelect(isSelected)
         grid:SetNow(self.OriginalCharacterId == characterId)
         if isSelected and not self.CurSelectGrid then
             self.CurSelectGrid = grid
+            self:RefreshModel()
             self:RefreshPanelRight()
         end
-    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
-        if characterId == self.CurSelectCharacterId then
-            return
-        end
-        if self.CurSelectGrid then
-            self.CurSelectGrid:SetSelect(false)
-        end
-        grid:SetSelect(true)
-        self.CurSelectCharacterId = characterId
-        self.CurSelectGrid = grid
-        self:RefreshPanelRight()
     end
 end
 
-function XUiDlcRelinkCharacter:RefreshPlayer()
-    XUiPlayerHead.InitPortrait(XPlayer.CurrHeadPortraitId, XPlayer.CurrHeadFrameId, self.Head)
-    self.TxtPlayer.text = XPlayer.Name
+---@param grid XUiGridDlcRelinkCharacter
+function XUiDlcRelinkCharacter:OnCharacterGridClick(grid)
+    local characterId = grid:GetCharacterId()
+    if characterId == self.CurSelectCharacterId then
+        return
+    end
+    if self.CurSelectGrid then
+        self.CurSelectGrid:SetSelect(false)
+    end
+    grid:SetSelect(true)
+    self.CurSelectCharacterId = characterId
+    self.CurSelectGrid = grid
+    self:RefreshModel()
+    self:RefreshPanelRight()
+end
+
+function XUiDlcRelinkCharacter:RefreshModel()
+    if not self.RoleModel then
+        ---@type XUiPanelRoleModel
+        self.RoleModel = XUiPanelRoleModel.New(self.PanelRoleModel1, self.Name, nil, true)
+    end
+    self.RoleModel:ShowRoleModel()
+    local fashionId = XMVCA.XCharacter:GetCharacterTemplate(self.CurSelectCharacterId).DefaultNpcFashtionId
+    self.RoleModel:UpdateCharacterModel(self.CurSelectCharacterId, self.PanelRoleModel1, self.Name, function(model)
+        self.PanelDrag.Target = model.transform
+    end, nil, fashionId, nil, nil, true)
 end
 
 function XUiDlcRelinkCharacter:RefreshPanelRight()
     if not self.PanelRightNode then
         ---@type XUiPanelDlcRelinkCharacterRight
         self.PanelRightNode = XUiPanelDlcRelinkCharacterRight.New(self.PanelRight, self)
-        self.PanelRightNode:Open()
     end
+    self.PanelRightNode:Open()
     self.PanelRightNode:Refresh(self.CurSelectCharacterId)
 end
 

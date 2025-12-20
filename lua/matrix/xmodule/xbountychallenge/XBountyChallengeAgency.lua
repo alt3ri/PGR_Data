@@ -169,6 +169,19 @@ function XBountyChallengeAgency:HasCharactersLimit()
     return false
 end
 
+function XBountyChallengeAgency:HasRobotsLimit()
+    local bossId, difficulty = self._Model:GetCurrentBossIdAndDifficulty()
+    local characterList, isRobot = self._Model:GetCharacters(bossId, difficulty)
+    if not characterList then
+        return false
+    end
+    if #characterList > 0 then
+        return isRobot
+    end
+    return false
+end
+
+
 -- 返回false代表可使用全部,返回table代表可试用的角色
 function XBountyChallengeAgency:GetCharactersTrial(bossId, level)
     --3、试玩角色规则
@@ -223,6 +236,13 @@ function XBountyChallengeAgency:GetCharacters()
     end
 
     return characterList
+end
+
+function XBountyChallengeAgency:GetCharacterIds()
+    local bossId, difficulty = self._Model:GetCurrentBossIdAndDifficulty()
+    local characters = self._Model:GetCharacters(bossId, difficulty)
+    
+    return characters
 end
 
 function XBountyChallengeAgency:GetCharacterCanSelectAmount()

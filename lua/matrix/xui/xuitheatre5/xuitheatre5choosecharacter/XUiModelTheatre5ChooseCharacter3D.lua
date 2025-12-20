@@ -16,11 +16,14 @@ end
 
 function XUiModelTheatre5ChooseCharacter3D:OnEnable()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CHARACTER_FASHION_CHANGED, self.RefreshCharacterShow, self)
+    XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_STORY_LINE_PROCESS_UPDATE, self.OnStoryLineProcessUpdate, self)
     self:ResetAllActionAndUiEffect()
+    self:RefreshCrowOutlineShow()
 end
 
 function XUiModelTheatre5ChooseCharacter3D:OnDisable()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CHARACTER_FASHION_CHANGED, self.RefreshCharacterShow, self)
+    XEventManager.RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_STORY_LINE_PROCESS_UPDATE, self.OnStoryLineProcessUpdate, self)
     if self._TimerResetAllActionAndUiEffect then
         XScheduleManager.UnSchedule(self._TimerResetAllActionAndUiEffect)
         self._TimerResetAllActionAndUiEffect = false
@@ -295,6 +298,41 @@ function XUiModelTheatre5ChooseCharacter3D:ResetAllActionAndUiEffect()
                 end
             end
         end
+    end
+end
+
+function XUiModelTheatre5ChooseCharacter3D:OnStoryLineProcessUpdate()
+    self:RefreshCrowOutlineShow()
+end
+
+function XUiModelTheatre5ChooseCharacter3D:RefreshCrowOutlineShow()
+    local isActive = false
+    
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
+        local showCondition = self._Control.PVEControl:GetClientConfigCrowModelOutLineShowCondition()
+        local hideCondition = self._Control.PVEControl:GetClientConfigCrowModelOutLineHideCondition()
+
+        local isShowSatisfy = true
+        local isHideSatisfy = true
+        
+        if not XTool.IsNumberValidEx(showCondition) or not XConditionManager.CheckCondition(showCondition) then
+            isShowSatisfy = false
+        end
+
+        if not XTool.IsNumberValidEx(hideCondition) or not XConditionManager.CheckCondition(hideCondition) then
+            isHideSatisfy = false
+        end
+        
+
+        if isHideSatisfy then
+            isActive = false
+        else
+            isActive = isShowSatisfy
+        end
+    end
+
+    if self.FxWanfaWuya then
+        self.FxWanfaWuya.gameObject:SetActiveEx(isActive)
     end
 end
 

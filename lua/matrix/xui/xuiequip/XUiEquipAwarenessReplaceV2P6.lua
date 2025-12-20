@@ -156,7 +156,7 @@ function XUiEquipAwarenessReplaceV2P6:OnBtnPutOnClick(equipId)
     local wearingCharacterId = XMVCA.XEquip:GetEquipWearingCharacterId(equipId)
     if wearingCharacterId and wearingCharacterId > 0 then
         local fullName = XMVCA.XCharacter:GetCharacterFullNameStr(wearingCharacterId)
-        local content = string.gsub(CSXTextManagerGetText("EquipAwarenessReplaceTip", fullName), " ", "")
+        local content = CSXTextManagerGetText("EquipAwarenessReplaceTip", fullName)
         XUiManager.DialogTip(
             CSXTextManagerGetText("TipTitle"),
             content,

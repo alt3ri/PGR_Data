@@ -55,12 +55,12 @@ end
 function XUiReCallActivityShare:DestoryTexture()
     if self.ShareTexture ~= nil then
         CS.UnityEngine.Object.Destroy(self.ShareTexture)
-        self.ShareTexture = nil
     end
     if self.SaveTexture ~= nil then
         CS.UnityEngine.Object.Destroy(self.SaveTexture)
-        self.SaveTexture = nil
     end
+    self.ShareTexture = nil
+    self.SaveTexture = nil
 end
 function XUiReCallActivityShare:InitUiAfterAuto()
     self.CapturePanel = XUiPhotographCapturePanel.New(self, self.PanelCapture)

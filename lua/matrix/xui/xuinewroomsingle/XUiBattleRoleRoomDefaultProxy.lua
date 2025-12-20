@@ -332,4 +332,8 @@ function XUiBattleRoleRoomDefaultProxy:CheckShowAnimationSet()
     return true
 end
 
+function XUiBattleRoleRoomDefaultProxy:IsTeamPrefabHideBtnCover()
+    return false
+end
+
 return XUiBattleRoleRoomDefaultProxy

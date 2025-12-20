@@ -72,6 +72,11 @@ function Player.Init(playerData)
     -- if XDataCenter.UiPcManager.IsPc() then
     --     UpdatePcOtherPlatformMoneyCardCount()
     -- end
+
+    -- 设置PerfSight用户ID
+    if playerData and playerData.Id then
+        CS.XProfilingLuaUtils.SetUserIdToPerfSight(tostring(playerData.Id))
+    end
 end
 
 function Getter.GetterExp()

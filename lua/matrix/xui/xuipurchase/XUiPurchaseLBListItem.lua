@@ -72,7 +72,7 @@ function XUiPurchaseLBListItem:SetData()
             local disCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(self.ItemData)
             if disCountValue < 1 then
                 local disCountStr = string.format("%.1f", disCountValue * 10)
-                if XOverseaManager.IsKRRegion()  or XOverseaManager.IsENRegion()then
+                if XOverseaManager.IsKRRegion() or XOverseaManager.IsENRegion() then
                     disCountStr = tostring(math.floor((1-disCountValue) * 100))
                 else
                     if self.ItemData.DiscountShowStr and self.ItemData.DiscountShowStr ~= "" then

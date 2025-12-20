@@ -1,48 +1,48 @@
 [
     {
         "Id": 1,
-        "Name": "\u7ef4\u5ea6\u89c2\u6d4b\u8005",
-        "Desc": "\u6bcf\u6b21\u4ea4\u6362\u6d88\u9664\u540e20%\u6982\u7387\u89e6\u53d1\uff0c\u8ba9\u672c\u6b21\u6d88\u9664\u4e2d\u968f\u673a\u4e00\u79cd\u989c\u8272\u7403\u7684\u5f97\u5206\u589e\u52a020%",
+        "Name": "Dimension Observer",
+        "Desc": "Each swap has a 20% chance to increase the score of a random color orb pinged by 20%.",
         "Type": 3.0,
         "TriggerRate": 20.0,
         "Params": "[6201]"
     },
     {
         "Id": 2,
-        "Name": "\u4eba\u5f62\u5267\u573a",
-        "Desc": "\u6bcf\u6b21\u4ea4\u6362\u6d88\u9664\u540e40%\u6982\u7387\u968f\u673a\u6d88\u96641\u4e2a\u7403",
+        "Name": "Puppet Theater",
+        "Desc": "Each swap has a 40% chance to ping 1 random orb.",
         "Type": 4.0,
         "TriggerRate": 40.0,
         "Params": "[6202]"
     },
     {
         "Id": 3,
-        "Name": "\u6267\u94ed\u5316\u5203",
-        "Desc": "\u4f7f\u7528\u9053\u5177\u6d88\u9664\u7684\u7403\u5f97\u5206\u53d8\u4e3a150%",
+        "Name": "Blade of History",
+        "Desc": "Orbs pinged with items give 150% score.",
         "Type": null,
         "TriggerRate": null,
         "Params": null
     },
     {
         "Id": 4,
-        "Name": "\u6d77\u6cab\u5e7b\u8c61",
-        "Desc": "\u666e\u653b\u7403\u4f24\u5bb3\u53d8\u4e3a200%",
+        "Name": "Seafoam Mirage",
+        "Desc": "Basic Attack Orbs deal 200% damage.",
         "Type": null,
         "TriggerRate": null,
         "Params": null
     },
     {
         "Id": 5,
-        "Name": "\u964d\u96f7\u5760",
-        "Desc": "\u6bcf\u6b21\u4ea4\u6362\u6d88\u9664\u540e 15% \u6982\u7387\u66b4\u51fb\u5f53\u6b21\u6d88\u7403\u5f97\u5206 x 200%",
+        "Name": "Lightning Fall",
+        "Desc": "Each swap ping has a 15% chance to make the pinging score critical (x200%).",
         "Type": 2.0,
         "TriggerRate": 15.0,
         "Params": "[2]"
     },
     {
         "Id": 6,
-        "Name": "\u53cc\u751f\u56de\u54cd",
-        "Desc": "\u666e\u653b\u7403\u51fa\u73b0\u6982\u7387\u589e\u52a05%",
+        "Name": "Echoing Twins",
+        "Desc": "Basic Attack Orbs' chance to appear increases by 5%",
         "Type": null,
         "TriggerRate": null,
         "Params": null

@@ -392,9 +392,17 @@ function XSkyGardenDormControl:RequestSaveAndApplyLayout(areaType, saveId, apply
     local isSave = saveId and saveId > 0
     if isSave then
         self:CaptureLayoutIcon(areaType, saveId)
-        if not XTool.IsTableEmpty(containerDataList) then
-            for _, data in pairs(containerDataList) do
+    end
+    
+    if not XTool.IsTableEmpty(containerDataList) then
+        local limit = self._Model:GetDormAreaMaxFurnitureCount(areaType)
+        for _, data in pairs(containerDataList) do
+            if isSave then
                 saveInfos[#saveInfos + 1] = data:ToServerData()
+            end
+            if data:GetFurnitureCount() > limit then
+                XUiManager.TipMsg(self:GetSameTypeFullCountText(1))
+                return
             end
         end
     end

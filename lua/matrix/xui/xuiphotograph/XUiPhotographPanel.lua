@@ -33,7 +33,7 @@ function XUiPhotographPanel:Init()
     self:InitMenuBtnGroup()
     self:InitDynamicTable()
     self.BtnSynchronous.CallBack = function () self:OnBtnSynchronousClick() end
-    self.BtnPhotographVertical.CallBack = function() self:OnBtnPhotographVerticalClick() end
+    self.BtnPhotographVertical:AddEventListener(handler(self, self.OnBtnPhotographVerticalClick))
     self.BtnHide.CallBack = function() self:OnBtnHideClick() end
     self.BtnSet.CallBack = function() self:OnBtnSetClick() end
     self.Btn.CallBack = function() self:OnBtnClick() end
@@ -43,7 +43,7 @@ function XUiPhotographPanel:Init()
         local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
         raycastComponent.raycastTarget = false
     else
-        self.BtnPhotograph.CallBack = function () self:OnBtnPhotographClick() end
+        self.BtnPhotograph:AddEventListener(handler(self, self.OnBtnPhotographClick))
     end
     self.PanelTip.gameObject:SetActiveEx(false)
     self.ActionPanel = XUiPhotographActionPanel.New(self.PanelAction)

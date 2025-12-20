@@ -24,11 +24,16 @@ function XUiTheatre5Settlement:OnStart(resultData)
     self.PanelGameDetail = XUiPanelTheatre5SettleGameDetail.New(self.PanelDetail, self, self.ResultData)
     ---@type XUiPanelTheatre5SettleReward
     self.PanelReward = XUiPanelTheatre5SettleReward.New(self.PanelReward, self, self.ResultData)
+
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
+        self._Control.PVPControl:StartPVPTimer()
+    end
 end
 
 function XUiTheatre5Settlement:OnDestroy()
     if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         self._Control.PVPControl:ClearAdventureData()
+        self._Control.PVPControl:StopPVPTimer()
     end
 end
 

@@ -211,6 +211,10 @@ function XAreaWarConfigs.GetAllBlockStageIds()
     return stageIds
 end
 
+function XAreaWarConfigs.GetBlockConfigs()
+    return BlockConfig
+end
+
 function XAreaWarConfigs.GetBlockRequirePurification(blockId)
     local config = GetBlockConfig(blockId)
     return config.CleanNeed
@@ -324,6 +328,7 @@ function XAreaWarConfigs.GetBlockDetachBasicRewardItems(blockId)
     if XTool.IsNumberValid(rewardId) then
         rewardItems = XRewardManager.GetRewardList(rewardId)
     end
+    table.insert(rewardItems,{RewardType = 1, TemplateId = XDataCenter.AreaWarManager.GetAuctionCoinItemId(),Count = config.AuctionCionReward})
     return XRewardManager.MergeAndSortRewardGoodsList(rewardItems)
 end
 
@@ -335,6 +340,7 @@ function XAreaWarConfigs.GetBlockDetachWhippingPeriodRewardItems(blockId)
     if XTool.IsNumberValid(rewardId) then
         rewardItems = XRewardManager.GetRewardList(rewardId)
     end
+    table.insert(rewardItems,{RewardType = 1, TemplateId = XDataCenter.AreaWarManager.GetAuctionCoinItemId(),Count = config.DetachAuctionCionReward})
     return XRewardManager.MergeAndSortRewardGoodsList(rewardItems)
 end
 
@@ -345,6 +351,7 @@ function XAreaWarConfigs.GetBlockRepeatChallengeRewardItems(blockId)
     if XTool.IsNumberValid(rewardId) then
         rewardItems = XRewardManager.GetRewardList(rewardId)
     end
+    table.insert(rewardItems,{RewardType = 1, TemplateId = XDataCenter.AreaWarManager.GetAuctionCoinItemId(),Count = config.AuctionCionReward})
     return XRewardManager.MergeAndSortRewardGoodsList(rewardItems)
 end
 
@@ -1435,9 +1442,114 @@ function XAreaWarConfigs.GetCancelBtnText(index)
     return template and template.Values[index] or ""
 end
 
-function XAreaWarConfigs.GetSkipLimit()
-    local template = GetShareConfig("SkipLimit")
-    return tonumber(template.Values[1]), tonumber(template.Values[2])
+function XAreaWarConfigs.GetCancelBtnText(index)
+    local template = GetClientConfig("CancelBtnText")
+    return template and template.Values[index] or ""
+end
+
+function XAreaWarConfigs.GetItemUnlockTips()
+    local template = GetClientConfig("ItemUnlockTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetItemRoomAttrs()
+    local template = GetClientConfig("ItemRoomAttrs")
+    return template.Values
+end
+
+function XAreaWarConfigs.GetItemRoomLvUpCost()
+    local template = GetClientConfig("ItemRoomLvUpCost")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetItemRoomLvUpCostNoEnough()
+    local template = GetClientConfig("ItemRoomLvUpCostNoEnough")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetItemRoomLvUpNoEnoughTips()
+    local template = GetClientConfig("ItemRoomLvUpNoEnoughTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetAuctionItemRemainTips()
+    local template = GetClientConfig("AuctionItemRemainTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetAuctionBuyNoEnoughCoinTips()
+    local template = GetClientConfig("AuctionBuyNoEnoughCoinTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetAuctionBuyNoEnoughCoinColor()
+    local template = GetClientConfig("AuctionBuyNoEnoughCoinColor")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetAuctionBuyNoEnoughShopTips()
+    local template = GetClientConfig("AuctionBuyNoEnoughShopTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetAuctionBuySuccessTips()
+    local template = GetClientConfig("AuctionBuySuccessTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetAuctionRefreshReBuyTips()
+    local template = GetClientConfig("AuctionRefreshReBuyTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetLightUpNoEnoughTips()
+    local template = GetClientConfig("LightUpNoEnoughTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetQualityTabAll()
+    local template = GetClientConfig("QualityTabAll")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetItemDetailUnlockTips()
+    local template = GetClientConfig("ItemDetailUnlockTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetOrderPutOffConfirmTips()
+    local template = GetClientConfig("OrderPutOffConfirmTips")
+    return template.Values[1], template.Values[2]
+end
+
+function XAreaWarConfigs.GetOrderPutOffFailTips()
+    local template = GetClientConfig("OrderPutOffFailTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetServerRedisCircuitBreakerTips()
+    local template = GetClientConfig("ServerRedisCircuitBreakerTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetBtnCollectionUnlockConditionId()
+    local template = GetClientConfig("BtnCollectionUnlockConditionId")
+    return template.Values[1] and tonumber(template.Values[1]) or 0
+end
+
+function XAreaWarConfigs.GetRareModelUnlockEffect()
+    local template = GetClientConfig("RareModelUnlockEffect")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetUseItemNumNoEnoughTips()
+    local template = GetClientConfig("UseItemNumNoEnoughTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetCollectionLockTips()
+    local template = GetClientConfig("CollectionLockTips")
+    return template.Values[1]
 end
 
 function XAreaWarConfigs.GetSkipItemId()
@@ -1474,6 +1586,16 @@ end
 
 function XAreaWarConfigs.GetMaxRescueRewardCount()
     local template = GetShareConfig("RewardLimit")
+    return tonumber(template.Values[1])
+end
+
+function XAreaWarConfigs.GetMaxAutoSellTime()
+    local template = GetShareConfig("MaxAutoSellTime")
+    return tonumber(template.Values[1])
+end
+
+function XAreaWarConfigs.GetAuctionSellRate()
+    local template = GetShareConfig("AuctionSellRate")
     return tonumber(template.Values[1])
 end
 

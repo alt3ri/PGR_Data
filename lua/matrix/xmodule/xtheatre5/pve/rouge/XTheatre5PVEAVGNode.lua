@@ -1,5 +1,5 @@
 local XTheatre5PVENode = require("XModule/XTheatre5/PVE/Rouge/XTheatre5PVENode")
----@class XTheatre5PVEAVGNode
+---@class XTheatre5PVEAVGNode: XTheatre5PVENode
 local XTheatre5PVEAVGNode = XClass(XTheatre5PVENode, "XTheatre5PVEAVGNode")
 
 function XTheatre5PVEAVGNode:_OnEnter()
@@ -16,7 +16,7 @@ function XTheatre5PVEAVGNode:_OnEnter()
 end
 
 function XTheatre5PVEAVGNode:_OnExit()
-
+    
 end
 
 return XTheatre5PVEAVGNode

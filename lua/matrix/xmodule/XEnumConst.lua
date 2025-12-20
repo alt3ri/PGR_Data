@@ -2366,13 +2366,13 @@ XEnumConst = {
         }
     },
     SharePlatform = {
-        KJQ = 1, -- 库街区
-        QQ = 2, -- QQ
-        QQSpace = 3, -- QQ空间
-        WX = 4, -- 微信
-        WXMoments = 5, -- 微信朋友圈
-        Bilibili = 6, -- B站
-        Weibo = 7, -- 微博
+        KJQ = 'KURO_BBS', -- 库街区
+        QQ = 'QQ', -- QQ
+        QQSpace = 'QQ_ZONE', -- QQ空间
+        WX = 'WECHAT', -- 微信
+        WXMoments = 'WECHAT_MOMENTS', -- 微信朋友圈
+        Bilibili = 'BILIBILI', -- B站
+        Weibo = 'WEI_BO', -- 微博
     },
     -- 主线2
     MAINLINE2 = {
@@ -3391,7 +3391,7 @@ XEnumConst = {
     },
     DlcRelink = {
         DefaultSelfIndex = 1, -- 默认自己在队伍中的位置
-        EquipSlotCount = 5, -- 装备槽数量
+        MaxAttributeCount = 5, -- 最大属性词条数量
         FactorType = {
             MainSkill = 1, -- 技能词条
             SkillAddition = 2, -- 技能伤害加成词条
@@ -3406,8 +3406,9 @@ XEnumConst = {
             Armor = 2, -- 装甲
             Assist = 3, -- 辅助
         },
-        ItemType = {
-            Equ = 1, -- 装备
+        RewardType = {
+            Equip = 1, -- 装备
+            RewardGoods = 2, -- 奖励组
         },
         EquipType = {
             None = 0,
@@ -3416,10 +3417,12 @@ XEnumConst = {
         },
         EquipSlotIndex = {
             MainSlot = 1, -- 主控装备
-            NormalSlot1 = 2, -- 普通装备槽1
-            NormalSlot2 = 3, -- 普通装备槽2
-            NormalSlot3 = 4, -- 普通装备槽3
-            NormalExpand1 = 5, -- 扩展普通装备槽
+            NormalExpandBegin = 11, -- 扩展普通装备槽
+            NormalSlotBegin = 111, -- 普通装备槽
+        },
+        ShopTaskType = {
+            Shop = 1, --商店
+            Task = 2, --任务
         },
     },
     HelpCourse = {
@@ -3504,9 +3507,24 @@ XEnumConst = {
     },
     Purchase = {
         Recommend = {
-            Luna = 206, --新手超S限定补给包（露娜）
-            CompanyPackage = 207, --新手三日限定补给+月卡Plus
-            ComboPackage = 213, -- 捆绑包，折扣需要动态计算
+            Luna = 'PurchaseLunaRecommendId', --新手超S限定补给包（露娜）
+            CompanyPackage = 'PurchaseCompanyPackRecommendId', --新手三日限定补给+月卡Plus
+            ComboPackage = 'PurchaseComboPackRecommendId', -- 捆绑包，折扣需要动态计算
         },
     },
+    FashionSuit = {
+        GainType = {
+            None = 0, --无
+            Shop = 1, --商店
+            Purchase = 2, --采购
+            Skip = 3, --跳转
+        },
+    },
+    ItemRestrict = 
+    {
+        Type = 
+        {
+            DrawCanLiver = 1
+        }
+    }
 }

@@ -1,6 +1,6 @@
 local XUiPanelArea = require("XUi/XUiMission/XUiPanelArea")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
-
+local XUiPanelAreaWarDetailTips = require("XUi/XUiAreaWar/XUiPanel/XUiPanelAreaWarDetailTips")
 
 ---@class XUiPanelAreaWarQuestDetail : XUiNode
 ---@field
@@ -16,26 +16,26 @@ local ColorEnum = {
 
 function XUiPanelAreaWarQuestDetail:DoAwake()
     self.Rewards = {}
-    
-    self.BtnFight.CallBack = function() 
+    self.BtnFight:AddEventListener(handler(self,function()
         self:OnBtnFightClick()
-    end
+    end))
+
     
-    self.BtnAuto.CallBack = function() 
+    self.BtnAuto:AddEventListener(handler(self,function() 
         self:OnBtnAutoClick()
-    end
+    end))
     
-    self.BtnReward.CallBack = function() 
+    self.BtnReward:AddEventListener(handler(self, function() 
         self:OnBtnRewardClick()
-    end
+    end))
     
-    self.BtnDispatch.CallBack = function() 
+    self.BtnDispatch:AddEventListener(handler(self, function() 
         self:OnBtnDispatchClick()
-    end
+    end))
     
-    self.BtnLike.CallBack = function() 
+    self.BtnLike:AddEventListener(handler(self, function() 
         self:OnBtnLikeClick()
-    end
+    end))
 
     self.GridCommon.gameObject:SetActiveEx(false)
     if not self.TxtTypeTitle then
@@ -89,6 +89,9 @@ function XUiPanelAreaWarQuestDetail:InitView()
     end
     
     self:RefreshReward()
+    self.PanelBuff.gameObject:SetActiveEx(false)
+    -- self.PanelTips = XUiPanelAreaWarDetailTips.New(self.UiAreaWarPanelTips, self,{self.EmptyClick})
+
 end
 
 function XUiPanelAreaWarQuestDetail:RefreshFight()

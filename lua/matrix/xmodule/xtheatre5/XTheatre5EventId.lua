@@ -142,6 +142,9 @@ local Theatre5EventIds = {
     
     --- 饰品更新
     EVENT_RELIC_UPDATE = "EVENT_RELIC_UPDATE",
+    
+    --- 匹配界面PVP结束踢出
+    EVENT_THEATRE5_PVP_END_IN_MATCH = "EVENT_THEATRE5_PVP_END_IN_MATCH",
 }
 
 return Theatre5EventIds

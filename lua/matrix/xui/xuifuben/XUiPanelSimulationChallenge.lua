@@ -84,10 +84,12 @@ function XUiPanelSimulationChallenge:InitData()
     self.TagManagerShowConditionDic = {}
     local UNLOCK_SORT_TAG_ID = 9 -- 指定只有第二个页签需要先根据解锁排序，再按配置顺序排序
     local fisrtUnlockTagIndex = nil
-    for _, secondTagconfig in pairs(self.AllSecondTag) do
+    
+    -- 获取的AllSecondTag配置已经是有序列表
+    for tagIndex, secondTagconfig in pairs(self.AllSecondTag) do
         local tagId = secondTagconfig.Id
         if not fisrtUnlockTagIndex and XDataCenter.FubenManagerEx.CheckHasOpenBySecondTagId(secondTagconfig.Id) then
-            fisrtUnlockTagIndex = secondTagconfig.Order -- 第一个已解锁的标签
+            fisrtUnlockTagIndex = tagIndex -- 第一个已解锁的标签
         end
 
         if not self.TagManagerDic[secondTagconfig.Id] then
@@ -122,6 +124,7 @@ function XUiPanelSimulationChallenge:InitData()
             end)
         end
     end
+    
     self.FisrtUnlockTagIndex = fisrtUnlockTagIndex
 end
 
@@ -194,9 +197,9 @@ function XUiPanelSimulationChallenge:RefreshDataByLeftTabChange(index, isClicked
     end
 
     --当前选择的侧边栏index
-    self.CurrentLeftTabIndex = index
+    self.CurrentLeftTabIndex = math.min(index, #self.AllSecondTag)
 
-    local tagId = self.AllSecondTag[index].Id
+    local tagId = self.AllSecondTag[self.CurrentLeftTabIndex].Id
     self.CurrentChanllengeManagers = self:GetFiltShowConditionManagers(self.TagManagerDic[tagId], tagId)
 
     ---@type XTableFubenSecondTag

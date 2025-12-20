@@ -56,7 +56,10 @@ end
 
 function XUiSignBanner:OnBtnCloseClick()
     self:Close()
-    XDataCenter.AutoWindowManager.NextAutoWindow()
+
+    if XLuaUiManager.IsUiShow('UiMain') then
+        XDataCenter.AutoWindowManager.NextAutoWindow()
+    end
 end
 
 function XUiSignBanner:SetInfo(configId)

@@ -73,6 +73,11 @@ function XUiMainLine2Chapter:OnEnable()
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.MainLine)
     self:Refresh()
     self:CheckPlayEffect()
+    XMVCA.XMainLine2:CheckOpenUiEggsTreasureTips(self.CurChapterId)
+end
+
+function XUiMainLine2Chapter:OnDisable()
+    
 end
 
 function XUiMainLine2Chapter:OnRelease()
@@ -104,6 +109,7 @@ function XUiMainLine2Chapter:RegisterUiEvents()
 end
 
 function XUiMainLine2Chapter:OnBtnBackClick()
+    XLuaUiManager.Remove("UiMainLine2EggsTreasureTips")
     XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.MainLine)
     self:Close()
 end
@@ -286,6 +292,7 @@ function XUiMainLine2Chapter:SwitchChapter(index)
     self.CurChapterId = self.ChapterIds[index]
     self:CloseDifficultyList()
     self:Refresh()
+    XMVCA.XMainLine2:CheckOpenUiEggsTreasureTips(self.CurChapterId)
 end
 
 -- 刷新界面

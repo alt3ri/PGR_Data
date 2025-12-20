@@ -314,6 +314,7 @@ end
 
 -- 领取结算
 function XSkyGardenShoppingStreetAgency:SgStreetStageWinSettleRequest(cb)
+    if self._Model:IsStageEmpty() then return end
     if self._SendingSgStreetStageWinSettleRequest then return end
     self._SendingSgStreetStageWinSettleRequest = true
     XNetwork.Call(

@@ -130,11 +130,6 @@ function XLevelScript1041:Init()
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)   --事件注册：npc加buff
     self._proxy:RegisterEvent(EWorldEvent.MissileDead)  --***************************************************************添加道具拾取事件
 
-    --拿到玩家列表
-    self._playerNpcContainer:Init(function(npc, index)
-        self:InitialPlayerSet(npc, index)
-    end)
-    self._playerNpcList = self._playerNpcContainer:GetPlayerNpcList()
     self._levelId = self._proxy:GetCurrentLevelId() -- 关卡ID(1041小岛，1051宿舍)
     self._campDict = self._proxy:MouseHunterGetCatCampIndex()    --玩家阵营读取
     self:InitPhase()
@@ -234,6 +229,13 @@ function XLevelScript1041:Init()
         self._proxy:MouseHunterSetSkillCD(6,0.5)              --传送信标一段
         self._proxy:MouseHunterSetSkillCD(7,30)               --传送信标二段 返回         
     end
+
+    --拿到玩家列表
+    self._playerNpcContainer:Init(function(npc, index)
+        self:InitialPlayerSet(npc, index)
+    end)
+    self._playerNpcList = self._playerNpcContainer:GetPlayerNpcList()
+
     XLog.Debug("关卡log_初始化完毕 关卡ID是" .. self._levelId)
 
 end
@@ -501,7 +503,7 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
         end
         if self._tipsMissileLauncher > 0 then
             for k, v in pairs(self._itemPoint) do
-                self._proxy:LaunchMissileFromPosToPos(self._tipsMissileLauncher, 50430124, v, v, 1)
+                self._proxy:LaunchMissileFromPosToPos(self._tipsMissileLauncher, 50430124, 50430124, v, v, 1)
             end
             self._isLaunchTipsMissile = true
             XLog.Debug("发射道具提示子弹完毕")              
@@ -606,7 +608,7 @@ function XLevelScript1041:InitialPlayerSet(npc, index)
     elseif self._levelId == 1061 then  
         self._proxy:ApplyMagic(npc, npc, 1900100, 1) --图3-商场标记
     else
-        XLog.Debug("===这tm根本不是躲猫猫关卡!===")
+        XLog.Debug("===这tm根本不是躲猫猫关卡!=== " .. self._levelId)
     end
     local isCat = self._campDict[self._proxy:GetPlayerIdByNpc(npc)] 
     if isCat == 1 then --如果是猫，初始化处理

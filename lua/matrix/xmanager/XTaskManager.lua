@@ -1153,6 +1153,27 @@ XTaskManagerCreator = function()
         return GetTaskList(tasks)
     end
 
+    function XTaskManager.GetCanLiverTaskList()
+        local taskGroupIds = XMVCA.XItemRestrict:GetTaskGroupIdList(XEnumConst.ItemRestrict.Type.DrawCanLiver)
+        if XTool.IsTableEmpty(taskGroupIds) then
+            return {}
+        end
+
+        local tasks = {}
+        for index, groupId in ipairs(taskGroupIds) do
+            if XTool.IsNumberValid(groupId) then
+                local list = XTaskManager.GetTimeLimitTaskListByGroupId(groupId)
+                if list then
+                    for _, task in pairs(list) do
+                        table.insert(tasks, task)
+                    end
+                end
+            end
+        end
+
+        return GetTaskList(tasks)
+    end
+
     function XTaskManager.GetActivityTaskList()
         return GetTaskList(XTaskManager.GetTaskDataByTaskType(XTaskManager.TaskType.Activity))
     end

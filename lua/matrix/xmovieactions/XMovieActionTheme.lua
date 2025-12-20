@@ -3,10 +3,10 @@ local XMovieActionTheme = XClass(XMovieActionBase, "XMovieActionTheme")
 function XMovieActionTheme:OnInit(actionData)
     local params = actionData.Params
 
-    self.Title = params[1]
-    self.Content = params[2]
+    self.Title = XMVCA.XMovie:FormatContent(params[1])
+    self.Content = XMVCA.XMovie:FormatContent(params[2])
     self.LogoPath = params[3]
-    self.Content2 = params[4]
+    self.Content2 = XMVCA.XMovie:FormatContent(params[4])
 end
 
 function XMovieActionTheme:OnEnter()

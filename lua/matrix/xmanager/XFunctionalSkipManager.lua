@@ -1163,7 +1163,7 @@ XFunctionalSkipManagerCreator = function()
 
     --跳转至2021端午活动主界面
     function XFunctionalSkipManager.SkipToRpgMakerGameMain()
-        XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
+        return XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
     end
 
     --================
@@ -1483,6 +1483,14 @@ XFunctionalSkipManagerCreator = function()
     
     function XFunctionalSkipManager.SkipToUiPacMan2Main()
         return XMVCA.XPacMan2:OpenMain()
+    end
+
+    function XFunctionalSkipManager.SkipToUiRadioSignPopupHall(skipData)
+        local result = XMVCA.XRadioSign:OpenMain()
+        if not result then
+            XUiManager.TipText("ActivityBranchNotOpen")
+        end
+        return result
     end
 
     --跳转到累消活动
@@ -2287,6 +2295,11 @@ XFunctionalSkipManagerCreator = function()
     function XFunctionalSkipManager.SkipToUiPurchase(skipData)
         local tab = skipData.CustomParams[1]
         local childTab = skipData.CustomParams[2]
+
+        if XLuaUiManager.IsUiLoad('UiPurchase') then
+            XLuaUiManager.Remove('UiPurchase')
+        end
+        
         -- 在推荐页签里，这不等于index，是id
         XLuaUiManager.Open("UiPurchase", tab, nil, childTab, {
             Operation = XPurchaseConfigs.UiPurchaseCustomOperation.OpenPurchaseTab,
@@ -2454,11 +2467,11 @@ XFunctionalSkipManagerCreator = function()
 
     -- 跳转到联机共斗
     function XFunctionalSkipManager.SkipToDlcRelink()
-        XMVCA.XDlcRelink:OpenMainUi()
+        return XMVCA.XDlcRelink:OpenMainUi()
     end
 
     function XFunctionalSkipManager.SkipToTeamPrefab(list)
-        XLuaUiManager.Open("UiTeamPrefabMain", nil, list.CustomParams[1])
+        XLuaUiManager.Open("UiTeamPrefabMain", nil, list.CustomParams[1], list.CustomParams[1])
     end
 
     --endregion

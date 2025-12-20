@@ -31,18 +31,17 @@ local function CommonRequestCallbcak(res,cb,func)
 end
 
 --故事线推进请求
-function XTheatre5PVEAgency:RequestPveStoryLinePromote(storyLineId,storyLineContentId, cb)
-    XNetwork.Call("PveStoryLinePromoteRequest", {StoryLineId = storyLineId,ContentId = storyLineContentId}, function(res)
-            CommonRequestCallbcak(res,cb,function(res)
+function XTheatre5PVEAgency:RequestPveStoryLinePromote(storyLineId, storyLineContentId, cb, selectId)
+    XNetwork.Call("PveStoryLinePromoteRequest", {StoryLineId = storyLineId, ContentId = storyLineContentId, SelectId = selectId}, function(res)
+        CommonRequestCallbcak(res,cb,function(res)
             --战斗章节完成不走主动推送，服务器自己处理
             self._Model.PVERougeData:UpdateChapterData(storyLineId, res.CurContentId, res.PveAdventureData)
             self._Model.PVERougeData:UpdateFinishChapterData(storyLineId, storyLineContentId)
             if not XTool.IsNumberValid(storyLineContentId) then --这是教学关的，要设置当前故事线
                 self._Model.PVERougeData:UpdateCurStoryLineId(storyLineId)
             end    
-            XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_STORY_LINE_PROCESS_UPDATE, storyLineId, res.CurContentId)
+            XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_STORY_LINE_PROCESS_UPDATE, storyLineId, res.CurContentId, storyLineContentId)
         end)
-       
     end)
 end
 

@@ -288,7 +288,7 @@ function XPlotExhibitionAgency:GetProgressByStoryConfig(storyConfig)
     --主线
     if chapterType == XEnumConst.FuBen.ChapterType.MainLine then
         local viewModel = XDataCenter.FubenMainLineManager:ExGetChapterViewModelById(chapterId, difficult)
-        return viewModel:GetCurrentAndMaxProgress()
+        return XMVCA.XMainLine2:GetViewModelCurrentAndMaxProgress(viewModel)
     end
 
     --外篇旧闻

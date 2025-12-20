@@ -24,7 +24,7 @@ end
 
 function XDlcHuntTeam:FindMember(character)
     for pos = 1, #self._Members do
-        local member = self._Members[i]
+        local member = self._Members[pos]
         if member:Equals(character) then
             return pos
         end

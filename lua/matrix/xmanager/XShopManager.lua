@@ -18,6 +18,7 @@ local ActivityLastSyncShopTime = {}               -- 活动商店刷新时间
 local ShopBaseInfoDict = {}             -- 商店基础信息
 local ShopDict = {}                     -- 商店详细信息
 local ShopGroup = {}
+local ShopOpenInfo = {}
 
 local ScreenGoodsList = {}
 local ScreenTagList = {}
@@ -96,6 +97,7 @@ XShopManager.ActivityShopType = {
     Maverick3Shop = 12, --孤胆枪手商店
     Theatre5Shop = 13, --肉鸽5商店
     RaceShop = 14, --赛马商店
+    FashionShop = 15, --涂装商店
 }
 
 --分解商店分类
@@ -174,6 +176,7 @@ function XShopManager.GetShopBaseInfoByTypeAndTag(type)
                     tagData.SecondType = 0
                     tagData.Name = shopGroup[v.SecondType].TagName
                     tagData.IsHasSnd = true
+                    tagData.IsNeedFirstBluePoint = v.IsNeedFirstBluePoint
                     tableInsert(list, tagData)
                     tagList[v.SecondType] = v.SecondType
                 end
@@ -374,6 +377,16 @@ end
 
 function XShopManager.IsShopExist(shopId)
     return ShopBaseInfoDict[shopId] ~= nil
+end
+
+function XShopManager.GetShopGoodsInfo(shopId, goodsId)
+    local goodsList = XShopManager.GetShopGoodsList(shopId, false, true)
+    for _, goods in pairs(goodsList) do
+        if goods.Id == goodsId then
+            return goods
+        end
+    end
+    return nil
 end
 
 function XShopManager.GetShopGoodsList(shopId, notDebugError, ignoreSort)
@@ -1143,4 +1156,49 @@ function XShopManager.OnLoginRequestShopList()
     if #shopIds > 0 then
         XShopManager.GetShopInfoList(shopIds, nil, XShopManager.ShopType.Login, true)
     end
+end
+
+---请求商店开启信息（开启时间、条件等）
+function XShopManager.RequestShopValidInfo(shopIds, cb)
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
+        return
+    end
+    XNetwork.CallWithAutoHandleErrorCode("GetShopValidInfoRequest", { IdList = shopIds }, function(res)
+        for _, data in pairs(res.ShopValidInfos) do
+            ShopOpenInfo[data.Id] = data
+        end
+        if cb then
+            cb()
+        end
+    end)
+end
+
+function XShopManager.GetShopOpenInfo(shopId)
+    return ShopOpenInfo[shopId]
+end
+
+--需要提前执行RequestShopValidInfo
+function XShopManager.IsShopOpen(shopId)
+    local info = XShopManager.GetShopOpenInfo(shopId)
+    if not info then
+        return false
+    end
+    local now = XTime.GetServerNowTimestamp()
+    if info.StartTime > 0 and info.StartTime > now then
+        return false
+    end
+    if info.EndTime > 0 and info.EndTime < now then
+        return false
+    end
+    if info.IsUnShelve then
+        return false
+    end
+    if not XTool.IsTableEmpty(info.ConditionIds) then
+        for _, conditionId in pairs(info.ConditionIds) do
+            if not XConditionManager.CheckCondition(conditionId) then
+                return false
+            end
+        end
+    end
+    return true
 end

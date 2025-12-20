@@ -10,7 +10,7 @@ function XMovieActionFullScreenDialog:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
-    local dialogContent = XDataCenter.MovieManager.ReplacePlayerName(params[1])
+    local dialogContent = XMVCA.XMovie:FormatContent(params[1])
     if not dialogContent or dialogContent == "" then
         XLog.Error("XMovieActionFullScreenDialog:Ctor error:DialogContent is empty, actionId is: " .. self.ActionId)
         return

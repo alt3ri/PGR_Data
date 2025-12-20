@@ -40,6 +40,7 @@ function XUiPurchaseSceneTip:OnEnable()
     self:RefreshBuyButtonState()
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiPurchaseSceneTip:OnDisable()

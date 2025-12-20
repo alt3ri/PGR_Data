@@ -129,19 +129,39 @@ function XUiSpecialFashionShop:OnBtnFilterClick()
             end
         end
     end
-
-    XLuaUiManager.Open('UiShopFashionFilter', self:GetCurShopId(), self._TmpCareerTags, self._TmpElementTags, characterId, function(careerTags, elementTags, characterId)
-        self._TmpCareerTags = careerTags
-        self._TmpElementTags = elementTags
-        self.SelectTag = CS.XTextManager.GetText("ScreenAll")
-        -- characterId 转成selectTag
-        if screenGroupCfg then
-            for i, id in pairs(screenGroupCfg.ScreenID) do
-                if characterId == id then
-                    self.SelectTag = screenGroupCfg.ScreenName[i]
-                    break
+    local goodsList = XShopManager.GetShopGoodsList(self.self:GetCurShopId(), true, true)
+    local dataProvider = {}
+    -- 获取商品里对应的角色Id
+    if not XTool.IsTableEmpty(goodsList) then
+        for i, goods in pairs(goodsList) do
+            local characterId = XDataCenter.FashionManager.GetCharacterId(goods.RewardGoods.TemplateId)
+            dataProvider[#dataProvider + 1] = {
+                characterId = characterId,
+            }
+        end
+    end
+    local selectData = {
+        selectId = characterId,
+        careerTags = self._TmpCareerTags,
+        elementTags = self._TmpElementTags
+    }
+    XLuaUiManager.Open('UiShopFashionFilter', dataProvider, selectData, function(resultData)
+        if resultData ~= nil then
+            self._TmpCareerTags = resultData.careerTags
+            self._TmpElementTags = resultData.elementTags
+            if resultData.selectId == nil then
+                self.SelectTag = CS.XTextManager.GetText("ScreenAll")
+            elseif screenGroupCfg then
+                -- characterId 转成selectTag
+                for i, id in pairs(screenGroupCfg.ScreenID) do
+                    if characterId == id then
+                        self.SelectTag = screenGroupCfg.ScreenName[i]
+                        break
+                    end
                 end
             end
+        else
+            self.SelectTag = CS.XTextManager.GetText("ScreenAll")
         end
         -- 刷新列表
         self.BtnFilter:SetNameByGroup(0, self.SelectTag)
@@ -149,7 +169,6 @@ function XUiSpecialFashionShop:OnBtnFilterClick()
         self:RefreshDynamicTable()
     end)
 end
-
 ------------------------------------------------------- 监听函数end -------------------------------------------------------
 
 ------------------------------------------------------- 页签start -------------------------------------------------------
@@ -162,7 +181,7 @@ function XUiSpecialFashionShop:InitTabList()
 
     -- 角色涂装
     local goodsList = XShopManager.GetShopGoodsList(self.ShopId)
-    if #goodsList > 0 then 
+    if #goodsList > 0 then
         -- 一级页签
         local firstBtnGo = CS.UnityEngine.Object.Instantiate(self.BtnFirstHasSnd)
         firstBtnGo.transform:SetParent(self.TabBtnGroup.transform, false)
@@ -181,7 +200,7 @@ function XUiSpecialFashionShop:InitTabList()
                 secBtnGo = CS.UnityEngine.Object.Instantiate(self.BtnSecondTop)
             elseif secIndex == #seriesIdList then
                 secBtnGo = CS.UnityEngine.Object.Instantiate(self.BtnSecondBottom)
-            else 
+            else
                 secBtnGo = CS.UnityEngine.Object.Instantiate(self.BtnSecond)
             end
             secBtnGo.transform:SetParent(self.TabBtnGroup.transform, false)
@@ -193,7 +212,7 @@ function XUiSpecialFashionShop:InitTabList()
             table.insert(self.TabUiBtnList, secUiBtn)
 
             local tabIndex = #self.TabUiBtnList
-            self.IndexToShopData[tabIndex] = {ShopId = self.ShopId, SeriesId = seriesId}
+            self.IndexToShopData[tabIndex] = { ShopId = self.ShopId, SeriesId = seriesId }
         end
     end
 
@@ -208,10 +227,10 @@ function XUiSpecialFashionShop:InitTabList()
         firstUiBtn:SetName(firstName)
         table.insert(self.TabUiBtnList, firstUiBtn)
         local tabIndex = #self.TabUiBtnList
-        self.IndexToShopData[tabIndex] = {ShopId = self.WeaponShopId}
+        self.IndexToShopData[tabIndex] = { ShopId = self.WeaponShopId }
     end
 
-    if #self.TabUiBtnList > 0 then 
+    if #self.TabUiBtnList > 0 then
         -- 初始化group
         self.TabBtnGroup:Init(self.TabUiBtnList, function(index) self:OnSelectedTab(index) end)
         self.TabBtnGroup:SelectIndex(1)
@@ -266,7 +285,7 @@ end
 
 function XUiSpecialFashionShop:InitDropDown()
     local shopData = self.IndexToShopData[self.CurTabIndex]
-    if shopData.ShopId == self.ShopId then 
+    if shopData.ShopId == self.ShopId then
         self.TagList = XDataCenter.SpecialShopManager.GetTagListBySeriesId(shopData.ShopId, shopData.SeriesId)
     else
         self.TagList = XShopManager.GetScreenTagListById(shopData.ShopId, XShopManager.ScreenType.WeaponType)
@@ -298,7 +317,7 @@ function XUiSpecialFashionShop:InitDropDown()
         else
             self.DropFilter:ClearOptions()
             self.DropFilter.captionText.text = self.SelectTag
-            for _,v in pairs(self.TagList or {}) do
+            for _, v in pairs(self.TagList or {}) do
                 local op = Dropdown.OptionData()
                 op.text = v.Text
                 self.DropFilter.options:Add(op)
@@ -311,7 +330,8 @@ end
 function XUiSpecialFashionShop:FilterGoodList()
     local shopData = self.IndexToShopData[self.CurTabIndex]
     if shopData.ShopId == self.ShopId then
-        self.GoodList = XDataCenter.SpecialShopManager.GetFashionListBySeriesId(shopData.ShopId, shopData.SeriesId, self.SelectTag)
+        self.GoodList = XDataCenter.SpecialShopManager.GetFashionListBySeriesId(shopData.ShopId, shopData.SeriesId,
+            self.SelectTag)
     else
         self.GoodList = XDataCenter.SpecialShopManager.GetWeaponFashionListByTag(shopData.ShopId, self.SelectTag)
     end

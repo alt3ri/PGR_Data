@@ -1,123 +1,123 @@
 [
     {
         "Key": "CameraDistance",
-        "Comment": "\u6444\u50cf\u673a\u8ddd\u79bb\u8c03\u8282\uff1a 1\uff1a\u6700\u5c0f\u8ddd\u79bb\uff1b2\uff1a\u6700\u5927\u8ddd\u79bb",
+        "Comment": "Camera Distance Adjustment: 1: Minimum Distance 2: Maximum Distance",
         "Values": "['10', '20']"
     },
     {
         "Key": "PrefabPath",
-        "Comment": "\u9884\u5236\u8d44\u6e90\u8def\u5f84",
+        "Comment": "Preset Resource Path",
         "Values": "['Assets/Product/Scene/ArenaWar/Prefabs/AreaWarScene.prefab']"
     },
     {
         "Key": "CameraZoomSpeed",
-        "Comment": "\u6444\u50cf\u673a\u7f29\u653e\u901f\u5ea6",
+        "Comment": "Camera Scale Speed",
         "Values": "['5']"
     },
     {
         "Key": "CameraSmallDisRatio",
-        "Comment": "\u70b9\u4f4d\u7f29\u5c0f\u7684\u76f8\u673a\u8ddd\u79bb\u6bd4\u4f8b",
+        "Comment": "Slot Zooming-out Camera Distance Ratio",
         "Values": "['0.4']"
     },
     {
         "Key": "ArticleTips",
-        "Comment": "\u6587\u7ae0\u76f8\u5173\u63d0\u793a",
-        "Values": "['\u6587\u7ae0\u672a\u89e3\u9501\uff01', '%s    %s \u53d1\u5e03']"
+        "Comment": "Article-Related Tips",
+        "Values": "['Article is locked!', 'Published by %s    %s']"
     },
     {
         "Key": "ArticleGroupTip",
-        "Comment": "\u6587\u7ae0\u7ec4\u63d0\u793a",
-        "Values": "['\u677f\u5757\u672a\u89e3\u9501\uff01']"
+        "Comment": "Article Group Tips",
+        "Values": "['Block is locked!']"
     },
     {
         "Key": "ArticleLikeCountBoundary",
-        "Comment": "1. \u70b9\u8d5e\u5206\u754c\u7ebf\uff0c\u4f4e\u4e8e\u8fd9\u4e2a\u6570\uff0c\u5219\u663e\u793a\u5177\u4f53\u7684\u6570\u91cf\uff0c\u9ad8\u4e8e\u5219\u663e\u793a\u5bf9\u5e94\u5355\u4f4d\uff1b2. \u5355\u4f4d",
+        "Comment": "1. Threshold of likes. Only likes below this number will be displayed. Otherwise, the corresponding unit will be displayed instead. 2. Unit",
         "Values": "['10000', 'W']"
     },
     {
         "Key": "EndTimeTips",
-        "Comment": "\u65f6\u95f4\u7ed3\u675f\u6587\u672c\u63d0\u793a",
-        "Values": "['%s\u540e\u7ed3\u675f']"
+        "Comment": "Time End Text Tips",
+        "Values": "['Ends in %s']"
     },
     {
         "Key": "GiftsRewardIds",
-        "Comment": "\u6253\u8138\u5956\u52b1Id",
+        "Comment": "Close-up Reward ID",
         "Values": "['6002806|1', '80082|1', '102|2000', '50005|1000', '11000205|1']"
     },
     {
         "Key": "FirstPlayStoryId",
-        "Comment": "\u9996\u6b21\u8fdb\u5165\u73a9\u6cd5\u5267\u60c5",
+        "Comment": "Story First Entering the Mode",
         "Values": null
     },
     {
         "Key": "UnlockAnimationInfo",
-        "Comment": "\u89e3\u9501\u52a8\u753b\u4fe1\u606f 1.\u52a8\u753b\u7c7b\u578b\uff1b2.\u52a8\u753b\u65f6\u957f\uff1b3.\u52a8\u753b\u4f4d\u79fb\u9ad8\u5ea6",
+        "Comment": "Unlocking Animation Info 1. Animation Type 2. Animation Duration 3. Animation Movement Height",
         "Values": "['2', '1.2', '0.82', '8']"
     },
     {
         "Key": "IdleAnimationInfo",
-        "Comment": "\u547c\u5438\u52a8\u753b\u4fe1\u606f 1.\u52a8\u753b\u7c7b\u578b\uff1b2.\u52a8\u753b\u65f6\u957f\uff1b3.\u52a8\u753b\u4f4d\u79fb\u9ad8\u5ea6",
+        "Comment": "Breathing Animation Info 1. Animation Type 2. Animation Duration 3. Animation Movement Height",
         "Values": "['0', '5', '0.82']"
     },
     {
         "Key": "PlateLiftUpInfo",
-        "Comment": "\u677f\u5757\u4e0a\u5347\u52a8\u753b 1: Y\u5411\u4e0b\u504f\u79fb\uff0c\u9690\u85cf\u5728\u5730\u56fe\u5916\uff1b2.\u4ece\u5730\u56fe\u5916\u4e0a\u5347\u6240\u9700\u65f6\u95f4",
+        "Comment": "Plate Ascending Animation: 1: Y moves down, hidden outside the map. 2: Time required to move up from outside the map",
         "Values": "['-3', '0.8']"
     },
     {
         "Key": "StageDetailFightTip",
-        "Comment": "\u5173\u5361\u8be6\u60c5\u5728\u97ad\u5c38\u671f\u4e0e\u975e\u97ad\u5c38\u671f\u65f6\u6218\u6597\u63cf\u8ff0",
-        "Values": "['\u9650\u65f6\u5185\uff0c\u8bc4\u5206\u8d8a\u9ad8\uff0c\u5956\u52b1\u8d8a\u4e30\u5bcc', '\u53c2\u4e0e\u4f5c\u6218\uff0c\u83b7\u5f97\u5956\u52b1']"
+        "Comment": "Battle Description in Stage Details in/Outside Corpse Punishment Period",
+        "Values": "['Within the time limit, the higher the rating, the better the rewards.', 'Participate in the battle for rewards']"
     },
     {
         "Key": "StageDetailBtnChallenge",
         "Comment": null,
-        "Values": "['\u4f5c\u6218\u51c6\u5907', '\u591a\u91cd\u6311\u6218']"
+        "Values": "['Battle Preparations', 'Multi Challenge']"
     },
     {
         "Key": "ItemNotEnough",
         "Comment": null,
-        "Values": "['\u8c03\u5ea6\u7533\u8bf7\u4e0d\u8db3, \u8bf7\u901a\u8fc7\u63f4\u62a4\u4efb\u52a1\u83b7\u53d6', '\u5f53\u524d\u4f53\u529b\u4e0d\u8db3\uff0c\u662f\u5426\u5c06\u591a\u91cd\u6311\u6218\u6b21\u6570\u8c03\u6574\u81f3<color=#4dc5ff>X%d</color>?', '\u5f53\u524d\u4f53\u529b\u4e0d\u8db3\uff0c\u65e0\u6cd5\u7ee7\u7eed\u4f5c\u6218']"
+        "Values": "['Insufficient Scheduling Request. Get more from Support Missions.', 'Insufficient Floating Processor. Change Multi Challenge to <color=#4dc5ff>X%d</color>?', 'Insufficient Floating Processor. Unable to continue.']"
     },
     {
         "Key": "QuestName",
-        "Comment": "\u63a2\u7d22\u4efb\u52a1Name",
-        "Values": "['\u7279\u6d3e\u4efb\u52a1', '\u7279\u6d3e\u4efb\u52a1', '\u63f4\u62a4\u4efb\u52a1']"
+        "Comment": "Explore Mission Name",
+        "Values": "['Special Mission', 'Special Mission', 'Support Mission']"
     },
     {
         "Key": "QuestDesc",
-        "Comment": "\u63a2\u7d22\u4efb\u52a1Desc",
-        "Values": "['\u4e2a\u4eba\u4efb\u52a1', '\u4e2a\u4eba\u4efb\u52a1', '\u4e92\u52a9\u4efb\u52a1']"
+        "Comment": "Explore Mission Desc",
+        "Values": "['Personal Mission', 'Personal Mission', 'Mutual Mission']"
     },
     {
         "Key": "BlockLevelTypeIcon",
-        "Comment": "\u8be6\u60c5\u56fe\u6807",
+        "Comment": "Details Icon",
         "Values": "['Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame02.png', 'Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame01.png']"
     },
     {
         "Key": "BlockLevelTypeMapIcon",
-        "Comment": "\u5730\u56fe\u56fe\u6807",
+        "Comment": "Map Icon",
         "Values": "['Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame02.png', 'Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame01.png']"
     },
     {
         "Key": "GrowBuffLockTip",
-        "Comment": "buff\u89e3\u9501\u63d0\u793a",
-        "Values": "['\u7b49\u7ea7\u8fbe\u5230%s\u89e3\u9501']"
+        "Comment": "Buff Unlock Tips",
+        "Values": "['Unlocks at Lv.%s']"
     },
     {
         "Key": "FinishAllQuestTip",
         "Comment": null,
-        "Values": "['\u5df2\u5b8c\u6210\u672c\u65e5\u6240\u6709\u5f02\u5e38\u8c03\u67e5', '\u5df2\u5b8c\u6210\u672c\u65e5\u6240\u6709\u6551\u63f4\u4efb\u52a1']"
+        "Values": "['All Special Missions of today have been completed', 'All Rescue Missions of today have been completed']"
     },
     {
         "Key": "RescueDetailText",
         "Comment": null,
-        "Values": "['\u8bf7 \u6c42 \u652f \u63f4', '\u961f\u53cb\u9047\u5230\u5371\u9669\uff0c\u8bf7\u6c42\u6551\u63f4']"
+        "Values": "['Requesting Support', 'Teammates in danger and requesting support']"
     },
     {
         "Key": "RescuedDetailText",
         "Comment": null,
-        "Values": "['\u83b7 \u5f97 \u5e2e \u52a9', '\u5176\u4ed6\u73a9\u5bb6\u5411\u4f60\u63d0\u4f9b\u4e86\u5e2e\u52a9']"
+        "Values": "['Help Received', 'Another player has helped you']"
     },
     {
         "Key": "TrailEffectUrl",
@@ -127,6 +127,111 @@
     {
         "Key": "CancelBtnText",
         "Comment": null,
-        "Values": "['\u53d6\u6d88', '\u5151\u6362\u4f53\u529b']"
+        "Values": "['Cancel', 'Redeem']"
+    },
+    {
+        "Key": "ItemUnlockTips",
+        "Comment": "Collectible Unlock Notification",
+        "Values": "['Unlocks at Lv.%s']"
+    },
+    {
+        "Key": "ItemRoomAttrs",
+        "Comment": "Collection Room Stats",
+        "Values": "['ATK', 'Health', 'Multi Challenge Maximum Multiplier']"
+    },
+    {
+        "Key": "ItemRoomLvUpCost",
+        "Comment": "Insufficient Upgrade Materials Display",
+        "Values": "['<color=#0E70BD>%s</color>/%s']"
+    },
+    {
+        "Key": "ItemRoomLvUpCostNoEnough",
+        "Comment": "Insufficient Upgrade Materials Display",
+        "Values": "['<color=#EE2323>%s</color>/%s']"
+    },
+    {
+        "Key": "ItemRoomLvUpNoEnoughTips",
+        "Comment": "Insufficient Upgrade Materials Notification",
+        "Values": "['Insufficient upgrade materials!']"
+    },
+    {
+        "Key": "AuctionItemRemainTips",
+        "Comment": "Trading House Remaining Item Quantity Notification",
+        "Values": "['(Only %s left)']"
+    },
+    {
+        "Key": "AuctionBuyNoEnoughCoinTips",
+        "Comment": "Trading House Purchase Insufficient Tokens Notification",
+        "Values": "['Insufficient Auction House tokens.']"
+    },
+    {
+        "Key": "AuctionBuyNoEnoughCoinColor",
+        "Comment": "Trading House Purchase Insufficient Tokens Color",
+        "Values": "['<color=#EE2323>%s</color>']"
+    },
+    {
+        "Key": "AuctionBuyNoEnoughShopTips",
+        "Comment": "Trading House Purchase Insufficient Items Notification",
+        "Values": "['Items Restocking']"
+    },
+    {
+        "Key": "AuctionBuySuccessTips",
+        "Comment": "Trading House Purchase Success Notification",
+        "Values": "['Purchase successful']"
+    },
+    {
+        "Key": "AuctionRefreshReBuyTips",
+        "Comment": "Data refreshes when making purchases at Trading House.",
+        "Values": "['Trading House has been refreshed. Please make your purchase again!']"
+    },
+    {
+        "Key": "LightUpNoEnoughTips",
+        "Comment": "Insufficient Lit Collectibles Notification",
+        "Values": "['Insufficient collectibles.']"
+    },
+    {
+        "Key": "QualityTabAll",
+        "Comment": "\"All\" Tab in Quality Filter",
+        "Values": "['All']"
+    },
+    {
+        "Key": "ItemDetailUnlockTips",
+        "Comment": "Item Details Unlock Notification",
+        "Values": "['Collection Room unlocks at Lv.%s']"
+    },
+    {
+        "Key": "OrderPutOffConfirmTips",
+        "Comment": "Cancel Order Confirmation Prompt",
+        "Values": "['System Notice', 'Remove this item from sale?']"
+    },
+    {
+        "Key": "OrderPutOffFailTips",
+        "Comment": "Prompt of order sold successfully during the confirmation process",
+        "Values": "['Cannot remove item. Order already sold!']"
+    },
+    {
+        "Key": "ServerRedisCircuitBreakerTips",
+        "Comment": "Auction House server down. The client will stop sending requests. Retry in 5 seconds!",
+        "Values": "['Auction House busy. Try again in 5s!']"
+    },
+    {
+        "Key": "BtnCollectionUnlockConditionId",
+        "Comment": "\u6536\u85cf\u5ba4\u6309\u94ae\u7684\u89e3\u9501\u6761\u4ef6",
+        "Values": "['863120']"
+    },
+    {
+        "Key": "RareModelUnlockEffect",
+        "Comment": "\u73cd\u7a00\u85cf\u54c1\u754c\u9762\u6a21\u578b\u672a\u89e3\u9501\u7279\u6548",
+        "Values": "['Assets/Product/Effect/Prefab/FxUi/FxUiMain/FxUiBlack.prefab']"
+    },
+    {
+        "Key": "UseItemNumNoEnoughTips",
+        "Comment": "Insufficient collectible items.",
+        "Values": "['Insufficient collectibles.']"
+    },
+    {
+        "Key": "CollectionLockTips",
+        "Comment": "Collection Room Locked Prompt",
+        "Values": "['Unlocks when server-wide purification progress reaches %s.']"
     }
 ]

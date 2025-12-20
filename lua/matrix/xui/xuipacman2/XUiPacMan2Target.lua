@@ -8,6 +8,9 @@ end
 
 ---@param data XUiPacMan2TargetData
 function XUiPacMan2Target:Update(data)
+    -- 判断是否需要显示 PanelReceived：本次达到或历史上已达到的都显示
+    local shouldShowReceived = data.IsOn or (data.IsHistoryOn == true)
+
     if data.IsOn then
         self.TxtTargetOn.text = XUiHelper.GetText("PacMan2StarTarget", data.Score)
         self.TargetOn.gameObject:SetActiveEx(true)
@@ -16,6 +19,11 @@ function XUiPacMan2Target:Update(data)
         self.TxtTargetOff.text = XUiHelper.GetText("PacMan2StarTarget", data.Score)
         self.TargetOn.gameObject:SetActiveEx(false)
         self.TargetOff.gameObject:SetActiveEx(true)
+    end
+
+    -- PanelReceived 显示：本次达到或历史上已达到（已领取过奖励）的都显示
+    if self.PanelReceived then
+        self.PanelReceived.gameObject:SetActiveEx(shouldShowReceived)
     end
 
     self._GridRewards = self._GridRewards or {}
@@ -30,4 +38,4 @@ function XUiPacMan2Target:Update(data)
     end
 end
 
-return XUiPacMan2Target
+return XUiPacMan2Target

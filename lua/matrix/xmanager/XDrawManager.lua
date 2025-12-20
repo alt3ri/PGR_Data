@@ -42,6 +42,10 @@ XDrawManagerCreator = function()
     local DrawDiscountGroupIds = nil
     local DrawDevilMayCryGroupIds = nil
 
+    -- 可肝卡池相关数据
+    local CanLiverActivityId = nil
+    local CanLiverDrawCount = nil
+    local CanLiverRewardIndex = nil
     XDrawManager.DrawEventType = { Normal = 0, NewHand = 1, Activity = 2, OldActivity = 3 }
 
     function XDrawManager.Init()
@@ -903,6 +907,98 @@ XDrawManagerCreator = function()
     function XDrawManager.GetIsDevilMayCryDrawOpen()
         return IsDevilMayCryDrawOpen
     end
+
+
+    function XDrawManager.NotifyDrawCanLiverData(data)
+        CanLiverActivityId = data.ActivityId
+        CanLiverDrawCount = data.DrawCount or 0
+        CanLiverRewardIndex = data.RewardIndex
+    end
+
+    function XDrawManager.GetCanLiverActivityId()
+        return CanLiverActivityId
+    end
+
+    function XDrawManager.GetCanLiverDrawCount()
+        return CanLiverDrawCount
+    end
+
+    function XDrawManager.GetCanLiverRewardIndex()
+        return CanLiverRewardIndex
+    end
+    function XDrawManager.IsCanJourneyRewardGet(index)
+        if not CanLiverRewardIndex then
+            return false
+        end
+
+        -- 获取配置中的对应num
+        local canLiverActivityId = XDrawManager.GetCanLiverActivityId()
+        local config = XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverActivityId)
+        if not config or not config.Schedules then
+            return false
+        end
+        local num = config.Schedules[index]
+        if not num then
+            return false
+        end
+
+        return CanLiverDrawCount >= num and not table.contains(CanLiverRewardIndex, index - 1) -- RewardIndex是C#侧下标
+    end
+
+    function XDrawManager.IsJourneyRewardReceived(index)
+        if not CanLiverRewardIndex then
+            return false
+        end
+    
+        -- RewardIndex 是 C# 的下标，所以要减 1
+        return table.contains(CanLiverRewardIndex, index - 1)
+    end
+
+    -- 返回当前卡池中最小可领取奖励的index，没有则返回nil
+    function XDrawManager.GetFirstCanJourneyRewardIndex()
+        local canLiverActivityId = XDrawManager.GetCanLiverActivityId()
+        if not canLiverActivityId then
+            return nil
+        end
+
+        local config = XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverActivityId)
+        if not config or not config.Schedules then
+            return nil
+        end
+
+        for index, _ in ipairs(config.Schedules) do
+            if XDrawManager.IsCanJourneyRewardGet(index) then
+                return index
+            end
+        end
+        return nil
+    end
+
+    -- 获取最近一个未领取奖励的index（无论是否可领，只要还没领）
+    function XDrawManager.GetFirstUnGetJourneyRewardIndex()
+        local canLiverActivityId = XDrawManager.GetCanLiverActivityId()
+        if not canLiverActivityId then
+            return nil
+        end
+
+        if not CanLiverRewardIndex then
+            return nil
+        end
+
+        local config = XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverActivityId)
+        if not config or not config.Schedules then
+            return nil
+        end
+
+        for index, _ in ipairs(config.Schedules) do
+            -- RewardIndex 是C#的下标
+            if not table.contains(CanLiverRewardIndex, index - 1) then
+                return index
+            end
+        end
+
+        return nil
+    end
     --endregion
     
     --region ServerDataUpdate
@@ -1102,6 +1198,21 @@ XDrawManagerCreator = function()
         end)
     end
 
+    -- 可肝卡池的奖励领取
+    function XDrawManager.DrawCanLiverRewardRequest(cb)
+        XNetwork.Call("DrawCanLiverRewardRequest", {}, function(res)
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+                return
+            end
+
+            CanLiverRewardIndex = XTool.MergeArray(CanLiverRewardIndex, res.RewardIndexSet)
+
+            if cb then
+                cb(res.RewardGoodsList)
+            end
+        end)
+    end
     --endregion
 
     function XDrawManager.CheckIsShowOptionDraw(drawGroupRuleId)
@@ -1148,4 +1259,8 @@ end
 
 XRpc.NotifyDevilMayCryDraw = function(data)
     XDataCenter.DrawManager.UpdateDevilMayCryDraw(data.OpenDraws)
-end
+end
+
+XRpc.NotifyDrawCanLiverData = function(data)
+    XDataCenter.DrawManager.NotifyDrawCanLiverData(data.DrawCanLiverData)
+end

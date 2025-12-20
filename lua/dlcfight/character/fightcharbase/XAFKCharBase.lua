@@ -300,7 +300,7 @@ function XAFKCharBase:IsValidSkillDelayTimer()--判断延迟释放技能有效�
         return true
     end
 
-    if not (self._proxy:CheckCanCastSkill(self._uuid) and self._proxy:CheckNpcCurSkillIsDone(self._uuid)) then --判断是否在技能后摇
+    if not (self._proxy:CheckCanCastSkill(self._uuid) and self._proxy:CheckNpcCurActionIsDone(self._uuid)) then --判断是否在技能后摇
         self.skillDelayTimer = nil --不在后摇，清空Timer
         return false
     end
@@ -442,7 +442,7 @@ function XAFKCharBase:ComboEndCheck() --检查Combo是否结束
     end
     
     if self._proxy:CheckNpcCurrentAction(self._uuid,self.currentComboLastSkillId) then --如果正在最后一个技能过程中
-        if self._proxy:CheckNpcCurSkillIsDone(self._uuid) then  --技能过程中后摇属于End
+        if self._proxy:CheckNpcCurActionIsDone(self._uuid) then  --技能过程中后摇属于End
             self:ComboEnd()
         end
     else

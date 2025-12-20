@@ -196,6 +196,10 @@ function XUiBuyAsset:OnBtnConfirmClick()
         local name = XDataCenter.ItemManager.GetItemName(targetId)
         if XOverseaManager.IsJPRegion() then
             XUiManager.TipMsg(XUiHelper.GetText("JPBuyTicketSuccessTips", name, targetCount))
+        elseif XOverseaManager.IsENRegion() then
+            XUiManager.TipMsg(XUiHelper.GetText("ENBuyTicketSuccessTips", targetCount, name))
+        elseif XOverseaManager.IsKRRegion() then
+            XUiManager.TipMsg(XUiHelper.GetText("KRBuyTicketSuccessTips", name, targetCount))
         else
             XUiManager.TipMsg(CS.XTextManager.GetText("BuySuccess") .. "," .. CS.XTextManager.GetText("Acquire") .. " " .. targetCount .. CS.XTextManager.GetText("QuantifiersA") .. " " .. name, XUiManager.UiTipType.Tip)
         end

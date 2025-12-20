@@ -4,7 +4,7 @@
 local XUiGridDlcRelinkChooseBoss = XClass(XUiNode, "XUiGridDlcRelinkChooseBoss")
 
 function XUiGridDlcRelinkChooseBoss:OnStart(chapterId)
-    XUiHelper.RegisterClickEvent(self, self.BtnSelect, self.OnBtnSelectClick, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnSelect, self.OnBtnSelectClick, true, true)
     self.ChapterId = chapterId
     self.IsShowTime = false
 end
@@ -12,11 +12,11 @@ end
 function XUiGridDlcRelinkChooseBoss:Refresh()
     local chapterIcon = self._Control:GetChapterIcon(self.ChapterId)
     if not string.IsNilOrEmpty(chapterIcon) then
-        self.ImgBoss:SetSprite(chapterIcon)
+        self.RImgBoss:SetRawImage(chapterIcon)
     end
     local isUnLock = self._Control:CheckChapterUnlock(self.ChapterId)
-    self.Txt.gameObject:SetActiveEx(isUnLock)
-    self.TxtLock.gameObject:SetActiveEx(not isUnLock)
+    self.BossName.gameObject:SetActiveEx(isUnLock)
+    self.RawImgLock.gameObject:SetActiveEx(not isUnLock)
     if isUnLock then
         self.Txt.text = self._Control:GetChapterName(self.ChapterId)
         self.TxtLock.text = ""
@@ -57,8 +57,13 @@ function XUiGridDlcRelinkChooseBoss:RefreshTime()
     self.TxtLock.text = string.format(self._Control:GetClientConfig("ChapterCountDownDesc"), timeStr)
 end
 
+function XUiGridDlcRelinkChooseBoss:RefreshRedPoint()
+    local isShowRedPoint = self._Control:CheckChapterHasAnyNewLevel(self.ChapterId)
+    self.Red.gameObject:SetActiveEx(isShowRedPoint)
+end
+
 function XUiGridDlcRelinkChooseBoss:SetSelect(isSelect)
-    self.ImgSelect.gameObject:SetActiveEx(isSelect)
+    self.RImgSelect.gameObject:SetActiveEx(isSelect)
 end
 
 function XUiGridDlcRelinkChooseBoss:OnBtnSelectClick()

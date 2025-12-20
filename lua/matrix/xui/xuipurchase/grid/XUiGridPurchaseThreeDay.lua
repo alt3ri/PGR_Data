@@ -33,9 +33,11 @@ function XUiGridPurchaseThreeDay:UpdateData(id, reward, isPurchaseEnter, isShow,
         isGain = self.WeekData:CheckIsGotByRoundAndDay(1, index)
         isExpired = self.WeekData:CheckIsPreviousDay(1, index)
     else
-        -- 三日礼包不会过期，没有数据默认已全部领取完
+        -- 三日礼包不会过期，没有数据显示已结束
         if isPurchaseEnter then
-            isGain = isBuyPurchase
+            if self.ImgEnd then
+                self.ImgEnd.gameObject:SetActiveEx(isBuyPurchase)
+            end
         end
     end
 

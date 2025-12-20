@@ -1,6 +1,6 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@class XUiNewGridDrawBanner
-local XUiNewGridDrawBanner = XClass(nil, "XUiNewGridDrawBanner")
+local XUiNewGridDrawBanner = XClass(XUiNode, "XUiNewGridDrawBanner")
 
 local SkipToDrawLogTabIndex = {
     BaseRule = 1, -- 基础规则页
@@ -8,26 +8,20 @@ local SkipToDrawLogTabIndex = {
     EventRule = 4, -- 特定规则页
 }
 
-function XUiNewGridDrawBanner:Ctor(ui, data, base)
+function XUiNewGridDrawBanner:Ctor(ui, parent, data)
     self.GameObject = ui.gameObject
     ---@type UnityEngine.RectTransform
     self.Transform = ui.transform
-    XTool.InitUiObject(self)
     self.Data = data
     ---@type XUiNewDrawMain
-    self.Base = base
+    self.Base = parent
 
     self.BtnSkipList = {}
 
     self:TryGetComponent()
     self:SetButtonCallBack()
-    self:SetUpBottomTimes()
-    self:SetUpRewardPreview()
-    self:SetBannerTime()
-    self:SetSwitchInfo()
-    self:SetNewHandTag()
+    self:Refresh()
     self:SetImage()
-    self:SetTime()
     self:InitNewDrawComponent()
     self:SetTextByResourceIds()
 end

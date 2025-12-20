@@ -84,7 +84,8 @@ function XMovieAgency:RequestAddStageBookmark(cb)
 
     local isCover = bookmarkData ~= nil
     local optionDic = XDataCenter.MovieManager.GetSelectionDataDic()
-    local req = { StageId = stageId, MovieId = movieId, ActionId = actionId, OptionDic = optionDic }
+    XMessagePack.MarkAsTable(optionDic)
+    local req = { StageId = stageId, MovieId = movieId, ActionId = actionId, OptionInfos = optionDic }
     XNetwork.CallWithAutoHandleErrorCode(self.RequestName.AddStageBookmarkRequest, req, function(res)
         self._Model:SetBookmarkData(req)
         if cb then cb() end
@@ -144,6 +145,23 @@ function XMovieAgency:SplitParam(param, splitStr, isNumber)
         end
     end
     return result
+end
+
+-- 格式化剧情文本
+function XMovieAgency:FormatContent(content)
+    if not content or content == "" then
+        return ""
+    end
+    -- 替换玩家名称
+    content = XDataCenter.MovieManager.ReplacePlayerName(content)
+    -- 提取指挥官性别文本
+    content = self:ExtractGenderContent(content)
+    -- 替换十进制特殊符号
+    content = self:ReplaceDecimalismCodeToStr(content)
+    -- 字符串换行符可用化
+    content = XUiHelper.ConvertLineBreakSymbol(content)
+
+    return content
 end
 
 -- 提取指挥官性别对应文本
@@ -327,7 +345,7 @@ function XMovieAgency:PlayBookmarkMovie()
     
     XDataCenter.MovieManager.PlayMovie(bookmarkData.MovieId, function()
         self:OnBookmarkMovieEnd(bookmarkData)
-    end, nil, nil, nil, bookmarkData.ActionId, bookmarkData.OptionDic, stageId)
+    end, nil, nil, nil, bookmarkData.ActionId, bookmarkData.OptionInfos, stageId)
 end
 
 -- 书签剧情播放结束回调

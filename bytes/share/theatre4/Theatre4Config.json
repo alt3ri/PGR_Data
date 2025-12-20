@@ -1,77 +1,77 @@
 [
     {
         "Key": "ChapterNumberParameter",
-        "Desc": "\u7ae0\u8282\u6570\u53c2\u6570",
+        "Desc": "Chapter Count Coefficient",
         "Values": "['100000']"
     },
     {
         "Key": "ProsperityIndexParameter",
-        "Desc": "\u7e41\u8363\u5ea6\u53c2\u6570",
+        "Desc": "Prosperity Coefficient",
         "Values": "['1']"
     },
     {
         "Key": "CellsOpenedParameter",
-        "Desc": "\u7ffb\u5f00\u683c\u5b50\u6570\u76ee\u53c2\u6570",
+        "Desc": "Overturned Tile Count Coefficient",
         "Values": "['150000']"
     },
     {
         "Key": "InterestNeedCount",
-        "Desc": "\u5355\u6b21\u5229\u606f\u9700\u8981\u91d1\u5e01\u6570\u3010\u5371\u9669\u3011",
+        "Desc": "Gold Coins required for one-time Interest [Danger]",
         "Values": "['10']"
     },
     {
         "Key": "InterestAwardCount",
-        "Desc": "\u5355\u6b21\u5229\u606f\u5956\u52b1\u91d1\u5e01\u6570",
+        "Desc": "One-time Interest Gold Coin reward",
         "Values": "['1']"
     },
     {
         "Key": "InterestAwardLimit",
-        "Desc": "\u56de\u5408\u5229\u606f\u5956\u52b1\u91d1\u5e01\u4e0a\u9650\u3010\u5371\u9669\u3011",
+        "Desc": "Gold Coin reward interest limit per round [Danger]",
         "Values": "['30']"
     },
     {
         "Key": "OpenCloseCheck",
-        "Desc": "\u5f00\u542f\u5f3a\u9000\u68c0\u6d4b",
+        "Desc": "Enable Force Exit Detection",
         "Values": "['1']"
     },
     {
         "Key": "CloseCheckCount",
-        "Desc": "\u5bb9\u9519\u4fdd\u5e95\u6b21\u6570",
+        "Desc": "Fault-Tolerant Guaranteed Attempts",
         "Values": "['1']"
     },
     {
         "Key": "ItemCountLimit",
-        "Desc": "\u85cf\u54c1\u4e0a\u9650",
+        "Desc": "Artifact Limit",
         "Values": "['5']"
     },
     {
         "Key": "InheritItemNum",
-        "Desc": "\u85cf\u54c1\u7ee7\u627f\u6570\u91cf",
+        "Desc": "Number of Artifacts inherited",
         "Values": "['2']"
     },
     {
         "Key": "InheritItemThreshold",
-        "Desc": "\u85cf\u54c1\u7ee7\u627f\u9608\u503c\uff08\u7ffb\u683c\u6570\u8981\u6c42\uff09",
+        "Desc": "Artifact inherit Threshold (overturned tile count requirement)",
         "Values": "['9999']"
     },
     {
         "Key": "PassChapterOperable",
-        "Desc": "\u5386\u53f2\u5173\u5361\u64cd\u4f5c\u8bb8\u53ef",
+        "Desc": "Archived Stages operation permission",
         "Values": "['0']"
     },
     {
         "Key": "MaxTotalTechPoint",
-        "Desc": "\u53ef\u83b7\u5f97\u79d1\u6280\u70b9\u603b\u4e0a\u9650",
+        "Desc": "Max total obtainable Tech Points",
         "Values": "['1200']"
     },
     {
         "Key": "MaxColorPoint",
-        "Desc": "\u53ef\u83b7\u5f97\u5929\u8d4b\u70b9\u4e0a\u9650",
+        "Desc": "Max total obtainable Talent Points",
         "Values": null
     },
     {
         "Key": "MaxProsperity",
-        "Desc": "\u53ef\u83b7\u5f97\u7e41\u8363\u5ea6\u4e0a\u9650",
+        "Desc": "Max total obtainable Prosperity",
         "Values": null
     }
 ]

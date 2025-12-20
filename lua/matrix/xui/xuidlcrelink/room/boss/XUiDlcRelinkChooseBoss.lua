@@ -33,6 +33,7 @@ function XUiDlcRelinkChooseBoss:OnEnable()
     self.Super.OnEnable(self)
     self:RefreshChapterGrid()
     self:RefreshPanelDetail(true)
+    self:RefreshRedPoint()
 end
 
 function XUiDlcRelinkChooseBoss:OnDisable()
@@ -112,13 +113,21 @@ function XUiDlcRelinkChooseBoss:RefreshTime()
     end
 end
 
+function XUiDlcRelinkChooseBoss:RefreshRedPoint()
+    for _, grid in pairs(self.BossGridList) do
+        if grid then
+            grid:RefreshRedPoint()
+        end
+    end
+end
+
 function XUiDlcRelinkChooseBoss:OnBtnChapterGridClick(chapterId)
     if not XTool.IsNumberValid(chapterId) or self.ChapterId == chapterId then
         return
     end
 
     if not self._Control:CheckChapterUnlock(chapterId) then
-        XUiManager.TipMsg(self._Control:GetChapterUnlockDesc(chapterId))
+        self._Control:OpenCommonTipMsg(self._Control:GetChapterUnlockDesc(chapterId))
         return
     end
 

@@ -38,6 +38,7 @@ local XMovieEnumConst = {
         SPINE_CHANGE_ANIM = 214,        -- Spine切换动画
         SPINE_ANIMATION_PLAY = 215,     -- Spine动画播放
         
+        DIALOG = 301,                   -- 对话
         SELECTION = 302,                -- 选择分支对话
         SELECTION_DELAY_SKIP = 303,     -- 选择分支延迟跳转
         AUTO_SKIP = 308,                -- 自动跳转节点
@@ -102,6 +103,7 @@ function XMovieEnumConst:GetActionClass(actionType)
         [306] = require("XMovieActions/XMovieActionRoleMask"), --上下遮罩动画
         [307] = require("XMovieActions/XMovieActionCenterTips"), --居中提示文本
         [308] = require("XMovieActions/XMovieActionAutoSkip"), --自动跳转节点
+        [309] = require("XMovieActions/XMovieActionAddReview"), --增加回顾记录
 
         [401] = require("XMovieActions/XMovieActionSoundPlay"), --BGM/CV/音效 播放
         [402] = require("XMovieActions/XMovieActionAudioInterrupt"), --BGM/CV/音效 打断

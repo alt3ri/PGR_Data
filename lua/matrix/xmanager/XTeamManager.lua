@@ -561,11 +561,11 @@ XTeamManagerCreator = function()
 
             request.EquipData[pos] = request.EquipData[pos] or {}
             request.EquipData[pos]["EquipDataDict"] = request.EquipData[pos]["EquipDataDict"] or {}
+            XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"])
 
             if weapon then
                 request.EquipData[pos]["EquipDataDict"][0] = weapon
                 XMessagePack.MarkAsTable(request.EquipData[pos])
-                XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"])
                 XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"][0])
                 if request.EquipData[pos]["EquipDataDict"][0].ResonanceDict then
                     XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"][0].ResonanceDict)

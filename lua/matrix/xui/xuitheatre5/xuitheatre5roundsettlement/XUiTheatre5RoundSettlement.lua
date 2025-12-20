@@ -42,17 +42,21 @@ end
 
 function XUiTheatre5RoundSettlement:OnBtnShopClickEvent()
     if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
-        XMVCA.XTheatre5:RequestTheatre5EnterShop(function(success)
-            if success then
-                CsXUiManager.Instance:SetRevertAndReleaseLock(true)
-                XLuaUiManager.CloseWithCallback('UiTheatre5RoundSettlement', function()
-                    CS.StatusSyncFight.XFightClient.RequestExitFight()
-                    XLuaUiManager.OpenWithCallback('UiTheatre5BattleShop', function()
-                        CsXUiManager.Instance:SetRevertAndReleaseLock(false)
+        if self:CheckBeforeEnterShop() then
+            XMVCA.XTheatre5:RequestTheatre5EnterShop(function(success)
+                if success then
+                    CsXUiManager.Instance:SetRevertAndReleaseLock(true)
+                    XLuaUiManager.CloseWithCallback('UiTheatre5RoundSettlement', function()
+                        CS.StatusSyncFight.XFightClient.RequestExitFight()
+                        XLuaUiManager.OpenWithCallback('UiTheatre5BattleShop', function()
+                            CsXUiManager.Instance:SetRevertAndReleaseLock(false)
+                        end)
                     end)
-                end)
-            end
-        end)
+                else
+                    self:CheckBeforeEnterShop()
+                end
+            end)
+        end
     else
         CsXUiManager.Instance:SetRevertAndReleaseLock(true)
         XLuaUiManager.CloseWithCallback('UiTheatre5RoundSettlement', function()
@@ -64,6 +68,14 @@ function XUiTheatre5RoundSettlement:OnBtnShopClickEvent()
 end
 
 function XUiTheatre5RoundSettlement:OnBtnEndClickEvent()
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
+        -- 检查pvp是否能正常结算
+        if not self:CheckBeforeEnterSettlement() then
+            return
+        end
+    end
+    
+    
     CsXUiManager.Instance:SetRevertAndReleaseLock(true)
     XLuaUiManager.CloseWithCallback('UiTheatre5RoundSettlement', function()
         CS.StatusSyncFight.XFightClient.RequestExitFight()
@@ -90,6 +102,28 @@ function XUiTheatre5RoundSettlement:UpdateCharacterLevel()
         local icon = self._Control:GetCharacterIcon()
         self.Role:SetRawImage(icon)
     end
+end
+
+--- 进入商店前检查是否ok
+function XUiTheatre5RoundSettlement:CheckBeforeEnterShop()
+    if not self._Control.PVPControl:CheckPVPInTime() then
+        XLuaUiManager.CloseWithCallback('UiTheatre5RoundSettlement', function()
+            CS.StatusSyncFight.XFightClient.RequestExitFight()
+            XScheduleManager.ScheduleNextFrame(function()
+                XLuaUiManager.CloseAllUpperUiWithCallback('UiTheatre5Main')
+                XUiManager.TipText('ActivityMainLineEnd')
+            end)
+        end)
+        
+        return false
+    end
+    
+    return true
+end
+
+function XUiTheatre5RoundSettlement:CheckBeforeEnterSettlement()
+    -- 进入最终结算的判断和进入商店暂时没区别，直接调用
+    return self:CheckBeforeEnterShop()
 end
 
 return XUiTheatre5RoundSettlement

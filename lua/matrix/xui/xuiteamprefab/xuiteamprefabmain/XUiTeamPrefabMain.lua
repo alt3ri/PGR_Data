@@ -33,11 +33,19 @@ function XUiTeamPrefabMain:InitCharacterCard()
 end
 
 local TempV2 = Vector2(0, 0)
-function XUiTeamPrefabMain:OnCharacterCardBeginDrag(index) 
+function XUiTeamPrefabMain:OnCharacterCardBeginDrag(index)
+    if self.CurDragCopyGo then
+        return
+    end
+
     local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
     local charId = curTeamPrefabEntity:GetEntityIdByTeamPos(index)
     if not XTool.IsNumberValid(charId) then
         return
+    end
+
+    if self.DragMask then
+        self.DragMask.gameObject:SetActiveEx(true)
     end
 
     local xCard = self.CharacterCardList[index]
@@ -84,6 +92,10 @@ end
 function XUiTeamPrefabMain:OnCharacterCardEndDrag(index)
     if not self.CurDragCopyGo then
         return
+    end
+
+    if self.DragMask then
+        self.DragMask.gameObject:SetActiveEx(false)
     end
 
     local curDragCard = self.CharacterCardList[self.CurDragCardIndex]
@@ -443,9 +455,8 @@ function XUiTeamPrefabMain:OnBtnSkipToTeamRecommendationClick()
 end
 
 ---@param xRealTeam XTeam
-function XUiTeamPrefabMain:OnStart(xRealTeam, forceHideUseAndCoverBtn)
+function XUiTeamPrefabMain:OnStart(xRealTeam, forceHideUseBtn, forceHideCoverBtn)
     self.XRealTeam = xRealTeam
-    self.ForceHideUseAndCoverBtn = forceHideUseAndCoverBtn
     local XTeam = require("XEntity/XTeam/XTeam")
     -- 不是xTeam或不是继承自xTeam的都不能操作这些队伍
     if not xRealTeam or (xRealTeam.__cname ~= "XTeam" and xRealTeam.Super == nil) or (xRealTeam.__cname ~= "XTeam" and not CheckClassSuper(xRealTeam, XTeam)) then
@@ -456,8 +467,8 @@ function XUiTeamPrefabMain:OnStart(xRealTeam, forceHideUseAndCoverBtn)
         self.ForbiddenRealTeamOperate = true
     end
 
-    self.BtnUse.gameObject:SetActiveEx(not forceHideUseAndCoverBtn)
-    self.BtnCover.gameObject:SetActiveEx(not forceHideUseAndCoverBtn)
+    self.BtnUse.gameObject:SetActiveEx(not forceHideUseBtn)
+    self.BtnCover.gameObject:SetActiveEx(not forceHideCoverBtn)
 end
 
 function XUiTeamPrefabMain:OnEnable()

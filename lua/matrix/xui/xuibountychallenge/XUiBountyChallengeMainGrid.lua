@@ -4,7 +4,6 @@ local XUiBountyChallengeMainGrid = XClass(XUiNode, "XUiBountyChallengeMainGrid")
 
 function XUiBountyChallengeMainGrid:OnStart()
     XUiHelper.RegisterClickEvent(self, self.Button, self.OnClick)
-    self._DifficultyImage = { self.Image }
     self._Timer = false
 end
 
@@ -65,66 +64,67 @@ function XUiBountyChallengeMainGrid:Update(data)
     self.Red.gameObject:SetActive(data.Red)
     self.TxtNum.text = XUiHelper.GetText("BountyChallengeProgress", data.Progress, data.ProgressMax)
 
-    -- 难度条
-    local difficulty = data.DifficultyLevel
-    for i = 1, difficulty do
-        local image = self._DifficultyImage[i]
-        if not image then
-            image = XUiHelper.Instantiate(self.Image, self.Image.transform.parent)
-            self._DifficultyImage[i] = image
-        end
-        image.gameObject:SetActive(true)
-    end
-    for i = difficulty + 1, #self._DifficultyImage do
-        local image = self._DifficultyImage[i]
-        if image then
-            image.gameObject:SetActive(false)
-        end
-    end
-
     if data.IsLock4Time then
         if self.PanelLock then
             self.PanelLock.gameObject:SetActive(true)
         end
+        -- 4.1 图片直接做在UI上
+        --[[
         if self.ImgMask then
             self.ImgMask:SetRawImage(data.Icon)
         end
+        --]]
         self:CountDown()
         self.RImgBgNormal.gameObject:SetActive(true)
         self.RImgBgComplete.gameObject:SetActive(false)
-        self.PanelNdNormal.gameObject:SetActive(false)
-        self.PanelNdComplete.gameObject:SetActive(false)
-        self.RImgBgNormal:SetRawImage(data.Icon)
-        self.RImgBgComplete:SetRawImage(data.Icon)
+        -- 4.1 图片直接做在UI上
+        --self.RImgBgNormal:SetRawImage(data.Icon)
+        --self.RImgBgComplete:SetRawImage(data.Icon)
         self.TxtNum.gameObject:SetActive(false)
     else
         if self.PanelLock then
             self.PanelLock.gameObject:SetActive(false)
         end
         self.TxtNum.gameObject:SetActive(true)
+        self.RImgBgNormal.gameObject:SetActiveEx(true)
         if self.TagComplete then
             if data.IsClear then
-                self.TagComplete.gameObject:SetActive(true)
-                self.RImgBgComplete.color = XUiHelper.Hexcolor2Color("B2B2B2FF")
+                self.TagComplete.gameObject:SetActiveEx(true)
+                -- 4.1 图片直接做在UI上
+                --self.RImgBgComplete:SetRawImage(data.Icon)
+                --self.RImgBgComplete.color = XUiHelper.Hexcolor2Color("B2B2B2FF")
+                --self.RImgBgNormal.gameObject:SetActiveEx(false)
             else
-                self.TagComplete.gameObject:SetActive(false)
+                self.TagComplete.gameObject:SetActiveEx(false)
             end
         end
+        
+        local format = self._Control:GetConfigStr('EntranceDifficultyLabel')
+        
+        local str = data.DifficultyName
 
-        if data.IsMaxLevel then
-            self.Difficulty2.text = data.DifficultyName
-            self.RImgBgNormal.gameObject:SetActive(false)
-            self.RImgBgComplete.gameObject:SetActive(true)
-            self.PanelNdNormal.gameObject:SetActive(false)
-            self.PanelNdComplete.gameObject:SetActive(true)
-            self.RImgBgComplete:SetRawImage(data.Icon)
+        if not string.IsNilOrEmpty(format) then
+            str = XUiHelper.FormatText(format, str)
+        end
+        
+        self.Button:SetNameByGroup(0, str)
+        -- 4.1 图片直接做在UI上
+        --self.RImgBgNormal:SetRawImage(data.Icon)
+    end
+
+    for i = 1, 10 do
+        local ui = self['RawImgDif0' .. i]
+
+        if ui then
+            local isCurLevel = i == data.DifficultyLevel
+
+            if data.IsLock4Time then
+                isCurLevel = false
+            end
+            
+            ui.gameObject:SetActiveEx(isCurLevel)
         else
-            self.Difficulty.text = data.DifficultyName
-            self.RImgBgNormal.gameObject:SetActive(true)
-            self.RImgBgComplete.gameObject:SetActive(false)
-            self.PanelNdNormal.gameObject:SetActive(true)
-            self.PanelNdComplete.gameObject:SetActive(false)
-            self.RImgBgNormal:SetRawImage(data.Icon)
+            break
         end
     end
 end

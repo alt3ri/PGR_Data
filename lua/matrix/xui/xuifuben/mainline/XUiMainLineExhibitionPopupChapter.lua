@@ -168,7 +168,7 @@ function XUiMainLineExhibitionPopupChapter:RefreshPreChapter(index, go, chapterI
     -- 进度
     local currentProgress, maxProgress = viewModel:GetCurrentAndMaxProgress()
     local stateNames = { "Normal", "Press"}
-    local txtProgress = math.floor(currentProgress / maxProgress * 100) .. "%"
+    local txtProgress = math.ceil(currentProgress / maxProgress * 100) .. "%"
     for _, stateName in pairs(stateNames) do
         local stateUiObj = uiObj:GetObject(stateName)
         stateUiObj:GetObject("TxtProgress").text = txtProgress

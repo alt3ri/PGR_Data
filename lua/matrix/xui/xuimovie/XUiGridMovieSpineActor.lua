@@ -4,6 +4,7 @@ local ROLE_ANIM_TIME = 4
 local ROLE_ANIM2_TIME = 1
 local DEFAULT_GRAY_SCALE = 0 -- 默认灰度值
 
+---@class XUiGridMovieSpineActor
 function XUiGridMovieSpineActor:Ctor(uiRoot, obj, actorIndex)
     self.UiRoot = uiRoot
     self.GameObject = obj.gameObject
@@ -262,9 +263,10 @@ function XUiGridMovieSpineActor:StopAnimationsLoop()
 end
 
 -- 设置灰度值
-function XUiGridMovieSpineActor:SetGrayScale(value)
+function XUiGridMovieSpineActor:SetGrayScale(value, time)
     if self.GrayValue == value then return end
     self.GrayValue = value
+    self.GrayTime = time
 
     self:UpdateGrayScale()
 end
@@ -283,7 +285,7 @@ function XUiGridMovieSpineActor:UpdateGrayScale(ignoreDefault)
             if not matController then 
                 matController = part.gameObject:AddComponent(typeof(CS.XUiMaterialController))
             end
-            matController:SetGrayScale(self.GrayValue)
+            matController:SetGrayScale(self.GrayValue, self.GrayTime)
         end
     end
 end

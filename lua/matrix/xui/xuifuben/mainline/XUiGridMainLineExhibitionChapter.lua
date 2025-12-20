@@ -264,7 +264,7 @@ function XUiGridMainLineExhibitionChapter:RefreshLock()
     local chapterCfg = XMVCA.XMainLine2:GetConfigExhibitionChapter(self.ChapterId)
     local challengeBannerConfig = XMVCA.XFuben:GetNewChallengeConfigById(chapterCfg.ExhibitionFubenConfigId)
     local lockFun = not XFunctionManager.JudgeCanOpen(challengeBannerConfig.FunctionId)
-    local lockSubPackage = not XMVCA.XSubPackage:CheckResDownloadByFunctionType(challengeBannerConfig.FunctionId)
+    local lockSubPackage = not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(challengeBannerConfig.FunctionId)
     local isLock = lockFun or lockSubPackage
     local lockText = XUiHelper.GetText("NecessaryResourcesNotDownloaded")
     if lockFun then
@@ -278,6 +278,7 @@ end
 -- 刷新成就
 function XUiGridMainLineExhibitionChapter:RefreshPanelAchievement(viewModel)
     local achievementIcon = viewModel:GetAchievementIcon()
+    local achievementIconLock = viewModel:GetAchievementIconLock()
     local isShowAchieve = achievementIcon ~= nil
     self.UiDetail:GetObject("PanelAchievement").gameObject:SetActiveEx(isShowAchieve)
     if isShowAchieve then
@@ -289,7 +290,7 @@ function XUiGridMainLineExhibitionChapter:RefreshPanelAchievement(viewModel)
         if isUnlock then
             rImgAchievementColor:SetRawImage(achievementIcon)
         else
-            rImgAchievementGrey:SetRawImage(achievementIcon)
+            rImgAchievementGrey:SetRawImage(achievementIconLock)
         end
     end
 end

@@ -297,17 +297,23 @@ function XUiLottoCibeizhe:_PlayLongStartAnim(time)
 	
 	-- 场景的long动画
     XScheduleManager.ScheduleNextFrame(function()
-        local timeEnableLong = self._SceneAnimRoot:FindTransform("AnimEnableLong")
-        timeEnableLong.gameObject:SetActiveEx(true)
-        timeEnableLong:PlayTimelineAnimation(function ()
-            timeEnableLong.gameObject:SetActiveEx(false)
-        end)
+        local sceneEnableLong = self._SceneAnimRoot:FindTransform("AnimEnableLong")
+        sceneEnableLong.gameObject:SetActiveEx(true)
+        local sceneEnableLongDir = sceneEnableLong.gameObject:GetComponent("PlayableDirector")
+        sceneEnableLongDir:Play()
+        local sceneEnableLongDuration = math.floor(sceneEnableLongDir.duration)
+        self._SceneLongAnimTimer = XScheduleManager.ScheduleOnce(function()
+            sceneEnableLong.gameObject:SetActiveEx(false)
+        end, XScheduleManager.SECOND * sceneEnableLongDuration)
     end)
 end
 
 function XUiLottoCibeizhe:_StopTimer()
     if self._LongAnimTimer then
         XScheduleManager.UnSchedule(self._LongAnimTimer)
+    end
+    if self._SceneLongAnimTimer then
+        XScheduleManager.UnSchedule(self._SceneLongAnimTimer)
     end
 end
 

@@ -2,15 +2,20 @@ local pairs = pairs
 local stringUtf8Len = string.Utf8Len
 local SPINE_INDEX_OFFSET = 100 -- spine位置的偏移值
 
+---@class XMovieActionDialog
+---@field UiRoot XUiMovie
 local XMovieActionDialog = XClass(XMovieActionBase, "XMovieActionDialog")
 
 function XMovieActionDialog:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
+    self.IsBlockTypeWriter = params[17] == "1" -- 打字机是否不可点击跳过，并在打字机播放完自动进入下一个节点
     self.CvId = paramToNumber(params[18])
     self.SpineActorIndexs = XMVCA.XMovie:SplitParam(params[19], "&",true)
     self.SpineActorKouSpeed = paramToNumber(params[20])
     self.LipAnimFolder = params[21] -- 嘴唇动画的文件夹名称
+    self.IsAppendContent = params[22] == "1" -- 是否是追加文本的形式展示
+    self.IsInReview = params[23] ~= "1" -- 是否进回顾。默认进回顾，配置1为不进回顾
     self.SkipRoleAnim = paramToNumber(params[1]) ~= 0
     self.RoleName = XUiHelper.ConvertLineBreakSymbol(XDataCenter.MovieManager.ReplacePlayerName(params[2]))
     self.Content = params[3] -- 配置内容
@@ -44,6 +49,8 @@ function XMovieActionDialog:GetEndDelay()
         local delayTime = XMovieConfigs.AutoPlayDelay + stringUtf8Len(self.DialogContent) * XMovieConfigs.PerWordDelay / speed
         delayTime = math.floor(delayTime)
         return delayTime
+    elseif self.IsBlockTypeWriter then
+        return self.EndDelay
     else
         return 0
     end
@@ -54,7 +61,7 @@ function XMovieActionDialog:IsBlock()
 end
 
 function XMovieActionDialog:OnEnter()
-    self.DialogContent = self:GetDialogContent()
+    self:GenDialogContent()
     self.IsAutoPlay = XDataCenter.MovieManager.GetIsAutoPlay()
     self.UiRoot:SetBtnNextCallback(function() self:OnClickBtnSkipDialog() end)
     self.UiRoot.DialogTypeWriter.CompletedHandle = function() self:OnTypeWriterComplete() end
@@ -73,7 +80,11 @@ function XMovieActionDialog:OnEnter()
     local typeWriter = self.UiRoot.DialogTypeWriter
     local speed = XDataCenter.MovieManager.GetSpeed()
     typeWriter.Duration = stringUtf8Len(dialogContent) * XMovieConfigs.TYPE_WRITER_SPEED / speed
-    typeWriter:Play()
+    if self.IsAppendContent then
+        typeWriter:AppendPlay()
+    else
+        typeWriter:Play()
+    end
     -- 加速播放时，不播音效
     if self.CvId ~= 0 and not XDataCenter.MovieManager.IsSpeedUp() then
         if self.AudioInfo then
@@ -90,7 +101,9 @@ function XMovieActionDialog:OnEnter()
         self:PlayAudioLipAnim()
     end
     self:PlaySpeakerAnim()
-    XDataCenter.MovieManager.PushInReviewDialogList(roleName, dialogContent, self.CvId)
+    if self.IsInReview then
+        XDataCenter.MovieManager.PushInReviewDialogList(roleName, dialogContent, self.CvId, XMVCA.XMovie.EnumConst.ACTION_TYPE.DIALOG)
+    end
 end
 
 function XMovieActionDialog:OnDestroy()
@@ -109,9 +122,12 @@ end
 
 function XMovieActionDialog:OnClickBtnSkipDialog()
     if self.IsTyping then
+        -- 设置打字机不可跳过
+        if self.IsBlockTypeWriter then return end
+        
         -- 打字中，直接显示完所有字体
         self.IsTyping = false
-        self.UiRoot.DialogTypeWriter:Stop()
+        self.UiRoot.DialogTypeWriter:ShowAllText()
     else
         -- 字体完全显示，点击屏幕播放下一个MovieAction
         XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK, false)
@@ -128,6 +144,9 @@ function XMovieActionDialog:OnTypeWriterComplete()
     -- 自动播放状态，打字完、语音播放完，播放下一个MovieAction
     if self.IsAutoPlay and not self.IsAudioing then
         XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK, true)
+    -- 打字机不可跳过，在打字机播放完自动进入下一个节点
+    elseif self.IsBlockTypeWriter then
+        XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK, false)
     end
 end
 
@@ -137,6 +156,9 @@ function XMovieActionDialog:OnAudioComplete()
     -- 自动播放状态，打字完、语音播放完，播放下一个MovieAction
     if self.IsAutoPlay and not self.IsTyping then
         XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK, true)
+    -- 打字机不可跳过，在打字机播放完自动进入下一个节点
+    elseif self.IsBlockTypeWriter then
+        XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK, false)
     end
 end
 
@@ -222,22 +244,15 @@ function XMovieActionDialog:StopSpineActorTalk()
     end
 end
 
--- 获取显示的对话内容
-function XMovieActionDialog:GetDialogContent()
-    if not self.Content or self.Content == "" then
-        return ""
+-- 生成要显示的DialogContent
+function XMovieActionDialog:GenDialogContent()
+    if self.IsAppendContent then
+        local dialogData = XDataCenter.MovieManager.PopLastReviewDialog(XMVCA.XMovie.EnumConst.ACTION_TYPE.DIALOG)
+        local lastContent = dialogData and dialogData.Content or ""
+        self.DialogContent = lastContent .. XMVCA.XMovie:FormatContent(self.Content)
+    else
+        self.DialogContent = XMVCA.XMovie:FormatContent(self.Content)
     end
-    local content = self.Content
-    -- 替换玩家名称
-    content = XDataCenter.MovieManager.ReplacePlayerName(content)
-    -- 提取指挥官性别文本
-    content = XMVCA.XMovie:ExtractGenderContent(content)
-    -- 替换十进制特殊符号
-    content = XMVCA.XMovie:ReplaceDecimalismCodeToStr(content)
-    -- 字符串换行符可用化
-    content = XUiHelper.ConvertLineBreakSymbol(content)
-
-    return content
 end
 
 function XMovieActionDialog:IsPassedActionRun(index)
@@ -254,18 +269,22 @@ function XMovieActionDialog:IsActionCover(action)
 end
 
 function XMovieActionDialog:OnPassedActionRun()
-    self.DialogContent = self:GetDialogContent()
+    self:GenDialogContent()
     self.UiRoot.PanelDialog.gameObject:SetActiveEx(true)
     self.UiRoot.TxtName.text = self.RoleName
     self.UiRoot.TxtWords.text = self.DialogContent
     self.UiRoot.TxtName.gameObject:SetActiveEx(self.RoleName ~= "")
     self:PlaySpeakerAnim()
-    XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId)
+    if self.IsInReview then
+        XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId, XMVCA.XMovie.EnumConst.ACTION_TYPE.DIALOG)
+    end
 end
 
 function XMovieActionDialog:OnPassedActionSkip()
-    self.DialogContent = self:GetDialogContent()
-    XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId)
+    self:GenDialogContent()
+    if self.IsInReview then
+        XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId, XMVCA.XMovie.EnumConst.ACTION_TYPE.DIALOG)
+    end
 end
 
 return XMovieActionDialog

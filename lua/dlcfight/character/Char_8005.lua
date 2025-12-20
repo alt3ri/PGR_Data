@@ -1,6 +1,7 @@
 local Base = require("Common/XFightBase")
 local XNpcFollowController = require("Character/Common/XNpcFollowController")
 local EGameplayTag = require("Enum/XGameplayTag")
+local GameplayTag = require("Tools/GameplayTag/GameplayTag")
 
 ---白龙
 ---@class XChar8005 : XFightBase
@@ -28,7 +29,6 @@ function XChar8005:Init()
 
     self:InitAggroSystem()
     self:InitChasingSystem()
-    self:InitPeaceSystem()
     self:InitCoreCombatSystem()
     self:InitDelayCallSystem()
     self:InitDebugSystem()
@@ -100,6 +100,7 @@ function XChar8005:InitEventCallBackRegister()
     self._proxy:RegisterEvent(EWorldEvent.NpcWrestleStart)
     self._proxy:RegisterEvent(EWorldEvent.NpcWrestlePursuit)
     self._proxy:RegisterEvent(EWorldEvent.NpcWrestleReversal)
+    self._proxy:RegisterEvent(EWorldEvent.NpcDodge)
 
     -- 指定目标事件绑定
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageBefore, self._uuid)
@@ -109,8 +110,9 @@ end
 
 function XChar8005:Terminate()
     -- 追逐系统注销
-    self._followController:Terminate()
-    self._followController = nil
+    --self._followController:Terminate()
+    --self._followController = nil
+    self._proxy:SetNpcStopFollow(self._uuid)
 
     -- 事件解绑
     self._proxy:UnregisterEvent(EWorldEvent.NpcCastActionAfter)
@@ -122,6 +124,10 @@ function XChar8005:Terminate()
     self._proxy:UnregisterEvent(EWorldEvent.NpcOverDriveFull)
     self._proxy:UnregisterEvent(EWorldEvent.NpcODBreakAfter)
     self._proxy:UnregisterEvent(EWorldEvent.NpcODExitBreakAfter)
+    self._proxy:UnregisterEvent(EWorldEvent.NpcWrestleStart)
+    self._proxy:UnregisterEvent(EWorldEvent.NpcWrestlePursuit)
+    self._proxy:UnregisterEvent(EWorldEvent.NpcWrestleReversal)
+    self._proxy:UnregisterEvent(EWorldEvent.NpcDodge)
 
     -- 指定目标事件解绑
     self._proxy:UnregisterEventByTarget(EWorldEvent.NpcCalcDamageBefore, self._uuid)
@@ -271,7 +277,7 @@ function XChar8005:UpdateAggroSystem(dt)
 
     -- 点名目标消失处理
     if self._curPickingTarUUID ~= nil then
-        if not self._proxy:CheckNpc(self._curPickingTarUUID) or self._proxy:IsNpcDead(self._curAggroTarUUID) then
+        if not self._proxy:CheckNpc(self._curPickingTarUUID) or self._proxy:IsNpcDead(self._curPickingTarUUID) then
             self._curPickingTarUUID = nil
         end
     end
@@ -320,13 +326,13 @@ function XChar8005:InitChasingSystem()
 
     --- 初始化跟随组件
     ---@type XNpcFollowController
-    self._followController = XNpcFollowController.New(self._proxy, self._uuid)
+    --self._followController = XNpcFollowController.New(self._proxy, self._uuid)
 end
 
 --- 更新：追逐系统
 function XChar8005:UpdateChasingSystem(dt)
     -- 跟随控制器update
-    self._followController:Update(dt)
+    --self._followController:Update(dt)
 
     -- 追逐未开始，不执行后续逻辑
     if not self._isChasing then
@@ -340,7 +346,7 @@ function XChar8005:UpdateChasingSystem(dt)
 
     -- 追逐流程停止
     if isAggroTargetNull or isAggroTargetChange or isInStopDis then
-        self._followController:CancelFollow()
+        self._proxy:SetNpcStopFollow(self._uuid)
         self._isChasing = false
 
         -- 输出log
@@ -381,7 +387,8 @@ function XChar8005:ChasingAggroTarget(stopDis)
 
     -- 如果还在追逐流程，则先停止追逐
     if self._isChasing then
-        self._followController:CancelFollow()
+        --self._followController:CancelFollow()
+        self._proxy:SetNpcStopFollow(self._uuid)
         XLog.Debug("白龙追逐系统: 上一个追逐流程未结束，强制停止！")
     end
 
@@ -389,19 +396,22 @@ function XChar8005:ChasingAggroTarget(stopDis)
     self._curChaseStopDis = stopDis;
     self._curChasingTarUUID = self:GetSkillTarget()
     self._isChasing = true;
-    self._followController:SetFollowTargetNpcNoNavMesh(self._curChasingTarUUID,  0, self._curChaseStopDis, 0.05)
+    --self._followController:SetFollowTargetNpcNoNavMesh(self._curChasingTarUUID,  0, self._curChaseStopDis, 0.05)
+    self._proxy:SetNpcDirectlyFollow(
+            self._uuid,
+            self._curChaseStopDis,
+            0,
+            false,
+            false,
+            false,
+            0,
+            false,
+            self._curChasingTarUUID,
+            45)
 
     if self._isDebugChasingLogic then
         XLog.Debug(string.format("白龙追逐系统: 开始追逐目标，目标UUID[%d]", self._curChasingTarUUID))
     end
-end
---endregion
-
---region 和平系统
-function XChar8005:InitPeaceSystem()
-end
-
-function XChar8005:UpdatePeaceSystem(dt)
 end
 --endregion
 
@@ -413,7 +423,7 @@ function XChar8005:InitCoreCombatSystem()
     self:InitCoreCombatInSkillSystem()
     self:InitCoreCombatRectifySystem()
     self:InitCoreCombatCoolDownSystem()
-    self:InitCoreCombatWrestleSystem()
+    -- self:InitCoreCombatWrestleSystem()
 end
 
 --- 更新：核心战斗系统
@@ -436,14 +446,14 @@ function XChar8005:UpdateCoreCombatSystem(dt)
     self:UpdateCoreCombatCoolDownSystem(dt)
 
     -- 状态控制系统更新
-    self:UpdateCoreCombatStateControlSystem(dt)
+    self:UpdateCoreCombatStateControlSystem()
 
     -- 多人弹刀/角力逻辑
-    self:UpdateCoreCombatMultiDeflectSystem(dt)
+    -- self:UpdateCoreCombatMultiDeflectSystem(dt)
 
     -- 技能中的话，阻断后续逻辑，并进行连招检定
     if self._proxy:CheckNpcFullActionState(self._uuid, 3, -1) then
-        self:UpdateCoreCombatInSkillSystem(dt)
+        self:UpdateCoreCombatInSkillSystem()
         return
     end
 
@@ -499,12 +509,20 @@ function XChar8005:InitCoreCombatStateControlSystem()
     --- 是否正在角力状态内
     self._isInWrestleState = false
 
+    --- 破韧状态的持续时间
+    self._breakMagicId = 8005901
+    self._immuUltraAbortMagicId = 8005906
+    self._cancelImmuUltraAbortMagicId = 8005907
+
     -- 初始化韧性OD系统
     self._proxy:SetNpcBreakGaugeActive(self._uuid, true)
     self._proxy:SetNpcOverDriveActive(self._uuid, true)
+
+    --- 是否启用直播内容
+    self._enableLiveContent = false
 end
 
-function XChar8005:UpdateCoreCombatStateControlSystem(dt)
+function XChar8005:UpdateCoreCombatStateControlSystem()
     -- OD Break序列逻辑
     if self._isODBreaking then
         if self._proxy:CheckNpcCurrentAction(self._uuid, self._odBreakEnterSkill) and self._skillTimer >= 2.75 then
@@ -521,7 +539,6 @@ function XChar8005:UpdateCoreCombatStateControlSystem(dt)
                 end
             end
         end
-
     end
 end
 
@@ -608,6 +625,15 @@ function XChar8005:CastTenaBreakSkillBySrcPos(srcId, isHeavy)
     self._proxy:CastAction(self._uuid, resultSkillId)
 end
 
+function XChar8005:CastBreakSkill(isQTE)
+    self._proxy:AbortAction(self._uuid, true)
+    if isQTE then
+        self._proxy:CastAction(self._uuid, 8005522)
+    else
+        self._proxy:CastAction(self._uuid, 8005125)
+    end
+end
+
 function XChar8005:CastODBreakHitActionBySrcPos(srcId)
     -- 来源不存在
     if not self._proxy:CheckNpc(srcId) then return end
@@ -627,10 +653,10 @@ function XChar8005:CastODBreakHitActionBySrcPos(srcId)
     self._proxy:CastAction(self._uuid, self._odBreakGetHitActionsInfo[resultInfoIdx][1])
 end
 
+--[[
 --- 将伤害百分比转化为OD值增长或者削减
 function XChar8005:TransHPDmgToODDmg(hpDmgPct)
     -- 如果在常规状态，则攻击增长OD值
-    --[[
     local odValChange = 0
     if self._curBattleState == XRelinkBossBase.EBattleState.NormalState then
         odValChange = hpDmgPct * self._hpPctToODIncreRatio * self._maxODValue
@@ -641,14 +667,14 @@ function XChar8005:TransHPDmgToODDmg(hpDmgPct)
     if odValChange ~= 0 then
         self:ModifyODValue(odValChange, true)
     end
-    --]]
 end
+]]
 
+--[[
 --- 修改OD值
 --- @param amount number @ 需要改动的量，正负皆可
 --- @param isModifiedByDmg boolean @ 是否为伤害修改（例如，OD值自然削减是不会触发Break的）
 function XChar8005:ModifyODValue(amount, isModifiedByDmg)
-    --[[
     local oldValue = self._curODValue
     self._curODValue = self:Clamp(self._curODValue + amount, 0, self._maxODValue)
 
@@ -672,13 +698,13 @@ function XChar8005:ModifyODValue(amount, isModifiedByDmg)
             self:OnODBreak()
         end
     end
-    ]]
 end
+]]
 
 --- 将伤害百分比转化为韧性削减
+--[[
 function XChar8005:TransHPDmgToTenaDmg(hpDmgPct)
     -- 如果在破韧冷却，则不允许造成韧性伤害
-    --[[
     if self._isTenaBreakCooling then
         return
     end
@@ -687,12 +713,12 @@ function XChar8005:TransHPDmgToTenaDmg(hpDmgPct)
     if tenaValChange ~= 0 then
         self:ModifyTenaValue(tenaValChange)
     end
-    ]]--
 end
+]]
 
 --- 修改韧性值
+--[[
 function XChar8005:ModifyTenaValue(amount)
-    --[[
     local oldValue = self._curTenacity
     self._curTenacity = self:Clamp(self._curTenacity + amount, 0, self._maxTenacity)
 
@@ -710,8 +736,8 @@ function XChar8005:ModifyTenaValue(amount)
             self:TryTenaBreak()
         end
     end
-    ]]
 end
+]]
 --endregion
 
 --region 核心战斗系统：技能释放系统
@@ -785,26 +811,41 @@ function XChar8005:InitCoreCombatSkillCastSystem()
         [8005047] = {      -- 喷气起飞冲地
             0,           true,    true,    {6, 25}, {{-55, 55}}
         },
+        [8005048] = {      -- 演出落地招 - 临时
+            0,           true,    true,    {}, {}
+        },
         [8005051] = {      -- 横扫口爆
             0,           true,    true,    {7, 14}, {{-55, 55}}
         },
         [8005055] = {      -- 飞天轰炸
-            0,    true,    false,   {},   {}
+            math.huge,    true,    false,   {},   {}
         },
         [8005505] = {      -- 多人弹刀技能
-            0,           true,    true,    {7, 14}, {{-55, 55}}
+            150,           true,    true,    {7, 14}, {{-55, 55}}
         },
         [8005514] = {
             0,           true,    true,    {14, 35}, {{-55, 55}}
         },
+        [8005296] = {
+            0,          true,    true,    {4, 14}, {{-60, 60}}
+        },
         [8005298] = {
-            0,           true,    true,    {0, 50}, {}
+            math.huge,   true,    false,    {}, {}
         },
         [8005299] = {
             0,           true,    true,    {}, {}
         },
         [8005300] = {
             0,           true,    true,    {}, {}
+        },
+        [8005315] = {   -- 入场动作
+            math.huge,   false,   false,   {}, {}
+        },
+        [8005518] = {   -- 全场喷火
+            math.huge,   true,    false,    {}, {}
+        },
+        [8005301] = {
+            math.huge,   true,    false,    {}, {}
         }
     }
     -- 每个技能组里存储多个技能，每个里面包含{技能索引, 释放权重, 优先级}
@@ -838,66 +879,100 @@ function XChar8005:InitCoreCombatSkillCastSystem()
         [24] = {{8005032, 1, 1}, {8005035, 1, 1}}, -- 黄圈左扫(50%) or 黄圈右扫(55%)
         [25] = {{8005046, 1, 1}, {8005039, 3, 1}}, -- 蓄力跳砸(25%) or 左右刺(75%)
         [26] = {{8005514, 1, 1}},
-        [27] = {{8005298, 1, 1}}            -- DPS CHECK
+        [27] = {{8005298, 1, 1}},            -- DPS CHECK
+        [28] = {{8005296, 1, 1}},            -- 小挥爪
+        [29] = {{8005048, 1, 1}},            -- 演出落地招 - 临时
+        [30] = {{8005518, 1, 1}},            -- 全场喷火
+        [31] = {{8005315, 1, 1}},            -- 入场动作
+        [32] = {{8005301, 1, 1}}             -- 临时喷火（直播素材）
     }
     -- 每个战斗循环里面细分为普通状态技能轴和OD状态技能轴，每个里面存储了技能组释放序列
     -- 格式为 { 技能组ID，点名概率 }
     --- 期望技能轴，按照顺序执行循环
     self._intendSkillSeqs = {
-        -- 弹刀测试技能轴
         --[[
         [1] = {
             [XChar8005.EBattleState.NormalState] = {
-                { 21, 0 },
+                {7, 0}
             },
             [XChar8005.EBattleState.ODState] = {
-                { 1, 0 },
-                { 21, 0 }
+                {1, 0},     -- OD吼
+                {19, 0}
             }
-        }
+        },
         ]]
 
         [1] = {
             [XChar8005.EBattleState.NormalState] = {
-                {22, 0},
-                {23, 0},
-                {24, 1},
-                {4, 0},
-                {11, 0},
-                {19, 0.4},
-                {7, 0}
+                {31, 0},    -- 入场动作
+                {23, 0},    -- 龙车(50%) or 二连前咬(50%)
+                {24, 1},    -- 黄圈左扫(50%) or 黄圈右扫(55%)，点名率100%
+                {28, 0},    -- 小挥爪
+                {4, 0},     -- 右扫爪+拍地板
+                {11, 0},    -- 左刺
+                {19, 0.4},  -- 横扫扇形爆破, 点名率40%
+                {7, 0}      -- 后撤开炮
             },
             [XChar8005.EBattleState.ODState] = {
-                {1, 0},
-                {25, 0},
-                {20, 0},
-                {14, 0},
-                {16, 0},
-                {3, 0},
-                {10, 0.5}
+                {1, 0},     -- OD吼
+                {25, 0},    -- 蓄力跳砸(25%) or 左右刺(75%)
+                {30, 0},    -- 全场三连喷火
+                {14, 0},    -- 浮游炮射击
+                {16, 0},    -- 大喷火
+                {21, 0},    -- ！多人弹刀技能！
+                {3, 0},     -- 二连前咬
+                {28, 0},    -- 小挥爪
+                {10, 0.5}   -- 黄圈扫+砸地
             }
         },
         [2] = {
             [XChar8005.EBattleState.NormalState] = {
-                {22, 0},
-                {9, 0},
-                {17, 0},
-                {12, 0.5},
-                {19, 0},
-                {18, 0},
+                {9, 0},     -- 龙车
+                {24, 1},    -- 黄圈左扫(50%) or 黄圈右扫(55%)，点名率100%
+                {15, 0},    -- 小喷火
+                {19, 0},    -- 横扫扇形爆破
+                {12, 0.5},  -- 左右刺，点名率50%
+                {28, 0},    -- 小挥爪
+                {4, 0},     -- 右扫爪+拍地板
             },
             [XChar8005.EBattleState.ODState] = {
-                {1, 0},
-                {16, 0},
-                {27, 0},
-                {4, 0},
-                {10, 0},
-                {14, 0},
-                {3, 0}
+                {1, 0},     -- OD吼
+                {16, 0},    -- 大喷火
+                {27, 0},    -- DPS检测
+                {4, 0},     -- 右扫爪+拍地板
+                {10, 0},    -- 黄圈扫+砸地
+                {14, 0},    -- 浮游炮射击
+                {21, 0},    -- ！多人弹刀技能！
+                {3, 0},     -- 二连前咬
+                {17, 0.5},  -- 蓄力跳砸，点名率50%
+                {28, 0},    -- 小挥爪
             }
         }
 
     }
+
+    -- 直播技能轴
+    if self._enableLiveContent then
+        self._intendSkillSeqs = {
+            -- 直播轴
+            [1] = {
+                [XChar8005.EBattleState.NormalState] = {
+                    { 31, 0 },
+                    { 21, 0 },  -- 角力
+                    { 15, 0 },  -- 小挥爪
+                    { 5, 0 },   -- 弹刀
+                    { 15, 0 },
+                    { 1, 0 },    -- OD 吼(！仅直播用，不然不符合状态逻辑！)
+                    { 30, 0 }   -- 喷火
+                },
+                [XChar8005.EBattleState.ODState] = {
+                    { 1, 0 },
+                    { 28, 0 }
+                }
+            }
+        }
+    end
+
     --- 战斗循环索引
     self._battleLoopIdx = 1
     --- 当前技能轴
@@ -920,9 +995,9 @@ function XChar8005:InitCoreCombatSkillCastSystem()
         [2] = 2,
         [3] = 2,
         [4] = 2,
-        [5] = 3,
-        [6] = 3,
-        [7] = 4
+        [5] = 2,
+        [6] = 2,
+        [7] = 2
     }
     --- 距离修正的烦躁增长值表
     self._disRectifyCostTable = {
@@ -935,9 +1010,9 @@ function XChar8005:InitCoreCombatSkillCastSystem()
     -- 如果玩家拉修正太多，就会触发这些技能，因为这些技能本来就在轴里，所以会导致一些乱轴（惩罚机制）
     --- 烦躁后的技能ID表
     self._irritationSkills = {
-        8005041,
-        8005037,
         8005034,
+        8005036,
+        8005037
     }
 
     --- 战斗中心
@@ -947,8 +1022,9 @@ function XChar8005:InitCoreCombatSkillCastSystem()
     --- 战斗安全范围Y
     self._battlePosLimitZ = { 30, 90 }
 
+    -- 大招：随机激光（固定间隔刷出随机位置的激光）
     --- 大招激光频率随机间隔
-    self._ultraRayIntervalRange = {0.15, 0.2}
+    self._ultraRayIntervalRange = {0.3, 0.4}
     --- 大招激光频率
     self._ultraRayInterval = 0
     --- 大招激光频率计时器
@@ -958,13 +1034,13 @@ function XChar8005:InitCoreCombatSkillCastSystem()
     --- 大招激光选择玩家为目标的概率（否则选择随机点）
     self._ultraRayPickPlayerPossibility = 0.3
     --- 大招激光随机点范围
-    self._ultraRayRandomPosRange = {45, 45}
+    self._ultraRayRandomPosRange = {30, 30}
     --- 大招激光持续时间计时器
     self._ultraRayTimer = 0
     --- 大招激光开始延迟（从技能释放开始计算） 5.4
     self._ultraRayStartTime = 2.8
     --- 大招激光停止时间
-    self._ultraRayStopTime = 11
+    self._ultraRayStopTime = 10
     --- 是否在大招激光的流程中
     self._isUltraRayStart = false
     --- 大招激光子弹发射ID
@@ -975,11 +1051,22 @@ function XChar8005:InitCoreCombatSkillCastSystem()
     self._isUltraCameraModified = false
     --- 中途拉镜延迟
     self._ultraCameraModifyDelay = 4
-    --- 是否释放过假浮游炮
-    self._isUltraGroupFunnelReleased = false;
-    --- 假浮游炮释放延迟
-    self._ultraGroupFunnelDelay = 2.67
-    self._ultraGroupFunnelMaxCount = 0
+
+    -- 大招：群集激光（同时出现大量落雷激光，同时落地）
+    --- 浮游炮泊松盘采样
+    self._ultraPoissonDiskTimer = 0
+    self._ultraPoissonDiskInterval = 2
+    self._ultraPoissonDiskPoints = {}
+    self._ultraPoissonDiskWidth = 60
+    self._ultraPoissonDiskHeight = 60
+    self._ultraPoissonDiskRadius = 14
+    self._isUltraPoissonDiskValid = false
+
+    -- DPS检测护盾受击频率控制
+    --- DPS检测受击特效最小间隔
+    self._ultraDpsCheckHitEffectMinInterval = 0.2
+    --- DPS检测受击特效间隔计时器
+    self._ultraDpsCheckHitEffectTimer = 0
 end
 
 function XChar8005:UpdateCoreCombatSkillCastSystem()
@@ -1215,7 +1302,7 @@ function XChar8005:CustomSelectSkillLogic()
         if isFacingTarget and isInDis then
             self._proxy:AbortAction(self._uuid, true)
             self._proxy:CastActionToTarget(self._uuid, 8005014, self:GetSkillTarget())
-            self._curRectifyIrritation = self._curRectifyIrritation + 5
+            self._curRectifyIrritation = self._curRectifyIrritation + 2
             return true
         end
     end
@@ -1235,6 +1322,8 @@ function XChar8005:CastRegularSkill(skillId)
     -- 刷新连招序号和当前释放的技能索引
     self._curComboId = 0
     self._curSkillId = skillId
+
+    XLog.Debug("白龙测试：AI释放技能" .. tostring(skillId))
 end
 --endregion
 
@@ -1242,22 +1331,22 @@ end
 function XChar8005:InitCoreCombatInSkillSystem()
     -- 连招系统
     -- 每个对应的【技能Id】会配备一个【连招信息表】，表内每一个元素存储的内容为：
-    --            [连招序号] = {前连招序号，连招技能Id，连接时间区间，开始时间，结束时间，连招触发概率(0-1浮点)，连招距离要求，连招角度要求, 状态要求}
+    --            [连招序号] = {前连招序号，连招技能Id，连接时间区间，开始时间，结束时间，连招触发概率(0-1浮点)，连招距离要求，连招角度要求}
     --                      如果前招式序号为0，则表示前招式为起手招
     --- 连招配置表
     self._comboTable = {
-        -- 右扫接左扫拍地
-        --[[
-        [8005032] = {
-            [1] = {0,  8005037,  {2.2, 2.3},  0.5,  7,  1,  {2, 14},  {{-75, 135}}}
-        },
-        ]]
+        -- 后撤开炮 -> 开炮 -> 开炮
         [8005034] = {
-            [1] = {0, 8005034, {2, 2.1}, 1.03, 3.46, 1, {}, {}},
-            [2] = {1, 8005034, {2, 2.1}, 1.03, 3.46, 1, {}, {}}
+            [1] = {0, 8005034, {2, 2.1}, 1.03, 3.46, 1, {10, 35}, {{-75, 75}}},
+            [2] = {1, 8005034, {2, 2.1}, 1.03, 3.46, 1, {10, 35}, {{-75, 75}}}
         },
+        -- 龙车 -> 蓄力跳砸
         [8005036] = {
             [1] = {0, 8005046, {2.16, 2.2}, 0, 5, 1, {8, 40}, {{-120, 120}}}
+        },
+        [8005048] = {
+            [1] = {0, 8005011, {1.4, 1.5}, 0, 3.37, 1, {}, {}},
+            [2] = {1, 8005505, {2.2, 2.3}, 0, 11.13, 1, {}, {}}
         }
     }
 
@@ -1273,7 +1362,7 @@ function XChar8005:InitCoreCombatInSkillSystem()
     --- DPS大招循环Action
     self._ultraLoopActionId = 8005299
     --- DPS大招循环Action结束时间
-    self._ultraLoopActionEndTime = 5
+    self._ultraLoopActionEndTime = 30
     --- DPS大招结束Action
     self._ultraEndActionId = 8005300
     --- DPS大招击破（即，玩家成功通过DPS Check）Action
@@ -1296,10 +1385,13 @@ function XChar8005:InitCoreCombatInSkillSystem()
     self._isUltraEndExplodeCameraApplied = false
     self._ultraEndExplodeCameraTime = 7.6
     self._ultraEndExplodeCameraMagic = { 8005464, 8005465 }
+
+    --- 全场火前置动作是否被打断
+    self._isFireUltraPreActionAborted = false
 end
 
 --- 更新：核心战斗系统 - 技能中系统
-function XChar8005:UpdateCoreCombatInSkillSystem(dt)
+function XChar8005:UpdateCoreCombatInSkillSystem()
     -- 更新技能时间
     local isSuccess, t = self._proxy:TryGetNpcCurrentActionElapsedTime(self._uuid)
     if isSuccess then
@@ -1370,16 +1462,12 @@ function XChar8005:CustomInSkillLogic()
         self._proxy:CastAction(self._uuid, self._ultraLoopActionId)
     end
 
-    if self._proxy:CheckNpcCurrentAction(self._uuid, self._ultraLoopActionId) and self._skillTimer >= self._ultraLoopActionEndTime then
-        self._proxy:CastActionToPosition(self._uuid, self._ultraEndActionId, self._battleSceneCenter)
-    end
-
     if self._proxy:CheckNpcCurrentAction(self._uuid, self._ultraEndActionId) then
         -- 解锁，回到自由镜头
         if not self._isUltraEndCameraUnlocked and self._skillTimer >= self._ultraEndCameraUnlockTime then
-            self._proxy:CancelHardLockTarget()
-            self._proxy:CancelSoftLockTarget()
-            XLog.Debug("锁定：取消硬锁")
+            --self._proxy:CancelHardLockTarget()
+            --self._proxy:CancelSoftLockTarget()
+            --XLog.Debug("锁定：取消硬锁")
             self._isUltraEndCameraUnlocked = true
         end
 
@@ -1389,7 +1477,6 @@ function XChar8005:CustomInSkillLogic()
             for k, playerId in ipairs(self._proxy:GetPlayerNpcList()) do
                 self._proxy:SetNpcFocusTarget(playerId, self._uuid)
             end
-            XLog.Debug("锁定：硬锁部位")
             self._isUltraEndCameraReLocked = true
         end
 
@@ -1406,6 +1493,71 @@ function XChar8005:CustomInSkillLogic()
         end
     end
 
+    if self._proxy:CheckNpcCurrentAction(self._uuid, 8005518) and not self._isFireUltraPreActionAborted and self._skillTimer >= 0.05 then
+        self._proxy:AbortAction(self._uuid, true)
+        if self._enableLiveContent then
+            self._proxy:CastActionToPosition(self._uuid, 8005301, self._battleSceneCenter)
+        else
+            if(self._proxy:CheckNpcPositionDistance(self._uuid, self._battleSceneCenter, 10, true)) then
+                -- 距场中小于10米，直接释放
+                self._proxy:CastActionToPosition(self._uuid, 8005301, self._battleSceneCenter)
+            else
+                -- 距离场中大于10米，先位移再释放
+                self._proxy:CastActionToPosition(self._uuid, 8005519, self._battleSceneCenter)
+            end
+        end
+        self._isFireUltraPreActionAborted = true
+    end
+
+
+    if self._proxy:CheckNpcCurrentAction(self._uuid, 8005519) and self._skillTimer >= 2.16 then
+        self._proxy:AbortAction(self._uuid, true)
+        self._proxy:CastActionToPosition(self._uuid, 8005301, self._battleSceneCenter)
+    end
+
+
+    -- 破韧开始 衔接 破韧起身
+    if self._proxy:CheckNpcCurrentAction(self._uuid, 8005125) and self._skillTimer >= 1.3 then
+        self._proxy:AbortAction(self._uuid, true)
+        self._proxy:CastAction(self._uuid, 8005127)
+    end
+
+    -- 破韧开始(QTE) 衔接 破韧起身
+    if self._proxy:CheckNpcCurrentAction(self._uuid, 8005522) and self._skillTimer >= 1.3 then
+        self._proxy:AbortAction(self._uuid, true)
+        self._proxy:CastAction(self._uuid, 8005127)
+    end
+
+    -- 直播演示：角力后攻击
+    if self._enableLiveContent then
+        if self._proxy:CheckNpcCurrentAction(self._uuid, 8005512) and self._skillTimer >= 1.6 then
+            self._proxy:AbortAction(self._uuid, true)
+
+            -- 攻击T
+            for k, playerId in ipairs(self._proxy:GetPlayerNpcList()) do
+                if self:IsPlayerTank(playerId) then
+                    --self._proxy:CastActionToTargetEx(self._uuid, 8005520, playerId, 0.433, 2.733)
+                    self._proxy:CastActionToTarget(self._uuid, 8005521, playerId)
+                    break
+                end
+            end
+
+            self:DelayCall("LiveTest", 1.56)
+        end
+
+        if self._proxy:CheckNpcCurrentAction(self._uuid, 8005011) and self._skillTimer >= 2.5 then
+            self._proxy:AbortAction(self._uuid, true)
+        end
+    end
+end
+
+function XChar8005:LiveTest()
+    -- 临时给C大量的仇恨
+    for k, playerId in ipairs(self._proxy:GetPlayerNpcList()) do
+        if self:IsPlayerCarry(playerId) then
+            self._proxy:ApplyMagic(self._uuid, playerId, 8005353, 1)
+        end
+    end
 end
 
 --- 尝试提前打断部分技能
@@ -1465,6 +1617,11 @@ function XChar8005:TryBreakSkill()
     if self._proxy:CheckNpcCurrentAction(self._uuid, 8005009) and self._skillTimer >= 1.267 then
         self._proxy:AbortAction(self._uuid, true)
     end
+
+    -- 打断入战吼叫
+    if self._proxy:CheckNpcCurrentAction(self._uuid, 8005013) and self._skillTimer >= 4 then
+        self._proxy:AbortAction(self._uuid, true)
+    end
 end
 --endregion
 
@@ -1485,8 +1642,8 @@ function XChar8005:InitCoreCombatRectifySystem()
     }
     --- 角度修正的区间（180度转特殊处理）
     self._angleRectifyConds ={
-        [1] = {{25, 50}},
-        [2] = {{-50, -25}},
+        [1] = {{45, 50}},
+        [2] = {{-50, -45}},
         [3] = {{50, 105}},
         [4] = {{-105, -50}},
         [5] = {{105, 150}},
@@ -1627,32 +1784,10 @@ end
 --region 核心战斗系统：技能冷却系统
 function XChar8005:InitCoreCombatCoolDownSystem()
     --- 技能冷却时间计时器
-    self._skillCdTimers = {
-        [8005011] = 0,
-        [8005012] = 0,
-        [8005013] = 0,
-        [8005014] = 0,
-        [8005030] = 0,
-        [8005031] = 0,
-        [8005032] = 0,
-        [8005035] = 0,
-        [8005037] = 0,
-        [8005033] = 0,
-        [8005034] = 0,
-        [8005038] = 0,
-        [8005039] = 0,
-        [8005036] = 0,
-        [8005040] = 0,
-        [8005045] = 0,
-        [8005041] = 0,
-        [8005042] = 0,
-        [8005043] = 0,
-        [8005046] = 0,
-        [8005047] = 0,
-        [8005051] = 0,
-        [8005055] = 0,
-        [8005505] = 0
-    }
+    self._skillCdTimers = {}
+    for skillId, info in pairs(self._skillInfos) do
+        self._skillCdTimers[skillId] = 0
+    end
 end
 
 --- 更新：核心战斗系统 - 技能冷却系统
@@ -1675,6 +1810,7 @@ end
 --endregion
 
 --region 核心战斗系统：多人弹刀系统
+--[[ DEMO 临时处理
 function XChar8005:InitCoreCombatWrestleSystem()
     -- 多人弹刀/角力
     --- 是否在角力过程中
@@ -1751,7 +1887,9 @@ function XChar8005:InitCoreCombatWrestleSystem()
     --- 当前插值移动位置
     self._curLerpMovePos = nil
 end
+]]
 
+--[[ DEMO 临时处理
 --- 更新：核心战斗系统 - 多人弹刀角力
 function XChar8005:UpdateCoreCombatMultiDeflectSystem(dt)
     -- 插值移动
@@ -1858,13 +1996,6 @@ function XChar8005:UpdateCoreCombatMultiDeflectSystem(dt)
         -- 弹开硬直
         self._proxy:AbortAction(self._uuid, true)
         self._proxy:CastAction(self._uuid, 8005504)
-        -- 取消拉镜
-        --[[
-        self._proxy:AddTimerTask(2, function()
-            self._proxy:ApplyMagic(self._uuid, self._multiDeflectTarget, 8005452, 1)
-            self._proxy:ApplyMagic(self._uuid, self._multiDeflectTarget, 8005454, 1)
-        end)
-        ]]
         -- slomo和镜头fov
         self._proxy:ApplyMagic(self._uuid, self._uuid, self._heavyReflectSlomo, 1)
         for i, player in ipairs(self._proxy:GetPlayerNpcList()) do
@@ -1921,12 +2052,6 @@ function XChar8005:UpdateCoreCombatMultiDeflectSystem(dt)
 
             -- 移除所有人的可支援标记
             self:ApplyMagicToPlayers({1000458}, 1)
-            --[[
-            local players = self._proxy:GetPlayerNpcList()
-            for k, player in ipairs(players) do
-                self._proxy:ApplyMagic(self._uuid, player, 1000458, 1)
-            end
-            ]]
 
             -- 解锁状态
             self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1)
@@ -1952,7 +2077,9 @@ function XChar8005:UpdateCoreCombatMultiDeflectSystem(dt)
         self._wrestleTimer = self._wrestleTimer + dt
     end
 end
+]]
 
+--[[ DEMO 临时处理
 ---角力持续时间延长的逻辑，在受到伤害时调用
 ---@param magicId number @ 伤害magicId
 function XChar8005:OnDamagedDuringWrestle(magicId, targetId)
@@ -2000,10 +2127,10 @@ function XChar8005:OnDamagedDuringWrestle(magicId, targetId)
         end
     end
 end
+]]
 
+--[[ DEMO 临时处理
 function XChar8005:MultiDeflectLogic(magicId, target)
-
-    --[[
     local hasGuardBuff = self._proxy:CheckBuffByKind(target, 105234)
     local hasGuardPointBuff = self._proxy:CheckBuffByKind(target, 105233)
     --- 0代表失败，1代表角力，2代表弹刀
@@ -2106,12 +2233,13 @@ function XChar8005:MultiDeflectLogic(magicId, target)
 
         self._isMultiDeflectSimulated = false
         end
-    ]]
 end
+]]
 
+--[[ DEMO 临时处理
 function XChar8005:DeflectLogic(magicId, target)
     -- 临时用七实防御buff作弹反条件
-    --[[
+
     local hasGuardBuff = self._proxy:CheckBuffByKind(target, 105234)
     local hasGuardPointBuff = self._proxy:CheckBuffByKind(target, 105233)
     --XLog.Debug("目标ID: " .. tostring(target) ..  " 是否拥有弹刀buff: " .. tostring(hasGuardBuff or hasGuardPointBuff))
@@ -2204,15 +2332,18 @@ function XChar8005:DeflectLogic(magicId, target)
         -- 弹刀震屏效果
         self:DelayCall("DeflectScreenShakeEffect", 0.2, target)
     end
-    ]]
 end
+]]
 
+--[[ DEMO 临时处理
 function XChar8005:DeflectScreenShakeEffect(target)
     -- 弹刀震屏效果
     self._proxy:ApplyMagic(self._uuid, target, 8005107, 1)
     self._proxy:ApplyMagic(self._uuid, target, 8005108, 1)
 end
+]]
 
+--[[ DEMO 临时处理
 function XChar8005:StartLerpMoveMultiDeflectTarget(targetPos, totalTime)
     if not self._proxy:CheckNpc(self._multiDeflectTarget) then
         return
@@ -2233,18 +2364,19 @@ function XChar8005:StartLerpMoveMultiDeflectTarget(targetPos, totalTime)
 
     self._isLerpMoving = true;
 end
+]]
 --endregion
 
 --region Debug系统
 function XChar8005:InitDebugSystem()
     -- 测试用tick（开始运行后，以固定频率调用的测试函数）
     --- 测试用tick更新频率
-    self._testTickInterval = 1
+    self._testTickInterval = 8
     --- 测试用tick计时器
     self._testTickTimer = 0
     -- 测试用delay（开始运行后，固定延迟一定时间后执行一次的函数）
     --- 测试用delay延迟时间
-    self._testDelayTime = 1
+    self._testDelayTime = 2
     --- 测试用delay计时器
     self._testDelayTimer = 0
     --- 测试用delay是否已经触发
@@ -2282,13 +2414,25 @@ function XChar8005:UpdateDebugSystem(dt)
 end
 
 function XChar8005:DebugTickLogic()
-    local myPos = self._proxy:GetNpcPosition(self._uuid)
-    local tarPos = self._proxy:GetNpcPosition(self._uuid)
 end
 
 ---开始运行后，固定延迟一定时间后执行一次的函数
 function XChar8005:DebugDelayLogic()
-    -- 延迟几秒后开始战斗
+    self._proxy:SetNpcPosition(self._uuid, {x = 57.5, y = 2, z = 60})
+
+    for k, playerID in ipairs(self._proxy:GetPlayerNpcList()) do
+        if self:IsPlayerCarry(playerID) then
+            self._proxy:SetNpcPosition(playerID, {x = 57.5, y = 2, z = 43.5})
+        end
+        if self:IsPlayerTank(playerID) then
+            self._proxy:SetNpcPosition(playerID, {x = 55.5, y = 2, z = 45})
+        end
+        if self:IsPlayerSup(playerID) then
+            self._proxy:SetNpcPosition(playerID, {x = 59.5, y = 2, z = 45})
+        end
+    end
+
+    -- 开启战斗AI逻辑
     self:ChangeState(XChar8005.EBattleState.NormalState)
 end
 --endregion
@@ -2296,14 +2440,15 @@ end
 --region 内置回调函数
 function XChar8005:OnStateChanged(previousState, newState)
     if previousState == XChar8005.EBattleState.Inactive and newState == XChar8005.EBattleState.NormalState then
-        -- 给全场玩家加仇恨值
-        self:ApplyMagicToPlayers({8005351}, 1)
-        --[[
+        -- 给全场玩家加仇恨值(T+5000, 非T+1)
         local players = self._proxy:GetPlayerNpcList()
         for key, playerId in ipairs(players) do
-            self._proxy:ApplyMagic(self._uuid, playerId, 8005351, 1)
+            if self:IsPlayerTank(playerId) then
+                self._proxy:ApplyMagic(self._uuid, playerId, 8005352, 1)
+            else
+                self._proxy:ApplyMagic(self._uuid, playerId, 8005351, 1)
+            end
         end
-        ]]
     end
 end
 --endregion
@@ -2318,12 +2463,14 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
     if skillId == 8005011 then
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000467, 1) -- 锁韧性
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000469, 1) -- 锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._immuUltraAbortMagicId, 1) -- 防被大招打断
     end
 
-    -- 大招解锁韧性 和 OD
+    -- 老大招解锁韧性 和 OD
     if skillId == 8005055 then
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000465, 1) -- 锁OD
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000469, 1) -- 锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._immuUltraAbortMagicId, 1) -- 防被大招打断
 
         -- 大招镜头
         self:ApplyMagicToPlayers({8005455}, 1)
@@ -2336,14 +2483,19 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
         -- 大招激光激活
         self._ultraRayTimer = 0
         self._isUltraCameraModified = false
-        self._isUltraGroupFunnelReleased = false
         self._isUltraRayStart = true
     end
 
-    if skillId == self._ultraEndActionId then
+    -- DPS检测
+    if skillId == self._ultraBeginActionId then
+        self:ApplyMagicToPlayers({8005466}, 1) -- 临时镜头
+
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000465, 1) -- 锁OD
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000469, 1) -- 锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._immuUltraAbortMagicId, 1) -- 防被大招打断
+    end
 
+    if skillId == self._ultraEndActionId then
         self._isUltraEndCameraUnlocked = false
         self._isUltraEndCameraReLocked = false
         self._isUltraEndLaserCameraApplied = false
@@ -2352,13 +2504,25 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
         -- 大招激光激活
         self._ultraRayTimer = 0
         self._isUltraCameraModified = false
-        self._isUltraGroupFunnelReleased = false
         self._isUltraRayStart = true
     end
 
     -- 召唤浮游炮镜头
     if skillId == 8005041 then
         self:ApplyMagicToPlayers({8005460, 8005461}, 1)
+    end
+
+    -- 全场喷火
+    if skillId == 8005518 then
+        self._isFireUltraPreActionAborted = false
+
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000465, 1) -- 锁OD
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000469, 1) -- 锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._immuUltraAbortMagicId, 1) -- 防被大招打断
+    end
+
+    if skillId == 8005301 and self._enableLiveContent then
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 8005316, 1)
     end
 
     self._skillTimer = 0
@@ -2371,38 +2535,77 @@ function XChar8005:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSce
     if skillId == 8005011 then
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000468, 1) -- 解锁韧性
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cancelImmuUltraAbortMagicId, 1) -- 取消防被大招打断
     end
 
-    -- 大招解锁韧性 和 OD
+    -- 老大招解锁韧性 和 OD
     if skillId == 8005055 then
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000466, 1) -- 解锁OD
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cancelImmuUltraAbortMagicId, 1) -- 取消防被大招打断
     end
 
+    -- DPS检测锁OD锁削韧
     if skillId == self._ultraEndActionId then
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000466, 1) -- 解锁OD
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cancelImmuUltraAbortMagicId, 1) -- 取消防被大招打断
+    end
+
+    if skillId == 8005301 then
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000466, 1) -- 解锁OD
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cancelImmuUltraAbortMagicId, 1) -- 取消防被大招打断
+    end
+
+    if skillId == 8005053 then
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000466, 1) -- 解锁OD
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cancelImmuUltraAbortMagicId, 1) -- 取消防被大招打断
     end
 
     self._skillTimer = 0
 end
 
-function XChar8005:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)
+function XChar8005:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
     if targetId ~= self._uuid then
         return
     end
 
     -- 角力受击逻辑
-    self:OnDamagedDuringWrestle(magicId, targetId)
+    -- self:OnDamagedDuringWrestle(magicId, targetId)
 
     -- OD Break Loop期间受击
     if self._isODBreakLooping then
         self:CastODBreakHitActionBySrcPos(launcherId)
     end
 
-    -- 破韧期间受击
-    if magicId == 10519201 and self._proxy:CheckBuffByKind(self._uuid, 8005901) then
-        self:CastTenaBreakSkillBySrcPos(launcherId, false)
+    -- DPS期间受击逻辑
+    if self._proxy:CheckBuffByKind(self._uuid, 8005070) then
+        -- 受击特效
+        self._proxy:LaunchMissile(self._uuid, self._uuid, 8005112, 8005105)
+
+        -- 检测护盾值
+        if self._proxy:GetNpcProtector(self._uuid) <= 0 then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 8005082, 1)
+            self:ApplyMagicToPlayers({8005467}, 1) -- 移除临时镜头
+        end
+    end
+
+    for i = 0, magicTags.Count - 1, 1 do
+        XLog.Debug("Tag测试" .. tostring(magicTags[i]))
+    end
+
+    -- 特殊受击
+    if GameplayTag.CSMatchAnyTag(magicTags, {EGameplayTag.Magic_RelinkDamage_HitType_Ultra}) then
+        if not self._proxy:CheckBuffByKind(self._uuid, self._immuUltraAbortMagicId) then
+            self:CastTenaBreakSkillBySrcPos(launcherId, false)
+        end
+    end
+    if GameplayTag.CSMatchAnyTag(magicTags, {EGameplayTag.Magic_RelinkDamage_HitType_Break}) then
+        if self._proxy:CheckBuffByKind(self._uuid, self._breakMagicId) then
+            self:CastBreakSkill(true)
+        end
     end
 end
 
@@ -2427,34 +2630,6 @@ function XChar8005:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     if buffId == 8005040 then
         self._proxy:SetNpcBreakGauge(self._uuid, 2000, ENpcBreakStateCondition.Break)
     end
-
-    -- 浮游炮
-    --[[
-    if buffId == 8005006 then
-        self._proxy:LaunchMissile(self._uuid, self._curAggroTarUUID, 8005001, 8005001, 1)
-        return
-    end
-    if buffId == 8005007 then
-        self._proxy:LaunchMissile(self._uuid, self._curAggroTarUUID, 8005002, 8005002, 1)
-        return
-    end
-    if buffId == 8005008 then
-        self._proxy:LaunchMissile(self._uuid, self._curAggroTarUUID, 8005003, 8005003, 1)
-        return
-    end
-    if buffId == 8005009 then
-        self._proxy:LaunchMissile(self._uuid, self._curAggroTarUUID, 8005004, 8005004,  1)
-        return
-    end
-    if buffId == 8005010 then
-        self._proxy:LaunchMissile(self._uuid, self._curAggroTarUUID, 8005005, 8005005, 1)
-        return
-    end
-    if buffId == 8005011 then
-        self._proxy:LaunchMissile(self._uuid, self._curAggroTarUUID, 8005006, 8005006, 1)
-        return
-    end
-    ]]
 end
 
 function XChar8005:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
@@ -2489,6 +2664,28 @@ function XChar8005:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
             self._proxy:CastAction(self._uuid, self._wrestleSuccessSkillId)
         end
     end
+
+    -- 决定DPS检测是否通过
+    if buffId == 8005070 then
+        if self._proxy:GetNpcProtector(self._uuid) > 0 then
+            -- 没通过，惩罚技能，启动！
+            self._proxy:CastActionToPosition(self._uuid, self._ultraEndActionId, self._battleSceneCenter)
+        else
+            -- 通过了直接Break
+            -- TODO：直接Break没功能，先放个特殊动作
+            self._proxy:DestroyAllMissileDependOnLauncher(self._uuid)
+
+            self._proxy:AbortAction(self._uuid, true)
+            self._proxy:CastAction(self._uuid, 8005053)
+
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 8005313, 1)
+            self:ApplyMagicToPlayers({8005313}, 1)
+
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1000466, 1) -- 解锁OD
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+        end
+        self._proxy:LaunchMissile(self._uuid, self._uuid, 8005113, 8005106)
+    end
 end
 
 function XChar8005:OnNpcBrokenAfter(launcherUUID, targetUUID, magicId)
@@ -2498,17 +2695,12 @@ function XChar8005:OnNpcBrokenAfter(launcherUUID, targetUUID, magicId)
     end
 
     -- 根据目标位置播破韧动作
-    self:CastTenaBreakSkillBySrcPos(launcherUUID, false)
+    -- self:CastTenaBreakSkillBySrcPos(launcherUUID, false)
+    self:CastBreakSkill(false)
     -- 破韧持续时间，临时用buff做
     self._proxy:ApplyMagic(self._uuid, self._uuid, 8005901, 1)
     -- 传递可放破韧技的通知(暂时给所有人上)
     self:ApplyMagicToPlayers({8005902}, 1)
-    --[[
-    local players = self._proxy:GetPlayerNpcList()
-    for k, playerID in ipairs(players) do
-        self._proxy:ApplyMagic(self._uuid, playerID, 8005902, 1)
-    end
-    ]]
 
     -- 调试打印
     if self._isDebugBattleLogic then
@@ -2517,11 +2709,11 @@ function XChar8005:OnNpcBrokenAfter(launcherUUID, targetUUID, magicId)
 end
 
 function XChar8005:OnNpcOverDriveFull(targetUUID)
-    if targetUUID ~= self._uuid then
-        return
-    end
+if targetUUID ~= self._uuid then
+return
+end
 
-    self:ChangeState(XChar8005.EBattleState.ODState)
+self:ChangeState(XChar8005.EBattleState.ODState)
 end
 
 function XChar8005:OnNpcODBreakAfter(targetUUID)
@@ -2538,7 +2730,9 @@ function XChar8005:OnNpcODBreakAfter(targetUUID)
     self:ChangeState(XChar8005.EBattleState.NormalState)
 
     -- Break期间不能破韧
+    self._proxy:ApplyMagic(self._uuid, self._uuid, 1000469, 1) -- 锁削韧
     self._proxy:ApplyMagic(self._uuid, self._uuid, 1000467, 1)
+    self._proxy:ApplyMagic(self._uuid, self._uuid, self._immuUltraAbortMagicId, 1) -- 防被大招打断
 
     -- 移除绑定特效buff
     self._proxy:RemoveBuff(self._uuid, 8005012)
@@ -2556,6 +2750,9 @@ function XChar8005:OnNpcODBreakAfter(targetUUID)
 
     -- 自身时停
     self._proxy:ApplyMagic(self._uuid, self._uuid, 8005302, 100)
+
+    -- 易伤
+    self._proxy:ApplyMagic(self._uuid, self._uuid, 8005556, 100)
 
     local players = self._proxy:GetPlayerNpcList()
     local hasGiveEnergy = false
@@ -2585,6 +2782,11 @@ function XChar8005:OnNpcODExitBreakAfter(targetUUID)
 
     -- 移除锁破韧
     self._proxy:ApplyMagic(self._uuid, self._uuid, 1000468, 1)
+    self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+    self._proxy:ApplyMagic(self._uuid, self._uuid, self._cancelImmuUltraAbortMagicId, 1) -- 取消防被大招打断
+
+    -- 移除易伤
+    self._proxy:ApplyMagic(self._uuid, self._uuid, 8005556, 100)
 end
 
 function XChar8005:BeforeDamageCalc(eventArgs)
@@ -2593,22 +2795,28 @@ function XChar8005:BeforeDamageCalc(eventArgs)
         return
     end
 
-    self:MultiDeflectLogic(eventArgs.Id, eventArgs.Target)
-    self:DeflectLogic(eventArgs.Id, eventArgs.Target)
-
     -- 扫爪+拍地，扫爪卡肉
-    if(eventArgs.Id == 8005023) then self._proxy:ApplyMagic(self._uuid, self._uuid, 8005301, 1) end
+    if eventArgs.Id == 8005023 then
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 8005301, 1)
+    end
+
+    if eventArgs.Id == 8005030 then
+        for k, playerId in ipairs(self._proxy:GetPlayerNpcList()) do
+            if self:IsPlayerSup(playerId) then
+                self._proxy:ApplyMagic(self._uuid, playerId, 8005908, 1)
+            end
+        end
+    end
 end
 
 function XChar8005:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag, triggerMissileTemplateId, triggerMissileUUID, contextId)
     Base.OnNpcBeforeTriggerCounter(self, triggerNpcUUID, counterNpcUUID, triggerTag, counterTag, triggerMissileTemplateId, triggerMissileUUID, contextId)
-
     -- 非技能目标不能弹刀
     if counterNpcUUID ~= self:GetSkillTarget() then
         return
     end
 
-    local isSustain = self:ContainsGameplayTag(triggerTag, EGameplayTag.Missile_Parry_Trigger_Sustain) or self:ContainsGameplayTag(counterTag, EGameplayTag.Missile_Parry_Counter_Light)
+    local isSustain = GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_Sustain}) or GameplayTag.CSMatchAnyTag(counterTag, {EGameplayTag.Missile_Parry_Counter_Light})
     -- 不打断拼刀(触发盒为sustain或反制盒为light)
     if isSustain then
         -- 通用逻辑部分
@@ -2624,14 +2832,13 @@ function XChar8005:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, tri
     end
 
     -- 打断拼刀(触发盒为interrupt)
-    local isInterrupt = self:ContainsGameplayTag(triggerTag, EGameplayTag.Missile_Parry_Trigger_Interrupt)
+    local isInterrupt = GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_Interrupt})
     if isInterrupt then
         -- 通用逻辑部分
         self._proxy:ApplyMagic(self._uuid, self._uuid, 8005307, 1)      -- 强顿帧（对自己）
         self._proxy:ApplyMagic(self._uuid, counterNpcUUID, 8005308, 1)  -- 强顿帧（对目标）
         self._proxy:ApplyMagic(self._uuid, counterNpcUUID, 8005107, 1)  -- 震屏
         self._proxy:ApplyMagic(self._uuid, counterNpcUUID, 8005108, 1)  -- 震屏
-
         -- 根据子弹ID的定制化表现
         -- 正面弹
         if triggerMissileTemplateId == 8005065 or triggerMissileTemplateId == 8005069 then
@@ -2640,13 +2847,13 @@ function XChar8005:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, tri
             self._proxy:ApplyMagic(self._uuid, counterNpcUUID, 8005458, 1)     -- 镜头抬升
             self._proxy:AbortAction(self._uuid, true)                                   -- 打断动作
             self._proxy:CastActionToTarget(self._uuid, 8005504, counterNpcUUID)   -- 弹刀动作
-        -- 左弹
+            -- 左弹
         elseif triggerMissileTemplateId == 8005063 or triggerMissileTemplateId == 8005066 then
             self._proxy:ApplyMagic(self._uuid, counterNpcUUID, 8005459, 1)  -- 镜头抬升
             self._proxy:AbortAction(self._uuid, true)                                   -- 打断动作
             self._proxy:CastActionToTarget(self._uuid, 8005502, counterNpcUUID)   -- 弹刀动作
             self._proxy:LaunchMissile(self._uuid, counterNpcUUID, 8005012, 8005012,  1)
-        -- 右弹
+            -- 右弹
         elseif triggerMissileTemplateId == 8005062 or triggerMissileTemplateId == 8005068 then
             self._proxy:ApplyMagic(self._uuid, counterNpcUUID, 8005459, 1)  -- 镜头抬升
             self._proxy:AbortAction(self._uuid, true)                                   -- 打断动作
@@ -2656,11 +2863,28 @@ function XChar8005:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, tri
         return
     end
 
-    local isMulti = self:ContainsGameplayTag(triggerTag, EGameplayTag.Missile_Parry_Trigger_MultiInteract) and self:ContainsGameplayTag(counterTag, EGameplayTag.Missile_Parry_Counter_Heavy)
+    local isMulti = GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_MultiInteract}) and GameplayTag.CSMatchAnyTag(counterTag, {EGameplayTag.Missile_Parry_Counter_Heavy})
     if isMulti then
-        -- 角力逻辑
+        -- 角力逻辑 & 多人弹刀逻辑
         self._proxy:AbortAction(self._uuid, true)
-        self._proxy:CastWrestle(self._uuid, counterNpcUUID, 800501)
+        if self:IsPlayerTank(counterNpcUUID) then
+            self._isInWrestleState = true
+
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1000465, 1) -- 锁OD
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1000469, 1) -- 锁削韧
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self._immuUltraAbortMagicId, 1) -- 防被大招打断
+
+            -- 移除所有角力前攻击镜头
+            self:ApplyMagicToPlayers({8005481}, 1)
+
+            self._proxy:CastWrestle(self._uuid, counterNpcUUID, 800501)
+        else
+            -- 移除所有角力前攻击镜头
+            self:ApplyMagicToPlayers({8005481}, 1)
+
+            self._proxy:CastMultiParry(self._uuid, counterNpcUUID, 800501)
+            return
+        end
     end
 end
 
@@ -2668,10 +2892,14 @@ function XChar8005:OnNpcAfterTriggerCounter(triggerNpcUUID, counterNpcUUID, trig
     Base.OnNpcAfterTriggerCounter(self, triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
 end
 
-function XChar8005:OnNpcWrestleStart(launcherNpcUUID, targetNpcUUID)
-    Base.OnNpcWrestleStart(self, launcherNpcUUID, targetNpcUUID)
-    if launcherNpcUUID == self._uuid then
-        self._isInWrestleState = true
+function XChar8005:OnNpcWrestleStart(launcherNpcUUID, targetNpcUUID, succeed)
+    Base.OnNpcWrestleStart(self, launcherNpcUUID, targetNpcUUID, succeed)
+
+    if launcherNpcUUID == self._uuid and not succeed then
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000466, 1) -- 解锁OD
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cancelImmuUltraAbortMagicId, 1) -- 取消防被大招打断
+        self._isInWrestleState = false
     end
 end
 
@@ -2679,6 +2907,10 @@ function XChar8005:OnNpcWrestlePursuit(launcherNpcUUID, targetNpcUUID)
     Base.OnNpcWrestlePursuit(self, launcherNpcUUID, targetNpcUUID)
     if launcherNpcUUID == self._uuid then
         self._isInWrestleState = false
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000466, 1) -- 解锁OD
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cancelImmuUltraAbortMagicId, 1) -- 取消防被大招打断
+        --XLog.Debug("白龙测试：角力退出")
     end
 end
 
@@ -2686,16 +2918,19 @@ function XChar8005:OnNpcWrestleReversal(launcherNpcUUID, targetNpcUUID)
     Base.OnNpcWrestleReversal(self, launcherNpcUUID, targetNpcUUID)
     if launcherNpcUUID == self._uuid then
         self._isInWrestleState = false
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000466, 1) -- 解锁OD
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000470, 1) -- 解锁削韧
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cancelImmuUltraAbortMagicId, 1) -- 取消防被大招打断
+        --XLog.Debug("白龙测试：角力退出")
     end
+end
+
+function XChar8005:OnNpcDodge(AttackerUUID, Type)
 end
 --endregion
 
 --region 工具函数
---- 目标与自身夹角是否满足角度条件table（[角度条件table]为一个数组，其中每一个[角度条件]的结构为{[起始角度from]，[到达角度to]}的区间）
---- @param targetUUID number @目标UUID
---- @param angleCond @角度条件table
---- @return boolean @是否满足角度条件
-function XChar8005:IsTarSatisfyAngleCond(targetUUID, angleCond)
+function XChar8005:IsPosSatisfyAngleCond(targetPos, angleCond)
     -- 如果条件为空则直接满足
     if #angleCond == 0 then
         return true
@@ -2707,7 +2942,7 @@ function XChar8005:IsTarSatisfyAngleCond(targetUUID, angleCond)
         if #angleSet >= 2 then
             local from = angleSet[1]
             local to = angleSet[2]
-            isSatisfy = isSatisfy or self:CheckTargetInAngle(targetUUID, from, to)
+            isSatisfy = isSatisfy or self:CheckPosInAngle(targetPos, from, to)
         end
 
         -- 满足条件直接跳出
@@ -2717,6 +2952,15 @@ function XChar8005:IsTarSatisfyAngleCond(targetUUID, angleCond)
     end
 
     return isSatisfy
+end
+
+--- 目标与自身夹角是否满足角度条件table（[角度条件table]为一个数组，其中每一个[角度条件]的结构为{[起始角度from]，[到达角度to]}的区间）
+--- @param targetUUID number @目标UUID
+--- @param angleCond @角度条件table
+--- @return boolean @是否满足角度条件
+function XChar8005:IsTarSatisfyAngleCond(targetUUID, angleCond)
+    local targetPos = self._proxy:GetNpcPosition(targetUUID)
+    return self:IsPosSatisfyAngleCond(targetPos, angleCond)
 end
 
 --- 给所有玩家添加效果
@@ -2740,6 +2984,21 @@ function XChar8005:GetNonAggroPlayerList()
         end
     end
     return results
+end
+
+--- 检测玩家是否为坦克位
+function XChar8005:IsPlayerTank(playerId)
+    return self._proxy:CheckBuffByKind(playerId, 1000487)
+end
+
+--- 检测玩家是否为输出位
+function XChar8005:IsPlayerCarry(playerId)
+    return self._proxy:CheckBuffByKind(playerId, 1000486)
+end
+
+--- 检测玩家是否为奶/支援位
+function XChar8005:IsPlayerSup(playerId)
+    return self._proxy:CheckBuffByKind(playerId, 1000488)
 end
 --endregion
 
@@ -2787,9 +3046,9 @@ function XChar8005:CheckPosInAngle(pos, from, to)
     -- 对于from小于0，to大于0的进行区间拆分
     local angleList
     if from < 0 and to > 0 then
-        angleList = {{from, 0}, {0, to}}
+    angleList = {{from, 0}, {0, to}}
     else
-        angleList = {{from, to}}
+    angleList = {{from, to}}
     end
 
     -- 获取自身位置和目标位置
@@ -2817,7 +3076,7 @@ function XChar8005:CheckPosInAngle(pos, from, to)
 
             -- 如果为左侧的话，负数绝对值对调
             if v[2] <= 0 then
-                absAngleMin, absAngleMax = absAngleMax, absAngleMin
+            absAngleMin, absAngleMax = absAngleMax, absAngleMin
             end
 
             -- 判断夹角是否在区间内
@@ -2839,68 +3098,6 @@ end
 function XChar8005:CheckTargetInAngle(targetUUID, from, to)
     local targetPos = self._proxy:GetNpcPosition(targetUUID)
     return self:CheckPosInAngle(targetPos, from, to)
-    --[[
-    -- 角度参数合法性检测
-    if from > to then
-        return false
-    end
-    if math.abs(from) > 180 or math.abs(to) > 180 then
-        return false
-    end
-
-    -- 如果差大于360度，则直接返回true
-    if (to - from) >= 360 then
-        return true
-    end
-
-    -- 对于from小于0，to大于0的进行区间拆分
-    local angleList
-    if from < 0 and to > 0 then
-        angleList = {{from, 0}, {0, to}}
-    else
-        angleList = {{from, to}}
-    end
-
-    -- 获取自身位置和目标位置
-    local targetPosVec3 = self._proxy:GetNpcPosition(targetUUID)
-    local sourcePosVec3 = self._proxy:GetNpcPosition(self._uuid)
-    local targetPos = { targetPosVec3.x, targetPosVec3.z }
-    local sourcePos = { sourcePosVec3.x, sourcePosVec3.z }
-
-    -- 计算前方和右方的方向向量，以及指向目标的方向向量
-    local forwardDir = self:NormalizeVector2(self:RotateVector2({ 0, 1 }, self._proxy:GetNpcRotation(self._uuid).y))
-    local rightDir = self:NormalizeVector2(self:RotateVector2(forwardDir, 90))
-    local targetDir = self:NormalizeVector2(self:SubtractVector2(targetPos, sourcePos))
-
-    -- 检测左右
-    local isIn = false
-    for k, v in ipairs(angleList) do
-        -- 点乘
-        local forwardDot = self:DotProduct(forwardDir, targetDir)
-        local rightDot = self:DotProduct(rightDir, targetDir)
-        --XLog.Debug(string.format("是否在右侧: [%q]", rightDot > 0))
-
-        -- 检测是否满足左右条件
-        if (v[2] <= 0 and rightDot <= 0) or (v[1] >= 0 and rightDot >= 0) then
-            local absAngleMin = math.abs(v[1])
-            local absAngleMax = math.abs(v[2])
-
-            -- 如果为左侧的话，负数绝对值对调
-            if v[2] <= 0 then
-                absAngleMin, absAngleMax = absAngleMax, absAngleMin
-            end
-
-            -- 判断夹角是否在区间内
-            local angleBtw = math.deg(math.acos(forwardDot))
-            if angleBtw >= absAngleMin and angleBtw <= absAngleMax then
-                isIn = true
-                break
-            end
-        end
-    end
-
-    return isIn
-    ]]
 end
 
 --- 旋转一个二维向量（这里用于计算XZ平面的旋转，即Y轴旋转）
@@ -2951,22 +3148,17 @@ function XChar8005:AddVector2(vectorA, vectorB)
     return { vectorA[1] + vectorB[1], vectorA[2] + vectorB[2] }
 end
 
---- 浮点数插值
---- @param u number @ 起始值
---- @param v number @ 最终值
---- @param t number @ 插值位置（0 - 1之间）
---- @param interpMode @ 插值类型
+        --- 浮点数插值
+        --- @param u number @ 起始值
+        --- @param v number @ 最终值
+        --- @param t number @ 插值位置（0 - 1之间）
+        --- @param interpMode @ 插值类型
 function XChar8005:InterpFloat(u, v, t, interpMode)
     if interpMode == XChar8005.EInterpMode.EaseOutCubic then
         t = 1 - (1 - t)^3
     end
 
     return u * (1 - t) + v * t
-end
-
---- 泊松盘采样
-function XChar8005:PoissonDiskSampling()
-    -- TODO: 后续做大招随机取点采样
 end
 --endregion
 
@@ -2988,26 +3180,6 @@ function XChar8005:UltraRayUpdateLogic(dt)
     -- 更新计时器
     self._ultraRayTimer = self._ultraRayTimer + dt
 
-    -- 临时做一下延迟拉镜效果
-    --[[
-    if not self._isUltraCameraModified and self._ultraRayTimer >= self._ultraCameraModifyDelay then
-        self:ApplyMagicToPlayers({8005456, 8005457}, 1)
-        self._isUltraCameraModified = true
-    end
-    ]]
-
-    -- 首批浮游炮
-    if not self._isUltraGroupFunnelReleased and self._ultraRayTimer >= self._ultraGroupFunnelDelay then
-        for i = 1, self._ultraGroupFunnelMaxCount do
-            local x = self._proxy:Random(-100, 100) * self._ultraRayRandomPosRange[1] / 100
-            local z = self._proxy:Random(-100, 100) * self._ultraRayRandomPosRange[2] / 100
-            local targetPos = {x = self._battleSceneCenter.x + x, y = self._battleSceneCenter.y + 0.2, z = self._battleSceneCenter.z + z }
-
-            self._proxy:LaunchMissileFromPosToPos(self._uuid, 8005081, 8005081, targetPos, targetPos, 1)
-        end
-        self._isUltraGroupFunnelReleased = true
-    end
-
     -- 逻辑结束
     if self._ultraRayTimer >= self._ultraRayStopTime then
         self._isUltraRayStart = false
@@ -3018,6 +3190,7 @@ function XChar8005:UltraRayUpdateLogic(dt)
     if self._ultraRayTimer <= self._ultraRayStartTime then
         return
     end
+
 
     self._ultraRayIntervalTimer = self._ultraRayIntervalTimer - dt
     -- 小于0则执行一次子弹逻辑
@@ -3059,6 +3232,35 @@ function XChar8005:UltraRayUpdateLogic(dt)
         -- 刷新计时器
         local rndIntervalVariant = self._proxy:Random(1, 100) / 100 * (self._ultraRayIntervalRange[2] - self._ultraRayIntervalRange[1])
         self._ultraRayIntervalTimer = self._ultraRayIntervalRange[1] + rndIntervalVariant
+    end
+
+
+    self._ultraPoissonDiskTimer = self._ultraPoissonDiskTimer - dt
+    if self._ultraPoissonDiskTimer <= 0 then
+        local poissonDiskPoints = self._proxy:PoissonDiscPoints(self._ultraPoissonDiskWidth, self._ultraPoissonDiskHeight, self._ultraPoissonDiskRadius)
+        -- 有效性检测
+        local isValid = poissonDiskPoints ~= nil and
+        #poissonDiskPoints > 0 and
+        #poissonDiskPoints % 2 == 0
+
+        if isValid then
+            local xFixedOffset = self._ultraPoissonDiskWidth / 2
+            local zFixedOffset = self._ultraPoissonDiskHeight / 2
+            for xIndex = 1, #poissonDiskPoints, 2 do
+                local zIndex = xIndex + 1
+
+                local targetPos = { x = self._battleSceneCenter.x + poissonDiskPoints[xIndex] - xFixedOffset,
+                y = self._battleSceneCenter.y,
+                z = self._battleSceneCenter.z + poissonDiskPoints[zIndex] - zFixedOffset}
+                targetPos.y = targetPos.y + 0.2
+
+                -- 发射子弹
+                self._proxy:LaunchMissileFromPosToPos(self._uuid, self._ultraRayMissileLaunchId, self._ultraRayMissileId, targetPos, targetPos, 1)
+            end
+        end
+
+        -- 刷新计时器
+        self._ultraPoissonDiskTimer = self._ultraPoissonDiskInterval
     end
 end
 --endregion

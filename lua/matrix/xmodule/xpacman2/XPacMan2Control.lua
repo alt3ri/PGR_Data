@@ -100,13 +100,18 @@ function XPacMan2Control:GetTargetList(stageId, getScore)
     if not stageConfig then
         return nil
     end
+    -- 获取历史最高星级
+    local historyStar = self._Model:GetStageStar(stageId)
     local targetList = {}
     for i = 1, #stageConfig.Star do
         local score = stageConfig.Star[i]
+        ---@class XUiPacMan2TargetData
         local target = {
             IsOn = getScore >= score,
             Score = score,
             RewardId = stageConfig.StarReward[i],
+            -- 添加历史上是否已达成该星级的标记（用于显示已领取标记）
+            IsHistoryOn = i <= historyStar,
         }
         targetList[#targetList + 1] = target
     end
@@ -209,6 +214,18 @@ function XPacMan2Control:GetCurrentStageId()
             return config.Id
         end
     end
+end
+
+function XPacMan2Control:GetStageTips()
+    return self._Model:GetStageTips()
+end
+
+function XPacMan2Control:GetToggleTouch()
+    return self._Model:GetToggleTouch()
+end
+
+function XPacMan2Control:SetToggleTouch(value)
+    self._Model:SetToggleTouch(value)
 end
 
 return XPacMan2Control

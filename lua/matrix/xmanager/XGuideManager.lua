@@ -418,7 +418,7 @@ XGuideManagerCreator = function()
             return
         end
         if not LastProxyType then
-            XLog.Error("复原上一个引导代理异常!!!")
+            XLog.Warning("复原上一个引导代理异常!!!")
             return
         end
         XGuideManager.SwitchGuideProxy(LastProxyType)
@@ -737,6 +737,12 @@ XGuideManagerCreator = function()
     --- 引导完成
     ---@param guideId number
     function XGuideManager.ReqGuideComplete(guideId, cb)
+        local orginalGuideId = guideId
+        guideId = tonumber(guideId)
+        if guideId == nil then
+            XLog.Error("引导完成失败, guideId有问题: " .. tostring(orginalGuideId))
+            return
+        end
         XNetwork.Call("GuideCompleteRequest", { GuideGroupId = guideId }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
@@ -754,6 +760,25 @@ XGuideManagerCreator = function()
 
             if cb then cb() end
         end)
+    end
+
+    function XGuideManager.ReqMultiGuideComplete(guideIds, cb)
+        if XTool.IsTableEmpty(guideIds) then
+            if cb then
+                cb()
+            end
+            return
+        end
+
+        local total, cur = #guideIds, 0
+        for _, guideId in pairs(guideIds) do
+            XGuideManager.ReqGuideComplete(guideId, function()
+                cur = cur + 1
+                if cur >= total and cb then
+                    cb()
+                end
+            end)
+        end
     end
     
     --- 当前引导组完成

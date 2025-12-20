@@ -85,6 +85,7 @@ function XDlcSimulationChallengeAgency:DlcGetNonnegativeAttribs()
         [XDlcNpcAttribType.SprintSpeedCOE] = true,
         [XDlcNpcAttribType.BreakGauge] = true,
         [XDlcNpcAttribType.OverDrive] = true,
+        [XDlcNpcAttribType.RebootValue] = true,
     }
 end
 

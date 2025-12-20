@@ -153,11 +153,8 @@ function XUiTheatre5PVEReasoning:OnClickDeduce()
             if isRight then
                 self:PlayRightAnswerAnim(res.IsScriptCompleted, function()
                     if res.IsScriptCompleted then
-                        if self._CompletedCb then
-                            self._CompletedCb()
-                        end
                         self._Control.PVEControl:DeduceRecode(self._DeduceRecodedata)    
-                        XLuaUiManager.PopThenOpen('UiTheatre5PVEReasoningEnd', self._DeduceScriptId, self._MainClueId)
+                        XLuaUiManager.PopThenOpen('UiTheatre5PVEReasoningEnd', self._DeduceScriptId, self._MainClueId, self._CompletedCb)
                     else
                         self:RefreshAll()
                     end

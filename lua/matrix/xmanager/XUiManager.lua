@@ -347,7 +347,20 @@ function XUiManager.OpenUiObtain(data, title, closeCallback, sureCallback, horiz
         XLuaUiManager.Open("UiObtain", data, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
     end
 end
+function XUiManager.OpenUiAreaWarObtain(data,areaWarItems, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+    if not CS.XFightInterface.IsOutFight then
+        return -- 战斗不弹
+    end
 
+    -- 等待父级ui中列表异步刷新完成，以保证弹窗的截图效果正常
+    if XUiManager.IsTableAsyncLoading() then
+        XUiManager.WaitTableLoadComplete(function()
+            XLuaUiManager.Open("UiAreaWarObtain", data,areaWarItems, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+        end)
+    else
+        XLuaUiManager.Open("UiAreaWarObtain", data, areaWarItems,title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+    end
+end
 function XUiManager.OpenUiTipReward(data, title, closeCallback, sureCallback)
     XLuaUiManager.Open("UiTipReward", data, title, closeCallback, sureCallback)
 end

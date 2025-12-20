@@ -104,11 +104,13 @@ function XUiStrongholdBattleRoleRoom:OnEnable()
     -- 刷新动画设置按钮
     self:OnAnimationSetChange()
     XEventManager.AddEventListener(XEventId.EVENT_FIGHT_ANIM_ENABLE, self.OnAnimationSetChange, self)
+    XEventManager.AddEventListener(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE, self.OnTeamEntityChange, self)
 end
 
 function XUiStrongholdBattleRoleRoom:OnDisable()
     XMVCA.XFavorability:StopCv()
     XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_ANIM_ENABLE, self.OnAnimationSetChange, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE, self.OnTeamEntityChange, self)
 end
 
 function XUiStrongholdBattleRoleRoom:OnDestroy()
@@ -185,6 +187,20 @@ function XUiStrongholdBattleRoleRoom:OnBtnSupportToggleClicked(state)
     else
         self:PlayRightTopTips(XUiHelper.GetText("FightAssistClose"))
     end
+end
+
+function XUiStrongholdBattleRoleRoom:OnTeamEntityChange()
+    if not self.Team then
+        return
+    end
+
+    self.Team = self.TeamList[self.TeamPropId]:GetOrCreateTempTeam()
+    
+    -- 刷新角色显示
+    self:RefreshRoleModels()
+    self:RefreshCharacterRImgType()
+    self:RefreshPartners()
+    self:RefreshRoleDetalInfo(true)
 end
 
 function XUiStrongholdBattleRoleRoom:OnBtnTeamPrefabClicked()
@@ -878,6 +894,7 @@ function XUiStrongholdBattleRoleRoom:OnJoinTeam(characterId, prefabMemberIndex)
 
     local setTeamFunc = function()
         swapFunc()
+        XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
     end
 
     local onJoinTeam = function()

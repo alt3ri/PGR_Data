@@ -3250,6 +3250,7 @@ function XCharacterAgency:GetCharacterElementPath()
     return "Client/Character/CharacterElement.tab"
 end
 
+-- 获取角色总数量（包括未获得的）
 function XCharacterAgency:GetCharacterTemplatesCount()
     return self._Model.CharacterTemplatesCount
 end

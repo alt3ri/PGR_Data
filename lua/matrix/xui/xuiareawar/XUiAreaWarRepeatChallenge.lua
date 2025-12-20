@@ -64,6 +64,13 @@ function XUiAreaWarRepeatChallenge:OnBtnEnterClick()
     if self.Count <= 0 then
         return
     end
+
+    local minItemNum = XDataCenter.AreaWarManager.GetUsingProbabilityItemsMinNum()
+    if minItemNum > 0 and minItemNum < self.Count then
+        local tips = XAreaWarConfigs.GetUseItemNumNoEnoughTips()
+        XUiManager.TipError(tips)
+        return
+    end
     
     local count = XDataCenter.ItemManager.GetCount(self.ConsumeId)
     local need = self.Count * self.ConsumeRatio

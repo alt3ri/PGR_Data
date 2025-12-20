@@ -253,7 +253,7 @@ function XGachaCanLiverAgency:OnNotifyGachaCanLiverData(data)
     if not XTool.IsTableEmpty(data) then
         --因为需要商店数据进行蓝点判定，当活动开启时就请求获取商店数据
         --仅当玩家商店权限开放和需要蓝点判定时才主动提前请求数据
-        if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon,false,true) then
+        if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon,true,true) then
             local shopIds = self._Model:GetCurActivityShopIds(true)
 
             if not XTool.IsTableEmpty(shopIds) then

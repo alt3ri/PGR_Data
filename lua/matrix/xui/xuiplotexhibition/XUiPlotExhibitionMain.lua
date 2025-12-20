@@ -22,6 +22,8 @@ function XUiPlotExhibitionMain:OnAwake()
     self.DynamicTableFilter = XUiHelper.DynamicTableNormalWithDelegate(self, self.ListPower, XUiPlotExhibitionMainFilterGrid, {
         OnDynamicTableEvent = function(table, event, index, grid)
             if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
+                -- 在update之前, 重置grid的透明度和坐标
+                self:ResetGridState(grid)
                 grid:Update(self.DynamicTableFilter:GetData(index))
             elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
                 --self._Control:OpenUiDetail(self.DynamicTableNormal:GetData(index))
@@ -139,6 +141,20 @@ function XUiPlotExhibitionMain:OnClickClearFilter()
     self:UpdateFilter()
 end
 
+-- 重置单个grid的透明度和坐标
+---@param grid XUiNode
+function XUiPlotExhibitionMain:ResetGridState(grid)
+    local zero = Vector3.zero
+    local canvasGroup = XUiHelper.TryGetComponent(grid.Transform, "Root", "CanvasGroup")
+    if canvasGroup then
+        canvasGroup.alpha = 1
+    end
+    local root = XUiHelper.TryGetComponent(grid.Transform, "Root", "RectTransform")
+    if root then
+        root.localPosition = zero
+    end
+end
+
 function XUiPlotExhibitionMain:StopAnimationAndResetState()
     for timer, _ in pairs(self._TempTimers) do
         XScheduleManager.UnSchedule(timer)
@@ -146,18 +162,10 @@ function XUiPlotExhibitionMain:StopAnimationAndResetState()
     end
     -- 终止所有的动画，但是要保证canvas.alpha正常
     -- 不止要还原alpha，还要还原root的坐标
-    local zero = Vector3.zero
     ---@type XUiPlotExhibitionMainGrid[]
     local grids = self.DynamicTableNormal:GetGrids()
     for _, grid in pairs(grids) do
-        local canvasGroup = XUiHelper.TryGetComponent(grid.Transform, "Root", "CanvasGroup")
-        if canvasGroup then
-            canvasGroup.alpha = 1
-        end
-        local root = XUiHelper.TryGetComponent(grid.Transform, "Root", "RectTransform")
-        if root then
-            root.localPosition = zero
-        end
+        self:ResetGridState(grid)
     end
 end
 

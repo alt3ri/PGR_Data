@@ -1180,6 +1180,20 @@ function XFubenBossSingleAgency:GetCharacterListInRecord(stageId)
     return
 end
 
+--- 获取有效的角色ID列表（过滤掉0值并排序）
+---@param ids number[] 角色ID数组
+---@return number[] 排序后的有效角色ID数组
+function XFubenBossSingleAgency:GetValidCharacterIds(ids)
+    local validIds = {}
+    for _, id in ipairs(ids) do
+        if id and id > 0 then
+            table.insert(validIds, id)
+        end
+    end
+    table.sort(validIds)
+    return validIds
+end
+
 function XFubenBossSingleAgency:CheckTeamDifferentWithRecord(stageId, team)
     if not self._Model:IsResetOpen() then
         return false
@@ -1197,17 +1211,24 @@ function XFubenBossSingleAgency:CheckTeamDifferentWithRecord(stageId, team)
     if not characterIdsInRecord or #characterIdsInRecord == 0 then
         return false
     end
-    -- 对比entityIds和characterIdsInRecord内容是否完全一致
-    local isChange = false
-    for i = 1, 3 do
-        local entityId = entityIds[i] or 0
-        local characterId = characterIdsInRecord[i] or 0
-        if entityId ~= characterId then
-            isChange = true
-            break
+    
+    -- 位置无关的比较：过滤掉0值，排序后比较集合是否相同
+    local currentIds = self:GetValidCharacterIds(entityIds)
+    local recordIds = self:GetValidCharacterIds(characterIdsInRecord)
+    
+    -- 比较两个数组的长度
+    if #currentIds ~= #recordIds then
+        return true
+    end
+    
+    -- 逐个比较排序后的ID
+    for i = 1, #currentIds do
+        if currentIds[i] ~= recordIds[i] then
+            return true
         end
     end
-    return isChange
+    
+    return false
 end
 
 function XFubenBossSingleAgency:IsCharacterHasRecord(stageId, characterId)

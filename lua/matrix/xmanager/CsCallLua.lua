@@ -487,11 +487,12 @@ function Theatre5.TestCalNpcAttribsAndBackXAutoChessData(xautoChessData)
     local autoChessData = {}
     
     autoChessData.CharacterId = xautoChessData.CharacterId
+    autoChessData.CharacterLevel = xautoChessData.CharacterLevel
     autoChessData.Attribs = {}
     autoChessData.RuneEvolves = {}
     autoChessData.Skills = {}
     autoChessData.Relics = {}
-
+    
     for i = 0, xautoChessData.RuneEvolves.Count - 1 do
         local runeEvolve = xautoChessData.RuneEvolves[i]
         autoChessData.RuneEvolves[i + 1] = {
