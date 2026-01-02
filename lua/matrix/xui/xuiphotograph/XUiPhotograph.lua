@@ -32,6 +32,8 @@ function XUiPhotograph:OnAwake()
     ---@type XUiPanelCharacterCG
     self.CG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
     self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK)
+    ---@type XUiPanelSwitchableSceneAnim
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
     self.PanelAutoLayout = self.PanelName:GetComponent("XAutoLayoutGroup")
     self.TxtRank = self.TxtLevel.transform.parent:Find("TxtLv"):GetComponent("Text")
     self.ImgGlory = self.TxtLevel.transform.parent:Find("Icon")
@@ -41,6 +43,9 @@ function XUiPhotograph:OnAwake()
     signBoardPlayer:SetPlayerData(playerData)
     ---@type XSignBoardPlayer
     self.SignBoardPlayer = signBoardPlayer
+    ---@type XUiPanelPhotographSceneChange
+    self._SceneChange = require("XUi/XUiPhotograph/XUiPanelPhotographSceneChange").New(self.PanelSceneChange, self)
+    self._SceneChange:SetUpdateBatteryMode(handler(self, self.UpdateBatteryMode))
 end
 
 function XUiPhotograph:OnStart()
@@ -89,6 +94,7 @@ function XUiPhotograph:OnEnable()
     XEventManager.DispatchEvent(XEventId.EVENT_PHOTO_ENTER)
     self:UpdateView()
     XMVCA.XFavorability:AddRoleActionUiAnimListener(self)
+    self._SceneChange:UpdateSceneChangeBtn()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
@@ -162,6 +168,7 @@ function XUiPhotograph:OnDisable()
         XUiHelper.StopClockTimeTempFun(self, self.ClockTimer)
         self.ClockTimer = nil
     end
+    self.SwitchableScene:Stop()
 end
 
 function XUiPhotograph:OnDestroy()
@@ -255,6 +262,7 @@ function XUiPhotograph:ChangeScene(sceneId)
     local scenePath, modelPath = XSceneModelConfigs.GetSceneAndModelPathById(sceneTemplate.SceneModelId)
     self:LoadUiScene(scenePath, modelPath, self.OnUiSceneLoadedCB, false)
     self.CurrSeleSceneId = sceneId
+    self._SceneChange:UpdateSceneChangeBtn()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
@@ -300,6 +308,7 @@ function XUiPhotograph:OnUiSceneLoaded()
     self:UpdatePartner(self.PartnerTemplateId)
     self:UpdateCamera()
     self:UpdateBatteryMode()
+    self.SwitchableScene:Play(XDataCenter.PhotographManager.GetCurSelectSceneId(), self.UiSceneInfo.Transform)
 end
 
 function XUiPhotograph:InitSceneRoot()
@@ -673,9 +682,9 @@ function XUiPhotograph:OnPortraitChanged(charId, fashionId, oldCharId)
 end
 
 function XUiPhotograph:UpdateBatteryMode() -- editor模式下 BatteryComponent.BatteryLevel 默认值为-1
-    if XQualityManager.IsSimulator and not BatteryComponent.DebugMode then
-        return
-    end
+    --if XQualityManager.IsSimulator and not BatteryComponent.DebugMode then
+    --    return
+    --end
 
     local animationRoot = self.UiSceneInfo.Transform:Find("Animations")
     if XTool.UObjIsNil(animationRoot) then return end
@@ -702,33 +711,17 @@ function XUiPhotograph:UpdateBatteryMode() -- editor模式下 BatteryComponent.B
         end
     end
     
-    local type = XPhotographConfigs.GetBackgroundTypeById(curSelectSceneId)
-    if type == XPhotographConfigs.BackGroundType.PowerSaved then
-        if BatteryComponent.IsCharging then --充电状态
-            if chargeAnimator then chargeAnimator:Play("Full") end
-            fullTimeLine.gameObject:SetActiveEx(true)
-        else
-            if BatteryComponent.BatteryLevel > LowPowerValue then -- 比较电量
-                if chargeAnimator then chargeAnimator:Play("Full") end
-                fullTimeLine.gameObject:SetActiveEx(true)
-            else
-                if chargeAnimator then chargeAnimator:Play("Low") end
-                chargeTimeLine.gameObject:SetActiveEx(true)
-            end
+    XMVCA.XSwitchableScene:PlaySceneAnim(curSelectSceneId, function()
+        if chargeAnimator then
+            chargeAnimator:Play("Full")
         end
-    else
-        -- v1.29 场景预览 时间模式判断
-        local startTime = XTime.ParseToTimestamp(DateStartTime)
-        local endTime = XTime.ParseToTimestamp(DateEndTime)
-        local nowTime = XTime.ParseToTimestamp(CS.System.DateTime.Now:ToLocalTime():ToString())
-        if startTime > nowTime and nowTime > endTime then   -- 比较时间
-            if chargeAnimator then chargeAnimator:Play("Full") end
-            fullTimeLine.gameObject:SetActiveEx(true)
-        else
-            if chargeAnimator then chargeAnimator:Play("Low") end
-            chargeTimeLine.gameObject:SetActiveEx(true)
+        fullTimeLine.gameObject:SetActiveEx(true)
+    end, function()
+        if chargeAnimator then
+            chargeAnimator:Play("Low")
         end
-    end
+        chargeTimeLine.gameObject:SetActiveEx(true)
+    end)
 end
 
 -- v1.32 播放角色特殊动作Ui动画

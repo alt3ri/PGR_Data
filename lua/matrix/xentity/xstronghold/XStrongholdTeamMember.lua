@@ -113,14 +113,14 @@ function XStrongholdTeamMember:GetCharacterType()
 end
 
 --上阵
-function XStrongholdTeamMember:SetInTeam(characterId, playerId)
+function XStrongholdTeamMember:SetInTeam(characterId, playerId, isNeedDispatch)
     if XRobotManager.CheckIsRobotId(characterId) then
         self:SetRobotId(characterId)
     else
         self:SetCharacterId(characterId, playerId)
     end
 
-    if XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(characterId) then
+    if isNeedDispatch and XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(characterId) then
         XEventManager.DispatchEvent(XEventId.EVENT_TEAM_MEMBER_MANUAL_CHANGE_MEMBER, self)
     end
 end

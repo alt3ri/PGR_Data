@@ -21,6 +21,8 @@ function XUiBigWorldProcessCourse:OnStart()
     self._DynamicTable = XUiHelper.DynamicTableNormal(self, self.ListTask, XUiBigWorldProcessCourseTask)
     ---@type XUiBigWorldProcessCourseReward[]
     self._ProgressGrids = {}
+    ---@type UnityEngine.UI.ScrollRect
+    self.ListScrollRect = self.ListScrollRect or self.ListReward:GetComponentInParent(typeof(CS.UnityEngine.UI.ScrollRect), true)
 
     self:_InitUi()
     self:_RegisterButtonClicks()
@@ -210,6 +212,12 @@ function XUiBigWorldProcessCourse:_RefreshProgressReward(progressEntitys)
     end
     for i = count + 1, table.nums(self._ProgressGrids) do
         self._ProgressGrids[i]:Close()
+    end
+end
+
+function XUiBigWorldProcessCourse:OnVersionChanged()
+    if self.ListScrollRect then
+        self.ListScrollRect.horizontalNormalizedPosition = 0
     end
 end
 

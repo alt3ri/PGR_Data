@@ -16,6 +16,14 @@ end
 
 function XBWCourseVersionEntity:IsValid()
     if not self:IsNil() then
+        local condition = self:GetConditionId()
+
+        if XTool.IsNumberValid(condition) then
+            if not XMVCA.XBigWorldService:CheckCondition(condition) then
+                return false
+            end
+        end
+
         return XMVCA.XBigWorldService:CheckInTimeByTimeId(self:GetTimeId(), true)
     end
 
@@ -42,6 +50,14 @@ end
 function XBWCourseVersionEntity:GetTimeId()
     if not self:IsNil() then
         return self._Model:GetBigWorldCourseVersionTimeIdByVersionId(self:GetVersionId())
+    end
+
+    return 0
+end
+
+function XBWCourseVersionEntity:GetConditionId()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldCourseVersionConditionIdByVersionId(self:GetVersionId())
     end
 
     return 0

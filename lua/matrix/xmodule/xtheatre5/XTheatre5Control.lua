@@ -17,6 +17,8 @@ function XTheatre5Control:OnInit()
     self.FlowControl = self:AddSubControl(require('XModule/XTheatre5/XTheatre5FlowController'))
     ---@type XTheatre5GameEntityControl
     self.GameEntityControl = self:AddSubControl(require('XModule/XTheatre5/Common/XTheatre5GameEntityControl'))
+    ---@type XTheatre5MissionControl
+    self.MissionControl = self:AddSubControl(require('XModule/XTheatre5/Common/XTheatre5MissionControl'))
 
     self._EnterFightHandler = handler(self, self.OnFightEnterEvent)
     self._ExitFightHandler = handler(self, self.OnFightExitEvent)
@@ -340,6 +342,7 @@ end
 
 --region 道具物品相关
 
+---@return XTableTheatre5Item
 function XTheatre5Control:GetTheatre5ItemCfgById(id, notips)
     return self._Model:GetTheatre5ItemCfgById(id, notips)
 end
@@ -467,14 +470,25 @@ function XTheatre5Control:GetClientConfigPVPTimeLabel()
     return self._Model:GetTheatre5ClientConfigText('PVPTimeLabel')
 end
 
+--- 界面内玩法入口未开启时的时间文本格式
+function XTheatre5Control:GetClientConfigPVPNotStartTips(isEnd)
+    return self._Model:GetTheatre5ClientConfigText('PVPNotStartTips', isEnd and 2 or 1)
+end
+
+--- 活动主界面打脸弹窗活动开启
+function XTheatre5Control:GetClientConfigPVPReasonTips(index)
+    return self._Model:GetTheatre5ClientConfigText('PVPReasonTips', index)
+end
+
+
 --- 奖励、商店界面的时间文本格式
 function XTheatre5Control:GetClientConfigRewardTimeLabel()
     return self._Model:GetTheatre5ClientConfigText('RewardTimeLabel')
 end
 
 --- PVP玩法不在时间内时的提示
-function XTheatre5Control:GetClientConfigPVPNotOpenTips()
-    return self._Model:GetTheatre5ClientConfigText('PVPNotOpenTips')
+function XTheatre5Control:GetClientConfigPVPNotOpenTips(willStart)
+    return self._Model:GetTheatre5ClientConfigText('PVPNotOpenTips', willStart and 2 or 1)
 end
 
 --任务商店剩余时间
@@ -761,6 +775,48 @@ function XTheatre5Control:GetDataHandBook(itemType)
                 end
             end
         end
+        return { tabOnlyOne }
+    end
+    if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Mission then
+        ---@type XUiTheatre5SkillHandbookTabGridData
+        local tabOnlyOne = {
+            TagName = "",
+            Id = 0,
+            Items = {},
+            Order = 0,
+            HideTagName = true,
+        }
+        
+        local missionCfgs = self._Model:GetTheatre5MissionCfgs()
+
+        if missionCfgs then
+            for id, v in pairs(missionCfgs) do
+                -- 获取一级道具配置
+                local itemCfg = self.MissionControl:GetItemCfgByMissionBountyId(v.Bounty, 1)
+                
+                ---@type XUiTheatre5SkillHandbookItemGridData
+                local data = {
+                    Id = itemCfg.Id,
+                    ItemId = itemCfg.Id,
+                    Order = itemCfg.Order,
+                    Name = v.Name,
+                    Quality = 0,
+                    Icon = self.MissionControl:GetMissionRewardIcon(v.Bounty),
+                    Desc = self.MissionControl:GetMissionRewardDesc(v.Bounty),
+                    Tags = itemCfg.Tags,
+                    Bounty = v.Bounty,
+                    IsUnlock = self.MissionControl:CheckMissionBountyIsGot(v.Bounty),
+                }
+                
+                table.insert(tabOnlyOne.Items, data)
+            end
+        end
+        
+        -- 排序
+        table.sort(tabOnlyOne.Items, function(a, b)
+            return a.Order < b.Order
+        end)
+        
         return { tabOnlyOne }
     end
     XLog.Error("[XTheatre5Control] unimplemented item type")

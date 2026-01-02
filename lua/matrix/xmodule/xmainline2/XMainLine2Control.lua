@@ -61,6 +61,11 @@ function XMainLine2Control:GetMainHideChapterOption(mainId)
     return self._Model:GetMainHideChapterOption(mainId)
 end
 
+-- 获取主章节任务组Id
+function XMainLine2Control:GetMainTaskGroupId(mainId)
+    return self._Model:GetMainTaskGroupId(mainId)
+end
+
 -- 获取章节配置表
 function XMainLine2Control:GetConfigChapter(chapterId)
     return self._Model:GetConfigChapter(chapterId)
@@ -292,19 +297,7 @@ end
 --- 获取关卡的通关进度
 ---@param stageId number 关卡Id
 function XMainLine2Control:GetStageProgress(stageId)
-    local conditions = self._Model:GetStageProgressConditions(stageId)
-    if #conditions > 0 then
-        local reachCnt = 0
-        for _, condition in ipairs(conditions) do
-            local isReach, desc = XConditionManager.CheckCondition(condition)
-            if isReach then
-                reachCnt = reachCnt + 1
-            end
-        end
-        return reachCnt, #conditions
-    end
-
-    return 0, 0
+    return self._Model:GetStageProgress(stageId)
 end
 
 --- 获取关卡成就完成情况

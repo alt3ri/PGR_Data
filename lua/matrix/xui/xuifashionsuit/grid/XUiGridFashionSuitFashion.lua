@@ -93,10 +93,10 @@ function XUiGridFashionSuitFashion:OpenDetail()
         end
     end
     if XTool.IsTableEmpty(hasOpenShopIds) then
-        XLuaUiManager.Open("UiFashionSuitDetail", self._SuitId, self._Id)
+        XMVCA.XShop:OpenFashionDetailUi(self._Id,nil,{suitId = self._SuitId})
     else
         XShopManager.GetShopInfoList(hasOpenShopIds, function()
-            XLuaUiManager.Open("UiFashionSuitDetail", self._SuitId, self._Id)
+            XMVCA.XShop:OpenFashionDetailUi(self._Id,nil,{suitId = self._SuitId})
         end, XShopManager.ActivityShopType.FashionShop)
     end
 end

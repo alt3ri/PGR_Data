@@ -47,30 +47,10 @@ function XUiDlcRelinkPopupCharacterAttributeDetail:OnDynamicTableEvent(event, in
     end
 end
 
--- 获取玩家等级
-function XUiDlcRelinkPopupCharacterAttributeDetail:GetPlayerLevel()
-    if self.IsNotSelf then
-        return self._Control.OtherMemberControl:GetPlayerLevel()
-    else
-        return self._Control:GetCurrentPlayerLevel()
-    end
-end
-
--- 获取装备Uid列表
-function XUiDlcRelinkPopupCharacterAttributeDetail:GetEquipUids()
-    if self.IsNotSelf then
-        return self._Control.OtherMemberControl:GetWearEquipUids()
-    else
-        return self._Control:GetWearEquipUidsByCharacterId(self.CharacterId)
-    end
-end
-
 -- 获取属性集合 (包含角色基础属性、玩家等级属性、装备属性)
 ---@return { AttrStr: string, CurValue:number, EquipValue:number }[]
 function XUiDlcRelinkPopupCharacterAttributeDetail:GetAttributeDataList()
-    local curPlayerLevel = self:GetPlayerLevel()
-    local equipUids = self:GetEquipUids()
-    local totalAttributes = self._Control:GetTotalAttributes(self.CharacterId, curPlayerLevel, equipUids, self.IsNotSelf)
+    local totalAttributes = self._Control:GetCharacterAttributeList(self.CharacterId, self.IsNotSelf)
 
     local attributeDataList = {}
     for index, attribute in ipairs(totalAttributes) do
@@ -84,8 +64,8 @@ function XUiDlcRelinkPopupCharacterAttributeDetail:GetAttributeDataList()
 end
 
 function XUiDlcRelinkPopupCharacterAttributeDetail:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnTanchuangClose, self.OnBtnCloseClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkPopupCharacterAttributeDetail:OnBtnCloseClick()

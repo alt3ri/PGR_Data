@@ -159,12 +159,12 @@ XAreaWarManagerCreator = function()
     local _LastTimeReqActivityData = 0
     function XAreaWarManager.EnterUiMain(beforeOpenUiCb)
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.AreaWar) then
-            return
+            return false
         end
 
         if not XAreaWarManager.IsOpen() then
             XUiManager.TipText("AreaWarActivityNotOpen")
-            return
+            return false
         end
 
         --主动gc一次
@@ -192,6 +192,7 @@ XAreaWarManagerCreator = function()
             requestCount = 1
             XAreaWarManager.RequestEnter(onResponse)
         end
+        return true
     end
 
     function XAreaWarManager.DoEnterUiMain(beforeOpenUiCb)
@@ -1960,7 +1961,7 @@ XAreaWarManagerCreator = function()
 
     --请求派遣(robotIds为上阵特攻角色对应的robotId，characterIds为上阵的自己拥有成员的characterId)
     function XAreaWarManager.AreaWarDetachRequest(blockId, characterIds, robotIds, multiple, cb)
-        local req = {BlockId = blockId, CardIds = characterIds, RobotIds = robotIds, Multiple = multiple,ChooseItemIds = XAreaWarManager.GetUsingProbabilityItems()}
+        local req = {BlockId = blockId, CardIds = characterIds, RobotIds = robotIds, Multiple = multiple,ChooseItemIds =XAreaWarManager.GetUsingProbabilityItems()}
         XNetwork.Call(
                 "AreaWarDetachRequest",
                 req,

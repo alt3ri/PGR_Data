@@ -52,6 +52,7 @@ function XBigWorldGamePlayModel:OnInit()
 
     self._EntranceRedDict = {}
     self._OpenGuideIdDict = {}
+    self._EntranceWorldMark = false --进入过的WorldId记录
     self._ConfigUtil:InitConfigByTableKey("BigWorld/Common/Activity", TableKey)
     self._ConfigUtil:InitConfigByTableKey("BigWorld/Common", ModuleKey)
     
@@ -210,6 +211,22 @@ function XBigWorldGamePlayModel:UpdateEntranceRedPoint(data)
     self._EntranceRedDict = data.RedPoints
 end
 
+function XBigWorldGamePlayModel:UpdateEntranceWorldMark(worldIds)
+    self._EntranceWorldMark = {}
+    if not XTool.IsTableEmpty(worldIds) then
+        for _, worldId in pairs(worldIds) do
+            self._EntranceWorldMark[worldId] = true
+        end
+    end
+end
+
+function XBigWorldGamePlayModel:AddEntranceWorldMark(worldId)
+    if not self._EntranceWorldMark then
+        self._EntranceWorldMark = {}
+    end
+    self._EntranceWorldMark[worldId] = true
+end
+
 --- 检查空花入口红点
 ---@return boolean
 function XBigWorldGamePlayModel:CheckSkyGardenEntranceRedPoint()
@@ -224,10 +241,15 @@ function XBigWorldGamePlayModel:IsSkyGardenEntryRedPoint()
     if not data then
         return true
     end
+    
+    if XMVCA.XFunction:CheckEntryRedPoint(XFunctionManager.FunctionName.SkyGarden) then
+        return true
+    end
     return false
 end
 
 function XBigWorldGamePlayModel:MarkSkyGardenEntryRedPoint()
+    XMVCA.XFunction:MarkEntryRedPoint(XFunctionManager.FunctionName.SkyGarden)
     self._SaveUtil:SaveDataByBlockKey(LocalUtilBlockKey[SystemModuleId.XSkyGarden], "SkyGardenEntryRedPoint", true)
 end
 
@@ -237,6 +259,16 @@ end
 
 function XBigWorldGamePlayModel:GetSkyGardenOpenGuideIdList()
     return self:GetOpenGuideIdList(SystemModuleId.XSkyGarden)
+end
+
+function XBigWorldGamePlayModel:CheckEntryWorld(worldId)
+    if not worldId or worldId <= 0 then
+        return false
+    end
+    if not self._EntranceWorldMark then
+        return false
+    end
+    return self._EntranceWorldMark[worldId] ~= nil
 end
 
 --endregion

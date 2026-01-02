@@ -78,6 +78,9 @@ local Theatre5EventIds = {
     
     --- 检查和修复拖拽物品的状态
     EVENT_THEATRE5_CHECK_AND_FIX_DRAGGING_STATE = 'EVENT_THEATRE5_CHECK_AND_FIX_DRAGGING_STATE',
+    
+    --- 刷新当前任务
+    EVENT_THEATRE5_REFRESH_CUR_MISSION = 'EVENT_THEATRE5_REFRESH_CUR_MISSION',
     --endregion
 
     --region PVE

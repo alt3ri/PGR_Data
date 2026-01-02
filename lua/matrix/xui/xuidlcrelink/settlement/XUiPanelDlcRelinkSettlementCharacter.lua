@@ -6,19 +6,21 @@ local XUiPanelDlcRelinkSettlementCharacter = XClass(XUiNode, "XUiPanelDlcRelinkS
 
 function XUiPanelDlcRelinkSettlementCharacter:OnStart()
     self.GridCharacter.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnNext, self.OnBtnNextClick, true, true)
+    self.BtnNext:AddEventListener(handler(self, self.OnBtnNextClick))
 
     ---@type XUiGridDlcRelinkSettlementCharacter[]
     self.CharacterGridList = {}
 end
 
 ---@param playerSettleResults XDlcRelinkPlayerSettleResult[]
-function XUiPanelDlcRelinkSettlementCharacter:Refresh(playerSettleResults)
+---@param customData table<number, table<number, number>>
+function XUiPanelDlcRelinkSettlementCharacter:Refresh(playerSettleResults, customData)
     if XTool.IsTableEmpty(playerSettleResults) then
         return
     end
     self.PlayerSettleResults = playerSettleResults
-
+    self.CustomData = customData
+    
     local maxSource = 0
     local maxSourceIndex = 0
     local newPlayerSettleResults = self:PreprocessPlayerSettleResults(playerSettleResults, XPlayer.Id)
@@ -34,12 +36,17 @@ function XUiPanelDlcRelinkSettlementCharacter:Refresh(playerSettleResults)
             grid = XUiGridDlcRelinkSettlementCharacter.New(go, self)
             self.CharacterGridList[index] = grid
         end
+        
+        local customData = not XTool.IsTableEmpty(self.CustomData) and self.CustomData[playerSettleResult.PlayerId] or nil
+        local fixedScore = self._Control:GetFixedScore(customData)
+
         grid:Open()
-        grid:Refresh(playerSettleResult)
+        grid:Refresh(playerSettleResult, customData, fixedScore)
         grid:SetTagBest(false)
 
-        if playerSettleResult.Score > maxSource then
-            maxSource = playerSettleResult.Score
+        
+        if fixedScore > maxSource then
+            maxSource = fixedScore
             maxSourceIndex = index
         end
     end

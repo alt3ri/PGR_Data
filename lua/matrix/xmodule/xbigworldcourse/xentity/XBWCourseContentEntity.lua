@@ -190,6 +190,14 @@ function XBWCourseContentEntity:GetTaskRewardIconNoneColor()
     return ""
 end
 
+function XBWCourseContentEntity:GetBigWorldCourseContentBannerBg()
+    if not self:IsNil() then
+        return self._OwnControl:GetBigWorldCourseContentBannerBg(self:GetContentId())
+    end
+
+    return ""
+end
+
 ---@return XBWCourseExploreEntity[]
 function XBWCourseContentEntity:GetExploreEntitys()
     return self._ExploreEntitys or {}

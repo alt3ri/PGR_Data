@@ -918,6 +918,16 @@ XFunctionalSkipManagerCreator = function()
         end
         XDataCenter.GachaManager.GetGachaRewardInfoRequest(gachaId, function()
             local gachaRule = XGachaConfigs.GetGachaRuleCfgById(gachaId)
+            --v4.2 剧情和主界面拆开 不再是父子界面关系
+            local isNewInteraction = not string.IsNilOrEmpty(gachaRule.StageLineUiName)
+            if isNewInteraction then
+                if isOpenStageLine then
+                    XLuaUiManager.Open(gachaRule.StageLineUiName, gachaId)
+                else
+                    XLuaUiManager.Open(gachaRule.UiName, gachaId)
+                end
+                return
+            end
             XLuaUiManager.Open(gachaRule.UiName, gachaId, isOpenStageLine)
         end)
     end
@@ -1417,7 +1427,7 @@ XFunctionalSkipManagerCreator = function()
 
     --跳转到全服决战
     function XFunctionalSkipManager.SkipToAreaWar()
-        XDataCenter.AreaWarManager.EnterUiMain()
+        return XDataCenter.AreaWarManager.EnterUiMain()
     end
 
     --跳转到周年意识营救战
@@ -2321,6 +2331,11 @@ XFunctionalSkipManagerCreator = function()
         return agency:ExOnSkip()
     end
 
+    -- 肉鸽5
+    function XFunctionalSkipManager:SkipToTheatre5(skipData)
+        return XMVCA.XTheatre5:ExOnSkip(skipData)
+    end
+
     --跳转日志上传
     function XFunctionalSkipManager.SkipToLogUpload()
         XMVCA.XLogUpload:OpenLogUploadUi()
@@ -2342,8 +2357,17 @@ XFunctionalSkipManagerCreator = function()
     end
     
     -- 进入空花
-    function XFunctionalSkipManager.SkipToBigWorld()
-        XMVCA.XBigWorldGamePlay:EnterGame()
+    function XFunctionalSkipManager.SkipToBigWorld(list)
+        local params = list.CustomParams
+        local worldId, levelId = 0, 0
+        local enterOperateType, enterOperateParam
+        if not XTool.IsTableEmpty(params) then
+            worldId = params[1]
+            levelId = params[2]
+            enterOperateType = params[3]
+            enterOperateParam = params[4]
+        end
+        XMVCA.XBigWorldGamePlay:EnterGame(worldId, levelId, enterOperateType, enterOperateParam)
     end
     
     -- 数织小游戏
@@ -2549,6 +2573,14 @@ XFunctionalSkipManagerCreator = function()
     end
 
     -- endregion
-
+    function XFunctionalSkipManager.OpenUiPaintingExperiencePass(list)
+        local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
+        if not XFunctionManager.CheckInTimeByTimeId(list.TimeId, true) then
+            XUiManager.TipText("FunctionNotOpen")
+            return 
+        end
+        XLuaUiManager.Open("UiPaintingExperiencePassV4P2", param1)
+    end
+    
     return XFunctionalSkipManager
 end

@@ -80,7 +80,7 @@ function XDlcMultiplayerAgency:GetDlcMultiplayerTitleGroupConfigById(id)
     return self._Model:GetDlcMultiplayerTitleGroupConfigById(id)
 end
 
----@return XTableDlcMultiplayerConfig
+---@return XTableDlcMultiplayerClientConfig
 function XDlcMultiplayerAgency:GetDlcMultiplayerConfigConfigByKey(key)
     return self._Model:GetDlcMultiplayerConfigConfigByKey(key)
 end

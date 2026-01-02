@@ -15,8 +15,7 @@ end
 
 function XUiGridBWSettleTarget:Update(objectiveId, index)
     local objTxt = XMVCA.XBigWorldQuest:GetObjectiveTitle(objectiveId)
-    local max = (not XMVCA.XBigWorldQuest:IsBoolObjective(objectiveId)) 
-            and XMVCA.XBigWorldQuest:GetObjectiveMaxProgress(objectiveId) or ""
+    local max = XMVCA.XBigWorldQuest:GetObjectiveMaxProgress(objectiveId)
     self.ComponentGroup:SetTextWithGroup(0, objTxt)
     self.ComponentGroup:SetTextWithGroup(1, max)
     
@@ -59,6 +58,7 @@ function XUiBigWorldSettlement:OnStart(settleData)
     self._Score = settleData.Score
     self._PlayTime = settleData.PlayTime
     self._IsWin = settleData.IsWin
+    self._ShowScore = settleData.ShowScore
     
     self:InitView()
 end
@@ -101,7 +101,8 @@ function XUiBigWorldSettlement:DoSettleWin()
     --播放完之后显示结算界面
     self.PanelSettleSuccessful.gameObject:SetActiveEx(true)
     self.PanelSettleFail.gameObject:SetActiveEx(false)
-    self:PlayAnimationWithMask("SuccessfulEnable", function() 
+    self.PanelScoreSuccessful.gameObject:SetActiveEx(self._ShowScore)
+    self:PlayAnimationWithMask("SuccessfulEnable", function()
         self:PlayScoreAnimation(self.TxtSuccessScore)
         XTool.UpdateDynamicItem(self._GridsObj, self._ObjectiveIds, self.GridTarget, XUiGridBWSettleTarget, self)
         self:PlaySeqAnimation()
@@ -112,6 +113,7 @@ end
 function XUiBigWorldSettlement:DoSettleLose()
     self.PanelSettleSuccessful.gameObject:SetActiveEx(false)
     self.PanelSettleFail.gameObject:SetActiveEx(true)
+    self.PanelScoreFail.gameObject:SetActiveEx(self._ShowScore)
     --倒计时
     local Cd = 30
     self.TxtCoolDown.text = Cd
@@ -153,6 +155,10 @@ function XUiBigWorldSettlement:OnBtnReStartClick()
 end
 
 function XUiBigWorldSettlement:PlayScoreAnimation(text)
+    if not self._ShowScore then
+        return
+    end
+
     local score = self._Score
     self:Tween(0.5, function(dt)
         text.text = math.floor(score * dt)

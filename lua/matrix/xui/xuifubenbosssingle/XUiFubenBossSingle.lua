@@ -1,4 +1,4 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 ---@class XUiFubenBossSingle : XLuaUi
 ---@field _Control XFubenBossSingleControl
 local XUiFubenBossSingle = XLuaUiManager.Register(XLuaUi, "UiFubenBossSingle")
@@ -35,6 +35,11 @@ function XUiFubenBossSingle:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_REFRESH_STAGE_DATA, self.OnSyncBossData, self)
     XEventManager.AddEventListener(XEventId.EVENT_BOSS_SINGLE_GET_REWARD, self.OnRewardGet, self)
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self.OnActivityEnd, self)
+    
+    -- 检查是否需要播放终极区解锁动画
+    if self._Control:CheckNeedPlayExtremeUnlockAnimation() then
+        self:PlayExtremeUnlockAnimation()
+    end
 end
 
 function XUiFubenBossSingle:OnDisable()
@@ -103,6 +108,20 @@ end
 
 function XUiFubenBossSingle:OnBtnMainUiClick()
     XLuaUiManager.RunMain()
+end
+
+--- 播放终极区解锁动画
+function XUiFubenBossSingle:PlayExtremeUnlockAnimation()
+    -- TODO: 实现终极区解锁动画播放逻辑
+    -- 1. 播放解锁动画（需要确认动画名称和播放方式）
+    -- 2. 动画播放完成后可能需要执行一些回调
+    -- 示例：
+    -- if self.AnimationExtremeUnlock then
+    --     self.AnimationExtremeUnlock:Play(function()
+    --         -- 动画播放完成后的回调
+    --     end)
+    -- end
+    XLog.Debug("[XUiFubenBossSingle] 需要播放终极区解锁动画")
 end
 
 function XUiFubenBossSingle:GetBossSingleData()

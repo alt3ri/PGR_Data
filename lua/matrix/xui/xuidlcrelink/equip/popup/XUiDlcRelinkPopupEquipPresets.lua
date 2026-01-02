@@ -57,7 +57,7 @@ function XUiDlcRelinkPopupEquipPresets:OnDynamicTableEvent(event, index, grid)
 end
 
 function XUiDlcRelinkPopupEquipPresets:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkPopupEquipPresets:OnBtnCloseClick()

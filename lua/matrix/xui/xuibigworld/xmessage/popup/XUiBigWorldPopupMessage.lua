@@ -88,7 +88,6 @@ function XUiBigWorldPopupMessage:OnBtnCloseClick()
 end
 
 function XUiBigWorldPopupMessage:OnMessageFinish()
-    CS.XLog.Debug("[BigWorldMessage]: Play Message Content Receive Finish Event.\n" .. debug.traceback())
     self:_RefreshDynamicTable()
 end
 

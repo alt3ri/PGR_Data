@@ -4,7 +4,7 @@
         "Type": 8,
         "Duration": 5,
         "NpcId": null,
-        "Text": "Connecting two different-color tiles grants 2 points.",
+        "Text": "\u5f02\u8272\u7684\u5730\u5757\u76f8\u8fde\u65f6\uff0c\u5206\u6570\u589e\u52a02\u5206",
         "Params": "['101']"
     },
     {
@@ -12,7 +12,7 @@
         "Type": 8,
         "Duration": 5,
         "NpcId": null,
-        "Text": "Connecting two same-color tiles grants 2 points per tile connected.",
+        "Text": "\u540c\u8272\u5730\u5757\u7ec4\u5408\u5728\u4e00\u8d77\u65f6\uff0c\u6bcf\u6709\u4e00\u683c\u589e\u52a02\u5206",
         "Params": "['102']"
     },
     {
@@ -20,7 +20,7 @@
         "Type": 1,
         "Duration": 5,
         "NpcId": null,
-        "Text": "Hey! The road is blocked!",
+        "Text": "\u5582\uff0c\u8def\u90fd\u88ab\u5835\u6b7b\u4e86\uff01",
         "Params": null
     },
     {
@@ -28,7 +28,7 @@
         "Type": 2,
         "Duration": 5,
         "NpcId": null,
-        "Text": "No. There's no enough space.",
+        "Text": "\u4e0d\u884c\uff0c\u8fd9\u91cc\u7a7a\u95f4\u4e0d\u591f\u4e86",
         "Params": null
     },
     {
@@ -36,7 +36,7 @@
         "Type": 3,
         "Duration": 5,
         "NpcId": null,
-        "Text": "Nice. I like the creativity.",
+        "Text": "\u53ef\u4ee5\uff0c\u4e0d\u9519\u7684\u521b\u610f",
         "Params": "['10']"
     },
     {
@@ -44,7 +44,7 @@
         "Type": 4,
         "Duration": 5,
         "NpcId": null,
-        "Text": "Perfect planning. The celebration is gonna be amazing.",
+        "Text": "\u5b8c\u7f8e\u7684\u89c4\u5212\uff0c\u5e86\u5178\u4e00\u5b9a\u5f88\u7cbe\u5f69\u3002",
         "Params": "['3000']"
     },
     {
@@ -52,15 +52,15 @@
         "Type": 5,
         "Duration": 5,
         "NpcId": null,
-        "Text": "Wanna try place the performance stage?",
-        "Params": "['The Stage']"
+        "Text": "\u8981\u8bd5\u8bd5\u653e\u7f6e\u8868\u6f14\u821e\u53f0\u5417\uff1f",
+        "Params": "['\u821e\u53f0']"
     },
     {
         "Id": 8,
         "Type": 6,
         "Duration": 5,
         "NpcId": null,
-        "Text": "If the cross area around \"Incredible\" has a tile \u2265 10 points and it's on the travel route, you will gain 1000 points!",
+        "Text": "\u201c\u4e0d\u53ef\u601d\u8bae\u201d\u65c1\u5341\u5b57\u533a\u57df\u5b58\u5728\u226510\u5206\u683c\u5b50\uff0c\u4e14\u6e38\u89c8\u8def\u7ebf\u7ecf\u8fc7\u53ef\u52a01000\u5206\uff01",
         "Params": "['801', '901']"
     },
     {
@@ -68,7 +68,7 @@
         "Type": 7,
         "Duration": 5,
         "NpcId": 1001.0,
-        "Text": "Misono Food Stall... Interesting.",
+        "Text": "\u5fa1\u56ed\u6599\u7406\u644a\u2026\u2026\u6709\u70b9\u611f\u5174\u8da3",
         "Params": null
     },
     {
@@ -76,7 +76,7 @@
         "Type": 7,
         "Duration": 5,
         "NpcId": 1002.0,
-        "Text": "I heard Lucia is interested in the Claw Machine.",
+        "Text": "\u542c\u8bf4\u9732\u897f\u4e9a\u5bf9\u5a03\u5a03\u673a\u611f\u5174\u8da3",
         "Params": null
     },
     {
@@ -84,7 +84,7 @@
         "Type": 7,
         "Duration": 5,
         "NpcId": 1003.0,
-        "Text": "I heard Lee is interested in assembling four-wheel drives.",
+        "Text": "\u542c\u8bf4\u91cc\u5bf9\u56db\u9a71\u8f66\u62fc\u88c5\u611f\u5174\u8da3",
         "Params": null
     },
     {
@@ -92,7 +92,7 @@
         "Type": 7,
         "Duration": 5,
         "NpcId": 1004.0,
-        "Text": "I heard Selena is interested in the piano.",
+        "Text": "\u542c\u8bf4\u8d5b\u7433\u5a1c\u5bf9\u94a2\u7434\u611f\u5174\u8da3",
         "Params": null
     },
     {
@@ -100,7 +100,7 @@
         "Type": 7,
         "Duration": 5,
         "NpcId": 1005.0,
-        "Text": "I heard Liv is interested in the Flower Shop.",
+        "Text": "\u542c\u8bf4\u4e3d\u8299\u5bf9\u82b1\u5349\u5e97\u611f\u5174\u8da3",
         "Params": null
     },
     {
@@ -108,7 +108,7 @@
         "Type": 7,
         "Duration": 5,
         "NpcId": 1006.0,
-        "Text": "I heard Nanami is interested in the arcade game Norman Hero.",
+        "Text": "\u542c\u8bf4\u4e03\u5b9e\u5bf9\u8857\u673a\u8bfa\u66fc\u82f1\u96c4\u611f\u5174\u8da3",
         "Params": null
     },
     {
@@ -116,7 +116,7 @@
         "Type": 7,
         "Duration": 5,
         "NpcId": 1007.0,
-        "Text": "I heard Bianca is interested in the movie called The Seven Spearsmen.",
+        "Text": "\u542c\u8bf4\u6bd4\u5b89\u5361\u5bf9\u300a\u4e03\u672c\u67aa\u300b\u7535\u5f71\u611f\u5174\u8da3",
         "Params": null
     },
     {
@@ -124,7 +124,7 @@
         "Type": 7,
         "Duration": 5,
         "NpcId": 1008.0,
-        "Text": "I heard Wanshi is interested in balloon shooting.",
+        "Text": "\u542c\u8bf4\u4e07\u4e8b\u5bf9\u6c14\u7403\u5c04\u51fb\u611f\u5174\u8da3",
         "Params": null
     },
     {
@@ -132,7 +132,7 @@
         "Type": 7,
         "Duration": 5,
         "NpcId": 1009.0,
-        "Text": "I heard Chrome is interested in suits.",
+        "Text": "\u542c\u8bf4\u5e93\u6d1b\u59c6\u5bf9\u897f\u88c5\u611f\u5174\u8da3",
         "Params": null
     }
 ]

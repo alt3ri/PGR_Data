@@ -39,6 +39,11 @@ function XBigWorldMapModel:OnInit()
 
     self._MapScaleCache = 0
 
+    self._AIMemoryGroups = {}
+
+    --- 如果在小地图打开前获取，则用默认值
+    self._LittleMapRadius = 114
+
     self:_InitTableKey()
 end
 
@@ -69,6 +74,8 @@ function XBigWorldMapModel:ResetAll()
         GroupId = 0,
         AreaId = 0,
     }
+
+    self._AIMemoryGroups = {}
 end
 
 function XBigWorldMapModel:UpdateServerTrackMapPin(data)
@@ -77,6 +84,10 @@ function XBigWorldMapModel:UpdateServerTrackMapPin(data)
             [data.TrackPinId] = true,
         })
     end
+end
+
+function XBigWorldMapModel:UpdateLittleMapRadius(radius)
+    self._LittleMapRadius = radius
 end
 
 function XBigWorldMapModel:InitPinData(worldId, levelId)
@@ -223,6 +234,25 @@ function XBigWorldMapModel:AddQuestMapPin(data)
     return pinId
 end
 
+function XBigWorldMapModel:ChangeMapPinShowType(levelId, pinId, showType)
+    if not levelId or levelId <= 0 then
+        return
+    end
+    if not pinId or pinId <= 0 then
+        return
+    end
+    local pinDatas = self:GetPinDatasByLevelId(levelId)
+    if not pinDatas then
+        return
+    end
+    local pinData = pinDatas[pinId]
+    if not pinData then
+        XLog.Error("获取图钉数据失败! LevelId = " .. levelId .. ", PinId = " .. pinId)
+        return
+    end
+    pinData:SetDisplayType(showType)
+end
+
 function XBigWorldMapModel:RemoveQuestMapPin(data)
     local questPinDatas = self:GetQuestPinDatasByQuestId(data.QuestId, true)
 
@@ -343,7 +373,6 @@ function XBigWorldMapModel:CancelTrackQuestMapPins(questId)
     self._TrackTemplateQuestIds[questId] = nil
     if not XTool.IsTableEmpty(questPinDatas) then
         for _, pinData in pairs(questPinDatas) do
-            pinData:UpdateDisplay(false)
             self:TryCancelQuestTrackPins(pinData.LevelId, pinData.PinId)
         end
     end
@@ -355,8 +384,19 @@ function XBigWorldMapModel:DisplayMapPin(data)
     local pinData = self:GetPinDataByLevelIdAndPinId(levelId, mapPinId)
 
     if pinData then
+        local virtualPinDatas = self:GetVirtualPinDatasByReferId(mapPinId, true)
+
+        if not XTool.IsTableEmpty(virtualPinDatas) then
+            for _, virtualPinData in pairs(virtualPinDatas) do
+                if virtualPinData.LevelId == levelId then
+                    virtualPinData:UpdateDisplay(data.Visible)
+                end
+            end
+        end
+
         pinData:UpdateDisplay(data.Visible)
     end
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE)
 end
 
 function XBigWorldMapModel:TrackPins(levelId, pinIdMap, trackType)
@@ -439,6 +479,10 @@ end
 
 function XBigWorldMapModel:GetAllTrackPinsByLevelId(levelId)
     return self._CurrentAllTrackPins[levelId]
+end
+
+function XBigWorldMapModel:GetTrackLevelPins()
+    return self._CurrentTrackPins
 end
 
 function XBigWorldMapModel:GetTrackPinsByLevelIdAndType(levelId, trackType)
@@ -559,6 +603,29 @@ function XBigWorldMapModel:GetCoincidenceReferenceMapByPinId(levelId, pinId)
     return self._CoincidenceReferenceMap[levelId][pinId]
 end
 
+function XBigWorldMapModel:GetAIMemoryIdsByGroupId(groupId)
+    if not self._AIMemoryGroups[groupId] then
+        local memoryGroup = {}
+        local memoryConfigs = self:GetBigworldAIMemoryConfigs(groupId)
+
+        if not XTool.IsTableEmpty(memoryConfigs) then
+            for _, config in pairs(memoryConfigs) do
+                if config.GroupId == groupId then
+                    memoryGroup[config.Index] = config.Id
+                end
+            end
+        end
+
+        self._AIMemoryGroups[groupId] = memoryGroup
+    end
+
+    return self._AIMemoryGroups[groupId]
+end
+
+function XBigWorldMapModel:GetLittleMapRadius()
+    return self._LittleMapRadius
+end
+
 function XBigWorldMapModel:_GetGeneratePinIdByLevelId(levelId)
     local pinId = self._CurrentMapPinIdMap[levelId] or 0
 
@@ -669,7 +736,6 @@ function XBigWorldMapModel:_TrackQuestMapPins(questPinDatas)
 
             trackPinIdMap[pinData.LevelId] = trackPinIdMap[pinData.LevelId] or {}
             trackPinIdMap[pinData.LevelId][pinData.PinId] = true
-            pinData:UpdateDisplay(true)
         end
 
         for levelId, pinIdMap in pairs(trackPinIdMap) do

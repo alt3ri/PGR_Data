@@ -1,4 +1,4 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiGuildWarTeamAreaCharacterSelectAssistantGrid = require("XUi/XUiGuildWar/TeamAreaStageDeploy/ChildPanel/XUiGuildWarTeamAreaCharacterSelectAssistantGrid")
 local XUiExpeditionEquipGrid = require("XUi/XUiExpedition/RoleList/XUiExpeditionEquipGrid/XUiExpeditionEquipGrid")
 
@@ -164,12 +164,12 @@ function XUiGuildWarTeamAreaCharacterSelectAssistant:GetEntities(notFilter)
         local TeamIndexB, XMemberB = self._Build:GetMemberTeamIndex(EntityIdB) or false
 
         --判断是否特攻角色 特攻优先
-        local SpecialA = XDataCenter.GuildWarManager.CheckIsSpecialRole(EntityIdA)
-        local SpecialB = XDataCenter.GuildWarManager.CheckIsSpecialRole(EntityIdB)
+        local SpecialA = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(EntityIdA)
+        local SpecialB = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(EntityIdB)
         if SpecialA and SpecialB and EntityIdA ~= EntityIdB then
             --判断是否头牌特攻角色
-            local isCenterSpecialA = XDataCenter.GuildWarManager.CheckIsCenterSpecialRole(EntityIdA)
-            local isCenterSpecialB = XDataCenter.GuildWarManager.CheckIsCenterSpecialRole(EntityIdB)
+            local isCenterSpecialA = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsCenterSpecialRole(EntityIdA)
+            local isCenterSpecialB = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsCenterSpecialRole(EntityIdB)
             if isCenterSpecialA ~= isCenterSpecialB then
                 return isCenterSpecialA
             end

@@ -24,11 +24,35 @@ function XBigWorldSkipFunctionAgency:GetSkipConditionIdBySkipId(skipId)
     return self._Model:GetBigWorldSkipFunctionConditionIdById(skipId)
 end
 
+function XBigWorldSkipFunctionAgency:GetSkipFinishConditionIdBySkipId(skipId)
+    return self._Model:GetBigWorldSkipFunctionFinishConditionIdById(skipId)
+end
+
+function XBigWorldSkipFunctionAgency:GetSkipNameBySkipId(skipId)
+    return self._Model:GetBigWorldSkipFunctionNameById(skipId)
+end
+
+function XBigWorldSkipFunctionAgency:CheckUnlock(skipId)
+    local conditionId = self._Model:GetBigWorldSkipFunctionConditionIdById(skipId)
+    if not conditionId or conditionId <= 0 then
+        return true
+    end
+    return XMVCA.XBigWorldService:CheckCondition(conditionId)
+end
+
+function XBigWorldSkipFunctionAgency:CheckFinish(skipId)
+    local conditionId = self._Model:GetBigWorldSkipFunctionFinishConditionIdById(skipId)
+    if not conditionId or conditionId <= 0 then
+        return false
+    end
+    return XMVCA.XBigWorldService:CheckCondition(conditionId)
+end
+
 function XBigWorldSkipFunctionAgency:SkipTo(skipId, ...)
     if not XTool.IsNumberValid(skipId) then
         return false
     end
-
+    
     local skip = self._Model:GetSkipBySkipId(skipId)
 
     if skip then

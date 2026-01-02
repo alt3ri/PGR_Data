@@ -11,7 +11,7 @@ local MenuType = {
 
 local UI_NAMES = {
     MAIN = "UiMain",
-    DLC_RELINK_PREFIX = "UiDlcRelink",
+    DLC_RELINK = { "UiDlcRelinkMain", "UiDlcRelinkRoom" },
 }
 
 function XUiDlcRelinkPopupInvitation:OnAwake()
@@ -21,12 +21,10 @@ end
 ---@param inviteData XChatData 邀请数据
 function XUiDlcRelinkPopupInvitation:OnStart(inviteData)
     self.InviteData = inviteData
-    -- 自动关闭
-    self:SetAutoCloseInfo(self:GetAutoCloseTime(), Handler(self, self.AutoCloseHandler))
+    self.IsStartTimer = false
 end
 
 function XUiDlcRelinkPopupInvitation:OnEnable()
-    self.Super.OnEnable(self)
     if not self.InviteData or not self.InviteData.Content then
         self:OnClose()
         return
@@ -34,6 +32,15 @@ function XUiDlcRelinkPopupInvitation:OnEnable()
 
     self.TxtChpaterName.text = XMVCA.XDlcRelink:ExGetName()
     self.TxtName.text = self.InviteData.NickName
+
+    -- 只显示头像，不用显示头像框
+    if self.RImgHead and XTool.IsNumberValidEx(self.InviteData.Icon) then
+        local info = XPlayerManager.GetHeadPortraitInfoById(self.InviteData.Icon)
+        if info then
+            self.RImgHead:SetRawImage(info.ImgSrc)
+        end
+    end
+
     self:CheckShowPanel()
 end
 
@@ -146,35 +153,52 @@ function XUiDlcRelinkPopupInvitation:CheckShowPanel()
         self:SetPanelActive(false)
         return
     end
-    -- 如果栈顶 UI 是 DLC Relink 相关界面，则显示邀请弹窗
-    local shouldShow = string.find(topUiName, UI_NAMES.DLC_RELINK_PREFIX) ~= nil
-    self:SetPanelActive(shouldShow)
+    -- 如果栈顶 UI 是 DLC_RELINK 里的任意一个，则显示邀请弹窗
+    local isInDlcRelinkUi = false
+    for _, name in ipairs(UI_NAMES.DLC_RELINK) do
+        if topUiName == name then
+            isInDlcRelinkUi = true
+            break
+        end
+    end
+    self:SetPanelActive(isInDlcRelinkUi)
 end
 
 function XUiDlcRelinkPopupInvitation:SetPanelActive(isActive)
     self.PanelInvite.gameObject:SetActiveEx(isActive)
+    if isActive and not self.IsStartTimer then
+        self.IsStartTimer = true
+        self:StartTimer()
+    end
 end
 
-function XUiDlcRelinkPopupInvitation:GetAutoCloseTime()
-    return XTime.GetServerNowTimestamp() + XMVCA.XDlcRoom:GetInviteShowTime()
-end
+function XUiDlcRelinkPopupInvitation:StartTimer()
+    if self.Timer then
+        self:StopTimer()
+    end
 
-function XUiDlcRelinkPopupInvitation:AutoCloseHandler(isClose)
-    if isClose then
+    local showTime = XMVCA.XDlcRoom:GetInviteShowTime()
+    self.Timer = XScheduleManager.ScheduleOnce(function()
+        if XTool.UObjIsNil(self.GameObject) then
+            self:StopTimer()
+            return
+        end
         self:OnClose()
+    end, XScheduleManager.SECOND * showTime)
+end
+
+function XUiDlcRelinkPopupInvitation:StopTimer()
+    if self.Timer then
+        XScheduleManager.UnSchedule(self.Timer)
+        self.Timer = nil
     end
 end
 
 function XUiDlcRelinkPopupInvitation:OnClose()
+    self:StopTimer()
     XLuaUiManager.CloseWithCallback(self.Name, function()
         XMVCA.XDlcRoom:CheckReceiveInvitation(true)
     end)
-end
-
--- 打开或返回房间界面
-function XUiDlcRelinkPopupInvitation:OpenOrReturnRoom()
-    self._Control:OpenMainAndReturnRoom()
-    self:CloseAndReadMessage()
 end
 
 -- 关闭弹窗并标记消息已读
@@ -186,8 +210,8 @@ function XUiDlcRelinkPopupInvitation:CloseAndReadMessage()
 end
 
 function XUiDlcRelinkPopupInvitation:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnSure, self.OnBtnSureClick)
-    self:RegisterClickEvent(self.BtnCancel, self.OnBtnCancelClick)
+    self.BtnSure:AddEventListener(handler(self, self.OnBtnSureClick))
+    self.BtnCancel:AddEventListener(handler(self, self.OnBtnCancelClick))
 end
 
 -- 确认按钮点击事件
@@ -206,7 +230,9 @@ function XUiDlcRelinkPopupInvitation:OnBtnSureClick()
     local worldId = tonumber(params[3])
     local roomId = params[4]
     local nodeId = params[7]
-    XMVCA.XDlcRoom:ClickEnterRoomHref(roomId, nodeId, worldId, self.InviteData.CreateTime, handler(self, self.OpenOrReturnRoom))
+    local levelId = tonumber(params[8])
+    XMVCA.XDlcRoom:ClickEnterRoomHref(roomId, nodeId, worldId, levelId, self.InviteData.CreateTime)
+    self:CloseAndReadMessage()
 end
 
 -- 取消按钮点击事件

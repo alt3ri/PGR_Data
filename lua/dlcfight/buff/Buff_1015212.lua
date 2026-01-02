@@ -24,10 +24,10 @@ end
 
 --region EventCallBack
 function XBuffScript1015212:InitEventCallBackRegister()
-    self._proxy:RegisterEvent(EWorldEvent.NpcChangeProtector)           -- OnNpcAddBuffEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcHurtProtector)           -- OnNpcAddBuffEvent
 end
 
-function XBuffScript1015212:XNpcChangeProtectorArgs(LauncherId, TargetId, Value, TotalValue)
+function XBuffScript1015212:XNpcHurtProtectorArgs(LauncherId, TargetId, Value, TotalValue)
     if TargetId == self._uuid and TotalValue == 0 then
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId1, self.magicLevel)
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId2, self.magicLevel)

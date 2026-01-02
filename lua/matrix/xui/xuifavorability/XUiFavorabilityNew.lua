@@ -33,6 +33,8 @@ function XUiFavorabilityNew:OnAwake()
     local curSceneTemplate = XDataCenter.PhotographManager.GetSceneTemplateById(curSceneId)
     local curSceneUrl, _ = XSceneModelConfigs.GetSceneAndModelPathById(curSceneTemplate.SceneModelId)
     local modelUrl = self:GetDefaultUiModelUrl()
+    ---@type XUiPanelSwitchableSceneAnim
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
     self:LoadUiScene(curSceneUrl, modelUrl, function() self:OnUiSceneLoaded() end, false)
     self.ThemeCtrl=XUiMainPanelBase.New(self.PanelTheme,self)
     self.ThemeCtrl:InitTheme(self.PanelTheme.transform)
@@ -73,6 +75,7 @@ function XUiFavorabilityNew:OnEnable()
 
     --刷新主题
     self:UpdateTheme()
+    self.SwitchableScene:Resume()
 end
 
 function XUiFavorabilityNew:OnDisable()
@@ -86,6 +89,7 @@ function XUiFavorabilityNew:OnDisable()
         XUiHelper.StopClockTimeTempFun(self, self.ClockTimer)
         self.ClockTimer = nil
     end
+    self.SwitchableScene:Stop()
 end
 
 function XUiFavorabilityNew:OnDestroy()
@@ -409,12 +413,13 @@ function XUiFavorabilityNew:OnUiSceneLoaded()
     self:InitUiAfterAuto()
     self:UpdateCamera(false)
     self:UpdateBatteryMode()
+    self.SwitchableScene:Play(XDataCenter.PhotographManager.GetCurSceneId(), self.UiSceneInfo.Transform)
 end
 
 function XUiFavorabilityNew:UpdateBatteryMode() -- editor模式下 BatteryComponent.BatteryLevel 默认值为-1
-    if XQualityManager.IsSimulator and not BatteryComponent.DebugMode then
-        return
-    end
+    --if XQualityManager.IsSimulator and not BatteryComponent.DebugMode then
+    --    return
+    --end
 
     local animationRoot = self.UiSceneInfo.Transform:Find("Animations")
     if XTool.UObjIsNil(animationRoot) then return end
@@ -430,7 +435,6 @@ function XUiFavorabilityNew:UpdateBatteryMode() -- editor模式下 BatteryCompon
     chargeTimeLine.gameObject:SetActiveEx(false)
 
     local curSelectSceneId = XDataCenter.PhotographManager.GetCurSceneId()
-    local type = XPhotographConfigs.GetBackgroundTypeById(curSelectSceneId)
     local particleGroupName = XDataCenter.PhotographManager.GetSceneTemplateById(curSelectSceneId).ParticleGroupName
     local chargeAnimator = nil
     if particleGroupName and particleGroupName ~= "" then
@@ -442,32 +446,17 @@ function XUiFavorabilityNew:UpdateBatteryMode() -- editor模式下 BatteryCompon
         end
     end
 
-    if type == XPhotographConfigs.BackGroundType.PowerSaved then
-        if BatteryComponent.IsCharging then --充电状态
-            if chargeAnimator then chargeAnimator:Play("Full") end
-            fullTimeLine.gameObject:SetActiveEx(true)
-        else
-            if BatteryComponent.BatteryLevel > LowPowerValue then -- 比较电量
-                if chargeAnimator then chargeAnimator:Play("Full") end
-                fullTimeLine.gameObject:SetActiveEx(true)
-            else
-                if chargeAnimator then chargeAnimator:Play("Low") end
-                chargeTimeLine.gameObject:SetActiveEx(true)
-            end
+    XMVCA.XSwitchableScene:PlaySceneAnim(curSelectSceneId, function()
+        if chargeAnimator then
+            chargeAnimator:Play("Full")
         end
-    else
-        -- v1.29 场景预览 时间模式判断
-        local startTime = XTime.ParseToTimestamp(DateStartTime)
-        local endTime = XTime.ParseToTimestamp(DateEndTime)
-        local nowTime = XTime.ParseToTimestamp(CS.System.DateTime.Now:ToLocalTime():ToString())
-        if startTime > nowTime and nowTime > endTime then   -- 比较时间
-            if chargeAnimator then chargeAnimator:Play("Full") end
-            fullTimeLine.gameObject:SetActiveEx(true)
-        else
-            if chargeAnimator then chargeAnimator:Play("Low") end
-            chargeTimeLine.gameObject:SetActiveEx(true)
+        fullTimeLine.gameObject:SetActiveEx(true)
+    end, function()
+        if chargeAnimator then
+            chargeAnimator:Play("Low")
         end
-    end
+        chargeTimeLine.gameObject:SetActiveEx(true)
+    end)
 end
 
 -- v1.32 播放角色特殊动作Ui动画

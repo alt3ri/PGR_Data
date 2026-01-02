@@ -1,6 +1,6 @@
-local XDynamicGridTask = require("XUi/XUiTask/XDynamicGridTask")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
----@class XUiGuildWarTaskGrid
+local XDynamicGridTask = require("XUi/XUiTask/XDynamicGridTask")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+---@class XUiGuildWarTaskGrid: XDynamicGridTask
 local XUiGuildWarTaskGrid = XClass(XDynamicGridTask, "XUiGuildWarTaskGrid")
 
 function XUiGuildWarTaskGrid:ResetData(data)
@@ -56,6 +56,9 @@ function XUiGuildWarTaskGrid:ResetData(data)
     else
         XUiGuildWarTaskGrid.Super.ResetData(self, data)
     end
+    
+    -- 设置一键领取
+    self:SetReceiveAll()
 end
 --=================
 --临时任务不走一般奖励领取逻辑，重写基类的领取按钮方法
@@ -95,6 +98,48 @@ function XUiGuildWarTaskGrid:UpdateProgress(data)
         self.BtnSkip:SetNameByGroup(1, XUiHelper.GetText("GuildWarTaskDisableName"))
         XUiGuildWarTaskGrid.Super.UpdateProgress(self, data)
     end
+end
+
+---@overload 重写一键领取的方法
+function XUiGuildWarTaskGrid:OnBtnAllReceiveClick()
+    local weaponCount = 0
+    local chipCount = 0
+
+    if XTool.IsTableEmpty(self.AllAchieveTaskDatas) then
+        return
+    end
+    
+    for key, taskId in pairs(self.AllAchieveTaskDatas) do --装备上限判断
+        local tableData = XDataCenter.TaskManager.GetTaskTemplate(taskId)
+        local rewards = XRewardManager.GetRewardList(tableData.RewardId)
+        for i = 1, #rewards do
+            local rewardsId = rewards[i].TemplateId
+            if XMVCA.XEquip:IsClassifyEqualByTemplateId(rewardsId, XEnumConst.EQUIP.CLASSIFY.WEAPON) then
+                weaponCount = weaponCount + 1
+            elseif XMVCA.XEquip:IsClassifyEqualByTemplateId(rewardsId, XEnumConst.EQUIP.CLASSIFY.AWARENESS) then
+                chipCount = chipCount + 1
+            end
+        end
+        if weaponCount > 0 and XMVCA.XEquip:CheckBagCount(weaponCount, XEnumConst.EQUIP.CLASSIFY.WEAPON) == false or
+                chipCount > 0 and XMVCA.XEquip:CheckBagCount(chipCount, XEnumConst.EQUIP.CLASSIFY.AWARENESS) == false then
+            return
+        end
+    end
+
+    --批量领取任务奖励
+    if self.Data.ReceiveCb then
+        self.Data.ReceiveCb()
+    else
+        local taskIds = self.AllAchieveTaskDatas
+        XDataCenter.TaskManager.FinishMultiTaskRequest(taskIds, function(rewardGoodsList)
+            local horizontalNormalizedPosition = 0
+            self:OpenUiObtain(rewardGoodsList, nil, nil, nil, horizontalNormalizedPosition)
+        end)
+    end
+end
+
+function XUiGuildWarTaskGrid:SetAllReceiveTaskIds(ids)
+    self.AllAchieveTaskDatas = ids
 end
 
 return XUiGuildWarTaskGrid

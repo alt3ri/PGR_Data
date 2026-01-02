@@ -164,7 +164,6 @@ function XUiDlcMultiPlayerRoomCuteGrid:Refresh(isRedisplay)
 
     self:RefreshModel(characterId, isRedisplay)
     self:RefreshTitle(customData:GetTitleId())
-    self:RefreshSkill()
 end
 
 function XUiDlcMultiPlayerRoomCuteGrid:RefreshChat(chatData, receiveTime)
@@ -216,25 +215,6 @@ function XUiDlcMultiPlayerRoomCuteGrid:RefreshTitle(titleId)
     end
 end
 
-function XUiDlcMultiPlayerRoomCuteGrid:RefreshSkill()
-    local member = self:_GetMember()
-    local hasData, skillData = self._Control:TryGetSkillData()
-    local CampEnum = XMVCA.XDlcMultiMouseHunter.DlcMouseHunterCamp
-    if member:IsSelf() and hasData then
-        self.PanelBuff.gameObject:SetActiveEx(true)
-        local catConfig = self._Control:GetDlcMultiplayerSkillConfigById(skillData.SelectCatSkillId)
-        local mouseConfig = self._Control:GetDlcMultiplayerSkillConfigById(skillData.SelectMouseSkillId)
-        self.BtnCatSkill:SetName(catConfig.Name)
-        self.BtnCatSkill:SetRawImage(catConfig.Icon)
-        self.BtnCatSkill:ShowReddot(self._Control:CheckNewSkillCampRedPoint(CampEnum.Cat))
-        self.BtnMouseSkill:SetName(mouseConfig.Name)
-        self.BtnMouseSkill:SetRawImage(mouseConfig.Icon)
-        self.BtnMouseSkill:ShowReddot(self._Control:CheckNewSkillCampRedPoint(CampEnum.Mouse))
-    else
-        self.PanelBuff.gameObject:SetActiveEx(false)
-    end
-end
-
 function XUiDlcMultiPlayerRoomCuteGrid:RefreshModelRoot(case)
     self._RoleModel = XUiPanelRoleModel.New(case, self.Parent.Name, nil, true)
     self:_InitEffect(case)
@@ -250,7 +230,13 @@ end
 function XUiDlcMultiPlayerRoomCuteGrid:RefreshModel(characterId, isRedisplay)
     self._ActionRandom:Stop()
     self._RoleModel:ShowRoleModel()
-    self._Control:UpdateCharacterModelByCharacterId(self._RoleModel, characterId, function()
+    self._Control:UpdateCharacterModelByCharacterId(self._RoleModel, characterId, function(modelGo)
+        for i = 0, self._RoleModel.Transform.childCount-1, 1 do
+            local childGo = self._RoleModel.Transform:GetChild(i).gameObject
+            if childGo.name == modelGo.name and childGo ~= modelGo then
+                XUiHelper.Destroy(childGo)
+            end
+        end 
         self._ActionRandom:SetAnimator(self._RoleModel:GetAnimator(), {}, self._RoleModel)
         self._ActionRandom:Play()
         if self._ImgEffect and not isRedisplay then
@@ -286,7 +272,6 @@ function XUiDlcMultiPlayerRoomCuteGrid:SetPanelActive(isActive)
         self.ImgReady.gameObject:SetActiveEx(false)
         self.ImgModifying.gameObject:SetActiveEx(false)
         self.PanelChat.gameObject:SetActiveEx(false)
-        self.PanelBuff.gameObject:SetActiveEx(false)
     end
 end
 
@@ -320,14 +305,12 @@ function XUiDlcMultiPlayerRoomCuteGrid:_RegisterListeners()
     -- 在此处注册事件监听
     XEventManager.AddEventListener(XEventId.EVENT_DLC_ROOM_MULTI_CANCEL_MATCH, self.OnCancelMatching, self)
     XEventManager.AddEventListener(XEventId.EVENT_DLC_ROOM_MULTI_START_MATCH, self.OnMatching, self)
-    XEventManager.AddEventListener(XEventId.EVENT_DLC_MOUSE_HUNTER_REFRESH_SKILL_DATA, self.RefreshSkill, self)
 end
 
 function XUiDlcMultiPlayerRoomCuteGrid:_RemoveListeners()
     -- 在此处移除事件监听
     XEventManager.RemoveEventListener(XEventId.EVENT_DLC_ROOM_MULTI_CANCEL_MATCH, self.OnCancelMatching, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_DLC_ROOM_MULTI_START_MATCH, self.OnMatching, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_DLC_MOUSE_HUNTER_REFRESH_SKILL_DATA, self.RefreshSkill, self)
 end
 
 function XUiDlcMultiPlayerRoomCuteGrid:_RegisterRedPointEvents()

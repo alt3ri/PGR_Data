@@ -252,6 +252,12 @@ function XMainLine2Model:GetMainSettlementBg(mainId)
     return config and config.SettlementBg or ""
 end
 
+-- 获取主章节任务组Id
+function XMainLine2Model:GetMainTaskGroupId(mainId)
+    local config = self:GetConfigMain(mainId)
+    return config and config.TaskGroupId or 0
+end
+
 -- 章节是否存在
 function XMainLine2Model:IsChapterExit(id)
     local cfgs = self._ConfigUtil:GetByTableKey(TableKey.MainLine2Chapter)
@@ -1035,6 +1041,24 @@ function XMainLine2Model:IsStagePass(stageId)
 
     local isPass = XMVCA:GetAgency(ModuleId.XFuben):CheckStageIsPass(stageId)
     return isPass
+end
+
+--- 获取关卡的通关进度
+---@param stageId number 关卡Id
+function XMainLine2Model:GetStageProgress(stageId)
+    local conditions = self:GetStageProgressConditions(stageId)
+    if #conditions > 0 then
+        local reachCnt = 0
+        for _, condition in ipairs(conditions) do
+            local isReach, desc = XConditionManager.CheckCondition(condition)
+            if isReach then
+                reachCnt = reachCnt + 1
+            end
+        end
+        return reachCnt, #conditions
+    end
+
+    return 0, 0
 end
 
 --- 获取关卡成就完成情况

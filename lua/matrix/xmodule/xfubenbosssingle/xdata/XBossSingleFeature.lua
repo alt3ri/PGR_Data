@@ -17,6 +17,8 @@ function XBossSingleFeature:SetData(featureId, stageId, characterIds)
         self._Desc = config.Desc
         self._Icon = config.Icon
         self._TriangleBg = config.TriangleBg
+        self._Type = config.Type or 1  -- v4.2 新增：type=1表示原本功能，type=2表示可选择词缀
+        self._ScoreRate = config.ScoreRate or 1  -- v4.2 新增：讨伐值倍率
         self._TotalScore = XMVCA.XFubenBossSingle:GetStageTotalScoreByStageId(stageId)
         self._StageId = stageId
         self._Score = stageData and stageData.Score or 0
@@ -94,6 +96,24 @@ end
 
 function XBossSingleFeature:GetIsRecord()
     return not (self:GetIsCharacterEmpty() and self:GetScore() == 0)
+end
+
+--- v4.2 新增：获取词缀类型（type=1表示原本功能，type=2表示可选择词缀）
+---@return number
+function XBossSingleFeature:GetType()
+    return self._Type or 1
+end
+
+--- v4.2 新增：判断是否为可选择词缀
+---@return boolean
+function XBossSingleFeature:IsSelectable()
+    return self:GetType() == 2
+end
+
+--- v4.2 新增：获取讨伐值倍率
+---@return number
+function XBossSingleFeature:GetScoreRate()
+    return self._ScoreRate or 1
 end
 
 function XBossSingleFeature:CheckCharacterClash(characterId)

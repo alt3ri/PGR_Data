@@ -1,380 +1,380 @@
 [
     {
         "Id": 1,
-        "Name": "Battle Adjustment",
+        "Name": "\u6218\u6597\u9002\u5e94",
         "PluginId": null,
         "Level": null,
         "UpgradeSpend": null,
         "FightEventId": 34001,
-        "Desc": "Frame DMG Amplification. Gains and refreshes the Shield every 30s. (The lower the frame's Battle Power, the higher the DMG Amplification/Shield.)"
+        "Desc": "\u673a\u4f53\u4f24\u5bb3\u589e\u5e45\uff0c\u6bcf30\u79d2\u83b7\u5f97\u5e76\u5237\u65b0\u62a4\u76fe\uff08\u673a\u4f53\u6218\u529b\u53c2\u6570\u8d8a\u4f4e\u83b7\u5f97\u7684\u4f24\u5bb3\u589e\u5e45/\u62a4\u76fe\u91cf\u8d8a\u9ad8\uff09"
     },
     {
         "Id": 2,
-        "Name": "Shieldbearer",
+        "Name": "\u5b88\u62a4\u8005",
         "PluginId": null,
         "Level": null,
         "UpgradeSpend": null,
         "FightEventId": 34002,
-        "Desc": "Hunter deals more damage/gains Resistance, has more ATK Rate and restores 3% max HP per second"
+        "Desc": "\u72e9\u730e\u8005\u4f24\u5bb3/\u6297\u6027\u589e\u52a0\uff0c\u653b\u51fb\u9891\u7387\u63d0\u5347\uff0c\u6bcf\u79d2\u6062\u590d3%\u6700\u5927\u751f\u547d"
     },
     {
         "Id": 3,
-        "Name": "Trap Master",
+        "Name": "\u673a\u5173\u5e08",
         "PluginId": null,
         "Level": null,
         "UpgradeSpend": null,
         "FightEventId": 34003,
-        "Desc": "Preparation Phase Tactical Resource +1"
+        "Desc": "\u51c6\u5907\u9636\u6bb5\u6218\u672f\u8d44\u6e90+1"
     },
     {
         "Id": 4,
-        "Name": "Defense",
+        "Name": "\u5b88\u5907",
         "PluginId": null,
         "Level": null,
         "UpgradeSpend": null,
         "FightEventId": 772490,
-        "Desc": "Gun after modification with significant improvement in Armor"
+        "Desc": "\u7ecf\u8fc7\u6539\u9020\u7684\u963f\u67aa\uff0c\u88c5\u7532\u6027\u80fd\u5927\u5e45\u5f3a\u5316"
     },
     {
         "Id": 5,
-        "Name": "Overclock",
+        "Name": "\u7a81\u7834",
         "PluginId": null,
         "Level": null,
         "UpgradeSpend": null,
         "FightEventId": 772491,
-        "Desc": "Salamander after modification with significant improvement in firing performance but poor mobility"
+        "Desc": "\u7ecf\u8fc7\u6539\u9020\u7684\u877e\u8788\uff0c\u5c04\u51fb\u6027\u80fd\u5927\u5e45\u5f3a\u5316\uff0c\u673a\u52a8\u6027\u8f83\u5dee"
     },
     {
         "Id": 6,
-        "Name": "Assistance",
+        "Name": "\u534f\u529b",
         "PluginId": null,
         "Level": null,
         "UpgradeSpend": null,
         "FightEventId": 772492,
-        "Desc": "Pointy after modification with balanced performance"
+        "Desc": "\u7ecf\u8fc7\u6539\u9020\u7684\u963f\u7bad\uff0c\u5404\u9879\u6027\u80fd\u76f8\u5bf9\u5747\u8861"
     },
     {
         "Id": 7,
-        "Name": "Scorch Device",
+        "Name": "\u70e7\u5937\u88c5\u7f6e",
         "PluginId": 1.0,
         "Level": 1.0,
         "UpgradeSpend": null,
         "FightEventId": 34007,
-        "Desc": "Ignites enemies within range for 2/3/5s (upgrade during the preparation phase), dealing 400% Fire DMG per second."
+        "Desc": "\u70b9\u71c3\u533a\u57df\u5185\u654c\u4eba2/3/5\u79d2(\u51c6\u5907\u9636\u6bb5\u5347\u7ea7)\uff0c\u6bcf\u79d2\u9020\u6210400%\u706b\u5c5e\u6027\u4f24\u5bb3"
     },
     {
         "Id": 8,
-        "Name": "Scorch Device",
+        "Name": "\u70e7\u5937\u88c5\u7f6e",
         "PluginId": 1.0,
         "Level": 2.0,
         "UpgradeSpend": 1250.0,
         "FightEventId": 34008,
-        "Desc": "Constructs within range deals 30% more damage and gains 30% Resistance"
+        "Desc": "\u533a\u57df\u5185\u6784\u9020\u4f53\u4f24\u5bb3\u4e0e\u6297\u6027\u63d0\u534730%"
     },
     {
         "Id": 9,
-        "Name": "Scorch Device",
+        "Name": "\u70e7\u5937\u88c5\u7f6e",
         "PluginId": 1.0,
         "Level": 3.0,
         "UpgradeSpend": 1750.0,
         "FightEventId": 34009,
-        "Desc": "Allies within range deal 20% more damage, gain 20% Resistance, and move 20% faster for 5s"
+        "Desc": "\u533a\u57df\u5185\u6211\u65b9\u5355\u4f4d\u4f24\u5bb3\u3001\u6297\u6027\u3001\u79fb\u901f\u63d0\u534720%\uff0c\u6301\u7eed5\u79d2"
     },
     {
         "Id": 10,
-        "Name": "Supply Device",
+        "Name": "\u8865\u7ed9\u88c5\u7f6e",
         "PluginId": 2.0,
         "Level": 1.0,
         "UpgradeSpend": 750.0,
         "FightEventId": 34010,
-        "Desc": "Allies within range restore 150/200/250 HP per second (upgrade during the preparation phase)"
+        "Desc": "\u533a\u57df\u5185\u6211\u65b9\u5355\u4f4d\u6bcf\u79d2\u6062\u590d150/200/250\u751f\u547d\u503c(\u51c6\u5907\u9636\u6bb5\u5347\u7ea7)"
     },
     {
         "Id": 11,
-        "Name": "Supply Device",
+        "Name": "\u8865\u7ed9\u88c5\u7f6e",
         "PluginId": 2.0,
         "Level": 2.0,
         "UpgradeSpend": 1250.0,
         "FightEventId": 34011,
-        "Desc": "Units that receive healing restore 25% more HP for every 20% HP lost"
+        "Desc": "\u53d7\u6cbb\u7597\u5355\u4f4d\u6bcf\u635f\u593120%\u751f\u547d\u503c\u6062\u590d\u91cf\u63d0\u534725%"
     },
     {
         "Id": 12,
-        "Name": "Supply Device",
+        "Name": "\u8865\u7ed9\u88c5\u7f6e",
         "PluginId": 2.0,
         "Level": 3.0,
         "UpgradeSpend": 1750.0,
         "FightEventId": 34012,
-        "Desc": "Converts 3000% of the excess healing to Physical DMG"
+        "Desc": "\u5c06\u533a\u57df\u5185\u6ea2\u51fa\u6cbb\u7597\u91cf\u76843000%\u8f6c\u5316\u4e3a\u7269\u7406\u4f24\u5bb3"
     },
     {
         "Id": 13,
-        "Name": "Dark Device",
+        "Name": "\u6697\u8d28\u88c5\u7f6e",
         "PluginId": 3.0,
         "Level": 1.0,
         "UpgradeSpend": 750.0,
         "FightEventId": 34013,
-        "Desc": "Deals 900% Dark DMG to 1 enemy within range every 4/3/2s (upgrade during the preparation phase)"
+        "Desc": "\u6bcf4/3/2\u79d2(\u51c6\u5907\u9636\u6bb5\u5347\u7ea7)\u5bf9\u5c04\u7a0b\u51851\u540d\u654c\u4eba\u9020\u6210900%\u6697\u5c5e\u6027\u4f24\u5bb3"
     },
     {
         "Id": 14,
-        "Name": "Dark Device",
+        "Name": "\u6697\u8d28\u88c5\u7f6e",
         "PluginId": 3.0,
         "Level": 2.0,
         "UpgradeSpend": 1250.0,
         "FightEventId": 34014,
-        "Desc": "For every identical device within double the range of the device, the device deals 12 more damage. And for every different device within that range, the character deals 12% more damage."
+        "Desc": "\u5c04\u7a0b2\u500d\u8303\u56f4\u5185\u6bcf\u5b58\u57281\u679a\u76f8\u540c\u88c5\u7f6e\u88c5\u7f6e\u4f24\u5bb3+12%\uff0c\u6bcf\u5b58\u57281\u679a\u4e0d\u540c\u88c5\u7f6e\u89d2\u8272\u4f24\u5bb3+12%"
     },
     {
         "Id": 15,
-        "Name": "Dark Device",
+        "Name": "\u6697\u8d28\u88c5\u7f6e",
         "PluginId": 3.0,
         "Level": 3.0,
         "UpgradeSpend": 1750.0,
         "FightEventId": 34015,
-        "Desc": "Dark Device gains target +1 for every 2 allies within range (up to +3)"
+        "Desc": "\u5c04\u7a0b\u5185\u6bcf\u5b58\u57282\u540d\u6211\u65b9\u5355\u4f4d\uff0c\u6697\u8d28\u88c5\u7f6e\u653b\u51fb\u76ee\u6807+1\uff08\u4e0a\u9650+3\uff09"
     },
     {
         "Id": 16,
-        "Name": "Bolt Device",
+        "Name": "\u8f70\u96f7\u88c5\u7f6e",
         "PluginId": 4.0,
         "Level": 1.0,
         "UpgradeSpend": 750.0,
         "FightEventId": 34016,
-        "Desc": "Casts lightning at a random spot within range every 2/1.5/1s (upgrade during the preparation phase), dealing 1200% Lightning DMG to enemies within 2m."
+        "Desc": "\u533a\u57df\u5185\u6bcf2/1.5/1\u79d2(\u51c6\u5907\u9636\u6bb5\u5347\u7ea7)\u5728\u968f\u673a\u4f4d\u7f6e\u843d\u96f7\uff0c\u5bf9\u534a\u5f842\u7c73\u5185\u654c\u4eba\u9020\u62101200%\u96f7\u5c5e\u6027\u4f24\u5bb3"
     },
     {
         "Id": 17,
-        "Name": "Bolt Device",
+        "Name": "\u8f70\u96f7\u88c5\u7f6e",
         "PluginId": 4.0,
         "Level": 2.0,
         "UpgradeSpend": 1250.0,
         "FightEventId": 34017,
-        "Desc": "Upon receiving Lightning DMG, enemies have -5% All Resistances for 3.5s. (Can be stacked.)"
+        "Desc": "\u654c\u4eba\u53d7\u5230\u96f7\u51fb\u540e\u6240\u6709\u6297\u6027-5%\uff0c\u6301\u7eed3.5\u79d2\uff08\u53ef\u53e0\u52a0\uff09"
     },
     {
         "Id": 18,
-        "Name": "Bolt Device",
+        "Name": "\u8f70\u96f7\u88c5\u7f6e",
         "PluginId": 4.0,
         "Level": 3.0,
         "UpgradeSpend": 1750.0,
         "FightEventId": 34018,
-        "Desc": "Enemies within range take 10% more damage. Units closer to the center receive more damage. The device also casts one extra lightning."
+        "Desc": "\u533a\u57df\u5185\u654c\u4eba\u53d7\u5230\u4f24\u5bb3\u63d0\u534710%\uff0c\u8d8a\u9760\u8fd1\u4e2d\u5fc3\u63d0\u5347\u8d8a\u9ad8\uff1b\u989d\u5916\u8ffd\u52a0\u4e00\u9053\u96f7\u51fb"
     },
     {
         "Id": 19,
-        "Name": "Frost Device",
+        "Name": "\u51b0\u51dd\u88c5\u7f6e",
         "PluginId": 5.0,
         "Level": 1.0,
         "UpgradeSpend": 750.0,
         "FightEventId": 34019,
-        "Desc": "Slows down the enemies within range by 30/40/50% (upgrade during the preparation phase)"
+        "Desc": "\u533a\u57df\u5185\u654c\u4eba\u79fb\u901f\u964d\u4f4e30/40/50%(\u51c6\u5907\u9636\u6bb5\u5347\u7ea7)"
     },
     {
         "Id": 20,
-        "Name": "Frost Device",
+        "Name": "\u51b0\u51dd\u88c5\u7f6e",
         "PluginId": 5.0,
         "Level": 2.0,
         "UpgradeSpend": 1250.0,
         "FightEventId": 34020,
-        "Desc": "Enemies within range receives Ice DMG equal to 10% max HP every 2s"
+        "Desc": "\u533a\u57df\u5185\u654c\u4eba\u6bcf2\u79d2\u53d7\u5230\u6700\u5927\u751f\u547d10%\u7684\u51b0\u5c5e\u6027\u4f24\u5bb3"
     },
     {
         "Id": 21,
-        "Name": "Frost Device",
+        "Name": "\u51b0\u51dd\u88c5\u7f6e",
         "PluginId": 5.0,
         "Level": 3.0,
         "UpgradeSpend": 1750.0,
         "FightEventId": 34021,
-        "Desc": "Upon dealing damage, the device has a 10% chance to freeze the enemy for 2s"
+        "Desc": "\u88c5\u7f6e\u9020\u6210\u4f24\u5bb3\u540e\u670910%\u6982\u7387\u51bb\u7ed3\u654c\u4eba2\u79d2"
     },
     {
         "Id": 22,
-        "Name": "Amplification Core",
+        "Name": "\u589e\u5e45\u6838\u5fc3",
         "PluginId": 6.0,
         "Level": 1.0,
         "UpgradeSpend": 600.0,
         "FightEventId": 772421,
-        "Desc": "Hunter DMG +25%"
+        "Desc": "\u72e9\u730e\u8005\u4f24\u5bb3+25%"
     },
     {
         "Id": 23,
-        "Name": "Amplification Core",
+        "Name": "\u589e\u5e45\u6838\u5fc3",
         "PluginId": 6.0,
         "Level": 2.0,
         "UpgradeSpend": 800.0,
         "FightEventId": 772422,
-        "Desc": "Hunter DMG +35%"
+        "Desc": "\u72e9\u730e\u8005\u4f24\u5bb3+35%"
     },
     {
         "Id": 24,
-        "Name": "Amplification Core",
+        "Name": "\u589e\u5e45\u6838\u5fc3",
         "PluginId": 6.0,
         "Level": 3.0,
         "UpgradeSpend": 1100.0,
         "FightEventId": 772423,
-        "Desc": "Hunter DMG +50%"
+        "Desc": "\u72e9\u730e\u8005\u4f24\u5bb3+50%"
     },
     {
         "Id": 25,
-        "Name": "Energy Core",
+        "Name": "\u80fd\u91cf\u6838\u5fc3",
         "PluginId": 7.0,
         "Level": 1.0,
         "UpgradeSpend": 600.0,
         "FightEventId": 772425,
-        "Desc": "Hunter HP +25%"
+        "Desc": "\u72e9\u730e\u8005\u751f\u547d+25%"
     },
     {
         "Id": 26,
-        "Name": "Energy Core",
+        "Name": "\u80fd\u91cf\u6838\u5fc3",
         "PluginId": 7.0,
         "Level": 2.0,
         "UpgradeSpend": 800.0,
         "FightEventId": 772426,
-        "Desc": "Hunter HP +35%"
+        "Desc": "\u72e9\u730e\u8005\u751f\u547d+35%"
     },
     {
         "Id": 27,
-        "Name": "Energy Core",
+        "Name": "\u80fd\u91cf\u6838\u5fc3",
         "PluginId": 7.0,
         "Level": 3.0,
         "UpgradeSpend": 1100.0,
         "FightEventId": 772427,
-        "Desc": "Hunter HP +50%"
+        "Desc": "\u72e9\u730e\u8005\u751f\u547d+50%"
     },
     {
         "Id": 28,
-        "Name": "Amplification Field",
+        "Name": "\u589e\u5e45\u529b\u573a",
         "PluginId": 8.0,
         "Level": 1.0,
         "UpgradeSpend": 600.0,
         "FightEventId": 772462,
-        "Desc": "Allies within 6m around the hunter gain +5% DMG"
+        "Desc": "\u72e9\u730e\u80056\u7c73\u8303\u56f4\u5185\u53cb\u519b\u4f24\u5bb3+5%"
     },
     {
         "Id": 29,
-        "Name": "Amplification Field",
+        "Name": "\u589e\u5e45\u529b\u573a",
         "PluginId": 8.0,
         "Level": 2.0,
         "UpgradeSpend": 800.0,
         "FightEventId": 772463,
-        "Desc": "Allies within 6m around the hunter gain +8% DMG"
+        "Desc": "\u72e9\u730e\u80056\u7c73\u8303\u56f4\u5185\u53cb\u519b\u4f24\u5bb3+8%"
     },
     {
         "Id": 30,
-        "Name": "Amplification Field",
+        "Name": "\u589e\u5e45\u529b\u573a",
         "PluginId": 8.0,
         "Level": 3.0,
         "UpgradeSpend": 1100.0,
         "FightEventId": 772464,
-        "Desc": "Allies within 6m around the hunter gain +12% DMG"
+        "Desc": "\u72e9\u730e\u80056\u7c73\u8303\u56f4\u5185\u53cb\u519b\u4f24\u5bb3+12%"
     },
     {
         "Id": 31,
-        "Name": "Protection Field",
+        "Name": "\u5b88\u62a4\u529b\u573a",
         "PluginId": 9.0,
         "Level": 1.0,
         "UpgradeSpend": 600.0,
         "FightEventId": 772472,
-        "Desc": "Allies within 6m around the hunter gain +5% Resistance"
+        "Desc": "\u72e9\u730e\u80056\u7c73\u8303\u56f4\u5185\u53cb\u519b\u6297\u6027+5%"
     },
     {
         "Id": 32,
-        "Name": "Protection Field",
+        "Name": "\u5b88\u62a4\u529b\u573a",
         "PluginId": 9.0,
         "Level": 2.0,
         "UpgradeSpend": 800.0,
         "FightEventId": 772473,
-        "Desc": "Allies within 6m around the hunter gain +8% Resistance"
+        "Desc": "\u72e9\u730e\u80056\u7c73\u8303\u56f4\u5185\u53cb\u519b\u6297\u6027+8%"
     },
     {
         "Id": 33,
-        "Name": "Protection Field",
+        "Name": "\u5b88\u62a4\u529b\u573a",
         "PluginId": 9.0,
         "Level": 3.0,
         "UpgradeSpend": 1100.0,
         "FightEventId": 772474,
-        "Desc": "Allies within 6m around the hunter gain +12% Resistance"
+        "Desc": "\u72e9\u730e\u80056\u7c73\u8303\u56f4\u5185\u53cb\u519b\u6297\u6027+12%"
     },
     {
         "Id": 34,
-        "Name": "Maintenance Device",
+        "Name": "\u7ef4\u7eed\u7ec4\u4ef6",
         "PluginId": 10.0,
         "Level": 1.0,
         "UpgradeSpend": 600.0,
         "FightEventId": 772429,
-        "Desc": "After dealing damage, hunter restores slight HP based on the damage"
+        "Desc": "\u72e9\u730e\u8005\u9020\u6210\u4f24\u5bb3\u540e\u57fa\u4e8e\u4f24\u5bb3\u91cf\u6062\u590d\u5c11\u91cf\u751f\u547d"
     },
     {
         "Id": 35,
-        "Name": "Maintenance Device",
+        "Name": "\u7ef4\u7eed\u7ec4\u4ef6",
         "PluginId": 10.0,
         "Level": 2.0,
         "UpgradeSpend": 800.0,
         "FightEventId": 772430,
-        "Desc": "After dealing damage, hunter restores medium HP based on the damage"
+        "Desc": "\u72e9\u730e\u8005\u9020\u6210\u4f24\u5bb3\u540e\u57fa\u4e8e\u4f24\u5bb3\u91cf\u6062\u590d\u4e2d\u91cf\u751f\u547d"
     },
     {
         "Id": 36,
-        "Name": "Maintenance Device",
+        "Name": "\u7ef4\u7eed\u7ec4\u4ef6",
         "PluginId": 10.0,
         "Level": 3.0,
         "UpgradeSpend": 1100.0,
         "FightEventId": 772431,
-        "Desc": "After dealing damage, hunter restores massive HP based on the damage"
+        "Desc": "\u72e9\u730e\u8005\u9020\u6210\u4f24\u5bb3\u540e\u57fa\u4e8e\u4f24\u5bb3\u91cf\u6062\u590d\u5927\u91cf\u751f\u547d"
     },
     {
         "Id": 37,
-        "Name": "Molten Core",
+        "Name": "\u7194\u706b\u6838\u5fc3",
         "PluginId": 11.0,
         "Level": 1.0,
         "UpgradeSpend": 600.0,
         "FightEventId": 772436,
-        "Desc": "Hunter's attacks have a 25% chance to ignite the enemy for 2s, dealing Fire DMG equal to 6% of the enemy's max HP"
+        "Desc": "\u72e9\u730e\u8005\u653b\u51fb\u65f625%\u6982\u7387\u70b9\u71c3\u654c\u4eba2\u79d2\uff0c\u6bcf\u79d2\u9020\u6210\u654c\u4eba\u6700\u5927\u751f\u547d6%\u7684\u706b\u5c5e\u6027\u4f24\u5bb3"
     },
     {
         "Id": 38,
-        "Name": "Molten Core",
+        "Name": "\u7194\u706b\u6838\u5fc3",
         "PluginId": 11.0,
         "Level": 2.0,
         "UpgradeSpend": 800.0,
         "FightEventId": 772437,
-        "Desc": "Hunter's attacks have a 35% chance to ignite the enemy for 3s, dealing Fire DMG equal to 6% of the enemy's max HP"
+        "Desc": "\u72e9\u730e\u8005\u653b\u51fb\u65f635%\u6982\u7387\u70b9\u71c3\u654c\u4eba3\u79d2\uff0c\u6bcf\u79d2\u9020\u6210\u654c\u4eba\u6700\u5927\u751f\u547d6%\u7684\u706b\u5c5e\u6027\u4f24\u5bb3"
     },
     {
         "Id": 39,
-        "Name": "Molten Core",
+        "Name": "\u7194\u706b\u6838\u5fc3",
         "PluginId": 11.0,
         "Level": 3.0,
         "UpgradeSpend": 1100.0,
         "FightEventId": 772438,
-        "Desc": "Hunter's attacks have a 50% chance to ignite the enemy for 4s, dealing Fire DMG equal to 6% of the enemy's max HP"
+        "Desc": "\u72e9\u730e\u8005\u653b\u51fb\u65f650%\u6982\u7387\u70b9\u71c3\u654c\u4eba4\u79d2\uff0c\u6bcf\u79d2\u9020\u6210\u654c\u4eba\u6700\u5927\u751f\u547d6%\u7684\u706b\u5c5e\u6027\u4f24\u5bb3"
     },
     {
         "Id": 40,
-        "Name": "Freezing Core",
+        "Name": "\u6781\u51bb\u6838\u5fc3",
         "PluginId": 12.0,
         "Level": 1.0,
         "UpgradeSpend": 600.0,
         "FightEventId": 772450,
-        "Desc": "Hunter's attacks have a 10% chance to freeze the enemy 1s"
+        "Desc": "\u72e9\u730e\u8005\u653b\u51fb\u65f6\u670910%\u7684\u6982\u7387\u51bb\u7ed3\u654c\u4eba1\u79d2"
     },
     {
         "Id": 41,
-        "Name": "Freezing Core",
+        "Name": "\u6781\u51bb\u6838\u5fc3",
         "PluginId": 12.0,
         "Level": 2.0,
         "UpgradeSpend": 800.0,
         "FightEventId": 772451,
-        "Desc": "Hunter's attacks have a 15% chance to freeze the enemy 1.5s"
+        "Desc": "\u72e9\u730e\u8005\u653b\u51fb\u65f6\u670915%\u7684\u6982\u7387\u51bb\u7ed3\u654c\u4eba1.5\u79d2"
     },
     {
         "Id": 42,
-        "Name": "Freezing Core",
+        "Name": "\u6781\u51bb\u6838\u5fc3",
         "PluginId": 12.0,
         "Level": 3.0,
         "UpgradeSpend": 1100.0,
         "FightEventId": 772452,
-        "Desc": "Hunter's attacks have a 20% chance to freeze the enemy 2s"
+        "Desc": "\u72e9\u730e\u8005\u653b\u51fb\u65f6\u670920%\u7684\u6982\u7387\u51bb\u7ed3\u654c\u4eba2\u79d2"
     }
 ]

@@ -227,6 +227,7 @@ function XBigWorldMessageModel:GetForceMessageData(isUnDequeue)
     return self._ForceMessageQueue:Dequeue()
 end
 
+---@return XBWMessageData
 function XBigWorldMessageModel:PeekForceMessageData()
     return self._ForceMessageQueue:Peek()
 end

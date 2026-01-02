@@ -27,6 +27,10 @@ function XFubenBossSingleAgency:OnInit()
     self._LastSyncServerChallengeRankTimes = {}
     self._SyncServerSecond = 20
     self.ExChapterType = self:ExGetChapterType()
+    self._IsUiShow = false
+    
+    -- 普通区编队数据缓存（key: SectionId, value: {SectionId, CharacterIds}）
+    self._NormalStageTeamInfos = {}
 end
 
 function XFubenBossSingleAgency:InitRpc()
@@ -36,16 +40,23 @@ function XFubenBossSingleAgency:InitRpc()
     XRpc.NotifyBossSingleRankInfo = Handler(self, self.OnNotifyBossSingleRankInfo)
     XRpc.NotifyBossSingleChallengeCount = Handler(self, self.OnNotifyBossSingleChallengeCount)
 end
+
 --30302803
 function XFubenBossSingleAgency:InitEvent()
     -- 实现跨Agency事件注册
     -- self:AddAgencyEvent()
+
+    -- 监听副本结算奖励事件（参考 XTransfiniteManager）
+    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
 end
 
 function XFubenBossSingleAgency:OnRelease()
     self._LastSyncServerRankTimes = {}
     self._LastSyncServerBossRankTimes = {}
     self._LastSyncServerChallengeRankTimes = {}
+
+    -- 移除事件监听
+    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
 end
 
 -- region Getter/Setter
@@ -102,7 +113,7 @@ function XFubenBossSingleAgency:GetChallengeCount()
 
     if XTool.IsTableEmpty(levelTypeConfig) then
         XLog.ErrorTableDataNotFound("XFubenBossSingleAgency:GetChallengeCount", "levelTypeCfg",
-                "Share/Fuben/BossSingle/BossSingleGrade.tab", "levelType", tostring(levelType))
+            "Share/Fuben/BossSingle/BossSingleGrade.tab", "levelType", tostring(levelType))
         return 0
     end
 
@@ -175,7 +186,7 @@ function XFubenBossSingleAgency:GetMaxStamina()
 
     if not staminaCount then
         XLog.ErrorTableDataNotFound("XFubenBossSingleAgency:GetMaxStamina", "levelTypeCfg",
-                "Share/Fuben/BossSingle/BossSingleGrade.tab", "levelType", tostring(levelType))
+            "Share/Fuben/BossSingle/BossSingleGrade.tab", "levelType", tostring(levelType))
         return 0
     end
 
@@ -200,7 +211,7 @@ function XFubenBossSingleAgency:GetRankSpecialIcon(number, levelType)
 
     if not configs[number] then
         XLog.Error(string.format("表BossSignleReward.tab不存在当前LevelType的RankIcon！索引:%d LevelType:%d",
-                number, levelType))
+            number, levelType))
         return
     end
 
@@ -252,6 +263,22 @@ end
 
 function XFubenBossSingleAgency:GetFeatureConfigById(id)
     return self._Model:GetBossSingleChallengeFeatureConfigById(id)
+end
+
+function XFubenBossSingleAgency:GetBossSingleChallengeFeatureGroupConfigByFeatureId(featureId)
+    return self._Model:GetBossSingleChallengeFeatureGroupConfigByFeatureId(featureId)
+end
+
+function XFubenBossSingleAgency:GetBossSingleChallengeBuffGroupIdByFeatureId(featureGroupId, featureId)
+    return self._Model:GetBossSingleChallengeBuffGroupIdByFeatureId(featureGroupId, featureId)
+end
+
+function XFubenBossSingleAgency:GetBossSingleChallengeFeatureGroupBuffGroupIdsById(id)
+    return self._Model:GetBossSingleChallengeFeatureGroupBuffGroupIdsById(id)
+end
+
+function XFubenBossSingleAgency:GetBossSingleChallengeBuffGroupBuffById(id)
+    return self._Model:GetBossSingleChallengeBuffGroupBuffById(id)
 end
 
 function XFubenBossSingleAgency:GetStageTotalScoreByStageId(stageId)
@@ -307,7 +334,6 @@ function XFubenBossSingleAgency:GetAllStageCount()
                 count = count + #sectionInfo
             end
         end
-
     end
 
     return count
@@ -323,7 +349,6 @@ function XFubenBossSingleAgency:GetNotPassStageCount()
         for k, bossId in pairs(bossList) do
             count = count + self:GetBossNotPassStageCount(bossId)
         end
-
     end
 
     return count
@@ -538,8 +563,6 @@ function XFubenBossSingleAgency:OpenMainUi(skipId, skipResultId)
     else
         XFunctionManager.AcceptResult(skipResultId, false)
     end
-
-
 end
 
 function XFubenBossSingleAgency:OpenTrialUi()
@@ -691,8 +714,6 @@ function XFubenBossSingleAgency:ExOpenMainUi()
     else
         XFubenSimulationChallengeAgency.ExOpenMainUi(self)
     end
-
-
 end
 
 --- 获取倒计时(周历专用)
@@ -817,12 +838,23 @@ function XFubenBossSingleAgency:CheckPreFight(stage)
 end
 
 function XFubenBossSingleAgency:PreFight(stage, teamId, isAssist, challengeCount, challengeId)
+    -- v4.2 获取当前buff对应的选中可选词缀ID列表
+    local selectedFeatureIds = {}
+    if self._Model then
+        local currentBuffFeatureId = self._Model:GetCurrentFeatureId()
+        if currentBuffFeatureId and currentBuffFeatureId > 0 then
+            selectedFeatureIds = self._Model:GetSelectedSelectableFeatureIds(currentBuffFeatureId) or {}
+        end
+    end
+
     local preFight = {
         CardIds = {},
         StageId = stage.StageId,
         IsHasAssist = isAssist and true or false,
         ChallengeCount = challengeCount or 1,
         BossSingleStageType = self._Model:GetFightStageType(),
+        -- v4.2 新增可选词缀：传入选中的可选词缀ID列表
+        BossSingleChallengeBuffIds = selectedFeatureIds,
     }
 
     -- 如果有试玩角色，则不读取玩家队伍信息
@@ -833,27 +865,109 @@ function XFubenBossSingleAgency:PreFight(stage, teamId, isAssist, challengeCount
         end
         preFight.CaptainPos = XDataCenter.TeamManager.GetTeamCaptainPos(teamId)
         preFight.FirstFightPos = XDataCenter.TeamManager.GetTeamFirstFightPos(teamId)
+        
+        -- 如果是普通区，保存编队到服务端
+        local bossSingleStageType = self._Model:GetFightStageType()
+        if bossSingleStageType == XEnumConst.BossSingle.StageType.Normal then
+            local bossId = self:GetBossSectionId(stage.StageId)
+            if bossId then
+                -- 提取角色ID列表（排除0和机器人）
+                local characterIds = {}
+                for _, entityId in ipairs(teamData) do
+                    if entityId ~= 0 and not XRobotManager.CheckIsRobotId(entityId) then
+                        table.insert(characterIds, entityId)
+                    end
+                end
+                
+                if #characterIds > 0 then
+                    self:SaveNormalStageTeamInfo(bossId, characterIds)
+                end
+            end
+        end
     end
 
     return preFight
 end
 
---- 胜利 & 奖励界面
-function XFubenBossSingleAgency:ShowReward(winData)
-    if XMVCA.XFuben:CheckHasFlopReward(winData) then
-        XLuaUiManager.Open("UiFubenFlopReward", function()
-            XLuaUiManager.PopThenOpen("UiSettleWinSingleBoss", winData)
-        end, winData)
+--- 战斗结束处理（参考 XFubenAgency:FinishFight 和 XTransfiniteManager 流程）
+---@param settle table 结算数据
+function XFubenBossSingleAgency:FinishFight(settle)
+    if settle.IsWin then
+        self:ChallengeWin(settle)
     else
-        XLuaUiManager.Open("UiSettleWinSingleBoss", winData)
+        self:ChallengeLose(settle)
     end
 end
 
---- 为独立判断普通囚笼和体验囚笼的Stage解锁增加的Handler
+--- 战斗胜利处理（参考 XFubenAgency:ChallengeWin）
+---@param settleData table 结算数据
+function XFubenBossSingleAgency:ChallengeWin(settleData)
+    local beginData = XMVCA.XFuben:GetFightBeginData()
+    local winData = XMVCA.XFuben:GetChallengeWinData(beginData, settleData)
+    local stage = XMVCA.XFuben:GetStageCfg(settleData.StageId)
+    local endStoryId = XMVCA.XFuben:GetEndStoryId(settleData.StageId)
+    local isKeepPlayingStory = stage and XMVCA.XFuben:IsKeepPlayingStory(stage.StageId)
+    local isNotPass = stage and beginData and not beginData.LastPassed
+
+    if endStoryId and (isKeepPlayingStory or isNotPass) then
+        -- 播放剧情
+        CsXUiManager.Instance:SetRevertAndReleaseLock(true)
+        XDataCenter.MovieManager.PlayMovie(endStoryId, function()
+            -- 弹出结算
+            CsXUiManager.Instance:SetRevertAndReleaseLock(false)
+            XLuaAudioManager.StopCurrentBGM()
+            -- self:ShowReward(winData, true)
+        end, nil, nil, nil, nil, nil, settleData.StageId)
+    else
+        -- 弹出结算
+        -- self:ShowReward(winData, false)
+    end
+
+    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_RESULT_WIN)
+end
+
+--- 战斗失败处理（参考 XFubenAgency:ChallengeLose）
+---@param settleData table 结算数据
+function XFubenBossSingleAgency:ChallengeLose(settleData)
+    XMVCA.XFuben:ChallengeLose(settleData)
+end
+
+--- 显示结算界面（私有函数，参考 XTransfiniteManager._ShowReward）
+---@param winData table 胜利数据
+function XFubenBossSingleAgency:_ShowReward(winData)
+    -- 检查强制退出（参考 XTransfiniteManager.ShowResult）
+    if self:CheckForceExit(true) then
+        return
+    end
+
+    if XMain.IsEditorDebug then
+        self._DebugWinData = winData
+    end
+
+    if XMVCA.XFuben:CheckHasFlopReward(winData) then
+        XLuaUiManager.Open("UiFubenFlopReward", function()
+            XLuaUiManager.PopThenOpen("UiFubenBossSingleSettlement", winData)
+        end, winData)
+    else
+        XLuaUiManager.Open("UiFubenBossSingleSettlement", winData)
+    end
+end
+
+--- 为独立判断普通囚笼和体验囚笼的Stage解锁增加的Handler（参考 XTransfiniteManager，对应 ProcessFunc.CheckUnlockByStageId）
 function XFubenBossSingleAgency:CheckUnlockByStageId(stageId)
     if self:IsBossSingleTrial() then
         return true
     end
+    -- 普通模式返回 nil，使用默认逻辑
+    return nil
+end
+
+--- 检查是否自动退出战斗（参考 XTransfiniteManager.CheckAutoExitFight，对应 ProcessFunc.CheckAutoExitFight）
+---@param stageId number 关卡ID
+---@return boolean 是否自动退出
+function XFubenBossSingleAgency:CheckAutoExitFight(stageId)
+    -- BossSingle 不需要自动退出战斗
+    return false
 end
 
 -- endregion
@@ -863,7 +977,15 @@ end
 function XFubenBossSingleAgency:OnNotifyFubenBossSingleData(data)
     self:UpdateBossSingleData(data)
     self._Model:SetChooseAbleBossListMap(data.BossListDict)
+    
+    -- 初始化普通区编队数据
+    if data.FubenBossSingleData and data.FubenBossSingleData.NormalStageTeamInfos then
+        self:InitNormalStageTeamInfos(data.FubenBossSingleData.NormalStageTeamInfos)
+    end
+    
     XEventManager.DispatchEvent(XEventId.EVENT_FUBEN_SINGLE_BOSS_SYNC)
+    -- 检查强制退出（参考 XTransfiniteManager.InitFromServerData）
+    self:CheckForceExit()
 end
 
 function XFubenBossSingleAgency:OnNotifyBossSingleRankInfo(data)
@@ -879,6 +1001,48 @@ function XFubenBossSingleAgency:OnNotifyBossSingleChallengeCount(data)
     local bossSingleData = self:GetBossSingleData()
 
     bossSingleData:SetChallengeCount(data.ChallengeCount)
+end
+
+---初始化普通区编队数据
+---@param normalStageTeamInfos table 服务端返回的编队数据 {{SectionId = int, CharacterIds = {int}}}
+function XFubenBossSingleAgency:InitNormalStageTeamInfos(normalStageTeamInfos)
+    self._NormalStageTeamInfos = {}
+    
+    if not normalStageTeamInfos then
+        return
+    end
+    
+    for _, teamInfo in ipairs(normalStageTeamInfos) do
+        if teamInfo.SectionId and teamInfo.CharacterIds then
+            self._NormalStageTeamInfos[teamInfo.SectionId] = {
+                SectionId = teamInfo.SectionId,
+                CharacterIds = teamInfo.CharacterIds
+            }
+        end
+    end
+end
+
+---获取普通区编队数据
+---@param sectionId int BOSS章节ID
+---@return table|nil 编队数据 {SectionId = int, CharacterIds = {int}}
+function XFubenBossSingleAgency:GetNormalStageTeamInfo(sectionId)
+    return self._NormalStageTeamInfos[sectionId]
+end
+
+---保存普通区编队到本地缓存
+---@param sectionId int BOSS章节ID
+---@param characterIds table 角色ID列表
+---注意：服务端会在 PreFight 时自动保存编队数据，这里只需要更新本地缓存
+function XFubenBossSingleAgency:SaveNormalStageTeamInfo(sectionId, characterIds)
+    if not sectionId or not characterIds then
+        return
+    end
+    
+    -- 更新本地缓存
+    self._NormalStageTeamInfos[sectionId] = {
+        SectionId = sectionId,
+        CharacterIds = characterIds
+    }
 end
 
 -- endregion
@@ -994,7 +1158,7 @@ function XFubenBossSingleAgency:RequestRankData(callback, levelType, isForce)
 
     if not isForce then
         if self._LastSyncServerRankTimes[levelType] and self._LastSyncServerRankTimes[levelType] + self._SyncServerSecond
-                > now then
+            > now then
             local rankData = self._Model:GetRankDataCacheByLevelType(levelType)
 
             if callback then
@@ -1031,7 +1195,7 @@ function XFubenBossSingleAgency:RequestBossRankData(callback, levelType, bossId,
 
     if not isForce then
         if self._LastSyncServerBossRankTimes[levelType] and self._LastSyncServerBossRankTimes[levelType][bossId]
-                and self._LastSyncServerBossRankTimes[levelType][bossId] + self._SyncServerSecond > now then
+            and self._LastSyncServerBossRankTimes[levelType][bossId] + self._SyncServerSecond > now then
             local rankData = self._Model:GetBossRankDataCacheByTypeAndBossId(levelType, bossId)
 
             if callback then
@@ -1069,7 +1233,7 @@ function XFubenBossSingleAgency:RequestChallengeRankData(callback, stageId)
 
     stageId = stageId or 0
     if self._LastSyncServerChallengeRankTimes[stageId] and self._LastSyncServerChallengeRankTimes[stageId]
-            + self._SyncServerSecond > now then
+        + self._SyncServerSecond > now then
         local rankData = self._Model:GetChallengeRankDataCacheByStageId(stageId)
 
         if callback then
@@ -1207,7 +1371,7 @@ function XFubenBossSingleAgency:CheckTeamDifferentWithRecord(stageId, team)
     if not record then
         return false
     end
-    local characterIdsInRecord = record.Characters--self:GetCharacterListInRecord(stageId)
+    local characterIdsInRecord = record.Characters --self:GetCharacterListInRecord(stageId)
     if not characterIdsInRecord or #characterIdsInRecord == 0 then
         return false
     end
@@ -1248,6 +1412,94 @@ function XFubenBossSingleAgency:ClearRankData()
     self._LastSyncServerRankTimes = {}
     self._LastSyncServerBossRankTimes = {}
     self._LastSyncServerChallengeRankTimes = {}
+end
+
+function XFubenBossSingleAgency:GetDebugWinData()
+    return self._DebugWinData
+end
+
+--- 设置UI显示状态（参考 XTransfiniteManager.SetUiShowed）
+---@param value boolean
+function XFubenBossSingleAgency:SetUiShowed(value)
+    self._IsUiShow = value
+end
+
+--- 获取UI显示状态（参考 XTransfiniteManager.IsUiShowed）
+---@return boolean
+function XFubenBossSingleAgency:IsUiShowed()
+    return self._IsUiShow
+end
+
+--- 退出战斗（参考 XTransfiniteManager.ExitFight）
+function XFubenBossSingleAgency:ExitFight()
+    CS.XFight.ExitForClient(true)
+    XEventManager.DispatchEvent(XEventId.EVENT_FUBEN_SINGLE_BOSS_HIDE_SETTLE)
+end
+
+--- 检查强制退出（参考 XTransfiniteManager.CheckForceExit）
+---@param isResult boolean 是否在结算界面
+---@return boolean 是否已强制退出
+function XFubenBossSingleAgency:CheckForceExit(isResult)
+    local bossSingleData = self:GetBossSingleData()
+    if not bossSingleData or not bossSingleData:IsForceExit() then
+        return false
+    end
+
+    if XFightUtil.IsFighting() then
+        -- 因为结算时, 使用了战斗结算动作, 作为背景, 所以战斗仍未退出
+        if isResult or XLuaUiManager.IsUiShow("UiFubenBossSingleSettlement") then
+            self:ExitFight()
+        else
+            return false
+        end
+    end
+
+    bossSingleData:ClearForceExit()
+    if self:IsUiShowed() then
+        XLuaUiManager.RunMain()
+        XUiManager.TipText("ActivityMainLineEnd")
+    end
+
+    return true
+end
+
+--- 处理战斗结算奖励事件（参考 XTransfiniteManager 的 EVENT_FUBEN_SETTLE_REWARD 处理）
+---@param settleData table 结算数据
+function XFubenBossSingleAgency:OnFightSettle(settleData, res)
+    -- 其他副本的战斗也会进这里, 所以需要检查是否是 BossSingle 的关卡
+    if not res then
+        return
+    end
+
+    if not settleData then
+        return
+    end
+
+    local stageId = settleData.StageId
+    if not stageId then
+        return
+    end
+
+    -- 检查是否是 BossSingle 的关卡
+    if not self:IsBossSingleStage(stageId) then
+        return
+    end
+    
+    if res.Code ~= XCode.Success then
+        XLog.Error("[XFubenBossSingleAgency] 结算结果失败: ", res.Code)
+        CS.XFight.ExitForClient(true)
+        return
+    end
+
+    if settleData.IsWin then
+        -- 胜利：显示结算界面（参考 XTransfiniteManager 的实现）
+        local beginData = XMVCA.XFuben:GetFightBeginData()
+        local winData = XMVCA.XFuben:GetChallengeWinData(beginData, settleData)
+        self:_ShowReward(winData)
+    else
+        -- 失败：退出战斗（使用默认的失败处理）
+        -- 注意：这里不直接调用 ChallengeLose，因为 FinishFight 已经处理了失败逻辑
+    end
 end
 
 return XFubenBossSingleAgency

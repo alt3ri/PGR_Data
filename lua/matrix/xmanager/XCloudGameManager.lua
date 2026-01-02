@@ -51,6 +51,23 @@ XCloudGameManagerCreator = function()
         CS.XInputKeyboard.ControlCameraByDragLocalCache = true
     end
 
+    -- 云游戏，注册陀螺仪数据监听回调 参数默认*100转整型，使用时需要自己/100 
+    -- public class DeviceMotionAttitude 
+    -- {
+    --     public int pitch;// 俯仰角：设备前后倾斜的角度，范围 -π/2 到 π/2。向前倾斜为正，向后倾斜为负
+    --     public int roll;// 横滚角：设备左右倾斜的角度，范围 -π 到 π。向右倾斜为正，向左倾斜为负
+    --     public int yaw;// 偏航角：设备水平旋转的角度，范围 -π 到 π。逆时针旋转为正，顺时针旋转为负
+    -- }
+    function XCloudGameManager.SeteMotionListeningAction(action)
+        -- Action<DeviceMotionAttitude>
+        CS.XWLinkAgent.SetMotionChangeAction(action)
+    end
+
+    -- 云游戏，开启陀螺仪数据监听，true开启，false关闭
+    function XCloudGameManager.EnableMotionListening(enable)
+        CS.XWLinkAgent.SetMotionListening(enable)
+    end
+
     XCloudGameManager.StartListTextInput()
     return XCloudGameManager
 end

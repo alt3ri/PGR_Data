@@ -28,7 +28,12 @@ end
 function XUiGridDlcRelinkResearchProperty:Format(v, isPercent)
     v = v or 0
     if isPercent then
-        return string.format("%s%%", math.floor(v / 100))
+        local value = v / 100
+        local intPart, fracPart = math.modf(value)
+        if fracPart == 0 then
+            value = intPart
+        end
+        return string.format("%s%%", value)
     end
     return tostring(v)
 end

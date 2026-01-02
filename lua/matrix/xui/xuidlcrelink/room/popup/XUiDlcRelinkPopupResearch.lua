@@ -10,7 +10,6 @@ end
 
 function XUiDlcRelinkPopupResearch:OnStart(callBack)
     self.CallBack = callBack
-    self:PlayAnimation("AnimBegin")
 
     ---@type XUiGridDlcRelinkResearchProperty[]
     self.PropertyGridList = {}
@@ -43,13 +42,13 @@ end
 
 function XUiDlcRelinkPopupResearch:RefreshCost()
     -- 图标
-    local icon = XDataCenter.ItemManager.GetItemIcon(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin)
+    local icon = XDataCenter.ItemManager.GetItemIcon(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin)
     self.Icon:SetRawImage(icon)
     -- 数量
     local needCost = self._Control:GetUpgradeNeedCostCoin()
     self.TxtATNums.text = needCost
     -- 拥有数量
-    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin)
+    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin)
     local color = self._Control:GetClientConfig("PlayerLevelNotEnoughCoinColor", hasCost < needCost and 2 or 1)
     self.TxtATNums.color = XUiHelper.Hexcolor2Color(color)
 end
@@ -104,8 +103,8 @@ function XUiDlcRelinkPopupResearch:RefreshRedPoint()
 end
 
 function XUiDlcRelinkPopupResearch:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnEnter, self.OnBtnEnterClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnEnter:AddEventListener(handler(self, self.OnBtnEnterClick))
 end
 
 function XUiDlcRelinkPopupResearch:OnBtnCloseClick()
@@ -113,12 +112,10 @@ function XUiDlcRelinkPopupResearch:OnBtnCloseClick()
 end
 
 function XUiDlcRelinkPopupResearch:OnClose()
-    self:PlayAnimation("AnimEnd", function()
-        self:Close()
-        if self.CallBack then
-            self.CallBack()
-        end
-    end)
+    self:Close()
+    if self.CallBack then
+        self.CallBack()
+    end
 end
 
 function XUiDlcRelinkPopupResearch:OnBtnEnterClick()
@@ -135,11 +132,15 @@ function XUiDlcRelinkPopupResearch:OnBtnEnterClick()
     end
 
     local needCost = self._Control:GetUpgradeNeedCostCoin()
-    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin)
+    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin)
     if hasCost < needCost then
-        local itemName = XDataCenter.ItemManager.GetItemName(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin)
+        local itemName = XDataCenter.ItemManager.GetItemName(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin)
         local desc2 = string.format(self._Control:GetClientConfig("PlayerLevelNotEnoughCoinDesc"), itemName)
         self._Control:OpenCommonTipMsg(desc2)
+        return
+    end
+
+    if not self._Control:AbleSyncDataToMatchServer() then
         return
     end
 

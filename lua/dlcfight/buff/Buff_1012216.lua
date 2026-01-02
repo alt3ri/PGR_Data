@@ -4,39 +4,45 @@ local XBuffScript1012216 = XDlcScriptManager.RegBuffScript(1012216, "XBuffScript
 
 function XBuffScript1012216:Init() --初始化
     Base.Init(self)
-    self.kaiguan = true
-    self._proxy:AddTimerTask(10, function()--延迟5秒后，开始以下逻辑
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012219, 1) --强化1级
-    end)
-    self._proxy:AddTimerTask(15, function()--延迟15秒后，开始以下逻辑
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012220, 1) --强化2级
-    end)
-    self._proxy:AddTimerTask(20, function()--延迟20秒后，开始以下逻辑
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012221, 1) --强化3级
-    end)
-    self._proxy:AddTimerTask(25, function()--延迟25秒后，开始以下逻辑
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012222, 1) --强化4级
-    end)
-    self._proxy:AddTimerTask(30, function()--延迟30秒后，开始以下逻辑
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012223, 1) --强化5级
-    end)
-    self._proxy:AddTimerTask(35, function()--延迟35秒后，开始以下逻辑
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012224, 1) --强化6级
-    end)
+    self.kaiguan1 = true
+    self.kaiguan2 = true
 end
 
 ---@param dt number @ delta time
 function XBuffScript1012216:Update(dt)
     Base.Update(self, dt)
-    if self._proxy:CheckBuffByKind(self._uuid, 1010029) and  self.kaiguan == true then
-        self.kaiguan = false
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012315, 1) --旧buff删除
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012316, 1) --旧buff删除
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012317, 1) --旧buff删除
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012318, 1) --旧buff删除
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012319, 1) --旧buff删除
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012320, 1) --旧buff删除
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012225, 1) --疲劳强化
+
+    if self.kaiguan1 == true then
+        local biaoji1 =  self._proxy:CheckBuffByKind(self._uuid, 1016411)
+        local biaoji2 =  self._proxy:CheckBuffByKind(self._uuid, 1016412)
+        local biaoji3 =  self._proxy:CheckBuffByKind(self._uuid, 1016413)
+        local biaoji4 =  self._proxy:CheckBuffByKind(self._uuid, 1016414)
+        local biaoji5 =  self._proxy:CheckBuffByKind(self._uuid, 1016415)
+        if biaoji1 == true  or biaoji2 == true or biaoji3 == true or biaoji4 == true or biaoji5 == true  then  -- 拥有任意标记buff时
+            self.kaiguan1 = false
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1012319, 1) --旧buff删除
+        end
+    end
+
+
+    if self._proxy:CheckBuffByKind(self._uuid, 1010029) and  self.kaiguan2 == true then --进入疲劳状态后
+        self.kaiguan2 = false
+        local biaoji1 =  self._proxy:CheckBuffByKind(self._uuid, 1016411)
+        local biaoji2 =  self._proxy:CheckBuffByKind(self._uuid, 1016412)
+        local biaoji3 =  self._proxy:CheckBuffByKind(self._uuid, 1016413)
+        local biaoji4 =  self._proxy:CheckBuffByKind(self._uuid, 1016414)
+        local biaoji5 =  self._proxy:CheckBuffByKind(self._uuid, 1016415)
+        if biaoji1 == true then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1012220, 1) --旧buff删除，替换新强化buff
+        elseif biaoji2 == true then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1012221, 1) --旧buff删除，替换新强化buff
+        elseif biaoji3 == true then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1012222, 1) --旧buff删除，替换新强化buff
+        elseif biaoji4 == true then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1012223, 1) --旧buff删除，替换新强化buff
+        elseif biaoji5 == true then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1012224, 1) --旧buff删除，替换新强化buff
+        end
     end
 end
 

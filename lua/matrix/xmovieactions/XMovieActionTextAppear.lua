@@ -51,6 +51,7 @@ end
 function XMovieActionTextAppear:OnClickBtnNext()
     if self.IsTyping then
         self.TypeWriter:Stop()
+        self.TypeWriter:ShowAllText()
         self:OnTypeWriterComplete()
     else
         XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK)

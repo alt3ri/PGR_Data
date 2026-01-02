@@ -167,24 +167,41 @@ end
 
 function XUiFubenBossSingleModeDetail:_RefreshBuffGrid()
     local count = self._ChallengeData:GetFeatureCount()
+    local displayIndex = 0  -- 用于记录实际显示的词缀索引
+
+    local bossId = self._ChallengeData:GetBossId()
+    local featureGroupId = self._ChallengeData:GetFeatureGroupId()
 
     for i = 1, count do
-        local gridBuff = self._GridBuffUiList[i]
         local feature = self._ChallengeData:GetFeatureByIndex(i)
+        
+        if feature then
+            displayIndex = displayIndex + 1
+            local gridBuff = self._GridBuffUiList[displayIndex]
 
-        if not gridBuff then
-            local grid = XUiHelper.Instantiate(self.GridBuff, self.PanelRight)
+            if not gridBuff then
+                local grid = XUiHelper.Instantiate(self.GridBuff, self.PanelRight)
 
-            gridBuff = XUiFubenBossSingleModeDetailGridBuff.New(grid, self)
-            self._GridBuffUiList[i] = gridBuff
+                gridBuff = XUiFubenBossSingleModeDetailGridBuff.New(grid, self)
+                self._GridBuffUiList[displayIndex] = gridBuff
+            end
+
+            gridBuff:Open()
+            gridBuff:Refresh(feature, displayIndex, featureGroupId)
+            gridBuff:SetDetailActive(false)
         end
-
-        gridBuff:Open()
-        gridBuff:Refresh(feature, i)
-        gridBuff:SetDetailActive(false)
     end
-    for i = count + 1, #self._GridBuffUiList do
+    
+    -- 关闭多余的Grid
+    for i = displayIndex + 1, #self._GridBuffUiList do
         self._GridBuffUiList[i]:Close()
+    end
+    
+    -- v4.2 刷新所有GridBuff的总倍率
+    for _, gridBuff in pairs(self._GridBuffUiList) do
+        if gridBuff and gridBuff._RefreshTotalScoreRate then
+            gridBuff:_RefreshTotalScoreRate()
+        end
     end
 end
 

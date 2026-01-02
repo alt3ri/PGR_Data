@@ -25,7 +25,7 @@ local TABLE_PARALLELANIMEGROUP = "Client/Fuben/MainLine/ParallelAnimeGroup.tab"
 local TABLE_MAINLINE_STAGE_TRANSFORM = "Client/Fuben/MainLine/MainLineStageTransform.tab"
 local TABLE_MAINLINE_TELEPORT = "Client/Fuben/MainLine/MainLineTeleport.tab"
 local TABLE_MAINLINE_STAGE_CLEAR_CONTR = "Client/Fuben/MainLine/MainLineStageClearContr.tab"
-local TABLE_MAINLINE_IGNORE_STAGE_LIST = "Client/Fuben/MainLine/MainlineIgnoreStageList.tab"
+local TABLE_MAINLINE_IGNORE_STAGE_LIST = "Share/Fuben/MainLine/MainlineIgnoreStageList.tab"
 local TABLE_MAINLINE_NEXT_CHAPTER = "Client/Fuben/MainLine/MainLineNextChapter.tab"
 
 local MainLineActivityCfg = {}

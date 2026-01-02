@@ -46,11 +46,14 @@ function XFubenBossSingleModel:OnInit()
     self._CurrentSelectIndex = 0
     self._CurrentFeatureId = 0
     self._IsUseSelectIndex = false
+    
+    -- v4.2 新增：临时保存选中的可选词缀ID列表（用于战斗时传入）
+    -- key为buff的featureId，value为该buff对应的可选词缀ID列表
+    ---@type table<number, number[]>
+    self._SelectedSelectableFeatureIds = {}
 end
 
 function XFubenBossSingleModel:ClearPrivate()
-    -- 这里执行内部数据清理
-    -- XLog.Error("请对内部数据进行清理")
 end
 
 function XFubenBossSingleModel:ResetAll()
@@ -65,6 +68,7 @@ function XFubenBossSingleModel:ResetAll()
     self._BossRankDataCache = {}
 
     self._CurrentSelectIndex = 0
+    self._SelectedSelectableFeatureIds = {}
 end
 
 function XFubenBossSingleModel:GetScoreRewardMap()
@@ -428,6 +432,77 @@ end
 
 function XFubenBossSingleModel:GetTimeStampResetCooldown()
     return self._SaveUtil:GetData("TimeStampResetCooldown")
+end
+
+--- 设置是否已播放过终极区解锁动画
+---@param value boolean
+function XFubenBossSingleModel:SetExtremeUnlockAnimationPlayed(value)
+    self._SaveUtil:SaveData("ExtremeUnlockAnimationPlayed", value)
+end
+
+--- 获取是否已播放过终极区解锁动画
+---@return boolean
+function XFubenBossSingleModel:GetExtremeUnlockAnimationPlayed()
+    return self._SaveUtil:GetData("ExtremeUnlockAnimationPlayed") or false
+end
+
+-- v4.2 新增：设置选中的可选词缀ID列表
+---@param featureIds number[]
+function XFubenBossSingleModel:SetSelectedSelectableFeatureIds(featureIds)
+    self._SelectedSelectableFeatureIds = featureIds or {}
+end
+
+-- v4.2 新增：获取指定buff的选中可选词缀ID列表
+---@param buffFeatureId number buff的featureId
+---@return number[]
+function XFubenBossSingleModel:GetSelectedSelectableFeatureIds(buffFeatureId)
+    if not buffFeatureId or buffFeatureId <= 0 then
+        return {}
+    end
+    if not self._SelectedSelectableFeatureIds then
+        self._SelectedSelectableFeatureIds = {}
+    end
+    return self._SelectedSelectableFeatureIds[buffFeatureId] or {}
+end
+
+-- v4.2 新增：添加选中的可选词缀ID（跟随buff）
+---@param buffFeatureId number buff的featureId
+---@param selectableFeatureId number 可选词缀的featureId
+function XFubenBossSingleModel:AddSelectedSelectableFeatureId(buffFeatureId, selectableFeatureId)
+    if not buffFeatureId or buffFeatureId <= 0 or not selectableFeatureId or selectableFeatureId <= 0 then
+        return
+    end
+    if not self._SelectedSelectableFeatureIds then
+        self._SelectedSelectableFeatureIds = {}
+    end
+    if not self._SelectedSelectableFeatureIds[buffFeatureId] then
+        self._SelectedSelectableFeatureIds[buffFeatureId] = {}
+    end
+    -- 检查是否已存在
+    for _, id in ipairs(self._SelectedSelectableFeatureIds[buffFeatureId]) do
+        if id == selectableFeatureId then
+            return
+        end
+    end
+    table.insert(self._SelectedSelectableFeatureIds[buffFeatureId], selectableFeatureId)
+end
+
+-- v4.2 新增：移除选中的可选词缀ID（跟随buff）
+---@param buffFeatureId number buff的featureId
+---@param selectableFeatureId number 可选词缀的featureId
+function XFubenBossSingleModel:RemoveSelectedSelectableFeatureId(buffFeatureId, selectableFeatureId)
+    if not buffFeatureId or buffFeatureId <= 0 or not selectableFeatureId or selectableFeatureId <= 0 then
+        return
+    end
+    if not self._SelectedSelectableFeatureIds or not self._SelectedSelectableFeatureIds[buffFeatureId] then
+        return
+    end
+    for i = #self._SelectedSelectableFeatureIds[buffFeatureId], 1, -1 do
+        if self._SelectedSelectableFeatureIds[buffFeatureId][i] == selectableFeatureId then
+            table.remove(self._SelectedSelectableFeatureIds[buffFeatureId], i)
+            break
+        end
+    end
 end
 
 return XFubenBossSingleModel

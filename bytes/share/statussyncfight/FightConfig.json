@@ -130,6 +130,16 @@
         "Value": "Assets/Product/Ui/Prefab/UiDebuggerMouseHunterDLC.prefab"
     },
     {
+        "Key": "UiDebuggerRelinkNpcListDLC",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/Prefab/UiDebuggerRelinkNpcListDLC.prefab"
+    },
+    {
+        "Key": "UiDebuggerWrestleSimulateDLC",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/Prefab/UiDebuggerWrestleSimulateDLC.prefab"
+    },
+    {
         "Key": "SyncPosLerpDuration",
         "Type": "float",
         "Value": "0.2"
@@ -423,5 +433,25 @@
         "Key": "DefaultThreatUpdateCD",
         "Type": "float",
         "Value": "3"
+    },
+    {
+        "Key": "ChangeMasterControllerByBadNetworkStateEnable",
+        "Type": "bool",
+        "Value": "1"
+    },
+    {
+        "Key": "ChangeMasterControllerWaitTimeByBadNetworkState",
+        "Type": "float",
+        "Value": "10"
+    },
+    {
+        "Key": "ChangeMasterControllerMaxScoreDifference",
+        "Type": "float",
+        "Value": "10"
+    },
+    {
+        "Key": "ChangeMasterControllerLowestScore",
+        "Type": "float",
+        "Value": "90"
     }
 ]

@@ -40,7 +40,7 @@ function XUiBigWorldTip:UpdateView()
     local data = self._Data
     self:ResetUi()
     if type(data) == "number" then
-        self._TemplateId = data
+        self.TemplateId = data
     else
         if data.IsTempItemData then
             self:SetTempGoodsInfo(data)
@@ -82,7 +82,7 @@ function XUiBigWorldTip:SetTempGoodsInfo(data)
     end
     -- 世界观描述
     if self.TxtWorldDesc and data.WorldDesc then
-        self.TxtWorldDesc.text = data.WorldDesc
+        self.TxtWorldDesc.text = XUiHelper.ConvertLineBreakSymbol(data.WorldDesc)
         self.ImgQuality.gameObject:SetActiveEx(true)
     end
     -- 描述
@@ -187,7 +187,7 @@ function XUiBigWorldTip:SetGoodsInfo(data)
         end
 
         if worldDesc and #worldDesc then
-            self.TxtWorldDesc.text = worldDesc
+            self.TxtWorldDesc.text = XUiHelper.ConvertLineBreakSymbol(worldDesc)
             self.TxtWorldDesc.gameObject:SetActiveEx(true)
         end
     end

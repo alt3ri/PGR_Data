@@ -17,26 +17,23 @@ function XDlcRelinkRoom:CloseFightUiLoading()
 end
 
 function XDlcRelinkRoom:OnDisconnect()
-    local uiName = "UiDlcRelinkRoom"
-    if XLuaUiManager.IsStackUiOpen(uiName) then
-        XLuaUiManager.CloseAllUpperUi(uiName)
-    else
-        XLuaUiManager.Open(uiName)
-    end
+    XMVCA.XDlcRelink:CommonRunRelinkRoomUiHandle()
 end
 
 function XDlcRelinkRoom:OnRoomLeaderTimeOut()
-    if not XUiManager.CheckTopUi(CsXUiType.Normal, "UiDlcRelinkRoom") then
-        XLuaUiManager.Remove("UiDlcRelinkRoom")
-    end
+    -- 房主超时后的处理
 end
 
 function XDlcRelinkRoom:OnKickOut(code)
     if code == XCode.DlcMultiplayerClose then
         XLuaUiManager.RunMain(true)
     else
-        -- TODO 被踢出房间后的处理
+        -- 被踢出房间后的处理
     end
+end
+
+function XDlcRelinkRoom:OnCustomEnterTargetRoom()
+    XMVCA.XDlcRelink:CommonRunRelinkRoomUiHandle()
 end
 
 return XDlcRelinkRoom

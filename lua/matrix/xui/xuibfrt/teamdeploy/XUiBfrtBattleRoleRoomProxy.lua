@@ -132,9 +132,6 @@ function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIdsCallback(teamInfoD
         local title = CsXTextManager.GetText("BfrtDeployTipTitle")
         local content = CsXTextManager.GetText("BfrtDeployTipContent", characterName, oldTeamName, newTeamName)
 
-        ---------------------------------------------------------------
-        -- 弹出提示对话框
-        ---------------------------------------------------------------
         XUiManager.DialogTip(title, content, XUiManager.DialogType.Normal,
             -- 取消回调
             function()
@@ -165,11 +162,18 @@ function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIdsCallback(teamInfoD
                 -------------------------------------------------------
                 XDataCenter.BfrtManager.SetViewGroupFightTeamData(info.OtherTeamIdx, info.OtherTeamPos, 0)
 
-                -- 同步被替换的队伍对象（如果存在缓存）
-                local replacedTeam = XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam and
-                    XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam(info.OtherTeamIdx)
+                -- [修改核心]：不再查 GetGirdEchelonIndexTempTeam，而是构造参数查 GetTeam
+                local teamQuery = {
+                    BfrtGroupId = XDataCenter.BfrtManager.GetViewGroupId(),
+                    EchelonIndex = info.OtherTeamIdx,
+                    -- [新增] 必须传入类型，否则默认为 Fight 会出错
+                    EchelonType = XDataCenter.BfrtManager.GetCurSelectFightType() 
+                }
+                local replacedTeam = XDataCenter.BfrtManager.GetTeam(teamQuery)
+                
                 if replacedTeam then
                     replacedTeam:UpdateEntityTeamPos(info.CharId, info.OtherTeamPos, false)
+                    -- replacedTeam 是 Manager 的引用，Update 会自动保存
                 else
                     XLog.Warning(string.format("[BfrtProxy] 未找到被替换队伍：%s", tostring(info.OtherTeamIdx)))
                 end

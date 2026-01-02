@@ -421,9 +421,10 @@ end
 function XUiPanelFashionSuitButtonGroup:OnPurchaseBuy()
     if self:CheckPurchaseBuy() then
         if self._ItemData and self._ItemData.Id then
-            XDataCenter.PurchaseManager.PurchaseRequest(self._ItemData.Id, function()
+            XDataCenter.PurchaseManager.PurchaseRequest(self._ItemData.Id, function(rewardList)
                 self:UpdateView()
                 self.Parent:ShowGift()
+                self.Parent:CallPurchaseCb(rewardList)
             end, 1, nil, XPurchaseConfigs.GetLBUiTypesList(), nil, nil, nil, function()
                 self:ShowWearPopup()
             end)
@@ -504,7 +505,10 @@ function XUiPanelFashionSuitButtonGroup:OnPurchaseMoneyNotEnough(skipIndex, left
     end
     if skipIndex == XPurchaseConfigs.TabsConfig.Pay and XHeroSdkManager.IsPayEnable() then
         if payCount then
-            XLuaUiManager.Open("UiPurchaseQuickBuy", payCount)
+            XLuaUiManager.Open("UiPurchaseQuickBuy", payCount, function(index)
+                XLuaUiManager.SafeClose("UiPurchaseQuickBuy")
+                XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
+            end)
         end
     end
 end

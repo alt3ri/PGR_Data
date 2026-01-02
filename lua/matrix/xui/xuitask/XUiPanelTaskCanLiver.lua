@@ -24,7 +24,9 @@ function XUiPanelTaskCanLiver:OnEnable()
     else
         self.TxtNone.text = XUiHelper.GetText("DrawCanLiverWeekTaskFinish")
     end
-    self.PanelBtnShop.gameObject:SetActiveEx(XTool.IsNumberValid(XDataCenter.DrawManager.GetCanLiverActivityId()))
+    local cId = 770400 -- 临时写死
+    local isShowShop = XConditionManager.CheckCondition(cId)
+    self.PanelBtnShop.gameObject:SetActiveEx(isShowShop)
     self.DynamicTable:SetDataSource(self.CanLiverTasks)
     self.DynamicTable:ReloadDataASync()
 end

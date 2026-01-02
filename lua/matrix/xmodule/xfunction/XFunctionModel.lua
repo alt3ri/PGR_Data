@@ -1,19 +1,25 @@
 ---@class XFunctionModel : XModel
 ---@field CurrentFunction XFunctionData
 local XFunctionModel = XClass(XModel, "XFunctionModel")
+
+local TableKey = {
+    FunctionalEntranceConfig = {
+        Identifier = "FunctionId",
+        CacheType = XConfigUtil.CacheType.Normal
+    }
+}
+
 function XFunctionModel:OnInit()
-    --初始化内部变量
-    --这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
+    self._EntryRedPoint = false
+    
+    self._ConfigUtil:InitConfigByTableKey("Functional", TableKey)
 end
 
 function XFunctionModel:ClearPrivate()
-    --这里执行内部数据清理
-    --XLog.Error("请对内部数据进行清理")
+  
 end
 
 function XFunctionModel:ResetAll()
-    --这里执行重登数据清理
-    --XLog.Error("重登数据清理")
     self:RemoveUploadDelayTimer()
 end
 
@@ -87,6 +93,61 @@ end
 function XFunctionModel:GetCurrentFunction()
     return self.CurrentFunction
 end
+--endregion
+
+--region 入口红点
+
+function XFunctionModel:InitEntryRedPoint(dict)
+    if not dict then
+        self._EntryRedPoint = {}
+    else
+        self._EntryRedPoint = dict
+    end
+end
+
+function XFunctionModel:MarkEntryRedPoint(functionId, num)
+    if not self._EntryRedPoint then
+        self._EntryRedPoint = {}
+    end
+    self._EntryRedPoint[functionId] = num
+end
+
+function XFunctionModel:CheckEntryRedPoint(functionId)
+    if not self._EntryRedPoint then
+        self._EntryRedPoint = {}
+    end
+    local redNum = self._EntryRedPoint[functionId]
+    if not redNum or redNum <= 0 then
+        redNum = 0
+    end
+    local configNum = self:GetEntryFunctionalRedNum(functionId)
+    if not configNum or configNum <= 0 then
+        return false
+    end
+    return redNum < configNum
+end
+
+---@return XTableFunctionalEntranceConfig
+function XFunctionModel:GetEntryFunctionalTemplate(functionId)
+    local template = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FunctionalEntranceConfig, functionId, true)
+    return template
+end
+
+function XFunctionModel:GetEntryFunctionalRedNum(functionId)
+    local t = self:GetEntryFunctionalTemplate(functionId)
+    return t and t.RedPointNum or 0
+end
+
+function XFunctionModel:GetEntryFunctionalLabel(functionId)
+    local t = self:GetEntryFunctionalTemplate(functionId)
+    return t and t.Label or "???"
+end
+
+function XFunctionModel:GetEntryFunctionalLabelTimeId(functionId)
+    local t = self:GetEntryFunctionalTemplate(functionId)
+    return t and t.LabelTimeId or 0
+end
+
 --endregion
 
 return XFunctionModel

@@ -98,6 +98,12 @@ function XBWMessageEntity:GetCurrentText()
                     return XMVCA.XBigWorldService:GetText("MessageOptionsText")
                 elseif content:IsMemes() then
                     return XMVCA.XBigWorldService:GetText("MessageMemesText")
+                elseif content:IsSystem() then
+                    return XMVCA.XBigWorldService:GetText("MessageSystemText")
+                elseif content:IsImage() then
+                    return XMVCA.XBigWorldService:GetText("MessageImageText")
+                elseif content:IsVideo() then
+                    return XMVCA.XBigWorldService:GetText("MessageVideoText")
                 else
                     return content:GetText()
                 end
@@ -113,6 +119,10 @@ function XBWMessageEntity:GetCurrentText()
                 return XMVCA.XBigWorldService:GetText("MessageMemesText")
             elseif content:IsSystem() then
                 return XMVCA.XBigWorldService:GetText("MessageSystemText")
+            elseif content:IsImage() then
+                return XMVCA.XBigWorldService:GetText("MessageImageText")
+            elseif content:IsVideo() then
+                return XMVCA.XBigWorldService:GetText("MessageVideoText")
             else
                 return content:GetText()
             end

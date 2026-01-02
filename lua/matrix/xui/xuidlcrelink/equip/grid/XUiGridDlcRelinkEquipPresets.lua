@@ -6,10 +6,10 @@ local XUiGridDlcRelinkEquipPresets = XClass(XUiNode, "XUiGridDlcRelinkEquipPrese
 
 function XUiGridDlcRelinkEquipPresets:OnStart()
     self.GridEquipment.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnTop, self.OnBtnTopClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnCover, self.OnBtnCoverClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnUse, self.OnBtnUseClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnRename, self.OnBtnRenameClick, true, true)
+    self.BtnTop:AddEventListener(handler(self, self.OnBtnTopClick))
+    self.BtnCover:AddEventListener(handler(self, self.OnBtnCoverClick))
+    self.BtnUse:AddEventListener(handler(self, self.OnBtnUseClick))
+    self.BtnRename:AddEventListener(handler(self, self.OnBtnRenameClick))
 
     ---@type XUiGridDlcRelinkEquipment[]
     self.EquipmentGridList = {}
@@ -28,10 +28,9 @@ end
 
 function XUiGridDlcRelinkEquipPresets:RefreshInfo()
     -- 预设名称
-    self.TxtPresets.text = self._Control:GetEquipPresetSetNameByIndex(self.Index)
+    self.TxtPresets.text = self._Control:GetEquipPresetSetNameByIndex(self.Index, true)
     -- 预设总战力
-    local totalAbility = self._Control:GetEquipPresetSetAbilityByIndex(self.Index)
-    self.TxtLv.text = string.format(self._Control:GetClientConfig("EquipLevelDesc"), totalAbility)
+    self.TxtLv.text = self._Control:GetEquipPresetSetAbilityByIndex(self.Index)
 end
 
 function XUiGridDlcRelinkEquipPresets:RefreshEquipment()
@@ -103,6 +102,11 @@ end
 
 -- 覆盖
 function XUiGridDlcRelinkEquipPresets:OnBtnCoverClick()
+    -- 检查当前角色装备是否与预设相同
+    if self:CheckCurrentCharacterEquipIsSameAsPreset() then
+        return
+    end
+    -- 检查预设是否为空
     local isEmpty = self._Control:CheckEquipPresetSetIsEmpty(self.Index)
     if not isEmpty then
         local title = self._Control:GetClientConfig("TipTitle")
@@ -128,11 +132,17 @@ end
 
 -- 使用
 function XUiGridDlcRelinkEquipPresets:OnBtnUseClick()
+    -- 检查预设是否为空
     local isEmpty = self._Control:CheckEquipPresetSetIsEmpty(self.Index)
     if isEmpty then
         self._Control:OpenCommonTipText("EquipPresetSetUseEmpty")
         return
     end
+    -- 检查当前角色装备是否与预设相同
+    if self:CheckCurrentCharacterEquipIsSameAsPreset() then
+        return
+    end
+    -- 检查预设是否被其他角色穿戴
     local isWorn = self._Control:CheckEquipPresetSetIsWornByOtherCharacter(self.Index, self.Parent.CharacterId)
     if isWorn then
         local title = self._Control:GetClientConfig("TipTitle")
@@ -154,6 +164,25 @@ function XUiGridDlcRelinkEquipPresets:OnBtnUseConfirm()
         self.Parent.DynamicTable:ReloadDataSync()
         self._Control:OpenCommonLeftTipDialog(self._Control:GetClientConfig("EquipPresetSetUseSuccess"))
     end)
+end
+
+--- 检查当前角色装备是否与预设相同
+---@return boolean 是否相同
+function XUiGridDlcRelinkEquipPresets:CheckCurrentCharacterEquipIsSameAsPreset()
+    local currentEquipUids = self._Control:GetWearEquipUidsByCharacterId(self.Parent.CharacterId)
+    local presetEquipUids = self._Control:GetEquipPresetSetEquipUidsByIndex(self.Index)
+
+    local equipSlotIndexMap = self._Control:GetEquipSlotIndexMap()
+    for _, slotIndex in ipairs(equipSlotIndexMap) do
+        local currentUid = currentEquipUids[slotIndex] or 0
+        local presetUid = presetEquipUids[slotIndex] or 0
+        if currentUid ~= presetUid then
+            return false
+        end
+    end
+
+    self._Control:OpenCommonTipText("EquipPresetSetUseSameEquip")
+    return true
 end
 
 -- 重命名

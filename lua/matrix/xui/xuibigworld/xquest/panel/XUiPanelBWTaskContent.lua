@@ -15,13 +15,12 @@ function XUiGridBWObjective:Refresh(data, isStep)
         progress = ""
         isFinish = data:IsFinish()
     end
-    if self.UiGroup then
-        self.UiGroup:SetTextWithGroup(0, title)
-        self.UiGroup:SetTextWithGroup(1, progress)
-    end
+    self.UiGroup:SetTextWithGroup(0, title)
+    self.UiGroup:SetTextWithGroup(1, progress)
+    local hasTitle = not string.IsNilOrEmpty(title)
     if self.PanelOff then
-        self.PanelOff.gameObject:SetActiveEx(not isFinish)
-        self.PanelOn.gameObject:SetActiveEx(isFinish)
+        self.PanelOff.gameObject:SetActiveEx(hasTitle and not isFinish)
+        self.PanelOn.gameObject:SetActiveEx(hasTitle and isFinish)
     end
 end
 
@@ -89,7 +88,6 @@ function XUiPanelBWTaskContent:RefreshBtn()
     self.BtnGo.gameObject:SetActiveEx(isTrack)
     self.BtnTrack.gameObject:SetActiveEx(not isTrack)
     self.BtnUntrack.gameObject:SetActiveEx(isTrack)
-    self.BtnSubmit.gameObject:SetActiveEx(false)
 end
 
 ---@param questId number
@@ -127,7 +125,7 @@ end
 ---@param step XBigWorldQuestStep
 function XUiPanelBWTaskContent:RefreshDetail(step)
     if step then
-        local objectiveList = XMVCA.XBigWorldQuest:GetObjectiveListWithStep(step)
+        local objectiveList = XMVCA.XBigWorldQuest:GetObjectiveListWithStep(step, false)
         self:RefreshObjective(objectiveList)
     end
     self:RefreshStep(step)
@@ -197,6 +195,8 @@ function XUiPanelBWTaskContent:OnBtnTrackClick()
                 or state == XMVCA.XBigWorldQuest.EQuestSkipToByFightState.NotExistPin then
             self.Parent:Close()
         elseif state == XMVCA.XBigWorldQuest.EQuestSkipToByFightState.SameAreaGroup then
+            self.Parent:Close()
+        elseif state == XMVCA.XBigWorldQuest.EQuestSkipToByFightState.LevelInValid then
             self.Parent:Close()
         else
             XMVCA.XBigWorldQuest:TrySkipToByFightSkipInfo(data)

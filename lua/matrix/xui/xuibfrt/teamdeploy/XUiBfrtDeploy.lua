@@ -25,7 +25,7 @@ local XUiGridEchelon = require("XUi/XUiBfrt/TeamDeploy/XUiGridEchelon")
 local XUiBfrtDeploy = XLuaUiManager.Register(XLuaUi, "UiBfrtDeploy")
 
 function XUiBfrtDeploy:OnAwake()
-    XDataCenter.BfrtManager.ClearGirdEchelonIndexTempTeam()
+    -- [已删除] XDataCenter.BfrtManager.ClearGirdEchelonIndexTempTeam() 
     XDataCenter.BfrtManager.InitTeamCaptainPos()
     XDataCenter.BfrtManager.InitTeamFirstFightPos()
     self:AutoAddListener()
@@ -286,19 +286,92 @@ function XUiBfrtDeploy:FindTeamPos(characterId)
     return findTeam, findPos
 end
 
+-- [替换] 处理角色交换/上阵逻辑 (适配托管模式)
 function XUiBfrtDeploy:CharacterSwapEchelon(oldCharacterId, newCharacterId, selectPos)
-    local oldTeam, oldCharacterPos = self:FindTeamPos(oldCharacterId)
-    local newTeam, newCharacterPos = self:FindTeamPos(newCharacterId)
+    local groupId = self.GroupId
+    
+    -- ===========================================
+    -- 1. 定位目标队伍 (即发生操作的那个格子所在的队伍)
+    -- ===========================================
+    local targetTeamIdx, targetTeamType
+    
+    -- 优先尝试通过被替换的角色(oldCharacterId)来定位队伍
+    if oldCharacterId and oldCharacterId > 0 then
+        targetTeamIdx, targetTeamType = XDataCenter.BfrtManager.CheckIsInTeamList(oldCharacterId)
+    end
+    
+    -- 如果 oldCharacterId 是 0 (空位上阵)，或者没找到，则必须依赖全局选中的队伍状态
+    if not targetTeamIdx then
+        targetTeamIdx = XDataCenter.BfrtManager.GetCurSelectTeamIdx()
+        targetTeamType = XDataCenter.BfrtManager.GetCurSelectFightType()
+    end
 
-    if oldTeam and oldCharacterPos then
-        oldTeam[oldCharacterPos] = newCharacterId
+    if not targetTeamIdx or targetTeamIdx == 0 then
+        XLog.Error("CharacterSwapEchelon Error: 无法定位目标队伍，请检查 SetCurSelectTeamIdx 是否调用")
+        return
+    end
+
+    -- ===========================================
+    -- 2. 获取目标队伍实例 (XTeam)
+    -- ===========================================
+    local targetTeam = XDataCenter.BfrtManager.GetTeam({
+        BfrtGroupId = groupId,
+        EchelonIndex = targetTeamIdx,
+        EchelonType = targetTeamType
+    })
+    
+    if not targetTeam then return end
+
+    -- ===========================================
+    -- 3. 执行交换逻辑
+    -- ===========================================
+    -- 检查新角色(newCharacterId)是否已经在某个队伍里
+    local sourceTeamIdx, sourceTeamType = XDataCenter.BfrtManager.CheckIsInTeamList(newCharacterId)
+    
+    if sourceTeamIdx and sourceTeamType then
+        -- 【情况 A】新角色已在某队 (跨队交换 或 同队换位)
+        ---@type XTeam
+        local sourceTeam = XDataCenter.BfrtManager.GetTeam({
+            BfrtGroupId = groupId,
+            EchelonIndex = sourceTeamIdx,
+            EchelonType = sourceTeamType
+        })
+        
+        if sourceTeam then
+            -- 获取新角色在来源队的位置
+            local sourcePos = sourceTeam:GetEntityIdPos(newCharacterId)
+            
+            if sourceTeam == targetTeam then
+                -- [同队换位] 直接交换两个位置
+                targetTeam:SwitchEntityPos(selectPos, sourcePos)
+            else
+                -- [跨队交换]
+                local targetIds = targetTeam:GetEntityIds()
+                local sourceIds = sourceTeam:GetEntityIds()
+                
+                -- 执行交换：目标位变成新人，来源位变成旧人(如果是空位则变0)
+                targetIds[selectPos] = newCharacterId
+                sourceIds[sourcePos] = oldCharacterId 
+                
+                -- 分别更新两队
+                targetTeam:UpdateEntityIds(targetIds)
+                sourceTeam:UpdateEntityIds(sourceIds)
+                
+                sourceTeam:Save() -- 保存来源队
+            end
+        end
     else
-        XDataCenter.BfrtManager.SetViewGroupFightTeamData(XDataCenter.BfrtManager.GetCurSelectTeamIdx(), selectPos, newCharacterId)
+        -- 【情况 B】新角色不在任何队伍 (从仓库直接上阵/替换)
+        local ids = targetTeam:GetEntityIds()
+        ids[selectPos] = newCharacterId
+        targetTeam:UpdateEntityIds(ids)
     end
 
-    if newTeam and newCharacterPos then
-        newTeam[newCharacterPos] = oldCharacterId
-    end
+    -- ===========================================
+    -- 4. 保存并刷新
+    -- ===========================================
+    targetTeam:Save() -- 保存目标队 (触发 Manager 同步 + 协议发送)
+    self:UpdateEchelonList() -- 刷新 UI 显示
 end
 --endregion
 
@@ -323,18 +396,6 @@ function XUiBfrtDeploy:AutoAddListener()
     self.BtnTongBlue.CallBack = function()
         self:OnBtnQuickClearClick()
     end
-    -- 海外版本据点界面添加帮助按钮
-    if XOverseaManager.IsJPRegion() then
-        self.BtnHelp.gameObject:SetActiveEx(true)
-        self.BtnHelp.CallBack = function()
-            self:OnBtnHelpClick()
-        end
-    end
-end
-
-function XUiBfrtDeploy:OnBtnHelpClick()
-    local helpContent = CS.XGame.ClientConfig:GetString("BfrtShowHelpTip03")
-    XUiManager.ShowHelpTip(helpContent)
 end
 
 function XUiBfrtDeploy:OnBtnFightClick()

@@ -181,21 +181,9 @@ function XUiMainLine2Chapter:CloseDifficultyList()
 end
 
 function XUiMainLine2Chapter:OnBtnAchievementClick()
-    local isGet = self._Control:IsAchievementGet(self.MainId)
-    local agency = XMVCA:GetAgency(ModuleId.XMainLine2)
-    local curCnt, maxCnt = agency:GetMainAchievementProgress(self.MainId)
-    if not isGet and curCnt >= maxCnt then
-        XMVCA:GetAgency(ModuleId.XMainLine2):RequestReceiveAchievement(self.MainId, function()
-            self:RefreshAchievements()
-        end)
-    else
-        local achievementId = self._Control:GetMainAchievementId(self.MainId)
-        local rewardId = self._Control:GetAchievementClearRewardId(achievementId)
-        local rewardList = XRewardManager.GetRewardList(rewardId)
-        local itemTemplateId = rewardList[1].TemplateId
-        local data = XDataCenter.MedalManager.GetScoreTitleById(itemTemplateId)
-        XLuaUiManager.Open("UiCollectionTip", data, XDataCenter.MedalManager.InType.Normal)
-    end
+    XMVCA.XMainLine2:OnBtnAchievementClick(self.MainId, function()
+        self:RefreshAchievements()
+    end)
 end
 
 function XUiMainLine2Chapter:OnBtnJumpClick(skipId)

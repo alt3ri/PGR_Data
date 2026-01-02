@@ -4,6 +4,7 @@ local XUiPlotExhibitionMainGrid = XClass(XUiNode, "XUiPlotExhibitionMainGrid")
 
 function XUiPlotExhibitionMainGrid:OnStart()
     self.ImgPercentNormal = self.ImgPercentNormal or XUiHelper.TryGetComponent(self.Transform, "PanelCharacter/Jindutiao/ImgPercentNormal", "Image")
+    XUiHelper.RegisterClickEvent(self, self.BtnChangeCover, self.OnClickChangeCover)
 end
 
 ---@param data XPlotExhibitionControlRole
@@ -22,6 +23,13 @@ end
 function XUiPlotExhibitionMainGrid:GetRoleId()
     if self._Data then
         return self._Data.Id
+    end
+end
+
+function XUiPlotExhibitionMainGrid:OnClickChangeCover()
+    local roleId = self:GetRoleId()
+    if roleId then
+        XLuaUiManager.Open("UiPlotExhibitionPopupCoverChange", roleId)
     end
 end
 

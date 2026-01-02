@@ -74,6 +74,7 @@ function XUiBigWorldProcessExplore:Refresh(contentEntity)
     self:_RefreshRedPoint()
     self:_RefreshProgress(contentEntity)
     self:_RefreshDynamicTable(contentEntity:GetExploreEntitysWithSorting())
+    self:_RefreshBannerBg(contentEntity)
 end
 
 ---@return XDynamicTableNormal
@@ -116,6 +117,7 @@ end
 
 function XUiBigWorldProcessExplore:_InitUi()
     self.GridExplore.gameObject:SetActiveEx(false)
+    self.ImgBg = self.ImgBg or self.Transform:Find("PanelAccumulate/ImgBg"):GetComponent("RawImage")
 end
 
 ---@param contentEntity XBWCourseContentEntity
@@ -151,6 +153,17 @@ function XUiBigWorldProcessExplore:_RefreshRedPoint()
     end
 
     self.BtnReward:ShowReddot(self._Entity:IsAchieved())
+end
+
+---@param exploreEntity XBWCourseContentEntity
+function XUiBigWorldProcessExplore:_RefreshBannerBg(exploreEntity)
+    if not self.ImgBg then
+        return
+    end
+    self.ImgBg:SetRawImage(exploreEntity:GetBigWorldCourseContentBannerBg())
+end
+
+function XUiBigWorldProcessExplore:OnVersionChanged()
 end
 
 return XUiBigWorldProcessExplore

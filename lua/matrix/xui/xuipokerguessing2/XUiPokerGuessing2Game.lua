@@ -24,6 +24,7 @@ function XUiPokerGuessing2Game:OnAwake()
     XUiHelper.RegisterClickEvent(self, self.BtnPlay, self.OnClickPlay, nil, true)
     XUiHelper.RegisterClickEvent(self, self.BtnBack, self.OnClickBack, nil, true)
     XUiHelper.RegisterClickEvent(self, self.BtnMainUi, self.OnClickMain, nil, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnShowRule, self.OnBtnShowRuleClick, nil, true)
     
     self.BtnSkillChangeSelf:AddEventListener(handler(self, self.OnBtnSkillChangeSelfClick))
     self.BtnSkillChangeEnemy:AddEventListener(handler(self, self.OnBtnSkillChangeEnemyClick))
@@ -48,6 +49,18 @@ function XUiPokerGuessing2Game:OnStart()
     self:UpdateEnemy()
     self:UpdateSkillShow()
     self:PlayAnimationStartRound()
+    
+    -- 默认显示PanelBuff
+    if self.PanelBuff then
+        self.PanelBuff.gameObject:SetActiveEx(true)
+        -- 3秒后自动关闭
+        self._PanelBuffAutoCloseTimer = XScheduleManager.ScheduleOnce(function()
+            if self.PanelBuff and not XTool.UObjIsNil(self.PanelBuff.gameObject) then
+                self.PanelBuff.gameObject:SetActiveEx(false)
+            end
+            self._PanelBuffAutoCloseTimer = nil
+        end, 3000)
+    end
 end
 
 function XUiPokerGuessing2Game:OnEnable()
@@ -58,6 +71,7 @@ function XUiPokerGuessing2Game:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_RESTART, self.Restart, self)
     XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_SELECT_PLAYER_CARD, self.PlayAnimationPlayerPutCard, self)
     XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_OPEN_CHANGE_SKILL, self.OnOpenChangeCardSkillPanel, self)
+    XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_UPDATE_STAGE_DESC, self.UpdateStageDesc, self)
     XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_CHANGE_CARD_SUCCESS, self.OnChangeCardSuccess, self)
     -- 任务会导致卡顿, 因此延迟到游戏界面关闭时进行更新
     XDataCenter.TaskManager.CloseSyncTasksEvent()
@@ -72,11 +86,18 @@ function XUiPokerGuessing2Game:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_SELECT_PLAYER_CARD, self.PlayAnimationPlayerPutCard, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_OPEN_CHANGE_SKILL, self.OnOpenChangeCardSkillPanel, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_CHANGE_CARD_SUCCESS, self.OnChangeCardSuccess, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_UPDATE_STAGE_DESC, self.UpdateStageDesc, self)
 
     XDataCenter.TaskManager.OpenSyncTasksEvent()
 end
 
 function XUiPokerGuessing2Game:OnDestroy()
+    -- 清理PanelBuff自动关闭定时器
+    if self._PanelBuffAutoCloseTimer then
+        XScheduleManager.UnSchedule(self._PanelBuffAutoCloseTimer)
+        self._PanelBuffAutoCloseTimer = nil
+    end
+    
     -- 防止遮罩层多次打开
     for i = 1, 99 do
         if XLuaUiManager.IsMaskShow("PokerGuessing2") then
@@ -130,10 +151,16 @@ function XUiPokerGuessing2Game:TimerQuick(callback, duration)
     self:_AddTimerId(timer)
 end
 
-function XUiPokerGuessing2Game:PlayAnimationConfirmResult(state, roundState)
+---@param state number 游戏状态
+---@param roundState number 回合状态
+---@param roundPlayerEffect number 玩家回合效果
+---@param roundRobotEffect number 敌人回合效果
+function XUiPokerGuessing2Game:PlayAnimationConfirmResult(state, roundState, roundPlayerEffect, roundRobotEffect)
     XLuaUiManager.SetMask(true, "PokerGuessing2")
-    -- 掀开敌人的卡
+    -- 掀开敌人的卡（敌人卡牌会在动画结束后自动克隆）
     self:RevealEnemyCard()
+    -- 玩家卡牌直接克隆（因为玩家卡牌不需要翻牌动画）
+    self._Player:CloneCardOnCurrentNode()
 
     -- 判断输赢
     self:TimerQuick(function()
@@ -154,15 +181,59 @@ function XUiPokerGuessing2Game:PlayAnimationConfirmResult(state, roundState)
     end, 1.3)
 
     -- 显示对话
-    local speak = self._Control:GetDialogue(state)
-    self:TimerQuick(function()
-        if speak.Player then
-            self._Player:Speak(speak.Player, speak.PlayerIsEmoji)
+    -- 优先处理回合效果（roundPlayerEffect 和 roundRobotEffect）
+    if roundPlayerEffect and roundPlayerEffect ~= 0 then
+        -- 将 PokerRoundEffect 映射到 Speak 枚举
+        local playerSpeakType = self:_MapRoundEffectToSpeak(roundPlayerEffect)
+        if playerSpeakType then
+            local playerSpeak = self._Control:GetDialogue(playerSpeakType)
+            self:TimerQuick(function()
+                if playerSpeak.Player then
+                    self:_ShowCharacterSpeak(self._Player, playerSpeak.Player)
+                end
+            end, 0.7)
         end
-    end, 0.7)
-    self:TimerQuick(function()
-        self._Enemy:Speak(speak.Enemy, speak.EnemyIsEmoji)
-    end, 0.7)
+    end
+    
+    if roundRobotEffect and roundRobotEffect ~= 0 then
+        -- 将 PokerRoundEffect 映射到 Speak 枚举
+        local enemySpeakType = self:_MapRoundEffectToSpeak(roundRobotEffect)
+        if enemySpeakType then
+            local enemySpeak = self._Control:GetDialogue(enemySpeakType)
+            self:TimerQuick(function()
+                if enemySpeak.Enemy then
+                    self:_ShowCharacterSpeak(self._Enemy, enemySpeak.Enemy)
+                end
+            end, 0.7)
+        end
+    end
+    
+    -- 获取原 state 的对话（用于玩家对话，以及没有效果时的敌人对话）
+    local originalSpeak = self._Control:GetDialogue(state)
+    
+    -- 如果没有回合效果，使用原来的 state 逻辑
+    if (not roundPlayerEffect or roundPlayerEffect == 0) and (not roundRobotEffect or roundRobotEffect == 0) then
+        self:TimerQuick(function()
+            if originalSpeak.Player then
+                self:_ShowCharacterSpeak(self._Player, originalSpeak.Player)
+            end
+        end, 0.7)
+        self:TimerQuick(function()
+            if originalSpeak.Enemy then
+                self:_ShowCharacterSpeak(self._Enemy, originalSpeak.Enemy)
+            end
+        end, 0.7)
+    else
+        -- 如果有回合效果，玩家对话使用原 state 逻辑
+        if roundRobotEffect and roundRobotEffect ~= 0 then
+            -- 反杀效果只改变敌人对话，玩家对话保留原逻辑
+            self:TimerQuick(function()
+                if originalSpeak.Player then
+                    self:_ShowCharacterSpeak(self._Player, originalSpeak.Player)
+                end
+            end, 0.7)
+        end
+    end
 
     -- 判断是否结束
     if self._Control:IsGameOver() then
@@ -204,8 +275,22 @@ function XUiPokerGuessing2Game:UpdateScore()
 end
 
 function XUiPokerGuessing2Game:UpdateStageDesc()
-    local desc = self._Control:GetUiMain().StageDesc
+    local uiMain = self._Control:GetUiMain()
+    local desc = uiMain.StageDesc or ""
+    local strikeBack = uiMain.StageStrikeBack or ""
+    
+    -- 显示 EffectDesc
     self.TxtDetail1.text = desc
+    
+    -- 显示 EffectStrikeBack
+    if self.TextStrikeBack then
+        self.TextStrikeBack.text = strikeBack
+    end
+    
+    -- 控制 PanelStrikeBack 的显示/隐藏
+    if self.PanelStrikeBack then
+        self.PanelStrikeBack.gameObject:SetActiveEx(strikeBack ~= "")
+    end
 end
 
 function XUiPokerGuessing2Game:OnClickPlay()
@@ -221,6 +306,21 @@ end
 
 function XUiPokerGuessing2Game:OnBtnSkillChangeEnemyClick()
     self._Control:UseSkillChangeEnemyCard()
+end
+
+function XUiPokerGuessing2Game:OnBtnShowRuleClick()
+    if not self.PanelBuff then
+        return
+    end
+    -- 切换PanelBuff的显示状态
+    local isActive = self.PanelBuff.gameObject.activeSelf
+    self.PanelBuff.gameObject:SetActiveEx(not isActive)
+    
+    -- 如果手动关闭了PanelBuff，取消自动关闭定时器
+    if not isActive and self._PanelBuffAutoCloseTimer then
+        XScheduleManager.UnSchedule(self._PanelBuffAutoCloseTimer)
+        self._PanelBuffAutoCloseTimer = nil
+    end
 end
 
 function XUiPokerGuessing2Game:OnOpenChangeCardSkillPanel(isPlayer, originId)
@@ -275,11 +375,44 @@ function XUiPokerGuessing2Game:HideSpeak()
     self._Player:Speak()
 end
 
+--- 显示角色对话
+---@param character XUiPokerGuessing2Character 角色UI组件
+---@param speakData table 对话数据 {Type, Text, Emoji}
+--- 将 PokerRoundEffect 映射到 Speak 枚举
+---@param roundEffect number PokerRoundEffect 枚举值
+---@return number|nil Speak 枚举值
+function XUiPokerGuessing2Game:_MapRoundEffectToSpeak(roundEffect)
+    if roundEffect == XPokerGuessing2Enum.PokerRoundEffect.RoundReverse then
+        return XPokerGuessing2Enum.Speak.StrikeBack
+    elseif roundEffect == XPokerGuessing2Enum.PokerRoundEffect.RoundBoom then
+        return XPokerGuessing2Enum.Speak.Boom
+    elseif roundEffect == XPokerGuessing2Enum.PokerRoundEffect.RoundTrap then
+        return XPokerGuessing2Enum.Speak.Trap
+    end
+    return nil
+end
+
+function XUiPokerGuessing2Game:_ShowCharacterSpeak(character, speakData)
+    if not character or not speakData then
+        return
+    end
+    
+    if speakData.Type == XPokerGuessing2Enum.SpeakShowType.Text then
+        -- 显示文本
+        character:Speak(speakData.Text, false)
+    elseif speakData.Type == XPokerGuessing2Enum.SpeakShowType.Emoji then
+        -- 显示表情
+        character:Speak(speakData.Emoji, true)
+    end
+end
+
 function XUiPokerGuessing2Game:UpdateSpeak(state)
     local speak = self._Control:GetDialogue(state)
-    self._Enemy:Speak(speak.Enemy, speak.EnemyIsEmoji)
+    if speak.Enemy then
+        self:_ShowCharacterSpeak(self._Enemy, speak.Enemy)
+    end
     if speak.Player then
-        self._Player:Speak(speak.Player, speak.PlayerIsEmoji)
+        self:_ShowCharacterSpeak(self._Player, speak.Player)
     else
         self._Player:Speak()
     end
@@ -287,6 +420,10 @@ end
 
 function XUiPokerGuessing2Game:Restart()
     self._Control:Restart(function()
+        -- 清理克隆的卡牌
+        self._Player:ClearClonedCards()
+        self._Enemy:ClearClonedCards()
+        
         self:UpdateScore()
         self:UpdateStageDesc()
         self:UpdatePlayer()
@@ -325,3 +462,4 @@ function XUiPokerGuessing2Game:PlayAnimationPlayerPutCard(cardIndex)
 end
 
 return XUiPokerGuessing2Game
+

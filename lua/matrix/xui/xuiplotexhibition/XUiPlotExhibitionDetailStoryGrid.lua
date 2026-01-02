@@ -6,10 +6,11 @@ local XUiPlotExhibitionDetailStoryGrid = XClass(XUiNode, "XUiPlotExhibitionDetai
 function XUiPlotExhibitionDetailStoryGrid:OnStart()
     self.BtnPower.gameObject:SetActiveEx(false)
     ---@type XUiComponent.XUiButton
-    self._BtnForces = { }
-    XUiHelper.RegisterClickEvent(self, self.BtnSetFace, self.OnClickSetCover)
+    self._BtnForces = {}
+    -- XUiHelper.RegisterClickEvent(self, self.BtnSetFace, self.OnClickSetCover)
     XUiHelper.RegisterClickEvent(self, self.PanelChapter, self.OnClickSkip)
-    self.ImgPercentNormal = self.ImgPercentNormal or XUiHelper.TryGetComponent(self.Transform, "PanelChapter/Jindutiao/ImgPercentNormal", "Image")
+    self.ImgPercentNormal = self.ImgPercentNormal or
+    XUiHelper.TryGetComponent(self.Transform, "PanelChapter/Jindutiao/ImgPercentNormal", "Image")
     self.TagNew.gameObject:SetActiveEx(false)
     self.TagLimited.gameObject:SetActiveEx(false)
     self.ImgNew = self.ImgNew or XUiHelper.TryGetComponent(self.Transform, "PanelChapter/ImgNew", "RectTransform")
@@ -81,7 +82,18 @@ function XUiPlotExhibitionDetailStoryGrid:Update(data)
     --    self.ImgBgGreen2.gameObject:SetActiveEx(false)
     --end
 
-    self.PanelChapter:SetNameByGroup(0, data.Progress .. "%")
+    -- 对于肉鸽12345类型，progress显示为空字符串
+    local progressText = ""
+    if data.StoryType == XEnumConst.FuBen.ChapterType.Theatre
+        or data.StoryType == XEnumConst.FuBen.ChapterType.BiancaTheatre
+        or data.StoryType == XEnumConst.FuBen.ChapterType.Theatre3
+        or data.StoryType == XEnumConst.FuBen.ChapterType.Theatre4
+        or data.StoryType == XEnumConst.FuBen.ChapterType.Theatre5 then
+        progressText = ""
+    else
+        progressText = data.Progress .. "%"
+    end
+    self.PanelChapter:SetNameByGroup(0, progressText)
     self:UpdateCover(data)
 end
 
@@ -94,14 +106,14 @@ function XUiPlotExhibitionDetailStoryGrid:UpdateCover(data)
     end
 end
 
-function XUiPlotExhibitionDetailStoryGrid:OnClickSetCover()
-    self._Control:SetRoleCover(self._Data)
-    self.Parent:UpdateCover()
-end
+-- function XUiPlotExhibitionDetailStoryGrid:OnClickSetCover()
+-- v4.2 选中cover的逻辑改为在XUiPlotExhibitionPopupCoverChangeGrid中实现
+-- self.Parent:UpdateCover()
+-- end
 
 function XUiPlotExhibitionDetailStoryGrid:OnClickSkip()
     XMVCA.XMainLine2:RecordEnterChapterWay(XEnumConst.MAINLINE2.ENTER_CHAPTER_WAY_TYPE.PLOT)
     self._Control:SkipToChapter(self._Data)
 end
 
-return XUiPlotExhibitionDetailStoryGrid
+return XUiPlotExhibitionDetailStoryGrid

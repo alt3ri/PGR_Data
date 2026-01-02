@@ -2,6 +2,8 @@ local mathMax = math.max
 local vector = CS.UnityEngine.Vector3
 local LineAnimCurve = CS.UnityEngine.AnimationCurve.Linear(0, 0, 1, 1)
 
+---@class XMovieActionActorShift
+---@field UiRoot XUiMovie
 local XMovieActionActorShift = XClass(XMovieActionBase, "XMovieActionActorShift")
 
 function XMovieActionActorShift:OnInit(actionData)
@@ -32,9 +34,22 @@ function XMovieActionActorShift:OnRunning()
     local targetPos = self.TargetPos
     local transPos = targetPos - startPos
     local duration = mathMax(0, self.Duration)
-    XUiHelper.Tween(duration, function(t)
+    
+    self:RemoveTimer()
+    self.Timer = XUiHelper.Tween(duration, function(t)
         actor:SetImagePos(startPos + transPos * LineAnimCurve:Evaluate(t))
     end)
+end
+
+function XMovieActionActorShift:OnUiRootDestroy()
+    self:RemoveTimer()
+end
+
+function XMovieActionActorShift:RemoveTimer()
+    if self.Timer then
+        XScheduleManager.UnSchedule(self.Timer)
+        self.Timer = nil
+    end
 end
 
 function XMovieActionActorShift:OnUndo()

@@ -76,7 +76,7 @@ function XDlcMutiplayerActivityModel:GetDlcMultiplayerTitleGroupConfigById(id)
     return XMVCA.XDlcMultiplayer:GetDlcMultiplayerTitleGroupConfigById(id)
 end
 
----@return XTableDlcMultiplayerConfig
+---@return XTableDlcMultiplayerClientConfig
 function XDlcMutiplayerActivityModel:GetDlcMultiplayerConfigConfigByKey(key)
     return XMVCA.XDlcMultiplayer:GetDlcMultiplayerConfigConfigByKey(key)
 end
@@ -225,6 +225,7 @@ function XDlcMutiplayerActivityModel:GetDlcMultiplayerConfigValuesByKey(key)
     return XMVCA.XDlcMultiplayer:GetDlcMultiplayerConfigValuesByKey(key)
 end
 
+---@return XTableDlcMultiplayerDiscussion
 function XDlcMutiplayerActivityModel:GetDlcMultiplayerDiscussionConfigById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcMultiplayerTableKey.DlcMultiplayerDiscussion, id, false)
 end

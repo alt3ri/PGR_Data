@@ -3,7 +3,9 @@
 local XUiGridDlcRelinkRole = XClass(XUiNode, "XUiGridDlcRelinkRole")
 
 function XUiGridDlcRelinkRole:OnStart()
-    XUiHelper.RegisterClickEvent(self, self.BtnDetail, self.OnBtnDetailClick, true, true)
+    if self.BtnDetail then
+        self.BtnDetail:AddEventListener(handler(self, self.OnBtnDetailClick))
+    end
 end
 
 ---@param playerInfo XDlcRelinkRankPlayerInfo 玩家信息

@@ -8,10 +8,16 @@ local INF = 0xFFFFFFF -- 表示距离无限
 local NoSafeLimit = 10000 -- 用于增加最短路径计算时，绕过未击破节点时的代价
 
 function XGuildWarControl:OnInit()
-    -- 初始化龙怒系统的控制器
+    ---@type XDragonRageControl @初始化龙怒系统的控制器
     self.DragonRageControl = self:AddSubControl(require("XModule/XGuildWar/SubModule/DragonRage/XDragonRageControl"))
-    -- 初始化驻守玩法的控制器
+    ---@type XGarrisonControl @初始化驻守玩法的控制器
     self.GarrisonControl = self:AddSubControl(require("XModule/XGuildWar/SubModule/Garrison/XGarrisonControl"))
+    ---@type XSpecialRoleControl @特攻角色系统
+    self.SpecialRoleControl = self:AddSubControl(require('XModule/XGuildWar/SubModule/SpecialRole/XSpecialRoleControl'))
+    ---@type XActionQueueControl @行为动画的控制器
+    self.ActionQueueControl = self:AddSubControl(require('XModule/XGuildWar/SubModule/ActionQueue/XActionQueueControl'))
+    ---@type XRoleStationControl @角色驻守玩法控制器
+    self.RoleStationControl = self:AddSubControl(require('XModule/XGuildWar/SubModule/RoleStation/XRoleStationControl'))
 end
 
 function XGuildWarControl:AddAgencyEvent()
@@ -27,12 +33,6 @@ function XGuildWarControl:OnRelease()
     self._DijkstraDist = nil
     self._DijkstraFlag = nil
     self._DijkstraPreNode = nil
-
-    local battleManager = XDataCenter.GuildWarManager.GetBattleManager()
-
-    if battleManager then
-        battleManager:ClearActionPlayingDic()
-    end
 end
 
 --region ---------- 节点数据 ---------->>>
@@ -46,6 +46,46 @@ function XGuildWarControl:GetMainMapNodes()
     local nodeList = battleManager:GetMainMapNodes()
     
     return nodeList
+end
+
+--- 判断指定节点及同位置的父/子节点是否至少打过一次
+function XGuildWarControl:CheckSamePosNodeHasFight(nodeId)
+    local isSelfFight = false
+
+    ---@type XGWNode
+    local nodeEntity = XDataCenter.GuildWarManager.GetNode(nodeId)
+
+    if nodeEntity and XTool.IsNumberValidEx(XDataCenter.GuildWarManager.GetBattleManager():GetMaxDamageByUID(nodeEntity:GetUID())) then
+        isSelfFight = true
+    end
+
+    -- 判断是否有父节点，及父节点是否打过一次
+    if not isSelfFight then
+        local rootId = nodeEntity:GetRootId()
+        
+        if XTool.IsNumberValidEx(nodeEntity:GetRootId()) then
+            if self:CheckSamePosNodeHasFight(rootId) then
+                isSelfFight = true
+            end
+        end
+    end
+    
+    -- 判断是否有子节点，及任意子节点是否打过一次
+    if not isSelfFight then
+        local childrenNodes = nodeEntity:GetChildrenNodes()
+
+        -- 针对子节点就不递归了
+        if not XTool.IsTableEmpty(childrenNodes) then
+            for i, v in pairs(childrenNodes) do
+                if XTool.IsNumberValidEx(XDataCenter.GuildWarManager.GetBattleManager():GetMaxDamageByUID(v:GetUID())) then
+                    isSelfFight = true
+                    break
+                end
+            end
+        end
+    end
+    
+    return isSelfFight
 end
 
 --endregion <<<--------------------------

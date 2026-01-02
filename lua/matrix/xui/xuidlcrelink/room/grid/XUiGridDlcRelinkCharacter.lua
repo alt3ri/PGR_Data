@@ -4,7 +4,7 @@ local XUiGridDlcRelinkCharacter = XClass(XUiNode, "XUiGridDlcRelinkCharacter")
 
 function XUiGridDlcRelinkCharacter:OnStart(callBack)
     self.CallBack = callBack
-    XUiHelper.RegisterClickEvent(self, self.BtnCharacter, self.OnBtnCharacterClick, true, true)
+    self.BtnCharacter:AddEventListener(handler(self, self.OnBtnCharacterClick))
     self.TxtNow.gameObject:SetActiveEx(false)
     self.ImgSelect.gameObject:SetActiveEx(false)
 end
@@ -19,21 +19,20 @@ function XUiGridDlcRelinkCharacter:Refresh(characterId)
     local fashionId = XMVCA.XCharacter:GetCharacterTemplate(characterId).DefaultNpcFashtionId
     self.RImgHead:SetRawImage(XDataCenter.FashionManager.GetFashionSmallHeadIcon(fashionId))
     -- 装备战力
-    local totalAbility = self._Control:GetEquipTotalAbilityByCharacterId(characterId)
-    self.TxtLv.text = string.format(self._Control:GetClientConfig("EquipLevelDesc"), totalAbility)
+    self.TxtLv.text = self._Control:GetEquipTotalAbilityByCharacterId(characterId)
     -- 角色职业图标
     self:RefreshOccupation()
 end
 
 function XUiGridDlcRelinkCharacter:OnGetLuaEvents()
     return {
-        XEventId.EVENT_DLC_RELINK_SWITCH_OCCUPATION,
+        XEventId.EVENT_DLC_RELINK_SWITCH_STYLE,
     }
 end
 
 function XUiGridDlcRelinkCharacter:OnNotify(event, ...)
     local args = { ... }
-    if event == XEventId.EVENT_DLC_RELINK_SWITCH_OCCUPATION then
+    if event == XEventId.EVENT_DLC_RELINK_SWITCH_STYLE then
         if args[1] == self.CharacterId then
             self:RefreshOccupation()
         end
@@ -42,8 +41,8 @@ end
 
 -- 刷新职业图标
 function XUiGridDlcRelinkCharacter:RefreshOccupation()
-    local occupationType = self._Control:GetOccupationTypeByCharacterId(self.CharacterId)
-    local occupationIcon = self._Control:GetClientConfig("CharacterOccupationIcon", occupationType) or ""
+    local styleType = self._Control:GetStyleTypeByCharacterId(self.CharacterId)
+    local occupationIcon = self._Control:GetCharacterOccupationIcon(self.CharacterId, styleType)
     if not string.IsNilOrEmpty(occupationIcon) then
         self.RImgType:SetRawImage(occupationIcon)
     end

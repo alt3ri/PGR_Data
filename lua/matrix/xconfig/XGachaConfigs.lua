@@ -127,6 +127,7 @@ function XGachaConfigs.GetGachaItemExchangeCfgById(id)
     return GachaItemExchange[id]
 end
 
+---@return XTableGacha
 function XGachaConfigs.GetGachaCfgById(id)
     if not Gachas[id] then
         XLog.ErrorTableDataNotFound("XGachaConfigs.GetGachaCfgById", "Gacha", TABLE_GACHA, "id", tostring(id))
@@ -139,6 +140,7 @@ function XGachaConfigs.GetGachaProbShows()
     return GachaProbShow
 end
 
+---@return XTableGachaRule
 function XGachaConfigs.GetGachaRuleCfgById(id)
     if not GachaRule[id] then
         XLog.ErrorTableDataNotFound("XGachaConfigs.GetGachaRuleCfgById", "GachaRule", TABLE_GACHA_RULE, "id", tostring(id))

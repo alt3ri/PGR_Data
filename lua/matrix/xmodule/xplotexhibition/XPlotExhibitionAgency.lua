@@ -330,6 +330,32 @@ function XPlotExhibitionAgency:GetProgressByStoryConfig(storyConfig)
         -- 这个函数参数是mainId，但是实际含义是chapterId
         return XMVCA.XMainLine2:GetMainProgress(chapterId)
     end
+
+    --肉鸽玩法（不参与计算，返回0）
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre then
+        return 0, 0
+    end
+
+    --肉鸽2.0（不参与计算，返回0）
+    if chapterType == XEnumConst.FuBen.ChapterType.BiancaTheatre then
+        return 0, 0
+    end
+
+    --肉鸽3.0（不参与计算，返回0）
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre3 then
+        return 0, 0
+    end
+
+    --肉鸽4.0（不参与计算，返回0）
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre4 then
+        return 0, 0
+    end
+
+    --肉鸽5.0（不参与计算，返回0）
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre5 then
+        return 0, 0
+    end
+
     XLog.Error("[XPlotExhibitionControl] 未实现的剧情进度:" .. chapterType)
     return 0, 0
 end

@@ -52,6 +52,13 @@ end
 local XUiPurchaseRecommend = XClass(nil, "XUiPurchaseRecommend")
 
 function XUiPurchaseRecommend:Ctor(ui, rootUi, skipFunc)
+    --- 页签切换索引偏差，超过这个偏差不滑动到目标而是直接重新加载
+    self._IndexOffsetLimitForReload = CS.XGame.ClientConfig:GetInt('PurchaseRecommendReloadIndexOffset')
+
+    if not XTool.IsNumberValidEx(self._IndexOffsetLimitForReload) then
+        self._IndexOffsetLimitForReload = 2
+    end
+    
     XUiHelper.InitUiClass(self, ui)
     self.PurchaseManager = XDataCenter.PurchaseManager
     self.RecommendManager = self.PurchaseManager.GetRecommendManager()
@@ -171,11 +178,20 @@ function XUiPurchaseRecommend:HidePanel()
 end
 
 function XUiPurchaseRecommend:OnBtnTabClicked(index)
+    local indexOffset = math.abs(index - self.CurrentIndex)
+    
     self.CurrentIndex = index
     local recommend = self.Recommends[index]
     recommend:SetShowRedPoint()
     self.CurrentSelectId = recommend:GetPurchasePackageId()
-    self.DynamicTable:TweenToIndex(index - 1)
+
+    if indexOffset <= self._IndexOffsetLimitForReload then
+        self.DynamicTable:TweenToIndex(index - 1)
+    else
+        self.DynamicTable:SetDataSource(self.Recommends)
+        self.DynamicTable:ReloadData(index - 1)
+    end
+
     local button = self.PanelTabGroup:GetButtonByIndex(index)
     button:ShowReddot(false)
     XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_RECOMMEND_RED)
@@ -261,6 +277,11 @@ function XUiPurchaseRecommend:TryFocusStage(selectGrid)
         local halfScreenHeight = self.PanelGroupList.viewport.rect.height / 2
         local moveMinY = halfScreenHeight
         local moveMaxY = self.PanelGroupList.content.rect.height - halfScreenHeight
+        
+        -- 无法滑动
+        if moveMaxY <= moveMinY then
+            moveMaxY = moveMinY
+        end
 
         local tarPosY = - selectGrid.transform.localPosition.y
         local fixedPositionY = CS.UnityEngine.Mathf.Clamp(tarPosY, moveMinY, moveMaxY)

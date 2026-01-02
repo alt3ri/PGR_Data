@@ -69,6 +69,18 @@ function XFashionSuitAgency:IsRed()
     return false
 end
 
+function XFashionSuitAgency:GetFashionSuitId(fashionId)
+  if not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.FashionSuit) then
+        return false
+    end
+    local configs = self._Model:GetFashionSuitConfigs()
+    for _,cfg in  pairs(configs) do
+       if table.contains(cfg.FashionIds,fashionId)  then
+            return cfg.Id
+        end
+    end
+    return nil
+end
 ----------public end----------
 
 ----------private start----------

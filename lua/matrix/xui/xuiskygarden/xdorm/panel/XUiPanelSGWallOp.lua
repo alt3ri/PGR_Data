@@ -8,6 +8,7 @@ local OpType = {
     Rotating = 2,
     StateChange = 3,
     Click = 4,
+    Scale = 5,
 }
 
 ---@type XDormitory.XFurnitureSlotState
@@ -30,6 +31,7 @@ function XUiPanelSGWallOp:InitCb()
         [OpType.Rotating] = function(param1, param2, param3, param4) self:OnFurnitureRotating(param1, param2, param3, param4) end,
         [OpType.StateChange] = function(param1, param2, param3, param4) self:OnFurnitureSlotStateChange(param1, param2, param3, param4) end,
         [OpType.Click] = function(param1, param2, param3, param4) self:OnFurnitureSlotClick(param1, param2, param3, param4) end,
+        [OpType.Scale] = function(param1, param2, param3, param4) self:OnFurnitureSlotScale(param1, param2, param3, param4) end,
     }
 end
 
@@ -139,6 +141,9 @@ function XUiPanelSGWallOp:OnFurnitureSlotStateChange(index, id, state, addParam)
 end
 
 function XUiPanelSGWallOp:OnFurnitureSlotClick(index, id, selectParam)
+end
+
+function XUiPanelSGWallOp:OnFurnitureSlotScale(index, id, scaleX)
 end
 
 function XUiPanelSGWallOp:GetPutWallContainerData()

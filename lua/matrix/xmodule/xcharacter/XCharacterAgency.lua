@@ -314,7 +314,7 @@ end
 --desc: 获取卡牌列表(获得)
 --@return 卡牌列表
 --==============================--
-function XCharacterAgency:GetCharacterList(characterType, isUseTempSelectTag, isAscendOrder, isUseNewSort)
+function XCharacterAgency:GetCharacterList(characterType)
     local characterList = {}
 
     local isNeedIsomer
@@ -328,31 +328,29 @@ function XCharacterAgency:GetCharacterList(characterType, isUseTempSelectTag, is
 
     local unOwnCharList = {}
     for k, v in pairs(self:GetCharacterTemplates()) do
-        if not isUseNewSort or XDataCenter.RoomCharFilterTipsManager.IsFilterSelectTag(k, characterType, isUseTempSelectTag) then
-            if self._Model.OwnCharacters[k] then
-                if isNeedIsomer == nil then
-                    tableInsert(characterList, self._Model.OwnCharacters[k])
-                elseif isNeedIsomer and self:GetIsIsomer(k) then
-                    tableInsert(characterList, self._Model.OwnCharacters[k])
-                elseif isNeedIsomer == false and not self:GetIsIsomer(k) then
-                    tableInsert(characterList, self._Model.OwnCharacters[k])
-                end
-            else
-                -- 联动角色在碎片状态时屏蔽
-                if self:IsHideCollaborationCharacter(k) then
-                    goto continueFragment
-                end
-
-                if isNeedIsomer == nil then
-                    tableInsert(unOwnCharList, v)
-                elseif isNeedIsomer and self:GetIsIsomer(k) then
-                    tableInsert(unOwnCharList, v)
-                elseif isNeedIsomer == false and not self:GetIsIsomer(k) then
-                    tableInsert(unOwnCharList, v)
-                end
-
-                ::continueFragment::
+        if self._Model.OwnCharacters[k] then
+            if isNeedIsomer == nil then
+                tableInsert(characterList, self._Model.OwnCharacters[k])
+            elseif isNeedIsomer and self:GetIsIsomer(k) then
+                tableInsert(characterList, self._Model.OwnCharacters[k])
+            elseif isNeedIsomer == false and not self:GetIsIsomer(k) then
+                tableInsert(characterList, self._Model.OwnCharacters[k])
             end
+        else
+            -- 联动角色在碎片状态时屏蔽
+            if self:IsHideCollaborationCharacter(k) then
+                goto continueFragment
+            end
+
+            if isNeedIsomer == nil then
+                tableInsert(unOwnCharList, v)
+            elseif isNeedIsomer and self:GetIsIsomer(k) then
+                tableInsert(unOwnCharList, v)
+            elseif isNeedIsomer == false and not self:GetIsIsomer(k) then
+                tableInsert(unOwnCharList, v)
+            end
+
+            ::continueFragment::
         end
     end
 
@@ -397,6 +395,33 @@ function XCharacterAgency:GetOwnCharacterList(characterType, isUseNewSort)
         return DefaultSort(a, b)
     end)
 
+    return characterList
+end
+
+function XCharacterAgency:GetOwnCharacterListWithNoSort(characterType)
+    local characterList = {}
+
+    local isNeedIsomer
+    if characterType then
+        if characterType == XEnumConst.CHARACTER.CharacterType.Normal then
+            isNeedIsomer = false
+        elseif characterType == XEnumConst.CHARACTER.CharacterType.Isomer then
+            isNeedIsomer = true
+        end
+    end
+
+    for characterId, v in pairs(self._Model.OwnCharacters) do
+        if XDataCenter.RoomCharFilterTipsManager.IsFilterSelectTag(characterId, characterType) then
+            if isNeedIsomer == nil then
+                tableInsert(characterList, v)
+            elseif isNeedIsomer and self:GetIsIsomer(characterId) then
+                tableInsert(characterList, v)
+            elseif isNeedIsomer == false and not self:GetIsIsomer(characterId) then
+                tableInsert(characterList, v)
+            end
+        end
+    end
+    
     return characterList
 end
 

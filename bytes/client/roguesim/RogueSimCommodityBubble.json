@@ -1,67 +1,67 @@
 [
     {
         "Id": 1,
-        "Name": "Base Price",
+        "Name": "\u57fa\u7840\u552e\u4ef7",
         "MethodName": "GetCommodityPriceBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 2,
-        "Name": "Price Bonus",
+        "Name": "\u552e\u4ef7\u52a0\u6210",
         "MethodName": "GetCommodityPriceAddBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 3,
-        "Name": "Price Fluctuation This Quarter",
+        "Name": "\u672c\u5b63\u5ea6\u4ef7\u683c\u6ce2\u52a8",
         "MethodName": "GetCommodityPriceFluctuationBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 4,
-        "Name": "Final Price Increase",
+        "Name": "\u6700\u7ec8\u552e\u4ef7\u589e\u52a0",
         "MethodName": "GetCommodityPriceAddFixedBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 5,
-        "Name": "Sale CRIT Rate",
+        "Name": "\u9500\u552e\u66b4\u51fb\u6982\u7387",
         "MethodName": "GetCommodityPriceCritAddBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 6,
-        "Name": "Sale CRIT Effect",
+        "Name": "\u9500\u552e\u66b4\u51fb\u6548\u679c",
         "MethodName": "GetCommodityPriceCritHurtAddBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 7,
-        "Name": "Base Output",
+        "Name": "\u57fa\u7840\u4ea7\u91cf",
         "MethodName": "GetCommodityProductionBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 8,
-        "Name": "Productivity Bonus",
+        "Name": "\u751f\u4ea7\u6548\u7387\u52a0\u6210",
         "MethodName": "GetCommodityProductionAddBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 9,
-        "Name": "Output Fluctuation This Quarter",
+        "Name": "\u672c\u5b63\u5ea6\u4ea7\u91cf\u6ce2\u52a8",
         "MethodName": "GetCommodityProductionFluctuationBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 10,
-        "Name": "Production CRIT Rate",
+        "Name": "\u751f\u4ea7\u66b4\u51fb\u6982\u7387",
         "MethodName": "GetCommodityProductionCritAddBubble",
         "ParamNames": "['Id']"
     },
     {
         "Id": 11,
-        "Name": "Production CRIT Effect",
+        "Name": "\u751f\u4ea7\u66b4\u51fb\u6548\u679c",
         "MethodName": "GetCommodityProductionCritHurtAddBubble",
         "ParamNames": "['Id']"
     }

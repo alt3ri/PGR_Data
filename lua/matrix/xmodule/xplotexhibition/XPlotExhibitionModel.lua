@@ -54,8 +54,8 @@ function XPlotExhibitionModel:GetRoleCover(roleId)
     return self._SaveUtil:GetData("RoleCover" .. roleId)
 end
 
-function XPlotExhibitionModel:SetRoleCover(roleId, storyId)
-    self._SaveUtil:SaveData("RoleCover" .. roleId, storyId)
+function XPlotExhibitionModel:SetRoleCover(roleId, characterId)
+    self._SaveUtil:SaveData("RoleCover" .. roleId, characterId)
 end
 
 ---@return XTablePlotExhibitionCharacter

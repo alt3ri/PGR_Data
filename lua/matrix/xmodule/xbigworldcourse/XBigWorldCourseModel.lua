@@ -20,6 +20,8 @@ function XBigWorldCourseModel:OnInit()
     ---@type table<number, XBWCourseVersionData>
     self._VersionDataMap = {}
 
+    self._CurSelectVersion = false
+
     self:_InitTableKey()
 end
 
@@ -42,6 +44,7 @@ function XBigWorldCourseModel:ResetAll()
 
     self._TaskRecordMap = false
     self._CoreElementRecordMap = false
+    self._CurSelectVersion = false
 
     self._VersionDataMap = {}
 end
@@ -118,6 +121,29 @@ end
 ---@return XBWCourseVersionData
 function XBigWorldCourseModel:GetVersionData(versionId)
     return self._VersionDataMap[versionId]
+end
+
+function XBigWorldCourseModel:SetSelectVersion(version)
+    if self._CurSelectVersion ~= version then
+        self._SaveUtil:SaveData(self:__GetLocalSelectVersionKey(), version)
+    end
+    self._CurSelectVersion = version
+end
+
+function XBigWorldCourseModel:GetSelectVersion()
+    if not self._CurSelectVersion then
+        local version = self._SaveUtil:GetData(self:__GetLocalSelectVersionKey())
+        if version and version > 0 then
+            local conditionId = self:GetBigWorldCourseVersionConditionIdByVersionId(version)
+            if conditionId and conditionId > 0 and not XMVCA.XBigWorldService:CheckCondition(conditionId) then
+                version = XEnumConst.BWCourse.Version.One
+            end
+        else
+            version = XEnumConst.BWCourse.Version.One
+        end
+        self._CurSelectVersion = version
+    end
+    return self._CurSelectVersion
 end
 
 function XBigWorldCourseModel:GetCurrentTaskProgress(versionId)
@@ -363,6 +389,10 @@ function XBigWorldCourseModel:__InitTaskRecordMap()
             end
         end
     end
+end
+
+function XBigWorldCourseModel:__GetLocalSelectVersionKey()
+    return string.format("BW_COURSE_SELECT_VERSION_%s", tostring(XPlayer.Id))
 end
 
 function XBigWorldCourseModel:__RecordTaskMap()

@@ -91,7 +91,7 @@ end
 
 function XBigWorldQuestControl:GetQuestIcon(questId)
     local template = self._Model:GetQuestTemplate(questId)
-    return template and template.QuestIcon or 0
+    return template and template.QuestIcon
 end
 
 function XBigWorldQuestControl:GetQuestState(questId)
@@ -147,8 +147,7 @@ function XBigWorldQuestControl:GetStepText(stepId)
 end
 
 function XBigWorldQuestControl:GetStepLocation(stepId)
-    local template = self._Model:GetQuestStepTemplate(stepId)
-    return template and template.LocationText or ""
+    return XMVCA.XBigWorldQuest:GetStepLocation(stepId)
 end
 
 function XBigWorldQuestControl:GetStepData(questId, stepId)
@@ -168,30 +167,6 @@ end
 
 function XBigWorldQuestControl:GetObjectiveProgressDesc(objectiveId, progress, max)
     return XMVCA.XBigWorldQuest:GetObjectiveProgressDesc(objectiveId, progress, max)
-end
-
-function XBigWorldQuestControl:GetObjectConsume(objectiveId)
-    local t = self._Model:GetQuestStepObjectiveTemplate(objectiveId)
-    local dict
-    local itemGetCount = t.ItemGetCount
-    if not itemGetCount or itemGetCount.Count <= 0 then
-        return dict
-    end
-    for i = 0, itemGetCount.Count - 1 do
-        local count = itemGetCount[i]
-        if count < 0 then
-            if not dict then
-                dict = {}
-            end
-            local id = t.QuestItemId[i]
-            if dict[id] then
-                dict[id] = dict[id] - count
-            else
-                dict[id] = -count
-            end
-        end
-    end
-    return dict
 end
 
 function XBigWorldQuestControl:GetChapterId()
@@ -243,5 +218,108 @@ function XBigWorldQuestControl:GetArchiveCompleteText(archiveId)
     local template = self._Model:GetArchiveTemplate(archiveId)
     return template and template.CompleteText or 0
 end
+
+--region 邀约任务
+function XBigWorldQuestControl:GetInviteIds()
+    return self._Model:GetInviteIds()
+end
+
+function XBigWorldQuestControl:GetInviteQuestPriority(id)
+    return self._Model:GetInviteQuestPriority(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestCondition(id)
+    return self._Model:GetInviteQuestCondition(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestModelId(id)
+    return self._Model:GetInviteQuestModelId(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestRolePath(id)
+    return self._Model:GetInviteQuestRolePath(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestTotalRewardId(id)
+    return self._Model:GetInviteQuestTotalRewardId(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestResultIds(id)
+    return self._Model:GetInviteQuestResultIds(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestResultName(id)
+    return self._Model:GetInviteQuestResultName(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestResultBanner(id)
+    return self._Model:GetInviteQuestResultBanner(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestResultDesc(id)
+    return self._Model:GetInviteQuestResultDesc(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestResultCGAsset(id)
+    return self._Model:GetInviteQuestResultCGAsset(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestResultRewardId(id)
+    return self._Model:GetInviteQuestResultRewardId(id)
+end
+
+function XBigWorldQuestControl:GetInviteQuestPopTipText(id)
+    local tip = self._Model:GetInviteQuestPopTipText(id)
+    if string.IsNilOrEmpty(tip) then
+        return tip
+    end
+    return XUiHelper.ReplaceTextNewLine(tip)
+end
+
+function XBigWorldQuestControl:GetInviteQuestTipText(id)
+    local tip = self._Model:GetInviteQuestTipText(id)
+    if string.IsNilOrEmpty(tip) then
+        return tip
+    end
+    return XUiHelper.ReplaceTextNewLine(tip)
+end
+
+function XBigWorldQuestControl:RequestAcceptInviteQuest(questId, func)
+    XNetwork.Call("DlcInviteQuestAcceptRequest", { QuestId = questId }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        if func then
+            func()
+        end
+    end)
+end
+
+function XBigWorldQuestControl:RequestReceiveInviteReward(questId, func)
+    if not questId or questId <= 0 then
+        XLog.Error("XBigWorldQuestControl:GetInviteQuestResultRewardId questId is nil or 0, questId = ", questId)
+        return
+    end
+    local isReceived = self._Model:CheckInviteRewardReceived(questId)
+    if isReceived then
+        XLog.Error("XBigWorldQuestControl:GetInviteQuestResultRewardId reward is received, inviteId = ", inviteId)
+        return
+    end
+    local results = self._Model:GetInviteQuestResultIds(questId)
+    local count = results and #results or 0
+    
+    XNetwork.Call("DlcInviteQuestResultNumRewardRequest", { QuestId = questId }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        self._Model:ReceiveInviteReward(questId, count)
+        if func then
+            func()
+        end
+    end)
+end
+--endregion 邀约任务
 
 return XBigWorldQuestControl

@@ -59,6 +59,11 @@ function XLeftTimeAgency:GetReCall(timeId)
     return self:GetByTimeIdAndTimeFormatType(timeId, XUiHelper.TimeFormatType.RECALL)
 end
 
+function XLeftTimeAgency:GetAccumulateExpendShopLeftTime(timeId)
+    return XMVCA.XShop:GetAccumulateExpendShopLeftTime(timeId)
+end
+
+
 --endregion
 
 ----------public start----------

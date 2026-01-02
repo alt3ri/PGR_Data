@@ -38,6 +38,7 @@ function XUiBigWorldBlackMaskLoading:OnDestroy()
         XMVCA.X3CProxy:UnRegisterHandler(X3C_CMD.CMD_CLOSE_BLACK_MASK_LOADING)
     end
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BLACK_MASK_LOADING_CLOSE, self.OnFadeOut, self)
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CHECK_FUNCTION_POPUP)
 end
 
 function XUiBigWorldBlackMaskLoading:OnEnable()

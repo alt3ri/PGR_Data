@@ -20,6 +20,7 @@ function XArenaActivityData:_InitData(data)
     self._ProtectedScore = data.ProtectedScore
     self._BeforeChallengeId = data.BeforeChallengeId
     self._BeforeArenaLevel = data.BeforeArenaLevel
+    self._ArenaIndex = data.ArenaIndex
 end
 
 function XArenaActivityData:_ClearData()
@@ -39,6 +40,7 @@ function XArenaActivityData:_ClearData()
     self._ProtectedScore = nil
     self._BeforeChallengeId = nil
     self._BeforeArenaLevel = nil
+    self._ArenaIndex = nil
 end
 
 function XArenaActivityData:GetActivityNo()
@@ -123,6 +125,10 @@ end
 
 function XArenaActivityData:GetBeforeArenaLevel()
     return self._BeforeArenaLevel
+end
+
+function XArenaActivityData:GetArenaIndex()
+    return self._ArenaIndex
 end
 
 function XArenaActivityData:ClearBeforeChallengeAndArenaId()

@@ -231,6 +231,11 @@ function XMainLine2Agency:GetMainTitle(mainId)
     return self._Model:GetMainTitle(mainId)
 end
 
+-- 获取主章节任务组Id
+function XMainLine2Agency:GetMainTaskGroupId(mainId)
+    return self._Model:GetMainTaskGroupId(mainId)
+end
+
 --- 主章节是否显示新章节标签：存在 已解锁 + 未通关 的关卡
 ---@param mainId number 主章节Id
 function XMainLine2Agency:IsMainHasNewTag(mainId)
@@ -309,6 +314,11 @@ function XMainLine2Agency:IsMainUnlock(mainId)
     return self._Model:IsMainUnlock(mainId)
 end
 
+-- 获取主章节是否已领取成就
+function XMainLine2Agency:IsAchievementGet(mainId)
+    return self._Model:IsAchievementGet(mainId)
+end
+
 --- 获取主章节成就进度
 ---@param mainId number 主章节Id
 function XMainLine2Agency:GetMainAchievementProgress(mainId)
@@ -373,6 +383,18 @@ function XMainLine2Agency:GetAchievementChapterIconLock(mainId)
     return nil
 end
 
+-- 获取主章节的第一个子章节Id
+function XMainLine2Agency:GetMainFirstChapterId(mainId)
+    local chapterIds = self._Model:GetMainChapterIds(mainId)
+    return chapterIds[1]
+end
+
+-- 获取子章节的第一个StageGroupId
+function XMainLine2Agency:GetChapterFirstStageGroupId(chapterId)
+    local stageGroupIds = self._Model:GetChapterStageGroupIds(chapterId)
+    return stageGroupIds[1]
+end
+
 --- 主章节是否显示蓝点
 ---@param mainId number 主章节Id
 function XMainLine2Agency:IsMainRed(mainId)
@@ -410,6 +432,11 @@ function XMainLine2Agency:IsMainRed(mainId)
 
     -- 时间蓝点
     if self:IsMainRedTimeIdShow(mainId) then
+        return true
+    end
+    
+    -- 任务蓝点
+    if self:IsMainRedTaskReward(mainId) then
         return true
     end
 
@@ -451,6 +478,15 @@ end
 
 function XMainLine2Agency:GetMainMainRedKey(mainId, timeId)
     return string.format("XMainLine2Main.tab_RedTimeId_%s_%s_%s", mainId, XPlayer.Id, timeId)
+end
+
+-- 蓝点：任务可领取奖励
+function XMainLine2Agency:IsMainRedTaskReward(mainId)
+    local taskGroupId = self:GetMainTaskGroupId(mainId)
+    if XTool.IsNumberValidEx(taskGroupId) then
+        return XDataCenter.TaskManager.CheckStoryTaskCanGet(taskGroupId)
+    end
+    return false
 end
 
 --- 章节是否存在
@@ -559,8 +595,8 @@ end
 --- 获取关卡成就信息
 ---@param stageId number 关卡Id
 ---@param isFighting boolean 是否在战斗中
-function XMainLine2Agency:GetStagesAchievementInfos(stageId, isFighting)
-    return self._Model:GetStagesAchievementInfos(stageId, isFighting)
+function XMainLine2Agency:GetStagesAchievementInfos(stageId, isFighting, isCombineStageGroup)
+    return self._Model:GetStagesAchievementInfos(stageId, isFighting, isCombineStageGroup)
 end
 
 -- 获取关卡成就简短描述
@@ -574,6 +610,12 @@ end
 ---@param stageId number 关卡Id
 function XMainLine2Agency:IsStagePass(stageId)
     return self._Model:IsStagePass(stageId)
+end
+
+--- 关卡是否解锁
+---@param stageId number 关卡Id
+function XMainLine2Agency:IsStageUnlock(stageId)
+    return self._Model:IsStageUnlock(stageId)
 end
 
 --- 关卡是否配置怪物上场
@@ -607,6 +649,12 @@ function XMainLine2Agency:IsStageAchievement(stageId)
     end
 
     return false
+end
+
+--- 获取关卡的通关进度
+---@param stageId number 关卡Id
+function XMainLine2Agency:GetStageProgress(stageId)
+    return self._Model:GetStageProgress(stageId)
 end
 
 --- 获取关卡所在的关卡列表
@@ -659,6 +707,20 @@ end
 -- 获取主线界面新手主线锁定文本显示的condition
 function XMainLine2Agency:GetClientNewbieMainLineLockCondition()
     return self._Model:GetClientConfigNumber('NewbieMainLineLockCondition')
+end
+
+--- 缓存关卡Id对应的章节Id
+---@param stageId number 关卡Id
+---@param chapterId number 章节Id
+function XMainLine2Agency:CacheStageChapterId(stageId, chapterId)
+    self._Model:CacheStageChapterId(stageId, chapterId)
+end
+
+--- 缓存关卡Id所在的组Id
+---@param stageId number 关卡Id
+---@param groupId number 关卡组Id
+function XMainLine2Agency:CacheStageGroupId(stageId, groupId)
+    self._Model:CacheStageGroupId(stageId, groupId)
 end
 
 --region Fuben
@@ -765,9 +827,21 @@ function XMainLine2Agency:OpenChapterUi(mainId, chapterId, stageId, isOpenStageD
         XUiManager.TipError(mainTips)
         return
     end
+    
+    if self:OpenSpecialChapterUi(mainId) then
+        return
+    end
 
     XLuaUiManager.Open("UiMainLine2Chapter", mainId, chapterId, stageId, isOpenStageDetail)
     self:RemoveMainRedTimeIdShow(mainId)
+end
+
+function XMainLine2Agency:OpenSpecialChapterUi(mainId)
+    if mainId == XEnumConst.MAINLINE2.SPECIAL_MAINID.LUOSAITA then
+        XMVCA.XMainLineLuosaita:ExOpenMainUi()
+        return true
+    end
+    return false
 end
 
 -- 通过关卡Id打开章节界面
@@ -835,6 +909,24 @@ function XMainLine2Agency:GetUiMainProgress(mainId)
         local progress = tostring(mainTitle) .. "-" .. tostring(stageCfg.OrderId)
         local difficult = tostring(enName) .. "：" .. tostring(name)
         return progress, difficult
+    end
+end
+
+-- 点击成就按钮回调
+function XMainLine2Agency:OnBtnAchievementClick(mainId, cb)
+    local isGet = self._Model:IsAchievementGet(mainId)
+    local curCnt, maxCnt = self:GetMainAchievementProgress(mainId)
+    if not isGet and curCnt >= maxCnt then
+        self:RequestReceiveAchievement(mainId, function()
+            if cb then cb() end
+        end)
+    else
+        local achievementId = self._Model:GetMainAchievementId(mainId)
+        local rewardId = self._Model:GetAchievementClearRewardId(achievementId)
+        local rewardList = XRewardManager.GetRewardList(rewardId)
+        local itemTemplateId = rewardList[1].TemplateId
+        local data = XDataCenter.MedalManager.GetScoreTitleById(itemTemplateId)
+        XLuaUiManager.Open("UiCollectionTip", data, XDataCenter.MedalManager.InType.Normal)
     end
 end
 --endregion
@@ -1123,7 +1215,7 @@ end
 -- 设置最后进入的时间轴章节
 function XMainLine2Agency:SetLastExhibitionChapter(exhibitionChapterId)
     local lastId = self._Model:GetLastExhibitionChapterId()
-    if lastId ~= exhibitionChapterId then
+    if lastId ~= exhibitionChapterId and exhibitionChapterId then
         local req = { ChapterId = exhibitionChapterId }
         XNetwork.CallWithAutoHandleErrorCode("MainLine2UpdateExhibitionChapterRequest", req, function(res)
             self._Model:SetLastExhibitionChapterId(exhibitionChapterId)

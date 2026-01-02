@@ -6,11 +6,7 @@ function XUiBigWorldPhotographPopupPhoto:OnAwake()
     self:_RegisterButtonClicks()
 end
 
-function XUiBigWorldPhotographPopupPhoto:OnStart(isHideOtherBtn, hasDetectedAllEnvTarget, needCloseControl)
-    self.hasDetectedAllEnvTarget = hasDetectedAllEnvTarget
-    if needCloseControl then
-        XMVCA.XBigWorldUI:SafeClose("UiBigWorldPhotographControl")
-    end
+function XUiBigWorldPhotographPopupPhoto:OnStart(isHideOtherBtn, needCloseControl)
     if isHideOtherBtn then
         self.Hide2.gameObject:SetActive(false)
     end
@@ -19,26 +15,50 @@ function XUiBigWorldPhotographPopupPhoto:OnStart(isHideOtherBtn, hasDetectedAllE
     self.TxtUserName2.text = XPlayer.Name
     self.TxtID.text = string.format("ID: %s", XPlayer.Id)
     self.TxtID2.text = string.format("ID: %s", XPlayer.Id)
-    self.RawImage.texture = self._Control:GetCaptureTexture()
-    self.RawImage2.texture = self.RawImage.texture
+
     self._hasUpload = false
 
-    if self._Control:GetAutoSave() then
-        if not self._Control:IsPhotoFull() then
-            self._hasUpload = true
-            self.BtnUpload.gameObject:SetActive(self._hasUpload)
-        end
-        self._DelayTimerId = XScheduleManager.ScheduleOnce(function()
-            self:OnBtnUploadClick()
-            self:_RemoveDelayTimer()
-        end, 600)
-    else
-        self:OnTipMsgEnqueue()
+    local t = XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CAMERA_PHOTOGRAPH_DO_TAKE_PHOTO)
+    self._IsFinishTask = false
+    if t and t.Completed then
+        self._IsFinishTask = true
     end
+    self._NeedCloseFirst = needCloseControl or self._IsFinishTask
+    self._DelayTimerId = XScheduleManager.ScheduleOnce(function()
+        self._Control:CaptureTextureNow(function()
+            self.RawImage.texture = self._Control:GetCaptureTexture()
+            self.RawImage2.texture = self.RawImage.texture
+
+            if self._Control:GetAutoSave() then
+                if not self._Control:IsPhotoFull() then
+                    self._hasUpload = true
+                    self.BtnUpload.gameObject:SetActive(self._hasUpload)
+                end
+                self:_RemoveDelayTimer()
+                self._DelayTimerId = XScheduleManager.ScheduleOnce(function()
+                    self:OnBtnUploadClick()
+                    self:_RemoveDelayTimer()
+                end, 600)
+            else
+                self:OnTipMsgEnqueue()
+                self:QuestFinishToFight()
+            end
+            self:PlayAnimation("Complete")
+        end)
+    end, 150)
+end
+
+function XUiBigWorldPhotographPopupPhoto:QuestFinishToFight(photoId, shotId)
+    if not self._IsFinishTask or self._IsSendFinish then return end
+    XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CAMERA_PHOTOGRAPH_PHOTO_UPLOADED, {
+        PhotoId = photoId or 0,
+        ShotId = shotId or 0,
+    })
+    self._IsSendFinish = true
 end
 
 function XUiBigWorldPhotographPopupPhoto:OnTipMsgEnqueue()
-    if self.hasDetectedAllEnvTarget then
+    if self._IsFinishTask then
         XUiManager.TipMsgEnqueue(XMVCA.XBigWorldService:GetText("SG_P_TakePicTaskFinish"))
     end
 end
@@ -48,6 +68,9 @@ function XUiBigWorldPhotographPopupPhoto:OnEnable()
 end
 
 function XUiBigWorldPhotographPopupPhoto:OnDestroy()
+    if self._NeedCloseFirst then
+        XMVCA.XBigWorldUI:Remove("UiBigWorldPhotographControl")
+    end
     self.CopyRoot.transform:SetParent(self.Transform)
     self:_RemoveDelayTimer()
 end
@@ -107,12 +130,13 @@ function XUiBigWorldPhotographPopupPhoto:_OnBtnSave()
     CS.XScreenCapture.ScreenCaptureWithCallBack(self.CameraCupture, function(texture)
         local photoName = "[" .. tostring(XPlayer.Id) .. "]" .. XTime.GetServerNowTimestamp()
         CS.XTool.SavePhotoAlbumImg(photoName, texture, function(errorCode)
+            XUiHelper.Destroy(texture)
             if errorCode > 0 then
                 XUiManager.TipText("PremissionDesc") -- ios granted总是true, 权限未开通code返回1
                 XLog.Debug("照片保存失败 Code：" .. errorCode)
                 return
             end
-            XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_P_SaveSucess"))
+            XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("BigWorldPhotoSaveSuccessTip", CS.XTool.GetPhotoAlbumPath()))
         end)
         self.CopyRoot.gameObject:SetActive(false)
         self.CopyRoot.transform:SetParent(self.Transform)
@@ -128,13 +152,15 @@ end
 function XUiBigWorldPhotographPopupPhoto:OnBtnUploadClick()
     if self._Control:IsPhotoFull() then
         XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_P_UploadFull"))
+        self:QuestFinishToFight()
         return
     end
     local descaleTimes = 6
-    self._Control:UploadTexture(self.RawImage.texture, function()
+    XMVCA.XBigWorldAlbum:UploadTakeTexture(false, self.RawImage.texture, function(photoData)
         self._hasUpload = true
         self:Refresh()
         self:OnTipMsgEnqueue()
+        self:QuestFinishToFight(photoData.Id)
     end, math.floor(self.RawImage.texture.width / descaleTimes), math.floor(self.RawImage.texture.height / descaleTimes))
 end
 

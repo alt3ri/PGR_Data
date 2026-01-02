@@ -39,7 +39,10 @@ function XUiDlcRelinkRank:InitBtnTab()
     for index, levelId in ipairs(self.LevelIdList) do
         local btn = XUiHelper.Instantiate(self.BtnTabBoss, self.PanelBtnGroup.transform)
         btn.gameObject:SetActiveEx(true)
-        btn:SetNameByGroup(0, self._Control:GetLevelName(levelId))
+        local chapterId = self._Control:GetLevelChapterId(levelId)
+        local chapterName = self._Control:GetChapterName(chapterId)
+        local levelName = self._Control:GetLevelName(levelId)
+        btn:SetNameByGroup(0, string.format("%s-%s", levelName, chapterName))
         btnTabList[index] = btn
     end
     self.PanelBtnGroup:Init(btnTabList, handler(self, self.OnBtnTabClick))
@@ -102,8 +105,8 @@ function XUiDlcRelinkRank:OpenMyRank()
 end
 
 function XUiDlcRelinkRank:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
     self:BindHelpBtn(self.BtnHelp, self._Control:GetClientConfig("HelpKey"))
 end
 

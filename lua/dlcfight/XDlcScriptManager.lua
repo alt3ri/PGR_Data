@@ -8,7 +8,6 @@ local SCRIPT_PATHS = {
     LEVEL_LOGIC = "Level/Level_%04d_Logic",
     LEVEL_PRESENT = "Level/Level_%04d_Present",
     SCENE_OBJ = "SceneObject/%04d",
-    QUEST = "Quest/Quest_%04d",
     BUFF = "Buff/Buff_%04d",
     QUEST_OBJECTIVE_HOTFIX = "QuestHotfix/Hotfix_%04d",
     SKILL = "Skill/Skill_%04d",
@@ -17,7 +16,6 @@ local SCRIPT_PATHS = {
     --[EScriptType.LevelLogic] = "Level/Level_%04d_Logic",
     --[EScriptType.LevelPresent] = "Level/Level_%04d_Present",
     --[EScriptType.SceneObject] = "SceneObject/%04d",
-    --[EScriptType.Quest] = "Quest/Quest_%04d",
     --[EScriptType.Buff] = "Buff/Buff_%04d",
 }
 
@@ -26,8 +24,6 @@ local ScriptClassDict = { --<string, <int, table(class)>>
     Level_Logic = {},
     Level_Present = {},
     Scene_Obj = {},
-    Quest = {},
-    QuestObjective = {},
     Buff = {},
     Quest_Objective_Hotfix = {},
     Skill = {},
@@ -238,40 +234,6 @@ end
 function XDlcScriptManager.NewSceneObjScript(id, proxy)
     return XDlcScriptManager.NewScript("Scene_Obj", id, proxy)
 end
---endregion
-
---region Quest Script
----@param id number @脚本文件名上的id
-function XDlcScriptManager.LoadQuestScript(id)
-    return XDlcScriptManager.LoadScript("Quest", id)
-end
-
----@param id number
----@param name string
----@param super table
-function XDlcScriptManager.RegQuestScript(id, name, super)
-    return XDlcScriptManager._RegisterScript("Quest", id, name, super)
-end
-
----@param id number
----@param proxy StatusSyncFight.XFightScriptProxy @C#代理对象
-function XDlcScriptManager.NewQuestScript(id, proxy)
-    return XDlcScriptManager.NewScript("Quest", id, proxy)
-end
-
----@param id number
----@param name string
----@param super table
-function XDlcScriptManager.RegQuestObjectiveScript(id, name, super)
-    return XDlcScriptManager._RegisterScript("QuestObjective", id, name, super)
-end
-
----@param id number
----@param proxy StatusSyncFight.XFightScriptProxy @C#代理对象
-function XDlcScriptManager.NewQuestObjectiveScript(id, proxy)
-    return XDlcScriptManager.NewScript("QuestObjective", id, proxy)
-end
-
 --endregion
 
 --region Buff Script

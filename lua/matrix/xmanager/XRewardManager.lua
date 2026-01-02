@@ -32,6 +32,8 @@ local XRewardType = {
     SgDormFashion = 28, --空花宿舍涂装
     QuestItem = 29, --空花任务道具
     BWDIYPart = 30, --空花指挥官DIY部件
+    Filter = 31,        -- 滤镜解锁
+    Anim = 32,          -- 动作解锁
 }
 
 --local HeadPortraitQuality = CS.XGame.Config:GetInt("HeadPortraitQuality")
@@ -71,6 +73,8 @@ local Arrange2RewardType = {
     [XArrangeConfigs.Types.SgDormFurniture] = XRewardType.SgDormFurniture,
     [XArrangeConfigs.Types.SgDormFashion] = XRewardType.SgDormFashion,
     [XArrangeConfigs.Types.BWDIYPart] = XRewardType.BWDIYPart,
+    [XArrangeConfigs.Types.Anim] = XRewardType.Anim,
+    [XArrangeConfigs.Types.Filter] = XRewardType.Filter,
 }
 
 local CreateGoodsFunc = {
@@ -326,6 +330,20 @@ local CreateGoodsFunc = {
     [XRewardType.SgDormFurniture] = function(templateId, count)
         return {
             RewardType = XRewardType.SgDormFurniture,
+            TemplateId = templateId,
+            Count = count and count or 1,
+        }
+    end,
+    [XRewardType.Anim] = function(templateId, count)
+        return {
+            RewardType = XRewardType.Anim,
+            TemplateId = templateId,
+            Count = count and count or 1,
+        }
+    end,
+    [XRewardType.Filter] = function(templateId, count)
+        return {
+            RewardType = XRewardType.Filter,
             TemplateId = templateId,
             Count = count and count or 1,
         }
@@ -612,6 +630,28 @@ local SortBWDIYPart = function(a, b)
     return a.TemplateId > b.TemplateId
 end
 
+local SortPhotoAnim = function(a, b)
+    local configA = XMVCA.XBigWorldAlbum:GetAnimationConfigById(a.TemplateId)
+    local configB = XMVCA.XBigWorldAlbum:GetAnimationConfigById(b.TemplateId)
+
+    if configA.Priority ~= configB.Priority then
+        return configA.Priority > configB.Priority
+    end
+
+    return configA.Id < configB.Id
+end
+
+local SortPhotoFilter = function(a, b)
+    local priorityA = XMVCA.XBigWorldAlbum:GetFilterConfigById(a.TemplateId)
+    local priorityB = XMVCA.XBigWorldAlbum:GetFilterConfigById(b.TemplateId)
+
+    if configA.Priority ~= configB.Priority then
+        return configA.Priority > configB.Priority
+    end
+
+    return configA.Id < configB.Id
+end
+
 local SortRewardTypePrioriy = {
     [XRewardType.Item] = 1,
     [XRewardType.Character] = 4,
@@ -636,6 +676,8 @@ local SortRewardTypePrioriy = {
     [XRewardType.BWDIYPart] = 24,
     [XRewardType.SgDormFurniture] = 25,
     [XRewardType.SgDormFashion] = 26,
+    [XRewardType.Anim] = 27,
+    [XRewardType.Filter] = 28,
 }
 
 local SortFunc = {
@@ -657,6 +699,8 @@ local SortFunc = {
     [XRewardType.DlcHuntChip] = SortDlcHuntChip,
     [XRewardType.ItemCollection] = SortItemCollect,
     [XRewardType.BWDIYPart] = SortBWDIYPart,
+    [XRewardType.Anim] = SortPhotoAnim,
+    [XRewardType.Filter] = SortPhotoFilter,
 }
 
 local RewardsFilter = {

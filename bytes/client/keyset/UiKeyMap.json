@@ -314,8 +314,8 @@
     {
         "UiName": "UiBigWorldHud",
         "InputMapSectionId": null,
-        "BtnName": "['BtnHandBook', 'BtnBag', 'BtnTeam', 'BtnMenu', 'BtnMessage', 'BtnSet', 'BtnTask', 'BtnMessageList', 'BtnPhoto', 'BtnTeach', 'BtnTrack', 'BtnBigMap', 'BtnGo', 'BtnQuitDoor2', 'BtnThird', 'BtnFrist', 'BtnQuit']",
-        "DefaultKeyMapIds": "['11503', '11502', '11507', '11509', '11506', '11513', '11504', '11511', '11510', '11512', '11508', '11505', '11508', '11501', '11548', '11548', '11501']"
+        "BtnName": "['BtnHandBook', 'BtnBag', 'BtnTeam', 'BtnMenu', 'BtnMessage', 'BtnSet', 'BtnTask', 'BtnMessageList', 'BtnPhoto', 'BtnTeach', 'BtnTrack', 'BtnBigMap', 'BtnGo', 'BtnQuitDoor2', 'BtnThird', 'BtnFrist', 'BtnQuit', 'BtnNews']",
+        "DefaultKeyMapIds": "['11503', '11502', '11507', '11509', '11506', '11513', '11504', '11511', '11510', '11512', '11508', '11505', '11508', '11501', '11548', '11548', '11501', '11549']"
     },
     {
         "UiName": "UiFightDlcExplorationControl",
@@ -344,8 +344,20 @@
     {
         "UiName": "UiBigWorldTaskMain",
         "InputMapSectionId": null,
-        "BtnName": "['BtnTrack', 'BtnUntrack', 'BtnGo', 'BtnBack']",
-        "DefaultKeyMapIds": "['11514', '11515', '11514', '11541']"
+        "BtnName": "['BtnTrack', 'BtnUntrack', 'BtnGo', 'BtnBack', 'BtnInvitation']",
+        "DefaultKeyMapIds": "['11514', '11515', '11514', '11541', '11545']"
+    },
+    {
+        "UiName": "UiBigWorldTaskMainInvitation",
+        "InputMapSectionId": null,
+        "BtnName": "['BtnStart', 'BtnBack']",
+        "DefaultKeyMapIds": "['11514', '11541']"
+    },
+    {
+        "UiName": "UiBigWorldTaskPopupEndingDetail",
+        "InputMapSectionId": null,
+        "BtnName": "['BtnTanchuangClose', 'BtnAgain']",
+        "DefaultKeyMapIds": "['11541', '11514']"
     },
     {
         "UiName": "UiSkyGardenDormPhotoWall",
@@ -429,6 +441,12 @@
         "UiName": "UiBigWorldMessage",
         "InputMapSectionId": null,
         "BtnName": "['BtnBack']",
+        "DefaultKeyMapIds": "['11541']"
+    },
+    {
+        "UiName": "UiBigWorldVideoPreview",
+        "InputMapSectionId": null,
+        "BtnName": "['UiBigWorldBtnTanchuangCloseWhite']",
         "DefaultKeyMapIds": "['11541']"
     },
     {
@@ -590,8 +608,14 @@
     {
         "UiName": "UiBigWorldMap",
         "InputMapSectionId": null,
-        "BtnName": "['BtnMinusSelect', 'BtnAddSelect', 'BtnBack']",
-        "DefaultKeyMapIds": "['11544', '11543', '11541']"
+        "BtnName": "['BtnMinusSelect', 'BtnAddSelect', 'BtnBack', 'BtnOverview']",
+        "DefaultKeyMapIds": "['11544', '11543', '11541', '11545']"
+    },
+    {
+        "UiName": "UiBigWorldMapOverview",
+        "InputMapSectionId": null,
+        "BtnName": "['BtnBack']",
+        "DefaultKeyMapIds": "['11541']"
     },
     {
         "UiName": "UiBigWorldDIY",
@@ -602,8 +626,8 @@
     {
         "UiName": "UiBigWorldProcess",
         "InputMapSectionId": null,
-        "BtnName": "['BtnBack']",
-        "DefaultKeyMapIds": "['11541']"
+        "BtnName": "['BtnBack', 'BtnSwitch', 'BtnSwitchNext']",
+        "DefaultKeyMapIds": "['11541', '11565', '11573']"
     },
     {
         "UiName": "UiFightDlcDramaLog",
@@ -634,5 +658,53 @@
         "InputMapSectionId": null,
         "BtnName": "['EnergyR3Vergil(Clone)', 'EnergyGroupR3Dante(Clone)', 'EnergyR6Luxiya(Clone)', 'EnergyR5Bianka1(Clone)', 'EnergyR5Bianka2(Clone)', 'EnergyR3Buouxiong(Clone)']",
         "DefaultKeyMapIds": "['104', '104', '104', '104', '104', '104']"
+    },
+    {
+        "UiName": "UiBigWorldPopupDelivery",
+        "InputMapSectionId": 1001.0,
+        "BtnName": "['BtnTanchuangClose', 'BtnRequire']",
+        "DefaultKeyMapIds": "['11541', '11564']"
+    },
+    {
+        "UiName": "UiBigWorldPopupNews",
+        "InputMapSectionId": 1002.0,
+        "BtnName": "['BtnTeach', 'BtnBack', 'UiBigWorldCommonBtnBigConfirm']",
+        "DefaultKeyMapIds": "['11566', '11541', '11568']"
+    },
+    {
+        "UiName": "UiBigWorldTextDialog",
+        "InputMapSectionId": 1003.0,
+        "BtnName": "['BtnClose']",
+        "DefaultKeyMapIds": "['11541']"
+    },
+    {
+        "UiName": "UiBigWorldPopupAdvance",
+        "InputMapSectionId": 1004.0,
+        "BtnName": "['BtnTanchuangClose', 'BtnYes', 'BtnCancel']",
+        "DefaultKeyMapIds": "['11541', '11571', '11572']"
+    },
+    {
+        "UiName": "UiBigWorldPopupEnvironmentalStory",
+        "InputMapSectionId": 1005.0,
+        "BtnName": "['BtnTanchuangClose']",
+        "DefaultKeyMapIds": "['11541']"
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneGame",
+        "InputMapSectionId": null,
+        "BtnName": "['BtnSpeedUp', 'BtnChange', 'BtnStop', 'BtnSpecial1', 'BtnSpecial4']",
+        "DefaultKeyMapIds": "['11514', '11515', '11534', '11562', '11562']"
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupStop",
+        "InputMapSectionId": null,
+        "BtnName": "['BtnTanchuangClose', 'UiSkyGardenSGDroneBtnConfirm', 'UiSkyGardenSGDroneBtnBigCancel(1)', 'UiSkyGardenSGDroneBtnBigCancel']",
+        "DefaultKeyMapIds": "['11541', '11564', '11565', '11564']"
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupSettlement",
+        "InputMapSectionId": null,
+        "BtnName": "['BtnTanchuangClose', 'UiSkyGardenSGDroneBtnConfirm', 'UiSkyGardenSGDroneBtnBigCancel']",
+        "DefaultKeyMapIds": "['11541', '11514', '11565']"
     }
 ]

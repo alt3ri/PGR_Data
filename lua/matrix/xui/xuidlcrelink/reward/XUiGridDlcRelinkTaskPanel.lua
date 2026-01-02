@@ -34,8 +34,9 @@ function XUiGridDlcRelinkTaskPanel:InitDynamicTable()
 end
 
 function XUiGridDlcRelinkTaskPanel:SetupDynamicTable()
-    local taskIds = self._Control:GetShopTaskParamId(self.ConfigId)
-    self.TaskDataList = not XTool.IsTableEmpty(taskIds) and XDataCenter.TaskManager.GetTaskIdListData(taskIds) or {}
+    local taskTimelimitIds = self._Control:GetShopTaskParamId(self.ConfigId)
+    local taskTimelimitId = taskTimelimitIds and taskTimelimitIds[1] or 0
+    self.TaskDataList = XTool.IsNumberValidEx(taskTimelimitId) and XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelimitId) or {}
     local isEmpty = XTool.IsTableEmpty(self.TaskDataList)
     self.PanelNoneStoryTask.gameObject:SetActiveEx(isEmpty)
     if isEmpty then

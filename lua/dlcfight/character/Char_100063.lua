@@ -4,8 +4,8 @@ local Base = require("Character/BigWorld/XBigWorldEcologyCharBase")
 ---@class XCharEcology100063 : XBigWorldEcologyCharBase
 local XCharEcologyTest = XDlcScriptManager.RegCharScript(100063, "XCharEcology100063", Base)
 
-function XCharEcologyTest:Init()
-    Base.Init(self)
+function XCharEcologyTest:CommonInit()
+    Base.CommonInit(self)
     -- 参数1:QuestId, 参数2:开始ObjectiveId, 参数3:Objective状态, 参数4:结束ObjectiveId, 参数5:Objective状态,
     self:AddOppositeQuest(1001, 10010171, self.QuestObjectiveState.InActive, 10010112, self.QuestObjectiveState.Finished)
 end

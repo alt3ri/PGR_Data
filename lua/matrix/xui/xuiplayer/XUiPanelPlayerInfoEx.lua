@@ -19,7 +19,7 @@ function XUiPanelPlayerInfoEx:OnStart()
     self.PanelSetBirthdayInst = XUiPanelSetBirthday.New(self.PanelSetBirthday.gameObject, self)
     
     self.DefaultText = CS.XTextManager.GetText("CharacterSignTip")
-
+    
     self.TxtVersion.text = CS.XRemoteConfig.DocumentVersion
     self.TxtServerName.text = XServerManager.GetCurServerName()
     self.PanelServerInfo.gameObject:SetActiveEx(false)
@@ -180,6 +180,19 @@ function XUiPanelPlayerInfoEx:AutoAddListener()
             self.BtnLogout.gameObject:SetActiveEx(false)
         end
     end
+
+    self.OpenInspectorView = CS.XProximaInspector.Instance.IsOpen
+    if self.OpenInspectorView then
+        self.TxtLikeCount.raycastTarget = true
+        self.ClickInspectorViewCnt = 0
+        XUiHelper.RegisterClickEvent(self, self.TxtLikeCount, function() 
+            self.ClickInspectorViewCnt = self.ClickInspectorViewCnt + 1
+            if self.ClickInspectorViewCnt >= 5 then
+                CS.XProximaInspector.Instance:Toggle()
+                self.ClickInspectorViewCnt = 0
+            end
+        end)
+    end
 end
 -- auto
 
@@ -203,7 +216,7 @@ end
 function XUiPanelPlayerInfoEx:SetPanelServerInfoShow(isShow)
     self.PanelServerInfo.gameObject:SetActiveEx(isShow)
 end
-
+    
 function XUiPanelPlayerInfoEx:OnCheckSetName(count)
     self.ImgSetNameTag.gameObject:SetActiveEx(count >= 0)
 end

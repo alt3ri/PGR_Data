@@ -252,6 +252,10 @@ function XBigWorldCommanderDIYAgency:GetNpcPartData()
     return self:GetNpcPartDataByGender(self._Model:GetGender())
 end
 
+function XBigWorldCommanderDIYAgency:GetCurrentGender()
+    return self._Model:GetGender()
+end
+
 function XBigWorldCommanderDIYAgency:GetCurrentPartModelIdByPartId(partId)
     local resId = self:GetCurrentResIdByPartId(partId)
 

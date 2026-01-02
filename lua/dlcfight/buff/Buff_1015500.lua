@@ -56,7 +56,6 @@ local ConfigRuneIdDict = {
     [1015534] = 20534,
     [1015536] = 20536,
     [1015538] = 20538,
-    [1015542] = 20542,
     [1015952] = 20952, --增强Buff：自身血量低于20%时，造成伤害提升X%
     [1015542] = 20542, --增强Buff：自身生命值低于20%时，受到伤害降低30.17%
     --强化效果部分
@@ -127,6 +126,7 @@ function XBuffScript1015500:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
     if self._uuid == npcUUID and self.signalId == buffId then
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
         self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
+        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
     end
 
     --如果当前BuffID为强化Buff[2]，则需要额外添加3个Buff
@@ -134,6 +134,7 @@ function XBuffScript1015500:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         for _, enhBuff2MagicId in ipairs(self.enhBuff2MagicArray) do
             self._proxy:ApplyMagic(self._uuid, self._uuid, enhBuff2MagicId, self.magicLevel)
         end
+        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.enhRuneIdDict[2], 1)  --记录一次触发
     end
 
 end

@@ -6,6 +6,7 @@ local XUiGridTheatre5Relic = require("XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGr
 local XUiTheatre5RoundSettlement = XLuaUiManager.Register(XLuaUi, 'UiTheatre5RoundSettlement')
 local XUiPanelTheatre5SettleTopInfo = require('XUi/XUiTheatre5/XUiTheatre5RoundSettlement/XUiPanelTheatre5SettleTopInfo')
 local XUiPanelTheatre5SettleSummary = require('XUi/XUiTheatre5/XUiTheatre5RoundSettlement/XUiPanelTheatre5SettleSummary')
+local XUiPanelTheatre5MissionMiniDetail = require('XUi/XUiTheatre5/XUiTheatre5RoundSettlement/XUiPanelTheatre5MissionMiniDetail')
 
 function XUiTheatre5RoundSettlement:OnAwake()
     self._RelicGrids = {}
@@ -34,6 +35,16 @@ function XUiTheatre5RoundSettlement:OnStart(resultData, summaryData)
     ---@type XUiPanelTheatre5SettleSummary
     self.PanelSummary = XUiPanelTheatre5SettleSummary.New(self.PanelLeft, self, resultData, self.SummaryData)
     self.PanelSummary:RefreshAllShow()
+
+    if self.UiTheatre5GridTaskDetail then
+        self.UiTheatre5GridTaskDetail.gameObject:SetActiveEx(false)
+        ---@type XUiPanelTheatre5MissionMiniDetail
+        self.TaskDetail = XUiPanelTheatre5MissionMiniDetail.New(self.UiTheatre5GridTaskDetail, self)
+    end
+
+    if self.BtnReward then
+        self.BtnReward:AddEventListener(handler(self, self.OnBtnRewardClickEvent))
+    end
 
     self:UpdateCharacterLevel()
 end
@@ -85,15 +96,87 @@ function XUiTheatre5RoundSettlement:OnBtnEndClickEvent()
     end)
 end
 
---endregion
-
-function XUiTheatre5RoundSettlement:UpdateRelics(data)
-    if self.RelicContainer then
-        -- 显示自己拥有的饰品/敌人的饰品
-        local relics = self._Control:GetUiDataRelicsByData(data.AutoChessData.Relics)
-        XTool.UpdateDynamicItem(self._RelicGrids, relics, self.RelicContainer, XUiGridTheatre5Relic, self)
+function XUiTheatre5RoundSettlement:OnBtnRewardClickEvent()
+    if XTool.IsNumberValidEx(self.MissionRelicId) then
+        if self.TaskDetail then
+            if self.TaskDetail:IsNodeShow() then
+                self.TaskDetail:Close()
+            else
+                self.TaskDetail:Open()
+                self.TaskDetail:RefreshDetail(self.MissionRelicId, self.MissionLevel)
+            end
+        end
     end
 end
+--endregion
+
+--region 任务饰品展示
+
+function XUiTheatre5RoundSettlement:UpdateRelics(data, isSelf)
+    if self.RelicContainer then
+        -- 显示自己拥有的饰品/敌人的饰品
+        -- 4.2 屏蔽饰品
+        --local relics = self._Control:GetUiDataRelicsByData(data.AutoChessData.Relics)
+        --XTool.UpdateDynamicItem(self._RelicGrids, relics, self.RelicContainer, XUiGridTheatre5Relic, self)
+        
+        --4.2 按照任务奖励的形式显示饰品
+        local missionRelicId = 0
+        local missionLevel = 0
+        local missionId = 0
+        
+        if isSelf then
+            missionId, missionLevel, missionRelicId = self:_GetSelfMissionIdAndRelicId()
+        else
+            missionId, missionLevel, missionRelicId = self:_GetEnemyMissionIdAndRelicId()
+        end
+        
+        if self.BtnReward then
+            if XTool.IsNumberValidEx(missionRelicId) and XTool.IsNumberValidEx(missionId) then
+                self.BtnReward:SetButtonState(CS.UiButtonState.Normal)
+                -- itemId = 6 * 10000 + bounty * 10 + level
+                local bounty = self._Control.MissionControl:GetTheatre5MissionBountyId(missionId)
+                local itemCfg = self._Control:GetTheatre5ItemCfgById(missionRelicId)
+
+                if itemCfg then
+                    self.BtnReward:SetRawImage(itemCfg.IconRes)
+                    
+                    local levelLabel = XUiHelper.FormatText(self._Control.MissionControl:GetMissionGridLevelShow(bounty, missionLevel))
+                    self.BtnReward:SetNameByGroup(0, levelLabel)
+                    self.BtnReward:SetNameByGroup(1, itemCfg.Name)
+                end
+            else
+                self.BtnReward:SetButtonState(CS.UiButtonState.Disable)
+            end
+        end
+        
+        self.MissionRelicId = missionRelicId
+        self.MissionLevel = missionLevel
+    end
+end
+
+function XUiTheatre5RoundSettlement:_GetSelfMissionIdAndRelicId()
+    local missionRelicId = 0
+    local missionLevel = 0
+    local missionId = 0
+
+
+    missionRelicId = self._Control.MissionControl:CheckMissionIsGotReward() and self._Control.MissionControl:GetCurMissionItemId() or 0
+
+    local mission = self._Control.MissionControl:GetCurMission()
+
+    if mission then
+        missionId = mission.MissionId
+        missionLevel = mission.MissionBounty.BountyLevel
+    end
+    
+    return missionId, missionLevel, missionRelicId
+end
+
+function XUiTheatre5RoundSettlement:_GetEnemyMissionIdAndRelicId()
+    return self._Control.MissionControl:GetMatchEnemyMissionData()
+end
+
+--endregion
 
 function XUiTheatre5RoundSettlement:UpdateCharacterLevel()
     if self.Role then

@@ -5,7 +5,7 @@
 local XUiGridDlcRelinkPopupPlayerInvite = XClass(XUiNode, "XUiGridDlcRelinkPopupPlayerInvite")
 
 function XUiGridDlcRelinkPopupPlayerInvite:OnStart()
-    XUiHelper.RegisterClickEvent(self, self.BtnInvite, self.OnBtnInviteClick, true, true)
+    self.BtnInvite:AddEventListener(handler(self, self.OnBtnInviteClick))
 end
 
 ---@param friendInfo XDlcRelinkFriend

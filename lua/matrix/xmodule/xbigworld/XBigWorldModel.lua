@@ -41,6 +41,8 @@ function XBigWorldModel:OnInit()
     self._LevelPerspectiveData = {}
     
     self._FinishOpenGuideIdDict = {}
+    -- 自定义参数
+    self._CustomParamDict = {}
 end
 
 function XBigWorldModel:ClearPrivate()
@@ -137,6 +139,27 @@ function XBigWorldModel:GetPerspectiveGroupId(levelId)
         return self:GetDefaultPerspectiveGroupId()
     end
     return template.FovGroupId
+end
+
+function XBigWorldModel:InitCustomParam(data)
+    if not data then
+        return
+    end
+    for _, paramId in pairs(data) do
+        self._CustomParamDict[paramId] = true
+    end
+end
+
+function XBigWorldModel:AddCustomParam(paramId)
+    self._CustomParamDict[paramId] = true
+end
+
+function XBigWorldModel:RemoveCustomParam(paramId)
+    self._CustomParamDict[paramId] = nil
+end
+
+function XBigWorldModel:CheckParamMarked(paramId)
+    return self._CustomParamDict[paramId] ~= nil
 end
 
 return XBigWorldModel

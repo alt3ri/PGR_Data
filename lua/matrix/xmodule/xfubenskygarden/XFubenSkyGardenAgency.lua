@@ -102,5 +102,20 @@ function XFubenSkyGardenAgency:ClearProgressTip()
     self._ProgressTip = false
 end
 
+function XFubenSkyGardenAgency:ExGetTimerShowStr()
+    if not self:ExCheckInTimerShow() then
+        return nil
+    end
+    return XMVCA.XFunction:GetEntryFunctionalLabel(XFunctionManager.FunctionName.SkyGarden)
+end
+
+function XFubenSkyGardenAgency:ExCheckInTimerShow()
+    local timeId = XMVCA.XFunction:GetEntryFunctionalLabelTimeId(XFunctionManager.FunctionName.SkyGarden)
+    if not timeId or timeId <= 0 then
+        return false
+    end
+    return XFunctionManager.CheckInTimeByTimeId(timeId)
+end
+
 
 return XFubenSkyGardenAgency

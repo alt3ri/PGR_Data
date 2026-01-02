@@ -5,7 +5,7 @@ local XUiPanelDlcRelinkBoss = XClass(XUiNode, "XUiPanelDlcRelinkBoss")
 
 function XUiPanelDlcRelinkBoss:OnStart()
     self.Icon.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnBoss, self.OnBtnBossClick, true, true)
+    self.BtnBoss:AddEventListener(handler(self, self.OnBtnBossClick))
     ---@type UiObject[]
     self.OccupationGridList = {}
 end
@@ -26,14 +26,16 @@ function XUiPanelDlcRelinkBoss:RefreshInfo()
     self.PanelNotChoosePress.gameObject:SetActiveEx(not isHaveBoss)
 
     if isHaveBoss then
-        self.BtnBoss:SetNameByGroup(0, self._Control:GetChapterName(self.ChapterId))
+        if self.LevelId == self._Control:GetTeachingLevelId() then
+            self.BtnBoss:SetName(self._Control:GetClientConfig("TutorialLevelName", 1))
+        elseif self.LevelId == self._Control:GetTrainingLevelId() then
+            self.BtnBoss:SetName(self._Control:GetClientConfig("TutorialLevelName", 2))
+        else
+            self.BtnBoss:SetName(self._Control:GetChapterName(self.ChapterId))
+        end
         self.BtnBoss:SetRawImageEx(self._Control:GetChapterRoomIcon(self.ChapterId))
         self:RefreshType(self._Control:GetLevelType(self.LevelId))
-
-        local levelLimit = self._Control:GetLevelLevelLimit(self.LevelId)
-        self.TxtTitle.gameObject:SetActiveEx(levelLimit > 0)
-        self.TxtLv.text = string.format(self._Control:GetClientConfig("RoomBossLevelLimit"), levelLimit)
-
+        self:RefreshAbilityLimitTips()
         self:RefreshCareerMatchingTips()
     else
         self:RefreshType(0)
@@ -50,7 +52,7 @@ function XUiPanelDlcRelinkBoss:RefreshInfo()
 end
 
 function XUiPanelDlcRelinkBoss:RefreshType(levelType)
-    for i = 1, 4 do
+    for i = 1, 5 do
         local typeObj = self[string.format("PanelDif0%s", i)]
         if typeObj then
             typeObj.gameObject:SetActiveEx(i == levelType)
@@ -58,80 +60,104 @@ function XUiPanelDlcRelinkBoss:RefreshType(levelType)
     end
 end
 
+function XUiPanelDlcRelinkBoss:RefreshAbilityLimitTips()
+    local abilityLimit = self._Control:GetLevelAbilityLimit(self.LevelId)
+    self.TxtLv.text = abilityLimit
+    self.TxtLvNotEnough.text = abilityLimit
+
+    local isEquipAbilityRational = self:IsEquipAbilityRational(abilityLimit)
+    local isLimitValid = abilityLimit > 0
+
+    self.TxtTitle.gameObject:SetActiveEx(isLimitValid and isEquipAbilityRational)
+    self.TxtTitleNotEnough.gameObject:SetActiveEx(isLimitValid and not isEquipAbilityRational)
+end
+
+function XUiPanelDlcRelinkBoss:IsEquipAbilityRational(abilityLimit)
+    local isInRoom = XMVCA.XDlcRoom:IsInRoom()
+    if isInRoom then
+        local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
+        return self._Control:CheckTeamEquipAbilityRational(team, abilityLimit)
+    else
+        local characterId = self._Control:GetFightCharacterId()
+        local totalAbility = self._Control:GetEquipTotalAbilityByCharacterId(characterId)
+        return totalAbility >= abilityLimit
+    end
+end
+
 function XUiPanelDlcRelinkBoss:RefreshCareerMatchingTips()
     self.PanelCondition.gameObject:SetActiveEx(false)
-    local isInRoom = XMVCA.XDlcRoom:IsInRoom()
-    if not isInRoom then
+
+    if not XMVCA.XDlcRoom:IsInRoom() then
         return
     end
+
     local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
     if not team then
         return
     end
 
     self.PanelCondition.gameObject:SetActiveEx(true)
-    local occupationMap = {}
-    local amount = team:GetMemberNumber()
-    for pos = 1, amount do
-        local member = team:GetMember(pos)
-        if member then
-            occupationMap[member:GetOccupationType()] = true
-        end
-    end
-
-    local trueOccupationList = self._Control:GetChapterTrueOccupations(self.ChapterId)
-    local isSuccess = true
-    local lackOccupationList = {}
-    for _, occupation in ipairs(trueOccupationList) do
-        if not occupationMap[occupation] then
-            isSuccess = false
-            table.insert(lackOccupationList, occupation)
-        end
-    end
+    local isSuccess, lackOccupationList = self._Control:CheckTeamOccupationRational(team, self.ChapterId)
 
     self.TxtRational.gameObject:SetActiveEx(isSuccess)
     self.PanelMiss.gameObject:SetActiveEx(not isSuccess)
-    if not isSuccess then
-        for index, occupation in ipairs(lackOccupationList) do
-            local grid = self.OccupationGridList[index]
-            if not grid then
-                grid = XUiHelper.Instantiate(self.Icon, self.PanelMiss)
-                self.OccupationGridList[index] = grid
-            end
 
-            grid.gameObject:SetActiveEx(true)
-            local occupationIcon = self._Control:GetClientConfig("CharacterOccupationIcon", occupation) or ""
-            grid:GetObject("RawImage"):SetRawImageEx(occupationIcon)
-            grid.transform:SetAsLastSibling()
+    if isSuccess then
+        return
+    end
+
+    for index, occupationType in ipairs(lackOccupationList) do
+        local grid = self.OccupationGridList[index]
+        if not grid then
+            grid = XUiHelper.Instantiate(self.Icon, self.PanelMiss)
+            self.OccupationGridList[index] = grid
         end
+        grid.gameObject:SetActiveEx(true)
+        local occupationIcon = self._Control:GetClientConfig("CharacterOccupationIconTwo", occupationType) or ""
+        grid:GetObject("RawImage"):SetRawImageEx(occupationIcon)
+        grid.transform:SetAsLastSibling()
+    end
 
-        for i = #lackOccupationList + 1, #self.OccupationGridList do
-            local grid = self.OccupationGridList[i]
-            if grid then
-                grid.gameObject:SetActiveEx(false)
-            end
+    for i = #lackOccupationList + 1, #self.OccupationGridList do
+        local grid = self.OccupationGridList[i]
+        if grid then
+            grid.gameObject:SetActiveEx(false)
         end
     end
 end
 
 -- 刷新红点
 function XUiPanelDlcRelinkBoss:RefreshRedPoint()
+    local isTeachingPass = self._Control:IsTeachingLevelPass()
     local isShowRedPoint = XMVCA.XDlcRelink:CheckAllLevelHasNewUnlock()
-    self.BtnBoss:ShowReddot(isShowRedPoint)
+    self.BtnBoss:ShowReddot(isTeachingPass and isShowRedPoint)
 end
 
 function XUiPanelDlcRelinkBoss:OnBtnBossClick()
+    if not self._Control:IsTeachingLevelPass() then
+        self._Control:OpenCommonTipText("FirstPlayTeachingLevelTip")
+        return
+    end
+
     if not XMVCA.XDlcRoom:IsInRoom() then
-        XLuaUiManager.Open("UiDlcRelinkChooseBoss")
+        self:OpenChooseBoss()
         return
     end
 
     local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
     if team and team:IsSelfLeader() then
-        XLuaUiManager.Open("UiDlcRelinkChooseBoss")
+        self:OpenChooseBoss()
     else
         self._Control:OpenCommonTipMsg(XUiHelper.GetText("MultiplayerRoomOnlyHomeownerTip"))
     end
+end
+
+function XUiPanelDlcRelinkBoss:OpenChooseBoss()
+    if self._Control:IsTutorialChapter() then
+        --教学关不在界面显示 所以重置下当前选择关卡的信息
+        self._Control:SetCurrentSelectLevelData()
+    end
+    XLuaUiManager.Open("UiDlcRelinkChooseBoss")
 end
 
 return XUiPanelDlcRelinkBoss

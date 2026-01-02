@@ -5,7 +5,7 @@ local XDlcWorldFight = require("XModule/XDlcRoom/XDlcWorldFight/XDlcWorldFight")
 ---@class XDlcActivityAgency : XFubenActivityAgency
 local XDlcActivityAgency = XClass(XFubenActivityAgency, "XDlcActivityAgency")
 
-function XDlcActivityAgency:DlcCheckClickHrefCanEnter(roomId, nodeId, worldId, createTime)
+function XDlcActivityAgency:DlcCheckClickHrefCanEnter(roomId, nodeId, worldId, levelId, createTime)
     if not self:DlcCheckActivityInTime() then
         XUiManager.TipText("CommonActivityEnd")
         return false
@@ -16,6 +16,14 @@ function XDlcActivityAgency:DlcCheckClickHrefCanEnter(roomId, nodeId, worldId, c
         return false
     end
 
+    if not self:DlcCheckCustomEnterCondition(roomId, nodeId, worldId, levelId, createTime) then
+        return false
+    end
+
+    return true
+end
+
+function XDlcActivityAgency:DlcCheckCustomEnterCondition(roomId, nodeId, worldId, levelId, createTime)
     return true
 end
 
@@ -86,6 +94,11 @@ function XDlcActivityAgency:DlcGetNonnegativeAttribs()
         [XDlcNpcAttribType.BreakGauge] = true,
         [XDlcNpcAttribType.OverDrive] = true,
         [XDlcNpcAttribType.RebootValue] = true,
+        [XDlcNpcAttribType.SignalSkillDmgAmpP] = true,
+        [XDlcNpcAttribType.CoreSkillDmgAmpP] = true,
+        [XDlcNpcAttribType.NormalAtkDmgAmpP] = true,
+        [XDlcNpcAttribType.ExSkillDmgAmpP] = true,
+        [XDlcNpcAttribType.DodgeEnergy] = true,
     }
 end
 

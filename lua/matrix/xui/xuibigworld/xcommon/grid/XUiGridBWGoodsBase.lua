@@ -49,6 +49,10 @@ function XUiGridBWGoodsBase:RefreshCount(count)
     self:_RefreshText(self.TxtCount, tostring(count))
 end
 
+function XUiGridBWGoodsBase:RefreshCountColor(color)
+    self:_RefreshColor(self.TxtCount, color)
+end
+
 function XUiGridBWGoodsBase:RefreshIcon(icon)
     self:_RefreshImage(self.RImgIcon, icon)
 end
@@ -97,6 +101,14 @@ function XUiGridBWGoodsBase:_RefreshText(component, value)
     end
 end
 
+function XUiGridBWGoodsBase:_RefreshColor(component, value)
+    if XTool.UObjIsNil(component) then
+        return
+    end
+    
+    component.color = value
+end
+
 function XUiGridBWGoodsBase:_RefreshImage(component, value)
     if XTool.UObjIsNil(component) then
         return
@@ -109,6 +121,17 @@ function XUiGridBWGoodsBase:_RefreshImage(component, value)
     if not invalid then
         component:SetImage(value)
     end
+end
+
+function XUiGridBWGoodsBase:SetClickState(value)
+    if not self.BtnClick then
+        return
+    end
+    self.BtnClick.gameObject:SetActiveEx(value)
+end
+
+function XUiGridBWGoodsBase:RefreshReceive(isReceive)
+    self:_RefreshActive(self.PanelReceive, isReceive)
 end
 
 return XUiGridBWGoodsBase

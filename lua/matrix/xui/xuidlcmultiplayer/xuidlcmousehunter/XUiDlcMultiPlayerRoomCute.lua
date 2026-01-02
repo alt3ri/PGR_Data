@@ -96,7 +96,7 @@ function XUiDlcMultiPlayerRoomCute:OnAwake()
 
     self._CurrentState = CameraState.Main
     ---@type XUiDlcMultiPlayerDiscussion
-    self._DiscussionPanelUi = XUiDlcMultiPlayerDiscussion.New(self.DiscussionPanel, self) 
+    self._DiscussionPanelUi = XUiDlcMultiPlayerDiscussion.New(self.DiscussionPanel, self)
 
     ---@type XDlcTeam
     self._Team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
@@ -112,8 +112,6 @@ function XUiDlcMultiPlayerRoomCute:OnStart()
 
     self:_InitRoom()
     self:_InitScene()
-
-    XMVCA.XDlcRoom:CancelReconnectToWorld()
 end
 
 function XUiDlcMultiPlayerRoomCute:OnEnable()
@@ -185,7 +183,6 @@ end
 function XUiDlcMultiPlayerRoomCute:OnBtnFightClick()
     if self._Team:IsAllReady() then
         local currentWorldId, currentLevelId = self._Control:GetCurrentWorldIdAndLevelId()
-
         XMVCA.XDlcRoom:Match(currentWorldId, currentLevelId, true)
     end
 end
@@ -239,6 +236,14 @@ end
 
 function XUiDlcMultiPlayerRoomCute:OnBtnBPClick()
     self._Control:OpenUiDlcMultiPlayerGift(self._BeginMatchTime)
+end
+
+function XUiDlcMultiPlayerRoomCute:OnBtnSkillClick()
+    if XMVCA.XDlcRoom:IsInRoomMatching() then
+        XUiManager.TipMsg(self._Control:GetDlcMultiplayerConfigConfigByKey("CantChangeSkillTip").Values[1])
+        return
+    end
+    self._Control:OpenUiDlcMultiPlayerSkill(self._BeginMatchTime)
 end
 -- endregion
 
@@ -383,6 +388,7 @@ function XUiDlcMultiPlayerRoomCute:_RegisterButtonClicks()
     self:RegisterClickEvent(self.BtnMatching, self.OnBtnMatchingClick, true)
     self:RegisterClickEvent(self.BtnInvite, self.OnBtnInviteClick, true)
     self:RegisterClickEvent(self.BtnBP, self.OnBtnBPClick, true)
+    self:RegisterClickEvent(self.BtnSkill, self.OnBtnSkillClick)
 end
 
 function XUiDlcMultiPlayerRoomCute:_RegisterSchedules()
@@ -536,7 +542,7 @@ function XUiDlcMultiPlayerRoomCute:_InitScene()
     local loadingType = self._Control:GetCurrentMaskLoadingType()
 
     self._IsChangeScene = true
-	self._VoteState = nil
+    self._VoteState = nil
     XLuaUiManager.SafeClose("UiDlcMultiPlayerCompetition")
     XLuaUiManager.Open("UiLoading", loadingType)
     self:LoadUiSceneAsync(sceneUrl, modelUrl, function()
@@ -566,9 +572,9 @@ end
 function XUiDlcMultiPlayerRoomCute:_CheckOpenVoteCompetitionUi()
     local discussion = self._Control:GetDiscussion()
     if discussion then
-        self._VoteState = discussion:GetStatus() 
+        self._VoteState = discussion:GetStatus()
     end
-    if self._Control:IsOpenVoteCompetitionUi() and not XLuaUiManager.IsUiShow("UiDlcMultiPlayerCompetition") then      
+    if self._Control:IsOpenVoteCompetitionUi() and not XLuaUiManager.IsUiShow("UiDlcMultiPlayerCompetition") then
         self._Control:OpenUiDlcMultiPlayerCompetition(self._BeginMatchTime)
     end
 end
@@ -781,7 +787,7 @@ function XUiDlcMultiPlayerRoomCute:_RefreshDiscussion()
     local voteState = discussion:GetStatus()
     if voteState ~= self._VoteState then
         self._VoteState = voteState
-        if self._Control:IsOpenVoteCompetitionUi() and not XLuaUiManager.IsUiShow("UiDlcMultiPlayerCompetition") then      
+        if self._Control:IsOpenVoteCompetitionUi() and not XLuaUiManager.IsUiShow("UiDlcMultiPlayerCompetition") then
             self._Control:OpenUiDlcMultiPlayerCompetition(self._BeginMatchTime)
         end
     end

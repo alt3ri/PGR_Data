@@ -9,6 +9,10 @@ function XFubenBossSingleControl:OnInit()
     -- 初始化内部变量
 end
 
+function XFubenBossSingleControl:UseUiStackOperationRef()
+    return true
+end
+
 function XFubenBossSingleControl:AddAgencyEvent()
     -- control在生命周期启动的时候需要对Agency及对外的Agency进行注册
 end
@@ -235,6 +239,10 @@ function XFubenBossSingleControl:SetEnterBossInfo(bossId, bossLevel, featureId)
     self._Model:SetCurrentFeatureId(featureId or 0)
 end
 
+function XFubenBossSingleControl:GetCurrentFeatureId()
+    return self._Model:GetCurrentFeatureId()
+end
+
 function XFubenBossSingleControl:SetFightStageType(value)
     self._Model:SetFightStageType(value)
 end
@@ -369,6 +377,32 @@ function XFubenBossSingleControl:GetChallengeNeedScore()
     return self._Model:GetBossSingleChallengeGradeNeedScoreByLevelType(challengeLevelType)
 end
 
+--- 检查是否需要播放终极区解锁动画
+---@return boolean 是否需要播放动画
+function XFubenBossSingleControl:CheckNeedPlayExtremeUnlockAnimation()
+    -- 检查是否在终极区
+    if not self:IsInLevelTypeExtreme() then
+        return false
+    end
+    
+    -- 检查是否已经播放过动画
+    if self._Model:GetExtremeUnlockAnimationPlayed() then
+        return false
+    end
+    
+    -- 检查分数是否达到解锁要求
+    local needScore = self:GetChooseLevelTypeNeedScore()
+    local data = self:GetBossSingleData()
+    
+    if needScore > 0 and data:GetBossSingleMaxScore() >= needScore then
+        -- 标记已播放，避免重复播放
+        self._Model:SetExtremeUnlockAnimationPlayed(true)
+        return true
+    end
+    
+    return false
+end
+
 function XFubenBossSingleControl:GetBossSectionLeftTime(bossId)
     local sectionId = self._Model:GetBossSectionConfigIdBySectionId(bossId)
     local switchTimeId = self._Model:GetBossSingleSectionSwitchTimeIdById(sectionId)
@@ -386,6 +420,7 @@ end
 
 function XFubenBossSingleControl:GetChooseLevelTypeNeedScore()
     local data = self:GetBossSingleData()
+    -- todo by zlb 这里是错的，+1不一定就等于下一关，到时候找橙子问一下，这要怎么改
     local levelType = data:GetBossSingleLevelType() + 1
     local bossSingleGradeCfg = self._Model:GetBossSingleGradeConfigByLevelType(levelType)
 
@@ -772,28 +807,69 @@ function XFubenBossSingleControl:GetTeamByBossId(bossId)
     local resultTeam = XDataCenter.TeamManager.GetXTeam(teamId)
 
     if not resultTeam then
-        local localTeam = XSaveTool.GetData(teamId .. XPlayer.Id)
-        ---@type XTeam
-        local serverTeam = XDataCenter.TeamManager.GetXTeamByTypeId(CS.XGame.Config:GetInt("TypeIdBossSingle"))
+        local teamData = nil
+        
+        -- 如果是普通区，优先使用服务端编队数据
+        if self:IsBossSingleNormal() then
+            local serverTeamInfo = XMVCA.XFubenBossSingle:GetNormalStageTeamInfo(bossId)
+            if serverTeamInfo and serverTeamInfo.CharacterIds and #serverTeamInfo.CharacterIds > 0 then
+                -- 使用服务端编队数据
+                ---@type XTeam
+                local serverTeam = XDataCenter.TeamManager.GetXTeamByTypeId(CS.XGame.Config:GetInt("TypeIdBossSingle"))
+                local baseTeamData = serverTeam:SwithToOldTeamData()
+                
+                -- 构造编队数据
+                teamData = {
+                    FirstFightPos = baseTeamData.FirstFightPos or 0,
+                    CaptainPos = baseTeamData.CaptainPos or 0,
+                    TeamData = {},
+                    TeamName = "",
+                    SelectedGeneralSkill = baseTeamData.SelectedGeneralSkill,
+                    EnterCgIndex = baseTeamData.EnterCgIndex,
+                    SettleCgIndex = baseTeamData.SettleCgIndex,
+                }
+                
+                -- 填充角色ID列表
+                for i = 1, 3 do
+                    if serverTeamInfo.CharacterIds[i] then
+                        teamData.TeamData[i] = serverTeamInfo.CharacterIds[i]
+                    else
+                        teamData.TeamData[i] = 0
+                    end
+                end
+            end
+        end
+        
+        -- 如果没有服务端数据，使用本地数据或默认数据
+        if not teamData then
+            local localTeam = XSaveTool.GetData(teamId .. XPlayer.Id)
+            ---@type XTeam
+            local serverTeam = XDataCenter.TeamManager.GetXTeamByTypeId(CS.XGame.Config:GetInt("TypeIdBossSingle"))
 
-        resultTeam = XTeam.New(teamId)
-        if not localTeam then
-            resultTeam:UpdateFromTeamData(serverTeam:SwithToOldTeamData())
+            resultTeam = XTeam.New(teamId)
+            if not localTeam then
+                resultTeam:UpdateFromTeamData(serverTeam:SwithToOldTeamData())
+            else
+                teamData = {
+                    FirstFightPos = localTeam.FirstFightPos,
+                    CaptainPos = localTeam.CaptainPos,
+                    TeamData = localTeam.EntitiyIds,
+                    TeamName = "",
+                    SelectedGeneralSkill = localTeam.SelectedGeneralSkill,
+                    EnterCgIndex = localTeam.EnterCgIndex,
+                    SettleCgIndex = localTeam.EnterCgIndex,
+                }
+
+                resultTeam:UpdateFromTeamData(teamData)
+            end
         else
-            local teamData = {
-                FirstFightPos = localTeam.FirstFightPos,
-                CaptainPos = localTeam.CaptainPos,
-                TeamData = localTeam.EntitiyIds,
-                TeamName = "",
-                SelectedGeneralSkill = localTeam.SelectedGeneralSkill,
-                EnterCgIndex = localTeam.EnterCgIndex,
-                SettleCgIndex = localTeam.EnterCgIndex,
-            }
-
+            -- 使用服务端数据创建编队
+            resultTeam = XTeam.New(teamId)
             resultTeam:UpdateFromTeamData(teamData)
         end
 
         resultTeam:UpdateSaveCallback(function(inTeam)
+            local serverTeam = XDataCenter.TeamManager.GetXTeamByTypeId(CS.XGame.Config:GetInt("TypeIdBossSingle"))
             serverTeam:UpdateFromTeamData(inTeam:SwithToOldTeamData())
         end)
         XDataCenter.TeamManager.SetXTeam(resultTeam)
@@ -937,6 +1013,33 @@ end
 
 function XFubenBossSingleControl:SetCurrentSelectIndex(value)
     self._Model:SetCurrentSelectIndex(value)
+end
+
+-- v4.2 新增：添加选中的可选词缀ID（跟随buff）
+---@param buffFeatureId number buff的featureId
+---@param selectableFeatureId number 可选词缀的featureId
+function XFubenBossSingleControl:AddSelectedSelectableFeatureId(buffFeatureId, selectableFeatureId)
+    self._Model:AddSelectedSelectableFeatureId(buffFeatureId, selectableFeatureId)
+end
+
+-- v4.2 新增：移除选中的可选词缀ID（跟随buff）
+---@param buffFeatureId number buff的featureId
+---@param selectableFeatureId number 可选词缀的featureId
+function XFubenBossSingleControl:RemoveSelectedSelectableFeatureId(buffFeatureId, selectableFeatureId)
+    self._Model:RemoveSelectedSelectableFeatureId(buffFeatureId, selectableFeatureId)
+end
+
+-- v4.2 新增：获取指定buff的选中可选词缀ID列表
+---@param buffFeatureId number buff的featureId
+---@return number[]
+function XFubenBossSingleControl:GetSelectedSelectableFeatureIds(buffFeatureId)
+    return self._Model:GetSelectedSelectableFeatureIds(buffFeatureId)
+end
+
+-- v4.2 新增：设置选中的可选词缀ID列表
+---@param featureIds table<number, number[]>
+function XFubenBossSingleControl:SetSelectedSelectableFeatureIds(featureIds)
+    self._Model:SetSelectedSelectableFeatureIds(featureIds)
 end
 
 -- region OpenUi

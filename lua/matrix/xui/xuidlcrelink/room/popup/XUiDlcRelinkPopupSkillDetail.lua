@@ -27,9 +27,6 @@ function XUiDlcRelinkPopupSkillDetail:OnAwake()
 
     ---@type UiObject[]
     self.GridTagList = {}
-
-    self.IsVideoPlaying = false
-
     ---@type UiObject[]
     self.GridAffixList = {}
     self.IsShowAffixDetail = false
@@ -49,8 +46,8 @@ function XUiDlcRelinkPopupSkillDetail:OnStart(skillId, characterId, isRemodel, c
 end
 
 function XUiDlcRelinkPopupSkillDetail:OnDisable()
-    if self.VideoPlayer and self.IsVideoPlaying then
-        self.VideoPlayer:Pause()
+    if self.VideoPlayer then
+        self.VideoPlayer:Stop()
         self.PanelVideo.gameObject:SetActiveEx(false)
     end
 end
@@ -156,24 +153,19 @@ function XUiDlcRelinkPopupSkillDetail:RefreshDesc()
     self.TxtDesc.onLinkClick = function(arg)
         self:RefreshAffixList(arg)
     end
-    self.TxtDesc.text = desc
+    self.TxtDesc.text = XUiHelper.ConvertLineBreakSymbol(desc)
 end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshVideo()
-    local videoUrl = self._Control:GetSkillDescVideoUrl(self.CurSecondSkillId)
-    if string.IsNilOrEmpty(videoUrl) then
+    local videoConfigId = self._Control:GetSkillDescVideoConfigId(self.CurSecondSkillId)
+    if not XTool.IsNumberValid(videoConfigId) then
         self.PanelVideo.gameObject:SetActiveEx(false)
         return
     end
 
     self.PanelVideo.gameObject:SetActiveEx(true)
-    self.VideoPlayer:SetVideoFromRelateUrl(videoUrl)
-    if self.IsVideoPlaying then
-        self.VideoPlayer:RePlay()
-    else
-        self.VideoPlayer:Play()
-    end
-    self.IsVideoPlaying = true
+    self.VideoPlayer:SetInfoByVideoId(videoConfigId)
+    self.VideoPlayer:RePlay()
 end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshAffixList(arg)
@@ -216,10 +208,11 @@ function XUiDlcRelinkPopupSkillDetail:HideAffixDetail()
 end
 
 function XUiDlcRelinkPopupSkillDetail:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnHurt, self.OnBtnHurtClick)
-    self:RegisterClickEvent(self.BtnDesc, self.OnBtnDescClick)
-    self:RegisterClickEvent(self.BtnChange, self.OnBtnChangeClick)
+    self.BtnClose.IsEventPass = true
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnHurt:AddEventListener(handler(self, self.OnBtnHurtClick))
+    self.BtnDesc:AddEventListener(handler(self, self.OnBtnDescClick))
+    self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
 end
 
 function XUiDlcRelinkPopupSkillDetail:OnBtnCloseClick()
@@ -228,10 +221,10 @@ function XUiDlcRelinkPopupSkillDetail:OnBtnCloseClick()
         return
     end
 
-    self:Close()
     if self.Callback then
         self.Callback()
     end
+    self:Close()
 end
 
 function XUiDlcRelinkPopupSkillDetail:OnBtnHurtClick()

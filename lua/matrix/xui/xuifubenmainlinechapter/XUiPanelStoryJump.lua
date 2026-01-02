@@ -168,7 +168,11 @@ function XUiPanelStoryJump:GetShowData(info, title, showData)
     for index, data in pairs(info) do
         chapterName = string.format("%s%s", chapterName, data.ChapterName or "")
         if count > 1 and index < count and not string.IsNilOrEmpty(chapterName) then
-            chapterName = string.format("%s、", chapterName)
+            if XOverseaManager.IsENRegion() then
+                chapterName = string.format("%s, ", chapterName)
+            else
+                chapterName = string.format("%s、", chapterName)
+            end
         end
     end
     local tempData = { Title = title, Content = XUiHelper.GetText("UiFubenStoryJumpPopupContent", chapterName) }

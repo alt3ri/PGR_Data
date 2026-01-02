@@ -154,6 +154,12 @@ XNpcAttribType = {
     LifeEnergy8 = 151,--生命树能量8
     LifeEnergy9 = 152,--生命树能量9
     LifeEnergy10 = 153,--生命树能量10
+    CustomEnergyGroup5 = 154, --自定义能量组5
+    CustomEnergyGroup6 = 155, --自定义能量组6
+    CustomEnergyGroup7 = 156, --自定义能量组7
+    CustomEnergyGroup8 = 157, --自定义能量组8
+    CustomEnergyGroup9 = 158, --自定义能量组9
+    CustomEnergyGroup10 = 159, --自定义能量组10
     
-    End = 154, --结束标志
+    End = 160, --结束标志
 }

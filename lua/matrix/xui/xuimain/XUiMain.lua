@@ -62,6 +62,8 @@ function XUiMain:InitPanel()
     self.CG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
     ---@type XUiMainBoardEffect
     self.MainBoardEffect = XUiMainBoardEffect.New(self)
+    ---@type XUiPanelSwitchableSceneAnim
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
     
     -- self.AreanOnline = XUiPanelArenaOnline.New(self, self.PanelArenaOnline)  --屏蔽合众战局
 end
@@ -166,6 +168,7 @@ function XUiMain:OnEnable()
     XUiHelper.SetSceneAnimHandler(self)
     --CS.XUwaGpmLuaAgent.ChangeScene("UiMain")
 
+    XMVCA.XSwitchableScene:CheckShowGyroTip()
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_ENABLE)
 end
 
@@ -214,6 +217,8 @@ function XUiMain:OnDisable()
             cvgp.blocksRaycasts = true
         end
     end
+
+    self.SwitchableScene:Stop()
 
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_DISABLE)
 
@@ -585,6 +590,7 @@ function XUiMain:OnUiSceneLoaded(particleGroupName)
         end
         self:UpdateCamera(camera)
     end
+    self.SwitchableScene:Play(self.CurSceneId, self.UiSceneInfo.Transform)
 end
 
 function XUiMain:IsShowTerminal()

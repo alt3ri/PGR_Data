@@ -76,6 +76,10 @@ function XMovieAgency:RequestAddStageBookmark(cb)
     local stageId = XDataCenter.MovieManager.GetStageId()
     local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
     local actionId = XDataCenter.MovieManager.GetCurPlayingActionId()
+    if XTool.IsNumberValidEx(stageId) or string.IsNilOrEmpty(movieId) or XTool.IsNumberValidEx(actionId) then
+        return
+    end
+    
     local bookmarkData = self._Model:GetBookmarkData()
     if bookmarkData and bookmarkData.StageId == stageId and bookmarkData.MovieId == movieId and bookmarkData.ActionId == actionId then
         if cb then cb() end
@@ -165,8 +169,13 @@ function XMovieAgency:FormatContent(content)
 end
 
 -- 提取指挥官性别对应文本
-function XMovieAgency:ExtractGenderContent(content)
-    local gender = XPlayer.GetShowGender()
+function XMovieAgency:ExtractGenderContent(content, specGender)
+    local gender = nil
+    if specGender and specGender > 0 then
+        gender = specGender
+    else
+        gender = XPlayer.GetShowGender()
+    end
     if gender == XEnumConst.PLAYER.GENDER_TYPE.MAN then
         local funcItor = string.gmatch(content, "<W>.-</W>")
         local result = funcItor()

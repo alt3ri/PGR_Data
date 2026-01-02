@@ -44,6 +44,8 @@ end
 
 function XBigWorldGamePlayAgency:InitRpc()
     self:AddRpc("NotifyBigWorldMainRedPoint", handler(self, self.NotifyBigWorldMainRedPoint))
+    self:AddRpc("NotifyExternalRequiredBigWorldPlayerData", handler(self, self.NotifyExternalRequiredBigWorldPlayerData))
+    self:AddRpc("NotifyNewEnteredBigWorldId", handler(self, self.NotifyNewEnteredBigWorldId))
 end
 
 function XBigWorldGamePlayAgency:InitEvent()
@@ -140,14 +142,14 @@ end
 --region 进入大世界流程
 
 --- 发送进入大世界入口协议
-function XBigWorldGamePlayAgency:EnterGame()
+function XBigWorldGamePlayAgency:EnterGame(worldId, levelId, enterOperateType, enterOperateParam)
     if not self:IsBigWorldOpen() then
         XUiManager.TipText("CommonNotOpen")
         return
     end
     XNetwork.Call("BigWorldEnterWorldRequest", {
-        WorldId = 0,
-        LevelId = 0,
+        WorldId = worldId,
+        LevelId = levelId,
     }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
@@ -170,11 +172,11 @@ function XBigWorldGamePlayAgency:EnterGame()
         self:RegisterMVCA()
         self:InitConfig()
         self:LaunchWorld()
-        self:PullModuleData(res)
+        self:PullModuleData(res, enterOperateType, enterOperateParam)
     end)
 end
 
-function XBigWorldGamePlayAgency:PullModuleData(response)
+function XBigWorldGamePlayAgency:PullModuleData(response, enterOperateType, enterOperateParam)
     XNetwork.Call("BigWorldOnModuleLoadCompleteRequest", nil, function(res)
         --错误代码
         if res.Code ~= XCode.Success then
@@ -187,6 +189,7 @@ function XBigWorldGamePlayAgency:PullModuleData(response)
         self:CsStatusSyncFightInit()
 
         self:GetCurrentAgency():BeginOpenGuide()
+        XMVCA.XBigWorldFunction:AddEnterOperate(enterOperateType, enterOperateParam)
     end, nil, function()
         self:EnterGameError()
     end)
@@ -260,13 +263,13 @@ function XBigWorldGamePlayAgency:DoEnterGame(worldData, fightData, levelData)
         XLog.Error("fightData or levelData is nil, 进入大世界失败!")
         return
     end
-
-    -- 初始化战斗
-    --self:CsStatusSyncFightInit()
+    CS.XProfilingLuaUtils.PerfSightSkyGardenProcessEnter()
     -- 设置当前大世界类型
     self:InitCurrentBigWorldType()
     -- 对应大世界执行进入战斗前逻辑
     self:GetCurrentAgency():BeforeEnterGame()
+    -- 通知进入大世界
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BEFORE_ENTER_GAME)
     -- 进入战斗
     self:CsStatusSyncEnterFight(worldData, fightData, levelData, XPlayer.Id)
     -- 进入战斗前会清理掉系统行为树数据
@@ -290,6 +293,7 @@ function XBigWorldGamePlayAgency:ExitGame()
         self:CsStatusSyncExitFight()
         self:GetCurrentAgency():Exit()
     end)
+    CS.XProfilingLuaUtils.PerfSightSkyGardenProcessExit()
 end
 
 --- 战斗事件通知，进入战斗（已经进入）
@@ -298,7 +302,8 @@ function XBigWorldGamePlayAgency:OnEventEnterFight()
         return
     end
     self:GetCurrentAgency():EnterFight()
-    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_ENTER_GAME)
+    -- 通知进入大世界
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_AFTER_ENTER_GAME)
 end
 
 --- 战斗事件通知，退出战斗
@@ -1028,6 +1033,21 @@ function XBigWorldGamePlayAgency:NotifyBigWorldMainRedPoint(data)
     self._Model:UpdateEntranceRedPoint(data)
 end
 
+function XBigWorldGamePlayAgency:NotifyExternalRequiredBigWorldPlayerData(data)
+    local worldIds
+    if data then
+        worldIds = data.EnteredBigWorldIds
+    end
+    self._Model:UpdateEntranceWorldMark(worldIds)
+end
+
+function XBigWorldGamePlayAgency:NotifyNewEnteredBigWorldId(data)
+    if not data then
+        return
+    end
+    self._Model:AddEntranceWorldMark(data.WorldId)
+end
+
 function XBigWorldGamePlayAgency:RequestRefreshBigWorldMainRedPoint()
     if not XLoginManager.IsLogin() then
         return
@@ -1060,6 +1080,10 @@ end
 
 function XBigWorldGamePlayAgency:MarkSkyGardenEntryRedPoint()
     self._Model:MarkSkyGardenEntryRedPoint()
+end
+
+function XBigWorldGamePlayAgency:CheckEntryWorld(worldId)
+    return self._Model:CheckEntryWorld(worldId)
 end
 
 --endregion

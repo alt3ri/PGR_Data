@@ -1,12 +1,14 @@
 [
     {
         "Id": 1,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": 1900072.0,
         "MagicId": 1900080.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon01.png",
-        "Name": "Scan",
-        "Des": "Scans the surroundings and warns when there's a rat faction player."
+        "SkillCnt": 3,
+        "SkillCd": 20,
+        "Name": "\u626b\u63cf",
+        "Des": "\u5bf9\u81ea\u8eab\u5468\u8fb9\u8303\u56f4\u8fdb\u884c\u626b\u63cf\uff0c\u5f53\u626b\u63cf\u8303\u56f4\u5185\u5b58\u5728\u9f20\u9635\u8425\u73a9\u5bb6\uff0c\u5c06\u51fa\u73b0\u9884\u8b66\u63d0\u793a\u3002"
     },
     {
         "Id": 2,
@@ -14,26 +16,32 @@
         "InitMagicId": 1900073.0,
         "MagicId": 1900081.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon02.png",
-        "Name": "Pointer",
-        "Des": "Picks a rat faction player who's not in the stealth status and generates a pointer to point at where the player is for a period of time."
+        "SkillCnt": 2,
+        "SkillCd": 5,
+        "Name": "\u6807\u70b9",
+        "Des": "\u968f\u673a\u9009\u62e9\u4e00\u540d\u4e0d\u5728\u9690\u8eab\u72b6\u6001\u4e0b\u7684\u9f20\u9635\u8425\u73a9\u5bb6\uff0c\u5728\u4e00\u6bb5\u65f6\u95f4\u5185\u751f\u6210\u4e00\u4e2a\u7bad\u5934\u6307\u5411\u8be5\u73a9\u5bb6\u6240\u5728\u4f4d\u7f6e\u3002"
     },
     {
         "Id": 3,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": 1900074.0,
         "MagicId": 1900082.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon03.png",
-        "Name": "Animal Trap",
-        "Des": "Generates an animal trap under the character's feet. The trap will stun any rat faction player passing by and notify the player who placed it. Each player can place up to 3 Animal Traps at the same time."
+        "SkillCnt": 4,
+        "SkillCd": 20,
+        "Name": "\u6355\u517d\u5939",
+        "Des": "\u5728\u89d2\u8272\u811a\u4e0b\u751f\u6210\u4e00\u4e2a\u6355\u517d\u5939\uff0c\u9677\u9631\u4f1a\u7729\u6655\u7ecf\u8fc7\u7684\u9f20\u9635\u8425\u73a9\u5e76\u5411\u653e\u7f6e\u6355\u517d\u5939\u7684\u73a9\u5bb6\u53d1\u9001\u63d0\u9192\uff0c\u6bcf\u540d\u73a9\u5bb6\u6700\u591a\u540c\u65f6\u653e\u7f6e3\u4e2a\u6355\u9f20\u5939\u3002"
     },
     {
         "Id": 4,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": 1900075.0,
         "MagicId": 1900083.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon05.png",
-        "Name": "Mass Speedup",
-        "Des": "Makes all rat faction players move faster for a period of time."
+        "SkillCnt": 2,
+        "SkillCd": 20,
+        "Name": "\u5168\u4f53\u589e\u901f",
+        "Des": "\u5728\u4e00\u5b9a\u65f6\u95f4\u5185\u63d0\u5347\u732b\u9635\u8425\u5168\u4f53\u73a9\u5bb6\u7684\u79fb\u52a8\u901f\u5ea6\u3002"
     },
     {
         "Id": 5,
@@ -41,25 +49,130 @@
         "InitMagicId": 1900076.0,
         "MagicId": 1900084.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon08.png",
-        "Name": "Random Item",
-        "Des": "Upon casting the skill, the player will get a random rat faction exclusive item."
+        "SkillCnt": 2,
+        "SkillCd": 5,
+        "Name": "\u968f\u673a\u9053\u5177",
+        "Des": "\u4f7f\u7528\u6280\u80fd\u540e\uff0c\u73a9\u5bb6\u53ef\u4ee5\u968f\u673a\u83b7\u5f97\u4e00\u4e2a\u9f20\u9635\u8425\u7684\u4e13\u7528\u9053\u5177\u3002"
     },
     {
         "Id": 6,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": 1900077.0,
         "MagicId": 1900085.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon06.png",
-        "Name": "Teleport Hat",
-        "Des": "Upon casting the skill for the first time, generates a temporary magic hat underfoot. Casting the skill again when there's a magic hat will teleport the caster to where the hat is."
+        "SkillCnt": 2,
+        "SkillCd": 25,
+        "Name": "\u4f20\u9001\u5e3d",
+        "Des": "\u9996\u6b21\u4f7f\u7528\u6280\u80fd\u65f6\uff0c\u5728\u811a\u4e0b\u751f\u6210\u4e00\u4e2a\u77ed\u6682\u5b58\u5728\u7684\u9b54\u672f\u5e3d\uff1b\u5728\u9b54\u672f\u5e3d\u5b58\u5728\u671f\u95f4\u518d\u6b21\u4f7f\u7528\u6280\u80fd\uff0c\u53ef\u4f20\u9001\u81f3\u9b54\u672f\u5e3d\u6240\u5728\u4f4d\u7f6e\u3002"
     },
     {
         "Id": 7,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": null,
         "MagicId": null,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon07.png",
-        "Name": "Teleport Hat - Teleport",
-        "Des": "Teleport Hat Phase 2"
+        "SkillCnt": 2,
+        "SkillCd": 5,
+        "Name": "\u4f20\u9001\u5e3d-\u4f20\u9001",
+        "Des": "\u4f20\u9001\u5e3d2\u9636\u6bb5"
+    },
+    {
+        "Id": 8,
+        "Condition": null,
+        "InitMagicId": 1900127.0,
+        "MagicId": 1900133.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon02.png",
+        "SkillCnt": 2,
+        "SkillCd": 25,
+        "Name": "\u8db3\u8ff9\u8ffd\u8e2a",
+        "Des": "\u5728\u4e00\u5b9a\u65f6\u95f4\u5185\uff0c\u663e\u793a\u9f20\u9635\u8425\u73a9\u5bb6\u7684\u884c\u52a8\u8f68\u8ff9\u3002"
+    },
+    {
+        "Id": 9,
+        "Condition": null,
+        "InitMagicId": 1900129.0,
+        "MagicId": 1900134.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon04.png",
+        "SkillCnt": 2,
+        "SkillCd": 25,
+        "Name": "\u91ce\u517d\u6807\u8bb0",
+        "Des": "\u5f53\u9f20\u9635\u8425\u73a9\u5bb6\u51fa\u73b0\u5728\u89c6\u91ce\u5185\u65f6\uff0c\u4f7f\u7528\u6280\u80fd\u540e\u53ef\u6301\u7eed\u4e00\u6bb5\u65f6\u95f4\u6807\u8bb0\u5176\u6240\u5728\u4f4d\u7f6e\u3002"
+    },
+    {
+        "Id": 10,
+        "Condition": null,
+        "InitMagicId": 1900131.0,
+        "MagicId": 1900135.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon11.png",
+        "SkillCnt": 2,
+        "SkillCd": 30,
+        "Name": "\u58a8\u6c41\u70b8\u5f39",
+        "Des": "\u5411\u6240\u5728\u4f4d\u7f6e\u653e\u7f6e\u4e00\u4e2a\u58a8\u6c41\u70b8\u5f39\uff0c\u7206\u70b8\u540e\u5468\u56f4\u4e00\u5b9a\u8303\u56f4\u5185\u7684\u5176\u4ed6\u73a9\u5bb6\u7684\u89c6\u91ce\u4f1a\u53d7\u5230\u58a8\u6c41\u963b\u6321\u3002"
+    },
+    {
+        "Id": 11,
+        "Condition": null,
+        "InitMagicId": 1900137.0,
+        "MagicId": 1900138.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon14.png",
+        "SkillCnt": 2,
+        "SkillCd": 20,
+        "Name": "\u9707\u6151",
+        "Des": "\u9707\u6151\u524d\u65b9\u4e00\u5b9a\u8303\u56f4\u5185\u7684\u9f20\u9635\u8425\u73a9\u5bb6\uff0c\u4f7f\u5176\u79fb\u52a8\u65b9\u5411\u4e0e\u64cd\u4f5c\u65b9\u5411\u76f8\u53cd\u3002"
+    },
+    {
+        "Id": 12,
+        "Condition": null,
+        "InitMagicId": 1900140.0,
+        "MagicId": 1900141.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon12.png",
+        "SkillCnt": 3,
+        "SkillCd": 5,
+        "Name": "\u9690\u8eab",
+        "Des": null
+    },
+    {
+        "Id": 13,
+        "Condition": null,
+        "InitMagicId": null,
+        "MagicId": 1900142.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon13.png",
+        "SkillCnt": 3,
+        "SkillCd": 25,
+        "Name": "\u9999\u8549\u76ae",
+        "Des": "\u8bbe\u7f6e\u4e00\u4e2a\u5bf9\u6240\u6709\u73a9\u5bb6\u5747\u6709\u6548\u7684\u9999\u8549\u76ae\uff0c\u8e29\u4e2d\u540e\u4f1a\u5411\u524d\u6ed1\u884c\uff0c\u671f\u95f4\u65e0\u6cd5\u4f7f\u7528\u5176\u4ed6\u6280\u80fd\uff0c\u82e5\u4e0e\u573a\u666f\u53d1\u751f\u78b0\u649e\u5219\u7729\u6655\u4e00\u6bb5\u65f6\u95f4\u3002"
+    },
+    {
+        "Id": 14,
+        "Condition": null,
+        "InitMagicId": null,
+        "MagicId": 1900153.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon10.png",
+        "SkillCnt": 2,
+        "SkillCd": 25,
+        "Name": "\u5e7b\u8c61",
+        "Des": "\u5411\u6444\u50cf\u673a\u65b9\u5411\u53d1\u5c04\u4e00\u4e2a\u53d8\u8eab\u524d\u7684\u5e7b\u8c61\uff0c\u5e7b\u8c61\u6301\u7eed\u79fb\u52a8\uff0c\u78b0\u649e\u5230\u969c\u788d\u7269\u65f6\u6d88\u5931\u3002"
+    },
+    {
+        "Id": 15,
+        "Condition": null,
+        "InitMagicId": null,
+        "MagicId": 1900155.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon05.png",
+        "SkillCnt": 2,
+        "SkillCd": 25,
+        "Name": "\u9632\u62a4\u7f69",
+        "Des": "\u5728\u77ed\u65f6\u95f4\u5185\u5c55\u5f00\u9632\u62a4\u7f69\uff0c\u53ef\u62b5\u5fa1\u4e00\u6b21\u5c04\u51fb\u3002\u82e5\u9632\u62a4\u7f69\u5c55\u5f00\u671f\u95f4\u53d7\u5230\u653b\u51fb\uff0c\u5219\u5728\u77ed\u65f6\u95f4\u5185\u83b7\u5f97\u901f\u5ea6\u63d0\u5347\u6548\u679c\u3002"
+    },
+    {
+        "Id": 16,
+        "Condition": null,
+        "InitMagicId": null,
+        "MagicId": 1900169.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon05.png",
+        "SkillCnt": 2,
+        "SkillCd": 25,
+        "Name": "\u900f\u89c6",
+        "Des": "\u5728\u77ed\u65f6\u95f4\u5185\u663e\u793a\u6240\u6709\u732b\u9635\u8425\u73a9\u5bb6\u7684\u4f4d\u7f6e\u3002"
     }
 ]

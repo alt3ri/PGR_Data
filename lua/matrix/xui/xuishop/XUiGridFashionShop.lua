@@ -84,10 +84,14 @@ function XUiGridFashionShop:OnBtnBuyClick()
                 end
             end)
             self.Parent:RefreshBuy()
-        end)
+        end,function(errorCode) 
+        if errorCode == 20030022 then --写死活动过期错误码
+            XLuaUiManager.RunMain()
+        end
+        end,self.Data.ActivityIsOpen)
     end
 
-    XLuaUiManager.Open("UiFashionDetail", self.Id, self.IsWeaponFashion, buyData)
+    XMVCA.XShop:OpenFashionDetailUi(self.Id,buyData,{isWeaponFashion = self.IsWeaponFashion})
 end
 
 function XUiGridFashionShop:UpdateData(data)
@@ -237,6 +241,9 @@ function XUiGridFashionShop:RefreshPrice()
         local txtNewPrice = self.TxtNewPrice[index]
         if txtNewPrice then
             self.NeedCount = math.floor(count.Count * self.Sales / 100)
+            if self.Data.ActivityIsOpen then
+                self.NeedCount = self.Data.ActivityConsumeCount
+            end
             txtNewPrice.text = self.NeedCount
             local itemCount = XDataCenter.ItemManager.GetCount(count.Id)
             if itemCount < self.NeedCount then
@@ -259,7 +266,10 @@ function XUiGridFashionShop:RefreshOnSales()
         table.insert(self.OnSalesLongTest, sales)
     end)
 
-    self.Sales = 100
+    self.Sales = 100 
+    if self.Data.ActivityIsOpen then
+        self.Sales = self.Data.ActivityDiscount
+    end
 
     if #self.OnSalesLongTest ~= 0 then
         local sortedKeys = {}
@@ -304,6 +314,11 @@ function XUiGridFashionShop:RefreshPanelSale()
             self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(true)
 
         end
+    end
+    if self.Data.ActivityIsOpen then 
+        self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(true)
+        self.TxtSaleRate.gameObject:SetActiveEx(true)
+        self.TxtSaleRate.text = self.Sales / 1000 .. CS.XTextManager.GetText("Snap")
     end
 end
 
@@ -404,6 +419,6 @@ function XUiGridFashionShop:RefreshOnSaleTime(time)
             SaleTime = SaleTime - 1
             func()
         end, 1000)
-end
-
+end
+
 return XUiGridFashionShop

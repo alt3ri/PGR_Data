@@ -5,21 +5,6 @@ local XUiDlcMultiPlayerTitleCommon = require(
     "XUi/XUiDlcMultiPlayer/XUiDlcMultiPlayerCommon/XUiDlcMultiPlayerTitleCommon")
 
 ---@class XUiDlcMultiPlayerSettlement : XUiDlcSettlementBase
----@field BtnClose XUiComponent.XUiButton
----@field BtnData XUiComponent.XUiButton
----@field ImgMvp UnityEngine.UI.Image
----@field TxtNum UnityEngine.UI.Text
----@field TxtScore UnityEngine.UI.Text
----@field PanelTitle UnityEngine.RectTransform
----@field ListTitle UnityEngine.RectTransform
----@field TxtCoinNum UnityEngine.UI.Text
----@field RImgCoin UnityEngine.UI.RawImage
----@field TxtTips UnityEngine.UI.Text
----@field TxtItemTitle UnityEngine.UI.Text
----@field TitleGrid UnityEngine.RectTransform
----@field PanelWin UnityEngine.RectTransform
----@field PanelFail UnityEngine.RectTransform
----@field WinEffect UnityEngine.RectTransform
 ---@field _Control XDlcMultiMouseHunterControl
 local XUiDlcMultiPlayerSettlement = XClass(XUiDlcSettlementBase, "XUiDlcMultiPlayerSettlement")
 
@@ -50,7 +35,6 @@ end
 ---@param result XDlcMultiMouseHunterResult
 function XUiDlcMultiPlayerSettlement:OnStart(result)
     self._Result = result
-
     self:_Init()
     self:_InitCamera()
     self:_InitModelRoot()
@@ -91,17 +75,8 @@ end
 function XUiDlcMultiPlayerSettlement:_Init()
     if self._Result then
         local result = self._Result
-        local coinIcon = self._Control:GetCoinIcon()
-        local titleList = result:GetTitleRewards()
-        local coinCount = result:GetCurrencyReward()
-        local currentCoinCount = result:GetCurrentCurrencyReward()
-        local dailyUpper = self._Control:GetCurrencyLimit()
-
         self.WinEffect.gameObject:SetActiveEx(result:GetIsSelfCampWin())
         self.BtnData.gameObject:SetActiveEx(not result:GetIsEarlySettlement())
-        self.TxtTips.gameObject:SetActiveEx(false)
-        self.TxtItemTitle.text = result:IsCatCamp() and self._Control:GetSettleDataCatTitle()
-                                     or self._Control:GetSettleDataMouseTitle()
         if result:GetIsEarlySettlement() then
             self.PanelWin.gameObject:SetActiveEx(false)
             self.PanelFail.gameObject:SetActiveEx(true)
@@ -109,26 +84,10 @@ function XUiDlcMultiPlayerSettlement:_Init()
             self.PanelWin.gameObject:SetActiveEx(result:GetIsSelfCampWin())
             self.PanelFail.gameObject:SetActiveEx(not result:GetIsSelfCampWin())
         end
-        self.TxtNum.text = result:IsCatCamp() and result:GetEliminatePlayerCount() or result:GetSurvivalTime()
-        self.TxtCoinNum.text =
-            XUiHelper.GetText("DlcMultiplayerCurrencyReward", coinCount, dailyUpper, currentCoinCount)
-        self.TxtScore.text = result:GetScore()
-        self.ImgMvp.gameObject:SetActiveEx(result:GetIsMvp() and result:GetIsSelfCampWin())
-        self.ImgSvp.gameObject:SetActiveEx(result:GetIsMvp() and not result:GetIsSelfCampWin())
-        self.RImgCoin:SetRawImage(coinIcon)
-        self.ListTitle.gameObject:SetActiveEx(true)
-        self.PanelTitle.gameObject:SetActiveEx(false)
-
-        if not XTool.IsTableEmpty(titleList) then
-            for i, titleId in pairs(titleList) do
-                local panelTitle = XUiHelper.Instantiate(self.PanelTitle, self.ListTitle)
-                local titleObject = panelTitle:FindTransform("PanelDlcMultiPlayerTitle")
-
-                panelTitle.gameObject:SetActiveEx(true)
-                if titleObject then
-                    self._TitleGridList[i] = XUiDlcMultiPlayerTitleCommon.New(titleObject, self, titleId)
-                end
-            end
+        if result:GetIsSelfCampWin() then
+            self:InitResultPanel(self.PanelWin.gameObject, self._Result)
+        else
+            self:InitResultPanel(self.PanelFail.gameObject, self._Result)
         end
     end
 end
@@ -197,5 +156,42 @@ function XUiDlcMultiPlayerSettlement:_RefreshModel()
 end
 
 -- endregion
+
+function XUiDlcMultiPlayerSettlement:InitResultPanel(panelGo, result)
+    local panelUi = {}
+    XTool.InitUiObjectByUi(panelUi, panelGo)
+    panelUi.ImgMvp.gameObject:SetActiveEx(result:GetIsMvp() and result:GetIsSelfCampWin())
+    panelUi.TxtNum.text = result:IsCatCamp() and result:GetEliminatePlayerCount() or result:GetSurvivalTime()
+    panelUi.TxtScore.text = result:GetScore()
+    panelUi.PanelTitle.gameObject:SetActiveEx(false)
+    panelUi.ListTitle.gameObject:SetActiveEx(true)
+    local titleList = result:GetTitleRewards()
+    if not XTool.IsTableEmpty(titleList) then
+        for i, titleId in pairs(titleList) do
+            local panelTitle = XUiHelper.Instantiate(panelUi.PanelTitle, panelUi.ListTitle)
+            local titleObject = panelTitle:FindTransform("PanelDlcMultiPlayerTitle")
+
+            panelTitle.gameObject:SetActiveEx(true)
+            if titleObject then
+                self._TitleGridList[i] = XUiDlcMultiPlayerTitleCommon.New(titleObject, self, titleId)
+            end
+        end
+    end
+    local coinCount = result:GetCurrencyReward()
+    local currentCoinCount = result:GetCurrentCurrencyReward()
+    local dailyUpper = self._Control:GetCurrencyLimit()
+
+    panelUi.TxtCoinNum.text =
+        XUiHelper.GetText("DlcMultiplayerCurrencyReward", coinCount, dailyUpper, currentCoinCount)
+    local coinIcon = self._Control:GetCoinIcon()
+
+    panelUi.RImgCoin:SetRawImage(coinIcon)
+
+    panelUi.TxtTips.gameObject:SetActiveEx(false)
+
+    panelUi.TxtItemTitle.text = result:IsCatCamp() and self._Control:GetSettleDataCatTitle()
+            or self._Control:GetSettleDataMouseTitle()
+    panelUi.ImgSvp.gameObject:SetActiveEx(result:GetIsMvp() and not result:GetIsSelfCampWin())
+end
 
 return XUiDlcMultiPlayerSettlement

@@ -2,7 +2,7 @@
 local XDlcMultiplayerConfigModel = XClass(XModel, "XDlcMultiplayerConfigModel")
 
 local DlcMultiplayerTableKey = {
-    DlcMultiplayerConfig = {
+    DlcMultiplayerClientConfig = {
         ReadFunc = XConfigUtil.ReadType.String,
         DirPath = XConfigUtil.DirectoryType.Client,
         Identifier = "Key",
@@ -47,14 +47,14 @@ function XDlcMultiplayerConfigModel:_InitTableKey()
     self._ConfigUtil:InitConfigByTableKey("DlcWorld/DlcMultiplayer", DlcMultiplayerTableKey)
 end
 
----@return XTableDlcMultiplayerConfig[]
+---@return XTableDlcMultiplayerClientConfig[]
 function XDlcMultiplayerConfigModel:GetDlcMultiplayerConfigConfigs()
-    return self._ConfigUtil:GetByTableKey(DlcMultiplayerTableKey.DlcMultiplayerConfig) or {}
+    return self._ConfigUtil:GetByTableKey(DlcMultiplayerTableKey.DlcMultiplayerClientConfig) or {}
 end
 
----@return XTableDlcMultiplayerConfig
+---@return XTableDlcMultiplayerClientConfig
 function XDlcMultiplayerConfigModel:GetDlcMultiplayerConfigConfigByKey(key)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcMultiplayerTableKey.DlcMultiplayerConfig, key, false) or {}
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcMultiplayerTableKey.DlcMultiplayerClientConfig, key, false) or {}
 end
 
 function XDlcMultiplayerConfigModel:GetDlcMultiplayerConfigCommentByKey(key)
@@ -361,6 +361,7 @@ function XDlcMultiplayerConfigModel:GetDlcMultiplayerTitleGroupTitleIdsById(id)
     return config.TitleIds
 end
 
+---@return XTableDlcMultiplayerSkill
 function XDlcMultiplayerConfigModel:GetDlcMultiplayerSkillConfigById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcMultiplayerTableKey.DlcMultiplayerSkill, id, false)
 end

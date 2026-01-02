@@ -813,7 +813,8 @@ local UiRegistry = {
     UiSimulatedCombatBuffTip = "XUi/XUiFubenSimulatedCombat/XUiSimulatedCombatBuffTip",
     UiSkipTip = "XUi/XUiCommon/XUiSkipTip",
     UiFubenChallengeMapEmex = "XUi/XUiFubenChallengeMapEmex/XUiFubenChallengeMapEmex",
-    UiArenaFightResult = "XUi/XUiArenaNew/XUiArenaResult/XUiArenaFightResult",
+    UiArenaSettlement = "XUi/XUiArenaNew/XUiArenaResult/XUiArenaSettlement",
+    UiArenaPopupNewRecord = "XUi/XUiArenaNew/XUiArenaResult/XUiArenaPopupNewRecord",
     UiSimulatedCombatBossBuffTips = "XUi/XUiFubenSimulatedCombat/XUiSimulatedCombatBossBuffTips",
     UiPartnerSkillPreview = "XUi/XUiPartner/PartnerSkillPreview/XUiPartnerSkillPreview",
     UiCueMark = "XUi/XUiDialog/XUiCueMark",
@@ -1190,7 +1191,7 @@ local UiRegistry = {
     UiFightBangbiPaper = "XUi/XUiFightBangbiSkill/XUiFightBangbiPaper",
     UiDlcHuntMatching = "XUi/XUiDlcHunt/Room/XUiDlcHuntMatching",
     UiDlcHuntPlayerRoom = "XUi/XUiDlcHunt/XUiDlcHuntPlayerRoom",
-    --region dlc new
+    --region dlc new 
     UiDlcHuntMain = "XUi/XUiDlcHunt/XUiDlcHuntMain",
     UiDlcHuntBag = "XUi/XUiDlcHunt/Bag/XUiDlcHuntBag",
     UiDlcHuntChipDetails = "XUi/XUiDlcHunt/Chip/XUiDlcHuntChipDetail",
@@ -1659,6 +1660,7 @@ local UiRegistry = {
     UiMainLine2PopupChooseGender = "XUi/XUiMainLine2/XUiMainLine2PopupChooseGender",
     UiMainLine2EggsTreasureTips = "XUi/XUiMainLine2/XUiMainLine2EggsTreasureTips",
     UiMainLine2EggsTreasureMail = "XUi/XUiMainLine2/XUiMainLine2EggsTreasureMail",
+    UiMainLine2Task = "XUi/XUiMainLine2/XUiMainLine2Task",
     UiMainLineExhibitionPopupChapter = "XUi/XUiFuben/MainLine/XUiMainLineExhibitionPopupChapter",
     UiMainLineExhibitionPopupCG = "XUi/XUiFuben/MainLine/XUiMainLineExhibitionPopupCG",
     UiMainLineExhibitionMission = "XUi/XUiFuben/MainLine/XUiMainLineExhibitionMission",
@@ -1699,6 +1701,7 @@ local UiRegistry = {
     UiLinkCraftActivityChapterDetail = "XUi/XUiLinkCraftActivity/UiLinkCraftActivityChapterDetail/XUiLinkCraftActivityChapterDetail",
     UiLinkCraftActivityShop = "XUi/XUiLinkCraftActivity/UiLinkCraftActivityShop/XUiLinkCraftActivityShop",
     UiFubenBossSingleChallengeRankReward = "XUi/XUiFubenBossSingle/XUiFubenBossSingleChallengeRankReward/XUiFubenBossSingleChallengeRankReward",
+    UiFubenBossSingleSettlement = "XUi/XUiFubenBossSingle/XUiFubenBossSingleSettlement",
     UiBattleRoomGeneralSkillSelect = "XUi/XUiNewRoomSingle/XUiBattleRoomGeneralSkillSelect",
     UiFightPuzzle = "XUi/XUiFight/FightPuzzle/XUiFightPuzzle",
     UiFightTutorial = "XUi/XUiFightTutorial/XUiFightTutorial",
@@ -1835,8 +1838,15 @@ local UiRegistry = {
     UiBigWorldMenu = "XUi/XUiBigWorld/XMenu/XUiBigWorldMenu",
     UiBigWorldTask = "XUi/XUiBigWorld/XQuest/XUiBigWorldTask",
     UiBigWorldTaskMain = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskMain",
+    UiBigWorldTaskMainInvitation = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskMainInvitation",
+    UiBigWorldPopupEnvironmentalStory = "XUi/XUiBigWorld/XQuest/XUiBigWorldPopupEnvironmentalStory",
+    UiBigWorldTaskPopupEndingDetail = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskPopupEndingDetail",
     UiBigWorldPopupDelivery = "XUi/XUiBigWorld/XQuest/XUiBigWorldPopupDelivery",
+    UiBigWorldPopupNews = "XUi/XUiBigWorld/XNews/XUiBigWorldPopupNews",
+    UiBigWorldTextDialog = "XUi/XUiBigWorld/XCommon/XUiBigWorldTextDialog",
     UiBigWorldTaskObtain = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskObtain",
+    UiBigWorldTaskObtainInvitation = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskObtainInvitation",
+    UiBigWorldPopupAdvance = "XUi/XUiBigWorld/XProcess/XUiBigWorldPopupAdvance",
     UiBigWorldTaskObtainDrama = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskObtainDrama",
     UiBigWorldTaskObtainDramaHeart = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskObtainDramaHeart",
     UiBigWorldLineChapter = "XUi/XUiBigWorld/XStory/XUiBigWorldLineChapter",
@@ -2072,7 +2082,7 @@ local UiRegistry = {
     UiBagOrganizePopupRankDetails = "XUi/XUiBagOrganizeActivity/UiBagOrganizePopupRankDetails/XUiBagOrganizePopupRankDetails",
     UiBagOrganizePopupEventDetails = "XUi/XUiBagOrganizeActivity/UiBagOrganizePopupEventDetails/XUiBagOrganizePopupEventDetails",
     UiMainLineExhibitionPopupComic = "XUi/XUiFubenMainLineChapter/XUiMainLineExhibitionPopupComic",
-
+    
     --region 新矿区
     UiScoreTowerMain = "XUi/XUiScoreTower/XUiScoreTowerMain",
     UiScoreTowerChapterDetail = "XUi/XUiScoreTower/Chapter/XUiScoreTowerChapterDetail",
@@ -2143,8 +2153,10 @@ local UiRegistry = {
     UiTheatre5PopupBacktrack = "XUi/XUiTheatre5/XUiTheatre5PopupBacktrack/XUiTheatre5PopupBacktrack",
     UiTheatre5PopupChoose = "XUi/XUiTheatre5/XUiTheatre5PopupChoose/XUiTheatre5PopupChoose",
     UiTheatre5PopupNewSeason = "XUi/XUiTheatre5/XUiTheatre5PopupNewSeason/XUiTheatre5PopupNewSeason",
+    UiTheatre5ChooseTask = "XUi/XUiTheatre5/XUiTheatre5ChooseTask/XUiTheatre5ChooseTask",
+    UiTheatre5PopupTaskSettlement = "XUi/XUiTheatre5/XUiTheatre5PopupTaskSettlement/XUiTheatre5PopupTaskSettlement",
     --endregion
-
+    
     --region 悬赏任务
     UiBountyChallengeMain = "XUi/XUiBountyChallenge/XUiBountyChallengeMain",
     UiBountyChallengeChapterDetail = "XUi/XUiBountyChallenge/XUiBountyChallengeChapterDetail",
@@ -2195,6 +2207,9 @@ local UiRegistry = {
     UiDlcRelinkLvReward = "XUi/XUiDlcRelink/Reward/XUiDlcRelinkLvReward",
     UiDlcRelinkPopupGetReward = "XUi/XUiDlcRelink/Common/XUiDlcRelinkPopupGetReward",
     UiDlcRelinkShopItem = "XUi/XUiDlcRelink/Common/XUiDlcRelinkShopItem",
+    UiDlcRelinkEncyclopedia = "XUi/XUiDlcRelink/Wiki/XUiDlcRelinkWiki",
+    UiDlcRelinkPopupChooseAttribute = "XUi/XUiDlcRelink/Equip/Popup/XUiDlcRelinkPopupChooseAttribute",
+    UiDlcRelinkPopupTutorial = "XUi/XUiDlcRelink/Room/Popup/XUiDlcRelinkPopupTutorial",
     --endregion
 
     --region mini改造
@@ -2215,7 +2230,7 @@ local UiRegistry = {
     UiPurchaseTips = "XUi/Oversea/XUiPurchaseTips",
     UiMonthlyCardEn = "XUi/Oversea/XUiMonthlyCardEn",
     --endregion
-
+    
     --region 赛马
     UiRaceMain = "XUi/XUiRace/XUiRaceMain",
     UiRacePredict = "XUi/XUiRace/XUiRacePredict",
@@ -2253,11 +2268,12 @@ local UiRegistry = {
     UiTeamPrefabPartner = "XUi/XUiTeamPrefab/XUiTeamPrefabPartner/XUiTeamPrefabPartner",
     UiTeamPrefabEquipSuitSkill = "XUi/XUiTeamPrefab/XUiTeamPrefabEquipSuitSkill",
     --endregion
-
+    
     --region 军团系统/PlotExhibition
     UiPlotExhibitionMain = "XUi/XUiPlotExhibition/XUiPlotExhibitionMain",
     UiPlotExhibitionDetail = "XUi/XUiPlotExhibition/XUiPlotExhibitionDetail",
     UiPlotExhibitionPopupPower = "XUi/XUiPlotExhibition/XUiPlotExhibitionPopupPower",
+    UiPlotExhibitionPopupCoverChange = "XUi/XUiPlotExhibition/XUiPlotExhibitionPopupCoverChange",
     --endregion
 
     UiFirstDownloadTips = "XUi/XUiSubPackage/XUiFirstDownloadTips",
@@ -2273,11 +2289,52 @@ local UiRegistry = {
     --陀螺仪测试
     UiHyxGyroTest = "XUi/XUiHyxGyroTest/XUiHyxGyroTest",
     UiAreaWarObtain = "XUi/XUiAreaWar/XUiAreaWarObtain",
-
+    
+    --region 罗塞塔主线
+    UiMainLineLuosaitaPopupSkyGardenDetail = "XUi/XUiMainLine2/XUiMainLineLuosaita/XUiMainLineLuosaitaPopupSkyGardenDetail",
+    UiMainLineLuosaitaMain = "XUi/XUiMainLine2/XUiMainLineLuosaita/XUiMainLineLuosaitaMain",
+    UiMainLineLuosaitaPopupFileDetail = "XUi/XUiMainLine2/XUiMainLineLuosaita/XUiMainLineLuosaitaPopupFileDetail",
+    UiMainLineLuosaitaPopupReview = "XUi/XUiMainLine2/XUiMainLineLuosaita/XUiMainLineLuosaitaPopupReview",
+    --endregion 
+    
     --region 空花签到
     UiRadioSignMain = "XUi/XUiRadioSign/XUiRadioSignMain",
     UiRadioSignPopupHall = "XUi/XUiRadioSign/XUiRadioSignPopupHall",
     --endregion
+
+    UiSkyGardenSGDroneMain = "XUi/XUiSkyGarden/XDroneGame/XUiSkyGardenSGDroneMain",
+    UiSkyGardenSGDroneChapter = "XUi/XUiSkyGarden/XDroneGame/XUiSkyGardenSGDroneChapter",
+    UiSkyGardenSGDroneStage = "XUi/XUiSkyGarden/XDroneGame/Stage/XUiSkyGardenSGDroneStage",
+    UiSkyGardenSGDroneStageDetail = "XUi/XUiSkyGarden/XDroneGame/StageDetail/XUiSkyGardenSGDroneStageDetail",
+    UiSkyGardenSGDroneGame = "XUi/XUiSkyGarden/XDroneGame/Battle/XUiSkyGardenSGDroneGame",
+    UiSkyGardenSGDronePopupSettlement = "XUi/XUiSkyGarden/XDroneGame/Settlement/XUiSkyGardenSGDronePopupSettlement",
+    UiSkyGardenSGDronePopupStop = "XUi/XUiSkyGarden/XDroneGame/Popup/XUiSkyGardenSGDronePopupStop",
+    UiSkyGardenSGDronePopupDetail = "XUi/XUiSkyGarden/XDroneGame/Popup/XUiSkyGardenSGDronePopupDetail",
+    UiSkyGardenSGDroneShop = "XUi/XUiSkyGarden/XDroneGame/Shop/XUiSkyGardenSGDroneShop",
+    UiSkyGardenSGDroneLoading = "XUi/XUiSkyGarden/XDroneGame/XUiSkyGardenSGDroneLoading",
+    UiBigWorldVideoPreview = "XUi/XUiBigWorld/XCommon/XPreview/XUiBigWorldVideoPreview",
+    
+    UiGuildWarStayChoose = "XUi/XUiGuildWar/RoleStationChoose/XUiGuildWarStayChoose",
+    UiGuildWarUpTeam = "XUi/XUiGuildWar/UiGuildWarUpTeam/XUiGuildWarUpTeam",
+    UiBigWorldMapOverview = "XUi/XUiBigWorld/XMap/XOverview/XUiBigWorldMapOverview",
+    UiPaintingExperiencePassV4P2 = "XUi/XUiPaintingExperiencePassV4P2/XUiPaintingExperiencePassV4P2",
+    UiTheatre5PopupChooseTaskReward = "XUi/XUiTheatre5/XUiTheatre5PopupChooseTaskReward/XUiTheatre5PopupChooseTaskReward",
+    UiAccumulateExpendShopMain = "XUi/XUiAccumulateExpendShop/XUiAccumulateExpendShopMain",
+    UiAccumulateExpendShopPopupDailyReward = "XUi/XUiAccumulateExpendShop/XUiAccumulateExpendShopObtaion",
+
+    --region 比安卡卡池
+    UiGachaBianka402BuyTicket = "XUi/XUiGachaBianka/XUiGachaBiankaBuyTicket",
+    UiGachaBianka402Log = "XUi/XUiGachaBianka/XUiGachaBiankaLog",
+    UiGachaBianka402Main = "XUi/XUiGachaBianka/XUiGachaBiankaMain",
+    UiGachaBianka402Passport = "XUi/XUiGachaBianka/XUiGachaBiankaPassport",
+    UiGachaBianka402QuickWear = "XUi/XUiGachaBianka/XUiGachaBiankaQuickWear",
+    UiGachaBianka402StageDetail = "XUi/XUiGachaBianka/XUiGachaBiankaStageDetail",
+    UiGachaBianka402StageLine = "XUi/XUiGachaBianka/XUiGachaBiankaStageLine",
+    UiGachaBianka402Tip = "XUi/XUiGachaBianka/XUiGachaBiankaTip",
+    UiGachaBianka402Show = "XUi/XUiGachaBianka/XUiGachaBiankaShow",
+    UiGachaBianka402Result = "XUi/XUiGachaBianka/XUiGachaBiankaResult",
+    --endregion
+    UiBigWorldPurchaseItem = "XUi/XUiBigWorld/XCommon/XUiBigWorldPurchaseItem",
 }
 
 return UiRegistry

@@ -18,6 +18,9 @@ local dlcEventId = {
     -- 刷新任务红点
     EVENT_QUEST_RED_POINT_REFRESH = NewId(),
 
+    -- 刷新主界面选择的任务
+    EVENT_QUEST_REFRESH_MAIN_SELECT = NewId(),
+
     -- 任务完成
     EVENT_QUEST_FINISH = NewId(),
 
@@ -90,6 +93,9 @@ local dlcEventId = {
     -- 追踪图钉
     EVENT_MAP_PIN_TRACK_CHANGE = NewId(),
 
+    -- 详情刷新
+    EVENT_MAP_DETAIL_CHANGE = NewId(),
+
     -- 添加图钉
     EVENT_MAP_PIN_ADD = NewId(),
 
@@ -111,11 +117,17 @@ local dlcEventId = {
     -- 图钉详情关闭
     EVENT_MAP_PIN_DETAIL_CLOSE = NewId(),
 
+    -- 修改图钉展示类型
+    EVENT_SET_MAP_PIN_SHOW_TYPE = NewId(),
+
     -- 地图传送弹窗关闭
     EVENT_MAP_TELEPORT_POPUP_CLOSE = NewId(),
 
     -- 地图传送弹窗打开
     EVENT_MAP_TELEPORT_POPUP_OPEN = NewId(),
+
+    -- 地图切换
+    EVENT_MAP_SWITCH = NewId(),
 
     -- 玩家进入区域
     EVENT_PLAYER_ENTER_AREA = NewId(),
@@ -168,6 +180,9 @@ local dlcEventId = {
     -- 短信播放结束
     EVENT_MESSAGE_PLAY_FINISH_NOTIFY = NewId(),
 
+    -- 短信播放暂停
+    EVENT_MESSAGE_PLAY_PAUSE_NOTIFY = NewId(),
+
     -- 设置重置
     EVENT_SETTING_RESET = NewId(),
 
@@ -218,9 +233,15 @@ local dlcEventId = {
 
     -- 打脸完成
     EVENT_BIG_WORLD_FUNCTION_EVENT_COMPLETE = NewId(),
+    
+    -- 检查打脸
+    EVENT_CHECK_FUNCTION_POPUP = NewId(),
 
-    -- 进入大世界
-    EVENT_ENTER_GAME = NewId(),
+    -- 进入大世界前
+    EVENT_BEFORE_ENTER_GAME = NewId(),
+
+    -- 进入大世界后
+    EVENT_AFTER_ENTER_GAME = NewId(),
 
     -- 大世界功能屏蔽
     EVENT_FUNCTION_SHIELD_CHANEG = NewId(),
@@ -254,6 +275,27 @@ local dlcEventId = {
     
     -- 背包更新
     EVENT_BIG_WORLD_BACKPACK_UPDATE = NewId(),
+
+    -- 无人机游戏暂存
+    EVENT_SKY_GARDEN_DRONE_GAME_SUSPEND = NewId(),
+
+    -- 无人机游戏关卡刷新
+    EVENT_SKY_GARDEN_DRONE_GAME_STAGE_UI_REFRESH = NewId(),
+
+    -- 无人机游戏关卡详情刷新
+    EVENT_SKY_GARDEN_DRONE_GAME_STAGE_DETAIL_UI_REFRESH = NewId(),
+
+    -- 无人机切换关卡完成
+    EVENT_SKY_GARDEN_DRONE_CHAPTER_SELECT_VIEW_SWITCH_COMPLETE = NewId(),
+
+    -- 预览视频播放结束
+    EVENT_BIG_WORLD_PREVIEW_VIDEO_FINISH = NewId(),
+
+    -- 预览界面关闭
+    EVENT_BIG_WORLD_PREVIEW_CLOSE = NewId(),
+
+    -- 商店购买
+    EVENT_BIG_WORLD_SHOP_BUY = NewId(),
 }
 
 return dlcEventId

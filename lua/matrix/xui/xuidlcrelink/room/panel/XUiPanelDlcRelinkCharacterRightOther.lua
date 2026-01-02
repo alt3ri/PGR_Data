@@ -52,8 +52,7 @@ end
 
 function XUiPanelDlcRelinkCharacterRightOther:RefreshPanelEquipment()
     -- 装备总战力
-    local totalAbility = self.Member:GetRelinkEquipTotalAbility()
-    self.TxtLv.text = string.format(self._Control:GetClientConfig("EquipLevelDesc"), totalAbility)
+    self.TxtLv.text = self.Member:GetRelinkEquipTotalAbility()
     -- 装备槽位
     local equipSlotIndexMap = self._Control:GetEquipSlotIndexMap()
     for index, slotIndex in ipairs(equipSlotIndexMap) do
@@ -121,13 +120,13 @@ end
 
 function XUiPanelDlcRelinkCharacterRightOther:RefreshPanelSkill()
     local characterId = self.Member:GetCharacterId()
-    local occupationType = self.Member:GetOccupationType()
-    local originalSkillIds = self._Control:GetCharacterSkillIds(characterId, occupationType)
-    local curSkillIds = self._Control:GetCharacterSkillIdsByCharacterId(characterId, occupationType, true)
+    local styleType = self.Member:GetStyleType()
+    local originalSkillIds = self._Control:GetCharacterSkillIds(characterId, styleType)
+    local curSkillIds = self._Control:GetCharacterSkillIdsByCharacterId(characterId, styleType, true)
     for index, skillId in pairs(curSkillIds) do
         local grid = self.SkillGridList[index]
         if not grid then
-            local go = XUiHelper.Instantiate(self.GridSkill, self.PanelSkill)
+            local go = XUiHelper.Instantiate(self.GridSkill, self.PanelSkillContent)
             grid = XUiGridDlcRelinkCharacterSkill.New(go, self, handler(self, self.OnSkillGridCallBack))
             self.SkillGridList[index] = grid
         end
@@ -154,6 +153,10 @@ function XUiPanelDlcRelinkCharacterRightOther:OnSkillGridCallBack(grid)
     grid:SetSelect(true)
     self.CurSelectSkillId = skillId
     self.CurSelectSkillGrid = grid
+    -- 响应穿透事件屏蔽
+    for _, skillGrid in pairs(self.SkillGridList) do
+        skillGrid:SetRespondPassEvent(skillGrid ~= grid)
+    end
     -- 打开技能详情
     XLuaUiManager.Open("UiDlcRelinkPopupSkillDetail", skillId, self.Member:GetCharacterId(), grid:GetIsRemodel(),
         handler(self, self.OnSkillDetailClose), true)
@@ -170,24 +173,24 @@ end
 function XUiPanelDlcRelinkCharacterRightOther:RefreshInfo()
     -- 角色信息
     local characterId = self.Member:GetCharacterId()
+    local styleType = self.Member:GetStyleType()
     self.TxtName01.text = XMVCA.XCharacter:GetCharacterName(characterId)
     self.TxtName02.text = XMVCA.XCharacter:GetCharacterTradeName(characterId)
-    local elementId = XMVCA.XCharacter:GetCharacterElement(characterId)
-    local charElement = XMVCA.XCharacter:GetCharElement(elementId)
-    self.RawImage:SetRawImage(charElement.Icon2)
-    self.Txt.text = charElement.ElementName
-    -- 角色职业图标
-    local occupationType = self.Member:GetOccupationType()
-    local occupationIcon = self._Control:GetClientConfig("CharacterOccupationIcon", occupationType)
+    -- 角色职业图标和名称
+    local occupationIcon = self._Control:GetCharacterOccupationIconTwo(characterId, styleType)
     if not string.IsNilOrEmpty(occupationIcon) then
-        self.RImgOcc:SetRawImage(occupationIcon)
+        self.RawImage:SetRawImage(occupationIcon)
+    end
+    self.Txt.text = self._Control:GetCharacterOccupationName(characterId, styleType)
+    -- 角色风格图标
+    local styleIcon = self._Control:GetCharacterStyleIcon(characterId, styleType)
+    if not string.IsNilOrEmpty(styleIcon) then
+        self.RImgOcc:SetRawImage(styleIcon)
     end
 end
 
 function XUiPanelDlcRelinkCharacterRightOther:RefreshAttributes()
-    local curPlayerLevel = self._Control.OtherMemberControl:GetPlayerLevel()
-    local equipUids = self._Control.OtherMemberControl:GetWearEquipUids()
-    local totalAttributes = self._Control:GetTotalAttributes(self.Member:GetCharacterId(), curPlayerLevel, equipUids, true)
+    local totalAttributes = self._Control:GetCharacterAttributeList(self.Member:GetCharacterId(), true)
 
     local maxCount = XEnumConst.DlcRelink.MaxAttributeCount
     local showCount = 0
@@ -219,8 +222,8 @@ function XUiPanelDlcRelinkCharacterRightOther:OnDestroy()
 end
 
 function XUiPanelDlcRelinkCharacterRightOther:RegisterUiEvents()
-    XUiHelper.RegisterClickEvent(self, self.BtnMore, self.OnBtnMoreClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnLv, self.OnBtnLvClick, true, true)
+    self.BtnMore:AddEventListener(handler(self, self.OnBtnMoreClick))
+    self.BtnLv:AddEventListener(handler(self, self.OnBtnLvClick))
 end
 
 function XUiPanelDlcRelinkCharacterRightOther:OnBtnMoreClick()

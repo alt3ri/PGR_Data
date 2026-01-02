@@ -71,8 +71,11 @@ function XSubPackageAgency:OnInit()
     self:ResolveResIndex()
 end
 
-function XSubPackageAgency:InitRpc()
+function XSubPackageAgency:GetSubIndexInfo()
+    return self._SubIndexInfo
+end
 
+function XSubPackageAgency:InitRpc()
 end
 
 function XSubPackageAgency:InitEvent()
@@ -571,7 +574,7 @@ function XSubPackageAgency:OnComplete(subpackageId)
 
     --埋点
     self:DoRecordSubpackageComplete(id)
-   self:Print(string.format("[SubPackage] Subpackage(%s) Download Complete!", subpackageId))
+    self:Print(string.format("[SubPackage] Subpackage(%s) Download Complete!", subpackageId))
 end
 
 function XSubPackageAgency:OnProgressUpdate(progress, taskGrpId)
@@ -589,6 +592,91 @@ function XSubPackageAgency:OnProgressUpdate(progress, taskGrpId)
     end
 end
 
+---------------------------------------------------------
+-- 根据 resId 卸载对应 XResource（删除所有本地文件）
+-- @param resId number
+---------------------------------------------------------
+function XSubPackageAgency:UninstallResourceByResId(resId)
+    if not resId or resId <= 0 then
+        XLog.Error("[XSubPackageAgency] UninstallResourceByResId: resId 无效 -> " .. tostring(resId))
+        return
+    end
+
+    local indexInfo = self._SubIndexInfo[resId]
+    if not indexInfo then
+        XLog.Warning(string.format("[XSubPackageAgency] UninstallResourceByResId: 找不到 IndexInfo, resId=%d", resId))
+        return
+    end
+
+    XLog.Warning(string.format("[XSubPackageAgency] 开始卸载 ResId=%d 的所有文件", resId))
+
+    for fileName, info in pairs(indexInfo) do
+        -- 文件名 info[1]
+        local fullName = info[1]
+        local savePath = self:GetSavePath(fullName)
+
+        -- Lua 层谨慎保险：如果 C# 未删除，则尝试删除（不报错）
+        CS.XFileTool.DeleteFile(savePath)
+
+        XLog.Warning(string.format("[XSubPackageAgency] 删除文件: %s", savePath))
+    end
+
+    -- 删除下载记录（否则认为资源已下载）
+    self._LaunchDlcManager.ClearDownloadRecord(resId)
+
+    XLog.Warning(string.format("[XSubPackageAgency] ResId=%d 卸载完成", resId))
+end
+
+---------------------------------------------------------
+-- 根据 SubpackageId 卸载该分包所有文件（按路径删除，不依赖ResId卸载接口）
+-- @param subpackageId number
+---------------------------------------------------------
+function XSubPackageAgency:UninstallSubpackageById(subpackageId)
+    if not subpackageId or subpackageId <= 0 then
+        XLog.Error("[XSubPackageAgency] UninstallSubpackageById: subpackageId 无效 -> " .. tostring(subpackageId))
+        return
+    end
+
+    local template = self:GetSubpackageTemplate(subpackageId)
+    if not template or not template.ResIds then
+        XLog.Warning(string.format(
+            "[XSubPackageAgency] UninstallSubpackageById: 找不到模板或 ResIds 为空, subpackageId=%d",
+            subpackageId
+        ))
+        return
+    end
+
+    XLog.Warning(string.format("[XSubPackageAgency] 开始卸载 SubpackageId=%d 所有文件", subpackageId))
+
+    -------------------------------------
+    -- 去重字典：因为多个ResId可能含同名文件
+    -------------------------------------
+    local deleted = {}
+
+    for _, resId in ipairs(template.ResIds) do
+        local indexInfo = self._SubIndexInfo[resId]
+        if indexInfo then
+            for fileName, info in pairs(indexInfo) do
+                local fullName = info[1]
+                if not deleted[fullName] then
+                    deleted[fullName] = true
+
+                    local savePath = self:GetSavePath(fullName)
+
+                    -- 这里直接删，不依赖 res 卸载接口
+                    CS.XFileTool.DeleteFile(savePath)
+
+                    XLog.Warning(string.format("[XSubPackageAgency] 删除文件: %s", savePath))
+                end
+            end
+        end
+    end
+
+    self._LaunchDlcManager.ClearDownloadRecord(subpackageId)
+
+    XLog.Warning(string.format("[XSubPackageAgency] SubpackageId=%d 卸载完成", subpackageId))
+end
+
 function XSubPackageAgency:ResolveResIndex()
     if not self:IsOpen() then
         return
@@ -602,6 +690,9 @@ function XSubPackageAgency:ResolveResIndex()
             goto continue
         end
         local subpackageIds = self._Model:GetSubpackageIdByResId(resId)
+        if XTool.IsTableEmpty(subpackageIds) then
+            XLog.Error("XSubPackageAgency:ResolveResIndex subpackageIds is empty, resId:", resId)
+        end
         for _, subpackageId in pairs(subpackageIds) do
             local item = self._Model:GetSubpackageItem(subpackageId)
             if item then
@@ -615,7 +706,6 @@ function XSubPackageAgency:ResolveResIndex()
     self._Model:ResolveComplete()
     self._IsResolve = true
 end
-
 function XSubPackageAgency:InitDownloader()
     if not self._DownloadCenter then
         self._DownloadCenter = CS.XMTDownloadCenter()
@@ -1336,6 +1426,50 @@ end
 
 function XSubPackageAgency:GetDefaultSkipVideoPreloadDownloadTip()
     return self.DefaultSkipVideoPreloadDownloadTip
+end
+
+---------------------------------------------------------
+-- 打印所有 SubIndexInfo 数据（单条日志）
+-- 结构：
+-- ResId
+--   - FileName | Size | Sha1
+---------------------------------------------------------
+function XSubPackageAgency:PrintAllSubIndexInfo()
+    local indexInfo = self._SubIndexInfo
+    if XTool.IsTableEmpty(indexInfo) then
+        XLog.Warning("[分包Info][SubIndexInfo] EMPTY")
+        return
+    end
+
+    local lines = {}
+    lines[#lines + 1] = "================ [分包Info _SubIndexInfo数据] BEGIN ================"
+
+    for resId, fileDict in pairs(indexInfo) do
+        lines[#lines + 1] = string.format("ResId: %s", tostring(resId))
+
+        if XTool.IsTableEmpty(fileDict) then
+            lines[#lines + 1] = "  (Empty)"
+        else
+            for _, info in pairs(fileDict) do
+                -- info = { fileName, sha1, size }
+                local fileName = info[1]
+                local sha1 = info[2]
+                local size = info[3]
+
+                lines[#lines + 1] = string.format(
+                    "  - %s | Size: %s | Sha1: %s",
+                    tostring(fileName),
+                    tostring(size),
+                    tostring(sha1)
+                )
+            end
+        end
+    end
+
+    lines[#lines + 1] = "================ [分包Info][SubIndexInfo] END =================="
+
+    -- 一次性输出，保证只有一条日志
+    XLog.Warning(table.concat(lines, "\n"))
 end
 
 function XSubPackageAgency:PrintAllItemInfo()

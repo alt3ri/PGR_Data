@@ -835,7 +835,8 @@ XRoomManagerCreator = function()
         local tempStageId = stageId
         if MultipleRoomType.DlcWorld == roomType then
             local nodeId = result[5] or ""
-            XMVCA.XDlcRoom:ClickEnterRoomHref(roomId, nodeId, stageId, createTime)
+            local levelId = tonumber(result[6]) or 0
+            XMVCA.XDlcRoom:ClickEnterRoomHref(roomId, nodeId, stageId, levelId, createTime)
             -- XDataCenter.DlcRoomManager.ClickEnterRoomHref(roomId, stageId, createTime)
             return
         end

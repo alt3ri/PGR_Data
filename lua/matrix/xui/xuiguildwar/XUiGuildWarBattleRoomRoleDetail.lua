@@ -5,7 +5,7 @@ local XUiRoleGrid = XClass(XUiBattleRoomRoleGrid, "XUiRoleGrid")
 function XUiRoleGrid:SetData(entity, team, stageId)
     XUiRoleGrid.Super.SetData(self, entity, team, stageId)
     self.RImgUpIcon.gameObject:SetActiveEx(
-        XDataCenter.GuildWarManager.CheckIsSpecialRole(entity:GetId()))
+            XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(entity:GetId()))
 end
 
 --######################## XUiChildPanel ########################
@@ -17,10 +17,10 @@ function XUiChildPanel:Ctor(ui)
 end
 
 function XUiChildPanel:SetData(currentEntityId)
-    local isSpecial = self.GuildWarManager.CheckIsSpecialRole(currentEntityId)
+    local isSpecial = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(currentEntityId)
     self.GameObject:SetActiveEx(isSpecial)
     if not isSpecial then return end
-    local buffData = self.GuildWarManager.GetSpecialRoleBuff(currentEntityId)
+    local buffData = XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialRoleBuff(currentEntityId)
     if buffData == nil then return end
     self.RImgSkillIcon:SetRawImage(buffData.Icon)
     self.TxtSkillDesc.text = buffData.Desc

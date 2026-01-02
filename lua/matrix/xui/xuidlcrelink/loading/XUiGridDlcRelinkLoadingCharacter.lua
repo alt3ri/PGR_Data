@@ -5,10 +5,9 @@ local XUiGridDlcRelinkLoadingCharacter = XClass(XUiNode, "XUiGridDlcRelinkLoadin
 ---@param playerData XDlcPlayerData
 function XUiGridDlcRelinkLoadingCharacter:Refresh(playerData)
     -- 职业图标
-    local occupationType = playerData:GetOccupationType()
-    local professionIcon = self._Control:GetClientConfig("CharacterOccupationIcon", occupationType)
-    if not string.IsNilOrEmpty(professionIcon) and self.RImgIconCareer then
-        self.RImgIconCareer:SetRawImage(professionIcon)
+    local occupationIcon = self._Control:GetCharacterOccupationIconTwo(playerData:GetCharacterId(), playerData:GetStyleType())
+    if not string.IsNilOrEmpty(occupationIcon) and self.RImgIconCareer then
+        self.RImgIconCareer:SetRawImage(occupationIcon)
     end
 
     -- 名称
@@ -17,9 +16,8 @@ function XUiGridDlcRelinkLoadingCharacter:Refresh(playerData)
     end
 
     -- 装备总战力
-    local totalAbility = playerData:GetRelinkEquLevel()
     if self.TxtLv then
-        self.TxtLv.text = string.format(self._Control:GetClientConfig("EquipLevelDesc"), totalAbility or 0)
+        self.TxtLv.text = playerData:GetRelinkEquLevel()
     end
 
     -- 角色图标

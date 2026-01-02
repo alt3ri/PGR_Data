@@ -117,6 +117,7 @@ function XBuffScript1015800:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         end
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
         self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
+        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
         --如果有增强Buff[2]存在，则额外添加效果
         if isEnhBuff2Active then
             for _, magicId in ipairs(self.enhBuff2MagicId) do

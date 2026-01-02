@@ -9,11 +9,16 @@ local stringFormat = string.format
 
 function XBigWorldServiceAgency:OnInit()
     self.DlcEventId = require("XModule/XBigWorldService/Common/XBigWorldEventId")
+
+    self.ShopBuyGoodsCountLimit = CS.XGame.Config:GetInt("ShopBuyGoodsCountLimit")
+
     self.RewardDisplayType = {
         Normal = 0,
         Expensive = 1,
         Special = 2,
     }
+
+    self._RewardTypesWithoutCount = false
 end
 
 function XBigWorldServiceAgency:InitRpc()
@@ -104,6 +109,11 @@ function XBigWorldServiceAgency:GetText(key, ...)
     end
 
     return stringFormat(t.Value, ...)
+end
+
+function XBigWorldServiceAgency:GetTextDialogTemplate(id)
+    local t = self._Model:GetTextDialogTemplate(id)
+    return t
 end
 
 function XBigWorldServiceAgency:GetNarrativeTitle(id)
@@ -311,8 +321,16 @@ function XBigWorldServiceAgency:GetItemsShowParams(data)
     if type(data) == "number" then
         params.TemplateId = data
     else
-        params.TemplateId = (data.TemplateId and data.TemplateId > 0) and data.TemplateId or data.Id
-        params.Count = data.Count
+        local templeteId = (data.TemplateId and data.TemplateId > 0) and data.TemplateId or data.Id
+
+        params.TemplateId = templeteId
+
+        if self:CheckRewardTypeWithoutCountById(templeteId) then
+            params.Count = nil
+        else
+            params.Count = data.Count
+        end
+
         params.IsUseBigIcon = data.UseBigIcon or false
         params.IsAllowSkip = data.IsSkip and true or false
     end
@@ -568,6 +586,75 @@ function XBigWorldServiceAgency:CheckSpecialReward(rewardGoodsId)
     return displayType == self.RewardDisplayType.Special
 end
 
+function XBigWorldServiceAgency:CheckRewardTypeWithoutCount(rewardType)
+    if not self._RewardTypesWithoutCount then
+        local values = XMVCA.XBigWorldCommon:GetCommonValues("RewardTypesWithoutCount")
+
+        self._RewardTypesWithoutCount = {}
+        if not XTool.IsTableEmpty(values) then
+            for _, value in pairs(values) do
+                self._RewardTypesWithoutCount[tonumber(value)] = true
+            end
+        end
+    end
+
+    return self._RewardTypesWithoutCount[rewardType] or false
+end
+
+function XBigWorldServiceAgency:CheckRewardTypeWithoutCountById(templateId)
+    local rewardType = XArrangeConfigs.GetType(templateId)
+
+    return self:CheckRewardTypeWithoutCount(rewardType)
+end
+
+function XBigWorldServiceAgency:CheckRewardCharacter(rewardType, templateId)
+    return XRewardManager.IsRewardCharacter(rewardType, templateId)
+end
+
+function XBigWorldServiceAgency:CheckRewardEquip(rewardType, templateId)
+    return XRewardManager.IsRewardEquip(rewardType, templateId)
+end
+
+-- endregion
+
+-- region Partner
+
+function XBigWorldServiceAgency:GetPartnerCountByTemplateId(templateId)
+    return XDataCenter.PartnerManager.GetPartnerCountByTemplateId(templateId)
+end
+
+-- endregion
+
+-- region Shop
+
+function XBigWorldServiceAgency:GetShopGoodsBuyPriorityDescript(goodsId)
+    return XShopConfigs.GetGoodsBuyPriorityDesc(goodsId)
+end
+
+function XBigWorldServiceAgency:GetShopBuyLimitLabel(clockId)
+    return XShopConfigs.GetBuyLimitLabel(clockId)
+end
+
+function XBigWorldServiceAgency:GetShopLeftTime(endTime)
+    return XShopManager.GetLeftTime(endTime)
+end
+
+function XBigWorldServiceAgency:GetShopLeftBuyTimes(shopId)
+    return XShopManager.GetShopLeftBuyTimes(shopId)
+end
+
+function XBigWorldServiceAgency:GetShopGoodsList(shopId, notDebugError, ignoreSort)
+    return XShopManager.GetShopGoodsList(shopId, notDebugError, ignoreSort)
+end
+
+function XBigWorldServiceAgency:RequestShopInfo(shopId, callback, noTip)
+    XShopManager.GetShopInfo(shopId, callback, noTip)
+end
+
+function XBigWorldServiceAgency:RequestShopBuy(shopId, goodsId, count, callback, errorCallback, isActivityOpen)
+    XShopManager.BuyShop(shopId, goodsId, count, callback, errorCallback, isActivityOpen)
+end
+
 -- endregion
 
 -- region Goods
@@ -578,6 +665,14 @@ end
 
 function XBigWorldServiceAgency:GetGoodsIconByTemplateId(templateId)
     return XGoodsCommonManager.GetGoodsIcon(templateId)
+end
+
+function XBigWorldServiceAgency:GetGoodsNameByTemplateId(templateId)
+    return XGoodsCommonManager.GetGoodsName(templateId)
+end
+
+function XBigWorldServiceAgency:GetGoodsCurrentCountByTemplateId(templateId)
+    return XGoodsCommonManager.GetGoodsCurrentCount(templateId)
 end
 
 function XBigWorldServiceAgency:GetQualityIcon(quality)

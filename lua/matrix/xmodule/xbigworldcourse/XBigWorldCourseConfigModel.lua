@@ -170,6 +170,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseContentTaskProgressItemIcon
     return config.TaskProgressItemIcon
 end
 
+function XBigWorldCourseConfigModel:GetBigWorldCourseContentBannerBgByContentId(contentId)
+    local config = self:GetBigWorldCourseContentConfigByContentId(contentId)
+
+    return config.BannerBg
+end
+
 function XBigWorldCourseConfigModel:GetBigWorldCourseContentExploreRewardIdByContentId(contentId)
     local config = self:GetBigWorldCourseContentConfigByContentId(contentId)
 
@@ -208,6 +214,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseVersionTimeIdByVersionId(ve
     local config = self:GetBigWorldCourseVersionConfigByVersionId(versionId)
 
     return config.TimeId
+end
+
+function XBigWorldCourseConfigModel:GetBigWorldCourseVersionConditionIdByVersionId(versionId)
+    local config = self:GetBigWorldCourseVersionConfigByVersionId(versionId)
+
+    return config.ConditionId
 end
 
 ---@return XTableBigWorldCourseExplore[]
@@ -442,10 +454,10 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementDisplayRewardIdB
     return config.DisplayRewardId
 end
 
-function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementEntryIdById(id)
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementEntryIdsById(id)
     local config = self:GetBigWorldCourseCoreElementConfigById(id)
 
-    return config.EntryId
+    return config.EntryIds
 end
 
 function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementSkipIdById(id)
@@ -464,6 +476,24 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementLockSkipConditio
     local config = self:GetBigWorldCourseCoreElementConfigById(id)
 
     return config.LockSkipConditionIds
+end
+
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementEarlyAccessSkipIdsById(id)
+    local config = self:GetBigWorldCourseCoreElementConfigById(id)
+
+    return config.EarlyAccessSkipIds
+end
+
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementCustomParamIdById(id)
+    local config = self:GetBigWorldCourseCoreElementConfigById(id)
+
+    return config.CustomParamId
+end
+
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementEntryTypeById(id)
+    local config = self:GetBigWorldCourseCoreElementConfigById(id)
+
+    return config.EntryType
 end
 
 ---@return XTableBigWorldCourseCoreGroup[]

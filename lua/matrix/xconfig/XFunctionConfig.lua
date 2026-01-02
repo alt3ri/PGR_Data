@@ -248,4 +248,4 @@ function XFunctionConfig.GetFunctionalShowCfg(id)
     end
     
     return cfg
-end 
+end

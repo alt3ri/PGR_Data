@@ -48,6 +48,9 @@ end
 ---@param matchTags int[]
 ---@return bool 是否匹配成功
 function GameplayTag.MatchAnyTag(targetTags, matchTags)
+    if targetTags == nil then
+        return false;
+    end
     for i = 1, #targetTags do
         local targetTag = targetTags[i]
         for j = 1, #matchTags do
@@ -65,6 +68,9 @@ end
 ---@param matchTags int[]
 ---@return bool 是否匹配成功
 function GameplayTag.MatchAllTag(targetTags, matchTags)
+    if targetTags == nil then
+        return false;
+    end
     for i = 1, #targetTags do
         local targetTag = targetTags[i]
         for j = 1, #matchTags do
@@ -82,6 +88,9 @@ end
 ---@param matchTags int[]
 ---@return bool 是否匹配成功
 function GameplayTag.MatchNoTag(targetTags, matchTags)
+    if targetTags == nil then
+        return true;
+    end
     for i = 1, #targetTags do
         local targetTag = targetTags[i]
         for j = 1, #matchTags do
@@ -103,6 +112,9 @@ end
 ---@param matchTags int[]
 ---@return bool 是否匹配成功
 function GameplayTag.CSMatchAnyTag(CSTargetTags, matchTags)
+    if CSTargetTags == nil then
+        return false;
+    end
     for i = 0, CSTargetTags.Count - 1, 1 do
         local targetTag = CSTargetTags[i]
         for j = 1, #matchTags do
@@ -120,6 +132,9 @@ end
 ---@param matchTags int[]
 ---@return bool 是否匹配成功
 function GameplayTag.CSMatchAllTag(CSTargetTags, matchTags)
+    if CSTargetTags == nil then
+        return false;
+    end
     for i = 0, CSTargetTags.Count - 1, 1 do
         local targetTag = CSTargetTags[i]
         for j = 1, #matchTags do
@@ -137,6 +152,9 @@ end
 ---@param matchTags int[]
 ---@return bool 是否匹配成功
 function GameplayTag.CSMatchNoTag(CSTargetTags, matchTags)
+    if CSTargetTags == nil then
+        return true;
+    end
     for i = 0, CSTargetTags.Count - 1, 1 do
         local targetTag = CSTargetTags[i]
         for j = 1, #matchTags do

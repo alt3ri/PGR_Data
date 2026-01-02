@@ -900,8 +900,8 @@ function XUiDrawOptional:_OnBtnComfirmSelectDrawAnim()
     local sureFun = function(IsChange)
         if IsChange then
             XDataCenter.DrawManager.SaveDrawAimId(self.CurSelectDrawId, self.ParentUi.GroupId, function()
-                self.OptionalCb(self.CurSelectDrawId)
                 self:Close()
+                self.OptionalCb(self.CurSelectDrawId)
             end)
         end
     end

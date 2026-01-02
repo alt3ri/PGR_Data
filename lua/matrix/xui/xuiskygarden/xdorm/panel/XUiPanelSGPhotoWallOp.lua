@@ -9,6 +9,9 @@ function XUiGridSGFurniturePhotoOp:InitUi()
     self.BtnPackUp.gameObject:SetActiveEx(true)
     self.BtnRotate.gameObject:SetActiveEx(true)
     self.BtnCancel.gameObject:SetActiveEx(true)
+    if self.BtnZoom then
+        self.BtnZoomPointer = self.BtnZoom.gameObject:GetComponent("XUiPointer")
+    end
     self._IsSafe = true
 end
 
@@ -17,17 +20,25 @@ function XUiGridSGFurniturePhotoOp:OnDestroy()
 end
 
 function XUiGridSGFurniturePhotoOp:InitCb()
+    local function OnRotateDown(eventData) 
+        self:OnRotateDown(eventData)
+    end
     self.BtnPackUp:AddEventListener(handler(self, self.OnBtnPackUpClick))
     self.BtnCancel:AddEventListener(handler(self, self.OnBtnCancelClick))
-    self.BtnRotate:AddPointerDownListener(function(eventData)
-        self:OnRotateDown(eventData)
-    end)
+    self.BtnRotate:AddPointerDownListener(OnRotateDown)
+    if self.BtnZoomPointer then
+        self.BtnZoomPointer:AddPointerDownListener(OnRotateDown)
+    end
 end
 
-function XUiGridSGFurniturePhotoOp:Refresh(index, id, visible, isAlbumPhoto)
+function XUiGridSGFurniturePhotoOp:Refresh(index, id, visible, furnitureType)
+    self:RefreshState(index, id, visible)
+    self:RefreshBtnRotate(furnitureType)
+end
+
+function XUiGridSGFurniturePhotoOp:RefreshState(index, id, visible)
     self._Id = id
     self._Index = index
-    self._IsAlbumPhoto = isAlbumPhoto or self._IsAlbumPhoto
     self:UpdateSafe(self._IsSafe)
     self:SetVisible(visible)
 end
@@ -78,6 +89,20 @@ function XUiGridSGFurniturePhotoOp:IsSafe()
         return true
     end
     return self._IsSafe 
+end
+
+function XUiGridSGFurniturePhotoOp:RefreshBtnRotate(furnitureType)
+    if not furnitureType or furnitureType <= 0 then
+        return
+    end
+    if not self.BtnZoomPointer then
+        return
+    end
+    
+    local isPhoto = furnitureType == XMVCA.XSkyGardenDorm.XSgFurnitureType.AlbumPhoto 
+            or furnitureType == XMVCA.XSkyGardenDorm.XSgFurnitureType.SystemPhoto
+    self.BtnRotate.gameObject:SetActiveEx(not isPhoto)
+    self.BtnZoomPointer.gameObject:SetActiveEx(isPhoto)
 end
 
 local XUiPanelSGWallOp = require("XUi/XUiSkyGarden/XDorm/Panel/XUiPanelSGWallOp")
@@ -136,6 +161,7 @@ function XUiPanelSGPhotoWallOp:CreateFurniture(index, id, visible, ignoreUpdate,
         XLog.Error("【照片墙】不存在家具：" .. id)
         return
     end
+    local majorType = 0
     if id and id > 0 then
         local data = self:GetPutWallContainerData()
         local f = data:GetFurniture(id, isAlbumPhoto)
@@ -143,14 +169,16 @@ function XUiPanelSGPhotoWallOp:CreateFurniture(index, id, visible, ignoreUpdate,
             if isAlbumPhoto then
                 data:AddFurniture(id, 0, 0, self._Control:AddLayer(), true)
             else
-                data:AddFurniture(id, self._Control:GetFurnitureConfigIdById(id), 0, self._Control:AddLayer(), false)
+                local configId = self._Control:GetFurnitureConfigIdById(id)
+                data:AddFurniture(id, configId, 0, self._Control:AddLayer(), false)
             end
-            
         end
+        majorType = isAlbumPhoto and self._Control:GetMajorType(self._Control:GetAlbumPhotoTypeId()) 
+                or self._Control:GetFurnitureMajorType(self._Control:GetFurnitureConfigIdById(id))
     end
     local min, max = fightData:GetSize()
-    local slot = self._Container:CreateFurniture(id, min, max, fightData:GetComponent(), isAlbumPhoto)
-    self:RefreshGridOp(slot, slot.Index, id, visible, ignoreUpdate)
+    local slot = self._Container:CreateFurniture(id, min, max, fightData:GetComponent(), majorType)
+    self:RefreshGridOp(slot, slot.Index, id, visible, ignoreUpdate, majorType)
 end
 
 function XUiPanelSGPhotoWallOp:RemoveFurniture(index, id)
@@ -190,6 +218,7 @@ function XUiPanelSGPhotoWallOp:RevertSingle(index, id, isAlbumPhoto)
     local f = layoutContainerData:GetFurniture(id, isAlbumPhoto)
     local x, y = 0, 0
     local angle = 0
+    local scale = 1
     local isDefault = true
     if f ~= nil then
         local ratio = XMVCA.XSkyGardenDorm.Ratio
@@ -198,6 +227,7 @@ function XUiPanelSGPhotoWallOp:RevertSingle(index, id, isAlbumPhoto)
         y = y / ratio
         angle = f:GetAngle() / ratio
         isDefault = false
+        scale = f:GetScale()
     end
     local isPhoto
     if isAlbumPhoto then
@@ -215,7 +245,8 @@ function XUiPanelSGPhotoWallOp:RevertSingle(index, id, isAlbumPhoto)
         IsDefault = isDefault,
         X = x,
         Y = y,
-        Angle = angle
+        Angle = angle,
+        Scale = scale
     })
     ---@type XDormitory.XFurnitureSlot
     local slot = self._Container:GetSlot(index)
@@ -331,7 +362,7 @@ function XUiPanelSGPhotoWallOp:OnFurnitureSafeStateChange(index, id, isSafe)
     local grid = self:TryGetGridPhotoOpByIndex(index)
     if grid then
         if not isSafe then
-            grid:Refresh(index, id, true)
+            grid:RefreshState(index, id, true)
         end
         grid:UpdateSafe(isSafe)
     end
@@ -357,6 +388,33 @@ function XUiPanelSGPhotoWallOp:OnFurnitureSlotClick(index, id, selectParam, _)
     local isSelect = selectParam > 0
     if isSelect then
         self:SetTopLayer(index, id)
+    end
+end
+
+function XUiPanelSGPhotoWallOp:OnFurnitureSlotMoving(index, id, x, y)
+    ---@type XDormitory.XFurnitureSlot
+    local slot = self._Container:GetSlot(index)
+    local furniture = self._Control:CloneContainerFurnitureData(self._AreaType):GetFurniture(id, slot and slot:IsAlbumPhoto() or false)
+    if furniture then
+        furniture:SetPos(x, y)
+    end
+end
+
+function XUiPanelSGPhotoWallOp:OnFurnitureRotating(index, id, angle, _)
+    ---@type XDormitory.XFurnitureSlot
+    local slot = self._Container:GetSlot(index)
+    local furniture = self._Control:CloneContainerFurnitureData(self._AreaType):GetFurniture(id, slot and slot:IsAlbumPhoto() or false)
+    if furniture then
+        furniture:SetAngle(angle)
+    end
+end
+
+function XUiPanelSGPhotoWallOp:OnFurnitureSlotScale(index, id, scale)
+    ---@type XDormitory.XFurnitureSlot
+    local slot = self._Container:GetSlot(index)
+    local furniture = self._Control:CloneContainerFurnitureData(self._AreaType):GetFurniture(id, slot and slot:IsAlbumPhoto() or false)
+    if furniture then
+        furniture:SetScale(scale)
     end
 end
 
@@ -407,10 +465,10 @@ function XUiPanelSGPhotoWallOp:TryGetGridPhotoOpByIndex(index)
 end
 
 ---@param slot XDormitory.XFurnitureSlot
-function XUiPanelSGPhotoWallOp:RefreshGridOp(slot, index, id, visible, ignoreUpdate)
+function XUiPanelSGPhotoWallOp:RefreshGridOp(slot, index, id, visible, ignoreUpdate, majorType)
     local grid = self:GetOrCreateGridOp(slot)
     if grid then
-        grid:Refresh(index, id, visible)
+        grid:Refresh(index, id, visible, majorType)
     end
 
     if visible then
@@ -520,24 +578,6 @@ function XUiPanelSGPhotoWallOp:BtnCancelAllClick()
         slot:RemoveState(CsFurnitureSlotState.Select)
     end
     self._Container:ClearLastSelect()
-end
-
-function XUiPanelSGPhotoWallOp:OnFurnitureSlotMoving(index, id, x, y)
-    ---@type XDormitory.XFurnitureSlot
-    local slot = self._Container:GetSlot(index)
-    local furniture = self._Control:CloneContainerFurnitureData(self._AreaType):GetFurniture(id, slot and slot:IsAlbumPhoto() or false)
-    if furniture then
-        furniture:SetPos(x, y)
-    end
-end
-
-function XUiPanelSGPhotoWallOp:OnFurnitureRotating(index, id, angle, _)
-    ---@type XDormitory.XFurnitureSlot
-    local slot = self._Container:GetSlot(index)
-    local furniture = self._Control:CloneContainerFurnitureData(self._AreaType):GetFurniture(id, slot and slot:IsAlbumPhoto() or false)
-    if furniture then
-        furniture:SetAngle(angle)
-    end
 end
 
 function XUiPanelSGPhotoWallOp:RotateByHandle(z)

@@ -14,7 +14,9 @@ function XBWMapPinData:Ctor()
     self.TargetSceneObjectPlaceId = 0
     self.TargetNpcPlaceId = 0
     self.IsDisplay = false
-    self.ForceDisplay = false
+    self.Radius = 0
+    self.DisplayType = XMVCA.XBigWorldMap.MapPinDisplayType.Point
+    self.IsOptionalQuestObjective = false
 end
 
 function XBWMapPinData:UpdateDisplay(isDisplay)
@@ -38,6 +40,8 @@ function XBWMapPinData:UpdateData(worldId, levelId, config, textConfig)
     self.TeleportPosition = config.TeleportPosition
     self.TeleportEulerAngleY = config.TeleportEulerAngleY
     self.ConditionId = config.ConditionId or 0
+    self.AiMemoryGroupId = config.AiMemoryGroupId or 0
+    self.ControlledByMapSwitch = config.ControlledByMapSwitch or 0
 
     self:UpdateOther()
 end
@@ -130,18 +134,10 @@ function XBWMapPinData:IsTracking()
 end
 
 function XBWMapPinData:IsDisplaying()
-    if self.ForceDisplay then
-        return true
-    end
-
     if XTool.IsNumberValid(self.ConditionId) then
         return XMVCA.XBigWorldService:CheckCondition(self.ConditionId)
     end
-
-    if self:IsQuest() then
-        return self:IsTracking()
-    end
-
+    
     return self.IsDisplay
 end
 
@@ -206,6 +202,30 @@ function XBWMapPinData:GetValidLevelId()
     end
 
     return self.LevelId
+end
+
+function XBWMapPinData:IsOptionalQuestObjectiveState()
+    return self.IsOptionalQuestObjective
+end
+
+function XBWMapPinData:IsAiMemoryGroup()
+    return self.AiMemoryGroupId > 0
+end
+
+function XBWMapPinData:GetAiMemoryGroupId()
+    return self.AiMemoryGroupId or 0
+end
+
+function XBWMapPinData:IsPointPin()
+    return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.Point) ~= 0
+end
+
+function XBWMapPinData:IsRadiusPin()
+    return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.Radius) ~= 0
+end
+
+function XBWMapPinData:SetDisplayType(value)
+    self.DisplayType = value
 end
 
 return XBWMapPinData

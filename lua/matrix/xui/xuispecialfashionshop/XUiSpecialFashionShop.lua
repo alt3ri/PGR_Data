@@ -129,7 +129,7 @@ function XUiSpecialFashionShop:OnBtnFilterClick()
             end
         end
     end
-    local goodsList = XShopManager.GetShopGoodsList(self.self:GetCurShopId(), true, true)
+    local goodsList = XShopManager.GetShopGoodsList(self:GetCurShopId(), true, true)
     local dataProvider = {}
     -- 获取商品里对应的角色Id
     if not XTool.IsTableEmpty(goodsList) then
@@ -145,7 +145,7 @@ function XUiSpecialFashionShop:OnBtnFilterClick()
         careerTags = self._TmpCareerTags,
         elementTags = self._TmpElementTags
     }
-    XLuaUiManager.Open('UiShopFashionFilter', dataProvider, selectData, function(resultData)
+    XLuaUiManager.Open('UiShopFashionFilter', selectData,dataProvider, function(resultData)
         if resultData ~= nil then
             self._TmpCareerTags = resultData.careerTags
             self._TmpElementTags = resultData.elementTags
@@ -154,7 +154,7 @@ function XUiSpecialFashionShop:OnBtnFilterClick()
             elseif screenGroupCfg then
                 -- characterId 转成selectTag
                 for i, id in pairs(screenGroupCfg.ScreenID) do
-                    if characterId == id then
+                    if resultData.selectId == id then
                         self.SelectTag = screenGroupCfg.ScreenName[i]
                         break
                     end

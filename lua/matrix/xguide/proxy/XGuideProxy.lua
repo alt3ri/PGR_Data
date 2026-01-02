@@ -35,6 +35,14 @@ function XGuideProxy:OpenUiObtain(...)
     XUiManager.OpenUiObtain(...)
 end
 
+---@param template XTableGuideGroup
+function XGuideProxy:ExecuteGuide(template)
+    if not template then
+        return
+    end
+    XDataCenter.GuideManager.ExecuteGuide(template)
+end
+
 ---@return XTableGuideGroup
 function XGuideProxy:GetGuideGroupTemplate(guideId)
     return XGuideConfig.GetGuideGroupTemplatesById(guideId)

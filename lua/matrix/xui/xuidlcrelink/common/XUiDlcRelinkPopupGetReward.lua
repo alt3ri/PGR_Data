@@ -7,7 +7,7 @@ local XUiDlcRelinkPopupGetReward = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkPo
 function XUiDlcRelinkPopupGetReward:OnAwake()
     self.GridReward.gameObject:SetActiveEx(false)
     self.GridEquipment.gameObject:SetActiveEx(false)
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     ---@type XUiGridCommon[]
     self.RewardGridList = {}
     ---@type XUiGridDlcRelinkEquipment[]

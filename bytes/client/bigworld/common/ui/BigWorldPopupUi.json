@@ -1,50 +1,78 @@
 [
     {
         "UiName": "UiBigWorldMessageTips",
-        "IsModality": null,
-        "Priority": 1,
+        "IsModality": true,
+        "Priority": 2001,
         "CustomModalityParams": "['1']",
         "SpecificModalityUi": null
     },
     {
-        "UiName": "UiBigWorldPopupTeach",
+        "UiName": "UiBigWorldPopupMessageSingle",
         "IsModality": true,
-        "Priority": 3,
+        "Priority": 2001,
         "CustomModalityParams": null,
         "SpecificModalityUi": null
     },
     {
         "UiName": "UiBigWorldTaskObtain",
         "IsModality": true,
-        "Priority": 2,
+        "Priority": 1031,
+        "CustomModalityParams": null,
+        "SpecificModalityUi": null
+    },
+    {
+        "UiName": "UiBigWorldTrialRolePopup",
+        "IsModality": true,
+        "Priority": 1031,
+        "CustomModalityParams": null,
+        "SpecificModalityUi": null
+    },
+    {
+        "UiName": "UiBigWorldTaskObtainInvitation",
+        "IsModality": true,
+        "Priority": 1031,
         "CustomModalityParams": null,
         "SpecificModalityUi": null
     },
     {
         "UiName": "UiBigWorldTaskObtainDrama",
         "IsModality": true,
-        "Priority": 3,
+        "Priority": 1002,
         "CustomModalityParams": null,
         "SpecificModalityUi": null
     },
     {
         "UiName": "UiBigWorldTaskObtainDramaHeart",
         "IsModality": true,
-        "Priority": 3,
+        "Priority": 1001,
         "CustomModalityParams": null,
         "SpecificModalityUi": null
     },
     {
         "UiName": "UiBigWorldRewardSidebar",
-        "IsModality": true,
-        "Priority": 4,
+        "IsModality": null,
+        "Priority": 101,
         "CustomModalityParams": null,
         "SpecificModalityUi": null
     },
     {
-        "UiName": "UiBigWorldPopupMessageSingle",
+        "UiName": "UiBigWorldPopupTeach",
         "IsModality": true,
-        "Priority": 1,
+        "Priority": 3001,
+        "CustomModalityParams": null,
+        "SpecificModalityUi": null
+    },
+    {
+        "UiName": "UiBigWorldTeachTips",
+        "IsModality": null,
+        "Priority": 3002,
+        "CustomModalityParams": null,
+        "SpecificModalityUi": null
+    },
+    {
+        "UiName": "UiBigWorldTaskPopupEndingDetail",
+        "IsModality": true,
+        "Priority": 4001,
         "CustomModalityParams": null,
         "SpecificModalityUi": null
     }

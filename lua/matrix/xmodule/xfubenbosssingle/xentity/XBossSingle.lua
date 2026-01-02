@@ -447,4 +447,24 @@ function XBossSingle:GetTotalScoreBestRecord()
     return self._BossSingleData:GetTotalScoreBestRecord()
 end
 
+function XBossSingle:IsForceExit()
+    if self:IsBossSingleEmpty() then
+        return false
+    else
+        return self._BossSingleData:IsForceExit()
+    end
+end
+
+function XBossSingle:ClearForceExit()
+    if not self:IsBossSingleEmpty() then
+        self._BossSingleData:ClearForceExit()
+    end
+end
+
+function XBossSingle:SetForceExit(value)
+    if not self:IsBossSingleEmpty() then
+        self._BossSingleData:SetForceExit(value)
+    end
+end
+
 return XBossSingle

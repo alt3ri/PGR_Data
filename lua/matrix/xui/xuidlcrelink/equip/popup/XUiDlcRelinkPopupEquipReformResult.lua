@@ -30,7 +30,7 @@ function XUiDlcRelinkPopupEquipReformResult:OnStart(attributeSlot)
 end
 
 function XUiDlcRelinkPopupEquipReformResult:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
 end
 
 function XUiDlcRelinkPopupEquipReformResult:OnBtnBackClick()

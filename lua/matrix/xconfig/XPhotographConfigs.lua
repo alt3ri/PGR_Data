@@ -15,6 +15,7 @@ XPhotographConfigs.BackGroundType = {
     PowerSaved = 1,     -- 省电模式
     Date = 2,           -- 昼夜模式
     Normal=3,           -- 普通类型，无特殊模式
+    Gyro = 4,           -- 交互模式（陀螺仪）
 }
 
 XPhotographConfigs.SceneRotationType = {
@@ -45,6 +46,7 @@ local TABLE_PHOTOMODE_SHARE_INFO = "Client/PhotoMode/ShareInfo.tab"
 
 -- XTablePhotoModeSdk
 
+---@type XTableBackground[]
 local SceneTemplates = {}
 local ShareInfo = {}
 
@@ -157,6 +159,13 @@ function XPhotographConfigs.GetBackgroundTypeById(id)
         return nil
     end
     return SceneTemplates[id].Type or nil
+end
+
+function XPhotographConfigs.GetBackgroundHasEnvMusicById(id)
+    if not SceneTemplates then
+        return nil
+    end
+    return SceneTemplates[id].IsEnvMusic or nil
 end
 
 function XPhotographConfigs.GetBackgroundTagById(id)

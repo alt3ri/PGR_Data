@@ -4,8 +4,8 @@ local Base = require("Character/BigWorld/XBigWorldEcologyCharBase")
 ---@class XNPC_Vera : XBigWorldEcologyCharBase
 local XNPC_Vera = XDlcScriptManager.RegCharScript(6074, "XNPC_Vera", Base)
 
-function XNPC_Vera:Init()
-    Base.Init(self)
+function XNPC_Vera:CommonInit()
+    Base.CommonInit(self)
     -- 填入冲突的薇拉NPC的PlaceId,在关卡编辑器里找
     self._oppositeNpcPlaceIdDict = {
         [600015] = true,

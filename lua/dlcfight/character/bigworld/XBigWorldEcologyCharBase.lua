@@ -1,4 +1,4 @@
-local Base = require("Character/BigWorld/XBigWorldPlayerCharBase")
+local Base = require("Common/XBigWorldCharBase")
 
 ---@class XBigWorldEcologyCharQuestInfo
 ---@field StartQuestObjectiveId
@@ -7,18 +7,26 @@ local Base = require("Character/BigWorld/XBigWorldPlayerCharBase")
 ---@field EndQuestObjectiveState
 
 ---生态角色脚本-角色占用功能还没完成前的替代方案
----@class XBigWorldEcologyCharBase : XBigWorldPlayerCharBase
+---@class XBigWorldEcologyCharBase : XBigWorldCharBase
 ---@field _oppositeNpcPlaceIdDict table<number, number> 冲突的PlaceId字典 key:PlaceId, value:是否在level内
 ---@field _oppositeQuestInfoDict table<number, XBigWorldEcologyCharQuestInfo> 冲突的QuestId字典 key:QuestId, value:XBigWorldEcologyCharQuestInfo
-local XBigWorldEcologyCharBase = XClass(nil, "XBigWorldEcologyCharBase")
+local XBigWorldEcologyCharBase = XClass(Base, "XBigWorldEcologyCharBase")
 
----@param proxy XDlcCSharpFuncs
-function XBigWorldEcologyCharBase:Ctor(proxy)
-    self._proxy = proxy
+---@param dt number @ delta time
+function XBigWorldEcologyCharBase:Update(dt)
+    self:CheckCharCanShow()
 end
 
-function XBigWorldEcologyCharBase:Init()
-    Base.Init(self)
+function XBigWorldEcologyCharBase:Terminate()
+    self._oppositeNpcPlaceIdDict = nil
+    self._oppositeQuestInfoDict = nil
+    Base.Terminate(self)
+end
+
+
+--region Lua基础生命周期函数
+function XBigWorldEcologyCharBase:CommonInit()
+    Base.CommonInit(self)
     self._oppositeNpcPlaceIdDict = { }
     self._oppositeQuestInfoDict = { }
     ---任务目标状态
@@ -30,12 +38,9 @@ function XBigWorldEcologyCharBase:Init()
         ---【已完成】时和之后
         Finished = 3
     }
+    self._isShow = false
 end
-
----@param dt number @ delta time
-function XBigWorldEcologyCharBase:Update(dt)
-    self:CheckCharCanShow()
-end
+--endregion
 
 function XBigWorldEcologyCharBase:CheckCharCanShow()
     local isShow = true
@@ -58,7 +63,10 @@ function XBigWorldEcologyCharBase:CheckCharCanShow()
             isShow = false
         end
     end
-    self._proxy:SetNpcActive(self._uuid, isShow)
+    if self._isShow ~= isShow or isShow ~= self._proxy:GetNpcActive(self._uuid) then
+        self._proxy:SetNpcActive(self._uuid, isShow)
+        self._isShow = isShow
+    end
 end
 
 --region NpcPlaceId冲突
@@ -107,11 +115,5 @@ function XBigWorldEcologyCharBase:CheckQuestObjectiveState(questId, questObjecti
     end
 end
 --endregion
-
-function XBigWorldEcologyCharBase:Terminate()
-    self._oppositeNpcPlaceIdDict = nil
-    self._oppositeQuestInfoDict = nil
-    Base.Terminate(self)
-end
 
 return XBigWorldEcologyCharBase

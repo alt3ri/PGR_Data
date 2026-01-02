@@ -242,6 +242,18 @@ function XDragonRageControl:SetHideSweepTips()
     self._Model:SetDragonRageHideSweepTips(curRoundId, self._Model:GetDragonRageData():GetDragonRageLevel())
 end
 
+--region Condition
+
+--- 判断是否是多周目
+function XDragonRageControl:CheckIsMultyGameThrough()
+    -- 龙怒等级初始为1，每经过一个周目+1
+    local level = self:GetDragonRageLevel()
+    
+    return XTool.IsNumberValidEx(level) and level > 1
+end
+
+--endregion
+
 --region ---------- 行为序列处理 ---------->>>
 
 --- 播放龙怒系统结束的动画(龙怒积累结束）

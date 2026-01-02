@@ -10,9 +10,13 @@ local State = {
 function XMessagePlayer:Ctor(proxy, message)
     ---@type XBWMessageContentEntity
     self._AwaitRecordContent = false
+    ---@type XBWMessageContentEntity
+    self._LoadingContent = false
     self._State = State.None
     self._Timer = false
     self._IsBeginLoading = false
+    self._IsCurrentRecord = false
+    self._IsPause = false
 
     self:SetMessage(message)
     self:SetProxy(proxy)
@@ -56,6 +60,25 @@ function XMessagePlayer:Stop()
     self:_ChangeState(State.None)
 end
 
+function XMessagePlayer:Pause()
+    if self:IsExist() and self._State == State.Playing then
+        if self._LoadingContent then
+            self:_RemoveTimer()
+            self:_OnPlaying(self._LoadingContent, self._IsCurrentRecord)
+            self._IsPause = true
+        end
+    end
+end
+
+function XMessagePlayer:Resume()
+    if self:IsExist() and self._State == State.Playing then
+        if self._IsPause then
+            self._IsPause = false
+            XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAY_NEXT_MESSAGE_NOTIFY)
+        end
+    end
+end
+
 function XMessagePlayer:IsExist()
     return self._Message and not self._Message:IsNil()
 end
@@ -86,20 +109,14 @@ function XMessagePlayer:_PlayNext(content, isRecord)
     local duration = content:GetDuration()
     local isComplete = content:IsComplete()
 
+    self._IsCurrentRecord = isRecord
     if XTool.IsNumberValid(duration) and not isComplete then
-        CS.XLog.Debug("[BigWorldMessage]: Play NonComplete Message Content, Duration: " .. tostring(duration) .. "\n" .. debug.traceback())
-
-        self:_OnProxyPlayBeginLoading(content)
+        self:_OnProxyPlayBeginLoading(content, duration)
         self._Timer = XScheduleManager.ScheduleOnce(function()
             self._Timer = false
             self:_OnPlaying(content, isRecord)
         end, duration * XScheduleManager.SECOND)
     else
-        if isComplete then
-            CS.XLog.Debug("[BigWorldMessage]: Play Complete Message Content.\n" .. debug.traceback())
-        else
-            CS.XLog.Debug("[BigWorldMessage]: Play NonComplete Message Content, Duration: 0\n" .. debug.traceback())
-        end
         self:_OnPlaying(content, isRecord)
     end
 end
@@ -110,17 +127,16 @@ function XMessagePlayer:_OnPlaying(content, isRecord)
     self:_OnProxyPlay(content)
 
     if content:IsEnd() then
-        CS.XLog.Debug("[BigWorldMessage]: Play Message Content Finish.\n" .. debug.traceback())
         self:_RequestCurrentMessageReadRecord(content)
         self:Stop()
-        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_FINISH_NOTIFY)
-    elseif content:IsOptions() then
+    elseif content:IsOptions() or content:IsReceiveForceVideo() then
         self:_RequestCurrentMessageReadRecord(content)
     elseif isRecord then
         self:_RequestCurrentMessageReadRecord(content)
     end
 
     content:Read()
+    self._IsCurrentRecord = false
 end
 
 function XMessagePlayer:_OnProxyPlay(content)
@@ -130,6 +146,10 @@ function XMessagePlayer:_OnProxyPlay(content)
 end
 
 function XMessagePlayer:_OnPlayNextNotify()
+    if self._IsPause then
+        return
+    end
+
     if self:IsPlaying() and self:IsExist() then
         local content = self._Message:GetContentByStepId(self._CurrentStepId)
 
@@ -160,17 +180,19 @@ function XMessagePlayer:_OnOptionsSelectNotify(index)
                     XLog.Error("当前短信存在相连的两个选项节点！ StepId = " .. tostring(selectStep))
                 end
 
-                XMVCA.XBigWorldMessage:RecordStatistical(selectContent:GetMessageId(), XMVCA.XBigWorldMessage.OperatorType.Reply, selectStep)
+                XMVCA.XBigWorldMessage:RecordStatistical(selectContent:GetMessageId(),
+                    XMVCA.XBigWorldMessage.OperatorType.Reply, selectStep)
                 self:_PlayNext(selectContent, true)
             end
         end
     end
 end
 
-function XMessagePlayer:_OnProxyPlayBeginLoading(content)
+function XMessagePlayer:_OnProxyPlayBeginLoading(content, duration)
     self._IsBeginLoading = true
     if self._Proxy and self._Proxy.OnPlayMessageBeginLoading then
-        self._Proxy:OnPlayMessageBeginLoading(content)
+        self._LoadingContent = content
+        self._Proxy:OnPlayMessageBeginLoading(content, duration)
     end
 end
 
@@ -179,6 +201,7 @@ function XMessagePlayer:_OnProxyPlayEndLoading(content)
         self._IsBeginLoading = false
         if self._Proxy and self._Proxy.OnPlayMessageEndLoading then
             self._Proxy:OnPlayMessageEndLoading(content)
+            self._LoadingContent = false
         end
     end
 end

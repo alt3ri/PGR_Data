@@ -11,8 +11,8 @@ function XUiPanelDlcRelinkSettlementReward:OnStart()
     self.GridEquipment.gameObject:SetActiveEx(false)
     self.GridReward.gameObject:SetActiveEx(false)
     self.PanelNone.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnLeave, self.OnBtnLeaveClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnBackRoom, self.OnBtnBackRoomClick, true, true)
+    self.BtnLeave:AddEventListener(handler(self, self.OnBtnLeaveClick))
+    self.BtnBackRoom:AddEventListener(handler(self, self.OnBtnBackRoomClick))
 
     ---@type XUiGridCommon[]
     self.RewardGridList = {}
@@ -157,12 +157,22 @@ end
 
 function XUiPanelDlcRelinkSettlementReward:OnBtnLeaveClick()
     XMVCA.XDlcRoom:Quit(function()
-        XLuaUiManager.CloseAllUpperUi("UiDlcRelinkRoom")
+        self._Control:CommonRunRelinkRoomUiHandle(nil, function()
+            if XTool.UObjIsNil(self.GameObject) then
+                return
+            end
+            XLuaUiManager.Remove(self.Parent.Name)
+        end)
     end)
 end
 
 function XUiPanelDlcRelinkSettlementReward:OnBtnBackRoomClick()
-    XLuaUiManager.CloseAllUpperUi("UiDlcRelinkRoom")
+    self._Control:CommonRunRelinkRoomUiHandle(nil, function()
+        if XTool.UObjIsNil(self.GameObject) then
+            return
+        end
+        XLuaUiManager.Remove(self.Parent.Name)
+    end)
 end
 
 return XUiPanelDlcRelinkSettlementReward

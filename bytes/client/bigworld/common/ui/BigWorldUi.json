@@ -20,6 +20,16 @@
         "ImpactIds": "[1]"
     },
     {
+        "UiName": "UiBigWorldTaskMainInvitation",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": null,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
         "UiName": "UiBigWorldLineChapter",
         "IsPauseFight": true,
         "IsChangeInput": true,
@@ -67,10 +77,30 @@
         "IsHideFightUi": null,
         "IsCloseCameraControl": null,
         "IsVirtual": null,
-        "ImpactIds": null
+        "ImpactIds": "[2]"
     },
     {
         "UiName": "UiBigWorldTaskObtainDramaHeart",
+        "IsPauseFight": null,
+        "IsChangeInput": true,
+        "IsQueue": true,
+        "IsHideFightUi": null,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": "[2]"
+    },
+    {
+        "UiName": "UiBigWorldTaskObtainInvitation",
+        "IsPauseFight": null,
+        "IsChangeInput": true,
+        "IsQueue": true,
+        "IsHideFightUi": null,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": "[1]"
+    },
+    {
+        "UiName": "UiBigWorldTaskPopupEndingDetail",
         "IsPauseFight": null,
         "IsChangeInput": true,
         "IsQueue": true,
@@ -170,6 +200,16 @@
         "ImpactIds": "[1]"
     },
     {
+        "UiName": "UiBigWorldMapOverview",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": null,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
         "UiName": "UiBigWorldDIY",
         "IsPauseFight": true,
         "IsChangeInput": true,
@@ -193,7 +233,7 @@
         "UiName": "UiBigWorldObtain",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": true,
+        "IsQueue": null,
         "IsHideFightUi": null,
         "IsCloseCameraControl": null,
         "IsVirtual": null,
@@ -203,7 +243,7 @@
         "UiName": "UiBigWorldObtainSpecial",
         "IsPauseFight": null,
         "IsChangeInput": null,
-        "IsQueue": true,
+        "IsQueue": null,
         "IsHideFightUi": null,
         "IsCloseCameraControl": null,
         "IsVirtual": null,
@@ -357,7 +397,7 @@
         "IsHideFightUi": null,
         "IsCloseCameraControl": null,
         "IsVirtual": null,
-        "ImpactIds": null
+        "ImpactIds": "[1]"
     },
     {
         "UiName": "UiBigWorldPhotographPopupAlbumDetail",
@@ -367,17 +407,17 @@
         "IsHideFightUi": null,
         "IsCloseCameraControl": null,
         "IsVirtual": null,
-        "ImpactIds": null
+        "ImpactIds": "[1]"
     },
     {
         "UiName": "UiBigWorldPhotographPopupPhoto",
-        "IsPauseFight": true,
+        "IsPauseFight": null,
         "IsChangeInput": true,
         "IsQueue": null,
         "IsHideFightUi": null,
         "IsCloseCameraControl": null,
         "IsVirtual": null,
-        "ImpactIds": null
+        "ImpactIds": "[1]"
     },
     {
         "UiName": "UiBigWorldTrialRolePopup",
@@ -401,6 +441,16 @@
     },
     {
         "UiName": "UiBigWorldProcess",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": null,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": "[1]"
+    },
+    {
+        "UiName": "UiBigWorldPopupNews",
         "IsPauseFight": true,
         "IsChangeInput": true,
         "IsQueue": null,
@@ -483,8 +533,108 @@
         "UiName": "UiBigWorldTip",
         "IsPauseFight": true,
         "IsChangeInput": true,
-        "IsQueue": true,
+        "IsQueue": null,
         "IsHideFightUi": null,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiBigWorldPopupDelivery",
+        "IsPauseFight": null,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": null,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneGame",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": true,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneMain",
+        "IsPauseFight": null,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": true,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneLoading",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": true,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneChapter",
+        "IsPauseFight": null,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": true,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneStageDetail",
+        "IsPauseFight": null,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": true,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneStage",
+        "IsPauseFight": null,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": true,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupSettlement",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": true,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupDetail",
+        "IsPauseFight": null,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": true,
+        "IsCloseCameraControl": null,
+        "IsVirtual": null,
+        "ImpactIds": null
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupStop",
+        "IsPauseFight": true,
+        "IsChangeInput": true,
+        "IsQueue": null,
+        "IsHideFightUi": true,
         "IsCloseCameraControl": null,
         "IsVirtual": null,
         "ImpactIds": null

@@ -557,7 +557,9 @@ function XQuestOperation:DoObjectiveActive(data)
             end
         end
     end
-    if data:CheckIsTempShow() then
+    --只有当前追踪的任务不是需要临时显示的任务才会显示
+    if data:CheckIsTempShow() 
+            and self:GetTrackQuestId() ~= data:GetQuestId() then
         self._View:InsertTempShow(3000)
     end
     self._View:StartAction()

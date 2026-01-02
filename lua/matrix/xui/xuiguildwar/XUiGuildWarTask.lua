@@ -1,4 +1,4 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 --######################## XUiGuildWarUpCharacter ########################
 local XUiCommonTaskControl = require("XUi/XUiCommon/XUiCommonTaskControl")
 local XUiGuildWarTask = XLuaUiManager.Register(XUiCommonTaskControl, "UiGuildWarTask")
@@ -40,7 +40,24 @@ function XUiGuildWarTask:HandleEndTimeFunc()
 end
 
 function XUiGuildWarTask:GetTaskDataByTabIndex(index)
-    return self.GuildWarManager.GetTaskList(self.TaskTypeDatas[index].TaskType)
+    local taskList = self.GuildWarManager.GetTaskList(self.TaskTypeDatas[index].TaskType)
+    
+    self.AllAchieveTaskDatas = nil
+    
+    -- 收集可领取的任务
+    if not XTool.IsTableEmpty(taskList) then
+        for i, v in pairs(taskList) do
+            if v.State == XDataCenter.TaskManager.TaskState.Achieved then
+                if self.AllAchieveTaskDatas == nil then
+                    self.AllAchieveTaskDatas = {}
+                end
+                
+                table.insert(self.AllAchieveTaskDatas, v.Id)
+            end
+        end
+    end
+    
+    return taskList
 end
 --==================
 --检查页签红点
@@ -54,12 +71,27 @@ function XUiGuildWarTask:CheckBtnsRed()
     end
 end
 
-function XUiGuildWarTask:OnDataSourceChanged()
-    -- if not self.CurrentTasks or #self.CurrentTasks == 0 then
-    --     self.TextEmpty.gameObject:SetActiveEx(true)
-    -- else
-    --     self.TextEmpty.gameObject:SetActiveEx(false)
-    -- end
+---@overload 
+function XUiGuildWarTask:OnDynamicTableEvent(event, index, grid)
+    if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
+        grid:ResetData(self.CurrentTasks[index])
+        grid:SetAllReceiveTaskIds(self.AllAchieveTaskDatas)
+    end
+end
+
+---@overload
+function XUiGuildWarTask:OnNotify(event, ...)
+    if event == XEventId.EVENT_FINISH_TASK or event ==XEventId.EVENT_FINISH_MULTI then
+        self:RefreshTaskList(self.CurrentTaskType)
+        self:CheckBtnsRed()
+    end
+end
+
+---@overload
+function XUiGuildWarTask:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_FINISH_MULTI,
+    }
 end
 
 return XUiGuildWarTask

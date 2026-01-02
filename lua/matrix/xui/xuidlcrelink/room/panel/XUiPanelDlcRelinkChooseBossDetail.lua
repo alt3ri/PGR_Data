@@ -11,11 +11,10 @@ function XUiPanelDlcRelinkChooseBossDetail:OnStart()
     self.GridReform.gameObject:SetActiveEx(false)
     self.GridReward.gameObject:SetActiveEx(false)
     self.GridDrop.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnClose, self.OnBtnCloseClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnChange, self.OnBtnChangeClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnSure, self.OnBtnSureClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnRight, self.OnBtnRightClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnLeft, self.OnBtnLeftClick, true, true)
+    self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
+    self.BtnSure:AddEventListener(handler(self, self.OnBtnSureClick))
+    self.BtnRight:AddEventListener(handler(self, self.OnBtnRightClick))
+    self.BtnLeft:AddEventListener(handler(self, self.OnBtnLeftClick))
 
     ---@type UiObject[]
     self.TagGridList = {}
@@ -26,7 +25,6 @@ function XUiPanelDlcRelinkChooseBossDetail:OnStart()
     self.SkillCount = 0
     self.CurSelectSkillIdIndex = 1
     self.CurSkillIds = {}
-    self.IsVideoPlaying = false
 
     ---@type UiObject[]
     self.LevelGridList = {}
@@ -193,31 +191,26 @@ function XUiPanelDlcRelinkChooseBossDetail:PlaySelectedVideo(skillId)
         return
     end
     self.Txt.text = self._Control:GetBossSkillDescName(skillId)
-    self:PlayVideo(self._Control:GetBossSkillDescVideoUrl(skillId))
+    self:PlayVideo(self._Control:GetBossSkillDescVideoConfigId(skillId))
 end
 
-function XUiPanelDlcRelinkChooseBossDetail:PlayVideo(videoUrl)
+function XUiPanelDlcRelinkChooseBossDetail:PlayVideo(videoConfigId)
     if not self.VideoPlayer then
         return
     end
-    if string.IsNilOrEmpty(videoUrl) then
+    if not XTool.IsNumberValid(videoConfigId) then
         self.VideoPlayer.gameObject:SetActiveEx(false)
         return
     end
 
     self.VideoPlayer.gameObject:SetActiveEx(true)
-    self.VideoPlayer:SetVideoFromRelateUrl(videoUrl)
-    if self.IsVideoPlaying then
-        self.VideoPlayer:RePlay()
-    else
-        self.VideoPlayer:Play()
-    end
-    self.IsVideoPlaying = true
+    self.VideoPlayer:SetInfoByVideoId(videoConfigId)
+    self.VideoPlayer:RePlay()
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:StopVideo()
-    if self.VideoPlayer and self.IsVideoPlaying then
-        self.VideoPlayer:Pause()
+    if self.VideoPlayer then
+        self.VideoPlayer:Stop()
         self.VideoPlayer.gameObject:SetActiveEx(false)
     end
 end
@@ -237,9 +230,9 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshLevelIds()
         grid.gameObject:SetActiveEx(true)
         local levelId = self.LevelIds[index]
         grid:GetObject("BtnReform"):SetNameByGroup(0, self._Control:GetLevelName(levelId))
-        local levelLimit = self._Control:GetLevelLevelLimit(levelId)
-        local levelLimitDesc = levelLimit > 0 and string.format(self._Control:GetClientConfig("RoomBossLevelLimit"), levelLimit) or ""
-        grid:GetObject("BtnReform"):SetNameByGroup(1, levelLimitDesc)
+        local abilityLimit = self._Control:GetLevelAbilityLimit(levelId)
+        local abilityLimitDesc = abilityLimit > 0 and string.format(self._Control:GetClientConfig("RoomBossLevelLimit"), abilityLimit) or ""
+        grid:GetObject("BtnReform"):SetNameByGroup(1, abilityLimitDesc)
         grid:GetObject("BtnReform").CallBack = function()
             local isUnlockNow = self._Control:CheckLevelUnlock(levelId)
             if not isUnlockNow then
@@ -249,6 +242,15 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshLevelIds()
             if self.LevelId ~= levelId then
                 self.LevelId = levelId
                 self:RefreshLevelGrid()
+            end
+        end
+        -- 背景颜色
+        local levelType = self._Control:GetLevelType(levelId)
+        local bgColor = self._Control:GetClientConfig("RoomBossLevelBgColor", levelType)
+        for i = 1, 3 do
+            local rImgBg = grid:GetObject(string.format("RImgBg%s", i))
+            if rImgBg then
+                rImgBg.color = XUiHelper.Hexcolor2Color(bgColor)
             end
         end
     end
@@ -292,7 +294,7 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshLevelGrid()
         end
     end
     -- 作战场次
-    self.TxtFight.text = self._Control:GetLevelPassTime(self.LevelId)
+    self.TxtFight.text = self._Control:GetLevelPassCount(self.LevelId)
     -- 作战时间
     local isPass = self._Control:CheckLevelPassed(self.LevelId)
     if isPass then
@@ -373,10 +375,6 @@ end
 
 function XUiPanelDlcRelinkChooseBossDetail:RefreshBtnChange()
     self.BtnChange:SetButtonState(self.IsSkillAngerStatus and CS.UiButtonState.Select or CS.UiButtonState.Normal)
-end
-
-function XUiPanelDlcRelinkChooseBossDetail:OnBtnCloseClick()
-    self.Parent:OnPanelDetailClose()
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:OnBtnChangeClick()

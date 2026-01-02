@@ -10,6 +10,11 @@ function XBigWorldUIAgency:OnInit()
 
     self._QueueHelper = require("XModule/XBigWorldUI/Base/XBigWorldQueueUiHelper").New()
     self._UiDestroyHandler = Handler(self, self.OnUiDestroy)
+    
+    self.UiThemeModule = {
+        None = 0,
+        Quest = 1,
+    }
 end
 
 function XBigWorldUIAgency:InitRpc()
@@ -20,7 +25,6 @@ function XBigWorldUIAgency:OnRelease()
 end
 
 function XBigWorldUIAgency:OnEnterBigWorld()
-    self.ESequentialJobsSerialMain = CS.StatusSyncFight.ESequentialJobsSerial.Main:GetHashCode()
     self._QueueHelper:Init()
     CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_DESTROY, self._UiDestroyHandler)
 end
@@ -88,17 +92,17 @@ function XBigWorldUIAgency:Open(uiName, ...)
         self:ImpactUiOpening(uiName)
         XLuaUiManager.Open(uiName, ...)
     end
-
     return true
 end
 
-function XBigWorldUIAgency:OpenWithFightSequence(uiName, ...)
+function XBigWorldUIAgency:OpenWithFightSequence(uiName, immidiateOpen, ...)
     if not self:CheckAllowOpenWithImpact(uiName) then
         return false
     end
     XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_OPEN_UI_BY_SEQUENTIAL_SYSTEM, {
-        Serial = self.ESequentialJobsSerialMain,
+        Serial = XMVCA.XBigWorldCommon.ESequentialJobsSerial.Main,
         UiName = uiName,
+        ImmidiateOpen = immidiateOpen or false,
         OpenArgs = { ... }
     })
     return true
@@ -210,12 +214,23 @@ function XBigWorldUIAgency:InsertHeaderAwaitUi(uiName, ...)
     self._QueueHelper:InsertHeaderAwaitUi(uiName, ...)
 end
 
+function XBigWorldUIAgency:IsQueueEmpty()
+    if not self._QueueHelper then
+        return true
+    end
+    return self._QueueHelper:IsEmpty()
+end
+
 -- endregion
 
 -- region 常用接口
 
 function XBigWorldUIAgency:SetMaskActive(isActive, key)
     XLuaUiManager.SetMask(isActive, key)
+end
+
+function XBigWorldUIAgency:IsMaskShow(isActive, key)
+    XLuaUiManager.IsMaskShow(key)
 end
 
 function XBigWorldUIAgency:TipCode(code, ...)
@@ -289,7 +304,7 @@ end
 
 function XBigWorldUIAgency:_OpenBigWorldObtain(uiName, rewardData, title, closeCb, disableAutoClose, isSequence)
     if isSequence then
-        return self:OpenWithFightSequence(uiName, rewardData, title, closeCb, disableAutoClose)
+        return self:OpenWithFightSequence(uiName, false, rewardData, title, closeCb, disableAutoClose)
     end
     return self:Open(uiName, rewardData, title, closeCb, disableAutoClose)
 end
@@ -342,7 +357,7 @@ function XBigWorldUIAgency:OpenBigWorldRewardSidebar(rewardData, closeCb, isSequ
     end
     
     if isSequence then
-        return self:OpenWithFightSequence("UiBigWorldRewardSidebar", rewardData, closeCb)
+        return self:OpenWithFightSequence("UiBigWorldRewardSidebar", false, rewardData, closeCb)
     end
     return self:Open("UiBigWorldRewardSidebar", rewardData, closeCb)
 end
@@ -383,7 +398,7 @@ function XBigWorldUIAgency:OpenGoodsInfo(data, title)
 end
 
 function XBigWorldUIAgency:OpenNarrative(id, callback)
-    self:OpenWithFightSequence("UiBigWorldNarrative", id, callback)
+    self:OpenWithFightSequence("UiBigWorldNarrative", false, id, callback)
 end
 
 function XBigWorldUIAgency:OpenPerspectiveUi(levelId, isShowClose, txtExplain, confirmCb)
@@ -395,7 +410,11 @@ function XBigWorldUIAgency:OpenPerspectiveUi(levelId, isShowClose, txtExplain, c
     self:Open("UiBigWorldFirstPerson", levelId, isShowClose, txtExplain, confirmCb)
 end
 
--- endregion
+function XBigWorldUIAgency:OpenTextDialog(dialogId)
+    self:Open("UiBigWorldTextDialog", dialogId)
+end
+
+-- endregion 通用界面
 
 -- region 其他
 
@@ -414,9 +433,23 @@ function XBigWorldUIAgency:CheckAllowOpenWithImpact(uiName)
     return self._Model:CheckAllowOpenWithImpact(uiName)
 end
 
+function XBigWorldUIAgency:ChangeTheme(module, themeId)
+    if not module or module <= 0 then
+        return
+    end
+    if not themeId or themeId <= 0 then
+        return
+    end
+    CS.XUiBigWorldTheme.ChangeTheme(module, themeId)
+end
+
+function XBigWorldUIAgency:RunMain()
+    self:CloseAllUpperUiWithCallback("UiFightDLC")
+end
+
 -- endregion
 
--- region X3C
+--region X3C
 
 function XBigWorldUIAgency:OnFightOpenUi(data)
     local uiName = data.UiName
@@ -477,9 +510,9 @@ function XBigWorldUIAgency:SendDramaSkipPopupCloseCommand(isSkip)
     })
 end
 
--- endregion
+--endregion
 
--- region Event
+--region Event
 
 function XBigWorldUIAgency:OnUiDestroy(event, args)
     local uiName = self:__GetUiNameByArgs(args)
@@ -487,7 +520,7 @@ function XBigWorldUIAgency:OnUiDestroy(event, args)
     self._Model:TryRemoveImpact(uiName)
 end
 
--- endregion
+--endregion
 
 function XBigWorldUIAgency:__GetUiNameByArgs(args)
     if not args or args.Length <= 0 then

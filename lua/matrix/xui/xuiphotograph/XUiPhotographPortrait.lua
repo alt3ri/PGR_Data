@@ -121,6 +121,7 @@ function XUiPhotographPortrait:OnDestroy()
     end
 
     XDataCenter.PhotographManager.ClearTextureCache()
+    self.SwitchableScene:Stop()
 end
 
 function XUiPhotographPortrait:Close()
@@ -142,6 +143,7 @@ function XUiPhotographPortrait:InitView()
     local sceneTemplate = XDataCenter.PhotographManager.GetSceneTemplateById(sceneId)
     local scenePath, modelPath = XSceneModelConfigs.GetSceneAndModelPathById(sceneTemplate.SceneModelId)
     self:LoadUiScene(scenePath, modelPath, handler(self, self.OnUiSceneLoaded), false)
+    self._SceneChange:UpdateSceneChangeBtn()
     
     self:RefreshBtnSynchronous()
 end
@@ -324,6 +326,11 @@ function XUiPhotographPortrait:InitUi()
     self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK)
     ---@type XUiPanelCharacterCG
     self.CG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
+    ---@type XUiPanelSwitchableSceneAnim
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    ---@type XUiPanelPhotographSceneChange
+    self._SceneChange = require("XUi/XUiPhotograph/XUiPanelPhotographSceneChange").New(self.PanelSceneChange, self)
+    self._SceneChange:SetUpdateBatteryMode(handler(self, self.UpdateBatteryMode))
 end
 
 --region   ------------------动态列表 start-------------------
@@ -560,6 +567,7 @@ function XUiPhotographPortrait:OnUiSceneLoaded()
     self.CameraNear.gameObject:SetActiveEx(true)
     
     self:UpdateBatteryMode()
+    self.SwitchableScene:Play(XDataCenter.PhotographManager.GetCurSelectSceneId(), self.UiSceneInfo.Transform)
 end
 
 function XUiPhotographPortrait:UpdateScene(sceneId)
@@ -568,6 +576,7 @@ function XUiPhotographPortrait:UpdateScene(sceneId)
     local scenePath, modelPath = XSceneModelConfigs.GetSceneAndModelPathById(sceneTemplate.SceneModelId)
     self:LoadUiScene(scenePath, modelPath, handler(self, self.OnUiSceneLoaded), false)
     self.CurrSeleSceneId = sceneId
+    self._SceneChange:UpdateSceneChangeBtn()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
@@ -1038,9 +1047,9 @@ function XUiPhotographPortrait:InitProportionImage()
 end
 
 function XUiPhotographPortrait:UpdateBatteryMode()
-    if CsXQualityManager.Instance.IsSimulator and not CsXUiBattery.DebugMode then
-        return
-    end
+    --if CsXQualityManager.Instance.IsSimulator and not CsXUiBattery.DebugMode then
+    --    return
+    --end
 
     local animationRoot = self.UiSceneInfo.Transform:Find("Animations")
     if XTool.UObjIsNil(animationRoot) then return end
@@ -1069,32 +1078,17 @@ function XUiPhotographPortrait:UpdateBatteryMode()
         end
     end
 
-    local type = XPhotographConfigs.GetBackgroundTypeById(curSelectSceneId)
-    if type == XPhotographConfigs.BackGroundType.PowerSaved then
-        if CsXUiBattery.IsCharging then --充电状态
-            if chargeAnimator then chargeAnimator:Play("Full") end
-            fullTimeLine.gameObject:SetActiveEx(true)
-        else
-            if CsXUiBattery.BatteryLevel > LowPowerValue then -- 比较电量
-                if chargeAnimator then chargeAnimator:Play("Full") end
-                fullTimeLine.gameObject:SetActiveEx(true)
-            else
-                if chargeAnimator then chargeAnimator:Play("Low") end
-                chargeTimeLine.gameObject:SetActiveEx(true)
-            end
+    XMVCA.XSwitchableScene:PlaySceneAnim(curSelectSceneId, function()
+        if chargeAnimator then
+            chargeAnimator:Play("Full")
         end
-    else
-        local startTime = XTime.ParseToTimestamp(DateStartTime)
-        local endTime = XTime.ParseToTimestamp(DateEndTime)
-        local nowTime = XTime.ParseToTimestamp(CS.System.DateTime.Now:ToLocalTime():ToString())
-        if startTime > nowTime and nowTime > endTime then   -- 比较时间
-            if chargeAnimator then chargeAnimator:Play("Full") end
-            fullTimeLine.gameObject:SetActiveEx(true)
-        else
-            if chargeAnimator then chargeAnimator:Play("Low") end
-            chargeTimeLine.gameObject:SetActiveEx(true)
+        fullTimeLine.gameObject:SetActiveEx(true)
+    end, function()
+        if chargeAnimator then
+            chargeAnimator:Play("Low")
         end
-    end
+        chargeTimeLine.gameObject:SetActiveEx(true)
+    end)
 end
 
 --endregion------------------界面显隐 finish------------------

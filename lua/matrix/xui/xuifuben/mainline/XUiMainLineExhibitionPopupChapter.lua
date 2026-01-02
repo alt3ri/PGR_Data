@@ -190,9 +190,21 @@ function XUiMainLineExhibitionPopupChapter:RefreshChapterCharacters(index, uiObj
     local characterIds = {}
     local configs = XMVCA.XPlotExhibition:GetStoryLineConfigs()
     for _, config in pairs(configs) do
+        -- 类型不一致跳过，外篇跟浮点纪实有相同的配置表Id
+        if chapterCfg.ExhibitionFubenType == XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.EXTRA and config.StoryType ~= XEnumConst.FuBen.ChapterType.ExtralChapter then
+            goto CONTINUE
+        end
+        if chapterCfg.ExhibitionFubenType == XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.MAINLINE and
+                (config.StoryType ~= XEnumConst.FuBen.ChapterType.MainLine 
+                and config.StoryType ~= XEnumConst.FuBen.ChapterType.MainLine2
+                and config.StoryType ~= XEnumConst.FuBen.ChapterType.ShortStory) then
+            goto CONTINUE
+        end
+        
         if config.StoryChapter == chapterCfg.ExhibitionFubenConfigId then
             table.insert(characterIds, config.CharacterId)
         end
+        :: CONTINUE ::
     end
     self.IndexToCharacterIds[index] = characterIds
 

@@ -111,6 +111,38 @@ function XBWMessageContentEntity:GetOprionsCount()
     return 0
 end
 
+function XBWMessageContentEntity:GetVideoImage()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldMessageStepVideoImageById(self:GetStepId())
+    end
+
+    return ""
+end
+
+function XBWMessageContentEntity:GetVideoId()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldMessageStepVideoIdById(self:GetStepId())
+    end
+
+    return 0
+end
+
+function XBWMessageContentEntity:GetPhotoRefId()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldMessageStepPhotoRefIdById(self:GetStepId())
+    end
+
+    return 0
+end
+
+function XBWMessageContentEntity:GetImage()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldMessageStepImageById(self:GetStepId())
+    end
+
+    return ""
+end
+
 function XBWMessageContentEntity:GetText()
     if not self:IsOptions() and not self:IsMemes() then
         local text = self:_GetTextList()[1] or ""
@@ -131,10 +163,10 @@ end
 
 function XBWMessageContentEntity:GetDuration()
     if not self:IsNil() then
-        if self:IsReceive() then
-            return self._Model:GetBigWorldMessageStepDurationById(self:GetStepId())
-        elseif self:IsSend() then
+        if self:IsSend() then
             return XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetFloat("MessageSendDuration")
+        else
+            return self._Model:GetBigWorldMessageStepDurationById(self:GetStepId())
         end
     end
 
@@ -147,6 +179,16 @@ function XBWMessageContentEntity:GetSpeakerId()
     end
 
     return 0
+end
+
+function XBWMessageContentEntity:GetPhotoImage()
+    local photoRefId = self:GetPhotoRefId()
+
+    if not XTool.IsNumberValid(photoRefId) then
+        return nil
+    end
+
+    return XMVCA.XBigWorldAlbum:GetPhotoTextureByMessageRefId(photoRefId)
 end
 
 function XBWMessageContentEntity:GetSpeakerName()
@@ -200,11 +242,31 @@ function XBWMessageContentEntity:GetNextStepId()
 end
 
 function XBWMessageContentEntity:IsReceive()
-    return self:IsReceiveDialog() or self:IsReceiveMemes()
+    return self:IsReceiveDialog() or self:IsReceiveMemes() or self:IsReceiveVideo() or self:IsReceiveForceVideo() or self:IsReceivePhoto() or self:IsReceiveImage() or self:IsReceiveImageToVideo()
 end
 
 function XBWMessageContentEntity:IsSend()
-    return self:IsSendDialog() or self:IsSendMemes()
+    return self:IsSendDialog() or self:IsSendMemes() or self:IsSendVideo() or self:IsSendPhoto() or self:IsSendImage() or self:IsSendImageToVideo()
+end
+
+function XBWMessageContentEntity:IsMemes()
+    return self:IsReceiveMemes() or self:IsSendMemes()
+end
+
+function XBWMessageContentEntity:IsVideo()
+    return self:IsReceiveVideo() or self:IsReceiveForceVideo() or self:IsSendVideo()
+end
+
+function XBWMessageContentEntity:IsPhoto()
+    return self:IsReceivePhoto() or self:IsSendPhoto()
+end
+
+function XBWMessageContentEntity:IsImage()
+    return self:IsReceiveImage() or self:IsSendImage() or self:IsReceiveImageToVideo() or self:IsSendImageToVideo()
+end
+
+function XBWMessageContentEntity:IsImageToVideo()
+    return self:IsSendImageToVideo() or self:IsReceiveImageToVideo()
 end
 
 function XBWMessageContentEntity:IsReceiveDialog()
@@ -223,16 +285,52 @@ function XBWMessageContentEntity:IsSystem()
     return self:GetType() == XEnumConst.BWMessage.ContentType.System
 end
 
-function XBWMessageContentEntity:IsMemes()
-    return self:IsReceiveMemes() or self:IsSendMemes()
-end
-
 function XBWMessageContentEntity:IsReceiveMemes()
     return self:GetType() == XEnumConst.BWMessage.ContentType.ReceiveMemes
 end
 
 function XBWMessageContentEntity:IsSendMemes()
     return self:GetType() == XEnumConst.BWMessage.ContentType.SendMemes
+end
+
+function XBWMessageContentEntity:IsReceiveVideo()
+    return self:GetType() == XEnumConst.BWMessage.ContentType.ReceiveVideo
+end
+
+function XBWMessageContentEntity:IsReceiveForceVideo()
+    return self:GetType() == XEnumConst.BWMessage.ContentType.ReceiveForceVideo
+end
+
+function XBWMessageContentEntity:IsSendVideo()
+    return self:GetType() == XEnumConst.BWMessage.ContentType.SendVideo
+end
+
+function XBWMessageContentEntity:IsReceivePhoto()
+    return self:GetType() == XEnumConst.BWMessage.ContentType.ReceivePhoto
+end
+
+function XBWMessageContentEntity:IsSendPhoto()
+    return self:GetType() == XEnumConst.BWMessage.ContentType.SendPhoto
+end
+
+function XBWMessageContentEntity:IsReceiveImage()
+    return self:GetType() == XEnumConst.BWMessage.ContentType.ReceiveImage
+end
+
+function XBWMessageContentEntity:IsSendImage()
+    return self:GetType() == XEnumConst.BWMessage.ContentType.SendImage
+end
+
+function XBWMessageContentEntity:IsSendImageToVideo()
+    return self:GetType() == XEnumConst.BWMessage.ContentType.SendImageToVideo
+end
+
+function XBWMessageContentEntity:IsReceiveImageToVideo()
+    return self:GetType() == XEnumConst.BWMessage.ContentType.ReceiveImageToVideo
+end
+
+function XBWMessageContentEntity:IsWait()
+    return (self:IsReceiveForceVideo() or self:IsReceiveImageToVideo()) and not self:IsComplete()
 end
 
 function XBWMessageContentEntity:Read()

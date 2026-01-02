@@ -172,6 +172,7 @@ XPurchaseManagerCreator = function()
         else
             PurchaseInfosData = {}
         end
+        XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_CLEAR_DATA)
     end
 
     -- RPC
@@ -534,8 +535,13 @@ XPurchaseManagerCreator = function()
             return
         end
         XDataCenter.KickOutManager.Lock(XEnumConst.KICK_OUT.LOCK.RECHARGE)
+        
+        local content = {
+            ComboId = comboId,
+            Param = PurchaseBuyCustomParams,
+        }
 
-        XNetwork.Call(PurchaseRequest.PurchaseComboReq, { ComboId = comboId }, function(res)
+        XNetwork.Call(PurchaseRequest.PurchaseComboReq, content, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
                 XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
@@ -1633,7 +1639,7 @@ XPurchaseManagerCreator = function()
             -- v3.1兼容跳转其他界面完成购买后，返回此界面时的刷新
             buyData.PurchaseLBUpdateCb = buyFinishedCb
             -- 从推荐页跳转需要购买冷却
-            XLuaUiManager.Open("UiFashionDetail", templateId, isWeaponFashion, buyData, nil, true)
+            XMVCA.XShop:OpenFashionDetailUi(templateId,buyData,{isWeaponFashion = isWeaponFashion,isNeedCD = true})
         else
             local mergeBeforeBuyCb = function(successCb)
                 data:HandleBeforeBuy(successCb)

@@ -1,83 +1,83 @@
 [
     {
         "Key": "HelpKey",
-        "Note": "Help Key",
+        "Note": "\u5e2e\u52a9Key",
         "Params": "['RogueSim']"
     },
     {
         "Key": "MainCountDownDesc",
-        "Note": "Countdown Description",
-        "Params": "['Remaining Time: %s']"
+        "Note": "\u5012\u8ba1\u65f6\u63cf\u8ff0",
+        "Params": "['\u7ecf\u8425\u5269\u4f59\u65f6\u95f4\uff1a%s']"
     },
     {
         "Key": "ExchangeCountDownDesc",
-        "Note": "Countdown Description",
-        "Params": "['Remaining Time for Shop Exchange: %s']"
+        "Note": "\u5012\u8ba1\u65f6\u63cf\u8ff0",
+        "Params": "['\u5546\u5e97\u5151\u6362\u5269\u4f59\u65f6\u95f4\uff1a%s']"
     },
     {
         "Key": "StageNotUnlockDesc",
-        "Note": "Stage Locked Description",
-        "Params": "['Unlocks in %s', 'Unlocks after clearing %s']"
+        "Note": "\u5173\u5361\u672a\u89e3\u9501\u63cf\u8ff0",
+        "Params": "['%s\u540e\u89e3\u9501', '\u901a\u5173\u201c%s\u201d\u540e\u89e3\u9501']"
     },
     {
         "Key": "StageRoundDesc",
-        "Note": "Stage Quarter Description",
-        "Params": "['<color=#ff0000>%s</color> quarters']"
+        "Note": "\u5173\u5361\u5b63\u5ea6\u63cf\u8ff0",
+        "Params": "['<color=#ff0000>%s</color>\u5b63\u5ea6']"
     },
     {
         "Key": "ScenePath",
-        "Note": "Scene Preset Including Grid Points and Cameras",
+        "Note": "\u573a\u666f\u9884\u7f6e\uff0c\u5305\u62ec\u683c\u5b50\u6302\u70b9\u548c\u955c\u5934",
         "Params": "['Assets/Product/Scene/ScenePrefab/SystemRogueSim3d01.prefab']"
     },
     {
         "Key": "SceneLoadGridSpeed",
-        "Note": "Number of Grid Preset Format Loaded per Frame in the Scene",
+        "Note": "\u573a\u666f\u6bcf\u5e27\u52a0\u8f7d\u683c\u5b50\u9884\u5236\u4f53\u7684\u6570\u91cf",
         "Params": "['20']"
     },
     {
         "Key": "ProduceContent",
-        "Note": "Production Page Description",
-        "Params": "['Item production will start according to these settings at the beginning of the next quarter']"
+        "Note": "\u751f\u4ea7\u754c\u9762\u63cf\u8ff0",
+        "Params": "['\u5b63\u5ea6\u5f00\u59cb\u65f6\u4f1a\u6839\u636e\u6b64\u8bbe\u7f6e\u751f\u4ea7\u5546\u54c1']"
     },
     {
         "Key": "ProduceBtnYesTips",
-        "Note": "Production Button Notification Info",
-        "Params": "['Please select an item for production', 'Overflowing stock will be abandoned during the production of this quarter', '%s stock limit reached. Cannot be produced anymore']"
+        "Note": "\u751f\u4ea7\u6309\u94ae\u63d0\u793a\u4fe1\u606f",
+        "Params": "['\u8bf7\u9009\u62e9\u8981\u751f\u4ea7\u5546\u54c1', '\u672c\u5b63\u5ea6\u4ea7\u54c1\u751f\u4ea7\u65f6\uff0c\u6ea2\u51fa\u4ed3\u5e93\u5bb9\u91cf\u7684\u90e8\u5206\u820d\u5f03\uff0c\u4e0d\u8ba1\u5165\u4ed3\u5e93', '%s\u5e93\u5b58\u5df2\u8fbe\u4e0a\u9650\uff0c\u65e0\u6cd5\u7ee7\u7eed\u751f\u4ea7']"
     },
     {
         "Key": "ProduceDialogTitle",
-        "Note": "Pop-up Window Title",
-        "Params": "['Tips']"
+        "Note": "\u5f39\u6846\u6807\u9898",
+        "Params": "['\u63d0\u793a']"
     },
     {
         "Key": "ProduceChangeContent",
-        "Note": "Production Change Description",
-        "Params": "['Production item changed successfully']"
+        "Note": "\u751f\u4ea7\u53d8\u66f4\u63cf\u8ff0",
+        "Params": "['\u751f\u4ea7\u5546\u54c1\u66f4\u6362\u6210\u529f']"
     },
     {
         "Key": "ProduceNotSelectTips",
-        "Note": "Item Not Selected for Production Notification",
-        "Params": "['Please select an item for production']"
+        "Note": "\u672a\u9009\u62e9\u751f\u4ea7\u63d0\u793a",
+        "Params": "['\u8bf7\u9009\u62e9\u8981\u751f\u4ea7\u7684\u5546\u54c1']"
     },
     {
         "Key": "SellContent",
-        "Note": "Trade Page Description",
-        "Params": "['Golden Shells earned by selling items will be sent during the next quarter.']"
+        "Note": "\u8d38\u6613\u754c\u9762\u63cf\u8ff0",
+        "Params": "['\u5546\u54c1\u9500\u552e\u83b7\u5f97\u7684\u91d1\u8d1d\u4f1a\u5728\u4e0b\u5b63\u5ea6\u5165\u8d26']"
     },
     {
         "Key": "SellSingleValue",
-        "Note": "Trade Decrease/Increase Value per Time",
+        "Note": "\u8d38\u6613\u5355\u6b21\u51cf\u5c11/\u589e\u52a0\u7684\u6570\u503c",
         "Params": "['9999999']"
     },
     {
         "Key": "SellChangeContent",
-        "Note": "Trade Change Description",
-        "Params": "['Loaded successfully', 'No items to load']"
+        "Note": "\u8d38\u6613\u53d8\u66f4\u63cf\u8ff0",
+        "Params": "['\u88c5\u8f66\u6210\u529f', '\u6682\u65e0\u5546\u54c1\u88c5\u8f66']"
     },
     {
         "Key": "BattleRoundNumDesc",
-        "Note": "Quarter Count Description",
-        "Params": "['Season <color=#ffeb9b>%d</color>']"
+        "Note": "\u5b63\u5ea6\u6570\u63cf\u8ff0",
+        "Params": "['\u5b63\u5ea6 <color=#ffeb9b>%d</color>']"
     },
     {
         "Key": "BattleRoundLine10",
@@ -111,652 +111,652 @@
     },
     {
         "Key": "TransitionDuration",
-        "Note": "Cutscene Duration",
+        "Note": "\u8fc7\u573a\u6301\u7eed\u65f6\u95f4",
         "Params": "['2']"
     },
     {
         "Key": "TransitionDesc",
-        "Note": "Cutscene Description",
-        "Params": "['Remaining Time: %d quarters', 'The last quarter!']"
+        "Note": "\u8fc7\u573a\u63cf\u8ff0",
+        "Params": "['\u7ecf\u8425\u65f6\u95f4\u8fd8\u6709\uff1a%d\u4e2a\u5b63\u5ea6', '\u6700\u540e\u4e00\u4e2a\u5b63\u5ea6\uff01']"
     },
     {
         "Key": "BtnExplore",
-        "Note": "Explore Button",
-        "Params": "['Explore']"
+        "Note": "\u63a2\u7d22\u6309\u94ae",
+        "Params": "['\u524d\u5f80\u63a2\u7d22']"
     },
     {
         "Key": "BtnDetail",
-        "Note": "Details Button",
-        "Params": "['View Details']"
+        "Note": "\u8be6\u60c5\u6309\u94ae",
+        "Params": "['\u67e5\u770b\u8be6\u60c5']"
     },
     {
         "Key": "LandBubbleBtnName",
-        "Note": "Grid Projectile Button Name",
-        "Params": "['Explore', 'View Details', 'View Upgrade', 'Continue to Select']"
+        "Note": "\u683c\u5b50\u5f39\u6846\u6309\u94ae\u540d\u79f0",
+        "Params": "['\u524d\u5f80\u63a2\u7d22', '\u67e5\u770b\u8be6\u60c5', '\u67e5\u770b\u5347\u7ea7', '\u7ee7\u7eed\u9009\u62e9']"
     },
     {
         "Key": "LandNotExplorableTips",
-        "Note": "Grid Cannot Be Explored Notification",
-        "Params": "['Explore to open up the path']"
+        "Note": "\u683c\u5b50\u4e0d\u53ef\u63a2\u7d22\u63d0\u793a",
+        "Params": "['\u9700\u8981\u5148\u901a\u8fc7\u63a2\u7d22\u8fde\u901a\u9053\u8def']"
     },
     {
         "Key": "North",
-        "Note": "North to the Rumor Point",
-        "Params": "['North']"
+        "Note": "\u4f20\u95fb\u70b9\u4f4d\u5317\u65b9\u5411",
+        "Params": "['\u5317\u65b9\u5411']"
     },
     {
         "Key": "South",
-        "Note": "South to the Rumor Point",
-        "Params": "['South']"
+        "Note": "\u4f20\u95fb\u70b9\u4f4d\u5357\u65b9\u5411",
+        "Params": "['\u5357\u65b9\u5411']"
     },
     {
         "Key": "East",
-        "Note": "East to the Rumor Point",
-        "Params": "['East']"
+        "Note": "\u4f20\u95fb\u70b9\u4f4d\u4e1c\u65b9\u5411",
+        "Params": "['\u4e1c\u65b9\u5411']"
     },
     {
         "Key": "West",
-        "Note": "West to the Rumor Point",
-        "Params": "['West']"
+        "Note": "\u4f20\u95fb\u70b9\u4f4d\u897f\u65b9\u5411",
+        "Params": "['\u897f\u65b9\u5411']"
     },
     {
         "Key": "Northeast",
-        "Note": "Northeast to the Rumor Point",
-        "Params": "['Northeast']"
+        "Note": "\u4f20\u95fb\u70b9\u4f4d\u4e1c\u5317\u65b9\u5411",
+        "Params": "['\u4e1c\u5317\u65b9\u5411']"
     },
     {
         "Key": "Southeast",
-        "Note": "Southeast to the Rumor Point",
-        "Params": "['Southeast']"
+        "Note": "\u4f20\u95fb\u70b9\u4f4d\u4e1c\u5357\u65b9\u5411",
+        "Params": "['\u4e1c\u5357\u65b9\u5411']"
     },
     {
         "Key": "Northwest",
-        "Note": "Northwest to the Rumor Point",
-        "Params": "['Northwest']"
+        "Note": "\u4f20\u95fb\u70b9\u4f4d\u897f\u5317\u65b9\u5411",
+        "Params": "['\u897f\u5317\u65b9\u5411']"
     },
     {
         "Key": "Southwest",
-        "Note": "Southwest to the Rumor Point",
-        "Params": "['Southwest']"
+        "Note": "\u4f20\u95fb\u70b9\u4f4d\u897f\u5357\u65b9\u5411",
+        "Params": "['\u897f\u5357\u65b9\u5411']"
     },
     {
         "Key": "MainMaxLevelDesc",
-        "Note": "Main City Max Level Description",
+        "Note": "\u4e3b\u57ce\u6700\u5927\u7b49\u7ea7\u63cf\u8ff0",
         "Params": "['MAX']"
     },
     {
         "Key": "MainLevelUpExpTips",
-        "Note": "Main City EXP Notification",
-        "Params": "['Can be leveled up', 'At max!']"
+        "Note": "\u4e3b\u57ce\u7ecf\u9a8c\u63d0\u793a",
+        "Params": "['\u53ef\u5347\u7ea7', '\u5df2\u6ee1\u7ea7\uff01']"
     },
     {
         "Key": "MainLevelUpAdditionDesc",
-        "Note": "Main City Level Bonus Description",
-        "Params": "['%s+%d', 'Tech Level Unlocked: Lv.%d', 'Exploration Level Unlocked: Lv.%d']"
+        "Note": "\u4e3b\u57ce\u7b49\u7ea7\u52a0\u6210\u63cf\u8ff0",
+        "Params": "['%s + %d', '\u79d1\u6280\u7b49\u7ea7\u89e3\u9501 Lv.%d', '\u63a2\u7d22\u533a\u57df\u89e3\u9501 Lv.%d']"
     },
     {
         "Key": "MainLevelCanLevelUpTips",
-        "Note": "Main City Upgrade Failure Notification",
-        "Params": "['Highest level reached', 'Insufficient Merchant EXP for upgrade', 'Insufficient Golden Shells']"
+        "Note": "\u4e3b\u57ce\u4e0d\u53ef\u5347\u7ea7\u63d0\u793a",
+        "Params": "['\u5df2\u8fbe\u6700\u9ad8\u7b49\u7ea7', '\u884c\u5546\u7ecf\u9a8c\u672a\u6ee1\u8db3\u5347\u7ea7\u9700\u6c42', '\u91d1\u8d1d\u4e0d\u8db3']"
     },
     {
         "Key": "MainLevelBtnLvUpText",
-        "Note": "Upgrade Button Text",
-        "Params": "['Upgrade', 'At max']"
+        "Note": "\u5347\u7ea7\u6309\u94ae\u6587\u672c",
+        "Params": "['\u5347\u7ea7', '\u5df2\u6ee1\u7ea7']"
     },
     {
         "Key": "MainLevelRewardColor",
-        "Note": "Main City Level Reward Color",
+        "Note": "\u4e3b\u57ce\u7b49\u7ea7\u5956\u52b1\u989c\u8272",
         "Params": "['524C3F', 'FF6500']"
     },
     {
         "Key": "MainLevelUpgradeGoldColor",
-        "Note": "Main City Upgrade Gold Coins Color",
+        "Note": "\u4e3b\u57ce\u7b49\u7ea7\u5347\u7ea7\u91d1\u5e01\u989c\u8272",
         "Params": "['524C3F', 'FF6500']"
     },
     {
         "Key": "ShopId",
-        "Note": "Shop ID",
+        "Note": "\u5546\u5e97Id",
         "Params": "['1434']"
     },
     {
         "Key": "PreviewShopGoodIds",
-        "Note": "Shop Preview Item ID List",
+        "Note": "\u5546\u5e97\u9884\u89c8\u5546\u54c1id\u5217\u8868",
         "Params": "['143366', '143367']"
     },
     {
         "Key": "TaskGroupId",
-        "Note": "Mission Group ID",
+        "Note": "\u4efb\u52a1\u7ec4Id",
         "Params": "['268']"
     },
     {
         "Key": "EventTurnNumberDesc",
-        "Note": "Event Quarter Count Description",
-        "Params": "['Time-limited: Complete within %d quarters']"
+        "Note": "\u4e8b\u4ef6\u5b63\u5ea6\u6570\u63cf\u8ff0",
+        "Params": "['\u9650\u65f6\uff1a\u9700\u8981%d\u5b63\u5ea6\u5185\u5b8c\u6210']"
     },
     {
         "Key": "BuildingGoldNotEnough",
-        "Note": "Insufficient Golden Shells for Building Notice",
-        "Params": "['Insufficient Golden Shells']"
+        "Note": "\u5efa\u9020\u5efa\u7b51\u91d1\u8d1d\u4e0d\u8db3\u63d0\u793a",
+        "Params": "['\u91d1\u8d1d\u4e0d\u8db3']"
     },
     {
         "Key": "StoryLockText",
-        "Note": "Story Locked",
-        "Params": "['Locked']"
+        "Note": "\u6545\u4e8b\u672a\u89e3\u9501",
+        "Params": "['\u6682\u672a\u89e3\u9501']"
     },
     {
         "Key": "TechLevelUnlockTips",
-        "Note": "Low Tech Tree Level Notification",
-        "Params": "['Unlocks at Main City Lv.%s!']"
+        "Note": "\u79d1\u6280\u6811\u7b49\u7ea7\u4e0d\u8db3\u7684\u63d0\u793a",
+        "Params": "['\u9700\u8981\u4e3b\u57ce\u8fbe\u5230\u7b49\u7ea7%s\u89e3\u9501\uff01']"
     },
     {
         "Key": "TechPreLevelUnlockTips",
-        "Note": "Activation Required for Key Technology on Tech Tree Notification",
-        "Params": "['Activate the key technology on the left first!']"
+        "Note": "\u79d1\u6280\u6811\u5173\u952e\u79d1\u6280\u9700\u8981\u5148\u6fc0\u6d3b\u7684\u63d0\u793a",
+        "Params": "['\u9700\u8981\u5148\u6fc0\u6d3b\u5de6\u4fa7\u7684\u5173\u952e\u79d1\u6280!']"
     },
     {
         "Key": "TechPreUnlockTips",
-        "Note": "Activation Required for Prerequisite Technology on Tech Tree Notification",
-        "Params": "['Please activate the prerequisite technology first!']"
+        "Note": "\u79d1\u6280\u6811\u524d\u7f6e\u79d1\u6280\u9700\u8981\u5148\u6fc0\u6d3b\u7684\u63d0\u793a",
+        "Params": "['\u8bf7\u5148\u70b9\u4eae\u524d\u7f6e\u79d1\u6280\uff01']"
     },
     {
         "Key": "TechGoldUnlockTips",
-        "Note": "Tech Tree Insufficient Golden Shells Notice",
-        "Params": "['Insufficient Golden Shells for upgrade!']"
+        "Note": "\u79d1\u6280\u6811\u91d1\u8d1d\u4e0d\u8db3\u63d0\u793a",
+        "Params": "['\u91d1\u8d1d\u4e0d\u591f\u5347\u7ea7\uff01']"
     },
     {
         "Key": "TechLevelNextUnlockTips",
-        "Note": "Tech Tree Key Technology Next Unlock Notification",
-        "Params": "['The remaining Technologies will be unlocked at Main City Lv.%s']"
+        "Note": "\u79d1\u6280\u6811\u5173\u952e\u79d1\u6280\u4e0b\u6b21\u89e3\u9501\u63d0\u793a",
+        "Params": "['\u5269\u4f59\u79d1\u6280\u5c06\u5728\u4e3b\u57ceLv.%s\u518d\u6b21\u89e3\u9501']"
     },
     {
         "Key": "TechCanUnlockTips",
-        "Note": "Unlock Available Notification",
-        "Params": "['Unlock Available: %s/%s']"
+        "Note": "\u53ef\u89e3\u9501\u63d0\u793a",
+        "Params": "['\u53ef\u89e3\u9501\uff1a%s/%s']"
     },
     {
         "Key": "TechSelectFull",
-        "Note": "Max Key Technologies Selected",
-        "Params": "['Max number selected!']"
+        "Note": "\u5173\u952e\u79d1\u6280\u5df2\u9009\u6ee1",
+        "Params": "['\u5f53\u524d\u9009\u62e9\u5df2\u8fbe\u5230\u6700\u5927\u6570\u91cf\uff01']"
     },
     {
         "Key": "TechActivePreLevelTechTips",
-        "Note": "Prerequisite Key Technology Not Activated",
-        "Params": "['Please activate the prerequisite Key Technology!']"
+        "Note": "\u5173\u952e\u79d1\u6280\u524d\u9762\u672a\u6fc0\u6d3b",
+        "Params": "['\u8bf7\u5148\u6fc0\u6d3b\u524d\u9762\u7684\u5173\u952e\u79d1\u6280\uff01']"
     },
     {
         "Key": "TechNoSelectFullTips",
-        "Note": "Unselected Key Technologies",
-        "Params": "['Please select %s technologies from them!']"
+        "Note": "\u5173\u952e\u79d1\u6280\u672a\u9009\u6ee1\u79d1\u6280",
+        "Params": "['\u8bf7\u4ece\u4e2d\u9009\u62e9%s\u4e2a\u79d1\u6280\uff01']"
     },
     {
         "Key": "RoundStartSellHistogramColor",
-        "Note": "Histogram Color",
+        "Note": "\u76f4\u65b9\u56fe\u989c\u8272",
         "Params": "['DBCBA0', '74CABD']"
     },
     {
         "Key": "RoundStartSellPriceColor",
-        "Note": "Profit Color",
+        "Note": "\u5229\u6da6\u989c\u8272",
         "Params": "['FFA600', 'FF0015']"
     },
     {
         "Key": "RoundStarProduceColor",
-        "Note": "Production Color",
+        "Note": "\u4ea7\u51fa\u989c\u8272",
         "Params": "['0F70BC', 'FF0015']"
     },
     {
         "Key": "SettlementDataContent",
-        "Note": "Result Data Text",
-        "Params": "['Earn Golden Shells', 'Main City Level', 'Buildings Constructed', 'City Total Star Level', 'Event and Artifact', 'Purchase Area']"
+        "Note": "\u7ed3\u7b97\u6570\u636e\u6587\u672c",
+        "Params": "['\u83b7\u5f97\u91d1\u8d1d', '\u4e3b\u57ce\u7b49\u7ea7', '\u5efa\u9020\u5efa\u7b51', '\u57ce\u90a6\u603b\u661f\u7ea7', '\u4e8b\u4ef6\u4e0e\u79d8\u85cf', '\u8d2d\u4e70\u533a\u57df']"
     },
     {
         "Key": "ActivityEntryProgressTips",
-        "Note": "Event Entrance Progress Notification",
-        "Params": "['Progress: %s/%s', '%s in Progress: Quarter %s/%s']"
+        "Note": "\u6d3b\u52a8\u5165\u53e3\u8fdb\u5ea6\u63d0\u793a",
+        "Params": "['\u8fdb\u5ea6:%s/%s', '%s\u6311\u6218\u4e2d:%s/%s\u5b63\u5ea6']"
     },
     {
         "Key": "HandbookProgress",
-        "Note": "Codex Page Unlock Progress Text",
+        "Note": "\u56fe\u9274\u754c\u9762\u89e3\u9501\u8fdb\u5ea6\u6587\u672c",
         "Params": "['%s<color=#FFFFFF>/%s</color>']"
     },
     {
         "Key": "AreaUnlockTips",
-        "Note": "Tap on Locked Area Notification",
-        "Params": "['Upgrade Main City to Lv.%s to unlock the area!']"
+        "Note": "\u70b9\u51fb\u672a\u89e3\u9501\u533a\u57df\u7684\u63d0\u793a",
+        "Params": "['\u4e3b\u57ce\u63d0\u5347\u5230%s\u7ea7\u65f6\u89e3\u9501\u533a\u57df\uff01']"
     },
     {
         "Key": "GridUnlockTips",
-        "Note": "Tap on Locked Grid Notification",
-        "Params": "['Please explore and form a connection first!']"
+        "Note": "\u70b9\u51fb\u672a\u89e3\u9501\u683c\u5b50\u7684\u63d0\u793a",
+        "Params": "['\u8bf7\u5148\u63a2\u7d22\u8fde\u901a!']"
     },
     {
         "Key": "CameraPanelDragSizeOffset",
-        "Note": "Camera drag area size offset, parameter 1: width, parameter 2: height",
+        "Note": "\u76f8\u673a\u62d6\u62fd\u533a\u57df\u5927\u5c0f\u504f\u79fb\uff0c\u53c2\u65701\u662f\u5bbd\u5ea6\uff0c\u53c2\u65702\u662f\u9ad8\u5ea6",
         "Params": "['-6', '-2']"
     },
     {
         "Key": "CameraDistance",
-        "Note": "Camera distance from the ground. When the camera is further away from the ground, more tiles are visible.",
+        "Note": "\u6444\u50cf\u673a\u8ddd\u79bb\u5730\u9762\u8ddd\u79bb\uff0c\u8ddd\u79bb\u8d8a\u8fdc\uff0c\u770b\u5230\u7684\u683c\u5b50\u6570\u91cf\u8d8a\u591a",
         "Params": "['14']"
     },
     {
         "Key": "CameraDistanceRange",
-        "Note": "Camera distance from the ground. Parameter 1 is the lowest, parameter 2 is the highest. Parameter 3 is a one-time value for the plus/minus buttons when the value changes. Parameter 4 is for the mouse scroll wheel multiplier.",
+        "Note": "\u6444\u50cf\u673a\u8ddd\u79bb\u5730\u9762\u8ddd\u79bb\u8303\u56f4\uff0c\u53c2\u65701\u4e3a\u6700\u5c0f\u503c\uff0c\u53c2\u65702\u4e3a\u6700\u5927\u503c\uff0c\u53c2\u65703\u4e3a\u52a0\u51cf\u53f7\u6309\u94ae\u4e00\u6b21\u53d8\u5316\u7684\u503c\uff0c\u53c2\u65704\u4e3a\u9f20\u6807\u6eda\u8f6e\u6ed1\u52a8\u7684\u500d\u6570",
         "Params": "['10', '25', '2.5', '10']"
     },
     {
         "Key": "CameraRotationX",
-        "Note": "Camera spins upwards on the X direction.",
+        "Note": "\u6444\u50cf\u673aX\u65b9\u5411\u4e0a\u7684\u65cb\u8f6c",
         "Params": "['45']"
     },
     {
         "Key": "CityExploredEffect",
-        "Note": "City Unlock Effect",
+        "Note": "\u57ce\u90a6\u89e3\u9501\u7279\u6548",
         "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingLevelUp.prefab']"
     },
     {
         "Key": "BuildingEffect",
-        "Note": "Successful Building Effect",
+        "Note": "\u5efa\u7b51\u5efa\u9020\u6210\u529f\u7279\u6548",
         "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingFog.prefab']"
     },
     {
         "Key": "MainLevelUpEffect",
-        "Note": "Main City Upgrade Effect",
+        "Note": "\u4e3b\u57ce\u5347\u7ea7\u7279\u6548",
         "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingLevelUp.prefab']"
     },
     {
         "Key": "GridCanExploreEffect",
-        "Note": "Tile Exploration Effect",
+        "Note": "\u683c\u5b50\u53ef\u63a2\u7d22\u7279\u6548",
         "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimGridTip.prefab']"
     },
     {
         "Key": "StageMaxScoreEmpty",
-        "Note": "No Highest Score for the Stage",
-        "Params": "['Not cleared']"
+        "Note": "\u5173\u5361\u65e0\u6700\u9ad8\u5206\u6570",
+        "Params": "['\u6682\u672a\u901a\u5173']"
     },
     {
         "Key": "StageMaxScore",
-        "Note": "Highest Score for the Stage",
-        "Params": "['Highest Score: %s']"
+        "Note": "\u5173\u5361\u6700\u9ad8\u5206\u6570",
+        "Params": "['\u6700\u9ad8\u5206\u6570 %s']"
     },
     {
         "Key": "MainLevelUpExpAnimTime",
-        "Note": "Main City Upgrade EXP Increase Amine Duration",
+        "Note": "\u4e3b\u57ce\u5347\u7ea7\u7ecf\u9a8c\u589e\u52a0\u52a8\u753b\u65f6\u957f",
         "Params": "['0.5']"
     },
     {
         "Key": "RoundSettlementConfirmTitle",
-        "Note": "End Quarter Confirmation Title",
-        "Params": "['Tips', 'Tips', 'End Quarter']"
+        "Note": "\u5b63\u5ea6\u7ed3\u675f\u786e\u8ba4\u6807\u9898",
+        "Params": "['\u63d0\u793a', '\u63d0\u793a', '\u5b63\u5ea6\u7ed3\u675f']"
     },
     {
         "Key": "RoundSettlementConfirmContent",
-        "Note": "End Quarter Confirmation Description",
-        "Params": "['You have not completed the exploration point. End the round anyway?', \"This quarter's %s output has exceeded the remaining warehouse capacity. End this quarter?\", 'There are still areas available for purchase. End the current season anyway?']"
+        "Note": "\u5b63\u5ea6\u7ed3\u675f\u786e\u8ba4\u63cf\u8ff0",
+        "Params": "['\u5f53\u524d\u8fd8\u6709\u5c1a\u672a\u5b8c\u6210\u7684\u63a2\u7d22\u8282\u70b9\uff0c\u662f\u5426\u786e\u8ba4\u7ed3\u675f\u56de\u5408\uff1f', '%s\u672c\u5b63\u5ea6\u7684\u751f\u4ea7\u91cf\u5927\u4e8e\u5269\u4f59\u4ed3\u5e93\u5bb9\u91cf\uff0c\u786e\u5b9a\u8981\u7ed3\u675f\u672c\u5b63\u5ea6\u5417\uff1f', '\u8fd8\u6709\u533a\u57df\u53ef\u4ee5\u8d2d\u4e70\uff0c\u662f\u5426\u786e\u8ba4\u7ed3\u675f\u5f53\u524d\u5b63\u5ea6\uff1f']"
     },
     {
         "Key": "RoundSettlementExceedLimitTips",
-        "Note": "Storage Limit Exceeded Notice",
-        "Params": "['%s stock limit reached. Cannot be produced anymore']"
+        "Note": "\u8d85\u51fa\u50a8\u5b58\u4e0a\u9650\u63d0\u793a",
+        "Params": "['%s\u5e93\u5b58\u5df2\u8fbe\u4e0a\u9650\uff0c\u65e0\u6cd5\u7ee7\u7eed\u751f\u4ea7']"
     },
     {
         "Key": "AllTargetCompleteTips",
-        "Note": "All In-Game Targets Completed Notification",
-        "Params": "['All targets completed']"
+        "Note": "\u6e38\u620f\u5185\u6240\u6709\u76ee\u6807\u5b8c\u6210\u7684\u63d0\u793a",
+        "Params": "['\u5df2\u5b8c\u6210\u6240\u6709\u76ee\u6807']"
     },
     {
         "Key": "Lv",
-        "Note": "Tech Tree Main City Level Display",
+        "Note": "\u79d1\u6280\u6811\u4e3b\u57ce\u7b49\u7ea7\u663e\u793a",
         "Params": "['Lv.%s']"
     },
     {
         "Key": "PropBuffCumulativeMarkupTip",
-        "Note": "Buff Accumulation Bonus Notification Info",
-        "Params": "['(Accumulated: %d%%)', '(Accumulated: %d)', 'Active', 'Inactive']"
+        "Note": "buff\u7d2f\u8ba1\u52a0\u6210\u63d0\u793a\u4fe1\u606f",
+        "Params": "['(\u5df2\u52a0\u6210%d%%)', '(\u5df2\u52a0\u6210%d)', '\u5df2\u751f\u6548', '\u672a\u751f\u6548']"
     },
     {
         "Key": "CityTaskSuccessContent",
-        "Note": "City Mission Complete Description",
-        "Params": "['%s missions complete, after completing missions the city can be upgraded.']"
+        "Note": "\u57ce\u90a6\u4efb\u52a1\u5b8c\u6210\u63cf\u8ff0",
+        "Params": "['%s \u4efb\u52a1\u5df2\u5b8c\u6210\uff0c\u5b8c\u6210\u5168\u90e8\u4efb\u52a1\u540e\u53ef\u524d\u5f80\u57ce\u90a6\u5347\u7ea7']"
     },
     {
         "Key": "CityTaskSuccessAnimTime",
-        "Note": "Mission Complete Anime Duration",
+        "Note": "\u4efb\u52a1\u5b8c\u6210\u52a8\u753b\u65f6\u957f",
         "Params": "['0.5']"
     },
     {
         "Key": "ShopRedPointCoinNumber",
-        "Note": "Shop Blue Point Token Threshold",
+        "Note": "\u5546\u5e97\u84dd\u70b9\u4ee3\u5e01\u9608\u503c",
         "Params": "['150']"
     },
     {
         "Key": "ShopRedPointTimerId",
-        "Note": "Shop Blue Point Display Time",
+        "Note": "\u5546\u5e97\u84dd\u70b9\u7684\u663e\u793a\u65f6\u95f4",
         "Params": "['33701']"
     },
     {
         "Key": "ExploreFail",
-        "Note": "Reward Not Issued for Exploration Completed",
-        "Params": "['Exploration failed due to an unknown error!']"
+        "Note": "\u63a2\u7d22\u5b8c\u6210\u672a\u4e0b\u53d1\u5956\u52b1",
+        "Params": "['\u672a\u77e5\u9519\u8bef\uff0c\u63a2\u7d22\u5931\u8d25\uff01']"
     },
     {
         "Key": "CameraMoveSpeed",
-        "Note": "Camera Movement Speed",
+        "Note": "\u955c\u5934\u79fb\u52a8\u7684\u901f\u5ea6",
         "Params": "['30']"
     },
     {
         "Key": "CameraMoveMaxTime",
-        "Note": "Max Camera Movement Time (s)",
+        "Note": "\u955c\u5934\u79fb\u52a8\u7684\u6700\u5927\u65f6\u95f4(\u79d2)",
         "Params": "['0.6']"
     },
     {
         "Key": "CameraMoveSpeedOverlook",
-        "Note": "Movement Speed in Distant View When Area is Unlocked",
+        "Note": "\u533a\u57df\u89e3\u9501\uff0c\u955c\u5934\u8fdc\u773a\u60c5\u51b5\u4e0b\uff0c\u79fb\u52a8\u7684\u901f\u5ea6",
         "Params": "['30']"
     },
     {
         "Key": "CameraMoveMaxTimeOverlook",
-        "Note": "Max Movement Time (s) in Distant View When Area is Unlocked",
+        "Note": "\u533a\u57df\u89e3\u9501\uff0c\u955c\u5934\u8fdc\u773a\u60c5\u51b5\u4e0b\uff0c\u79fb\u52a8\u7684\u6700\u5927\u65f6\u95f4(\u79d2)",
         "Params": "['0.5']"
     },
     {
         "Key": "CameraFocusGridOffsetXWan",
-        "Note": "Focus tile is in the X direction offset by (Value x 10000 configuration). When the tile moves towards the screen center's left side the value is negative, the value is positive when it moves towards the right side.",
+        "Note": "\u805a\u7126\u683c\u5b50\u5728X\u65b9\u5411\u7684\u504f\u79fb(\u6570\u503c\u4e5810000\u914d\u7f6e)\uff0c\u683c\u5b50\u5f80\u5c4f\u5e55\u4e2d\u5fc3\u70b9\u5de6\u8fb9\u504f\u79fb\u662f\u8d1f\u6570\uff0c\u53f3\u8fb9\u662f\u6b63\u6570",
         "Params": "['-4000']"
     },
     {
         "Key": "ActivityNotOpenTip",
-        "Note": "Event Not Available Notification",
-        "Params": "['Outside the event period']"
+        "Note": "\u6d3b\u52a8\u672a\u5f00\u542f\u63d0\u793a",
+        "Params": "['\u4e0d\u5728\u6d3b\u52a8\u65f6\u95f4\u5185']"
     },
     {
         "Key": "PopupBuildIcon",
-        "Note": "Building Pop-up Window Picture",
+        "Note": "\u5efa\u7b51\u5f39\u6846\u56fe\u7247",
         "Params": "['Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimBuild.png']"
     },
     {
         "Key": "PopupBuildTitle",
-        "Note": "Building Pop-up Window Title",
-        "Params": "['Area Construction']"
+        "Note": "\u5efa\u7b51\u5f39\u6846\u6807\u9898",
+        "Params": "['\u533a \u57df \u5efa \u9020']"
     },
     {
         "Key": "PopupBuildTips",
-        "Note": "Building Pop-up Window Notice",
-        "Params": "['Consume Blueprints and Golden Shells to build in the current area']"
+        "Note": "\u5efa\u7b51\u5f39\u6846\u63d0\u793a",
+        "Params": "['\u6d88\u8017\u56fe\u7eb8\u4e0e\u91d1\u8d1d\u53ef\u5728\u5f53\u524d\u533a\u57df\u8fdb\u884c\u5efa\u9020']"
     },
     {
         "Key": "MainEffectProduce",
-        "Note": "Main City Upgrade Display Effect",
-        "Params": "['Production', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceIcon01.png']"
+        "Note": "\u4e3b\u57ce\u5347\u7ea7\u5c55\u793a\u6548\u679c",
+        "Params": "['\u751f\u4ea7\u529b', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceIcon01.png']"
     },
     {
         "Key": "MainEffectArea",
-        "Note": "Main City Upgrade Display Effect",
-        "Params": "['Islands for Sale', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimPurchaseArea.png']"
+        "Note": "\u4e3b\u57ce\u5347\u7ea7\u5c55\u793a\u6548\u679c",
+        "Params": "['\u53ef\u8d2d\u5c9b\u5c7f', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimPurchaseArea.png']"
     },
     {
         "Key": "MainEffectBuild",
-        "Note": "Main City Upgrade Display Effect",
-        "Params": "['Building Area', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceConstruction.png']"
+        "Note": "\u4e3b\u57ce\u5347\u7ea7\u5c55\u793a\u6548\u679c",
+        "Params": "['\u5efa\u9020\u533a\u57df', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceConstruction.png']"
     },
     {
         "Key": "PopulationTextColor",
-        "Note": "Production Text Color",
+        "Note": "\u751f\u4ea7\u529b\u6587\u672c\u989c\u8272",
         "Params": "['0F70BC', 'FF0015']"
     },
     {
         "Key": "RoundEndRemainPopulationTips",
-        "Note": "Round End Remaining Production Notice",
-        "Params": "['There is still unallocated productivity']"
+        "Note": "\u56de\u5408\u7ed3\u675f\u5c1a\u4f59\u751f\u4ea7\u529b\u63d0\u793a",
+        "Params": "['\u8fd8\u6709\u751f\u4ea7\u529b\u672a\u5206\u914d\u5b8c']"
     },
     {
         "Key": "RoundEndPopulationOverFlowTips",
-        "Note": "Round End Production Overflow Notice",
-        "Params": "['Productivity has exceeded the limit, please reassign!']"
+        "Note": "\u56de\u5408\u7ed3\u675f\u751f\u4ea7\u529b\u6ea2\u51fa\u63d0\u793a",
+        "Params": "['\u751f\u4ea7\u529b\u5206\u914d\u8d85\u51fa\u4e0a\u9650\uff0c\u8bf7\u91cd\u65b0\u8fdb\u884c\u5206\u914d\uff01']"
     },
     {
         "Key": "RoundEndMainCanLevelUpTips",
-        "Note": "Round End Main City Upgrade Notice",
-        "Params": "['Main city can be upgraded, upgrade in the waiting list!']"
+        "Note": "\u56de\u5408\u7ed3\u675f\u4e3b\u57ce\u53ef\u5347\u7ea7\u63d0\u793a",
+        "Params": "['\u4e3b\u57ce\u53ef\u5347\u7ea7\uff0c\u8bf7\u524d\u5f80\u5f85\u529e\u4e8b\u9879\u5904\u7406\uff01']"
     },
     {
         "Key": "RoundEndPendingEventTips",
-        "Note": "Round End Waiting List Notice",
-        "Params": "['Waiting list has yet to be processed!']"
+        "Note": "\u56de\u5408\u7ed3\u675f\u4ee3\u529e\u4e8b\u4ef6\u63d0\u793a",
+        "Params": "['\u5f85\u529e\u4e8b\u9879\u4e2d\u6709\u4e8b\u4ef6\u5c1a\u672a\u5904\u7406\uff01']"
     },
     {
         "Key": "RoundEndEventGambleRewardTips",
-        "Note": "Round End Event Speculation Notice",
-        "Params": "['Speculation rewards unclaimed, please claim from the waiting list.']"
+        "Note": "\u56de\u5408\u7ed3\u675f\u4e8b\u4ef6\u6295\u673a\u63d0\u793a",
+        "Params": "['\u6295\u8d44\u5956\u52b1\u5c1a\u672a\u9886\u53d6\uff0c\u8bf7\u524d\u5f80\u5f85\u529e\u4e8b\u9879\u5904\u7406\uff01']"
     },
     {
         "Key": "RoundEndCityCanLevelUpTips",
-        "Note": "Round End City Upgrade Notice",
-        "Params": "['City can be upgraded, upgrade through city commissions!']"
+        "Note": "\u56de\u5408\u7ed3\u675f\u57ce\u90a6\u53ef\u5347\u7ea7\u63d0\u793a",
+        "Params": "['\u57ce\u90a6\u53ef\u5347\u7ea7\uff0c\u8bf7\u901a\u8fc7\u57ce\u90a6\u59d4\u6258\u524d\u5f80\u5904\u7406\uff01']"
     },
     {
         "Key": "BuildingBluePrintNotSelectTips",
-        "Note": "Private Building Not Selected Notice",
-        "Params": "['Please select a building']"
+        "Note": "\u81ea\u5efa\u5efa\u7b51\u672a\u9009\u62e9\u63d0\u793a",
+        "Params": "['\u8bf7\u9009\u62e9\u5efa\u7b51']"
     },
     {
         "Key": "AutoSellNoProfitTips",
-        "Note": "Vending Profits Notice",
-        "Params": "['Please set an amount']"
+        "Note": "\u81ea\u52a8\u51fa\u552e\u6ca1\u6709\u5229\u6da6\u63d0\u793a",
+        "Params": "['\u8bf7\u8bbe\u7f6e\u51fa\u552e\u6570\u91cf']"
     },
     {
         "Key": "CityLevelCanLevelUpTips",
-        "Note": "City Cannot Be Upgraded Notice",
-        "Params": "['City not yet purchased', 'Highest level reached', 'City mission incomplete']"
+        "Note": "\u57ce\u90a6\u4e0d\u53ef\u5347\u7ea7\u63d0\u793a",
+        "Params": "['\u57ce\u90a6\u672a\u8d2d\u4e70', '\u5df2\u8fbe\u6700\u9ad8\u7b49\u7ea7', '\u57ce\u90a6\u4efb\u52a1\u672a\u5b8c\u6210']"
     },
     {
         "Key": "TemporaryBagRewardDropIcon",
-        "Note": "Temporary Inventory Reward Drop Icon",
+        "Note": "\u4e34\u65f6\u80cc\u5305\u5956\u52b1\u6389\u843d\u56fe\u6807",
         "Params": "['Assets/Product/Texture/Image/IconTools/IconRogueSimTwo08.png']"
     },
     {
         "Key": "TemporaryBagRewardTips",
-        "Note": "Temporary Inventory Reward Notice",
-        "Params": "['Temporary inventory is empty', '%s warehouse full']"
+        "Note": "\u4e34\u65f6\u80cc\u5305\u5956\u52b1\u63d0\u793a",
+        "Params": "['\u4e34\u65f6\u80cc\u5305\u4e3a\u7a7a', '%s\u4ed3\u5e93\u5df2\u6ee1']"
     },
     {
         "Key": "NoCityTip",
-        "Note": "No Cities Owned Notice",
-        "Params": "['No cities purchased']"
+        "Note": "\u6ca1\u6709\u57ce\u90a6\u63d0\u793a",
+        "Params": "['\u6682\u672a\u8d2d\u4e70\u57ce\u90a6']"
     },
     {
         "Key": "NewsShowTime",
-        "Note": "Rumor Display Duration (unit: ms)",
+        "Note": "\u4f20\u95fb\u663e\u793a\u65f6\u957f\uff08\u5355\u4f4d\uff1a\u6beb\u79d2\uff09",
         "Params": "['10000']"
     },
     {
         "Key": "GambleLoading",
-        "Note": "Configuration Loading Text",
-        "Params": "['Checking Earnings...']"
+        "Note": "\u914d\u7f6eloading\u6587\u672c",
+        "Params": "['\u6b63\u5728\u68c0\u67e5\u6536\u76ca\u3002\u3002\u3002']"
     },
     {
         "Key": "GambleResultWin",
-        "Note": "Multiplier >10000 text",
-        "Params": "['Rising Market']"
+        "Note": "\u500d\u7387\uff1e10000\u65f6\u7684\u6587\u672c",
+        "Params": "['\u5e02\u573a\u5927\u6da8']"
     },
     {
         "Key": "GambleResultLose",
-        "Note": "Multiplier \uff1c10000 text",
-        "Params": "['Falling Market']"
+        "Note": "\u500d\u7387\uff1c10000\u65f6\u7684\u6587\u672c",
+        "Params": "['\u5e02\u573a\u5927\u964d']"
     },
     {
         "Key": "GambleImgWin",
-        "Note": "Rising Pictures",
+        "Note": "\u4e0a\u6da8\u65f6\u7684\u914d\u56fe",
         "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconZy13.png']"
     },
     {
         "Key": "GambleDescWin",
-        "Note": "Rising Text",
-        "Params": "['Rising Market']"
+        "Note": "\u4e0a\u6da8\u65f6\u7684\u6587\u672c",
+        "Params": "['\u5e02\u573a\u5927\u6da8']"
     },
     {
         "Key": "GambleImgLose",
-        "Note": "Falling Pictures",
+        "Note": "\u4e0b\u8dcc\u65f6\u7684\u914d\u56fe",
         "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconZy14.png']"
     },
     {
         "Key": "GambleDescLose",
-        "Note": "Falling Text",
-        "Params": "['Falling Market']"
+        "Note": "\u4e0b\u8dcc\u65f6\u7684\u6587\u672c",
+        "Params": "['\u5e02\u573a\u5927\u964d']"
     },
     {
         "Key": "GambleGainTips",
-        "Note": "Earnings Ratio",
-        "Params": "['Investment Return {0}%']"
+        "Note": "\u6536\u76ca\u6bd4\u4f8b",
+        "Params": "['\u6295\u8d44\u6536\u76ca{0}%']"
     },
     {
         "Key": "GambleEventOptionsCost",
-        "Note": "Gambling Event Option Consumption",
-        "Params": "['{0} ({1}% of current tokens)']"
+        "Note": "\u8d4c\u535a\u4e8b\u4ef6\u9009\u9879\u6d88\u8017",
+        "Params": "['{0}({1}%\u5f53\u524d\u8d27\u5e01)']"
     },
     {
         "Key": "GambleNotReady",
         "Note": null,
-        "Params": "['Event speculation has not reached the required rounds']"
+        "Params": "['\u4e8b\u4ef6\u6295\u673a\u672a\u5230\u56de\u5408\u6570']"
     },
     {
         "Key": "GridChangeAnim",
-        "Note": "Tile change animation. Parameters 1|3|5... are the height, parameters 2|4|6... are the time.",
+        "Note": "\u683c\u5b50\u53d8\u5316\u7684\u52a8\u753b\u3002\u53c2\u65701|3|5...\u662f\u9ad8\u5ea6\uff0c\u53c2\u65702|4|6...\u662f\u65f6\u95f4",
         "Params": "['-0.2', '0.2', '0.6', '0.6', '0', '0.4']"
     },
     {
         "Key": "GridChangeTimeInterval",
-        "Note": "Tile Opening Animation Time",
+        "Note": "\u683c\u5b50\u9519\u5f00\u64ad\u653e\u52a8\u753b\u65f6\u95f4",
         "Params": "['0.2']"
     },
     {
         "Key": "BuildingQualityIcon",
-        "Note": "Building Quality Icon",
+        "Note": "\u5efa\u7b51\u54c1\u8d28\u56fe\u6807",
         "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb01.png', 'Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb02.png', 'Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb03.png']"
     },
     {
         "Key": "ResourceNotEnoughTip",
-        "Note": "Insufficient Resources Notice",
-        "Params": "['%s insufficient']"
+        "Note": "\u8d44\u6e90\u4e0d\u591f\u63d0\u793a",
+        "Params": "['%s\u4e0d\u8db3']"
     },
     {
         "Key": "BattleEarlySettlementTitle",
-        "Note": "Result Calculation in Advance Title",
-        "Params": "['Tip', 'Tip']"
+        "Note": "\u63d0\u524d\u7ed3\u7b97\u6807\u9898",
+        "Params": "['\u63d0\u793a', '\u63d0\u793a']"
     },
     {
         "Key": "BattleEarlySettlementContent",
-        "Note": "Result Calculation in Advance Content",
-        "Params": "['Challenge goals already completed. Skip to stage summary?', 'Give up and enter summary?']"
+        "Note": "\u63d0\u524d\u7ed3\u7b97\u5185\u5bb9",
+        "Params": "['\u5f53\u524d\u6311\u6218\u76ee\u6807\u5df2\u5168\u90e8\u8fbe\u6210\uff0c\u662f\u5426\u63d0\u524d\u8fdb\u884c\u5173\u5361\u7ed3\u7b97', '\u662f\u5426\u653e\u5f03\u6e38\u620f\u5e76\u8fdb\u5165\u7ed3\u7b97']"
     },
     {
         "Key": "BattleEarlySettlementBtnName",
-        "Note": "Result Calculation in Advance Button Text",
-        "Params": "['Early Tally', 'Abandon Game']"
+        "Note": "\u63d0\u524d\u7ed3\u7b97\u6309\u94ae\u6587\u672c",
+        "Params": "['\u63d0\u524d\u7ed3\u7b97', '\u653e\u5f03\u6e38\u620f']"
     },
     {
         "Key": "StageStarConditionTips",
-        "Note": "Stage 3\u2605 Requirements Notice",
-        "Params": "['3\u2605 requirements incomplete']"
+        "Note": "\u5173\u5361\u4e09\u661f\u6761\u4ef6\u63d0\u793a",
+        "Params": "['\u4e09\u661f\u6761\u4ef6\u672a\u5b8c\u6210']"
     },
     {
         "Key": "CommodityAttributeType",
-        "Note": "Cargo Attribute Type",
+        "Note": "\u8d27\u7269\u5c5e\u6027\u7c7b\u578b",
         "Params": "['1002', '1003', '1005', '1006', '2003', '2005', '2006']"
     },
     {
         "Key": "CommodityAttributeScore",
-        "Note": "Cargo Attribute Rating",
+        "Note": "\u8d27\u7269\u5c5e\u6027\u8bc4\u5206",
         "Params": "['100', '10', '5', '1.5', '10', '5', '1.5']"
     },
     {
         "Key": "CommodityFluctuationScore",
-        "Note": "Cargo Fluctuation Rating",
+        "Note": "\u8d27\u7269\u6ce2\u52a8\u8bc4\u5206",
         "Params": "['10']"
     },
     {
         "Key": "CommodityScoreInterval1",
-        "Note": "Cargo Rating Area",
+        "Note": "\u8d27\u7269\u8bc4\u5206\u533a\u95f4",
         "Params": "['-1000', '0', '00C314']"
     },
     {
         "Key": "CommodityScoreInterval2",
-        "Note": "Cargo Rating Area",
+        "Note": "\u8d27\u7269\u8bc4\u5206\u533a\u95f4",
         "Params": "['0', '1000', '808080']"
     },
     {
         "Key": "CommodityScoreInterval3",
-        "Note": "Cargo Rating Area",
+        "Note": "\u8d27\u7269\u8bc4\u5206\u533a\u95f4",
         "Params": "['1000', '-1', 'FF0000']"
     },
     {
         "Key": "AreaDefaultIcon",
-        "Note": "Navigation Function Area Default Icon",
+        "Note": "\u5bfc\u822a\u529f\u80fd\u91cc\u533a\u57df\u9ed8\u8ba4\u56fe\u6807",
         "Params": "['Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimBuild.png']"
     },
     {
         "Key": "DelayOpenNextTipsTime",
-        "Note": "Delay the time for opening the notice about entering the next season, configuration unit is ms.",
+        "Note": "\u5ef6\u8fdf\u6253\u5f00\u8fdb\u5165\u4e0b\u4e00\u5b63\u5ea6\u7684\u63d0\u793a\u65f6\u95f4\uff0c\u914d\u7f6e\u5355\u4f4d\u4e3a\u6beb\u79d2",
         "Params": "['1500']"
     },
     {
         "Key": "RollingNumberTime",
-        "Note": "Scroll Number Duration (ms)",
+        "Note": "\u6eda\u52a8\u6570\u5b57\u65f6\u957f\uff08ms\uff09",
         "Params": "['500']"
     },
     {
         "Key": "LandBubbleCommonBgIcon",
-        "Note": "Interface Left Pop-up Common Background Icon",
+        "Note": "\u754c\u9762\u5de6\u4fa7\u5f39\u6846\u901a\u7528\u80cc\u666f\u56fe\u6807",
         "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimTu.png']"
     },
     {
         "Key": "TemporaryBagParticleInterval1",
-        "Note": "Temporary Inventory Particle Space (Cargo 1)",
+        "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u533a\u95f4\uff08\u8d27\u72691\uff09",
         "Params": "['0|10|1', '10|50|5', '50|100|8', '100|200|12', '200|300|15', '300|400|20', '400|500|25', '500|-1|30']"
     },
     {
         "Key": "TemporaryBagParticleInterval2",
-        "Note": "Temporary Inventory Particle Space (Cargo 2)",
+        "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u533a\u95f4\uff08\u8d27\u72692\uff09",
         "Params": "['0|25|1', '25|100|8', '100|250|12', '250|400|20', '400|600|25', '600|-1|30']"
     },
     {
         "Key": "TemporaryBagParticleInterval3",
-        "Note": "Temporary Inventory Particle Space (Cargo 3)",
+        "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u533a\u95f4\uff08\u8d27\u72693\uff09",
         "Params": "['0|2|1', '2|30|4', '30|50|8', '50|80|10', '80|150|15', '150|200|18', '200|300|25', '300|-1|30']"
     },
     {
         "Key": "TemporaryBagParticleTotalLimit",
-        "Note": "Temporary Inventory Particle Space Limit",
+        "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u603b\u4e0a\u9650",
         "Params": "['100']"
     },
     {
         "Key": "TemporaryBagParticleDuration",
-        "Note": "Temporary Inventory Particle Time (ms)",
+        "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u65f6\u957f\uff08ms\uff09",
         "Params": "['2500']"
     },
     {
         "Key": "LandformIdsCommodity1",
-        "Note": "Cargo 1 corresponding landform Id list",
+        "Note": "\u8d27\u72691\u5bf9\u5e94\u7684\u5730\u8c8cId\u5217\u8868",
         "Params": "['3341', '3342', '3343']"
     },
     {
         "Key": "LandformIdsCommodity2",
-        "Note": "Cargo 2 corresponding landform Id list",
+        "Note": "\u8d27\u72692\u5bf9\u5e94\u7684\u5730\u8c8cId\u5217\u8868",
         "Params": "['3351', '3352', '3353']"
     },
     {
         "Key": "LandformIdsCommodity3",
-        "Note": "Cargo 3 corresponding landform Id list",
+        "Note": "\u8d27\u72693\u5bf9\u5e94\u7684\u5730\u8c8cId\u5217\u8868",
         "Params": "['3361', '3362', '3363']"
     },
     {
         "Key": "CommodityFullTitle",
-        "Note": "Cargo Filled Title",
-        "Params": "['Tip']"
+        "Note": "\u8d27\u7269\u5df2\u6ee1\u6807\u9898",
+        "Params": "['\u63d0\u793a']"
     },
     {
         "Key": "CommodityFullContent",
-        "Note": "Cargo Filled Content",
-        "Params": "['%s warehouse full, continue exploring?']"
+        "Note": "\u8d27\u7269\u5df2\u6ee1\u5185\u5bb9",
+        "Params": "['%s\u4ed3\u5e93\u5df2\u6ee1\uff0c\u662f\u5426\u7ee7\u7eed\u63a2\u7d22\u3002']"
     }
 ]

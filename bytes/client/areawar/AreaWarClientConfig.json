@@ -1,123 +1,123 @@
 [
     {
         "Key": "CameraDistance",
-        "Comment": "Camera Distance Adjustment: 1: Minimum Distance 2: Maximum Distance",
+        "Comment": "\u6444\u50cf\u673a\u8ddd\u79bb\u8c03\u8282\uff1a 1\uff1a\u6700\u5c0f\u8ddd\u79bb\uff1b2\uff1a\u6700\u5927\u8ddd\u79bb",
         "Values": "['10', '20']"
     },
     {
         "Key": "PrefabPath",
-        "Comment": "Preset Resource Path",
+        "Comment": "\u9884\u5236\u8d44\u6e90\u8def\u5f84",
         "Values": "['Assets/Product/Scene/ArenaWar/Prefabs/AreaWarScene.prefab']"
     },
     {
         "Key": "CameraZoomSpeed",
-        "Comment": "Camera Scale Speed",
+        "Comment": "\u6444\u50cf\u673a\u7f29\u653e\u901f\u5ea6",
         "Values": "['5']"
     },
     {
         "Key": "CameraSmallDisRatio",
-        "Comment": "Slot Zooming-out Camera Distance Ratio",
+        "Comment": "\u70b9\u4f4d\u7f29\u5c0f\u7684\u76f8\u673a\u8ddd\u79bb\u6bd4\u4f8b",
         "Values": "['0.4']"
     },
     {
         "Key": "ArticleTips",
-        "Comment": "Article-Related Tips",
-        "Values": "['Article is locked!', 'Published by %s    %s']"
+        "Comment": "\u6587\u7ae0\u76f8\u5173\u63d0\u793a",
+        "Values": "['\u6587\u7ae0\u672a\u89e3\u9501\uff01', '%s    %s \u53d1\u5e03']"
     },
     {
         "Key": "ArticleGroupTip",
-        "Comment": "Article Group Tips",
-        "Values": "['Block is locked!']"
+        "Comment": "\u6587\u7ae0\u7ec4\u63d0\u793a",
+        "Values": "['\u677f\u5757\u672a\u89e3\u9501\uff01']"
     },
     {
         "Key": "ArticleLikeCountBoundary",
-        "Comment": "1. Threshold of likes. Only likes below this number will be displayed. Otherwise, the corresponding unit will be displayed instead. 2. Unit",
+        "Comment": "1. \u70b9\u8d5e\u5206\u754c\u7ebf\uff0c\u4f4e\u4e8e\u8fd9\u4e2a\u6570\uff0c\u5219\u663e\u793a\u5177\u4f53\u7684\u6570\u91cf\uff0c\u9ad8\u4e8e\u5219\u663e\u793a\u5bf9\u5e94\u5355\u4f4d\uff1b2. \u5355\u4f4d",
         "Values": "['10000', 'W']"
     },
     {
         "Key": "EndTimeTips",
-        "Comment": "Time End Text Tips",
-        "Values": "['Ends in %s']"
+        "Comment": "\u65f6\u95f4\u7ed3\u675f\u6587\u672c\u63d0\u793a",
+        "Values": "['%s\u540e\u7ed3\u675f']"
     },
     {
         "Key": "GiftsRewardIds",
-        "Comment": "Close-up Reward ID",
+        "Comment": "\u6253\u8138\u5956\u52b1Id",
         "Values": "['6002806|1', '80082|1', '102|2000', '50005|1000', '11000205|1']"
     },
     {
         "Key": "FirstPlayStoryId",
-        "Comment": "Story First Entering the Mode",
+        "Comment": "\u9996\u6b21\u8fdb\u5165\u73a9\u6cd5\u5267\u60c5",
         "Values": null
     },
     {
         "Key": "UnlockAnimationInfo",
-        "Comment": "Unlocking Animation Info 1. Animation Type 2. Animation Duration 3. Animation Movement Height",
+        "Comment": "\u89e3\u9501\u52a8\u753b\u4fe1\u606f 1.\u52a8\u753b\u7c7b\u578b\uff1b2.\u52a8\u753b\u65f6\u957f\uff1b3.\u52a8\u753b\u4f4d\u79fb\u9ad8\u5ea6",
         "Values": "['2', '1.2', '0.82', '8']"
     },
     {
         "Key": "IdleAnimationInfo",
-        "Comment": "Breathing Animation Info 1. Animation Type 2. Animation Duration 3. Animation Movement Height",
+        "Comment": "\u547c\u5438\u52a8\u753b\u4fe1\u606f 1.\u52a8\u753b\u7c7b\u578b\uff1b2.\u52a8\u753b\u65f6\u957f\uff1b3.\u52a8\u753b\u4f4d\u79fb\u9ad8\u5ea6",
         "Values": "['0', '5', '0.82']"
     },
     {
         "Key": "PlateLiftUpInfo",
-        "Comment": "Plate Ascending Animation: 1: Y moves down, hidden outside the map. 2: Time required to move up from outside the map",
+        "Comment": "\u677f\u5757\u4e0a\u5347\u52a8\u753b 1: Y\u5411\u4e0b\u504f\u79fb\uff0c\u9690\u85cf\u5728\u5730\u56fe\u5916\uff1b2.\u4ece\u5730\u56fe\u5916\u4e0a\u5347\u6240\u9700\u65f6\u95f4",
         "Values": "['-3', '0.8']"
     },
     {
         "Key": "StageDetailFightTip",
-        "Comment": "Battle Description in Stage Details in/Outside Corpse Punishment Period",
-        "Values": "['Within the time limit, the higher the rating, the better the rewards.', 'Participate in the battle for rewards']"
+        "Comment": "\u5173\u5361\u8be6\u60c5\u5728\u97ad\u5c38\u671f\u4e0e\u975e\u97ad\u5c38\u671f\u65f6\u6218\u6597\u63cf\u8ff0",
+        "Values": "['\u9650\u65f6\u5185\uff0c\u8bc4\u5206\u8d8a\u9ad8\uff0c\u5956\u52b1\u8d8a\u4e30\u5bcc', '\u53c2\u4e0e\u4f5c\u6218\uff0c\u83b7\u5f97\u5956\u52b1']"
     },
     {
         "Key": "StageDetailBtnChallenge",
         "Comment": null,
-        "Values": "['Battle Preparations', 'Multi Challenge']"
+        "Values": "['\u4f5c\u6218\u51c6\u5907', '\u591a\u91cd\u6311\u6218']"
     },
     {
         "Key": "ItemNotEnough",
         "Comment": null,
-        "Values": "['Insufficient Scheduling Request. Get more from Support Missions.', 'Insufficient Floating Processor. Change Multi Challenge to <color=#4dc5ff>X%d</color>?', 'Insufficient Floating Processor. Unable to continue.']"
+        "Values": "['\"\u8c03\u5ea6\u7533\u8bf7\u4e0d\u8db3, \u8bf7\u901a\u8fc7\u63f4\u62a4\u4efb\u52a1\u83b7\u53d6\"', '\u5f53\u524d\u4f53\u529b\u4e0d\u8db3\uff0c\u662f\u5426\u5c06\u591a\u91cd\u6311\u6218\u6b21\u6570\u8c03\u6574\u81f3<color=#4dc5ff>X%d</color>?', '\u5f53\u524d\u4f53\u529b\u4e0d\u8db3\uff0c\u65e0\u6cd5\u7ee7\u7eed\u4f5c\u6218']"
     },
     {
         "Key": "QuestName",
-        "Comment": "Explore Mission Name",
-        "Values": "['Special Mission', 'Special Mission', 'Support Mission']"
+        "Comment": "\u63a2\u7d22\u4efb\u52a1Name",
+        "Values": "['\u7279\u6d3e\u4efb\u52a1', '\u7279\u6d3e\u4efb\u52a1', '\u63f4\u62a4\u4efb\u52a1']"
     },
     {
         "Key": "QuestDesc",
-        "Comment": "Explore Mission Desc",
-        "Values": "['Personal Mission', 'Personal Mission', 'Mutual Mission']"
+        "Comment": "\u63a2\u7d22\u4efb\u52a1Desc",
+        "Values": "['\u4e2a\u4eba\u4efb\u52a1', '\u4e2a\u4eba\u4efb\u52a1', '\u4e92\u52a9\u4efb\u52a1']"
     },
     {
         "Key": "BlockLevelTypeIcon",
-        "Comment": "Details Icon",
+        "Comment": "\u8be6\u60c5\u56fe\u6807",
         "Values": "['Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame02.png', 'Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame01.png']"
     },
     {
         "Key": "BlockLevelTypeMapIcon",
-        "Comment": "Map Icon",
+        "Comment": "\u5730\u56fe\u56fe\u6807",
         "Values": "['Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame02.png', 'Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame01.png']"
     },
     {
         "Key": "GrowBuffLockTip",
-        "Comment": "Buff Unlock Tips",
-        "Values": "['Unlocks at Lv.%s']"
+        "Comment": "buff\u89e3\u9501\u63d0\u793a",
+        "Values": "['\u7b49\u7ea7\u8fbe\u5230%s\u89e3\u9501']"
     },
     {
         "Key": "FinishAllQuestTip",
         "Comment": null,
-        "Values": "['All Special Missions of today have been completed', 'All Rescue Missions of today have been completed']"
+        "Values": "['\u5df2\u5b8c\u6210\u672c\u65e5\u6240\u6709\u5f02\u5e38\u8c03\u67e5', '\u5df2\u5b8c\u6210\u672c\u65e5\u6240\u6709\u6551\u63f4\u4efb\u52a1']"
     },
     {
         "Key": "RescueDetailText",
         "Comment": null,
-        "Values": "['Requesting Support', 'Teammates in danger and requesting support']"
+        "Values": "['\u8bf7 \u6c42 \u652f \u63f4', '\u961f\u53cb\u9047\u5230\u5371\u9669\uff0c\u8bf7\u6c42\u6551\u63f4']"
     },
     {
         "Key": "RescuedDetailText",
         "Comment": null,
-        "Values": "['Help Received', 'Another player has helped you']"
+        "Values": "['\u83b7 \u5f97 \u5e2e \u52a9', '\u5176\u4ed6\u73a9\u5bb6\u5411\u4f60\u63d0\u4f9b\u4e86\u5e2e\u52a9']"
     },
     {
         "Key": "TrailEffectUrl",
@@ -127,92 +127,92 @@
     {
         "Key": "CancelBtnText",
         "Comment": null,
-        "Values": "['Cancel', 'Redeem']"
+        "Values": "['\u53d6\u6d88', '\u5151\u6362\u4f53\u529b']"
     },
     {
         "Key": "ItemUnlockTips",
-        "Comment": "Collectible Unlock Notification",
-        "Values": "['Unlocks at Lv.%s']"
+        "Comment": "\u85cf\u54c1\u89e3\u9501\u7684\u63d0\u793a\u6587\u672c",
+        "Values": "['\u7b49\u7ea7%s\u89e3\u9501']"
     },
     {
         "Key": "ItemRoomAttrs",
-        "Comment": "Collection Room Stats",
-        "Values": "['ATK', 'Health', 'Multi Challenge Maximum Multiplier']"
+        "Comment": "\u85cf\u54c1\u5ba4\u5c5e\u6027",
+        "Values": "['\u653b\u51fb', '\u751f\u547d', '\u591a\u91cd\u6311\u6218\u6700\u5927\u500d\u7387']"
     },
     {
         "Key": "ItemRoomLvUpCost",
-        "Comment": "Insufficient Upgrade Materials Display",
+        "Comment": "\u5347\u7ea7\u6750\u6599\u8db3\u591f\u7684\u6570\u91cf\u663e\u793a",
         "Values": "['<color=#0E70BD>%s</color>/%s']"
     },
     {
         "Key": "ItemRoomLvUpCostNoEnough",
-        "Comment": "Insufficient Upgrade Materials Display",
+        "Comment": "\u5347\u7ea7\u6750\u6599\u4e0d\u591f\u7684\u6570\u91cf\u663e\u793a",
         "Values": "['<color=#EE2323>%s</color>/%s']"
     },
     {
         "Key": "ItemRoomLvUpNoEnoughTips",
-        "Comment": "Insufficient Upgrade Materials Notification",
-        "Values": "['Insufficient upgrade materials!']"
+        "Comment": "\u5347\u7ea7\u6750\u6599\u4e0d\u8db3\u63d0\u793a",
+        "Values": "['\u5347\u7ea7\u6240\u9700\u6750\u6599\u4e0d\u8db3\uff01']"
     },
     {
         "Key": "AuctionItemRemainTips",
-        "Comment": "Trading House Remaining Item Quantity Notification",
-        "Values": "['(Only %s left)']"
+        "Comment": "\u4ea4\u6613\u884c\u9053\u5177\u5269\u4f59\u6570\u91cf\u63d0\u793a",
+        "Values": "['\uff08\u4ec5\u5269%s\u4ef6\uff09']"
     },
     {
         "Key": "AuctionBuyNoEnoughCoinTips",
-        "Comment": "Trading House Purchase Insufficient Tokens Notification",
-        "Values": "['Insufficient Auction House tokens.']"
+        "Comment": "\u4ea4\u6613\u884c\u8d2d\u4e70\u65f6\u8d27\u5e01\u4e0d\u8db3\u63d0\u793a",
+        "Values": "['\u62cd\u5356\u884c\u8d27\u5e01\u4e0d\u8db3']"
     },
     {
         "Key": "AuctionBuyNoEnoughCoinColor",
-        "Comment": "Trading House Purchase Insufficient Tokens Color",
+        "Comment": "\u4ea4\u6613\u884c\u8d2d\u4e70\u65f6\u8d27\u5e01\u4e0d\u8db3\u989c\u8272",
         "Values": "['<color=#EE2323>%s</color>']"
     },
     {
         "Key": "AuctionBuyNoEnoughShopTips",
-        "Comment": "Trading House Purchase Insufficient Items Notification",
-        "Values": "['Items Restocking']"
+        "Comment": "\u4ea4\u6613\u884c\u8d2d\u4e70\u65f6\u5546\u54c1\u4e0d\u8db3\u63d0\u793a",
+        "Values": "['\u5546\u54c1\u8865\u8d27\u4e2d']"
     },
     {
         "Key": "AuctionBuySuccessTips",
-        "Comment": "Trading House Purchase Success Notification",
-        "Values": "['Purchase successful']"
+        "Comment": "\u4ea4\u6613\u884c\u8d2d\u4e70\u6210\u529f\u63d0\u793a",
+        "Values": "['\u8d2d\u4e70\u6210\u529f']"
     },
     {
         "Key": "AuctionRefreshReBuyTips",
-        "Comment": "Data refreshes when making purchases at Trading House.",
-        "Values": "['Trading House has been refreshed. Please make your purchase again!']"
+        "Comment": "\u4ea4\u6613\u884c\u8d2d\u4e70\u65f6\uff0c\u6570\u636e\u5237\u65b0",
+        "Values": "['\u4ea4\u6613\u884c\u5df2\u5237\u65b0\uff0c\u8bf7\u91cd\u65b0\u8d2d\u4e70\uff01']"
     },
     {
         "Key": "LightUpNoEnoughTips",
-        "Comment": "Insufficient Unlocked Collectibles Notification",
-        "Values": "['Insufficient collectibles.']"
+        "Comment": "\u70b9\u4eae\u85cf\u54c1\u6570\u91cf\u4e0d\u8db3\u63d0\u793a",
+        "Values": "['\u85cf\u54c1\u6570\u91cf\u4e0d\u8db3']"
     },
     {
         "Key": "QualityTabAll",
-        "Comment": "\"All\" Tab in Quality Filter",
-        "Values": "['All']"
+        "Comment": "\u54c1\u8d28\u7b5b\u9009\u91cc\u7684\u5168\u90e8\u9875\u7b7e",
+        "Values": "['\u5168\u90e8']"
     },
     {
         "Key": "ItemDetailUnlockTips",
-        "Comment": "Item Details Unlock Notification",
-        "Values": "['Unlocks at Collection Room Lv.%s']"
+        "Comment": "\u9053\u5177\u8be6\u60c5\u89e3\u9501\u83b7\u53d6\u63d0\u793a",
+        "Values": "['\u85cf\u54c1\u5ba4\u7b49\u7ea7%s\u89e3\u9501\u83b7\u53d6']"
     },
     {
         "Key": "OrderPutOffConfirmTips",
-        "Comment": "Cancel Order Confirmation Prompt",
-        "Values": "['System Notice', 'Remove this item from sale?']"
+        "Comment": "\u53d6\u6d88\u8ba2\u5355\u4e8c\u6b21\u786e\u8ba4\u63d0\u793a",
+        "Values": "['\u63d0\u793a', '\u662f\u5426\u4e0b\u67b6\u6b64\u5546\u54c1\uff1f']"
     },
     {
         "Key": "OrderPutOffFailTips",
-        "Comment": "Prompt of order sold successfully during the confirmation process",
-        "Values": "['Cannot remove item. Order already sold!']"
+        "Comment": "\u5728\u4e8c\u6b21\u786e\u8ba4\u8fc7\u7a0b\u4e2d\uff0c\u8ba2\u5355\u51fa\u552e\u6210\u529f\u4e86\u7684\u63d0\u793a",
+        "Values": "['\u4e0b\u67b6\u5546\u54c1\u5931\u8d25\uff0c\u8ba2\u5355\u5df2\u51fa\u552e\u6210\u529f\uff01']"
     },
     {
         "Key": "ServerRedisCircuitBreakerTips",
-        "Comment": "Auction House server down. The client will stop sending requests. Retry in 5 seconds!",
-        "Values": "['Auction House busy. Try again in 5s!']"
+        "Comment": "\u670d\u52a1\u5668\u4ea4\u6613\u884c\u6302\u4e86\uff0c\u5ba2\u6237\u7aef\u4e0d\u518d\u8bf7\u6c42\u534f\u8bae\uff0c\u63d0\u793a5\u79d2\u540e\u91cd\u8bd5\uff01",
+        "Values": "['\u62cd\u5356\u884c\u7e41\u5fd9\uff0c\u8bf75\u79d2\u540e\u91cd\u8bd5\uff01']"
     },
     {
         "Key": "BtnCollectionUnlockConditionId",
@@ -226,12 +226,12 @@
     },
     {
         "Key": "UseItemNumNoEnoughTips",
-        "Comment": "Insufficient collectible items.",
-        "Values": "['Insufficient collectibles.']"
+        "Comment": "\u4f7f\u7528\u85cf\u54c1\u9053\u5177\u6570\u91cf\u4e0d\u8db3",
+        "Values": "['\u53ef\u6d88\u8017\u85cf\u54c1\u6570\u91cf\u4e0d\u8db3']"
     },
     {
         "Key": "CollectionLockTips",
-        "Comment": "Collection Room Locked Prompt",
-        "Values": "['Unlocks when server-wide purification progress reaches %s.']"
+        "Comment": "\u85cf\u54c1\u5ba4\u4e0a\u9501\u63d0\u793a",
+        "Values": "['\u5168\u670d\u51c0\u5316\u8fdb\u5ea6\u8fbe\u5230%s\u540e\u89e3\u9501']"
     }
 ]

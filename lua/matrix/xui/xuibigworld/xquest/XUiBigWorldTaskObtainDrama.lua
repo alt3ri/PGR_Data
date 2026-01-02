@@ -15,6 +15,8 @@ function XUiBigWorldTaskObtainDrama:OnAwake()
 end
 
 function XUiBigWorldTaskObtainDrama:OnStart(questId, isFinish)
+    local systemModuleId = XMVCA.XBigWorldQuest:GetQuestSystemUiStyleId(questId)
+    XMVCA.XBigWorldUI:ChangeTheme(XMVCA.XBigWorldUI.UiThemeModule.Quest, systemModuleId)
     self._QuestId = questId
     self._IsFinish = isFinish
     self:InitView()
@@ -61,6 +63,14 @@ function XUiBigWorldTaskObtainDrama:InitView()
     local cueId = isFinish and 5600015 or 5600013
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
     self.TxtTaskTitle.text = self._Control:GetQuestName(questId)
+    if self.TxtExtraDetail then
+        local extraDetail = XMVCA.XBigWorldQuest:GetQuestFinishTip(questId)
+        local valid = not string.IsNilOrEmpty(extraDetail)
+        self.TxtExtraDetail.gameObject:SetActiveEx(valid)
+        if valid then
+            self.TxtExtraDetail.text = extraDetail
+        end
+    end
 end
 
 function XUiBigWorldTaskObtainDrama:SendCmd()

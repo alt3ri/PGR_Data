@@ -68,6 +68,7 @@ function XSgContainerFurnitureData:ClearAllFurniture()
     self._PhotoDict = {}
 end
 
+---@return table<number, XSgFurnitureData>
 function XSgContainerFurnitureData:GetFurnitureDict(isAlbumPhoto)
     local dict = isAlbumPhoto and self._PhotoDict or self._FurnitureDict
     return dict

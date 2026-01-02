@@ -16,8 +16,8 @@ function XBWCourseCoreEntity:IsNil()
     return not XTool.IsNumberValid(self:GetCoreId())
 end
 
-function XBWCourseCoreEntity:IsActivity()
-    return self:GetGroupType() == XEnumConst.BWCourse.CoreGroupType.Activity
+function XBWCourseCoreEntity:IsGamePlay()
+    return self:GetGroupType() == XEnumConst.BWCourse.CoreGroupType.GamePlay
 end
 
 function XBWCourseCoreEntity:IsQuest()

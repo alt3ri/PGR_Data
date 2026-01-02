@@ -28,9 +28,6 @@ function XUiGridSGFurnitureGiftOp:Refresh(index, id)
     local hasFurniture = id and id > 0
     local select = self._Slot:HasState(CsFurnitureSlotState.Select) or selectIndex == index
     self.Empty.gameObject:SetActiveEx(not hasFurniture)
-    --if self.NonEmpty then
-    --    self.NonEmpty.gameObject:SetActiveEx(hasFurniture)
-    --end
     self.Select.gameObject:SetActiveEx(select)
     self.BtnPackUp.gameObject:SetActiveEx(id > 0)
     self:SetVisible(self.Parent:GetSelectMajorType() == SgFurnitureType.Gift)
@@ -110,14 +107,17 @@ function XUiPanelSGGiftWallOp:CreateFurniture(index, id, visible, ignoreUpdate)
         XLog.Error("【摆件架】不存在家具：" .. id)
         return
     end
+    local majorType = 0
     if id and id > 0 then
         local data = self:GetPutWallContainerData()
         local f = data:GetFurniture(id, false)
+        local cfgId = self._Control:GetFurnitureConfigIdById(id)
         if not f then
-            data:AddFurniture(id, self._Control:GetFurnitureConfigIdById(id), index, 0, false)
+            data:AddFurniture(id, cfgId, index, 0, false)
         end
+        majorType = self._Control:GetFurnitureMajorType(cfgId)
     end
-    local slot = self._Container:CreateFurniture(index, id, fightData:GetComponent())
+    local slot = self._Container:CreateFurniture(index, id, fightData:GetComponent(), majorType)
     self:RefreshGridOp(slot, slot.Index, id, visible, ignoreUpdate)
 end
 

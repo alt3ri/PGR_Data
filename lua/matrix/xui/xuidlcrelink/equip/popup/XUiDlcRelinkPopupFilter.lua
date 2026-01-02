@@ -6,6 +6,7 @@ local XUiDlcRelinkPopupFilter = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkPopup
 
 function XUiDlcRelinkPopupFilter:OnAwake()
     self.GridCharacteristic.gameObject:SetActiveEx(false)
+    self.CurSelectGrid = nil
     self:RegisterUiEvents()
 end
 
@@ -27,23 +28,47 @@ function XUiDlcRelinkPopupFilter:OnStart(equipMainFactorIds, equipFilterCache, i
     self.EquipFilterCache.EquipType = self.EquipFilterCache.EquipType or 0
 
     self:InitBtnGroup(self.TypeReform, "ReformedType")
-    self:InitBtnGroup(self.TypeNumber, "FactorRemovedType")
+    --self:InitBtnGroup(self.TypeNumber, "FactorRemovedType")
     self:InitBtnGroup(self.TypePosition, "EquipType")
 
     if self.TypePosition then
         self.TypePosition.gameObject:SetActiveEx(not self.IsHidePosition)
     end
+    -- 隐藏删除次数筛选
+    if self.TypeNumber then
+        self.TypeNumber.gameObject:SetActiveEx(false)
+    end
 
     self:InitDynamicTable()
+end
+
+---@param equipMainFactorIds table<number> 装备主属性Id列表
+---@param equipFilterCache XDlcRelinkEquipFilterCache 装备筛选缓存
+function XUiDlcRelinkPopupFilter:RefreshFilter(equipMainFactorIds, equipFilterCache)
+    self.EquipMainFactorIds = equipMainFactorIds
+    self.EquipFilterCache = equipFilterCache or {}
+
+    self.EquipFilterCache.FactorIds = self.EquipFilterCache.FactorIds or {}
+    self.EquipFilterCache.ReformedType = self.EquipFilterCache.ReformedType or 0
+    self.EquipFilterCache.FactorRemovedType = self.EquipFilterCache.FactorRemovedType or 0
+    self.EquipFilterCache.EquipType = self.EquipFilterCache.EquipType or 0
+
+    if self.TypeReform then
+        self.TypeReform:CancelSelect()
+    end
+    if not self.IsHidePosition and self.TypePosition then
+        self.TypePosition:CancelSelect()
+    end
+    self:SetupDynamicTable()
 end
 
 function XUiDlcRelinkPopupFilter:OnEnable()
     if self.TypeReform and XTool.IsNumberValid(self.EquipFilterCache.ReformedType) then
         self.TypeReform:SelectIndex(self.EquipFilterCache.ReformedType, false)
     end
-    if self.TypeNumber and XTool.IsNumberValid(self.EquipFilterCache.FactorRemovedType) then
-        self.TypeNumber:SelectIndex(self.EquipFilterCache.FactorRemovedType, false)
-    end
+    --if self.TypeNumber and XTool.IsNumberValid(self.EquipFilterCache.FactorRemovedType) then
+    --    self.TypeNumber:SelectIndex(self.EquipFilterCache.FactorRemovedType, false)
+    --end
     if not self.IsHidePosition and self.TypePosition and XTool.IsNumberValid(self.EquipFilterCache.EquipType) then
         self.TypePosition:SelectIndex(self.EquipFilterCache.EquipType, false)
     end
@@ -101,21 +126,32 @@ function XUiDlcRelinkPopupFilter:OnDynamicTableEvent(event, index, grid)
         grid:Refresh(factorId)
         local isSelected = table.contains(self.EquipFilterCache.FactorIds, factorId)
         grid:SetSelect(isSelected)
-    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
-        local isSelected, i = table.contains(self.EquipFilterCache.FactorIds, factorId)
-        if isSelected then
-            table.remove(self.EquipFilterCache.FactorIds, i)
-            grid:SetSelect(false)
-        else
-            table.insert(self.EquipFilterCache.FactorIds, factorId)
-            grid:SetSelect(true)
+        if isSelected and not self.CurSelectGrid then
+            self.CurSelectGrid = grid
         end
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
+        --单选
+        local curFactorId = self.EquipFilterCache.FactorIds[1] or 0
+        local isSelected = curFactorId == factorId
+        if isSelected then
+            self.EquipFilterCache.FactorIds[1] = nil
+            grid:SetSelect(false)
+            self.CurSelectGrid = nil
+        else
+            self.EquipFilterCache.FactorIds[1] = factorId
+            if self.CurSelectGrid then
+                self.CurSelectGrid:SetSelect(false)
+            end
+            grid:SetSelect(true)
+            self.CurSelectGrid = grid
+        end
+
         self:InvokeUpdateCallback()
     end
 end
 
 function XUiDlcRelinkPopupFilter:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkPopupFilter:OnBtnCloseClick()

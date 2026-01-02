@@ -91,6 +91,16 @@ local GoodsName = {
     [XArrangeConfigs.Types.SgDormFurniture] = function(templateId)
         return XMVCA.XSkyGardenDorm:GetFurnitureName(templateId)
     end,
+    [XArrangeConfigs.Types.Anim] = function(templateId)
+        local template = XMVCA.XBigWorldAlbum:GetAnimationConfigById(templateId)
+        if not template then return "" end
+        return template.Name
+    end,
+    [XArrangeConfigs.Types.Filter] = function(templateId)
+        local template = XMVCA.XBigWorldAlbum:GetFilterConfigById(templateId)
+        if not template then return "" end
+        return template.Name
+    end,
 }
 
 local GoodsQuality = {
@@ -246,6 +256,16 @@ local GoodsIcon = {
     [XArrangeConfigs.Types.SgDormFurniture] = function(templateId)
         return XMVCA.XSkyGardenDorm:GetFurnitureIcon(templateId)
     end,
+    [XArrangeConfigs.Types.Anim] = function(templateId)
+        local template = XMVCA.XBigWorldAlbum:GetAnimationConfigById(templateId)
+        if not template then return "" end
+        return template.Icon
+    end,
+    [XArrangeConfigs.Types.Filter] = function(templateId)
+        local template = XMVCA.XBigWorldAlbum:GetFilterConfigById(templateId)
+        if not template then return "" end
+        return template.Icon
+    end,
 }
 
 local GoodsDescription = {
@@ -346,6 +366,16 @@ local GoodsDescription = {
     [XArrangeConfigs.Types.SgDormFurniture] = function(templateId)
         return XMVCA.XSkyGardenDorm:GetFurnitureDescription(templateId)
     end,
+    [XArrangeConfigs.Types.Anim] = function(templateId)
+        local template = XMVCA.XBigWorldAlbum:GetAnimationConfigById(templateId)
+        if not template then return "" end
+        return template.Desc
+    end,
+    [XArrangeConfigs.Types.Filter] = function(templateId)
+        local template = XMVCA.XBigWorldAlbum:GetFilterConfigById(templateId)
+        if not template then return "" end
+        return template.Desc
+    end,
 }
 
 local GoodsWorldDesc = {
@@ -420,6 +450,16 @@ local GoodsWorldDesc = {
 
     [XArrangeConfigs.Types.SgDormFashion] = function(templateId)
         return XMVCA.XSkyGardenDorm:GetFashionWorldDescription(templateId)
+    end,
+    [XArrangeConfigs.Types.Anim] = function(templateId)
+        local template = XMVCA.XBigWorldAlbum:GetAnimationConfigById(templateId)
+        if not template then return "" end
+        return template.WorldDesc
+    end,
+    [XArrangeConfigs.Types.Filter] = function(templateId)
+        local template = XMVCA.XBigWorldAlbum:GetFilterConfigById(templateId)
+        if not template then return "" end
+        return template.WorldDesc
     end,
 }
 
@@ -536,6 +576,13 @@ local GoodsCurrentCount = {
 
     [XArrangeConfigs.Types.SgDormFurniture] = function(templateId)
         return XMVCA.XSkyGardenDorm:GetFurnitureCount(templateId)
+    end,
+
+    [XArrangeConfigs.Types.Anim] = function(templateId)
+        return XMVCA.XBigWorldAlbum:IsUnlockCharacterActionId(templateId) and 1 or 0
+    end,
+    [XArrangeConfigs.Types.Filter] = function(templateId)
+        return XMVCA.XBigWorldAlbum:IsUnlockFilterId(templateId) and 1 or 0
     end,
 }
 
@@ -940,6 +987,22 @@ GoodsShowParams[XArrangeConfigs.Types.SgDormFashion] = function(templateId)
 end
 
 
+GoodsShowParams[XArrangeConfigs.Types.Anim] = function(templateId)
+    if not XMVCA:IsRegisterAgency(ModuleId.XBigWorldAlbum) then
+        XLog.Error("尚未注册模块", ModuleId.XBigWorldAlbum)
+        return
+    end
+    return XMVCA.XBigWorldAlbum:GeAnimParams(templateId)
+end
+
+GoodsShowParams[XArrangeConfigs.Types.Filter] = function(templateId)
+    if not XMVCA:IsRegisterAgency(ModuleId.XBigWorldAlbum) then
+        XLog.Error("尚未注册模块", ModuleId.XBigWorldAlbum)
+        return
+    end
+    return XMVCA.XBigWorldAlbum:GetFilterParams(templateId)
+end
+
 --==============================--
 --desc: 通用物品展示参数
 --@templateId: 配置表id
@@ -948,11 +1011,12 @@ end
 function XGoodsCommonManager.GetGoodsShowParamsByTemplateId(templateId)
     local arrangeType = XArrangeConfigs.GetType(templateId)
 
-    if not GoodsShowParams[arrangeType] then
+    local func = GoodsShowParams[arrangeType]
+    if not func then
         local str = "XGoodsCommonManager.GetGoodsShowParamsByTemplateId error: goods type is nonsupport, arrangeType is "
         XLog.Error(str .. arrangeType .. " templateId is " .. templateId)
         return
     end
 
-    return GoodsShowParams[arrangeType](templateId)
+    return func(templateId)
 end

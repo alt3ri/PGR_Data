@@ -48,7 +48,12 @@ function XUiGridDlcRelinkCharacterAttribute:Format(v, isPercent)
         return ""
     end
     if isPercent then
-        return string.format("%s%%", math.floor(v / 100))
+        local value = v / 100
+        local intPart, fracPart = math.modf(value)
+        if fracPart == 0 then
+            value = intPart
+        end
+        return string.format("%s%%", value)
     end
     return tostring(v)
 end
@@ -58,9 +63,22 @@ function XUiGridDlcRelinkCharacterAttribute:Format2(v, isPercent)
         return ""
     end
     if isPercent then
-        return string.format("%s%%", math.floor(v / 100))
+        local value = v / 100
+        local intPart, fracPart = math.modf(value)
+        if fracPart == 0 then
+            value = intPart
+        end
+        if value >= 0 then
+            return string.format("+%s%%", value)
+        else
+            return string.format("%s%%", value)
+        end
     end
-    return string.format("+%s", v)
+    if v >= 0 then
+        return string.format("+%s", v)
+    else
+        return tostring(v)
+    end
 end
 
 return XUiGridDlcRelinkCharacterAttribute

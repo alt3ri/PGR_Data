@@ -18,6 +18,7 @@
 --InitCd = 0, --初始CD
 --Cd = 0, --设置CD
 --IsNeedODState = false,--是否在OD状态下才可以释放
+--IsLockInODState = false,--是否限制在OD状态下释放
 --IsODResetCd =false, --OD状态切换时重置CD
 --PhaseNeed = {}, -- 阶段要求
 --HpNeed = {}, --血量要求
@@ -50,6 +51,7 @@ local SkillConditions = {
     [805205] = {--格挡反击（逻辑释放）
     },
     [805206] = {--流星冲锋坠（衔接）
+        IsLockInODState = true,
     },
     [805207] = {--交叉射击
         DistanceNeed = {10}, --距离要求
@@ -57,10 +59,12 @@ local SkillConditions = {
     },
     [805208] = {--推进拳
         DistanceNeed = {20},
+        IsLockInODState = true,
     },
     [805209] = {--下段斩（空落锤衔接）
+        PhaseNeed = {2,3,4},
     },
-    [805209] = {--一阶段前推（衔接）
+    [805210] = {--一阶段前推（衔接）
     },
     [805211] = {--一阶段后推（衔接）
     },
@@ -87,25 +91,30 @@ local SkillConditions = {
         DistanceNeed = {12,999}, --
     },
     [805222] = {--光刃三连(空落锤衔接)
+        DistanceNeed = {20}, --
+        IsLockInODState = true,
+        PhaseNeed = {2,3,4}, -- 阶段要求
     },
-    [805223] = {--光刃上天（格挡处理）
+    [805223] = {--光刃上天
         PhaseNeed = {2,3,4}, -- 阶段要求
     },
     [805224] = {--光刃二连
+        DistanceNeed = {20}, --
+        IsLockInODState = true,
         PhaseNeed = {2,3,4}, -- 阶段要求
     },
-    [805225] = {--胸炮浮空版(衔接里面处理)
+    [805225] = {--胸炮浮空版
     },
     [805226] = {--胸炮地面起跳版
         PhaseNeed = {2,3,4}, -- 阶段要求
-        DistanceNeed ={15,999}
+        DistanceNeed ={20,999}
     },
     [805227] = {--升龙腿
     },
     [805228] = {--空落锤(衔接)
-        Cd=10,
+        Cd=0,
     },
-    [805229] = {--重火锤（还没配伤害盒）
+    [805229] = {--重火锤
         PhaseNeed = {2,3,4}, -- 阶段要求
     },
     [805230] = {--后退斩
@@ -115,6 +124,7 @@ local SkillConditions = {
     },
     [805232] = {--瑟提锤
         DistanceNeed = {10,25},
+        IsLockInODState = true,
     },
     [805233] = {--拼刀小受击
     },
@@ -155,12 +165,70 @@ local SkillConditions = {
     },
     [805257]={ --浮空机制启动技能
         IsNeedODState = true,
-        PhaseNeed = {2}
+        PhaseNeed = {2,3,4}, -- 阶段要求
     },
     [805258]={ --Dash机制启动技能
-        IsNeedODState = false,
         IsNeedODState = true,
         PhaseNeed = {1,3}
+    },
+    [805276] ={--蓄力大不死斩
+        IsNeedODState = true,
+    },
+    [805273] ={--OD：胸炮浮空版
+    },
+    [805274] ={--OD：胸炮地面起跳版
+        PhaseNeed = {2,3,4}, -- 阶段要求
+        DistanceNeed ={20,999}
+    },
+    [805275] ={--OD:蓄力不死斩启动技能
+        PhaseNeed = {2,3,4}, -- 阶段要求
+        IsNeedODState = true,
+    },
+    [805277] ={--OD：光刃二连
+        DistanceNeed = {20},
+        IsNeedODState = true,
+        PhaseNeed = {2,3,4}, -- 阶段要求
+    },
+    [805278] ={--OD：光刃三连
+        DistanceNeed = {20}, 
+        IsNeedODState = true,
+        PhaseNeed = {2,3,4}, -- 阶段要求
+    },
+    [805279] ={--OD:流星冲锋坠
+        IsNeedODState = true,
+    },
+    --------------70AI的技能条件配置-------------------------
+    [105215] ={ --70
+        DistanceNeed = {8},
+    },
+    [105216] ={ --70
+        DistanceNeed = {8},
+    },
+    [105217] ={ --70
+        DistanceNeed = {8},
+    },
+    [105218] ={ --70
+        DistanceNeed = {8},
+    },
+
+    --------------丽芙AI的技能条件配置-------------------------
+    [105301] ={ --普攻
+        DistanceNeed = {15},
+    },
+    [105302] ={ --普攻
+        DistanceNeed = {15},
+    },
+    [105303] ={ --普攻
+        DistanceNeed = {15},
+    },
+    [105304] ={ --普攻
+        DistanceNeed = {15},
+    },
+    [105305] ={ --普攻
+        DistanceNeed = {15},
+    },
+    [105306] ={ --普攻
+        DistanceNeed = {15},
     },
 }
 return SkillConditions

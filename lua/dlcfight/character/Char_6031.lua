@@ -1,4 +1,4 @@
-local Base = require("Character/BigWorld/XBigWorldPlayerCharBase")
+local Base = require("Common/XBigWorldCharBase")
 local XNpcFollowController = require("Character/Common/XNpcFollowController")
 local XNpcGuideController = require("Character/Common/XNpcGuideController")
 
@@ -9,7 +9,7 @@ local GuideAIMode = {
 }
 
 ---历程任务向导AI
----@class Char_6031 : XBigWorldPlayerCharBase
+---@class Char_6031 : XBigWorldCharBase
 ---@field _AIMode number AI模式, 模式详看 GuideAIMode
 ---@field _guideController XNpcGuideController 向导组件
 ---@field _guideIsPlayedCaption boolean 向导是否播放过提示字幕

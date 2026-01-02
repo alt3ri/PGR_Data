@@ -13,6 +13,18 @@ local ViewSideEnum = {
     Enemy = 2, -- 查看敌人的统计数据
 }
 
+-- 数值类型
+local ValueType = {
+    Damage = 1, -- 伤害
+    CureOrProtector = 2, -- 治疗或护盾
+}
+
+-- 来源类型
+local SourceType = {
+    Skill = 0,
+    Other = 1,
+}
+
 function XUiPanelTheatre5SettleSummary:OnStart(resultData, summaryData)
     self.ResultData = resultData
     self.SummaryData = summaryData
@@ -57,7 +69,7 @@ function XUiPanelTheatre5SettleSummary:RefreshAllShow()
     self:RefreshSkillShow()
 
     if self.ViewSide == ViewSideEnum.Self then
-        self.Parent:UpdateRelics(self.ResultData.ResultData.WorldData.AutoChessGameplayData.SelfData)
+        self.Parent:UpdateRelics(self.ResultData.ResultData.WorldData.AutoChessGameplayData.SelfData, true)
     else
         self.Parent:UpdateRelics(self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData)
     end
@@ -101,20 +113,24 @@ function XUiPanelTheatre5SettleSummary:RefreshRunesShow()
             grid:SetItemData(itemData)
 
             grid.PanelTrigger.gameObject:SetActiveEx(true)
-            if runesData:ContainsKey(id) then
-                grid:SetTriggerTimes(runesData[id])
-            else
-                ---@type XTableTheatre5ItemRune
-                local gemCfg = self._Control:GetTheatre5ItemRuneCfgById(id)
 
-                if gemCfg and gemCfg.Type == XMVCA.XTheatre5.EnumConst.GemType.Passive then
-                    grid:SetPassiveShow()
-                else
-                    grid:SetTriggerTimes(0)
+            ---@type XTableTheatre5ItemRune
+            local gemCfg = self._Control:GetTheatre5ItemRuneCfgById(id)
+
+            if gemCfg and gemCfg.Type == XMVCA.XTheatre5.EnumConst.GemType.Passive then
+                grid:SetPassiveShow()
+            else
+                local timesVal = 0
+
+                if runesData:ContainsKey(id) then
+                    timesVal = runesData[id]
                 end
+
+                grid:SetTriggerTimes(timesVal)
             end
 
             self._GridGemList[itemData.Index] = grid
+            grid.Transform:SetAsLastSibling()
         end
 
     else
@@ -139,46 +155,12 @@ function XUiPanelTheatre5SettleSummary:RefreshSkillShow()
         self._SkillItemList = {}
     end
 
-    self.SkillDamageRecord = nil
-    self.SkillCureRecord = nil
-    self.SkillMaxDamage = 0
-    self.SkillMaxCure = 0
+    self:_CollectSkillAndOtherOutputData()    
 
-    if self.ViewSide == ViewSideEnum.Self then
-        self.SkillIdList = self._Control:GetCurSelfSkillIdListWithNormalATK()
-        self.NormalATKSkillId = self._Control:GetCurSelfNormalAttackSkillId()
-        self.SkillDamageRecord = self.SummaryData.AutoChessRecord.SelfRecord and self.SummaryData.AutoChessRecord.SelfRecord.SkillDamageRecord or nil
-        self.SkillCureRecord = self.SummaryData.AutoChessRecord.SelfRecord and self.SummaryData.AutoChessRecord.SelfRecord.SkillCureRecord or nil
-    else
-        self.SkillIdList = self._Control:GetCurEnemySkillIdListWithNormalATK()
-        self.NormalATKSkillId = self._Control:GetCurEnemyNormalAttackSkillId()
-        self.SkillDamageRecord = self.SummaryData.AutoChessRecord.EnemyRecord and self.SummaryData.AutoChessRecord.EnemyRecord.SkillDamageRecord or nil
-        self.SkillCureRecord = self.SummaryData.AutoChessRecord.EnemyRecord and self.SummaryData.AutoChessRecord.EnemyRecord.SkillCureRecord or nil
-    end
-
-    if self.SkillDamageRecord and self.SkillCureRecord then
-        -- 查找最大伤害值和恢复量
-        local iter = self.SkillDamageRecord:GetEnumerator()
-        while iter:MoveNext() do
-            local v = iter.Current.Value
-            -- 处理v
-            if v > self.SkillMaxDamage then
-                self.SkillMaxDamage = v
-            end
-        end
-
-        iter = self.SkillCureRecord:GetEnumerator()
-        while iter:MoveNext() do
-            local v = iter.Current.Value
-            -- 处理v
-            if v > self.SkillMaxCure then
-                self.SkillMaxCure = v
-            end
-        end
-
-        -- 刷新UI
-        if not XTool.IsTableEmpty(self.SkillIdList) then
-            XUiHelper.RefreshCustomizedList(self.ListData.transform, self.GridData, #self.SkillIdList, function(index, go)
+    -- 如果至少有一个指标有有效值，则需要列出来
+    if XTool.IsNumberValidEx(self.MaxDamageRecord) or XTool.IsNumberValidEx(self.MaxCureOrProtectorRecord) then
+        if not XTool.IsTableEmpty(self.RecordDataList) then
+            XUiHelper.RefreshCustomizedList(self.ListData.transform, self.GridData, #self.RecordDataList, function(index, go)
                 local grid = self._SkillItemList[go]
 
                 if not grid then
@@ -190,16 +172,219 @@ function XUiPanelTheatre5SettleSummary:RefreshSkillShow()
                 grid:Open()
                 --- 需要在打开后再初始化，接口内已做重复初始化跳过判断
                 grid:InitBindItem(XUiGridTheatre5SettleSkill)
+                
+                local damageRecord = 0
+                local cureOrProtectorRecord = 0
+                
+                local recordData = self.RecordDataList[index]
 
-                local skillId = self.SkillIdList[index]
-                local damageRecord = self.SkillDamageRecord:ContainsKey(skillId) and self.SkillDamageRecord[skillId] or 0
-                local cureRecord = self.SkillCureRecord:ContainsKey(skillId) and self.SkillCureRecord[skillId] or 0
-                grid:ShowDamage(damageRecord, self.SkillMaxDamage)
-                grid:ShowHeal(cureRecord, self.SkillMaxCure)
-                grid:SetItemShowById(skillId, skillId == self.NormalATKSkillId)
+                if recordData.Type == SourceType.Skill then
+                    local skillId = recordData.Id
+                    if self.SkillDamageRecordDict and self.SkillDamageRecordDict:ContainsKey(skillId) then
+                        damageRecord = self.SkillDamageRecordDict[skillId]
+                    end
+
+                    if not XTool.IsTableEmpty(self.SkillCureOrProtectorRecordTable) then
+                        cureOrProtectorRecord = self.SkillCureOrProtectorRecordTable[skillId] or 0
+                    end
+
+                    grid:SetItemShowById(skillId, skillId == self.NormalATKSkillId)
+                elseif recordData.Type == SourceType.Other then
+                    damageRecord = self.OtherDamageRecord
+                    cureOrProtectorRecord = self.OtherCureOrProtectorRecord
+                    
+                    grid:SetOtherSourceShow()    
+                end
+                
+                grid:ShowDamage(damageRecord, self.MaxDamageRecord)
+                grid:ShowHeal(cureOrProtectorRecord, self.MaxCureOrProtectorRecord)
             end)
         end
     end
+end
+
+-- 分类和收集数据
+function XUiPanelTheatre5SettleSummary:_CollectSkillAndOtherOutputData()
+    -- 各种数值输出，不仅仅是技能
+    local dataList = {}
+    
+    local skillIdList = nil
+    local recordData = nil
+
+    self.SkillDamageRecordDict = nil
+    self.SkillCureOrProtectorRecordTable = nil
+
+    self.OtherDamageRecord = 0
+    self.OtherCureOrProtectorRecord = 0
+    
+    if self.ViewSide == ViewSideEnum.Self then
+        skillIdList = self._Control:GetCurSelfSkillIdListWithNormalATK()
+        self.NormalATKSkillId = self._Control:GetCurSelfNormalAttackSkillId()
+
+        recordData = self.SummaryData.AutoChessRecord.SelfRecord
+    else
+        skillIdList = self._Control:GetCurEnemySkillIdListWithNormalATK()
+        self.NormalATKSkillId = self._Control:GetCurEnemyNormalAttackSkillId()
+        recordData = self.SummaryData.AutoChessRecord.EnemyRecord
+    end
+    
+    -- 设置技能数据
+    if not XTool.IsTableEmpty(skillIdList) then
+        for i, v in pairs(skillIdList) do
+            local data = {
+                Type = SourceType.Skill,
+                Id = v,
+            }
+            
+            table.insert(dataList, data)
+        end
+    end
+    
+    -- 收集各来源及各类型的统计数值
+    if recordData then
+        -- 默认技能类型产生的数据是0号位, 其他位置归类为“其他来源”
+        
+        -- 先收集单一类型：伤害值
+        if recordData.DamageRecord then
+            local damageRecord = recordData.DamageRecord
+
+            if damageRecord:ContainsKey(SourceType.Skill) then
+                self.SkillDamageRecordDict = damageRecord[SourceType.Skill]
+            end
+            
+            -- 收集除了技能以外的来源
+            self.OtherDamageRecord = self:_CollectOtherSourceDamageRecord(damageRecord)
+        end
+
+        -- 再收集复合类型：治疗和护盾
+        local cureAndProtectorRecordTable = self:_MergeCureAndProtectorRecordDict(recordData.CureRecord, recordData.ProtectorRecord)
+
+        if not XTool.IsTableEmpty(cureAndProtectorRecordTable) then
+            self.SkillCureOrProtectorRecordTable = cureAndProtectorRecordTable[SourceType.Skill]
+            
+            -- 收集除了技能以外的来源
+            self.OtherCureOrProtectorRecord = self:_CollectOtherSourceCureAndProtectorRecord(cureAndProtectorRecordTable)
+        end
+        
+    end
+    
+    -- 如果其他来源的数据不都为0，则额外增加一个“其他来源”的数据
+    if XTool.IsNumberValidEx(self.OtherDamageRecord) or XTool.IsNumberValidEx(self.OtherCureOrProtectorRecord) then
+        local data = {
+            Type = SourceType.Other,
+            Id = 0,
+        }
+
+        table.insert(dataList, data)
+    end
+    
+    -- 查找伤害最大值、治疗/护盾最大值，作为进度条范围
+    local maxDamage = self.OtherDamageRecord
+    local maxCurOrProtector = self.OtherCureOrProtectorRecord
+
+    if self.SkillDamageRecordDict and self.SkillDamageRecordDict.GetEnumerator then
+        local iter = self.SkillDamageRecordDict:GetEnumerator()
+        while iter:MoveNext() do
+            if iter.Current.Value > maxDamage then
+                maxDamage = iter.Current.Value
+            end
+        end
+    end
+
+    if not XTool.IsTableEmpty(self.SkillCureOrProtectorRecordTable) then
+        for i, v in pairs(self.SkillCureOrProtectorRecordTable) do
+            if v > maxCurOrProtector then
+                maxCurOrProtector = v
+            end
+        end
+    end
+    
+    self.MaxDamageRecord = maxDamage
+    self.MaxCureOrProtectorRecord = maxCurOrProtector
+    self.RecordDataList = dataList
+end
+
+--- 收集除了技能以外其他来源造成的伤害之和
+function XUiPanelTheatre5SettleSummary:_CollectOtherSourceDamageRecord(damageRecord)
+    local sum = 0
+    
+    local iter = damageRecord:GetEnumerator()
+    while iter:MoveNext() do
+        if iter.Current.Key ~= SourceType.Skill then
+            local secondDict = iter.Current.Value
+
+            if secondDict and secondDict.GetEnumerator then
+                local secondIter = secondDict:GetEnumerator()
+                while secondIter:MoveNext() do
+                    sum = sum + secondIter.Current.Value
+                end
+            end
+        end
+    end
+    
+    return sum
+end
+
+--- 收集除了技能以外其他来源产生的治疗/护盾数值之和
+---@param cureAndProjectorRecord table
+function XUiPanelTheatre5SettleSummary:_CollectOtherSourceCureAndProtectorRecord(cureAndProjectorRecord)
+    local sum = 0
+
+    if not XTool.IsTableEmpty(cureAndProjectorRecord) then
+        for sourceType, dict in pairs(cureAndProjectorRecord) do
+            if sourceType ~= SourceType.Skill then
+                for i, v in pairs(dict) do
+                    sum = sum + v
+                end
+            end
+        end
+    end
+    
+    return sum
+end
+
+-- 将治疗和护盾的数值，按照来源类型、具体来源进行合并
+---@return table
+function XUiPanelTheatre5SettleSummary:_MergeCureAndProtectorRecordDict(cureRecord, protectorRecord)
+    -- 一级字典，按照来源类型划分
+    local firstDict = {}
+
+    -- 先将治疗统计转移到table中
+    local iter = cureRecord:GetEnumerator()
+    while iter:MoveNext() do
+        local secondCureDict = iter.Current.Value
+        
+        local finalSecondDict = firstDict[iter.Current.Key] or {}
+
+        if secondCureDict and secondCureDict.GetEnumerator then
+            local secondIter = secondCureDict:GetEnumerator()
+            while secondIter:MoveNext() do
+                finalSecondDict[secondIter.Current.Key] = secondIter.Current.Value
+            end
+        end
+
+        firstDict[iter.Current.Key] = finalSecondDict
+    end
+    
+    -- 再将护盾部分累加过去
+    iter = protectorRecord:GetEnumerator()
+    while iter:MoveNext() do
+        local secondCureDict = iter.Current.Value
+
+        local finalSecondDict = firstDict[iter.Current.Key] or {}
+
+        if secondCureDict and secondCureDict.GetEnumerator then
+            local secondIter = secondCureDict:GetEnumerator()
+            while secondIter:MoveNext() do
+                local oldValue = finalSecondDict[secondIter.Current.Key] or 0
+                finalSecondDict[secondIter.Current.Key] = secondIter.Current.Value + oldValue
+            end
+        end
+
+        firstDict[iter.Current.Key] = finalSecondDict
+    end
+    
+    return firstDict
 end
 
 function XUiPanelTheatre5SettleSummary:OnBtnChangeClickEvent()

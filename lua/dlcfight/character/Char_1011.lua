@@ -11,6 +11,7 @@ function XCharTes1011:InitEventCallBackRegister()
     --按需求解除注释进行注册
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
     self.kaiguan = true
+    self.jishu = 0
 end
 
 function XCharTes1011:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
@@ -59,16 +60,59 @@ function XCharTes1011:OnNpcDamageEvent(launcherId, targetId, magicId, kind, phys
         self.kaiguan = false
         self._proxy:ApplyMagic(self._uuid, self._uuid,  10510701, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid,  1010583, 1)
-        self._proxy:ApplyMagic(self._uuid, self._uuid,  1010586, 1)
-        self._proxy:AddTimerTask(6, function()--延迟6秒后，恢复CD
+        self.jishu = self.jishu + 1
+        self._proxy:AddTimerTask(3, function()--延迟6秒后，恢复CD
             self.kaiguan = true
         end)
-        if self._proxy:GetBuffStacks(self._uuid, 1010586) == 1 then
-            self._proxy:ApplyMagic(self._uuid, self._uuid,  1010587, 1)
-        elseif self._proxy:GetBuffStacks(self._uuid, 1010586) == 2 then
-            self._proxy:ApplyMagic(self._uuid, self._uuid,  1010588, 1)
-        elseif self._proxy:GetBuffStacks(self._uuid, 1010586) == 3 then
-            self._proxy:ApplyMagic(self._uuid, self._uuid,  1010589, 1)
+        if self.jishu < 1 then  -- 第1次释放时的伤害
+            if self._proxy:CheckBuffByKind(self._uuid, 1016385)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010651, 1)  -- 强化1级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016386)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010655, 1)  -- 强化2级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016387)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010659, 1)  -- 强化3级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016388)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010587, 1)  -- 强化4级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016389)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010663, 1)  -- 强化5级伤害
+            end
+
+        elseif self.jishu < 2 then  -- 第2次释放时的伤害
+            if self._proxy:CheckBuffByKind(self._uuid, 1016385)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010652, 1)  -- 强化1级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016386)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010656, 1)  -- 强化2级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016387)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010660, 1)  -- 强化3级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016388)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010588, 1)  -- 强化4级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016389)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010664, 1)  -- 强化5级伤害
+            end
+        elseif self.jishu < 3 then  -- 第3次释放时的伤害
+            if self._proxy:CheckBuffByKind(self._uuid, 1016385)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010653, 1)  -- 强化1级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016386)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010657, 1)  -- 强化2级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016387)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010661, 1)  -- 强化3级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016388)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010589, 1)  -- 强化4级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016389)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010665, 1)  -- 强化5级伤害
+            end
+        elseif self.jishu < 4 then  -- 第4次释放时的伤害
+            if self._proxy:CheckBuffByKind(self._uuid, 1016385)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010654, 1)  -- 强化1级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016386)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010658, 1)  -- 强化2级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016387)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010662, 1)  -- 强化3级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016388)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010590, 1)  -- 强化4级伤害
+            elseif self._proxy:CheckBuffByKind(self._uuid, 1016389)  then
+                self._proxy:ApplyMagic(self._uuid, self._uuid,  1010666, 1)  -- 强化5级伤害
+            end
         end
     end
 end

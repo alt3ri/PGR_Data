@@ -23,7 +23,10 @@ local CmdPrefix = {
     [CmdType.C2L] = "C2L: "
 }
 
-local IgnorePrint
+local IgnorePrint = {
+    CMD_GET_MAP_PIN_DEFAULT_ACTIVE_BY_SCENE_OBJECT = true,
+    CMD_UPDATE_MAP_PIN_POSITION = true,
+}
 
 local CsX3CProxyDebug = CS.X3CProxyDebug
 
@@ -53,6 +56,10 @@ end
 ---@param func function 函数
 ---@param obj any
 function X3CProxyAgency:RegisterHandler(cmd, func, obj)
+    if not cmd then
+        XLog.Error("注册handler, cmd: nil, " .. debug.traceback())
+        return
+    end
     if self._HandlerTab[cmd] then
         XLog.Error("请勿重复注册handler, cmd: " .. tostring(cmd))
         return 
@@ -133,9 +140,6 @@ end
 
 function X3CProxyAgency:CheckPrintEnable()
     Print3CMsg = CS.XApplication.Debug and XSaveTool.GetData(LocalKey)
-    if Print3CMsg and not IgnorePrint then
-        IgnorePrint = {}
-    end
     return Print3CMsg
 end
 

@@ -70,25 +70,27 @@ function XUiDlcMultiPlayerGift:_InitTab()
     self.BtnGroupList = {
         self.BtnReward,
         self.BtnTask,
-        self.BtnTaskDaily,
-        self.BtnTaskChallenge,
+        -- self.BtnTaskDaily,
+        -- self.BtnTaskChallenge,
     }
     self.TabIndex = {
         Reward = 1,
         TaskDaily = 3,
-        TaskChallenge = 4
+        TaskChallenge = 2
     }
     self.TabPanelMap = {
         [self.TabIndex.Reward] = self.RewardPanelUi,
-        [self.TabIndex.TaskDaily] = self.TaskPanelUi,
+        -- [self.TabIndex.TaskDaily] = self.TaskPanelUi,
         [self.TabIndex.TaskChallenge] = self.TaskPanelUi,
     }
 
-    self.BtnTaskDaily.SubGroupIndex = 2
+    -- self.BtnTaskDaily.SubGroupIndex = 2
     self.BtnTaskChallenge.SubGroupIndex = 2
 
     self.TabBtnGroup:Init(self.BtnGroupList, Handler(self, self.OnSelectedTag))
     self.TabBtnGroup:SelectIndex(1)
+    self.BtnTaskDaily.gameObject:SetActiveEx(false)
+    self.BtnTaskChallenge.gameObject:SetActiveEx(false)
 end
 
 function XUiDlcMultiPlayerGift:_RefreshTaskRedPoint()

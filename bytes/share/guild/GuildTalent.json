@@ -1,7 +1,7 @@
 [
     {
         "Id": 1101,
-        "Name": "Beacon: Power",
+        "Name": "\u4fe1\u6807\u00b7\u5f3a\u529b",
         "GuildLevel": 1,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[0, 0]",
@@ -9,7 +9,7 @@
     },
     {
         "Id": 1102,
-        "Name": "Beacon: Garrison",
+        "Name": "\u4fe1\u6807\u00b7\u9a7b\u9632",
         "GuildLevel": 1,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[0, 0]",
@@ -17,7 +17,7 @@
     },
     {
         "Id": 1103,
-        "Name": "Beacon: Physical DMG Up",
+        "Name": "\u4fe1\u6807\u00b7\u7269\u7406\u589e\u4f24",
         "GuildLevel": 1,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[0, 0]",
@@ -25,7 +25,7 @@
     },
     {
         "Id": 1201,
-        "Name": "Beacon: Fire DMG Up",
+        "Name": "\u4fe1\u6807\u00b7\u706b\u7cfb\u589e\u4f24",
         "GuildLevel": 2,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1101, 0]",
@@ -33,7 +33,7 @@
     },
     {
         "Id": 1202,
-        "Name": "Beacon: Ice DMG Up",
+        "Name": "\u4fe1\u6807\u00b7\u51b0\u7cfb\u589e\u4f24",
         "GuildLevel": 2,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1101, 1102]",
@@ -41,7 +41,7 @@
     },
     {
         "Id": 1203,
-        "Name": "Beacon: Lightning DMG Up",
+        "Name": "\u4fe1\u6807\u00b7\u96f7\u7cfb\u589e\u4f24",
         "GuildLevel": 2,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1102, 1103]",
@@ -49,7 +49,7 @@
     },
     {
         "Id": 1204,
-        "Name": "Beacon: Dark DMG Up",
+        "Name": "\u4fe1\u6807\u00b7\u6697\u7cfb\u589e\u4f24",
         "GuildLevel": 2,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1103, 0]",
@@ -57,7 +57,7 @@
     },
     {
         "Id": 1301,
-        "Name": "Beacon: DMG Bonus",
+        "Name": "\u4fe1\u6807\u00b7\u989d\u5916\u589e\u4f24",
         "GuildLevel": 3,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1201, 1202]",
@@ -65,7 +65,7 @@
     },
     {
         "Id": 1302,
-        "Name": "Beacon: HP Boost",
+        "Name": "\u4fe1\u6807\u00b7\u751f\u547d\u589e\u52a0",
         "GuildLevel": 3,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1202, 1203]",
@@ -73,7 +73,7 @@
     },
     {
         "Id": 1303,
-        "Name": "Beacon: Riot",
+        "Name": "\u4fe1\u6807\u00b7\u66b4\u4e71",
         "GuildLevel": 3,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1203, 1204]",
@@ -81,7 +81,7 @@
     },
     {
         "Id": 1401,
-        "Name": "Beacon: Offense-Defense Balance",
+        "Name": "\u4fe1\u6807\u00b7\u653b\u5b88\u517c\u5907",
         "GuildLevel": 4,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1301, 1302]",
@@ -89,7 +89,7 @@
     },
     {
         "Id": 1402,
-        "Name": "Beacon: Critical DMG",
+        "Name": "\u4fe1\u6807\u00b7\u66b4\u4f24",
         "GuildLevel": 4,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1302, 1303]",
@@ -97,7 +97,7 @@
     },
     {
         "Id": 1501,
-        "Name": "Beacon: Enhanced Healing",
+        "Name": "\u4fe1\u6807\u00b7\u7597\u6108\u5f3a\u5316",
         "GuildLevel": 5,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1401, 0]",
@@ -105,7 +105,7 @@
     },
     {
         "Id": 1502,
-        "Name": "Beacon: Energy Storage",
+        "Name": "\u4fe1\u6807\u00b7\u50a8\u80fd",
         "GuildLevel": 5,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1401, 0]",
@@ -113,7 +113,7 @@
     },
     {
         "Id": 1503,
-        "Name": "Beacon: Sprint",
+        "Name": "\u4fe1\u6807\u00b7\u75be\u8d70",
         "GuildLevel": 5,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1402, 0]",
@@ -121,7 +121,7 @@
     },
     {
         "Id": 1504,
-        "Name": "Beacon: Dodge Limit",
+        "Name": "\u4fe1\u6807\u00b7\u95ea\u907f\u754c\u9650",
         "GuildLevel": 5,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1402, 0]",
@@ -129,7 +129,7 @@
     },
     {
         "Id": 1601,
-        "Name": "Beacon: Attacker Invincibility",
+        "Name": "\u4fe1\u6807\u00b7\u8fdb\u653b\u578b\u521a\u4f53",
         "GuildLevel": 6,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1501, 1502]",
@@ -137,7 +137,7 @@
     },
     {
         "Id": 1602,
-        "Name": "Beacon: Tank Invincibility",
+        "Name": "\u4fe1\u6807\u00b7\u88c5\u7532\u578b\u521a\u4f53",
         "GuildLevel": 6,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1502, 1503]",
@@ -145,7 +145,7 @@
     },
     {
         "Id": 1603,
-        "Name": "Beacon: Healer Invincibility",
+        "Name": "\u4fe1\u6807\u00b7\u8f85\u52a9\u578b\u521a\u4f53",
         "GuildLevel": 6,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1503, 1504]",
@@ -153,7 +153,7 @@
     },
     {
         "Id": 1701,
-        "Name": "Beacon: Vanguard Invincibility",
+        "Name": "\u4fe1\u6807\u00b7\u5148\u950b\u578b\u521a\u4f53",
         "GuildLevel": 7,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1601, 0]",
@@ -161,7 +161,7 @@
     },
     {
         "Id": 1702,
-        "Name": "Beacon: Attacker Power",
+        "Name": "\u4fe1\u6807\u00b7\u8fdb\u653b\u578b\u5f3a\u529b",
         "GuildLevel": 7,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1601, 1602]",
@@ -169,7 +169,7 @@
     },
     {
         "Id": 1703,
-        "Name": "Beacon: Tank Power",
+        "Name": "\u4fe1\u6807\u00b7\u88c5\u7532\u578b\u5f3a\u529b",
         "GuildLevel": 7,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1602, 1603]",
@@ -177,7 +177,7 @@
     },
     {
         "Id": 1704,
-        "Name": "Beacon: Support Power",
+        "Name": "\u4fe1\u6807\u00b7\u8f85\u52a9\u578b\u5f3a\u529b",
         "GuildLevel": 7,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1603, 0]",
@@ -185,7 +185,7 @@
     },
     {
         "Id": 1801,
-        "Name": "Beacon: Vanguard Power",
+        "Name": "\u4fe1\u6807\u00b7\u5148\u950b\u578b\u5f3a\u529b",
         "GuildLevel": 8,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1701, 1702]",
@@ -193,7 +193,7 @@
     },
     {
         "Id": 1802,
-        "Name": "Beacon: Fearless",
+        "Name": "\u4fe1\u6807\u00b7\u65e0\u754f",
         "GuildLevel": 8,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1702, 1703]",
@@ -201,7 +201,7 @@
     },
     {
         "Id": 1803,
-        "Name": "Beacon: Inspired",
+        "Name": "\u4fe1\u6807\u00b7\u632f\u594b",
         "GuildLevel": 8,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1703, 1704]",
@@ -209,7 +209,7 @@
     },
     {
         "Id": 1901,
-        "Name": "Beacon: Skill Acquisition",
+        "Name": "\u4fe1\u6807\u00b7\u6280\u827a\u9886\u609f",
         "GuildLevel": 9,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1801, 0]",
@@ -217,7 +217,7 @@
     },
     {
         "Id": 1902,
-        "Name": "Beacon: Ultimate Enlightenment",
+        "Name": "\u4fe1\u6807\u00b7\u7ec8\u6280\u9886\u609f",
         "GuildLevel": 9,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1802, 0]",
@@ -225,7 +225,7 @@
     },
     {
         "Id": 1903,
-        "Name": "Beacon: Matrix DMG Up",
+        "Name": "\u4fe1\u6807\u00b7\u8d85\u7b97\u589e\u4f24",
         "GuildLevel": 9,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1803, 0]",
@@ -233,7 +233,7 @@
     },
     {
         "Id": 2001,
-        "Name": "Beacon: Elemental DMG Up",
+        "Name": "\u4fe1\u6807\u00b7\u5143\u7d20\u589e\u4f24",
         "GuildLevel": 10,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1901, 0]",
@@ -241,7 +241,7 @@
     },
     {
         "Id": 2002,
-        "Name": "Beacon: Energy Recovery",
+        "Name": "\u4fe1\u6807\u00b7\u80fd\u91cf\u6062\u590d",
         "GuildLevel": 10,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1902, 0]",
@@ -249,7 +249,7 @@
     },
     {
         "Id": 2003,
-        "Name": "Beacon: Quick Support",
+        "Name": "\u4fe1\u6807\u00b7\u5feb\u901f\u652f\u63f4",
         "GuildLevel": 10,
         "CostPoint": "[1, 2, 2, 3, 3, 5, 5, 7, 7, 10]",
         "Parent": "[1903, 0]",

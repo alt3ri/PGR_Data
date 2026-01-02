@@ -31,6 +31,10 @@ local MapTableKey = {
         CacheType = XConfigUtil.CacheType.Normal,
         Identifier = "LevelId",
     },
+    BigworldAIMemory = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
 }
 
 function XBigWorldMapConfigModel:_InitTableKey()
@@ -225,6 +229,12 @@ function XBigWorldMapConfigModel:GetBigWorldMapPinStyleBriefIconByStyleId(styleI
     return config.BriefIcon
 end
 
+function XBigWorldMapConfigModel:GetBigWorldMapPinStyleAreaColorByStyleId(styleId)
+    local config = self:GetBigWorldMapPinStyleConfigByStyleId(styleId)
+
+    return config.AreaColor
+end
+
 ---@return XTableBigWorldMapQuestPin[]
 function XBigWorldMapConfigModel:GetBigWorldMapQuestPinConfigs()
     return self._ConfigUtil:GetByTableKey(MapTableKey.BigWorldMapQuestPin)
@@ -239,12 +249,28 @@ function XBigWorldMapConfigModel:GetBigWorldMapQuestPinStyleIdByQuestId(questId)
     local config = self:GetBigWorldMapQuestPinConfigByQuestId(questId)
 
     if not config then
-        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinStyleIdByQuestId questId = " .. questId .. " not found!")
+        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinStyleIdByQuestId questId = " .. questId ..
+                       " not found!")
 
         return 0
     end
 
     return config.StyleId
+end
+
+function XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestId(questId)
+    local config = self:GetBigWorldMapQuestPinConfigByQuestId(questId)
+
+    if not config then
+        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestId questId = " .. questId .. " not found!")
+        return 0
+    end
+
+    if config.SecondStyleId == 0 then
+        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestId questId = " .. questId .. ", SecondStyleId = 0 !")
+    end
+
+    return config.SecondStyleId
 end
 
 ---@return XTableBigWorldMapLink[]
@@ -273,6 +299,74 @@ function XBigWorldMapConfigModel:GetBigWorldMapLinkBindPinIdByLevelId(levelId)
     local config = self:GetBigWorldMapLinkConfigByLevelId(levelId)
 
     return config.BindPinId
+end
+
+---@return XTableBigworldAIMemory[]
+function XBigWorldMapConfigModel:GetBigworldAIMemoryConfigs()
+    return self._ConfigUtil:GetByTableKey(MapTableKey.BigworldAIMemory)
+end
+
+---@return XTableBigworldAIMemory
+function XBigWorldMapConfigModel:GetBigworldAIMemoryConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(MapTableKey.BigworldAIMemory, id, false)
+end
+
+function XBigWorldMapConfigModel:GetBigworldAIMemoryGroupIdById(id)
+    local config = self:GetBigworldAIMemoryConfigById(id)
+
+    return config.GroupId
+end
+
+function XBigWorldMapConfigModel:GetBigworldAIMemoryIndexById(id)
+    local config = self:GetBigworldAIMemoryConfigById(id)
+
+    return config.Index
+end
+
+function XBigWorldMapConfigModel:GetBigworldAIMemoryConditionById(id)
+    local config = self:GetBigworldAIMemoryConfigById(id)
+
+    return config.Condition
+end
+
+function XBigWorldMapConfigModel:GetBigworldAIMemoryLockedTitleById(id)
+    local config = self:GetBigworldAIMemoryConfigById(id)
+
+    return config.LockedTitle
+end
+
+function XBigWorldMapConfigModel:GetBigworldAIMemoryLockedDescById(id)
+    local config = self:GetBigworldAIMemoryConfigById(id)
+
+    return config.LockedDesc
+end
+
+function XBigWorldMapConfigModel:GetBigworldAIMemoryUnlockedTitleById(id)
+    local config = self:GetBigworldAIMemoryConfigById(id)
+
+    return config.UnlockedTitle
+end
+
+function XBigWorldMapConfigModel:GetBigworldAIMemoryUnlockedDescById(id)
+    local config = self:GetBigworldAIMemoryConfigById(id)
+
+    return config.UnlockedDesc
+end
+
+function XBigWorldMapConfigModel:GetBigworldAIMemorysByGroupId(groupId)
+    if not self._AIMemoryGroupCache then
+        self._AIMemoryGroupCache = {}
+        for _, config in pairs(self:GetBigworldAIMemoryConfigs()) do
+            if not self._AIMemoryGroupCache[config.GroupId] then
+                self._AIMemoryGroupCache[config.GroupId] = {}
+            end
+            table.insert(self._AIMemoryGroupCache[config.GroupId], config)
+        end
+        for groupId, configs in pairs(self._AIMemoryGroupCache) do
+            table.sort(configs, function(a, b) return a.Index < b.Index end)
+        end
+    end
+    return self._AIMemoryGroupCache[groupId]
 end
 
 return XBigWorldMapConfigModel

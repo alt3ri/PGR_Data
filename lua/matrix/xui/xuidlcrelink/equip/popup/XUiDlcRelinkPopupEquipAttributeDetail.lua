@@ -130,8 +130,8 @@ function XUiDlcRelinkPopupEquipAttributeDetail:OnDynamicTableEvent(event, index,
 end
 
 function XUiDlcRelinkPopupEquipAttributeDetail:RefreshSkill()
-    local occupationType = self._Control:GetOccupationTypeByCharacterId(self.CharacterId, self.IsNotSelf)
-    local curSkillIds = self._Control:GetCharacterSkillIdsByCharacterId(self.CharacterId, occupationType, self.IsNotSelf)
+    local styleType = self._Control:GetStyleTypeByCharacterId(self.CharacterId, self.IsNotSelf)
+    local curSkillIds = self._Control:GetCharacterSkillIdsByCharacterId(self.CharacterId, styleType, self.IsNotSelf)
     if XTool.IsTableEmpty(curSkillIds) then
         self.GridSkillAttributeList.gameObject:SetActiveEx(false)
         return
@@ -152,7 +152,7 @@ function XUiDlcRelinkPopupEquipAttributeDetail:RefreshSkill()
             curDamage = math.min(curDamage, maxDamage)
         end
         grid:GetObject("TxtNum").text = string.format("%s/%s", curDamage, maxDamage > 0 and maxDamage or "∞")
-        grid:GetObject("TxtName").text = self._Control:GetSkillDescName(skillId)
+        grid:GetObject("TxtName").text = self._Control:GetSkillDescTypeDesc(skillId)
         grid:GetObject("Icon"):SetSprite(self._Control:GetSkillDescIcon(skillId))
     end
 
@@ -188,8 +188,8 @@ function XUiDlcRelinkPopupEquipAttributeDetail:RefreshSkillAttribute(attribute)
 end
 
 function XUiDlcRelinkPopupEquipAttributeDetail:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnTanchuangClose, self.OnBtnCloseClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkPopupEquipAttributeDetail:OnBtnCloseClick()

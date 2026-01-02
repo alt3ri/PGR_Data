@@ -12,6 +12,7 @@ local TablePath = {
     BigWorldReward = "Share/BigWorld/Common/Reward/BigWorldReward.tab",
     BigWorldRewardGoods = "Share/BigWorld/Common/Reward/BigWorldRewardGoods.tab",
     BigWorldText = "Client/BigWorld/Common/Text/BigWorldText.tab",
+    BigWorldTextDialog = "Client/BigWorld/Common/Text/BigWorldTextDialog.tab",
     BigWorldNarrativeText = "Client/BigWorld/Common/Text/BigWorldNarrativeText.tab",
     BigWorldItem = "Share/BigWorld/Common/Item/BigWorldItem.tab",
     BigWorldRewardGoodDetails = "Client/BigWorld/Common/Reward/BigWorldRewardGoodDetails.tab",
@@ -48,6 +49,12 @@ function XBigWorldServiceModel:OnInit()
             XConfigUtil.ReadType.String,
             XTable.XTableBigWorldText,
             "Key",
+            NormalCacheType,
+        },
+        [TablePath.BigWorldTextDialog] = {
+            XConfigUtil.ReadType.Int,
+            XTable.XTableBigWorldTextDialog,
+            "Id",
             NormalCacheType,
         },
         [TablePath.BigWorldNarrativeText] = {
@@ -122,6 +129,11 @@ end
 ---@return XTableBigWorldNarrativeText
 function XBigWorldServiceModel:GetNarrativeTextTemplate(id)
     return self._ConfigUtil:GetCfgByPathAndIdKey(TablePath.BigWorldNarrativeText, id)
+end
+
+---@return XTableBigWorldTextDialog
+function XBigWorldServiceModel:GetTextDialogTemplate(id)
+    return self._ConfigUtil:GetCfgByPathAndIdKey(TablePath.BigWorldTextDialog, id)
 end
 
 --- 提供给战斗判断配置是否存在，只在Debug模式下提供，避免表格全部序列化

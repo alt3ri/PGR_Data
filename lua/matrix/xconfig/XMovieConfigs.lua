@@ -41,7 +41,7 @@ XMovieConfigs.PerWordDelay = CS.XGame.ClientConfig:GetInt("MoviePerWordDelay") -
 --19-21 为背景8的专属演员
 XMovieConfigs.MAX_ACTOR_NUM = 21
 
-XMovieConfigs.MAX_SPINE_ACTOR_NUM = 14
+XMovieConfigs.MAX_SPINE_ACTOR_NUM = 18
 
 -- 通用的spine动画
 XMovieConfigs.SpineActorAnim = 

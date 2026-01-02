@@ -1,5 +1,5 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiBattery = require("XUi/XUiBuyAsset/XUiBattery")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiBattery = require("XUi/XUiBuyAsset/XUiBattery")
 local CSXTextManagerGetText = CS.XTextManager.GetText
 local TipTimeLimitItemsLeftTime = CS.XGame.ClientConfig:GetInt("TipTimeLimitItemsLeftTime")    -- 限时道具提示时间
 local TipBatteryLeftTime = CS.XGame.ClientConfig:GetInt("TipBatteryLeftTime")    -- 限时血清道具提示时间
@@ -143,16 +143,28 @@ function XUiMainRightTop:UpdateChargeState()
         return nil
     end
     --]]
+
+    --v4.2新增场景控制功能
+    local sceneId = XDataCenter.PhotographManager.GetCurSceneId()
+    local option = XMVCA.XSwitchableScene:GetSceneSetting(sceneId)
     local curMainUiChargeState = XUiMainChargeState.None
-    if BatteryComponent.IsCharging then
-        curMainUiChargeState = XUiMainChargeState.Charge
-    else
-        if BatteryComponent.BatteryLevel > self.LowPowerValue then
-            curMainUiChargeState = XUiMainChargeState.Enough
+
+    if option == XEnumConst.SwitchableScene.Setting.Power.Auto then
+        if BatteryComponent.IsCharging then
+            curMainUiChargeState = XUiMainChargeState.Charge
         else
-            curMainUiChargeState = XUiMainChargeState.LowPower
+            if BatteryComponent.BatteryLevel > self.LowPowerValue then
+                curMainUiChargeState = XUiMainChargeState.Enough
+            else
+                curMainUiChargeState = XUiMainChargeState.LowPower
+            end
         end
+    elseif option == XEnumConst.SwitchableScene.Setting.Power.Full then
+        curMainUiChargeState = XUiMainChargeState.Enough
+    elseif option == XEnumConst.SwitchableScene.Setting.Power.Low then
+        curMainUiChargeState = XUiMainChargeState.LowPower
     end
+    
     return curMainUiChargeState
 end
 
@@ -163,16 +175,27 @@ function XUiMainRightTop:UpdateDateState()
     --    return nil
     --end
 
-    local startTime = XTime.ParseToTimestamp(DateStartTime)
-    local endTime = XTime.ParseToTimestamp(DateEndTime)
-    local nowTime = XTime.ParseToTimestamp(CS.System.DateTime.Now:ToLocalTime():ToString())
-
+    --v4.2新增场景控制功能
+    local sceneId = XDataCenter.PhotographManager.GetCurSceneId()
+    local option = XMVCA.XSwitchableScene:GetSceneSetting(sceneId)
     local curMainUiChargeState = XUiMainChargeState.None
-    if startTime > nowTime and nowTime > endTime then
+
+    if option == XEnumConst.SwitchableScene.Setting.Data.Auto then
+        local startTime = XTime.ParseToTimestamp(DateStartTime)
+        local endTime = XTime.ParseToTimestamp(DateEndTime)
+        local nowTime = XTime.ParseToTimestamp(CS.System.DateTime.Now:ToLocalTime():ToString())
+
+        if startTime > nowTime and nowTime > endTime then
+            curMainUiChargeState = XUiMainChargeState.Enough
+        else
+            curMainUiChargeState = XUiMainChargeState.LowPower
+        end
+    elseif option == XEnumConst.SwitchableScene.Setting.Data.Day then
         curMainUiChargeState = XUiMainChargeState.Enough
-    else
+    elseif option == XEnumConst.SwitchableScene.Setting.Data.Night then
         curMainUiChargeState = XUiMainChargeState.LowPower
     end
+
     return curMainUiChargeState
 end
 
@@ -182,7 +205,9 @@ function XUiMainRightTop:UpdateSceneState()
     
     local curSceneId = XDataCenter.PhotographManager.GetCurSceneId()
     local type = XPhotographConfigs.GetBackgroundTypeById(curSceneId)
-    if type == XPhotographConfigs.BackGroundType.PowerSaved then
+    if type == XPhotographConfigs.BackGroundType.Gyro then
+        curMainUiChargeState = XUiMainChargeState.None
+    elseif type == XPhotographConfigs.BackGroundType.PowerSaved then
         curMainUiChargeState = self:UpdateChargeState()
     else
         curMainUiChargeState = self:UpdateDateState()
@@ -215,10 +240,7 @@ function XUiMainRightTop:UpdateSceneState()
     -- 省电模式需要显示省电标签
     if type == XPhotographConfigs.BackGroundType.PowerSaved then
         self:UpdateChargeMark()
-    elseif type == XPhotographConfigs.BackGroundType.Date then
-        self.LowPowerMarkFight.gameObject:SetActiveEx(false)
-        self.LowPowerMarkBuilding.gameObject:SetActiveEx(false)
-    elseif type==XPhotographConfigs.BackGroundType.Normal then
+    else
         self.LowPowerMarkFight.gameObject:SetActiveEx(false)
         self.LowPowerMarkBuilding.gameObject:SetActiveEx(false)
     end
@@ -237,10 +259,7 @@ function XUiMainRightTop:PreviewUpdateChargeMark()
             self.LowPowerMarkFight.gameObject:SetActiveEx(true)
             self.LowPowerMarkBuilding.gameObject:SetActiveEx(true)
         end
-    elseif type == XPhotographConfigs.BackGroundType.Date then
-        self.LowPowerMarkFight.gameObject:SetActiveEx(false)
-        self.LowPowerMarkBuilding.gameObject:SetActiveEx(false)
-    elseif type==XPhotographConfigs.BackGroundType.Normal then
+    else
         self.LowPowerMarkFight.gameObject:SetActiveEx(false)
         self.LowPowerMarkBuilding.gameObject:SetActiveEx(false)
     end

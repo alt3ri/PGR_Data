@@ -6,6 +6,13 @@ local XUiPanelTheatre5SettleSkill = require('XUi/XUiTheatre5/XUiTheatre5Settleme
 local XUiPanelTheatre5SettleGem = require('XUi/XUiTheatre5/XUiTheatre5Settlement/XUiPanelTheatre5SettleGem')
 local XUiGridTheatre5Container = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGridItems/XUiGridTheatre5Container')
 local XUiGridTheatre5Relic = require("XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGridItems/XUiGridTheatre5Relic")
+local XUiTheatre5GridTaskDetail = require('XUi/XUiTheatre5/XUiTheatre5ChooseTask/XUiTheatre5GridTaskDetail')
+
+local RewardStateEnum = {
+    InProgress = 'InProgress',
+    Complete = 'Complete',
+}
+
 
 ---@param resultData XDlcFightSettleData
 function XUiPanelTheatre5SettleGameDetail:OnStart(resultData)
@@ -25,6 +32,8 @@ function XUiPanelTheatre5SettleGameDetail:OnStart(resultData)
 
     self:InitCharacter()
 
+    -- 4.2屏蔽饰品展示
+    --[[
     self._GridRelics = {}
     self.RelicContainer = self.RelicContainer or XUiHelper.TryGetComponent(self.Transform, "PanelRight/PanelListRelic/PanelRelic/RelicContainer", "RectTransform")
     if self.RelicContainer then
@@ -36,6 +45,37 @@ function XUiPanelTheatre5SettleGameDetail:OnStart(resultData)
             end
         end
         XTool.UpdateDynamicItem(self._GridRelics, relics, self.RelicContainer, XUiGridTheatre5Relic, self)
+    end
+    --]]
+
+    self:RefreshMissionShow()
+
+    if self.BtnReward then
+        self.BtnReward:AddEventListener(function()
+            if self.Mission then
+                self.TaskDetail:Open()
+                if self.Mission.MissionState == XMVCA.XTheatre5.EnumConst.Theatre5MissionState.HasFinish or self.Mission.MissionState == XMVCA.XTheatre5.EnumConst.Theatre5MissionState.HasReward then
+                    self.TaskDetail:Refresh(XMVCA.XTheatre5.EnumConst.UITaskDetailShowType.InComplete, self.Mission, self.Mission.MissionRelicId)
+                else
+                    self.TaskDetail:Refresh(XMVCA.XTheatre5.EnumConst.UITaskDetailShowType.InProgress, self.Mission)
+                end
+                self.BtnMissionDetailClose.gameObject:SetActiveEx(true)
+            end
+        end)
+    end
+
+    if self.BtnMissionDetailClose then
+        self.BtnMissionDetailClose:AddEventListener(function()
+            self.TaskDetail:Close()
+            self.BtnMissionDetailClose.gameObject:SetActiveEx(false)
+        end)
+        self.BtnMissionDetailClose.gameObject:SetActiveEx(false)
+    end
+
+    if self.UiTheatre5GridTaskDetail then
+        self.UiTheatre5GridTaskDetail.gameObject:SetActiveEx(false)
+        ---@type XUiTheatre5GridTaskDetail
+        self.TaskDetail = XUiTheatre5GridTaskDetail.New(self.UiTheatre5GridTaskDetail, self)
     end
 end
 
@@ -120,6 +160,57 @@ function XUiPanelTheatre5SettleGameDetail:RefreshCharacterShow()
 
     if self.GemNone then
         self.GemNone.gameObject:SetActiveEx(not self._Control:CheckHasEquipGem())
+    end
+end
+
+function XUiPanelTheatre5SettleGameDetail:RefreshMissionShow()
+    if self.BtnReward then
+        local mission = self._Control.MissionControl:GetCurMission()
+
+        if mission then
+            local bountyId = mission.MissionBounty.Bounty
+            local level = mission.MissionBounty.BountyLevel
+            local missionRelicId = mission.MissionRelicId
+
+            local isRewardGot = mission.MissionState == XMVCA.XTheatre5.EnumConst.Theatre5MissionState.HasReward
+            local isComplete = mission.MissionState == XMVCA.XTheatre5.EnumConst.Theatre5MissionState.HasFinish or isRewardGot
+
+            self.BtnReward:SetButtonState(CS.UiButtonState.Normal)
+            self.BtnRewardStateCtrl:ChangeState(isComplete and RewardStateEnum.Complete or RewardStateEnum.InProgress)
+
+            -- 奖励图标
+            local iconRes = ''
+
+            if isRewardGot and XTool.IsNumberValidEx(missionRelicId) then
+                local cfg = self._Control:GetTheatre5ItemCfgById(missionRelicId)
+
+                if cfg then
+                    iconRes = cfg.IconRes
+                end
+            else
+                iconRes = self._Control.MissionControl:GetMissionRewardIcon(bountyId, level)
+            end
+
+            if not string.IsNilOrEmpty(iconRes) then
+                self.BtnReward:SetRawImage(iconRes)
+            end
+
+            -- 等级
+            self.BtnReward:SetNameByGroup(0, self._Control.MissionControl:GetMissionGridLevelShow(bountyId, level))
+
+            -- 完成情况
+            if self.PanelNone then
+                self.PanelNone.gameObject:SetActiveEx(not isComplete)
+            end
+        else
+            self.BtnReward:SetButtonState(CS.UiButtonState.Disable)
+            -- 完成情况
+            if self.PanelNone then
+                self.PanelNone.gameObject:SetActiveEx(true)
+            end
+        end
+        
+        self.Mission = mission
     end
 end
 

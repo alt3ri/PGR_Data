@@ -730,6 +730,14 @@ function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
     self:UpdateSelectGeneralSkill(aimSkillId)
 end
 
+local TANK_CAREERS = {
+    [XEnumConst.CHARACTER.Career.Tank] = true,
+    [XEnumConst.CHARACTER.Career.Breaker] = true,
+}
+local AMPLIFIER_CAREERS = {
+    [XEnumConst.CHARACTER.Career.Amplifier] = true,
+    [XEnumConst.CHARACTER.Career.Support] = true,
+}
 function XTeam:GetObservationActiveCareer()
     local tankCount = 0
     local tankPos = 0
@@ -752,10 +760,10 @@ function XTeam:GetObservationActiveCareer()
                 physicalCount = physicalCount + 1
                 physicalPos = i
             end
-            if career == XEnumConst.CHARACTER.Career.Tank then
+            if TANK_CAREERS[career] then
                 tankCount = tankCount + 1
                 tankPos = i
-            elseif (career == XEnumConst.CHARACTER.Career.Amplifier or career == XEnumConst.CHARACTER.Career.Support) then
+            elseif AMPLIFIER_CAREERS[career] then
                 amplifierCount = amplifierCount + 1
                 amplifierPos = i
             elseif career == XEnumConst.CHARACTER.Career.Observation then

@@ -235,7 +235,7 @@ function XUiPurchaseCoatingLB:OpenUiView(data)
         buyData.IsConvert = data.ConvertSwitch < data.ConsumeCount
         -- v3.1兼容跳转其他界面完成购买后，返回此界面时的刷新
         buyData.PurchaseLBUpdateCb = self.UpdateCb
-	    XLuaUiManager.Open("UiFashionDetail", templateId, isWeaponFashion, buyData)
+        XMVCA.XShop:OpenFashionDetailUi(templateId, buyData, { isWeaponFashion = isWeaponFashion, updateCb = self.UpdateCb })
 	else
         XLuaUiManager.Open("UiPurchaseBuyTips", data, self.CheckBuyFun, self.UpdateCb, self.BeforeBuyReqFun, XPurchaseConfigs.GetLBUiTypesList())
 	end

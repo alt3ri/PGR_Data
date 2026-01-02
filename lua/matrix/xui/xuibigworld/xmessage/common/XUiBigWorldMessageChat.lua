@@ -17,6 +17,7 @@ local XMessagePlayer = require("XModule/XBigWorldMessage/Common/XMessagePlayer")
 ---@field BtnAnswer XUiComponent.XUiButton
 ---@field PanelNone UnityEngine.RectTransform
 ---@field PanelTaskBg UnityEngine.RectTransform
+---@field PanelTips UnityEngine.RectTransform
 ---@field _Control XBigWorldMessageControl
 local XUiBigWorldMessageChat = XClass(XUiNode, "XUiBigWorldMessageChat")
 
@@ -42,16 +43,22 @@ function XUiBigWorldMessageChat:OnStart(audioPlayer)
     self._ChatScroll = XUiHelper.TryGetComponent(self.ListChat, "", typeof(CS.UnityEngine.UI.ScrollRect))
 
     self._IsLockGridIndex = false
+    self._IsShow = false
 
-    self._OnScrollEndCb = function()
-        self._Scrolling = false
-    end
+    self._IsScrolling = false
+    self._ScrolledNotifyId = false
+    self._OnScrollEndHandle = Handler(self, self.OnScrollEnd)
 
     self._AudioPlayer = audioPlayer
+
+    self._Timer = false
 
     self._TaskUi:Close()
     self:_InitUi()
     self:_RegisterButtonClicks()
+
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PREVIEW_CLOSE, self.OnPreviewClose,
+        self)
 end
 
 function XUiBigWorldMessageChat:OnEnable()
@@ -61,13 +68,14 @@ function XUiBigWorldMessageChat:OnEnable()
 end
 
 function XUiBigWorldMessageChat:OnDisable()
-    self:_RemoveSchedules()
     self:_RemoveListeners()
-    self._Player:Stop()
 end
 
 function XUiBigWorldMessageChat:OnDestroy()
+    self:_RemoveSchedules()
     self._Player:Destroy()
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PREVIEW_CLOSE,
+        self.OnPreviewClose, self)
 end
 
 -- endregion
@@ -76,7 +84,7 @@ end
 function XUiBigWorldMessageChat:RefreshChat(message)
     self:_Reset()
     self:_RefreshChatPanel(message == nil or message:IsNil())
-    self:_ShowAnswerOptions(false)
+    self:_ShowAnswerOptions(false, 0, true)
 
     if message and not message:IsNil() then
         self.TxtName.text = self._Control:GetContactsName(message:GetContactsId())
@@ -85,46 +93,65 @@ function XUiBigWorldMessageChat:RefreshChat(message)
     end
 end
 
+function XUiBigWorldMessageChat:RefreshPanelTips(isActive)
+    self.PanelTips.gameObject:SetActiveEx(isActive)
+end
+
 ---@param content XBWMessageContentEntity
 function XUiBigWorldMessageChat:OnPlayMessage(content)
     local stepId = content:GetStepId()
+    local isComplete = content:IsComplete()
 
-    CS.XLog.Debug("[BigWorldMessage]: Play Message Content. StepId: " .. tonumber(stepId) .. "\n" .. debug.traceback())
     if content:IsReceive() then
         local grid = self:_GetReceiveGrid()
 
         grid:Refresh(content)
         grid:PlayEnableAnimation(content, self._AudioPlayer)
+
+        if content:IsWait() then
+            self:_TryScrolling(not isComplete)
+        else
+            self:_TryScrolling(not isComplete, nil, XMVCA.XBigWorldService.DlcEventId.EVENT_PLAY_NEXT_MESSAGE_NOTIFY)
+        end
     elseif content:IsSend() then
         local grid = self:_GetSendGrid()
 
         grid:Refresh(content)
         grid:PlayEnableAnimation(content, self._AudioPlayer)
+
+        if content:IsWait() then
+            self:_TryScrolling(not isComplete)
+        else
+            self:_TryScrolling(not isComplete, nil, XMVCA.XBigWorldService.DlcEventId.EVENT_PLAY_NEXT_MESSAGE_NOTIFY)
+        end
     elseif content:IsSystem() then
         local tip = self:_GetSystemTip()
 
         tip.text = content:GetText()
-        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAY_NEXT_MESSAGE_NOTIFY)
+        self:_TryScrolling(not isComplete, nil, XMVCA.XBigWorldService.DlcEventId.EVENT_PLAY_NEXT_MESSAGE_NOTIFY)
+
+        if content:IsEnd() then
+            XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_FINISH_NOTIFY, content, isComplete)
+        end
     elseif content:IsOptions() then
         if content:IsCompleteWithOption() then
-            XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAY_NEXT_MESSAGE_NOTIFY)
+            self:_TryScrolling(false, nil, XMVCA.XBigWorldService.DlcEventId.EVENT_PLAY_NEXT_MESSAGE_NOTIFY)
         else
             self:_RefreshAnswerOptions(content)
+            self:_TryScrolling(true, 0.2)
         end
     end
-
-    self:_RefreshScrolling()
 end
 
 ---@param content XBWMessageContentEntity
-function XUiBigWorldMessageChat:OnPlayMessageBeginLoading(content)
+function XUiBigWorldMessageChat:OnPlayMessageBeginLoading(content, duration)
     self._IsLockGridIndex = true
     if content:IsReceive() then
         local grid = self:_GetReceiveGrid()
 
         grid:Refresh(content)
         grid:SetLoadingEffectActive(true)
-        self:_RefreshScrolling()
+        self:_RefreshScrolling(math.min(0.4, duration))
     end
 end
 
@@ -142,6 +169,23 @@ function XUiBigWorldMessageChat:OnTaskStateChange(questId)
     self._TaskUi:RefreshState(questId)
 end
 
+function XUiBigWorldMessageChat:OnPlayMessagePause()
+    self._Player:Pause()
+end
+
+function XUiBigWorldMessageChat:OnPreviewClose()
+    self._Player:Resume()
+end
+
+function XUiBigWorldMessageChat:OnScrollEnd()
+    self._IsScrolling = false
+
+    if self._ScrolledNotifyId then
+        XEventManager.DispatchEvent(self._ScrolledNotifyId)
+        self._ScrolledNotifyId = false
+    end
+end
+
 -- region 私有方法
 
 function XUiBigWorldMessageChat:_RegisterButtonClicks()
@@ -154,21 +198,30 @@ end
 
 function XUiBigWorldMessageChat:_RemoveSchedules()
     -- 在此处移除定时器
+    if self._Timer then
+        XScheduleManager.UnSchedule(self._Timer)
+        self._Timer = false
+    end
 end
 
 function XUiBigWorldMessageChat:_RegisterListeners()
     -- 在此处注册事件监听
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_QUEST_NOTIFY, self.OnTaskStateChange, self)
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_FINISH_NOTIFY, self._RefreshEnd,
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_QUEST_NOTIFY, self.OnTaskStateChange,
         self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_PAUSE_NOTIFY,
+        self.OnPlayMessagePause, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_FINISH_NOTIFY,
+        self._RefreshPrepareEnd, self)
 end
 
 function XUiBigWorldMessageChat:_RemoveListeners()
     -- 在此处移除事件监听
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_QUEST_NOTIFY, self.OnTaskStateChange,
-        self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_QUEST_NOTIFY,
+        self.OnTaskStateChange, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_PAUSE_NOTIFY,
+        self.OnPlayMessagePause, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_FINISH_NOTIFY,
-        self._RefreshEnd, self)
+        self._RefreshPrepareEnd, self)
 end
 
 function XUiBigWorldMessageChat:_RegisterRedPointEvents()
@@ -287,6 +340,7 @@ function XUiBigWorldMessageChat:_GetSystemTip()
         self._SystemTips[index] = tip
     end
 
+    tip.gameObject:SetActiveEx(true)
     tip.transform:SetAsLastSibling()
     self._SystemTipIndex = self._SystemTipIndex + 1
 
@@ -335,23 +389,52 @@ function XUiBigWorldMessageChat:_RefreshTask(questId)
 end
 
 ---@param content XBWMessageContentEntity
-function XUiBigWorldMessageChat:_RefreshEnd(content)
-    CS.XLog.Debug("[BigWorldMessage]: Play Message Content Receive Play Finish Event. StepId: " .. tostring(content:GetStepId()) .. "\n" .. debug.traceback())
-    self:_RefreshTeskPanel(content)
-    self:_ShowMessageEnd()
-    self._Control:SendMessageComplete(content:GetMessageId())
-    self:_RefreshScrolling()
-end
+function XUiBigWorldMessageChat:_RefreshPrepareEnd(content, isComplete)
+    self:_RemoveSchedules()
 
-function XUiBigWorldMessageChat:_RefreshScrolling()
-    if not self._Scrolling then
-        self._Scrolling = true
-        self._ChatScroll:DOVerticalNormalizedPos(0, 0.2):OnComplete(self._OnScrollEndCb)
+    if isComplete then
+        self:_RefreshEnd(content)
+    else
+        self._Timer = XScheduleManager.ScheduleOnce(function()
+            self._Timer = false
+            self:_RefreshEnd(content)
+        end, 0.5 * XScheduleManager.SECOND)
     end
 end
 
-function XUiBigWorldMessageChat:_ShowAnswerOptions(isShow, messageId)
+---@param content XBWMessageContentEntity
+function XUiBigWorldMessageChat:_RefreshEnd(content)
+    self:_RefreshTeskPanel(content)
+    self:_ShowMessageEnd()
+    self._Control:SendMessageComplete(content:GetMessageId())
+    self:_TryScrolling(true, 0.3, XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_FINISH_NOTIFY)
+end
+
+function XUiBigWorldMessageChat:_RefreshScrolling(time, notifyEventId)
+    if not self._IsScrolling then
+        self._ScrolledNotifyId = notifyEventId
+        self._ChatScroll:DOVerticalNormalizedPos(0, time or 0.4):OnComplete(self._OnScrollEndHandle)
+    end
+end
+
+function XUiBigWorldMessageChat:_TryScrolling(isScrolling, time, notifyEventId)
+    if isScrolling then
+        self:_RefreshScrolling(time, notifyEventId)
+    else
+        self._ChatScroll.verticalNormalizedPosition = 0
+        if notifyEventId then
+            XEventManager.DispatchEvent(notifyEventId)
+        end
+    end
+end
+
+function XUiBigWorldMessageChat:_ShowAnswerOptions(isShow, messageId, isForce)
     if self._IsShow == isShow then
+        if isForce then
+            self.PanelTaskBg.gameObject:SetActiveEx(isShow)
+            self.ListAnswer.gameObject:SetActiveEx(isShow)
+        end
+
         return
     end
 
@@ -380,6 +463,7 @@ function XUiBigWorldMessageChat:_InitUi()
     self.PanelLeft.gameObject:SetActiveEx(false)
     self.PanelRight.gameObject:SetActiveEx(false)
     self.TxtTips.gameObject:SetActiveEx(false)
+    self.PanelTips.gameObject:SetActiveEx(false)
 
     self.PanelTaskBgEnable = self.PanelTaskBg:FindTransform("PanelTaskBgEnable")
     self.PanelTaskBgDisable = self.PanelTaskBg:FindTransform("PanelTaskBgDisable")

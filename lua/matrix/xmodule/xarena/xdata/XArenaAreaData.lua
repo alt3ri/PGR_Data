@@ -14,6 +14,8 @@ function XArenaAreaData:_InitData(data)
     ---@type table<number, XArenaAreaShowData>
     self._AreaShowMap = {}
     self._GroupFightEventsMap = {}
+    ---@type table<number, number> key:分区id, value:该分区的最高分
+    self._AreaDistributeMaxPoint = data.AreaDistributeMaxPoint or {}
 
     if not XTool.IsTableEmpty(arenaList) then
         for i, arena in pairs(arenaList) do
@@ -32,6 +34,7 @@ function XArenaAreaData:_ClearData()
     self._GroupFightEvent = nil
     self._AreaShowList = nil
     self._AreaShowMap = {}
+    self._AreaDistributeMaxPoint = {}
 end
 
 function XArenaAreaData:GetTotalPoint()
@@ -71,6 +74,22 @@ function XArenaAreaData:SetAreaShowDataPointByAreaId(areaId, point)
     if arenaShowData and not arenaShowData:IsClear() then
         arenaShowData:SetPoint(point)
     end
+end
+
+--- 获取所有分区的最高分字典
+---@return table<number, number> key:分区id, value:该分区的最高分
+function XArenaAreaData:GetAreaDistributeMaxPoint()
+    return self._AreaDistributeMaxPoint or {}
+end
+
+--- 根据DistributeType获取该分区的最高分
+---@param distributeType number DistributeType值
+---@return number|nil 该分区的最高分，如果不存在则返回 nil
+function XArenaAreaData:GetAreaDistributeMaxPointByDistributeType(distributeType)
+    if not self._AreaDistributeMaxPoint then
+        return nil
+    end
+    return self._AreaDistributeMaxPoint[distributeType]
 end
 
 return XArenaAreaData

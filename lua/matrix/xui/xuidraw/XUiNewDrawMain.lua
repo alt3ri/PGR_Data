@@ -981,6 +981,19 @@ function XUiNewDrawMain:OnSelectUp(drawId)
     local drawInfo = XDataCenter.DrawManager.GetDrawInfo(drawId)
     self.DrawInfo = drawInfo
     self:UpdatePurchase()
+
+    -- 可肝卡池商店跳转按钮
+    local cId = 770400 -- 临时写死
+    local isCurDrawIsOpenCanLiverDraw = XConditionManager.CheckCondition(cId) and drawInfo.IsShowShop
+    self.BtnShop.gameObject:SetActiveEx(isCurDrawIsOpenCanLiverDraw)
+    --==============================
+    -- 可肝卡池商店按钮红点逻辑
+    --==============================
+    local key = string.format("NewDraw_ShopRedDot_%s", tostring(drawId))
+    local hasClicked = XSaveTool.GetData(key)
+    -- 未点击过 → 显示红点
+    self.BtnShop:ShowReddot(not hasClicked)
+
     self.DrawControl:Update(drawInfo, self.GroupId)
     local combination = XDataCenter.DrawManager.GetDrawCombination(drawInfo.Id)
     if not combination then
@@ -1015,19 +1028,6 @@ function XUiNewDrawMain:OnSelectUp(drawId)
     -- 播放切换特效
     self.Effect2.gameObject:SetActive(false)
     self.Effect2.gameObject:SetActive(true)
-
-    -- 可肝卡池商店跳转按钮
-
-    local cId = 770400 -- 临时写死
-    local isCurDrawIsOpenCanLiverDraw = XConditionManager.CheckCondition(cId) and drawInfo.IsShowShop
-    self.BtnShop.gameObject:SetActiveEx(isCurDrawIsOpenCanLiverDraw)
-    --==============================
-    -- 可肝卡池商店按钮红点逻辑
-    --==============================
-    local key = string.format("NewDraw_ShopRedDot_%s", tostring(drawId))
-    local hasClicked = XSaveTool.GetData(key)
-    -- 未点击过 → 显示红点
-    self.BtnShop:ShowReddot(not hasClicked)
 
     self.CurBanner:UpdateNewDrawChar(self.GoodsShowParams.Icon, isShowQuality, self.GoodsShowParams.QualityIcon)
 end

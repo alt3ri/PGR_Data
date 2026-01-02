@@ -18,6 +18,11 @@ local ConditionManager = {}
 local UiDialog = {}
 local VideoManager = {}
 local CommonGuide = {}
+local Movie = {}
+local Function = {}
+
+local TrueString = "True"
+local FalseString = "False"
 
 function Fuben.CheckSettleFight()
     return XDataCenter.FubenManager.CheckSettleFight()
@@ -131,6 +136,16 @@ function DlcFuben.GetModelIdByWorldNpcData(worldType, npcData)
     return modelId
 end
 
+function DlcFuben.GetAnimExpressionSOGroupIdByWorldType(worldType, fashionId)
+    if not fashionId then
+        XLog.Error("CsCallLua.DlcFuben.GetAnimExpressionSOGroupIdByWorldType 参数错误: fashionId == null")
+
+        return 0
+    end
+    local groupId = XMVCA.XDlcHelper:GetAnimExpressionSOGroupId(worldType, fashionId)
+    return groupId
+end
+
 function DlcFuben.CheckLevelPlayFullCleared(worldType, levelPlayId)
     if not XTool.IsNumberValid(levelPlayId) then
         XLog.Error("CsCallLua.DlcFuben.CheckLevelPlayFullCleared 参数错误: levelPlayId is invalid")
@@ -179,8 +194,31 @@ function DlcFuben.GetNpcPartDataByGender(gender)
     return XMVCA.XBigWorldCommanderDIY:GetNpcPartDataByGender(gender)
 end
 
+function BigWorld.GetCurrentGender()
+    if not XMVCA:IsRegisterAgency(ModuleId.XBigWorldCommanderDIY) then
+        XLog.Error("未初始化DIY模块，请勿调用当前接口！")
+        return XEnumConst.PlayerFashion.Gender.Male
+    end
+    return XMVCA.XBigWorldCommanderDIY:GetCurrentGender()
+end
+
 function DlcFuben.GetBigWorldText(key)
     return XMVCA.XBigWorldService:GetText(key)
+end
+
+function DlcFuben.InitDefaultFightDelegate()
+    ---@type XDlcActivityAgency
+    local agency = require("XModule/XBase/XDlcActivityAgency")
+
+    CS.StatusSyncFight.XFightDelegate.GetDlcBaseAttrib = Handler(agency, agency.DlcGetBaseAttrib)
+    CS.StatusSyncFight.XFightDelegate.GetDlcNpcAttrib = Handler(agency, agency.DlcGetNpcAttrib)
+    CS.StatusSyncFight.XFightDelegate.GetWorldNpcBornMagicLevelMap = Handler(agency, agency.DlcGetWorldNpcBornMagicLevelMap)
+end
+
+function DlcFuben.ClearDefaultFightDelegate()
+    CS.StatusSyncFight.XFightDelegate.GetDlcBaseAttrib = nil
+    CS.StatusSyncFight.XFightDelegate.GetDlcNpcAttrib = nil
+    CS.StatusSyncFight.XFightDelegate.GetWorldNpcBornMagicLevelMap = nil
 end
 
 function DlcCondition.CheckCondition(conditionId)
@@ -547,9 +585,13 @@ end
 
 function BigWorld.OpenBigWorldUi(uiName, args)
     if args then
-        return XMVCA.XBigWorldUI:Open(uiName, table.unpack(args))
+        local ret = XMVCA.XBigWorldUI:Open(uiName, table.unpack(args))
+        CsXGameEventManager.Instance:Notify(CS.XEventId.EVENT_BIG_WORLD_OPEN_UI_STATUS, uiName, ret and TrueString or FalseString)
+        return ret
     end
-    return XMVCA.XBigWorldUI:Open(uiName)
+    local ret = XMVCA.XBigWorldUI:Open(uiName)
+    CsXGameEventManager.Instance:Notify(CS.XEventId.EVENT_BIG_WORLD_OPEN_UI_STATUS, uiName, ret and TrueString or FalseString)
+    return ret
 end
 
 function BigWorld.DebugCheckNarrativeExist(narrativeId)
@@ -584,6 +626,19 @@ function VideoManager.RecordVideoSkip(id)
 end
 --endregion
 
+function Movie.ExtractGenderContent(content, specGender)
+    local content = XMVCA.XMovie:ExtractGenderContent(content, specGender)
+    return content
+end
+
+function Function.SkipInterface(skipId)
+    XFunctionManager.SkipInterface(skipId)
+end
+
+function Function.BiwWorldSkipInterface(skipId)
+    XMVCA.XBigWorldSkipFunction:SkipTo(skipId)
+end
+
 CsCallLua = {}
 CsCallLua.Fuben = Fuben
 CsCallLua.Character = Character
@@ -604,4 +659,6 @@ CsCallLua.Theatre5 = Theatre5
 CsCallLua.ConditionManager = ConditionManager
 CsCallLua.UiDialog = UiDialog
 CsCallLua.VideoManager = VideoManager
-CsCallLua.CommonGuide = CommonGuide
+CsCallLua.CommonGuide = CommonGuide
+CsCallLua.Movie = Movie
+CsCallLua.Function = Function

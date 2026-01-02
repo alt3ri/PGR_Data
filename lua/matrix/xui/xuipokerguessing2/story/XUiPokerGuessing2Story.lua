@@ -12,7 +12,9 @@ function XUiPokerGuessing2Story:OnAwake()
     self.DynamicTable:SetDelegate(self)
     self.GridArchiveNpc.gameObject:SetActiveEx(false)
     self.ToggleFilter.onValueChanged:AddListener(handler(self, self.OnToggleShowUnplayedStoriesFirst))
-    self.ToggleFilter.isOn = XSaveTool.GetData("PokerGuessing2ShowUnplayedStoriesFirst") or false
+    
+    -- 默认激活 true
+    self.ToggleFilter.isOn = self._Control:GetShowUnplayedStoriesFirst()
 
     self.AssetActivityPanel = XUiHelper.NewPanelActivityAssetSafe({
         self._Control:GetConfigItemId()
@@ -61,7 +63,7 @@ function XUiPokerGuessing2Story:PlayGridAnimation()
 end
 
 function XUiPokerGuessing2Story:OnToggleShowUnplayedStoriesFirst(isOn)
-    XSaveTool.SaveData("PokerGuessing2ShowUnplayedStoriesFirst", isOn)
+    self._Control:SetShowUnplayedStoriesFirst(isOn)
     self:Update()
 end
 

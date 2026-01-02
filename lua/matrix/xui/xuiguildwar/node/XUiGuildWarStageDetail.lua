@@ -2,6 +2,7 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPanelEliteMonster = require("XUi/XUiGuildWar/Node/XUiPanelEliteMonster")
 local XUiPanelNodeDetail = require("XUi/XUiGuildWar/Node/XUiPanelNodeDetail")
 local XUiPanelCommonEffect = require("XUi/XUiGuildWar/Node/XUiPanelCommonEffect")
+local XUiPanelRoleStationed = require('XUi/XUiGuildWar/Node/XUiPanelRoleStationed')
 
 --######################## XUiGuildWarStageDetail ########################
 ---@class XUiGuildWarStageDetail: XLuaUi
@@ -105,6 +106,13 @@ function XUiGuildWarStageDetail:OnAwake()
     -- 连接信号
     self.UiPanelNodeDetail:ConnectSignal("ChangeTopDetailStatus", self, self.OnChangeTopDetailStatus)
     self.UiPanelEliteMonster:ConnectSignal("ChangeTopDetailStatus", self, self.OnChangeTopDetailStatus)
+    
+    --4.2 九期角色驻守玩法
+    if self.PanelStay then
+        ---@type XUiPanelRoleStationed
+        self.PanelRoleStationed = XUiPanelRoleStationed.New(self.PanelStay, self)
+        self.PanelRoleStationed:Open()
+    end
 end
 
 -- node : XNormalGWNode
@@ -158,7 +166,10 @@ end
 
 function XUiGuildWarStageDetail:RefreshNode(node)
     if node == nil then
-        node = self.Node
+        -- 根据NodeId从数据层重新取实例
+        if self.Node then
+            node = XDataCenter.GuildWarManager.GetNode(self.Node:GetId())
+        end
     end
     self.Node = node
 
@@ -194,6 +205,10 @@ function XUiGuildWarStageDetail:RefreshNode(node)
     self.BtnPlayer:SetNameByGroup(1, node:GetMemberCount())
     -- 按钮状态
     self:RefreshButtonStatus()
+
+    if self.PanelRoleStationed then
+        self.PanelRoleStationed:InitNodeId(self.Node:GetId())
+    end
 end
 
 function XUiGuildWarStageDetail:RefreshTimeData()

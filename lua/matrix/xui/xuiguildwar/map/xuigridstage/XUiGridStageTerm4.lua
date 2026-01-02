@@ -6,12 +6,16 @@ local XUiGridStageTerm4 = XClass(XUiGridStage, "XUiGridStageTerm4")
 
 function XUiGridStageTerm4:OnBtnStageClick(selectedNodeId)
     if self.IsPathEdit then
-        self.Base:AddPath(self.StageNode:GetId(), self)
+        self.Base:AddPath(self.StageNodeId, self)
     else
-        if self.StageNode:GetIsPlayerNode() then
-            XLuaUiManager.Open("UiGuildWarTerm4Panel", self.StageNode)
-        else
-            XLuaUiManager.Open("UiGuildWarStageDetail", self.StageNode, false)
+        local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId)
+
+        if nodeEntity then
+            if nodeEntity:GetIsPlayerNode() then
+                XLuaUiManager.Open("UiGuildWarTerm4Panel", nodeEntity)
+            else
+                XLuaUiManager.Open("UiGuildWarStageDetail", nodeEntity, false)
+            end
         end
     end
 end

@@ -21,7 +21,17 @@ function XBuffScript1010578:Update(dt)
     local SelfHpPercent = SelfHp / SelfHpMax -- 获取自身血量百分比
     local TargetHpPercent = TargetHp / TargetHpMax -- 获取敌方血量百分比
     if SelfHpPercent > TargetHpPercent  then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1010580, 1) --强化回血
+        if self._proxy:CheckBuffByKind(self._uuid, 1016390) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010580, 1) --强化回血1级
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016391) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010667, 1) --强化回血2级
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016392) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010668, 1) --强化回血3级
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016393) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010669, 1) --强化回血4级
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016394) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010670, 1) --强化回血5级
+        end
     else
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1010581, 1) --删除强化回血
     end

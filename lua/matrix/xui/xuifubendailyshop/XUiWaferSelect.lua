@@ -1,4 +1,4 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiGridWaferSelect = require("XUi/XUiFubenDailyShop/XUiGridWaferSelect")
 
 local XUiWaferSelect = XLuaUiManager.Register(XLuaUi, "UiWaferSelect")
@@ -35,10 +35,11 @@ function XUiWaferSelect:OnDisable()
 end
 
 function XUiWaferSelect:InitComponent()
-    self.BtnConfirm.CallBack = function() self:OnBtnConfirmClick() end
-    self.BtnClose.CallBack = function() self:OnBtnCloseClick() end
-    self.BtnCancel.CallBack = function() self:OnBtnCloseClick() end
-    self.BtnTanchuangClose.CallBack = function() self:OnBtnCloseClick() end
+
+    self.BtnConfirm:AddEventListener(handler(self, function() self:OnBtnConfirmClick() end))
+    self.BtnClose:AddEventListener(handler(self, function() self:OnBtnCloseClick() end))
+    self.BtnCancel:AddEventListener(handler(self, function() self:OnBtnCloseClick() end))
+    self.BtnTanchuangClose:AddEventListener(handler(self, function() self:OnBtnCloseClick() end))
 
     self.GridSuitSimple.gameObject:SetActiveEx(false)
 end

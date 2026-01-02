@@ -286,9 +286,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
                 self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)     --章节结束
             end
             self._Model.CurAdventureData:HandleAutoChessGameplayResult(autoChessResult)
-
-            XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_BATTLE_RESULT, res.DlcFightSettleData)
-
+            
             -- 战斗校验结果
             if XTool.IsNumberValid(autoChessResult.CheckFailTimes) and autoChessResult.CheckFailTimes > self._Model.CurAdventureData:GetCheckFailTimes() then
                 local limit = self._Model:GetTheatre5ConfigValByKey('BattleCheckFailTimesLimit')
@@ -786,6 +784,14 @@ function XTheatre5BattleAgencyCom:_GetXFightClientArgs()
 
     args.InterruptFightCb = function(result, summary)
         self:RequestTheatre5NormalSettle(result, summary)
+    end
+    
+    args.ExitFightCb = function()
+        if XMain.IsEditorDebug then
+            XLog.Debug('退出战斗回调')
+        end
+
+        XLuaUiManager.SafeClose('UiTheatre5RoundSettlement')
     end
 
     return args

@@ -64,7 +64,7 @@ function XUiBigWorldProcessCore:OnTabGroupClick(index)
 
         self._CurrentIndex = index
         if coreEntity then
-            if coreEntity:IsActivity() then
+            if coreEntity:IsGamePlay() then
                 self._StoryUi:Close()
                 self._ActivityDynamicTable:SetActive(true)
                 self:_RefreshActivityDynamicTable(coreEntity)
@@ -220,7 +220,7 @@ function XUiBigWorldProcessCore:_RefreshActivityDynamicTable(coreEntity)
     if not XTool.IsTableEmpty(elements) then
         self._ActivityDynamicTable:SetActive(true)
         self._ActivityDynamicTable:SetDataSource(elements)
-        self._ActivityDynamicTable:ReloadDataSync()
+        self._ActivityDynamicTable:ReloadDataSync(1)
     else
         self._ActivityDynamicTable:SetActive(false)
     end
@@ -269,6 +269,11 @@ function XUiBigWorldProcessCore:_RefreshTabReddot()
             end
         end
     end
+end
+
+function XUiBigWorldProcessCore:OnVersionChanged()
+    self._CurrentIndex = nil
+    self._ContentEntity = nil
 end
 
 return XUiBigWorldProcessCore

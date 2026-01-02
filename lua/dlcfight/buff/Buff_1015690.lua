@@ -17,7 +17,7 @@ function XBuffScript1015690:Init()
     self.battleStartBuffId = 1015992    --战斗开始标记buff
     self.targetId = 0   --目标ID
     ------------执行------------
-    self.runeId = self.magicId - 1015000 + 20000 - 1
+    self.runeId = 20690
 
 end
 
@@ -44,6 +44,7 @@ function XBuffScript1015690:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         end
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, calMagicLevel)
         self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
+        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
         if self.targetId ~= 0 then
             self._proxy:ApplyMagic(self._uuid, self.targetId, self.magicId, calMagicLevel)
         end
@@ -68,6 +69,7 @@ function XBuffScript1015690:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId,
         end
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, calMagicLevel)
         self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
+        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
         if self.targetId ~= 0 then
             self._proxy:ApplyMagic(self._uuid, self.targetId, self.magicId, calMagicLevel)
         end

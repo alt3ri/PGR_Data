@@ -7,7 +7,9 @@ local XUiPanelDlcRelinkCharacterRight = require("XUi/XUiDlcRelink/Room/Panel/XUi
 local XUiDlcRelinkCharacter = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkCharacter")
 
 function XUiDlcRelinkCharacter:OnAwake()
-    XMVCA.XDlcRoom:BeginSelectCharacter()
+    if not self:CheckIsReady() then
+        XMVCA.XDlcRoom:BeginSelectCharacter()
+    end
     self.PanelEmptyList.gameObject:SetActiveEx(false)
     self.PanelRight.gameObject:SetActiveEx(false)
     self.GridCharacter.gameObject:SetActiveEx(false)
@@ -76,6 +78,11 @@ function XUiDlcRelinkCharacter:RefreshCharacterList()
         return
     end
 
+    if not XTool.IsNumberValid(self.CurSelectCharacterId) then
+        -- 默认选择第一个角色
+        self.CurSelectCharacterId = self.CharacterIds[1]
+    end
+
     for index, characterId in ipairs(self.CharacterIds) do
         local grid = self.CharacterGridList[index]
         if not grid then
@@ -139,7 +146,7 @@ function XUiDlcRelinkCharacter:RefreshPanelRight()
 end
 
 function XUiDlcRelinkCharacter:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
 end
 
 function XUiDlcRelinkCharacter:OnBtnBackClick()
@@ -147,8 +154,33 @@ function XUiDlcRelinkCharacter:OnBtnBackClick()
 end
 
 function XUiDlcRelinkCharacter:EndSelectingAndClose()
-    XMVCA.XDlcRoom:EndSelectCharacter()
+    if not self:CheckIsReady() then
+        XMVCA.XDlcRoom:EndSelectCharacter()
+    end
     self:Close()
+end
+
+--- 检查打开这个界面时玩家是否准备了
+function XUiDlcRelinkCharacter:CheckIsReady()
+    if not XMVCA.XDlcRoom:IsInRoom() then
+        return false
+    end
+    
+    ---@type XDlcTeam
+    local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
+    if not team then
+        return false
+    end
+
+    
+    ---@type XDlcMember
+    local member = team:GetSelfMember()
+
+    if not member then
+        return false
+    end
+    
+    return member:IsReady() or false
 end
 
 return XUiDlcRelinkCharacter

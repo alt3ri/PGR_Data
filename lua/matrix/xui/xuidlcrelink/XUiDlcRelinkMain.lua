@@ -26,11 +26,9 @@ function XUiDlcRelinkMain:OnStart()
             self:RefreshTime()
         end
     end)
-    self.IsPaused = false
     self.Tips = self._Control:GetActivityTips()
     self.TipSwitchInterval = tonumber(self._Control:GetClientConfig("MainTipsSwitchInterval"))
     self.CurrentTipIndex = -1
-    self:InitVideo()
     self:InitRewardPreview()
     -- TODO 战斗初始化，先临时放在这里，后续等战斗那边优化后在调整。
     XMVCA.XDlcRelink:DlcInitFight()
@@ -44,6 +42,7 @@ function XUiDlcRelinkMain:OnEnable()
     self:RefreshBtnEnter()
     self:RefreshBtnTask()
     self:RefreshBtnBox()
+    self._Control:OnReceiveInvite()
 end
 
 function XUiDlcRelinkMain:OnDisable()
@@ -55,23 +54,16 @@ end
 function XUiDlcRelinkMain:OnGetLuaEvents()
     return {
         XEventId.EVENT_DLC_ROOM_KICKOUT,
+        XEventId.EVENT_DLC_RELINK_SYNC_DAILY_SIGN,
     }
 end
 
-function XUiDlcRelinkMain:OnNotify(evet, ...)
-    if evet == XEventId.EVENT_DLC_ROOM_KICKOUT then
+function XUiDlcRelinkMain:OnNotify(event, ...)
+    if event == XEventId.EVENT_DLC_ROOM_KICKOUT then
         self:RefreshBtnEnter()
+    elseif event == XEventId.EVENT_DLC_RELINK_SYNC_DAILY_SIGN then
+        self:RefreshBtnBox()
     end
-end
-
-function XUiDlcRelinkMain:InitVideo()
-    local videoUrl = self._Control:GetActivityVideoUrl()
-    if string.IsNilOrEmpty(videoUrl) then
-        self.VideoPlayer.gameObject:SetActiveEx(false)
-        return
-    end
-    self.VideoPlayer.gameObject:SetActiveEx(true)
-    self.VideoPlayer:SetVideoFromRelateUrl(videoUrl)
 end
 
 function XUiDlcRelinkMain:InitRewardPreview()
@@ -149,17 +141,21 @@ function XUiDlcRelinkMain:GetRandomIndex()
 end
 
 function XUiDlcRelinkMain:PlayVideo()
-    if self.IsPaused then
-        self.VideoPlayer:RePlay()
-        self.IsPaused = false
-    else
-        self.VideoPlayer:Play()
+    local videoConfigId = self._Control:GetActivityVideoConfigId()
+    if not XTool.IsNumberValid(videoConfigId) then
+        self.VideoPlayer.gameObject:SetActiveEx(false)
+        return
     end
+    self.VideoPlayer.gameObject:SetActiveEx(true)
+    self.VideoPlayer:SetInfoByVideoId(videoConfigId)
+    self.VideoPlayer:RePlay()
 end
 
 function XUiDlcRelinkMain:StopVideo()
-    self.VideoPlayer:Pause()
-    self.IsPaused = true
+    if self.VideoPlayer then
+        self.VideoPlayer:Stop()
+        self.VideoPlayer.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiDlcRelinkMain:RefreshBtnEnter()
@@ -187,12 +183,12 @@ function XUiDlcRelinkMain:RefreshBtnBox()
 end
 
 function XUiDlcRelinkMain:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
-    self:RegisterClickEvent(self.BtnTask, self.OnBtnTaskClick)
-    self:RegisterClickEvent(self.BtnRank, self.OnBtnRankClick)
-    self:RegisterClickEvent(self.BtnEnter, self.OnBtnEnterClick)
-    self:RegisterClickEvent(self.BtnBox, self.OnBtnBoxClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
+    self.BtnTask:AddEventListener(handler(self, self.OnBtnTaskClick))
+    self.BtnRank:AddEventListener(handler(self, self.OnBtnRankClick))
+    self.BtnEnter:AddEventListener(handler(self, self.OnBtnEnterClick))
+    self.BtnBox:AddEventListener(handler(self, self.OnBtnBoxClick))
     self:BindHelpBtn(self.BtnHelp, self._Control:GetClientConfig("HelpKey"))
 end
 

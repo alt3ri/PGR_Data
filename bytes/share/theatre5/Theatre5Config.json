@@ -12,7 +12,7 @@
     {
         "Key": "PvpTarget",
         "Desc": "PvP\u6a21\u5f0f\u76ee\u6807\u5956\u676f\u6570",
-        "Values": "['10']"
+        "Values": "['12']"
     },
     {
         "Key": "ReduceRankFailCount",
@@ -71,12 +71,12 @@
     },
     {
         "Key": "RobotHeadPortraits",
-        "Desc": "List of Portraits available for Robots",
+        "Desc": "\u673a\u5668\u4eba\u53ef\u9009\u5934\u50cf\u5217\u8868",
         "Values": "['9000001']"
     },
     {
         "Key": "RobotHeadHeadFrames",
-        "Desc": "List of Portrait Frames available for Robots",
+        "Desc": "\u673a\u5668\u4eba\u53ef\u9009\u5934\u50cf\u6846\u5217\u8868",
         "Values": "['9090008']"
     },
     {
@@ -201,72 +201,97 @@
     },
     {
         "Key": "KLoseMin",
-        "Desc": "Minimum Restart K Value Penalty",
+        "Desc": "\u6700\u5c0f\u91cd\u5f00\u60e9\u7f5aK\u503c",
         "Values": "['2']"
     },
     {
         "Key": "PveTimeId",
-        "Desc": "PVE Mode Starting Time",
+        "Desc": "PVE\u6a21\u5f0f\u5f00\u542f\u65f6\u95f4",
         "Values": "['34']"
     },
     {
         "Key": "PveVersion",
-        "Desc": "PVE Mode Version Number",
-        "Values": "['4']"
+        "Desc": "PVE\u6a21\u5f0f\u7248\u672c\u53f7",
+        "Values": "['5']"
     },
     {
         "Key": "SkipSotryPage",
-        "Desc": "Codex Redirect Tag",
+        "Desc": "\u56fe\u9274\u8df3\u8f6c\u9875\u7b7e",
         "Values": "['16']"
     },
     {
         "Key": "MainVideoId",
-        "Desc": "Main Screen Video ID",
+        "Desc": "\u4e3b\u754c\u9762videoId",
         "Values": "['20004']"
     },
     {
         "Key": "ShopShowRewards",
-        "Desc": "Groups of 2: The 1st part is the ID, the 2nd is the quantity.",
+        "Desc": "\u4e24\u4e2a\u4e00\u7ec4\uff0c\u7b2c\u4e00\u4e2a\u662fid\uff0c\u7b2c\u4e8c\u662f\u6570\u91cf",
         "Values": "['50005', '2250', '32', '49', '11000292', '1']"
     },
     {
         "Key": "PveSlideButton",
-        "Desc": "PVE Clue Board +/- buttons; click {\u53c2\u65701} times to reach max/min value.",
+        "Desc": "pve\u7ebf\u7d22\u677f+-\u6309\u94ae\uff0c\u70b9{\u53c2\u65701}\u4e0b\u5230\u6700\u5927/\u6700\u5c0f\u503c",
         "Values": "['20']"
     },
     {
         "Key": "Theatre5LimitShop",
-        "Desc": "PVE limited-time shop ID corresponding to taskshop table ID",
+        "Desc": "pve\u9650\u65f6\u5546\u5e97id\u5bf9\u5e94\u7684taskshop\u8868id",
         "Values": "['1']"
     },
     {
         "Key": "PveWorldId",
-        "Desc": "PVE world ID to be loaded",
+        "Desc": "pve\u8bfb\u53d6\u7684worldid",
         "Values": "['200']"
     },
     {
         "Key": "ClueBoardMaskMinAndMax",
-        "Desc": "PvE clue board zoom aperture configuration",
+        "Desc": "pve\u7ebf\u7d22\u677f\u7f29\u653e\u5149\u5708\u53d8\u5316\u7684\u914d\u7f6e",
         "Values": "['1000', '2000']"
     },
     {
         "Key": "PvpLevelGroup",
-        "Desc": "PvP Level Configuration Set",
+        "Desc": "pvp\u4f7f\u7528\u7b49\u7ea7\u914d\u7f6e\u7ec4",
         "Values": "['1']"
     },
     {
         "Key": "RelicRefresh",
-        "Desc": "Accessory Refresh Attempts",
+        "Desc": "\u9970\u54c1\u53ef\u5237\u65b0\u6b21\u6570",
         "Values": "['1']"
     },
     {
         "Key": "StrengthenRate",
-        "Desc": "Enhanced Rune Price Multiplier",
+        "Desc": "\u7b26\u7eb9\u5f3a\u5316\u540e\u4ef7\u683c\u500d\u7387",
         "Values": "['20000']"
     },
     {
         "Key": "MinPvpFinishScores",
-        "Desc": "The guarantee system triggers after clearing with 10 wins (guarantee scores vary by remaining HP)",
+        "Desc": "10\u80dc\u901a\u5173\u8fdb\u884c\u4fdd\u5e95(\u4e0d\u540c\u8840\u91cf\u4fdd\u5e95\u5206\u6570\u4e0d\u540c)",
         "Values": "['10', '10', '15', '15', '15']"
+    },
+    {
+        "Key": "MissionFreshCnt",
+        "Desc": "\u4efb\u52a1\u9009\u62e9\u754c\u9762\u6bcf\u4e2a\u69fd\u4f4d\u7684\u5237\u65b0\u6b21\u6570",
+        "Values": "['1']"
+    },
+    {
+        "Key": "CharacterInitExp",
+        "Desc": "pvp/pve\u89d2\u8272\u521d\u59cb\u5316\u7ecf\u9a8c",
+        "Values": "['0']"
+    },
+    {
+        "Key": "PvpMultiplierLimit",
+        "Desc": "pvp\u500d\u7387\u9650\u5236",
+        "Values": "['0', '0', '0', '0', '0']"
+    },
+    {
+        "Key": "PveMultiplierLimit",
+        "Desc": "pve\u500d\u7387\u9650\u5236",
+        "Values": "['0', '0', '0', '0', '0']"
+    },
+    {
+        "Key": "MissionLevelUpForRound",
+        "Desc": "\u6bcf\u56de\u5408\u5347\u7ea7\u6b21\u6570",
+        "Values": "['1']"
     }
 ]

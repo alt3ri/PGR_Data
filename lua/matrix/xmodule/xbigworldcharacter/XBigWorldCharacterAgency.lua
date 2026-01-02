@@ -247,6 +247,11 @@ function XBigWorldCharacterAgency:ExGetDlcModelIdByCharacterData(characterData)
     return XMVCA.XBigWorldCharacter:GetModelIdByFashionId(fashionId)
 end
 
+function XBigWorldCharacterAgency:GetAnimExpressionSOGroupId(fashionId)
+    local template = self._Model:GetDlcFashionTemplate(fashionId)
+    return  template and template.AnimExpressionSOGroupId or 0
+end
+
 --endregion 角色配置
 
 --region 队伍配置

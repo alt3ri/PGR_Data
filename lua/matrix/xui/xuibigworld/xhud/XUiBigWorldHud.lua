@@ -31,7 +31,6 @@ function XUiBigWorldHud:OnEnable()
     self:RefreshBtnQuit()
     self:RefreshRedPoint()
     self:RefreshShield()
-    self:RefreshPerspective()
     self:AddEventHandler()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_UI_HUD_ENABLE)
 end
@@ -88,6 +87,8 @@ function XUiBigWorldHud:InitCb()
     self.BtnFrist:AddEventListener(handler(self, self.OnBtnFirstClick))
 
     self.BtnThird:AddEventListener(handler(self, self.OnBtnThirdClick))
+
+    self.BtnNews:AddEventListener(handler(self, self.OnBtnNewsClick))
     
     self._OnEnableAnimCb = handler(self, self.OnEnableAnimEnd)
     self._OnDisableAnimCb = handler(self, self.OnDisableAnimEnd)
@@ -100,7 +101,7 @@ end
 function XUiBigWorldHud:AddEventHandler()
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_TEACH_UNLOCK, self.OnRefreshTeachRedPoint, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_TEACH_READ, self.OnRefreshTeachRedPoint, self)
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.RefreshQuestRedPoint, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.OnQuestStateChanged, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FUNCTION_SHIELD_CHANEG, self.OnShieldChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FUNCTION_SHIELD_CONTROL, self.OnShieldControl, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_FINISH_NOTIFY, self.OnMessageChange, self)
@@ -114,12 +115,13 @@ function XUiBigWorldHud:AddEventHandler()
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_DISABLE, self.RefreshPerspective, self)
     XEventManager.AddEventListener(XEventId.EVENT_TASK_SYNC, self.OnRefreshCourseRedPoint, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_BACKPACK_UPDATE, self.OnBackpackUpdate, self)
+    XEventManager.AddEventListener("EVENT_GUIDE_BIG_WORLD_OPEN_COURSE_UI", self.OnOpenCourseUi, self)
 end
 
 function XUiBigWorldHud:RemoveEventHandler()
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_TEACH_UNLOCK, self.OnRefreshTeachRedPoint, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_TEACH_READ, self.OnRefreshTeachRedPoint, self)
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.RefreshQuestRedPoint, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.OnQuestStateChanged, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FUNCTION_SHIELD_CHANEG, self.OnShieldChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FUNCTION_SHIELD_CONTROL, self.OnShieldControl, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_FINISH_NOTIFY, self.OnMessageChange, self)
@@ -133,6 +135,7 @@ function XUiBigWorldHud:RemoveEventHandler()
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_DISABLE, self.RefreshPerspective, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_TASK_SYNC, self.OnRefreshCourseRedPoint, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_BACKPACK_UPDATE, self.OnBackpackUpdate, self)
+    XEventManager.RemoveEventListener("EVENT_GUIDE_BIG_WORLD_OPEN_COURSE_UI", self.OnOpenCourseUi, self)
 end
 
 
@@ -163,7 +166,7 @@ function XUiBigWorldHud:OnBtnQuitClick()
         end
     end
 end
-
+    
 function XUiBigWorldHud:OnBtnTaskClick()
     if XMVCA.XBigWorldGamePlay:IsInstLevel() then
         return
@@ -230,6 +233,10 @@ function XUiBigWorldHud:OnBtnThirdClick()
     self:RefreshPerspective()
 end
 
+function XUiBigWorldHud:OnBtnNewsClick()
+    XMVCA.XBigWorldNews:OpenNewsUi()
+end
+
 function XUiBigWorldHud:RefreshMenu()
     local anim
     if self._IsShowMenu then
@@ -255,8 +262,11 @@ function XUiBigWorldHud:RefreshFunction()
     local checkCourse = XMVCA.XBigWorldFunction:CheckFunctionOpen(XMVCA.XBigWorldFunction.FunctionId.BigWorldCourse) 
             and not XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Process)
     
-    self.BtnHandBook.gameObject:SetActiveEx(checkCourse)
+    self.BtnHandBook.gameObject:SetActiveEx(checkCourse) 
+    self.BtnNews.gameObject:SetActiveEx(not XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.News) 
+            and not XMVCA.XBigWorldNews:IsNewsEmpty() and XMVCA.XBigWorldFunction:CheckFunctionOpen(XMVCA.XBigWorldFunction.FunctionId.BigWorldNews))
     self:RefreshMessage()
+    self:RefreshPerspective()
 end
 
 function XUiBigWorldHud:RefreshShield()
@@ -294,6 +304,7 @@ function XUiBigWorldHud:RefreshRedPoint()
     self:RefreshMessageRedPoint()
     self:RefreshMainMenuRedPoint()
     self:RefreshBackpackRedPoint()
+    self:RefreshNewsTag()
 end
 
 function XUiBigWorldHud:RefreshQuestRedPoint()
@@ -323,6 +334,15 @@ function XUiBigWorldHud:RefreshMainMenuRedPoint()
     --end
     
     self.BtnMenu:ShowReddot(false)
+end
+
+function XUiBigWorldHud:RefreshNewsTag()
+    self.BtnNews:ShowTag(XMVCA.XBigWorldNews:HasNewNews())
+end
+
+function XUiBigWorldHud:OnQuestStateChanged()
+    self:RefreshQuestRedPoint()
+    self:RefreshNewsTag()
 end
 
 --endregion
@@ -393,6 +413,16 @@ end
 
 function XUiBigWorldHud:OnBackpackUpdate()
     self:RefreshBackpackRedPoint()
+end
+
+function XUiBigWorldHud:OnOpenCourseUi(versionStr)
+    if string.IsNilOrEmpty(versionStr) then
+        return
+    end
+
+    local versionId = tonumber(versionStr)
+
+    XMVCA.XBigWorldCourse:OpenMainUi(nil, true, versionId)
 end
 
 -- endregion

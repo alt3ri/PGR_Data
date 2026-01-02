@@ -81,9 +81,9 @@ function XDlcMember:GetCharacterId(pos)
     return 0
 end
 
-function XDlcMember:GetOccupationType(pos)
+function XDlcMember:GetStyleType(pos)
     if not self:IsEmpty() then
-        return self._PlayerData:GetOccupationType(pos)
+        return self._PlayerData:GetStyleType(pos)
     end
     return 0
 end

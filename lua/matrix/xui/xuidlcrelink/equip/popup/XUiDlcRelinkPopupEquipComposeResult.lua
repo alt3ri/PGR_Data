@@ -17,10 +17,33 @@ function XUiDlcRelinkPopupEquipComposeResult:OnStart(equipUidList)
 
     self.CurSelectGrid = nil
     self.CurSelectEquipUid = 0
+
+    self:SortEquipList()
 end
 
 function XUiDlcRelinkPopupEquipComposeResult:OnEnable()
     self:SetupDynamicTable()
+end
+
+-- 装备列表排序
+-- 1.按品质排，品质越高越前
+-- 2.按类型排，主控装备比常规装备优先
+function XUiDlcRelinkPopupEquipComposeResult:SortEquipList()
+    table.sort(self.EquipUidList, function(a, b)
+        local templateIdA = self._Control:GetEquipTemplateIdByEquipUid(a)
+        local templateIdB = self._Control:GetEquipTemplateIdByEquipUid(b)
+        local qualityA = self._Control:GetEquipQuality(templateIdA)
+        local qualityB = self._Control:GetEquipQuality(templateIdB)
+        if qualityA ~= qualityB then
+            return qualityA > qualityB
+        end
+        local isMainEquipA = self._Control:GetEquipType(templateIdA) == XEnumConst.DlcRelink.EquipType.Main
+        local isMainEquipB = self._Control:GetEquipType(templateIdB) == XEnumConst.DlcRelink.EquipType.Main
+        if isMainEquipA ~= isMainEquipB then
+            return isMainEquipA
+        end
+        return a < b
+    end)
 end
 
 function XUiDlcRelinkPopupEquipComposeResult:InitDynamicTable()
@@ -38,9 +61,8 @@ function XUiDlcRelinkPopupEquipComposeResult:SetupDynamicTable()
         return
     end
 
-    local index = #self.EquipUidList
     self.DynamicTable:SetDataSource(self.EquipUidList)
-    self.DynamicTable:ReloadDataSync(index)
+    self.DynamicTable:ReloadDataSync(1)
 end
 
 ---@param grid XUiGridDlcRelinkEquipment
@@ -50,6 +72,7 @@ function XUiDlcRelinkPopupEquipComposeResult:OnDynamicTableEvent(event, index, g
         grid:Refresh(equipUid)
         local isSelected = equipUid == self.CurSelectEquipUid
         grid:SetSelect(isSelected)
+        grid.BtnEquip.gameObject:SetActiveEx(true)
         if isSelected and not self.CurSelectGrid then
             self.CurSelectGrid = grid
             self:ShowEquipBubble(equipUid, grid.Transform)
@@ -87,9 +110,9 @@ function XUiDlcRelinkPopupEquipComposeResult:OnBubbleEquipDetailClose()
 end
 
 function XUiDlcRelinkPopupEquipComposeResult:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnTanchuangClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnSure, self.OnBtnCloseClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnSure:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkPopupEquipComposeResult:OnBtnCloseClick()

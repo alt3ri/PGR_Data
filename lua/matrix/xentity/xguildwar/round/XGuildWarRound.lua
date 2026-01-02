@@ -32,16 +32,11 @@ function XGuildWarRound:UpdateFightRecords(fightRecords)
         self.BattleManager:UpdateFightRecords(fightRecords)
     end
 end
---更新动画事件列表
-function XGuildWarRound:UpdateLastActionIdDic(actionIdList)
-    if self.BattleManager then
-        self.BattleManager:UpdateShowedActionIdDic(actionIdList)
-    end
-end
+
 --endregion
 
 --刷新轮次数据
-function XGuildWarRound:RefreshRoundData(roundData)
+function XGuildWarRound:RefreshRoundData(roundData, isRealTime, type, id)
     local difficultyChanged = self.Difficulty~= nil and self.Difficulty ~= roundData.DifficultyId
     
     self.Difficulty = roundData.DifficultyId
@@ -51,7 +46,7 @@ function XGuildWarRound:RefreshRoundData(roundData)
     if not self.BattleManager then
         self.BattleManager = CreateBattleManager(roundData.DifficultyId)
     end
-    self.BattleManager:UpdateCurrentRoundData(roundData, difficultyChanged)
+    self.BattleManager:UpdateCurrentRoundData(roundData, difficultyChanged, isRealTime, type, id)
 end
 --设置结算数据
 function XGuildWarRound:SetSettleData(settleData)

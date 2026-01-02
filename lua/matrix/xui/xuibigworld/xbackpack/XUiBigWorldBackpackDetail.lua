@@ -74,7 +74,7 @@ function XUiBigWorldBackpackDetail:OnBtnConfirmClick()
         XMVCA.XBigWorldService:UseItem(self._ItemId, nil, self._UseCount, function(rewardGoodsList)
             XMVCA.XBigWorldUI:OpenBigWorldObtain(rewardGoodsList, nil, function()
                 self.Parent:RefreshType(true)
-            end)
+            end, true)
         end)
     end
 end

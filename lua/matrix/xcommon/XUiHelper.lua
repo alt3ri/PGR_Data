@@ -1694,7 +1694,7 @@ end
 --读取Text配置并保留换行符
 ---@return string, number
 function XUiHelper.ReadTextWithNewLine(text, ...)
-    return stringGsub(CSTextManagerGetText(text, ...), "\\n", "\n")
+    return XUiHelper.ConvertLineBreakSymbol(CSTextManagerGetText(text, ...))
 end
 
 ---@return string

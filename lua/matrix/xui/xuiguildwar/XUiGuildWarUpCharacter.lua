@@ -14,7 +14,7 @@ function XUiRoleGrid:SetData(roleId)
         return
     end
     self.RImgRoleIcon:SetRawImage(XMVCA.XCharacter:GetCharHalfBodyImage(roleId))
-    local buffData = self.GuildWarManager.GetSpecialRoleBuff(roleId)
+    local buffData = XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialRoleBuff(roleId)
     if buffData == nil then return end
     self.RImgSkillIcon:SetRawImage(buffData.Icon)
     if self.TxtSkillName then
@@ -24,6 +24,8 @@ function XUiRoleGrid:SetData(roleId)
 end
 
 --######################## XUiGuildWarUpCharacter ########################
+---@class XUiGuildWarUpCharacter: XLuaUi
+---@field _Control XGuildWarControl
 local XUiGuildWarUpCharacter = XLuaUiManager.Register(XLuaUi, "UiGuildWarUpCharacter")
 local UI_MAX_ROLE = 4
 
@@ -35,14 +37,14 @@ end
 
 function XUiGuildWarUpCharacter:OnStart()
     -- 特攻角色列表
-    local roleIds = self.GuildWarManager.GetSpecialRoleList()
+    local roleIds = self._Control.SpecialRoleControl:GetSpecialRoleList()
     local roleGrid
     for i = 1, UI_MAX_ROLE do
         roleGrid = XUiRoleGrid.New(self["PanglUpCharater" .. i])
         roleGrid:SetData(roleIds[i])
     end
     -- 队伍技能
-    local teamBuff = self.GuildWarManager.GetSpecialTeamBuff()
+    local teamBuff = XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialTeamBuff()
     if teamBuff == nil then return end
     self.RImgTeamSkillIcon:SetRawImage(teamBuff.Icon)
     self.TxtTeamSkillDesc.text = teamBuff.Desc

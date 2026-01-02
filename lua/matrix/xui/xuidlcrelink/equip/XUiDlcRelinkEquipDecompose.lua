@@ -1,6 +1,7 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiGridDlcRelinkEquipment = require("XUi/XUiDlcRelink/Equip/Grid/XUiGridDlcRelinkEquipment")
 local XUiPanelDlcRelinkEquipFilter = require("XUi/XUiDlcRelink/Equip/Panel/XUiPanelDlcRelinkEquipFilter")
+local XUiPanelDlcRelinkEquipDetail = require("XUi/XUiDlcRelink/Equip/Panel/XUiPanelDlcRelinkEquipDetail")
 ---@class XUiDlcRelinkEquipDecompose : XLuaUi
 ---@field private _Control XDlcRelinkControl
 ---@field PanelTab XUiButtonGroup
@@ -35,11 +36,16 @@ function XUiDlcRelinkEquipDecompose:OnStart()
         end
     end)
 
-    self.EquipOccupationDefaultIndex = 1 -- 进入时默认选择的职业Tab
-    self.CurSelectEquipOccupationIndex = 0
+    ---@type XUiPanelDlcRelinkEquipDetail
+    self.EquipDetailNode = XUiPanelDlcRelinkEquipDetail.New(self.PanelDetail, self)
+    self.EquipDetailNode.BtnClose:AddEventListener(handler(self, self.HideEquipBubble))
+
+    self.DefaultSelectTabIndex = 0 -- 进入时默认选择的Tab下标
+    self.CurSelectTabIndex = -1 -- 当前选择的Tab下标
 
     ---@type table<number, boolean>
     self.SelectedEquipUidSet = {} -- 当前选中的装备uid集合
+    self:RefreshSelectedCount()
 
     self:InitPanelTab()
     self:InitDynamicTable()
@@ -48,7 +54,7 @@ end
 function XUiDlcRelinkEquipDecompose:OnEnable()
     self.Super.OnEnable(self)
     self:RefreshEquipCapacity()
-    self.PanelTab:SelectIndex(self.EquipOccupationDefaultIndex)
+    self.PanelTab:SelectIndex(self.DefaultSelectTabIndex)
 end
 
 function XUiDlcRelinkEquipDecompose:OnDisable()
@@ -61,28 +67,43 @@ end
 
 function XUiDlcRelinkEquipDecompose:InitPanelTab()
     self.EquipBtnTabList = {}
-    local tabDescList = self._Control:GetClientConfigParams("EquipTabsDesc")
-    for _, tabDesc in ipairs(tabDescList) do
+    -- 收集并排序
+    local sortedTagTypes = {}
+    for key, value in pairs(self._Control.EquipTagType) do
+        table.insert(sortedTagTypes, { Key = key, Value = value })
+    end
+    table.sort(sortedTagTypes, function(a, b)
+        return a.Value < b.Value
+    end)
+    -- 创建Tab按钮
+    for _, tagTypeInfo in ipairs(sortedTagTypes) do
+        local index = tagTypeInfo.Value
         ---@type XUiComponent.XUiButton
         local btnTab = XUiHelper.Instantiate(self.BtnTab, self.PanelTab.transform)
         btnTab.gameObject:SetActiveEx(true)
+
+        local tabDesc = self._Control:GetClientConfig("EquipTabsDesc", index + 1)
         btnTab:SetNameByGroup(0, tabDesc)
-        table.insert(self.EquipBtnTabList, btnTab)
+
+        local tabIcon = self._Control:GetClientConfig("EquipTabsIcon", index + 1)
+        btnTab:SetSprite(tabIcon)
+
+        self.EquipBtnTabList[index] = btnTab
     end
     self.PanelTab:Init(self.EquipBtnTabList, handler(self, self.OnEquipBtnTabClick))
 end
 
 function XUiDlcRelinkEquipDecompose:OnEquipBtnTabClick(index)
-    if self.CurSelectEquipOccupationIndex == index then
+    if self.CurSelectTabIndex == index then
         return
     end
-    self.CurSelectEquipOccupationIndex = index
+    self.CurSelectTabIndex = index
     -- 重置装备筛选缓存
     self.EquipFilterCache = {}
     self:SetupDynamicTable()
-    self:RefreshSelectedCount()
     self:RefreshPanelFilter()
     self:RefreshReward()
+    self:CancelSelectAll()
 end
 
 function XUiDlcRelinkEquipDecompose:InitDynamicTable()
@@ -92,10 +113,10 @@ function XUiDlcRelinkEquipDecompose:InitDynamicTable()
     self.DynamicTable:SetDelegate(self)
 end
 
-function XUiDlcRelinkEquipDecompose:SetupDynamicTable()
+function XUiDlcRelinkEquipDecompose:SetupDynamicTable(isSelect)
     self:ClearSelected()
     -- 获取当前页签下的装备列表
-    self.EquipUidList = self._Control:GetEquipUidListByOccupationType(self.CurSelectEquipOccupationIndex, { Context = "Decompose" })
+    self.EquipUidList = self._Control:GetEquipUidListByTagType(self.CurSelectTabIndex, self._Control.EquipUiType.Decompose, self.EquipFilterCache)
     local isEmpty = XTool.IsTableEmpty(self.EquipUidList)
     self.None.gameObject:SetActiveEx(isEmpty)
     if isEmpty then
@@ -103,19 +124,16 @@ function XUiDlcRelinkEquipDecompose:SetupDynamicTable()
         return
     end
 
-    self:SelectFilterEquip()
+    if isSelect then
+        self:SelectFilterEquip()
+    end
     self.DynamicTable:SetDataSource(self.EquipUidList)
     self.DynamicTable:ReloadDataSync()
 end
 
 -- 选择符合筛选条件的装备
 function XUiDlcRelinkEquipDecompose:SelectFilterEquip()
-    if not self:CheckFilterCache() then
-        return
-    end
-
-    local filterEquipUidList = self._Control:GetEquipUidListByOccupationType(self.CurSelectEquipOccupationIndex, { Context = "Decompose", Filter = self.EquipFilterCache })
-    for _, equipUid in ipairs(filterEquipUidList) do
+    for _, equipUid in ipairs(self.EquipUidList) do
         if self:CanSelect(equipUid) then
             self:SetSelected(equipUid, true)
         end
@@ -128,8 +146,9 @@ function XUiDlcRelinkEquipDecompose:OnDynamicTableEvent(event, index, grid)
         local equipUid = self.EquipUidList[index]
         grid:Refresh(equipUid)
         grid:SetHead(self._Control:GetEquipWearCharacterId(equipUid))
-        -- 按当前选择集刷新选中态（显示减号）
-        grid:SetSelect(self:IsSelected(equipUid), true)
+        grid:SetPreset(self._Control:CheckEquipIsPresetByEquipUid(equipUid))
+        -- 按当前选择集刷新选中态
+        grid:SetSelect(self:IsSelected(equipUid))
     end
 end
 
@@ -141,7 +160,7 @@ function XUiDlcRelinkEquipDecompose:OnEquipItemCallBack(grid)
     end
 
     -- 始终先展示右侧气泡
-    self:ShowEquipBubble(equipUid, grid.Transform)
+    self:ShowEquipBubble(equipUid)
     -- 已选中：仅展示气泡，不取消选择
     if self:IsSelected(equipUid) then
         return
@@ -150,8 +169,7 @@ function XUiDlcRelinkEquipDecompose:OnEquipItemCallBack(grid)
     self:CheckSelectCondition(equipUid, function()
         -- 可选：设置为选中并刷新显示
         self:SetSelected(equipUid, true)
-        grid:SetSelect(true, true)
-        self:RefreshSelectedCount()
+        grid:SetSelect(true)
         self:RefreshReward()
     end)
 end
@@ -168,14 +186,18 @@ function XUiDlcRelinkEquipDecompose:OnEquipItemRemoveCallBack(grid)
     end
     self:SetSelected(equipUid, false)
     grid:SetSelect(false)
-    self:RefreshSelectedCount()
     self:RefreshReward()
+    self:CancelSelectAll()
 end
 
 -- 右侧装备气泡展示
----@param targetTransform UnityEngine.RectTransform
-function XUiDlcRelinkEquipDecompose:ShowEquipBubble(equipUid, targetTransform)
-    XLuaUiManager.Open("UiDlcRelinkBubbleEquipDetail", equipUid, targetTransform)
+function XUiDlcRelinkEquipDecompose:ShowEquipBubble(equipUid)
+    self.EquipDetailNode:Open()
+    self.EquipDetailNode:Refresh(equipUid)
+end
+
+function XUiDlcRelinkEquipDecompose:HideEquipBubble()
+    self.EquipDetailNode:Close()
 end
 
 -- 刷新装备容量
@@ -183,7 +205,7 @@ function XUiDlcRelinkEquipDecompose:RefreshEquipCapacity()
     local curCount, maxCount = self._Control:GetEquipBagCurCountAndMaxCount()
     local isFull = curCount >= maxCount
     local desc = self._Control:GetClientConfig("EquipCapacityDesc", isFull and 2 or 1)
-    self.TxtTips.text = XUiHelper.FormatText(desc, curCount, maxCount)
+    self.TxtTips.text = string.format(desc, curCount, maxCount)
 end
 
 -- 刷新已选择数量
@@ -192,6 +214,10 @@ function XUiDlcRelinkEquipDecompose:RefreshSelectedCount()
     local desc = self._Control:GetClientConfig("EquipDecomposeSelectedCountDesc", count > 0 and 2 or 1)
     self.Txt.text = string.format(desc, count)
     self.BtnBreak:SetDisable(count <= 0)
+
+    if count <= 0 then
+        self:HideEquipBubble()
+    end
 end
 
 --endregion
@@ -294,6 +320,7 @@ function XUiDlcRelinkEquipDecompose:SetSelected(equipUid, isSelect)
     else
         self.SelectedEquipUidSet[equipUid] = nil
     end
+    self:RefreshSelectedCount()
 end
 
 -- 切换选中状态，返回是否选中
@@ -306,6 +333,7 @@ end
 -- 清空选择
 function XUiDlcRelinkEquipDecompose:ClearSelected()
     self.SelectedEquipUidSet = {}
+    self:RefreshSelectedCount()
 end
 
 --endregion
@@ -324,8 +352,7 @@ end
 
 function XUiDlcRelinkEquipDecompose:OnEquipFilterChange()
     self:SetupDynamicTable()
-    self:RefreshSelectedCount()
-    self:RefreshReward()
+    self:CancelSelectAll()
 end
 
 -- 检查当前筛选条件是否有生效
@@ -335,7 +362,6 @@ function XUiDlcRelinkEquipDecompose:CheckFilterCache()
     end
 
     if XTool.IsNumberValid(self.EquipFilterCache.ReformedType)
-        or XTool.IsNumberValid(self.EquipFilterCache.FactorRemovedType)
         or XTool.IsNumberValid(self.EquipFilterCache.EquipType)
         or not XTool.IsTableEmpty(self.EquipFilterCache.FactorIds) then
         return true
@@ -383,8 +409,10 @@ end
 --endregion
 
 function XUiDlcRelinkEquipDecompose:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnBreak, self.OnBtnBreakClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnBreak:AddEventListener(handler(self, self.OnBtnBreakClick))
+    self.BtnSelectAll:AddEventListener(handler(self, self.OnBtnSelectAllClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
 end
 
 function XUiDlcRelinkEquipDecompose:OnBtnBackClick()
@@ -408,8 +436,8 @@ function XUiDlcRelinkEquipDecompose:OnBtnBreakClick()
     end
     self._Control:RequestEquipBreak(equipUidList, function(rewardList)
         self:SetupDynamicTable()
-        self:RefreshSelectedCount()
         self:RefreshReward()
+        self:RefreshEquipCapacity()
 
         if XTool.IsTableEmpty(rewardList) then
             return
@@ -422,6 +450,23 @@ function XUiDlcRelinkEquipDecompose:OnBtnBreakClick()
         end
         XLuaUiManager.Open("UiDlcRelinkPopupEquipDecomposeResult", rewardGoodsList)
     end)
+end
+
+function XUiDlcRelinkEquipDecompose:OnBtnSelectAllClick()
+    local isSelect = self.BtnSelectAll:GetToggleState()
+    self:SetupDynamicTable(isSelect)
+    self:RefreshReward()
+end
+
+---取消选中【全选】
+function XUiDlcRelinkEquipDecompose:CancelSelectAll()
+    if self.BtnSelectAll:GetToggleState() then
+        self.BtnSelectAll:SetButtonState(XUiButtonState.Normal)
+    end
+end
+
+function XUiDlcRelinkEquipDecompose:OnBtnMainUiClick()
+    XLuaUiManager.RunMain()
 end
 
 return XUiDlcRelinkEquipDecompose

@@ -27,8 +27,12 @@ function XDlcMultiMouseHunterModel:OnInit()
     self._Discussion = nil              --话题数据
     self._BpLevel = 0                   --BP等级
     self._BpRewardIds = nil             --已经领取过Bp奖励的Lv列表
+    ---@type XDlcMultiMouseHunterSkillData
     self._SkillData = nil               --猫鼠技能
     self._FinishStageCount = 0          --已经对局的场数
+    ---@type XDlcMultiplayerDanmakuPoolList[]
+    self._DanmakuPools = {}              -- 弹幕池
+    self._MonsterClickCount = 0          -- 点击次数
 end
 
 function XDlcMultiMouseHunterModel:ClearPrivate()
@@ -48,6 +52,8 @@ function XDlcMultiMouseHunterModel:ResetAll()
     self._BpRewardIds = nil             --已经领取过Bp奖励的Lv列表
     self._SkillData = nil               --猫鼠技能
     self._FinishStageCount = 0          --已经对局的场数
+    self._DanmakuPools = {}             -- 弹幕池
+    self._MonsterClickCount = 0         -- 点击次数
 end
 
 function XDlcMultiMouseHunterModel:SetActivityId(activityId)
@@ -222,6 +228,7 @@ function XDlcMultiMouseHunterModel:SetDiscussionInfo(info)
     self._Discussion:SetInfo(info)
 end
 
+---@return XDlcMultiMouseHunterDiscussion
 function XDlcMultiMouseHunterModel:GetDiscussion()
     if not self._Discussion then
         self._Discussion = XDlcMultiMouseHunterDiscussion.New()
@@ -252,21 +259,17 @@ function XDlcMultiMouseHunterModel:GetBpRewardIds()
 end
 
 function XDlcMultiMouseHunterModel:SetSkillData(skillData)
-    if not self._SkillData then
-        self._SkillData = {
-            UnlockSkills = {}
-        }
-    end
+    self._SkillData = self._SkillData or {}
+    self._SkillData.UnlockSkills = self._SkillData.UnlockSkills or {}
 
-    local data = self._SkillData
     for _, v in pairs(skillData.CatSkills) do
-        data.UnlockSkills[v] = true
+        self._SkillData.UnlockSkills[v] = true
         if skillData.IsNew then
             self:SaveNewSkill(v)
         end
     end
     for _, v in pairs(skillData.MouseSkills) do
-        data.UnlockSkills[v] = true
+        self._SkillData.UnlockSkills[v] = true
         if skillData.IsNew then
             self:SaveNewSkill(v)
         end
@@ -294,7 +297,7 @@ end
 
 function XDlcMultiMouseHunterModel:SaveDiscussionRedPoint()
     local discussion = self:GetDiscussion()
-    if not discussion:HasDiscussionData() then 
+    if not discussion:HasDiscussionData() then
         return
     end
     XSaveTool.SaveData(self:GetSaveDiscussionRedPointKey(), discussion:GetId())
@@ -306,7 +309,7 @@ end
 
 function XDlcMultiMouseHunterModel:CheckDiscussionRedPoint()
     local discussion = self:GetDiscussion()
-    if not discussion:HasDiscussionData() then 
+    if not discussion:HasDiscussionData() then
         return false
     end
     return XSaveTool.GetData(self:GetSaveDiscussionRedPointKey()) ~= discussion:GetId()
@@ -316,15 +319,13 @@ function XDlcMultiMouseHunterModel:GetSaveDiscussionRedPointKey()
     return string.format("MouseHunterDiscussionRedPoint_%d_%d", XPlayer.Id, self:GetActivityId() or 0)
 end
 
-function XDlcMultiMouseHunterModel:SetSelectSkillData(catSkillId, mouseSkillId)
-    if not self._SkillData then
-        self._SkillData = {
-            UnlockSkills = {}
-        }
-    end
-
-    self._SkillData.SelectCatSkillId = catSkillId
-    self._SkillData.SelectMouseSkillId = mouseSkillId
+--- 设置选择技能数据
+---@param catSkillIds number[] 猫技能Id列表
+---@param mouseSkillIds number[] 鼠技能Id列表
+function XDlcMultiMouseHunterModel:SetSelectSkillData(catSkillIds, mouseSkillIds)
+    self._SkillData = self._SkillData or {}
+    self._SkillData.SelectCatSkillIds = catSkillIds
+    self._SkillData.SelectMouseSkillIds = mouseSkillIds
 end
 
 function XDlcMultiMouseHunterModel:TryGetSkillData()
@@ -348,7 +349,7 @@ function XDlcMultiMouseHunterModel:CheckBpTaskRedPoint(taskType)
             return true
         end
     end
-    
+
     return false
 end
 
@@ -384,9 +385,9 @@ function XDlcMultiMouseHunterModel:GetBpTaskList(taskType, isSort)
         XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimeLimitId, false, false, taskDatas)
     end
     if isSort then
-        XDataCenter.TaskManager.SortTaskDatas(taskDatas) 
+        XDataCenter.TaskManager.SortTaskDatas(taskDatas)
     end
-    
+
     --未开启任务(数据只做显示用)
     if taskType == TaskTypeEnum.Challenge then
         local checkData = {}
@@ -417,5 +418,38 @@ function XDlcMultiMouseHunterModel:CheckReceiveBpReawrd(lv)
     return rewards[lv] == true
 end
 
+-- 设置弹幕池数据
+function XDlcMultiMouseHunterModel:SetDanmakuPools(danmakuPools)
+    self._DanmakuPools = danmakuPools or {}
+end
 
-return XDlcMultiMouseHunterModel
+-- 获取弹幕池数据
+function XDlcMultiMouseHunterModel:GetDanmakuPools()
+    return self._DanmakuPools
+end
+
+-- 设置点击次数
+function XDlcMultiMouseHunterModel:SetMonsterClickCount(count)
+    self._MonsterClickCount = count
+end
+
+-- 获取点击次数
+function XDlcMultiMouseHunterModel:GetMonsterClickCount()
+    return self._MonsterClickCount
+end
+
+return XDlcMultiMouseHunterModel
+
+---@class XDlcMultiMouseHunterSkillData
+---@field UnlockSkills table<number, boolean> 已解锁技能Id列表
+---@field SelectCatSkillIds number[] 选择的猫技能Id列表
+---@field SelectMouseSkillIds number[] 选择的鼠技能Id列表
+
+---@class XDlcMultiplayerDanmakuPoolList
+---@field DanmakuList XDlcMultiplayerDanmakuData[] 弹幕列表
+
+---@class XDlcMultiplayerDanmakuData
+---@field PlayerId number 玩家Id
+---@field PlayerName string 玩家名称
+---@field HeadPortraitId number 头像Id
+---@field BpLevel number BP等级

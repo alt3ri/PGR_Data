@@ -138,7 +138,9 @@ function XUiPokerGuessing2Card:OnBeginDrag(eventData)
     --self._DragOffset = Vector2(screenPoint.x, screenPoint.y) - eventData.position 
     self.Transform:SetParent(self._ParentOnDrag, true)
     self._IsOnOriginalParent = false
-    self.Transform.localEulerAngles = Vector3(0, 0, 0)
+    -- 设置世界旋转为0
+    self.Transform.rotation = CS.UnityEngine.Quaternion.identity
+    -- self.Transform.localEulerAngles = Vector3(0, 0, 0)
 
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2SelectCard)
 end
@@ -181,6 +183,7 @@ function XUiPokerGuessing2Card:OnEndDrag(eventData)
     local isInside = CS.UnityEngine.RectTransformUtility.RectangleContainsScreenPoint(self._ParentOnDrag, screenPointV2, camera)
     if isInside then
         self.Transform.localPosition = Vector3.zero
+        self.Transform.localRotation = CS.UnityEngine.Quaternion.identity
         self._IsOnOriginalParent = false
         self:SetPlayerSelected()
         self.Parent:RevertCardParentAndPosition(self)
@@ -226,10 +229,9 @@ function XUiPokerGuessing2Card:PlayAnimationCardToPutDown(duration)
     self._IsPutOnGround = true
     self.Transform:SetParent(self._ParentOnDrag, true)
     self.Transform.localEulerAngles = Vector3(0, 0, 0)
-    ---@type UnityEngine.RectTransform
-    local rectTransform = self._ParentOnDrag
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2SelectCard)
-    self:DoMove(self.Transform, rectTransform.anchoredPosition3D, duration, nil, function()
+    -- 移动到父节点的局部坐标原点，而不是父节点的anchoredPosition3D
+    self:DoMove(self.Transform, Vector3.zero, duration, nil, function()
         XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2DropDownCard)
         self.Parent:ShowEffectPutDown()
         self._Control:SetEnemySelectedCard(self._Data)
@@ -244,9 +246,7 @@ function XUiPokerGuessing2Card:SetPutOnGround(value)
     self._IsPutOnGround = value
 end
 
-function XUiPokerGuessing2Card:SetWin(value)
-    self.PanelWin.gameObject:SetActiveEx(value)
-end
+-- SetWin 方法已移除，PanelWin 现在在 Character 上
 
 function XUiPokerGuessing2Card:KeepTheCardFaceUp(value)
     if value then
@@ -263,14 +263,14 @@ function XUiPokerGuessing2Card:GetOriginalSiblingIndex()
 end
 
 function XUiPokerGuessing2Card:Reset()
-    self:SetWin(false)
+    -- Reset 逻辑，PanelWin 现在由 Character 管理
 end
 
-function XUiPokerGuessing2Card:PlayAnimationRevealTheCard()
+function XUiPokerGuessing2Card:PlayAnimationRevealTheCard(callback)
     self:SetVisibleCardFace(false)
     self:_HideChangedPanel()
     self:TryShowChangedCard(false)
-    self:PlayAnimation("ShowCard", nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
+    self:PlayAnimation("ShowCard", callback, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
 end
 
 return XUiPokerGuessing2Card

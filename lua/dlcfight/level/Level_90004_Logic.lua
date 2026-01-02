@@ -70,6 +70,12 @@ function XLevelScript90004:Init() --初始化逻辑
     self._proxy:SetObstacleActive(11,false)
     self._proxy:SetObstacleActive(12,false)
     self._proxy:SetObstacleActive(13,false)
+    self._proxy:SetObstacleActive(14,false)                                                                        
+    self._proxy:SetObstacleActive(15,false)
+    self._proxy:SetObstacleActive(16,false)
+    self._proxy:SetObstacleActive(17,false)
+
+
 
     XLog.Debug("初始化完毕")
 end
@@ -121,12 +127,26 @@ function XLevelScript90004:OnEnterPhase(phase)
         XLog.Debug("进入Battle阶段")
         --self._proxy:SetUiActive(UIObjectID,false)                                                                 --UI显示
 
-    elseif phase == Phase.WinDelay then
-        XLog.Debug("进入胜利过场阶段")
-        self._levelEndTime = self._levelTime
+    elseif phase == Phase.LosedStart then
+        XLog.Debug("进入失败流程结算")
+
     elseif phase == Phase.LosedDelay then
         XLog.Debug("进入失败过场阶段")
         self._levelEndTime = self._levelTime
+    elseif phase == Phase.LosedDialog then
+        XLog.Debug("进入失败弹窗阶段")
+
+
+    elseif phase == Phase.WinStart then
+        XLog.Debug("进入胜利流程结算")
+
+
+    elseif phase == Phase.WinDelay then
+        XLog.Debug("进入胜利过场阶段")
+        self._levelEndTime = self._levelTime
+    elseif phase == Phase.WinDialog then
+        XLog.Debug("进入胜利弹窗阶段")
+    
     elseif phase == Phase.End then
         XLog.Debug("进入结束关卡阶段")
     end

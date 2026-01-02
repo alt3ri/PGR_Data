@@ -464,7 +464,30 @@ XFubenExperimentManagerCreator = function()
         end
         XLuaUiManager.Open("UiFubenExperiment")
     end
-    
+
+    function XFubenExperimentManager.GetTrialLevelByFashionID(fashionId)
+        for _, group in pairs(TrialLevelDic) do
+            for _,v in pairs(group)do
+                if fashionId == v.FashionId then
+                    if v.TimeId ~= -1 and XFunctionManager.CheckInTimeByTimeId(v.TimeId, true) then
+                        return v
+                    end
+                end
+            end
+        end
+        return nil
+    end
+
+    function XFubenExperimentManager.GetFashionTrailLevelById(id)
+        for _, group in pairs(TrialLevelDic) do
+               for _,v in pairs(group)do
+                if id == v.Id then
+                    return v
+                end
+            end
+        end
+        
+    end
     ------------------副本入口扩展 end-------------------------
 
     XFubenExperimentManager.Init()

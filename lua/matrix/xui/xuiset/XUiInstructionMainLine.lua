@@ -238,6 +238,23 @@ function XUiInstructionMainLine:RefreshPanelAffix()
         CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(grid.GameObject:GetComponent("RectTransform"))
     end
 
+    local uiFightCom = fight.UiManager:GetUi(typeof(CS.XUiFightComponent))
+    if uiFightCom then
+        local exclusiveBuff = uiFightCom:GetExclusiveBuff()
+        if exclusiveBuff  then
+            local uiGo = XUiHelper.Instantiate(self.PanelDataEnemy, self.PanelDataEnemy.parent)
+            uiGo.gameObject:SetActiveEx(false)
+            local buffGrid = XGridAffix.New(uiGo, self)
+
+            if self.PanelAffix.gameObject.activeSelf then
+                buffGrid:Open()
+            else
+                buffGrid:Close()
+            end
+            buffGrid:RefreshExclusiveBuff(exclusiveBuff)
+        end
+    end
+
     self.PanelDataOwn.gameObject:SetActiveEx(false)
     self.PanelDataEnemy.gameObject:SetActiveEx(false)
 end

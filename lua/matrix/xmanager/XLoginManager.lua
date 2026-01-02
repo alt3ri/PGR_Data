@@ -276,10 +276,56 @@ end
 local DoHeartbeat
 local HearbeatRequestTime
 
---region 调试心跳包协议收发
+--region 调试心跳包协议收发，主线战斗结算卡加载处理
+-- 心跳包超时的次数
+local HeartbeatTimeOutCount = 0
+-- 断线重连成功的次数
+local ReconnectSuccCount = 0
+-- 是否输出心跳包相关日志
 local IsPrintHeartbeatLog = false
+-- 是否心跳包超时触发断线重连
+local IsHeartbeatTimeOutReconnect = true
+local ReCallRequestNo = 0
+
 function XLoginManager.CheckPrintHeartbeatLog()
     return IsPrintHeartbeatLog
+end
+
+function XLoginManager.AddReconnectSuccCount()
+    if not CS.XFight.Instance then
+        return
+    end
+    ReconnectSuccCount = ReconnectSuccCount + 1
+end
+
+function XLoginManager.AddHeartbeatTimeOutCount()
+    if not CS.XFight.Instance then
+        return
+    end
+    HeartbeatTimeOutCount = HeartbeatTimeOutCount + 1
+end
+
+function XLoginManager.SetReCallRequestNo(requestNo)
+    ReCallRequestNo = requestNo
+end
+
+-- 战斗中断线重连成功和心跳包超时2次，则收到心跳包返回后再重发协议
+function XLoginManager.IsHeartbeatSuccReCall()
+    return HeartbeatTimeOutCount >= 2 and ReconnectSuccCount >= 2
+end
+
+-- 重置计数
+function XLoginManager.ResetHeartbeatCount()
+    HeartbeatTimeOutCount = 0
+    ReconnectSuccCount = 0
+end
+
+-- 设置是否心跳包超时触发断线重连
+function XLoginManager.SetIsHeartbeatTimeOutReconnect(isHeartbeatTimeOutReconnect)
+    if IsHeartbeatTimeOutReconnect ~= isHeartbeatTimeOutReconnect then
+        CS.XLog.Debug(string.format("设置是否心跳包超时触发断线重连：%s", isHeartbeatTimeOutReconnect))
+    end
+    IsHeartbeatTimeOutReconnect = isHeartbeatTimeOutReconnect
 end
 --endregion
 
@@ -288,6 +334,7 @@ local function CheckHeartbeatTimeout()
     --if XNetwork.IsShowNetLog then
         CS.XLog.Debug("lua tcp heartbeat time out.")
     --end
+    XLoginManager.AddHeartbeatTimeOutCount()
     CS.XGameEventManager.Instance:Notify(CS.XEventId.EVENT_HEART_BEAT_LOG, true)
     IsPrintHeartbeatLog = true
     StartReconnect()
@@ -314,6 +361,15 @@ local function OnHeartbeatResp(res)
 
     IsPrintHeartbeatLog = false
     ClearHeartbeatTimer()
+    
+    if XLoginManager.IsHeartbeatSuccReCall() then
+        CS.XLog.Debug("战中断线重连成功和心跳包超时2次，已成功收到心跳包返回再重发缓存的协议")
+        CS.XNetwork.ReCall(ReCallRequestNo)
+        XLoginManager.SetIsHeartbeatTimeOutReconnect(false)
+    else
+        XLoginManager.SetIsHeartbeatTimeOutReconnect(true)
+    end
+    XLoginManager.ResetHeartbeatCount()
      --if XNetwork.IsShowHearBeat then
      --    XLog.Debug("tcp heartbeat response.")
      --end
@@ -332,7 +388,9 @@ DoHeartbeat = function()
      --    XLog.Debug("tcp heartbeat request.")
      --end
     -- 等待心跳返回
-    HeartbeatTimeOutTimer = XScheduleManager.ScheduleOnce(CheckHeartbeatTimeout, HeartbeatTimeout)
+    if IsHeartbeatTimeOutReconnect then
+        HeartbeatTimeOutTimer = XScheduleManager.ScheduleOnce(CheckHeartbeatTimeout, HeartbeatTimeout)
+    end
 
     HearbeatRequestTime = SinceStartupTime()
     XNetwork.Call("HeartbeatRequest", nil, OnHeartbeatResp)
@@ -654,7 +712,8 @@ function XLoginManager.DoLogin(cb)
     "&userId=" .. XUserManager.UserId ..
     "&projectId=" .. (projectId or "") ..
     "&token=" .. (XUserManager.Token or "") ..
-    "&deviceId=" .. CS.XHeroSdkAgent.GetDeviceId()
+    "&deviceId=" .. CS.XHeroSdkAgent.GetDeviceId() .. 
+    "&pkgId=" .. CS.XHeroSdkAgent.GetPkgId()
 
     XLog.Debug("LoginUrl = " .. loginUrl)
     local request = CS.UnityEngine.Networking.UnityWebRequest.Get(loginUrl)
@@ -693,7 +752,11 @@ function XLoginManager.DoLogin(cb)
         local ok, result = pcall(Json.decode, request.downloadHandler.text)
         if not ok then
             XServerManager.NextLoginUrlIndex()
-            XLog.Error("login http error，url is " .. loginUrl .. ", message is json decode error")
+            local jsonContent = "???"
+            if type(request.downloadHandler.text) == "string" then
+                jsonContent = request.downloadHandler.text
+            end
+            XLog.Error("login http error，url is " .. loginUrl .. ", message is json decode error\n json = " .. jsonContent)
             XLuaUiManager.SetAnimationMask("RequestLoginHttpSever", false)
             XLoginManager.LoginErrorTips("", LoginHttpError, function () 
                 OnLogin(XCode.Fail)    
@@ -801,6 +864,7 @@ function XLoginManager.DoLoginGame(cb)
         LoginPlatform = XUserManager.Platform,
         UserId = XUserManager.UserId,
         ProjectId = CS.XHeroSdkAgent.GetAppProjectId(),
+        PkgId = CS.XHeroSdkAgent.GetPkgId(),
         Token = LoginTokenCache,
         DeviceId = CS.XHeroSdkAgent.GetDeviceId(),
         OaId = CS.XHeroSdkAgent.OAID,
@@ -1014,6 +1078,11 @@ XRpc.NotifyLogin = function(data)
     XMVCA.XMainLine2:OnLoginNotify(data.FubenMainLine2Data)
     mailLine2Profiler:Stop()
 
+    local mainLineLuosaitaAgency = loginProfiler:CreateChild("MainLineLuosaitaAgency")
+    mainLineLuosaitaAgency:Start()
+    XMVCA.XMainLineLuosaita:OnLoginNotify(data.FubenMainLineLuosaitaData)
+    mainLineLuosaitaAgency:Stop()
+
     local fubenExtraChapterProfiler = loginProfiler:CreateChild("FubenExtraChapterManager")
     fubenExtraChapterProfiler:Start()
     XDataCenter.ExtraChapterManager.InitExtraInfos(data.FubenChapterExtraLoginData)
@@ -1101,6 +1170,30 @@ XRpc.NotifyLogin = function(data)
     InitLimitLoginData(data.LimitedLoginData)
     --涂装套装
     XMVCA.XFashionSuit:SetFashionSuitData(data.FashionSuitList)
+    
+    -- 按键界面设置同步
+    local keyPadProfiler = loginProfiler:CreateChild("KeyPadManager")
+    keyPadProfiler:Start()
+    -- 正常登录流程
+    if data.KeyPadSetting then
+        XLog.Debug("[KeyPad] NotifyLogin: 收到服务端按键设置数据，开始初始化")
+        -- 初始化服务端数据
+        XKeyPadManager.InitFromServer(data.KeyPadSetting)
+    else
+        XLog.Debug("[KeyPad] NotifyLogin: 服务端按键设置数据为空，尝试首次同步本地数据")
+        -- 如果服务端数据为空，尝试首次同步本地数据
+        XKeyPadManager.TryFirstSync()
+    end
+    keyPadProfiler:Stop()
+    
+    -- 公告蓝点同步
+    local noticeProfiler = loginProfiler:CreateChild("NoticeManager")
+    noticeProfiler:Start()
+    if data.RedPointRecords then
+        XDataCenter.NoticeManager.InitGameNoticeRecordsFromServer(data.RedPointRecords)
+    end
+    noticeProfiler:Stop()
+    
     XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_DATA_LOAD_COMPLETE)
 
     local onloginProfiler = loginProfiler:CreateChild("OnLogin")

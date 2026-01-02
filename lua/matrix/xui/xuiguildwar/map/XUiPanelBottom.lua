@@ -136,7 +136,7 @@ function XUiPanelBottom:OnBtnTaskClick()
 end
 
 function XUiPanelBottom:OnBtnRoleClick()
-    XLuaUiManager.Open("UiGuildWarUpCharacter")
+    XLuaUiManager.Open("UiGuildWarUpTeam")
 end
 
 function XUiPanelBottom:OnBtnReportClick()

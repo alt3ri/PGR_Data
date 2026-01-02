@@ -9,7 +9,9 @@ local TableNormal = {
     GuildWarPlayThrough = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
     GuildWarDragonRage = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
     GuildWarDragonRageNodeChange = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
+    GuildWarClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String, Identifier = "Key" },
 
+    GuildWarSpecialRoleTeam = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
 }
 
 function XGuildWarModel:OnInit()
@@ -20,6 +22,15 @@ function XGuildWarModel:OnInit()
     self._GarrisonData = require('XModule/XGuildWar/Entity/XGuildWarGarrisonData').New()
     -- 初始化龙怒系统玩法数据管理对象
     self._DragonRageData = require('XModule/XGuildWar/Entity/XGuildWarDragonRageData').New()
+    
+    ---@type XSpecialRoleModel @特攻角色系统子model
+    self.SpecialRoleModel = self:AddSubModel(require('XModule/XGuildWar/SubModule/SpecialRole/XSpecialRoleModel'))
+    
+    ---@type XActionQueueModel @行为队列子model
+    self.ActionQueueModel = self:AddSubModel(require('XModule/XGuildWar/SubModule/ActionQueue/XActionQueueModel'))
+    
+    ---@type XRoleStationModel @角色驻扎玩法子model
+    self.RoleStationModel = self:AddSubModel(require('XModule/XGuildWar/SubModule/RoleStation/XRoleStationModel'))
     
     self:InitRoundData()
 end
@@ -99,6 +110,15 @@ end
 
 function XGuildWarModel:GetDragonRagePlayThroughCfgById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableNormal.GuildWarPlayThrough, id)
+end
+
+function XGuildWarModel:GetGuildWarClientConfig(key)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableNormal.GuildWarClientConfig, key)
+end
+
+---@return XTableGuildWarSpecialRoleTeam[]
+function XGuildWarModel:GetGuildWarSpecialRoleTeamCfgs()
+    return self._ConfigUtil:GetByTableKey(TableNormal.GuildWarSpecialRoleTeam)
 end
 --endregion
 

@@ -1792,11 +1792,7 @@ PlayerCondition = {
     end,
 
     [32199] = function(condition)
-        local battleManager = XDataCenter.GuildWarManager.GetBattleManager()
-        if not battleManager then
-            return false
-        end
-        return battleManager:CheckIsCanGuide()
+        return XMVCA.XGuildWar.ActionQueueAgency:CheckIsCanGuide()
     end,
     [10401] = function(condition)
         -- 国际战棋关卡通关判断
@@ -2681,6 +2677,56 @@ PlayerCondition = {
     --region 涂装套装
     [17460] = function(condition)
         return XMVCA.XFashionSuit:IsRed(), condition.Desc
+    end,
+    --endregion
+    
+    --region 罗塞塔主线
+    -- 是否击败全部指定敌人
+    [10191] = function(condition)
+        for _, enemyId in pairs(condition.Params) do
+            if not XMVCA.XMainLineLuosaita:IsKillEnemy(enemyId) then
+                return false, condition.Desc
+            end
+        end
+        return true, condition.Desc
+    end,
+    --endregion
+    --判断是否进入过DlcWorld
+    [23101] = function(condition) 
+        local worldId = condition.Params[1]
+        local isEntry = condition.Params[2] == 1
+        return XMVCA.XBigWorldGamePlay:CheckEntryWorld(worldId) == isEntry, condition.Desc
+    end,
+    --region 累消商店
+    --累计代币总数大于配置
+    [10502] = function(condition)
+        local itemId = condition.Params[1]
+        local count = condition.Params[2]
+        return XMVCA.XShop:GetAccumulateExpendShopConvertedCount() > count, condition.Desc
+    end,
+    --endregion
+
+    --region Relink
+    -- Relink-章节通关次数
+    [23002] = function(condition)
+        local chapterId = condition.Params[1]
+        local levelId = condition.Params[2]
+        local count = condition.Params[3]
+        return XMVCA.XDlcRelink:CheckChapterPassCount(chapterId, levelId, count), condition.Desc
+    end,
+    -- Relink-角色研发等级
+    [23003] = function(condition)
+        local level = condition.Params[1]
+        return XMVCA.XDlcRelink:CheckCharacterResearchLevel(level), condition.Desc
+    end,
+    -- Relink-使用指定的角色ID通过关卡X次
+    [23004] = function(condition)
+        local characterId = condition.Params[1]
+        local styleType = condition.Params[2]
+        local chapterId = condition.Params[3]
+        local levelId = condition.Params[4]
+        local times = condition.Params[5]
+        return XMVCA.XDlcRelink:CheckUseCharacterPassLevelTimes(characterId, styleType, chapterId, levelId, times), condition.Desc
     end,
     --endregion
 }

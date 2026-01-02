@@ -21,10 +21,21 @@ function XBuffScript1010519:Update(dt)
     local SelfHpPercent = SelfHp / SelfHpMax -- 获取自身血量百分比
     local TargetHpPercent = TargetHp / TargetHpMax -- 获取敌方血量百分比
     if SelfHpPercent < 0.3 or TargetHpPercent < 0.3 then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1010521, 1) --额外护盾
+        if self._proxy:CheckBuffByKind(self._uuid, 1016380) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010521, 1) --额外护盾1
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016381) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010524, 1) --额外护盾2
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016382) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010525, 1) --额外护盾3
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016383) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010526, 1) --额外护盾4
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016384) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010527, 1) --额外护盾5
+        end
     else
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1010522, 1) --删除额外护盾
     end
+    
 end
 
 return XBuffScript1010519

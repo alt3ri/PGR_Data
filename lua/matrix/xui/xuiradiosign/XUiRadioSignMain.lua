@@ -59,7 +59,11 @@ function XUiRadioSignMain:OnAwake()
     self._StandTimerId = nil                           -- 停留定时器ID
     self._CurrentConfig = nil                          -- 当前停留的配置
     self._SubtitleTimerIds = {}                        -- 字幕定时器ID列表
-    self._LightTimerIds = {}                           -- 灯光定时器ID列表
+    self._LightTimerId = nil                           -- 灯光定时器ID
+    self._LightEffectStartTime = nil                   -- 灯光效果开始时间（毫秒）
+    self._LightEffectInterval = nil                    -- 灯光点亮间隔（毫秒）
+    self._LightEffectCount = 0                         -- 灯光总数
+    self._LightEffectCurrentIndex = 0                  -- 当前已点亮的灯光索引
     self._PlayState = PlayState.Idle                   -- 播放状态
     -- 长按按钮组件
     self._BtnAddLongClick = nil                        -- BtnAdd长按组件
@@ -74,6 +78,7 @@ function XUiRadioSignMain:OnAwake()
     self._RewardRequestState = RewardRequestState.None -- 奖励请求状态
     self._RewardRequestSuccess = false                 -- 奖励请求是否成功
     self._PendingRewardList = nil                      -- 延后显示的奖励列表
+    self._RewardRequestCheckTimerId = nil              -- 奖励请求检查定时器ID
     -- 初始化标志
     self._IsInStart = false                            -- 是否在 OnStart 阶段，用于控制 ImageStart 的隐藏
     -- RMS 可视化组件
@@ -130,7 +135,7 @@ function XUiRadioSignMain:OnStart(content)
     -- 如果没有传入content，使用默认content
     if not content then
         local contents = self._Control:GetContentConfigs()
-        
+
         -- 将 contents 转换为数组并按 id 排序
         local sortedContents = {}
         for _, contentItem in pairs(contents) do
@@ -139,7 +144,7 @@ function XUiRadioSignMain:OnStart(content)
         table.sort(sortedContents, function(a, b)
             return a.Id < b.Id
         end)
-        
+
         -- 按 id 顺序遍历，找到第一个在时间范围内且未领奖的content
         for _, contentItem in ipairs(sortedContents) do
             local timeId = contentItem.TimeId
@@ -150,7 +155,7 @@ function XUiRadioSignMain:OnStart(content)
                 end
             end
         end
-        
+
         -- 如果没有找到未领奖的，使用第一个
         if not content and #sortedContents > 0 then
             content = sortedContents[1]
@@ -230,9 +235,13 @@ function XUiRadioSignMain:OnBtnTabClick(index)
 
         -- 如果未激活且未领取，或者前一关未领取，按钮处于disable状态，不响应点击
         if not isReceived and (not isInTime or not isPrevContentReceived) then
+            XUiManager.TipText("CommonNotOpen")
             return
         end
     end
+
+    -- 先更新索引，确保后续的UpdateRewardUI使用正确的索引
+    self._Index = index
 
     -- 切换Tab前，如果有待弹出的奖励列表，先弹出（必须在ResetAll之前，因为ResetAll会清理状态）
     self:TryShowPendingReward()
@@ -251,6 +260,7 @@ function XUiRadioSignMain:CleanupAllTimers()
     self:CancelStandTimer()
     self:CancelSubtitleTimers()
     self:CancelLightTimers()
+    self:CancelRewardRequestCheckTimer()
 end
 
 -- 重置所有状态和资源
@@ -305,6 +315,9 @@ function XUiRadioSignMain:OnEnable()
 
     -- OnEnable 结束，释放初始化标志
     self._IsInStart = false
+
+        -- 检查引导，因为在连续弹窗的过程中，不会触发指引，所以这里只能手动触发
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 function XUiRadioSignMain:OnDisable()
@@ -484,7 +497,7 @@ function XUiRadioSignMain:UpdateReceivedRewardUI(isReceived, config)
         -- 已领奖时隐藏ImgTips和ImageStart，显示LineGroup
         self:SetGameObjectActive(self.ImgTips and self.ImgTips.gameObject, false)
         self:SetGameObjectActive(self.ImageStart and self.ImageStart.gameObject, false)
-        self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, true)
+        self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, false)
 
         -- 更新ImgMask和BtnPlayAgain显示状态（考虑播放状态）
         -- ImgMask：已领奖时显示，但如果正在播放视频则隐藏
@@ -587,7 +600,7 @@ function XUiRadioSignMain:UpdateAllButtons()
             self:UpdateButtonState(xBtn, config)
         end
     end
-    
+
     -- 刷新后重新设置当前页签的选中状态
     if self._Index and self.PanelTab then
         self.PanelTab:SelectIndex(self._Index)
@@ -942,12 +955,21 @@ function XUiRadioSignMain:PlayVideo(content)
     end
 end
 
+-- 取消奖励请求检查定时器
+function XUiRadioSignMain:CancelRewardRequestCheckTimer()
+    if self._RewardRequestCheckTimerId then
+        XScheduleManager.UnSchedule(self._RewardRequestCheckTimerId)
+        self._RewardRequestCheckTimerId = nil
+    end
+end
+
 -- 尝试弹出待处理的奖励列表
 -- 如果奖励请求已完成且成功，且有待弹出的奖励列表，则弹出
 -- 如果请求还在进行中，等待请求完成后再弹出
 function XUiRadioSignMain:TryShowPendingReward()
     -- 如果奖励请求已完成且成功，且有待弹出的奖励列表，则弹出
     if self._RewardRequestState == RewardRequestState.Completed and self._RewardRequestSuccess and self._PendingRewardList then
+        self:CancelRewardRequestCheckTimer()
         XUiManager.OpenUiObtain(self._PendingRewardList)
         self._PendingRewardList = nil
         -- 更新界面
@@ -957,7 +979,15 @@ function XUiRadioSignMain:TryShowPendingReward()
         self._RewardRequestSuccess = false
     elseif self._RewardRequestState == RewardRequestState.Pending then
         -- 如果请求还在进行中，等待请求完成后再弹出
+        -- 如果已经有定时器在运行，不再创建新的
+        if self._RewardRequestCheckTimerId then
+            return
+        end
+
         local function CheckRequest()
+            -- 清除定时器ID，允许下次重新创建
+            self._RewardRequestCheckTimerId = nil
+
             if self._RewardRequestState == RewardRequestState.Completed then
                 if self._RewardRequestSuccess and self._PendingRewardList then
                     XUiManager.OpenUiObtain(self._PendingRewardList)
@@ -968,18 +998,29 @@ function XUiRadioSignMain:TryShowPendingReward()
                 -- 重置请求状态
                 self._RewardRequestState = RewardRequestState.None
                 self._RewardRequestSuccess = false
-            else
-                -- 继续等待
-                XScheduleManager.ScheduleOnce(CheckRequest, 0.1)
+            elseif self._RewardRequestState == RewardRequestState.Pending then
+                -- 继续等待，创建新的定时器
+                self._RewardRequestCheckTimerId = XScheduleManager.ScheduleOnce(CheckRequest, 0.1)
             end
         end
-        XScheduleManager.ScheduleOnce(CheckRequest, 0.1)
+        self._RewardRequestCheckTimerId = XScheduleManager.ScheduleOnce(CheckRequest, 0.1)
     end
 end
 
 -- 停止播放视频，恢复LineGroup显示，隐藏Video
 ---@param isNormalEnd boolean 是否正常播放结束（true=正常结束，false=错误结束，nil=手动停止）
 function XUiRadioSignMain:StopVideo(isNormalEnd)
+    -- 立即清除视频回调，防止在处理过程中再次触发回调导致状态混乱
+    if self.Video then
+        self.Video.ActionEnded = nil
+        self.Video.ActionPlayed = nil
+        self.Video.ActionError = nil
+        if self.Video.VideoPlayerUgui then
+            self.Video.VideoPlayerUgui.ActionEnded = nil
+            self.Video.VideoPlayerUgui.ActionError = nil
+        end
+    end
+
     -- 如果正常播放结束，处理奖励请求结果
     if isNormalEnd == true and self._CurrentContentConfig then
         -- 如果奖励请求已完成，直接更新UI
@@ -997,27 +1038,33 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
             self._RewardRequestState = RewardRequestState.None
             self._RewardRequestSuccess = false
         elseif self._RewardRequestState == RewardRequestState.Pending then
-            -- 如果请求还在进行中，等待请求完成后再更新UI
-            local function CheckRequest()
-                if self._RewardRequestState == RewardRequestState.Completed then
-                    if self._RewardRequestSuccess then
-                        -- 弹出延后的奖励
-                        if self._PendingRewardList then
-                            XUiManager.OpenUiObtain(self._PendingRewardList)
-                            self._PendingRewardList = nil
+            -- 如果请求还在进行中，使用统一的检查机制
+            -- 如果已经有定时器在运行，不再创建新的（TryShowPendingReward 可能已经创建了）
+            if not self._RewardRequestCheckTimerId then
+                local function CheckRequest()
+                    -- 清除定时器ID，允许下次重新创建
+                    self._RewardRequestCheckTimerId = nil
+
+                    if self._RewardRequestState == RewardRequestState.Completed then
+                        if self._RewardRequestSuccess then
+                            -- 弹出延后的奖励
+                            if self._PendingRewardList then
+                                XUiManager.OpenUiObtain(self._PendingRewardList)
+                                self._PendingRewardList = nil
+                            end
+                            -- 领奖完成后，更新界面
+                            self:UpdateRewardUI()
                         end
-                        -- 领奖完成后，更新界面
-                        self:UpdateRewardUI()
+                        -- 重置请求状态
+                        self._RewardRequestState = RewardRequestState.None
+                        self._RewardRequestSuccess = false
+                    elseif self._RewardRequestState == RewardRequestState.Pending then
+                        -- 继续等待，创建新的定时器
+                        self._RewardRequestCheckTimerId = XScheduleManager.ScheduleOnce(CheckRequest, 0.1)
                     end
-                    -- 重置请求状态
-                    self._RewardRequestState = RewardRequestState.None
-                    self._RewardRequestSuccess = false
-                else
-                    -- 继续等待
-                    XScheduleManager.ScheduleOnce(CheckRequest, 0.1)
                 end
+                self._RewardRequestCheckTimerId = XScheduleManager.ScheduleOnce(CheckRequest, 0.1)
             end
-            XScheduleManager.ScheduleOnce(CheckRequest, 0.1)
         else
             -- 如果没有提前请求，说明可能是手动重播已领奖的视频，不需要再次请求
             -- 直接更新UI即可
@@ -1059,17 +1106,6 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
             self:SetGameObjectActive(self.ImgMask and self.ImgMask.gameObject, false)
             self:SetGameObjectActive(self.BtnPlayAgain and self.BtnPlayAgain.gameObject, false)
             self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, false)
-        end
-    end
-
-    -- 清除视频回调
-    if self.Video then
-        self.Video.ActionEnded = nil
-        self.Video.ActionPlayed = nil
-        self.Video.ActionError = nil
-        if self.Video.VideoPlayerUgui then
-            self.Video.VideoPlayerUgui.ActionEnded = nil
-            self.Video.VideoPlayerUgui.ActionError = nil
         end
     end
 
@@ -1164,6 +1200,9 @@ function XUiRadioSignMain:PlaySubtitles(content)
     if subtitleCount == 0 then
         return
     end
+
+    -- 先取消之前的字幕定时器，避免重复创建
+    self:CancelSubtitleTimers()
 
     -- 显示字幕组件
     if self.TxtSubtitles.gameObject then
@@ -1409,6 +1448,9 @@ function XUiRadioSignMain:StartLightEffect(standTime)
     if not self._ImgLights or #self._ImgLights == 0 then
         return
     end
+    
+    -- 先取消之前的灯光定时器，避免重复创建
+    self:CancelLightTimers()
 
     -- 先重置所有灯光
     self:ResetLights()
@@ -1417,14 +1459,42 @@ function XUiRadioSignMain:StartLightEffect(standTime)
     local lightCount = #self._ImgLights
     local interval = standTime / lightCount
 
-    -- 按顺序点亮每个灯光
-    for i = 1, lightCount do
-        local timerId = XScheduleManager.ScheduleOnce(function()
-            self:SetLightOn(i)
-        end, interval * (i - 1))
+    -- 记录开始时间和间隔
+    self._LightEffectStartTime = CS.UnityEngine.Time.realtimeSinceStartup * 1000  -- 转换为毫秒
+    self._LightEffectInterval = interval
+    self._LightEffectCount = lightCount
+    self._LightEffectCurrentIndex = 0  -- 当前已点亮的灯光索引
 
-        table.insert(self._LightTimerIds, timerId)
-    end
+    -- 使用 ScheduleForever 定时器，定期检查应该点亮哪个灯光
+    self._LightTimerId = XScheduleManager.ScheduleForever(function()
+        if not self._LightEffectStartTime or not self._LightEffectInterval then
+            return
+        end
+        
+        local currentTime = CS.UnityEngine.Time.realtimeSinceStartup * 1000  -- 转换为毫秒
+        local elapsedTime = currentTime - self._LightEffectStartTime
+        
+        -- 计算应该点亮到第几个灯光（从1开始）
+        local targetIndex = math.floor(elapsedTime / self._LightEffectInterval) + 1
+        
+        -- 如果已经超过所有灯光，停止定时器
+        if targetIndex > self._LightEffectCount then
+            -- 确保所有灯光都已点亮
+            for i = 1, self._LightEffectCount do
+                self:SetLightOn(i)
+            end
+            self:CancelLightTimers()
+            return
+        end
+        
+        -- 只点亮新增加的灯光，避免重复设置
+        if targetIndex > self._LightEffectCurrentIndex then
+            for i = self._LightEffectCurrentIndex + 1, targetIndex do
+                self:SetLightOn(i)
+            end
+            self._LightEffectCurrentIndex = targetIndex
+        end
+    end, 16)  -- 约60fps的检查频率
 end
 
 -- 设置指定索引的灯光为点亮状态
@@ -1455,14 +1525,15 @@ end
 
 -- 取消所有灯光定时器
 function XUiRadioSignMain:CancelLightTimers()
-    if self._LightTimerIds then
-        for _, timerId in ipairs(self._LightTimerIds) do
-            if timerId then
-                XScheduleManager.UnSchedule(timerId)
-            end
-        end
-        self._LightTimerIds = {}
+    if self._LightTimerId then
+        XScheduleManager.UnSchedule(self._LightTimerId)
+        self._LightTimerId = nil
     end
+    
+    self._LightEffectStartTime = nil
+    self._LightEffectInterval = nil
+    self._LightEffectCount = 0
+    self._LightEffectCurrentIndex = 0
 
     -- 重置所有灯光
     self:ResetLights()

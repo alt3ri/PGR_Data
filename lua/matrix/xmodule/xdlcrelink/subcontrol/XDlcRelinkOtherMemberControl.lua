@@ -48,13 +48,13 @@ function XDlcRelinkOtherMemberControl:GetPlayerLevel()
     return self._memberData:GetRelinkPlayerLevel()
 end
 
---- 获取其他成员职业类型
+--- 获取其他成员风格类型
 ---@return number
-function XDlcRelinkOtherMemberControl:GetOccupationType()
+function XDlcRelinkOtherMemberControl:GetStyleType()
     if not self:HasValidMemberData() then
         return 0
     end
-    return self._memberData:GetOccupationType()
+    return self._memberData:GetStyleType()
 end
 
 --endregion
@@ -209,11 +209,13 @@ function XDlcRelinkOtherMemberControl:GetEquipMaxAbilityByEquipUid(equipUid)
     local templateId = equip.TemplateId
     local ability = self._MainControl:GetEquipAbility(templateId)
 
-    -- 主属性战力
+    -- 主属性战力（包含主技能属性战力）
     local mainSkillFactorId = self._MainControl:GetEquipMainSkillFactorId(templateId)
     for _, attribute in pairs(equip.MainFactors or {}) do
         if mainSkillFactorId ~= attribute.FactorId then
             ability = ability + self._MainControl:GetAttributeAbilityInternal(attribute)
+        else
+            ability = ability + self._MainControl:GetEquipMainSkillFactorAbility(attribute.EquipTemplate)
         end
     end
 
@@ -247,16 +249,16 @@ function XDlcRelinkOtherMemberControl:CheckEquipSlotOccupationTypeSame(mainSlotI
     return mainOccupationType == extendOccupationType
 end
 
---- 通过角色Id和职业类型获取其他成员角色技能Id列表
+--- 通过角色Id和风格类型获取其他成员角色技能Id列表
 ---@param characterId number 角色Id
----@param occupationType number 职业类型
+---@param styleType number 风格类型
 ---@return table<number> 技能Id列表
-function XDlcRelinkOtherMemberControl:GetCharacterSkillIdsByCharacterId(characterId, occupationType)
-    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(occupationType) then
+function XDlcRelinkOtherMemberControl:GetCharacterSkillIdsByCharacterId(characterId, styleType)
+    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(styleType) then
         return {}
     end
 
-    local skillIds = self._MainControl:GetCharacterSkillIds(characterId, occupationType)
+    local skillIds = self._MainControl:GetCharacterSkillIds(characterId, styleType)
     if XTool.IsTableEmpty(skillIds) then
         return {}
     end
@@ -271,16 +273,24 @@ function XDlcRelinkOtherMemberControl:GetCharacterSkillIdsByCharacterId(characte
         return skillIds
     end
 
-    local affectedSkillId = self._MainControl:GetFactorAffectedSkillId(attribute.FactorId, attribute.Level)
-    local newSkillId = self._MainControl:GetFactorNewSkillId(attribute.FactorId, attribute.Level)
-    if not XTool.IsNumberValid(affectedSkillId) or not XTool.IsNumberValid(newSkillId) then
+    local affectedSkillIds = self._MainControl:GetFactorAffectedSkillIds(attribute.FactorId, attribute.Level)
+    local newSkillIds = self._MainControl:GetFactorNewSkillIds(attribute.FactorId, attribute.Level)
+    if XTool.IsTableEmpty(affectedSkillIds) or XTool.IsTableEmpty(newSkillIds) then
         return skillIds
     end
 
-    for index, skillId in pairs(skillIds) do
-        if skillId == affectedSkillId then
+    local skillReplaceMap = {}
+    for i, affectedSkillId in ipairs(affectedSkillIds) do
+        local newSkillId = newSkillIds[i]
+        if XTool.IsNumberValid(affectedSkillId) and XTool.IsNumberValid(newSkillId) then
+            skillReplaceMap[affectedSkillId] = newSkillId
+        end
+    end
+
+    for index, skillId in ipairs(skillIds) do
+        local newSkillId = skillReplaceMap[skillId]
+        if XTool.IsNumberValid(newSkillId) then
             skillIds[index] = newSkillId
-            break
         end
     end
     return skillIds

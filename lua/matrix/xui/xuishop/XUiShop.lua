@@ -84,8 +84,8 @@ function XUiShop:OnStart(typeId, cb, configShopId, screenId)
     self.IsHasScreen = false
     self.RefreshBuyTime = 0
 
+    self.TagBtnShopGroup = {}
     self.FilterResult = {}
-
     XShopManager.ClearBaseInfoData()
 
     -- XShopManager.GetBaseInfo(function()
@@ -113,11 +113,11 @@ function XUiShop:OnShopItemNotEnough(code, shopId, isHasCache)
     if isHasCache then
         if self.Type and self.Type == XShopManager.ShopType.Recharge then
             local isHasCharacterCoin = XDataCenter.ItemManager.CheckItemCountById(
-            XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, 1)
+                XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, 1)
             local isHasEquipCoin = XDataCenter.ItemManager.CheckItemCountById(
-            XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1)
+                XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1)
             local isHasPartner = XDataCenter.ItemManager.CheckItemCountById(
-            XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1)
+                XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1)
 
             if (shopId == XShopManager.RechargeShopType.CharacterShop and not isHasCharacterCoin)
                 or (shopId == XShopManager.RechargeShopType.EquipShop and not isHasEquipCoin)
@@ -137,18 +137,16 @@ end
 function XUiShop:InitAutoScript()
     self:AutoAddListener()
 end
+
 function XUiShop:GetAutoKey(uiNode, eventName)
     if not uiNode then return end
     return eventName .. uiNode:GetHashCode()
 end
 
 function XUiShop:AutoAddListener()
-    self.BtnBack.CallBack = function()
-        self:OnBtnBackClick()
-    end
-    self.BtnMainUi.CallBack = function()
-        self:OnBtnMainUiClick()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
+
     -- self.BtnScreenGroup.CallBack = function()
     --     self:OnBtnScreenGroupClick()
     -- end
@@ -182,8 +180,8 @@ function XUiShop:AutoAddListener()
     self.BtnFilterSuit:AddEventListener(handler(self, self.OpenSuitSelect))
     self.BtnFilterWeapon:AddEventListener(handler(self, self.OpenWeaponSelect))
     self.BtnFilter:AddEventListener(handler(self, self.OnBtnFilterClick))
-    self.BtnScreening:ShowReddot(false)
 
+    self.BtnScreening:ShowReddot(false)
 end
 
 function XUiShop:OnBtnBackClick()
@@ -215,6 +213,7 @@ function XUiShop:OnBtnScreenGroupClick()
         end
     end
 end
+
 function XUiShop:OnDestroy()
     self.AssetActivityPanel:HidePanel()
     self.ItemList:HidePanel()
@@ -228,11 +227,11 @@ function XUiShop:SetShopBtn(shopType)
 
     if self.BtnOptionalShop then
         local isHasCharacterCoin = XDataCenter.ItemManager.CheckItemCountById(
-        XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, 1)
+            XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, 1)
         local isHasEquipCoin = XDataCenter.ItemManager.CheckItemCountById(
-        XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1)
+            XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1)
         local isHasPartner = XDataCenter.ItemManager.CheckItemCountById(
-        XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1)
+            XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1)
         local isOptionalOpen = isHasCharacterCoin or isHasEquipCoin or isHasPartner
 
         self.BtnOptionalShop.gameObject:SetActiveEx(isOptionalOpen)
@@ -377,7 +376,7 @@ function XUiShop:UpdateTog()
                 btn.transform:SetParent(self.TabBtnContent, false)
                 local uiButton = btn:GetComponent("XUiButton")
                 uiButton.SubGroupIndex = SubGroupIndex
-                uiButton:SetName(name)
+                uiButton:SetName(name)                
                 table.insert(self.BtnGoList, uiButton)
                 if info.IsNeedFirstBluePoint then
                     -- key 与当前 info.Id 绑定
@@ -387,6 +386,7 @@ function XUiShop:UpdateTog()
                     -- 如果没有点击过 → 显示蓝点，否则不显示
                     uiButton:ShowReddot(not hasClicked)
                 end
+                self.TagBtnShopGroup[uiButton] = info
                 btn.gameObject.name = info.Id
             end
         end
@@ -426,6 +426,7 @@ function XUiShop:UpdateTog()
     end
     self.TabBtnGroup:Init(self.BtnGoList, function(index) self:OnSelectedTog(index) end)
     self.TabBtnGroup:SelectIndex(selectIndex)
+    self:GroupBtnShowActivityTag()
 end
 
 function XUiShop:GetRechargeTagIndex(infoList, rechargeType)
@@ -493,6 +494,18 @@ function XUiShop:UpdateInfo(shopId)
     self:InitScreen(shopId)
     self:RefreshSelectFilter(shopId)
     self:UpdateList(shopId, false)
+
+    self.TxtActivityTimeTip.gameObject:SetActiveEx(XShopManager.GetShopActivityIsOpen(shopId))
+    local activityTime = XShopManager.GetShopActivityEndTime(shopId)
+    if activityTime then
+        local gameTime = activityTime - XTime.GetServerNowTimestamp()
+        local totalDays = gameTime / (3600 * 24)
+        if totalDays >= 1 then
+            self.TxtActivityTimeTip.text = XUiHelper.GetText("FashionActivityRemainDays", math.floor(totalDays))
+        else
+            self.TxtActivityTimeTip.text = XUiHelper.GetText("FashionActivityRemainNotEnoughDay")
+        end
+    end
 end
 
 function XUiShop:InitScreen(shopId)
@@ -501,21 +514,23 @@ function XUiShop:InitScreen(shopId)
     self.ScreenGroupIDList = XShopManager.GetShopScreenGroupIDList(shopId)
     if self.ScreenGroupIDList and #self.ScreenGroupIDList > 0 then
         self.IsHasScreen = true
-        self.ScreenNum =  #self.ScreenGroupIDList
+        self.ScreenNum = #self.ScreenGroupIDList
         -- self.BtnScreenGroup.gameObject:SetActiveEx(#self.ScreenGroupIDList > 1)
     else
         self.IsHasScreen = false
     end
     self.PanelShaixuan.gameObject:SetActiveEx(self.IsHasScreen)
 
+   
 end
+
 function XUiShop:UpdateList(shopId, is4RequestRefresh)
     local isKeepOrder = os.clock() - self.RefreshBuyTime < 0.5 -- 刚购买之后0.5秒内的刷新, 不改变商品顺序
     if is4RequestRefresh then
         isKeepOrder = false
     end
     self.AssetActivityPanel:Refresh(XShopManager.GetShopShowIdList(shopId))
-       local selectTag = nil
+    local selectTag = nil
     if self.FilterResult[shopId] then
         selectTag = self.FilterResult[shopId].TagText
     end
@@ -615,12 +630,12 @@ function XUiShop:GetSuitScreenDataProvider(ignoreOther)
                     local firstGood = goodsList[1]
                     local templateId = firstGood.RewardGoods.TemplateId
                     local suitId = XMVCA.XEquip:GetEquipSuitId(templateId)
-                    dataProvider[#dataProvider + 1] = XMVCA.XEquip:GetSuitFilterProvider(v.Text,suitId)
+                    dataProvider[#dataProvider + 1] = XMVCA.XEquip:GetSuitFilterProvider(v.Text, suitId)
                 end
             end
         end
     end
-    if ignoreOther ==nil and hasOther then
+    if ignoreOther == nil and hasOther then
         local other = {
             text = XShopManager.GetTagScreenOther(),
             icon = CS.XGame.ClientConfig:GetString("UiShopOthers"),
@@ -632,6 +647,36 @@ function XUiShop:GetSuitScreenDataProvider(ignoreOther)
 end
 
 --endregion
+function XUiShop:GroupBtnShowActivityTag()
+    local shopGroup = {}
+    local groupId = nil
+    for i = 1, #self.BtnGoList do
+        local btnUi = self.BtnGoList[i]
+        local info = self.TagBtnShopGroup[btnUi]
+        if info.IsHasSnd and info.Id == 0 then
+            groupId = btnUi
+            -- btnUi.gameObject:SetActiveEx(false)
+        end
+        local tagTransform = btnUi.transform:Find("ActivityTag")
+        if tagTransform and info.ActivityEndTime ~= -1 then
+            tagTransform.gameObject:SetActiveEx(true)
+            local tagText = tagTransform.gameObject:GetComponentInChildren(typeof(CS.UnityEngine.UI.Text))
+            tagText.text = XUiHelper.GetText("FashionActivitySecondTag")
+            if groupId and not shopGroup[groupId] then
+                shopGroup[groupId] = true
+            end
+        end
+    end
+    for btnUi, isShow in pairs(shopGroup) do
+        local tagTransform = btnUi.transform:Find("ActivityTag")
+        if isShow and tagTransform then
+            tagTransform.gameObject:SetActiveEx(true)
+            local tagText = tagTransform.gameObject:GetComponentInChildren(typeof(CS.UnityEngine.UI.Text))
+            tagText.text = XUiHelper.GetText("FashionActivityFirstTag")
+        end
+    end
+end
+
 --region V4.1商店筛选逻辑
 function XUiShop:OpenSuitSelect()
     local shopId = self.CurShopId

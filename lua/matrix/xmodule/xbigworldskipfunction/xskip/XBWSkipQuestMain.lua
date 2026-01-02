@@ -8,12 +8,24 @@ function XBWSkipQuestMain:Skip()
 
     if XTool.IsTableEmpty(params) then
         XLog.Error("跳转失败, 参数异常!")
-        return
+        return false
     end
-
-    local questId = params[1]
-
+    local questId
+    local index = 1
+    while true do
+        questId = params[index]
+        if not questId or questId <= 0 then
+            break
+        end
+        local questData = XMVCA.XBigWorldQuest:GetQuestData(questId)
+        if questData and questData:IsInProgress() then
+            break
+        end
+        index = index + 1
+    end
     XMVCA.XBigWorldQuest:OpenQuestMain(1, questId)
+
+    return true
 end
 
 return XBWSkipQuestMain

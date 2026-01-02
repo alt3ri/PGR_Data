@@ -37,7 +37,17 @@ function XUiBigWorldMapDetail:OnAwake()
     ---@type XUiGridBWItem[]
     self._RewardGrids = {}
 
+    if self.CharacterEcologyTitle then
+        self.CharacterEcologyTitle.text = XMVCA.XBigWorldService:GetText("MapAiMemoryTitle")
+    end
     self:_RegisterButtonClicks()
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_DETAIL_CHANGE, self.Refresh, self)
+end
+
+function XUiBigWorldMapDetail:OnStart(levelId, pinData)
+    self._LevelId = levelId
+    self._PinData = pinData
+    self._QuickGoingData = self._Control:GetQuickGoingPinData(pinData)
 end
 
 function XUiBigWorldMapDetail:OnEnable()
@@ -53,7 +63,7 @@ function XUiBigWorldMapDetail:OnDisable()
 end
 
 function XUiBigWorldMapDetail:OnDestroy()
-
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_DETAIL_CHANGE, self.Refresh, self)
 end
 
 -- endregion
@@ -78,10 +88,25 @@ function XUiBigWorldMapDetail:OnBtnTrackingClick()
 
     if pinData then
         if not pinData:IsTracking() then
-            if pinData:IsVirtual() then
-                self._Control:TrackPin(pinData.LevelId, pinData.ReferPinId)
-            else
-                self._Control:TrackPin(pinData.LevelId, pinData.PinId)
+            local isCanTele = false
+            local currentLevelId = XMVCA.XBigWorldGamePlay:GetCurrentLevelId()
+            if pinData.LevelId ~= currentLevelId then
+                local quickGoingData = self._Control:GetQuickGoingPinData(self._PinData, true)
+                isCanTele = quickGoingData ~= nil
+                self:_QuickTeleport(quickGoingData, true, self.Name .. "OnBtnTrackingClick", XMVCA.XBigWorldService:GetText("MapQuickGoingTeleportDesc"), true, function()
+                    if pinData:IsVirtual() then
+                        self._Control:TrackPin(pinData.LevelId, pinData.ReferPinId)
+                    else
+                        self._Control:TrackPin(pinData.LevelId, pinData.PinId)
+                    end
+                end)
+            end
+            if not isCanTele then
+                if pinData:IsVirtual() then
+                    self._Control:TrackPin(pinData.LevelId, pinData.ReferPinId)
+                else
+                    self._Control:TrackPin(pinData.LevelId, pinData.PinId)
+                end
             end
         end
     end
@@ -208,14 +233,75 @@ function XUiBigWorldMapDetail:_RegisterRedPointEvents()
 end
 
 function XUiBigWorldMapDetail:_Refresh()
-    if self._PinData then
-        if self._PinData:IsQuest() then
-            self:_RefreshQuest(self._PinData.QuestId, self._PinData.QuestObjectiveId)
-        elseif self._PinData:IsActivity() then
-            self:_RefreshActivity(self._PinData.ActivityId)
-        else
-            self:_RefreshPin()
+    if not self._PinData then
+        return
+    end
+
+    if self._PinData:IsAiMemoryGroup() then
+        self:_RefreshCharacterEcology()
+    else
+        self:_RefreshNormalPin()
+    end
+end
+
+function XUiBigWorldMapDetail:_RefreshCharacterEcology()
+    local pinData = self._PinData
+    local isActive = self._PinData:IsActive()
+    local aiMemoryGroupId = pinData:GetAiMemoryGroupId()
+    local isShowAiMemory = aiMemoryGroupId > 0
+
+    self.PanelCharacterEcology.gameObject:SetActive(isShowAiMemory)
+    self.PanelName.gameObject:SetActive(not isShowAiMemory)
+    self.ProgressList.gameObject:SetActive(not isShowAiMemory)
+    self.TxtStoryDes.gameObject:SetActive(not isShowAiMemory)
+    self.PanelReward.gameObject:SetActive(not isShowAiMemory)
+
+    self:_RefreshPinIcon(self._PinData)
+    self:_RefreshTrackOperator(not (isActive and self._PinData.TeleportEnable))
+    self:_RefreshTeleportOperator(isActive and self._PinData.TeleportEnable)
+    self:_RefreshQuickGoingOperator()
+
+    self.TxtTitle.text = pinData.Name or ""
+
+    if isShowAiMemory then
+        if not self._AiMemoryGrids then
+            self._AiMemoryGrids = {}
         end
+        local configs = self._Control:GetBigworldAIMemorysByGroupId(aiMemoryGroupId)
+        XTool.UpdateDynamicItemByUiCache(self._AiMemoryGrids, configs, self.GroupCharacterEcology.transform.parent, nil, self)
+        for i = 1, #configs do
+            local config = configs[i]
+            local cell = self._AiMemoryGrids[i]
+            local isUnlock = config.Condition == 0 or XMVCA.XBigWorldService:CheckCondition(config.Condition)
+            cell.UnLock.gameObject:SetActive(isUnlock)
+            cell.Lock.gameObject:SetActive(not isUnlock)
+            if isUnlock then
+                cell.TxtNameUnLock.text = config.UnlockedTitle
+                cell.CharacterEcologyTaskTxtStoryUnLock.text = XUiHelper.ConvertLineBreakSymbol(config.UnlockedDesc)
+            else
+                cell.TxtNameLock.text = config.LockedTitle
+                cell.CharacterEcologyTaskTxtStoryLock.text = XUiHelper.ConvertLineBreakSymbol(config.LockedDesc)
+            end
+        end
+    end
+end
+
+function XUiBigWorldMapDetail:_RefreshNormalPin()
+    if self._AiMemoryGrids then
+        XTool.UpdateDynamicItemByUiCache(self._AiMemoryGrids, nil, self.GroupCharacterEcology.transform.parent, nil, self)
+    end
+    self.PanelCharacterEcology.gameObject:SetActive(false)
+    self.PanelName.gameObject:SetActive(false)
+    self.ProgressList.gameObject:SetActive(true)
+    self.TxtStoryDes.gameObject:SetActive(true)
+    self.PanelReward.gameObject:SetActive(true)
+
+    if self._PinData:IsQuest() then
+        self:_RefreshQuest(self._PinData.QuestId, self._PinData.QuestObjectiveId)
+    elseif self._PinData:IsActivity() then
+        self:_RefreshActivity(self._PinData.ActivityId)
+    else
+        self:_RefreshPin()
     end
 end
 
@@ -300,7 +386,8 @@ function XUiBigWorldMapDetail:_RefreshQuickGoingOperator()
 
         if isNearBy then
             local nearbyPinId = self._PinData.NearbyPinId
-            local nearbyPinData = self._Control:GetPinDataByLevelIdAndPinId(self._PinData:GetValidLevelId(), nearbyPinId)
+            local nearbyPinData =
+                self._Control:GetPinDataByLevelIdAndPinId(self._PinData:GetValidLevelId(), nearbyPinId)
 
             if nearbyPinData then
                 isNearByTeleportLevel = nearbyPinData:IsTeleportLevel()
@@ -430,7 +517,7 @@ function XUiBigWorldMapDetail:_Teleport(pinData)
 end
 
 ---@param pinData XBWMapPinData
-function XUiBigWorldMapDetail:_QuickTeleport(pinData, isPopConfirm, key, tips, isToggleActive)
+function XUiBigWorldMapDetail:_QuickTeleport(pinData, isPopConfirm, key, tips, isToggleActive, cb)
     if pinData and pinData:IsCouldTeleport() then
         local teleportLevelId = pinData:GetTeleportLevelId()
         local currentLevelId = XMVCA.XBigWorldGamePlay:GetCurrentLevelId()
@@ -445,6 +532,7 @@ function XUiBigWorldMapDetail:_QuickTeleport(pinData, isPopConfirm, key, tips, i
             confirmData:InitSureClick(nil, function()
                 XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_BEGIN_TELEPORT,
                     teleportLevelId, mapPinLevelId, pinId)
+                if cb then cb() end
             end)
             confirmData:InitCancelAndCloseClick(nil, function()
                 XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_TELEPORT_POPUP_CLOSE)
@@ -459,6 +547,7 @@ function XUiBigWorldMapDetail:_QuickTeleport(pinData, isPopConfirm, key, tips, i
         else
             XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_BEGIN_TELEPORT, teleportLevelId,
                 mapPinLevelId, pinId)
+            if cb then cb() end
         end
     end
 end

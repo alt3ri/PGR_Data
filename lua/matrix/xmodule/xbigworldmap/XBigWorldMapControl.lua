@@ -4,6 +4,7 @@ local XBigWorldMapControl = XClass(XControl, "XBigWorldMapControl")
 
 function XBigWorldMapControl:OnInit()
     -- 初始化内部变量
+    self._IsShowCharactorPosKey = XPlayer.Id .. "_ShowCharactorPos"
 end
 
 function XBigWorldMapControl:AddAgencyEvent()
@@ -11,11 +12,25 @@ function XBigWorldMapControl:AddAgencyEvent()
 end
 
 function XBigWorldMapControl:RemoveAgencyEvent()
-
 end
 
 function XBigWorldMapControl:OnRelease()
     -- XLog.Error("这里执行Control的释放")
+end
+
+-- 显示设置
+function XBigWorldMapControl:GetShowCharactorPos()
+    local isShow = XSaveTool.GetData(self._IsShowCharactorPosKey)
+
+    if isShow == nil then
+        return true
+    end
+
+    return isShow == 1
+end
+
+function XBigWorldMapControl:SetShowCharactorPos(isShow)
+    XSaveTool.SaveData(self._IsShowCharactorPosKey, isShow and 1 or 0)
 end
 
 function XBigWorldMapControl:InitMapData(worldId, levelId)
@@ -34,6 +49,18 @@ function XBigWorldMapControl:GetCurrentCameraTransform()
     return camera.transform
 end
 
+---@return XTableBigWorldMap[]
+function XBigWorldMapControl:GetAllMapConfigs()
+    return self._Model:GetBigWorldMapConfigs()
+end
+
+function XBigWorldMapControl:GetMapLinkLevelIdByLevelId(levelId)
+    ---@type XBigWorldMapAgency
+    local agency = self:GetAgency()
+
+    return agency:GetMapLinkLevelIdByLevelId(levelId)
+end
+
 function XBigWorldMapControl:GetCurrentAreaGroupId()
     ---@type XBigWorldMapAgency
     local agency = self:GetAgency()
@@ -42,11 +69,11 @@ function XBigWorldMapControl:GetCurrentAreaGroupId()
 end
 
 ---@return XBWMapPinData[]
-function XBigWorldMapControl:GetMapPinDatasByLevelId(levelId)
+function XBigWorldMapControl:GetMapPinDatasByLevelId(levelId, isNoTip)
     ---@type XBigWorldMapAgency
     local agency = self:GetAgency()
 
-    return agency:GetMapPinDatasByLevelId(levelId)
+    return agency:GetMapPinDatasByLevelId(levelId, isNoTip)
 end
 
 ---@return XBWMapPinData[]
@@ -295,34 +322,69 @@ function XBigWorldMapControl:GetTeleportLevelTips(levelId)
     return XMVCA.XBigWorldService:GetText("MapTeleportLevelTips", levelName)
 end
 
+function XBigWorldMapControl:GetBigworldAIMemorysByGroupId(groupId)
+    return self._Model:GetBigworldAIMemorysByGroupId(groupId)
+end
+
 ---@param targetPinData XBWMapPinData
-function XBigWorldMapControl:GetQuickGoingPinData(targetPinData)
+function XBigWorldMapControl:GetQuickGoingPinData(targetPinData, isForce)
     local result = nil
 
-    if targetPinData and not targetPinData:IsCouldTeleport() and targetPinData:IsTracking() then
+    if targetPinData and not targetPinData:IsCouldTeleport() and (targetPinData:IsTracking() or isForce) then
         local minDistance = math.maxinteger
         local targetPosition = targetPinData.WorldPosition
         local pinDatas = self:GetMapPinDatasByLevelId(targetPinData.LevelId)
         
         if not XTool.IsTableEmpty(pinDatas) then
+            local currentLevel = XMVCA.XBigWorldGamePlay:GetCurrentLevelId()
+            local sortDatas = {}
             for pinId, pinData in pairs(pinDatas) do
-                if pinData:IsTeleportInLevel() and pinData.MapAreaGroupId == targetPinData.MapAreaGroupId then
-                    if not result then
-                        local position = pinData.WorldPosition
-
-                        result = pinData
-                        minDistance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
-                    else
-                        local position = pinData.WorldPosition
-                        local distance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
-
-                        if distance < minDistance then
-                            result = pinData
-                            minDistance = distance
-                        end
-                    end
+                if pinData:IsTeleportInLevel() then
+                    local position = pinData.WorldPosition
+                    local distance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
+                    local groupSortId = math.abs(pinData.MapAreaGroupId - targetPinData.MapAreaGroupId)
+                    table.insert(sortDatas, {
+                        PinData = pinData,
+                        Distance = distance,
+                        SameGroupSortId = groupSortId,
+                        QuestId = pinData.QuestId or -1,
+                    })
                 end
             end
+
+            table.sort(sortDatas, function(a, b)
+                if a.SameGroupSortId ~= b.SameGroupSortId then
+                    return a.SameGroupSortId < b.SameGroupSortId
+                end
+                if a.Distance ~= b.Distance then
+                    return a.Distance < b.Distance
+                end
+                return a.QuestId < b.QuestId
+            end)
+
+            local res = sortDatas[1]
+            if res then
+                result = res.PinData
+            end
+
+            -- for pinId, pinData in pairs(pinDatas) do
+            --     if pinData:IsTeleportInLevel() and pinData.MapAreaGroupId == targetPinData.MapAreaGroupId then
+            --         if not result then
+            --             local position = pinData.WorldPosition
+
+            --             result = pinData
+            --             minDistance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
+            --         else
+            --             local position = pinData.WorldPosition
+            --             local distance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
+
+            --             if distance < minDistance then
+            --                 result = pinData
+            --                 minDistance = distance
+            --             end
+            --         end
+            --     end
+            -- end
         end
     end
 
@@ -366,6 +428,13 @@ function XBigWorldMapControl:CheckLevelHasMap(levelId)
     local agency = self:GetAgency()
 
     return agency:CheckLevelHasMap(levelId)
+end
+
+function XBigWorldMapControl:CheckLevelLinkOther(levelId)
+    ---@type XBigWorldMapAgency
+    local agency = self:GetAgency()
+
+    return agency:CheckLevelLinkOther(levelId)
 end
 
 function XBigWorldMapControl:CheckQuestPin(levelId, pinId)
@@ -484,7 +553,7 @@ end
 
 function XBigWorldMapControl:SendTrackCommand(levelId, pinId)
     if not self:CheckCurrentTrackPin(levelId, pinId) then
-        self:SendCancelAllTrackCommand(levelId)
+        self:SendCancelAllLevelTrackCommand(levelId)
         self._Model:TrackPins(levelId, {
             [pinId] = true,
         })
@@ -505,6 +574,7 @@ function XBigWorldMapControl:SendCancelTrackCommand(levelId, pinId)
     end
 end
 
+-- 移除对应关卡跟踪
 function XBigWorldMapControl:SendCancelAllTrackCommand(levelId)
     local trackPins = self._Model:GetTrackPinsByLevelIdAndType(levelId)
 
@@ -512,6 +582,14 @@ function XBigWorldMapControl:SendCancelAllTrackCommand(levelId)
         for pinId, _ in pairs(trackPins) do
             self:SendCancelTrackCommand(levelId, pinId)
         end
+    end
+end
+
+-- 移除所有场景跟踪
+function XBigWorldMapControl:SendCancelAllLevelTrackCommand()
+    local levelpins = self._Model:GetTrackLevelPins()
+    for levelId, _ in pairs(levelpins) do
+        self:SendCancelAllTrackCommand(levelId)
     end
 end
 

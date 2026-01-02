@@ -33,15 +33,39 @@
     },
     {
         "Id": 150,
-        "MutualExclusionIds": "[151, 153]"
+        "MutualExclusionIds": "[151, 153, 154, 1001, 1002, 1003, 1004, 1005]"
     },
     {
         "Id": 151,
-        "MutualExclusionIds": "[150]"
+        "MutualExclusionIds": "[150, 153, 154, 1001, 1002, 1003, 1004, 1005]"
     },
     {
         "Id": 153,
         "MutualExclusionIds": "[150]"
+    },
+    {
+        "Id": 154,
+        "MutualExclusionIds": null
+    },
+    {
+        "Id": 1001,
+        "MutualExclusionIds": "[1002, 1003, 1004, 1005, 150, 151, 154]"
+    },
+    {
+        "Id": 1002,
+        "MutualExclusionIds": "[1001, 1003, 1004, 1005, 150, 151, 154]"
+    },
+    {
+        "Id": 1003,
+        "MutualExclusionIds": "[1001, 1002, 1004, 1005, 150, 151, 154]"
+    },
+    {
+        "Id": 1004,
+        "MutualExclusionIds": "[1001, 1002, 1003, 1005, 150, 151, 154]"
+    },
+    {
+        "Id": 1005,
+        "MutualExclusionIds": "[1001, 1002, 1003, 1004, 150, 151, 154]"
     },
     {
         "Id": 16028,

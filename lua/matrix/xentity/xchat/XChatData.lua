@@ -138,6 +138,7 @@ function XChatData:GetRoomMsgContent()
             local worldId = stageId
             local playerName
             local nodeId = contentData[7] or ""
+            local levelId = tonumber(contentData[8]) or 0
             if playerId == XPlayer.Id then
                 playerName = XPlayer.Name
             else
@@ -145,7 +146,7 @@ function XChatData:GetRoomMsgContent()
             end
             -- local stageName = XDlcHuntWorldConfig.GetWorldName(worldId)
             local stageName = XMVCA.XDlcWorld:GetWorldNameById(worldId)
-            local inviteWords = CS.XTextManager.GetText("OnlineInviteLink", string.format("%s|%s|%s|%s|%s", roomId, tostring(worldId), tostring(roomType), tostring(stageLevel), tostring(nodeId)))
+            local inviteWords = CS.XTextManager.GetText("OnlineInviteLink", string.format("%s|%s|%s|%s|%s|%s", roomId, tostring(worldId), tostring(roomType), tostring(stageLevel), tostring(nodeId), tostring(levelId)))
             return CS.XTextManager.GetText("OnlineInviteFriend", playerName, stageName, inviteWords)
         end
     end

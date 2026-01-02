@@ -392,17 +392,17 @@
     {
         "Key": "ControlCameraByDragTip",
         "Type": "string",
-        "Value": "Switched to Classic Mode: Hold the left mouse button to control camera movement"
+        "Value": "\u5df2\u5207\u6362\u81f3\u4f20\u7edf\u6a21\u5f0f\uff1a\u6309\u4f4f\u9f20\u6807\u5de6\u952e\u64cd\u63a7\u89c6\u89d2\u79fb\u52a8"
     },
     {
         "Key": "ControlCameraByMoveTip",
         "Type": "string",
-        "Value": "Switched to Classic Mode: POV will automatically moves according to the mouse."
+        "Value": "\u5df2\u5207\u6362\u81f3\u81ea\u7531\u6a21\u5f0f\uff1a\u89c6\u89d2\u5c06\u81ea\u52a8\u8ddf\u968f\u9f20\u6807\u79fb\u52a8"
     },
     {
         "Key": "OccupiedKeyCode",
         "Type": "string",
-        "Value": "The key is occupied and cannot be customized."
+        "Value": "\u8be5\u952e\u503c\u88ab\u5360\u7528\u65e0\u6cd5\u81ea\u5b9a\u4e49"
     },
     {
         "Key": "VirtualEffectEnable",
@@ -437,22 +437,22 @@
     {
         "Key": "Action",
         "Type": "string",
-        "Value": "Pose"
+        "Value": "\u52a8\u4f5c"
     },
     {
         "Key": "Other",
         "Type": "string",
-        "Value": "Others"
+        "Value": "\u5176\u4ed6"
     },
     {
         "Key": "Paster",
         "Type": "string",
-        "Value": "Sticker"
+        "Value": "\u8d34\u7eb8"
     },
     {
         "Key": "Filter",
         "Type": "string",
-        "Value": "Filter"
+        "Value": "\u6ee4\u955c"
     },
     {
         "Key": "ActionEn",
@@ -825,6 +825,16 @@
         "Value": "1.5"
     },
     {
+        "Key": "SubGridAllDMGPrefab",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/UiFightPrefab/SubGridAllDMG.prefab"
+    },
+    {
+        "Key": "ShowAllDMGStageType",
+        "Type": "string",
+        "Value": "5|12"
+    },
+    {
         "Key": "UIFightBuouxiongHack1",
         "Type": "string",
         "Value": "Assets/Product/Ui/Prefab/UiFight/UIFightBuouxiongHack1.prefab"
@@ -843,5 +853,10 @@
         "Key": "UIFightBuouxiongHack4",
         "Type": "string",
         "Value": "Assets/Product/Ui/Prefab/UiFight/UIFightBuouxiongHack4.prefab"
+    },
+    {
+        "Key": "LastBuffTimeTips",
+        "Type": "float",
+        "Value": "1"
     }
 ]

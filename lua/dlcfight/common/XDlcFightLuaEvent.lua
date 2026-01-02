@@ -7,6 +7,16 @@ EFightLuaEvent = {
     AutoChessItemSkillComboStart = 1002,
     --- 触发道具技能连招 参数详看: XLuaEventArgsAutoChessItemSkillComboEnd
     AutoChessItemSkillComboEnd = 1003,
+    --- 设置RelinkAI是否激活 参数详看：XLuaEventArgsRelinkSetAIActivate
+    RelinkSetAIActivate = 1004,
+    --- RelinkAI出生 参数详看：XLuaEventArgsRelinkAIBorn
+    RelinkAIBorn = 1005,
+    --- Relink弹刀事件
+    RelinkCounterSuccess = 1006,
+    --- Relink发起弹刀技能
+    RelinkCastCounterSkill = 1007,
+    --- Relink怪物释放强力技能
+    RelinkMonsterCastPowerfulSkill = 1008
 }
 
 --region Define - GetEventArgs
@@ -24,6 +34,24 @@ EFightLuaEvent = {
 ---@class XLuaEventArgsAutoChessItemSkillComboEnd
 ---@field NpcUUid number
 ---@field ItemSkillId number
+
+---@class XLuaEventArgsRelinkSetAIActivate
+---@field NpcUUid number
+---@field IsActivated boolean
+
+---@class XLuaEventArgsRelinkAIBorn
+---@field NpcUUid number
+
+---@class XLuaEventArgsRelinkCounterSuccess
+---@field TriggerNpcUUid number
+---@field NpcUUid number
+
+---@class XLuaEventArgsRelinkCastCounterSkill
+---@field SourceNpcUUID int
+---@field TargetNpcUUID int
+
+---@class XLuaEventArgsRelinkMonsterCastPowerfulSkill
+---@field NpcUUid int
 --endregion
 
 --------------------------------------------

@@ -9,7 +9,8 @@ local XUiBigWorldNarrative = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldNarrativ
 local NarrativeType = {
     Text = 1,
     Photo = 2,
-    Spine = 3
+    Spine = 3,
+    RawImage = 4,
 }
 
 function XUiBigWorldNarrative:OnAwake()
@@ -25,9 +26,12 @@ function XUiBigWorldNarrative:OnAwake()
     self._panelPhoto = require("XUi/XUiBigWorld/XNarrative/XUiBigWorldNarrativePhotoPanel").New(self.PanelPhoto, self)
     ---@type XUiBigWorldSpinePanel
     self._panelSpine = require("XUi/XUiBigWorld/XNarrative/XUiBigWorldSpinePanel").New(self.PanelPhotoSpine, self)
+    ---@type XUiBigWorldRawImagePanel
+    self._panelRawImage = require("XUi/XUiBigWorld/XNarrative/XUiBigWorldRawImagePanel").New(self.PanelImage, self)
     self._panelNarrative:Close()
     self._panelPhoto:Close()
     self._panelSpine:Close()
+    self._panelRawImage:Close()
 end
 
 function XUiBigWorldNarrative:OnStart()
@@ -61,12 +65,20 @@ function XUiBigWorldNarrative:Refresh()
         self._panelNarrative:Refresh(self._currentId)
         self._panelPhoto:Close()
         self._panelSpine:Close()
+        self._panelRawImage:Close()
     elseif self._curNarrativeType == NarrativeType.Photo then
         self._panelPhoto:Refresh(self._currentId)
         self._panelNarrative:Close()
         self._panelSpine:Close()
+        self._panelRawImage:Close()
     elseif self._curNarrativeType == NarrativeType.Spine then
         self._panelSpine:Refresh(self._currentId)
+        self._panelNarrative:Close()
+        self._panelPhoto:Close()
+        self._panelRawImage:Close()
+    elseif self._curNarrativeType == NarrativeType.RawImage then
+        self._panelRawImage:Refresh(self._currentId)
+        self._panelSpine:Close()
         self._panelNarrative:Close()
         self._panelPhoto:Close()
     end

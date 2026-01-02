@@ -22,11 +22,9 @@ end
 
 function XSkyGardenDormControl:OnRelease()
     for key, tex in pairs(self._LocalLayoutTex) do
-        if not XTool.UObjIsNil(tex) then
-            XUiHelper.Destroy(tex)
-        end
-        self._LocalLayoutTex[key] = nil
+        XUiHelper.Destroy(tex)
     end
+    self._LocalLayoutTex = nil
 end
 
 function XSkyGardenDormControl:GetFurnitureTypeList(areaType)
@@ -128,17 +126,20 @@ end
 
 function XSkyGardenDormControl:GetFurnitureLockDesc(furnitureId)
     local t = self._Model:GetFurnitureTemplate(furnitureId)
-    return t and t.LockDesc or ""
+    local desc = t and t.LockDesc or ""
+    return XUiHelper.ReplaceTextNewLine(desc)
 end
 
 function XSkyGardenDormControl:GetFurnitureDesc(furnitureId)
     local t = self._Model:GetFurnitureTemplate(furnitureId)
-    return t and t.Desc or ""
+    local desc = t and t.Desc or ""
+    return XUiHelper.ReplaceTextNewLine(desc)
 end
 
 function XSkyGardenDormControl:GetFurnitureWorldDesc(furnitureId)
     local t = self._Model:GetFurnitureTemplate(furnitureId)
-    return t and t.WorldDesc or ""
+    local desc = t and t.WorldDesc or ""
+    return XUiHelper.ReplaceTextNewLine(desc)
 end
 
 function XSkyGardenDormControl:GetFurnitureSceneObjId(furnitureId)
@@ -358,6 +359,7 @@ function XSkyGardenDormControl:CaptureCamera(fileName, func)
     end
     
     CS.XScreenCapture.ScreenCaptureWithCallBack(XMVCA.XBigWorldGamePlay:GetCamera(), function(tex)
+        XUiHelper.Destroy(self._LocalLayoutTex[fileName])
         if tex then
             self._LocalLayoutTex[fileName] = tex
             CS.XTool.SaveCaptureImg(fileName, tex)

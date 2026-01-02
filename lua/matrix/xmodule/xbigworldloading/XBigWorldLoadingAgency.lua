@@ -162,4 +162,20 @@ function XBigWorldLoadingAgency:OnCmdCloseLoading(data)
     end
 end
 
+function XBigWorldLoadingAgency:IsShowLoading(loadingType)
+    loadingType = loadingType or self.LoadingType.ImageMask
+    local uiName
+    if loadingType == self.LoadingType.ImageMask then
+        uiName = "UiBigWorldLoading"
+    elseif loadingType == self.LoadingType.BlackTransition then
+        uiName = "UiBigWorldShowLoading"
+    elseif loadingType == self.LoadingType.BlackMask then
+        uiName = "UiBigWorldBlackMaskLoading"
+    end
+    if not uiName then
+        return false
+    end
+    return XMVCA.XBigWorldUI:IsShow(uiName)
+end
+
 return XBigWorldLoadingAgency

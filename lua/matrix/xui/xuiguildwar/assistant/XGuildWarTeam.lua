@@ -122,8 +122,6 @@ function XGuildWarTeam:GetMemberByEntityId(entityId)
     return nil
 end
 
-
-
 function XGuildWarTeam:GetEntityIds()
     local entityIds = { 0, 0, 0 }
     for pos, member in pairs(self.Members) do
@@ -218,7 +216,10 @@ end
 --剔除已经失效的援助角色
 function XGuildWarTeam:KickOutInvalidMembers()
     for pos, member in pairs(self.Members) do
-        if not member:CheckValid() then
+        -- 检查驻扎角色
+        local isStationed = XMVCA.XGuildWar.RoleStationAgency:CheckCharacterIsStationedAnyNode(member.EntityId)
+        
+        if not member:CheckValid() or isStationed then
             self:UpdateEntityTeamPos(false, pos, false)
         end
     end
@@ -312,6 +313,25 @@ function XGuildWarTeam:UpdateFromTeamData(teamData)
     self:Save()
 end
 
+---@overload
+function XGuildWarTeam:UpdateEntityIds(ids)
+    if not self.IsStandAlone then
+        local isSameEntityId, index = XMVCA.XCharacter:HasDuplicateCharId(ids)
+        if isSameEntityId then
+            ids[index] = 0
+        end
+    end
+
+    for pos, characterId in ipairs(ids) do
+        if characterId > 0 and XMVCA.XCharacter:IsOwnCharacter(characterId) then
+            self:UpdateEntityTeamPos({ EntityId = characterId, PlayerId = XPlayer.Id }, pos, true)
+        end
+    end
+
+    self:RefreshGeneralSkills(true)
+    self:Save()
+end
+
 --region 角色效应相关
 
 -- 技能汇总表仅加载时缓存，不会存储到本地。在该重写版本中参数是memberData
@@ -380,6 +400,14 @@ function XGuildWarTeam:UpdateGenernalSkillsByMemberDatas(memberDatas, keepOldDat
 end
 --endregion
 
+local TANK_CAREERS = {
+    [XEnumConst.CHARACTER.Career.Tank] = true,
+    [XEnumConst.CHARACTER.Career.Breaker] = true,
+}
+local AMPLIFIER_CAREERS = {
+    [XEnumConst.CHARACTER.Career.Amplifier] = true,
+    [XEnumConst.CHARACTER.Career.Support] = true,
+}
 function XGuildWarTeam:GetObservationActiveCareer()
     local tankCount = 0
     local tankPos = 0
@@ -399,10 +427,11 @@ function XGuildWarTeam:GetObservationActiveCareer()
                 physicalCount = physicalCount + 1
                 physicalPos = i
             end
-            if career == XEnumConst.CHARACTER.Career.Tank then
+
+            if TANK_CAREERS[career] then
                 tankCount = tankCount + 1
                 tankPos = i
-            elseif (career == XEnumConst.CHARACTER.Career.Amplifier or career == XEnumConst.CHARACTER.Career.Support) then
+            elseif AMPLIFIER_CAREERS[career] then
                 amplifierCount = amplifierCount + 1
                 amplifierPos = i
             elseif career == XEnumConst.CHARACTER.Career.Observation then

@@ -48,6 +48,8 @@ function XDragonRageAgencyCom:RefreshDataFromActivityData(activityData)
     end
     
     if not XTool.IsTableEmpty(activityData.RoundData) then
+        local hasUpdateData = false
+        
         for i, myRoundData in pairs(activityData.RoundData) do
             -- 只更新查找当前轮次的数据
             if myRoundData.RoundId == XDataCenter.GuildWarManager.GetCurrentRoundId() then
@@ -57,7 +59,14 @@ function XDragonRageAgencyCom:RefreshDataFromActivityData(activityData)
                 end
 
                 self._OwnerModel:GetDragonRageData():UpdateDragonRageData(myRoundData)
+                hasUpdateData = true
             end
+        end
+        
+        -- 如果请求到完整的回合数据了，但是确没有更新到，那么要么是没有数据，此时应当清空之前的缓存
+        if not hasUpdateData then
+            self._OwnerModel:GetDragonRageData():ResetData()
+            XLog.CustomReport(ModuleId.XGuildWar, '逻辑标记：在刷新活动数据过程中，没有符合的轮次数据对龙怒系统数据缓存进行更新，进行缓存清空操作。结合此日志查看是否有引起其他相关的逻辑错误')
         end
     end
 end

@@ -4,2918 +4,2918 @@
         "Type": null,
         "Formula": "999101&999201",
         "Params": null,
-        "Desc": "Current quarter count greater than 5, player has over 100 items for sale"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u5927\u4e8e 5 \uff0c\u4e14\u73a9\u5bb6\u62e5\u6709\u5546\u54c1\u5927\u4e8e 100"
     },
     {
         "Id": 999002,
         "Type": null,
         "Formula": "999101|999201",
         "Params": null,
-        "Desc": "Current quarter count greater than 5, or player has more than 100 items"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u5927\u4e8e 5 \uff0c\u6216\u8005\u73a9\u5bb6\u62e5\u6709\u5546\u54c1\u5927\u4e8e 100"
     },
     {
         "Id": 999003,
         "Type": null,
         "Formula": "(999101&999106)|999111",
         "Params": null,
-        "Desc": "Own more than 100 Item 1 and more than 100 Item 2; or own more than 100 Live Item 3"
+        "Desc": "\u62e5\u6709\u5546\u54c1 1 \u5927\u4e8e 100\u3001\u540c\u65f6\u62e5\u6709\u5546\u54c1 2 \u5927\u4e8e 100 \uff1b\u6216\u8005\u62e5\u6709\u6d3b\u7269 3 \u5927\u4e8e 100"
     },
     {
         "Id": 999101,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 1, 100]",
-        "Desc": "Own more than 100 Type 1 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 1 \u5546\u54c1\u5927\u4e8e 100"
     },
     {
         "Id": 999102,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 100]",
-        "Desc": "Own more than or equal to 100 Type 1 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 1 \u5546\u54c1\u5927\u4e8e\u7b49\u4e8e 100"
     },
     {
         "Id": 999103,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 3, 100]",
-        "Desc": "Own 100 Type 1 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 1 \u5546\u54c1\u7b49\u4e8e 100"
     },
     {
         "Id": 999104,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 4, 100]",
-        "Desc": "Own less than or equal to 100 Type 1 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 1 \u5546\u54c1\u5c0f\u4e8e\u7b49\u4e8e 100"
     },
     {
         "Id": 999105,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 5, 100]",
-        "Desc": "Own less than 100 Type 1 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 1 \u5546\u54c1\u5c0f\u4e8e 100"
     },
     {
         "Id": 999106,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 1, 100]",
-        "Desc": "Own more than 100 Type 2 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 2 \u5546\u54c1\u5927\u4e8e 100"
     },
     {
         "Id": 999107,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 2, 100]",
-        "Desc": "Own more than or equal to 100 Type 2 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 2 \u5546\u54c1\u5927\u4e8e\u7b49\u4e8e 100"
     },
     {
         "Id": 999108,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 3, 100]",
-        "Desc": "Own 100 Type 2 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 2 \u5546\u54c1\u7b49\u4e8e 100"
     },
     {
         "Id": 999109,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 4, 100]",
-        "Desc": "Own less than or equal to 100 Type 2 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 2 \u5546\u54c1\u5c0f\u4e8e\u7b49\u4e8e 100"
     },
     {
         "Id": 999110,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 5, 100]",
-        "Desc": "Own less than 100 Type 2 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 2 \u5546\u54c1\u5c0f\u4e8e 100"
     },
     {
         "Id": 999111,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 1, 100]",
-        "Desc": "Own more than 100 Type 3 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 3 \u5546\u54c1\u5927\u4e8e 100"
     },
     {
         "Id": 999112,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 2, 100]",
-        "Desc": "Own more than or equal to 100 Type 3 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 3 \u5546\u54c1\u5927\u4e8e\u7b49\u4e8e 100"
     },
     {
         "Id": 999113,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 3, 100]",
-        "Desc": "Own 100 Type 3 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 3 \u5546\u54c1\u7b49\u4e8e 100"
     },
     {
         "Id": 999114,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 4, 100]",
-        "Desc": "Own less than or equal to 100 Type 3 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 3 \u5546\u54c1\u5c0f\u4e8e\u7b49\u4e8e 100"
     },
     {
         "Id": 999115,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 5, 100]",
-        "Desc": "Own less than 100 Type 3 items"
+        "Desc": "\u62e5\u6709\u7c7b\u578b 3 \u5546\u54c1\u5c0f\u4e8e 100"
     },
     {
         "Id": 999201,
         "Type": 4.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Current quarter count greater than 5"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u5927\u4e8e 5"
     },
     {
         "Id": 999202,
         "Type": 4.0,
         "Formula": null,
         "Params": "[3, 5]",
-        "Desc": "Current quarter count equals 5"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u7b49\u4e8e 5"
     },
     {
         "Id": 999203,
         "Type": 4.0,
         "Formula": null,
         "Params": "[5, 5]",
-        "Desc": "Current quarter count less than 5"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u5c0f\u4e8e 5"
     },
     {
         "Id": 999204,
         "Type": 4.0,
         "Formula": null,
         "Params": "[3, 10]",
-        "Desc": "Current quarter count equals 10"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u7b49\u4e8e 10"
     },
     {
         "Id": 999205,
         "Type": 4.0,
         "Formula": null,
         "Params": "[3, 15]",
-        "Desc": "Current quarter count equals 15"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u7b49\u4e8e 15"
     },
     {
         "Id": 999206,
         "Type": 4.0,
         "Formula": null,
         "Params": "[3, 20]",
-        "Desc": "Current quarter count equals 20"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u7b49\u4e8e 20"
     },
     {
         "Id": 999207,
         "Type": 4.0,
         "Formula": null,
         "Params": "[3, 25]",
-        "Desc": "Current quarter count equals 25"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u7b49\u4e8e 25"
     },
     {
         "Id": 999208,
         "Type": null,
         "Formula": "999204|999205|999206|999207",
         "Params": null,
-        "Desc": "Current Round is 10/15/20/25"
+        "Desc": "\u5f53\u524d\u56de\u5408\u662f10/15/20/25"
     },
     {
         "Id": 999501,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 3]",
-        "Desc": "Main City reached Lv.3?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u8fbe\u5230\u7b49\u7ea7 3"
     },
     {
         "Id": 999502,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 4]",
-        "Desc": "Main City reached Lv.4?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u8fbe\u5230\u7b49\u7ea7 4"
     },
     {
         "Id": 999503,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Main City reached Lv.5?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u8fbe\u5230\u7b49\u7ea7 5"
     },
     {
         "Id": 999504,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 6]",
-        "Desc": "Main City reached Lv.6?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u8fbe\u5230\u7b49\u7ea7 6"
     },
     {
         "Id": 999505,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 7]",
-        "Desc": "Main City reached Lv.7?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u8fbe\u5230\u7b49\u7ea7 7"
     },
     {
         "Id": 999506,
         "Type": 7.0,
         "Formula": null,
         "Params": "[0, 3]",
-        "Desc": "Main City failed to reach Lv.3?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u672a\u8fbe\u5230\u7b49\u7ea7 3"
     },
     {
         "Id": 999507,
         "Type": 7.0,
         "Formula": null,
         "Params": "[0, 4]",
-        "Desc": "Main City failed to reach Lv.4?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u672a\u8fbe\u5230\u7b49\u7ea7 4"
     },
     {
         "Id": 999508,
         "Type": 7.0,
         "Formula": null,
         "Params": "[0, 5]",
-        "Desc": "Main City failed to reach Lv.5?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u672a\u8fbe\u5230\u7b49\u7ea7 5"
     },
     {
         "Id": 999509,
         "Type": 7.0,
         "Formula": null,
         "Params": "[0, 6]",
-        "Desc": "Main City failed to reach Lv.6?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u672a\u8fbe\u5230\u7b49\u7ea7 6"
     },
     {
         "Id": 999510,
         "Type": 7.0,
         "Formula": null,
         "Params": "[0, 7]",
-        "Desc": "Main City failed to reach Lv.7?"
+        "Desc": "\u4e3b\u57ce\u662f\u5426\u672a\u8fbe\u5230\u7b49\u7ea7 7"
     },
     {
         "Id": 999601,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 100]",
-        "Desc": "Type 1 item current stock greater or equal to 100"
+        "Desc": "\u7c7b\u578b 1 \u5546\u54c1\u5f53\u524d\u5e93\u5b58\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999602,
         "Type": 8.0,
         "Formula": null,
         "Params": "[1, 1, 2, 100]",
-        "Desc": "Type 1 item stock limit greater or equal to 100"
+        "Desc": "\u7c7b\u578b 1 \u5546\u54c1\u5e93\u5b58\u4e0a\u9650\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999603,
         "Type": 8.0,
         "Formula": null,
         "Params": "[1, 100, 2, 100]",
-        "Desc": "Type 1 item final price greater or equal to 100"
+        "Desc": "\u7c7b\u578b 1 \u5546\u54c1\u7ed3\u7b97\u552e\u4ef7\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999604,
         "Type": 8.0,
         "Formula": null,
         "Params": "[1, 200, 2, 100]",
-        "Desc": "Type 1 item final production greater or equal to 100"
+        "Desc": "\u7c7b\u578b 1 \u5546\u54c1\u7ed3\u7b97\u4ea7\u91cf\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999605,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 2, 100]",
-        "Desc": "Type 2 item current stock greater or equal to 100"
+        "Desc": "\u7c7b\u578b 2 \u5546\u54c1\u5f53\u524d\u5e93\u5b58\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999606,
         "Type": 8.0,
         "Formula": null,
         "Params": "[2, 1, 2, 100]",
-        "Desc": "Type 2 item stock limit greater or equal to 100"
+        "Desc": "\u7c7b\u578b 2 \u5546\u54c1\u5e93\u5b58\u4e0a\u9650\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999607,
         "Type": 8.0,
         "Formula": null,
         "Params": "[2, 100, 2, 100]",
-        "Desc": "Type 2 item final price greater or equal to 100"
+        "Desc": "\u7c7b\u578b 2 \u5546\u54c1\u7ed3\u7b97\u552e\u4ef7\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999608,
         "Type": 8.0,
         "Formula": null,
         "Params": "[2, 200, 2, 100]",
-        "Desc": "Type 2 item final production greater or equal to 100"
+        "Desc": "\u7c7b\u578b 2 \u5546\u54c1\u7ed3\u7b97\u4ea7\u91cf\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999609,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 2, 100]",
-        "Desc": "Type 3 item current stock greater or equal to 100"
+        "Desc": "\u7c7b\u578b 3 \u5546\u54c1\u5f53\u524d\u5e93\u5b58\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999610,
         "Type": 8.0,
         "Formula": null,
         "Params": "[3, 1, 2, 100]",
-        "Desc": "Type 3 item stock limit greater or equal to 100"
+        "Desc": "\u7c7b\u578b 3 \u5546\u54c1\u5e93\u5b58\u4e0a\u9650\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999611,
         "Type": 8.0,
         "Formula": null,
         "Params": "[3, 100, 2, 100]",
-        "Desc": "Type 3 item final price greater or equal to 100"
+        "Desc": "\u7c7b\u578b 3 \u5546\u54c1\u7ed3\u7b97\u552e\u4ef7\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 999612,
         "Type": 8.0,
         "Formula": null,
         "Params": "[3, 200, 2, 100]",
-        "Desc": "Type 3 item final production greater or equal to 100"
+        "Desc": "\u7c7b\u578b 3 \u5546\u54c1\u7ed3\u7b97\u4ea7\u91cf\u5927\u4e8e\u7b49\u4e8e100"
     },
     {
         "Id": 51001,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 5]",
-        "Desc": "More than 5 Cities activated?"
+        "Desc": "\u6fc0\u6d3b\u57ce\u90a6\u662f\u5426\u8d85\u8fc75\u4e2a"
     },
     {
         "Id": 51002,
         "Type": 11.0,
         "Formula": null,
         "Params": "[2, 3]",
-        "Desc": "More than 3 City Missions completed?"
+        "Desc": "\u5b8c\u6210\u57ce\u90a6\u4efb\u52a1\u662f\u5426\u8d85\u8fc73\u4e2a"
     },
     {
         "Id": 51003,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Main City must be Lv.5 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52305\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 120101,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Main City must be Lv.5 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52305\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 120201,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Main City must be Lv.5 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52305\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 155201,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Main City must be Lv.5 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52305\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 120301,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 3]",
-        "Desc": "Connect more than 3 cities"
+        "Desc": "\u9700\u8981\u8fde\u901a\u57ce\u90a6\u8d85\u8fc73\u4e2a"
     },
     {
         "Id": 120401,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 3]",
-        "Desc": "Connect more than 3 cities"
+        "Desc": "\u9700\u8981\u8fde\u901a\u57ce\u90a6\u8d85\u8fc73\u4e2a"
     },
     {
         "Id": 120501,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 3]",
-        "Desc": "Connect more than 3 cities"
+        "Desc": "\u9700\u8981\u8fde\u901a\u57ce\u90a6\u8d85\u8fc73\u4e2a"
     },
     {
         "Id": 120601,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 3]",
-        "Desc": "Connect more than 3 cities"
+        "Desc": "\u9700\u8981\u8fde\u901a\u57ce\u90a6\u8d85\u8fc73\u4e2a"
     },
     {
         "Id": 12010101,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 6]",
-        "Desc": "Main City must be Lv.6 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52306\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 12020101,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 6]",
-        "Desc": "Main City must be Lv.6 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52306\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 12030101,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 3]",
-        "Desc": "Connect more than 3 cities"
+        "Desc": "\u9700\u8981\u8fde\u901a\u57ce\u90a6\u8d85\u8fc73\u4e2a"
     },
     {
         "Id": 12040101,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 3]",
-        "Desc": "Connect more than 3 cities"
+        "Desc": "\u9700\u8981\u8fde\u901a\u57ce\u90a6\u8d85\u8fc73\u4e2a"
     },
     {
         "Id": 12050101,
         "Type": 11.0,
         "Formula": null,
         "Params": "[2, 4]",
-        "Desc": "Complete more than 4 City Missions"
+        "Desc": "\u9700\u8981\u5b8c\u62104\u4e2a\u4ee5\u4e0a\u57ce\u90a6\u4efb\u52a1"
     },
     {
         "Id": 12060101,
         "Type": 11.0,
         "Formula": null,
         "Params": "[2, 4]",
-        "Desc": "Complete more than 4 City Missions"
+        "Desc": "\u9700\u8981\u5b8c\u62104\u4e2a\u4ee5\u4e0a\u57ce\u90a6\u4efb\u52a1"
     },
     {
         "Id": 12070101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u89811w\u91d1\u8d1d"
     },
     {
         "Id": 12080101,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 250]",
-        "Desc": "<color=#969190>Coconut </color> x250 required"
+        "Desc": "\u9700\u8981250<color=#969190>\u6930\u5b50</color>"
     },
     {
         "Id": 12090101,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 2, 500]",
-        "Desc": "<color=#969190>Wood </color> x500 required"
+        "Desc": "\u9700\u8981500<color=#969190>\u6728\u6750</color>"
     },
     {
         "Id": 12100101,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 2, 50]",
-        "Desc": "<color=#cd934a>Petroleum</color> x50 required"
+        "Desc": "\u9700\u898150<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 15210101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 30000]",
-        "Desc": "30000 Golden Shells required"
+        "Desc": "\u9700\u89813w\u91d1\u8d1d"
     },
     {
         "Id": 15210102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u89811w\u91d1\u8d1d"
     },
     {
         "Id": 15410101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u89811w\u91d1\u8d1d"
     },
     {
         "Id": 15420101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u89811w\u91d1\u8d1d"
     },
     {
         "Id": 15430101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u89811w\u91d1\u8d1d"
     },
     {
         "Id": 15510101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 30000]",
-        "Desc": "30000 Golden Shells required"
+        "Desc": "\u9700\u89813w\u91d1\u8d1d"
     },
     {
         "Id": 15510201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 30000]",
-        "Desc": "30000 Golden Shells required"
+        "Desc": "\u9700\u89813w\u91d1\u8d1d"
     },
     {
         "Id": 15510301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 100000]",
-        "Desc": "100000 Golden Shells required"
+        "Desc": "\u9700\u898110w\u91d1\u8d1d"
     },
     {
         "Id": 15520201,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Main City must be Lv.5 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52305\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 15520301,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 6]",
-        "Desc": "Main City must be Lv.6 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52306\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 18010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815k\u91d1\u8d1d"
     },
     {
         "Id": 18020101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815k\u91d1\u8d1d"
     },
     {
         "Id": 18030101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815k\u91d1\u8d1d"
     },
     {
         "Id": 18040101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815k\u91d1\u8d1d"
     },
     {
         "Id": 18050101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815k\u91d1\u8d1d"
     },
     {
         "Id": 18110101,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 100]",
-        "Desc": "<color=#fdc700>Coconut</color> x100 required"
+        "Desc": "\u9700\u8981100<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 18120101,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 2, 900]",
-        "Desc": "<color=#969190>Wood </color> x900 required"
+        "Desc": "\u9700\u8981900<color=#969190>\u6728\u6750</color>"
     },
     {
         "Id": 18130101,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 2, 60]",
-        "Desc": "<color=#cd934a>Petroleum</color> x60 required"
+        "Desc": "\u9700\u898160<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 18140101,
         "Type": null,
         "Formula": "18140102&18140103",
         "Params": null,
-        "Desc": "<color=#fdc700>Coconut</color> x75 and <color=#969190>Wood</color> x225 required"
+        "Desc": "\u9700\u898175<color=#fdc700>\u6930\u5b50</color>\u3001225<color=#969190>\u6728\u6750</color>"
     },
     {
         "Id": 18140102,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 75]",
-        "Desc": "<color=#fdc700>Coconut</color> x75 required"
+        "Desc": "\u9700\u898175<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 18140103,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 2, 225]",
-        "Desc": "<color=#969190>Wood</color> x225 required"
+        "Desc": "\u9700\u8981225<color=#969190>\u6728\u6750</color>"
     },
     {
         "Id": 18150101,
         "Type": null,
         "Formula": "18150102&18150103",
         "Params": null,
-        "Desc": "<color=#fdc700>Coconut</color> x25 and <color=#969190>Wood</color> x675 required"
+        "Desc": "\u9700\u898125<color=#fdc700>\u6930\u5b50</color>\u3001675<color=#969190>\u6728\u6750</color>"
     },
     {
         "Id": 18150102,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 25]",
-        "Desc": "<color=#fdc700>Coconut</color> x25 required"
+        "Desc": "\u9700\u898125<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 18150103,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 2, 675]",
-        "Desc": "<color=#969190>Wood </color> x675 required"
+        "Desc": "\u9700\u8981675<color=#969190>\u6728\u6750</color>"
     },
     {
         "Id": 18160101,
         "Type": null,
         "Formula": "18160102&18160103",
         "Params": null,
-        "Desc": "<color=#969190>Wood</color> x675 and <color=#cd934a>Petroleum</color> x15 required"
+        "Desc": "\u9700\u8981675<color=#969190>\u6728\u6750</color>\u300115<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 18160102,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 2, 675]",
-        "Desc": "<color=#969190>Wood </color> x675 required"
+        "Desc": "\u9700\u8981675<color=#969190>\u6728\u6750</color>"
     },
     {
         "Id": 18160103,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 2, 15]",
-        "Desc": "<color=#cd934a>Petroleum</color> x15 required"
+        "Desc": "\u9700\u898115<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 18170101,
         "Type": null,
         "Formula": "18170102&18170103",
         "Params": null,
-        "Desc": "<color=#969190>Wood</color> x225 and <color=#cd934a>Petroleum</color> x45 required"
+        "Desc": "\u9700\u8981225<color=#969190>\u6728\u6750</color>\u300145<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 18170102,
         "Type": 3.0,
         "Formula": null,
         "Params": "[2, 2, 225]",
-        "Desc": "<color=#969190>Wood</color> x225 required"
+        "Desc": "\u9700\u8981225<color=#969190>\u6728\u6750</color>"
     },
     {
         "Id": 18170103,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 2, 45]",
-        "Desc": "<color=#cd934a>Petroleum</color> x45 required"
+        "Desc": "\u9700\u898145<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 18180101,
         "Type": null,
         "Formula": "18180102&18180103",
         "Params": null,
-        "Desc": "<color=#fdc700>Coconut</color> x75 and <color=#cd934a>Petroleum</color> x15 required"
+        "Desc": "\u9700\u898175<color=#fdc700>\u6930\u5b50</color>\u300115<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 18180102,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 75]",
-        "Desc": "<color=#fdc700>Coconut</color> x75 required"
+        "Desc": "\u9700\u898175<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 18180103,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 2, 15]",
-        "Desc": "<color=#cd934a>Petroleum</color> x15 required"
+        "Desc": "\u9700\u898115<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 18190101,
         "Type": null,
         "Formula": "18190102&18190103",
         "Params": null,
-        "Desc": "<color=#fdc700>Coconut</color> x25 and <color=#cd934a>Petroleum</color> x45 required"
+        "Desc": "\u9700\u898125<color=#fdc700>\u6930\u5b50</color>\u300145<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 18190102,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 25]",
-        "Desc": "<color=#fdc700>Coconut</color> x25 required"
+        "Desc": "\u9700\u898125<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 18190103,
         "Type": 3.0,
         "Formula": null,
         "Params": "[3, 2, 45]",
-        "Desc": "<color=#cd934a>Petroleum</color> x45 required"
+        "Desc": "\u9700\u898145<color=#cd934a>\u77f3\u6cb9</color>"
     },
     {
         "Id": 20000000,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 1]",
-        "Desc": "Current round count \u22651"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570\u22651"
     },
     {
         "Id": 20000001,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 1]",
-        "Desc": "Main City must be Lv.1 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52301\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 20000002,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 2]",
-        "Desc": "Main City must be Lv.2 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52302\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 20000003,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 3]",
-        "Desc": "Main City must be Lv.3 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52303\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 20000004,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 4]",
-        "Desc": "Main City must be Lv.4 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52304\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 20000005,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Main City must be Lv.5 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52305\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 20000006,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 6]",
-        "Desc": "Main City must be Lv.6 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52306\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 20000007,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 7]",
-        "Desc": "Main City must be Lv.7 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52307\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 20000008,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 8]",
-        "Desc": "Main City must be Lv.8 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52308\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 20000009,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 9]",
-        "Desc": "Main City must be Lv.9 or above"
+        "Desc": "\u9700\u8981\u4e3b\u57ce\u8fbe\u52309\u7ea7\u4ee5\u4e0a"
     },
     {
         "Id": 19010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u8981 1w \u91d1\u8d1d"
     },
     {
         "Id": 19110101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u8981 1w \u91d1\u8d1d"
     },
     {
         "Id": 19310101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u8981 1w \u91d1\u8d1d"
     },
     {
         "Id": 19410101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u8981 1w \u91d1\u8d1d"
     },
     {
         "Id": 21010401,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u8981 1w \u91d1\u8d1d"
     },
     {
         "Id": 21020101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u8981 1w \u91d1\u8d1d"
     },
     {
         "Id": 21020301,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 500]",
-        "Desc": "<color=#fdc700>Coconut</color> x500 required"
+        "Desc": "\u9700\u8981500<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 21030101,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 500]",
-        "Desc": "<color=#fdc700>Coconut</color> x500 required"
+        "Desc": "\u9700\u8981500<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 21030102,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 500]",
-        "Desc": "<color=#fdc700>Coconut</color> x500 required"
+        "Desc": "\u9700\u8981500<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 21031102,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 500]",
-        "Desc": "<color=#fdc700>Coconut</color> x500 required"
+        "Desc": "\u9700\u8981500<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 21031201,
         "Type": 3.0,
         "Formula": null,
         "Params": "[1, 2, 500]",
-        "Desc": "<color=#fdc700>Coconut</color> x500 required"
+        "Desc": "\u9700\u8981500<color=#fdc700>\u6930\u5b50</color>"
     },
     {
         "Id": 22010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 2000000]",
-        "Desc": "2000000 Golden Shells required"
+        "Desc": "\u9700\u8981200w \u91d1\u8d1d"
     },
     {
         "Id": 1001,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 3]",
-        "Desc": "Tutorial Stage - 3\u2605 requirement - Main City reaches Lv.3"
+        "Desc": "\u6559\u5b66\u5173\u7684\u4e09\u661f\u6761\u4ef6-\u4e3b\u57ce\u8fbe\u52303\u7ea7"
     },
     {
         "Id": 1011,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 2]",
-        "Desc": "Normal Stage 1 - 3\u2605 requirement - Explore 2 Cities"
+        "Desc": "\u666e\u901a\u51731\u7684\u4e09\u661f\u6761\u4ef6-\u63a2\u7d22\u4e24\u4e2a\u57ce\u90a6"
     },
     {
         "Id": 1012,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Normal Stage 1 - 3\u2605 requirement - Main City reaches Lv.5"
+        "Desc": "\u666e\u901a\u51731\u7684\u4e09\u661f\u6761\u4ef6-\u4e3b\u57ce\u8fbe\u52305\u7ea7"
     },
     {
         "Id": 1021,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 2]",
-        "Desc": "Normal Stage 2 - 3\u2605 requirement - Explore 2 Cities"
+        "Desc": "\u666e\u901a\u51732\u7684\u4e09\u661f\u6761\u4ef6-\u63a2\u7d22\u4e24\u4e2a\u57ce\u90a6"
     },
     {
         "Id": 1022,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Normal Stage 2 - 3\u2605 requirement - Main City reaches Lv.5"
+        "Desc": "\u666e\u901a\u51732\u7684\u4e09\u661f\u6761\u4ef6-\u4e3b\u57ce\u8fbe\u52305\u7ea7"
     },
     {
         "Id": 1023,
         "Type": 15.0,
         "Formula": null,
         "Params": "[2, 300000]",
-        "Desc": "Normal Stage 2 - 3\u2605 requirement - Earn 300000 Golden Shells"
+        "Desc": "\u666e\u901a\u51732\u7684\u4e09\u661f\u6761\u4ef6-\u7d2f\u8ba1\u83b7\u5f97300000\u91d1\u8d1d"
     },
     {
         "Id": 1031,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 2]",
-        "Desc": "Normal Stage 3 - 3\u2605 requirement - Explore 2 Cities"
+        "Desc": "\u666e\u901a\u51733\u7684\u4e09\u661f\u6761\u4ef6-\u63a2\u7d22\u4e24\u4e2a\u57ce\u90a6"
     },
     {
         "Id": 1032,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 7]",
-        "Desc": "Normal Stage 3 - 3\u2605 requirement - Main City reaches Lv.7"
+        "Desc": "\u666e\u901a\u51733\u7684\u4e09\u661f\u6761\u4ef6-\u4e3b\u57ce\u8fbe\u52307\u7ea7"
     },
     {
         "Id": 1033,
         "Type": 15.0,
         "Formula": null,
         "Params": "[2, 1500000]",
-        "Desc": "Normal Stage 3 - 3\u2605 requirement - Earn 1500000 Golden Shells"
+        "Desc": "\u666e\u901a\u51733\u7684\u4e09\u661f\u6761\u4ef6-\u7d2f\u8ba1\u83b7\u5f971500000\u91d1\u8d1d"
     },
     {
         "Id": 1041,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 2]",
-        "Desc": "Normal Stage 4 - 3\u2605 requirement - Explore 2 Cities"
+        "Desc": "\u666e\u901a\u51734\u7684\u4e09\u661f\u6761\u4ef6-\u63a2\u7d22\u4e24\u4e2a\u57ce\u90a6"
     },
     {
         "Id": 1042,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 7]",
-        "Desc": "Normal Stage 4 - 3\u2605 requirement - Main City reaches Lv.7"
+        "Desc": "\u666e\u901a\u51734\u7684\u4e09\u661f\u6761\u4ef6-\u4e3b\u57ce\u8fbe\u52307\u7ea7"
     },
     {
         "Id": 1043,
         "Type": 15.0,
         "Formula": null,
         "Params": "[2, 1500000]",
-        "Desc": "Normal Stage 4 - 3\u2605 requirement - Earn 1500000 Golden Shells"
+        "Desc": "\u666e\u901a\u51734\u7684\u4e09\u661f\u6761\u4ef6-\u7d2f\u8ba1\u83b7\u5f971500000\u91d1\u8d1d"
     },
     {
         "Id": 1051,
         "Type": 10.0,
         "Formula": null,
         "Params": "[2, 2]",
-        "Desc": "Normal Stage 5 - 3\u2605 requirement - Explore 2 Cities"
+        "Desc": "\u666e\u901a\u51735\u7684\u4e09\u661f\u6761\u4ef6-\u63a2\u7d22\u4e24\u4e2a\u57ce\u90a6"
     },
     {
         "Id": 1052,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 7]",
-        "Desc": "Normal Stage 5 - 3\u2605 requirement - Main City reaches Lv.7"
+        "Desc": "\u666e\u901a\u51735\u7684\u4e09\u661f\u6761\u4ef6-\u4e3b\u57ce\u8fbe\u52307\u7ea7"
     },
     {
         "Id": 1053,
         "Type": 15.0,
         "Formula": null,
         "Params": "[2, 1500000]",
-        "Desc": "Normal Stage 5 - 3\u2605 requirement - Earn 1500000 Golden Shells"
+        "Desc": "\u666e\u901a\u51735\u7684\u4e09\u661f\u6761\u4ef6-\u7d2f\u8ba1\u83b7\u5f971500000\u91d1\u8d1d"
     },
     {
         "Id": 1054,
         "Type": 11.0,
         "Formula": null,
         "Params": "[2, 2]",
-        "Desc": "1\u2605 requirement changed to: Complete 2 City Missions"
+        "Desc": "\u4e00\u661f\u6761\u4ef6\u6539\u4e3a\u5b8c\u6210\u57ce\u90a6\u4efb\u52a12\u4e2a"
     },
     {
         "Id": 1101,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 2]",
-        "Desc": "Main City reaches 2\u2605"
+        "Desc": "\u4e3b\u57ce\u8fbe\u52302\u661f"
     },
     {
         "Id": 1102,
         "Type": 15.0,
         "Formula": null,
         "Params": "[2, 5000]",
-        "Desc": "Earn 5000 Golden Shells"
+        "Desc": "\u83b7\u5f975000\u91d1\u8d1d"
     },
     {
         "Id": 1103,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 3]",
-        "Desc": "Main City reaches 3\u2605"
+        "Desc": "\u4e3b\u57ce\u8fbe\u52303\u661f"
     },
     {
         "Id": 1111,
         "Type": 11.0,
         "Formula": null,
         "Params": "[2, 4]",
-        "Desc": "Complete 4 City Missions"
+        "Desc": "\u5b8c\u62104\u4e2a\u57ce\u90a6\u4efb\u52a1"
     },
     {
         "Id": 1112,
         "Type": 22.0,
         "Formula": null,
         "Params": "[0, 8]",
-        "Desc": "Construct 8 buildings"
+        "Desc": "\u5efa\u90208\u4e2a\u5efa\u7b51"
     },
     {
         "Id": 1113,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Main City reaches 5\u2605"
+        "Desc": "\u4e3b\u57ce\u8fbe\u52305\u661f"
     },
     {
         "Id": 1121,
         "Type": 11.0,
         "Formula": null,
         "Params": "[2, 4]",
-        "Desc": "Complete 4 City Missions"
+        "Desc": "\u5b8c\u62104\u4e2a\u57ce\u90a6\u4efb\u52a1"
     },
     {
         "Id": 1122,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Main City reaches 5\u2605"
+        "Desc": "\u4e3b\u57ce\u8fbe\u52305\u661f"
     },
     {
         "Id": 1123,
         "Type": 15.0,
         "Formula": null,
         "Params": "[2, 700000]",
-        "Desc": "Earn 700000 Golden Shells"
+        "Desc": "\u83b7\u5f97700000\u91d1\u8d1d"
     },
     {
         "Id": 1131,
         "Type": 17.0,
         "Formula": null,
         "Params": "[2, 6]",
-        "Desc": "Purchase 6 islands"
+        "Desc": "\u8d2d\u51656\u4e2a\u5c9b\u5c7f"
     },
     {
         "Id": 1132,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 6]",
-        "Desc": "Main City reaches 6\u2605"
+        "Desc": "\u4e3b\u57ce\u8fbe\u52306\u661f"
     },
     {
         "Id": 1133,
         "Type": 15.0,
         "Formula": null,
         "Params": "[2, 8000000]",
-        "Desc": "Earn 8000000 Golden Shells"
+        "Desc": "\u83b7\u5f978000000\u91d1\u8d1d"
     },
     {
         "Id": 1141,
         "Type": 22.0,
         "Formula": null,
         "Params": "[0, 5]",
-        "Desc": "Construct 5 buildings"
+        "Desc": "\u5efa\u90205\u4e2a\u5efa\u7b51"
     },
     {
         "Id": 1142,
         "Type": 15.0,
         "Formula": null,
         "Params": "[2, 1000000]",
-        "Desc": "Earn 1000000 Golden Shells"
+        "Desc": "\u83b7\u5f971000000\u91d1\u8d1d"
     },
     {
         "Id": 1143,
         "Type": 17.0,
         "Formula": null,
         "Params": "[2, 5]",
-        "Desc": "Purchase 5 islands"
+        "Desc": "\u8d2d\u51655\u4e2a\u5c9b\u5c7f"
     },
     {
         "Id": 1201,
         "Type": 15.0,
         "Formula": null,
         "Params": "[2, 100000]",
-        "Desc": "Earn 100000 Golden Shells"
+        "Desc": "\u83b7\u5f97100000\u91d1\u8d1d"
     },
     {
         "Id": 1202,
         "Type": 22.0,
         "Formula": null,
         "Params": "[0, 20]",
-        "Desc": "Construct 20 buildings"
+        "Desc": "\u5efa\u902020\u4e2a\u5efa\u7b51"
     },
     {
         "Id": 1203,
         "Type": 17.0,
         "Formula": null,
         "Params": "[2, 8]",
-        "Desc": "Purchase 8 islands"
+        "Desc": "\u8d2d\u51658\u4e2a\u5c9b\u5c7f"
     },
     {
         "Id": 9001,
         "Type": 19.0,
         "Formula": null,
         "Params": "[2, 1304, 3]",
-        "Desc": "Stage 3, City 4, 3\u2605 building bonus effect condition"
+        "Desc": "\u5173\u53613\uff0c\u57ce\u90a64\u4e09\u661f\u5efa\u7b51\u52a0\u6210\u6548\u679c\u6761\u4ef6"
     },
     {
         "Id": 810001,
         "Type": null,
         "Formula": "810002&810003",
         "Params": null,
-        "Desc": "Current round count \u22651 and \uff1c3"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570\u22651\u4e14\uff1c3"
     },
     {
         "Id": 810002,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 1]",
-        "Desc": "Current round count \u22651"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570\u22651"
     },
     {
         "Id": 810003,
         "Type": 4.0,
         "Formula": null,
         "Params": "[5, 3]",
-        "Desc": "Current round count \uff1c3"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570<3"
     },
     {
         "Id": 810101,
         "Type": null,
         "Formula": "810102&810103",
         "Params": null,
-        "Desc": "Current quarter count \u22651 and \uff1c6"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u22651\uff0c\u4e14\uff1c6"
     },
     {
         "Id": 810102,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 1]",
-        "Desc": "Current quarter count \u22651"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u22651"
     },
     {
         "Id": 810103,
         "Type": 4.0,
         "Formula": null,
         "Params": "[5, 6]",
-        "Desc": "Current quarter count \uff1c6"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\uff1c6"
     },
     {
         "Id": 811101,
         "Type": null,
         "Formula": "811102&811103",
         "Params": null,
-        "Desc": "Current quarter count \u22656 and \uff1c11"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 6\uff0c\u4e14\uff1c11"
     },
     {
         "Id": 811102,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 6]",
-        "Desc": "Current quarter count \u22656"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 6"
     },
     {
         "Id": 811103,
         "Type": 4.0,
         "Formula": null,
         "Params": "[5, 11]",
-        "Desc": "Current quarter count \uff1c11"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\uff1c11"
     },
     {
         "Id": 812101,
         "Type": null,
         "Formula": "812102&812103",
         "Params": null,
-        "Desc": "Current quarter count \u226511 and \uff1c16"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 11\uff0c\u4e14\uff1c16"
     },
     {
         "Id": 812102,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 11]",
-        "Desc": "Current quarter count \u226511"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 11"
     },
     {
         "Id": 812103,
         "Type": 4.0,
         "Formula": null,
         "Params": "[5, 16]",
-        "Desc": "Current quarter count \uff1c16"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\uff1c16"
     },
     {
         "Id": 813101,
         "Type": null,
         "Formula": "813102&813103",
         "Params": null,
-        "Desc": "Current quarter count \u226516 and \uff1c21"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 16\uff0c\u4e14\uff1c21"
     },
     {
         "Id": 813102,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 16]",
-        "Desc": "Current quarter count \u226516"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 16"
     },
     {
         "Id": 813103,
         "Type": 4.0,
         "Formula": null,
         "Params": "[5, 21]",
-        "Desc": "Current quarter count \uff1c21"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\uff1c21"
     },
     {
         "Id": 814101,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 21]",
-        "Desc": "Current quarter count \u226521"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 21"
     },
     {
         "Id": 815101,
         "Type": null,
         "Formula": "815102&815103",
         "Params": null,
-        "Desc": "Current quarter count \u22651 and \uff1c5"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 1\uff0c\u4e14\uff1c5"
     },
     {
         "Id": 815102,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 1]",
-        "Desc": "Current quarter count \u22651"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 1"
     },
     {
         "Id": 815103,
         "Type": 4.0,
         "Formula": null,
         "Params": "[5, 5]",
-        "Desc": "Current quarter count \uff1c5"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\uff1c5"
     },
     {
         "Id": 816101,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 5]",
-        "Desc": "Current quarter count \u22655"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u2265 5"
     },
     {
         "Id": 81010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815000\u91d1\u8d1d"
     },
     {
         "Id": 81010102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 1500]",
-        "Desc": "1500 Golden Shells required"
+        "Desc": "\u9700\u89811500\u91d1\u8d1d"
     },
     {
         "Id": 81011101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 6500]",
-        "Desc": "6500 Golden Shells required"
+        "Desc": "\u9700\u89816500\u91d1\u8d1d"
     },
     {
         "Id": 81011102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 2600]",
-        "Desc": "2600 Golden Shells required"
+        "Desc": "\u9700\u89812600\u91d1\u8d1d"
     },
     {
         "Id": 81011201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 8450]",
-        "Desc": "8450 Golden Shells required"
+        "Desc": "\u9700\u89818450\u91d1\u8d1d"
     },
     {
         "Id": 81011202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 4225]",
-        "Desc": "4225 Golden Shells required"
+        "Desc": "\u9700\u89814225\u91d1\u8d1d"
     },
     {
         "Id": 81011301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 8450]",
-        "Desc": "8450 Golden Shells required"
+        "Desc": "\u9700\u89818450\u91d1\u8d1d"
     },
     {
         "Id": 82010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815000\u91d1\u8d1d"
     },
     {
         "Id": 82010102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 1500]",
-        "Desc": "1500 Golden Shells required"
+        "Desc": "\u9700\u89811500\u91d1\u8d1d"
     },
     {
         "Id": 82011101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 6500]",
-        "Desc": "6500 Golden Shells required"
+        "Desc": "\u9700\u89816500\u91d1\u8d1d"
     },
     {
         "Id": 82011102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 2600]",
-        "Desc": "2600 Golden Shells required"
+        "Desc": "\u9700\u89812600\u91d1\u8d1d"
     },
     {
         "Id": 82011201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 8450]",
-        "Desc": "8450 Golden Shells required"
+        "Desc": "\u9700\u89818450\u91d1\u8d1d"
     },
     {
         "Id": 82011202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 4225]",
-        "Desc": "4225 Golden Shells required"
+        "Desc": "\u9700\u89814225\u91d1\u8d1d"
     },
     {
         "Id": 82011301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 8450]",
-        "Desc": "8450 Golden Shells required"
+        "Desc": "\u9700\u89818450\u91d1\u8d1d"
     },
     {
         "Id": 83010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 8000]",
-        "Desc": "8000 Golden Shells required"
+        "Desc": "\u9700\u89818000\u91d1\u8d1d"
     },
     {
         "Id": 83010102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 2400]",
-        "Desc": "2400 Golden Shells required"
+        "Desc": "\u9700\u89812400\u91d1\u8d1d"
     },
     {
         "Id": 83011101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10400]",
-        "Desc": "10400 Golden Shells required"
+        "Desc": "\u9700\u898110400\u91d1\u8d1d"
     },
     {
         "Id": 83011102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 4160]",
-        "Desc": "4160 Golden Shells required"
+        "Desc": "\u9700\u89814160\u91d1\u8d1d"
     },
     {
         "Id": 83011201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 13520]",
-        "Desc": "13520 Golden Shells required"
+        "Desc": "\u9700\u898113520\u91d1\u8d1d"
     },
     {
         "Id": 83011202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 6760]",
-        "Desc": "6760 Golden Shells required"
+        "Desc": "\u9700\u89816760\u91d1\u8d1d"
     },
     {
         "Id": 83011301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 13520]",
-        "Desc": "13520 Golden Shells required"
+        "Desc": "\u9700\u898113520\u91d1\u8d1d"
     },
     {
         "Id": 81110101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 8000]",
-        "Desc": "8000 Golden Shells required"
+        "Desc": "\u9700\u89818000\u91d1\u8d1d"
     },
     {
         "Id": 81110102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 2400]",
-        "Desc": "2400 Golden Shells required"
+        "Desc": "\u9700\u89812400\u91d1\u8d1d"
     },
     {
         "Id": 81111101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10400]",
-        "Desc": "10400 Golden Shells required"
+        "Desc": "\u9700\u898110400\u91d1\u8d1d"
     },
     {
         "Id": 81111102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 4160]",
-        "Desc": "4160 Golden Shells required"
+        "Desc": "\u9700\u89814160\u91d1\u8d1d"
     },
     {
         "Id": 81111201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 13520]",
-        "Desc": "13520 Golden Shells required"
+        "Desc": "\u9700\u898113520\u91d1\u8d1d"
     },
     {
         "Id": 81111202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 6760]",
-        "Desc": "6760 Golden Shells required"
+        "Desc": "\u9700\u89816760\u91d1\u8d1d"
     },
     {
         "Id": 81111301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 13520]",
-        "Desc": "13520 Golden Shells required"
+        "Desc": "\u9700\u898113520\u91d1\u8d1d"
     },
     {
         "Id": 82110101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u898110000\u91d1\u8d1d"
     },
     {
         "Id": 82110102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 3000]",
-        "Desc": "3000 Golden Shells required"
+        "Desc": "\u9700\u89813000\u91d1\u8d1d"
     },
     {
         "Id": 82111101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 13000]",
-        "Desc": "13000 Golden Shells required"
+        "Desc": "\u9700\u898113000\u91d1\u8d1d"
     },
     {
         "Id": 82111102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5200]",
-        "Desc": "5200 Golden Shells required"
+        "Desc": "\u9700\u89815200\u91d1\u8d1d"
     },
     {
         "Id": 82111201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 16900]",
-        "Desc": "16900 Golden Shells required"
+        "Desc": "\u9700\u898116900\u91d1\u8d1d"
     },
     {
         "Id": 82111202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 8450]",
-        "Desc": "8450 Golden Shells required"
+        "Desc": "\u9700\u89818450\u91d1\u8d1d"
     },
     {
         "Id": 82111301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 16900]",
-        "Desc": "16900 Golden Shells required"
+        "Desc": "\u9700\u898116900\u91d1\u8d1d"
     },
     {
         "Id": 83110101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 20000]",
-        "Desc": "20000 Golden Shells required"
+        "Desc": "\u9700\u898120000\u91d1\u8d1d"
     },
     {
         "Id": 83110102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 6000]",
-        "Desc": "6000 Golden Shells required"
+        "Desc": "\u9700\u89816000\u91d1\u8d1d"
     },
     {
         "Id": 83111101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 26000]",
-        "Desc": "26000 Golden Shells required"
+        "Desc": "\u9700\u898126000\u91d1\u8d1d"
     },
     {
         "Id": 83111102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10400]",
-        "Desc": "10400 Golden Shells required"
+        "Desc": "\u9700\u898110400\u91d1\u8d1d"
     },
     {
         "Id": 83111201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 33800]",
-        "Desc": "33800 Golden Shells required"
+        "Desc": "\u9700\u898133800\u91d1\u8d1d"
     },
     {
         "Id": 83111202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 16900]",
-        "Desc": "16900 Golden Shells required"
+        "Desc": "\u9700\u898116900\u91d1\u8d1d"
     },
     {
         "Id": 83111301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 33800]",
-        "Desc": "33800 Golden Shells required"
+        "Desc": "\u9700\u898133800\u91d1\u8d1d"
     },
     {
         "Id": 81210101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 40000]",
-        "Desc": "40000 Golden Shells required"
+        "Desc": "\u9700\u898140000\u91d1\u8d1d"
     },
     {
         "Id": 81210102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 12000]",
-        "Desc": "12000 Golden Shells required"
+        "Desc": "\u9700\u898112000\u91d1\u8d1d"
     },
     {
         "Id": 81211101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 52000]",
-        "Desc": "52000 Golden Shells required"
+        "Desc": "\u9700\u898152000\u91d1\u8d1d"
     },
     {
         "Id": 81211102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 20800]",
-        "Desc": "20800 Golden Shells required"
+        "Desc": "\u9700\u898120800\u91d1\u8d1d"
     },
     {
         "Id": 81211201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 67600]",
-        "Desc": "67600 Golden Shells required"
+        "Desc": "\u9700\u898167600\u91d1\u8d1d"
     },
     {
         "Id": 81211202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 33800]",
-        "Desc": "33800 Golden Shells required"
+        "Desc": "\u9700\u898133800\u91d1\u8d1d"
     },
     {
         "Id": 81211301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 67600]",
-        "Desc": "67600 Golden Shells required"
+        "Desc": "\u9700\u898167600\u91d1\u8d1d"
     },
     {
         "Id": 82210101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 40000]",
-        "Desc": "40000 Golden Shells required"
+        "Desc": "\u9700\u898140000\u91d1\u8d1d"
     },
     {
         "Id": 82210102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 12000]",
-        "Desc": "12000 Golden Shells required"
+        "Desc": "\u9700\u898112000\u91d1\u8d1d"
     },
     {
         "Id": 82211101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 52000]",
-        "Desc": "52000 Golden Shells required"
+        "Desc": "\u9700\u898152000\u91d1\u8d1d"
     },
     {
         "Id": 82211102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 20800]",
-        "Desc": "20800 Golden Shells required"
+        "Desc": "\u9700\u898120800\u91d1\u8d1d"
     },
     {
         "Id": 82211201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 67600]",
-        "Desc": "67600 Golden Shells required"
+        "Desc": "\u9700\u898167600\u91d1\u8d1d"
     },
     {
         "Id": 82211202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 33800]",
-        "Desc": "33800 Golden Shells required"
+        "Desc": "\u9700\u898133800\u91d1\u8d1d"
     },
     {
         "Id": 82211301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 67600]",
-        "Desc": "67600 Golden Shells required"
+        "Desc": "\u9700\u898167600\u91d1\u8d1d"
     },
     {
         "Id": 83210101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 60000]",
-        "Desc": "60000 Golden Shells required"
+        "Desc": "\u9700\u898160000\u91d1\u8d1d"
     },
     {
         "Id": 83210102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 18000]",
-        "Desc": "18000 Golden Shells required"
+        "Desc": "\u9700\u898118000\u91d1\u8d1d"
     },
     {
         "Id": 83211101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 78000]",
-        "Desc": "78000 Golden Shells required"
+        "Desc": "\u9700\u898178000\u91d1\u8d1d"
     },
     {
         "Id": 83211102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 31200]",
-        "Desc": "31200 Golden Shells required"
+        "Desc": "\u9700\u898131200\u91d1\u8d1d"
     },
     {
         "Id": 83211201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 101400]",
-        "Desc": "101400 Golden Shells required"
+        "Desc": "\u9700\u8981101400\u91d1\u8d1d"
     },
     {
         "Id": 83211202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 50700]",
-        "Desc": "50700 Golden Shells required"
+        "Desc": "\u9700\u898150700\u91d1\u8d1d"
     },
     {
         "Id": 83211301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 101400]",
-        "Desc": "101400 Golden Shells required"
+        "Desc": "\u9700\u8981101400\u91d1\u8d1d"
     },
     {
         "Id": 81310101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 60000]",
-        "Desc": "60000 Golden Shells required"
+        "Desc": "\u9700\u898160000\u91d1\u8d1d"
     },
     {
         "Id": 81310102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 18000]",
-        "Desc": "18000 Golden Shells required"
+        "Desc": "\u9700\u898118000\u91d1\u8d1d"
     },
     {
         "Id": 81311101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 78000]",
-        "Desc": "78000 Golden Shells required"
+        "Desc": "\u9700\u898178000\u91d1\u8d1d"
     },
     {
         "Id": 81311102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 31200]",
-        "Desc": "31200 Golden Shells required"
+        "Desc": "\u9700\u898131200\u91d1\u8d1d"
     },
     {
         "Id": 81311201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 101400]",
-        "Desc": "101400 Golden Shells required"
+        "Desc": "\u9700\u8981101400\u91d1\u8d1d"
     },
     {
         "Id": 81311202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 50700]",
-        "Desc": "50700 Golden Shells required"
+        "Desc": "\u9700\u898150700\u91d1\u8d1d"
     },
     {
         "Id": 81311301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 101400]",
-        "Desc": "101400 Golden Shells required"
+        "Desc": "\u9700\u8981101400\u91d1\u8d1d"
     },
     {
         "Id": 82310101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 80000]",
-        "Desc": "80000 Golden Shells required"
+        "Desc": "\u9700\u898180000\u91d1\u8d1d"
     },
     {
         "Id": 82310102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 24000]",
-        "Desc": "24000 Golden Shells required"
+        "Desc": "\u9700\u898124000\u91d1\u8d1d"
     },
     {
         "Id": 82311101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 104000]",
-        "Desc": "104000 Golden Shells required"
+        "Desc": "\u9700\u8981104000\u91d1\u8d1d"
     },
     {
         "Id": 82311102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 41600]",
-        "Desc": "41600 Golden Shells required"
+        "Desc": "\u9700\u898141600\u91d1\u8d1d"
     },
     {
         "Id": 82311201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 135200]",
-        "Desc": "135200 Golden Shells required"
+        "Desc": "\u9700\u8981135200\u91d1\u8d1d"
     },
     {
         "Id": 82311202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 67600]",
-        "Desc": "67600 Golden Shells required"
+        "Desc": "\u9700\u898167600\u91d1\u8d1d"
     },
     {
         "Id": 82311301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 135200]",
-        "Desc": "135200 Golden Shells required"
+        "Desc": "\u9700\u8981135200\u91d1\u8d1d"
     },
     {
         "Id": 83310101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 120000]",
-        "Desc": "120000 Golden Shells required"
+        "Desc": "\u9700\u8981120000\u91d1\u8d1d"
     },
     {
         "Id": 83310102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 36000]",
-        "Desc": "36000 Golden Shells required"
+        "Desc": "\u9700\u898136000\u91d1\u8d1d"
     },
     {
         "Id": 83311101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 156000]",
-        "Desc": "156000 Golden Shells required"
+        "Desc": "\u9700\u8981156000\u91d1\u8d1d"
     },
     {
         "Id": 83311102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 62400]",
-        "Desc": "62400 Golden Shells required"
+        "Desc": "\u9700\u898162400\u91d1\u8d1d"
     },
     {
         "Id": 83311201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 202800]",
-        "Desc": "202800 Golden Shells required"
+        "Desc": "\u9700\u8981202800\u91d1\u8d1d"
     },
     {
         "Id": 83311202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 101400]",
-        "Desc": "101400 Golden Shells required"
+        "Desc": "\u9700\u8981101400\u91d1\u8d1d"
     },
     {
         "Id": 83311301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 202800]",
-        "Desc": "202800 Golden Shells required"
+        "Desc": "\u9700\u8981202800\u91d1\u8d1d"
     },
     {
         "Id": 81410101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 200000]",
-        "Desc": "200000 Golden Shells required"
+        "Desc": "\u9700\u8981200000\u91d1\u8d1d"
     },
     {
         "Id": 81410102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 60000]",
-        "Desc": "60000 Golden Shells required"
+        "Desc": "\u9700\u898160000\u91d1\u8d1d"
     },
     {
         "Id": 81411101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 260000]",
-        "Desc": "260000 Golden Shells required"
+        "Desc": "\u9700\u8981260000\u91d1\u8d1d"
     },
     {
         "Id": 81411102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 104000]",
-        "Desc": "104000 Golden Shells required"
+        "Desc": "\u9700\u8981104000\u91d1\u8d1d"
     },
     {
         "Id": 81411201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 338000]",
-        "Desc": "338000 Golden Shells required"
+        "Desc": "\u9700\u8981338000\u91d1\u8d1d"
     },
     {
         "Id": 81411202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 169000]",
-        "Desc": "169000 Golden Shells required"
+        "Desc": "\u9700\u8981169000\u91d1\u8d1d"
     },
     {
         "Id": 81411301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 338000]",
-        "Desc": "338000 Golden Shells required"
+        "Desc": "\u9700\u8981338000\u91d1\u8d1d"
     },
     {
         "Id": 82410101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 200000]",
-        "Desc": "200000 Golden Shells required"
+        "Desc": "\u9700\u8981200000\u91d1\u8d1d"
     },
     {
         "Id": 82410102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 60000]",
-        "Desc": "60000 Golden Shells required"
+        "Desc": "\u9700\u898160000\u91d1\u8d1d"
     },
     {
         "Id": 82411101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 260000]",
-        "Desc": "260000 Golden Shells required"
+        "Desc": "\u9700\u8981260000\u91d1\u8d1d"
     },
     {
         "Id": 82411102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 104000]",
-        "Desc": "104000 Golden Shells required"
+        "Desc": "\u9700\u8981104000\u91d1\u8d1d"
     },
     {
         "Id": 82411201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 338000]",
-        "Desc": "338000 Golden Shells required"
+        "Desc": "\u9700\u8981338000\u91d1\u8d1d"
     },
     {
         "Id": 82411202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 169000]",
-        "Desc": "169000 Golden Shells required"
+        "Desc": "\u9700\u8981169000\u91d1\u8d1d"
     },
     {
         "Id": 82411301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 338000]",
-        "Desc": "338000 Golden Shells required"
+        "Desc": "\u9700\u8981338000\u91d1\u8d1d"
     },
     {
         "Id": 83410101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 350000]",
-        "Desc": "350000 Golden Shells required"
+        "Desc": "\u9700\u8981350000\u91d1\u8d1d"
     },
     {
         "Id": 83410102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 105000]",
-        "Desc": "105000 Golden Shells required"
+        "Desc": "\u9700\u8981105000\u91d1\u8d1d"
     },
     {
         "Id": 83411101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 455000]",
-        "Desc": "455000 Golden Shells required"
+        "Desc": "\u9700\u8981455000\u91d1\u8d1d"
     },
     {
         "Id": 83411102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 182000]",
-        "Desc": "182000 Golden Shells required"
+        "Desc": "\u9700\u8981182000\u91d1\u8d1d"
     },
     {
         "Id": 83411201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 591500]",
-        "Desc": "591500 Golden Shells required"
+        "Desc": "\u9700\u8981591500\u91d1\u8d1d"
     },
     {
         "Id": 83411202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 295750]",
-        "Desc": "295750 Golden Shells required"
+        "Desc": "\u9700\u8981295750\u91d1\u8d1d"
     },
     {
         "Id": 83411301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 591500]",
-        "Desc": "591500 Golden Shells required"
+        "Desc": "\u9700\u8981591500\u91d1\u8d1d"
     },
     {
         "Id": 81510101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 60000]",
-        "Desc": "60000 Golden Shells required"
+        "Desc": "\u9700\u898160000\u91d1\u8d1d"
     },
     {
         "Id": 81510102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 18000]",
-        "Desc": "18000 Golden Shells required"
+        "Desc": "\u9700\u898118000\u91d1\u8d1d"
     },
     {
         "Id": 81511101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 78000]",
-        "Desc": "78000 Golden Shells required"
+        "Desc": "\u9700\u898178000\u91d1\u8d1d"
     },
     {
         "Id": 81511102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 31200]",
-        "Desc": "31200 Golden Shells required"
+        "Desc": "\u9700\u898131200\u91d1\u8d1d"
     },
     {
         "Id": 81511201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 101400]",
-        "Desc": "101400 Golden Shells required"
+        "Desc": "\u9700\u8981101400\u91d1\u8d1d"
     },
     {
         "Id": 81511202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 50700]",
-        "Desc": "50700 Golden Shells required"
+        "Desc": "\u9700\u898150700\u91d1\u8d1d"
     },
     {
         "Id": 81511301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 101400]",
-        "Desc": "101400 Golden Shells required"
+        "Desc": "\u9700\u8981101400\u91d1\u8d1d"
     },
     {
         "Id": 82510101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 80000]",
-        "Desc": "80000 Golden Shells required"
+        "Desc": "\u9700\u898180000\u91d1\u8d1d"
     },
     {
         "Id": 82510102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 24000]",
-        "Desc": "24000 Golden Shells required"
+        "Desc": "\u9700\u898124000\u91d1\u8d1d"
     },
     {
         "Id": 82511101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 104000]",
-        "Desc": "104000 Golden Shells required"
+        "Desc": "\u9700\u8981104000\u91d1\u8d1d"
     },
     {
         "Id": 82511102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 41600]",
-        "Desc": "41600 Golden Shells required"
+        "Desc": "\u9700\u898141600\u91d1\u8d1d"
     },
     {
         "Id": 82511201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 135200]",
-        "Desc": "135200 Golden Shells required"
+        "Desc": "\u9700\u8981135200\u91d1\u8d1d"
     },
     {
         "Id": 82511202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 67600]",
-        "Desc": "67600 Golden Shells required"
+        "Desc": "\u9700\u898167600\u91d1\u8d1d"
     },
     {
         "Id": 82511301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 135200]",
-        "Desc": "135200 Golden Shells required"
+        "Desc": "\u9700\u8981135200\u91d1\u8d1d"
     },
     {
         "Id": 83510101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 120000]",
-        "Desc": "120000 Golden Shells required"
+        "Desc": "\u9700\u8981120000\u91d1\u8d1d"
     },
     {
         "Id": 83510102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 36000]",
-        "Desc": "36000 Golden Shells required"
+        "Desc": "\u9700\u898136000\u91d1\u8d1d"
     },
     {
         "Id": 83511101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 156000]",
-        "Desc": "156000 Golden Shells required"
+        "Desc": "\u9700\u8981156000\u91d1\u8d1d"
     },
     {
         "Id": 83511102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 62400]",
-        "Desc": "62400 Golden Shells required"
+        "Desc": "\u9700\u898162400\u91d1\u8d1d"
     },
     {
         "Id": 83511201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 202800]",
-        "Desc": "202800 Golden Shells required"
+        "Desc": "\u9700\u8981202800\u91d1\u8d1d"
     },
     {
         "Id": 83511202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 101400]",
-        "Desc": "101400 Golden Shells required"
+        "Desc": "\u9700\u8981101400\u91d1\u8d1d"
     },
     {
         "Id": 83511301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 202800]",
-        "Desc": "202800 Golden Shells required"
+        "Desc": "\u9700\u8981202800\u91d1\u8d1d"
     },
     {
         "Id": 81610101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 200000]",
-        "Desc": "200000 Golden Shells required"
+        "Desc": "\u9700\u8981200000\u91d1\u8d1d"
     },
     {
         "Id": 81610102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 60000]",
-        "Desc": "60000 Golden Shells required"
+        "Desc": "\u9700\u898160000\u91d1\u8d1d"
     },
     {
         "Id": 81611101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 260000]",
-        "Desc": "260000 Golden Shells required"
+        "Desc": "\u9700\u8981260000\u91d1\u8d1d"
     },
     {
         "Id": 81611102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 104000]",
-        "Desc": "104000 Golden Shells required"
+        "Desc": "\u9700\u8981104000\u91d1\u8d1d"
     },
     {
         "Id": 81611201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 338000]",
-        "Desc": "338000 Golden Shells required"
+        "Desc": "\u9700\u8981338000\u91d1\u8d1d"
     },
     {
         "Id": 81611202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 169000]",
-        "Desc": "169000 Golden Shells required"
+        "Desc": "\u9700\u8981169000\u91d1\u8d1d"
     },
     {
         "Id": 81611301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 338000]",
-        "Desc": "338000 Golden Shells required"
+        "Desc": "\u9700\u8981338000\u91d1\u8d1d"
     },
     {
         "Id": 82610101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 200000]",
-        "Desc": "200000 Golden Shells required"
+        "Desc": "\u9700\u8981200000\u91d1\u8d1d"
     },
     {
         "Id": 82610102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 60000]",
-        "Desc": "60000 Golden Shells required"
+        "Desc": "\u9700\u898160000\u91d1\u8d1d"
     },
     {
         "Id": 82611101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 260000]",
-        "Desc": "260000 Golden Shells required"
+        "Desc": "\u9700\u8981260000\u91d1\u8d1d"
     },
     {
         "Id": 82611102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 104000]",
-        "Desc": "104000 Golden Shells required"
+        "Desc": "\u9700\u8981104000\u91d1\u8d1d"
     },
     {
         "Id": 82611201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 338000]",
-        "Desc": "338000 Golden Shells required"
+        "Desc": "\u9700\u8981338000\u91d1\u8d1d"
     },
     {
         "Id": 82611202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 169000]",
-        "Desc": "169000 Golden Shells required"
+        "Desc": "\u9700\u8981169000\u91d1\u8d1d"
     },
     {
         "Id": 82611301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 338000]",
-        "Desc": "338000 Golden Shells required"
+        "Desc": "\u9700\u8981338000\u91d1\u8d1d"
     },
     {
         "Id": 83610101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 350000]",
-        "Desc": "350000 Golden Shells required"
+        "Desc": "\u9700\u8981350000\u91d1\u8d1d"
     },
     {
         "Id": 83610102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 105000]",
-        "Desc": "105000 Golden Shells required"
+        "Desc": "\u9700\u8981105000\u91d1\u8d1d"
     },
     {
         "Id": 83611101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 455000]",
-        "Desc": "455000 Golden Shells required"
+        "Desc": "\u9700\u8981455000\u91d1\u8d1d"
     },
     {
         "Id": 83611102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 182000]",
-        "Desc": "182000 Golden Shells required"
+        "Desc": "\u9700\u8981182000\u91d1\u8d1d"
     },
     {
         "Id": 83611201,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 591500]",
-        "Desc": "591500 Golden Shells required"
+        "Desc": "\u9700\u8981591500\u91d1\u8d1d"
     },
     {
         "Id": 83611202,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 295750]",
-        "Desc": "295750 Golden Shells required"
+        "Desc": "\u9700\u8981295750\u91d1\u8d1d"
     },
     {
         "Id": 83611301,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 591500]",
-        "Desc": "591500 Golden Shells required"
+        "Desc": "\u9700\u8981591500\u91d1\u8d1d"
     },
     {
         "Id": 910001,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 1]",
-        "Desc": "Current round count \u22651"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570\u22651"
     },
     {
         "Id": 910002,
         "Type": null,
         "Formula": "910004&910005",
         "Params": null,
-        "Desc": "Current round count \u22653 and triggered promotion event once"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570\u22653\uff0c\u4e14\u89e6\u53d1\u8fc7\u7b2c\u4e00\u6b21\u63a8\u5e7f\u4e8b\u4ef6"
     },
     {
         "Id": 910003,
         "Type": null,
         "Formula": "910006&910007",
         "Params": null,
-        "Desc": "Current round count \u22651 and \uff1c3"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570\u22651\u4e14\uff1c3"
     },
     {
         "Id": 910004,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 3]",
-        "Desc": "Current round count \u22653"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570\u22653"
     },
     {
         "Id": 910005,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 910001]",
-        "Desc": "Prerequisite condition(s) completed"
+        "Desc": "\u5b8c\u6210\u4e86\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 910006,
         "Type": 4.0,
         "Formula": null,
         "Params": "[2, 1]",
-        "Desc": "Current round count \u22651"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570\u22651"
     },
     {
         "Id": 910007,
         "Type": 4.0,
         "Formula": null,
         "Params": "[5, 3]",
-        "Desc": "Current round count \uff1c3"
+        "Desc": "\u5f53\u524d\u56de\u5408\u6570<3"
     },
     {
         "Id": 910101,
         "Type": null,
         "Formula": "910102&910103",
         "Params": null,
-        "Desc": "Main City 1\u2605 or 2\u2605"
+        "Desc": "\u4e3b\u57ce\u7b49\u7ea7\u57281~2\u661f"
     },
     {
         "Id": 910102,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 1]",
-        "Desc": "Main City reaches 1\u2605"
+        "Desc": "\u4e3b\u57ce\u8fbe\u52301\u661f"
     },
     {
         "Id": 910103,
         "Type": 7.0,
         "Formula": null,
         "Params": "[0, 3]",
-        "Desc": "Main City under 3\u2605"
+        "Desc": "\u4e3b\u57ce\u672a\u8fbe\u52303\u661f"
     },
     {
         "Id": 920101,
         "Type": null,
         "Formula": "920102&920103",
         "Params": null,
-        "Desc": "Main City between 3\u2605 and 5\u2605"
+        "Desc": "\u4e3b\u57ce\u7b49\u7ea7\u57283~5\u661f"
     },
     {
         "Id": 920102,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 3]",
-        "Desc": "Main City reaches 3\u2605"
+        "Desc": "\u4e3b\u57ce\u8fbe\u52303\u661f"
     },
     {
         "Id": 920103,
         "Type": 7.0,
         "Formula": null,
         "Params": "[0, 6]",
-        "Desc": "Main City under 6\u2605"
+        "Desc": "\u4e3b\u57ce\u672a\u8fbe\u52306\u661f"
     },
     {
         "Id": 930101,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 6]",
-        "Desc": "Main City reaches 6\u2605"
+        "Desc": "\u4e3b\u57ce\u8fbe\u52306\u661f"
     },
     {
         "Id": 940101,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 1]",
-        "Desc": "Main City reaches 1\u2605"
+        "Desc": "\u4e3b\u57ce\u8fbe\u52301\u661f"
     },
     {
         "Id": 10201,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 10100]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 10301,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 10201]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 10501,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 10401]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 10601,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 10502]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 10701,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 10503]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 10901,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 10802]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 11001,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 10803]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 11101,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 10901]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 11103,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 11001]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 11301,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 11202]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 11401,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 11203]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 11501,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 11301]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 11601,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 11401]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 11801,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 11701]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 11901,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 11801]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 30200,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30101]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 30211,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30102]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 30400,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30301]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 30411,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30302]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 30600,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30501]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 30611,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30502]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 30800,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30701]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 30811,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30702]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31000,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30901]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31011,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 30902]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31200,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31101]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31211,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31102]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31400,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31301]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31411,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31302]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31600,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31501]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31611,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31502]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31800,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31701]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 31811,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31702]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 32000,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31901]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 32011,
         "Type": 6.0,
         "Formula": null,
         "Params": "[1, 31902]",
-        "Desc": "Prerequisite event must be completed first"
+        "Desc": "\u9700\u8981\u5b8c\u6210\u524d\u7f6e\u4e8b\u4ef6"
     },
     {
         "Id": 91010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u898110000\u91d1\u8d1d"
     },
     {
         "Id": 92010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 50000]",
-        "Desc": "50000 Golden Shells required"
+        "Desc": "\u9700\u898150000\u91d1\u8d1d"
     },
     {
         "Id": 93010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 150000]",
-        "Desc": "150000 Golden Shells required"
+        "Desc": "\u9700\u8981150000\u91d1\u8d1d"
     },
     {
         "Id": 94010101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 150000]",
-        "Desc": "150000 Golden Shells required"
+        "Desc": "\u9700\u8981150000\u91d1\u8d1d"
     },
     {
         "Id": 2001,
         "Type": 23.0,
         "Formula": null,
         "Params": "[1, 3]",
-        "Desc": "Gain most profit from Coconuts within 3 rounds"
+        "Desc": "3\u56de\u5408\u5185\u6930\u5b50\u6536\u5165\u6700\u9ad8"
     },
     {
         "Id": 2002,
         "Type": 23.0,
         "Formula": null,
         "Params": "[2, 3]",
-        "Desc": "Gain most profit from Wood within 3 rounds"
+        "Desc": "3\u56de\u5408\u5185\u6728\u6750\u6536\u5165\u6700\u9ad8"
     },
     {
         "Id": 2003,
         "Type": 23.0,
         "Formula": null,
         "Params": "[3, 3]",
-        "Desc": "Gain most profit from Petroleum within 3 rounds"
+        "Desc": "3\u56de\u5408\u5185\u77f3\u6cb9\u6536\u5165\u6700\u9ad8"
     },
     {
         "Id": 2004,
         "Type": 28.0,
         "Formula": null,
         "Params": "[0, 1, 50000]",
-        "Desc": "Earn more than 50000 Golden Shells in a single round"
+        "Desc": "\u5355\u56de\u5408\u6536\u5165\u8d85\u8fc75W\u91d1\u8d1d"
     },
     {
         "Id": 2005,
         "Type": 26.0,
         "Formula": null,
         "Params": "[1, 0, 5]",
-        "Desc": "Coconut fluctuation <0"
+        "Desc": "\u6930\u5b50\u6ce2\u52a8\u5c0f\u4e8e0"
     },
     {
         "Id": 2006,
         "Type": 26.0,
         "Formula": null,
         "Params": "[2, 0, 5]",
-        "Desc": "Wood fluctuation <0"
+        "Desc": "\u6728\u6750\u6ce2\u52a8\u5c0f\u4e8e0"
     },
     {
         "Id": 2007,
         "Type": 26.0,
         "Formula": null,
         "Params": "[3, 0, 5]",
-        "Desc": "Petroleum fluctuation <0"
+        "Desc": "\u77f3\u6cb9\u6ce2\u52a8\u5c0f\u4e8e0"
     },
     {
         "Id": 2008,
         "Type": 26.0,
         "Formula": null,
         "Params": "[1, 0, 1]",
-        "Desc": "Coconut fluctuation <0"
+        "Desc": "\u6930\u5b50\u6ce2\u52a8\u5c0f\u4e8e0"
     },
     {
         "Id": 2009,
         "Type": 26.0,
         "Formula": null,
         "Params": "[2, 0, 1]",
-        "Desc": "Wood fluctuation <0"
+        "Desc": "\u6728\u6750\u6ce2\u52a8\u5c0f\u4e8e0"
     },
     {
         "Id": 2010,
         "Type": 26.0,
         "Formula": null,
         "Params": "[3, 0, 1]",
-        "Desc": "Petroleum fluctuation <0"
+        "Desc": "\u77f3\u6cb9\u6ce2\u52a8\u5c0f\u4e8e0"
     },
     {
         "Id": 3001,
         "Type": 4.0,
         "Formula": null,
         "Params": "[1, 1]",
-        "Desc": "Current quarter count >1"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u5927\u4e8e 1"
     },
     {
         "Id": 3002,
         "Type": 4.0,
         "Formula": null,
         "Params": "[1, 5]",
-        "Desc": "Current quarter count greater than 5"
+        "Desc": "\u5f53\u524d\u5b63\u5ea6\u6570\u5927\u4e8e 5"
     },
     {
         "Id": 4001,
         "Type": 22.0,
         "Formula": null,
         "Params": "[0, 3]",
-        "Desc": "Less than 3 buildings constructed"
+        "Desc": "\u5c1a\u672a\u5efa\u90203\u4e2a\u5efa\u7b51"
     },
     {
         "Id": 4002,
         "Type": 22.0,
         "Formula": null,
         "Params": "[0, 8]",
-        "Desc": "Less than 8 buildings constructed"
+        "Desc": "\u5c1a\u672a\u5efa\u90208\u4e2a\u5efa\u7b51"
     },
     {
         "Id": 4003,
         "Type": 22.0,
         "Formula": null,
         "Params": "[0, 12]",
-        "Desc": "Less than 12 buildings constructed"
+        "Desc": "\u5c1a\u672a\u5efa\u902012\u4e2a\u5efa\u7b51"
     },
     {
         "Id": 4004,
         "Type": 17.0,
         "Formula": null,
         "Params": "[2, 2]",
-        "Desc": "Less than 2 islands purchased"
+        "Desc": "\u5c1a\u672a\u8d2d\u51652\u4e2a\u5c9b\u5c7f"
     },
     {
         "Id": 4005,
         "Type": 22.0,
         "Formula": null,
         "Params": "[0, 20]",
-        "Desc": "Less than 20 buildings constructed"
+        "Desc": "\u5c1a\u672a\u5efa\u902020\u4e2a\u5efa\u7b51"
     },
     {
         "Id": 4006,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 4]",
-        "Desc": "Main City not upgraded to Lv.4"
+        "Desc": "\u4e3b\u57ce\u5c1a\u672a\u5347\u81f34\u7ea7"
     },
     {
         "Id": 4007,
         "Type": 22.0,
         "Formula": null,
         "Params": "[0, 30]",
-        "Desc": "Less than 30 buildings constructed"
+        "Desc": "\u5c1a\u672a\u5efa\u902030\u4e2a\u5efa\u7b51"
     },
     {
         "Id": 4008,
         "Type": 17.0,
         "Formula": null,
         "Params": "[2, 5]",
-        "Desc": "Less than 5 islands purchased"
+        "Desc": "\u5c1a\u672a\u8d2d\u51655\u4e2a\u5c9b\u5c7f"
     },
     {
         "Id": 4009,
         "Type": 7.0,
         "Formula": null,
         "Params": "[1, 9]",
-        "Desc": "Main City not upgraded to Lv.9"
+        "Desc": "\u4e3b\u57ce\u5c1a\u672a\u5347\u81f39\u7ea7"
     },
     {
         "Id": 4010,
         "Type": 18.0,
         "Formula": null,
         "Params": "[1504]",
-        "Desc": "Polarized Island not purchased"
+        "Desc": "\u5c1a\u672a\u8d2d\u5165\u4e24\u6781\u5c9b"
     },
     {
         "Id": 1010001,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 1000]",
-        "Desc": "1000 Golden Shells required"
+        "Desc": "\u9700\u89811000\u91d1\u8d1d"
     },
     {
         "Id": 1020101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815000\u91d1\u8d1d"
     },
     {
         "Id": 1030101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 10000]",
-        "Desc": "10000 Golden Shells required"
+        "Desc": "\u9700\u898110000\u91d1\u8d1d"
     },
     {
         "Id": 1030102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 8000]",
-        "Desc": "8000 Golden Shells required"
+        "Desc": "\u9700\u89818000\u91d1\u8d1d"
     },
     {
         "Id": 1170102,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 1000]",
-        "Desc": "1000 Golden Shells required"
+        "Desc": "\u9700\u89811000\u91d1\u8d1d"
     },
     {
         "Id": 1401,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 100000]",
-        "Desc": "100000 Golden Shells required"
+        "Desc": "\u9700\u8981100000\u91d1\u8d1d"
     },
     {
         "Id": 1402,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 200000]",
-        "Desc": "200000 Golden Shells required"
+        "Desc": "\u9700\u8981200000\u91d1\u8d1d"
     },
     {
         "Id": 2010001,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 1000]",
-        "Desc": "1000 Golden Shells required"
+        "Desc": "\u9700\u89811000\u91d1\u8d1d"
     },
     {
         "Id": 3050001,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 2000]",
-        "Desc": "2000 Golden Shells required"
+        "Desc": "\u9700\u89812000\u91d1\u8d1d"
     },
     {
         "Id": 3070101,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 2000]",
-        "Desc": "2000 Golden Shells required"
+        "Desc": "\u9700\u89812000\u91d1\u8d1d"
     },
     {
         "Id": 3130001,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 500]",
-        "Desc": "500 Golden Shells required"
+        "Desc": "\u9700\u8981500\u91d1\u8d1d"
     },
     {
         "Id": 3150001,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815000\u91d1\u8d1d"
     },
     {
         "Id": 3190001,
         "Type": 13.0,
         "Formula": null,
         "Params": "[2, 2, 5000]",
-        "Desc": "5000 Golden Shells required"
+        "Desc": "\u9700\u89815000\u91d1\u8d1d"
     }
 ]

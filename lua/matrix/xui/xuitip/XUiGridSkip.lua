@@ -14,6 +14,8 @@ function XUiGridSkip:InitAutoScript()
             XUiManager.TipText("MatchingSkipTip")
         elseif XMVCA.XDlcRoom and XMVCA.XDlcRoom:IsSelfReady() then
             XUiManager.TipText("ReadySkipTip")
+        elseif XMVCA.XDlcRoom and XMVCA.XDlcRoom:IsInRoom() then
+            XUiManager.TipText("InRoomSkipTip")
         else
             XFunctionManager.SkipInterface(self.SkipId, nil, self.Args)
             if self.SkipCb then

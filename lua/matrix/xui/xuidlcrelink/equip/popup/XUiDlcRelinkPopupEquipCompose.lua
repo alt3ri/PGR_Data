@@ -8,14 +8,16 @@ local Interval = 100
 local SpeedBaseNumber = 150
 
 function XUiDlcRelinkPopupEquipCompose:OnAwake()
+    self._ItemId = tonumber(self._Control:GetConfig("TargetingComposeConsumeId"))
+    self._ItemCount = tonumber(self._Control:GetConfig("TargetingComposeConsumeCount"))
     self:RegisterUiEvents()
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnStart(composeId)
     self.ComposeId = composeId
-    self.CurComposeCount = 0
-    self.MaxComposeCount = self._Control:CalculateComposeMaxCount(composeId)
+    self.CurComposeCount = 1
 
+    self:UpdateMaxComposeCount()
     self:SetInputSelectData()
     self.InputSelect.onValueChanged:AddListener((handler(self, self.OnInputSelectValueChanged)))
     self.InputSelect.onEndEdit:AddListener((handler(self, self.OnInputSelectEndEdit)))
@@ -25,6 +27,9 @@ function XUiDlcRelinkPopupEquipCompose:OnStart(composeId)
 
     XUiButtonLongClick.New(self.WgtBtnAddSelect, Interval, self, nil, self.BtnAddSelectLongClickCallback, nil, true)
     XUiButtonLongClick.New(self.WgtBtnMinusSelect, Interval, self, nil, self.BtnMinusSelectLongClickCallback, nil, true)
+
+    ---@type XUiPanelDlcRelinkEquipChooseAttribute
+    self._ChooseAttribute = require("XUi/XUiDlcRelink/Equip/Panel/XUiPanelDlcRelinkEquipChooseAttribute").New(self.PanelChooseAttribute, self)
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnEnable()
@@ -33,18 +38,43 @@ function XUiDlcRelinkPopupEquipCompose:OnEnable()
     self.InputSelect.text = self.CurComposeCount
 end
 
+function XUiDlcRelinkPopupEquipCompose:UpdateMaxComposeCount()
+    if self._ChooseAttribute and self._ChooseAttribute:IsChooseAttr() then
+        local haveCount = XDataCenter.ItemManager.GetCount(self._ItemId)
+        self.MaxComposeCount = math.floor(haveCount / self._ItemCount)
+    else
+        self.MaxComposeCount = self._Control:CalculateComposeMaxCount(self.ComposeId)
+    end
+    self.MaxComposeCount = math.max(self.MaxComposeCount, 1)
+end
+
+function XUiDlcRelinkPopupEquipCompose:OnChooseAttrChange()
+    self:UpdateMaxComposeCount()
+    if self.CurComposeCount > self.MaxComposeCount then
+        self.CurComposeCount = self.MaxComposeCount
+        self.InputSelect.text = self.CurComposeCount
+    end
+    self:RefreshConsumes()
+    self:RefreshBtnState()
+end
+
 function XUiDlcRelinkPopupEquipCompose:SetInputSelectData()
     self.InputSelect.characterLimit = 4
     self.InputSelect.contentType = CS.UnityEngine.UI.InputField.ContentType.IntegerNumber
 end
 
 function XUiDlcRelinkPopupEquipCompose:GetItemIdAndCount()
-    local consumeIds = self._Control:GetComposeConsumeIds(self.ComposeId)
-    local consumeCounts = self._Control:GetComposeConsumeCounts(self.ComposeId)
-    -- 默认取第一个消耗物品
-    local itemId = consumeIds[1]
-    local itemCount = consumeCounts[1]
-    return itemId, itemCount
+    if self._ChooseAttribute:IsChooseAttr() then
+        --定向合成的消耗
+        return self._ItemId, self._ItemCount
+    else
+        local consumeIds = self._Control:GetComposeConsumeIds(self.ComposeId)
+        local consumeCounts = self._Control:GetComposeConsumeCounts(self.ComposeId)
+        -- 默认取第一个消耗物品
+        local itemId = consumeIds[1]
+        local itemCount = consumeCounts[1]
+        return itemId, itemCount
+    end
 end
 
 function XUiDlcRelinkPopupEquipCompose:RefreshConsumes()
@@ -54,16 +84,17 @@ function XUiDlcRelinkPopupEquipCompose:RefreshConsumes()
 end
 
 function XUiDlcRelinkPopupEquipCompose:RefreshBtnState()
-    self.BtnMinusSelect:SetDisable(self.CurComposeCount <= 0)
+    self.BtnMinusSelect:SetDisable(self.CurComposeCount <= 1)
     self.BtnAddSelect:SetDisable(self.CurComposeCount >= self.MaxComposeCount)
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnInputSelectValueChanged(value)
-    if value == nil or value == "" then
+    local num = tonumber(value)
+    if not num or num <= 0 then
         return
     end
 
-    local num = tonumber(value) or 0
+    num = num or 1
     if num > self.MaxComposeCount then
         num = self.MaxComposeCount
         self.InputSelect.text = num
@@ -75,11 +106,13 @@ function XUiDlcRelinkPopupEquipCompose:OnInputSelectValueChanged(value)
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnInputSelectEndEdit(value)
-    if value == nil or value == "" then
-        self.CurComposeCount = 0
-        self.InputSelect.text = 0
+    local num = tonumber(value)
+    if not num or num <= 0 then
+        self.CurComposeCount = 1
+        self.InputSelect.text = 1
         self:RefreshConsumes()
         self:RefreshBtnState()
+        self._Control:OpenCommonTipText("EquipComposeInputTip")
     end
 end
 
@@ -97,25 +130,24 @@ function XUiDlcRelinkPopupEquipCompose:BtnAddSelectLongClickCallback(time)
 end
 
 function XUiDlcRelinkPopupEquipCompose:BtnMinusSelectLongClickCallback(time)
-    if self.CurComposeCount <= 0 then
+    if self.CurComposeCount <= 1 then
         self._Control:OpenCommonTipText("EquipComposeCountLimitTips", 1)
         return
     end
 
     local delta = math.max(0, math.floor(time / SpeedBaseNumber))
-    self.CurComposeCount = math.max(0, self.CurComposeCount - delta)
+    self.CurComposeCount = math.max(1, self.CurComposeCount - delta)
     self:RefreshConsumes()
     self.InputSelect.text = self.CurComposeCount
     self:RefreshBtnState()
 end
 
 function XUiDlcRelinkPopupEquipCompose:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnTanchuangClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnAddSelect, self.OnBtnAddSelectClick)
-    self:RegisterClickEvent(self.BtnMinusSelect, self.OnBtnMinusSelectClick)
-    self:RegisterClickEvent(self.BtnMax, self.OnBtnMaxClick)
-    self:RegisterClickEvent(self.BtnCompose, self.OnBtnComposeClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnAddSelect:AddEventListener(handler(self, self.OnBtnAddSelectClick))
+    self.BtnMinusSelect:AddEventListener(handler(self, self.OnBtnMinusSelectClick))
+    self.BtnMax:AddEventListener(handler(self, self.OnBtnMaxClick))
+    self.BtnCompose:AddEventListener(handler(self, self.OnBtnComposeClick))
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnBtnCloseClick()
@@ -134,7 +166,7 @@ function XUiDlcRelinkPopupEquipCompose:OnBtnAddSelectClick()
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnBtnMinusSelectClick()
-    if self.CurComposeCount > 0 then
+    if self.CurComposeCount > 1 then
         self.CurComposeCount = self.CurComposeCount - 1
         self:RefreshConsumes()
         self.InputSelect.text = self.CurComposeCount
@@ -168,8 +200,14 @@ function XUiDlcRelinkPopupEquipCompose:OnBtnComposeClick()
         return
     end
 
-    self._Control:RequestEquipCompose(self.ComposeId, self.CurComposeCount, function(equipRewardGoodsList)
-        self:Close()
+    if not self._Control:AbleSyncDataToMatchServer() then
+        return
+    end
+
+    local factorId = self._ChooseAttribute:GetAttrId() or 0
+    local composeId = XTool.IsNumberValid(factorId) and 0 or self.ComposeId
+
+    self._Control:RequestEquipCompose(composeId, self.CurComposeCount, factorId, function(equipRewardGoodsList)
         if XTool.IsTableEmpty(equipRewardGoodsList) then
             return
         end
@@ -179,6 +217,7 @@ function XUiDlcRelinkPopupEquipCompose:OnBtnComposeClick()
                 table.insert(equipUidList, goods.EquipUid)
             end
         end
+        self:OnChooseAttrChange()
         XLuaUiManager.Open("UiDlcRelinkPopupEquipComposeResult", equipUidList)
     end)
 end

@@ -128,7 +128,13 @@ ModuleId = {
   XPassportComb = "XPassportComb",
   XAccumulateExpendL = "XAccumulateExpendL",
   XPlotExhibition = "XPlotExhibition",
+
+  XSkyGardenDroneGame = "XSkyGardenDroneGame",
+  XBigWorldNews = "XBigWorldNews",
   XFashionSuit = "XFashionSuit",
+  XMainLineLuosaita = "XMainLineLuosaita",
+  XSwitchableScene = "XSwitchableScene",
   XRadioSign = "XRadioSign",
   XItemRestrict = "XItemRestrict",
+  XShop = "XShop",
 }

@@ -8,6 +8,10 @@ local BossSingleTableKey = {
     BossSingleChallengeFeatureGroup = {
         CacheType = XConfigUtil.CacheType.Normal,
     },
+    BossSingleChallengeBuffGroup = {
+        -- 先用private缓存，如有必要，后面再改回normal
+        CacheType = XConfigUtil.CacheType.Private,
+    },
     BossSingleChallengeGrade = {
         Identifier = "LevelType",
     },
@@ -99,6 +103,66 @@ function XFubenBossSingleConfigModel:GetBossSingleChallengeFeatureGroupFeatureId
     local config = self:GetBossSingleChallengeFeatureGroupConfigById(id)
 
     return config.FeatureIds
+end
+
+function XFubenBossSingleConfigModel:GetBossSingleChallengeFeatureGroupBuffGroupIdsById(id)
+    local config = self:GetBossSingleChallengeFeatureGroupConfigById(id)
+
+    return config.BuffGroupIds or {}
+end
+
+function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupBuffById(id)
+    local config = self:GetBossSingleChallengeBuffGroupConfigById(id)
+
+    return config.Buff or {}
+end
+
+--- 根据featureGroupId和featureId获取对应的BuffGroupId
+---@param featureGroupId number FeatureGroup的ID
+---@param featureId number Feature的ID
+---@return number|nil BuffGroupId，如果找不到则返回nil
+function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupIdByFeatureId(featureGroupId, featureId)
+    local config = self:GetBossSingleChallengeFeatureGroupConfigById(featureGroupId)
+    if not config then
+        return nil
+    end
+    
+    local featureIds = config.FeatureIds or {}
+    local buffGroupIds = config.BuffGroupIds or {}
+    
+    for i, id in ipairs(featureIds) do
+        if id == featureId then
+            return buffGroupIds[i]
+        end
+    end
+    
+    return nil
+end
+
+--- 根据featureId获取对应的FeatureGroup配置
+---@param featureId number
+---@return XTableBossSingleChallengeFeatureGroup|nil
+function XFubenBossSingleConfigModel:GetBossSingleChallengeFeatureGroupConfigByFeatureId(featureId)
+    local configs = self:GetBossSingleChallengeFeatureGroupConfigs()
+    for _, config in pairs(configs) do
+        local featureIds = config.FeatureIds or {}
+        for _, id in ipairs(featureIds) do
+            if id == featureId then
+                return config
+            end
+        end
+    end
+    return nil
+end
+
+---@return XTableBossSingleChallengeBuffGroup[]
+function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigs()
+    return self._ConfigUtil:GetByTableKey(BossSingleTableKey.BossSingleChallengeBuffGroup) or {}
+end
+
+---@return XTableBossSingleChallengeBuffGroup
+function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(BossSingleTableKey.BossSingleChallengeBuffGroup, id, false) or {}
 end
 
 ---@return XTableBossSingleChallengeGrade[]
@@ -527,7 +591,7 @@ end
 
 ---@return XTableBossSingleStage
 function XFubenBossSingleConfigModel:GetBossSingleStageConfigByStageId(stageId)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(BossSingleTableKey.BossSingleStage, stageId, false) or {}
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(BossSingleTableKey.BossSingleStage, stageId, true) or {}
 end
 
 function XFubenBossSingleConfigModel:GetBossSingleStageModelIdByStageId(stageId)

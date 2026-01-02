@@ -24,6 +24,13 @@ function XUiTheatre5SkillHandbookItemGrid:Update(data)
     if data.PlayAnimation then
         XUiHelper.PlayUiNodeAnimation(self.Grid, "GridShopAnimEnable")
     end
+
+    if self.PanelLock then
+        -- 目前只有任务有这个功能，其他类型图鉴没有这个字段
+        if data.IsUnlock == false then
+            self.PanelLock.gameObject:SetActiveEx(true)
+        end
+    end
 end
 
 function XUiTheatre5SkillHandbookItemGrid:OnClick()

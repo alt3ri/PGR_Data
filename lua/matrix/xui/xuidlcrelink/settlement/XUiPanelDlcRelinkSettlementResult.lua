@@ -12,9 +12,9 @@ local TipType = {
 
 function XUiPanelDlcRelinkSettlementResult:OnStart()
     self.PanelTips.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnLeft, self.OnBtnLeftClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnRight, self.OnBtnRightClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnNext, self.OnBtnNextClick, true, true)
+    self.BtnLeft:AddEventListener(handler(self, self.OnBtnLeftClick))
+    self.BtnRight:AddEventListener(handler(self, self.OnBtnRightClick))
+    self.BtnNext:AddEventListener(handler(self, self.OnBtnNextClick))
 
     self.TipList = {}
     self.CurrentTipIndex = 1
@@ -27,10 +27,20 @@ function XUiPanelDlcRelinkSettlementResult:Refresh(resultData, relinkSettleResul
     self.RelinkSettleResult = relinkSettleResult
     -- 是否通关
     local isWin = resultData.IsPlayerWin
-    self.RImgFail.gameObject:SetActiveEx(not isWin)
-    self.RImgWin.gameObject:SetActiveEx(isWin)
+    if self.RImgFailBg then
+        self.RImgFailBg.gameObject:SetActiveEx(not isWin)
+    end
+    if self.FailMask then
+        self.FailMask.gameObject:SetActiveEx(not isWin)
+    end
+    if self.RImgWinBg then
+        self.RImgWinBg.gameObject:SetActiveEx(isWin)
+    end
+    if self.WinMask then
+        self.WinMask.gameObject:SetActiveEx(isWin)
+    end
     -- 通关时间
-    local timer = resultData.FinishTime
+    local timer = self:GetFinishTime()
     self.TxtTime.text = XUiHelper.GetTime(timer, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME)
     -- 新纪录
     self.GridTag.gameObject:SetActiveEx(isWin and relinkSettleResult.IsNewRecord)
@@ -41,6 +51,25 @@ function XUiPanelDlcRelinkSettlementResult:Refresh(resultData, relinkSettleResul
     end
     -- 背景图
     self.RImgBg:SetRawImage(self._Control:GetClientConfig("SettlementResultBg", isWin and 1 or 2))
+end
+
+-- 获取通关时间
+function XUiPanelDlcRelinkSettlementResult:GetFinishTime()
+    -- 非强制退出状态,直接返回完成时间
+    if self.ResultData.SettleState ~= XEnumConst.DlcWorld.SettleState.ForceExit then
+        return self.ResultData.FinishTime or 0
+    end
+
+    -- 强制退出状态,查找当前玩家的结算时间
+    ---@type table<number, XDlcFightResultPlayerData>
+    local playerDataList = self.ResultData.PlayerData or {}
+    for _, playerData in pairs(playerDataList) do
+        if playerData.PlayerId == XPlayer.Id then
+            return playerData.SettleTime or 0
+        end
+    end
+
+    return 0
 end
 
 -- 刷新提示
@@ -73,17 +102,17 @@ end
 
 -- 检查队伍中是否存在多个相同职业
 function XUiPanelDlcRelinkSettlementResult:CheckDuplicateProfession()
-    local occTypeCount = {}
+    local occupationTypeCount = {}
     local settleResults = self.RelinkSettleResult.SettleResults
     if XTool.IsTableEmpty(settleResults) then
         return false
     end
 
     for _, result in pairs(settleResults) do
-        local occType = result.OccType
-        if occType then
-            occTypeCount[occType] = (occTypeCount[occType] or 0) + 1
-            if occTypeCount[occType] > 1 then
+        local occupationType = self._Control:GetCharacterOccupationType(result.CharacterId, result.StyleType)
+        if occupationType > 0 then
+            occupationTypeCount[occupationType] = (occupationTypeCount[occupationType] or 0) + 1
+            if occupationTypeCount[occupationType] > 1 then
                 return true
             end
         end
@@ -95,8 +124,8 @@ end
 -- 检查装备等级是否低于要求
 function XUiPanelDlcRelinkSettlementResult:CheckEquipmentLevel()
     local levelId = self.ResultData.WorldData.LevelId
-    local levelLimit = self._Control:GetLevelLevelLimit(levelId)
-    if not XTool.IsNumberValid(levelLimit) then
+    local abilityLimit = self._Control:GetLevelAbilityLimit(levelId)
+    if not XTool.IsNumberValid(abilityLimit) then
         return false
     end
 
@@ -106,7 +135,7 @@ function XUiPanelDlcRelinkSettlementResult:CheckEquipmentLevel()
     end
 
     for _, result in pairs(settleResults) do
-        if result.PlayerId == XPlayer.Id and result.EquLevel < levelLimit then
+        if result.PlayerId == XPlayer.Id and result.EquLevel < abilityLimit then
             return true
         end
     end
@@ -150,7 +179,12 @@ end
 function XUiPanelDlcRelinkSettlementResult:OnBtnNextClick()
     if self.ResultData.SettleState == XEnumConst.DlcWorld.SettleState.ForceExit then
         -- 强制退出
-        XLuaUiManager.CloseAllUpperUi("UiDlcRelinkRoom")
+        self._Control:CommonRunRelinkRoomUiHandle(nil, function()
+            if XTool.UObjIsNil(self.GameObject) then
+                return
+            end
+            XLuaUiManager.Remove(self.Parent.Name)
+        end)
         return
     end
     self.Parent:RefreshPanelCharacter()

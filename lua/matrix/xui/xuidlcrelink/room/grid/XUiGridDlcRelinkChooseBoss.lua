@@ -4,7 +4,7 @@
 local XUiGridDlcRelinkChooseBoss = XClass(XUiNode, "XUiGridDlcRelinkChooseBoss")
 
 function XUiGridDlcRelinkChooseBoss:OnStart(chapterId)
-    XUiHelper.RegisterClickEvent(self, self.BtnSelect, self.OnBtnSelectClick, true, true)
+    self.BtnSelect:AddEventListener(handler(self, self.OnBtnSelectClick))
     self.ChapterId = chapterId
     self.IsShowTime = false
 end
@@ -64,6 +64,7 @@ end
 
 function XUiGridDlcRelinkChooseBoss:SetSelect(isSelect)
     self.RImgSelect.gameObject:SetActiveEx(isSelect)
+    self.Parent.PanelDrag.gameObject:SetActiveEx(not isSelect) --拖动组件会挡住弹框的关闭按钮
 end
 
 function XUiGridDlcRelinkChooseBoss:OnBtnSelectClick()

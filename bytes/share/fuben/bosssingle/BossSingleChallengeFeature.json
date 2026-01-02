@@ -1,515 +1,794 @@
 [
     {
         "Id": 1,
-        "Name": "Invasion I",
+        "Name": "\u4fb5\u88ad\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1001.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Taking Physical DMG accumulates the Wound Gauge. Becomes Wounded at maximum stacks, significantly increasing the CRIT DMG taken, stacking up to 4 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u65f6\uff0c\u79ef\u7d2f\u521b\u4f24\u69fd\uff0c\u6ee1\u5c42\u540e\u8fdb\u5165\u521b\u4f24\u72b6\u6001\uff0c\u53d7\u5230\u66b4\u51fb\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a04\u5c42\u3002",
         "FightEventIds": "[2300001]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 2,
-        "Name": "Sharpness I",
+        "Name": "\u950b\u9510\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Taking Physical DMG accumulates the Wound Gauge. Becomes Wounded at maximum stacks, significantly increasing the Physical DMG taken, stacking up to 4 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u65f6\uff0c\u79ef\u7d2f\u521b\u4f24\u69fd\uff0c\u6ee1\u5c42\u540e\u8fdb\u5165\u521b\u4f24\u72b6\u6001\uff0c\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a04\u5c42\u3002",
         "FightEventIds": "[2300002]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 3,
-        "Name": "Thunderstorm I",
+        "Name": "\u96f7\u66b4\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1003.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Upon dealing Lightning DMG, gains a Lightning Shield that deals Lightning DMG to nearby enemies over time and increases the character's Lightning DMG significantly.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u9020\u6210\u96f7\u4f24\u5bb3\u65f6\uff0c\u89d2\u8272\u83b7\u5f97\u96f7\u76fe\uff0c\u96f7\u76fe\u5bf9\u5468\u56f4\u6301\u7eed\u9020\u6210\u96f7\u5c5e\u6027\u4f24\u5bb3\uff0c\u4e14\u4f7f\u89d2\u8272\u81ea\u8eab\u96f7\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300003]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 4,
-        "Name": "Lightning Surge I",
+        "Name": "\u96f7\u6f6e\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Upon dealing Lightning DMG, gains a Lightning Shield that significantly increases the Lightning DMG taken by units within its range.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u96f7\u4f24\u5bb3\u65f6\uff0c\u83b7\u5f97\u96f7\u76fe\uff0c\u96f7\u76fe\u8f90\u5c04\u8303\u56f4\u5185\u5355\u4f4d\u53d7\u5230\u96f7\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300004]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 5,
-        "Name": "Dark Condensation I",
+        "Name": "\u51dd\u6697\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Taking Dark DMG drops a Dark Orb, which increases the character's Dark DMG when picked up. After picking up the maximum number of Dark Orbs, the next attack will unleash all Dark Orbs to trigger an explosion, significantly increasing the Dark DMG dealt by the character.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u53d7\u5230\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\uff0c\u6389\u843d\u6697\u7403\uff0c\u62fe\u53d6\u540e\u89d2\u8272\u6697\u5c5e\u6027\u4f24\u5bb3\u63d0\u5347\u3002\u6697\u7403\u6570\u91cf\u8fbe\u5230\u4e0a\u9650\u540e\uff0c\u4e0b\u6b21\u653b\u51fb\u5c06\u91ca\u653e\u5168\u90e8\u6697\u7403\u5f15\u53d1\u7206\u70b8\uff0c\u4f7f\u89d2\u8272\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300006]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 6,
-        "Name": "Dark Corruption I",
+        "Name": "\u6697\u8680\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1006.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Taking Dark DMG drops a Dark Orb, which increases Dark DMG when picked up. After picking up the maximum number of Dark Orbs, the next attack will unleash all Dark Orbs to trigger an explosion, significantly increasing the Dark DMG taken by the units hit.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u53d7\u5230\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\uff0c\u6389\u843d\u6697\u7403\uff0c\u62fe\u53d6\u540e\u81ea\u8eab\u6697\u5c5e\u6027\u4f24\u5bb3\u63d0\u5347\u3002\u6697\u7403\u6570\u91cf\u8fbe\u5230\u4e0a\u9650\u540e\uff0c\u4e0b\u6b21\u653b\u51fb\u5c06\u91ca\u653e\u5168\u90e8\u6697\u7403\u5f15\u53d1\u7206\u70b8\uff0c\u4f7f\u5355\u4f4d\u53d7\u5230\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300005]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 7,
-        "Name": "Assault I",
+        "Name": "\u5f3a\u88ad\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Converts 50% of the Boss's max HP into Equilibrium Field. Breaking the Equilibrium Field significantly increases all Elemental DMG of the character.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u6700\u5927\u751f\u547d\u503c\u768450%\u8f6c\u6362\u4e3a\u7a33\u6001\u529b\u573a\u3002\u51fb\u788e\u7a33\u6001\u529b\u573a\u65f6\uff0c\u89d2\u8272\u81ea\u8eab\u5168\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300008]",
-        "ShowRecommendIds": "[1]"
+        "ShowRecommendIds": "[1]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 8,
-        "Name": "Discontinuance I",
+        "Name": "\u4e0d\u7ee7\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1008.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Converts 50% of the Boss's max HP into Equilibrium Field. When the Equilibrium Field is broken, the unit takes significantly more DMG from all Elemental types.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss\u6700\u5927\u751f\u547d\u503c\u768450%\u8f6c\u6362\u4e3a\u7a33\u6001\u529b\u573a\u3002\u51fb\u788e\u7a33\u6001\u529b\u573a\u65f6\uff0c\u5355\u4f4d\u53d7\u5230\u5168\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300007]",
-        "ShowRecommendIds": "[1]"
+        "ShowRecommendIds": "[1]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 9,
-        "Name": "Combustible I",
+        "Name": "\u6613\u71c3\u2160",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Easily ignited by high temperatures and causes huge explosions. Fire DMG received is increased significantly.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u6781\u6613\u53d7\u9ad8\u6e29\u70b9\u71c3\u5e76\u5f15\u53d1\u5267\u70c8\u7684\u7206\u70b8\uff0c\u57fa\u4e8e\u6b64\u7279\u6027\u53d7\u5230\u7684\u706b\u5c5e\u6027\u4f24\u5bb3\u4f1a\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300009]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 10,
-        "Name": "Frost I",
+        "Name": "\u971c\u7ed3\u2160",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "The phenomenon of freezing expansion will occur at low temperatures. Ice DMG received is increased significantly.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u4f4e\u6e29\u60c5\u51b5\u4e0b\u4f1a\u51fa\u73b0\u81a8\u80c0\u5f0f\u51bb\u7ed3\u6548\u5e94\uff0c\u57fa\u4e8e\u6b64\u7279\u6027\u53d7\u5230\u7684\u51b0\u5c5e\u6027\u4f24\u5bb3\u4f1a\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300010]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 11,
-        "Name": "Invasion II",
+        "Name": "\u4fb5\u88ad\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1001.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Taking Physical DMG accumulates the Wound Gauge. Becomes Wounded at maximum stacks, significantly increasing the CRIT DMG taken, stacking up to 4 times. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u65f6\uff0c\u79ef\u7d2f\u521b\u4f24\u69fd\uff0c\u6ee1\u5c42\u540e\u8fdb\u5165\u521b\u4f24\u72b6\u6001\uff0c\u53d7\u5230\u66b4\u51fb\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a04\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300011]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 12,
-        "Name": "Sharpness II",
+        "Name": "\u950b\u9510\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Taking Physical DMG accumulates the Wound Gauge. Becomes Wounded at maximum stacks, significantly increasing the Physical DMG taken, stacking up to 4 times. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u65f6\uff0c\u79ef\u7d2f\u521b\u4f24\u69fd\uff0c\u6ee1\u5c42\u540e\u8fdb\u5165\u521b\u4f24\u72b6\u6001\uff0c\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a04\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300012]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 13,
-        "Name": "Thunderstorm II",
+        "Name": "\u96f7\u66b4\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1003.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Upon dealing Lightning DMG, gains a Lightning Shield that deals Lightning DMG to nearby enemies over time and increases the character's Lightning DMG significantly. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u9020\u6210\u96f7\u4f24\u5bb3\u65f6\uff0c\u89d2\u8272\u83b7\u5f97\u96f7\u76fe\uff0c\u96f7\u76fe\u5bf9\u5468\u56f4\u6301\u7eed\u9020\u6210\u96f7\u5c5e\u6027\u4f24\u5bb3\uff0c\u4e14\u4f7f\u89d2\u8272\u81ea\u8eab\u96f7\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300013]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 14,
-        "Name": "Lightning Surge II",
+        "Name": "\u96f7\u6f6e\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Upon dealing Lightning DMG, gains a Lightning Shield that significantly increases the Lightning DMG taken by units within its range. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u96f7\u4f24\u5bb3\u65f6\uff0c\u83b7\u5f97\u96f7\u76fe\uff0c\u96f7\u76fe\u8f90\u5c04\u8303\u56f4\u5185\u5355\u4f4d\u53d7\u5230\u96f7\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300014]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 15,
-        "Name": "Dark Condensation II",
+        "Name": "\u51dd\u6697\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Taking Dark DMG drops a Dark Orb, which increases the character's Dark DMG when picked up. After picking up the maximum number of Dark Orbs, the next attack will unleash all Dark Orbs to trigger an explosion, significantly increasing the Dark DMG dealt by the character. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u53d7\u5230\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\uff0c\u6389\u843d\u6697\u7403\uff0c\u62fe\u53d6\u540e\u89d2\u8272\u6697\u5c5e\u6027\u4f24\u5bb3\u63d0\u5347\u3002\u6697\u7403\u6570\u91cf\u8fbe\u5230\u4e0a\u9650\u540e\uff0c\u4e0b\u6b21\u653b\u51fb\u5c06\u91ca\u653e\u5168\u90e8\u6697\u7403\u5f15\u53d1\u7206\u70b8\uff0c\u4f7f\u89d2\u8272\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300016]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 16,
-        "Name": "Dark Corruption II",
+        "Name": "\u6697\u8680\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1006.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Taking Dark DMG drops a Dark Orb, which increases Dark DMG when picked up. After picking up the maximum number of Dark Orbs, the next attack will unleash all Dark Orbs to trigger an explosion, significantly increasing the Dark DMG taken by the units hit. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u53d7\u5230\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\uff0c\u6389\u843d\u6697\u7403\uff0c\u62fe\u53d6\u540e\u81ea\u8eab\u6697\u5c5e\u6027\u4f24\u5bb3\u63d0\u5347\u3002\u6697\u7403\u6570\u91cf\u8fbe\u5230\u4e0a\u9650\u540e\uff0c\u4e0b\u6b21\u653b\u51fb\u5c06\u91ca\u653e\u5168\u90e8\u6697\u7403\u5f15\u53d1\u7206\u70b8\uff0c\u4f7f\u5355\u4f4d\u53d7\u5230\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300015]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 17,
-        "Name": "Assault II",
+        "Name": "\u5f3a\u88ad\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Converts 50% of the Boss's max HP into Equilibrium Field. Breaking the Equilibrium Field significantly increases all Elemental DMG of the character. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u6700\u5927\u751f\u547d\u503c\u768450%\u8f6c\u6362\u4e3a\u7a33\u6001\u529b\u573a\u3002\u51fb\u788e\u7a33\u6001\u529b\u573a\u65f6\uff0c\u89d2\u8272\u81ea\u8eab\u5168\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300018]",
-        "ShowRecommendIds": "[1]"
+        "ShowRecommendIds": "[1]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 18,
-        "Name": "Discontinuance II",
+        "Name": "\u4e0d\u7ee7\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1008.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Converts 50% of the Boss's max HP into Equilibrium Field. When the Equilibrium Field is broken, the unit takes significantly more DMG from all Elemental types. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss\u6700\u5927\u751f\u547d\u503c\u768450%\u8f6c\u6362\u4e3a\u7a33\u6001\u529b\u573a\u3002\u51fb\u788e\u7a33\u6001\u529b\u573a\u65f6\uff0c\u5355\u4f4d\u53d7\u5230\u5168\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300017]",
-        "ShowRecommendIds": "[1]"
+        "ShowRecommendIds": "[1]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 19,
-        "Name": "Combustible II",
+        "Name": "\u6613\u71c3\u2161",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Easily ignited by high temperatures and causes huge explosions. Fire DMG received is increased significantly. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u6781\u6613\u53d7\u9ad8\u6e29\u70b9\u71c3\u5e76\u5f15\u53d1\u5267\u70c8\u7684\u7206\u70b8\uff0c\u57fa\u4e8e\u6b64\u7279\u6027\u53d7\u5230\u7684\u706b\u5c5e\u6027\u4f24\u5bb3\u4f1a\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300019]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 20,
-        "Name": "Frost II",
+        "Name": "\u971c\u7ed3\u2161",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "The phenomenon of freezing expansion will occur at low temperatures. Ice DMG received is increased significantly. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u4f4e\u6e29\u60c5\u51b5\u4e0b\u4f1a\u51fa\u73b0\u81a8\u80c0\u5f0f\u51bb\u7ed3\u6548\u5e94\uff0c\u57fa\u4e8e\u6b64\u7279\u6027\u53d7\u5230\u7684\u51b0\u5c5e\u6027\u4f24\u5bb3\u4f1a\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300020]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 21,
-        "Name": "Wailing Scars I",
+        "Name": "\u6f78\u7136\u6b8b\u75ae\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Ping accumulates the Wound Gauge. Becomes Wounded when full, significantly increasing the Physical DMG taken, stacking up to 2 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u6d88\u7403\u65f6\u79ef\u7d2f\u521b\u4f24\u69fd\uff0c\u6512\u6ee1\u540e\u8fdb\u5165\u521b\u4f24\u72b6\u6001\uff0c\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a02\u5c42\u3002",
         "FightEventIds": "[2300021]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 22,
-        "Name": "Twilight Haze I",
+        "Name": "\u6697\u7ff3\u665a\u6cab\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Receive Dark Orbs when you deal Dark DMG. After picking up a Dark Orb, the next attack will launch Dark Orb and deal Dark DMG, while significantly increasing your Dark DMG. Stacks up to 6 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\u53ef\u83b7\u5f97\u6697\u7403\uff0c\u62fe\u53d6\u540e\u4e0b\u6b21\u653b\u51fb\u5c06\u6253\u51fa\u6697\u7403\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\uff0c\u5e76\u4f7f\u81ea\u8eab\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a06\u5c42\u3002",
         "FightEventIds": "[2300022]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 23,
-        "Name": "The Calming Destruction I",
+        "Name": "\u566c\u6b84\u6d88\u5f2d\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Upon casting Ultima Slash, significantly increase your Physical DMG and Ultima Slash DMG delt to the boss. Stacks up to 5 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u91ca\u653e\u771f\u610f\u65a9\u65f6\uff0c\u4f7f\u81ea\u8eab\u7269\u7406\u4f24\u5bb3\u548cBoss\u53d7\u5230\u771f\u610f\u65a9\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\u3002",
         "FightEventIds": "[2300023]",
-        "ShowRecommendIds": "[3]"
+        "ShowRecommendIds": "[3]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 24,
-        "Name": "Murky Woodlands I",
+        "Name": "\u68ee\u9aa8\u6d4a\u57df\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Converts 40% of the Boss's max HP into Equilibrium Field. Breaking the Equilibrium Field significantly increases Signature DMG of the character.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u6700\u5927\u751f\u547d\u503c\u768440%\u8f6c\u6362\u4e3a\u7a33\u6001\u529b\u573a\u3002\u51fb\u788e\u7a33\u6001\u529b\u573a\u65f6\uff0c\u89d2\u8272\u5fc5\u6740\u6280\u9020\u6210\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300024]",
-        "ShowRecommendIds": "[1]"
+        "ShowRecommendIds": "[1]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 25,
-        "Name": "The Echo of Dawn I",
+        "Name": "\u9e23\u663c\u95ea\u57a9\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1010.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Boss will take significantly higher DMG from Plasma Beam during the character's Electric Storm Flash.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u89d2\u8272\u8fdb\u5165\u7535\u66b4\u9e23\u95ea\u72b6\u6001\u65f6\uff0cBoss\u53d7\u5230\u7535\u675f\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300025]",
-        "ShowRecommendIds": "[4]"
+        "ShowRecommendIds": "[4]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 26,
-        "Name": "Radiant Inferno I",
+        "Name": "\u7099\u8d6b\u4e1a\u706b\u2160",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Enter the Frenzied state upon casting Signature Move. Every 2 Fire DMG instances in this state significantly increases Fire DMG, stacking up to 5 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u91ca\u653e\u5fc5\u6740\u6280\u540e\u8fdb\u5165\u6124\u6012\u72b6\u6001\uff0c\u5728\u8be5\u72b6\u6001\u4e0b\u6bcf\u9020\u62102\u6b21\u706b\u5c5e\u6027\u4f24\u5bb3\uff0c\u81ea\u8eab\u706b\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\u3002",
         "FightEventIds": "[2300026]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 27,
-        "Name": "Roaring Tempest I",
+        "Name": "\u8f70\u6d8c\u96f7\u66b4\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Dealing Lightning DMG grants a Lightning Shield. When the shield stacks to its maximum, it will automatically detonate, significantly increasing Lightning DMG dealt to the boss. The shield can stack up to 4 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u96f7\u4f24\u5bb3\u65f6\u53ef\u83b7\u5f97\u96f7\u76fe\uff0c\u96f7\u76fe\u53e0\u6ee1\u65f6\u5c06\u81ea\u52a8\u5f15\u7206\uff0c\u4f7fBoss\u53d7\u5230\u96f7\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a04\u5c42\u3002",
         "FightEventIds": "[2300027]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 28,
-        "Name": "Frostbound Chasm I",
+        "Name": "\u6ca7\u7691\u971c\u58d1\u2160",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Dealing Ice DMG accumulates Frost, which significantly increases Ice DMG delt to the boss. Stacks up to 3 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u51b0\u5c5e\u6027\u4f24\u5bb3\u53ef\u79ef\u7d2f\u971c\u51bb\u69fd\uff0c\u4f7fBoss\u53d7\u5230\u51b0\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a03\u5c42\u3002",
         "FightEventIds": "[2300028]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 29,
-        "Name": "Wailing Scars II",
+        "Name": "\u6f78\u7136\u6b8b\u75ae\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Ping accumulates the Wound Gauge. Becomes Wounded when full, significantly increasing the Physical DMG taken, stacking up to 2 times. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u6d88\u7403\u65f6\u79ef\u7d2f\u521b\u4f24\u69fd\uff0c\u6512\u6ee1\u540e\u8fdb\u5165\u521b\u4f24\u72b6\u6001\uff0c\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a02\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300029]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 30,
-        "Name": "Twilight Haze II",
+        "Name": "\u6697\u7ff3\u665a\u6cab\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Receive Dark Orbs when you deal Dark DMG. After picking up a Dark Orb, the next attack will launch Dark Orb and deal Dark DMG, while significantly increasing your Dark DMG. Stacks up to 6 times. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\u53ef\u83b7\u5f97\u6697\u7403\uff0c\u62fe\u53d6\u540e\u4e0b\u6b21\u653b\u51fb\u5c06\u6253\u51fa\u6697\u7403\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\uff0c\u5e76\u4f7f\u81ea\u8eab\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a06\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300030]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 31,
-        "Name": "The Calming Destruction II",
+        "Name": "\u566c\u6b84\u6d88\u5f2d\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Upon casting Ultima Slash, significantly increase your Physical DMG and Ultima Slash DMG delt to the boss. Stacks up to 5 times. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u91ca\u653e\u771f\u610f\u65a9\u65f6\uff0c\u4f7f\u81ea\u8eab\u7269\u7406\u4f24\u5bb3\u548cBoss\u53d7\u5230\u771f\u610f\u65a9\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300031]",
-        "ShowRecommendIds": "[3]"
+        "ShowRecommendIds": "[3]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 32,
-        "Name": "Murky Woodlands II",
+        "Name": "\u68ee\u9aa8\u6d4a\u57df\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Converts 40% of the Boss's max HP into Equilibrium Field. Breaking the Equilibrium Field significantly increases the Signature DMG of the character. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u6700\u5927\u751f\u547d\u503c\u768440%\u8f6c\u6362\u4e3a\u7a33\u6001\u529b\u573a\u3002\u51fb\u788e\u7a33\u6001\u529b\u573a\u65f6\uff0c\u89d2\u8272\u5fc5\u6740\u6280\u9020\u6210\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300032]",
-        "ShowRecommendIds": "[1]"
+        "ShowRecommendIds": "[1]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 33,
-        "Name": "The Echo of Dawn II",
+        "Name": "\u9e23\u663c\u95ea\u57a9\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1010.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Boss will take significantly higher DMG from Plasma Beam during the character's Electric Storm Flash. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u89d2\u8272\u8fdb\u5165\u7535\u66b4\u9e23\u95ea\u72b6\u6001\u65f6\uff0cBoss\u53d7\u5230\u7535\u675f\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300033]",
-        "ShowRecommendIds": "[4]"
+        "ShowRecommendIds": "[4]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 34,
-        "Name": "Radiant Inferno II",
+        "Name": "\u7099\u8d6b\u4e1a\u706b\u2161",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Enter the Frenzied state upon casting Signature Move. Every 2 Fire DMG instances in this state significantly increases Fire DMG, stacking up to 5 times. When all members enter, damage increases for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u91ca\u653e\u5fc5\u6740\u6280\u540e\u8fdb\u5165\u6124\u6012\u72b6\u6001\uff0c\u5728\u8be5\u72b6\u6001\u4e0b\u6bcf\u9020\u62102\u6b21\u706b\u5c5e\u6027\u4f24\u5bb3\uff0c\u81ea\u8eab\u706b\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300034]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 35,
-        "Name": "Roaring Tempest II",
+        "Name": "\u8f70\u6d8c\u96f7\u66b4\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Dealing Lightning DMG grants a Lightning Shield. When the shield stacks to its maximum, it will automatically detonate, significantly increasing Lightning DMG dealt to the boss. The shield can stack up to 4 times. When all members enter, damage increases for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u96f7\u4f24\u5bb3\u65f6\u53ef\u83b7\u5f97\u96f7\u76fe\uff0c\u96f7\u76fe\u53e0\u6ee1\u65f6\u5c06\u81ea\u52a8\u5f15\u7206\uff0c\u4f7fBoss\u53d7\u5230\u96f7\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a04\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300035]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 36,
-        "Name": "Frostbound Chasm II",
+        "Name": "\u6ca7\u7691\u971c\u58d1\u2161",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Dealing Ice DMG accumulates Frost, which significantly increases Ice DMG delt to the boss. Stacks up to 3 times. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u51b0\u5c5e\u6027\u4f24\u5bb3\u53ef\u79ef\u7d2f\u971c\u51bb\u69fd\uff0c\u4f7fBoss\u53d7\u5230\u51b0\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a03\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300036]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 37,
-        "Name": "Candleflame Inferno I",
+        "Name": "\u660e\u70db\u52ab\u706b\u2160",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Enter the Frenzied state upon casting Signature Move. Every 2 Fire DMG instances in this state significantly increases Fire DMG, stacking up to 5 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u91ca\u653e\u5fc5\u6740\u6280\u540e\u8fdb\u5165\u6124\u6012\u72b6\u6001\uff0c\u5728\u8be5\u72b6\u6001\u4e0b\u6bcf\u9020\u62102\u6b21\u706b\u5c5e\u6027\u4f24\u5bb3\uff0c\u81ea\u8eab\u706b\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\u3002",
         "FightEventIds": "[2300037]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 38,
-        "Name": "Thunderstrike Tempest I",
+        "Name": "\u9617\u96f7\u70e8\u7535\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Dealing Lightning DMG grants a Lightning Shield. When the shield stacks to its maximum, it will automatically detonate, significantly increasing Lightning DMG dealt to the boss. The shield can stack up to 4 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u96f7\u4f24\u5bb3\u65f6\u53ef\u83b7\u5f97\u96f7\u76fe\uff0c\u96f7\u76fe\u53e0\u6ee1\u65f6\u5c06\u81ea\u52a8\u5f15\u7206\uff0c\u4f7fBoss\u53d7\u5230\u96f7\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a04\u5c42\u3002",
         "FightEventIds": "[2300038]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 39,
-        "Name": "Candleflame Inferno II",
+        "Name": "\u660e\u70db\u52ab\u706b\u2161",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Enter the Frenzied state upon casting Signature Move. Every 2 Fire DMG instances in this state significantly increases Fire DMG, stacking up to 5 times. When all members enter, damage increases for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u91ca\u653e\u5fc5\u6740\u6280\u540e\u8fdb\u5165\u6124\u6012\u72b6\u6001\uff0c\u5728\u8be5\u72b6\u6001\u4e0b\u6bcf\u9020\u62102\u6b21\u706b\u5c5e\u6027\u4f24\u5bb3\uff0c\u81ea\u8eab\u706b\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300039]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 40,
-        "Name": "Thunderstrike Tempest II",
+        "Name": "\u9617\u96f7\u70e8\u7535\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Dealing Lightning DMG grants a Lightning Shield. When the shield stacks to its maximum, it will automatically detonate, significantly increasing Lightning DMG dealt to the boss. The shield can stack up to 4 times. When all members enter, damage increases for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u96f7\u4f24\u5bb3\u65f6\u53ef\u83b7\u5f97\u96f7\u76fe\uff0c\u96f7\u76fe\u53e0\u6ee1\u65f6\u5c06\u81ea\u52a8\u5f15\u7206\uff0c\u4f7fBoss\u53d7\u5230\u96f7\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a04\u5c42\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300040]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 41,
-        "Name": "Cosmos Disorder I",
+        "Name": "\u5e7b\u5b99\u5931\u8c03\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Converts 40% of the Boss's max HP into Equilibrium Field. When the Equilibrium Field is broken, the Boss takes significantly more Nihil DMG.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u6700\u5927\u751f\u547d\u503c\u768440%\u8f6c\u6362\u4e3a\u7a33\u6001\u529b\u573a\u3002\u51fb\u788e\u7a33\u6001\u529b\u573a\u65f6\uff0c\u4f7fBoss\u53d7\u5230\u7a7a\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300041]",
-        "ShowRecommendIds": "[1]"
+        "ShowRecommendIds": "[1]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 42,
-        "Name": "Cosmos Disorder II",
+        "Name": "\u5e7b\u5b99\u5931\u8c03\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Converts 40% of the Boss's max HP into Equilibrium Field. When the Equilibrium Field is broken, the Boss takes significantly more Nihil DMG. Increases the DMG dealt by any character switched into battle for 10s.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u6700\u5927\u751f\u547d\u503c\u768440%\u8f6c\u6362\u4e3a\u7a33\u6001\u529b\u573a\u3002\u51fb\u788e\u7a33\u6001\u529b\u573a\u65f6\uff0c\u4f7fBoss\u53d7\u5230\u7a7a\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u5347\uff0c\u6301\u7eed10\u79d2\u3002",
         "FightEventIds": "[2300042]",
-        "ShowRecommendIds": "[1]"
+        "ShowRecommendIds": "[1]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 43,
-        "Name": "Devouring Current I",
+        "Name": "\u6697\u6b92\u566c\u6d41\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Receive Dark Orbs when you deal Dark DMG. After picking up a Dark Orb, the next attack will launch Dark Orb and deal Dark DMG, while significantly increasing your Dark DMG. Stacks up to 6 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\u53ef\u83b7\u5f97\u6697\u7403\uff0c\u62fe\u53d6\u540e\u4e0b\u6b21\u653b\u51fb\u5c06\u6253\u51fa\u6697\u7403\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\uff0c\u5e76\u4f7f\u81ea\u8eab\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a06\u5c42\u3002",
         "FightEventIds": "[2300043]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 44,
-        "Name": "Cosmos Disorder III",
+        "Name": "\u5e7b\u5b99\u5931\u8c03\u2162",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Converts 40% of the Boss's max HP into Equilibrium Field. When the Equilibrium Field is broken, the Boss takes significantly more Nihil DMG.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u6700\u5927\u751f\u547d\u503c\u768440%\u8f6c\u6362\u4e3a\u7a33\u6001\u529b\u573a\u3002\u51fb\u788e\u7a33\u6001\u529b\u573a\u65f6\uff0c\u4f7fBoss\u53d7\u5230\u7a7a\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3002",
         "FightEventIds": "[2300044]",
-        "ShowRecommendIds": "[1]"
+        "ShowRecommendIds": "[1]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 45,
-        "Name": "Devouring Current III",
+        "Name": "\u6697\u6b92\u566c\u6d41\u2162",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Receive Dark Orbs when you deal Dark DMG. After picking up a Dark Orb, the next attack will launch Dark Orb and deal Dark DMG, while significantly increasing your Dark DMG. Stacks up to 6 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\u53ef\u83b7\u5f97\u6697\u7403\uff0c\u62fe\u53d6\u540e\u4e0b\u6b21\u653b\u51fb\u5c06\u6253\u51fa\u6697\u7403\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\uff0c\u5e76\u4f7f\u81ea\u8eab\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a06\u5c42\u3002",
         "FightEventIds": "[2300045]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 46,
-        "Name": "Brutal Crash I",
+        "Name": "\u6c89\u8650\u6e83\u51fb\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Critical Hits make Boss take significantly more Physical DMG. Max 6 stacks.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u66b4\u51fb\u65f6\u4f7fBoss\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a06\u5c42\u3002",
         "FightEventIds": "[2300046]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 47,
-        "Name": "Greedy Frost I",
+        "Name": "\u6b32\u58d1\u51cc\u971c\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1012.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "When Glaciation Effect deals damage, Boss takes significantly more Glaciation DMG. Max 5 stacks.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u8986\u51b0\u6548\u5e94\u9020\u6210\u4f24\u5bb3\u65f6\uff0cBoss\u53d7\u5230\u8986\u51b0\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\u3002",
         "FightEventIds": "[2300047]",
-        "ShowRecommendIds": "[5]"
+        "ShowRecommendIds": "[5]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 48,
-        "Name": "Skyfire Cataclysm I",
+        "Name": "\u711a\u5929\u70bd\u5730\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1013.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Dealing Ignition DMG makes the Boss take significantly higher Ignition DMG for 10s, stacking up to 8 times. The duration is reset when any member is switched into battle.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u9020\u6210\u711a\u70e7\u4f24\u5bb3\u65f6\uff0cBoss\u53d7\u5230\u711a\u70e7\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a08\u5c42\uff0c\u6301\u7eed10\u79d2\uff0c\u5168\u5458\u5207\u6362\u5165\u573a\u65f6\u5237\u65b0\u6301\u7eed\u65f6\u95f4\u3002",
         "FightEventIds": "[2300048]",
-        "ShowRecommendIds": "[2]"
+        "ShowRecommendIds": "[2]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 49,
-        "Name": "The Calming Destruction III",
+        "Name": "\u566c\u6b84\u6d88\u5f2d\u2162",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Upon casting Ultima Slash, significantly increase your Physical DMG and Ultima Slash DMG delt to the boss. Stacks up to 5 times.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u91ca\u653e\u771f\u610f\u65a9\u65f6\uff0c\u4f7f\u81ea\u8eab\u7269\u7406\u4f24\u5bb3\u548cBoss\u53d7\u5230\u771f\u610f\u65a9\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\u3002",
         "FightEventIds": "[2300049]",
-        "ShowRecommendIds": "[3]"
+        "ShowRecommendIds": "[3]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 50,
-        "Name": "Radiant Renewal I",
+        "Name": "\u6656\u5149\u65e5\u65b0\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1014.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "For each orb pinged, significantly increases Lightning and Plasma Beam DMG taken by the Boss for 10s, stacking up to 5 times. Duration resets every time the effect is triggered.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u6bcf\u6d88\u9664\u4e00\u4e2a\u7403\uff0cBoss\u53d7\u5230\u96f7\u5c5e\u6027\u53ca\u7535\u675f\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\uff0c\u6301\u7eed10\u79d2\uff0c\u91cd\u590d\u89e6\u53d1\u5237\u65b0\u6301\u7eed\u65f6\u95f4\u3002",
         "FightEventIds": "[2300050]",
-        "ShowRecommendIds": "[7]"
+        "ShowRecommendIds": "[7]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 51,
-        "Name": "Perish at Dusk I",
+        "Name": "\u66ae\u6c89\u6b86\u6b92\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Dealing Dark DMG significantly increases Dark DMG taken by the Boss for 10s, stacking up to 6 times. Duration resets every time the effect is triggered.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\uff0cBoss\u53d7\u5230\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a06\u5c42\uff0c\u6301\u7eed10\u79d2\uff0c\u91cd\u590d\u89e6\u53d1\u5237\u65b0\u6301\u7eed\u65f6\u95f4\u3002",
         "FightEventIds": "[2300051]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 52,
-        "Name": "Brutal Crash II",
+        "Name": "\u6c89\u8650\u6e83\u51fb\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Critical Hits make Boss take significantly more Physical DMG. Max 6 stacks.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u66b4\u51fb\u65f6\u4f7fBoss\u53d7\u5230\u7269\u7406\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a06\u5c42\u3002",
         "FightEventIds": "[2300052]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 53,
-        "Name": "Perish at Dusk II",
+        "Name": "\u66ae\u6c89\u6b86\u6b92\u2161",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "Dealing Dark DMG significantly increases Dark DMG taken by the Boss for 10s, stacking up to 6 times. Duration resets every time the effect is triggered.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u9020\u6210\u6697\u5c5e\u6027\u4f24\u5bb3\u65f6\uff0cBoss\u53d7\u5230\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a06\u5c42\uff0c\u6301\u7eed10\u79d2\uff0c\u91cd\u590d\u89e6\u53d1\u5237\u65b0\u6301\u7eed\u65f6\u95f4\u3002",
         "FightEventIds": "[2300053]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 54,
-        "Name": "Thunderstrike Tempest III",
+        "Name": "\u9617\u96f7\u70e8\u7535\u2162",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Dealing Lightning DMG grants a Lightning Shield. When the shield stacks to its maximum, it will automatically detonate, significantly increasing Lightning DMG dealt to the boss. The shield can stack up to 4 times. (Raydiance Effect DMG slightly increased)",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u96f7\u4f24\u5bb3\u65f6\u53ef\u83b7\u5f97\u96f7\u76fe\uff0c\u96f7\u76fe\u53e0\u6ee1\u65f6\u5c06\u81ea\u52a8\u5f15\u7206\uff0c\u4f7fBoss\u53d7\u5230\u96f7\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a04\u5c42\u3002\uff08\u71a0\u5149\u6548\u5e94\u4f24\u5bb3\u5c0f\u5e45\u63d0\u5347\uff09",
         "FightEventIds": "[2300054]",
-        "ShowRecommendIds": null
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 55,
-        "Name": "Tidal Return I",
+        "Name": "\u8fd4\u6d8c\u9eef\u6f6e\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1015.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "When dealing Darkflow DMG, significantly increases Darkflow DMG taken by enemies for 10s, stacking up to 9 times. Duration resets every time it is triggered.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u9eef\u884d\u4f24\u5bb3\u65f6\uff0c\u4f7f\u654c\u4eba\u53d7\u5230\u9eef\u884d\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53e0\u52a09\u5c42\uff0c\u6301\u7eed10\u79d2\uff0c\u91cd\u590d\u89e6\u53d1\u5237\u65b0\u6301\u7eed\u65f6\u95f4\u3002",
         "FightEventIds": "[2300055]",
-        "ShowRecommendIds": "[6]"
+        "ShowRecommendIds": "[6]",
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 56,
-        "Name": "Frostbound Chasm III",
+        "Name": "\u6ca7\u7691\u971c\u58d1\u2162",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Dealing Ice DMG accumulates Frost, which significantly increases Ice DMG delt to the boss. Stacks up to 3 times.",
-        "FightEventIds": "[2300056]",
-        "ShowRecommendIds": null
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u9020\u6210\u51b0\u5c5e\u6027\u4f24\u5bb3\u53ef\u79ef\u7d2f\u971c\u51bb\u69fd\uff0c\u4f7fBoss\u53d7\u5230\u51b0\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a03\u5c42\u3002",
+        "FightEventIds": "[2300028]",
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
     },
     {
         "Id": 57,
-        "Name": "Flare Burst I",
+        "Name": "\u8000\u6591\u70c8\u653e\u2160",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1014.png",
-        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
-        "Desc": "For each orb pinged, significantly increases Raydiance DMG taken by the Boss for 10s, stacking up to 5 times. Duration resets every time the effect is triggered.",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u6bcf\u6d88\u9664\u4e00\u4e2a\u7403\uff0cBoss\u53d7\u5230\u71a0\u5149\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\uff0c\u6301\u7eed10\u79d2\uff0c\u91cd\u590d\u89e6\u53d1\u5237\u65b0\u6301\u7eed\u65f6\u95f4\u3002",
         "FightEventIds": "[2300057]",
-        "ShowRecommendIds": "[7]"
+        "ShowRecommendIds": "[7]",
+        "Type": 1,
+        "ScoreRate": null
+    },
+    {
+        "Id": 58,
+        "Name": "\u6e6e\u706d\u9761\u534e\u2160",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "\u6bcf\u6d88\u9664\u4e00\u4e2a\u7403\uff0cBoss\u53d7\u5230\u6697\u5c5e\u6027\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53e0\u52a04\u5c42\uff0c\u6301\u7eed10\u79d2\uff0c\u91cd\u590d\u89e6\u53d1\u5237\u65b0\u6301\u7eed\u65f6\u95f4\u3002",
+        "FightEventIds": "[2300058]",
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
+    },
+    {
+        "Id": 59,
+        "Name": "\u660e\u5203\u7834\u5984\u2160",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "\u6bcf\u6b21\u91ca\u653e\u771f\u610f\u65a9\uff0c\u4f7fBoss\u53d7\u5230\u771f\u610f\u65a9\u6548\u5e94\u4f24\u5bb3\u663e\u8457\u63d0\u5347\u3001\u81ea\u8eab\u7269\u7406\u4f24\u5bb3\u663e\u8457\u63d0\u5347\uff0c\u6700\u591a\u53ef\u53e0\u52a05\u5c42\uff0c\u6301\u7eed10\u79d2\uff0c\u91cd\u590d\u89e6\u53d1\u5237\u65b0\u6301\u7eed\u65f6\u95f4\u3002",
+        "FightEventIds": "[2300059]",
+        "ShowRecommendIds": "[3]",
+        "Type": 1,
+        "ScoreRate": null
+    },
+    {
+        "Id": 1001,
+        "Name": "\u547d\u7edc\u4ea4\u7f57\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon013.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss\u7684\u751f\u547d\u503c\u589e\u52a020%\u3002",
+        "FightEventIds": "[2301001]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 750.0
+    },
+    {
+        "Id": 1002,
+        "Name": "\u552f\u5175\u89c1\u9aa8\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon001.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u7269\u7406\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301002]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1003,
+        "Name": "\u70bd\u5e8f\u7981\u57df\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon002.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u706b\u5c5e\u6027\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301003]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1004,
+        "Name": "\u5bd2\u8680\u5165\u4fb5\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon003.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u51b0\u5c5e\u6027\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301004]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1005,
+        "Name": "\u6c38\u591c\u5f25\u4e98\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon004.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u6697\u5c5e\u6027\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301005]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1006,
+        "Name": "\u7a7a\u9706\u6b8b\u54cd\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u96f7\u5c5e\u6027\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301006]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1007,
+        "Name": "\u9065\u5929\u5343\u4ede\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon006.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u7a7a\u5c5e\u6027\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301007]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1008,
+        "Name": "\u591c\u65ab\u94ee\u94ee\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon007.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u771f\u610f\u65a9\u6548\u5e94\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301008]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1009,
+        "Name": "\u4e16\u706b\u711a\u71d4\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon008.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u711a\u70e7\u6548\u5e94\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301009]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1010,
+        "Name": "\u51b0\u51c7\u9522\u5bd2\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon009.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u8986\u51b0\u6548\u5e94\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301010]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1011,
+        "Name": "\u767d\u663c\u7ff3\u853d\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon010.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u9eef\u884d\u6548\u5e94\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301011]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1012,
+        "Name": "\u7535\u8d77\u66ae\u4e91\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon011.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u7535\u675f\u6548\u5e94\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301012]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1013,
+        "Name": "\u552f\u5149\u793c\u8d5e\u2160",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon012.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Boss\u53d7\u5230\u9664\u71a0\u5149\u6548\u5e94\u5916\u7684\u5176\u5b83\u4f24\u5bb3\u964d\u4f4e\u3002",
+        "FightEventIds": "[2301013]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
     }
 ]

@@ -16,8 +16,8 @@ function XDlcPlayerData:Ctor(worldType, roomData, worldData)
     self._CustomData = nil
     self._IsClear = true
     self._Camp = nil
-    self._CatSkillId = nil
-    self._MouseSkillId = nil
+    self._CatSkillIds = nil
+    self._MouseSkillIds = nil
     self._HeadPortraitId = nil
     self._HeadFrameId = nil
 
@@ -60,12 +60,12 @@ function XDlcPlayerData:GetCamp()
     return self._Camp
 end
 
-function XDlcPlayerData:GetCatSkillId()
-    return self._CatSkillId
+function XDlcPlayerData:GetCatSkillIds()
+    return self._CatSkillIds
 end
 
-function XDlcPlayerData:GetMouseSkillId()
-    return self._MouseSkillId
+function XDlcPlayerData:GetMouseSkillIds()
+    return self._MouseSkillIds
 end
 
 ---@return XDlcPlayerCustomData
@@ -83,10 +83,10 @@ function XDlcPlayerData:GetCharacterId(pos)
     return nil
 end
 
-function XDlcPlayerData:GetOccupationType(pos)
+function XDlcPlayerData:GetStyleType(pos)
     local character = self._CharacterDataList[pos or 1]
     if character then
-        return character:GetOccupationType()
+        return character:GetStyleType()
     end
     return nil
 end
@@ -187,8 +187,8 @@ function XDlcPlayerData:Clone(other)
     self._NickName = other._NickName
     self._IsLeader = other._IsLeader
     self._Camp = other._Camp
-    self._CatSkillId = other._CatSkillId
-    self._MouseSkillId = other._MouseSkillId
+    self._CatSkillIds = other._CatSkillIds
+    self._MouseSkillIds = other._MouseSkillIds
     self._HeadPortraitId = other._HeadPortraitId
     self._HeadFrameId = other._HeadFrameId
 
@@ -230,8 +230,8 @@ function XDlcPlayerData:Clear()
     self._NickName = nil
     self._IsLeader = false
     self._Camp = nil
-    self._CatSkillId = nil
-    self._MouseSkillId = nil
+    self._CatSkillIds = nil
+    self._MouseSkillIds = nil
     self._HeadPortraitId = nil
     self._HeadFrameId = nil
     if self:HasCustomData() then
@@ -278,8 +278,8 @@ function XDlcPlayerData:_InitWithWorldData(data)
 
         if not XTool.IsTableEmpty(multiplayerData) then
             self._Camp = multiplayerData.Camp
-            self._CatSkillId = multiplayerData.CatSkillId
-            self._MouseSkillId = multiplayerData.MouseSkillId
+            self._CatSkillIds = multiplayerData.SelectCatSkillIds
+            self._MouseSkillIds = multiplayerData.SelectMouseSkillIds
         end
 
         if not XTool.IsTableEmpty(npcList) then

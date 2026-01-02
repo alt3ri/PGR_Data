@@ -1,47 +1,47 @@
 [
     {
         "Id": 1,
-        "Name": "Leave",
-        "Desc": "Will not appear again during this business session after being seated"
+        "Name": "\u79bb\u5f00",
+        "Desc": "\u5165\u5ea7\u540e\uff0c\u672c\u6b21\u7ecf\u8425\u5c06\u4e0d\u4f1a\u518d\u51fa\u73b0"
     },
     {
         "Id": 2,
-        "Name": "Prior",
-        "Desc": "Always appears first."
+        "Name": "\u4f18\u5148",
+        "Desc": "\u59cb\u7ec8\u4f1a\u4f18\u5148\u51fa\u73b0"
     },
     {
         "Id": 3,
-        "Name": "Keep",
-        "Desc": "Customers won't leave if they are not seated when the period changes."
+        "Name": "\u4fdd\u7559",
+        "Desc": "\u65f6\u6bb5\u5207\u6362\u65f6\u672a\u5165\u5ea7\uff0c\u8be5\u987e\u5ba2\u4e0d\u4f1a\u79bb\u5f00"
     },
     {
         "Id": 4,
-        "Name": "Regular",
-        "Desc": "Will not leave when the period ends if not seated. Will appear again in the next period if seated."
+        "Name": "\u5e38\u5ba2",
+        "Desc": "\u672a\u5165\u5ea7\u65f6\uff0c\u65f6\u6bb5\u7ed3\u675f\u4e0d\u4f1a\u79bb\u5f00\uff1b\u5165\u5ea7\u540e\uff0c\u4e0b\u4e2a\u65f6\u6bb5\u4f1a\u518d\u6b21\u51fa\u73b0"
     },
     {
         "Id": 5,
-        "Name": "Expansion",
-        "Desc": "You may increase the customer limit."
+        "Name": "\u6269\u5145",
+        "Desc": "\u53ef\u4ee5\u589e\u52a0\u987e\u5ba2\u4e0a\u9650"
     },
     {
         "Id": 6,
-        "Name": "Auto-Add",
-        "Desc": "No manual action required. Will automatically be added to the list when Bianca is added."
+        "Name": "\u514d\u7f16",
+        "Desc": "\u65e0\u9700\u7f16\u5165\u540d\u5355\uff0c\u7f16\u5165\u6bd4\u5b89\u5361\u65f6\uff0c\u5c06\u81ea\u52a8\u8fdb\u5165\u540d\u5355"
     },
     {
         "Id": 7,
-        "Name": "Join",
-        "Desc": "When Bianca is seated, immediately obtain one of Discord, Palma, or Issarius."
+        "Name": "\u52a0\u5165",
+        "Desc": "\u6bd4\u5b89\u5361\u5165\u5ea7\u65f6\uff0c\u53ef\u7acb\u5373\u83b7\u5f97\u659c\u594f\u3001\u5e15\u9732\u739b\u3001\u4f0a\u8428\u7409\u65af\u4e2d\u7684\u4e00\u4f4d"
     },
     {
         "Id": 8,
-        "Name": "Special",
-        "Desc": "This customer cannot be seated"
+        "Name": "\u7279\u6b8a",
+        "Desc": "\u672c\u987e\u5ba2\u65e0\u6cd5\u5165\u5ea7"
     },
     {
         "Id": 9,
-        "Name": "Assessment",
-        "Desc": "Will automatically leave after passing the assessment."
+        "Name": "\u8003\u6838",
+        "Desc": "\u8003\u6838\u901a\u8fc7\u540e\u5c06\u81ea\u52a8\u79bb\u5f00"
     }
 ]

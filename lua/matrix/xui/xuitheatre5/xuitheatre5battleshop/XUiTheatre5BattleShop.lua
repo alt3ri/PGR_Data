@@ -14,6 +14,7 @@ local XUiPanelTheatre5ShopNpc = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/X
 local XUiPanelTheatre5TempBag = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/XUiPanelTheatre5TempBag')
 local XUiTheatre5Level = require("XUi/XUiTheatre5/XUiTheatre5Level/XUiTheatre5Level")
 local XUiTheatre5RelicPanel = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/XUiTheatre5RelicPanel')
+local XUiTheatre5MissionPanel = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/XUiTheatre5MissionPanel')
 local UNITY = CS.UnityEngine
 
 function XUiTheatre5BattleShop:OnAwake()
@@ -137,9 +138,10 @@ function XUiTheatre5BattleShop:InitPanels()
     self.ShopNpc:Open()
     ---@type XUiTheatre5RelicPanel
     self.PanelRelic = XUiTheatre5RelicPanel.New(self.ListRelicBag, self)
+    ---@type XUiTheatre5MissionPanel
+    self.PanelMission = XUiTheatre5MissionPanel.New(self.PanelTask, self)
 
     if self.PanelTemporaryBag then
-        --todo 资源未打包无引用会报错，确认svn打包后可去除
         ---@type XUiPanelTheatre5TempBag
         self.TempBag = XUiPanelTheatre5TempBag.New(self.PanelTemporaryBag, self)
         self.TempBag:Open()
@@ -288,6 +290,7 @@ function XUiTheatre5BattleShop:OnShopStateChangedEvent(afterSkillSelection)
         if afterSkillSelection then
             self:PlayAnimationWithMask('QieHuan', function()
                 self.PanelSkillChoice:Close()
+                XMVCA.XTheatre5:TriggerInterruptEvent()
             end)
         end
     else

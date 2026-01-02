@@ -27,6 +27,9 @@ function XUiDlcRelinkChooseBoss:OnStart()
     self.LevelId = self._Control:GetCurrentSelectLevelId()
 
     self.WheelSensitivity = self.PanelDrag.WheelSensitivity
+
+    self.BtnTraining.gameObject:SetActiveEx(XTool.IsNumberValid(self._Control:GetTrainingLevelId()))
+    self.BtnTeaching.gameObject:SetActiveEx(XTool.IsNumberValid(self._Control:GetTeachingLevelId()))
 end
 
 function XUiDlcRelinkChooseBoss:OnEnable()
@@ -163,11 +166,45 @@ function XUiDlcRelinkChooseBoss:OnPanelDetailClose()
 end
 
 function XUiDlcRelinkChooseBoss:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnTeaching:AddEventListener(handler(self, self.OnBtnTeachingClick))
+    self.BtnTraining:AddEventListener(handler(self, self.OnBtnTrainingClick))
+    self.BtnBubbleClose:AddEventListener(handler(self, self.OnPanelDetailClose))
 end
 
 function XUiDlcRelinkChooseBoss:OnBtnBackClick()
     self:Close()
+end
+
+function XUiDlcRelinkChooseBoss:OnBtnTeachingClick()
+    local levelId = self._Control:GetTeachingLevelId()
+    local chapterId = self._Control:GetLevelChapterId(levelId)
+    self._Control:SetCurrentSelectLevelData(chapterId, levelId)
+    self:Close()
+end
+
+function XUiDlcRelinkChooseBoss:OnBtnTrainingClick()
+    local isNeedQuit = false
+    if XMVCA.XDlcRoom:IsInRoom() then
+        --房间内有其他玩家时，无法选择训练关
+        local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
+        if team and team:GetMemberAmount() > 1 then
+            self._Control:OpenCommonTipText("SelectTrainingTip")
+            return
+        end
+        --房间为空时，自动退出房间回到单人
+        isNeedQuit = true
+    end
+
+    local levelId = self._Control:GetTrainingLevelId()
+    local chapterId = self._Control:GetLevelChapterId(levelId)
+    self._Control:SetCurrentSelectLevelData(chapterId, levelId)
+
+    if isNeedQuit then
+        XMVCA.XDlcRoom:Quit(handler(self, self.Close))
+    else
+        self:Close()
+    end
 end
 
 return XUiDlcRelinkChooseBoss

@@ -91,8 +91,10 @@ end
 
 function XUiDlcRelinkPopupPlayerInvite:SetupDynamicTable()
     if XTool.IsTableEmpty(self.FriendInfoList) then
+        self:SetPanelNonActive(true)
         return
     end
+    self:SetPanelNonActive(false)
     self.DynamicTable:SetDataSource(self.FriendInfoList)
     self.DynamicTable:ReloadDataASync()
 end
@@ -101,6 +103,12 @@ end
 function XUiDlcRelinkPopupPlayerInvite:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self.FriendInfoList[index])
+    end
+end
+
+function XUiDlcRelinkPopupPlayerInvite:SetPanelNonActive(isActive)
+    if self.PanelNon then
+        self.PanelNon.gameObject:SetActiveEx(isActive)
     end
 end
 
@@ -142,8 +150,8 @@ end
 --endregion
 
 function XUiDlcRelinkPopupPlayerInvite:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnTanchuangClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkPopupPlayerInvite:OnBtnCloseClick()

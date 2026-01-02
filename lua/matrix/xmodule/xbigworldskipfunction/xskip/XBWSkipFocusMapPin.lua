@@ -10,8 +10,9 @@ function XBWSkipFocusMapPin:Skip()
         local worldId = params[1] or 0
         local levelId = params[2] or 0
         local pinId = params[3] or 0
+        local openAiMemory = params[4] or 0
 
-        return XMVCA.XBigWorldMap:OpenBigWorldMapUiWithPinId(worldId, levelId, pinId)
+        return XMVCA.XBigWorldMap:OpenBigWorldMapUiWithPinId(worldId, levelId, pinId, openAiMemory)
     end
 
     return false

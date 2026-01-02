@@ -220,8 +220,9 @@ end
 
 -- 更新新获得的表情包红点
 function XUiMainLeftBottom:RefreshEmojiRed()
-    local isRed = XDataCenter.ChatManager.CheckIsNewEmoji() or XDataCenter.ChatManager.CheckHasNewChatBoard()
-    self.BtnChat:ShowReddot(isRed)
+    -- v4.2 云游戏要求去掉，但是策划好像想要只能引导聊天频道的红点
+    -- local isRed = XDataCenter.ChatManager.CheckIsNewEmoji() or XDataCenter.ChatManager.CheckHasNewChatBoard()
+    -- self.BtnChat:ShowReddot(isRed)
 end
 
 --更新聊天按钮

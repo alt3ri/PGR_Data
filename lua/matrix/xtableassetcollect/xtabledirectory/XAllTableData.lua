@@ -67,4 +67,39 @@ function this:GetSameDirectoryFilePathList(filePath)
     return resultFilePathList
 end
 
+-- 获取该路径下所有的配置表
+-- 例如：传入Client/BigWorld/MapData，返回Client/BigWorld/MapData/下所有其他配置表
+function this:GetAllFileAtDirectory(directoryPath)
+    local resultFilePathList = {}
+    local curDirectory = self.directoryData
+
+    directoryPath = string.gsub(directoryPath, "\\", "/")
+    local pathList = string.Split(directoryPath, "/")
+
+    if #pathList > 0 then
+        local startIndex = 1
+        if pathList[1] == "Table" then
+            startIndex = 2
+        end
+
+        for i = startIndex, #pathList do
+            local directoryName = pathList[i]
+            if directoryName == "" then
+                break
+            end
+
+            curDirectory = curDirectory:GetDirectory(directoryName)
+
+            if curDirectory == nil then
+                XLog.Error("不存在文件路径: " .. directoryPath)
+                return resultFilePathList
+            end
+        end
+
+        resultFilePathList = curDirectory:GetFilePathList()
+    end
+
+    return resultFilePathList
+end
+
 return this

@@ -23,6 +23,9 @@ end
 function XArenaAgency:InitEvent()
     -- 实现跨Agency事件注册
     -- self:AddAgencyEvent()
+
+    -- 监听副本结算奖励事件（参考 XFubenBossSingleAgency）
+    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
 end
 
 -- region Notify
@@ -54,6 +57,11 @@ function XArenaAgency:OnNotifyArenaStopResetTime(data)
 end
 
 -- endregion
+
+function XArenaAgency:OnRelease()
+    -- 移除事件监听
+    XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
+end
 
 -- region 副本入口
 
@@ -337,8 +345,152 @@ function XArenaAgency:PreFight(stage, teamId, isAssist, challengeCount, challeng
     return preFight
 end
 
-function XArenaAgency:ShowReward(winData)
-    XLuaUiManager.Open("UiArenaFightResult", winData.SettleData.ArenaResult)
+--- 战斗结束处理（参考 XFubenBossSingleAgency:FinishFight）
+---@param settle table 结算数据
+function XArenaAgency:FinishFight(settle)
+    if settle.IsWin then
+        self:ChallengeWin(settle)
+    else
+        self:ChallengeLose(settle)
+    end
+end
+
+--- 战斗胜利处理（参考 XFubenBossSingleAgency:ChallengeWin）
+---@param settleData table 结算数据
+function XArenaAgency:ChallengeWin(settleData)
+    local beginData = XMVCA.XFuben:GetFightBeginData()
+    local winData = XMVCA.XFuben:GetChallengeWinData(beginData, settleData)
+    local stage = XMVCA.XFuben:GetStageCfg(settleData.StageId)
+    local endStoryId = XMVCA.XFuben:GetEndStoryId(settleData.StageId)
+    local isKeepPlayingStory = stage and XMVCA.XFuben:IsKeepPlayingStory(stage.StageId)
+    local isNotPass = stage and beginData and not beginData.LastPassed
+
+    if endStoryId and (isKeepPlayingStory or isNotPass) then
+        -- 播放剧情
+        CsXUiManager.Instance:SetRevertAndReleaseLock(true)
+        XDataCenter.MovieManager.PlayMovie(endStoryId, function()
+            -- 弹出结算
+            CsXUiManager.Instance:SetRevertAndReleaseLock(false)
+            XLuaAudioManager.StopCurrentBGM()
+            -- self:ShowReward(winData, true)
+        end, nil, nil, nil, nil, nil, settleData.StageId)
+    else
+        -- 弹出结算
+        -- self:ShowReward(winData, false)
+    end
+
+    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_RESULT_WIN)
+end
+
+--- 战斗失败处理（参考 XFubenBossSingleAgency:ChallengeLose）
+---@param settleData table 结算数据
+function XArenaAgency:ChallengeLose(settleData)
+    XMVCA.XFuben:ChallengeLose(settleData)
+end
+
+--- 显示结算界面（私有函数，参考 XTransfiniteManager._ShowReward）
+---@param winData table 胜利数据
+function XArenaAgency:_ShowReward(winData)
+    -- 检查强制退出（参考 XFubenBossSingleAgency）
+    if self:CheckRunMainWhenFightOver() then
+        return
+    end
+
+    -- Debug 模式下保存界面数据（参考 XFubenBossSingleAgency）
+    if XMain.IsEditorDebug then
+        self._DebugWinData = winData
+    end
+
+    -- 保存结算数据（Point 和 OldPoint，用于新纪录检查）
+    local arenaResult = winData and winData.SettleData and winData.SettleData.ArenaResult
+    if arenaResult and arenaResult.Point and arenaResult.OldPoint then
+        local areaId = self._Model:GetCurrentEnterAreaId()
+        if areaId and areaId > 0 then
+            -- 通过 ConfigModel 获取 DistributeType 数组
+            local distributeTypeList = self._Model:GetAreaStageDistributeTypeById(areaId)
+            if distributeTypeList and not XTool.IsTableEmpty(distributeTypeList) then
+                local selectIndex = self._Model:GetCurrentSelectFightBuffIndex()
+                if selectIndex and selectIndex > 0 and selectIndex <= #distributeTypeList then
+                    local distributeType = distributeTypeList[selectIndex]
+                    if distributeType then
+                        self._Model:SaveSettlePointByDistributeType(
+                            distributeType,
+                            arenaResult.Point,
+                            arenaResult.OldPoint
+                        )
+                    end
+                end
+            end
+        end
+    end
+
+    if XMVCA.XFuben:CheckHasFlopReward(winData) then
+        XLuaUiManager.Open("UiFubenFlopReward", function()
+            XLuaUiManager.PopThenOpen("UiArenaSettlement", winData)
+        end, winData)
+    else
+        XLuaUiManager.Open("UiArenaSettlement", winData)
+    end
+end
+
+--- 为独立判断关卡解锁增加的Handler（参考 XFubenBossSingleAgency，对应 ProcessFunc.CheckUnlockByStageId）
+function XArenaAgency:CheckUnlockByStageId(stageId)
+    -- 普通模式返回 nil，使用默认逻辑
+    return nil
+end
+
+--- 检查是否自动退出战斗（参考 XFubenBossSingleAgency.CheckAutoExitFight，对应 ProcessFunc.CheckAutoExitFight）
+---@param stageId number 关卡ID
+---@return boolean 是否自动退出
+function XArenaAgency:CheckAutoExitFight(stageId)
+    -- 战区不需要自动退出战斗
+    return false
+end
+
+--- 退出战斗（参考 XFubenBossSingleAgency.ExitFight）
+function XArenaAgency:ExitFight()
+    CS.XFight.ExitForClient(true)
+    XEventManager.DispatchEvent(XEventId.EVENT_ARENA_HIDE_SETTLE)
+end
+
+--- 处理战斗结算奖励事件（参考 XFubenBossSingleAgency 的 EVENT_FUBEN_SETTLE_REWARD 处理）
+---@param settleData table 结算数据
+---@param res table 结算响应
+function XArenaAgency:OnFightSettle(settleData, res)
+    -- 其他副本的战斗也会进这里, 所以需要检查是否是 Arena 的关卡
+    if not res then
+        return
+    end
+
+    if not settleData then
+        return
+    end
+
+    local stageId = settleData.StageId
+    if not stageId then
+        return
+    end
+
+    -- 检查是否是 Arena 的关卡
+    if not self:CheckIsArenaStage(stageId) then
+        return
+    end
+    
+    if res.Code ~= XCode.Success then
+        XLog.Error("[XArenaAgency] 结算结果失败: ", res.Code)
+        CS.XFight.ExitForClient(true)
+        return
+    end
+
+    if settleData.IsWin then
+        -- 胜利：显示结算界面（参考 XTransfiniteManager 的实现）
+        local beginData = XMVCA.XFuben:GetFightBeginData()
+        local winData = XMVCA.XFuben:GetChallengeWinData(beginData, settleData)
+        self:_ShowReward(winData)
+    else
+        -- 失败：退出战斗（使用默认的失败处理）
+        -- 注意：这里不直接调用 ChallengeLose，因为 FinishFight 已经处理了失败逻辑
+    end
 end
 
 -- endregion
@@ -558,9 +710,12 @@ function XArenaAgency:CheckOpenActivityResultUi(isInActivityOpen)
 end
 
 function XArenaAgency:CheckIsArenaStage(stageId)
-    local config = self._Model:GetArenaStageConfigByStageId(stageId)
-
-    return not XTool.IsTableEmpty(config)
+    local stageConfig = XMVCA.XFuben:GetStageCfg(stageId)
+    if not stageConfig then
+        return false
+    end
+    
+    return stageConfig.Type == XEnumConst.FuBen.StageType.Arena
 end
 
 function XArenaAgency:CheckIsSpecialAreaNumber(number)
@@ -637,6 +792,12 @@ end
 function XArenaAgency:CheckInStatus(status)
     local currentStatus = self._Model:GetStatus()
     return currentStatus == status
+end
+
+--- 获取 Debug 模式下的胜利数据（参考 XFubenBossSingleAgency:GetDebugWinData）
+---@return table|nil
+function XArenaAgency:GetDebugWinData()
+    return self._DebugWinData
 end
 
 return XArenaAgency

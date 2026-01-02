@@ -99,6 +99,7 @@ function XNetwork.ConnectGateServer(args)
                         --end
                         XLoginManager.OnReconnectFailed()
                     else
+                        XLoginManager.AddReconnectSuccCount()
                         XNetwork.Send("ReconnectAck")
                         --if XNetwork.IsShowNetLog then
                             CS.XLog.Debug(string.format("服务器返回断线重连成功。新的ReconnectToken：%s", res.ReconnectToken))
@@ -111,7 +112,12 @@ function XNetwork.ConnectGateServer(args)
                         if res.OfflineMessages then
                             CS.XNetwork.ProcessReconnectMessageList(res.OfflineMessages)
                         end
-                        CS.XNetwork.ReCall(res.RequestNo)
+
+                        if not XLoginManager.IsHeartbeatSuccReCall() then
+                            CS.XNetwork.ReCall(res.RequestNo)
+                        else
+                            XLoginManager.SetReCallRequestNo(res.RequestNo)
+                        end
                     end
                 end)
             end

@@ -258,7 +258,8 @@ function XServerManager.TestConnectivity(server, gridCb)
         "?loginType=" .. XUserManager.Channel ..
         "&userId=" .. XUserManager.UserId ..
         "&projectId=" .. CS.XHeroSdkAgent.GetAppProjectId() ..
-        "&token=" .. (XUserManager.Token or "")
+        "&token=" .. (XUserManager.Token or "") ..
+        "&pkgId=" .. CS.XHeroSdkAgent.GetPkgId()
     end
 
     local request = CS.UnityEngine.Networking.UnityWebRequest.Get(loginUrl)

@@ -696,16 +696,16 @@ function XShopManager.GetBaseInfo(cb)
     end)
 end
 
-function XShopManager.BuyShop(shopId, goodsId, count, cb, err_cb)
+function XShopManager.BuyShop(shopId, goodsId, count, cb, err_cb, isActivityOpen)
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon) then
         return
     end
-    local req = { ShopId = shopId, GoodsId = goodsId, Count = count }
+    local req = { ShopId = shopId, GoodsId = goodsId, Count = count, IsActivityOpen = isActivityOpen}
     XNetwork.Call(METHOD_NAME.Buy, req, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             if err_cb then
-                err_cb()
+                err_cb(res.Code)
             end
             return
         end
@@ -1202,3 +1202,21 @@ function XShopManager.IsShopOpen(shopId)
     end
     return true
 end
+function XShopManager.GetShopActivityIsOpen(shopId)
+    local shop = ShopDict[shopId]
+    if not shop then
+        XLog.Error("XShopManager.GetShopActivityIsOpen error: can not found shop, id is " .. shopId)
+        return
+    end
+   
+    return shop.ActivityIsOpen
+end
+
+function XShopManager.GetShopActivityEndTime(shopId)
+    local info = ShopBaseInfoDict[shopId]
+    if not info then
+        XLog.Error("XShopManager.GetShopActivityIsOpen error: can not found shop, id is " .. shopId)
+        return
+    end
+    return info.ActivityEndTime
+end

@@ -1,5 +1,8 @@
+local XPokerGuessing2Enum = require("XModule/XPokerGuessing2/XPokerGuessing2Enum")
+
 ---@class XUiPokerGuessing2StoryGrid : XUiNode
 ---@field _Control XPokerGuessing2Control
+---@field ImgNew XUiComponent.XUiRawImage  -- 本期角色标识
 local XUiPokerGuessing2StoryGrid = XClass(XUiNode, "XUiPokerGuessing2StoryGrid")
 
 function XUiPokerGuessing2StoryGrid:OnStart()
@@ -21,6 +24,12 @@ function XUiPokerGuessing2StoryGrid:Update(data)
     else
         self.Btnplay.gameObject:SetActiveEx(false)
         self.BtnGiveGifts.gameObject:SetActiveEx(true)
+    end
+    
+    -- 显示本期角色标识
+    if self.ImgNew then
+        local isCurrent = data.Type == XPokerGuessing2Enum.StoryType.Current
+        self.ImgNew.gameObject:SetActiveEx(isCurrent)
     end
 end
 

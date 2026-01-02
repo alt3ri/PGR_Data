@@ -34,7 +34,7 @@ function XUiDlcRelinkPopupExchangeWheel:OnAwake()
 
     -- 列表区域hover监听，用于判断拖拽释放位置
     if self.PanelEmojiList then
-        self:AddPointerEnterExit(self.PanelEmojiList.gameObject, function() self.HoverInList = true end, function() self.HoverInList = false end)
+        self:AddPointerEnterExitClick(self.PanelEmojiList.gameObject, handler(self, self.OnPointerEnterList), handler(self, self.OnPointerExitList), handler(self, self.OnPointerClickList))
     end
 end
 
@@ -60,14 +60,14 @@ function XUiDlcRelinkPopupExchangeWheel:OnEnable()
     self:RefreshPanelWheel()
 end
 
--- 进入/离开监听绑定
-function XUiDlcRelinkPopupExchangeWheel:AddPointerEnterExit(go, onEnter, onExit)
+-- 进入/离开/点击监听绑定
+function XUiDlcRelinkPopupExchangeWheel:AddPointerEnterExitClick(go, onEnter, onExit, onClick)
     if not go then
         return
     end
     ---@type XGoInputHandler
     local handler = go:GetComponent(typeof(CS.XGoInputHandler))
-    if not handler then
+    if XTool.UObjIsNil(handler) then
         handler = go:AddComponent(typeof(CS.XGoInputHandler))
     end
     if onEnter then
@@ -75,6 +75,9 @@ function XUiDlcRelinkPopupExchangeWheel:AddPointerEnterExit(go, onEnter, onExit)
     end
     if onExit then
         handler:AddPointerExitListener(onExit)
+    end
+    if onClick then
+        handler:AddPointerClickListener(onClick)
     end
     return handler
 end
@@ -100,6 +103,7 @@ function XUiDlcRelinkPopupExchangeWheel:SetupDynamicTable()
     self.TextEmojiIdList = self._Control:GetEmojiWheelIdsByType(self.CurSelectIndex)
     local isEmpty = XTool.IsTableEmpty(self.TextEmojiIdList)
     self.None.gameObject:SetActiveEx(isEmpty)
+    self.PanelDelete.gameObject:SetActiveEx(false)
     if isEmpty then
         self.DynamicTable:Clear()
         return
@@ -117,22 +121,15 @@ function XUiDlcRelinkPopupExchangeWheel:OnDynamicTableEvent(event, index, grid)
         -- 标记是否使用中（在轮盘上）
         local used = self:IsUsed(emojiId)
         grid:SetTag(used)
-        -- 左侧选中高亮
+        -- 左侧选中
         local isSelect = self.ClickSelectFrom == DraggingFromType.List and self.ClickSelectEmojiId == emojiId
         grid:SetSelect(isSelect)
-        -- 左侧点击选择时提升层级
-        if isSelect then
-            local order = self:GetExchangeBaseOrder() + 1
-            grid:SetLayerOrder(order)
-        else
-            grid:RestoreLayerOrder()
-        end
     end
 end
 
 function XUiDlcRelinkPopupExchangeWheel:IsUsed(emojiId)
     for _, id in ipairs(self.TempEmojiWheelIds) do
-        if XTool.IsNumberValid(emojiId) and id == emojiId then
+        if XTool.IsNumberValid(emojiId) and XTool.IsNumberValid(id) and id == emojiId then
             return true
         end
     end
@@ -149,7 +146,7 @@ function XUiDlcRelinkPopupExchangeWheel:RefreshPanelWheel()
                 return
             end
             -- 槽位hover监听
-            self:AddPointerEnterExit(parent.gameObject, function(e) self:OnPointerEnterEmoji(e, i) end, function(e) self:OnPointerExitEmoji(e, i) end)
+            self:AddPointerEnterExitClick(parent.gameObject, function() self:OnPointerEnterWheel(i) end, function() self:OnPointerExitWheel(i) end)
             -- 实例化格子
             local go = XUiHelper.Instantiate(self.GridEmoji2, parent)
             grid = XUiGridDlcRelinkExchangeWheelEmoji.New(go, self)
@@ -161,32 +158,97 @@ function XUiDlcRelinkPopupExchangeWheel:RefreshPanelWheel()
         grid:SetIsWheelSlot(true)
         grid:SetWheelIndex(i)
     end
-    self:UpdateWheelHoverState()
-    -- 根据当前选择状态调整层级
-    self:UpdateSelectionLayers()
+    self:UpdateWheelSelectState()
 end
 
---region 悬停监听
+--region 轮盘状态刷新
 
-function XUiDlcRelinkPopupExchangeWheel:OnPointerEnterEmoji(_, index)
-    self.HoverWheelIndex = index
-    self:UpdateWheelHoverState()
-end
-
-function XUiDlcRelinkPopupExchangeWheel:OnPointerExitEmoji(_, index)
-    if self.HoverWheelIndex == index then
-        self.HoverWheelIndex = nil
-        self:UpdateWheelHoverState()
+-- 刷新轮盘选中状态
+function XUiDlcRelinkPopupExchangeWheel:UpdateWheelSelectState()
+    for i, grid in ipairs(self.EmojiGridList) do
+        if grid then
+            local isClickSelected = self.ClickSelectFrom == DraggingFromType.Wheel and self.ClickSelectWheelIndex == i
+            grid:SetSelect(isClickSelected)
+        end
     end
 end
 
+-- 刷新轮盘选择状态
+function XUiDlcRelinkPopupExchangeWheel:UpdateWheelSelectableState(emojiId)
+    for i, grid in ipairs(self.EmojiGridList) do
+        if grid then
+            local isCanSelect = XTool.IsNumberValid(emojiId) and grid:GetEmojiId() == emojiId
+            local imgSelect = self[string.format("ImgSelect0%s", i)]
+            if imgSelect then
+                imgSelect.gameObject:SetActiveEx(isCanSelect)
+            end
+        end
+    end
+end
+
+-- 刷新轮盘悬停状态
 function XUiDlcRelinkPopupExchangeWheel:UpdateWheelHoverState()
     for i, grid in ipairs(self.EmojiGridList) do
         if grid then
             local isDragHover = self.Dragging and self.HoverWheelIndex == i
-            local isClickSelected = self.ClickSelectFrom == DraggingFromType.Wheel and self.ClickSelectWheelIndex == i
-            grid:SetSelect(isDragHover or isClickSelected)
+            local imgSelect = self[string.format("ImgSelect0%s", i)]
+            if imgSelect then
+                imgSelect.gameObject:SetActiveEx(isDragHover)
+            end
         end
+    end
+end
+
+--endregion
+
+--region 监听
+
+function XUiDlcRelinkPopupExchangeWheel:OnPointerEnterList()
+    if not self.Dragging then
+        return
+    end
+    self.HoverInList = true
+    if self.DraggingFrom == DraggingFromType.List then
+        return
+    end
+    self.PanelDelete.gameObject:SetActiveEx(true)
+end
+
+function XUiDlcRelinkPopupExchangeWheel:OnPointerExitList()
+    if not self.Dragging then
+        return
+    end
+    self.HoverInList = false
+    if self.DraggingFrom == DraggingFromType.List then
+        return
+    end
+    self.PanelDelete.gameObject:SetActiveEx(false)
+end
+
+function XUiDlcRelinkPopupExchangeWheel:OnPointerClickList()
+    if self.Dragging then
+        return
+    end
+    if XTool.IsNumberValid(self.ClickSelectEmojiId) then
+        self:ExitSelectionMode()
+    end
+end
+
+function XUiDlcRelinkPopupExchangeWheel:OnPointerEnterWheel(index)
+    if not self.Dragging then
+        return
+    end
+    self.HoverWheelIndex = index
+    self:UpdateWheelHoverState()
+end
+
+function XUiDlcRelinkPopupExchangeWheel:OnPointerExitWheel(index)
+    if not self.Dragging then
+        return
+    end
+    if self.HoverWheelIndex == index then
+        self.HoverWheelIndex = nil
+        self:UpdateWheelHoverState()
     end
 end
 
@@ -212,19 +274,24 @@ function XUiDlcRelinkPopupExchangeWheel:StartDrag(grid)
     ---@type XUiGridDlcRelinkExchangeWheelEmoji
     local dragGrid = self.DragCloneGrid
     if not dragGrid then
-        local go = XUiHelper.Instantiate(self.GridEmoji2, self.PanelInfo)
+        local go = XUiHelper.Instantiate(self.GridEmoji, self.PanelInfo)
         dragGrid = XUiGridDlcRelinkExchangeWheelEmoji.New(go, self)
         self.DragCloneGrid = dragGrid
-
-        local order = self:GetExchangeBaseOrder() + 2
-        dragGrid:SetLayerOrder(order)
-        ---@type UnityEngine.CanvasGroup
-        local canvasGroup = dragGrid.GameObject:AddComponent(typeof(CS.UnityEngine.CanvasGroup))
-        canvasGroup.blocksRaycasts = false
     end
     dragGrid:Open()
     dragGrid:SetIsDragClone(true)
     dragGrid:Refresh(emojiId)
+    -- 提升拖拽格子层级
+    local order = self:GetExchangeBaseOrder() + 5
+    dragGrid:SetOverrideSorting(true)
+    dragGrid:SetLayerOrder(order)
+    -- 禁用拖拽格子射线检测
+    ---@type UnityEngine.CanvasGroup
+    local canvasGroup = dragGrid.GameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+    if XTool.UObjIsNil(canvasGroup) then
+        canvasGroup = dragGrid.GameObject:AddComponent(typeof(CS.UnityEngine.CanvasGroup))
+    end
+    canvasGroup.blocksRaycasts = false
 end
 
 function XUiDlcRelinkPopupExchangeWheel:GetPosByEventData(eventData)
@@ -276,6 +343,7 @@ function XUiDlcRelinkPopupExchangeWheel:ClearDragState()
         self.DragCloneGrid:Close()
     end
     self:UpdateWheelHoverState()
+    self.PanelDelete.gameObject:SetActiveEx(false)
 end
 
 --endregion
@@ -316,38 +384,35 @@ end
 
 --region 点击操作
 
-function XUiDlcRelinkPopupExchangeWheel:ClearClickSelectState()
-    self.ClickSelectFrom = nil
-    self.ClickSelectEmojiId = nil
-    self.ClickSelectWheelIndex = nil
-end
-
 ---@param grid XUiGridDlcRelinkExchangeWheelEmoji
 function XUiDlcRelinkPopupExchangeWheel:OnClickListEmoji(grid)
     local emojiId = grid and grid:GetEmojiId() or 0
     if not XTool.IsNumberValid(emojiId) then
         return
     end
-    local enteringSelect = false
-    -- 切换到“从列表选择”模式（再次点击同一项则取消选择）
+
+    -- 情况1：右侧槽位已有选择，点击列表项则替换并退出状态
+    if self.ClickSelectFrom == DraggingFromType.Wheel and self.ClickSelectWheelIndex then
+        self:ApplyEmojiToWheel(self.ClickSelectWheelIndex, emojiId, nil)
+        self:ExitSelectionMode()
+        return
+    end
+
+    -- 情况2/3：右侧槽位无选择。点击列表项, 则进入“从列表选择”模式；
+    -- 若已经在列表选择模式, 再次点击同一项则取消选择
     if self.ClickSelectFrom == DraggingFromType.List and self.ClickSelectEmojiId == emojiId then
-        self:ClearClickSelectState()
-    else
-        self.ClickSelectFrom = DraggingFromType.List
-        self.ClickSelectEmojiId = emojiId
-        self.ClickSelectWheelIndex = nil
-        enteringSelect = true
+        self:ExitSelectionMode()
+        return
     end
-    -- 更新左侧“使用中”与高亮
+
+    -- 进入从列表选择模式
+    self.ClickSelectFrom = DraggingFromType.List
+    self.ClickSelectEmojiId = emojiId
+    self.ClickSelectWheelIndex = nil
+
     self.DynamicTable:ReloadDataSync()
-    self:UpdateWheelHoverState()
-    -- 根据当前选择状态调整层级
-    self:UpdateSelectionLayers()
-    if enteringSelect then
-        self:OpenExchangePanel()
-    else
-        self:CloseExchangePanel()
-    end
+    self:UpdateWheelSelectableState(emojiId)
+    self:OpenExchangePanel()
 end
 
 ---@param grid XUiGridDlcRelinkExchangeWheelEmoji
@@ -383,29 +448,48 @@ function XUiDlcRelinkPopupExchangeWheel:OnClickWheelEmoji(grid)
         return
     end
 
-    -- 没有任何选择时，点击有内容的槽位则开始“从轮盘选择”
-    if XTool.IsNumberValid(curWheelEmojiId) then
-        self.ClickSelectFrom = DraggingFromType.Wheel
-        self.ClickSelectEmojiId = curWheelEmojiId
-        self.ClickSelectWheelIndex = targetIndex
-        self:UpdateWheelHoverState()
-        -- 进入轮盘选择时仅提升轮盘层级
-        self:UpdateSelectionLayers()
-        self:OpenExchangePanel()
+    -- 情况4：左侧无选择，当前槽位无内容，点击无效
+    if not XTool.IsNumberValid(curWheelEmojiId) then
+        return
     end
+
+    -- 进入从轮盘选择模式
+    self.ClickSelectFrom = DraggingFromType.Wheel
+    self.ClickSelectEmojiId = curWheelEmojiId
+    self.ClickSelectWheelIndex = targetIndex
+
+    self:UpdateWheelSelectState()
+    self:UpdateWheelSelectableState(curWheelEmojiId)
+    self:OpenExchangePanel()
+end
+
+---@param grid XUiGridDlcRelinkExchangeWheelEmoji
+function XUiDlcRelinkPopupExchangeWheel:OnClickDeleteWheelEmoji(grid)
+    local targetIndex = grid and grid:GetWheelIndex() or nil
+    if not targetIndex then
+        return
+    end
+
+    self.TempEmojiWheelIds[targetIndex] = 0
+    self:RefreshPanelWheel()
+    self:ExitSelectionMode()
 end
 
 -- 退出选择模式 & 刷新相关显示
 function XUiDlcRelinkPopupExchangeWheel:ExitSelectionMode()
     self:ClearClickSelectState()
-    -- 更新左侧“使用中”与高亮
     if self.DynamicTable then
         self.DynamicTable:ReloadDataSync()
     end
-    self:UpdateWheelHoverState()
-    -- 根据当前选择状态调整层级
-    self:UpdateSelectionLayers()
+    self:UpdateWheelSelectState()
+    self:UpdateWheelSelectableState(nil)
     self:CloseExchangePanel()
+end
+
+function XUiDlcRelinkPopupExchangeWheel:ClearClickSelectState()
+    self.ClickSelectFrom = nil
+    self.ClickSelectEmojiId = nil
+    self.ClickSelectWheelIndex = nil
 end
 
 --endregion
@@ -415,40 +499,6 @@ end
 -- 获取遮罩的基础order
 function XUiDlcRelinkPopupExchangeWheel:GetExchangeBaseOrder()
     return self.ExchangeCanvas and self.ExchangeCanvas.sortingOrder or 0
-end
-
--- 将轮盘里的所有格子层级设置为指定 order
-function XUiDlcRelinkPopupExchangeWheel:SetWheelGridsLayer(order)
-    for _, grid in ipairs(self.EmojiGridList) do
-        if grid then
-            grid:SetLayerOrder(order)
-        end
-    end
-end
-
--- 还原轮盘里所有格子的层级
-function XUiDlcRelinkPopupExchangeWheel:RestoreWheelGridsLayer()
-    for _, grid in ipairs(self.EmojiGridList) do
-        if grid then
-            grid:RestoreLayerOrder()
-        end
-    end
-end
-
--- 根据当前选择状态应用层级调整
-function XUiDlcRelinkPopupExchangeWheel:UpdateSelectionLayers()
-    local baseOrder = self:GetExchangeBaseOrder()
-    local raised = baseOrder + 1
-    if self.ClickSelectFrom == DraggingFromType.List and XTool.IsNumberValid(self.ClickSelectEmojiId) then
-        -- 列表选择：轮盘全部+1，左侧被选中项单独由列表格子处理
-        self:SetWheelGridsLayer(raised)
-    elseif self.ClickSelectFrom == DraggingFromType.Wheel and self.ClickSelectWheelIndex then
-        -- 轮盘选择：仅轮盘全部+1
-        self:SetWheelGridsLayer(raised)
-    else
-        -- 无选择：全部还原
-        self:RestoreWheelGridsLayer()
-    end
 end
 
 -- 打开交换面板并锁定拖拽
@@ -469,10 +519,10 @@ end
 --endregion
 
 function XUiDlcRelinkPopupExchangeWheel:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnTanchuangClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnSave, self.OnBtnSaveClick)
-    self:RegisterClickEvent(self.BtnClose2, self.OnBtnClose2Click)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnSave:AddEventListener(handler(self, self.OnBtnSaveClick))
+    self.BtnClose2:AddEventListener(handler(self, self.OnBtnClose2Click))
 end
 
 function XUiDlcRelinkPopupExchangeWheel:OnBtnCloseClick()
