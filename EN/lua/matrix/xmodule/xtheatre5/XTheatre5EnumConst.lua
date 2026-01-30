@@ -25,6 +25,7 @@ local Theatre5EnumConst = {
         Exp = 8, -- exp(非背包)
         -- 1000开始的是客户端用的道具
         Common = 1001, --通用的道具， Item.tab
+        Mission = 1002, -- 任务，Theatre5Mission.tab
     },
 
     --- 物品容器类型
@@ -287,6 +288,7 @@ local Theatre5EnumConst = {
         AutoSellRune = 10, --出售指定位置的符纹(不对技能操作)
         AutoReplaceRune = 11, --将指定位置的符纹删除,并根据删除符纹的稀有度抽取对应的RandomGroup(不对技能操作)
         ChangeHp = 12, --心数增加、减少
+        ReplaceShopGoods = 13, --在指定{randomGroup}去重抽取{x}次以替换当前商店货物
     },
 
     Theatre5SpecificValType = {
@@ -322,26 +324,24 @@ local Theatre5EnumConst = {
         Update = 2,
         Add = 3,
     },
-
-    Theatre5EffectType = {
-        AddBuff = 1, --进入战斗时获得指定Buff
-        RandomItemGroup = 2, --在指定的RandomGroup中进行一次抽取,抽取时需排除[商店][临时背包][背包][装备中]达到数量上限的商品
-        AddItem = 3, --获得指定的道具
-        ChangeGold = 4, --获得金币.期待可配负值,等同于扣除金币.扣除时最多扣到0.(最终数量=参数1+参数2*参数3)
-        AddFreeFreshCnt = 5, --获得免费刷新次数(刷新价格固定为0,刷新时不计入已刷新次数)
-        AddExp = 6, --获得经验
-        RandomStealShopRune = 7, --随机偷取商店内的符纹(不消耗金币,随机购买)
-        AddAutoStrengthenCnt = 8, --将后续x次购买的符纹替换为强化状态的符纹
-        AddAttr = 9, --进入战斗时获得属性(期待数值和比例可配负值)
-        AutoSellRune = 10, --出售指定位置的符纹(不对技能操作)
-        AutoReplaceRune = 11, --将指定位置的符纹删除,并根据删除符纹的稀有度抽取对应的RandomGroup(不对技能操作)
-        ChangeHp = 12, --心数增加、减少
-    },
     
     -- UI风格的UI类型
     UITypeInStyles = {
         UiMain = 1, -- 主界面
         UiBattleEventSelection = 2, -- 事件选择界面
+    },
+    
+    UITaskDetailShowType = {
+        InChoose = 1, -- 选择界面
+        InProgress = 2, -- 进行中进度展示
+        InComplete = 3, -- 完成结算
+    },
+
+    --- 任务状态
+    Theatre5MissionState = {
+        HasAccept = 1, -- 已接取
+        HasFinish = 2, -- 已完成
+        HasReward = 3, -- 已领取
     }
 }
 

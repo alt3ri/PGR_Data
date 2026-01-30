@@ -484,6 +484,8 @@ end
 
 -- 选中速度按钮回调
 function XUiMovie:OnClickSpeedButtonCallBack(index)
+    XDataCenter.MovieManager.SetLongPressAutoPlay(false)
+    
     -- 关闭倍速列表
     self:ShowSpeedList(false)
 
@@ -567,12 +569,11 @@ function XUiMovie:OnClickBtnAuto()
 
         -- 自动播放和暂停文本
         self:RefreshTextPause()
-    else
-        self:ClearAutoTimer()
     end
 end
 
 function XUiMovie:OnClickBtnAutoing()
+    XDataCenter.MovieManager.SetLongPressAutoPlay(false)
     XDataCenter.MovieManager.SetMoviePause(false)
     XDataCenter.MovieManager.SetAutoPlay(false)
     

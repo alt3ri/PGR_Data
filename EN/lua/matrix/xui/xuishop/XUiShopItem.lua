@@ -1,5 +1,6 @@
-local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+---@class XUiShopItem : XLuaUi
 local XUiShopItem = XLuaUiManager.Register(XLuaUi, "UiShopItem")
 local MAX_COUNT = CS.XGame.Config:GetInt("ShopBuyGoodsCountLimit")
 local ColorRed = CS.XGame.ClientConfig:GetString("ShopCanNotBuyColor")
@@ -192,6 +193,11 @@ function XUiShopItem:OnSelectTextChange()
         self.TxtSelect.text = 1
     end
     local tmp = tonumber(self.TxtSelect.text)
+    -- 保证大于0
+    if not tmp or tmp <= 0 then
+        tmp = 1
+        self.TxtSelect.text = tmp
+    end
     local tmpMax = math.max(math.min(MAX_COUNT, self.MaxCount), 1)
     if tmp > tmpMax then
         tmp = tmpMax

@@ -5,8 +5,11 @@ local XUiGridDlcRelinkEquipment = XClass(XUiNode, "XUiGridDlcRelinkEquipment")
 function XUiGridDlcRelinkEquipment:OnStart(callBack, RemoveCallBack)
     self.CallBack = callBack
     self.RemoveCallBack = RemoveCallBack
-    XUiHelper.RegisterClickEvent(self, self.BtnEquip, self.OnBtnEquipClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnRemove, self.OnBtnRemoveClick, true, true)
+    self.BtnEquip:AddEventListener(handler(self, self.OnBtnEquipClick))
+    self.BtnRemove:AddEventListener(handler(self, self.OnBtnRemoveClick))
+    if self.BtnRemove2 then
+        self.BtnRemove2:AddEventListener(handler(self, self.OnBtnRemoveClick))
+    end
 end
 
 function XUiGridDlcRelinkEquipment:GetEquipUid()
@@ -64,7 +67,7 @@ function XUiGridDlcRelinkEquipment:Refresh(equipUid, slotIndex, isNotSelf)
     end
 
     -- 装备职业类型图标
-    local equipOccupationTypeIcon = self._Control:GetOccupationIconByEquipId(templateId)
+    local equipOccupationTypeIcon = self._Control:GetEquipOccupationIcon(templateId)
     if not string.IsNilOrEmpty(equipOccupationTypeIcon) then
         self.EquipmentBg.gameObject:SetActiveEx(true)
         self.IconEquipment:SetSprite(equipOccupationTypeIcon)
@@ -80,15 +83,43 @@ function XUiGridDlcRelinkEquipment:Refresh(equipUid, slotIndex, isNotSelf)
     -- 装备战力
     local equipAbility = self._Control:GetEquipAbilityByUid(self.EquipUid, self.IsNotSelf)
     self.ImgLv.gameObject:SetActiveEx(equipAbility > 0)
-    self.TxtLv.text = string.format(self._Control:GetClientConfig("EquipLevelDesc"), equipAbility)
+    self.TxtLv.text = equipAbility
 
     self:RefreshIsLocked()
 end
 
 -- 刷新锁定状态
 function XUiGridDlcRelinkEquipment:RefreshIsLocked()
+    if self.IsNotSelf or not XTool.IsNumberValid(self.EquipUid) then
+        self.Lock.gameObject:SetActiveEx(false)
+        return
+    end
     local isLocked = self._Control:GetEquipIsLockedByEquipUid(self.EquipUid, self.IsNotSelf)
     self.Lock.gameObject:SetActiveEx(isLocked)
+end
+
+---装备展示
+function XUiGridDlcRelinkEquipment:RefreshByEquipId(templateId)
+    self:HideAll()
+
+    -- 装备类型
+    local equipType = self._Control:GetEquipType(templateId)
+    self.IconBg01.gameObject:SetActiveEx(equipType == XEnumConst.DlcRelink.EquipType.Main)
+    self.IconBg02.gameObject:SetActiveEx(equipType == XEnumConst.DlcRelink.EquipType.Normal)
+
+    -- 装备图标
+    local equipIcon = self._Control:GetEquipIcon(templateId)
+    if not string.IsNilOrEmpty(equipIcon) then
+        self.RImgIcon.gameObject:SetActiveEx(true)
+        self.RImgIcon:SetRawImage(equipIcon)
+    end
+
+    -- 装备职业类型图标
+    local equipOccupationTypeIcon = self._Control:GetEquipOccupationIcon(templateId)
+    if not string.IsNilOrEmpty(equipOccupationTypeIcon) then
+        self.EquipmentBg.gameObject:SetActiveEx(true)
+        self.IconEquipment:SetSprite(equipOccupationTypeIcon)
+    end
 end
 
 function XUiGridDlcRelinkEquipment:HideAll()
@@ -108,13 +139,8 @@ function XUiGridDlcRelinkEquipment:HideAll()
 end
 
 -- 选中状态
--- isShowMinus: 是否显示减号
-function XUiGridDlcRelinkEquipment:SetSelect(isSelect, isShowMinus)
+function XUiGridDlcRelinkEquipment:SetSelect(isSelect)
     self.PanelSelect.gameObject:SetActiveEx(isSelect)
-    if isSelect then
-        self.PanelSelect:GetObject("Image1").gameObject:SetActiveEx(isShowMinus)
-        self.PanelSelect:GetObject("Image2").gameObject:SetActiveEx(isShowMinus)
-    end
 end
 
 -- 显示添加标识 (当前槽位无装备)
@@ -153,6 +179,11 @@ end
 -- 红点
 function XUiGridDlcRelinkEquipment:SetRedDot(isShow)
     self.Red.gameObject:SetActiveEx(isShow)
+end
+
+-- 设置是否响应穿透事件
+function XUiGridDlcRelinkEquipment:SetRespondPassEvent(isRespond)
+    self.BtnEquip.IsRespondPassEvent = isRespond
 end
 
 function XUiGridDlcRelinkEquipment:OnBtnEquipClick()

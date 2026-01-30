@@ -8,6 +8,7 @@ XGuideManagerCreator = function()
     ---@type XTableGuideGroup
     local RunningGuideTemplate = false  --正在运行的引导配置
     local IsGuiding = false             --引导运行中   
+    local IsOpenControl = false         -- 引导是否可以接受按键隐射，默认关闭
     local DisableFunctionFlag = 0      --功能屏蔽标记（调试模式时使用）
     --引导代理类型
     XGuideManager.ProxyType = {
@@ -84,6 +85,9 @@ XGuideManagerCreator = function()
         UiBigWorldBlackMaskLoading      = true,
         UiBigWorldBlackMaskNormal       = true,
         UiBigWorldShowLoading           = true,
+        UiDlcRelinkPopupInvitation      = true,
+        UiDlcRelinkToastCommon          = true,
+        UiDlcRelinkToastCommonSmall     = true,
     }
     local NextGridCb = nil
     local CbProxy = nil
@@ -172,6 +176,7 @@ XGuideManagerCreator = function()
     function XGuideManager.Init()
         --监听登出
         XEventManager.AddEventListener(XEventId.EVENT_USER_LOGOUT, XGuideManager.HandleSignOut)
+        XEventManager.AddEventListener(XEventId.EVENT_GUIDE_OPEN_CONTROL_EVENT, XGuideManager.SwitchOpenControlEvent)
         --XEventManager.AddEventListener(XEventId.EVENT_NETWORK_DISCONNECT, XGuideManager.HandleSignOut)
         --监听Ui打开
         CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_ALLOWOPERATE, function(evt, args)
@@ -303,7 +308,7 @@ XGuideManagerCreator = function()
                 end
             end
 
-            if active and XGuideManager.TryActiveGuide(guideTemplate) then
+            if active and XGuideManager.TryActiveGuide(guideTemplate, true) then
                 break
             end
         end
@@ -337,7 +342,7 @@ XGuideManagerCreator = function()
     
     ---- 尝试启动引导
     ---@param guideTemplate XTableGuideGroup
-    function XGuideManager.TryActiveGuide(guideTemplate)
+    function XGuideManager.TryActiveGuide(guideTemplate, isUiOpen)
         if not guideTemplate then
             return false
         end
@@ -352,21 +357,7 @@ XGuideManagerCreator = function()
         
         local active = false
         --栈顶UiName
-        local uiName = CsXUiManager.Instance:GetTopParentUiName()
-        local index = 1
-        --过滤掉不需要引导的UI
-        while true do
-            --保底
-            if string.IsNilOrEmpty(uiName) then
-                break
-            end
-            --战斗的UI不参与系统引导
-            if not (SKIP_CHECK_UI_NAME[uiName] or XUiManager.IsFightUi(uiName)) then
-                break
-            end
-            uiName = CsXUiManager.Instance:GetTopXUiName(index)
-            index = index + 1
-        end
+        local uiName = CurrentProxy:GetTopUiName(SKIP_CHECK_UI_NAME)
         local activeUis = string.Split(guideTemplate.ActiveUi, '|')
         if not XTool.IsTableEmpty(activeUis) then
             for _, achieveUi in pairs(activeUis) do
@@ -386,8 +377,9 @@ XGuideManagerCreator = function()
             return false
         end
         
-        RunningGuideTemplate = guideTemplate
-        XGuideManager.PlayGuide(guideTemplate.Id)
+        --RunningGuideTemplate = guideTemplate
+        --XGuideManager.PlayGuide(guideTemplate.Id)
+        CurrentProxy:ExecuteGuide(guideTemplate, isUiOpen)
         return true
     end
     
@@ -415,6 +407,9 @@ XGuideManagerCreator = function()
     --- 恢复上一个代理
     function XGuideManager.RevertGuideProxy()
         if not XLoginManager.IsLogin() then
+            LastProxyType = nil
+            CurrentProxyType = nil
+            CurrentProxy = nil
             return
         end
         if not LastProxyType then
@@ -431,6 +426,16 @@ XGuideManagerCreator = function()
         end
         GuideAgent.gameObject:SetActiveEx(true)
         XLuaBehaviorManager.PlayId(guideId, GuideAgent)
+        XEventManager.DispatchEvent(XEventId.EVENT_GUIDE_BEGIN_PLAY)
+    end
+    
+    ---@param template XTableGuideGroup
+    function XGuideManager.ExecuteGuide(template)
+        if not template then
+            XLog.Error("执行引导失败!")
+        end
+        RunningGuideTemplate = template
+        XGuideManager.PlayGuide(template.Id)
     end
     
     function XGuideManager.OnGuideStart()
@@ -440,6 +445,7 @@ XGuideManagerCreator = function()
     end
     
     function XGuideManager.OnGuideEnd()
+        IsOpenControl = false
         CurrentProxy:OnGuideEnd()
         XGuideManager.RecordBuryingPoint(XGuideManager.BuryingPointType.End)
         XGuideManager.ResetGuide()
@@ -516,6 +522,14 @@ XGuideManagerCreator = function()
     ---@return boolean
     function XGuideManager.CheckIsInGuide()
         return IsGuiding and RunningGuideTemplate ~= nil
+    end
+
+    function XGuideManager.GetIsOpenControl()
+        return IsOpenControl
+    end
+
+    function XGuideManager.SwitchOpenControlEvent(argsStr)
+        IsOpenControl = argsStr == "1"
     end
     
     ---@return XTableGuideGroup
@@ -690,10 +704,6 @@ XGuideManagerCreator = function()
     --region 协议
     
     function XGuideManager.OnSyncGuideData(guideId)
-        if (CurrentProxy and CurrentProxy:CheckDisableGuide()) or ForceDisableGuide then
-            return
-        end
-        
         GuideData[guideId] = guideId
         XGuideManager.TriggerUnlockBigWorldTeach(guideId)
         if RunningGuideTemplate and RunningGuideTemplate.Id == guideId 

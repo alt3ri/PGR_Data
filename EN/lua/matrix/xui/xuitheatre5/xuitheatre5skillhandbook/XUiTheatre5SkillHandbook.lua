@@ -1,10 +1,13 @@
 local XUiTheatre5SkillHandbookTabGrid = require("XUi/XUiTheatre5/XUiTheatre5SkillHandbook/XUiTheatre5SkillHandbookTabGrid")
 local XUiTheatre5SkillHandbookTag = require("XUi/XUiTheatre5/XUiTheatre5SkillHandbook/XUiTheatre5SkillHandbookTag")
 local XUiGridTheatre5Item = require("XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGridItems/XUiGridTheatre5Item")
+local XUiGridTheatre5MissionInBook = require('XUi/XUiTheatre5/XUiTheatre5SkillHandbook/XUiGridTheatre5MissionInBook')
+
 local Tab = {
     Skill = 1,
     Rune = 2,
-    Relic = 3
+    Relic = 3,
+    Mission = 4,
 }
 
 ---@class XUiTheatre5SkillHandbook : XLuaUi
@@ -39,13 +42,19 @@ function XUiTheatre5SkillHandbook:OnAwake()
     ---@type XUiGridTheatre5Item
     self._GridRelic = XUiGridTheatre5Item.New(self.UiTheatre5GridRelic, self)
     self._GridRelic:SetHideTag(true)
+    ---@type XUiGridTheatre5MissionInBook
+    self._GridMission = XUiGridTheatre5MissionInBook.New(self.UiTheatre5GridMission, self)
+    self._GridMission:SetHideTag(true)
 end
 
 function XUiTheatre5SkillHandbook:OnStart()
+    self._Control.MissionControl:InitUnlockMissionItemCache()
+    
     self.PanelBtnTab:Init({
         self.BtnTab1,
         self.BtnTab2,
-        self.BtnTab3
+        self.BtnTab3,
+        self.BtnTab4,
     }, function(index)
         if self._TimerDelaySelectTab then
             XScheduleManager.UnSchedule(self._TimerDelaySelectTab)
@@ -69,6 +78,8 @@ function XUiTheatre5SkillHandbook:OnDisable()
 end
 
 function XUiTheatre5SkillHandbook:OnDestroy()
+    self._Control.MissionControl:ReleaseUnlockMissionItemCache()
+    
     if self._TimerDelayInit then
         XScheduleManager.UnSchedule(self._TimerDelayInit)
         self:_RemoveTimerIdAndDoCallback(self._TimerDelayInit)
@@ -107,6 +118,8 @@ function XUiTheatre5SkillHandbook:OnSelectTab(index)
         type = XMVCA.XTheatre5.EnumConst.ItemType.Equip
     elseif index == Tab.Relic then
         type = XMVCA.XTheatre5.EnumConst.ItemType.Relic
+    elseif index == Tab.Mission then
+        type = XMVCA.XTheatre5.EnumConst.ItemType.Mission  
     else
         XLog.Error("[XUiTheatre5SkillHandbook] invalid tab index: " .. tostring(index))
         return
@@ -142,6 +155,11 @@ function XUiTheatre5SkillHandbook:OnSelectItem(data)
     self._GridSkill:Close()
     self._GridGem:Close()
     self._GridRelic:Close()
+    self._GridMission:Close()
+
+    if self.PanelConsume then
+        self.PanelConsume.gameObject:SetActiveEx(false)
+    end
 
     -- 根据索引打开对应面板并刷新显示
     local showStoryParent = false
@@ -158,6 +176,10 @@ function XUiTheatre5SkillHandbook:OnSelectItem(data)
         self._GridRelic:Open()
         self._GridRelic:RefreshShow(data)
         showStoryParent = false
+    elseif self._Index == Tab.Mission then
+        self._GridMission:Open()
+        self._GridMission:RefreshShow(data)
+        showStoryParent = false
     end
 
     self.TxtStory.transform.parent.gameObject:SetActiveEx(showStoryParent)
@@ -166,8 +188,17 @@ function XUiTheatre5SkillHandbook:OnSelectItem(data)
     --    self.TxtStory.text = data.Desc
     --end
     if self.TxtDes then
-        local config = XMVCA.XTheatre5:GetTheatre5ItemCfgById(data.Id)
-        self.TxtDes.text = self._Control:GetItemDesc(config)
+        if self._Index == Tab.Mission then
+            if data.IsUnlock then
+                self.TxtDes.text = data.Desc
+            else
+                self.TxtDes.text = self._Control.MissionControl:GetClientConfigMissonIsLockInBook()
+            end
+        else
+            local config = XMVCA.XTheatre5:GetTheatre5ItemCfgById(data.Id)
+            self.TxtDes.text = self._Control:GetItemDesc(config)
+        end
+        
     end
     --self.RImgIcon:SetRawImage(data.Icon)
     self.TxtTitle.text = data.Name
@@ -179,7 +210,24 @@ function XUiTheatre5SkillHandbook:OnSelectItem(data)
     --end
 
     -- tag
-    XTool.UpdateDynamicItem(self._Tags, data.Tags, self.GridTag, XUiTheatre5SkillHandbookTag, self)
+    if self._Index == Tab.Mission then
+        XTool.UpdateDynamicItem(self._Tags, nil, self.GridTag, XUiTheatre5SkillHandbookTag, self)
+        self.ListItemTag.gameObject:SetActiveEx(false)
+
+        if data.IsUnlock then
+            if self.PanelConsume then
+                self.PanelConsume.gameObject:SetActiveEx(true)
+            end
+
+            if self.TxtConsume then
+                self.TxtConsume.text = self._Control.MissionControl:GetMissionLevelUpCostDesc(data.Bounty)
+            end
+        end
+        
+    else
+        self.ListItemTag.gameObject:SetActiveEx(true)
+        XTool.UpdateDynamicItem(self._Tags, data.Tags, self.GridTag, XUiTheatre5SkillHandbookTag, self)
+    end
 
     for i, tags in pairs(self._Tabs) do
         tags:UpdateSelectState(data)

@@ -31,6 +31,13 @@ function XUiArenaSceneZone:Init(zoneObject, stageObject)
     self._LinkEnableAnimation = zoneObject.transform:FindTransform("PanelPiontEnable")
     self._StartAnimation = zoneObject.transform:FindTransform("NameStart")
     self._Button = zoneObject:GetComponent(typeof(CS.XUiComponent.XUiButton))
+    
+    -- 查找 TxtNew 节点（路径：TxtScore/TxtNew）
+    local txtScore = zoneObject.transform:FindTransform("TxtScore")
+    if txtScore then
+        self._TxtNew = txtScore:FindTransform("TxtNew")
+    end
+    
     self._StageObject = stageObject
     self._CurrentState = "Normal"
     self._PlayerGridRoot = rankRoot
@@ -40,6 +47,7 @@ function XUiArenaSceneZone:Init(zoneObject, stageObject)
     self:SetEnterEffectActive(false)
     self:SetChangeEffectActive(false)
     self:SetPlayerListActive(false)
+    self:ShowNewRecord(false) -- 默认隐藏新纪录标记
 end
 
 function XUiArenaSceneZone:SetCurrentState(value)
@@ -81,6 +89,14 @@ end
 
 function XUiArenaSceneZone:ShowPoint(isShow)
     self._Button:ShowReddot(isShow)
+end
+
+--- 显示/隐藏新纪录标记
+---@param isShow boolean 是否显示
+function XUiArenaSceneZone:ShowNewRecord(isShow)
+    if self._TxtNew then
+        self._TxtNew.gameObject:SetActiveEx(isShow)
+    end
 end
 
 function XUiArenaSceneZone:SetClickEvent(clickEvent)

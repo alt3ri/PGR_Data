@@ -17,6 +17,8 @@ function XTheatre5Control:OnInit()
     self.FlowControl = self:AddSubControl(require('XModule/XTheatre5/XTheatre5FlowController'))
     ---@type XTheatre5GameEntityControl
     self.GameEntityControl = self:AddSubControl(require('XModule/XTheatre5/Common/XTheatre5GameEntityControl'))
+    ---@type XTheatre5MissionControl
+    self.MissionControl = self:AddSubControl(require('XModule/XTheatre5/Common/XTheatre5MissionControl'))
 
     self._EnterFightHandler = handler(self, self.OnFightEnterEvent)
     self._ExitFightHandler = handler(self, self.OnFightExitEvent)
@@ -340,6 +342,7 @@ end
 
 --region 道具物品相关
 
+---@return XTableTheatre5Item
 function XTheatre5Control:GetTheatre5ItemCfgById(id, notips)
     return self._Model:GetTheatre5ItemCfgById(id, notips)
 end
@@ -467,14 +470,29 @@ function XTheatre5Control:GetClientConfigPVPTimeLabel()
     return self._Model:GetTheatre5ClientConfigText('PVPTimeLabel')
 end
 
+--- 界面内玩法入口未开启时的时间文本格式
+function XTheatre5Control:GetClientConfigPVPNotStartTips(isEnd)
+    return self._Model:GetTheatre5ClientConfigText('PVPNotStartTips', isEnd and 2 or 1)
+end
+
+--- 活动主界面打脸弹窗活动开启
+function XTheatre5Control:GetClientConfigPVPReasonTips(index)
+    return self._Model:GetTheatre5ClientConfigText('PVPReasonTips', index)
+end
+
+--- PVP赛季打脸提示显示开启时间范围
+function XTheatre5Control:GetClientConfigPVPReasonTimeDuration()
+    return self._Model:GetTheatre5ClientConfigText('PVPReasonTimeDuration')
+end
+
 --- 奖励、商店界面的时间文本格式
 function XTheatre5Control:GetClientConfigRewardTimeLabel()
     return self._Model:GetTheatre5ClientConfigText('RewardTimeLabel')
 end
 
 --- PVP玩法不在时间内时的提示
-function XTheatre5Control:GetClientConfigPVPNotOpenTips()
-    return self._Model:GetTheatre5ClientConfigText('PVPNotOpenTips')
+function XTheatre5Control:GetClientConfigPVPNotOpenTips(willStart)
+    return self._Model:GetTheatre5ClientConfigText('PVPNotOpenTips', willStart and 2 or 1)
 end
 
 --任务商店剩余时间
@@ -762,6 +780,9 @@ function XTheatre5Control:GetDataHandBook(itemType)
             end
         end
         return { tabOnlyOne }
+    end
+    if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Mission then
+        return self.MissionControl:GetDataHandBook()
     end
     XLog.Error("[XTheatre5Control] unimplemented item type")
     return {}

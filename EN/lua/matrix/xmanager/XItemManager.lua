@@ -122,7 +122,6 @@ XItemManagerCreator = function()
         ScoreTowerCoin = 96203, -- 新矿区代币
         Theatre5Coin = 97054, -- 肉鸽5货币
         DlcRelinkStoreCoin = 97070, -- DLC联机共斗商店货币
-        DlcRelinkExpCoin = 97071, -- DLC联机共斗经验货币
         DlcRelinkGameplayCoin = 97072, -- DLC联机共斗局内货币
     }
 

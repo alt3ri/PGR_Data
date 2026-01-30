@@ -44,6 +44,8 @@ end
 
 function XUiGuildDormPanelPhotograph:OnDestroy()
     XDataCenter.PhotographManager.ClearTextureCache()
+    self:DestroyScreenShot()
+    self:DestroyShareTexture()
 end
 
 function XUiGuildDormPanelPhotograph:UpdateView()
@@ -134,11 +136,28 @@ function XUiGuildDormPanelPhotograph:SetLogoOrInfoPos(rectTransform, alignment, 
     end
 end
 
+function XUiGuildDormPanelPhotograph:DestroyScreenShot()
+    if not XTool.UObjIsNil(self._ScreenShot) then
+        CS.UnityEngine.Object.Destroy(self._ScreenShot)
+        self._ScreenShot = nil
+    end
+end
+
+function XUiGuildDormPanelPhotograph:DestroyShareTexture()
+    if not XTool.UObjIsNil(self.ShareTexture) then
+        CS.UnityEngine.Object.Destroy(self.ShareTexture)
+        self.ShareTexture = nil
+    end
+end
+
 function XUiGuildDormPanelPhotograph:Photograph()
     XCameraHelper.ScreenShotNew(self.ImgPicture, CS.XUiManager.Instance.UiCamera, function(screenShot)
+        self:DestroyScreenShot()
+        self._ScreenShot = screenShot
         -- 截图后操作
         XCameraHelper.ScreenShotNew(self.CapturePanel.ImagePhoto, self.CameraCupture, function(shot) -- 把合成后的图片渲染到游戏UI中的照片展示(最终要分享的图片)
             CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Normal, CS.XUiManager.Instance.UiCamera)
+            self:DestroyShareTexture()
             self.ShareTexture = shot
             self.PhotoName = "[" .. tostring(XPlayer.Id) .. "]" .. XTime.GetServerNowTimestamp()
             self.Photo:PlayTimelineAnimation(function()

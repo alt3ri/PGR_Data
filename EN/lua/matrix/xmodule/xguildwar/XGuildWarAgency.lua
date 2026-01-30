@@ -10,6 +10,13 @@ function XGuildWarAgency:OnInit()
     
     self.GarrisonCom:Init(self, self._Model)
     self.DragonRageCom:Init(self, self._Model)
+    
+    ---@type XSpecialRoleAgency @特攻角色系统子agency
+    self.SpecialRoleAgency = self:AddSubAgency(require('XModule/XGuildWar/SubModule/SpecialRole/XSpecialRoleAgency'))
+    ---@type XActionQueueAgency @行为事件系统子agency
+    self.ActionQueueAgency = self:AddSubAgency(require('XModule/XGuildWar/SubModule/ActionQueue/XActionQueueAgency'))
+    ---@type XRoleStationAgency @角色驻扎玩法子agency
+    self.RoleStationAgency = self:AddSubAgency(require('XModule/XGuildWar/SubModule/RoleStation/XRoleStationAgency'))
 end
 
 function XGuildWarAgency:InitRpc()
@@ -26,6 +33,7 @@ function XGuildWarAgency:InitRpc()
     XRpc.NotifyGuildWarDragonRageChange = handler(self, self.OnNotifyGuildWarDragonRageChange)
     XRpc.NotifyGuildWarNewGameThrough = handler(self, self.OnNotifyGuildWarNewGameThrough)
     XRpc.NotifyGuildWarDragonRageOpen = handler(self, self.OnNotifyGuildWarDragonRageOpen)
+    XRpc.NotifyGuildWarBeStationedFightRecordChange = handler(self, self.OnNotifyGuildWarBeStationedFightRecordChange)
 end
 
 function XGuildWarAgency:InitEvent()
@@ -62,6 +70,8 @@ function XGuildWarAgency:OnNotifyGuildWarActivityData(data)
     self:GetGarrisonData():ClearDefensePlayerPercentCache()
     XDataCenter.GuildWarManager.OnNotifyActivityData(data)
     self.DragonRageCom:UpdateDataFromLoginNotify(data)
+    self.RoleStationAgency:UpdateDataFromLoginNotify(data)
+    XMVCA.XGuildWar.ActionQueueAgency:UpdateFullActionList(data.ActivityData.ActionList)
 end
 
 --- 轮次结算通知
@@ -87,6 +97,8 @@ function XGuildWarAgency:OnNotifyGuildWarActivityDataChange(data)
     end
     self:GetGarrisonData():ClearDefensePlayerPercentCache()
     XDataCenter.GuildWarManager.RefreshActivityData(data.ActivityData)
+    XMVCA.XGuildWar.ActionQueueAgency:UpdateFullActionList(data.ActivityData.ActionList)
+
 end
 
 --- 通知客户端，新事件发生
@@ -94,8 +106,8 @@ function XGuildWarAgency:OnNotifyGuildWarAction(data)
     if XGuildWarConfig.CLOSE_DEBUG then
         return
     end
-    local battleManager = XDataCenter.GuildWarManager.GetBattleManager()
-    battleManager:AddActionList(data.ActionList)
+    
+    self.ActionQueueAgency:AddActionListRealTime(data.ActionList)
     XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTIONLIST_CHANGE, data.ActionList)
 end
 
@@ -107,7 +119,7 @@ function XGuildWarAgency:OnNotifyGuildWarNodeUpdate(data)
 
     if not XTool.IsTableEmpty(data.NodeDataList) then
         for i, nodeData in pairs(data.NodeDataList) do
-            XDataCenter.GuildWarManager.GetBattleManager():UpdateNodeData(nodeData)
+            XDataCenter.GuildWarManager.GetBattleManager():UpdateNodeDataRealTime(nodeData, XGuildWarConfig.NodeDataUpdateSource.SingleNodeChange)
         end
     end
     XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_NODEDATA_CHANGE)
@@ -170,7 +182,7 @@ function XGuildWarAgency:OnNotifyGuildWarNewGameThrough(data)
     local roundData = self._Model:GetRoundByRoundId(data.RoundData.RoundId)
 
     if roundData then
-        roundData:RefreshRoundData(data.RoundData)
+        roundData:RefreshRoundData(data.RoundData, true, XGuildWarConfig.NodeDataUpdateSource.NewGameThrough)
     end
     
     local battleManager = XDataCenter.GuildWarManager.GetBattleManager()
@@ -181,17 +193,17 @@ function XGuildWarAgency:OnNotifyGuildWarNewGameThrough(data)
     
     -- 更新玩家自己的点位
     if XTool.IsNumberValid(data.CurNodeId) then
-        local battleManager = XDataCenter.GuildWarManager.GetBattleManager()
-
         if battleManager then
             battleManager:UpdateCurrentNodeId(data.CurNodeId)
         end
     end
+    
+    -- 更新驻扎信息
+    self._Model.RoleStationModel:UpdateMyAndAllRoleStationedData(data.MyStationedData, data.GuildStationedData)
 
     -- 同步行为动画
     if not XTool.IsTableEmpty(data.ActionList) then
-        local battleManager = XDataCenter.GuildWarManager.GetBattleManager()
-        battleManager:AddActionList(data.ActionList)
+        self.ActionQueueAgency:AddActionListRealTime(data.ActionList, true)
         XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTIONLIST_CHANGE, data.ActionList)
     end
 end
@@ -208,15 +220,18 @@ function XGuildWarAgency:OnNotifyGuildWarDragonRageOpen(data)
     local roundData = self._Model:GetRoundByRoundId(data.RoundData.RoundId)
 
     if roundData then
-        roundData:RefreshRoundData(data.RoundData)
+        roundData:RefreshRoundData(data.RoundData, true, XGuildWarConfig.NodeDataUpdateSource.DragenRageOpen)
     end
 
     -- 同步行为动画
     if not XTool.IsTableEmpty(data.ActionList) then
-        local battleManager = XDataCenter.GuildWarManager.GetBattleManager()
-        battleManager:AddActionList(data.ActionList)
+        self.ActionQueueAgency:AddActionListRealTime(data.ActionList)
         XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTIONLIST_CHANGE, data.ActionList)
     end
+end
+
+function XGuildWarAgency:OnNotifyGuildWarBeStationedFightRecordChange(data)
+    self._Model.RoleStationModel:UpdateBeStationedFightRecord(data.BeStationedFightRecord)
 end
 --endregion <<<----------------------
 
@@ -236,6 +251,11 @@ end
 --- 获取轮次数据，用于混合结构期间时提供给Manager访问数据
 function XGuildWarAgency:GetRoundByRoundId(roundId)
     return self._Model:GetRoundByRoundId(roundId)
+end
+
+-- todo: 混合框架临时接口
+function XGuildWarAgency:GetGuildWarClientConfig(key)
+    return self._Model:GetGuildWarClientConfig(key)
 end
 
 return XGuildWarAgency

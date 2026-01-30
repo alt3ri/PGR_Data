@@ -29,10 +29,9 @@ function XUiGridSGFurniture:PlayEnableAnimation(index)
     self:StopAnimationTimer()
     if not XTool.UObjIsNil(self._CanvasGroup) then
         self._CanvasGroup.alpha = 0
-        
     end
     self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        self:PlayAnimation("GridItemEnable")
+        self:PlayAnimationWithMask("GridItemEnable")
         self:StopAnimationTimer()
     end, (index - 1) * Delay)
 end

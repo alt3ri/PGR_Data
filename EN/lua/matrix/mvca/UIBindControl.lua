@@ -359,6 +359,7 @@ local UIBindControl = {
     UiMainLine2PopupChooseGender = ModuleId.XMainLine2,
     UiMainLine2EggsTreasureTips = ModuleId.XMainLine2,
     UiMainLine2EggsTreasureMail = ModuleId.XMainLine2,
+    UiMainLine2Task = ModuleId.XMainLine2,
     --endregion
 
     --region 幻痛囚笼
@@ -376,6 +377,7 @@ local UIBindControl = {
     UiFubenBossSingleModeSaveDialog = ModuleId.XFubenBossSingle,
     UiFubenBossSingleChallengeRank = ModuleId.XFubenBossSingle,
     UiFubenBossSingleChallengeRankReward = ModuleId.XFubenBossSingle,
+    UiFubenBossSingleSettlement = ModuleId.XFubenBossSingle,
     --endregion
 
     --region 大秘境
@@ -455,6 +457,7 @@ local UIBindControl = {
     UiDlcMultiPlayerSettlementBeach = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerSettlementDorm = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerSettlementMarket = ModuleId.XDlcMultiMouseHunter,
+    UiDlcMultiPlayerSettlementLantern = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerExchange = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerData = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerCompetition = ModuleId.XDlcMultiMouseHunter,
@@ -527,8 +530,9 @@ local UIBindControl = {
     UiArenaContributeTips = ModuleId.XArena,
     UiArenaChapterDetail = ModuleId.XArena,
     UiArenaTask = ModuleId.XArena,
-    UiArenaFightResult = ModuleId.XArena,
     UiArenaNewActivityResult = ModuleId.XArena,
+    UiArenaSettlement = ModuleId.XArena,
+    UiArenaPopupNewRecord = ModuleId.XArena,
 
     --region v2.14 战中成就界面
     UiFightAchievement = ModuleId.XUiFightAchievement,
@@ -636,6 +640,10 @@ local UIBindControl = {
     UiBigWorldStoryStageDetail = ModuleId.XBigWorldQuest,
     UiBigWorldPopupDelivery = ModuleId.XBigWorldQuest,
     UiBigWorldTask = ModuleId.XBigWorldQuest,
+    UiBigWorldTaskMainInvitation  = ModuleId.XBigWorldQuest,
+    UiBigWorldTaskPopupEndingDetail  = ModuleId.XBigWorldQuest,
+    UiBigWorldTaskObtainInvitation  = ModuleId.XBigWorldQuest,
+    UiBigWorldPopupEnvironmentalStory  = ModuleId.XBigWorldQuest,
     --endregion SkyGarden - Quest
 
     --region 指挥官DIY系统
@@ -756,6 +764,7 @@ local UIBindControl = {
     --region 空花地图系统
     UiBigWorldMap = ModuleId.XBigWorldMap,
     UiBigWorldMapDetail = ModuleId.XBigWorldMap,
+    UiBigWorldMapOverview = ModuleId.XBigWorldMap,
     --endregion
 
     --region 关卡精选
@@ -877,6 +886,10 @@ local UIBindControl = {
     UiGuildWarStageMain = ModuleId.XGuildWar,
     UiGuildWarBoss7Panel = ModuleId.XGuildWar,
     UiGuildWarStageDetail = ModuleId.XGuildWar,
+    UiGuildWarUpCharacter = ModuleId.XGuildWar,
+    UiGuildWarStayChoose = ModuleId.XGuildWar,
+    UiGuildWarUpTeam = ModuleId.XGuildWar,
+    UiGuildWarCharacterSelect = ModuleId.XGuildWar,
     --endregion
     
     --region PokerGuessing2
@@ -911,6 +924,7 @@ local UIBindControl = {
     
     --region 空花历程
     UiBigWorldProcess = ModuleId.XBigWorldCourse,
+    UiBigWorldPopupAdvance = ModuleId.XBigWorldCourse,
     --endregion
     
     --region 肉鸽5
@@ -945,6 +959,9 @@ local UIBindControl = {
     UiTheatre5PopupBacktrack = ModuleId.XTheatre5,
     UiTheatre5PopupChoose = ModuleId.XTheatre5,
     UiTheatre5PopupNewSeason = ModuleId.XTheatre5,
+    UiTheatre5ChooseTask = ModuleId.XTheatre5,
+    UiTheatre5PopupTaskSettlement = ModuleId.XTheatre5,
+    UiTheatre5PopupChooseTaskReward = ModuleId.XTheatre5,
     --endregion
     
     --region 悬赏挑战
@@ -997,6 +1014,9 @@ local UIBindControl = {
     UiDlcRelinkLvReward = ModuleId.XDlcRelink,
     UiDlcRelinkPopupGetReward = ModuleId.XDlcRelink,
     UiDlcRelinkShopItem = ModuleId.XDlcRelink,
+    UiDlcRelinkEncyclopedia = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupChooseAttribute = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupTutorial = ModuleId.XDlcRelink,
     --endregion
 
     --region mini改造
@@ -1065,6 +1085,7 @@ local UIBindControl = {
     UiPlotExhibitionDetail = ModuleId.XPlotExhibition,
     UiPlotExhibitionMain = ModuleId.XPlotExhibition,
     UiPlotExhibitionPopupPower = ModuleId.XPlotExhibition,
+    UiPlotExhibitionPopupCoverChange = ModuleId.XPlotExhibition,
     --endregion
     
     --region 涂装套装
@@ -1091,11 +1112,34 @@ local UIBindControl = {
     UiAreaWarObtain = ModuleId.XAreaWar,
     --endregion
     
+    --region 罗塞塔主线
+    UiMainLineLuosaitaPopupSkyGardenDetail = ModuleId.XMainLineLuosaita,
+    UiMainLineLuosaitaMain = ModuleId.XMainLineLuosaita,
+    UiMainLineLuosaitaPopupFileDetail = ModuleId.XMainLineLuosaita,
+    UiMainLineLuosaitaPopupReview = ModuleId.XMainLineLuosaita,
+    --endregion
+    
     --region 空花签到
     UiRadioSignMain = ModuleId.XRadioSign,
     UiRadioSignPopupHall = ModuleId.XRadioSign,
     --endregion
 
+    --region 无人机玩法
+    UiSkyGardenSGDroneMain = ModuleId.XSkyGardenDroneGame,
+    UiSkyGardenSGDroneChapter = ModuleId.XSkyGardenDroneGame,
+    UiSkyGardenSGDroneStage = ModuleId.XSkyGardenDroneGame,
+    UiSkyGardenSGDroneStageDetail = ModuleId.XSkyGardenDroneGame,
+    UiSkyGardenSGDroneGame = ModuleId.XSkyGardenDroneGame,
+    UiSkyGardenSGDronePopupSettlement = ModuleId.XSkyGardenDroneGame,
+    UiSkyGardenSGDronePopupStop = ModuleId.XSkyGardenDroneGame,
+    UiSkyGardenSGDronePopupDetail = ModuleId.XSkyGardenDroneGame,
+    UiSkyGardenSGDroneShop = ModuleId.XSkyGardenDroneGame,
+    -- endregion
+
+    --region 商店系统
+    UiAccumulateExpendShopMain = ModuleId.XShop,
+    UiAccumulateExpendShopLog = ModuleId.XShop,
+    --endregion
 }
 
 return UIBindControl

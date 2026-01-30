@@ -61,7 +61,8 @@ function XBuffScript1015902:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[1]) then
             self.effectHpRate = self.enhEffectHpRate
             --激活增强Buff[1]符纹特效
-            self._proxy:SetAutoChessGemTriggerState(self.enhBuffIdDict[1], self.enhRuneIdDict[1])
+            self._proxy:SetAutoChessGemTriggerState(self._uuid, self.enhRuneIdDict[1])
+            self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.enhRuneIdDict[1], 1)  --记录一次触发
         end
     end
 end

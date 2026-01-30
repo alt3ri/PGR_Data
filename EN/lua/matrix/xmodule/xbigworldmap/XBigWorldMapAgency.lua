@@ -6,6 +6,7 @@ function XBigWorldMapAgency:OnInit()
     -- 初始化一些变量
     self:InitConditionCheck()
     self:InitShieldController()
+    self:InitEnum()
 end
 
 function XBigWorldMapAgency:InitRpc()
@@ -38,6 +39,14 @@ function XBigWorldMapAgency:ReleaseConditionCheck()
 
     XMVCA.XBigWorldService:UnRegisterConditionFunc(10101004)
     XMVCA.XBigWorldService:UnRegisterConditionFunc(10101006)
+end
+
+function XBigWorldMapAgency:InitEnum()
+    self.MapPinDisplayType = {
+        Point = 1 << 0,
+        LittleMapRadius = 1 << 1,
+        BigMapRadius = 1 << 2,
+    }
 end
 
 function XBigWorldMapAgency:InitShieldController()
@@ -85,6 +94,14 @@ function XBigWorldMapAgency:OnAddQuestMapPin(data)
     }
 end
 
+function XBigWorldMapAgency:OnMapPinShowTypeChange(data)
+    if not data then
+        return
+    end
+    self._Model:ChangeMapPinShowType(data.MapPinLevelId, data.MapPinId, data.ShowType)
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE)
+end
+
 function XBigWorldMapAgency:OnRemoveQuestMapPin(data)
     self._Model:RemoveQuestMapPin(data)
     self._Model:RemoveVirtualMapPin(data.LevelId, data.PinId)
@@ -117,9 +134,11 @@ end
 function XBigWorldMapAgency:OnCancelTrackMapPin(data)
     local levelId = data.MapPinLevelId
 
-    self:RequestCancelTrackMapPin(levelId, function()
-        self._Model:CancelTrackPins(levelId)
-    end)
+    if self:CheckLevelPinsTracking(levelId) then
+        self:RequestCancelTrackMapPin(levelId, function()
+            self._Model:CancelTrackPins(levelId)
+        end)
+    end
 end
 
 function XBigWorldMapAgency:OnPlayerEnterArea(data)
@@ -148,12 +167,40 @@ function XBigWorldMapAgency:OnAssistedTrackMapPin(data)
 end
 
 function XBigWorldMapAgency:OnUpdateMapPinPosition(data)
+    self._Model:UpdatePinOutStatus(data.MapPinLevelId, data.MapPinId, false)
     self._Model:UpdatePinPosition(data.MapPinLevelId, data.MapPinId, data.Position)
-    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE)
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE, data)
+end
+
+function XBigWorldMapAgency:OnGetLittleMapRadius(data)
+    local levelId = data.LevelId
+
+    if not XTool.IsNumberValid(levelId) or not self:CheckLevelHasMap(levelId) then
+        return {
+            Radius = 0,
+        }
+    end
+
+    local scale = self:GetLittleMapScaleByLevelId(levelId)
+    local pixelRatio = self:GetMapPixelRatioByLevelId(levelId)
+    local radius = self._Model:GetLittleMapRadius()
+
+    if not XTool.IsNumberValid(pixelRatio) then
+        pixelRatio = 1
+    end
+
+    return {
+        Radius = (radius / scale) / pixelRatio
+    }
 end
 
 function XBigWorldMapAgency:OnOpenBigMap(data)
     self:OpenBigWorldMapUiWithPinId(data.WorldId, data.LevelId, data.PinId)
+end
+
+function XBigWorldMapAgency:OnLittleMapPinRemove(data)
+    self._Model:UpdatePinOutStatus(data.MapPinLevelId, data.MapPinId, true)
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, data.MapPinLevelId, data.MapPinId)
 end
 
 ---@param controlData XBWFunctionControlData
@@ -246,24 +293,34 @@ function XBigWorldMapAgency:OpenBigWorldMapUiWithPosition(worldId, levelId, posX
     }, scaleRatio)
 end
 
-function XBigWorldMapAgency:OpenBigWorldMapUiWithPinId(worldId, levelId, pinId)
+function XBigWorldMapAgency:OpenBigWorldMapUiWithPinId(worldId, levelId, pinId, openAiMemory)
     if not XTool.IsNumberValid(levelId) or not XTool.IsNumberValid(worldId) then
         return false
     end
 
-    return self:TryOpenBigWorldMapUi(worldId, levelId, pinId)
+    return self:TryOpenBigWorldMapUi(worldId, levelId, pinId, nil, nil, openAiMemory)
 end
 
-function XBigWorldMapAgency:TryOpenBigWorldMapUi(worldId, levelId, targetPinId, focusPos, scaleRatio)
+function XBigWorldMapAgency:TryOpenBigWorldMapUi(worldId, levelId, targetPinId, focusPos, scaleRatio, openAiMemory)
     if self:CheckLevelLinkOther(levelId) then
         local linkLevelId = self:GetMapLinkLevelIdByLevelId(levelId)
         local linkWorldId = self._Model:GetBigWorldMapLinkLinkWorldIdByLevelId(levelId)
         local bindPinId = self._Model:GetBigWorldMapLinkBindPinIdByLevelId(levelId)
 
-        XMVCA.XBigWorldUI:Open("UiBigWorldMap", linkWorldId, linkLevelId, bindPinId, targetPinId, focusPos, scaleRatio)
+        XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_BIG_MAP_OPENED_NOTIFY)
+        XMVCA.XBigWorldUI:Open("UiBigWorldMap", linkWorldId, linkLevelId, bindPinId, targetPinId, focusPos, scaleRatio, openAiMemory)
         return true
     elseif self:CheckLevelHasMap(levelId) then
-        XMVCA.XBigWorldUI:Open("UiBigWorldMap", worldId, levelId, 0, targetPinId, focusPos, scaleRatio)
+        local currentLevelId = XMVCA.XBigWorldGamePlay:GetCurrentLevelId()
+        local bindPinId = 0
+        if self:CheckLevelLinkOther(currentLevelId) then
+            local linkLevelId = self:GetMapLinkLevelIdByLevelId(currentLevelId)
+            if linkLevelId == levelId then
+                bindPinId = self._Model:GetBigWorldMapLinkBindPinIdByLevelId(currentLevelId)
+            end
+        end
+        XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_BIG_MAP_OPENED_NOTIFY)
+        XMVCA.XBigWorldUI:Open("UiBigWorldMap", worldId, levelId, bindPinId, targetPinId, focusPos, scaleRatio, openAiMemory)
         return true
     end
 
@@ -303,6 +360,10 @@ function XBigWorldMapAgency:GetQuestPinStyleIdByQuestId(questId)
     return self._Model:GetBigWorldMapQuestPinStyleIdByQuestId(questId)
 end
 
+function XBigWorldMapAgency:GetOptionalQuestPinStyleIdByQuestId(questId)
+    return self._Model:GetBigWorldMapQuestPinSecondStyleIdByQuestId(questId)
+end
+
 ---@param questId number
 ---@param isIncludeCurrentLevel boolean 是否包含当前关卡(为True时会返回在当前关卡内目标图钉的名称)
 ---@return string
@@ -337,6 +398,10 @@ end
 
 function XBigWorldMapAgency:UpdateAllActivateTeleporter(data)
     self._Model:UpdateAllActivateTeleporter(data)
+end
+
+function XBigWorldMapAgency:UpdateLittleMapRadius(radius)
+    self._Model:UpdateLittleMapRadius(radius)
 end
 
 function XBigWorldMapAgency:SendCurrentTrackCommand()
@@ -447,6 +512,12 @@ function XBigWorldMapAgency:CheckPinTracking(levelId, pinId)
     local currentPinIds = self._Model:GetAllTrackPinsByLevelId(levelId)
 
     return currentPinIds and currentPinIds[pinId]
+end
+
+function XBigWorldMapAgency:CheckLevelPinsTracking(levelId, trackType)
+    local currentPinIds = self._Model:GetTrackPinsByLevelIdAndType(levelId, trackType)
+
+    return not XTool.IsTableEmpty(currentPinIds)
 end
 
 function XBigWorldMapAgency:OnNotifyBigWorldBoxData(data)
@@ -589,6 +660,10 @@ function XBigWorldMapAgency:GetMapGroupIdsByLevelId(levelId)
     return result
 end
 
+function XBigWorldMapAgency:GetBigWorldMapConditionIdByLevelId(levelId)
+    return self._Model:GetBigWorldMapConditionIdByLevelId(levelId)
+end
+
 function XBigWorldMapAgency:GetAreaIdsByGroupId(groupId)
     return self._Model:GetBigWorldMapAreaGroupAreaIdsByGroupId(groupId)
 end
@@ -669,8 +744,8 @@ function XBigWorldMapAgency:GetMapPinDatasByLevelIdAndGroupId(levelId, groupId)
 end
 
 ---@return XBWMapPinData[]
-function XBigWorldMapAgency:GetMapPinDatasByLevelId(levelId)
-    return self._Model:GetPinDatasByLevelId(levelId)
+function XBigWorldMapAgency:GetMapPinDatasByLevelId(levelId, isNoTip)
+    return self._Model:GetPinDatasByLevelId(levelId, isNoTip)
 end
 
 ---@return XBWMapPinData
@@ -750,9 +825,13 @@ function XBigWorldMapAgency:GetPinIconByStyleId(styleId, isActive)
         return self:GetPinUnActiveIconByStyleId(styleId)
     end
 
-    XLog.Error("XBigWorldMapControl:GetPinIconByStyleId styleId is INVALID! 请检查关卡图钉配置表!")
+    XLog.Error("XBigWorldMapControl:GetPinIconByStyleId styleId is INVALID! 请检查关卡图钉配置表! " .. styleId)
 
     return ""
+end
+
+function XBigWorldMapAgency:GetBigWorldMapPinStyleAreaColorByStyleId(styleId)
+    return self._Model:GetBigWorldMapPinStyleAreaColorByStyleId(styleId)
 end
 
 ---@return table<number, XBWMapPinData>

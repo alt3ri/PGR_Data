@@ -381,12 +381,11 @@ function XCharacterModel:InitOwnCharacter()
         __pairs = function(t)
             return function(t, k)
                 local nk, nv = next(t, k)
-                if nk then
+                while nk do
                     if XMVCA.XCharacter:IsCharacterCanShow(nk) then
                         return nk, nv
-                    else
-                        return nk, nil
                     end
+                    nk, nv = next(t, nk)
                 end
             end, t, nil
         end

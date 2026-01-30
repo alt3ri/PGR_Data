@@ -10,6 +10,8 @@ function XBigWorldMessageControl:OnInit()
     self._MessageList = false
     ---@type XBWMessageEntity[]
     self._UnreadMessageList = false
+
+    self._ImageMaxSize = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetInt("BigWorldMessageImageMaxSize")
 end
 
 function XBigWorldMessageControl:AddAgencyEvent()
@@ -144,7 +146,6 @@ end
 
 ---@return XBWMessageEntity
 function XBigWorldMessageControl:GetForceMessageByMessageId(messageId)
-    self._Model:TryRemoveUnReadMessageData(messageId)
     return self:AddEntity(XBWMessageEntity, messageId)
 end
 
@@ -158,8 +159,31 @@ function XBigWorldMessageControl:DequeueForceMessageData()
     return self._Model:DequeueForceMessageData()
 end
 
+function XBigWorldMessageControl:AdaptImageSize(rawImage)
+    if not rawImage then
+        return
+    end
+
+    rawImage:SetNativeSize()
+
+    local width = rawImage.transform.rect.width
+    local height = rawImage.transform.rect.height
+
+    if width > height then
+        if width > self._ImageMaxSize then
+            rawImage.transform.sizeDelta = Vector2(self._ImageMaxSize, height * (self._ImageMaxSize / width))
+        end
+    else
+        if height > self._ImageMaxSize then
+            rawImage.transform.sizeDelta = Vector2(width * (self._ImageMaxSize / height), self._ImageMaxSize)
+        end
+    end
+end
+
 function XBigWorldMessageControl:CheckMessageIsForcePlay(messageId)
-    return self._Model:GetBigWorldMessageTypeById(messageId) == XEnumConst.BWMessage.MessageType.ForcePlay
+    local messageType = self._Model:GetBigWorldMessageTypeById(messageId)
+
+    return messageType == XEnumConst.BWMessage.MessageType.ForcePlay or messageType == XEnumConst.BWMessage.MessageType.Send
 end
 
 function XBigWorldMessageControl:ReplaceMessageContentPlayerName(text)

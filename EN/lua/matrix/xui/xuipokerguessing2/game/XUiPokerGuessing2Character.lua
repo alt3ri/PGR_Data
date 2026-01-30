@@ -1,4 +1,6 @@
 local XUiPokerGuessing2Card = require("XUi/XUiPokerGuessing2/Game/XUiPokerGuessing2Card")
+---@type UnityEngine.Vector3
+local Vector3 = CS.UnityEngine.Vector3
 
 ---@class XUiPokerGuessing2Character : XUiNode
 ---@field _Control XPokerGuessing2Control
@@ -20,11 +22,39 @@ function XUiPokerGuessing2Character:OnStart(isPlayer)
     end
     self._IsPlayer = isPlayer
 
-    if self.PutDownEffect then
-        self.PutDownEffect.gameObject:SetActiveEx(false)
+    -- 初始化5个放置节点
+    self._NodesToPutDown = {
+        self.NodeToPutDown1,
+        self.NodeToPutDown2,
+        self.NodeToPutDown3,
+        self.NodeToPutDown4,
+        self.NodeToPutDown5,
+    }
+    -- 禁用每个节点下挂的RawImage脚本
+    for i = 1, #self._NodesToPutDown do
+        local node = self._NodesToPutDown[i]
+        if node then
+            -- 禁用节点本身的RawImage组件
+            local rawImage = node:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+            if rawImage then
+                rawImage.enabled = false
+            end
+            -- 禁用节点下所有子对象的RawImage组件
+            local childCount = node.transform.childCount
+            for j = 0, childCount - 1 do
+                local child = node.transform:GetChild(j)
+                if child then
+                    local childRawImage = child:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+                    if childRawImage then
+                        childRawImage.enabled = false
+                    end
+                end
+            end
+        end
     end
-    if self.SuccessEffect then
-        self.SuccessEffect.gameObject:SetActiveEx(false)
+
+    if self.PanelWin then
+        self.PanelWin.gameObject:SetActiveEx(false)
     end
 end
 
@@ -105,8 +135,10 @@ function XUiPokerGuessing2Character:Update(data)
         self.RImgCharacter:SetRawImage(data.Icon)
         self.TxtName.text = data.Name
 
+        -- 根据回合数获取对应的节点
+        local nodeToPutDown = self:GetNodeToPutDownByRound()
         for i = 1, #self._Cards do
-            self._Cards[i]:SetParentOnDrag(self.NodeToPutDown)
+            self._Cards[i]:SetParentOnDrag(nodeToPutDown)
         end
         if self._IsPlayer then
             for i = 1, #self._Cards do
@@ -230,45 +262,59 @@ function XUiPokerGuessing2Character:RevealCoveredCard(cardData)
         local card = self._Cards[i]
         if card:IsPutOnGround() then
             card:Update(cardData)
-            -- 播放先开牌动画
-            card:PlayAnimationRevealTheCard()
+            -- 播放先开牌动画，动画结束后克隆卡牌
+            card:PlayAnimationRevealTheCard(function()
+                self:CloneCardOnCurrentNode()
+            end)
             return
         end
     end
 end
 
 function XUiPokerGuessing2Character:SetTheRevealCardWin()
-    for i = 1, #self._Cards do
-        local card = self._Cards[i]
-        if card:IsPutOnGround() then
-            card:SetWin(true)
-        end
+    if self.PanelWin then
+        self.PanelWin.gameObject:SetActiveEx(true)
     end
 end
 
 function XUiPokerGuessing2Character:HideCardWin()
-    for i = 1, #self._Cards do
-        local card = self._Cards[i]
-        card:SetWin(false)
+    if self.PanelWin then
+        self.PanelWin.gameObject:SetActiveEx(false)
     end
 end
 
 function XUiPokerGuessing2Character:Reset()
+    -- 停止所有卡牌的 ShowCard 动画
+    self:StopAllCardsShowCardAnimation()
+    
     self:SetAllCardPutOnGroup(false)
     for i = 1, #self._Cards do
         local card = self._Cards[i]
         card:Reset()
     end
+    self:HideCardWin()
 end
 
-function XUiPokerGuessing2Character:ShowEffectPutDown()
-    self.PutDownEffect.gameObject:SetActiveEx(false)
-    self.PutDownEffect.gameObject:SetActiveEx(true)
-end
-
-function XUiPokerGuessing2Character:ShowEffectSuccess()
-    self.SuccessEffect.gameObject:SetActiveEx(false)
-    self.SuccessEffect.gameObject:SetActiveEx(true)
+-- 重置克隆卡牌的特效值
+function XUiPokerGuessing2Character:ResetClonedCardDissolutionEffect(clonedGameObject)
+    if not clonedGameObject then
+        return
+    end
+    
+    -- 查找并让 animation/ChangeCard 的 PlayableDirector 跳到最后一帧并停止
+    local animRoot = clonedGameObject.transform:Find("Animation")
+    if animRoot then
+        local changeCardAnim = animRoot:Find("ChangeCard")
+        if changeCardAnim then
+            local playableDirector = changeCardAnim:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+            if playableDirector then
+                -- 跳到最后一帧并停止
+                playableDirector.time = playableDirector.duration
+                playableDirector:Evaluate()
+                playableDirector:Stop()
+            end
+        end
+    end
 end
 
 -- 使所有牌背面向上
@@ -277,6 +323,154 @@ function XUiPokerGuessing2Character:CoverAllTheCards()
         local card = self._Cards[i]
         card:SetVisibleCardFace(false)
         card:SetVisibleCardBack(true)
+    end
+end
+
+-- 根据回合数获取对应的放置节点
+function XUiPokerGuessing2Character:GetNodeToPutDownByRound()
+    local round = self._Control:GetRound() or 1
+    
+    -- 回合数从1开始，超过5就使用最后一个
+    local index = math.min(round, 5)
+    local node = self._NodesToPutDown[index]
+    
+    -- 如果节点不存在，使用第一个或最后一个可用的节点
+    if not node then
+        for i = 1, #self._NodesToPutDown do
+            if self._NodesToPutDown[i] then
+                node = self._NodesToPutDown[i]
+                break
+            end
+        end
+    end
+    
+    return node or self.NodeToPutDown
+end
+
+-- 获取已放在地上的卡牌
+function XUiPokerGuessing2Character:GetCardOnGround()
+    for i = 1, #self._Cards do
+        local card = self._Cards[i]
+        if card:IsPutOnGround() then
+            return card
+        end
+    end
+    return nil
+end
+
+-- 克隆当前放在地上的卡牌到当前节点
+function XUiPokerGuessing2Character:CloneCardOnCurrentNode()
+    -- 找到已经放在地上的卡牌
+    local cardOnGround = self:GetCardOnGround()
+    
+    if not cardOnGround then
+        return nil
+    end
+    
+    -- 使用卡牌的父节点
+    local parentNode = cardOnGround.Transform.parent
+    if not parentNode then
+        return nil
+    end
+
+    -- 克隆卡牌的GameObject
+    local clonedGameObject = CS.UnityEngine.Object.Instantiate(cardOnGround.GameObject, parentNode)
+    if clonedGameObject then
+        -- 设置克隆对象的位置和旋转
+        local clonedTransform = clonedGameObject.transform
+        clonedTransform.localPosition = Vector3.zero
+        clonedTransform.localRotation = CS.UnityEngine.Quaternion.identity
+        
+        -- 重置克隆体的特效值
+        self:ResetClonedCardDissolutionEffect(clonedGameObject)
+    end
+    
+    return clonedGameObject
+end
+
+-- 停止所有卡牌的 ShowCard 动画
+function XUiPokerGuessing2Character:StopAllCardsShowCardAnimation()
+    -- 停止所有原始卡牌的 ShowCard 动画并隐藏 SuccessEffect 和 PutDownEffect
+    for i = 1, #self._Cards do
+        local card = self._Cards[i]
+        if card then
+            card:StopAnimation("ShowCard")
+            -- 隐藏 SuccessEffect 和 PutDownEffect
+            card:HideEffectSuccess()
+            card:HideEffectPutDown()
+        end
+    end
+    
+    -- 停止所有克隆卡牌的 ShowCard 动画并隐藏 SuccessEffect 和 PutDownEffect
+    for i = 1, #self._NodesToPutDown do
+        local node = self._NodesToPutDown[i]
+        if node then
+            local childCount = node.transform.childCount
+            for j = 0, childCount - 1 do
+                local child = node.transform:GetChild(j)
+                if child then
+                    -- 停止 ShowCard 动画
+                    local animRoot = child:Find("Animation")
+                    if not XTool.UObjIsNil(animRoot) then
+                        local animTrans = animRoot:Find("ShowCard")
+                        if not XTool.UObjIsNil(animTrans) then
+                            animTrans:StopTimelineAnimation()
+                        end
+                    end
+                    
+                    -- 隐藏 SuccessEffect
+                    local successEffect = XUiHelper.TryGetComponent(child, "SuccessEffect", "RectTransform")
+                    if successEffect then
+                        successEffect.gameObject:SetActiveEx(false)
+                    end
+                    
+                    -- 隐藏 PutDownEffect
+                    local putDownEffect = XUiHelper.TryGetComponent(child, "PutDownEffect", "RectTransform")
+                    if putDownEffect then
+                        putDownEffect.gameObject:SetActiveEx(false)
+                    end
+                end
+            end
+        end
+    end
+end
+
+-- 清理所有节点下的克隆卡牌
+function XUiPokerGuessing2Character:ClearClonedCards()
+    -- 收集所有原始卡牌的GameObject，用于判断是否是克隆对象
+    local originalCardGameObjects = {}
+    for i = 1, #self._Cards do
+        local card = self._Cards[i]
+        if card and card.GameObject then
+            originalCardGameObjects[card.GameObject] = true
+        end
+    end
+    
+    -- 遍历所有节点，清理克隆的卡牌
+    for i = 1, #self._NodesToPutDown do
+        local node = self._NodesToPutDown[i]
+        if node then
+            local childCount = node.transform.childCount
+            -- 从后往前遍历，避免删除时索引变化的问题
+            for j = childCount - 1, 0, -1 do
+                local child = node.transform:GetChild(j)
+                if child then
+                    local childGameObject = child.gameObject
+                    -- 如果不是原始卡牌的GameObject，则是克隆对象，需要销毁
+                    if not originalCardGameObjects[childGameObject] then
+                        CS.UnityEngine.Object.Destroy(childGameObject)
+                    end
+                end
+            end
+        end
+    end
+end
+
+function XUiPokerGuessing2Character:HideAllCardsEffect()
+    for i = 1, #self._Cards do
+        local card = self._Cards[i]
+        card:HideEffectSuccess()
+        card:HideEffectPutDown()
     end
 end
 

@@ -27,6 +27,14 @@ function XGWNode:Ctor(id)
     self.IsJustDestroyed = false
 end
 
+function XGWNode:UpdateWithServerDataRealTime(data, type, id)
+    self:UpdateWithServerData(data)
+
+    if XMain.IsEditorDebug then
+        XLog.Warning('[公会战]关卡节点Id: ' .. tostring(self._Id) .. '刷新，类型：' .. tostring(type) .. ' id: ' .. tostring(id), data)
+    end
+end
+
 -- data : XGuildWarNodeData
 function XGWNode:UpdateWithServerData(data)
     if data == nil then

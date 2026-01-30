@@ -32,26 +32,27 @@ end
 
 ---@desc 初始化配置
 function XSkillBase:InitSkillTemplate()
-    self.Template = {}
     local template = self._proxy:GetSkillTemplate()
-    self.Template.SkillId = template.Id
-    self.Template.NpcId = template.NpcId
-    self.Template.ScriptType = template.ScriptType
-    self.Template.ScriptId = template.ScriptId
-    self.Template.CoolDown = template.CoolDown
-    self.Template.CDGroup = template.CDGroup
-    self.Template.MaxCharge = template.MaxCharge
-    self.Template.OriginCharge = template.OriginCharge
-    self.Template.ActionList1 = XTool.CsList2LuaTable(template.ActionList1);
-    self.Template.ActionList2 = XTool.CsList2LuaTable(template.ActionList2);
-    self.Template.ActionList3 = XTool.CsList2LuaTable(template.ActionList3);
-    self.Template.CustomActionList = XTool.CsList2LuaTable(template.CustomActionList);
-    self.Template.CustomParamList = XTool.CsList2LuaTable(template.CustomParamList);
+    local Template = {}
+    Template.SkillId = template.Id
+    Template.NpcId = template.NpcId
+    Template.ScriptType = template.ScriptType
+    Template.ScriptId = template.ScriptId
+    Template.CoolDown = template.CoolDown
+    Template.CDGroup = template.CDGroup
+    Template.MaxCharge = template.MaxCharge
+    Template.OriginCharge = template.OriginCharge
+    Template.ActionList1 = XTool.CsList2LuaTable(template.ActionList1);
+    Template.ActionList2 = XTool.CsList2LuaTable(template.ActionList2);
+    Template.ActionList3 = XTool.CsList2LuaTable(template.ActionList3);
+    Template.CustomActionList = XTool.CsList2LuaTable(template.CustomActionList);
+    Template.CustomParamList = XTool.CsList2LuaTable(template.CustomParamList);
+    self.Template = Template
     return self.Template
 end
 
 ---@desc Update基函数
----@param dt number @ delta time 
+---@param dt number @ delta time
 function XSkillBase:Update(dt)
     Base.Update(self, dt)
     self:CheckInputCacheValid()
@@ -80,13 +81,14 @@ end
 function XSkillBase:Terminate()
     Base.Terminate(self)
 end
+
 --endregion
 
 --region 输入相关
 ---@desc 主输入事件(同一帧内时机比Update要早)
 ---@param eventArgs userdata
 ---eventArgs = {
----     
+---
 ---}
 function XSkillBase:OnInputEvent(eventArgs)
     --缓存输入
@@ -165,7 +167,6 @@ function XSkillBase:CheckInputCacheAndTryCastAction()
     end
 end
 
-
 --endregion
 
 --region 事件入口
@@ -195,6 +196,7 @@ function XSkillBase:CastStartAction()
     self.OnCastStartAction(CastContext)
     return CastContext.Result
 end
+
 ---@desc 禁止继承复写
 function XSkillBase:CastLoopAction()
     local CastContext = {}
@@ -202,6 +204,7 @@ function XSkillBase:CastLoopAction()
     self.OnCastLoopAction(CastContext)
     return CastContext.Result
 end
+
 ---@desc 禁止继承复写
 function XSkillBase:CastEndAction()
     local CastContext = {}
@@ -214,10 +217,12 @@ end
 function XSkillBase:TryCastStartAction(CastContext)
     return false
 end
+
 ---@尝试释放循环动作
 function XSkillBase:TryLoopEndAction(CastContext)
     return false
 end
+
 ---@尝试释放结束动作
 function XSkillBase:TryCastEndAction(CastContext)
     return false
@@ -226,9 +231,11 @@ end
 ---@释放开始动作后(无论成不成功)
 function XSkillBase:OnCastStartAction(CastContext)
 end
+
 ---@释放循环动作后(无论成不成功)
 function XSkillBase:OnCastLoopAction(CastContext)
 end
+
 ---@释放结束动作后(无论成不成功)
 function XSkillBase:OnCastEndAction(CastContext)
 end
@@ -259,7 +266,7 @@ end
 function XSkillBase:CheckCastCondition(actionId, timingId)
     --默认TimingId为0
     timingId = timingId or 0
-    
+
     --判断输入是否通过
     if not self:CheckInputValid(actionId) then
         --XLog.Error("输入不通过")
@@ -271,48 +278,86 @@ function XSkillBase:CheckCastCondition(actionId, timingId)
         --XLog.Error("动作条件不通过")
         return false
     end
-    
+
     --判断打断关系
     if not self._proxy:CheckNpcCanAbortCurrentAction(self._uuid, actionId, timingId) then
         local _, curtime = self._proxy:TryGetNpcCurrentActionElapsedTime(self._uuid)
         --XLog.Error("打断不通过:" .. tostring(actionId) .. "  "  .. tostring(timingId) .. "   " .. tostring(curtime))
         return false
     end
-    
+
     --C#该接口判断了
     --1 Npc是否死亡
-    --2 Npc是否拥有 Npc状态:无法释放动作 
+    --2 Npc是否拥有 Npc状态:无法释放动作
     --3 Npc是否在受击
     --4 空中组件判断是否能在空中放动作
     if not self._proxy:CheckCanCastSkill(self._uuid) then
         --XLog.Error("Npc状态不用过")
         return false
     end
-    
+
     return true
 end
 
----@desc 对索敌目标(敌人)释放技能，若无索敌目标，则对Npc面前10米处释放
-function XSkillBase:CastActionBySearchEnemy(actionId)
-    -- self._proxy:AbortAction(self._uuid, true, false)
+---@desc 刷新索敌并对索敌目标(敌人)释放技能，若无索敌目标，则对Npc面前10米处释放
+function XSkillBase:CastActionBySearchEnemy(actionId, startTime, endTime)
     local LauncherId = self._uuid
     local searchId = self._proxy:GetFirstSearchTarget(self._uuid, ENpcTargetType.Enemy)
     local curTarId = self._proxy:GetLockTarget(LauncherId)
-    if searchId ~= 0 and searchId ~= curTarId then
-        self._proxy:SetSoftLock(LauncherId, searchId) --直接使用新索敌获得目标设置为软锁目标，新索敌获得的id不可读，为组合生成内容
-        local locktargetid, npcid = self._proxy:GetLockTarget()--转换新索敌目标为搜索目标id，npcuuid
-        self._proxy:SetNpcFocusTarget(LauncherId, npcid)  --镜头锁定
+
+    if searchId ~= curTarId then
         curTarId = searchId
+        if searchId ~= 0 then
+            local locktargettype = self._proxy:GetCurLockTargetType()
+            if locktargettype == ELockTargetType.HardLock then
+                self._proxy:SetHardLock(self._uuid, searchId)
+            else
+                self._proxy:SetSoftLock(self._uuid, searchId) --直接使用新索敌获得目标设置为软锁目标，新索敌获得的id不可读，为组合生成内容
+            end
+
+            local _, targetId = self._proxy:GetLockTarget()     --转换新索敌目标为搜索目标id，npcuuid
+            self._proxy:SetNpcFocusTarget(LauncherId, targetId) --镜头锁定
+        end
     end
 
+    local actionTemplate = self._proxy:GetSkillActionTemplate(actionId)
+    startTime = startTime or (actionTemplate and actionTemplate.StartTime)
+    endTime = endTime or (actionTemplate and actionTemplate.EndTime)
+
     if curTarId ~= 0 then
-        return self._proxy:CastSkillActionToSearchTargetNotCheck(self._uuid, actionId, searchId)
+        return self._proxy:CastSkillActionToSearchTargetNotCheck(self._uuid, actionId, curTarId, startTime, endTime)
     else
-        local pos = self._proxy:GetNpcPosition(self._uuid)
-        local facing = self._proxy:GetNpcRotation(self._uuid)
-        local tarPos = pos + facing * 10
-        return self._proxy:CastSkillActionToPositionNotCheck(self._uuid, actionId, tarPos)
+        return self:CastActionToFront(actionId, startTime, endTime);
     end
+end
+
+---@desc 对已有目标释放技能,若无目标,则对Npc面前10米处释放
+function XSkillBase:CastActionToOldTarget(actionId, startTime, endTime)
+    local LauncherId = self._uuid
+    local curTarId = self._proxy:GetLockTarget(LauncherId)
+
+    local actionTemplate = self._proxy:GetSkillActionTemplate(actionId)
+    startTime = startTime or (actionTemplate and actionTemplate.StartTime)
+    endTime = endTime or (actionTemplate and actionTemplate.EndTime)
+
+    if curTarId ~= 0 then
+        return self._proxy:CastSkillActionToSearchTargetNotCheck(self._uuid, actionId, curTarId, startTime, endTime)
+    else
+        return  self:CastActionToFront(actionId, startTime, endTime)
+    end
+end
+
+---@desc 对Npc面前10米处释放
+function XSkillBase:CastActionToFront(actionId, startTime, endTime)
+    local actionTemplate = self._proxy:GetSkillActionTemplate(actionId)
+    startTime = startTime or (actionTemplate and actionTemplate.StartTime)
+    endTime = endTime or (actionTemplate and actionTemplate.EndTime)
+
+
+    local pos = self._proxy:GetNpcPosition(self._uuid)
+    local facing = self._proxy:GetNpcRotation(self._uuid)
+    local tarPos = pos + facing * 10
+    return self._proxy:CastSkillActionToPositionNotCheck(self._uuid, actionId, tarPos, startTime, endTime)
 end
 
 ---@desc 检查输入是否通过
@@ -334,11 +379,10 @@ end
 
 function XSkillBase:Exec()
     for _, actionId in ipairs(self.Template.ActionList1) do
-        if self:CheckCastCondition(actionId) then 
+        if self:CheckCastCondition(actionId) then
             self:CastActionBySearchEnemy(actionId)
         end
     end
 end
-
 
 return XSkillBase

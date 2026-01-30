@@ -86,8 +86,8 @@ function XUiDlcRelinkCharacterOther:RefreshPanelRight()
 end
 
 function XUiDlcRelinkCharacterOther:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnPlayer, self.OnBtnPlayerClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnPlayer:AddEventListener(handler(self, self.OnBtnPlayerClick))
 end
 
 function XUiDlcRelinkCharacterOther:OnBtnBackClick()

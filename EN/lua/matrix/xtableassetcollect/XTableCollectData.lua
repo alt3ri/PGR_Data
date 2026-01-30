@@ -15,11 +15,10 @@ function this:GetFileInfo(fileName)
     return self.fileInfoDic[fileName]
 end
 
-function this:AddFileInfo(fileName, ModelName)
+function this:AddFileInfo(fileName)
     if not self.fileInfoDic[fileName] then
         local fileInfo = {}
         fileInfo.fileName = fileName
-        fileInfo.ModelName = ModelName
         fileInfo.tableInfoList = {}
         fileInfo.tableDic = {}
         
@@ -30,26 +29,27 @@ function this:AddFileInfo(fileName, ModelName)
     end
 end
 
-function this:GetOrAddFileInfo(fileName, ModelName)
+function this:GetOrAddFileInfo(fileName)
     if not self.fileInfoDic[fileName] then
-        self:AddFileInfo(fileName, ModelName)
+        self:AddFileInfo(fileName)
     end
 
     return self.fileInfoDic[fileName]
 end
 
-function this:AddTable(fileName, ModelName, tablePath, tableSourceType)
+function this:AddTable(fileName, modelName, tablePath, tableSourceType)
     if not self.totalTableDic[tablePath] then
         self.totalTableDic[tablePath] = true
         self.totalTableCount = self.totalTableCount + 1
     end
 
-    local fileInfo = self:GetOrAddFileInfo(fileName, ModelName)
+    local fileInfo = self:GetOrAddFileInfo(fileName)
 
     if not fileInfo.tableDic[tablePath] then
         local tableInfo = {
-            sourceType = tableSourceType,
+            modelName = modelName,
             tablePath = tablePath,
+            sourceType = tableSourceType,
         }
 
         table.insert(fileInfo.tableInfoList, tableInfo)

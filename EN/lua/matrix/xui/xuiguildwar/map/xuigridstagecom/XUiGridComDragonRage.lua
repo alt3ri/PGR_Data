@@ -10,19 +10,23 @@ end
 --- 根据当前龙怒状态、节点类型选择播放常驻特效、动画
 function XUiGridComDragonRage:PlayDragonRageStateShow(isDragonRageOpen)
     if isDragonRageOpen and self.Owner.GameObject.activeSelf then
-        local nodeType = self.Owner.StageNode:GetNodeType()
+        local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.Owner.StageNodeId)
 
-        -- 龙怒玩法，有父节点的非废墟节点都是龙怒节点
-        if nodeType ~= XGuildWarConfig.NodeType.NodeRelic and XTool.IsNumberValid(self.Owner.StageNode:GetRootId()) then
-            --todo 播放龙怒节点常驻特效
-            
-            return
-        end
-        
-        --todo 废墟节点播放废墟特效
-        if nodeType == XGuildWarConfig.NodeType.NodeRelic then
-            
-            return
+        if nodeEntity then
+            local nodeType = nodeEntity:GetNodeType()
+
+            -- 龙怒玩法，有父节点的非废墟节点都是龙怒节点
+            if nodeType ~= XGuildWarConfig.NodeType.NodeRelic and XTool.IsNumberValid(nodeEntity:GetRootId()) then
+                --todo 播放龙怒节点常驻特效
+
+                return
+            end
+
+            --todo 废墟节点播放废墟特效
+            if nodeType == XGuildWarConfig.NodeType.NodeRelic then
+
+                return
+            end
         end
     end
     
@@ -31,7 +35,9 @@ end
 --- 关卡切换时，龙怒状态节点显示动画
 function XUiGridComDragonRage:PlayDragonRageChangeShow(cb)
     -- 判断自己是什么节点，普通节点隐藏，龙怒节点显示
-    if XTool.IsNumberValid(self.Owner.StageNode:GetRootId()) then
+    local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.Owner.StageNodeId)
+    
+    if nodeEntity and XTool.IsNumberValid(nodeEntity:GetRootId()) then
         --todo 龙怒节点显示动画
         if cb then
             cb()
@@ -47,7 +53,9 @@ end
 
 --- 关卡切换时，废墟节点显示动画 
 function XUiGridComDragonRage:PlayRelicChangeShow(cb)
-    if self.Owner.StageNode:GetNodeType() == XGuildWarConfig.NodeType.NodeRelic then
+    local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.Owner.StageNodeId)
+    
+    if nodeEntity and nodeEntity:GetNodeType() == XGuildWarConfig.NodeType.NodeRelic then
         --todo 废墟节点显示动画
         if cb then
             cb()

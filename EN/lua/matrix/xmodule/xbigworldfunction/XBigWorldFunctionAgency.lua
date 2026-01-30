@@ -16,6 +16,8 @@ local FunctionState = {
 
 local DlcEventId = XMVCA.XBigWorldService.DlcEventId
 
+local Debug = CS.XApplication.Debug
+
 function XBigWorldFunctionAgency:OnInit()
     ---@type BigWorldFunctionType
     self.FunctionType = require("XModule/XBigWorldFunction/XFunction/XBWFunctionType")
@@ -32,6 +34,19 @@ function XBigWorldFunctionAgency:OnInit()
     self._ReturnFightFunction = {
         IsEnable = false
     }
+    
+    self.EnterOperateType = {
+        OpenNews = 1, --打开新闻界面
+    }
+    
+    self._EnterOperateHandler = {
+        
+    }
+    
+    self._EnterOperateQueue = {
+    }
+    
+    self._UiHud = "UiBigWorldHud"
 end
 
 function XBigWorldFunctionAgency:InitRpc()
@@ -44,6 +59,9 @@ end
 
 function XBigWorldFunctionAgency:OnRelease()
     self:RemoveFunctionEvent()
+    self._EnterOperateQueue = nil
+    self._EnterOperateHandler = nil
+    XDataCenter.GuideManager.SetDisableGuide(false)
 end
 
 function XBigWorldFunctionAgency:CheckFunctionShield(functionType, isTips)
@@ -135,45 +153,65 @@ function XBigWorldFunctionAgency:OnSkipInterface(data)
 end
 
 function XBigWorldFunctionAgency:InitFunctionEvent()
-    XEventManager.AddEventListener(DlcEventId.EVENT_ENTER_GAME, self.DoWaitLoading, self)
+    XEventManager.AddEventListener(DlcEventId.EVENT_BEFORE_ENTER_GAME, self.DoWaitLoading, self)
     XEventManager.AddEventListener(DlcEventId.EVENT_FIGHT_UI_HUD_ENABLE, self.DoBackToMain, self)
     XEventManager.AddEventListener(DlcEventId.EVENT_BIG_WORLD_SETTLEMENT, self.DoSettlement, self)
     XEventManager.AddEventListener(DlcEventId.EVENT_QUEST_FINISH, self.DoQuestFinish, self)
+    XEventManager.AddEventListener(DlcEventId.EVENT_CHECK_FUNCTION_POPUP, self.DoCheckFunctionPopup, self)
     XEventManager.AddEventListener(DlcEventId.EVENT_FIGHT_ENTER_LEVEL, self.DoWaitLoading, self)
     XEventManager.AddEventListener(DlcEventId.EVENT_FIGHT_LEAVE_LEVEL, self.DoWaitLoading, self)
     XEventManager.AddEventListener(DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.DoLevelUpdate, self)
     XEventManager.AddEventListener(DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_COMPLETE, self.OnFunctionEventCompleted, self)
     XEventManager.AddEventListener(XEventId.EVENT_FUNCTION_EVENT_COMPLETE, self.OnFunctionEventCompleted, self)
+    XEventManager.AddEventListener(XEventId.EVENT_GUIDE_BEGIN_PLAY, self.OnGuideBeginPlay, self)
 end
 
 function XBigWorldFunctionAgency:RemoveFunctionEvent()
-    XEventManager.RemoveEventListener(DlcEventId.EVENT_ENTER_GAME, self.DoWaitLoading, self)
+    XEventManager.RemoveEventListener(DlcEventId.EVENT_BEFORE_ENTER_GAME, self.DoWaitLoading, self)
     XEventManager.RemoveEventListener(DlcEventId.EVENT_FIGHT_UI_HUD_ENABLE, self.DoBackToMain, self)
     XEventManager.RemoveEventListener(DlcEventId.EVENT_BIG_WORLD_SETTLEMENT, self.DoSettlement, self)
     XEventManager.RemoveEventListener(DlcEventId.EVENT_QUEST_FINISH, self.DoQuestFinish, self)
+    XEventManager.RemoveEventListener(DlcEventId.EVENT_CHECK_FUNCTION_POPUP, self.DoCheckFunctionPopup, self)
     XEventManager.RemoveEventListener(DlcEventId.EVENT_FIGHT_ENTER_LEVEL, self.DoWaitLoading, self)
     XEventManager.RemoveEventListener(DlcEventId.EVENT_FIGHT_LEAVE_LEVEL, self.DoWaitLoading, self)
     XEventManager.RemoveEventListener(DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.DoLevelUpdate, self)
     XEventManager.RemoveEventListener(DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_COMPLETE, self.OnFunctionEventCompleted, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FUNCTION_EVENT_COMPLETE, self.OnFunctionEventCompleted, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_GUIDE_BEGIN_PLAY, self.OnGuideBeginPlay, self)
 end
 
 function XBigWorldFunctionAgency:OnFunctionEventChanged()
     --尝试开启新功能
     self:TryOpenFunction()
 
-    if not self:IsFunctionEventFree() then
+    if not self:IsFunctionEventFree() or XMVCA.XBigWorldLoading:IsShowAnyLoading() then
         return
     end
     XEventManager.DispatchEvent(DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_BEGIN)
-    if self:OpenFuncOpenHint() then --系统开放
-        self:_AddState(FunctionState.Busy)
-    elseif XDataCenter.GuideManager.CheckGuideOpen() then --引导
-        self:_AddState(FunctionState.Busy)
-    elseif XMVCA.XBigWorldMessage:TryOpenMessageTipUi() then --强制短信
-        self:_AddState(FunctionState.Busy)
-    elseif XMVCA.XBigWorldTeach:TryShowTeach() then --教学
-        self:_AddState(FunctionState.Busy)
+    if self:TryDoAfterEnterOp() then
+        --进入游戏后就需要的操作
+        self:DoFunctionEventBusy()
+        self:_Debug("执行进入空花后的操作")
+    elseif XMVCA.XBigWorldNews:CheckAutoPopup() then
+        --新闻自动弹出
+        self:DoFunctionEventBusy()
+        self:_Debug("弹出新闻界面")
+    elseif self:OpenFuncOpenHint() then
+        --系统开放
+        self:DoFunctionEventBusy()
+        self:_Debug("弹出系统开放提示")
+    elseif XDataCenter.GuideManager.CheckGuideOpen() then
+        --引导
+        self:DoFunctionEventBusy()
+        self:_Debug("执行引导[打脸]")
+    elseif self:IsShowHud() and XMVCA.XBigWorldMessage:TryOpenMessageTipUi() then
+        --强制短信, 短信一定要比引导优先级低
+        self:DoFunctionEventBusy()
+        self:_Debug("弹出强制短信")
+    elseif XMVCA.XBigWorldTeach:TryShowTeach() then
+        --教学
+        self:DoFunctionEventBusy()
+        self:_Debug("弹出教学教程")
     end
     if self:IsFunctionEventFree() then
         XEventManager.DispatchEvent(DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_END)
@@ -332,6 +370,15 @@ function XBigWorldFunctionAgency:DoQuestFinish()
     self:OnFunctionEventChanged()
 end
 
+function XBigWorldFunctionAgency:DoCheckFunctionPopup()
+    self:OnFunctionEventChanged()
+end
+
+function XBigWorldFunctionAgency:OnGuideBeginPlay()
+    self:_AddState(FunctionState.Busy)
+    self:_Debug("开始播放引导")
+end
+
 function XBigWorldFunctionAgency:DoLevelUpdate()
     self:UnFreezeFunctionEvent()
     self:OnFunctionEventChanged()
@@ -342,8 +389,18 @@ function XBigWorldFunctionAgency:DoWaitLoading()
 end
 
 function XBigWorldFunctionAgency:OnFunctionEventCompleted()
-    self:_RemoveState(FunctionState.Busy)
+    self:_Debug("移除繁忙状态")
+    if self:_ContainState(FunctionState.Busy) then
+        self:_RemoveState(FunctionState.Busy)
+        XDataCenter.GuideManager.SetDisableGuide(false)
+    end
     self:OnFunctionEventChanged()
+end
+
+function XBigWorldFunctionAgency:DoFunctionEventBusy()
+    self:_AddState(FunctionState.Busy)
+    XDataCenter.GuideManager.SetDisableGuide(true)
+    self:_Debug("设置繁忙状态")
 end
 
 --冻结状态
@@ -370,6 +427,13 @@ function XBigWorldFunctionAgency:_AddState(state)
     self._FunctionState = self._FunctionState | state
 end
 
+function XBigWorldFunctionAgency:_Debug(...)
+    if not Debug then
+        return
+    end
+    XLog.Debug("[打脸队列]", ...)
+end
+
 function XBigWorldFunctionAgency:_RemoveState(state)
     self._FunctionState = self._FunctionState & (~state)
 end
@@ -378,5 +442,45 @@ function XBigWorldFunctionAgency:_ContainState(state)
     return (self._FunctionState & state) ~= 0
 end
 
+function XBigWorldFunctionAgency:AddEnterOperateHandler(enterOperateType, func, caller)
+    local listenerList = self._EnterOperateHandler[enterOperateType]
+    if not listenerList then
+        listenerList = {}
+        self._EnterOperateHandler[enterOperateType] = listenerList
+    end
+    listenerList[#listenerList + 1] = {func = func, caller = caller}
+end
+
+function XBigWorldFunctionAgency:AddEnterOperate(opType, params)
+    if not opType or opType <= 0 then
+        return
+    end
+    self._EnterOperateQueue[#self._EnterOperateQueue + 1] = {
+        OpType = opType,
+        Params = params
+    }
+end
+
+function XBigWorldFunctionAgency:TryDoAfterEnterOp()
+    if XTool.IsTableEmpty(self._EnterOperateQueue) then
+        return false
+    end
+    local op = table.remove(self._EnterOperateQueue, 1)
+    if op then
+        local listenerList = self._EnterOperateHandler[op.OpType]
+        if not XTool.IsTableEmpty(listenerList) then
+            for _, listener in ipairs(listenerList) do
+                listener.func(listener.caller, op.Params)
+            end
+            return true
+        end
+        return self:TryDoAfterEnterOp()
+    end
+    return self:TryDoAfterEnterOp()
+end
+
+function XBigWorldFunctionAgency:IsShowHud()
+    return XMVCA.XBigWorldUI:IsShow(self._UiHud)
+end
 
 return XBigWorldFunctionAgency

@@ -64,14 +64,9 @@ function XUiBigWorldPopupMessageSingle:Close()
 end
 
 function XUiBigWorldPopupMessageSingle:OnMessageFinish()
-    CS.XLog.Debug("[BigWorldMessage]: Play Message Content Receive Finish Event.\n" .. debug.traceback())
     self._IsPlayFinish = true
     self.BtnClose.gameObject:SetActiveEx(true)
-    CS.XLog.Debug("[BigWorldMessage]: Message Button Close Set Active. Active: " ..
-                      tostring(self.BtnClose.gameObject.activeSelf) .. "\n" .. debug.traceback())
     self.BtnBgClose.gameObject:SetActiveEx(true)
-    CS.XLog.Debug("[BigWorldMessage]: Message Button BgClose Set Active. Active: " ..
-                      tostring(self.BtnBgClose.gameObject.activeSelf) .. "\n" .. debug.traceback())
 end
 
 -- region 私有方法
@@ -87,18 +82,12 @@ function XUiBigWorldPopupMessageSingle:_RegisterSchedules()
     self._Timer = XScheduleManager.ScheduleForever(function()
         if not self._IsPlayFinish then
             if not self._Message or self._Message:IsNil() or self._Message:IsComplete() then
-                local isActive = self.BtnClose.gameObject.activeSelf
-
                 self._IsPlayFinish = true
-                self.BtnBack.gameObject:SetActiveEx(true)
+                self.BtnClose.gameObject:SetActiveEx(true)
                 self.BtnBgClose.gameObject:SetActiveEx(true)
 
                 XScheduleManager.UnSchedule(self._Timer)
                 self._Timer = false
-
-                if not isActive then
-                    XLog.Error("[BigWorldMessage]: Message Play Finish But Button Close Not Set Active.")
-                end
             end
         end
     end, XScheduleManager.SECOND * 3)
@@ -116,14 +105,12 @@ function XUiBigWorldPopupMessageSingle:_RegisterListeners()
     -- 在此处注册事件监听
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_FINISH_NOTIFY, self.OnMessageFinish,
         self)
-    CS.XLog.Debug("[BigWorldMessage]: Message Single Register Event Listener.\n" .. debug.traceback())
 end
 
 function XUiBigWorldPopupMessageSingle:_RemoveListeners()
     -- 在此处移除事件监听
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_FINISH_NOTIFY,
         self.OnMessageFinish, self)
-    CS.XLog.Debug("[BigWorldMessage]: Message Single Remove Event Listener.\n" .. debug.traceback())
 end
 
 function XUiBigWorldPopupMessageSingle:_RegisterRedPointEvents()
@@ -137,8 +124,6 @@ function XUiBigWorldPopupMessageSingle:_Refresh()
     if self._Message and not self._Message:IsNil() then
         self._ChatUi:RefreshChat(self._Message)
     end
-    CS.XLog.Debug("[BigWorldMessage]: Message Single Refresh. IsForce: " .. tostring(self._IsForce) ..
-                      ", IsPlayFinish: " .. tostring(self._IsPlayFinish) .. "\n" .. debug.traceback())
 end
 
 -- endregion

@@ -60,7 +60,7 @@ function XBuffScript1016226:Init()
     self.countAttrib = 125    -- 每获得x点额外属性
     self.magicEffect = 100    -- 其他属性转为本属性时的转换比
     self.attrib = ConfigAttribDict[self._buffId]
-    self.addTimes = 240
+    self.addTimes = 320
 
     self.magicIdFire = ConfigFireId[self._buffId]
     self.magicIdThunder = ConfigThunderId[self._buffId]

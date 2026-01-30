@@ -141,6 +141,30 @@ function XBigWorldMessageConfigModel:GetBigWorldMessageStepEmojiById(id)
     return config.Emoji
 end
 
+function XBigWorldMessageConfigModel:GetBigWorldMessageStepVideoImageById(id)
+    local config = self:GetBigWorldMessageStepConfigById(id)
+
+    return config.VideoImage
+end
+
+function XBigWorldMessageConfigModel:GetBigWorldMessageStepVideoIdById(id)
+    local config = self:GetBigWorldMessageStepConfigById(id)
+
+    return config.VideoId
+end
+
+function XBigWorldMessageConfigModel:GetBigWorldMessageStepPhotoRefIdById(id)
+    local config = self:GetBigWorldMessageStepConfigById(id)
+
+    return config.PhotoRefId
+end
+
+function XBigWorldMessageConfigModel:GetBigWorldMessageStepImageById(id)
+    local config = self:GetBigWorldMessageStepConfigById(id)
+
+    return config.Image
+end
+
 function XBigWorldMessageConfigModel:GetBigWorldMessageStepTextById(id)
     local config = self:GetBigWorldMessageStepConfigById(id)
 

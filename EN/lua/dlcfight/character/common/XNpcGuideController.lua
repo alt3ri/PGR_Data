@@ -118,11 +118,10 @@ end
 ---@protected
 function XNpcGuideController:CheckIsOutOfRoute()
     -- 判断逻辑：玩家与目标点的距离大于向导与目标点的距离且玩家距离目标点超过outOfRoute距离, 视为偏离路线
-    local playerPos = self._proxy:GetNpcPosition(self._proxy:GetLocalPlayerNpcId())
-    local guideNpcPos = self._proxy:GetNpcPosition(self._uuid)
-    local player2TargetDistance = XScriptTool.Distance(playerPos, self._targetPosition)
-    local guide2TargetDistance = XScriptTool.Distance(guideNpcPos, self._targetPosition)
-    local guide2playerDistance = XScriptTool.Distance(guideNpcPos, playerPos)
+    local playerUid = self._proxy:GetLocalPlayerNpcId()
+    local player2TargetDistance = self._proxy:CalcNpcDistanceWitchPos(playerUid, self._targetPosition.x, self._targetPosition.y, self._targetPosition.z)
+    local guide2TargetDistance = self._proxy:CalcNpcDistanceWitchPos(self._uuid, self._targetPosition.x, self._targetPosition.y, self._targetPosition.z)
+    local guide2playerDistance = self._proxy:CalcNpcDistance(self._uuid, playerUid)
     if guide2playerDistance > self._outOfRouteDistance and player2TargetDistance > guide2TargetDistance then
         return true
     end
@@ -131,9 +130,7 @@ end
 
 ---@protected
 function XNpcGuideController:CheckIsArriveTarget()
-    local guideNpcPos = self._proxy:GetNpcPosition(self._uuid)
-    local guide2TargetDistance = XScriptTool.Distance(guideNpcPos, self._guideTargetPosition)
-    return guide2TargetDistance < 2
+    return self._proxy:CheckNpcDistanceWithPos(self._uuid, self._guideTargetPosition.x, self._guideTargetPosition.y, self._guideTargetPosition.z, 2)
 end
 --endregion
 

@@ -5,13 +5,13 @@ function XUiCerberusGameBattleRoomRoleDetail:Ctor(stageId, team, pos)
     self.StageId = stageId
 end
 
-function XUiBattleRoomRoleDetailDefaultProxy:AOPOnStartAfter(rootUi)
+function XUiCerberusGameBattleRoomRoleDetail:AOPOnStartAfter(rootUi)
     rootUi.BtnGroupCharacterType.gameObject:SetActiveEx(false)
     rootUi.BtnFilter.gameObject:SetActiveEx(false)
 end
 
 -- 检测storyPoint的禁用角色
-function XUiBattleRoomRoleDetailDefaultProxy:AOPOnBtnJoinTeamClickedBefore(rootUi)
+function XUiCerberusGameBattleRoomRoleDetail:AOPOnBtnJoinTeamClickedBefore(rootUi)
 
 end
 

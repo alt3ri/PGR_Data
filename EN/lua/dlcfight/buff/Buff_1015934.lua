@@ -125,7 +125,6 @@ function XBuffScript1015934:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
             for _ = 1, self.magicStacks do
                 self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
                 self._proxy:ApplyMagic(self._uuid, self._uuid, self.attackId, self.magicLevel)
-                self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
             end
             self._proxy:SetAutoChessGemTriggerState(self._uuid, self.runeId)
             --进行一次成功触发标记，触发Buff[1]、Buff[4]效果

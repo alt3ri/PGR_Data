@@ -1,6 +1,8 @@
 ---@class XSgFurnitureData 家具数据
 local XSgFurnitureData = XClass(nil, "XSgFurnitureData")
 
+local ScaleRatio = 1000
+
 function XSgFurnitureData:Ctor(id, isAlbumPhoto)
     self:Reset()
     if isAlbumPhoto then
@@ -29,6 +31,8 @@ function XSgFurnitureData:Reset()
     self._Layer = 0
     --下标
     self._Index = 0
+    --缩放
+    self._Scale = 1000
 end
 
 function XSgFurnitureData:UpdateData(data)
@@ -43,6 +47,7 @@ function XSgFurnitureData:UpdateData(data)
     self._Angle = data.Angle or 0
     self._Layer = data.Layer or 0
     self._Index = data.Index or 0
+    self._Scale = data.Scale or 1000
 end
 
 function XSgFurnitureData:GetId()
@@ -103,6 +108,14 @@ function XSgFurnitureData:IsAlbumPhoto()
     return self._PhotoId > 0 and self._Id <= 0
 end
 
+function XSgFurnitureData:GetScale()
+    return self._Scale / ScaleRatio
+end
+
+function XSgFurnitureData:SetScale(scale)
+    self._Scale = math.floor(scale * ScaleRatio)
+end
+
 ---@param furniture XSgFurnitureData
 function XSgFurnitureData:Equal(furniture)
     if not furniture then
@@ -120,15 +133,19 @@ function XSgFurnitureData:Equal(furniture)
         return false
     end
 
-    if self._Angle ~= furniture:GetAngle() then
+    if self:GetAngle() ~= furniture:GetAngle() then
         return false
     end
 
-    if self._Layer ~= furniture:GetLayer() then
+    if self:GetLayer() ~= furniture:GetLayer() then
         return false
     end
 
-    if self._Index ~= furniture:GetIndex() then
+    if self:GetIndex() ~= furniture:GetIndex() then
+        return false
+    end
+
+    if self:GetScale() ~= furniture:GetScale() then
         return false
     end
     
@@ -146,6 +163,7 @@ function XSgFurnitureData:ToServerData()
             Angle = 0,
             Layer = 0,
             Index = 0,
+            Scale = 1000
         }
     end
     self._ServerData.Id = self._Id
@@ -156,6 +174,7 @@ function XSgFurnitureData:ToServerData()
     self._ServerData.Angle = self._Angle
     self._ServerData.Layer = self._Layer
     self._ServerData.Index = self._Index
+    self._ServerData.Scale = self._Scale
     
     return self._ServerData
 end
@@ -172,7 +191,8 @@ function XSgFurnitureData:Clone()
         Y = self._Y,
         Angle = self._Angle,
         Layer = self._Layer,
-        Index = self._Index
+        Index = self._Index,
+        Scale = self._Scale
     })
     return data
 end

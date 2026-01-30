@@ -52,7 +52,8 @@ end
 -- 刷新通关时间
 function XUiGridDlcRelinkPlayerRank:RefreshPassTime()
     if not self.RankInfo or self.RankInfo.FinishTime <= 0 then
-        self.TxtRankScore.text = "00:00:00"
+        --self.TxtRankScore.text = "00:00:00"
+        self.TxtRankScore.text = self._Control:GetClientConfig("RankDefaultTimeText")
         return
     end
     self.TxtRankScore.text = XUiHelper.GetTime(self.RankInfo.FinishTime, XUiHelper.TimeFormatType.DAY_HOUR)
@@ -66,6 +67,11 @@ function XUiGridDlcRelinkPlayerRank:RefreshRole()
     end
     self.PanelRole.gameObject:SetActiveEx(true)
     local playerInfos = self.RankInfo.PlayerInfos or {}
+    -- 排序（按照玩家Id升序）
+    table.sort(playerInfos, function(a, b)
+        return a.PlayerId < b.PlayerId
+    end)
+    -- 刷新角色列表
     for index, playerInfo in ipairs(playerInfos) do
         local grid = self.GridRoleList[index]
         if not grid then
@@ -76,7 +82,7 @@ function XUiGridDlcRelinkPlayerRank:RefreshRole()
         grid:Open()
         grid:Refresh(playerInfo)
     end
-
+    -- 关闭多余的角色格子
     for i = #playerInfos + 1, #self.GridRoleList do
         local grid = self.GridRoleList[i]
         if grid then

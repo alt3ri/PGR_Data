@@ -688,6 +688,12 @@ local type = {
 
     -- 空花签到
     CONDITION_RADIO_SIGN = "XRedPointConditionRadioSign",
+
+    --累消商店
+    CONDITION_ACCUMULATE_EXPEND_SHOP_NOTIFY = "XRedPointAccumulateExpendShopNotify",
+    
+    -- relink玩法
+    CONDITION_DLC_RELINK_MAIN = "XDlcRelink/XRedPointDlcRelinkMain",
 }
 XRedPointConditions.Conditions = type
 

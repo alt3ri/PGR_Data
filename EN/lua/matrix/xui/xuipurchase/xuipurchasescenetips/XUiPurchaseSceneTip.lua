@@ -57,6 +57,9 @@ end
 
 --region 初始化
 function XUiPurchaseSceneTip:SetBatteryUi()
+    if XMVCA.XSwitchableScene:IsSceneGyro(self.SceneId) then
+        return
+    end
     --self:SetGameObject()
     -- 场景虚拟相机
     self.CamFarMain = self:FindVirtualCamera("CamFarMain")

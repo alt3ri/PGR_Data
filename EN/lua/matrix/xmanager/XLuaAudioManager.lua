@@ -12,7 +12,7 @@ XLuaAudioManager.SoundType = {
 XLuaAudioManager.Sound2PlayType = {
     [XLuaAudioManager.SoundType.Music] = XAudioManager.PlayType.Music,
     [XLuaAudioManager.SoundType.SFX] = XAudioManager.PlayType.SFX,
-    [XLuaAudioManager.SoundType.Voice] = XAudioManager.PlayType.Cv,
+    [XLuaAudioManager.SoundType.Voice] = XAudioManager.PlayType.Voice,
 }
 
 XLuaAudioManager.PlayFunc = {

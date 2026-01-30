@@ -5,6 +5,7 @@ local XUiDlcRelinkBubbleEquipDetail = XLuaUiManager.Register(XLuaUi, "UiDlcRelin
 
 local CSVector2 = CS.UnityEngine.Vector2
 local CSVector3 = CS.UnityEngine.Vector3
+local EquipSlotIndex = XEnumConst.DlcRelink.EquipSlotIndex
 
 function XUiDlcRelinkBubbleEquipDetail:OnAwake()
     self:RegisterUiEvents()
@@ -16,7 +17,7 @@ end
 ---@param equipUid number 装备Uid
 ---@param targetTransform UnityEngine.RectTransform 目标节点
 ---@param callBack function 关闭回调
----@param extraData { SlotIndex:number, MainEquipUid:number, IsNotSelf:boolean } 额外数据
+---@param extraData { SlotIndex:number, MainEquipUid:number, IsNotSelf:boolean, IsEventPass:boolean } 额外数据
 function XUiDlcRelinkBubbleEquipDetail:OnStart(equipUid, targetTransform, callBack, extraData)
     self.EquipUid = equipUid
     self.TargetTransform = targetTransform
@@ -24,6 +25,7 @@ function XUiDlcRelinkBubbleEquipDetail:OnStart(equipUid, targetTransform, callBa
     self.SlotIndex = extraData and extraData.SlotIndex or 0
     self.MainEquipUid = extraData and extraData.MainEquipUid or 0
     self.IsNotSelf = extraData and extraData.IsNotSelf or false
+    self.IsEventPass = extraData and extraData.IsEventPass or false
 
     self:RefreshEquipDetail()
     self:RefreshPanelSkill()
@@ -33,6 +35,10 @@ function XUiDlcRelinkBubbleEquipDetail:OnStart(equipUid, targetTransform, callBa
 
     -- 以SafeAreaContentPane节点为根节点进行位置计算
     self.Root = self.EquipDetailNode.Transform.parent
+
+    if self.IsEventPass then
+        self.BtnClose.IsEventPass = true
+    end
 end
 
 function XUiDlcRelinkBubbleEquipDetail:OnEnable()
@@ -186,9 +192,7 @@ function XUiDlcRelinkBubbleEquipDetail:LayoutPanelSkill()
 end
 
 function XUiDlcRelinkBubbleEquipDetail:CheckExtendSlotAndMainSlotWearEquip()
-    local isExtendSlot = self._Control:CheckIsExpandSlotIndex(self.SlotIndex)
-    local isMainSlotWearEquip = XTool.IsNumberValid(self.MainEquipUid)
-    return isExtendSlot and isMainSlotWearEquip
+    return self.SlotIndex >= EquipSlotIndex.NormalExpandBegin and self.SlotIndex < EquipSlotIndex.NormalSlotBegin
 end
 
 function XUiDlcRelinkBubbleEquipDetail:RefreshEquipDetail()
@@ -205,29 +209,31 @@ function XUiDlcRelinkBubbleEquipDetail:RefreshPanelSkill()
     local equipType = self._Control:GetEquipType(templateId)
 
     local isMainEquip = equipType == XEnumConst.DlcRelink.EquipType.Main
-    self.PanelSkill.gameObject:SetActiveEx(isMainEquip)
     if not isMainEquip then
+        self.PanelSkill.gameObject:SetActiveEx(false)
         return
     end
 
     local mainSkillAttr = self._Control:GetEquipMainFactorByUid(self.EquipUid, true, self.IsNotSelf)
     if not mainSkillAttr then
+        self.PanelSkill.gameObject:SetActiveEx(false)
         return
     end
 
+    self.PanelSkill.gameObject:SetActiveEx(true)
     self.TxtName.text = self._Control:GetEquipSkillFactorName(mainSkillAttr.FactorId)
     self.TxtDesc.text = self._Control:GetEquipSkillFactorDescription(mainSkillAttr.FactorId)
 end
 
 function XUiDlcRelinkBubbleEquipDetail:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkBubbleEquipDetail:OnBtnCloseClick()
-    self:Close()
     if self.CallBack then
         self.CallBack()
     end
+    self:Close()
 end
 
 return XUiDlcRelinkBubbleEquipDetail

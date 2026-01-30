@@ -1,5 +1,8 @@
+--[[4.2 到九期为止都没在用过，注释掉减少代码重构的调整范围
+
 local XUiGridStage = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStage")
 
+--- 五期的资源点，驻守炮击玩法
 local XUiGridStageResource = XClass(XUiGridStage, "XUiGridStageResource")
 
 function XUiGridStageResource:Ctor()
@@ -27,11 +30,11 @@ function XUiGridStageResource:RefreshGarrison()
     if self.DefendPercentText then
         self.DefendPercentText.transform.parent.gameObject:SetActiveEx(true)
         
-        local percent = garrisonData:GetDefensePlayerPercentById(self.StageNode._Id)
+        local percent = garrisonData:GetDefensePlayerPercentById(self.StageNodeId)
         self.DefendPercentText.text = string.format("%d",math.floor(percent * 100))..'%'
     end
     if self.Garrison then
-        self._IsDefend = garrisonData:CheckDefensePointIsPlayerInById(self.StageNode._Id)
+        self._IsDefend = garrisonData:CheckDefensePointIsPlayerInById(self.StageNodeId)
         self.Garrison.gameObject:SetActiveEx(self._IsDefend)
         self.PanelMe.gameObject:SetActiveEx(self._IsDefend)
     end
@@ -42,17 +45,21 @@ function XUiGridStageResource:RefreshRebuildState()
     if self.Rebuild then
         ---@type XGuildWarGarrisonData
         local garrisonData = XMVCA.XGuildWar:GetGarrisonData()
-        self._IsRebuild = garrisonData:IsDefensePointRebuilding(self.StageNode._Id)
+        self._IsRebuild = garrisonData:IsDefensePointRebuilding(self.StageNodeId)
         self.Rebuild.gameObject:SetActiveEx(self._IsRebuild)
         if self.GarrisonBg then
             self.GarrisonBg.gameObject:SetActiveEx(not self._IsRebuild)
         end
+        
+        local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId)
 
-        if self._IsRebuild then
-            local icons = XGuildWarConfig.GetClientConfigValues('ResNodeRebuildIcons')
-            self.BtnStage:SetRawImage(icons[self.StageNode.Config.StageIndex])
-        else
-            self.BtnStage:SetRawImage(self.StageNode:GetIcon())
+        if nodeEntity then
+            if self._IsRebuild then
+                local icons = XGuildWarConfig.GetClientConfigValues('ResNodeRebuildIcons')
+                self.BtnStage:SetRawImage(icons[nodeEntity.Config.StageIndex])
+            else
+                self.BtnStage:SetRawImage(nodeEntity:GetIcon())
+            end
         end
     end
 end
@@ -64,9 +71,13 @@ end
 function XUiGridStageResource:UpdateNodeData()
     ---@type XGuildWarGarrisonData
     local garrisonData = XMVCA.XGuildWar:GetGarrisonData()
-    local latestNode = garrisonData:GetLatestResourceNodeId(self.StageNode._Id)
+    local latestNode = garrisonData:GetLatestResourceNodeId(self.StageNodeId)
     if latestNode then
-        self.StageNode:UpdateWithServerData(latestNode)
+        local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId)
+
+        if nodeEntity then
+            nodeEntity:UpdateWithServerData(latestNode)
+        end
     end
 end
 
@@ -93,4 +104,6 @@ function XUiGridStageResource:SetDisplayWithAttackAnimation(isAnimation)
     end
 end
 
-return XUiGridStageResource
+return XUiGridStageResource
+
+--]]

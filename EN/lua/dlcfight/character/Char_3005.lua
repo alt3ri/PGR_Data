@@ -1,15 +1,15 @@
-local Base = require("Character/BigWorld/XBigWorldPlayerCharBase")
+local Base = require("Common/XBigWorldCharBase")
 
 ---首席指挥官角色脚本
----@class XCharTest : XBigWorldPlayerCharBase
+---@class XCharTest : XBigWorldCharBase
 local XCharTest = XDlcScriptManager.RegCharScript(3005, "XCharTest", Base)
 
 ---@param proxy XDlcCSharpFuncs
 function XCharTest:Ctor(proxy)
 end
 
-function XCharTest:Init()
-    Base.Init(self)
+function XCharTest:CommonInit()
+    Base.CommonInit(self)
 
     self:ResetFixAirErrorParam()
     self:InitHandleJumpTurnSpeedParams()
@@ -69,7 +69,7 @@ function XCharTest:UpdateAndCheckAirError(dt)
     if not self._proxy:GetNpcActive(self._uuid) then
         return
     end
-    if not self._proxy:CheckNpcOnAir(self._uuid) then
+    if not self._proxy:CheckNpcOnAir(self._uuid) or self._proxy:HasRunningDrama() then
         self._curAirErrorTime = 0
         return
     end

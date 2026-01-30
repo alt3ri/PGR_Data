@@ -500,6 +500,7 @@ XEnumConst = {
             Amplifier = 5, -- 增幅
             Annihilator = 6, -- 湮灭
             Observation = 7, -- 侦察
+            Breaker = 8, -- 破甲
         },
         -- 元素类型
         Element = {
@@ -1304,7 +1305,14 @@ XEnumConst = {
         StoryLayoutBgType = { -- 好感度界面背景类型
             Default = 1, -- 默认旧版
             Style3_4 = 2, --3.4新增样式
-        }
+        },
+        CameraAnimStatus = {
+            Play = 1,
+            Pause = 2,
+            Resume = 3,
+            Close = 4,
+            Destory = 5,
+        },
     },
     CONNECTING_LINE = {
         OPERATION_TYPE = {
@@ -1599,6 +1607,7 @@ XEnumConst = {
             ForceExit = 1, --未完成对局主动退出
             AdvanceExit = 2, --完成对局提前结算(不一定胜利)
             PlayerOffline = 3, --玩家掉线
+            LoadingFail = 4, --进战斗前加载失败
             ErrorState = 1001, --状态错误
         },
         MatchStrategy = {
@@ -2378,6 +2387,7 @@ XEnumConst = {
     MAINLINE2 = {
         SPECIAL_MAINID = {
             THIRTEENTH = 1013,      -- 第13章，终焉福音
+            LUOSAITA = 1039,        -- 第39章，罗塞塔主线
         },
         -- 章节故事类型
         STORY_TYPE = {
@@ -2954,6 +2964,15 @@ XEnumConst = {
             System = 4,
             ReceiveMemes = 5,
             SendMemes = 6,
+            ReceivePhoto = 7,
+            SendPhoto = 8,
+            ReceiveForceVideo = 9,
+            ReceiveVideo = 10,
+            SendVideo = 11,
+            ReceiveImage = 12,
+            SendImage = 13,
+            SendImageToVideo = 14,
+            ReceiveImageToVideo = 15,
             None = 1001
         },
         MessageState = {
@@ -2970,6 +2989,7 @@ XEnumConst = {
             ForcePlay = 1,
             Tips = 2,
             Normal = 3,
+            Send = 4,
         },
     },
     -- 轮椅手册
@@ -3339,7 +3359,7 @@ XEnumConst = {
         },
         CoreGroupType = {
             None = 0,
-            Activity = 1,
+            GamePlay = 1,
             Quest = 2,
         },
         Version = {
@@ -3401,7 +3421,7 @@ XEnumConst = {
             Text = 1, -- 文本
             Emoji = 2, --表情
         },
-        OccTypeEnum = {
+        StyleTypeEnum = {
             Attacker = 1, -- 进攻
             Armor = 2, -- 装甲
             Assist = 3, -- 辅助
@@ -3424,6 +3444,21 @@ XEnumConst = {
             Shop = 1, --商店
             Task = 2, --任务
         },
+        FactorLevelOverlyingType = {
+            Overlying = 1, -- 等级叠加
+            UseMax = 2, -- 取最高等级
+        },
+        FactorAttributeType = {
+            Origin = 1, -- 基础值
+            BasePercentage = 2, -- 基础百分比加成
+            ExtraFixed = 3, -- 额外固定值
+            ExtraPercentage = 4, -- 额外百分比
+        },
+        FactorDetailShowType = { -- 装备详情显示类型
+            Normal = 1, -- 常规
+            Damage = 2, -- 伤害上限
+            SpeicalSkill = 3, -- 特殊技能
+        }
     },
     HelpCourse = {
         UiHelpType = {
@@ -3519,6 +3554,27 @@ XEnumConst = {
             Purchase = 2, --采购
             Skip = 3, --跳转
         },
+    },
+    SwitchableScene = {
+        Setting = {
+            Data = {
+                Auto = 0,
+                Day = 1,
+                Night = 2,
+            },
+            Power = {
+                Auto = 0,
+                Full = 1,
+                Low = 2,
+            },
+            Open = 0,
+            Close = 1,
+        }
+    },
+    BWPreviewType = {
+        Video = 1, --视频
+        Image = 2, --图片
+        ImageToVideo = 3, -- 图片转全屏视频
     },
     ItemRestrict = 
     {

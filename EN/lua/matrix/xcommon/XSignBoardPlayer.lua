@@ -429,6 +429,7 @@ end
 
 function XSignBoardPlayer:OnDestroy()
     self:Stop()
+    XMVCA.XFavorability:SceneAnimDestory()
 end
 
 -- v1.32 角色特殊动作

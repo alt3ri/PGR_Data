@@ -16,6 +16,7 @@ end
 function XUiDlcRelinkPopupRename:OnEnable()
     self.InFSigm.text = ""
     self.TxtCount.text = string.format(self._Control:GetClientConfig("EquipPresetNameLengthFormat"), 0, self.MaxNameLength)
+    self.BtnNameSure:SetDisable(true)
 end
 
 -- 去首尾空白
@@ -35,7 +36,8 @@ end
 
 function XUiDlcRelinkPopupRename:OnInputValueChanged(text)
     local utf8Count = self:GetInputLength()
-    self.TxtCount.text = string.format(self._Control:GetClientConfig("EquipPresetNameLengthFormat"), utf8Count, self.MaxNameLength)
+    local index = utf8Count > self.MaxNameLength and 2 or 1
+    self.TxtCount.text = string.format(self._Control:GetClientConfig("EquipPresetNameLengthFormat", index), utf8Count, self.MaxNameLength)
 
     local editName = self:Trim(text)
     local disable = (editName == nil or editName == "") or (utf8Count > self.MaxNameLength)
@@ -43,10 +45,10 @@ function XUiDlcRelinkPopupRename:OnInputValueChanged(text)
 end
 
 function XUiDlcRelinkPopupRename:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnTanchuangClose, self.OnBtnCancelClick)
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCancelClick)
-    self:RegisterClickEvent(self.BtnNameCancel, self.OnBtnCancelClick)
-    self:RegisterClickEvent(self.BtnNameSure, self.OnBtnNameSureClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCancelClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCancelClick))
+    self.BtnNameCancel:AddEventListener(handler(self, self.OnBtnCancelClick))
+    self.BtnNameSure:AddEventListener(handler(self, self.OnBtnNameSureClick))
 end
 
 function XUiDlcRelinkPopupRename:OnBtnCancelClick()

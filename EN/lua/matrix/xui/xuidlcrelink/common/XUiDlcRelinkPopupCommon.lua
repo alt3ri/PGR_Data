@@ -34,16 +34,17 @@ function XUiDlcRelinkPopupCommon:OnStart(title, content, closeCallback, sureCall
             self.BtnHint:SetNameByGroup(0, extraData.NoRemindText)
         end
 
+        self.BtnHint.gameObject:SetActiveEx(self.NoRemindCallback and true or false)
         self.BtnHint:SetButtonState(extraData.DefaultNoRemind and CS.UiButtonState.Select or CS.UiButtonState.Normal)
     end
 end
 
 function XUiDlcRelinkPopupCommon:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnTanchuangClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnHint, self.OnBtnHintClick)
-    self:RegisterClickEvent(self.BtnCancel, self.OnBtnCancelClick)
-    self:RegisterClickEvent(self.BtnConfirm, self.OnBtnConfirmClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnHint:AddEventListener(handler(self, self.OnBtnHintClick))
+    self.BtnCancel:AddEventListener(handler(self, self.OnBtnCancelClick))
+    self.BtnConfirm:AddEventListener(handler(self, self.OnBtnConfirmClick))
 end
 
 function XUiDlcRelinkPopupCommon:OnBtnCloseClick()

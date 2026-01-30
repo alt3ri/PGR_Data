@@ -425,6 +425,11 @@
         "Value": "30"
     },
     {
+        "Key": "DynamicResCacheTimeForLowMemory",
+        "Type": "float",
+        "Value": "10"
+    },
+    {
         "Key": "MaxTotalLoadingResCount",
         "Type": "int",
         "Value": "20"
@@ -593,5 +598,45 @@
         "Key": "OpenRenderPos",
         "Type": "bool",
         "Value": "1"
+    },
+    {
+        "Key": "QuestNotDeliverItemQuestTipId",
+        "Type": "int",
+        "Value": "4001015"
+    },
+    {
+        "Key": "QuestDeliverItemTypeNotMatchTipId",
+        "Type": "int",
+        "Value": "4001016"
+    },
+    {
+        "Key": "QuestDeliverItemCountNotMatchTipId",
+        "Type": "int",
+        "Value": "4001017"
+    },
+    {
+        "Key": "QuestItemConfigErrorTipId",
+        "Type": "int",
+        "Value": "4001018"
+    },
+    {
+        "Key": "QuestNotEnoughItemTipId",
+        "Type": "int",
+        "Value": "4001019"
+    },
+    {
+        "Key": "QuestNotItemInBagTipId",
+        "Type": "int",
+        "Value": "4001020"
+    },
+    {
+        "Key": "NavPointEnterRadiusTipId",
+        "Type": "int",
+        "Value": "4001021"
+    },
+    {
+        "Key": "RelinkSkillButtonHitUiEffectName",
+        "Type": "string",
+        "Value": "FxCommonPressNormal"
     }
 ]

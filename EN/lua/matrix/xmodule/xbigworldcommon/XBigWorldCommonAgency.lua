@@ -9,6 +9,8 @@ function XBigWorldCommonAgency:OnInit()
     self._ConfirmPopupDataPool = XQueue.New()
     ---@type XQueue
     self._QuitConfirmPopupDataPool = XQueue.New()
+    ---@type XQueue
+    self._PreviewDataPool = XQueue.New()
     
     self.CoolTimeFormat = {
         -- 显示为 00:00:01
@@ -21,6 +23,11 @@ function XBigWorldCommonAgency:OnInit()
         Effect = 3,
     }
     
+    self.ESequentialJobsSerial = {
+        Main = CS.StatusSyncFight.ESequentialJobsSerial.Main:GetHashCode(),
+        Drama = CS.StatusSyncFight.ESequentialJobsSerial.Drama:GetHashCode(),
+    }
+
     self.KeyCode = require("XModule/XBigWorldCommon/XInput/XInputKeyCode")
 end
 
@@ -64,6 +71,21 @@ function XBigWorldCommonAgency:GetPopupQuitConfirmData()
     return confirmData
 end
 
+---@return XPreviewData
+function XBigWorldCommonAgency:GetPreviewData()
+    if self._PreviewDataPool:IsEmpty() then
+        local XPreviewData = require("XModule/XBigWorldCommon/XData/XPreviewData/XPreviewData")
+
+        return XPreviewData.New()
+    end
+
+    local previewData = self._PreviewDataPool:Dequeue()
+
+    previewData:Clear()
+
+    return previewData
+end
+
 ---@param data XBWPopupConfirmData
 function XBigWorldCommonAgency:RepaidPopupConfirmData(data)
     data:Clear()
@@ -74,6 +96,12 @@ end
 function XBigWorldCommonAgency:RepaidPopupQuitConfirmData(data)
     data:Clear()
     self._QuitConfirmPopupDataPool:Enqueue(data)
+end
+
+---@param data XPreviewData
+function XBigWorldCommonAgency:RepaidPreviewData(data)
+    data:Clear()
+    self._PreviewDataPool:Enqueue(data)
 end
 
 function XBigWorldCommonAgency:CreateShadyController(uiTransform, isAutoOpen)
@@ -112,6 +140,11 @@ function XBigWorldCommonAgency:GetCoolTimeStr(second)
     return self:GetCoolTime():GetClockTimeStr(second)
 end
 
+---@return string[]
+function XBigWorldCommonAgency:GetCommonValues(key)
+    return self._Model:GetCommonValues(key)
+end
+
 -- region 任务流水线
 
 function XBigWorldCommonAgency:AddCommonSequentialJob(serial)
@@ -142,6 +175,29 @@ end
 
 function XBigWorldCommonAgency:ClearSequentialJob(id)
     self._Model:ClearSequentialJob(id)
+end
+
+function XBigWorldCommonAgency:HasSequentialJob(serial)
+    ---@type StatusSyncFight.XFightClient
+    local client = CS.StatusSyncFight.XFightClient
+    if not client then
+        return false
+    end
+    ---@type StatusSyncFight.XFight
+    local fightInstance = client.FightInstance
+    if not fightInstance then
+        return false
+    end
+    return fightInstance:HasSequentialJob(serial)
+end
+
+function XBigWorldCommonAgency:HasAnySequentialJob()
+    for _, serial in pairs(self.ESequentialJobsSerial) do
+        if self:HasSequentialJob(serial) then
+            return true
+        end
+    end
+    return false
 end
 
 -- endregion

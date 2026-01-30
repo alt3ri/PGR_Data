@@ -4,7 +4,7 @@
 local XUiGridDlcRelinkChooseBoss = XClass(XUiNode, "XUiGridDlcRelinkChooseBoss")
 
 function XUiGridDlcRelinkChooseBoss:OnStart(chapterId)
-    XUiHelper.RegisterClickEvent(self, self.BtnSelect, self.OnBtnSelectClick, true, true)
+    self.BtnSelect:AddEventListener(handler(self, self.OnBtnSelectClick))
     self.ChapterId = chapterId
     self.IsShowTime = false
 end
@@ -53,7 +53,7 @@ function XUiGridDlcRelinkChooseBoss:RefreshTime()
         return
     end
 
-    local timeStr = XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME)
+    local timeStr = XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.MOE_WAR)
     self.TxtLock.text = string.format(self._Control:GetClientConfig("ChapterCountDownDesc"), timeStr)
 end
 
@@ -64,6 +64,7 @@ end
 
 function XUiGridDlcRelinkChooseBoss:SetSelect(isSelect)
     self.RImgSelect.gameObject:SetActiveEx(isSelect)
+    self.Parent.PanelDrag.gameObject:SetActiveEx(not isSelect) --拖动组件会挡住弹框的关闭按钮
 end
 
 function XUiGridDlcRelinkChooseBoss:OnBtnSelectClick()

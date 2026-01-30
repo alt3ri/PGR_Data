@@ -2,8 +2,18 @@
 ---@field private _Model XBigWorldCourseModel
 local XBigWorldCourseAgency = XClass(XAgency, "XBigWorldCourseAgency")
 
+local CoreElementEntityProxyDict = {}
+
 function XBigWorldCourseAgency:OnInit()
-    -- 初始化一些变量
+    self.CoreEntryType ={
+        None = 0, --无效
+        Activity = 1, --活动玩法
+        FavorQuest = 2, --好感任务
+        CommonMultiQuest = 3, --普通多任务
+        CommonSingleQuest = 4, --普通单任务
+        InviteQuest = 5, --邀约任务
+        EnvironmentQuest = 6, --环境任务
+    }
 end
 
 function XBigWorldCourseAgency:InitRpc()
@@ -14,8 +24,6 @@ function XBigWorldCourseAgency:InitRpc()
 end
 
 function XBigWorldCourseAgency:InitEvent()
-    -- 实现跨Agency事件注册
-    -- self:AddAgencyEvent()
 end
 
 function XBigWorldCourseAgency:OnNotifyBigWorldCourseData(data)
@@ -30,7 +38,7 @@ function XBigWorldCourseAgency:OnNotifyBigWorldCourseExploreProgress(data)
     self._Model:UpdateExploreProgressData(data.VersionId, data.ExploreId, data.PoiId, data.Count)
 end
 
-function XBigWorldCourseAgency:OpenMainUi(contentId, ignorePipeline)
+function XBigWorldCourseAgency:OpenMainUi(contentId, ignorePipeline, versionId)
     if not XMVCA.XBigWorldFunction:DetectionFunction(XMVCA.XBigWorldFunction.FunctionId.BigWorldCourse) then
         return false
     end
@@ -40,18 +48,35 @@ function XBigWorldCourseAgency:OpenMainUi(contentId, ignorePipeline)
     end
 
     if ignorePipeline then
-        XMVCA.XBigWorldUI:Open("UiBigWorldProcess", 0, contentId)
+        XMVCA.XBigWorldUI:Open("UiBigWorldProcess", 0, contentId, versionId)
     else
         local id = XMVCA.XBigWorldCommon:AddCommonSequentialJob()
         if XTool.IsNumberValid(id) then
             XMVCA.XBigWorldCommon:AddSequentialJobBehavior(id, function()
-                --- Todo zjx 后续优化弹窗队列后一并优化
-                XMVCA.XBigWorldUI:Open("UiBigWorldProcess", id, contentId)
+                XMVCA.XBigWorldUI:Open("UiBigWorldProcess", id, contentId, versionId)
             end)
         end
     end
 
     return true
+end
+
+function XBigWorldCourseAgency:CheckVersionIdValid(versionId)
+    if not XTool.IsNumberValid(versionId) then
+        return false
+    end
+
+    local conditionId = self._Model:GetBigWorldCourseVersionConditionIdByVersionId(versionId)
+
+    if XTool.IsNumberValid(conditionId) then
+        if not XMVCA.XBigWorldService:CheckCondition(conditionId) then
+            return false
+        end
+    end
+
+    local timeId = self._Model:GetBigWorldCourseVersionTimeIdByVersionId(versionId)
+
+    return XMVCA.XBigWorldService:CheckInTimeByTimeId(timeId, true)
 end
 
 function XBigWorldCourseAgency:CheckAllAchieved()
@@ -60,7 +85,7 @@ end
 
 function XBigWorldCourseAgency:CheckVersionAchieved(versionId)
     return self:CheckVersionTaskAchieved(versionId) or self:CheckVersionExploreAchieved(versionId) or
-            self:CheckVersionNewCore(versionId)
+               self:CheckVersionNewCore(versionId)
 end
 
 function XBigWorldCourseAgency:CheckAllTaskAchieved()
@@ -69,7 +94,7 @@ end
 
 function XBigWorldCourseAgency:CheckVersionTaskAchieved(versionId)
     return self:CheckVersionTaskRewardAchieved(versionId) or self:CheckVersionTaskProgressRewardAchieved(versionId) or
-            self:CheckVersionTaskNew(versionId)
+               self:CheckVersionTaskNew(versionId)
 end
 
 function XBigWorldCourseAgency:CheckAllTaskRewardAchieved()
@@ -87,6 +112,10 @@ function XBigWorldCourseAgency:CheckAllTaskRewardAchieved()
 end
 
 function XBigWorldCourseAgency:CheckVersionTaskRewardAchieved(versionId)
+    if not self:CheckVersionIdValid(versionId) then
+        return false
+    end
+
     local contentId = self._Model:GetContentIdByVersionIdAndType(versionId, XEnumConst.BWCourse.ContentType.Task)
 
     if not XTool.IsNumberValid(contentId) then
@@ -121,6 +150,10 @@ function XBigWorldCourseAgency:CheckAllTaskNew()
 end
 
 function XBigWorldCourseAgency:CheckVersionTaskNew(versionId)
+    if not self:CheckVersionIdValid(versionId) then
+        return false
+    end
+
     local contentId = self._Model:GetContentIdByVersionIdAndType(versionId, XEnumConst.BWCourse.ContentType.Task)
 
     if not XTool.IsNumberValid(contentId) then
@@ -155,6 +188,10 @@ function XBigWorldCourseAgency:CheckAllTaskProgressRewardAchieved()
 end
 
 function XBigWorldCourseAgency:CheckVersionTaskProgressRewardAchieved(versionId)
+    if not self:CheckVersionIdValid(versionId) then
+        return false
+    end
+
     local contentId = self._Model:GetContentIdByVersionIdAndType(versionId, XEnumConst.BWCourse.ContentType.Task)
 
     if not XTool.IsNumberValid(contentId) then
@@ -196,6 +233,10 @@ function XBigWorldCourseAgency:CheckAllExploreAchieved()
 end
 
 function XBigWorldCourseAgency:CheckVersionExploreAchieved(versionId)
+    if not self:CheckVersionIdValid(versionId) then
+        return false
+    end
+
     local contentId = self._Model:GetContentIdByVersionIdAndType(versionId, XEnumConst.BWCourse.ContentType.Explore)
 
     if not XTool.IsNumberValid(contentId) then
@@ -224,6 +265,10 @@ function XBigWorldCourseAgency:CheckVersionExploreAchieved(versionId)
 end
 
 function XBigWorldCourseAgency:CheckVersionTotalExploreAchieved(versionId)
+    if not self:CheckVersionIdValid(versionId) then
+        return false
+    end
+
     local contentId = self._Model:GetContentIdByVersionIdAndType(versionId, XEnumConst.BWCourse.ContentType.Explore)
 
     if not XTool.IsNumberValid(contentId) then
@@ -254,6 +299,10 @@ function XBigWorldCourseAgency:CheckVersionTotalExploreAchieved(versionId)
 end
 
 function XBigWorldCourseAgency:CheckExploreAchieved(versionId, exploreId)
+    if not self:CheckVersionIdValid(versionId) then
+        return false
+    end
+
     local versionData = self._Model:GetVersionData(versionId)
 
     if versionData then
@@ -295,6 +344,10 @@ function XBigWorldCourseAgency:CheckAllNewCore()
 end
 
 function XBigWorldCourseAgency:CheckVersionNewCore(versionId)
+    if not self:CheckVersionIdValid(versionId) then
+        return false
+    end
+
     local contentId = self._Model:GetContentIdByVersionIdAndType(versionId, XEnumConst.BWCourse.ContentType.Core)
 
     if not XTool.IsNumberValid(contentId) then
@@ -315,6 +368,10 @@ function XBigWorldCourseAgency:CheckVersionNewCore(versionId)
 end
 
 function XBigWorldCourseAgency:CheckVersionCoreNewElements(versionId, coreId)
+    if not self:CheckVersionIdValid(versionId) then
+        return false
+    end
+
     local versionData = self._Model:GetVersionData(versionId)
 
     if versionData then
@@ -342,6 +399,21 @@ function XBigWorldCourseAgency:GetCourseTotalTaskProgress()
         total = total + 1
     end
     return cur, total
+end
+
+function XBigWorldCourseAgency:AddCoreElementEntityProxy(entryType, super, name)
+    local proxy = XClass(super, name)
+    CoreElementEntityProxyDict[entryType] = proxy
+    return proxy
+end
+
+function XBigWorldCourseAgency:GetCoreElementEntityProxy(entryType)
+    local proxy = CoreElementEntityProxyDict[entryType]
+    if not proxy then
+        XLog.Error("XBigWorldCourseAgency:GetCoreElementEntityProxy", "entryType:" .. entryType .. " not found")
+        return nil
+    end
+    return proxy
 end
 
 return XBigWorldCourseAgency

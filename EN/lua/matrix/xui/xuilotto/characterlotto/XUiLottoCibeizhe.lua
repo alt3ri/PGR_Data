@@ -319,10 +319,11 @@ end
 
 ---跳过进入短入场动画(台上Stand)
 function XUiLottoCibeizhe:PlayShortEnableAnim()
+    local animEnableLoop = self._SceneAnimRoot:FindTransform("AnimEnableLoop")
+    animEnableLoop:PlayTimelineAnimation()
+
     if self:CheckPanelType(PANEL_TYPE.SHOW) then
         -- 入场短动画
-        local animEnableLoop = self._SceneAnimRoot:FindTransform("AnimEnableLoop")
-        animEnableLoop:PlayTimelineAnimation()
 
         if self._IsBackMain then
             self:PlayAnimationWithMask("AnimStart1", function()
@@ -517,9 +518,9 @@ end
 function XUiLottoCibeizhe:InitSceneAnim()
     ---@type UnityEngine.RectTransform
     self._SceneAnimRoot = XUiHelper.TryGetComponent(self.UiSceneInfo.Transform, "Animations")
-    ---@type UnityEngine.Playables.PlayableDirector
+    -- ---@type UnityEngine.Playables.PlayableDirector
     --self._SceneAnimStart = XUiHelper.TryGetComponent(self._SceneAnimRoot, "Timeline_B", "PlayableDirector")
-    ---@type UnityEngine.Playables.PlayableDirector
+    -- ---@type UnityEngine.Playables.PlayableDirector
     --self._SceneAnimEnableLong = XUiHelper.TryGetComponent(self._SceneAnimRoot, "Timeline_C", "PlayableDirector")
 end
 
@@ -536,7 +537,6 @@ function XUiLottoCibeizhe:InitCameraAnim()
     self._CamAnimEnableStory = root:FindTransform("AnimEnableStory"):GetComponent("PlayableDirector")
     ---@type UnityEngine.Playables.PlayableDirector
     self._CamAnimDisableStory = root:FindTransform("AnimDisableStory"):GetComponent("PlayableDirector")
-    ---@type UnityEngine.Playables.PlayableDirector
 
     ---@type UnityEngine.Transform[]
     self._CamAnimDrawDir = {}

@@ -12,6 +12,8 @@ local XUiArenaChapterDetailGridBuff = require("XUi/XUiArenaNew/XUiArenaChapter/X
 ---@field GridTitle XUiComponent.XUiButton
 ---@field TxtTitle UnityEngine.UI.Text
 ---@field TxtEnvironment UnityEngine.UI.Text
+---@field TxtBestRecord UnityEngine.UI.Text
+---@field TxtNew UnityEngine.UI.Text
 ---@field PanelTitle UnityEngine.RectTransform
 ---@field _Control XArenaControl
 local XUiArenaChapterDetail = XLuaUiManager.Register(XLuaUi, "UiArenaChapterDetail")
@@ -81,6 +83,9 @@ function XUiArenaChapterDetail:OnListTitleClick(index)
 
     self._CurrentSelectBuffIndex = index
     self._Control:SetLocalSelectBuffIndex(areaId, index)
+    
+    -- 更新区域历史最高分显示
+    self:_UpdateBestRecord(areaId, index)
 end
 
 function XUiArenaChapterDetail:OnZoneSelectClick(index)
@@ -143,6 +148,10 @@ function XUiArenaChapterDetail:_RefreshStageDatail()
     local stageBuffNameList = self._Control:GetAreaStageBuffNameListByAreaId(areaId)
 
     self.TxtTips.text = self._Control:GetAreaStageDescByAreaId(areaId)
+    
+    -- 显示区域历史最高分（使用当前选中的Buff索引）
+    local currentBuffIndex = self._Control:GetLocalSelectBuffIndex(areaId) or 1
+    self:_UpdateBestRecord(areaId, currentBuffIndex)
     if #stageBuffNameList == 1 then
         self.PanelTitle.gameObject:SetActiveEx(true)
         self.ListTitle.gameObject:SetActiveEx(false)
@@ -189,6 +198,46 @@ function XUiArenaChapterDetail:_GetCurrentAreaShowData()
     local index = self._CurrentSelectZoneIndex
 
     return self._AreaData:GetAreaShowDataByIndex(index)
+end
+
+--- 更新区域历史最高分显示
+---@param areaId number 区域ID
+---@param index number DistributeType数组的索引（对应OnListTitleClick中的index）
+function XUiArenaChapterDetail:_UpdateBestRecord(areaId, index)
+    if not self.TxtBestRecord then
+        return
+    end
+    
+    local distributeTypeList = self._Control:GetAreaStageDistributeTypeByAreaId(areaId)
+    local maxPoint = nil
+    local isNewRecord = false
+    
+    -- 使用index获取DistributeType数组中对应的值
+    if distributeTypeList and not XTool.IsTableEmpty(distributeTypeList) then
+        local distributeType = distributeTypeList[index]
+        if distributeType then
+            maxPoint = self._AreaData:GetAreaDistributeMaxPointByDistributeType(distributeType)
+            
+            -- 检查是否是新纪录（通过结算数据判断）
+            local settleData = self._Control:GetSettlePointByDistributeType(distributeType)
+            if settleData and settleData.Point and settleData.OldPoint then
+                if settleData.Point > settleData.OldPoint and settleData.Point > 0 then
+                    isNewRecord = true
+                end
+            end
+        end
+    end
+    
+    if maxPoint and maxPoint > 0 then
+        self.TxtBestRecord.text = tostring(maxPoint)
+    else
+        self.TxtBestRecord.text = "--"
+    end
+    
+    -- 显示/隐藏新纪录标记
+    if self.TxtNew then
+        self.TxtNew.gameObject:SetActiveEx(isNewRecord)
+    end
 end
 
 -- endregion

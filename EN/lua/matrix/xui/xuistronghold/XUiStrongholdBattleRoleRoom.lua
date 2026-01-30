@@ -484,7 +484,7 @@ function XUiStrongholdBattleRoleRoom:RefreshCharacterRImgType()
         amplifierEffectGo:SetActiveEx(false)
         if obsActiveCarrer ~= XEnumConst.CHARACTER.Career.None and XTool.IsNumberValid(obsPos) and obsPos == pos then
             iconPath = XMVCA.XCharacter:GetNpcTypeIconObs(obsActiveCarrer)
-            if obsActiveCarrer == XEnumConst.CHARACTER.Career.Tank then
+            if obsActiveCarrer == XEnumConst.CHARACTER.Career.Tank or obsActiveCarrer == XEnumConst.CHARACTER.Career.Breaker then
                 tankEffectGo:SetActiveEx(true)
             elseif obsActiveCarrer == XEnumConst.CHARACTER.Career.Amplifier or obsActiveCarrer == XEnumConst.CHARACTER.Career.Support then
                 amplifierEffectGo:SetActiveEx(true)
@@ -835,89 +835,130 @@ function XUiStrongholdBattleRoleRoom:GetCharacterLimitType()
     return XFubenConfigs.GetStageCharacterLimitType(self.StageId)
 end
 
+-- 替换函数：UpdateTeamPrefab (并行弹窗 + 忽略其他队伍支援角色版)
 function XUiStrongholdBattleRoleRoom:UpdateTeamPrefab(team)
-    self.IsUpdateTeamPrefab = true
     local teamData = team and team.TeamData
-    local firstFightPos = team and team.FirstFightPos
-    local captainPos = team and team.CaptainPos
-    local enterCgIndex = team and team.EnterCgIndex or 0
-    local settleCgIndex = team and team.SettleCgIndex or 0
-    local selectedGeneralSkill = team.SelectedGeneralSkill and team.SelectedGeneralSkill or 0
+    if not teamData then return end
 
-    for index, characterId in ipairs(teamData or {}) do
-        self:OnJoinTeam(characterId, index)
-    end
-
-    local team = self.TeamList[self.TeamPropId]
-    team:SetCaptainPos(captainPos)
-    team:SetFirstPos(firstFightPos)
-    team:SetEnterCgIndex(enterCgIndex)
-    team:SetSettleCgIndex(settleCgIndex)
-    team:UpdateSelectGeneralSkill(selectedGeneralSkill)
-end
-
-function XUiStrongholdBattleRoleRoom:OnJoinTeam(characterId, prefabMemberIndex)
-    local groupId = self.GroupId
     local teamList = self.TeamList
-    local teamId = self.TeamPropId
+    local currentTeamId = self.TeamPropId
+    local currentTeam = teamList[currentTeamId]
+    local groupId = self.GroupId
 
-    local team = teamList[teamId]
-    local member = team:GetMember(prefabMemberIndex)
-    local playerId = XPlayer.Id
+    -- 1. 定义单人移动操作
+    local function SafeMoveCharacter(characterId, targetIndex)
+        local targetMember = currentTeam:GetMember(targetIndex)
+        local targetOldCharId = targetMember and targetMember:GetInTeamCharacterId() or 0
+        local targetOldPlayerId = targetMember and targetMember:GetPlayerId() or 0
 
-    if not self:CheckCanJoin(characterId, teamList, groupId, prefabMemberIndex) then
-        return
-    end
+        if not XTool.IsNumberValid(characterId) then
+            if targetMember then targetMember:SetInTeam(0, 0) end
+            XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
+            return
+        end
 
-    local swapFunc = function()
-        local oldCharacterId = member:GetInTeamCharacterId()
-        local oldPlayerId = member:GetPlayerId()
+        -- A. 摘除旧位置
         local oldTeamId = XDataCenter.StrongholdManager.GetCharacterInTeamId(characterId, teamList)
         if XTool.IsNumberValid(oldTeamId) then
-            --swap team
             local oldTeam = teamList[oldTeamId]
             local oldMember = oldTeam:GetInTeamMemberByCharacterId(characterId)
-            local oldCharacterType = self:GetCharacterType(oldCharacterId)
-            if oldTeam:ExistDifferentCharacterType(oldCharacterType) then
-                oldTeam:Clear()
+            if oldMember then
+                oldMember:SetInTeam(0, 0)
+
+                -- 交换逻辑：将原位置的角色移到旧位置
+                if XTool.IsNumberValid(targetOldCharId) then
+                    local targetCharType = self:GetCharacterType(targetOldCharId)
+                    if oldTeam:ExistDifferentCharacterType(targetCharType) then
+                        oldTeam:Clear()
+                    end
+                    oldMember:SetInTeam(targetOldCharId, targetOldPlayerId)
+                end
             end
-
-            oldMember:SetInTeam(oldCharacterId, oldPlayerId)
         end
 
-        member:SetInTeam(characterId, playerId)
-
-        if self.IsUpdateTeamPrefab then
-            self:CheckIsCloseView()
+        -- B. 填入新位置
+        if targetMember then
+            targetMember:SetInTeam(characterId, XPlayer.Id)
         end
-    end
 
-    local setTeamFunc = function()
-        swapFunc()
+        -- C. 刷新
         XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
     end
 
-    local onJoinTeam = function()
-        local isInTeam = XDataCenter.StrongholdManager.CheckInTeamList(characterId, teamList, nil, teamId)
-        if isInTeam then
-            --在别的队伍中，可以交换
-            local inTeamId = XDataCenter.StrongholdManager.GetCharacterInTeamId(characterId, teamList)
-            local title = CsXTextManagerGetText("StrongholdDeployTipTitle")
-            local showCharacterId = XRobotManager.GetCharacterId(characterId)
-            local characterName = XMVCA.XCharacter:GetCharacterName(showCharacterId)
-            local content = CsXTextManagerGetText("StrongholdDeployTipContent", characterName, inTeamId, teamId)
-            self:AddDialogTipCount()
-            XUiManager.DialogTip(title, content, XUiManager.DialogType.Normal, handler(self, self.DialogCloseCallback), setTeamFunc)
-        else
-            --不在在别的队伍中，直接上阵
-            setTeamFunc()
+    -- 2. 遍历预设 (并行处理)
+    for index, characterId in ipairs(teamData) do
+        local isProcessed = false
+        
+        -- Step 1: 空位置处理
+        if not isProcessed then
+            if not XTool.IsNumberValid(characterId) then
+                SafeMoveCharacter(0, index)
+                isProcessed = true
+            end
         end
 
+        -- Step 2: 合法性检查 (电能/锁定/同名)
+        if not isProcessed then
+            if XDataCenter.StrongholdManager.CheckInElectricTeam(characterId) or 
+               XDataCenter.StrongholdManager.CheckInTeamListLock(groupId, characterId, teamList) then
+                SafeMoveCharacter(0, index)
+                isProcessed = true
+            end
+        end
+
+        -- Step 3: 冲突检查与执行
+        if not isProcessed then
+            local isInOtherTeam, inTeamId = XDataCenter.StrongholdManager.CheckInTeamListWithOutPlayerId(characterId, teamList, currentTeamId)
+            
+            if isInOtherTeam then
+                -- local inTeamId, _ = XDataCenter.StrongholdManager.GetCharacterInTeamId(characterId, teamList)
+                
+                -- [NEW] 检查冲突队伍中的角色是否为支援角色
+                local isAssistInfo = false
+                if XTool.IsNumberValid(inTeamId) then
+                    local otherTeam = teamList[inTeamId]
+                    local isIn, otherMemberPos = otherTeam:CheckInTeamWithOutPlayerId(characterId)
+                    local otherMember = otherTeam:GetMember(otherMemberPos)
+                    if isIn and otherMember and otherMember:IsAssitant() then
+                        -- 如果PlayerId有效且不为自己，说明是支援角色
+                        isAssistInfo = true
+                    end
+                end
+
+                if isAssistInfo then
+                    -- === 是支援角色，直接忽略 ===
+                    -- 不提示，不替换，也不置空，直接保留当前位置原样（即跳过处理）
+                    isProcessed = true
+                else
+                    -- === 是普通角色冲突，弹出确认窗 ===
+                    local charId = XRobotManager.GetCharacterId(characterId)
+                    local charName = XMVCA.XCharacter:GetCharacterName(charId)
+
+                    local title = CsXTextManager.GetText("StrongholdDeployTipTitle")
+                    local content = CsXTextManager.GetText("StrongholdDeployTipContent", charName, inTeamId, currentTeamId)
+
+                    local onConfirm = function()
+                        SafeMoveCharacter(characterId, index)
+                    end
+                    
+                    XUiManager.DialogTip(title, content, XUiManager.DialogType.Normal, nil, onConfirm)
+                end
+            else
+                -- === 无冲突，立即执行 ===
+                SafeMoveCharacter(characterId, index)
+            end
+        end
     end
 
-    XDataCenter.PracticeManager.OnJoinTeam(characterId, function()
-        XDataCenter.PracticeManager.OpenUiFubenPractice(characterId, true)
-    end, onJoinTeam)
+    -- 3. 设置队伍元数据
+    currentTeam:SetCaptainPos(team and team.CaptainPos)
+    currentTeam:SetFirstPos(team and team.FirstFightPos)
+    currentTeam:SetEnterCgIndex(team and team.EnterCgIndex or 0)
+    currentTeam:SetSettleCgIndex(team and team.SettleCgIndex or 0)
+    currentTeam:UpdateSelectGeneralSkill(team.SelectedGeneralSkill and team.SelectedGeneralSkill or 0)
+
+    -- 触发一次初始刷新
+    XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
 end
 
 --能否编入队伍

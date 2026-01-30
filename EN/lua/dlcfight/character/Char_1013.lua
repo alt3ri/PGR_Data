@@ -58,7 +58,7 @@ function XCharTes1013:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, 
         return
     end
 
-    if (skillId == 101303) or (skillId == 101304) or (skillId ==101307) or (skillId ==101308) or (skillId ==101309) or (skillId ==101328)then
+    if (skillId == 101303) or (skillId == 101304) or (skillId == 101307) or (skillId == 101308) or (skillId == 101309) or (skillId == 101328) then
         self._proxy:SetNpcAnimationLayer(self._uuid, 0)
     else
         self._proxy:SetNpcAnimationLayer(self._uuid, 1)
@@ -102,8 +102,26 @@ function XCharTes1013:OnNpcDamageEvent(launcherId, targetId, magicId, kind, phys
         return
     end
 
-    if self.Cishu > 4 then
-        return
+    if self._proxy:CheckBuffByKind(self._uuid, 1016395) then
+        if self.Cishu > 1 then
+            return
+        end
+    elseif self._proxy:CheckBuffByKind(self._uuid, 1016396) then
+        if self.Cishu > 2 then
+            return
+        end
+    elseif self._proxy:CheckBuffByKind(self._uuid, 1016397) then
+        if self.Cishu > 3 then
+            return
+        end
+    elseif self._proxy:CheckBuffByKind(self._uuid, 1016398) then
+        if self.Cishu > 4 then
+            return
+        end
+    elseif self._proxy:CheckBuffByKind(self._uuid, 1016399) then
+        if self.Cishu > 5 then
+            return
+        end
     end
 
     self.Damage = self.Damage + elementDamage

@@ -192,10 +192,6 @@ function XUiTemple2Game:OnDestroy()
     -- 复原速度
     CS.UnityEngine.Time.timeScale = 1
     XDataCenter.PhotographManager.ClearTextureCache()
-    if self.ShareTexture then
-        CS.UnityEngine.Object.Destroy(self.ShareTexture)
-        self.ShareTexture = false
-    end
     self._Control:ClearCurrentGameStageId()
 end
 
@@ -217,9 +213,9 @@ function XUiTemple2Game:OnClickShare()
 
     local camera = CS.XUiManager.Instance.UiCamera
     XCameraHelper.ScreenShotNew(self.ImageForSnapShot, camera, function(screenShot)
+        self:AddCacheTexture(screenShot)
         -- 把合成后的图片渲染到游戏UI中的照片展示(最终要分享的图片)
         CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Hud, CS.XUiManager.Instance.UiCamera)
-        self.ShareTexture = screenShot
         local photoName = "[" .. tostring(XPlayer.Id) .. "]" .. XTime.GetServerNowTimestamp()
         XLuaUiManager.OpenWithCallback("UiTemple2Share", function()
             self._IsShotScreen = false

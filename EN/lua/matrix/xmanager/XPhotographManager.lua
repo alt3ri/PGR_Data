@@ -35,6 +35,15 @@ XPhotographManagerCreator = function()
         PhotoBackgroundRequest = "PhotoBackgroundRequest", -- 拍照消息
     }
 
+    local IGNORE_UI_ON_DRAW = {
+        "UiEpicFashionGacha",
+        "UiGachaLamiyaMain",
+        "UiGachaAlphaMain",
+        "UiGachaLuciaMain",
+        "UiGachaSelenaMain",
+        "UiGachaBianka402Main",
+    }
+
     -- 背景场景预览状态
     local PreviewState = XPhotographConfigs.BackGroundState.Full
     local PreviewSceneId = nil
@@ -259,13 +268,7 @@ XPhotographManagerCreator = function()
     end
 
     function XPhotographManager.GetIgnoreUiOnDraw()
-        return {
-            "UiEpicFashionGacha",
-            "UiGachaLamiyaMain",
-            "UiGachaAlphaMain",
-            "UiGachaLuciaMain",
-            "UiGachaSelenaMain",
-        }
+        return IGNORE_UI_ON_DRAW
     end
 
     function XPhotographManager.HandlerAddPhotoScene(data)
@@ -648,6 +651,7 @@ XPhotographManagerCreator = function()
 
             if CurSceneId ~= sceneId then
                 XEventManager.DispatchEvent(XEventId.EVENT_PHOTO_SYNC_CHANGE_BACKGROUND, sceneId)
+                XMVCA.XSwitchableScene:CheckSceneChange(sceneId)
             end
 
             CurSceneId = sceneId

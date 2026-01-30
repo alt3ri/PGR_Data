@@ -244,6 +244,7 @@ function XSkyGardenDormModel:GetPhotoWallFightInitData(containerFurnitureData)
                 Angle = f:GetAngle() / ratio,
                 Layer = f:GetLayer(),
                 SaltId = 0,
+                Scale = f:GetScale(),
             }
         elseif majorType == decorationType then
             adorns[#adorns + 1] = {
@@ -252,7 +253,8 @@ function XSkyGardenDormModel:GetPhotoWallFightInitData(containerFurnitureData)
                 X = x / ratio,
                 Y = y / ratio,
                 Angle = f:GetAngle() / ratio,
-                Layer = f:GetLayer()
+                Layer = f:GetLayer(),
+                Scale = f:GetScale()
             }
         end
     end
@@ -269,7 +271,8 @@ function XSkyGardenDormModel:GetPhotoWallFightInitData(containerFurnitureData)
                 X = x / ratio,
                 Y = y / ratio,
                 Angle = f:GetAngle() / ratio,
-                Layer = f:GetLayer()
+                Layer = f:GetLayer(),
+                Scale = f:GetScale()
             }
         end
     end

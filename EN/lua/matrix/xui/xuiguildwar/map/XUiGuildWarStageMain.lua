@@ -52,7 +52,7 @@ function XUiGuildWarStageMain:Init()
     end, self.AssetActivityPanel)
     self.AssetActivityPanel:Refresh(itemIds, nil, { XDataCenter.GuildWarManager.GetMaxActionPoint() })
 
-    self.BattleManager:SetIsHistoryAction(true)
+    XMVCA.XGuildWar.ActionQueueAgency:SetIsHistoryAction(true)
     XDataCenter.GuildWarManager.GetNewRoundFlag()--如果是新打开的界面则无视之前的新回合标记
 end
 

@@ -55,7 +55,19 @@ function XCharTes1010:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, t
     end
 
     if skillId == 101013 then --寂灭灵灰强化效果
-        if self._proxy:CheckBuffByKind(self._uuid, 1010518) and self.Jishu < 4 then
+        if not self._proxy:CheckBuffByKind(self._uuid, 1010518) then
+            return
+        end
+
+        if self._proxy:CheckBuffByKind(self._uuid, 1016375) and self.Jishu < 1 then -- 寂灭灵灰1级强化
+            self.Jishu = self.Jishu + 1
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016376) and self.Jishu < 2 then -- 寂灭灵灰2级强化
+            self.Jishu = self.Jishu + 1
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016377) and self.Jishu < 3 then -- 寂灭灵灰3级强化
+            self.Jishu = self.Jishu + 1
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016378) and self.Jishu < 4 then -- 寂灭灵灰4级强化
+            self.Jishu = self.Jishu + 1
+        elseif self._proxy:CheckBuffByKind(self._uuid, 1016379) and self.Jishu < 5 then -- 寂灭灵灰5级强化
             self.Jishu = self.Jishu + 1
         else
             self._proxy:ApplyMagic(self._uuid, self._uuid, 1010520, 1) --删除强化效果

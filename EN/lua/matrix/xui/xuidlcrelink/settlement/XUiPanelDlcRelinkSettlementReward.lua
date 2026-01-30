@@ -11,8 +11,8 @@ function XUiPanelDlcRelinkSettlementReward:OnStart()
     self.GridEquipment.gameObject:SetActiveEx(false)
     self.GridReward.gameObject:SetActiveEx(false)
     self.PanelNone.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnLeave, self.OnBtnLeaveClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnBackRoom, self.OnBtnBackRoomClick, true, true)
+    self.BtnLeave:AddEventListener(handler(self, self.OnBtnLeaveClick))
+    self.BtnBackRoom:AddEventListener(handler(self, self.OnBtnBackRoomClick))
 
     ---@type XUiGridCommon[]
     self.RewardGridList = {}
@@ -25,7 +25,8 @@ end
 
 ---@param playerSettleResult XDlcRelinkPlayerSettleResult 玩家结算结果
 ---@param rewardGoodsList XDlcRelinkRewardGoods[] 奖励物品列表
-function XUiPanelDlcRelinkSettlementReward:Refresh(playerSettleResult, rewardGoodsList)
+---@param levelId number 关卡Id
+function XUiPanelDlcRelinkSettlementReward:Refresh(playerSettleResult, rewardGoodsList, levelId)
     -- 刷新玩家信息
     if not self.CharacterNode then
         ---@type XUiGridDlcRelinkSettlementCharacter
@@ -36,7 +37,7 @@ function XUiPanelDlcRelinkSettlementReward:Refresh(playerSettleResult, rewardGoo
     -- 研发进度
     self:RefreshProgress()
     -- 刷新奖励
-    self:RefreshRewards(rewardGoodsList)
+    self:RefreshRewards(rewardGoodsList, levelId)
 end
 
 -- 刷新研发进度
@@ -47,7 +48,6 @@ function XUiPanelDlcRelinkSettlementReward:RefreshProgress()
         return
     end
 
-    self.TxtTitle.text = string.format(self._Control:GetClientConfig("SettlementResearchTitle"), settlementCacheData.CurLevel)
     local isMaxLevel = self._Control:GetPlayerLevelIsMax(settlementCacheData.CurLevel)
     local isUplevel = settlementCacheData.CurLevel > settlementCacheData.LastLevel
     self.GridTag.gameObject:SetActiveEx(isUplevel)
@@ -64,19 +64,26 @@ function XUiPanelDlcRelinkSettlementReward:RefreshProgress()
         self.TxtNum.text = string.format("+%d", addExp)
     end
 
+    local levelDescIndex = 1
     if isMaxLevel then
         self.ImgProgress.fillAmount = 1
         self.ImgProgressAdd.fillAmount = 0
-        return
+        levelDescIndex = 2
+    else
+        local nextLevelExp = self._Control:GetNextPlayerLevelExp(settlementCacheData.CurLevel)
+        self.ImgProgress.fillAmount = isUplevel and 0 or (settlementCacheData.LastExp / nextLevelExp)
+        self.ImgProgressAdd.fillAmount = settlementCacheData.CurExp / nextLevelExp
+        if not isUplevel then
+            levelDescIndex = settlementCacheData.CurExp > nextLevelExp and 2 or 1
+        end
     end
 
-    local nextLevelExp = self._Control:GetNextPlayerLevelExp(settlementCacheData.CurLevel)
-    self.ImgProgress.fillAmount = isUplevel and 0 or (settlementCacheData.LastExp / nextLevelExp)
-    self.ImgProgressAdd.fillAmount = settlementCacheData.CurExp / nextLevelExp
+    self.TxtTitle.text = string.format(self._Control:GetClientConfig("SettlementResearchTitle", levelDescIndex), settlementCacheData.CurLevel)
 end
 
 ---@param rewardGoodsList XDlcRelinkRewardGoods[] 奖励物品列表
-function XUiPanelDlcRelinkSettlementReward:RefreshRewards(rewardGoodsList)
+---@param levelId number 关卡Id
+function XUiPanelDlcRelinkSettlementReward:RefreshRewards(rewardGoodsList, levelId)
     if XTool.IsTableEmpty(rewardGoodsList) then
         self.PanelNone.gameObject:SetActiveEx(true)
         return
@@ -94,6 +101,8 @@ function XUiPanelDlcRelinkSettlementReward:RefreshRewards(rewardGoodsList)
     end
 
     -- 奖励
+    local isFirstPass = self._Control:CheckSettlementCacheLevelFirstPass(levelId)
+    rewardGoods = XRewardManager.MergeAndSortRewardGoodsList(rewardGoods)
     local rewardCount = #rewardGoods
     for index = 1, rewardCount do
         local grid = self.RewardGridList[index]
@@ -106,6 +115,10 @@ function XUiPanelDlcRelinkSettlementReward:RefreshRewards(rewardGoodsList)
         grid:SetProxyClickFunc(function()
             XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", grid.TemplateId)
         end)
+        -- 首通标识
+        if grid.ImgClear then
+            grid.ImgClear.gameObject:SetActiveEx(isFirstPass)
+        end
         grid.GameObject:SetActiveEx(true)
         grid.Transform:SetAsLastSibling()
     end
@@ -123,7 +136,7 @@ function XUiPanelDlcRelinkSettlementReward:RefreshRewards(rewardGoodsList)
             self.EquipmentGridList[index] = grid
         end
         grid:Open()
-        grid:Refresh(uid, index)
+        grid:Refresh(uid)
         grid.Transform:SetAsLastSibling()
     end
 
@@ -144,7 +157,12 @@ function XUiPanelDlcRelinkSettlementReward:OnEquipItemCallBack(grid)
     grid:SetSelect(true)
     self.CurSelectEquipUid = equipUid
     self.CurSelectGrid = grid
-    XLuaUiManager.Open("UiDlcRelinkBubbleEquipDetail", equipUid, grid.Transform, handler(self, self.OnBubbleEquipDetailClose))
+    -- 响应穿透事件屏蔽
+    for _, equipGrid in pairs(self.EquipmentGridList) do
+        equipGrid:SetRespondPassEvent(equipGrid ~= grid)
+    end
+    -- 打开气泡详情
+    XLuaUiManager.Open("UiDlcRelinkBubbleEquipDetail", equipUid, grid.Transform, handler(self, self.OnBubbleEquipDetailClose), { IsEventPass = true })
 end
 
 function XUiPanelDlcRelinkSettlementReward:OnBubbleEquipDetailClose()
@@ -157,12 +175,22 @@ end
 
 function XUiPanelDlcRelinkSettlementReward:OnBtnLeaveClick()
     XMVCA.XDlcRoom:Quit(function()
-        XLuaUiManager.CloseAllUpperUi("UiDlcRelinkRoom")
+        self._Control:CommonRunRelinkRoomUiHandle(nil, function()
+            if XTool.UObjIsNil(self.GameObject) then
+                return
+            end
+            XLuaUiManager.Remove(self.Parent.Name)
+        end)
     end)
 end
 
 function XUiPanelDlcRelinkSettlementReward:OnBtnBackRoomClick()
-    XLuaUiManager.CloseAllUpperUi("UiDlcRelinkRoom")
+    self._Control:CommonRunRelinkRoomUiHandle(nil, function()
+        if XTool.UObjIsNil(self.GameObject) then
+            return
+        end
+        XLuaUiManager.Remove(self.Parent.Name)
+    end)
 end
 
 return XUiPanelDlcRelinkSettlementReward

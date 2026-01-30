@@ -1,4 +1,4 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 ---@class XUiFubenBossSingle : XLuaUi
 ---@field _Control XFubenBossSingleControl
 local XUiFubenBossSingle = XLuaUiManager.Register(XLuaUi, "UiFubenBossSingle")
@@ -35,6 +35,8 @@ function XUiFubenBossSingle:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_REFRESH_STAGE_DATA, self.OnSyncBossData, self)
     XEventManager.AddEventListener(XEventId.EVENT_BOSS_SINGLE_GET_REWARD, self.OnRewardGet, self)
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self.OnActivityEnd, self)
+    
+    -- 鏖战点解锁动画逻辑已移到XUiPanelBossStage中处理
 end
 
 function XUiFubenBossSingle:OnDisable()
@@ -104,6 +106,7 @@ end
 function XUiFubenBossSingle:OnBtnMainUiClick()
     XLuaUiManager.RunMain()
 end
+
 
 function XUiFubenBossSingle:GetBossSingleData()
     return self._Control:GetBossSingleData()

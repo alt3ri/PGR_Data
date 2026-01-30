@@ -1,3 +1,4 @@
+---@class XUiSceneTip:XLuaUi
 local XUiSceneTip = XLuaUiManager.Register(XLuaUi, "UiSceneTip")
 
 local UiMainMenuType = {
@@ -12,6 +13,8 @@ end
 function XUiSceneTip:OnStart(sceneId,openType)
     self.SceneId = sceneId
     self.OpenType=openType
+    ---@type XUiPanelSwitchableSceneAnim
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
     local sceneTemplate = XDataCenter.PhotographManager.GetSceneTemplateById(self.SceneId)
     local scenePath, modelPath = XSceneModelConfigs.GetSceneAndModelPathById(sceneTemplate.SceneModelId)
     self:LoadUiScene(scenePath, modelPath, function() self:SetBatteryUi() end, false)
@@ -29,12 +32,16 @@ end
 
 function XUiSceneTip:OnDisable()
     self:RemoveEventListener()
-
+    self.SwitchableScene:Stop()
     -- 关闭时钟
     if self.ClockTimer then
         XUiHelper.StopClockTimeTempFun(self, self.ClockTimer)
         self.ClockTimer = nil
     end
+end
+
+function XUiSceneTip:OnDestroy()
+    self.SwitchableScene:OnDestory()
 end
 
 function XUiSceneTip:Refresh()
@@ -49,6 +56,11 @@ function XUiSceneTip:SetBatteryUi()
     -- 场景虚拟相机
     self.CamFarMain = self:FindVirtualCamera("CamFarMain")
     if self.CamFarMain then self.CamFarMain.gameObject:SetActive(true) end
+    --判断是否开启陀螺仪动画
+    if XMVCA.XSwitchableScene:IsSceneGyro(self.SceneId) then
+        self.SwitchableScene:Play(self.SceneId, self.UiSceneInfo.Transform)
+        return
+    end
     -- 场景动画
     self.AnimationRoot = self.UiSceneInfo.Transform:Find("Animations")
     if XTool.UObjIsNil(self.AnimationRoot) then return end

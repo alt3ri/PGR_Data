@@ -12,7 +12,15 @@ function XUiPanelDlcRelinkEquipDetail:OnStart(isNotSelf)
     self.StoryLine.gameObject:SetActiveEx(false)
     self.GridAttributeGroup.gameObject:SetActiveEx(false)
     self.GridNone.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnLock, self.OnBtnLockClick, true, true)
+    self.BtnLock:AddEventListener(handler(self, self.OnBtnLockClick))
+
+    if self.BtnDescFold then
+        self.BtnDescFold:AddEventListener(handler(self, self.OnBtnDescFold))
+    end
+
+    if self.PanelDetail then
+        self.PanelDetail.gameObject:SetActiveEx(false)
+    end
 
     self.IsNotSelf = isNotSelf or false
 
@@ -32,6 +40,10 @@ function XUiPanelDlcRelinkEquipDetail:OnStart(isNotSelf)
     if canvas then
         self.DefaultLayer = canvas.sortingOrder
     end
+
+    self._IsShowDetail = self._Control:GetEquipAttrDescIsDetail()
+
+    self:RefreshFoldIcon()
 end
 
 function XUiPanelDlcRelinkEquipDetail:Refresh(equipUid)
@@ -48,28 +60,37 @@ function XUiPanelDlcRelinkEquipDetail:RefreshEquipInfo()
         self.EquipNode = XUiGridDlcRelinkEquipment.New(self.GridEquipment, self)
         self.EquipNode:Open()
     end
-    self.EquipNode:Refresh(self.EquipUid)
+    self.EquipNode:Refresh(self.EquipUid, nil, self.IsNotSelf)
     local templateId = self._Control:GetEquipTemplateIdByEquipUid(self.EquipUid, self.IsNotSelf)
+    self._OccupationType = self._Control:GetEquipOccupationType(templateId)
     -- 装备名称
     self.TxtName.text = self._Control:GetEquipName(templateId)
     -- 装备职业图标
-    local occupationIcon = self._Control:GetOccupationIconByEquipId(templateId)
+    local occupationIcon = self._Control:GetEquipOccupationIcon(templateId)
     if not string.IsNilOrEmpty(occupationIcon) then
         self.ImgOccupation:SetSprite(occupationIcon)
     end
     -- 装备职业名称
-    self.TxtOccupation.text = self._Control:GetOccupationNameByEquipId(templateId)
+    self.TxtOccupation.text = self._Control:GetEquipOccupationName(templateId)
     -- 装备类型
     local equipType = self._Control:GetEquipType(templateId)
     self.LabelMain.gameObject:SetActiveEx(equipType == XEnumConst.DlcRelink.EquipType.Main)
     self.LabelNormal.gameObject:SetActiveEx(equipType == XEnumConst.DlcRelink.EquipType.Normal)
     -- 装备战力
-    local equipAbility = self._Control:GetEquipAbilityByUid(self.EquipUid, self.IsNotSelf)
-    self.TxtLv.text = string.format(self._Control:GetClientConfig("EquipLevelDesc"), equipAbility)
+    self.TxtLv.text = self._Control:GetEquipAbilityByUid(self.EquipUid, self.IsNotSelf)
     self.TxtMax.gameObject:SetActiveEx(self._Control:CheckEquipIsMaxAbility(self.EquipUid, self.IsNotSelf))
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.TxtMax.transform.parent)
+    -- 顶部槽位扩展提示
+    self.PanelTopTips.gameObject:SetActiveEx(equipType == XEnumConst.DlcRelink.EquipType.Main)
+    self.TxtTip.text = self._Control:GetClientConfig("EquipSlotExpandTip")
 end
 
 function XUiPanelDlcRelinkEquipDetail:RefreshIsLocked()
+    if self.IsNotSelf or not XTool.IsNumberValid(self.EquipUid) then
+        self.BtnLock.gameObject:SetActiveEx(false)
+        return
+    end
+    self.BtnLock.gameObject:SetActiveEx(true)
     local isLocked = self._Control:GetEquipIsLockedByEquipUid(self.EquipUid, self.IsNotSelf)
     self.BtnLock:SetButtonState(isLocked and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end
@@ -82,11 +103,10 @@ function XUiPanelDlcRelinkEquipDetail:RefreshEquipAttributes()
     local mainSkillAttr = self._Control:GetEquipMainFactorByUid(self.EquipUid, true, self.IsNotSelf)
     if mainSkillAttr then
         local node = self:EnsureMainAttrNode(true)
-        node:Refresh(mainSkillAttr, true)
-        node.Transform:SetAsLastSibling()
-
-        self:EnsureLineActive(lineCount)
-        lineCount = lineCount + 1
+        node:Refresh(mainSkillAttr)
+        node:RefreshDetailShow(self._IsShowDetail, mainSkillAttr)
+        node:MoveToParentLatest()
+        node:ShowBg1()
     end
 
     -- 主属性
@@ -94,31 +114,66 @@ function XUiPanelDlcRelinkEquipDetail:RefreshEquipAttributes()
     if mainAttr then
         local node = self:EnsureMainAttrNode(false)
         node:Refresh(mainAttr)
-        node.Transform:SetAsLastSibling()
-
-        -- 加持描述
-        self:RefreshBlessingTips()
-
-        self:EnsureLineActive(lineCount)
-        lineCount = lineCount + 1
+        node:RefreshDetailShow(self._IsShowDetail, mainAttr)
+        node:MoveToParentLatest()
+        --背景图交错开
+        if mainSkillAttr then
+            node:ShowBg2()
+        else
+            node:ShowBg1()
+        end
     end
+
+    -- 加持描述
+    self:RefreshBlessingTips()
 
     -- 副属性
     local templateId = self._Control:GetEquipTemplateIdByEquipUid(self.EquipUid, self.IsNotSelf)
     local quality = self._Control:GetEquipQuality(templateId)
     local deputyNum = self._Control:GetEquipQualityDeputyFactorNum(quality)
+
+    --主副属性分割线
+    if (mainSkillAttr or mainAttr) and deputyNum > 0 then
+        self:EnsureLineActive(lineCount)
+        lineCount = lineCount + 1
+    end
+
+    local count = 1
+    local attrs = {}
+    local ShowNoneCount = 0
     for index = 1, deputyNum do
         local slot = self._Control:GetEquipDeputyFactorByUid(self.EquipUid, index, self.IsNotSelf)
         if not slot or not slot.Attributes or #slot.Attributes == 0 then
-            self:EnsureNone(index)
+            ShowNoneCount = ShowNoneCount + 1
         else
-            self:RefreshDeputyAttributes(index, slot.Attributes)
+            for _, v in ipairs(slot.Attributes) do
+                local idx = math.ceil(count / 2)
+                if attrs[idx] then
+                    table.insert(attrs[idx], v)
+                else
+                    attrs[idx] = { v }
+                end
+                count = count + 1
+            end
         end
+    end
 
-        if index < deputyNum then
-            self:EnsureLineActive(lineCount)
-            lineCount = lineCount + 1
-        end
+    for k, v in ipairs(attrs) do
+        self:RefreshDeputyAttributes(k, v)
+    end
+
+    for index = 1, ShowNoneCount do
+        self:EnsureNone(index)
+    end
+end
+
+function XUiPanelDlcRelinkEquipDetail:RefreshFoldIcon()
+    if self.IconSimpleState then
+        self.IconSimpleState.gameObject:SetActiveEx(not self._IsShowDetail)
+    end
+
+    if self.IconDetailState then
+        self.IconDetailState.gameObject:SetActiveEx(self._IsShowDetail)
     end
 end
 
@@ -161,7 +216,9 @@ function XUiPanelDlcRelinkEquipDetail:EnsureMainAttrNode(isSkill)
     local field = isSkill and "MainSkillAttribute" or "MainAttribute"
     if not self[field] then
         local go = XUiHelper.Instantiate(self.GridAttribute, self.PanelGroup)
-        self[field] = XUiGridDlcRelinkEquipAttribute.New(go, self)
+        
+        local detailGo = self.PanelDetail and XUiHelper.Instantiate(self.PanelDetail, self.PanelGroup) or nil
+        self[field] = XUiGridDlcRelinkEquipAttribute.New(go, self, detailGo)
     end
     local node = self[field]
     node:Open()
@@ -195,18 +252,36 @@ function XUiPanelDlcRelinkEquipDetail:RefreshDeputyAttributes(index, attributes)
     local attrCount = #attributes
 
     grid:GetObject("GridAttribute1").gameObject:SetActiveEx(attrCount >= 1)
+    local panelDetail1 = grid:GetObject("PanelDetail1", false)
+
+    if panelDetail1 then
+        panelDetail1.gameObject:SetActiveEx(attrCount >= 1)
+    end
+
     local hasSecond = attrCount >= 2
     grid:GetObject("Line").gameObject:SetActiveEx(hasSecond)
     grid:GetObject("GridAttribute2").gameObject:SetActiveEx(hasSecond)
 
+    local panelDetail2 = grid:GetObject("PanelDetail2", false)
+
+    if panelDetail2 then
+        panelDetail2.gameObject:SetActiveEx(hasSecond)
+    end
+
     self.DeputyAttributeNodes[index] = self.DeputyAttributeNodes[index] or {}
     for i = 1, math.min(attrCount, 2) do
         if not self.DeputyAttributeNodes[index][i] then
-            self.DeputyAttributeNodes[index][i] = XUiGridDlcRelinkEquipAttribute.New(grid:GetObject("GridAttribute" .. i), self)
+            self.DeputyAttributeNodes[index][i] = XUiGridDlcRelinkEquipAttribute.New(grid:GetObject("GridAttribute" .. i), self, grid:GetObject("PanelDetail" .. i, false))
         end
         local node = self.DeputyAttributeNodes[index][i]
         node:Open()
         node:Refresh(attributes[i])
+        node:RefreshDetailShow(self._IsShowDetail, attributes[i], true)
+        if i & 1 == 1 then
+            node:ShowBg1()
+        else
+            node:ShowBg2()
+        end
     end
 end
 
@@ -215,12 +290,26 @@ function XUiPanelDlcRelinkEquipDetail:RefreshBlessingTips()
         local isShowTip = self.Parent:CheckExtendSlotAndMainSlotWearEquip()
         self.PanelTips.gameObject:SetActiveEx(isShowTip)
         if isShowTip then
-            local characterId = self.Parent.CharacterId
-            local mainSlotIndex = XEnumConst.DlcRelink.EquipSlotIndex.MainSlot
-            local extendSlotIndex = self.Parent.CurSelectSlotIndex or self.SlotIndex.SlotIndex or XEnumConst.DlcRelink.EquipSlotIndex.NormalExpandBegin
-            local isOccupationTypeSame = self._Control:CheckEquipSlotOccupationTypeSame(characterId, mainSlotIndex, extendSlotIndex, self.IsNotSelf)
-            self.PanelTips:GetObject("TipsNotEffective").gameObject:SetActiveEx(not isOccupationTypeSame)
-            self.PanelTips:GetObject("TipsInBlessing").gameObject:SetActiveEx(isOccupationTypeSame)
+            local isOccupationTypeSame = false
+            local mainEquipUid
+            if self.IsNotSelf then
+                mainEquipUid = self._Control.OtherMemberControl:GetEquipWearEquipUidBySlot(XEnumConst.DlcRelink.EquipSlotIndex.MainSlot)
+            else
+                mainEquipUid = self._Control:GetEquipUidByCharacterId(self.Parent.CharacterId, XEnumConst.DlcRelink.EquipSlotIndex.MainSlot)
+            end
+            if XTool.IsNumberValid(mainEquipUid) then
+                local equipId = self._Control:GetEquipTemplateIdByEquipUid(mainEquipUid, self.IsNotSelf)
+                local mainOccupationType = self._Control:GetEquipOccupationType(equipId)
+                isOccupationTypeSame = self._OccupationType == mainOccupationType
+            end
+            if not self._PanelTipObj then
+                self._PanelTipObj = {}
+                XUiHelper.InitUiClass(self._PanelTipObj, self.PanelTips)
+                self._PanelTipObj.TxtTipsNotEffective.text = self._Control:GetClientConfig("TipsNotEffective")
+                self._PanelTipObj.TxtTipsInBlessing.text = self._Control:GetClientConfig("TipsInBlessing")
+            end
+            self._PanelTipObj.TipsNotEffective.gameObject:SetActiveEx(not isOccupationTypeSame)
+            self._PanelTipObj.TipsInBlessing.gameObject:SetActiveEx(isOccupationTypeSame)
             self.PanelTips.transform:SetAsLastSibling()
         end
     end
@@ -351,5 +440,17 @@ function XUiPanelDlcRelinkEquipDetail:CloseDeleteFactorPanel()
         end
     end
 end
+
+--- 装备详情
+function XUiPanelDlcRelinkEquipDetail:OnBtnDescFold()
+    self._IsShowDetail = not self._IsShowDetail
+
+    -- 刷新词条详情显示情况
+    self:RefreshEquipAttributes()
+    self:RefreshFoldIcon()
+    
+    self._Control:SetEquipAttrDescIsDetail(self._IsShowDetail)
+end
+
 
 return XUiPanelDlcRelinkEquipDetail

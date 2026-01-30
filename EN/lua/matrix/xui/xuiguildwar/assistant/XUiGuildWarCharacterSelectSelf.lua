@@ -1,4 +1,4 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiGuildWarCharacterSelectSelfGrid = require("XUi/XUiGuildWar/Assistant/XUiGuildWarCharacterSelectSelfGrid")
 
 ---@class XUiGuildWarCharacterSelectSelf@refer to XUiPanelStrongholdRoomCharacterSelf
@@ -121,13 +121,13 @@ function XUiGuildWarCharacterSelectSelf:GetEntities(notFilter)
         local AbilityA = CA.Ability
         local AbilityB = CB.Ability
         --判断是否特攻角色 特攻优先
-        local SpecialA = XDataCenter.GuildWarManager.CheckIsSpecialRole(EntityIdA)
-        local SpecialB = XDataCenter.GuildWarManager.CheckIsSpecialRole(EntityIdB)
+        local SpecialA = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(EntityIdA)
+        local SpecialB = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(EntityIdB)
         if SpecialA and SpecialB then
             --判断是否头牌特攻角色
-            if XDataCenter.GuildWarManager.CheckIsCenterSpecialRole(EntityIdA) then
+            if XMVCA.XGuildWar.SpecialRoleAgency:CheckIsCenterSpecialRole(EntityIdA) then
                 return true
-            elseif XDataCenter.GuildWarManager.CheckIsCenterSpecialRole(EntityIdB) then
+            elseif XMVCA.XGuildWar.SpecialRoleAgency:CheckIsCenterSpecialRole(EntityIdB) then
                 return false
             else
                 return SortNormal(AbilityA, AbilityB, EntityIdA, EntityIdB)
@@ -256,12 +256,35 @@ function XUiGuildWarCharacterSelectSelf:OnBtnWeaponClicked()
 end
 
 function XUiGuildWarCharacterSelectSelf:OnBtnJoinTeamClicked()
-    local memberData = {
-        EntityId = self:GetCharacterId(),
-        PlayerId = XPlayer.Id
-    }
-    self._Team:UpdateEntityTeamPos(memberData, self._Pos, true)
-    self.CloseUiFunc(true, memberData)
+    local characterId = self:GetCharacterId()
+    local stationedNodeId = XMVCA.XGuildWar.RoleStationAgency:GetStationedNodeIdByCharacterId(self:GetCharacterId())
+
+    if XTool.IsNumberValidEx(stationedNodeId) then
+        local roleFullName = XMVCA.XCharacter:GetCharacterFullNameStr(characterId)
+        local gwNodeName = XGuildWarConfig.GetNodeName(stationedNodeId)
+        
+        XUiManager.DialogTip(XUiHelper.GetText('TipTitle'), XMVCA.XGuildWar.RoleStationAgency:GetClientConfigCharacterJoinTeamWithStationedTips(roleFullName, gwNodeName), nil, nil, function()
+            -- 先请求撤回驻扎
+            XMVCA.XGuildWar.RoleStationAgency:RequestXGuildWarBeStationed(stationedNodeId, 0, function(success)
+                if success then
+                    local memberData = {
+                        EntityId = self:GetCharacterId(),
+                        PlayerId = XPlayer.Id
+                    }
+                    self._Team:UpdateEntityTeamPos(memberData, self._Pos, true)
+                    self.CloseUiFunc(true, memberData)
+                end
+            end)
+        end)
+    else
+        local memberData = {
+            EntityId = self:GetCharacterId(),
+            PlayerId = XPlayer.Id
+        }
+        self._Team:UpdateEntityTeamPos(memberData, self._Pos, true)
+        self.CloseUiFunc(true, memberData)
+    end
+    
 end
 
 function XUiGuildWarCharacterSelectSelf:OnBtnQuitTeamClick()

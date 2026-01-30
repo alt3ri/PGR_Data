@@ -295,8 +295,8 @@ end
 --region Action模块
 function XAFKCharBase:IsValidSkillDelayTimer()--判断延迟释放技能有效性
     
-    if not self._proxy:CheckNpcFullActionState(self._uuid,ENpcAction.Skill)then --不在技能，清空Timer
-        self.skillDelayTimer = nil --清空技能DelayTimer
+    if not self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Skill) then --不在技能，清空Timer
+        self.skillDelayTimer = nil                                              --清空技能DelayTimer
         return true
     end
 

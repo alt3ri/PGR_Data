@@ -975,7 +975,7 @@ function XUiBattleRoleRoom:RefreshCharacterRImgType()
         amplifierEffectGo:SetActiveEx(false)
         if obsActiveCarrer ~= XEnumConst.CHARACTER.Career.None and XTool.IsNumberValid(obsPos) and obsPos == pos then
             iconPath = XMVCA.XCharacter:GetNpcTypeIconObs(obsActiveCarrer)
-            if obsActiveCarrer == XEnumConst.CHARACTER.Career.Tank then
+            if obsActiveCarrer == XEnumConst.CHARACTER.Career.Tank or obsActiveCarrer == XEnumConst.CHARACTER.Career.Breaker then
                 tankEffectGo:SetActiveEx(true)
             elseif obsActiveCarrer == XEnumConst.CHARACTER.Career.Amplifier or obsActiveCarrer == XEnumConst.CHARACTER.Career.Support then
                 amplifierEffectGo:SetActiveEx(true)

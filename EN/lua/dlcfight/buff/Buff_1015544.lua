@@ -52,6 +52,7 @@ function XBuffScript1015544:Update(dt)
         self.attHp = math.floor(self.maxHp * self.percent)
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId1, self.magicLevel)
         self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
+        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
         self.isSelfHurt = true
     end
 end

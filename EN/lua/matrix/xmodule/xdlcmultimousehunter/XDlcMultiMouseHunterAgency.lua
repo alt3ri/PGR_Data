@@ -12,7 +12,8 @@ local Protocols = {
     DlcMultiplayerDiscussionVoteRequest = "DlcMultiplayerDiscussionVoteRequest",
     DlcMultiplayerGetDiscussionVoteRewardRequest = "DlcMultiplayerGetDiscussionVoteRewardRequest",
     DlcMultiplayerGetBpRewardRequest = "DlcMultiplayerGetBpRewardRequest",
-    DlcMultiplayerSelectSkillRequest = "DlcMultiplayerSelectSkillRequest"
+    DlcMultiplayerSelectSkillRequest = "DlcMultiplayerSelectSkillRequest",
+    DlcMultiplayerDanmakuRequest = "DlcMultiplayerDanmakuRequest", -- 弹幕请求
 }
 
 function XDlcMultiMouseHunterAgency:OnInit()
@@ -38,7 +39,7 @@ function XDlcMultiMouseHunterAgency:InitEnum()
         Challenge = 1 --挑战任务
     }
     self.DlcMouseHunterCamp = {
-        Cat = 1,  --猫技能
+        Cat = 1, --猫技能
         Mouse = 2, --鼠技能
     }
 end
@@ -62,11 +63,25 @@ function XDlcMultiMouseHunterAgency:InitEvent()
 end
 
 function XDlcMultiMouseHunterAgency:OpenMainUi()
-    local worldId, levelId = self:GetCurrentWorldIdAndLevelId()
-
-    if worldId and levelId then
-        XMVCA.XDlcRoom:CreateRoom(worldId, levelId, 1, true)
+    if self.InCd then
+        return
     end
+    -- 玩法重连检查
+    XMVCA.XDlcRoom:ReqPreCheckReconnect(self:DlcGetWorldType(), function()
+        -- 重连处理
+        if XMVCA.XDlcWorld:OnReconnectFight() then
+            return
+        end
+
+        local worldId, levelId = self:GetCurrentWorldIdAndLevelId()
+        if worldId and levelId then
+            XMVCA.XDlcRoom:CreateRoom(worldId, levelId, 1, true)
+        end
+    end)
+    XScheduleManager.ScheduleOnce(function()
+        self.InCd = false
+    end, 1000)--增加1s Cd
+    self.InCd = true
 end
 
 -- region Notify
@@ -84,8 +99,9 @@ function XDlcMultiMouseHunterAgency:OnNotifyDlcMultiplayerData(data)
     self._Model:SetDiscussionInfo(data.Discussion)
     self._Model:SetBpLevel(data.BpLevel)
     self._Model:SetBpRewardIds(data.BpRewardIds)
-    self._Model:SetSelectSkillData(data.SelectCatSkillId, data.SelectMouseSkillId)
+    self._Model:SetSelectSkillData(data.SelectCatSkillIds, data.SelectMouseSkillIds)
     self._Model:SetFinishStageCount(data.FinishStageCount)
+    self._Model:SetMonsterClickCount(data.MonsterClickCount)
 
     if oldChapterId ~= self._Model:GetCurrentChapterId() then
         XEventManager.DispatchEvent(XEventId.EVENT_DLC_MOUSE_HUNTER_UPDATE)
@@ -159,23 +175,30 @@ function XDlcMultiMouseHunterAgency:RequestWearTitle(titleId, callback)
     end)
 end
 
-function XDlcMultiMouseHunterAgency:RequestPlayerDiscussionVote(camp)
-    XNetwork.Call(Protocols.DlcMultiplayerDiscussionVoteRequest, {
+--- 选择讨论阵营投票
+---@param camp number 阵营
+function XDlcMultiMouseHunterAgency:RequestPlayerDiscussionVote(camp, oncall)
+    local request = {
         Camp = camp,
-    }, function(res)
+    }
+    XNetwork.Call(Protocols.DlcMultiplayerDiscussionVoteRequest, request, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return
         end
 
         self._Model:SetDiscussionInfo(res.DiscussionInfo)
+        if oncall then
+            oncall()
+        end
         XEventManager.DispatchEvent(XEventId.EVENT_DLC_MOUSE_HUNTER_REFRESH_DISCUSSION_DATA)
     end)
 end
 
+--- 请求获取讨论投票奖励
+---@param callback function 请求成功回调
 function XDlcMultiMouseHunterAgency:RequestGetDiscussionVoteReward(callback)
-    XNetwork.Call(Protocols.DlcMultiplayerGetDiscussionVoteRewardRequest, {
-    }, function(res)
+    XNetwork.Call(Protocols.DlcMultiplayerGetDiscussionVoteRewardRequest, nil, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return
@@ -206,24 +229,45 @@ function XDlcMultiMouseHunterAgency:RequestDlcMultiplayerGetBpReward(callback)
     end)
 end
 
-function XDlcMultiMouseHunterAgency:RequestDlcMultiplayerSelectSkill(catSkillId, mouseSkillId, callback)
-    XNetwork.Call(Protocols.DlcMultiplayerSelectSkillRequest, {
-        CatSkillId = catSkillId,
-        MouseSkillId = mouseSkillId
-    }, function(res)
+--- 选择技能
+---@param catSkillIds table<number> 猫技能Id列表
+---@param mouseSkillIds table<number> 鼠技能Id列表
+---@param callback function 选择成功回调
+function XDlcMultiMouseHunterAgency:RequestDlcMultiplayerSelectSkill(catSkillIds, mouseSkillIds, callback)
+    local request = {
+        CatSkillIds = catSkillIds,
+        MouseSkillIds = mouseSkillIds
+    }
+    XNetwork.Call(Protocols.DlcMultiplayerSelectSkillRequest, request, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return
         end
 
-        self._Model:SetSelectSkillData(catSkillId, mouseSkillId)
+        self._Model:SetSelectSkillData(catSkillIds, mouseSkillIds)
         XEventManager.DispatchEvent(XEventId.EVENT_DLC_MOUSE_HUNTER_REFRESH_SKILL_DATA)
         if callback then
             callback()
         end
     end)
 end
--- endregion
+
+--- 弹幕请求
+---@param callback function 请求成功回调
+function XDlcMultiMouseHunterAgency:RequestDlcMultiplayerDanmaku(callback)
+    XNetwork.Call(Protocols.DlcMultiplayerDanmakuRequest, nil, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        self._Model:SetDanmakuPools(res.DanmakuPools)
+        if callback then
+            callback()
+        end
+    end)
+end
+
 
 -- region Dlc
 
@@ -265,7 +309,7 @@ function XDlcMultiMouseHunterAgency:DlcReconnect()
     XUiManager.DialogTip(title, message, XUiManager.DialogType.Normal, function()
         XMVCA.XDlcRoom:CancelReconnectToWorld()
     end, function()
-        self:DlcInitFight() 
+        self:DlcInitFight()
         XMVCA.XDlcRoom:ReconnectToWorld()
     end)
 end
@@ -406,7 +450,7 @@ function XDlcMultiMouseHunterAgency:CheckShopRedPoint()
                     -- 货币不足
                     for _, consume in ipairs(goods.ConsumeList) do
                         local count = itemMap[consume.Id] or 0
-                        
+
                         if count >= consume.Count then
                             return true
                         end
@@ -415,7 +459,7 @@ function XDlcMultiMouseHunterAgency:CheckShopRedPoint()
             end
         end
     end
-    
+
     return false
 end
 

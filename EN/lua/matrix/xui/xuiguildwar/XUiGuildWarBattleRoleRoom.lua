@@ -5,12 +5,24 @@ function XUiTeamSkillGrid:Ctor(ui)
     XUiHelper.InitUiClass(self, ui)
 end
 
-function XUiTeamSkillGrid:SetData(buffData, isActive, currentCount, maxCount)
+function XUiTeamSkillGrid:SetData(buffData)
     self.RImgSkillIcon:SetRawImage(buffData.Icon)
-    self.TxtSkillName.text = string.format("%s(%s/%s)", buffData.Name, currentCount, maxCount)
+    self.TxtSkillName.text = string.format("%s(%s/%s)", buffData.Name, buffData.CurCount, buffData.MaxCount)
     self.TxtSkillDesc.text = buffData.Desc
-    self.PanelSelect.gameObject:SetActiveEx(isActive)
-    self.PanelNone.gameObject:SetActiveEx(not isActive)
+    self.PanelSelect.gameObject:SetActiveEx(buffData.IsActive)
+    self.PanelNone.gameObject:SetActiveEx(not buffData.IsActive)
+
+    if self.Icon then
+        self.Icon:SetRawImage(XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialRoleIconBySpecialTeamId(buffData.Id))
+    else
+        XLog.Warning('公会战编队房间特攻buff角标UI引用丢失')
+    end
+
+    if self.UpTag then
+        self.UpTag:SetRawImage(XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialRoleIconBgBySpecialTeamId(buffData.Id))
+    else
+        XLog.Warning('公会战编队房间特攻buff角标背景UI引用丢失')
+    end
 end
 
 --######################## XUiChildPanel ########################
@@ -58,10 +70,16 @@ function XUiGuildWarBattleRoleRoom:CreateCustomTipGo(panel)
     panel.gameObject:SetActiveEx(true)
     local go = panel:LoadPrefab(XUiConfigs.GetComponentUrl("UPCharacterTeamSkills"))
     local teamSkillGrid = XUiTeamSkillGrid.New(go)
-    local teamBuff = self.GuildWarManager.GetSpecialTeamBuff()
-    if teamBuff == nil then return end
-    local currentCount, maxCount, isActive = self.GuildWarManager.CheckIsSpecialTeam(self.Team:GetMembers())
-    teamSkillGrid:SetData(teamBuff, isActive, currentCount, maxCount)
+    local members = self.Team:GetMembers()
+
+    local buffData = XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialTeamBuffByMembers(members)
+
+    if buffData then
+        teamSkillGrid.GameObject:SetActiveEx(true)
+        teamSkillGrid:SetData(buffData)
+    else
+        teamSkillGrid.GameObject:SetActiveEx(false)
+    end
 end
 
 -- return : bool 是否开启自动关闭检查

@@ -120,7 +120,7 @@ end
 local function GetAttribValueTemplate(attribId)
     local attribs = AttribTemplates[attribId]
     if not attribs then
-        XLog.Error("XAttribManager GetAttribTemplate Error: can not found attrib template, Id is " .. attribId, AttribTemplates)
+        XLog.Error("Share/Attrib/Attrib 未找到配置，Id:" .. attribId)
         return XCode.AttribManagerGetAttribTemplateNotFound, nil
     end
 

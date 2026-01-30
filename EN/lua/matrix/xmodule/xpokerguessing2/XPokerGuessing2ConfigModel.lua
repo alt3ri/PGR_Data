@@ -1,3 +1,5 @@
+local XPokerGuessing2Enum = require("XModule/XPokerGuessing2/XPokerGuessing2Enum")
+
 ---@class XPokerGuessing2ConfigModel : XModel
 local XPokerGuessing2ConfigModel = XClass(XModel, "XPokerGuessing2ConfigModel")
 
@@ -331,6 +333,12 @@ function XPokerGuessing2ConfigModel:GetPokerGuessing2StoryLineGameWinById(id)
     local config = self:GetPokerGuessing2StoryConfigById(id)
 
     return config.LineGameWin
+end
+
+function XPokerGuessing2ConfigModel:GetPokerGuessing2StoryTypeById(id)
+    local config = self:GetPokerGuessing2StoryConfigById(id)
+
+    return config.Type or XPokerGuessing2Enum.StoryType.Current
 end
 
 ---@return XTablePokerGuessing2Config[]

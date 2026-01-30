@@ -17,11 +17,13 @@ function XUiMainLine2Chapter:OnStart(mainId, chapterId, stageId, isOpenStageDeta
     self.ChapterIds = self._Control:GetMainChapterIds(mainId)
 
     -- 进战斗/播剧情后恢复界面
-    local resumeData = self._Control:GetMainReleaseData(self.MainId, true)
-    if resumeData then 
-        self.CurChapterId = resumeData.ChapterId
-        self:SetLastClickStageId(resumeData.LastClickStageId)
-        self.IsOpenStageDetail = false
+    if self.IsResume then
+        local resumeData = self._Control:GetMainReleaseData(self.MainId, true)
+        if resumeData then
+            self.CurChapterId = resumeData.ChapterId
+            self:SetLastClickStageId(resumeData.LastClickStageId)
+            self.IsOpenStageDetail = false
+        end
     end
     
     -- 未播放章节切换效果
@@ -94,6 +96,10 @@ function XUiMainLine2Chapter:OnRelease()
     self.ChapterLinkGos = nil
     self.BtnDifficultUiObjs = nil
     self.BtnDifficults = nil
+end
+
+function XUiMainLine2Chapter:OnResume(value)
+    self.IsResume = true
 end
 
 function XUiMainLine2Chapter:OnReleaseInst()
@@ -181,21 +187,9 @@ function XUiMainLine2Chapter:CloseDifficultyList()
 end
 
 function XUiMainLine2Chapter:OnBtnAchievementClick()
-    local isGet = self._Control:IsAchievementGet(self.MainId)
-    local agency = XMVCA:GetAgency(ModuleId.XMainLine2)
-    local curCnt, maxCnt = agency:GetMainAchievementProgress(self.MainId)
-    if not isGet and curCnt >= maxCnt then
-        XMVCA:GetAgency(ModuleId.XMainLine2):RequestReceiveAchievement(self.MainId, function()
-            self:RefreshAchievements()
-        end)
-    else
-        local achievementId = self._Control:GetMainAchievementId(self.MainId)
-        local rewardId = self._Control:GetAchievementClearRewardId(achievementId)
-        local rewardList = XRewardManager.GetRewardList(rewardId)
-        local itemTemplateId = rewardList[1].TemplateId
-        local data = XDataCenter.MedalManager.GetScoreTitleById(itemTemplateId)
-        XLuaUiManager.Open("UiCollectionTip", data, XDataCenter.MedalManager.InType.Normal)
-    end
+    XMVCA.XMainLine2:OnBtnAchievementClick(self.MainId, function()
+        self:RefreshAchievements()
+    end)
 end
 
 function XUiMainLine2Chapter:OnBtnJumpClick(skipId)

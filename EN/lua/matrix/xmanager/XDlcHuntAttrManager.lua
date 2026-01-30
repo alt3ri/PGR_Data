@@ -36,6 +36,11 @@ XDlcHuntAttrManagerCreator = function()
         [XDlcNpcAttribType.BreakGauge] = true,
         [XDlcNpcAttribType.OverDrive] = true,
         [XDlcNpcAttribType.RebootValue] = true,
+        [XDlcNpcAttribType.SignalSkillDmgAmpP] = true,
+        [XDlcNpcAttribType.CoreSkillDmgAmpP] = true,
+        [XDlcNpcAttribType.NormalAtkDmgAmpP] = true,
+        [XDlcNpcAttribType.ExSkillDmgAmpP] = true,
+        [XDlcNpcAttribType.DodgeEnergy] = true,
     }
 
     local function ToXAttrib(attrTable)

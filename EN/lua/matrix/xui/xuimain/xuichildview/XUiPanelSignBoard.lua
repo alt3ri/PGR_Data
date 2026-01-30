@@ -718,15 +718,16 @@ function XUiPanelSignBoard:OnMultClick(clickTimes)
         return
     end
     if config ~= nil then
+        -- 标记这次播放是“点击触发”的，后面真正播放动作时再决定要不要播 CG
+        self.PendingClickCg = true
+        self.PendingClickCgRawId = config.Id   -- 原始点击 Id，有需要可以用来做调试
+
         if self.Parent.FavorabilityMain then
             self:ForcePlayCross(config.Id, self.Parent.FavorabilityMain.CvType, true, true)
         else
             self:ForcePlayCross(config.Id, nil, true, true)
         end
-        if self.Parent.TryPlayCG then
-            local curDisChar = XDataCenter.DisplayManager.GetDisplayChar()
-            self.Parent:TryPlayCG(curDisChar.FashionId, config.Id)
-        end
+        -- 注意：这里不再调用 TryPlayCG，避免用“错误的上游 Id”
     end
 end
 
@@ -902,6 +903,19 @@ function XUiPanelSignBoard:PlayCross(element)
     self:_PlayUi(element)
     self:_PlayCv(element)
     self:_PlayAction(element, true)
+
+    -- ★ 在这里决定是否播放 CG：此时 element 就是 PlayNextCross 真正选中的 head
+    if self.PendingClickCg then
+        -- 只响应“由点击触发”的那一次播放，避免自动播/Idle 也乱放 CG
+        self.PendingClickCg = nil
+
+        local finalId = element.SignBoardConfig and element.SignBoardConfig.Id
+        if finalId and self.Parent and self.Parent.TryPlayCG then
+            local curDisChar = XDataCenter.DisplayManager.GetDisplayChar()
+            -- 这里传的是最终动作 Id，而不是 OnMultClick 那个原始 Id
+            self.Parent:TryPlayCG(curDisChar.FashionId, finalId)
+        end
+    end
 
     XMVCA.XUiMain:SetLastPlaySignBoardCfgId(element.SignBoardConfig.Id)
 

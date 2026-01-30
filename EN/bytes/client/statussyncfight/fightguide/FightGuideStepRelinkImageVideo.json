@@ -57,9 +57,45 @@
         "Id": 7,
         "PrefabPath": null,
         "IsTimeStop": null,
-        "Titles": "['Boss Rage']",
-        "Contents": "['The enemy will <color=#ff5656>gain Rage</color> in battle and enter the <color=#ff5656>Berserk status</color> at full Rage. <color=#ff5656>The Berserk status will grant a new move</color> and <color=#ff5656>cannot be interrupted</color>.']",
+        "Titles": "['Boss Fury']",
+        "Contents": "['Enemies will <color=#ff5656>gain Fury</color> in battle and enter the <color=#ff5656>Wrath Form</color> at full Fury. <color=#ff5656>The Wrath Form will grant a new move</color> and <color=#ff5656>cannot be interrupted</color>.']",
         "AssetPaths": "['30004']",
         "AssetTypes": "[1]"
+    },
+    {
+        "Id": 90005308,
+        "PrefabPath": null,
+        "IsTimeStop": true,
+        "Titles": "['Powerful Attack Warning', 'Flash Block']",
+        "Contents": "['Some enemy moves come with warning indicators.\\\\nBlock warnings and counter warnings: Block or counter moves can trigger [Flash Block]. The attack can also be avoided by dodging.', 'When team members block or use melee attacks to counter certain enemy moves, [Flash Block] is triggered, reducing incoming DMG while interrupting enemy actions.']",
+        "AssetPaths": "['Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage03.png', '31007']",
+        "AssetTypes": "[2, 1]"
+    },
+    {
+        "Id": 90005310,
+        "PrefabPath": null,
+        "IsTimeStop": true,
+        "Titles": "['Perfect Dodge']",
+        "Contents": "['When an enemy attack is about to hit, use Dodge to trigger a [Perfect Dodge].']",
+        "AssetPaths": "['Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage15.png']",
+        "AssetTypes": "[2]"
+    },
+    {
+        "Id": 90005315,
+        "PrefabPath": null,
+        "IsTimeStop": true,
+        "Titles": "['Fury & Overload State', 'Imbalanced Disruption']",
+        "Contents": "[\"Enemies continuously gain [Fury] when taking damage. At full [Fury], they enter [Overload state]. Enemies in [Overload state] attack more ferociously. During this time, landing attacks effectively reduces the enemy's [Fury].\", 'When [Fury] is cleared, enters [Imbalanced Disruption] state.']",
+        "AssetPaths": "['Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage05.png', '31005']",
+        "AssetTypes": "[2, 1]"
+    },
+    {
+        "Id": 90005316,
+        "PrefabPath": null,
+        "IsTimeStop": true,
+        "Titles": "['Hyperlink Co-Strike', 'Hyperlink Co-Strike']",
+        "Contents": "['After you cast a Signature Move, Signature Moves cast by other commandants within a limited time can trigger Hyperlink Co-Strike. Meanwhile, casting Signature Moves provides Signature Energy to other members. Use this mechanic to trigger Hyperlink Co-Strike more quickly.', '[Hyperlink Co-Strike] can deal massive DMG and interrupt most enemy moves.']",
+        "AssetPaths": "['Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage01.png', '31001']",
+        "AssetTypes": "[2, 1]"
     }
 ]

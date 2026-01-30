@@ -12,7 +12,6 @@ end
 
 function XUiDlcRelinkPopupEquipDecomposeResult:OnStart(rewardGoodsList)
     self:Refresh(rewardGoodsList)
-    self:PlayAnimation("AniObtain")
 end
 
 function XUiDlcRelinkPopupEquipDecomposeResult:OnEnable()
@@ -45,7 +44,7 @@ function XUiDlcRelinkPopupEquipDecomposeResult:Refresh(rewardGoodsList)
 end
 
 function XUiDlcRelinkPopupEquipDecomposeResult:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
 end
 
 function XUiDlcRelinkPopupEquipDecomposeResult:OnBtnBackClick()

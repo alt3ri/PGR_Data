@@ -47,7 +47,6 @@ function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFas
     self.IsShowFashionIconWithoutGift = isShowFashionIconWithoutGift
     self.CustomDesc = customDesc
     self.CustomWeaponFashionId = customWeaponFashionId
-
     if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then 
         --v1.31武器时装
         self.IsHaveFashion = XDataCenter.WeaponFashionManager.CheckHasFashion(self.FashionId) and
@@ -63,7 +62,11 @@ function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFas
     self.LastBuyTime = CS.UnityEngine.Time.realtimeSinceStartup
     self:SetDetailData()
     self:CheckWeaponFashionBtnShow()
-    
+
+    self.TrialLevelInfo = XDataCenter.FubenExperimentManager.GetTrialLevelByFashionID(fashionId)
+    local functionId = XFunctionManager.FunctionName.Experiment
+    local isOpen = XFunctionManager.JudgeCanOpen(functionId)
+    self.BtnPlay.gameObject:SetActiveEx(isOpen and self.TrialLevelInfo ~=nil)
     self._StartRun = true
 end
 
@@ -135,7 +138,8 @@ function XUiFashionDetail:InitBuyData()
     self.BtnBuy:SetName(self.BuyData.ItemCount)
     self.RawImageConsume:SetRawImage(self.BuyData.ItemIcon)
     self.TxtLimitBuy.text = self.BuyData.LimitText or ""
-
+    self.BtnBuy:SetNameByGroup(1,self.BuyData.OriginCount or "")
+    self.BtnBuy:ActiveTextByGroup(1,self.BuyData.OriginCount)
     self.BtnBuy.CallBack = function()
         -- v1.28 采购优化 记录时间, 判断是否拦截
         if self.IsNeedCD then
@@ -205,9 +209,11 @@ function XUiFashionDetail:OnBtnLensIn()
 end
 
 function XUiFashionDetail:AutoAddListener()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
-    self:RegisterClickEvent(self.BtnGouxuan, self.OnBtnShowWeaponFashion)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
+    self.BtnGouxuan:AddEventListener(handler(self, self.OnBtnShowWeaponFashion))
+    self.BtnPlay:AddEventListener(handler(self, self.OnPlayClick))
+
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderCharacterHight, self.OnSliderCharacterHightChanged)
     self.BtnLensOut.CallBack = function() self:OnBtnLensOut() end
     self.BtnLensIn.CallBack = function() self:OnBtnLensIn() end
@@ -456,4 +462,12 @@ function XUiFashionDetail:OnBtnShowWeaponFashion()
     self:UpdateCharacterModel()
 end
 
+--endregion
+
+--region 跳转试玩
+function XUiFashionDetail:OnPlayClick()
+
+    XLuaUiManager.Open("UiPaintingExperiencePassV4P2",self.TrialLevelInfo.Id)
+end
+    
 --endregion

@@ -5,8 +5,8 @@ function XDlcCharacterData:Ctor(data)
     -- NpcId
     self._Id = nil
     self._CharacterId = nil
-    -- dlc-relink 职业
-    self._OccupationType = nil
+    -- dlc-relink 风格
+    self._StyleType = nil
     self._Level = nil
 
     --region Relink数据
@@ -27,7 +27,7 @@ end
 function XDlcCharacterData:Clone(other)
     self._Id = other._Id
     self._CharacterId = other._CharacterId
-    self._OccupationType = other._OccupationType
+    self._StyleType = other._StyleType
     self._Level = other._Level
     self._RelinkEquips = other._RelinkEquips and XTool.Clone(other._RelinkEquips) or nil
     self._RelinkEquLevel = other._RelinkEquLevel
@@ -41,8 +41,8 @@ function XDlcCharacterData:GetId()
     return self._Id
 end
 
-function XDlcCharacterData:GetOccupationType()
-    return self._OccupationType
+function XDlcCharacterData:GetStyleType()
+    return self._StyleType
 end
 
 function XDlcCharacterData:GetLevel()
@@ -80,7 +80,7 @@ function XDlcCharacterData:_Init(data)
     if data then
         self._Id = data.Id
         self._CharacterId = data.Character.Id
-        self._OccupationType = data.Character.OccupationType
+        self._StyleType = data.Character.StyleType
         self._Level = data.Level
         self._RelinkEquips = data.RelinkEquips
         self._RelinkEquLevel = data.RelinkEquLevel

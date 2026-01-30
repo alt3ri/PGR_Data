@@ -349,9 +349,9 @@ function XUiFightCommonInterBtnList:SetCommonInterBtn(...)
         return
     end
 
+    -- 检查操作Key是否超过上限
     local maxKey = CS.System.Convert.ToInt32(CS.XNpcOperationClickKey.Max)
     if data[2] > maxKey then
-        XLog.Error(string.format("按键Key不能超过上限%d，当前设置的Id：%d、Key：%d", maxKey, id, data[2]))
         return
     end
 

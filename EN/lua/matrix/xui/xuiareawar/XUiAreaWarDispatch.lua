@@ -65,9 +65,7 @@ function XUiAreaWarDispatch:AutoAddListener()
     self.BtnTanchuangCloseBig.CallBack = function()
         self:Close()
     end
-    self.BtnDispatch.CallBack = function()
-        self:OnClickBtnDispatch()
-    end
+    self:RegisterClickEvent(self.BtnDispatch, self.OnClickBtnDispatch)
     self.BtnAdd.CallBack = function()
         self:OnClickBtnAdd()
     end

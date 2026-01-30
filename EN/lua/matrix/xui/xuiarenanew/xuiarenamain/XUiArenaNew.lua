@@ -1,4 +1,4 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiArenaNewPrepare = require("XUi/XUiArenaNew/XUiArenaMain/XUiArenaNewPrepare")
 local XUiArenaNewLeft = require("XUi/XUiArenaNew/XUiArenaMain/XUiArenaNewLeft")
 local XUiArenaNewRight = require("XUi/XUiArenaNew/XUiArenaMain/XUiArenaNewRight")
@@ -155,6 +155,8 @@ function XUiArenaNew:_Refresh()
             self._PanelRightUi:Open()
             self._PanelRightUi:Refresh(areaData)
             self._PanelRightUi:CheckTaskRedDot()
+            -- zone 更新完成后，检查是否需要弹出新纪录弹窗
+            self:_CheckAndShowNewRecordPopup()
         end)
         self._PanelPrepareUi:Close()
     else
@@ -207,6 +209,82 @@ function XUiArenaNew:_RemoveEnterTimer()
     if self._EnterTimer then
         XScheduleManager.UnSchedule(self._EnterTimer)
         self._EnterTimer = nil
+    end
+end
+
+--- 检查并显示新纪录弹窗
+function XUiArenaNew:_CheckAndShowNewRecordPopup()
+    local areaData = self._Control:GetArenaAreaData()
+    if not areaData or areaData:IsClear() then
+        return
+    end
+    
+    -- 遍历所有区域，检查是否有新纪录
+    local areaShowList = areaData:GetArenaShowList()
+    if not areaShowList or XTool.IsTableEmpty(areaShowList) then
+        return
+    end
+    
+    for zoneIndex, areaShowData in ipairs(areaShowList) do
+        if areaShowData and not areaShowData:IsClear() then
+            local areaId = areaShowData:GetAreaId()
+            local currentPoint = areaShowData:GetPoint() or 0
+            
+            -- 获取该区域的 DistributeType 数组
+            local distributeTypeList = self._Control:GetAreaStageDistributeTypeByAreaId(areaId)
+            if distributeTypeList and not XTool.IsTableEmpty(distributeTypeList) then
+                -- 遍历所有 DistributeType，检查是否有新纪录
+                for index, distributeType in ipairs(distributeTypeList) do
+                    -- 使用结算时保存的数据（Point 和 OldPoint）
+                    local settleData = self._Control:GetSettlePointByDistributeType(distributeType)
+                    
+                    if settleData and settleData.Point and settleData.OldPoint then
+                        local point = settleData.Point
+                        local oldPoint = settleData.OldPoint
+                        
+                        -- 如果当前分数超过历史最高分，则发现新纪录（和结算界面一样：Point > OldPoint）
+                        if point > oldPoint and point > 0 then
+                            -- 清除已使用的结算数据（弹窗需要，但zone标记不clear）
+                            self._Control:ClearSettlePointByDistributeType(distributeType)
+                            
+                            -- 显示新纪录标记（zone这边不clear）
+                            self:_ShowNewRecordMark(zoneIndex)
+                        
+                            -- 获取区域名称（使用当前选中的 Buff 索引对应的名称）
+                            local areaName = self._Control:GetAreaStageNameByAreaId(areaId) or ""
+                            local buffName = self._Control:GetAreaStageBuffNameByAreaIdAndIndex(areaId, index) or ""
+                            
+                            -- 构建新纪录数据
+                            local recordData = {
+                                areaName = areaName,
+                                buffName = buffName,
+                                score = point,
+                                areaId = areaId,
+                                distributeType = distributeType
+                            }
+                            
+                            -- 打开新纪录弹窗
+                            XLuaUiManager.Open("UiArenaPopupNewRecord", recordData)
+                            return -- 只显示第一个新纪录
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+--- 显示新纪录标记
+---@param zoneIndex number zone的索引（从1开始）
+function XUiArenaNew:_ShowNewRecordMark(zoneIndex)
+    if not self._Scene then
+        return
+    end
+    
+    -- 获取zone（需要根据实际场景的startIndex计算）
+    local zone = self._Scene:GetZoneByIndex(zoneIndex)
+    if zone then
+        zone:ShowNewRecord(true)
     end
 end
 

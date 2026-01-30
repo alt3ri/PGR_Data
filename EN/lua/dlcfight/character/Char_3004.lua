@@ -1,15 +1,15 @@
-local Base = require("Character/BigWorld/XBigWorldPlayerCharBase")
+local Base = require("Common/XBigWorldCharBase")
 
 ---首席指挥官角色脚本
----@class XCharCommanderChief : XBigWorldPlayerCharBase
+---@class XCharCommanderChief : XBigWorldCharBase
 local XCharCommanderChief = XDlcScriptManager.RegCharScript(3004, "XCharCommanderChief", Base)
 
 ---@param proxy XDlcCSharpFuncs
 function XCharCommanderChief:Ctor(proxy)
 end
 
-function XCharCommanderChief:Init()
-    Base.Init(self)
+function XCharCommanderChief:CommonInit()
+    Base.CommonInit(self)
 end
 
 ---@param dt number @ delta time

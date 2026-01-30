@@ -10,6 +10,10 @@ function XUiPanelPokerGuessing2ChangeCard:OnStart(btnMask)
     
     self.GridSmallCard.gameObject:SetActiveEx(false)
     self.CardGrids = {}
+    
+    -- 获取并缓存两个 Panel 的 Canvas 组件
+    self._CanvasPlayer = XUiHelper.TryGetComponent(self.PanelBigCardPlayer.transform, "", "Canvas")
+    self._CanvasEnemy = XUiHelper.TryGetComponent(self.PanelBigCardEnemy.transform, "", "Canvas")
 end
 
 function XUiPanelPokerGuessing2ChangeCard:OnEnable()
@@ -31,14 +35,39 @@ function XUiPanelPokerGuessing2ChangeCard:RefreshShowWithSide(isPlayerSide, orig
     self._OriginId = originId
     self._IsPlayerSide = isPlayerSide
     
+    -- 通过交换 Canvas 的 sortingOrder 来控制层级
+    if self._CanvasPlayer and self._CanvasEnemy then
+        local playerOrder = self._CanvasPlayer.sortingOrder
+        local enemyOrder = self._CanvasEnemy.sortingOrder
+        
+        -- 判断原本哪个order更高
+        local needSwap = false
+        if not isPlayerSide then
+            -- 玩家侧：需要 Enemy 在上层（order更高）
+            -- 如果原本 Player 的 order 更高，需要交换
+            if playerOrder > enemyOrder then
+                needSwap = true
+            end
+        else
+            -- 敌人侧：需要 Player 在上层（order更高）
+            -- 如果原本 Enemy 的 order 更高，需要交换
+            if enemyOrder > playerOrder then
+                needSwap = true
+            end
+        end
+        
+        -- 如果需要交换，则交换两个 Canvas 的 sortingOrder
+        if needSwap then
+            local temp = playerOrder
+            self._CanvasPlayer.sortingOrder = enemyOrder
+            self._CanvasEnemy.sortingOrder = temp
+        end
+    end
+
     -- 设置位置
     if isPlayerSide then
-        self.PanelBigCardEnemy.transform:SetAsFirstSibling()
-        
         self.Transform.position = self.SelfChangePanelPos.transform.position
     else
-        self.PanelBigCardPlayer.transform:SetAsFirstSibling()
-        
         self.Transform.position = self.EnemyChangePanelPos.transform.position
     end
     

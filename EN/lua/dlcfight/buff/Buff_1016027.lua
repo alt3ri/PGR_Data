@@ -10,6 +10,7 @@ function XBuffScript1016027:Init()
     ------------配置------------
     self.missileIds = { 10210118, 10210120, 10210122, 10210124 }
     self.dmgMissileIds = { 10210119, 10210121, 10210123, 10210125 }
+
     self.magicLevel = 1
     self.battleStartBuffId = 1015992    --战斗开始标记buff
     self.signalId = 1015911 --【定时】标记
@@ -19,6 +20,10 @@ function XBuffScript1016027:Init()
     self.maxLevel = 4
     self.enhBuffId = 1016244    --【定时】通用强化buff标记
     self.enhLevel = 0
+
+    self.dmgMissionEnhMissileIds = { 10210133, 10210134, 10210135, 10210136 }
+    self.missionEnhBuffId = 1016374
+
     ------------执行------------
 end
 ---@param dt number @ delta time
@@ -54,8 +59,15 @@ function XBuffScript1016027:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
                 if not self._proxy:CheckNpc(self.targetId) then
                     return
                 end
-                for i = 1, self.enhLevel do
-                    self._proxy:LaunchMissileFromPosToPos(self._uuid, self.dmgMissileIds[self.level], self.dmgMissileIds[self.level], targetPos, targetPos, self.magicLevel)
+                --有任务奖励标记buff时，放强化版火球子弹
+                if self._proxy:CheckBuffByKind(self._uuid, self.missionEnhBuffId) then
+                    for i = 1, self.enhLevel do
+                        self._proxy:LaunchMissileFromPosToPos(self._uuid, self.dmgMissionEnhMissileIds[self.level], self.dmgMissionEnhMissileIds[self.level], targetPos, targetPos, self.magicLevel)
+                    end
+                else
+                    for i = 1, self.enhLevel do
+                        self._proxy:LaunchMissileFromPosToPos(self._uuid, self.dmgMissileIds[self.level], self.dmgMissileIds[self.level], targetPos, targetPos, self.magicLevel)
+                    end
                 end
                 self.level = math.min(self.level + 1, self.maxLevel)
                 self.cnt = 0

@@ -117,6 +117,10 @@ function XDlcRoom:OnEnterWorld()
     
 end
 
+function XDlcRoom:OnCustomEnterTargetRoom()
+
+end
+
 --endregion
 
 --region 其他

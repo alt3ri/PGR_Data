@@ -61,10 +61,7 @@ function XUiBigWorldPanelQuest:InitCb()
     end
     
     self._OnTrackFinishListener = function()
-        if not self.BtnTrack then
-            return
-        end
-        self.BtnTrack.gameObject:SetActiveEx(false)
+        self:SetBtnTrackActive(false)
     end
     
     self.BtnTrack:AddEventListener(handler(self, self.OnBtnTrackClick))
@@ -218,9 +215,16 @@ function XUiBigWorldPanelQuest:SetBtnTrackActive(value)
     self.BtnTrack.gameObject:SetActiveEx(value)
 end
 
+function XUiBigWorldPanelQuest:SetBtnGoActive(value)
+    if XTool.UObjIsNil(self.BtnGo) then
+        return
+    end
+    self.BtnGo.gameObject:SetActiveEx(value)
+end
+
 function XUiBigWorldPanelQuest:RefreshBtnGo(questId)
     if not questId or questId <= 0 then
-        self.BtnGo.gameObject:SetActiveEx(false)
+        self:SetBtnGoActive(false)
         return
     end
     --是否为副本任务
@@ -229,16 +233,16 @@ function XUiBigWorldPanelQuest:RefreshBtnGo(questId)
     local isTrackQuest = questId == XMVCA.XBigWorldQuest:GetTrackQuestId()
     --任务是否完成
     local isFinish = XMVCA.XBigWorldQuest:CheckQuestFinish(questId)
-    if not isFinish and not isInstQuest and isTrackQuest then
+    if (not isFinish or XMVCA.XBigWorldQuest:IsInviteQuest(questId)) and not isInstQuest and isTrackQuest then
         local skipTxt = XMVCA.XBigWorldQuest:GetQuestSkipToText(XMVCA.XBigWorldQuest:GetQuestSkipInfo(questId))
         if not string.IsNilOrEmpty(skipTxt) then
             self.BtnGo:SetNameByGroup(0, skipTxt)
-            self.BtnGo.gameObject:SetActiveEx(true)
+            self:SetBtnGoActive(true)
         else
-            self.BtnGo.gameObject:SetActiveEx(false)
+            self:SetBtnGoActive(false)
         end
     else
-        self.BtnGo.gameObject:SetActiveEx(false)
+        self:SetBtnGoActive(false)
     end
 end
 
@@ -247,7 +251,7 @@ function XUiBigWorldPanelQuest:HideAll()
     self:RefreshStep(0, nil, false)
     self:HideAllObjective()
     self:SetBtnTrackActive(false)
-    self.BtnGo.gameObject:SetActiveEx(false)
+    self:SetBtnGoActive(false)
 end
 
 function XUiBigWorldPanelQuest:RefreshAll()
@@ -400,11 +404,29 @@ function XUiBigWorldPanelQuest:OnBtnGoClick()
     if not self._DisplayQuestId or self._DisplayQuestId <= 0 then
         return
     end
+    if XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Task) then
+        return
+    end
+    if not XMVCA.XBigWorldUI:IsQueueEmpty() then
+        return
+    end
+    if XMVCA.XBigWorldCommon:HasAnySequentialJob() then
+        return
+    end
     XMVCA.XBigWorldQuest:TrySkipToByFightSkipInfo(XMVCA.XBigWorldQuest:GetQuestSkipInfo(self._DisplayQuestId))
 end
 
 function XUiBigWorldPanelQuest:OnQuestClick()
     if not self._DisplayQuestId or self._DisplayQuestId <= 0 then
+        return
+    end
+    if XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Task) then
+        return
+    end
+    if not XMVCA.XBigWorldUI:IsQueueEmpty() then
+        return
+    end
+    if XMVCA.XBigWorldCommon:HasAnySequentialJob() then
         return
     end
     self.Parent:RecordQuestClick()

@@ -49,6 +49,7 @@ function XUiPurchaseCoatingLBListItem:SetData()
     self.TxtUnShelveTime.gameObject:SetActive(false)
     self.TextNotNeed.gameObject:SetActiveEx(false)
     self.Parent:RemoveTimerFun(self.ItemData.Id)
+    self.ImgQuota.gameObject:SetActive(false)
     self.RemainTime = 0
     local nowTime = XTime.GetServerNowTimestamp()
 
@@ -169,7 +170,7 @@ function XUiPurchaseCoatingLBListItem:SetData()
         self.ImgHave.gameObject:SetActive(isShowHave)
     end
 
-    self.ImgQuota.gameObject:SetActive(true)
+    -- self.ImgQuota.gameObject:SetActive(true)
     self:SetBuyDes()
 
     --有失效时间只显示失效时间。
@@ -181,9 +182,9 @@ function XUiPurchaseCoatingLBListItem:SetData()
             self.Parent:RegisterTimerFun(self.ItemData.Id, self.TimerUpdateCb)
             self.TxtUnShelveTime.gameObject:SetActive(true)
             if self.IsDisCount then
-                self.TxtUnShelveTime.text = TextManager.GetText("PurchaseSetOffTime", XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB))
+                self.TxtUnShelveTime.text = XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB)
             else
-                self.TxtUnShelveTime.text = TextManager.GetText("PurchaseSetOffTime", XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB))
+                self.TxtUnShelveTime.text = XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB)
             end
         else
             self.Parent:RemoveTimerFun(self.ItemData.Id)
@@ -203,9 +204,9 @@ function XUiPurchaseCoatingLBListItem:SetData()
                 self.Parent:RegisterTimerFun(self.ItemData.Id, self.TimerUpdateCb)
                 self.TxtUnShelveTime.gameObject:SetActive(true)
                 if self.IsDisCount then
-                    self.TxtUnShelveTime.text = TextManager.GetText("PurchaseSetOffTime", XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB))
+                    self.TxtUnShelveTime.text = XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB)
                 else
-                    self.TxtUnShelveTime.text = TextManager.GetText("PurchaseSetOffTime", XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB))
+                    self.TxtUnShelveTime.text = XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB)
                 end
             else
                 self.Parent:RemoveTimerFun(self.ItemData.Id)
@@ -224,11 +225,11 @@ end
 function XUiPurchaseCoatingLBListItem:SetBuyDes()
     local clientResetInfo = self.ItemData.ClientResetInfo or {}
     if Next(clientResetInfo) == nil then
-        if self.ItemData.BuyLimitTimes > 0 then
-            self.TxtQuota.text = TextManager.GetText("PurchaseLimitBuy", self.ItemData.BuyTimes, self.ItemData.BuyLimitTimes)
-        else
-            self.ImgQuota.gameObject:SetActive(false)
-        end
+        -- if self.ItemData.BuyLimitTimes > 0 then
+        --     self.TxtQuota.text = TextManager.GetText("PurchaseLimitBuy", self.ItemData.BuyTimes, self.ItemData.BuyLimitTimes)
+        -- else
+            -- self.ImgQuota.gameObject:SetActive(false)
+        -- end
         return
     end
 
@@ -284,7 +285,7 @@ function XUiPurchaseCoatingLBListItem:UpdateTimer(isRecover)
     end
 
     if self.UpdateTimerType == UpdateTimerTypeEnum.SettOff then
-        self.TxtUnShelveTime.text = TextManager.GetText("PurchaseSetOffTime", XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB))
+        self.TxtUnShelveTime.text = XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB)
         return
     end
     self.TxtPutawayTime.text = TextManager.GetText("PurchaseSetOnTime", XUiHelper.GetTime(self.RemainTime, XUiHelper.TimeFormatType.PURCHASELB))

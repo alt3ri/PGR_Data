@@ -25,10 +25,22 @@ function XBigWorldSkipFunctionConfigModel:GetBigWorldSkipFunctionSkipNameById(id
     return config.SkipName
 end
 
+function XBigWorldSkipFunctionConfigModel:GetBigWorldSkipFunctionNameById(id)
+    local config = self:GetBigWorldSkipFunctionConfigById(id)
+
+    return config.Name or "???"
+end
+
 function XBigWorldSkipFunctionConfigModel:GetBigWorldSkipFunctionConditionIdById(id)
     local config = self:GetBigWorldSkipFunctionConfigById(id)
 
     return config.ConditionId
+end
+
+function XBigWorldSkipFunctionConfigModel:GetBigWorldSkipFunctionFinishConditionIdById(id)
+    local config = self:GetBigWorldSkipFunctionConfigById(id)
+
+    return config.FinishConditionId
 end
 
 function XBigWorldSkipFunctionConfigModel:GetBigWorldSkipFunctionParamsById(id)

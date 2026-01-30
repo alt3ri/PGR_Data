@@ -37,6 +37,25 @@ function XUiDlcRelinkSettlementNew:OnEnable()
     self:RefreshPanelResult()
 end
 
+function XUiDlcRelinkSettlementNew:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_DLC_RELINK_LIKE_NOTIFY,
+    }
+end
+
+function XUiDlcRelinkSettlementNew:OnNotify(event, ...)
+    local args = { ... }
+    if event == XEventId.EVENT_DLC_RELINK_LIKE_NOTIFY then
+        local fromPlayerId = args[1]
+        local toPlayerId = args[2]
+        if XPlayer.Id == toPlayerId then
+            local playerName = self:GetPlayerNameById(fromPlayerId)
+            local desc = string.format(self._Control:GetClientConfig("LikeSuccessDesc"), playerName)
+            self._Control:OpenCommonLeftTipDialog(desc)
+        end
+    end
+end
+
 function XUiDlcRelinkSettlementNew:RefreshPanelResult()
     if not self.PanelResultNode then
         ---@type XUiPanelDlcRelinkSettlementResult
@@ -74,7 +93,7 @@ function XUiDlcRelinkSettlementNew:RefreshPanelCharacter()
         self.PanelCharacterNode = XUiPanelDlcRelinkSettlementCharacter.New(self.PanelCharacter, self)
     end
     self.PanelCharacterNode:Open()
-    self.PanelCharacterNode:Refresh(self.RelinkSettleResult.SettleResults)
+    self.PanelCharacterNode:Refresh(self.RelinkSettleResult.SettleResults, self.ResultData.CustomData)
 end
 
 function XUiDlcRelinkSettlementNew:RefreshPanelReward()
@@ -93,7 +112,25 @@ function XUiDlcRelinkSettlementNew:RefreshPanelReward()
         end
     end
     -- 刷新奖励
-    self.PanelRewardNode:Refresh(myPlayerSettleResult, self.RelinkSettleResult.RewardGoodsList)
+    self.PanelRewardNode:Refresh(myPlayerSettleResult, self.RelinkSettleResult.RewardGoodsList, self.WorldData.LevelId)
+end
+
+-- 通过玩家Id获取玩家名称
+---@param playerId number
+---@return string
+function XUiDlcRelinkSettlementNew:GetPlayerNameById(playerId)
+    if not XTool.IsNumberValid(playerId) then
+        return ""
+    end
+
+    if self.RelinkSettleResult.SettleResults then
+        for _, playerSettleResult in pairs(self.RelinkSettleResult.SettleResults) do
+            if playerSettleResult.PlayerId == playerId then
+                return playerSettleResult.Name
+            end
+        end
+    end
+    return ""
 end
 
 return XUiDlcRelinkSettlementNew

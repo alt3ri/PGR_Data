@@ -9,11 +9,11 @@ function XBWMapVirtualPinData:UpdateData(pinId, bindLevelId, bindPinId, pinData)
     self.ReferPinId = pinData.PinId
     self.BindPinId = bindPinId
     self.BindLevelId = bindLevelId
-    self.ForceDisplay = pinData.ForceDisplay
     self.QuestObjectiveId = pinData.QuestObjectiveId or 0
     self.TargetSceneObjectPlaceId = pinData.TargetSceneObjectPlaceId or 0
     self.TargetNpcPlaceId = pinData.TargetNpcPlaceId or 0
     self.NearbyPinId = bindPinId
+    self:UpdateDisplay(pinData.Active or pinData.IsDisplay or false)
     self.Super.UpdateData(self, pinData.WorldId, pinData.LevelId, {
         Id = pinId,
         StyleId = pinData.StyleId,

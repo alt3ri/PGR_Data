@@ -1,4 +1,5 @@
 local XBigWorldCharacterUiEffectInfo = require("XModule/XBigWorldCharacter/Data/XBigWorldCharacterUiEffectInfo")
+local XBigWorldCharacterTrialData = require("XModule/XBigWorldCharacter/Data/XBigWorldCharacterTrialData")
 
 local XBigWorldCharacter
 
@@ -38,9 +39,8 @@ function XBigWorldCharacterModel:ResetAll()
 end
 
 function XBigWorldCharacterModel:ResetData()
-    self._TrialCharacterIds = {}
-    self._TrialCharacterMap = {}
-    self._IsTrialCoverTeam = false
+    ---@type XBigWorldCharacterTrialData
+    self._TrialCharacterData = XBigWorldCharacterTrialData.New()
 
     self._UnlockRoleDict = {}
     self._AllRoleIds = false
@@ -227,46 +227,38 @@ end
 
 -- region 试用角色
 
-function XBigWorldCharacterModel:UpdateTrialCharacterIds(characterIds, isCover, firstCharacterId)
+function XBigWorldCharacterModel:UpdateTrialCharacterIds(trialNpcConfigs, isCover, displayCharacterId)
     self:ClearTrialCharacterIds()
-    self._IsTrialCoverTeam = isCover or false
 
-    if characterIds then
+    self._TrialCharacterData:SetIsTrialCoverTeam(isCover)
+
+    if trialNpcConfigs then
         local displayCharacterId = 0
 
-        XTool.LoopCollection(characterIds, function(characterId)
-            if characterId == firstCharacterId then
-                displayCharacterId = characterId
-            end
+        XTool.LoopMap(trialNpcConfigs, function(characterId, isSelf)
+            self._TrialCharacterData:AddTrialCharacterId(characterId)
 
-            table.insert(self._TrialCharacterIds, characterId)
-            self._TrialCharacterMap[characterId] = true
+            if isSelf then
+                self._TrialCharacterData:AddSelfCharacterId(characterId)
+            end
         end)
 
-        if not XTool.IsTableEmpty(self._TrialCharacterIds) then
-            if not XTool.IsNumberValid(displayCharacterId) then
-                displayCharacterId = self._TrialCharacterIds[1]
-            end
+        self._TrialCharacterData:SetDisplayCharacterId(displayCharacterId)
 
-            if XTool.IsNumberValid(displayCharacterId) then
-                XMVCA.XBigWorldUI:Open("UiBigWorldTrialRolePopup", displayCharacterId)
-            end
+        if self._TrialCharacterData:IsDisplayCharacter() then
+            displayCharacterId = self._TrialCharacterData:GetValidDisplayCharacterId()
+
+            XMVCA.XBigWorldUI:Open("UiBigWorldTrialRolePopup", displayCharacterId)
         end
     end
 end
 
 function XBigWorldCharacterModel:ClearTrialCharacterIds()
-    self._TrialCharacterIds = {}
-    self._TrialCharacterMap = {}
-    self._IsTrialCoverTeam = false
+    self._TrialCharacterData:Clear()
 end
 
 function XBigWorldCharacterModel:CheckTrialCharacter(characterId)
-    if XTool.IsNumberValid(characterId) then
-        return self._TrialCharacterMap[characterId] or false
-    end
-
-    return false
+    return self._TrialCharacterData:IsTrialCharacter(characterId)
 end
 
 -- endregion

@@ -81,15 +81,6 @@ function XUiUnionKillGrade:BeforeGradeClose()
         XLuaUiManager.Open("UiSettleWin", self.WinData)
         return
     end
-
-    -- boss、试炼关卡
-    -- if XDataCenter.FubenUnionKillManager.IsBossStage(self.StageId) or XDataCenter.FubenUnionKillManager.IsTrialStage(self.StageId) then
-    --     if self.WinData.SettleData.UnionKillResult then
-    --         XLuaUiManager.Open("UiArenaFightResult", self.WinData)
-    --         return
-    --     end
-    -- end
-
 end
 
 function XUiUnionKillGrade:OnBtnContinueClick()

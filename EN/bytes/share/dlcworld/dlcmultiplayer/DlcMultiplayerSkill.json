@@ -1,10 +1,12 @@
 [
     {
         "Id": 1,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": 1900072.0,
         "MagicId": 1900080.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon01.png",
+        "SkillCnt": 3,
+        "SkillCd": 20,
         "Name": "Scan",
         "Des": "Scans the surroundings and warns when there's a rat faction player."
     },
@@ -14,26 +16,32 @@
         "InitMagicId": 1900073.0,
         "MagicId": 1900081.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon02.png",
+        "SkillCnt": 2,
+        "SkillCd": 5,
         "Name": "Pointer",
         "Des": "Picks a rat faction player who's not in the stealth status and generates a pointer to point at where the player is for a period of time."
     },
     {
         "Id": 3,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": 1900074.0,
         "MagicId": 1900082.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon03.png",
+        "SkillCnt": 5,
+        "SkillCd": 5,
         "Name": "Animal Trap",
-        "Des": "Generates an animal trap under the character's feet. The trap will stun any rat faction player passing by and notify the player who placed it. Each player can place up to 3 Animal Traps at the same time."
+        "Des": "Generates an animal trap disguised as cheese. The trap will cancel the transformation of any rat faction player passing by and inflict Stun, while notifying the player who placed it. Up to 6 animal traps can be placed at the same time."
     },
     {
         "Id": 4,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": 1900075.0,
         "MagicId": 1900083.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon05.png",
+        "SkillCnt": 3,
+        "SkillCd": 20,
         "Name": "Mass Speedup",
-        "Des": "Makes all rat faction players move faster for a period of time."
+        "Des": "Increases all cats' movement speed for a certain duration."
     },
     {
         "Id": 5,
@@ -41,25 +49,130 @@
         "InitMagicId": 1900076.0,
         "MagicId": 1900084.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon08.png",
+        "SkillCnt": 2,
+        "SkillCd": 5,
         "Name": "Random Item",
         "Des": "Upon casting the skill, the player will get a random rat faction exclusive item."
     },
     {
         "Id": 6,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": 1900077.0,
         "MagicId": 1900085.0,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon06.png",
+        "SkillCnt": 3,
+        "SkillCd": 15,
         "Name": "Teleport Hat",
         "Des": "Upon casting the skill for the first time, generates a temporary magic hat underfoot. Casting the skill again when there's a magic hat will teleport the caster to where the hat is."
     },
     {
         "Id": 7,
-        "Condition": 1050094.0,
+        "Condition": null,
         "InitMagicId": null,
         "MagicId": null,
         "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon07.png",
+        "SkillCnt": 2,
+        "SkillCd": 5,
         "Name": "Teleport Hat - Teleport",
         "Des": "Teleport Hat Phase 2"
+    },
+    {
+        "Id": 8,
+        "Condition": null,
+        "InitMagicId": 1900127.0,
+        "MagicId": 1900133.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon16.png",
+        "SkillCnt": 3,
+        "SkillCd": 10,
+        "Name": "Footprint Tracking",
+        "Des": "Reveals a rat's recent movement path for a certain duration."
+    },
+    {
+        "Id": 9,
+        "Condition": null,
+        "InitMagicId": 1900129.0,
+        "MagicId": 1900134.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon19.png",
+        "SkillCnt": 3,
+        "SkillCd": 25,
+        "Name": "Beast Mark",
+        "Des": "After equipping this skill, it automatically triggers when a rat moves within the carrier's field of view, marking their location for a certain duration."
+    },
+    {
+        "Id": 10,
+        "Condition": null,
+        "InitMagicId": 1900131.0,
+        "MagicId": 1900135.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon17.png",
+        "SkillCnt": 3,
+        "SkillCd": 20,
+        "Name": "Ink Bomb",
+        "Des": "Places an ink bomb at your current location. After the explosion, other players within a certain range around it will have their vision blocked by ink."
+    },
+    {
+        "Id": 11,
+        "Condition": null,
+        "InitMagicId": 1900137.0,
+        "MagicId": 1900138.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon21.png",
+        "SkillCnt": 3,
+        "SkillCd": 20,
+        "Name": "Shock",
+        "Des": "Intimidates rats within a certain range ahead, reversing their movement controls."
+    },
+    {
+        "Id": 12,
+        "Condition": null,
+        "InitMagicId": 1900140.0,
+        "MagicId": 1900141.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon12.png",
+        "SkillCnt": 3,
+        "SkillCd": 5,
+        "Name": "Stealth",
+        "Des": null
+    },
+    {
+        "Id": 13,
+        "Condition": null,
+        "InitMagicId": null,
+        "MagicId": 1900142.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon20.png",
+        "SkillCnt": 5,
+        "SkillCd": 6,
+        "Name": "Banana Peel",
+        "Des": "Places a banana peel that affects all players. When stepped on, it causes the player to slide forward and prevents them from using other skills. If a mouse character steps on it, their transformation is canceled."
+    },
+    {
+        "Id": 14,
+        "Condition": null,
+        "InitMagicId": null,
+        "MagicId": 1900153.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon15.png",
+        "SkillCnt": 3,
+        "SkillCd": 15,
+        "Name": "Illusion",
+        "Des": "Cancels the transformation and fires an illusion forward. The illusion continues moving and disappears when it collides with obstacles."
+    },
+    {
+        "Id": 15,
+        "Condition": null,
+        "InitMagicId": null,
+        "MagicId": 1900155.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon18.png",
+        "SkillCnt": 3,
+        "SkillCd": 20,
+        "Name": "Shield",
+        "Des": "Deploys a protective shield for a short duration that can block one shot. If the shield takes damage while deployed, gain increased speed for a short duration."
+    },
+    {
+        "Id": 16,
+        "Condition": null,
+        "InitMagicId": null,
+        "MagicId": 1900169.0,
+        "Icon": "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerBuffIcon04.png",
+        "SkillCnt": 3,
+        "SkillCd": 20,
+        "Name": "See-Through",
+        "Des": "Reveals the locations of all cats for a short duration."
     }
 ]

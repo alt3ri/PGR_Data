@@ -1524,10 +1524,6 @@ end
 
 -- 胜利 & 奖励界面
 function XFubenAgency:ShowReward(winData)
-    -- if winData.SettleData.ArenaResult then
-    --     XLuaUiManager.Open("UiArenaFightResult", winData)
-    --     return
-    -- end
     if self:CheckHasFlopReward(winData) then
         XLuaUiManager.Open("UiFubenFlopReward", function()
             XLuaUiManager.PopThenOpen("UiSettleWin", winData)
@@ -1581,7 +1577,7 @@ function XFubenAgency:SettleFight(result)
             --战斗结算清除数据的判断依据
             self._Model:SetFubenSettleResult(res)
             self._Model:UpdateStageEventInfo()
-            XEventManager.DispatchEvent(XEventId.EVENT_FUBEN_SETTLE_REWARD, res.Settle)
+            XEventManager.DispatchEvent(XEventId.EVENT_FUBEN_SETTLE_REWARD, res.Settle, res)
         end, true)
     end
 end

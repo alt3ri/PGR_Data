@@ -1,0 +1,209 @@
+[
+    {
+        "Id": 101,
+        "Type": 1,
+        "Name": "Hyperlink Co-Strike",
+        "ConditionId": null,
+        "VideoConfigIds": "{3: '31001'}",
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage01.png', 2: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage16.png'}",
+        "Desc": "{1: '- After you cast a <color=#ffdd93>Signature Move</color>, Signature Moves cast by other commandants within a <color=#ffdd93>limited time</color> can trigger <color=#ffdd93>Hyperlink Co-Strike</color>.\\\\n- Casting Signature Moves provides <color=#ffdd93>bonus Signature Energy</color> to other members. Use this mechanic to trigger Hyperlink Co-Strike more quickly.', 2: \"- Other members' <color=#ffdd93>Signature Energy</color> is displayed beneath their HP bars in the upper-left corner.\", 3: '- <color=#ffdd93>Hyperlink Co-Strike</color> can deal massive DMG and <color=#ffdd93>interrupt most enemy</color> moves.'}"
+    },
+    {
+        "Id": 102,
+        "Type": 1,
+        "Name": "Ultimate Skill",
+        "ConditionId": null,
+        "VideoConfigIds": "{2: '31004'}",
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage02.png'}",
+        "Desc": "{1: '- Performing coordinated team actions during battle generates <color=#ffdd93>Ultimate Energy</color>.\\\\n- Ultimate Energy is a shared team resource. When one segment is full, <color=#ffdd93>tap a character portrait</color> to consume Ultimate Energy and cast an <color=#ffdd93>Ultimate Skill</color>.', 2: '- The entire team shares <color=#ffdd93>Ultimate Energy</color>.\\\\n- Each member can only cast their <color=#ffdd93>Ultimate Skill</color> <color=#ffdd93>once</color> per battle. Use them strategically based on the combat situation.'}"
+    },
+    {
+        "Id": 103,
+        "Type": 1,
+        "Name": "Enemy Warnings",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage03.png', 2: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage04.png'}",
+        "Desc": "{1: '- Certain enemy attacks display warning indicators before striking.\\\\n- <color=#efcb74>Block Warning</color>: Using <color=#ffdd93>Block</color> or <color=#ffdd93>Counter</color> can trigger <color=#ffdd93>Flash Block</color>. The attack can also be avoided by dodging.\\\\n- <color=#74cbef>Convergence Warning</color>: Using <color=#74cbef>Block</color> or <color=#74cbef>Counter</color> can trigger <color=#74cbef>Flash Block</color>. Triggering Flash Block initiates <color=#74cbef>Convergence Counter</color>. The attack can also be avoided by dodging.', 2: '- <color=#de4650>Penetration Warning</color>: Flash Block is ineffective. Blocking triggers DMG Reduction. Can be avoided by dodging.\\\\n- <color=#9978d7>Guaranteed Hit Warning</color>: Flash Block is ineffective. Blocking triggers DMG Reduction. <color=#9978d7>Cannot be avoided by dodging</color>.'}"
+    },
+    {
+        "Id": 104,
+        "Type": 1,
+        "Name": "Flash Block",
+        "ConditionId": null,
+        "VideoConfigIds": "{1: '31007'}",
+        "ImageUrl": null,
+        "Desc": "{1: '- When members <color=#ffdd93>block</color> or use <color=#ffdd93>melee attacks to counter</color> certain enemy moves, triggers <color=#ffdd93>Flash Block</color>, reducing incoming DMG and interrupting enemy actions.'}"
+    },
+    {
+        "Id": 105,
+        "Type": 1,
+        "Name": "Convergence Counter",
+        "ConditionId": null,
+        "VideoConfigIds": "{1: '31002', 2: '31003'}",
+        "ImageUrl": null,
+        "Desc": "{1: '- Certain enemy moves display <color=#74cbef>blue warnings</color>. Triggering <color=#74cbef>Flash Block</color> during these warnings initiates <color=#74cbef>Convergence Counter</color>.\\\\n- When <color=#ffdd93>Tank member</color> triggers <color=#ffdd93>Flash Block</color>, enters <color=#ffdd93>Duel State</color>.\\\\n- Duel State <color=#ffdd93>extends</color> the duration of Convergence Counter. Continuously tap the <color=#ffdd93>QTE button</color> to deal multiple instances of DMG.', 2: '- When a member enters <color=#ffdd93>Convergence Counter</color>, the <color=#ffdd93>first member to tap the QTE button</color> will assist teammates in <color=#ffdd93>interrupting enemy attacks</color>.\\\\n- The <color=#ffdd93>second member to tap the QTE button</color> will launch a <color=#ffdd93>secondary follow-up attack</color> against the enemy.'}"
+    },
+    {
+        "Id": 106,
+        "Type": 1,
+        "Name": "Fury & Wrath Form",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage05.png'}",
+        "Desc": "{1: '- Enemies continuously gain <color=#ffdd93>Fury</color> when taking DMG. At full Fury, they enter <color=#ffdd93>Wrath Form</color>.\\\\n- Enemies in Wrath Form attack more ferociously. During this time, <color=#ffdd93>attacking</color> enemies reduces their <color=#ffdd93>Fury</color>. When their Fury is cleared, enemies enter <color=#ffdd93>Imbalanced Disruption</color> state.'}"
+    },
+    {
+        "Id": 107,
+        "Type": 1,
+        "Name": "Imbalanced Disruption & Inverse Matrix",
+        "ConditionId": null,
+        "VideoConfigIds": "{1: '31005'}",
+        "ImageUrl": null,
+        "Desc": "{1: '- Enemies in <color=#ffdd93>Wrath Form</color> enter <color=#ffdd93>Imbalanced Disruption</color> when their <color=#ffdd93>Fury</color> is depleted.\\\\n- Enemies cannot act for a certain duration in this state.\\\\n- All members simultaneously enter <color=#ffdd93>Inverse Matrix</color> state, gaining a <color=#ffdd93>time-stop effect</color> for a certain duration.'}"
+    },
+    {
+        "Id": 108,
+        "Type": 1,
+        "Name": "Stagger & Follow-Up Skills",
+        "ConditionId": null,
+        "VideoConfigIds": "{2: '31006'}",
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage06.png', 2: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage06.png'}",
+        "Desc": "{1: '- Dealing DMG reduces enemy <color=#ffdd93>Balance</color>.\\\\n- When Balance is depleted, enemies enter <color=#ffdd93>Imbalanced State</color> and cannot act for a short time.\\\\n- <color=#ffdd93>While in Imbalanced State</color>, Balance slowly recovers and <color=#ffdd93>cannot be reduced for a short time</color>.', 2: '- When an enemy enters the <color=#ffdd93>Imbalanced State</color>, nearby members can <color=#ffdd93>tap the QTE button</color> to launch <color=#ffdd93>Follow-Up Skills</color>.'}"
+    },
+    {
+        "Id": 109,
+        "Type": 1,
+        "Name": "Enemy Aggro",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage07.png', 2: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage07.png'}",
+        "Desc": "{1: '- Attacking enemies generates <color=#ffdd93>Aggro</color>. <color=#ffdd93>Tank</color> members generate Aggro faster.\\\\n- Enemies prioritize targeting the unit with the highest Aggro. Some <color=#ffdd93>special moves</color> can forcibly change the current <color=#ffdd93>Aggro target</color>.', 2: '- Targeted members display an <color=#ffdd93>Aggro marker</color> on their portrait in the upper-left corner.\\\\n- When an enemy switches its <color=#ffdd93>Aggro target</color>, a brief <color=#ffdd93>red line</color> appears on the new target.'}"
+    },
+    {
+        "Id": 110,
+        "Type": 1,
+        "Name": "Fall Reboot",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage08.png'}",
+        "Desc": "{1: '- When members reach <color=#ffdd93>0 HP</color>, they enter Maintenance State and cannot act.\\\\n- After a certain duration, tap <color=#ffdd93>Reboot</color> to act again.\\\\n- Standing near <color=#ffdd93>teammates under maintenance</color> helps them reboot faster.'}"
+    },
+    {
+        "Id": 201,
+        "Type": 2,
+        "Name": "Max DMG",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage17.png'}",
+        "Desc": "{1: '- Every character skill and attack has a preset <color=#ffdd93>max DMG</color>.\\\\n- Player DMG dealt in battle <color=#ffdd93>cannot exceed</color> the preset max DMG.\\\\n- Max DMG can be increased by upgrading <color=#ffdd93>Research Level</color> or <color=#ffdd93>equipment traits</color>.'}"
+    },
+    {
+        "Id": 202,
+        "Type": 2,
+        "Name": "Class Equipment",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage10.png'}",
+        "Desc": "{1: '- When <color=#ffdd93>Research Level</color> meets requirements, equipping <color=#ffdd93>class equipment</color> unlocks two <color=#ffdd93>special module slots</color> (left and right).\\\\n- When equipment in the left and right slots is the <color=#ffdd93>same class</color> as the class equipment, gains a <color=#ffdd93>Trait Level bonus</color>.\\\\n- When the bonus is triggered, the <color=#ffdd93>first trait</color> of the module equipment receives an additional level increase.'}"
+    },
+    {
+        "Id": 203,
+        "Type": 2,
+        "Name": "Unique Trait",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage11.png'}",
+        "Desc": "{1: '- A trait marked as <color=#ffdd93>Unique</color>. When carried in duplicates, only the trait with the <color=#ffdd93>highest level</color> will take effect.'}"
+    },
+    {
+        "Id": 204,
+        "Type": 2,
+        "Name": "Trait Level",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage12.png'}",
+        "Desc": "{1: '- Each trait is generated with a fixed level.\\\\n- <color=#ffdd93>Identical traits</color> stack their levels, and traits gain corresponding effects based on their <color=#ffdd93>total level</color>.\\\\n- After Trait Level reaches the <color=#ffdd93>cap</color>, exceeding levels have no effect.'}"
+    },
+    {
+        "Id": 205,
+        "Type": 2,
+        "Name": "Equipment Level",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage13.png'}",
+        "Desc": "{1: \"- Used to evaluate equipment strength and <color=#ffdd93>matchmaking</color> threshold requirements for stages.\\\\n- A piece's Equipment Level equals <color=#ffdd93>Quality</color> plus <color=#ffdd93>Trait</color> levels combined.\\\\n- <color=#ffdd93>Equipment Level</color> can be increased by embedding more traits through <color=#ffdd93>Enhancement</color>.\"}"
+    },
+    {
+        "Id": 206,
+        "Type": 2,
+        "Name": "Gear Enhancement",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage14.png'}",
+        "Desc": "{1: '- Extraction consumes <color=#ffdd93>other equipment</color> to embed their <color=#ffdd93>traits</color> into <color=#ffdd93>empty trait slots</color> of the equipment being enhanced.\\\\n- When the extracted equipment has <color=#ffdd93>multiple traits</color>, one will be <color=#ffdd93>randomly selected</color> for embedding.'}"
+    },
+    {
+        "Id": 300,
+        "Type": 3,
+        "Name": "Character Forms",
+        "ConditionId": null,
+        "VideoConfigIds": null,
+        "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage09.png'}",
+        "Desc": "{1: '- The character has multiple <color=#ffdd93>forms</color>, each with different <color=#ffdd93>skills</color> and <color=#ffdd93>combat focus</color>.\\\\n- Tap to switch freely between forms.'}"
+    },
+    {
+        "Id": 301,
+        "Type": 3,
+        "Name": "Crimson Weave: Phantom Cavalry",
+        "ConditionId": null,
+        "VideoConfigIds": "{1: '31008', 2: '31008'}",
+        "ImageUrl": null,
+        "Desc": "{1: \"- <color=#ffdd93>Crimson Weave</color>'s <color=#ffdd93>Phantom Cavalry</color> excels at <color=#ffdd93>burst DPS</color>.\\\\n- In this form, most attacks can generate <color=#ffdd93>Wildfire Value</color>.\\\\n- At max Wildfire Value, <color=#ffdd93>press and hold Basic Attack</color> to cast <color=#ffdd93>Wildfire Slash</color>, dealing massive DMG to enemies.\\\\n- In <color=#ffdd93>Odachi Mode</color>, Wildfire Slash deals higher DMG.\", 2: \"- <color=#ffdd93>Kodachi Mode</color>: Cast Skill 2 <color=#ffdd93>Sundered Delusion</color> to gain large amounts of <color=#ffdd93>Wildfire Value.</color>\\\\n- Combine Skill 2's <color=#ffdd93>Swordwave Attack</color> and Skill 1 <color=#ffdd93>Whirling Thrash</color> combos to rapidly fill up Wildfire Value.\\\\n- <color=#ffdd93>Basic Attack</color> and <color=#ffdd93>Swordwave Attack</color> in <color=#ffdd93>Odachi Mode</color> can quickly generate Wildfire Value for burst DMG.\"}"
+    },
+    {
+        "Id": 302,
+        "Type": 3,
+        "Name": "Crimson Weave: Resonance Edge",
+        "ConditionId": null,
+        "VideoConfigIds": "{1: '31009', 2: '31010'}",
+        "ImageUrl": null,
+        "Desc": "{1: \"- <color=#ffdd93>Crimson Weave</color>'s <color=#ffdd93>Resonance Edge</color> form excels at <color=#ffdd93>team buffs</color> and <color=#ffdd93>sustained DPS</color>.\\\\n- In this form, most attacks grant <color=#ffdd93>Swordwave Energy</color>.\\\\n- When Swordwave Energy exceeds <color=#ffdd93>20</color>, perform a <color=#ffdd93>Dodge</color> or the <color=#ffdd93>4th hit of Basic Attack</color>, then <color=#ffdd93>rapidly tap Basic Attack</color>, to consume Swordwave Energy and unleash <color=#ffdd93>Swordwave Attack</color>, dealing DMG and applying <color=#ffdd93>Bladebreak</color> to enemies.\\\\n- Enemies affected by Bladebreak take increased DMG.\", 2: '- <color=#ffdd93>Kodachi Mode</color>: Use Skill 1 <color=#ffdd93>Whirling Thrash</color> combos and Skill 2 <color=#ffdd93>Sundered Delusion</color> to quickly fill up <color=#ffdd93>Swordwave Energy</color>.\\\\n- <color=#ffdd93>Odachi Mode</color>: Completing <color=#ffdd93>Basic Attack cycles</color> can also fully fill up Swordwave Energy.'}"
+    },
+    {
+        "Id": 303,
+        "Type": 3,
+        "Name": "Startrail: Iron Bastion",
+        "ConditionId": null,
+        "VideoConfigIds": "{1: '31011', 2: '31012'}",
+        "ImageUrl": null,
+        "Desc": "{1: \"- <color=#ffdd93>Startrail</color>'s <color=#ffdd93>Iron Bastion</color> form excels at <color=#ffdd93>survivability</color> and building <color=#ffdd93>Aggro</color>.\\\\n- In this form, <color=#ffdd93>defensive actions</color> and most attacks grant <color=#ffdd93>Starcore Value</color>.\\\\n- When wielding Sword Shield, <color=#ffdd93>press and hold Basic Attack</color> to consume <color=#ffdd93>100</color> Starcore Value and cast <color=#ffdd93>Jump Cleave</color>.\\\\n- When wielding Shield Axe and Starcore Value exceeds <color=#ffdd93>400</color>, <color=#ffdd93>press and hold Basic Attack</color> to cast <color=#ffdd93>Meteoric Doom</color>.\", 2: '- When <color=#ffdd93>switching weapon</color> forms, gains a shield based on the current <color=#ffdd93>Starcore Value</color>.\\\\n- When wielding Sword & Shield and <color=#ffdd93>using skills</color>, gains a <color=#ffdd93>DMG bonus</color> and a <color=#ffdd93>shield</color>.\\\\n- Using Skill 2 <color=#ffdd93>Golden Roar</color> can also <color=#ffdd93>taunt enemies</color>, drawing their attacks.\\\\n- Use skills strategically to stay safe while also safeguarding other players.'}"
+    },
+    {
+        "Id": 304,
+        "Type": 3,
+        "Name": "Startrail: Mad Dissection",
+        "ConditionId": null,
+        "VideoConfigIds": "{1: '31013', 2: '31014'}",
+        "ImageUrl": null,
+        "Desc": "{1: \"- <color=#ffdd93>Startrail</color>'s <color=#ffdd93>Mad Dissection</color> form excels at <color=#ffdd93>Toughness Break</color>.\\\\n- In this form, most attacks with Sword Shield grant <color=#ffdd93>Sharpness Value</color>.\\\\n- When wielding Shield Axe, <color=#ffdd93>Basic Attacks</color> consume Sharpness Value to generate <color=#ffdd93>Infinitas Value</color>, and <color=#ffdd93>using skills</color> also generates Infinitas Value.\\\\n- When Infinitas Value exceeds <color=#ffdd93>300</color>, <color=#ffdd93>press and hold Basic Attack</color> to consume all Infinitas Value and cast <color=#ffdd93>Meteoric Doom</color>. Additional effects are triggered when <color=#ffdd93>600</color> or <color=#ffdd93>900</color> Infinitas Value are consumed.\", 2: '- While wielding Sword Shield, use Skill 1 <color=#ffdd93>Comet Burst</color> combos, Skill 2 <color=#ffdd93>Lightning Blade Slash</color> combos, and a full <color=#ffdd93>Basic Attack</color> chain to rapidly build <color=#ffdd93>Sharpness Value</color>.\\\\n- After switching to Shield Axe form, <color=#ffdd93>Basic Attack</color> converts Sharpness Value into <color=#ffdd93>Infinitas Value</color>. Then, <color=#ffdd93>press and hold</color> Skill 1 <color=#ffdd93>Inferno Cyclone</color> and Skill 2 <color=#ffdd93>Lightning Sweep</color> combos to gain a total of <color=#ffdd93>600</color> Infinitas Value.\\\\n- When combined with the <color=#ffdd93>300</color> Infinitas Value gained while <color=#ffdd93>enemies are Imbalanced</color>, you can spend <color=#ffdd93>900</color> Infinitas Value to unleash the most powerful <color=#ffdd93>Meteoric Doom</color>.'}"
+    },
+    {
+        "Id": 305,
+        "Type": 3,
+        "Name": "Empyrea: Chant Weaver",
+        "ConditionId": null,
+        "VideoConfigIds": "{1: '31015', 2: '31016'}",
+        "ImageUrl": null,
+        "Desc": "{1: \"- <color=#ffdd93>Empyrea</color>'s <color=#ffdd93>Chant Weaver</color> form excels at <color=#ffdd93>team healing</color> and <color=#ffdd93>DMG Reduction</color>.\\\\n- In this form, Skill 1 <color=#ffdd93>Holywings Mass</color>, Skill 2 <color=#ffdd93>Zodiacal Grace</color> combos, and the <color=#ffdd93>final hit of Basic Attack</color> can grant <color=#ffdd93>Chant Stacks</color>, up to <color=#ffdd93>12 stacks</color>.\\\\n- At max Chant Stacks, <color=#ffdd93>press and hold Basic Attack</color> to cast <color=#ffdd93>Divine Prayer</color> and clear all stacks to enter <color=#ffdd93>Empyrea Form</color>.\\\\n- In Empyrea Form, Skill 3 is replaced with <color=#ffdd93>Azure Firmament</color>; can <color=#ffdd93>press and hold Basic Attack</color> to perform 2 hits with <color=#ffdd93>Radiant Judgment I</color> and <color=#ffdd93>Radiant Judgment II</color>.\\\\n- Azure Firmament can <color=#ffdd93>heal</color> all allied units on the field and provide substantial <color=#ffdd93>DMG Reduction</color> for allies <color=#ffdd93>within range</color>.\", 2: \"- Skill 1 or Skill 2 can grant <color=#ffdd93>Chant Stacks</color>, which are key to maintaining battle rhythm and resource cycling.\\\\n- Skill 3 <color=#ffdd93>Nighttime Prayer</color> can <color=#ffdd93>heal</color> all allied units. When used at the right moment, it provides strong tactical value beyond simple recovery.\\\\n- The <color=#ffdd93>Empyrea Form</color> exclusive skill <color=#ffdd93>Azure Firmament</color> offers powerful protection but has a <color=#ffdd93>long cooldown</color>. It's recommended to use it to precisely counter <color=#ffdd93>high-threat enemy Signatures</color> or <color=#ffdd93>burst attacks</color>.\\\\n- Skill 4 <color=#ffdd93>Crimson Crown</color> provides an <color=#ffdd93>ATK boost</color> for the entire team. Best to use it when enemies enter <color=#ffdd93>Imbalanced state</color>, or just before your main damage dealer characters <color=#ffdd93>activate burst skills</color>, to maximize team damage output.\"}"
+    },
+    {
+        "Id": 306,
+        "Type": 3,
+        "Name": "Empyrea: Dawnhymn Angel",
+        "ConditionId": null,
+        "VideoConfigIds": "{1: '31017', 2: '31017'}",
+        "ImageUrl": null,
+        "Desc": "{1: \"- <color=#ffdd93>Empyrea</color>'s <color=#ffdd93>Dawnhymn Angel</color> form has <color=#ffdd93>weakened support abilities</color> but <color=#ffdd93>enhanced damage output</color>.\\\\n- In this form, Skill 1 <color=#ffdd93>Holywings Mass</color> combos, Skill 2 <color=#ffdd93>Zodiacal Grace</color> combos, and the <color=#ffdd93>final hit of Basic Attack</color> grant <color=#ffdd93>Chant Stacks</color>, up to <color=#ffdd93>12 stacks</color>.\\\\n- Skill 3 <color=#ffdd93>Nighttime Prayer</color> and Skill 4 <color=#ffdd93>Crimson Crown</color> consume <color=#ffdd93>4 Chant Stacks</color>.\\\\n- At <color=#ffdd93>8 Chant Stacks</color>, <color=#ffdd93>press and hold Basic Attack</color> to cast <color=#ffdd93>Divine Prayer</color>, clearing all Chant Stacks to enter <color=#ffdd93>Empyrea Form</color> and replacing Skill 3 with <color=#ffdd93>Azure Firmament</color>; can <color=#ffdd93>press and hold Basic Attack</color> to perform 2 hits with <color=#ffdd93>Radiant Judgment I</color> and <color=#ffdd93>Radiant Judgment II</color>.\\\\n- <color=#ffdd93>Radiant Judgment</color> deals increased DMG while in Dawnhymn Angel form.\", 2: '- Use Skill 1 <color=#ffdd93>Holywings Mass</color> combos and Skill 2 <color=#ffdd93>Zodiacal Grace</color> combos to quickly accumulate <color=#ffdd93>Chant Stacks</color> and enter <color=#ffdd93>Empyrea Form</color>.\\\\n- After entering Empyrea Form, <color=#ffdd93>press and hold Basic Attack</color> to cast <color=#ffdd93>Radiant Judgment</color> for massive burst damage.\\\\n- Skill 3 <color=#ffdd93>Nighttime Prayer</color> and Skill 4 <color=#ffdd93>Crimson Crown</color> both consume Chant Stacks when cast.\\\\n- During combat, adjust how you allocate and prioritize Chant Stacks based on the battlefield situation.'}"
+    }
+]

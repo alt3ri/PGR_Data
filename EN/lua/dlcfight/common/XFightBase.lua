@@ -8,10 +8,23 @@ function XFightBase:Ctor(proxy)
     self._proxy = proxy
 end
 
-function XFightBase:Init()
+function XFightBase:_BaseInit()
     self._uuid = self._proxy:GetSelfNpcId()
     self:InitLuaEvent()
     self:InitEventCallBackRegister()
+end
+
+function XFightBase:ScriptInit(isGainControl)
+end
+
+function XFightBase:Init()
+    self:_BaseInit()
+    self:ScriptInit(false)
+end
+
+function XFightBase:GainControl()
+    self:_BaseInit()
+    self:ScriptInit(true)
 end
 
 ---@param dt number @ delta time
@@ -25,6 +38,9 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcDamage then
         self:OnNpcDamageEvent(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.MagicId, eventArgs.Kind,
                 eventArgs.PhysicalDamage, eventArgs.ElementDamage, eventArgs.ElementType, eventArgs.RealDamage, eventArgs.IsCritical, eventArgs.SkillId, eventArgs.MagicTags)
+    end
+    if eventType == EWorldEvent.NpcCure then
+        self:OnNpcCureEvent(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.MagicId, eventArgs.Kind, eventArgs.Value, eventArgs.SkillId)
     end
     if eventType == EWorldEvent.NpcCastActionBefore then
         self:OnNpcCastActionBeforeEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
@@ -46,6 +62,15 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     end
     if eventType == EWorldEvent.NpcWaitReboot then
         self:OnNpcWaitRebootEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.KillerUUID, eventArgs.MagicId, eventArgs.DeathType, eventArgs.DeathId, eventArgs.RebootType, eventArgs.RebootId)
+    end
+    if eventType == EWorldEvent.NpcWaitRescue then
+        self:OnNpcWaitRescueEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.KillerUUID, eventArgs.MagicId, eventArgs.DeathType, eventArgs.DeathId, eventArgs.RebootType, eventArgs.RebootId)
+    end
+    if eventType == EWorldEvent.OnNpcBeginRescue then
+        self:OnNpcBeginRescueEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.RescuerUUID)
+    end
+    if eventType == EWorldEvent.OnNpcEndRescue then
+        self:OnNpcEndRescueEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.RescuerUUID)
     end
     if eventType == EWorldEvent.NpcRevive then
         self:OnNpcReviveEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer)
@@ -74,6 +99,9 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcCalcDamageBefore then
         self:BeforeDamageCalc(eventArgs)
     end
+    if eventType == EWorldEvent.NpcChangeDamageBeforeCalc then
+        self:ChangeDamageBeforeCalc(eventArgs)
+    end
     if eventType == EWorldEvent.NpcCalcDamageAfter then
         self:AfterDamageCalc(eventArgs)
     end
@@ -86,11 +114,14 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcAddProtector then
         self:XNpcAddProtectorArgs(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.Value, eventArgs.TotalValue, eventArgs.MagicId)
     end
+    if eventType == EWorldEvent.NpcHurtProtector then
+        self:XNpcHurtProtectorArgs(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.Value, eventArgs.TotalValue)
+    end
     if eventType == EWorldEvent.NpcChangeProtector then
         self:XNpcChangeProtectorArgs(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.Value, eventArgs.TotalValue)
     end
     if eventType == EWorldEvent.NpcDodge then
-        self:OnNpcDodge(eventArgs.SourceUUID, eventArgs.AttackerUUID, eventArgs.Type)
+        self:OnNpcDodge(eventArgs.SourceUUID, eventArgs.AttackerUUID, eventArgs.Type, eventArgs.MissileTemplateId)
     end
     if eventType == EWorldEvent.NpcBrokenBefore then
         self:OnNpcBrokenBefore(eventArgs.LauncherUUID, eventArgs.TargetUUID, eventArgs.MagicId)
@@ -164,11 +195,32 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcMultiParryFail then
         self:OnNpcMultiParryFail(eventArgs.LauncherUUID, eventArgs.TargetUUID)
     end
+    if eventType == EWorldEvent.NpcGuardianAngelConsume then
+        self:OnNpcGuardianAngelConsume(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.BuffTemplateId)
+    end
+    if eventType == EWorldEvent.FullChainSkillStart then
+        self:OnFullChainSkillStart(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpcList, eventArgs.ChainLevel, eventArgs.CurChainStartNpcId)
+    end
+    if eventType == EWorldEvent.FullChainSkillEnd then
+        self:OnFullChainSkillEnd(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpcList, eventArgs.ChainLevel, eventArgs.CurChainEndNpcId)
+    end
+    if eventType == EWorldEvent.CastFullChainFinalSkill then
+        self:OnCastFullChainFinalSkill(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpcList, eventArgs.ChainLevel)
+    end
+    if eventType == EWorldEvent.FullChainStageEnd then
+        self:OnFullChainStageEnd(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpcList, eventArgs.ChainLevel)
+    end
+    if eventType == EWorldEvent.FullChainShowStart then
+        self:OnFullChainShowStart(eventArgs.GamePlayActive, eventArgs.ChainNpcList, eventArgs.ChainLevel)
+    end
 end
 
 ---@param eventType number 来自EFightLuaEvent
 ---@param eventArgs table
 function XFightBase:HandleLuaEvent(eventType, eventArgs)
+end
+
+function XFightBase:CancelControl()
 end
 
 ---@desc 生命周期里CleanUp的上一步，可以理解为脚本专用的CleanUp
@@ -195,6 +247,16 @@ end
 ---@param skillId number 技能Id
 ---@param MagicTags table Magic配置的Tags
 function XFightBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
+end
+
+---Npc进行治疗
+---@param launcherId number 治疗发起者的UUID
+---@param targetId number 治疗目标的UUID
+---@param magicId number 治疗Magic的配表Id
+---@param kind number 策划定义的伤害类型
+---@param value number 治疗值
+---@param skillId number 技能Id
+function XFightBase:OnNpcCureEvent(launcherId, targetId, magicId, kind, value, skillId)
 end
 
 ---Npc释放技能前
@@ -280,6 +342,38 @@ end
 function XFightBase:OnNpcWaitRebootEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
 end
 
+---Npc等待救援
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param killerUUID number
+---@param magicId number
+---@param deathType number
+---@param deathId number
+---@param rebootType number
+---@param rebootId number
+function XFightBase:OnNpcWaitRescueEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
+end
+
+---Npc开始救援
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param rescuerUUID number 救援者UUID
+function XFightBase:OnNpcBeginRescueEvent(npcUUID, npcPlaceId, npcKind, isPlayer, rescuerUUID)
+end
+
+---Npc结束救援
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param rescuerUUID number 救援者UUID
+function XFightBase:OnNpcEndRescueEvent(npcUUID, npcPlaceId, npcKind, isPlayer, rescuerUUID)
+end
+
 ---Npc复活
 ---@param npcUUID number
 ---@param npcPlaceId number
@@ -356,6 +450,24 @@ end
 function XFightBase:BeforeDamageCalc(eventArgs)
 end
 
+---@class ChangeDamageBeforeCalcEventArgs
+---@field ContextId int 伤害上下文Id
+---@field Launcher number 发起者NpcId
+---@field Target number 目标NpcId
+---@field Part number 部位ID
+---@field Id number MagicId
+---@field Kind number 伤害类型
+---@field PhysicalPermyraid number 物理伤害倍率
+---@field ElementPermyraid number 元素伤害倍率
+---@field HackDamage number 击破伤害基础值
+---@field HackPermyraid number 击破倍率
+---@field IsCrit bool 是否暴击
+---@field ElementType number 元素类型
+---@field Additive table 附加值数组 （可更改）
+---@param eventArgs ChangeDamageBeforeCalcEventArgs
+function XFightBase:ChangeDamageBeforeCalc(eventArgs)
+end
+
 ---计算伤害后
 ---@class AfterDamageCalcEventArgs
 ---@field Launcher number 发起者NpcId
@@ -420,6 +532,14 @@ end
 ---@param TargetId number 目标NpcId
 ---@param Value number 获得的护盾值
 ---@param TotalValue number 当前总护盾值
+function XFightBase:XNpcHurtProtectorArgs(LauncherId, TargetId, Value, TotalValue)
+
+end
+
+---@param LauncherId number 发起者NpcId
+---@param TargetId number 目标NpcId
+---@param Value number 获得的护盾值
+---@param TotalValue number 当前总护盾值
 function XFightBase:XNpcChangeProtectorArgs(LauncherId, TargetId, Value, TotalValue)
 
 end
@@ -428,9 +548,10 @@ end
 ---@field SourceUUID number 触发闪避目标
 ---@field AttackerUUID number 被闪避目标
 ---@field Type number 闪避窗口类型
+---@field MissileTemplateId number 子弹配置ID
 ---触发闪避成功
 ---@param eventArgs XNpcDodgeEventArgs
-function XFightBase:OnNpcDodge(SourceUUID, AttackerUUID, Type)
+function XFightBase:OnNpcDodge(SourceUUID, AttackerUUID, Type, MissileTemplateId)
 
 end
 
@@ -604,6 +725,60 @@ end
 ---@param launcherNpcUUID number 被弹刀NpcUUID
 ---@param targetNpcUUID number 弹刀NpcUUID
 function XFightBase:OnNpcMultiParryFail(launcherNpcUUID, targetNpcUUID)
+end
+
+---Npc消耗复活甲
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param buffTemplateId int
+function XFightBase:OnNpcGuardianAngelConsume(npcUUID, npcPlaceId, npcKind, isPlayer, buffTemplateId)
+end
+
+---FullChain开启连锁
+---@param gameplayActive number 是否开启玩法
+---@param isInChain number 是否在连锁状态
+---@param chainRemainTime number 连锁剩余时间
+---@param chainNpcList number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+---@param curChainStartNpcId number 当前开始连锁的NpcId
+function XFightBase:OnFullChainSkillStart(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel, curChainStartNpcId)
+end
+
+---FullChain连锁结束
+---@param gameplayActive number 是否开启玩法
+---@param isInChain number 是否在连锁状态
+---@param chainRemainTime number 连锁剩余时间
+---@param chainNpcList number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+---@param curChainEndNpcId number 当前结束连锁的NpcId
+function XFightBase:OnFullChainSkillEnd(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel, curChainEndNpcId)
+end
+
+---FullChainSkill释放！
+---@param gameplayActive number 是否开启玩法
+---@param isInChain number 是否在连锁状态
+---@param chainRemainTime number 连锁剩余时间
+---@param chainNpcList number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+function XFightBase:OnCastFullChainFinalSkill(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel)
+end
+
+---FullChainSkill释放！
+---@param gameplayActive number 是否开启玩法
+---@param isInChain number 是否在连锁状态
+---@param chainRemainTime number 连锁剩余时间
+---@param chainNpcList number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+function XFightBase:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel)
+end
+
+---FullChainSkill表演开始
+---@param gameplayActive number 是否开启玩法
+---@param chainNpcList number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+function XFightBase:OnFullChainShowStart(gameplayActive, chainNpcList, chainLevel)
 end
 
 --endregion

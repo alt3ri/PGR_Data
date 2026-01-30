@@ -256,6 +256,49 @@ function XArenaModel:GetCurrentAreaCount()
     return 0
 end
 
+--- 获取区域数据
+---@return XArenaAreaData|nil
+function XArenaModel:GetArenaAreaData()
+    if self._ArenaAreaDataCache and not self._ArenaAreaDataCache:IsClear() then
+        return self._ArenaAreaDataCache
+    end
+    return nil
+end
+
+--- 保存结算数据（Point 和 OldPoint，用于新纪录检查）
+---@param distributeType number DistributeType值
+---@param point number 当前分数
+---@param oldPoint number 历史最高分
+function XArenaModel:SaveSettlePointByDistributeType(distributeType, point, oldPoint)
+    local key = self:_GetSettlePointKey(distributeType)
+    self._SaveUtil:SaveData(key, {
+        Point = point,
+        OldPoint = oldPoint
+    })
+end
+
+--- 获取结算数据（Point 和 OldPoint，用于新纪录检查）
+---@param distributeType number DistributeType值
+---@return table|nil 包含 Point 和 OldPoint 的表格，如果不存在则返回 nil
+function XArenaModel:GetSettlePointByDistributeType(distributeType)
+    local key = self:_GetSettlePointKey(distributeType)
+    return self._SaveUtil:GetData(key)
+end
+
+--- 清除结算数据（检查完新纪录后清除）
+---@param distributeType number DistributeType值
+function XArenaModel:ClearSettlePointByDistributeType(distributeType)
+    local key = self:_GetSettlePointKey(distributeType)
+    self._SaveUtil:SaveData(key, nil)
+end
+
+--- 获取结算数据的保存key
+---@param distributeType number DistributeType值
+---@return string
+function XArenaModel:_GetSettlePointKey(distributeType)
+    return "ArenaSettlePoint_" .. distributeType
+end
+
 function XArenaModel:ClearAll()
     self:ClearScoreQueryCache()
     self:ClearAreaDataCache()

@@ -99,16 +99,15 @@ function XUiDlcMultiPlayerLoading:_InitItemList()
     local playerDataList = worldData and worldData:GetPlayerDataList() or {}
     local playerCount = #playerDataList
     local middle = math.ceil(playerCount / 2)
-
     for i, playerData in pairs(playerDataList) do
         local item = nil
-        
-        if i <= middle then
-            item = XUiHelper.Instantiate(self.LoadingPlayerItem.gameObject, self.UpperLineLoadingDetail)
+        local parent
+        if playerData:GetCamp() == XMVCA.XDlcMultiMouseHunter.DlcMouseHunterCamp.Cat then
+            parent = self.UpperLineLoadingDetail
         else
-            item = XUiHelper.Instantiate(self.LoadingPlayerItem.gameObject, self.LowerLineLoadingDetail)
+            parent = self.LowerLineLoadingDetail
         end
-
+        item = XUiHelper.Instantiate(self.LoadingPlayerItem.gameObject, parent)
         local itemObject = XUiDlcMultiPlayerLoadingItem.New(item, self, playerData)
 
         self._OnLoadingItemMap[playerData:GetPlayerId()] = itemObject

@@ -17,6 +17,7 @@ function XBuffScript1015648:Init()
     self.runeId = self.magicId - 1015000 + 20000 - 1
     self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
     self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
+    self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
 end
 
 return XBuffScript1015648

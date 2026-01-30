@@ -1,3 +1,5 @@
+--[[4.2 直到九期都未再用过，注释掉
+
 local XNormalGWNode = require("XEntity/XGuildWar/Battle/Node/XNormalGWNode")
 -- 黑白鲨节点
 ---@class XTwinsChildGWNode:XGWNode
@@ -93,3 +95,5 @@ function XTwinsChildGWNode:SetWeakness(value)
 end
 
 return XTwinsChildGWNode
+
+--]]

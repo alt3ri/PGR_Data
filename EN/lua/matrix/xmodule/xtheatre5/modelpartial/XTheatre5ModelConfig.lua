@@ -42,6 +42,14 @@ local TablePrivate = {
     Theatre5UiStyle =  { DirPath = XConfigUtil.DirectoryType.Client },
 }
 
+local TableMission = {
+    Theatre5Mission =  { DirPath = XConfigUtil.DirectoryType.Share },
+    Theatre5MissionBounty =  { DirPath = XConfigUtil.DirectoryType.Share },
+    Theatre5MissionCondition =  { DirPath = XConfigUtil.DirectoryType.Share },
+    Theatre5MissionTriggerCondition =  { DirPath = XConfigUtil.DirectoryType.Share },
+    Theatre5TriggerCondition =  { DirPath = XConfigUtil.DirectoryType.Share },
+}
+
 local PVETableKey = {
     Theatre5PveEventLevel = {},
     Theatre5PveChapter = { CacheType = XConfigUtil.CacheType.Normal },
@@ -53,7 +61,7 @@ local PVETableKey = {
     Theatre5PveMonster = {},
     Theatre5PveStoryEntrance = {},
     Theatre5PveStoryLine = {},
-    Theatre5PveStoryLineContent = {},
+    Theatre5PveStoryLineContent = { CacheType = XConfigUtil.CacheType.Normal },
     Theatre5PveSceneChat = {},
     Theatre5PveEnding = { DirPath = XConfigUtil.DirectoryType.Client },
     Theatre5PveSceneChatStoryPool = {},
@@ -88,6 +96,9 @@ function XTheatre5Model:InitConfigs()
     self._ConfigUtil:InitConfigByTableKey('Theatre5', TableNormal, XConfigUtil.CacheType.Normal)
     self._ConfigUtil:InitConfigByTableKey('Theatre5', TablePrivate, XConfigUtil.CacheType.Private)
     self._ConfigUtil:InitConfigByTableKey('Theatre5/Theatre5Pve', PVETableKey)
+    self._ConfigUtil:InitConfigByTableKey('Theatre5/TheatreMission', TableMission)
+    
+    self._MissionBountyGroups = nil
 end
 
 --- 清理与私有配置表有关的缓存
@@ -107,6 +118,7 @@ function XTheatre5Model:ReleasePriConfigCache()
     self._TaskShopCfgsDic = nil
     self._DeduceClueByScriptIdDic = nil
     self._CharacterLevelGroups = nil
+    self._MissionBountyGroups = nil
 end
 
 function XTheatre5Model:ReleaseNopriConfigCache()
@@ -118,6 +130,11 @@ end
 ---@return XTableTheatre5Activity
 function XTheatre5Model:GetTheatre5ActivityCfgById(activityId, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableNormal.Theatre5Activity, activityId, notips)
+end
+
+---@return XTableTheatre5Activity[]
+function XTheatre5Model:GetTheatre5ActivityCfgs()
+    return self._ConfigUtil:GetByTableKey(TableNormal.Theatre5Activity)
 end
 
 function XTheatre5Model:GetTheatre5PVPWorldIdByActivityId(activityId)
@@ -309,6 +326,14 @@ function XTheatre5Model:GetTheatre5ClientConfigText(key, index, notips)
     end
 
     return ''
+end
+
+function XTheatre5Model:GetTheatre5ClientConfigTextArray(key, notips)
+    local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableNormal.Theatre5ClientConfig, key, notips)
+
+    if cfg then
+        return cfg.Values
+    end
 end
 
 function XTheatre5Model:GetTheatre5ClientConfigNum(key, index, notips)
@@ -836,6 +861,8 @@ end
 
 --endregion
 
+--region 升级、饰品
+
 ---@param adventureData XTheatre5PVEAdventureData|XTheatre5PVPAdventureData
 function XTheatre5Model:GetCharacterLevelConfig(adventureData, level)
     local group = self:GetCharacterLevelGroupConfig(adventureData)
@@ -1022,5 +1049,78 @@ function XTheatre5Model:GetRelicEffectConfigs(relicId)
         XLog.Error("[XTheatre5Model] 找不到对应的饰品配置:" .. tostring(relicId))
     end
 end
+
+--endregion
+
+--region 任务
+
+function XTheatre5Model:GetMissionBountyComboId(bountyId, level)
+    return bountyId * 10 + level
+end
+
+---@return XTableTheatre5Mission
+function XTheatre5Model:GetTableMissionCfgById(id, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableMission.Theatre5Mission, id, notips)
+end
+
+---@return XTableTheatre5Mission[]
+function XTheatre5Model:GetTheatre5MissionCfgs()
+    return self._ConfigUtil:GetByTableKey(TableMission.Theatre5Mission)
+end
+
+---@return XTableTheatre5MissionCondition
+function XTheatre5Model:GetTableMissionConditionCfgById(id, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableMission.Theatre5MissionCondition, id, notips)
+end
+
+---@return XTableTheatre5MissionBounty
+function XTheatre5Model:GetTheatre5MissionBountyCfgById(id, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableMission.Theatre5MissionBounty, id, notips)
+end
+
+---@return XTableTheatre5MissionBounty[]
+function XTheatre5Model:GetTheatre5MissionBountyGroupByBountyId(bountyId)
+    if self._MissionBountyGroups == nil then
+        ---@type table<number, XTableTheatre5MissionBounty[]>
+        self._MissionBountyGroups = {}
+    end
+    
+    local group = self._MissionBountyGroups[bountyId]
+
+    if not group then
+        group = {}
+        
+        local cfgs = self._ConfigUtil:GetByTableKey(TableMission.Theatre5MissionBounty)
+        
+        -- id规则为 bounty * 10 + level
+        for i = 1, 9 do
+            local id = bountyId * 10 + i
+            local cfg = cfgs[id]
+
+            if cfg then
+                table.insert(group, cfg)
+            else
+                break    
+            end
+        end
+
+        self._MissionBountyGroups[bountyId] = group
+    end
+    
+    return group
+end
+
+function XTheatre5Model:GetTheatre5MissionBountyMaxLevel(bounty)
+    local bountyCfgs = self:GetTheatre5MissionBountyGroupByBountyId(bounty)
+
+    -- 目前数量与等级一一对应
+    if bountyCfgs then
+        return #bountyCfgs
+    end
+    
+    return 1
+end
+--endregion
+
 
 return XTheatre5Model

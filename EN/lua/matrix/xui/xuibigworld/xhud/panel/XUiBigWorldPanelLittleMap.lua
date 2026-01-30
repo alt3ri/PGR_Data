@@ -1,4 +1,5 @@
 local XUiBigWorldMapPin = require("XUi/XUiBigWorld/XMap/XUiBigWorldMapPin")
+local XUiBigWorldMapAreaPin = require("XUi/XUiBigWorld/XMap/XUiBigWorldMapAreaPin")
 local XBWMapAxisConversion = require("XModule/XBigWorldMap/XCommon/XBWMapAxisConversion")
 local XBWLittleMapInterface = require("XModule/XBigWorldMap/XInterface/XBWLittleMapInterface")
 
@@ -25,11 +26,15 @@ function XUiBigWorldPanelLittleMap:OnStart()
     ---@type table<number, XUiBigWorldMapPin>
     self._PinNodeMap = {}
 
+    ---@type XUiBigWorldMapAreaPin[]
+    self._PinAreaList = {}
+
     ---@type XBWMapAxisConversion
     self._AxisConversion = XBWMapAxisConversion.New(CS.XUiType.Hud)
 
     self._AreaGroupList = {}
     self._AreaGroupIds = {}
+    self._PinIdToTarget = {}
     self._CurrentGroupIndex = 1
 
     self._Scale = 1
@@ -76,9 +81,43 @@ function XUiBigWorldPanelLittleMap:OnBtnBigMapClick()
     XMVCA.XBigWorldMap:OpenBigWorldMapUi()
 end
 
+function XUiBigWorldPanelLittleMap:OnPositionChange(data)
+    if self._IsEmpty then
+        return
+    end
+    local pinNode = self._PinNodeMap[data.MapPinId]
+    if pinNode then
+        local pinData = XMVCA.XBigWorldMap:GetPinDataByLevelIdAndPinId(data.MapPinLevelId, data.MapPinId)
+        if pinData then
+            pinNode:Open()
+            pinNode:_RefreshPosition(pinData)
+        end
+    else
+        self:_RefreshPin()
+    end
+end
+
 function XUiBigWorldPanelLittleMap:OnPinStateChange()
     if not self._IsEmpty then
         self:_RefreshPin()
+    end
+end
+
+function XUiBigWorldPanelLittleMap:OnPinHide(levelId, pinId)
+    local pinNode = self._PinNodeMap[pinId]
+    if pinNode then
+        local pinData = XMVCA.XBigWorldMap:GetPinDataByLevelIdAndPinId(levelId, pinId)
+        if pinData then
+            if pinData:IsLittleMapRadiusPin() then
+                for _, areaPinNode in pairs(self._PinAreaList) do
+                    if areaPinNode._LevelId == levelId and areaPinNode._PinData.PinId == pinId then
+                        areaPinNode:Close()
+                    end
+                end
+            end
+
+            pinNode:Close()
+        end
     end
 end
 
@@ -93,6 +132,7 @@ function XUiBigWorldPanelLittleMap:OnPlayerEnterArea(groupId, areaId)
     end
 
     self:_RefreshCurrentGroup(groupId)
+    self:OnPinStateChange()
 end
 
 -- endregion
@@ -109,6 +149,17 @@ end
 
 function XUiBigWorldPanelLittleMap:GetAxisConversion()
     return self._AxisConversion
+end
+
+function XUiBigWorldPanelLittleMap:GetOrCreateTarget(pinId, prefab, parent)
+    if self._PinIdToTarget[pinId] then
+        return self._PinIdToTarget[pinId]
+    end
+    local target = XUiHelper.Instantiate(prefab, parent)
+    if target then
+        self._PinIdToTarget[pinId] = target
+    end
+    return target
 end
 
 -- region 私有方法
@@ -129,42 +180,44 @@ end
 function XUiBigWorldPanelLittleMap:_RegisterListeners()
     -- 在此处注册事件监听
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SCENE_OBJECT_ACTIVATE, self.OnPinStateChange,
-        self)
+            self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_TRACK_CHANGE, self.OnPinStateChange,
-        self)
+            self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ADD, self.OnPinStateChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_REMOVE, self.OnPinStateChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ASSISTED_TRACK_UPDATE,
-        self.OnPinStateChange, self)
+            self.OnPinStateChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE,
-        self.OnPinStateChange, self)
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_ENTER_AREA, self.OnPinStateChange,
-        self)
+            self.OnPositionChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.OnLevelUpdate,
-        self)
+            self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_ENTER_AREA, self.OnPlayerEnterArea,
-        self)
+            self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE, self.OnPinStateChange,
+            self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)
 end
 
 function XUiBigWorldPanelLittleMap:_RemoveListeners()
     -- 在此处移除事件监听
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SCENE_OBJECT_ACTIVATE,
-        self.OnPinStateChange, self)
+            self.OnPinStateChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_TRACK_CHANGE,
-        self.OnPinStateChange, self)
+            self.OnPinStateChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ADD, self.OnPinStateChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_REMOVE, self.OnPinStateChange,
-        self)
+            self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ASSISTED_TRACK_UPDATE,
-        self.OnPinStateChange, self)
+            self.OnPinStateChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE,
-        self.OnPinStateChange, self)
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_ENTER_AREA, self.OnPinStateChange,
-        self)
+            self.OnPositionChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE,
-        self.OnLevelUpdate, self)
+            self.OnLevelUpdate, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_ENTER_AREA, self.OnPlayerEnterArea,
-        self)
+            self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE, self.OnPinStateChange,
+            self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)
 end
 
 function XUiBigWorldPanelLittleMap:_RegisterRedPointEvents()
@@ -174,11 +227,15 @@ end
 
 function XUiBigWorldPanelLittleMap:_InitUi()
     self.PinNode.gameObject:SetActiveEx(false)
+    if self.PinArea then
+        self.PinArea.gameObject:SetActiveEx(false)
+    end
     self.ImgLevelMap.gameObject:SetActiveEx(false)
 end
 
 function XUiBigWorldPanelLittleMap:_InitTrack()
     self._TrackRadius = self.PanelTrack.rect.width / 2
+    XMVCA.XBigWorldMap:UpdateLittleMapRadius(self._TrackRadius)
 end
 
 function XUiBigWorldPanelLittleMap:_InitMap(levelId)
@@ -322,6 +379,16 @@ function XUiBigWorldPanelLittleMap:_RefreshEmptyMap()
         self._AutoTransform:SetTarget(self.ImgMapBase.transform, 0, 0, 0, 1)
         self._AutoTransform:SetCursor(self.PlayerPos.transform, self.ImgView.transform)
     end
+    if self._PinNodeList then
+        for _, v in pairs(self._PinNodeList) do
+            v:Close()
+        end
+    end
+    if self._PinAreaList then
+        for _, v in pairs(self._PinAreaList) do
+            v:Close()
+        end
+    end
 end
 
 function XUiBigWorldPanelLittleMap:_RefreshPin()
@@ -331,21 +398,23 @@ function XUiBigWorldPanelLittleMap:_RefreshPin()
         return
     end
 
+    local index = 1
+    local areaIndex = 1
     local pinDatas = XMVCA.XBigWorldMap:GetMapPinDatasByLevelIdAndGroupId(self._LevelId, groupId)
 
     self._PinNodeMap = {}
     if not XTool.IsTableEmpty(pinDatas) then
-        local index = 1
 
         for _, pinData in pairs(pinDatas) do
-            if pinData:IsDisplaying() and not pinData:IsVirtual() then
+            local isDisplay = pinData:IsDisplaying()
+            local isOut = pinData:IsOut()
+            if isDisplay and pinData:IsPointPin() and not pinData:IsVirtual() and not isOut then
                 local pinNode = self._PinNodeList[index]
 
                 if not pinNode then
                     local node = XUiHelper.Instantiate(self.PinNode, self.MapPin)
 
-                    pinNode =
-                        XUiBigWorldMapPin.New(node, self, self.PinTarget, self.MapPinTarget, true)
+                    pinNode = XUiBigWorldMapPin.New(node, self, self.PinTarget, self.MapPinTarget, true)
                     self._PinNodeList[index] = pinNode
                 end
 
@@ -355,12 +424,34 @@ function XUiBigWorldPanelLittleMap:_RefreshPin()
                 pinNode:SetPlayerTagActive(false)
                 self._PinNodeMap[pinData.PinId] = pinNode
             end
-            self:_RefreshPinNodeIndex()
+            if isDisplay and pinData:IsLittleMapRadiusPin() and not isOut then
+                self:_RefreshPinArea(areaIndex, pinData)
+                areaIndex = areaIndex + 1
+            end
         end
-        for i = index, table.nums(self._PinNodeList) do
-            self._PinNodeList[i]:Close()
-        end
+        self:_RefreshPinNodeIndex()
     end
+    for i = index, table.nums(self._PinNodeList) do
+        self._PinNodeList[i]:Close()
+    end
+    for i = areaIndex, table.nums(self._PinAreaList) do
+        self._PinAreaList[i]:Close()
+    end
+end
+
+function XUiBigWorldPanelLittleMap:_RefreshPinArea(areaIndex, pinData)
+    if not self.PinArea then
+        return
+    end
+    local pinNode = self._PinAreaList[areaIndex]
+    if not pinNode then
+        local node = XUiHelper.Instantiate(self.PinArea, self.MapAreaPin)
+
+        pinNode = XUiBigWorldMapAreaPin.New(node, self, self.PinTarget, self.MapPinTarget)
+        self._PinAreaList[areaIndex] = pinNode
+    end
+    pinNode:Open()
+    pinNode:Refresh(self._LevelId, pinData, self._Interface)
 end
 
 function XUiBigWorldPanelLittleMap:_RefreshCurrentGroup(groupId, isForce)
@@ -406,7 +497,7 @@ function XUiBigWorldPanelLittleMap:_RefreshTrackPin(posX, posY)
 
                 if pinData:IsVirtual() then
                     local bindPinData = XMVCA.XBigWorldMap:GetPinDataByLevelIdAndPinId(pinData.BindLevelId,
-                        pinData.BindPinId)
+                            pinData.BindPinId)
 
                     pinNode = self._PinNodeMap[pinData.BindPinId]
 

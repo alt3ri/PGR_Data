@@ -32,12 +32,24 @@
         "Value": "[System Message]"
     },
     {
+        "Key": "MessageVideoText",
+        "Value": "[Video]"
+    },
+    {
+        "Key": "MessageImageText",
+        "Value": "[Picture]"
+    },
+    {
         "Key": "DramaSkipConfirmTip",
         "Value": "Watching the full story helps you understand the story development. Skip anyway?"
     },
     {
         "Key": "MapPinDesc",
         "Value": "Thumbtack Details"
+    },
+    {
+        "Key": "ViewDetails",
+        "Value": "View Details"
     },
     {
         "Key": "MapPinQuestDesc",
@@ -74,6 +86,10 @@
     {
         "Key": "MapQuickGoingFarTeleportDesc",
         "Value": "Teleport beacon is quite far away. Continue teleporting?"
+    },
+    {
+        "Key": "MapAiMemoryTitle",
+        "Value": "Encounter Journal"
     },
     {
         "Key": "CommmonTipsTitle",
@@ -148,8 +164,24 @@
         "Value": "Photo taken!"
     },
     {
+        "Key": "SG_P_DefaultFirstPersonSet",
+        "Value": "Enable First-Person Mode by Default"
+    },
+    {
+        "Key": "SG_P_FakeSet",
+        "Value": "Enable Background Blur"
+    },
+    {
+        "Key": "SG_P_FakePowerSet",
+        "Value": "Blur Intensity"
+    },
+    {
         "Key": "SG_P_SaveSucess",
         "Value": "Saved"
+    },
+    {
+        "Key": "SG_P_QuestionTarget",
+        "Value": "\uff1f\uff1f\uff1f"
     },
     {
         "Key": "SG_SS_UpgradeSucess",
@@ -565,7 +597,7 @@
     },
     {
         "Key": "QuestCanNotGoToText",
-        "Value": "Cannot jump"
+        "Value": "You can't do this right now."
     },
     {
         "Key": "QuestReadMessageText",
@@ -574,6 +606,10 @@
     {
         "Key": "QuestGoToCurrentLevelText",
         "Value": "Go to the mission target"
+    },
+    {
+        "Key": "QuestGoToNewLevelText",
+        "Value": "You're about to leave the current scene and enter a new area."
     },
     {
         "Key": "SOMeshText0000_001_DLCLevel4001",
@@ -586,5 +622,85 @@
     {
         "Key": "SOMeshText0000_003_DLCLevel4001",
         "Value": "This is the 3rd floating text in group 0000. When configuring special effect text, please pay attention to length and placement position to avoid clipping issues, and consider the text after localization"
+    },
+    {
+        "Key": "DeliveryNotEnough",
+        "Value": "Insufficient Items (Temp)"
+    },
+    {
+        "Key": "SkipToFinshPreCondition",
+        "Value": "Complete Prerequisites"
+    },
+    {
+        "Key": "SkipTo",
+        "Value": "Go"
+    },
+    {
+        "Key": "EarlyAccessTitle",
+        "Value": "Early Access"
+    },
+    {
+        "Key": "EarlyAccessSubtitle",
+        "Value": "Prerequisites"
+    },
+    {
+        "Key": "EarlyAccessContent",
+        "Value": "You may skip the prerequisites to access this content early.\\nThis action <color=#1272bb>will not affect your prerequisite progress</color>. We recommend playing in the intended order."
+    },
+    {
+        "Key": "BigWorldPhotoSaveSuccessTip",
+        "Value": "Photo saved to: %s"
+    },
+    {
+        "Key": "BranchQuestAccepted",
+        "Value": "You've already accepted an invitation. You can't accept another character's invitation at the same time."
+    },
+    {
+        "Key": "BranchQuestTips",
+        "Value": "Next, you can spend some private time with %s and share a more personal moment. You can choose whether to experience it."
+    },
+    {
+        "Key": "LocalTextureExist",
+        "Value": "Local file already exists!"
+    },
+    {
+        "Key": "CourseCoreQuestProgressText",
+        "Value": "%s Completed"
+    },
+    {
+        "Key": "InviteQuestFinishTotalText",
+        "Value": "Endings Achieved:"
+    },
+    {
+        "Key": "EnvironmentQuestFinishTotalText",
+        "Value": "Encounters Completed:"
+    },
+    {
+        "Key": "InviteQuestBeginTip",
+        "Value": "You're about to spend a romantic moment with %s."
+    },
+    {
+        "Key": "QuestIsInActiveTip",
+        "Value": "Mission has not been unlocked yet"
+    },
+    {
+        "Key": "DramaPartSkipConfirmTip",
+        "Value": "Watching the full story helps you understand the story development. Skip anyway?"
+    },
+    {
+        "Key": "LoginWillNoLongerPrompt",
+        "Value": "Do not show again during this session"
+    },
+    {
+        "Key": "ShopBuySuccess",
+        "Value": "Purchase successful"
+    },
+    {
+        "Key": "ShopBuyNotEnough",
+        "Value": "Not enough materials to purchase"
+    },
+    {
+        "Key": "ShopBuyNotSales",
+        "Value": "Not yet on sale"
     }
 ]

@@ -4,8 +4,8 @@ local Base = require("Character/BigWorld/XBigWorldEcologyCharBase")
 ---@class XNPC_Lucia : XBigWorldEcologyCharBase
 local XNPC_Lucia = XDlcScriptManager.RegCharScript(6075, "XNPC_Lucia", Base)
 
-function XNPC_Lucia:Init()
-    Base.Init(self)
+function XNPC_Lucia:CommonInit()
+    Base.CommonInit(self)
     -- 填入冲突的露西亚NPC的PlaceId,在关卡编辑器里找
     -- 只用填这行
     self._oppositeNpcPlaceIdDict = {

@@ -12,6 +12,10 @@ function XUiPlayerInfoClothGrid:AutoAddListener()
 end
 
 function XUiPlayerInfoClothGrid:OnBtnFashion()
+    if XMVCA.XDlcRoom:IsInRoom() then
+        XUiManager.TipError(CS.XTextManager.GetText("InTeamCantLookFashion"))
+        return
+    end
     local IsWeaponFashion = self.FashionType == XPlayerInfoConfigs.FashionType.Weapon
     XLuaUiManager.Open("UiFashionDetail", self.Fashion.Id, IsWeaponFashion)
 end
@@ -30,6 +34,6 @@ function XUiPlayerInfoClothGrid:UpdateGrid(fashion, fashionType)
     self.ImgFashion:SetRawImage(fashion.Data.BigIcon)
     self.PanelLock.gameObject:SetActiveEx(isLocked)
     self.BtnFashion.gameObject:SetActiveEx(not isLocked)
-end
-
+end
+
 return XUiPlayerInfoClothGrid

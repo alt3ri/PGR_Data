@@ -24,10 +24,6 @@ XGuildWarManagerCreator = function()
     --援助角色数据
     local _DataAssistant
     local _AssistantCharacterList = {}
-    --特攻角色列表
-    local SpecialRoleList
-    --主要特攻角色
-    local MainSpecialRoleId
     --难度通关记录
     local DifficultyPassRecord
     --公会战总任务信息列表
@@ -118,8 +114,6 @@ XGuildWarManagerCreator = function()
         CurrentRoundId = 1
         RoundTimeId = 0
         ActionPoint = 0
-        SpecialRoleList = nil
-        MainSpecialRoleId = nil
         PopupRecord = nil
         GuildWarTaskList = nil
         GuildWarTaskByTaskIdDic = nil
@@ -194,8 +188,8 @@ XGuildWarManagerCreator = function()
     --================
     function XGuildWarManager.CheckActivityIsEnd()
         local timeNow = XTime.GetServerNowTimestamp()
-        local startTime = XGuildWarManager.GetActivityStartTime()
-        local endTime = XGuildWarManager.GetActivityEndTime()
+        local startTime = XGuildWarManager.GetActivityStartTime() or 0
+        local endTime = XGuildWarManager.GetActivityEndTime() or 0
         local isEnd = timeNow >= endTime
         local isStart = timeNow >= startTime
         local inActivity = (not isEnd) and (isStart)
@@ -233,8 +227,14 @@ XGuildWarManagerCreator = function()
             return
         end
         XNetwork.CallWithAutoHandleErrorCode(METHOD_NAME.GetActivityData, {}, function(res)
-            XGuildWarManager.RefreshActivityData(res.ActivityData)
+            XGuildWarManager.RefreshActivityData(res.ActivityData, true, XGuildWarConfig.NodeDataUpdateSource.Activity)
             XMVCA.XGuildWar.DragonRageCom:RefreshDataFromActivityData(res.ActivityData)
+            XMVCA.XGuildWar.RoleStationAgency:RefreshDataFromActivityData(res.ActivityData)
+            --更新当前回合战场动画数据
+            if res.ActivityData then
+                XMVCA.XGuildWar.ActionQueueAgency:UpdateFullActionList(res.ActivityData.ActionList)
+            end
+            
             if cb then
                 cb()
             end
@@ -249,10 +249,10 @@ XGuildWarManagerCreator = function()
         InitActivityCfg(cfg)
         PopupRecord = data.PopupRecord and data.PopupRecord.SettleDatas or {}
         local activityData = data.ActivityData
+        XMVCA.XGuildWar.ActionQueueAgency:UpdateShowedActionIdDic(data.ActionPlayed)
         XGuildWarManager.RefreshActivityData(activityData) --处理公会活动数据刷新
         XGuildWarManager.RefreshMyRoundData(data.MyRoundData) --处理玩家活动数据刷新
         XGuildWarManager.RefreshFightRecords(data.FightRecords) --处理战斗数据刷新
-        XGuildWarManager.RefreshLastActionIdDic(data.ActionPlayed) --处理最后的ActionId刷新
         XGuildWarManager.RefreshAreaTeamNodeData(data.HideAreaTeamInfos or {}, data.LastHideAreaTeamInfos or {}) --隐藏区域队伍记录
         if activityData and IsNotifyDataFirstTime then
             IsNotifyDataFirstTime = false
@@ -273,7 +273,7 @@ XGuildWarManagerCreator = function()
         
     end
     --处理公会活动数据刷新
-    function XGuildWarManager.RefreshActivityData(activityData)
+    function XGuildWarManager.RefreshActivityData(activityData, isRealTime, type, id)
         if not activityData then
             return
         end
@@ -350,19 +350,12 @@ XGuildWarManagerCreator = function()
         for _, roundData in ipairs(activityData.RoundData) do
             local round = XMVCA.XGuildWar:GetRoundByRoundId(roundData.RoundId)
             if round then
-                round:RefreshRoundData(roundData)
+                round:RefreshRoundData(roundData, isRealTime, type, id)
             end
 
             if XMVCA.XGuildWar.DragonRageCom:IsOpenDragonRageSystem() and XTool.IsNumberValid(roundData.BossDead) then
                 DifficultyPassRecord[roundData.DifficultyId] = true
             end
-        end
-
-        --更新当前回合战场动画数据
-        local battleManager = XGuildWarManager.GetBattleManager()
-        if battleManager then
-            --活动开启前battleManager会为空
-            battleManager:SetActionList(activityData.ActionList)
         end
 
         --更新轮次结算数据
@@ -412,15 +405,7 @@ XGuildWarManagerCreator = function()
             end
         end
     end
-    --处理最后的ActionId刷新
-    function XGuildWarManager.RefreshLastActionIdDic(actionIdList)
-        if actionIdList then
-            local round = XGuildWarManager.GetCurrentRound()
-            if round then
-                round:UpdateLastActionIdDic(actionIdList)
-            end
-        end
-    end
+
     --更新多区域队伍挑战节点数据
     --param HideAreaTeamInfos:List<C# XGuildWarTeamInfo>
     function XGuildWarManager.RefreshAreaTeamNodeData(areaTeamInfos, recordTeamInfos)
@@ -683,10 +668,6 @@ XGuildWarManagerCreator = function()
         return XDataCenter.GuildManager.IsGuildCoLeader()
                 or XDataCenter.GuildManager.IsGuildLeader()
     end
-    --endregion
-
-    --region UI相关
-
     --endregion
 
     --region 难度选择相关
@@ -1200,177 +1181,20 @@ XGuildWarManagerCreator = function()
     --@param cb: function 回调
     --===============
     function XGuildWarManager.RequestPopupActionID(showedActionIdList, cb)
-        XNetwork.CallWithAutoHandleErrorCode(METHOD_NAME.PopupActionID, { ActionPlayed = showedActionIdList }, function(res)
+        XNetwork.Call(METHOD_NAME.PopupActionID, { ActionPlayed = showedActionIdList }, function(res)
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+
+                if cb then
+                    cb(false)
+                end
+                return
+            end
+
             if cb then
-                cb()
+                cb(true)
             end
         end)
-    end
-    --endregion
-
-    --region 特攻角色相关
-    --===============
-    --获取所有特攻角色列表
-    --@return 角色Id列表 (默认索引1是主攻角色)
-    --===============
-    function XGuildWarManager.GetSpecialRoleList()
-        if not SpecialRoleList then
-            local tempList = {}
-            local roles = XGuildWarConfig.GetSpecialRoles()
-            for _, role in pairs(roles) do
-                local data = { Center = role.CenterCharacter == 1, CharacterId = role.Id }
-                table.insert(tempList, data)
-            end
-            table.sort(tempList, function(roleDataA, roleDataB)
-                if roleDataA.Center then
-                    return true
-                end
-                if roleDataB.Center then
-                    return false
-                end
-                return roleDataA.CharacterId < roleDataB.CharacterId
-            end)
-            SpecialRoleList = {}
-            --主要特攻角色
-            MainSpecialRoleId = tempList[1].CharacterId
-            for i = 1, #tempList do
-                table.insert(SpecialRoleList, tempList[i].CharacterId)
-            end
-        end
-        return SpecialRoleList
-    end
-    --===============
-    --根据实体Id获取特攻角色的Buff数据
-    --若传入非特攻角色的Id，返回nil
-    --@return buffData = { Icon = 图标地址, Name = Buff名称, Desc = Buff描述 }
-    --===============
-    function XGuildWarManager.GetSpecialRoleBuff(entityId)
-        if not entityId then
-            return nil
-        end
-        local characterId = 0
-        if XRobotManager.CheckIsRobotId(entityId) then
-            characterId = XRobotManager.GetCharacterId(entityId)
-        else
-            characterId = entityId
-        end
-        local roleCfg = XGuildWarConfig.GetSpecialRole(characterId)
-        if not roleCfg then
-            return nil
-        end
-        local fightEventId = roleCfg.FightEventId
-        if not fightEventId or (fightEventId == 0) then
-            return nil
-        end
-        local cfg = XFubenConfigs.GetStageFightEventDetailsByStageFightEventId(fightEventId)
-        if not cfg then
-            return nil
-        end
-        local buffData = { Icon = cfg.Icon, Name = cfg.Name, Desc = cfg.Description }
-        return buffData
-    end
-    --===============
-    --获取特攻角色队伍Buff数据
-    --@return buffData = { Icon = 图标地址, Name = Buff名称, Desc = Buff描述 }
-    --===============
-    function XGuildWarManager.GetSpecialTeamBuff()
-        local teamCfg = Config.GetCfgByIdKey(
-                Config.TableKey.SpecialTeam,
-                1
-        )
-        local fightEventId = teamCfg.FightEventId
-        if not fightEventId or (fightEventId == 0) then
-            return nil
-        end
-        local cfg = XFubenConfigs.GetStageFightEventDetailsByStageFightEventId(fightEventId)
-        if not cfg then
-            return nil
-        end
-        local buffData = { Icon = cfg.Icon, Name = cfg.Name, Desc = cfg.Description }
-        return buffData
-    end
-    --根据实体Id检查是否特攻角色
-    function XGuildWarManager.CheckIsSpecialRole(entityId)
-        if not entityId then
-            return false
-        end
-        local characterId = 0
-        if XRobotManager.CheckIsRobotId(entityId) then
-            characterId = XRobotManager.GetCharacterId(entityId)
-        else
-            characterId = entityId
-        end
-        local roles = XGuildWarConfig.GetSpecialRoles()
-        local roleCfg = roles[characterId]
-        return roleCfg ~= nil
-    end
-    --根据实体Id检查是否头牌特攻角色
-    function XGuildWarManager.CheckIsCenterSpecialRole(entityId)
-        if not entityId then
-            return false
-        end
-        local characterId = 0
-        if XRobotManager.CheckIsRobotId(entityId) then
-            characterId = XRobotManager.GetCharacterId(entityId)
-        else
-            characterId = entityId
-        end
-        local roles = XGuildWarConfig.GetSpecialRoles()
-        local spRoleCfg = roles[characterId]
-        if spRoleCfg == nil then
-            return false
-        end
-        return spRoleCfg.CenterCharacter == 1
-    end
-    --获得特攻角色专属图标
-    function XGuildWarManager.GetSpecialRoleIcon(entityId)
-        if not entityId then
-            return false
-        end
-        local characterId = 0
-        if XRobotManager.CheckIsRobotId(entityId) then
-            characterId = XRobotManager.GetCharacterId(entityId)
-        else
-            characterId = entityId
-        end
-        local roleCfg = XGuildWarConfig.GetSpecialRole(characterId)
-        if roleCfg == nil then
-            return false
-        end
-        if roleCfg.CenterCharacter == 1 then
-            return XGuildWarConfig.GetClientConfigValues("SpecialRoleIcon1", "string")[1]
-        end
-        return XGuildWarConfig.GetClientConfigValues("SpecialRoleIcon2", "string")[1]
-    end
-    --===============
-    --根据队伍数据检查是否特攻角色队伍
-    --@return CurrentSpecial, MaxNum, IsSpecial
-    --CurrentSpecial = (int)当前特攻角色数量
-    --MaxNum = (int)激活需要的特攻角色数量
-    --IsSpecial = (bool)是否已激活
-    --===============
-    function XGuildWarManager.CheckIsSpecialTeam(members)
-        if not members then
-            return false
-        end
-        local count = 0
-        local isSpecialTeam = true
-        for _, member in pairs(members) do
-            local entityId = member:GetEntityId()
-            if entityId == 0 then
-                isSpecialTeam = false --队伍要全队满员，且都是特攻角色才满足条件
-                goto continue
-            end
-            local isSpecialRole = XGuildWarManager.CheckIsSpecialRole(entityId)
-            if not isSpecialRole then
-                isSpecialTeam = false
-                goto continue
-            end
-            count = count + 1
-            :: continue ::
-        end
-        local maxPos = XDataCenter.TeamManager.GetMaxPos()
-        return count, maxPos, isSpecialTeam and count == maxPos
     end
     --endregion
 
@@ -2147,7 +1971,7 @@ XGuildWarManagerCreator = function()
             CurNodeId = XGuildWarManager.GetBattleManager():GetCurrentNodeId(),
             NextNodeId = targetNodeId,
         }, function(res)
-            XGuildWarManager.GetBattleManager():UpdateNodeDatas(res.NodeDatas)
+            XGuildWarManager.GetBattleManager():UpdateNodeDatasRealTime(res.NodeDatas, XGuildWarConfig.NodeDataUpdateSource.PlayerMove)
             XGuildWarManager.GetBattleManager():UpdateCurrentNodeId(targetNodeId)
             XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_PLAYER_MOVE)
             if cb then

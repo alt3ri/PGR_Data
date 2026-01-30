@@ -117,12 +117,14 @@ function XBWMapAxisConversion:FilterOutScreenPinsPosition(pinDatas, transform, t
     if not XTool.IsTableEmpty(pinDatas) then
         result = {}
         for _, pinData in pairs(pinDatas) do
-            local pinPosition = pinData:GetWorldPosition2D()
-            local trackPos = self:FilterOutScreenPosition(transform, targetTransform, pinPosition.x, pinPosition.y,
-                pixelRatio)
+            if pinData:IsDisplaying() then
+                local pinPosition = pinData:GetWorldPosition2D()
+                local trackPos = self:FilterOutScreenPosition(transform, targetTransform, pinPosition.x, pinPosition.y,
+                    pixelRatio)
 
-            if trackPos then
-                result[pinData.PinId] = trackPos
+                if trackPos then
+                    result[pinData.PinId] = trackPos
+                end
             end
         end
     end
@@ -237,6 +239,10 @@ function XBWMapAxisConversion:_GetValidPixelRatio(pixelRatio)
     end
 
     return self._PixelRatio
+end
+
+function XBWMapAxisConversion:GetPixelDisByWorldDis(worldDis)
+    return worldDis * self:_GetValidPixelRatio()
 end
 
 return XBWMapAxisConversion

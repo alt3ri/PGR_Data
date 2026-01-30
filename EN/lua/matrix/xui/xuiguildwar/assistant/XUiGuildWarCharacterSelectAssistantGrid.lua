@@ -36,12 +36,12 @@ function XUiGuildWarCharacterSelectAssistantGrid:UpdateCharacter()
     self:UpdateCdAndInTeam()
 
     -- 特攻角色
-    local isSpecialRole = XDataCenter.GuildWarManager.CheckIsSpecialRole(characterId)
+    local isSpecialRole = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(characterId)
     self.PanelUP.gameObject:SetActiveEx(isSpecialRole)
 
     -- 特攻图标
     if isSpecialRole then
-        local icon = XDataCenter.GuildWarManager.GetSpecialRoleIcon(characterId)
+        local icon = XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialRoleIcon(characterId)
         if icon then
             self.RImgUpIcon:SetRawImage(icon)
         end

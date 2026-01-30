@@ -20,6 +20,17 @@ function XBigWorldQueueUiHelper:Ctor()
     self:_RegisterListenEvent()
 end
 
+function XBigWorldQueueUiHelper:OnFunctionEventEnd()
+    if self:IsEmpty() then
+        return
+    end
+    --界面还在展示中
+    if self._OpeningUiName then
+        return
+    end
+    self:_OpenNext()
+end
+
 ---@param event string 事件Id
 ---@param args System.Object[] 参数
 function XBigWorldQueueUiHelper:OnUiDestroy(event, args)
@@ -29,24 +40,28 @@ function XBigWorldQueueUiHelper:OnUiDestroy(event, args)
         return
     end
 
+    if self._OpeningUiName == uiName then
+        self._OpeningUiName = false
+    end
+    
     self:_TryOpenNext(uiName)
 end
 
 ---@param event string 事件Id
 ---@param args System.Object[] 参数
 function XBigWorldQueueUiHelper:OnUiAllowOperate(event, args)
-    if self:CheckOpening() then
-        local uiName = self:_GetUiName(args)
-
-        if XMVCA.XBigWorldUI:IsVirtual(uiName) then
-            return
-        end
-
-        if self._OpeningUiName == uiName then
-            self._OpeningUiName = false
-            self:_TryOpenUi()
-        end
-    end
+    --if self:CheckOpening() then
+    --    local uiName = self:_GetUiName(args)
+    --
+    --    if XMVCA.XBigWorldUI:IsVirtual(uiName) then
+    --        return
+    --    end
+    --
+    --    if self._OpeningUiName == uiName then
+    --        self._OpeningUiName = false
+    --        self:_TryOpenUi()
+    --    end
+    --end
 end
 
 function XBigWorldQueueUiHelper:Open(uiName, ...)
@@ -97,11 +112,14 @@ function XBigWorldQueueUiHelper:CheckOpening()
     return self._OpeningUiName
 end
 
+function XBigWorldQueueUiHelper:IsEmpty()
+    return XTool.IsTableEmpty(self._AwaitUiQueue)
+end
+
 function XBigWorldQueueUiHelper:Init()
     self:Release()
     self._UiDestroyHandler = Handler(self, self.OnUiDestroy)
-    self._UiAwakeHandler = Handler(self, self.OnUiAwake)
-    self._UiAllowOperateHandler = Handler(self, self.OnUiAllowOperate)
+    --self._UiAllowOperateHandler = Handler(self, self.OnUiAllowOperate)
     self:_RegisterListenEvent()
 end
 
@@ -171,14 +189,16 @@ function XBigWorldQueueUiHelper:_RegisterListenEvent()
     if not self._IsRegistering then
         self._IsRegistering = true
         CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_DESTROY, self._UiDestroyHandler)
-        CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_ALLOWOPERATE, self._UiAllowOperateHandler)
+        XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_END, self.OnFunctionEventEnd, self)
+        --CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_ALLOWOPERATE, self._UiAllowOperateHandler)
     end
 end
 
 function XBigWorldQueueUiHelper:_UnRegisterStopListenEvent()
     if self._IsRegistering then
         CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_DESTROY, self._UiDestroyHandler)
-        CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_ALLOWOPERATE, self._UiAllowOperateHandler)
+        XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_END, self.OnFunctionEventEnd, self)
+        --CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_ALLOWOPERATE, self._UiAllowOperateHandler)
         self._IsRegistering = false
     end
 end
@@ -230,6 +250,7 @@ end
 function XBigWorldQueueUiHelper:_OpenNext()
     if XTool.IsTableEmpty(self._AwaitUiQueue) then
         self:_ClearQueue()
+        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CHECK_FUNCTION_POPUP)
         return
     end
 

@@ -146,7 +146,7 @@ function XUiGridCommon:OnBtnClickClick()
     elseif self.GoodsShowParams.RewardType == XRewardManager.XRewardType.Fashion then
         local buyData = self:GetBuyData()
         -- WeaopnFashionId如果有值，则在界面左下角显示一个勾选框，勾选后显示该自定义武器涂装
-        XLuaUiManager.Open("UiFashionDetail", self.TemplateId, false, buyData, nil, nil, self._WeaopnFashionId, self._ShowWeaopnFashionDesc)
+        XMVCA.XShop:OpenFashionDetailUi(self.TemplateId,buyData,{customWeaponFashionId = self._WeaopnFashionId,customDesc = self._ShowWeaopnFashionDesc})
     elseif self.GoodsShowParams.RewardType == XRewardManager.XRewardType.Partner then
         --从Tips的ui跳转需要关闭Tips的UI
         if self.RootUi and self.RootUi.Ui.UiData.UiType == CsXUiType.Tips then
@@ -162,9 +162,9 @@ function XUiGridCommon:OnBtnClickClick()
     elseif XDataCenter.ItemManager.IsWeaponFashion(self.TemplateId) then
         local buyData = self:GetBuyData()
         local weaponFashionId = XDataCenter.ItemManager.GetWeaponFashionId(self.TemplateId)
-        XLuaUiManager.Open("UiFashionDetail", weaponFashionId, true, buyData)
+        XMVCA.XShop:OpenFashionDetailUi(weaponFashionId,buyData,{isWeaponFashion = true})
     elseif self.GoodsShowParams.RewardType == XArrangeConfigs.Types.WeaponFashion then
-        XLuaUiManager.Open("UiFashionDetail", self.TemplateId, true, self:GetBuyData())
+        XMVCA.XShop:OpenFashionDetailUi(self.TemplateId,self:GetBuyData(),{isWeaponFashion = true})
     elseif self.GoodsShowParams.RewardType == XRewardManager.XRewardType.Nameplate then
         XLuaUiManager.Open("UiNameplateTip", self.TemplateId, true, true, true)
     elseif self.GoodsShowParams.RewardType == XRewardManager.XRewardType.Medal then

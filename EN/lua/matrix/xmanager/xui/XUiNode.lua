@@ -183,6 +183,7 @@ function XUiNode:OnDestroyUi()
         
         self._TweenAnimationAgency = nil
         self._IsNodeShow = false
+        self:RemoveAllCacheTexture()
         self:DestroyChildNodes()
         self:OnDestroy()
     end
@@ -590,4 +591,45 @@ function XUiNode:DelayCall(func, delayTime)
     local timeId = XScheduleManager.ScheduleOnce(func, delayTime * XScheduleManager.SECOND)
     self._TweenAnimationAgency:_AddTimerId(timeId)
 end
---endregion
+
+function XUiNode:DelayCallRaw(func, delayTime)
+    local timeId = XScheduleManager.ScheduleOnce(func, delayTime)
+    self._TweenAnimationAgency:_AddTimerId(timeId)
+end
+
+function XUiNode:RemoveCacheTexture(key)
+    if not self._CacheTextureDic then return end
+
+    local texture = self._CacheTextureDic[key]
+    if texture then
+        CS.UnityEngine.Object.Destroy(texture)
+        self._CacheTextureDic[key] = nil
+    end
+end
+
+function XUiNode:AddCacheTexture(texture, key)
+    if not self._CacheTextureDic then
+        self._CacheTextureDic = {}
+    end
+
+    local defaultKey = key or 0
+    self:RemoveCacheTexture(defaultKey)
+    self._CacheTextureDic[defaultKey] = texture
+end
+
+function XUiNode:GetCacheTexture(key)
+    if not self._CacheTextureDic then return end
+    local defaultKey = key or 0
+    return self._CacheTextureDic[defaultKey]
+end
+
+function XUiNode:RemoveAllCacheTexture()
+    if not self._CacheTextureDic then return end
+
+    for _, texture in pairs(self._CacheTextureDic) do
+        CS.UnityEngine.Object.Destroy(texture)
+    end
+    self._CacheTextureDic = nil
+end
+
+--endregion

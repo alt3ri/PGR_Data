@@ -8,10 +8,13 @@ function XUiGridDlcRelinkExchangeWheelEmoji:OnStart()
     self.ImgBg.gameObject:SetActiveEx(false)
     self.ImgSelect.gameObject:SetActiveEx(false)
     self.PanelTag.gameObject:SetActiveEx(false)
-    XUiHelper.RegisterClickEvent(self, self.BtnEmoji, self.OnBtnEmojiClick, true, true)
+    --self.BtnEmoji:AddEventListener(handler(self, self.OnBtnEmojiClick))
+    if self.BtnDelete then
+        self.BtnDelete:AddEventListener(handler(self, self.OnBtnDeleteClick))
+    end
 
     self.DefaultLayer = self.Canvas.sortingOrder
-    --self.GoInput:AddPointerClickListener(function(eventData) self:OnPointerClick(eventData) end)
+    self.GoInput:AddPointerClickListener(function(eventData) self:OnPointerClick(eventData) end)
     self.GoInput:AddBeginDragListener(function(eventData) self:OnBeginDrag(eventData) end)
     self.GoInput:AddDragListener(function(eventData) self:OnDrag(eventData) end)
     self.GoInput:AddEndDragListener(function(eventData) self:OnEndDrag(eventData) end)
@@ -99,6 +102,14 @@ function XUiGridDlcRelinkExchangeWheelEmoji:OnBtnEmojiClick()
     end
 end
 
+-- 删除
+function XUiGridDlcRelinkExchangeWheelEmoji:OnBtnDeleteClick()
+    if self.IsDragClone or not self.IsWheelSlot then
+        return
+    end
+    self.Parent:OnClickDeleteWheelEmoji(self)
+end
+
 function XUiGridDlcRelinkExchangeWheelEmoji:OnPointerClick(eventData)
     if self.IsDragClone then
         return
@@ -125,6 +136,14 @@ function XUiGridDlcRelinkExchangeWheelEmoji:OnEndDrag(eventData)
         return
     end
     self.Parent:EndDrag(eventData)
+end
+
+-- 设置 Canvas 覆盖排序
+function XUiGridDlcRelinkExchangeWheelEmoji:SetOverrideSorting(isOverride)
+    if not self.Canvas then
+        return
+    end
+    self.Canvas.overrideSorting = isOverride
 end
 
 -- 设置 Canvas 层级

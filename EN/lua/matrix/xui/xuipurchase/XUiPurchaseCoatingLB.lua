@@ -135,6 +135,9 @@ end
 
 -- 更新数据
 function XUiPurchaseCoatingLB:OnRefresh(uiType)
+    if XTool.UObjIsNil(self.GameObject)  then
+        return
+    end
     local data = XDataCenter.PurchaseManager.GetDatasByUiType(uiType)
     if not data then
         return
@@ -235,7 +238,10 @@ function XUiPurchaseCoatingLB:OpenUiView(data)
         buyData.IsConvert = data.ConvertSwitch < data.ConsumeCount
         -- v3.1兼容跳转其他界面完成购买后，返回此界面时的刷新
         buyData.PurchaseLBUpdateCb = self.UpdateCb
-	    XLuaUiManager.Open("UiFashionDetail", templateId, isWeaponFashion, buyData)
+        if disCountValue ~= 1 then
+            buyData.OriginCount = data.ConvertSwitch
+        end
+        XMVCA.XShop:OpenFashionDetailUi(templateId, buyData, { isWeaponFashion = isWeaponFashion, updateCb = self.UpdateCb })
 	else
         XLuaUiManager.Open("UiPurchaseBuyTips", data, self.CheckBuyFun, self.UpdateCb, self.BeforeBuyReqFun, XPurchaseConfigs.GetLBUiTypesList())
 	end

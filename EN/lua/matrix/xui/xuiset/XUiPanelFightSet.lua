@@ -116,7 +116,8 @@ end
 
 --自定义按键
 function XUiPanelFightSet:OnCheckCustomUiSetNews(count)
-    local isShowNew = count >= 0 and not CS.XCustomUi.Instance.IsOpenUiFightCustomRed
+    local isOpenUiFightCustomRed = XKeyPadManager.IsOpenUiFightCustomRed()
+    local isShowNew = count >= 0 and not isOpenUiFightCustomRed
     self.BtnCustomUi:ShowTag(isShowNew)
     self.BtnCustomUi:ShowReddot(count >= 0)
     self.BtnTabTouch:ShowTag(isShowNew)

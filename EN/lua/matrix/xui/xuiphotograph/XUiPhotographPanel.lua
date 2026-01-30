@@ -450,6 +450,7 @@ function XUiPhotographPanel:UpdateViewState(show)
     else
         self.BtnSet.gameObject:SetActiveEx(show)
     end
+    self.RootUi.PanelSceneChange.gameObject:SetActiveEx(show)
     --self.PanelTip.gameObject:SetActiveEx(show)
 end
 

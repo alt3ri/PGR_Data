@@ -41,6 +41,10 @@ local DlcRelinkTableKey = {
     DlcRelinkMedalTag = {
         DirPath = XConfigUtil.DirectoryType.Client,
     },
+    DlcRelinkSummaryFactor = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+        CacheType = XConfigUtil.CacheType.Private,
+    },
     DlcRelinkCharacterAttrib = {
         ReadFunc = XConfigUtil.ReadType.String,
         DirPath = XConfigUtil.DirectoryType.Client,
@@ -61,7 +65,9 @@ local DlcRelinkTableKey = {
         ReadFunc = XConfigUtil.ReadType.String,
         DirPath = XConfigUtil.DirectoryType.Client,
         Identifier = "Key",
-    }
+    },
+    DlcRelinkWiki = {},
+    DlcRelinkMechanismTeach = { DirPath = XConfigUtil.DirectoryType.Client },
 }
 
 ---@class XDlcRelinkModel : XModel
@@ -78,10 +84,21 @@ function XDlcRelinkModel:OnInit()
     -- 结算缓存数据
     ---@type XDlcRelinkSettlementCache
     self.SettlementCacheData = nil
+
+    -- 登录wifi提醒 
+    self._NeedPopWifiTips = true
+    -- 是否开启了全局匹配
+    self.GlobalMatchEnabled = false
+    -- 点赞信息缓存
+    self.LikeInfoCache = nil
 end
 
 function XDlcRelinkModel:ClearPrivate()
     --这里执行内部数据清理
+    self._EquipFactorDict = nil
+    self._ShowChapterIds = nil
+    self._TeachingLevelId = nil
+    self._TrainingLevelId = nil
 end
 
 function XDlcRelinkModel:ResetAll()
@@ -89,6 +106,10 @@ function XDlcRelinkModel:ResetAll()
     self.ActivityData = nil
     self.CommonTipNoRemindMap = {}
     self.SettlementCacheData = nil
+
+    self._NeedPopWifiTips = true
+    self.GlobalMatchEnabled = false
+    self.LikeInfoCache = nil
 end
 
 --region 服务端信息更新和获取
@@ -97,11 +118,21 @@ function XDlcRelinkModel:NotifyActivityData(data)
     if not XTool.IsNumberValid(data.ActivityId) then
         return
     end
+    local isFinishedTutorial = false
 
     if not self.ActivityData then
         self.ActivityData = require("XModule/XDlcRelink/XEntity/XDlcRelinkActivity").New()
+    else
+        if not self.ActivityData:IsTutorialPassed() and data.FinishedTutorial then
+            isFinishedTutorial = true
+        end
     end
     self.ActivityData:NotifyActivityData(data)
+
+    --通关教学关
+    if isFinishedTutorial then
+        XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_TEACHING_LEVEL_PASS)
+    end
 end
 
 --- 检查关卡是否通关
@@ -111,7 +142,17 @@ function XDlcRelinkModel:CheckLevelPassed(levelId)
     if not XTool.IsNumberValid(levelId) or not self.ActivityData then
         return false
     end
+    if levelId == self:GetTeachingLevelId() then
+        return self:IsTutorialPassed()
+    end
     return self.ActivityData:IsLevelPassed(levelId)
+end
+
+function XDlcRelinkModel:IsTutorialPassed()
+    if not self.ActivityData then
+        return false
+    end
+    return self.ActivityData:IsTutorialPassed()
 end
 
 --endregion
@@ -138,8 +179,16 @@ end
 
 --- 获取活动章节Ids
 function XDlcRelinkModel:GetActivityChapterIds()
-    local config = self:GetActivityConfig()
-    return config and config.ChapterIds or {}
+    if not self._ShowChapterIds then
+        self._ShowChapterIds = {}
+        local config = self:GetActivityConfig()
+        for _, id in ipairs(config.ChapterIds) do
+            if not self:GetChapterConfig(id).IsTutorial then --排除教学章节
+                table.insert(self._ShowChapterIds, id)
+            end
+        end
+    end
+    return self._ShowChapterIds
 end
 
 --endregion
@@ -155,9 +204,38 @@ function XDlcRelinkModel:GetChapterConfig(chapterId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkChapter, chapterId)
 end
 
+function XDlcRelinkModel:GetChapterTimeId(chapterId)
+    local config = self:GetChapterConfig(chapterId)
+    return config and config.TimeId or 0
+end
+
+function XDlcRelinkModel:GetChapterConditionIds(chapterId)
+    local config = self:GetChapterConfig(chapterId)
+    return config and config.Condition or {}
+end
+
 function XDlcRelinkModel:GetChapterLevelIds(chapterId)
     local config = self:GetChapterConfig(chapterId)
     return config and config.LevelIds or {}
+end
+
+function XDlcRelinkModel:CheckChapterUnlock(chapterId)
+    if not XTool.IsNumberValid(chapterId) then
+        return false
+    end
+
+    local timeId = self:GetChapterTimeId(chapterId)
+    if timeId > 0 and not XFunctionManager.CheckInTimeByTimeId(timeId) then
+        return false
+    end
+
+    local conditionIds = self:GetChapterConditionIds(chapterId)
+    for _, conditionId in ipairs(conditionIds) do
+        if conditionId > 0 and not XConditionManager.CheckCondition(conditionId) then
+            return false
+        end
+    end
+    return true
 end
 
 --endregion
@@ -282,6 +360,28 @@ end
 ---@return XTableDlcRelinkEquip
 function XDlcRelinkModel:GetEquipConfig(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkEquip, id)
+end
+
+function XDlcRelinkModel:GetMaxQualityEquipByFactor(factor)
+    if not self._EquipFactorDict then
+        ---@type table<number,XTableDlcRelinkEquip>
+        self._EquipFactorDict = {}
+        for _, v in pairs(self:GetEquipConfigs()) do
+            if XTool.IsNumberValid(v.MainFactorId) then
+                local equip = self._EquipFactorDict[v.MainFactorId]
+                if not equip or equip.Quality < v.Quality then
+                    self._EquipFactorDict[v.MainFactorId] = v
+                end
+            end
+            if XTool.IsNumberValid(v.MainSkillFactorId) then
+                local equip = self._EquipFactorDict[v.MainSkillFactorId]
+                if not equip or equip.Quality < v.Quality then
+                    self._EquipFactorDict[v.MainSkillFactorId] = v
+                end
+            end
+        end
+    end
+    return self._EquipFactorDict[factor]
 end
 
 --endregion
@@ -473,6 +573,11 @@ function XDlcRelinkModel:GetMedalTagConfig(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkMedalTag, id)
 end
 
+---@return XTableDlcRelinkSummaryFactor
+function XDlcRelinkModel:GetDlcRelinkSummaryFactorConfig(id, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkSummaryFactor, id, notips)
+end
+
 --endregion
 
 --region 角色属性表相关
@@ -541,6 +646,15 @@ function XDlcRelinkModel:GetConfig(key, index)
     return config.Param and config.Param[index]
 end
 
+function XDlcRelinkModel:GetConfigParams(key)
+    ---@type XTableDlcRelinkConfig
+    local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkConfig, key)
+    if not config then
+        return nil
+    end
+    return config.Param
+end
+
 --endregion
 
 --region 客户端配置表相关
@@ -561,6 +675,38 @@ function XDlcRelinkModel:GetClientConfigParams(key)
     return config.Params
 end
 
+function XDlcRelinkModel:GetClientConfigVal(key, index)
+    local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkClientConfig, key)
+    if not config then
+        return 0
+    end
+
+    index = index or 1
+
+    local param = config.Params and config.Params[index] or ""
+
+    if not string.IsNilOrEmpty(param) and string.IsFloatNumber(param) then
+        return tonumber(param)
+    end
+end
+
+function XDlcRelinkModel:GetTeachingLevelId()
+    if not self._TeachingLevelId then
+        self._TeachingLevelId = tonumber(self:GetClientConfig("TeachingLevelId", 1))
+    end
+    return self._TeachingLevelId
+end
+
+function XDlcRelinkModel:GetTrainingLevelId()
+    if not self._TrainingLevelId then
+        self._TrainingLevelId = tonumber(self:GetClientConfig("TrainingLevelId", 1))
+    end
+    return self._TrainingLevelId
+end
+
+function XDlcRelinkModel:GetClientConfigBattleSettleShowTitleMaxCount()
+    return self:GetClientConfigVal('BattleSettleShowTitleMaxCount')
+end
 --endregion
 
 --region 结算相关
@@ -574,6 +720,53 @@ function XDlcRelinkModel:RecordSettlementLevelAndExp(level, exp)
     self.SettlementCacheData.CurExp = exp or 0
     self.SettlementCacheData.LastLevel = self.ActivityData:GetLevel()
     self.SettlementCacheData.LastExp = self.ActivityData:GetExp()
+end
+
+--endregion
+
+--region 百科全书相关
+
+---@return XTableDlcRelinkWiki
+function XDlcRelinkModel:GetWikiConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkWiki, id)
+end
+
+---@return XTableDlcRelinkWiki[]
+function XDlcRelinkModel:GetWikiConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkWiki)
+end
+
+function XDlcRelinkModel:GetHasWikiBeenViewed(wikiId)
+    return XSaveTool.GetData(string.format("DlcRelink_Wiki_%s_%s", XPlayer.Id, wikiId)) == 1
+end
+
+function XDlcRelinkModel:SetWikiHasBeenViewed(wikiId)
+    XSaveTool.SaveData(string.format("DlcRelink_Wiki_%s_%s", XPlayer.Id, wikiId), 1)
+end
+
+--endregion
+
+--region 机制教学相关
+
+function XDlcRelinkModel:GetMechanismTeachById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkMechanismTeach, id)
+end
+
+function XDlcRelinkModel:GetMechanismTeachByLevelId(levelId)
+    ---@type XTableDlcRelinkMechanismTeach[]
+    local configs = self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkMechanismTeach)
+    for k, v in pairs(configs) do
+        if table.contains(v.LevelId, levelId) then
+            if XSaveTool.GetData(string.format("DlcRelink_Mechanism_Teach_%s_%s", XPlayer.Id, v.Id)) ~= 1 then
+                return v
+            end
+        end
+    end
+    return nil
+end
+
+function XDlcRelinkModel:SetMechanismTeachHasBeenViewed(id)
+    XSaveTool.SaveData(string.format("DlcRelink_Mechanism_Teach_%s_%s", XPlayer.Id, id), 1)
 end
 
 --endregion
@@ -600,10 +793,39 @@ function XDlcRelinkModel:RecordLevelViewed(levelId)
     if not XTool.IsNumberValid(levelId) then
         return
     end
+    if not self:CheckLevelUnlock(levelId) then
+        return
+    end
     local key = self:GetLevelViewedKey(levelId)
     if not XSaveTool.GetData(key) then
         XSaveTool.SaveData(key, true)
     end
+end
+
+--- 获取技能描述是否为详细
+function XDlcRelinkModel:GetSkillDescIsDetail()
+    return self._SaveUtil:GetData('IsSkillDescIsDetail') or false
+end
+
+--- 设置技能描述是否为详细
+function XDlcRelinkModel:SetSkillDescIsDetail(isDetail)
+    self._SaveUtil:SaveData('IsSkillDescIsDetail', isDetail)
+end
+
+--- 获取装备描述是否为详细
+function XDlcRelinkModel:GetEquipAttrDescIsDetail()
+    local result = self._SaveUtil:GetData('IsEquipAttrDescIsDetail')
+
+    if result == nil then
+        return true
+    end
+    
+    return result
+end
+
+--- 设置装备描述是否为详细
+function XDlcRelinkModel:SetEquipAttrDescIsDetail(isDetail)
+    self._SaveUtil:SaveData('IsEquipAttrDescIsDetail', isDetail)
 end
 
 --endregion
@@ -632,6 +854,12 @@ function XDlcRelinkModel:CheckChapterHasAnyNewLevel(chapterId)
         return false
     end
 
+    -- 检查章节是否解锁
+    if not self:CheckChapterUnlock(chapterId) then
+        return false
+    end
+
+    -- 检查章节下的关卡是否有新解锁
     local levelIds = self:GetChapterLevelIds(chapterId)
     for _, levelId in ipairs(levelIds) do
         if self:CheckLevelHasNewUnlock(levelId) then
@@ -639,6 +867,29 @@ function XDlcRelinkModel:CheckChapterHasAnyNewLevel(chapterId)
         end
     end
     return false
+end
+
+--endregion
+
+--region wifi切换提示相关
+
+function XDlcRelinkModel:CheckNeedPopWifiTips()
+    return self._NeedPopWifiTips or false
+end
+
+function XDlcRelinkModel:ClearWifiTipsPopMark()
+    self._NeedPopWifiTips = false
+end
+
+--endregion
+
+--region 点赞信息相关
+
+--- 添加点赞信息缓存
+function XDlcRelinkModel:AddLikeInfoCache(fromPlayerId, targetPlayerId)
+    self.LikeInfoCache = self.LikeInfoCache or {}
+    self.LikeInfoCache[fromPlayerId] = self.LikeInfoCache[fromPlayerId] or {}
+    self.LikeInfoCache[fromPlayerId][targetPlayerId] = true
 end
 
 --endregion

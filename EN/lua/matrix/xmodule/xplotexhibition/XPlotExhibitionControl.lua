@@ -169,21 +169,7 @@ function XPlotExhibitionControl:UpdateMain(forceUpdate)
 
             -- 更新立绘
             --当玩家有设置该角色下某一机体标记时，以该标记的机体对应配置资源作为图片展示
-            local storyId = self._Model:GetRoleCover(role.Id)
-            local storyConfig
-            if storyId and storyId > 0 then
-                storyConfig = self._Model:GetStoryLineConfig(storyId)
-            end
-            if storyConfig then
-                role.Icon = storyConfig.StoryBg
-            else
-                --读取配置的第一个机体资源作为图片展示
-                local roleGroupConfig = self._Model:GetRoleGroupConfig(role.Id)
-                local characterIdList = roleGroupConfig.CharacterId
-                local characterId = characterIdList[#characterIdList]
-                local characterConfig = self._Model:GetCharacterConfig(characterId)
-                role.Icon = characterConfig.CharacterCg
-            end
+            role.Icon = self:GetRoleIcon(role.Id)
         end
     end
 end
@@ -418,7 +404,7 @@ function XPlotExhibitionControl:UpdateStoryDetail(forceUpdate)
                     ---@type XPlotExhibitionControlForce[]
                     Force = forceList,
                     Progress = self:GetProgress4Text(currentProgress, totalProgress),
-                    IsCover = self._Model:GetRoleCover(character.RoleId) == storyConfig.Id,
+                    IsCover = self._Model:GetRoleCover(character.RoleId) == character.Id,
                     IsNew = isNew,
                     AchievementIcon = achievementIcon,
                     IsAchievementIconUnlock = isAchievementIconUnlock,
@@ -459,15 +445,17 @@ function XPlotExhibitionControl:GetForce(forceId)
     return self._AllForce[forceId]
 end
 
----@param story XPlotExhibitionControlStory
-function XPlotExhibitionControl:SetRoleCover(story)
-    if self._Model:GetRoleCover(story.RoleId) == story.Id then
+---@param character XPlotExhibitionControlCharacter
+function XPlotExhibitionControl:SetRoleCover(character)
+    if self._Model:GetRoleCover(character.RoleId) == character.Id then
         return
     end
-    self._Model:SetRoleCover(story.RoleId, story.Id)
+    self._Model:SetRoleCover(character.RoleId, character.Id)
+    -- 更新StoryDetail中的IsCover状态
+    local currentCharacterId = character.Id
     for i = 1, #self._UiData.StoryDetail.StoryList do
         local storyData = self._UiData.StoryDetail.StoryList[i]
-        storyData.IsCover = storyData.Id == story.Id
+        storyData.IsCover = storyData.CharacterId == currentCharacterId
     end
     self:UpdateMain(true)
     -- 提示设置成功
@@ -633,12 +621,110 @@ function XPlotExhibitionControl:SkipToChapter(data)
         return
     end
 
+    --肉鸽玩法
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre then
+        XDataCenter.FunctionalSkipManager.SkipToTheatre()
+        return
+    end
+
+    --肉鸽2.0
+    if chapterType == XEnumConst.FuBen.ChapterType.BiancaTheatre then
+        XDataCenter.FunctionalSkipManager.SkipToBiancaTheatre()
+        return
+    end
+
+    --肉鸽3.0
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre3 then
+        XDataCenter.FunctionalSkipManager.SkipToTheatre3()
+        return
+    end
+
+    --肉鸽4.0
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre4 then
+        XDataCenter.FunctionalSkipManager:SkipToTheatre4()
+        return
+    end
+
+    --肉鸽5.0
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre5 then
+        XDataCenter.FunctionalSkipManager:SkipToTheatre5()
+        return
+    end
+
     --好感度剧情
     if chapterType == XEnumConst.FuBen.ChapterType.FavorabilityStory then
         XMVCA.XFavorability:OpenUiStory(data.CharacterId)
         return
     end
     XLog.Error("[XPlotExhibitionControl] 未实现的chapterType跳转:" .. tostring(chapterType))
+end
+
+---获取角色的默认characterId（最后一个）
+---@param roleId number
+---@return number
+function XPlotExhibitionControl:GetDefaultCharacterId(roleId)
+    local roleGroupConfig = self._Model:GetRoleGroupConfig(roleId)
+    if roleGroupConfig and roleGroupConfig.CharacterId then
+        local characterIdList = roleGroupConfig.CharacterId
+        return characterIdList[#characterIdList]
+    end
+    return 0
+end
+
+---获取角色的封面图标
+---@param roleId number
+---@return string|nil
+function XPlotExhibitionControl:GetRoleIcon(roleId)
+    local characterId = self._Model:GetRoleCover(roleId)
+    if not characterId or characterId <= 0 then
+        -- 如果没有设置封面，使用默认的最后一个characterId
+        characterId = self:GetDefaultCharacterId(roleId)
+    end
+    
+    if characterId and characterId > 0 then
+        local characterConfig = self._Model:GetCharacterConfig(characterId)
+        if characterConfig then
+            return characterConfig.CharacterCg
+        end
+    end
+    
+    -- 如果获取失败，再次尝试使用默认值
+    local defaultCharacterId = self:GetDefaultCharacterId(roleId)
+    if defaultCharacterId and defaultCharacterId > 0 then
+        local defaultCharacterConfig = self._Model:GetCharacterConfig(defaultCharacterId)
+        if defaultCharacterConfig then
+            return defaultCharacterConfig.CharacterCg
+        end
+    end
+    
+    return nil
+end
+
+---判断characterId是否为该角色的封面（包含默认逻辑）
+---@param roleId number
+---@param characterId number
+---@return boolean
+function XPlotExhibitionControl:IsCharacterCover(roleId, characterId)
+    local currentCoverCharacterId = self._Model:GetRoleCover(roleId)
+    if currentCoverCharacterId and currentCoverCharacterId > 0 then
+        -- 如果设置了封面，直接比较
+        return currentCoverCharacterId == characterId
+    else
+        -- 如果没有设置封面，默认使用最后一个characterId作为封面
+        local defaultCharacterId = self:GetDefaultCharacterId(roleId)
+        return characterId == defaultCharacterId
+    end
+end
+
+---获取Character的CharacterCg
+---@param characterId number
+---@return string|nil
+function XPlotExhibitionControl:GetCharacterCg(characterId)
+    local characterConfig = self._Model:GetCharacterConfig(characterId)
+    if characterConfig then
+        return characterConfig.CharacterCg
+    end
+    return nil
 end
 
 return XPlotExhibitionControl

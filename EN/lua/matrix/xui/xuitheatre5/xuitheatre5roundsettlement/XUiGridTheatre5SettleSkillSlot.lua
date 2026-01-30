@@ -7,11 +7,21 @@ local XUiGridTheatre5SettleSkillSlot = XClass(XUiGridTheatre5Container, 'XUiGrid
 
 ---@overload
 function XUiGridTheatre5SettleSkillSlot:InitBindItem(cls)
+    if self.GridSkill then
+        -- 默认隐藏
+        self.GridSkill.gameObject:SetActiveEx(false)
+    end
+    
     XUiGridTheatre5Container.InitBindItem(self, cls)
 
     if self.GridAttack then
+        self.GridAttack.gameObject:SetActiveEx(false)
         self.GridNormalAtk = XUiGridTheatre5SettleNormalAtk.New(self.GridAttack, self)
         self.GridNormalAtk:Close()
+    end
+
+    if self.GridOther then
+        self.GridOther.gameObject:SetActiveEx(false)
     end
 end
 
@@ -65,6 +75,14 @@ function XUiGridTheatre5SettleSkillSlot:SetItemShowById(skillId, isNormalATK)
             self.CurUiGrid:SetIsNormalAttack(isNormalATK)
             self.CurUiGrid:RefreshShowById(skillId)
         end
+    end
+end
+
+function XUiGridTheatre5SettleSkillSlot:SetOtherSourceShow()
+    self:_ClearItemShow()
+
+    if self.GridOther then
+        self.GridOther.gameObject:SetActiveEx(true)
     end
 end
 

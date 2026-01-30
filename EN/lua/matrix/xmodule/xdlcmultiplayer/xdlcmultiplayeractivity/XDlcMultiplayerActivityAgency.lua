@@ -8,7 +8,7 @@ function XDlcMultiplayerActivityAgency:DlcMultiplayerRegisterPrivateConfig(table
 end
 
 function XDlcMultiplayerActivityAgency:DlcMultiplayerRegisterAllPrivateConfig()
-    self:DlcMultiplayerRegisterPrivateConfig("DlcMultiplayerConfig")
+    self:DlcMultiplayerRegisterPrivateConfig("DlcMultiplayerClientConfig")
     self:DlcMultiplayerRegisterPrivateConfig("DlcMultiplayerTitleGroup")
     self:DlcMultiplayerRegisterPrivateConfig("DlcMultiplayerTitle")
     self:DlcMultiplayerRegisterPrivateConfig("DlcMultiplayerWorld")

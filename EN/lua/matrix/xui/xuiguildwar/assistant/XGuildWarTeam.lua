@@ -122,8 +122,6 @@ function XGuildWarTeam:GetMemberByEntityId(entityId)
     return nil
 end
 
-
-
 function XGuildWarTeam:GetEntityIds()
     local entityIds = { 0, 0, 0 }
     for pos, member in pairs(self.Members) do
@@ -218,7 +216,10 @@ end
 --剔除已经失效的援助角色
 function XGuildWarTeam:KickOutInvalidMembers()
     for pos, member in pairs(self.Members) do
-        if not member:CheckValid() then
+        -- 检查驻扎角色
+        local isStationed = XMVCA.XGuildWar.RoleStationAgency:CheckCharacterIsStationedAnyNode(member.EntityId)
+        
+        if not member:CheckValid() or isStationed then
             self:UpdateEntityTeamPos(false, pos, false)
         end
     end
@@ -312,6 +313,25 @@ function XGuildWarTeam:UpdateFromTeamData(teamData)
     self:Save()
 end
 
+---@overload
+function XGuildWarTeam:UpdateEntityIds(ids)
+    if not self.IsStandAlone then
+        local isSameEntityId, index = XMVCA.XCharacter:HasDuplicateCharId(ids)
+        if isSameEntityId then
+            ids[index] = 0
+        end
+    end
+
+    for pos, characterId in ipairs(ids) do
+        if characterId > 0 and XMVCA.XCharacter:IsOwnCharacter(characterId) then
+            self:UpdateEntityTeamPos({ EntityId = characterId, PlayerId = XPlayer.Id }, pos, true)
+        end
+    end
+
+    self:RefreshGeneralSkills(true)
+    self:Save()
+end
+
 --region 角色效应相关
 
 -- 技能汇总表仅加载时缓存，不会存储到本地。在该重写版本中参数是memberData
@@ -380,65 +400,8 @@ function XGuildWarTeam:UpdateGenernalSkillsByMemberDatas(memberDatas, keepOldDat
 end
 --endregion
 
-function XGuildWarTeam:GetObservationActiveCareer()
-    local tankCount = 0
-    local tankPos = 0
-    local amplifierCount = 0
-    local amplifierPos = 0
-    local physicalCount = 0
-    local physicalPos = 0
-    local obsCount = 0
-    local obsPos = 0
-    for i, member in pairs(self.Members) do
-        local entityId = member:GetEntityId()
-        if XTool.IsNumberValid(entityId) then
-            local career = XMVCA.XCharacter:GetCharacterCareer(entityId)
-            local charElement = XMVCA.XCharacter:GetCharacterElement(entityId)
-            local isPhysical = charElement == XEnumConst.CHARACTER.Element.Physical
-            if isPhysical then
-                physicalCount = physicalCount + 1
-                physicalPos = i
-            end
-            if career == XEnumConst.CHARACTER.Career.Tank then
-                tankCount = tankCount + 1
-                tankPos = i
-            elseif (career == XEnumConst.CHARACTER.Career.Amplifier or career == XEnumConst.CHARACTER.Career.Support) then
-                amplifierCount = amplifierCount + 1
-                amplifierPos = i
-            elseif career == XEnumConst.CHARACTER.Career.Observation then
-                obsCount = obsCount + 1
-                obsPos = i
-            end
-
-        end
-    end
-
-    local res = XEnumConst.CHARACTER.Career.None
-    if tankCount + amplifierCount >= 2 then
-        return res
-    end
-    if obsCount ~= 1 then
-        return res
-    end
-    if physicalCount > 1 then
-        return res
-    end
-    
-    if physicalCount == 1 then
-        if self:GetEntityCount() == 2  then
-            return res
-        elseif self:GetEntityCount() == 3 and (physicalPos == tankPos or physicalPos == amplifierPos) then
-            return res
-        end
-    end
-
-    if tankCount == 1 and amplifierCount == 0 then
-        res = XEnumConst.CHARACTER.Career.Amplifier
-    elseif tankCount == 0 and amplifierCount == 1 then
-        res = XEnumConst.CHARACTER.Career.Tank
-    end
-
-    return res, obsPos
+function XGuildWarTeam:GetEntityIdListForObservation()
+    return self:GetEntityIds()
 end
 
 return XGuildWarTeam

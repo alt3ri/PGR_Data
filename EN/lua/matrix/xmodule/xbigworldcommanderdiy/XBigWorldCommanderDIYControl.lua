@@ -420,9 +420,53 @@ function XBigWorldCommanderDIYControl:RestorePreviewPart()
                 local temporaryWearData = self._WearDataMap[typeId]
 
                 wearData:ClearPart()
+
                 if temporaryWearData then
-                    wearData:SetPartId(temporaryWearData:GetPartId())
-                    wearData:SetColorId(temporaryWearData:GetColorId())
+                    --- 套装部分需要特殊处理
+                    if temporaryWearData:IsSuitPart() then
+                        local suitWearData = wearDataMap[XEnumConst.PlayerFashion.PartType.Suit]
+                        local currentSuitWearData = self._WearDataMap[XEnumConst.PlayerFashion.PartType.Suit]
+
+                        if not suitWearData or not currentSuitWearData then
+                            wearData:ClearPart()
+                        else
+                            --- 如果当前穿戴套装，且当前套装与保存套装相同，则直接覆盖
+                            if suitWearData:IsWaeredPart() and currentSuitWearData:IsWaeredPart() then
+                                local suitPartId = suitWearData:GetPartId()
+                                local currentSuitPartId = currentSuitWearData:GetPartId()
+
+                                if suitPartId == currentSuitPartId then
+                                    wearData:SetPartId(temporaryWearData:GetPartId())
+                                    wearData:SetColorId(temporaryWearData:GetColorId())
+                                else
+                                    local partIds = self._Model:GetDlcPlayerFashionPartPartsById(suitPartId)
+
+                                    if not XTool.IsTableEmpty(partIds) then
+                                        for _, partId in pairs(partIds) do
+                                            local suitPartTypeId = self._Model:GetDlcPlayerFashionPartTypeIdById(partId)
+
+                                            if suitPartTypeId == typeId then
+                                                local colorId = self._Model:GetDefaultColorIdByPartId(partId)
+
+                                                wearData:SetPartId(partId)
+                                                wearData:SetColorId(colorId)
+                                                break
+                                            end
+                                        end
+                                    else
+                                        wearData:ClearPart()
+                                    end
+                                end
+                            else
+                                wearData:ClearPart()
+                            end
+                        end
+                    else
+                        wearData:SetPartId(temporaryWearData:GetPartId())
+                        wearData:SetColorId(temporaryWearData:GetColorId())
+                    end
+                else
+                    wearData:ClearPart()
                 end
             end
         end
@@ -463,7 +507,8 @@ function XBigWorldCommanderDIYControl:CheckWearPreview()
 
     if not XTool.IsTableEmpty(wearDataMap) then
         for typeId, wearData in pairs(wearDataMap) do
-            if wearData:IsWaeredPart() and not wearData:IsSuitPart() and not self._Model:CheckPartUnlcok(wearData:GetPartId()) then
+            if wearData:IsWaeredPart() and not wearData:IsSuitPart() and
+                not self._Model:CheckPartUnlcok(wearData:GetPartId()) then
                 return true
             end
         end
@@ -592,7 +637,7 @@ end
 function XBigWorldCommanderDIYControl:_RecordPartMapToLocal()
     if self._RecordPartMap then
         local result = {}
-        
+
         for partId, _ in pairs(self._RecordPartMap) do
             table.insert(result, partId)
         end

@@ -10,12 +10,12 @@ local XInfectGWNode = require("XEntity/XGuildWar/Battle/Node/XInfectGWNode")
 local XSentinelGWNode = require("XEntity/XGuildWar/Battle/Node/XSentinelGWNode")
 local XGWEliteMonster = require("XEntity/XGuildWar/Battle/XGWEliteMonster")
 local XGWReinforcements = require("XEntity/XGuildWar/Battle/XGWReinforcements")
-local XPandaRootGWNode = require("XEntity/XGuildWar/Battle/Node/XPandaRootGWNode")
-local XPandaChildGWNode = require("XEntity/XGuildWar/Battle/Node/XPandaChildGWNode")
-local XTwinsRootGWNode = require("XEntity/XGuildWar/Battle/Node/XTwinsRootGWNode")
-local XTwinsChildGWNode = require("XEntity/XGuildWar/Battle/Node/XTwinsChildGWNode")
-local XTerm3SecretRootGWNode = require("XEntity/XGuildWar/Battle/Node/XTerm3SecretRootGWNode")
-local XTerm3SecretChildGWNode = require("XEntity/XGuildWar/Battle/Node/XTerm3SecretChildGWNode")
+--local XPandaRootGWNode = require("XEntity/XGuildWar/Battle/Node/XPandaRootGWNode")
+--local XPandaChildGWNode = require("XEntity/XGuildWar/Battle/Node/XPandaChildGWNode")
+--local XTwinsRootGWNode = require("XEntity/XGuildWar/Battle/Node/XTwinsRootGWNode")
+--local XTwinsChildGWNode = require("XEntity/XGuildWar/Battle/Node/XTwinsChildGWNode")
+--local XTerm3SecretRootGWNode = require("XEntity/XGuildWar/Battle/Node/XTerm3SecretRootGWNode")
+--local XTerm3SecretChildGWNode = require("XEntity/XGuildWar/Battle/Node/XTerm3SecretChildGWNode")
 local XSecondarySentinelGWNode = require("XEntity/XGuildWar/Battle/Node/XSecondarySentinelGWNode")
 local XBlockadeGWNode = require("XEntity/XGuildWar/Battle/Node/XBlockadeGWNode")
 local XTerm4BossGWNode = require("XEntity/XGuildWar/Battle/Node/XTerm4BossGWNode")
@@ -34,12 +34,12 @@ local NodeType2Class = {
     [XGuildWarConfig.NodeType.Sentinel] = XSentinelGWNode,
     [XGuildWarConfig.NodeType.Guard] = XGuardGWNode,
     [XGuildWarConfig.NodeType.Infect] = XInfectGWNode,
-    [XGuildWarConfig.NodeType.PandaRoot] = XPandaRootGWNode,
-    [XGuildWarConfig.NodeType.PandaChild] = XPandaChildGWNode,
-    [XGuildWarConfig.NodeType.TwinsRoot] = XTwinsRootGWNode,
-    [XGuildWarConfig.NodeType.TwinsChild] = XTwinsChildGWNode,
-    [XGuildWarConfig.NodeType.Term3SecretRoot] = XTerm3SecretRootGWNode,
-    [XGuildWarConfig.NodeType.Term3SecretChild] = XTerm3SecretChildGWNode,
+    --[XGuildWarConfig.NodeType.PandaRoot] = XPandaRootGWNode,
+    --[XGuildWarConfig.NodeType.PandaChild] = XPandaChildGWNode,
+    --[XGuildWarConfig.NodeType.TwinsRoot] = XTwinsRootGWNode,
+    --[XGuildWarConfig.NodeType.TwinsChild] = XTwinsChildGWNode,
+    --[XGuildWarConfig.NodeType.Term3SecretRoot] = XTerm3SecretRootGWNode,
+    --[XGuildWarConfig.NodeType.Term3SecretChild] = XTerm3SecretChildGWNode,
     [XGuildWarConfig.NodeType.SecondarySentinel] = XSecondarySentinelGWNode,
 
     [XGuildWarConfig.NodeType.Term4BossRoot] = XTerm4BossGWNode,
@@ -118,7 +118,7 @@ end
 --region 数据
 -- 更新档次轮次数据
 -- data : GuildWarActivityData
-function XGWBattleManager:UpdateCurrentRoundData(data, difficultyChanged)
+function XGWBattleManager:UpdateCurrentRoundData(data, difficultyChanged, isRealTime, type, updateId)
     self.DifficultyId = data.DifficultyId
     self.CurrentRoundData = data
     local attackPlan = self:GetCurrentRoundData().AttackPlan
@@ -131,11 +131,61 @@ function XGWBattleManager:UpdateCurrentRoundData(data, difficultyChanged)
         -- 登录状态难度变更后，需要清空上个难度的节点实体数据
         self.NodeDic = {}
     else
+        local wasteNodeEntities = nil
+        
         for id, node in pairs(self.NodeDic) do
             -- 重置难度后, data可能不存在
             local nodeData = self:GetNodeServerData(id)
             if nodeData then
-                node:UpdateWithServerData(nodeData)
+                if isRealTime then
+                    node:UpdateWithServerDataRealTime(nodeData, type, updateId)
+                else
+                    node:UpdateWithServerData(nodeData)
+                end
+            else
+                -- 不存在数据的节点，先锁住读写
+                setmetatable(node, {
+                    __index = function(tab, key)
+                        local uid = rawget(tab, 'UID')
+                        local id = 0
+                        
+                        local config = rawget(tab, 'Config')
+                        
+                        if config then 
+                            id = config.Id
+                        end
+                        
+                        XLog.Error('访问当前轮次不存在的节点，节点Uid：' .. tostring(uid) .. ' 节点Id: ' .. tostring(id) .. ' 读取的字段: ' .. tostring(key))
+                    end,
+                    
+                    __newindex = function(tab, key, value)
+                        local uid = rawget(tab, 'UID')
+                        local id = 0
+
+                        local config = rawget(tab, 'Config')
+
+                        if config then
+                            id = config.Id
+                        end
+
+                        XLog.Error('访问当前轮次不存在的节点，节点Uid：' .. tostring(uid) .. ' 节点Id: ' .. tostring(id) .. ' 写入的字段: ' .. tostring(key) .. '写入的值: ' .. tostring(value))
+                    end
+                })
+
+                if wasteNodeEntities == nil then
+                    wasteNodeEntities = {}
+                end
+
+                wasteNodeEntities[id] = node
+            end
+        end
+
+        -- 未使用的节点直接移除，后面再需要访问指定node时根据服务端数据重新实例化实体对象
+        if not XTool.IsTableEmpty(wasteNodeEntities) then
+            for id, node in pairs(wasteNodeEntities) do
+                if self.NodeDic[id] == node then
+                    self.NodeDic[id] = nil
+                end
             end
         end
     end
@@ -308,89 +358,6 @@ end
 
 --region 行动动画
 
---执行动画接口
-XGWBattleManager.DoAction = {
-    [XGuildWarConfig.GWActionType.MonsterDead] = function(self, actionGroup)--怪物死亡
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_DEAD, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.MonsterBorn] = function(self, actionGroup)--怪物诞生
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_BORN, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.MonsterMove] = function(self, actionGroup)--怪物移动
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_MOVE, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.BaseBeHit] = function(self, actionGroup)--基地受伤
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_BASEHIT, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.NodeDestroyed] = function(self, actionGroup)--节点攻破
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_NODEDESTROY, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.TransferWeakness] = function(self, actionGroup)--交换弱点
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_TRANSFER_WEAKNESS, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.AllGuardNodeDead] = function(self, actionGroup)--守卫死亡
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_ALL_GUARD_NODE_DEAD, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.BaseBeHitByBoss] = function(self, actionGroup)--基地被boss攻击
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_BASE_BE_HIT_BY_BOSS, actionGroup)
-    end,
-    
-    [XGuildWarConfig.GWActionType.RoundStart] = function(self, actionGroup)--回合开始
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_ROUND_START, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.BossMerge] = function(self, actionGroup)--BOSS合体)
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_BOSS_MERGE, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.BossTreatMonster] = function(self, actionGroup)--BOSS治疗怪物
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_BOSS_TREAT_MONSTER, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.MonsterBornTimeChange] = function(self, actionGroup)--前哨怪物出生时间改变
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_MONSTER_BORN_TIME_CHANGE, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.ReinforcementBorn] = function(self, actionGroup)
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_REINFORCEMENTS_BORN, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.ReinforcementMove] = function(self, actionGroup)
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_REINFORCEMENTS_MOVE, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.ReinforcementAttack] = function(self, actionGroup)
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_REINFORCEMENTS_ATTACK, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.ReinforcementDead] = function(self, actionGroup)
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_REINFORCEMENTS_DEAD, actionGroup)
-    end,
-    
-    [XGuildWarConfig.GWActionType.DragonRageEmpty] = function(self, actionGroup)
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_DRAGON_RAGE_EMPTY, actionGroup)
-    end,
-    
-    [XGuildWarConfig.GWActionType.DragonRageFull] = function(self, actionGroup)
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_DRAGON_RAGE_FULL, actionGroup)
-    end,
-    
-    [XGuildWarConfig.GWActionType.NodeChangeToRelic] = function(self, actionGroup)
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_DRAGON_RAGE_CHANGE_RELIC, actionGroup)
-    end,
-
-    [XGuildWarConfig.GWActionType.NewGameThrough] = function(self, actionGroup)
-        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTION_DRAGON_RAGE_NEW_GAMETHROUH, actionGroup)
-    end,
-}
-
 --region 内部接口
 --更新行动动画数据
 function XGWBattleManager:UpdateActionData(actionList)
@@ -402,7 +369,7 @@ function XGWBattleManager:UpdateActionData(actionList)
         if action.ActionType == XGuildWarConfig.GWActionType.MonsterDead then
             self:UpdateMonsterDead(action.MonsterUid, true)
         elseif action.ActionType == XGuildWarConfig.GWActionType.NodeDestroyed then
-            self:UpdateNodeData(action.NodeData)
+            self:UpdateNodeDataRealTime(action.NodeData, XGuildWarConfig.NodeDataUpdateSource.Action, action.ActionId)
             XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_NODEDATA_CHANGE)
         elseif action.ActionType == XGuildWarConfig.GWActionType.AllGuardNodeDead then
             local pandaRootNode = self:GetNodePandaRoot()
@@ -426,7 +393,7 @@ function XGWBattleManager:UpdateActionData(actionList)
                 pandaRootNode:UpdateNextBossAttackTime(action.NextBossAttackTime)
             end
         elseif action.ActionType == XGuildWarConfig.GWActionType.BossMerge then
-            self:UpdateNodeDatas(action.NodeDatas)
+            self:UpdateNodeDatasRealTime(action.NodeDatas, XGuildWarConfig.NodeDataUpdateSource.Action, action.ActionId)
             --local node = self:GetNodeBossRoot()
             --if node then
             --    node.IsMerge = 1
@@ -454,277 +421,65 @@ function XGWBattleManager:UpdateActionData(actionList)
     end
 end
 
-
--- 根据UI类型获取动画播放队列(根据XGuildWarConfig获取UI需要的动画和顺序)
--- PlayType:XGuildWarConfig.GWActionType
-local InsertActinGroupList = function(allActinGroupList, actinGroup)
-    if actinGroup and next(actinGroup) then
-        table.sort(actinGroup, function (a, b)
-            return a.ActionId < b.ActionId
-        end)
-        table.insert(allActinGroupList, actinGroup)
-    end
-end
-function XGWBattleManager:GetUiActionGroupList(playType)
-    local resultActionList = {}
-    local playTypeActionConfig = XGuildWarConfig.GWPlayType2Action[playType] or {}
-    local playType2Sequence = {}
-    for index,actionType in ipairs(playTypeActionConfig) do
-        playType2Sequence[actionType] = index
-    end
-    local newTurnActionGourpList = function()
-        local gourp = {}
-        for index,actionType in ipairs(playTypeActionConfig) do
-            gourp[index] = {}
-        end
-        return gourp
-    end
-    local tempActionGourpByTurn = {}
-    local allTurn = 1
-    tempActionGourpByTurn[allTurn] = newTurnActionGourpList()
-    for _,action in pairs(self.ActionList or {}) do
-        if not self:CheckActionIsShowed(action.ActionId) then
-            local index = playType2Sequence[action.ActionType]
-            if index then
-                table.insert(tempActionGourpByTurn[allTurn][index], action)
-                goto continue
-            end
-        end
-        if action.ActionType == XGuildWarConfig.GWActionType.NextTurn then
-            allTurn = allTurn + 1
-            tempActionGourpByTurn[allTurn] = newTurnActionGourpList()
-        end
-        ::continue::
-    end
-
-    for turn = 1, allTurn do
-        local Gourp = tempActionGourpByTurn[turn]
-        for index, list in ipairs(Gourp) do
-            InsertActinGroupList(resultActionList, list)
-        end
-    end
-    resultActionList.ExtraParam = playTypeActionConfig.ExtraParam
-    return resultActionList
-end
--- 根据多个UI类型获取动画播放队列 并按顺序插入
--- PlayTypeList:XGuildWarConfig.GWActionType[]
-local MergeActionGroupList = function(GroupList1,GroupList2)
-    for index,list in ipairs(GroupList2) do
-        table.insert(GroupList1,list)
-    end
-    --如果有特殊参数 合并特殊参数(合并逻辑有待更新)
-    if GroupList2.ExtraParam then
-        for key, value in pairs(GroupList2.ExtraParam) do
-            GroupList1.ExtraParam[key] = value
-        end
-    end
-end
-function XGWBattleManager:GetUisActionGroupList(playTypeList)
-    local resultActionList = {}
-    resultActionList.ExtraParam = {}
-    resultActionList.UiParam = playTypeList.UiParam or {}
-    for index, playType in ipairs(playTypeList) do
-        local actionList = self:GetUiActionGroupList(playType)
-        MergeActionGroupList(resultActionList, actionList)
-    end
-    return resultActionList
-end
 --检查是否正在播放动画
+--todo 已迁移
 function XGWBattleManager:CheckActionPlaying()
-    for _,playing in pairs(self.IsActionPlayingDic or {}) do
-        if playing then
-            return true
-        end
-    end
-    return false
-end
-
---- 清空正在播放动画的缓存标记，退出公会战界面时调用，防止出现错误缓存时登录状态卡流程
-function XGWBattleManager:ClearActionPlayingDic()
-    if not XTool.IsTableEmpty(self.IsActionPlayingDic) then
-        self.IsActionPlayingDic = {}
-    end
-end
-
-function XGWBattleManager:CheckIsCanGuide()
-    return (not self.IsWaitingActionCallback) and (not self:CheckActionPlaying())
+    return XMVCA.XGuildWar.ActionQueueAgency:CheckActionPlaying()
 end
 
 -- 检查某个动画是否已经播放
+--todo 已迁移
 function XGWBattleManager:CheckActionIsShowed(id)
-    return self.ShowedActionIdDic[id]
+    return XMVCA.XGuildWar.ActionQueueAgency:CheckActionIsShowed(id)
 end
--- 更新已经播放完毕动画的ID字典
-function XGWBattleManager:UpdateShowedActionIdDic(idList)
-    for _,id in pairs(idList or {}) do
-        self.ShowedActionIdDic[id] = true
-    end
-end
--- 清空播放完毕动画的ID字典
-function XGWBattleManager:ClearShowedActionIdDic()
-    self.ShowedActionIdDic = {}
-end
---检查动作动画需不需要定位缩放操作
-function XGWBattleManager:CheckActionGroupNeedZoom(actionGroup)
-    for _,action in pairs(actionGroup or {}) do
-        if self.ActionZoomDic[action.ActionId] then
-            return true
-        end
-    end
-    return false
-end
+
 --endregion
 
---设置行动动画队列
-function XGWBattleManager:SetActionList(actionList)
-    self.ActionList = actionList
-    
-    self:ActionListFilter()
-    
-    self.ActionZoomDic = {}
-    for _,action in pairs(actionList or {}) do
-        self.ActionZoomDic[action.ActionId] = true
-        self.ActionIdMap[action.ActionId] = true
-    end
-end
---增加行动动画队列
-function XGWBattleManager:AddActionList(actionList)
-    if not XTool.IsTableEmpty(actionList) then
-        for i, v in ipairs(actionList) do
-            --- 过滤Id重复的action
-            if not self.ActionIdMap[v.ActionId] then
-                table.insert(self.ActionList, v)
-                self.ActionIdMap[v.ActionId] = true
-            end
-        end
-    end
-
-    self:ActionListFilter()
-    
-    -- 移除被过滤的新action
-    if not XTool.IsTableEmpty(actionList) then
-        for i = #actionList, 1, -1 do
-            if not table.contains(self.ActionList, actionList[i]) then
-                table.remove(actionList, i)
-            else
-                -- 即时下推的动画新增标记
-                actionList[i].IsRealTime = true
-            end
-        end
-    end
-    -- 针对特殊的action类型需要设置到缩放缓存中
-    for i, v in pairs(actionList) do
-        if v.ActionType == XGuildWarConfig.GWActionType.DragonRageFull then
-            self.ActionZoomDic[v.ActionId] = true
-        end
-    end
-    
-    self:UpdateActionData(actionList)--只有即时发生的事件需要通过action去更新数据
-end
 -- 获取行动动画队列是否还有动画没有播放
+--todo 已迁移
 function XGWBattleManager:GetIsHasCanPlayAction(playTypeList)
-    local getTypeHashSet = function(PlayType)
-        local playTypeActionConfig = XGuildWarConfig.GWPlayType2Action[PlayType] or {}
-        local hashSet = {}
-        for index,actionType in ipairs(playTypeActionConfig) do
-            hashSet[actionType] = true
-        end
-        return hashSet
-    end
-    local typeHashSetList = {}
-    for index, playType in ipairs(playTypeList) do
-        table.insert(typeHashSetList,getTypeHashSet(playType))
-    end
-    for _,action in pairs(self.ActionList or {}) do
-        for index, hashSet in ipairs(typeHashSetList) do
-            if hashSet[action.ActionType] and (not self:CheckActionIsShowed(action.ActionId)) then
-                return true
-            end
-        end
-    end
-    return false
+    return XMVCA.XGuildWar.ActionQueueAgency:GetIsHasCanPlayAction(playTypeList)
 end
+
 -- 检查某UI的行动动画列表 并播放行动动画 动画播放队列根据XGuildWarConfig获取UI需要的动画和顺序
 -- PlayTypeList:XGuildWarConfig.GWPlayType2Action[]
+--todo 已迁移
 function XGWBattleManager:CheckActionList(PlayTypeList)
-    if not self:CheckActionPlaying() then
-        local firstIndex = 1
-        local actionGroupList = self:GetUisActionGroupList(PlayTypeList)
-        local actionGroup = actionGroupList[firstIndex]
-        XLog.Warning("CheckActionList:",actionGroupList)
-        if actionGroup and next(actionGroup) then
-            local actionIdList = {}
-            for _,action in pairs(actionGroup) do
-                table.insert(actionIdList, action.ActionId)
-            end
-            local callback =  function ()
-                self.IsWaitingActionCallback = false
-                local type = actionGroup[1].ActionType
-                self.IsActionPlayingDic[type] = true
-                self:UpdateShowedActionIdDic(actionIdList)
-                if self.DoAction[type] then
-                    --当前动画行列允许缩放，且需要缩放，并且没在缩放时，执行缩放动画逻辑。
-                    if actionGroupList.UiParam.CanZoom and self:CheckActionGroupNeedZoom(actionGroup) and not self.IsActionInZoom then
-                        XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_OPEN_MOVIEMODE,function ()
-                            self.DoAction[type](self, actionGroup)
-                        end, actionGroup)
-                        self.IsActionInZoom = true
-                    else
-                        self.DoAction[type](self, actionGroup)
-                    end
-                end
-            end
-            self.IsWaitingActionCallback = true
-            -- debug 不请求, 如此就可以不停播放
-            --XScheduleManager.ScheduleOnce(callback, 0)
-            XDataCenter.GuildWarManager.RequestPopupActionID(actionIdList, callback)
-        else
-            XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_ACTIONLIST_OVER)
-            XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_CLOSE_MOVIEMODE)
-            self:SetIsHistoryAction(false)
-            self.IsActionInZoom = false
-        end
-    end
+    XMVCA.XGuildWar.ActionQueueAgency:CheckActionList(PlayTypeList)
 end
+
 -- 行动动画播放完毕时调用(UI调用)
 -- PlayTypeList:XGuildWarConfig.GWActionType[]
+--todo 已迁移
 function XGWBattleManager:DoActionFinish(actionType,PlayTypeList)
-    self.IsActionPlayingDic[actionType] = nil
-    self:CheckActionList(PlayTypeList)
-end
-
---检查是否历史动作动画
-function XGWBattleManager:CheckIsHistoryAction()
-    return self.IsHistoryAction
-end
---设置历史动作动画
-function XGWBattleManager:SetIsHistoryAction(IsHistory)
-    self.IsHistoryAction = IsHistory
-end
-
--- 根据动画类型获取动画列表(特殊接口 没有用到 但留着)
--- actionType : XGuildWarConfig.GWActionType
-function XGWBattleManager:GetActionListByType(actionType)
-    local list = {}
-    for _,action in pairs(self.ActionList or {}) do
-        if not self:CheckActionIsShowed(action.ActionId) then
-            if action.ActionType == actionType then
-                list[#list + 1] = action
-            end
-        end
-    end
-    return list
+    XMVCA.XGuildWar.ActionQueueAgency:DoActionFinish(actionType,PlayTypeList)
 end
 
 --endregion
 
 --region 战场节点
+
+--- 更新节点，除了登录等全量下推以外的实时更新
+function XGWBattleManager:UpdateNodeDataRealTime(data, type, id)
+    local node = self:GetNode(data.NodeId)
+    node:UpdateWithServerDataRealTime(data, type, id)
+end
+
 --更新节点数据
 -- data : XGuildWarNodeData
 function XGWBattleManager:UpdateNodeData(data)
     local node = self:GetNode(data.NodeId)
     node:UpdateWithServerData(data)
 end
+
+--批量更新节点数据
+-- datas : XGuildWarNodeData[]
+function XGWBattleManager:UpdateNodeDatasRealTime(datas, type, id)
+    for _, data in ipairs(datas) do
+        self:UpdateNodeDataRealTime(data, type, id)
+    end
+end
+
 
 --批量更新节点数据
 -- datas : XGuildWarNodeData[]
@@ -748,6 +503,13 @@ end
 --获取节点
 ---@return XGWNode
 function XGWBattleManager:GetNode(id, notips)
+    if not XTool.IsNumberValidEx(id) then
+        if not notips then
+            XLog.Error('错误的节点Id: ' .. tostring(id))
+        end
+        return
+    end
+    
     local result = self.NodeDic[id]
     if result == nil then
         result = CreateNode(id)
@@ -1261,16 +1023,7 @@ function XGWBattleManager:GetTeam()
         self.__Team = require("XUi/XUiGuildWar/Assistant/XGuildWarTeam").New(id)
         XDataCenter.TeamManager.SetXTeam(self.__Team)
     end
-    -- 清除错误配置的机器人 机器人Robot(系统已废弃)
-    -- local robotIds = XGuildWarConfig.GetCfgByIdKey(XGuildWarConfig.TableKey.Difficulty, self:GetDifficultyId()).RobotId
-    -- local robotIdDic = table.arrayToDic(robotIds)
-    -- for pos, entityId in ipairs(self.__Team:GetEntityIds()) do
-    --     if entityId > 0 and XEntityHelper.GetIsRobot(entityId) then
-    --         if robotIdDic[entityId] == nil then
-    --             self.__Team:UpdateEntityTeamPos(entityId, pos, false)
-    --         end
-    --     end
-    -- end
+
     return self.__Team
 end
 
@@ -1305,78 +1058,6 @@ function XGWBattleManager:AddRewardReceived(id)
     end
     local getRewards = self.CurrentMyRoundData.GetBossRewards
     getRewards[#getRewards + 1] = id
-end
-
-function XGWBattleManager:ActionListFilter()
-    if not XTool.IsTableEmpty(self.ActionList) then
-        -- 援军的行动只播最新的，需要把旧的过滤掉
-        local actionMap = {} -- key: actionType, value: turnIndex
-        local turnIndex = 0
-        local needToMarkPlayed = {}
-        
-        for i = #self.ActionList, 1, -1 do
-            local action = self.ActionList[i]
-
-            if action.ActionType == XGuildWarConfig.GWActionType.NextTurn then
-                turnIndex = turnIndex + 1
-            elseif action.ActionType >= XGuildWarConfig.GWActionType.ReinforcementBorn and action.ActionType <= XGuildWarConfig.GWActionType.ReinforcementDead then
-                if actionMap[action.ActionType] ~= nil then
-                    if turnIndex ~= actionMap[action.ActionType] then
-                        local removedAction = table.remove(self.ActionList, i)
-                        table.insert(needToMarkPlayed, removedAction.ActionId)
-                    end
-                else
-                    actionMap[action.ActionType] = turnIndex
-                end
-            end
-        end
-        
-        -- 过滤掉的action需要请求为已播放，防止下次登录再次被下发下来
-        if not XTool.IsTableEmpty(needToMarkPlayed) then
-            XDataCenter.GuildWarManager.RequestPopupActionID(needToMarkPlayed, function()
-                self:UpdateShowedActionIdDic(needToMarkPlayed)
-            end)
-        end
-    end
-
-    --- 龙怒系统玩法action过滤逻辑
-    if XMVCA.XGuildWar.DragonRageCom:IsOpenDragonRageSystem() then
-        -- 找到最新的周目action
-        local lastNewGameActionId = XMVCA.XGuildWar.DragonRageCom:GetCurLatestNewGameActionId()
-        local newGameActionId = 0
-        
-        for i = #self.ActionList, 1, -1 do
-            local action = self.ActionList[i]
-            if action.ActionType == XGuildWarConfig.GWActionType.NewGameThrough then
-                if not XTool.IsNumberValid(lastNewGameActionId) or action.ActionId > lastNewGameActionId then
-                    if action.ActionId > newGameActionId then
-                        newGameActionId = action.ActionId
-                    end
-                end
-            end
-        end
-
-        if XTool.IsNumberValid(newGameActionId) and not self:CheckActionIsShowed(newGameActionId) then
-            XMVCA.XGuildWar.DragonRageCom:SetCurLatestNewGameActionId(newGameActionId)
-            XMVCA.XGuildWar.DragonRageCom:SetIsNewGameThroughActionWaitToPlay(true)
-            local needToMarkPlayed = {}
-            -- 移除所有比最新周目action的Id还小的action
-            for i = #self.ActionList, 1, -1 do
-                local action = self.ActionList[i]
-                if action.ActionId < newGameActionId then
-                    local removedAction = table.remove(self.ActionList, i)
-                    table.insert(needToMarkPlayed, removedAction.ActionId)
-                end
-            end
-
-            -- 过滤掉的action需要请求为已播放，防止下次登录再次被下发下来
-            if not XTool.IsTableEmpty(needToMarkPlayed) then
-                XDataCenter.GuildWarManager.RequestPopupActionID(needToMarkPlayed, function()
-                    self:UpdateShowedActionIdDic(needToMarkPlayed)
-                end)
-            end
-        end
-    end
 end
 
 return XGWBattleManager

@@ -10,8 +10,15 @@ function XUiRadioSignPopupHall:OnStart(content)
     self.TxtInfo.text = content.Text
     XUiHelper.RegisterClickEvent(self, self.BtnGo, function()
         XLuaUiManager.Open("UiRadioSignMain", content)
-        XLuaUiManager.Remove(self.Name)
+        XLuaUiManager.SafeClose(self.Name)
     end)
+
+    -- 检查引导，因为在连续弹窗的过程中，不会触发指引，所以这里只能手动触发
+    XDataCenter.GuideManager.CheckGuideOpen()
+end
+
+function XUiRadioSignPopupHall:OnDisable()
+    XDataCenter.FunctionEventManager.OnFunctionEventCompleted()
 end
 
 return XUiRadioSignPopupHall

@@ -1,4 +1,4 @@
-local Base = require("Common/XFightBase")
+local Base = require("Buff/BuffBase/XBuffBase")
 
 ---@class XBuffScript1016214 : XFightBase
 local XBuffScript1016214 = XDlcScriptManager.RegBuffScript(1016214, "XBuffScript1016214", Base)

@@ -1,0 +1,34 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Name": "Toward Undiscovered Beauty",
+        "Title": "Toward Undiscovered Beauty",
+        "Content": "Complete the prerequisite missions to unlock more content in Babylonia.",
+        "ShowReward": 2002,
+        "UnlockCondition": null,
+        "PopupCondition": null,
+        "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg10.png",
+        "SkipId": null,
+        "TextDialogId": 1001.0,
+        "Params": "[2002, 7001]",
+        "PreConditions": null,
+        "PreSkipIds": null
+    },
+    {
+        "Id": 2,
+        "Type": 2,
+        "Name": "Frostheart Shadow",
+        "Title": "Frostheart Shadow",
+        "Content": "Glacier rifts swallow the dawn. The shadow of Frostheart lies hidden. Beneath Babylonia's dome, a crisis stirs beneath the surface.",
+        "ShowReward": 2001,
+        "UnlockCondition": null,
+        "PopupCondition": null,
+        "BgPic": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldNews/UiBigWorldPopupNewsBg108.png",
+        "SkipId": 200106.0,
+        "TextDialogId": null,
+        "Params": "[1002]",
+        "PreConditions": "[50002053]",
+        "PreSkipIds": "[200105]"
+    }
+]

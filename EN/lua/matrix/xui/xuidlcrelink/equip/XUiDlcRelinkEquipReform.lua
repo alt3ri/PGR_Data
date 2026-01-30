@@ -24,8 +24,8 @@ function XUiDlcRelinkEquipReform:OnAwake()
 
     ---@type XUiComponent.XUiButton[]
     self.EquipBtnTabList = {}
-    ---@type XUiGridDlcRelinkEquipAttribute
-    self.MainAttribute = nil
+    ---@type XUiGridDlcRelinkEquipAttribute[]
+    self.MainAttributes = {}
     ---@type table<number, UiObject>
     self.DeputyAttributeGroup = {}
     ---@type table<number, table<number, XUiGridDlcRelinkEquipAttribute>>
@@ -45,11 +45,13 @@ function XUiDlcRelinkEquipReform:OnStart(equipUid)
     end)
 
     self.CurSelectSlotIndex = EquipSlotType.Absorb
+    ---吸收者
     self.CurReformSlotEquipUid = equipUid
+    ---被吸收者
     self.CurAbsorbSlotEquipUid = 0
 
-    self.EquipOccupationDefaultIndex = 1 -- 进入时默认选择的职业Tab
-    self.CurSelectEquipOccupationIndex = 0
+    self.DefaultSelectTabIndex = 0 -- 进入时默认选择的Tab下标
+    self.CurSelectTabIndex = -1 -- 当前选择的Tab下标
 
     self.CurSelectGrid = nil
     self.CurSelectEquipUid = 0
@@ -62,10 +64,8 @@ function XUiDlcRelinkEquipReform:OnEnable()
     self.Super.OnEnable(self)
     self:RefreshEquipReform()
     self:RefreshEquipAbsorb()
-    self:RefreshEquipSlotSelect()
     self:RefreshEquipDetail()
-    self.PanelTab:SelectIndex(self.EquipOccupationDefaultIndex)
-    self.BtnFilter:SetSpriteVisible(false)
+    self.PanelTab:SelectIndex(self.DefaultSelectTabIndex)
 end
 
 function XUiDlcRelinkEquipReform:OnDisable()
@@ -77,25 +77,42 @@ end
 
 function XUiDlcRelinkEquipReform:InitPanelTab()
     self.EquipBtnTabList = {}
-    local tabDescList = self._Control:GetClientConfigParams("EquipTabsDesc")
-    for _, tabDesc in ipairs(tabDescList) do
+    -- 收集并排序
+    local sortedTagTypes = {}
+    for key, value in pairs(self._Control.EquipTagType) do
+        table.insert(sortedTagTypes, { Key = key, Value = value })
+    end
+    table.sort(sortedTagTypes, function(a, b)
+        return a.Value < b.Value
+    end)
+    -- 创建Tab按钮
+    for _, tagTypeInfo in ipairs(sortedTagTypes) do
+        local index = tagTypeInfo.Value
         ---@type XUiComponent.XUiButton
         local btnTab = XUiHelper.Instantiate(self.BtnTab, self.PanelTab.transform)
         btnTab.gameObject:SetActiveEx(true)
+
+        local tabDesc = self._Control:GetClientConfig("EquipTabsDesc", index + 1)
         btnTab:SetNameByGroup(0, tabDesc)
-        table.insert(self.EquipBtnTabList, btnTab)
+
+        local tabIcon = self._Control:GetClientConfig("EquipTabsIcon", index + 1)
+        btnTab:SetSprite(tabIcon)
+
+        self.EquipBtnTabList[index] = btnTab
     end
     self.PanelTab:Init(self.EquipBtnTabList, handler(self, self.OnEquipBtnTabClick))
 end
 
 function XUiDlcRelinkEquipReform:OnEquipBtnTabClick(index)
-    if self.CurSelectEquipOccupationIndex == index then
+    if self.CurSelectTabIndex == index then
         return
     end
-    self.CurSelectEquipOccupationIndex = index
+
+    self.CurSelectTabIndex = index
     -- 重置装备筛选缓存
     self.EquipFilterCache = {}
     self:SetupDynamicTable()
+    self:RefreshEquipFilter()
     self:RefreshFilterBtn()
 end
 
@@ -107,21 +124,13 @@ function XUiDlcRelinkEquipReform:InitDynamicTable()
 end
 
 function XUiDlcRelinkEquipReform:SetupDynamicTable()
-    local opts = { Context = "Reform", Filter = self.EquipFilterCache }
-    if self.CurSelectSlotIndex == EquipSlotType.Reform then
-        opts.SelectedEquipUid = self.CurAbsorbSlotEquipUid
-    elseif self.CurSelectSlotIndex == EquipSlotType.Absorb then
-        opts.SelectedEquipUid = self.CurReformSlotEquipUid
-    end
-
-    self.EquipUidList = self._Control:GetEquipUidListByOccupationType(self.CurSelectEquipOccupationIndex, opts)
+    self.EquipUidList = self._Control:GetEquipUidListByTagType(self.CurSelectTabIndex, self._Control.EquipUiType.Reform, self.EquipFilterCache)
     local isEmpty = XTool.IsTableEmpty(self.EquipUidList)
     self.None.gameObject:SetActiveEx(isEmpty)
     if isEmpty then
         self.DynamicTable:Clear()
         self.CurSelectEquipUid = 0
         self.CurSelectGrid = nil
-        self:RefreshPanelReform()
         return
     end
 
@@ -156,12 +165,14 @@ function XUiDlcRelinkEquipReform:OnDynamicTableEvent(event, index, grid)
         local equipUid = self.EquipUidList[index]
         grid:Refresh(equipUid)
         grid:SetHead(self._Control:GetEquipWearCharacterId(equipUid))
+        grid:SetPreset(self._Control:CheckEquipIsPresetByEquipUid(equipUid))
         local isSelected = XTool.IsNumberValid(self.CurSelectEquipUid) and equipUid == self.CurSelectEquipUid
         grid:SetSelect(isSelected)
         if isSelected and not self.CurSelectGrid then
             self.CurSelectGrid = grid
-            self:RefreshPanelReform()
         end
+        local isSlotEquip = XTool.IsNumberValid(self.CurReformSlotEquipUid) and equipUid == self.CurReformSlotEquipUid or XTool.IsNumberValid(self.CurAbsorbSlotEquipUid) and equipUid == self.CurAbsorbSlotEquipUid
+        grid:SetNon(isSlotEquip and not isSelected)
     end
 end
 
@@ -182,11 +193,11 @@ function XUiDlcRelinkEquipReform:OnEquipItemCallBack(grid)
 
         if self.CurSelectSlotIndex == EquipSlotType.Reform then
             self.CurReformSlotEquipUid = equipUid
+            self:RefreshEquipReform()
         elseif self.CurSelectSlotIndex == EquipSlotType.Absorb then
             self.CurAbsorbSlotEquipUid = equipUid
+            self:RefreshEquipAbsorb()
         end
-
-        self:RefreshPanelReform()
     end)
 end
 
@@ -196,7 +207,14 @@ function XUiDlcRelinkEquipReform:CheckSelectEquipCondition(equipUid, callback)
         return
     end
 
-    -- 改造槽位选择装备没有条件
+    -- 检查是否选择了相同的装备
+    local otherSlotEquipUid = self.CurSelectSlotIndex == EquipSlotType.Reform and self.CurAbsorbSlotEquipUid or self.CurReformSlotEquipUid
+    if otherSlotEquipUid == equipUid then
+        self._Control:OpenCommonTipText("EquipReformSelectSameEquipTip")
+        return
+    end
+
+    -- 改造槽位选择装备没有条件限制
     if self.CurSelectSlotIndex == EquipSlotType.Reform then
         if callback then
             callback()
@@ -258,35 +276,32 @@ end
 
 --region 装备改造
 
-function XUiDlcRelinkEquipReform:RefreshPanelReform()
-    if self.CurSelectSlotIndex == EquipSlotType.Reform then
-        self:RefreshEquipReform()
-    elseif self.CurSelectSlotIndex == EquipSlotType.Absorb then
-        self:RefreshEquipAbsorb()
-    end
-end
-
 function XUiDlcRelinkEquipReform:RefreshEquipReform()
     if not self.EquipReformNode then
         ---@type XUiGridDlcRelinkEquipment
-        self.EquipReformNode = XUiGridDlcRelinkEquipment.New(self.GridReformEquipment, self, handler(self, self.OnEquipSlotCallBack))
+        self.EquipReformNode = XUiGridDlcRelinkEquipment.New(self.GridReformEquipment, self, handler(self, self.OnEquipSlotCallBack), handler(self, self.OnEquipSlotRemoveCallBack))
         self.EquipReformNode:Open()
     end
     self.EquipReformNode:Refresh(self.CurReformSlotEquipUid, EquipSlotType.Reform)
     self.EquipReformNode:SetHead(self._Control:GetEquipWearCharacterId(self.CurReformSlotEquipUid))
+    self.EquipReformNode:SetPreset(self._Control:CheckEquipIsPresetByEquipUid(self.CurReformSlotEquipUid))
+    self.EquipReformNode:SetSelect(self.CurSelectSlotIndex == EquipSlotType.Reform)
 
     self:RefreshEquipDetail()
+    self:RefreshAbsorbBtn()
 end
 
 function XUiDlcRelinkEquipReform:RefreshEquipAbsorb()
     if not self.EquipAbsorbNode then
         ---@type XUiGridDlcRelinkEquipment
-        self.EquipAbsorbNode = XUiGridDlcRelinkEquipment.New(self.GridAbsorbEquipment, self, handler(self, self.OnEquipSlotCallBack))
+        self.EquipAbsorbNode = XUiGridDlcRelinkEquipment.New(self.GridAbsorbEquipment, self, handler(self, self.OnEquipSlotCallBack), handler(self, self.OnEquipSlotRemoveCallBack))
         self.EquipAbsorbNode:Open()
     end
     self.EquipAbsorbNode:Refresh(self.CurAbsorbSlotEquipUid, EquipSlotType.Absorb)
     self.EquipAbsorbNode:SetHead(self._Control:GetEquipWearCharacterId(self.CurAbsorbSlotEquipUid))
+    self.EquipAbsorbNode:SetPreset(self._Control:CheckEquipIsPresetByEquipUid(self.CurAbsorbSlotEquipUid))
     self.EquipAbsorbNode:SetAdd(not XTool.IsNumberValid(self.CurAbsorbSlotEquipUid))
+    self.EquipAbsorbNode:SetSelect(self.CurSelectSlotIndex == EquipSlotType.Absorb)
 
     self:RefreshIsLocked()
     self:RefreshAttributes()
@@ -314,16 +329,21 @@ function XUiDlcRelinkEquipReform:RefreshAttributes()
 
     self:HideEquipAttributes()
 
+    local bgIndex = 1
     -- 主属性
-    local mainAttr = self._Control:GetEquipMainFactorByUid(self.CurAbsorbSlotEquipUid, false)
-    if mainAttr then
-        if not self.MainAttribute then
-            local grid = XUiHelper.Instantiate(self.GridAttribute, self.PanelGroup)
-            self.MainAttribute = XUiGridDlcRelinkEquipAttribute.New(grid, self)
+    local mainAttrs = self._Control:GetEquipAllMainFactorByUid(self.CurAbsorbSlotEquipUid)
+    if not XTool.IsTableEmpty(mainAttrs) then
+        for i = 1, #mainAttrs do
+            if not self.MainAttributes[i] then
+                local grid = XUiHelper.Instantiate(self.GridAttribute, self.PanelGroup)
+                self.MainAttributes[i] = XUiGridDlcRelinkEquipAttribute.New(grid, self)
+            end
+            self.MainAttributes[i]:Open()
+            self.MainAttributes[i]:Refresh(mainAttrs[i])
+            self.MainAttributes[i]:SetBg(bgIndex % 2 ~= 0)
+            self.MainAttributes[i].Transform:SetAsLastSibling()
+            bgIndex = bgIndex + 1
         end
-        self.MainAttribute:Open()
-        self.MainAttribute:Refresh(mainAttr)
-        self.MainAttribute.Transform:SetAsLastSibling()
 
         self.Spacing.gameObject:SetActiveEx(true)
         self.Spacing.transform:SetAsLastSibling()
@@ -349,14 +369,18 @@ function XUiDlcRelinkEquipReform:RefreshAttributes()
                 local node = self.DeputyAttributeNodes[index][i]
                 node:Open()
                 node:Refresh(slot.Attributes[i])
+                node:SetBg(bgIndex % 2 ~= 0)
+                bgIndex = bgIndex + 1
             end
         end
     end
 end
 
 function XUiDlcRelinkEquipReform:HideEquipAttributes()
-    if self.MainAttribute then
-        self.MainAttribute:Close()
+    for _, mainAttr in pairs(self.MainAttributes) do
+        if mainAttr then
+            mainAttr:Close()
+        end
     end
     for _, nodes in pairs(self.DeputyAttributeNodes) do
         for _, node in pairs(nodes or {}) do
@@ -383,21 +407,29 @@ end
 function XUiDlcRelinkEquipReform:OnEquipSlotCallBack(grid)
     local slotIndex = grid:GetSlotIndex()
     if self.CurSelectSlotIndex == slotIndex then
-        if slotIndex == EquipSlotType.Absorb then
-            self:UnloadAbsorbSlot()
-        end
         return
     end
 
     self.CurSelectSlotIndex = slotIndex
     self:RefreshEquipSlotSelect()
 
-    -- 重置职业选择并刷新列表
-    self.CurSelectEquipOccupationIndex = 0
-    self.CurSelectEquipUid = 0
-    self.CurSelectGrid = nil
-    self.EquipFilterCache = {}
+    self.CurSelectTabIndex = -1
+    local defaultIndex = self:GetDefaultSelectEquipOccupationIndex()
+    self.PanelTab:SelectIndex(defaultIndex)
+end
 
+---@param grid XUiGridDlcRelinkEquipment
+function XUiDlcRelinkEquipReform:OnEquipSlotRemoveCallBack(grid)
+    local slotIndex = grid:GetSlotIndex()
+    if self.CurSelectSlotIndex ~= slotIndex then
+        return
+    end
+
+    if slotIndex == EquipSlotType.Absorb then
+        self:UnloadAbsorbSlot()
+    end
+
+    self.CurSelectTabIndex = -1
     local defaultIndex = self:GetDefaultSelectEquipOccupationIndex()
     self.PanelTab:SelectIndex(defaultIndex)
 end
@@ -414,16 +446,9 @@ end
 
 -- 卸下吸收槽位的装备
 function XUiDlcRelinkEquipReform:UnloadAbsorbSlot()
-    -- 吸收槽位无装备
     if not XTool.IsNumberValid(self.CurAbsorbSlotEquipUid) then
         return
     end
-
-    if self.CurSelectGrid then
-        self.CurSelectGrid:SetSelect(false)
-    end
-    self.CurSelectEquipUid = 0
-    self.CurSelectGrid = nil
     self.CurAbsorbSlotEquipUid = 0
     self:RefreshEquipAbsorb()
 end
@@ -442,7 +467,7 @@ function XUiDlcRelinkEquipReform:GetDefaultSelectEquipOccupationIndex()
             return occupationType
         end
     end
-    return 1
+    return 0
 end
 
 function XUiDlcRelinkEquipReform:GetEquipOccupationTypeByUid(equipUid)
@@ -470,17 +495,14 @@ function XUiDlcRelinkEquipReform:RefreshEquipDetail()
         self.EquipDetailNode:Close()
     end
 
-    self.BtnDelete.gameObject:SetActiveEx(isValid)
-    self.TxtTips.gameObject:SetActiveEx(isValid)
-    if isValid then
-        self:RefreshDeleteBtn()
-    end
-end
-
-function XUiDlcRelinkEquipReform:RefreshDeleteBtn()
     local remainFactorRemoveNum = self:GetRemainFactorRemoveNum()
-    self.TxtTips.text = string.format(self._Control:GetClientConfig("EquipReformDeleteTips"), remainFactorRemoveNum)
-    self.BtnDelete:SetDisable(remainFactorRemoveNum <= 0)
+    local isShowDelete = isValid and remainFactorRemoveNum > 0
+    self.BtnDelete.gameObject:SetActiveEx(isShowDelete)
+    self.TxtTips.gameObject:SetActiveEx(isShowDelete)
+    if isShowDelete then
+        self.TxtTips.text = string.format(self._Control:GetClientConfig("EquipReformDeleteTips"), remainFactorRemoveNum)
+        self.BtnDelete:SetDisable(remainFactorRemoveNum <= 0)
+    end
 end
 
 -- 获取当前改造槽位装备剩余可移除次数
@@ -504,7 +526,8 @@ end
 
 function XUiDlcRelinkEquipReform:RefreshFilterBtn()
     local isFilter = self:CheckFilterCache()
-    self.BtnFilter:SetNameByGroup(0, self._Control:GetClientConfig("EquipFilterBtnDesc", isFilter and 2 or 1))
+    local color = self._Control:GetClientConfig("EquipFilterBtnColor", isFilter and 2 or 1)
+    self.BtnFilter:SetImgRGB(XUiHelper.Hexcolor2Color(color))
 end
 
 -- 检查当前筛选条件是否有生效
@@ -514,7 +537,6 @@ function XUiDlcRelinkEquipReform:CheckFilterCache()
     end
 
     if XTool.IsNumberValid(self.EquipFilterCache.ReformedType)
-        or XTool.IsNumberValid(self.EquipFilterCache.FactorRemovedType)
         or XTool.IsNumberValid(self.EquipFilterCache.EquipType)
         or not XTool.IsTableEmpty(self.EquipFilterCache.FactorIds) then
         return true
@@ -526,35 +548,51 @@ end
 function XUiDlcRelinkEquipReform:RefreshAbsorbBtn()
     local isValid = XTool.IsNumberValid(self.CurAbsorbSlotEquipUid)
     local isLocked = isValid and self._Control:GetEquipIsLockedByEquipUid(self.CurAbsorbSlotEquipUid) or false
-    local isSlotFull = isValid and self._Control:CheckEquipDeputyFactorSlotsIsFull(self.CurAbsorbSlotEquipUid) or false
+    local isSlotFull = isValid and self._Control:CheckEquipDeputyFactorSlotsIsFull(self.CurReformSlotEquipUid) or false
     self.BtnAbsorb:SetDisable(not isValid or isLocked or isSlotFull)
 end
 
 --endregion
 
+--region 筛选相关
+
+function XUiDlcRelinkEquipReform:RefreshEquipFilter()
+    ---@type XUiDlcRelinkPopupFilter
+    local luaUi = XLuaUiManager.GetTopLuaUi("UiDlcRelinkPopupFilter")
+    if luaUi then
+        local equipMainFactorIds = self._Control:GetEquipMainFactorIds(self.EquipUidList)
+        luaUi:RefreshFilter(equipMainFactorIds, self.EquipFilterCache)
+    end
+end
+
+--endregion
+
 function XUiDlcRelinkEquipReform:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnFilter, self.OnBtnFilterClick)
-    self:RegisterClickEvent(self.BtnDelete, self.OnBtnDeleteClick)
-    self:RegisterClickEvent(self.BtnLock, self.OnBtnLockClick)
-    self:RegisterClickEvent(self.BtnAbsorb, self.OnBtnAbsorbClick)
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnFilter:AddEventListener(handler(self, self.OnBtnFilterClick))
+    self.BtnDelete:AddEventListener(handler(self, self.OnBtnDeleteClick))
+    self.BtnLock:AddEventListener(handler(self, self.OnBtnLockClick))
+    self.BtnAbsorb:AddEventListener(handler(self, self.OnBtnAbsorbClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkEquipReform:OnBtnBackClick()
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupFilter")
     self:Close()
 end
 
 -- 打开筛选弹窗
 function XUiDlcRelinkEquipReform:OnBtnFilterClick()
-    self.BtnFilter:SetSpriteVisible(true)
-    local equipUidList = self._Control:GetEquipUidListByOccupationType(self.CurSelectEquipOccupationIndex)
+    if XLuaUiManager.IsUiShow("UiDlcRelinkPopupFilter") then
+        XLuaUiManager.Close("UiDlcRelinkPopupFilter")
+        return
+    end
+
+    local equipUidList = self._Control:GetEquipUidListByTagType(self.CurSelectTabIndex, self._Control.EquipUiType.Reform)
     local equipMainFactorIds = self._Control:GetEquipMainFactorIds(equipUidList)
     XLuaUiManager.Open("UiDlcRelinkPopupFilter", equipMainFactorIds, self.EquipFilterCache, false, function()
         self:SetupDynamicTable()
         self:RefreshFilterBtn()
-    end, function()
-        self.BtnFilter:SetSpriteVisible(false)
     end)
 end
 
@@ -586,6 +624,7 @@ function XUiDlcRelinkEquipReform:OnBtnLockClick()
     local isLocked = self._Control:GetEquipIsLockedByEquipUid(self.CurAbsorbSlotEquipUid)
     local callback = function()
         self:RefreshIsLocked()
+        self:RefreshAbsorbBtn()
     end
 
     if isLocked then
@@ -608,7 +647,7 @@ function XUiDlcRelinkEquipReform:OnBtnAbsorbClick()
         return
     end
 
-    local isSlotFull = self._Control:CheckEquipDeputyFactorSlotsIsFull(self.CurAbsorbSlotEquipUid)
+    local isSlotFull = self._Control:CheckEquipDeputyFactorSlotsIsFull(self.CurReformSlotEquipUid)
     if isSlotFull then
         self._Control:OpenCommonTipText("EquipReformAbsorbFullTips")
         return
@@ -627,7 +666,10 @@ function XUiDlcRelinkEquipReform:OnBtnAbsorbClick()
         self:UnloadAbsorbSlot()
         self:RefreshEquipReform()
         self:RefreshEquipDetail()
+        self.EquipFilterCache = {}
         self:SetupDynamicTable()
+        self:RefreshFilterBtn()
+        XLuaUiManager.SafeClose("UiDlcRelinkPopupFilter")
     end)
 end
 

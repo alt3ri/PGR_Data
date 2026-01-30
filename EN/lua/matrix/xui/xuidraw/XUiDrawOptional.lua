@@ -849,10 +849,10 @@ function XUiDrawOptional:OnBtnCloseClick()
     end
 
     if isDoNotSelectCb then
+        self:Close()
         if self.NotSelectCb then
             self.NotSelectCb()
         end
-        self:Close()
         return
     end
 
@@ -875,8 +875,8 @@ end
 ---校准活动选择
 function XUiDrawOptional:_OnBtnComfirmSelectDrawTarget()
     XDataCenter.DrawManager.RequestSelectTargetActivity(self._TargetActivityData:GetActivityId(), self.CurSelectDrawId, function()
-        self.OptionalCb(self._TargetActivityData)
         self:Close()
+        self.OptionalCb(self._TargetActivityData)
     end)
 end
 
@@ -900,8 +900,8 @@ function XUiDrawOptional:_OnBtnComfirmSelectDrawAnim()
     local sureFun = function(IsChange)
         if IsChange then
             XDataCenter.DrawManager.SaveDrawAimId(self.CurSelectDrawId, self.ParentUi.GroupId, function()
-                self.OptionalCb(self.CurSelectDrawId)
                 self:Close()
+                self.OptionalCb(self.CurSelectDrawId)
             end)
         end
     end

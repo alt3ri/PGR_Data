@@ -7,13 +7,16 @@ function XBWMapQuestPinData:UpdateData(pinId, data)
     local questId = data.QuestId
 
     self.QuestId = questId
-    self.ForceDisplay = data.ForceActive
     self.QuestObjectiveId = data.QuestObjectiveId or 0
+    self.IsOptionalQuestObjective = data.IsOptionalQuestObjective or false
     self.TargetSceneObjectPlaceId = data.SceneObjPlaceId or 0
     self.TargetNpcPlaceId = data.NpcPlaceId or 0
+    self.DisplayType = data.ShowType or XMVCA.XBigWorldMap.MapPinDisplayType.Point
+    self.Radius = data.Radius or 0
+    self:UpdateDisplay(data.Active or false)
     self.Super.UpdateData(self, 0, data.LevelId, {
         Id = pinId,
-        StyleId = XMVCA.XBigWorldMap:GetQuestPinStyleIdByQuestId(questId),
+        StyleId = self.IsOptionalQuestObjective and XMVCA.XBigWorldMap:GetOptionalQuestPinStyleIdByQuestId(questId) or XMVCA.XBigWorldMap:GetQuestPinStyleIdByQuestId(questId),
         ActivityId = 0,
         MapAreaGroupId = data.MapAreaGroupId or 0,
         WorldPosition = {

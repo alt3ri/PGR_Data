@@ -8,6 +8,8 @@ function XDlcRelinkActivity:Ctor()
     self.Exp = 0
     -- 每日签到
     self.DailySign = false
+    -- 是否完成了教学关
+    self.FinishedTutorial = false
     -- 当前角色列表 key:characterId
     ---@type XDlcRelinkCharacter[]
     self.Characters = {}
@@ -23,6 +25,8 @@ function XDlcRelinkActivity:Ctor()
     -- 装备预设 key:presetIndex
     ---@type table<number, XDlcRelinkEquipPreset>
     self.EquipPresetSets = {}
+    -- 今日全局匹配奖励获取次数
+    self.GlobalMatchRewardTimes = 0
 end
 
 function XDlcRelinkActivity:NotifyActivityData(data)
@@ -31,11 +35,13 @@ function XDlcRelinkActivity:NotifyActivityData(data)
     self.Level = data.Level or 0
     self.Exp = data.Exp or 0
     self.DailySign = data.DailySign or false
+    self.FinishedTutorial = data.FinishedTutorial or false
     self:UpdateCharacters(data.Characters)
     self:UpdateEquipsDatas(data.EquipsDatas)
     self.LevelDict = data.LevelDict or {}
     self.EmojiWheelIds = data.EmojiWheelIds or {}
     self.EquipPresetSets = data.EquipPresetSets or {}
+    self.GlobalMatchRewardTimes = data.GlobalMatchRewardTimes or 0
 end
 
 --region 更新信息
@@ -54,12 +60,19 @@ function XDlcRelinkActivity:AddCharacters(data)
     if not data or not data.CharacterId then
         return
     end
-    local character = self.Characters[data.CharacterId]
+    local curId = data.CharacterId
+    local character = self.Characters[curId]
     if not character then
         character = require("XModule/XDlcRelink/XEntity/XDlcRelinkCharacter").New()
-        self.Characters[data.CharacterId] = character
+        self.Characters[curId] = character
     end
     character:NotifyCharacterData(data)
+    --将装备从原先的穿戴者身上卸下
+    for id, char in pairs(self.Characters) do
+        if id ~= curId then
+            char:UnWearRepeatEquip(character)
+        end
+    end
 end
 
 function XDlcRelinkActivity:UpdateEquipsDatas(data)
@@ -110,11 +123,11 @@ function XDlcRelinkActivity:SetDailySign(dailySign)
     self.DailySign = dailySign or false
 end
 
--- 设置角色职业类型
-function XDlcRelinkActivity:SetCharacterOccupationType(characterId, occupationType)
+-- 设置角色风格类型
+function XDlcRelinkActivity:SetCharacterStyleType(characterId, styleType)
     local character = self:GetCharacterDataByCharacterId(characterId)
     if character then
-        character:SetOccupationType(occupationType)
+        character:SetStyleType(styleType)
     end
 end
 
@@ -131,14 +144,6 @@ function XDlcRelinkActivity:SetEquipIsLocked(equipUid, isLock)
     local equipData = self:GetEquipsDataByUid(equipUid)
     if equipData then
         equipData:SetIsLocked(isLock)
-    end
-end
-
--- 卸下穿戴的装备
-function XDlcRelinkActivity:UnWearEquipByCharacterId(characterId, equipSlotIndex)
-    local character = self:GetCharacterDataByCharacterId(characterId)
-    if character then
-        character:UnWearEquip(equipSlotIndex)
     end
 end
 
@@ -160,6 +165,11 @@ function XDlcRelinkActivity:SetEquipPresetSetByIndex(presetIndex, presetEquip, p
     self.EquipPresetSets[presetIndex] = self.EquipPresetSets[presetIndex] or {}
     self.EquipPresetSets[presetIndex].Slot2EquipUid = presetEquip or {}
     self.EquipPresetSets[presetIndex].Name = presetName or ""
+end
+
+-- 设置今日全局匹配奖励获取次数
+function XDlcRelinkActivity:SetGlobalMatchRewardTimes(times)
+    self.GlobalMatchRewardTimes = times or 0
 end
 
 --endregion
@@ -222,19 +232,21 @@ function XDlcRelinkActivity:GetEquipsDataCount()
     return table.nums(self.EquipsDatas)
 end
 
+-- 获取等级信息字典
+function XDlcRelinkActivity:GetLevelDict()
+    return self.LevelDict
+end
+
 -- 获取关卡通关时间
 function XDlcRelinkActivity:GetLevelFinishTime(levelId)
     local levelInfo = self.LevelDict and self.LevelDict[levelId]
-    if levelInfo and levelInfo.TopRankTeamInfo then
-        return levelInfo.TopRankTeamInfo.FinishTime or 0
-    end
-    return 0
+    return levelInfo and levelInfo.GoodFinishTime or 0
 end
 
 -- 获取关卡通关次数
-function XDlcRelinkActivity:GetLevelPassTime(levelId)
+function XDlcRelinkActivity:GetLevelPassCount(levelId)
     local levelInfo = self.LevelDict and self.LevelDict[levelId]
-    return levelInfo and levelInfo.PassTime or 0
+    return levelInfo and levelInfo.PassCount or 0
 end
 
 -- 获取表情轮盘Id列表
@@ -255,6 +267,11 @@ function XDlcRelinkActivity:GetEquipPresetSetDataByIndex(presetIndex)
     return self.EquipPresetSets[presetIndex]
 end
 
+-- 获取今日全局匹配奖励获取次数
+function XDlcRelinkActivity:GetGlobalMatchRewardTimes()
+    return self.GlobalMatchRewardTimes
+end
+
 --endregion
 
 --region 检查信息
@@ -265,6 +282,11 @@ function XDlcRelinkActivity:IsLevelPassed(levelId)
     return levelInfo and levelInfo.FirstPass or false
 end
 
+---是否完成了教学关
+function XDlcRelinkActivity:IsTutorialPassed()
+    return self.FinishedTutorial
+end
+
 --endregion
 
 return XDlcRelinkActivity
@@ -273,15 +295,16 @@ return XDlcRelinkActivity
 ---@class XDlcRelinkLevelInfo
 ---@field Level number 等级Id
 ---@field FirstPass number 是否首次通关
----@field TopRankTeamInfo XDlcRelinkRankTeamInfo 个人最好每个关卡最好成绩
+---@field TopRankTeamInfoList XDlcRelinkRankTeamInfo[] 个人最好每个关卡最好成绩 -个人排行榜使用
 ---@field Score number 最高分
----@field PassTime number 通关次数
+---@field GoodFinishTime number 最佳完成时间
+---@field PassCount number 通关次数
 
 ---@class XDlcRelinkRankPlayerInfo
 ---@field PlayerId number 玩家Id
 ---@field Name string 玩家名字
 ---@field CharacterId number 使用的角色Id
----@field OccupationType number 职业
+---@field StyleType number 风格
 ---@field HeadPortraitId number 头像Id
 ---@field HeadFrameId number 头像框Id
 ---@field TeamId number 队伍职业(是否是队长)

@@ -6,6 +6,7 @@ local XBossSingleData = XClass(nil, "XBossSingleData")
 
 function XBossSingleData:Ctor(data)
     self._IsEmpty = true
+    self._IsForceExit = false
     self:SetData(data)
 end
 
@@ -241,6 +242,18 @@ end
 
 function XBossSingleData:GetTotalScoreBestRecord()
     return self._TotalScoreBestRecord or 0
+end
+
+function XBossSingleData:IsForceExit()
+    return self._IsForceExit
+end
+
+function XBossSingleData:ClearForceExit()
+    self._IsForceExit = false
+end
+
+function XBossSingleData:SetForceExit(value)
+    self._IsForceExit = value or false
 end
 
 return XBossSingleData

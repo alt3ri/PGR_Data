@@ -10,10 +10,10 @@ function XGridCharacterGuildWarAssistantV2P6:UpdateBaseCharacterInfo()
     local character = self.Character
     if character then
         local characterId = character:GetId()
-        local isSpecialRole = XDataCenter.GuildWarManager.CheckIsSpecialRole(characterId)
+        local isSpecialRole = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(characterId)
         local icon = false
         if isSpecialRole then
-            icon = XDataCenter.GuildWarManager.GetSpecialRoleIcon(characterId)
+            icon = XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialRoleIcon(characterId)
             self.RImgGuildWarUP:SetRawImage(icon)
             self.PanelHighPriority.gameObject:SetActiveEx(true)
             return

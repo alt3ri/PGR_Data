@@ -27,10 +27,12 @@ function XUiBigWorldTaskMain:OnStart(index, questId)
     self:InitView()
     
     XEventManager.AddEventListener(DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.RefreshRedPoint, self)
+    XEventManager.AddEventListener(DlcEventId.EVENT_QUEST_REFRESH_MAIN_SELECT, self.SetSelectQuestId, self)
 end
 
 function XUiBigWorldTaskMain:OnEnable()
     self.PanelTabBtnGroup:SelectIndex(self._DefaultIndex)
+    self:RefreshButton()
 end
 
 function XUiBigWorldTaskMain:OnDisable()
@@ -38,6 +40,7 @@ end
 
 function XUiBigWorldTaskMain:OnDestroy()
     XEventManager.RemoveEventListener(DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.RefreshRedPoint, self)
+    XEventManager.RemoveEventListener(DlcEventId.EVENT_QUEST_REFRESH_MAIN_SELECT, self.SetSelectQuestId, self)
     
     XMVCA.XBigWorldQuest:SaveQuestRed()
 end
@@ -70,6 +73,8 @@ function XUiBigWorldTaskMain:InitCb()
     self.BtnBack:AddEventListener(handler(self, self.Close))
 
     self.BtnStory:AddEventListener(handler(self, self.OnBtnStoryClick))
+    
+    self.BtnInvitation:AddEventListener(handler(self, self.OnBtnInvitationClick))
 end
 
 function XUiBigWorldTaskMain:InitView()
@@ -107,6 +112,12 @@ function XUiBigWorldTaskMain:GetSelectData(typeId)
         --Type2TabIndex[typeId] = questId
         LastSelectQuest = questId
         return questId
+    end
+    if LastSelectQuest and LastSelectQuest > 0 then
+        local questData = XMVCA.XBigWorldQuest:GetQuestData(LastSelectQuest)
+        if not questData:IsInProgress() then
+            LastSelectQuest = nil
+        end
     end
     return LastSelectQuest
 end
@@ -154,7 +165,13 @@ function XUiBigWorldTaskMain:RefreshRedPoint()
     for i, typeId in pairs(self._TypeIds) do
         local btn = self._TabList[i]
         btn:ShowReddot(self:CheckRedPoint(typeId))
-    end 
+    end
+    
+    self.BtnInvitation:ShowReddot(XMVCA.XBigWorldQuest:CheckAllInviteRedPoint())
+end
+
+function XUiBigWorldTaskMain:RefreshButton()
+    self.BtnInvitation.gameObject:SetActiveEx(XMVCA.XBigWorldFunction:CheckFunctionOpen(XMVCA.XBigWorldFunction.FunctionId.BigWorldInviteQuest))
 end
 
 function XUiBigWorldTaskMain:RefreshTabButton()
@@ -164,4 +181,20 @@ function XUiBigWorldTaskMain:RefreshTabButton()
         return
     end
     panel:RefreshButton()
+end
+
+function XUiBigWorldTaskMain:OnBtnInvitationClick()
+    XMVCA.XBigWorldQuest:OpenInvitationView(LastSelectQuest)
+end
+
+function XUiBigWorldTaskMain:SetSelectQuestId(questId)
+    self._TabIndex = nil
+    local questType = self._Control:GetQuestType(questId)
+    for index, typeId in ipairs(self._TypeIds) do
+        if questType == typeId then
+            self._DefaultIndex = index
+            break
+        end
+    end
+    self._DefaultQuestId = questId
 end

@@ -15,6 +15,7 @@ XAreaWarManagerCreator = function()
     local _ActivityEnd = false --活动是否结束
     local _IsPlayMovie = false --是否播放开场剧情
     local _RandomSeed = 1 --随机种子，由服务端下发，用于生成地块
+    local _RescueCount = 0 -- 剩余可领奖救援次数
 
     local MAIN_UI_NEWBIE_GUIDE_ID = 0 --主界面新手引导Id
     local _UsingProbabilityItems = nil
@@ -159,12 +160,12 @@ XAreaWarManagerCreator = function()
     local _LastTimeReqActivityData = 0
     function XAreaWarManager.EnterUiMain(beforeOpenUiCb)
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.AreaWar) then
-            return
+            return false
         end
 
         if not XAreaWarManager.IsOpen() then
             XUiManager.TipText("AreaWarActivityNotOpen")
-            return
+            return false
         end
 
         --主动gc一次
@@ -192,6 +193,7 @@ XAreaWarManagerCreator = function()
             requestCount = 1
             XAreaWarManager.RequestEnter(onResponse)
         end
+        return true
     end
 
     function XAreaWarManager.DoEnterUiMain(beforeOpenUiCb)
@@ -1960,7 +1962,7 @@ XAreaWarManagerCreator = function()
 
     --请求派遣(robotIds为上阵特攻角色对应的robotId，characterIds为上阵的自己拥有成员的characterId)
     function XAreaWarManager.AreaWarDetachRequest(blockId, characterIds, robotIds, multiple, cb)
-        local req = {BlockId = blockId, CardIds = characterIds, RobotIds = robotIds, Multiple = multiple,ChooseItemIds = XAreaWarManager.GetUsingProbabilityItems()}
+        local req = {BlockId = blockId, CardIds = characterIds, RobotIds = robotIds, Multiple = multiple,ChooseItemIds =XAreaWarManager.GetUsingProbabilityItems()}
         XNetwork.Call(
                 "AreaWarDetachRequest",
                 req,
@@ -1994,6 +1996,7 @@ XAreaWarManagerCreator = function()
             end
 
             XAreaWarManager.GetAreaWarQuest(questId):Finish()
+            _RescueCount = _RescueCount - 1
             
             if cb then
                 cb(res.RewardGoodsList)
@@ -2040,6 +2043,13 @@ XAreaWarManagerCreator = function()
 
     --- 替换战斗前获取数据方法
     function XAreaWarManager.PreFight(stage, teamId, isAssist, challengeCount, challengeId)
+        -- 读取多重挑战的次数
+        local key = XDataCenter.AreaWarManager.GetCookieKey("SelectRepeatCount")
+        local localData = XSaveTool.GetData(key)
+        if localData then
+            challengeCount = localData
+        end
+        
         local preFight = {
             CardIds  ={0, 0, 0},
             RobotIds = {0, 0, 0},
@@ -2074,7 +2084,9 @@ XAreaWarManagerCreator = function()
             preFight.EnterCgIndex = team:GetEnterCgIndex()
             preFight.SettleCgIndex = team:GetSettleCgIndex()
         
-            preFight.AreaWar4PreFightInfo ={ChooseItemIds =XAreaWarManager.GetUsingProbabilityItems()} 
+            -- 道具数量 < 挑战次数，视为不使用道具
+            local chooseItemIds = XAreaWarManager.GetUsingProbabilityItems(challengeCount)
+            preFight.AreaWar4PreFightInfo ={ ChooseItemIds = chooseItemIds } 
 
         else
             XLog.Error("获取队伍数据失败, 关卡Id = " .. tostring(stage.StageId) .. ", 队伍Id = " .. teamId)
@@ -2204,12 +2216,12 @@ XAreaWarManagerCreator = function()
         _UsingProbabilityItems = itemIds
     end
 
-    function XAreaWarManager.GetUsingProbabilityItems()
+    function XAreaWarManager.GetUsingProbabilityItems(challengeCount)
         local result = {}
         if _UsingProbabilityItems then
             for _, itemId in pairs(_UsingProbabilityItems) do
                 local num = XMVCA.XAreaWar:GetItemRoom():GetItemNum(itemId)
-                if num > 0 then
+                if num > 0 and (not challengeCount or num >= challengeCount) then
                     table.insert(result, itemId)
                 end
             end
@@ -2636,6 +2648,11 @@ XAreaWarManagerCreator = function()
     function XAreaWarManager.CheckTodayRescueQuestRedPoint()
         return XAreaWarManager.GetPersonal():CheckTodayRescueQuestRedPoint()
     end
+
+    -- 获取剩余可领奖救援次数
+    function XAreaWarManager.GetRescueCount()
+        return _RescueCount
+    end
     
     --- 点赞救援任务
     ---@param questId number
@@ -2762,6 +2779,8 @@ XAreaWarManagerCreator = function()
         --先获取数据
         local listDaily, listRescue = personal:GetAllDailyList(false), personal:GetAllRescueList(false)
         personal:UpdateData(data.PlayerQuests, data.RescueQuests, data.RescueRefreshCount, data.CoinRecord)
+        -- 剩余可领奖救援次数
+        _RescueCount = data.RescueCount
         --更新随机种子
         _RandomSeed = data.RandomSeed
         UpdateLikeCount(data.LikeCount, 0)

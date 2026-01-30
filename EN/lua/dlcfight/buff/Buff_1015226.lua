@@ -3,7 +3,7 @@ local Base = require("Common/XFightBase")
 ---@class XBuffScript1015226 : XFightBase
 local XBuffScript1015226 = XDlcScriptManager.RegBuffScript(1015226, "XBuffScript1015226", Base)
 
---效果说明：每获得2.5%额外【护盾强度】，提升1%火伤，至多提升200%火伤
+--效果说明：每获得2.5%额外【护盾强度】，提升1%火伤，至多提升160%火伤
 function XBuffScript1015226:Init()
     --初始化
     Base.Init(self)
@@ -13,7 +13,7 @@ function XBuffScript1015226:Init()
     self.countAttrib = 250    -- 每获得x点额外属性
     self.magicEffect = 100    -- 其他属性转为本属性时的转换比
     self.attrib = ENpcAttrib.ShieldAmpP
-    self.addTimes = 200
+    self.addTimes = 160
 
     self.magicIdFire = 1015029
     self.magicIdThunder = 1015131

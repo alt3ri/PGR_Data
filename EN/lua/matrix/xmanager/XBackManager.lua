@@ -34,6 +34,7 @@ XBackManagerCreator = function()
         BtnCloseMask4 = true,
         BtnTanchuangCloseWhite = true,
         BtnCloseCollection = true,
+        UiDlcRelinkPopupBtnClose = true,
     }
 
     local function IsOnBtnClick()

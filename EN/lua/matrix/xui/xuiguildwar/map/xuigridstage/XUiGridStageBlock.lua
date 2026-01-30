@@ -14,12 +14,10 @@ end
 ---@param panelStage XUiGuildWarPanelStage
 function XUiGridStageBlock:UpdateGrid(nodeEntity, IsPathEdit, IsActionPlaying, isPathEditOver, panelStage)
     self.Super.UpdateGrid(self, nodeEntity, IsPathEdit, IsActionPlaying, isPathEditOver, panelStage)
-
-    local node = self.StageNode
     
     self._PanelStage = panelStage
     
-    if node:GetIsDead() then
+    if nodeEntity:GetIsDead() then
         self:SetEffectBlockActive(false)
         if self._EffectLine1 then
             self._EffectLine1.gameObject:SetActiveEx(false)
@@ -53,7 +51,9 @@ function XUiGridStageBlock:OnHide()
 end
 
 function XUiGridStageBlock:OnShow()
-    if self.StageNode and not self.StageNode:GetIsDead() then
+    local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId)
+    
+    if nodeEntity and not nodeEntity:GetIsDead() then
         self:SetEffectBlockActive(true)
         if self._EffectLine1 then
             self._EffectLine1.gameObject:SetActiveEx(self._PanelStage and self._PanelStage.StageGroupLine1.gameObject.activeSelf)

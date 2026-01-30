@@ -15,11 +15,10 @@ function XUiGuildWarFlagSpecialAndAssistant:Update(member)
 
     -- 特攻图标
     local characterId = member:GetEntityId()
-    local isSpecialRole = XDataCenter.GuildWarManager.CheckIsSpecialRole(
-                              characterId)
+    local isSpecialRole = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(characterId)
     self.PanelGuildwarUP.gameObject:SetActiveEx(isSpecialRole)
     if isSpecialRole then
-        local icon = XDataCenter.GuildWarManager.GetSpecialRoleIcon(characterId)
+        local icon = XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialRoleIcon(characterId)
         self.RImgGuildwarUP:SetRawImage(icon)
     end
     self.PanelGuildwarSupport.gameObject:SetActiveEx(member:IsAssitant())

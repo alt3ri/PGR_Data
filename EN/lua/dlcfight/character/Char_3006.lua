@@ -4,8 +4,8 @@ local Base = require("Character/BigWorld/XBigWorldEcologyCharBase")
 ---@class XCharEcologyTest : XBigWorldEcologyCharBase
 local XCharEcologyTest = XDlcScriptManager.RegCharScript(3006, "XCharEcologyTest", Base)
 
-function XCharEcologyTest:Init()
-    Base.Init(self)
+function XCharEcologyTest:CommonInit()
+    Base.CommonInit(self)
     -- 冲突的PlaceId
     self._oppositeNpcPlaceIdDict = {
         [100016] = true,

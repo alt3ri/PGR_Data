@@ -4,8 +4,8 @@ local Base = require("Character/BigWorld/XBigWorldEcologyCharBase")
 ---@class XNPC_Lifu : XBigWorldEcologyCharBase
 local XNPC_Lifu = XDlcScriptManager.RegCharScript(6064, "XNPC_Lifu", Base)
 
-function XNPC_Lifu:Init()
-    Base.Init(self)
+function XNPC_Lifu:CommonInit()
+    Base.CommonInit(self)
     -- 神丽芙NPC冲突屏蔽脚本
     -- 参数1:QuestId, 参数2:开始ObjectiveId, 参数3:Objective状态, 参数4:结束ObjectiveId, 参数5:Objective状态,
     -- 在任务2002下，开始的目标2002014，目标状态开始，结束的目标2002051，目标状态结束

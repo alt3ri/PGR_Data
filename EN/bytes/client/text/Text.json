@@ -661,7 +661,7 @@
     },
     {
         "Key": "Snap",
-        "Text": "{0}%Off"
+        "Text": "{0}% Off"
     },
     {
         "Key": "QuantifiersA",
@@ -693,7 +693,7 @@
     },
     {
         "Key": "Residue",
-        "Text": "Remaining "
+        "Text": "Remaining"
     },
     {
         "Key": "Buy",
@@ -1193,7 +1193,7 @@
     },
     {
         "Key": "BossSingleLeftTime",
-        "Text": "<size=34><color=#000000FF>Time until reset: </color></size>{0}"
+        "Text": "<size=34><color=#000000FF>Resets in: </color></size>{0}"
     },
     {
         "Key": "BossSingleLeftTimeIos",
@@ -1953,19 +1953,19 @@
     },
     {
         "Key": "ArenaActivityResultUp",
-        "Text": "You have been promoted to <color=#0f70bc><size=60>{0}</size></color> in War Zone."
+        "Text": "You have been promoted to <color=#0f70bc><size=60>{0} Squad</size></color> in War Zone."
     },
     {
         "Key": "ArenaActivityResultDown",
-        "Text": "You have been demoted to <color=#0f70bc><size=60>{0}</size></color> in War Zone."
+        "Text": "You have been demoted to <color=#0f70bc><size=60>{0} Squad</size></color> in War Zone."
     },
     {
         "Key": "ArenaActivityResultKeep",
-        "Text": "You have retained your rank of <color=#0f70bc><size=60>{0}</size></color> in War Zone."
+        "Text": "You have retained your rank of <color=#0f70bc><size=60>{0} Squad</size></color> in War Zone."
     },
     {
         "Key": "ArenaActivityResultNotContributeScore",
-        "Text": "Merit lower than {0}. You stayed in the <color=#0f70bc><size=60>{1} Team</size></color> in the War Zone."
+        "Text": "Merit lower than {0}. You stayed in the <color=#0f70bc><size=60>{1} Squad</size></color> in the War Zone."
     },
     {
         "Key": "ArenaActivityProtected",
@@ -3649,7 +3649,7 @@
     },
     {
         "Key": "BossSingleAutoFightDesc10",
-        "Text": "(Max {0} Progress obtainable)"
+        "Text": "{0}"
     },
     {
         "Key": "BossSingleAutoFightDesc11",
@@ -3713,11 +3713,11 @@
     },
     {
         "Key": "TaskLeftHour",
-        "Text": "Remaining<color=#0e70bd> {0} </color>hour(s) "
+        "Text": "<color=#0e70bd> {0} </color>hr left"
     },
     {
         "Key": "TaskLeftMin",
-        "Text": "Remaining<color=#0e70bd> {0} </color>min(s)"
+        "Text": "<color=#0e70bd> {0} </color>min left"
     },
     {
         "Key": "TaskBeginHour",
@@ -3761,7 +3761,7 @@
     },
     {
         "Key": "PurchaseDiscount",
-        "Text": "*Bundle is <color=#4851A3>more cost-effective</color> than purchasing separately"
+        "Text": "*Bundle is more cost-effective than purchasing separately"
     },
     {
         "Key": "BattleLoseActorNum",
@@ -3980,6 +3980,10 @@
         "Text": "Cannot access Dormitory in Co-op room"
     },
     {
+        "Key": "InTeamCantLookFashion",
+        "Text": "Cannot view Coating details in Co-op room"
+    },
+    {
         "Key": "DormNullFurniture",
         "Text": "No Decors"
     },
@@ -4101,7 +4105,7 @@
     },
     {
         "Key": "TaskLeftDay",
-        "Text": "Remaining<color=#0e70bd> {0} </color>day(s)"
+        "Text": "<color=#0e70bd> {0}</color>D left"
     },
     {
         "Key": "TypeItem",
@@ -5029,11 +5033,11 @@
     },
     {
         "Key": "PlayBeforeStory",
-        "Text": "Play pre-combat Cutscene"
+        "Text": "Play Pre-combat Story"
     },
     {
         "Key": "PlayAfterStory",
-        "Text": "Play post-combat Cutscene"
+        "Text": "Play Post-combat Story"
     },
     {
         "Key": "MovieSkipTipTitle",
@@ -5977,7 +5981,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=34>{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -9841,7 +9845,7 @@
     },
     {
         "Key": "StrongholdTeamRestartConfirmContentOther",
-        "Text": "Ongoing Challenge Progress found in <color=blue>{0}</color>, challenging this stage will cause the retreat of that team, all cleared stages will need to be challenged again. Confirm retreat?"
+        "Text": "\u5f53\u524d\u5df2\u5728{0}\u62e5\u6709\u6311\u6218\u8fdb\u5ea6\uff0c\u6311\u6218\u672c\u5173\u5c06\u64a4\u56de\u76f8\u5173\u68af\u961f\uff0c\u5df2\u538b\u5236\u5173\u5361\u9700\u8981\u91cd\u65b0\u6311\u6218\uff0c\u662f\u5426\u786e\u8ba4\u64a4\u9000\uff1f"
     },
     {
         "Key": "StrongholdElectricTeamMaxNum",
@@ -10957,23 +10961,23 @@
     },
     {
         "Key": "InvertCardGameMaxInvertConutTextBlue",
-        "Text": "After flipping cards <color=#ffe956>{0}</color> time(s), no more Whalesound Memory is needed to flip additional cards. (<color=#ffe956>{1}</color>/{2})"
+        "Text": "\u7d2f\u8ba1\u7ffb\u724c <color=#744EF1>{0}</color> \u6b21\u540e\uff0c\u7ffb\u724c\u4e0d\u6d88\u8017\u9cb8\u97f3\u5b58\u50a8\u5668\uff08<color=#744EF1>{1}</color>/{2}\uff09"
     },
     {
         "Key": "InvertCardGameMaxInvertConutTextNormal",
-        "Text": "After flipping cards <color=#ffe956>{0}</color> time(s), no more Whalesound Memory is needed to flip additional cards. ({1}/{2})"
+        "Text": "\u7d2f\u8ba1\u7ffb\u724c <color=#744EF1>{0}</color> \u6b21\u540e\uff0c\u7ffb\u724c\u4e0d\u6d88\u8017\u9cb8\u97f3\u5b58\u50a8\u5668\uff08{1}/{2}\uff09"
     },
     {
         "Key": "InvertCardGameCurInvertConutText",
-        "Text": "Cards flipped: <color=#ffe956>{0}/{1}</color>"
+        "Text": "\u5f53\u524d\u7ffb\u724c\uff1a<color=#744EF1>{0}/{1}</color>"
     },
     {
         "Key": "InvertCardGameConstomCountBlue",
-        "Text": "<color=#ffe956>{0}</color> to flip"
+        "Text": "<color=#744EF1>{0}</color> \u53ef\u4ee5\u7ffb\u5f00\u5361\u724c"
     },
     {
         "Key": "InvertCardGameConstomCountRed",
-        "Text": "<color=#da4a4a>{0}</color> to flip"
+        "Text": "<color=#744EF1>{0}</color> \u53ef\u4ee5\u7ffb\u5f00\u5361\u724c"
     },
     {
         "Key": "InvertCardGameHaveNotEnoughItem",
@@ -11237,7 +11241,7 @@
     },
     {
         "Key": "MineSweepingNotCoinHint",
-        "Text": "You do not have sufficient [Dreamcatchers]."
+        "Text": "Insufficient [Deduction Data]. Unable to do this."
     },
     {
         "Key": "STOverTimeHint",
@@ -11521,7 +11525,7 @@
     },
     {
         "Key": "PassportAutoGetTipsDesc",
-        "Text": "Some rating missions have refreshed. The Intel points of your completed rating missions have been automatically claimed:"
+        "Text": "Some rating missions have refreshed. The Intel Value of your completed rating missions have been automatically claimed:"
     },
     {
         "Key": "STTierCanNotPlayHint",
@@ -11849,7 +11853,7 @@
     },
     {
         "Key": "PassportRewardTxtBuy",
-        "Text": "<color=#0f70bc>{0}</color>, increase Rating Lv. to Lv.<color=#0f70bc>{1}</color>?"
+        "Text": "<color=#0f70bc>{0}</color>, increase Rating Level to Lv.<color=#0f70bc>{1}</color>?"
     },
     {
         "Key": "SSBMainPointGetText",
@@ -12509,7 +12513,7 @@
     },
     {
         "Key": "DiceGameNoEnoughCoinHint",
-        "Text": "Tea Tin x<color=#ff0000>{0}</color> required to do this."
+        "Text": "Crimson Chip x<color=#ff0000>{0}</color> required to do this."
     },
     {
         "Key": "DiceGameCostFlagHint",
@@ -14433,7 +14437,7 @@
     },
     {
         "Key": "WeekChallengeLock",
-        "Text": "Unlock on MM/dd/yyyy"
+        "Text": "'Unlocks on' MM/dd/yyyy"
     },
     {
         "Key": "ShopExchangeTip",
@@ -14973,7 +14977,7 @@
     },
     {
         "Key": "EquipGuideEquipNotExist",
-        "Text": "No equipment can be equipped for now."
+        "Text": "No equipable items available."
     },
     {
         "Key": "EquipGuideEquipCanEquips",
@@ -16833,7 +16837,7 @@
     },
     {
         "Key": "ItemOwn",
-        "Text": "Owned"
+        "Text": "Own"
     },
     {
         "Key": "ItemCost",
@@ -17461,7 +17465,7 @@
     },
     {
         "Key": "ConnectingLineMoney",
-        "Text": "\u3010\u9ed1\u91d1\u718a\u5361\u3011\u4e0d\u8db3\uff0c\u65e0\u6cd5\u5f00\u542f\u5173\u5361"
+        "Text": "Insufficient [Black Gold Bear Cards]. Unable to unlock the stage."
     },
     {
         "Key": "ConnectingLineStage",
@@ -18212,6 +18216,38 @@
         "Text": "Less than 10 Research Attempts left"
     },
     {
+        "Key": "GachaBiankaFashionBtn",
+        "Text": "Change Coating"
+    },
+    {
+        "Key": "GachaBiankaBgBtn",
+        "Text": "Use Now"
+    },
+    {
+        "Key": "GachaBiankaRewardTitle1",
+        "Text": "Milestone Reward Obtained \u2014 {0}"
+    },
+    {
+        "Key": "GachaBiankaRewardTitle2",
+        "Text": "Milestone Reward \u2014 {0}"
+    },
+    {
+        "Key": "GachaBiankaSettingSuccess",
+        "Text": "Settings saved"
+    },
+    {
+        "Key": "GachaBiankaTime",
+        "Text": "{0}"
+    },
+    {
+        "Key": "GachaBiankaFashionDesc",
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Milestone Rewards]."
+    },
+    {
+        "Key": "GachaBiankaItemNoEnough",
+        "Text": "Less than 10 Research Attempts left"
+    },
+    {
         "Key": "ResonanceSuccess",
         "Text": "Resonance success"
     },
@@ -18281,7 +18317,7 @@
     },
     {
         "Key": "DlcMultiplayerCurrencyReward",
-        "Text": "<color=#60ffeb>{0}</color>/{1} (+{2})"
+        "Text": "<color=#be4f2f>{0}</color>/{1} (+{2})"
     },
     {
         "Key": "DlcMultiplayerCantInvitedTip",
@@ -19401,15 +19437,15 @@
     },
     {
         "Key": "MultiMouseHunterUnVote",
-        "Text": "Support <color=#ffc341>All</color>"
+        "Text": "Support All"
     },
     {
         "Key": "MultiMouseHunterVote",
-        "Text": "<color=#ffc43e>Confirm to support</color> {0}"
+        "Text": "Confirm to support {0}"
     },
     {
         "Key": "MultiMouseHunterVoted",
-        "Text": "{0} <color=#ffc43e>supported</color>"
+        "Text": "{0} supported"
     },
     {
         "Key": "MultiMouseHunterSubUnVote",
@@ -19512,6 +19548,10 @@
         "Text": "You cannot jump during matchmaking"
     },
     {
+        "Key": "InRoomSkipTip",
+        "Text": "Cannot navigate while in co-op room"
+    },
+    {
         "Key": "VersionGiftLeftTime",
         "Text": "{0}"
     },
@@ -19569,11 +19609,11 @@
     },
     {
         "Key": "PokerGuessing2StoryInviteContent",
-        "Text": "Spend 1 Double Seventh Festival Coin to watch the character's exclusive story. Proceed?"
+        "Text": "Spend 1 Valentine's Day event item to watch the character's exclusive story. Proceed?"
     },
     {
         "Key": "PokerGuessing2StoryInviteNoEnoughTicket",
-        "Text": "Insufficient Double Seventh Festival Coins"
+        "Text": "Insufficient Valentine's Day event items"
     },
     {
         "Key": "PokerGuessing2UnknownName",
@@ -19593,15 +19633,15 @@
     },
     {
         "Key": "PokerGuessing2ChangeEnemyCardSkillOver",
-        "Text": "Opponent's card(s) already modified"
+        "Text": "Opponent's card already changed."
     },
     {
         "Key": "PokerGuessing2UseSkillInNoCardTips",
-        "Text": "Please play the card you want to modify first"
+        "Text": "Play a card first."
     },
     {
         "Key": "PokerGuessing2GameLoseTips",
-        "Text": "Try watching your opponent to figure out their play, or use the help option"
+        "Text": "Try to read your opponent's play, or use a card change."
     },
     {
         "Key": "LevelChinese",
@@ -23476,6 +23516,10 @@
         "Text": "Switch to this Coating immediately?"
     },
     {
+        "Key": "FashionSuitDiscountActivityTip",
+        "Text": "Discount expires in: {0}"
+    },
+    {
         "Key": "TeamPrefabWeaponNotExistConflict",
         "Text": "Some equipment in the current team is unavailable. Adjust your setup before deploying."
     },
@@ -23552,6 +23596,26 @@
         "Text": "Discount"
     },
     {
+        "Key": "FashionActivityFirstTag",
+        "Text": "Event"
+    },
+    {
+        "Key": "FashionActivitySecondTag",
+        "Text": "Special Offer"
+    },
+    {
+        "Key": "FashionActivityRemainDays",
+        "Text": "Returns to original price in {0} day(s)."
+    },
+    {
+        "Key": "FashionActivityRemainNotEnoughDay",
+        "Text": "Returns to original price in under 1 day."
+    },
+    {
+        "Key": "SwitchableScenePcTip",
+        "Text": "Hold Alt and move the mouse to interact."
+    },
+    {
         "Key": "DrawCanLiverWeekTaskFinish",
         "Text": "All weekly event missions completed"
     },
@@ -23562,5 +23626,21 @@
     {
         "Key": "ENBuyTicketSuccessTips",
         "Text": "Purchase successful. Obtained {0} {1}(s)."
+    },
+    {
+        "Key": "DlcMultiPlayerSkillTips1",
+        "Text": "Skill slots not full. Please continue equipping."
+    },
+    {
+        "Key": "DlcMultiPlayerSkillTips2",
+        "Text": "The slots are full. Please remove a skill first."
+    },
+    {
+        "Key": "DlcRelinkMateForceExit",
+        "Text": "Co-op connection interrupted due to network error. Please check your network connection."
+    },
+    {
+        "Key": "DiscountActivityTip",
+        "Text": "<color=#626c78>Discount expires in:</color> {0}"
     }
 ]

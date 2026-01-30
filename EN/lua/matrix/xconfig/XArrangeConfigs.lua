@@ -60,6 +60,8 @@ XArrangeConfigs.Types = {
     SgDormFashion = 28, --空花宿舍涂装
     QuestItem = 29, --空花任务道具
     BWDIYPart = 30, --空花指挥官DIY部件
+    Filter = 31,        -- 滤镜解锁
+    Anim = 32,          -- 动作解锁
 }
 
 function XArrangeConfigs.GetType(id)

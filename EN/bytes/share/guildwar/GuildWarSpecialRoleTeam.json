@@ -1,7 +1,32 @@
 [
     {
         "Id": 1,
-        "CharacterIds": "[1041005, 1271003, 1331003, 1071004]",
-        "FightEventId": 2240400
+        "CharacterIds": "[1141004, 1041005, 1331003, 1341002]",
+        "FightEventId": "[2240413, 2240414]",
+        "EnableNum": "[2, 3]",
+        "BuffName": "Lightless Oblivion",
+        "BuffSimpleDesc": "Dark DMG of all members increases.",
+        "BuffDesc": "<size=21>When the team includes 2/3 of the following frames, Dark DMG of all team members increases by 10%/15%</size>",
+        "BuffIcon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangan2.png"
+    },
+    {
+        "Id": 2,
+        "CharacterIds": "[1291003, 1211003, 1521004, 1091003]",
+        "FightEventId": "[2240415, 2240416]",
+        "EnableNum": "[2, 3]",
+        "BuffName": "Zero Frost",
+        "BuffSimpleDesc": "Ice DMG of all members increases.",
+        "BuffDesc": "<size=21>When the team includes 2/3 of the following frames, Ice DMG of all team members increases by 10%/15%</size>",
+        "BuffIcon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie2.png"
+    },
+    {
+        "Id": 3,
+        "CharacterIds": "[1031005, 1051005, 1221003, 1021005]",
+        "FightEventId": "[2240417, 2240418]",
+        "EnableNum": "[2, 3]",
+        "BuffName": "Megavolt Field",
+        "BuffSimpleDesc": "Lightning DMG of all members increases.",
+        "BuffDesc": "<size=21>When the team includes 2/3 of the following frames, Lightning DMG of all team members increases by 10%/15%</size>",
+        "BuffIcon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png"
     }
 ]

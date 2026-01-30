@@ -27,9 +27,11 @@ function XUiFashionSuitDetail:OnAwake()
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderCharacterHight, self.OnSliderCharacterHightChanged)
 end
 
-function XUiFashionSuitDetail:OnStart(fashionSuitId, fashionId)
+---@param updateCb fun(rewardList:table) 采购界面更新回调
+function XUiFashionSuitDetail:OnStart(fashionSuitId, fashionId, updateCb)
     self._SuitId = fashionSuitId
     self._Id = fashionId
+    self._UpdateCb = updateCb
     self._SuitConfig = self._Control:GetFashionSuitById(fashionSuitId)
     self._FashionConfig = XFashionConfigs.GetFashionTemplate(fashionId)
     self._FashionCount = #self._SuitConfig.FashionIds
@@ -43,18 +45,37 @@ function XUiFashionSuitDetail:OnStart(fashionSuitId, fashionId)
 
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
     XUiHelper.NewPanelActivityAssetSafe({ XDataCenter.ItemManager.ItemId.HongKa, XDataCenter.ItemManager.ItemId.PaintingDesign }, self.PanelSpecialTool, self)
+    XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_CLEAR_DATA, self.SignGetShopInfo, self)
 end
 
 function XUiFashionSuitDetail:OnEnable()
-    self:UpdateView()
+    -- 从采购界面回来时，礼包数据会被清空
+    if self._ReqShopInfo then
+        XDataCenter.PurchaseManager.LBInfoDataReq(function()
+            self:UpdateView()
+        end)
+    else
+        self:UpdateView()
+    end
+    self._ReqShopInfo = false
 end
 
 function XUiFashionSuitDetail:OnDisable()
 
 end
 
-function XUiFashionSuitDetail:OnDestroy()
+--历史遗留逻辑：XPurchaseManager.ClearData和UiPurchase绑定
+--在进入试玩时，涂装套装界面先于采购界面关闭，所以监听不到事件
+function XUiFashionSuitDetail:OnReleaseInst()
+    return self._ReqShopInfo or XLuaUiManager.IsUiLoad("UiPurchase")
+end
 
+function XUiFashionSuitDetail:OnResume(reqShopInfo)
+    self._ReqShopInfo = reqShopInfo
+end
+
+function XUiFashionSuitDetail:OnDestroy()
+    XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_CLEAR_DATA, self.SignGetShopInfo, self)
 end
 
 function XUiFashionSuitDetail:InitView()
@@ -70,6 +91,16 @@ function XUiFashionSuitDetail:InitView()
     
     self:OnBtnShowUiClick()
     self:OnBtnTipsCloseClick()
+end
+
+function XUiFashionSuitDetail:SignGetShopInfo()
+    self._ReqShopInfo = true
+end
+
+function XUiFashionSuitDetail:CallPurchaseCb(rewardList)
+    if self._UpdateCb then
+        self._UpdateCb(rewardList)
+    end
 end
 
 function XUiFashionSuitDetail:UpdateView()
@@ -337,46 +368,13 @@ end
 --region 试玩
 
 function XUiFashionSuitDetail:UpdatePlayBtn()
-    local isShowBtn = false
-    local skip = self._FashionConfig.FashionSuitTestPlayLevelSkipId
-    if XTool.IsNumberValid(skip) then
-        local skipConfig = XFunctionConfig.GetSkipFuncCfg(skip)
-        local isOpen = skipConfig.FunctionalId and XFunctionManager.JudgeCanOpen(skipConfig.FunctionalId)
-        if isOpen then
-            local startTime = XTime.ParseToTimestamp(skipConfig.StartTime)
-            local closeTime = XTime.ParseToTimestamp(skipConfig.CloseTime)
-            local nowTime = XTime.GetServerNowTimestamp()
-            if skipConfig.StartTime and skipConfig.CloseTime then
-                if nowTime >= startTime and nowTime <= closeTime then
-                    isShowBtn = true
-                end
-            elseif skipConfig.StartTime and not skipConfig.CloseTime then
-                if nowTime >= startTime then
-                    isShowBtn = true
-                end
-            elseif not skipConfig.StartTime and skipConfig.CloseTime then
-                if nowTime <= closeTime then
-                    isShowBtn = true
-                end
-            else
-                isShowBtn = true
-            end
-        end
-    end
-    self.BtnPlay.gameObject:SetActiveEx(isShowBtn)
+    self._TrialLevelInfo = XDataCenter.FubenExperimentManager.GetTrialLevelByFashionID(self._Id)
+    local isOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.Experiment)
+    self.BtnPlay.gameObject:SetActiveEx(isOpen and self._TrialLevelInfo ~= nil)
 end
 
 function XUiFashionSuitDetail:OnBtnPlayClick()
-    local skip = self._FashionConfig.FashionSuitTestPlayLevelSkipId
-    local skipConfig = XFunctionConfig.GetSkipFuncCfg(skip)
-    if XTool.IsNumberValid(skipConfig.ConditionId) then
-        local result, desc = XConditionManager.CheckCondition(skipConfig.ConditionId)
-        if not result then
-            XUiManager.TipError(desc)
-            return
-        end
-    end
-    XFunctionManager.SkipInterface(self._FashionConfig.FashionSuitTestPlayLevelSkipId)
+    XLuaUiManager.Open("UiPaintingExperiencePassV4P2", self._TrialLevelInfo.Id)
 end
 
 --endregion

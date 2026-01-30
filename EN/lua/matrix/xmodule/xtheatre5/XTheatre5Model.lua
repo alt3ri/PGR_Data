@@ -148,4 +148,18 @@ function XTheatre5Model:HasEnoughExpToAutoUpgrade()
     return false
 end
 
+--- 判断任务是否有多个奖励
+function XTheatre5Model:CheckMissionHasMultyRewards(bountyId, level)
+    level = level or 1
+
+    local id = self:GetMissionBountyComboId(bountyId, level)
+    local bountyCfg = self:GetTheatre5MissionBountyCfgById(id)
+
+    if bountyCfg then
+        return XTool.GetTableCount(bountyCfg.BountyItem) > 1
+    end
+
+    return false
+end
+
 return XTheatre5Model

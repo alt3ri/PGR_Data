@@ -69,7 +69,9 @@ function XCharKuroro:Update(dt)
         end
         if distance <= 0.15 then
             XLog.Debug("库洛洛停止移动，开始与目标交互")
-            self._proxy:NpcStartInteractWith(self._uuid, self._interactTargetUUID, self._interactOptionId)
+            --该接口已废弃，玩家交互不应再允许玩家操作外的地方发起。库洛洛交互逻辑层面可以作为玩家交互流程的一环来实现。
+            --表现层面看起来还是一样的，就是到一个指定的地方，播个动画特效之类的，然后开门。
+            --self._proxy:NpcStartInteractWith(self._uuid, self._interactTargetUUID, self._interactOptionId)
             self._movingToInteractSpot = false
             self._executingInteractBehavior = false
         end
@@ -126,7 +128,8 @@ function XCharKuroro:GoToInteractWith(targetUUID, interactOptionId, spotIndex)
     self._interactTargetUUID = targetUUID
     self._interactOptionId = interactOptionId
 
-    self._interactSpot = self._proxy:GetActorInteractionLauncherSpot(targetUUID)
+    --该接口已废弃
+    --self._interactSpot = self._proxy:GetActorInteractionLauncherSpot(targetUUID)
     self._movingToInteractSpot = true
     self._executingInteractBehavior = true
     XLog.Debug(string.format("库洛洛开始去和目标交互:目标UUID:%d,交互选项ID:%d", targetUUID, interactOptionId))

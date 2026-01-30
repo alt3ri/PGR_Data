@@ -194,6 +194,16 @@ function table.nums(t)
     return XTool.GetTableCount(t)
 end
 
+function table.findElementCout(t, element)
+    local count = 0
+    for k, v in pairs(t) do
+        if v == element then
+            count = count + 1
+        end
+    end
+    return count
+end
+
 --[[
     @desc: 列表去重
     --@t:需要去重的列表

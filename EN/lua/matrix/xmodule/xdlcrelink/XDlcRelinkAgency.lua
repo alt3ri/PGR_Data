@@ -1,12 +1,12 @@
-local XDlcSimulationChallengeAgency = require("XModule/XBase/XDlcSimulationChallengeAgency")
+local XDlcActivityAgency = require("XModule/XBase/XDlcActivityAgency")
 local XDlcRelinkRoom = require("XModule/XDlcRelink/XEntity/XDlcRelinkRoom")
 local XDlcRelinkWorldFight = require("XModule/XDlcRelink/XEntity/XDlcRelinkWorldFight")
----@class XDlcRelinkAgency : XDlcSimulationChallengeAgency
+---@class XDlcRelinkAgency : XDlcActivityAgency
 ---@field private _Model XDlcRelinkModel
-local XDlcRelinkAgency = XClass(XDlcSimulationChallengeAgency, "XDlcRelinkAgency")
+local XDlcRelinkAgency = XClass(XDlcActivityAgency, "XDlcRelinkAgency")
 function XDlcRelinkAgency:OnInit()
     --初始化一些变量
-    self:DlcRegisterChapter()
+    self:DlcRegisterActivity()
 end
 
 function XDlcRelinkAgency:InitRpc()
@@ -17,6 +17,8 @@ function XDlcRelinkAgency:InitRpc()
     XRpc.NotifyDlcRelinkRemoveEquip = handler(self, self.NotifyDlcRelinkRemoveEquip)
     XRpc.NotifyDlcRelinkEquipPreset = handler(self, self.NotifyDlcRelinkEquipPreset)
     XRpc.NotifyDlcRelinkCharacterData = handler(self, self.NotifyDlcRelinkCharacterData)
+    XRpc.NotifyDlcRelinkDailyReset = handler(self, self.NotifyDlcRelinkDailyReset)
+    XRpc.DlcRelinkLikeNotify = handler(self, self.DlcRelinkLikeNotify)
 end
 
 function XDlcRelinkAgency:InitEvent()
@@ -81,7 +83,7 @@ function XDlcRelinkAgency:NotifyDlcRelinkEquipPreset(data)
     XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_SYNC_EQUIP_PRESET)
 end
 
--- 角色数据同步
+--- 角色数据同步
 function XDlcRelinkAgency:NotifyDlcRelinkCharacterData(data)
     if not data then
         return
@@ -92,6 +94,28 @@ function XDlcRelinkAgency:NotifyDlcRelinkCharacterData(data)
     for _, v in pairs(data.Character) do
         self._Model.ActivityData:AddCharacters(v)
     end
+end
+
+--- 每日重置通知
+function XDlcRelinkAgency:NotifyDlcRelinkDailyReset(data)
+    if not data then
+        return
+    end
+    if not self._Model.ActivityData then
+        return
+    end
+    self._Model.ActivityData:SetDailySign(data.DailySign)
+    self._Model.ActivityData:SetGlobalMatchRewardTimes(data.GlobalMatchRewardTimes)
+    XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_DAILY_RESET)
+end
+
+--- 点赞通知
+function XDlcRelinkAgency:DlcRelinkLikeNotify(data)
+    if not data then
+        return
+    end
+    self._Model:AddLikeInfoCache(data.FromPlayerId, data.TargetPlayerId)
+    XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_LIKE_NOTIFY, data.FromPlayerId, data.TargetPlayerId)
 end
 
 --endregion
@@ -115,7 +139,16 @@ function XDlcRelinkAgency:OpenMainUi()
     if not self:GetIsOpen() then
         return false
     end
-    XLuaUiManager.Open("UiDlcRelinkMain")
+
+    -- 玩法重连检查
+    XMVCA.XDlcRoom:ReqPreCheckReconnect(self:DlcGetWorldType(), function()
+        -- 重连处理
+        if XMVCA.XDlcWorld:OnReconnectFight() then
+            return
+        end
+
+        XLuaUiManager.Open("UiDlcRelinkMain")
+    end)
     return true
 end
 
@@ -154,12 +187,61 @@ end
 --- 打开邀请UI
 ---@param inviteData XChatData 邀请数据
 function XDlcRelinkAgency:DlcOpenInviteUi(inviteData)
+    if self:DlcCheckInInviteRoom(inviteData.Content) then
+        XLog.Debug("已在邀请的房间内，无需再次打开邀请界面")
+        return
+    end
     XLuaUiManager.Open("UiDlcRelinkPopupInvitation", inviteData)
+end
+
+--- 检查是否已在邀请的房间内
+---@param content string 邀请内容
+---@return boolean
+function XDlcRelinkAgency:DlcCheckInInviteRoom(content)
+    local params = XChatData.DecodeRoomMsg(content)
+    if not params then
+        return false
+    end
+
+    if not XMVCA.XDlcRoom:IsInRoom() then
+        return false
+    end
+
+    local roomData = XMVCA.XDlcRoom:GetRoomData()
+    if not roomData then
+        return false
+    end
+
+    local worldId = tonumber(params[3])
+    local roomId = params[4]
+    local levelId = tonumber(params[8])
+    if roomData:GetWorldId() == worldId and roomData:GetId() == roomId and roomData:GetLevelId() == levelId then
+        return true
+    end
+    return false
 end
 
 --- 检测邀请UI是否打开
 function XDlcRelinkAgency:DlcCheckInviteUiShow()
     return XLuaUiManager.IsUiShow("UiDlcRelinkPopupInvitation")
+end
+
+--- 自定义进入条件检测
+function XDlcRelinkAgency:DlcCheckCustomEnterCondition(roomId, nodeId, worldId, levelId, createTime)
+    -- 未完成教学, 跳转到主界面并提示
+    local teachingLevelId = self._Model:GetTeachingLevelId()
+    if XTool.IsNumberValid(teachingLevelId) and not self._Model:IsTutorialPassed() then
+        local tipContext = self._Model:GetClientConfig("TeachingNotPassedTips", 1)
+        if XLuaUiManager.IsUiShow("UiDlcRelinkMain") or XLuaUiManager.IsUiShow("UiDlcRelinkRoom") then
+            XUiManager.TipMsg(tipContext)
+            return false
+        end
+        self:CommonRunRelinkMainUiHandle(function()
+            XUiManager.TipMsg(tipContext)
+        end)
+        return false
+    end
+    return true
 end
 
 --- 战斗侧获取角色模型Id
@@ -192,9 +274,9 @@ function XDlcRelinkAgency:ExCheckInTime()
     return XFunctionManager.CheckInTimeByTimeId(timeId)
 end
 
-function XDlcRelinkAgency:ExGetChapterType()
-    return XEnumConst.FuBen.ChapterType.DlcRelink
-end
+--function XDlcRelinkAgency:ExGetChapterType()
+--    return XEnumConst.FuBen.ChapterType.DlcRelink
+--end
 
 function XDlcRelinkAgency:ExGetProgressTip()
     local passCount, totalCount = self:GetLevelPassProgress()
@@ -238,6 +320,10 @@ end
 
 --- 检查所有关卡是否有新解锁
 function XDlcRelinkAgency:CheckAllLevelHasNewUnlock()
+    local teachingLevelId = self._Model:GetTeachingLevelId()
+    if XTool.IsNumberValid(teachingLevelId) and not self._Model:IsTutorialPassed() then
+        return false
+    end
     local chapterIds = self._Model:GetActivityChapterIds()
     for _, chapterId in pairs(chapterIds) do
         if self._Model:CheckChapterHasAnyNewLevel(chapterId) then
@@ -255,16 +341,215 @@ function XDlcRelinkAgency:CheckAllTaskRedPoint()
     end
     for _, config in pairs(configs) do
         if config.Type == XEnumConst.DlcRelink.ShopTaskType.Task then
-            local taskIds = config.ParamId or {}
-            for _, taskId in ipairs(taskIds) do
-                local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
-                if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
-                    return true
+            local taskTimelineIds = config.ParamId or {}
+            for _, taskTimelineId in ipairs(taskTimelineIds) do
+                local taskDataList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelineId)
+                if not XTool.IsTableEmpty(taskDataList) then
+                    for _, taskData in ipairs(taskDataList) do
+                        if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
+                            return true
+                        end
+                    end
                 end
             end
         end
     end
     return false
+end
+
+--endregion
+
+--region 主界面和房间逻辑
+
+--- 回到主界面
+function XDlcRelinkAgency:CommonRunRelinkMainUiHandle(callback)
+    local uiName = "UiDlcRelinkMain"
+    if XLuaUiManager.IsStackUiOpen(uiName) then
+        XLuaUiManager.CloseAllUpperUiWithCallback(uiName, callback)
+    else
+        XLuaUiManager.OpenWithCallback(uiName, callback)
+    end
+end
+
+--- 回到房间界面 需要先回到主界面再打开房间界面
+function XDlcRelinkAgency:CommonRunRelinkRoomUiHandle(callback)
+    local mainUiName = "UiDlcRelinkMain"
+    local roomUiName = "UiDlcRelinkRoom"
+    if XLuaUiManager.IsStackUiOpen(mainUiName) then
+        if XLuaUiManager.IsStackUiOpen(roomUiName) then
+            XLuaUiManager.CloseAllUpperUiWithCallback(roomUiName, callback)
+        else
+            XLuaUiManager.OpenWithCallback(roomUiName, callback)
+        end
+    else
+        XLuaUiManager.OpenWithCallback(mainUiName, function()
+            XLuaUiManager.OpenWithCallback(roomUiName, callback)
+        end)
+    end
+end
+
+--endregion
+
+--region 埋点相关
+
+---教学关结束时发送教学引导相关的埋点信息
+function XDlcRelinkAgency:RecordTeachingLevel(settleData)
+    if not settleData or not settleData.ResultData or not settleData.ResultData.WorldData then
+        return
+    end
+
+    local levelId = settleData.ResultData.WorldData.LevelId
+    if levelId ~= self._Model:GetTeachingLevelId() then
+        return
+    end
+
+    local guideId = tonumber(self._Model:GetClientConfig("TeachingLevelGuideId", 1))
+    local state = 0
+    if XTool.IsNumberValid(guideId) and XDataCenter.GuideManager.CheckIsGuide(guideId) then
+        state = 1
+    end
+    local dict = {
+        guide_id = guideId,
+        guide_state = state,
+    }
+    CS.XRecord.Record(dict, "1000012", "DlcRelinkTeachingLevelGuide")
+end
+
+--endregion
+
+--region Condition相关
+
+--- 章节通关次数
+---@param chapterId number 章节Id 为 0 表示 任意章节
+---@param levelId number 关卡Id 为 0 表示 某章节下的 任意关卡
+---@param count number 通关次数
+---@return boolean
+function XDlcRelinkAgency:CheckChapterPassCount(chapterId, levelId, count)
+    if not self._Model.ActivityData then
+        return false
+    end
+
+    local levelDict = self._Model.ActivityData:GetLevelDict()
+    if XTool.IsTableEmpty(levelDict) then
+        return false
+    end
+
+    local totalPassCount = 0
+    for _, levelInfo in pairs(levelDict) do
+        local levelCfg = self._Model:GetLevelConfig(levelInfo.Level)
+        if levelCfg then
+            local isChapterMatch = (chapterId == 0) or (levelCfg.ChapterId == chapterId)
+            local isLevelMatch = (levelId == 0) or (levelInfo.Level == levelId)
+            if isChapterMatch and isLevelMatch then
+                totalPassCount = totalPassCount + levelInfo.PassCount
+            end
+        end
+    end
+
+    return totalPassCount >= count
+end
+
+--- 角色研发等级
+---@param level number 等级
+---@return boolean
+function XDlcRelinkAgency:CheckCharacterResearchLevel(level)
+    if not self._Model.ActivityData then
+        return false
+    end
+
+    local playerLevel = self._Model.ActivityData:GetLevel()
+    return playerLevel >= level
+end
+
+--- 使用指定的角色ID通过关卡X次
+---@param characterId number 角色Id
+---@param styleType number 角色风格类型 为0 表示任意风格
+---@param chapterId number 章节Id 为 0 表示 任意章节
+---@param levelId number 关卡Id 为 0 表示 某章节下的 任意关卡
+---@param times number 次数
+---@return boolean
+function XDlcRelinkAgency:CheckUseCharacterPassLevelTimes(characterId, styleType, chapterId, levelId, times)
+    if not self._Model.ActivityData then
+        return false
+    end
+
+    local characterInfo = self._Model.ActivityData:GetCharacterDataByCharacterId(characterId)
+    if not characterInfo then
+        return false
+    end
+
+    local characterPassInfo = characterInfo:GetCharacterStyleTypePassInfoDict()
+    if XTool.IsTableEmpty(characterPassInfo) then
+        return false
+    end
+
+    local totalCount = 0
+    for _, passInfo in pairs(characterPassInfo) do
+        if styleType == 0 or styleType == passInfo.StyleType then
+            local levelAndPassCountDict = passInfo.LevelAndPassCountDict or {}
+            for levelIdKey, passCount in pairs(levelAndPassCountDict) do
+                local levelCfg = self._Model:GetLevelConfig(levelIdKey)
+                if levelCfg then
+                    local isChapterMatch = (chapterId == 0) or (levelCfg.ChapterId == chapterId)
+                    local isLevelMatch = (levelId == 0) or (levelIdKey == levelId)
+                    if isChapterMatch and isLevelMatch then
+                        totalCount = totalCount + passCount
+                    end
+                end
+            end
+        end
+    end
+
+    return totalCount >= times
+end
+
+--- 背包界面引导条件检测
+--- 1. 研发等级达到指定等级
+--- 2. 背包界面已打开并且主槽位有装备
+---@param level number 等级
+---@return boolean
+function XDlcRelinkAgency:CheckBagUiGuideCondition(level)
+    if not self._Model.ActivityData then
+        return false
+    end
+
+    local playerLevel = self._Model.ActivityData:GetLevel()
+    if playerLevel < level then
+        return false
+    end
+
+    ---@type XUiDlcRelinkEquipBag
+    local luaUi = XLuaUiManager.GetTopLuaUi("UiDlcRelinkEquipBag")
+    if not luaUi then
+        return false
+    end
+
+    local characterId = luaUi.CharacterId
+    local characterInfo = self._Model.ActivityData:GetCharacterDataByCharacterId(characterId)
+    if not characterInfo then
+        return false
+    end
+
+    local equipUid = characterInfo:GetEquipBySlot(XEnumConst.DlcRelink.EquipSlotIndex.MainSlot)
+    if XTool.IsNumberValid(equipUid) then
+        return true
+    end
+    return false
+end
+
+--- 是否显示网络切换提示
+--- 1. 仅在房间界面显示
+--- 2. 当前网络为非wifi且之前未弹过提示则显示
+---@param isShow boolean 是否显示
+---@return boolean
+function XDlcRelinkAgency:IsShowNetworkSwitchTip(isShow)
+    if not XLuaUiManager.IsUiShow("UiDlcRelinkRoom") then
+        return false
+    end
+
+    local isWifi = CS.XNetworkReachability.IsViaLocalArea()
+    local needPopTip = not isWifi and self._Model:CheckNeedPopWifiTips()
+    return isShow == needPopTip
 end
 
 --endregion

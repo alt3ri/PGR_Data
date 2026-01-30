@@ -19,7 +19,7 @@ function XUiDlcRelinkPopupSkillDetail:OnAwake()
     self:RegisterUiEvents()
 
     self.IsShowHurtBubble = false
-    self.IsSimpleDesc = true
+    self.IsSimpleDesc = not self._Control:GetSkillDescIsDetail()
 
     self.SecondSkillIds = {}
     self.CurSecondSkillIndex = 1
@@ -27,9 +27,6 @@ function XUiDlcRelinkPopupSkillDetail:OnAwake()
 
     ---@type UiObject[]
     self.GridTagList = {}
-
-    self.IsVideoPlaying = false
-
     ---@type UiObject[]
     self.GridAffixList = {}
     self.IsShowAffixDetail = false
@@ -42,15 +39,13 @@ function XUiDlcRelinkPopupSkillDetail:OnStart(skillId, characterId, isRemodel, c
     self.Callback = callback
     self.IsNotSelf = isNotSelf or false
 
-    self:RefreshGridSkill()
     self:RefreshInfo()
-    self:RefreshDamage()
     self:RefreshSkillDetail()
 end
 
 function XUiDlcRelinkPopupSkillDetail:OnDisable()
-    if self.VideoPlayer and self.IsVideoPlaying then
-        self.VideoPlayer:Pause()
+    if self.VideoPlayer then
+        self.VideoPlayer:Stop()
         self.PanelVideo.gameObject:SetActiveEx(false)
     end
 end
@@ -61,7 +56,7 @@ function XUiDlcRelinkPopupSkillDetail:RefreshGridSkill()
         self.GridSkillUi = XUiGridDlcRelinkCharacterSkill.New(self.GridSkill, self)
     end
     self.GridSkillUi:Open()
-    self.GridSkillUi:Refresh(self.SkillId, self.CharacterId, self.IsRemodel, self.IsNotSelf)
+    self.GridSkillUi:Refresh(self.CurSecondSkillId, self.CharacterId, self.IsRemodel, self.IsNotSelf)
 end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshInfo()
@@ -74,8 +69,8 @@ end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshDamage()
     -- 伤害
-    local curDamage = self._Control:GetSkillCurrentDamage(self.SkillId, self.CharacterId, self.IsNotSelf)
-    local maxDamage = self._Control:GetSkillMaxDamageLimit(self.SkillId, self.CharacterId, self.IsNotSelf)
+    local curDamage = self._Control:GetSkillCurrentDamage(self.CurSecondSkillId, self.CharacterId, self.IsNotSelf)
+    local maxDamage = self._Control:GetSkillMaxDamageLimit(self.CurSecondSkillId, self.CharacterId, self.IsNotSelf)
     if maxDamage > 0 then
         curDamage = math.min(curDamage, maxDamage)
     end
@@ -108,7 +103,9 @@ end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshSecondSkill()
     self.CurSecondSkillId = self.SecondSkillIds[self.CurSecondSkillIndex]
-    self.TxtSecondTitle.text = self.CurSecondSkillId == self.SkillId and self._Control:GetClientConfig("SkillDetailSecondTitle") or self._Control:GetSkillDescName(self.CurSecondSkillId)
+    self.TxtSecondTitle.text = self._Control:GetSkillDescSubtitle(self.CurSecondSkillId)
+    self:RefreshGridSkill()
+    self:RefreshDamage()
     self:RefreshTagList()
     self:RefreshDesc()
     self:RefreshVideo()
@@ -156,24 +153,19 @@ function XUiDlcRelinkPopupSkillDetail:RefreshDesc()
     self.TxtDesc.onLinkClick = function(arg)
         self:RefreshAffixList(arg)
     end
-    self.TxtDesc.text = desc
+    self.TxtDesc.text = XUiHelper.ConvertLineBreakSymbol(desc)
 end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshVideo()
-    local videoUrl = self._Control:GetSkillDescVideoUrl(self.CurSecondSkillId)
-    if string.IsNilOrEmpty(videoUrl) then
+    local videoConfigId = self._Control:GetSkillDescVideoConfigId(self.CurSecondSkillId)
+    if not XTool.IsNumberValid(videoConfigId) then
         self.PanelVideo.gameObject:SetActiveEx(false)
         return
     end
 
     self.PanelVideo.gameObject:SetActiveEx(true)
-    self.VideoPlayer:SetVideoFromRelateUrl(videoUrl)
-    if self.IsVideoPlaying then
-        self.VideoPlayer:RePlay()
-    else
-        self.VideoPlayer:Play()
-    end
-    self.IsVideoPlaying = true
+    self.VideoPlayer:SetInfoByVideoId(videoConfigId)
+    self.VideoPlayer:RePlay()
 end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshAffixList(arg)
@@ -216,10 +208,11 @@ function XUiDlcRelinkPopupSkillDetail:HideAffixDetail()
 end
 
 function XUiDlcRelinkPopupSkillDetail:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnHurt, self.OnBtnHurtClick)
-    self:RegisterClickEvent(self.BtnDesc, self.OnBtnDescClick)
-    self:RegisterClickEvent(self.BtnChange, self.OnBtnChangeClick)
+    self.BtnClose.IsEventPass = true
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnHurt:AddEventListener(handler(self, self.OnBtnHurtClick))
+    self.BtnDesc:AddEventListener(handler(self, self.OnBtnDescClick))
+    self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
 end
 
 function XUiDlcRelinkPopupSkillDetail:OnBtnCloseClick()
@@ -228,10 +221,10 @@ function XUiDlcRelinkPopupSkillDetail:OnBtnCloseClick()
         return
     end
 
-    self:Close()
     if self.Callback then
         self.Callback()
     end
+    self:Close()
 end
 
 function XUiDlcRelinkPopupSkillDetail:OnBtnHurtClick()
@@ -249,6 +242,9 @@ function XUiDlcRelinkPopupSkillDetail:OnBtnDescClick()
     end
 
     self.IsSimpleDesc = not self.IsSimpleDesc
+
+    self._Control:SetSkillDescIsDetail(not self.IsSimpleDesc)
+
     self:RefreshDesc()
 end
 

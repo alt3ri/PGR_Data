@@ -32,7 +32,7 @@ XGuildWarConfig.RankingTarget = {
     Player = 2, --玩家排行榜
     Secret = 3, --隐藏节点排行榜
 }
---地图节点类型枚举
+--地图节点类型枚举\
 XGuildWarConfig.NodeType = {
     Home = 1, -- 基地
     Normal = 2, -- 普通点
@@ -264,6 +264,16 @@ XGuildWarConfig.RewardStatus = {
     Received = 3,
 }
 
+-- 特殊节点刷新类型（用于记录节点被服务端数据覆盖的顺序）
+XGuildWarConfig.NodeDataUpdateSource = {
+    Action = 1, -- 携带数据的行为
+    NewGameThrough = 2, -- 新周目数据
+    DragenRageOpen = 3, -- 龙怒开启
+    Activity = 4, -- 完整数据覆盖（包括定时请求和八点下推）
+    SingleNodeChange = 5, -- 单个节点变化下推
+    PlayerMove = 6, -- 玩家移动时触发的节点下推
+}
+
 --endregion
 
 --=============
@@ -282,7 +292,6 @@ XGuildWarConfig.TableKey = enum({
     Difficulty = { TableName = "GuildWarDifficulty" }, --难度配置
     EliteMonster = { TableName = "GuildWarEliteMonster" }, --精英怪配置
     Node = { TableName = "GuildWarNode" }, --节点配置
-    ClientConfig = { DirType = XConfigCenter.DirectoryType.Client, TableName = "GuildWarClientConfig", ReadFuncName = "ReadByStringKey", ReadKeyName = "Key" }, --客户端灵活配置
     MonsterPatrol = { TableName = "GuildWarMonsterPatrol" }, --精英怪巡逻配置
     Buff = { TableName = "GuildWarBuff" }, --buff配置
     SpecialRole = { TableName = "GuildWarSpecialRole" }, --特攻角色列表
@@ -315,7 +324,7 @@ function XGuildWarConfig.GetServerConfigValue(key)
 end
 --ClientConfig
 function XGuildWarConfig.GetClientConfigValues(Key, valueType)
-    local cfg = XGuildWarConfig.GetCfgByIdKey(XGuildWarConfig.TableKey.ClientConfig, Key)
+    local cfg = XMVCA.XGuildWar:GetGuildWarClientConfig(Key)
     
     local tagValues = {}
 
@@ -336,7 +345,7 @@ function XGuildWarConfig.GetClientConfigValues(Key, valueType)
 end
 
 function XGuildWarConfig.GetClientConfigValue(Key, valueType, index)
-    local cfg = XGuildWarConfig.GetCfgByIdKey(XGuildWarConfig.TableKey.ClientConfig, Key)
+    local cfg = XMVCA.XGuildWar:GetGuildWarClientConfig(Key)
 
     if cfg and not XTool.IsTableEmpty(cfg.Values) then
         local valueStr = cfg.Values[(index or 1)]
@@ -344,7 +353,7 @@ function XGuildWarConfig.GetClientConfigValue(Key, valueType, index)
         if (valueType == "Int" or valueType == "Float") then
             return (not string.IsNilOrEmpty(valueStr) and string.IsFloatNumber(valueStr)) and tonumber(valueStr) or 0
         else
-            return valueStr
+            return valueStr or ''
         end
 
     end

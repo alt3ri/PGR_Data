@@ -7,7 +7,6 @@ local XUiPanelDlcRelinkCharacterRight = require("XUi/XUiDlcRelink/Room/Panel/XUi
 local XUiDlcRelinkCharacter = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkCharacter")
 
 function XUiDlcRelinkCharacter:OnAwake()
-    XMVCA.XDlcRoom:BeginSelectCharacter()
     self.PanelEmptyList.gameObject:SetActiveEx(false)
     self.PanelRight.gameObject:SetActiveEx(false)
     self.GridCharacter.gameObject:SetActiveEx(false)
@@ -37,17 +36,6 @@ function XUiDlcRelinkCharacter:OnEnable()
     self:RefreshCharacterList()
 end
 
-function XUiDlcRelinkCharacter:OnGetLuaEvents()
-    return {
-        XEventId.EVENT_DLC_ROOM_SELECT_CHARACTER,
-        XEventId.EVENT_DLC_MULTIPLAYER_MATCHING_BACK
-    }
-end
-
-function XUiDlcRelinkCharacter:OnNotify(event, ...)
-    self:EndSelectingAndClose()
-end
-
 function XUiDlcRelinkCharacter:OnDisable()
     self.Super.OnDisable(self)
     self.CurSelectGrid = nil
@@ -74,6 +62,11 @@ function XUiDlcRelinkCharacter:RefreshCharacterList()
     self.PanelCharacter.gameObject:SetActiveEx(not isEmpty)
     if isEmpty then
         return
+    end
+
+    if not XTool.IsNumberValid(self.CurSelectCharacterId) then
+        -- 默认选择第一个角色
+        self.CurSelectCharacterId = self.CharacterIds[1]
     end
 
     for index, characterId in ipairs(self.CharacterIds) do
@@ -139,15 +132,10 @@ function XUiDlcRelinkCharacter:RefreshPanelRight()
 end
 
 function XUiDlcRelinkCharacter:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
 end
 
 function XUiDlcRelinkCharacter:OnBtnBackClick()
-    self:EndSelectingAndClose()
-end
-
-function XUiDlcRelinkCharacter:EndSelectingAndClose()
-    XMVCA.XDlcRoom:EndSelectCharacter()
     self:Close()
 end
 

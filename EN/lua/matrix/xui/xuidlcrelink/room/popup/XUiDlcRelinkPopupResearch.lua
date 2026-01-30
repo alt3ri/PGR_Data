@@ -10,7 +10,6 @@ end
 
 function XUiDlcRelinkPopupResearch:OnStart(callBack)
     self.CallBack = callBack
-    self:PlayAnimation("AnimBegin")
 
     ---@type XUiGridDlcRelinkResearchProperty[]
     self.PropertyGridList = {}
@@ -20,6 +19,7 @@ function XUiDlcRelinkPopupResearch:OnEnable()
     self:RefreshInfo()
     self:RefreshPropertyList()
     self:RefreshRedPoint()
+    self:RefreshLevelUpShow()
 end
 
 function XUiDlcRelinkPopupResearch:RefreshInfo()
@@ -43,13 +43,13 @@ end
 
 function XUiDlcRelinkPopupResearch:RefreshCost()
     -- 图标
-    local icon = XDataCenter.ItemManager.GetItemIcon(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin)
+    local icon = XDataCenter.ItemManager.GetItemIcon(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin)
     self.Icon:SetRawImage(icon)
     -- 数量
     local needCost = self._Control:GetUpgradeNeedCostCoin()
     self.TxtATNums.text = needCost
     -- 拥有数量
-    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin)
+    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin)
     local color = self._Control:GetClientConfig("PlayerLevelNotEnoughCoinColor", hasCost < needCost and 2 or 1)
     self.TxtATNums.color = XUiHelper.Hexcolor2Color(color)
 end
@@ -98,14 +98,46 @@ function XUiDlcRelinkPopupResearch:RefreshPropertyList()
     end
 end
 
+function XUiDlcRelinkPopupResearch:RefreshLevelUpShow()
+    local curLevel = self._Control:GetCurrentPlayerLevel()
+    local nextLevel = curLevel + 1
+
+    local isMax = self._Control:GetPlayerLevelIsMax(curLevel)
+
+    local isUnlockUp, lockDesc = false, ''
+
+    if not isMax then
+        isUnlockUp, lockDesc = self._Control:CheckPlayerLevelUpCondition(nextLevel)
+    end
+
+    if self.PanelLock then
+        local isShowLock = not isMax and not isUnlockUp
+        self.PanelLock.gameObject:SetActiveEx(isShowLock)
+
+        if isShowLock then
+            if self.TxtLock then
+                self.TxtLock.text = lockDesc
+            end
+        end
+    end
+
+    if self.PanelMax then
+        self.PanelMax.gameObject:SetActiveEx(isMax)
+    end
+
+    if self.PanelBottom then
+        self.PanelBottom.gameObject:SetActiveEx(not isMax and isUnlockUp)
+    end
+end
+
 function XUiDlcRelinkPopupResearch:RefreshRedPoint()
     local isShowRedPoint = self._Control:CheckPlayerLevelUpRedPoint()
     self.BtnEnter:ShowReddot(isShowRedPoint)
 end
 
 function XUiDlcRelinkPopupResearch:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
-    self:RegisterClickEvent(self.BtnEnter, self.OnBtnEnterClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnEnter:AddEventListener(handler(self, self.OnBtnEnterClick))
 end
 
 function XUiDlcRelinkPopupResearch:OnBtnCloseClick()
@@ -113,12 +145,10 @@ function XUiDlcRelinkPopupResearch:OnBtnCloseClick()
 end
 
 function XUiDlcRelinkPopupResearch:OnClose()
-    self:PlayAnimation("AnimEnd", function()
-        self:Close()
-        if self.CallBack then
-            self.CallBack()
-        end
-    end)
+    self:Close()
+    if self.CallBack then
+        self.CallBack()
+    end
 end
 
 function XUiDlcRelinkPopupResearch:OnBtnEnterClick()
@@ -135,11 +165,15 @@ function XUiDlcRelinkPopupResearch:OnBtnEnterClick()
     end
 
     local needCost = self._Control:GetUpgradeNeedCostCoin()
-    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin)
+    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin)
     if hasCost < needCost then
-        local itemName = XDataCenter.ItemManager.GetItemName(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin)
+        local itemName = XDataCenter.ItemManager.GetItemName(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin)
         local desc2 = string.format(self._Control:GetClientConfig("PlayerLevelNotEnoughCoinDesc"), itemName)
         self._Control:OpenCommonTipMsg(desc2)
+        return
+    end
+
+    if not self._Control:AbleSyncDataToMatchServer() then
         return
     end
 
@@ -147,6 +181,7 @@ function XUiDlcRelinkPopupResearch:OnBtnEnterClick()
         self:RefreshInfo()
         self:RefreshPropertyList()
         self:RefreshRedPoint()
+        self:RefreshLevelUpShow()
     end)
 end
 

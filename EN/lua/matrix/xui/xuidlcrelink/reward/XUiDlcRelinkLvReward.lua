@@ -11,6 +11,12 @@ function XUiDlcRelinkLvReward:OnAwake()
     self.BtnChild.gameObject:SetActiveEx(false)
     self.PanelTaskStory.gameObject:SetActiveEx(false)
     self.PanelItemList.gameObject:SetActiveEx(false)
+
+    local itemIds = { XDataCenter.ItemManager.ItemId.DlcRelinkStoreCoin }
+    self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe(itemIds, self.PanelSpecialTool, self, nil, function(data, index)
+        local itemId = itemIds[index]
+        XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", itemId)
+    end)
 end
 
 function XUiDlcRelinkLvReward:OnStart()
@@ -188,7 +194,7 @@ function XUiDlcRelinkLvReward:UpdateBuy(data, cb)
             cb()
         end
         self:RefreshRedPoint()
-    end, "000000ff")
+    end)
 end
 
 function XUiDlcRelinkLvReward:GetCurShopId()
@@ -203,8 +209,8 @@ function XUiDlcRelinkLvReward:RefreshBuy()
 end
 
 function XUiDlcRelinkLvReward:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
 end
 
 function XUiDlcRelinkLvReward:OnBtnBackClick()

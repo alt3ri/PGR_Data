@@ -18,6 +18,7 @@ end
 
 function XUiBigWorldShowLoading:OnDestroy()
     XMVCA.XBigWorldUI:SetMaskActive(false)
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CHECK_FUNCTION_POPUP)
 end
 
 return XUiBigWorldShowLoading

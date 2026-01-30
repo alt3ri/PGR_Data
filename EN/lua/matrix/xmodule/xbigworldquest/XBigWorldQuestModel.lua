@@ -21,6 +21,24 @@ local TableQuestKey = {
     DlcQuestArchive = { DirPath = XConfigUtil.DirectoryType.Client },
 }
 
+local TableInviteQuestKey = {
+    DlcInviteQuest = {
+        ReadFunc = XConfigUtil.ReadType.IntAll,
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
+    DlcInviteQuestResult = {
+        CacheType = XConfigUtil.CacheType.Normal
+    },
+}
+
+local TableEnvironmentQuestKey = {
+    DlcEnvironmentQuest = {
+        CacheType = XConfigUtil.CacheType.Normal,
+        ReadFunc = XConfigUtil.ReadType.IntAll,
+        DirPath = XConfigUtil.DirectoryType.Client 
+    },
+}
+
 local QuestViewShield = {
     --领取时屏蔽
     ShieldWhenReceive = 1,
@@ -29,6 +47,9 @@ local QuestViewShield = {
 }
 
 local PopViewType = {
+    --不开弹窗
+    None = 0,
+    
     --通用
     Small = 1,
     
@@ -37,12 +58,16 @@ local PopViewType = {
     
     --全屏好感
     FullScreenFavorable = 3,
+    
+    --邀约任务
+    Invitation = 4,
 }
 
 local PopViewType2UiName = {
     [PopViewType.Small] = "UiBigWorldTaskObtain",
     [PopViewType.FullScreenNormal] = "UiBigWorldTaskObtainDrama",
     [PopViewType.FullScreenFavorable] = "UiBigWorldTaskObtainDramaHeart",
+    [PopViewType.Invitation] = "UiBigWorldTaskObtainInvitation",
 }
 
 local QuestViewShieldTypeList = {
@@ -59,8 +84,17 @@ function XBigWorldQuestModel:OnInit()
     self._FinishQuest = false
     self._QuestRedDict = false
     self:InitQuestRed()
-    self._TrackQuestDict = {}
+    -- 当前追踪的Id
+    self._CurrentTrackQuestId = 0
+    -- 上一次追踪的Id
+    self._LastTrackQuestId = 0
+    self._FinishInviteResultDict = {}
+    self._ReceiveInviteReward = false
+    self._PopUiViewDataPool = {}
+    self._PopUiViewDataQueue = {}
     self._ConfigUtil:InitConfigByTableKey("DlcWorld/QuestSystem", TableQuestKey)
+    self._ConfigUtil:InitConfigByTableKey("DlcWorld/QuestSystem/InviteQuest", TableInviteQuestKey)
+    self._ConfigUtil:InitConfigByTableKey("DlcWorld/QuestSystem/EnvironmentQuest", TableEnvironmentQuestKey)
 end
 
 function XBigWorldQuestModel:ClearPrivate()
@@ -70,6 +104,12 @@ function XBigWorldQuestModel:ResetAll()
     self:ClearTemplate()
     self._QuestDataDict = false
     self._FinishQuest = false
+    self._FinishInviteResultDict = false
+    self._ReceiveInviteReward = false
+    self._EnvironmentIds = 0
+    self._InviteQuestIds = 0
+    self._PopUiViewDataPool = false
+    self._PopUiViewDataQueue = false
 end
 
 function XBigWorldQuestModel:ClearTemplate()
@@ -113,35 +153,44 @@ function XBigWorldQuestModel:UpdateFinishQuest(questIds)
     end
 end
 
-function XBigWorldQuestModel:UpdateTrackIds(traceQuestIds)
-    local dict = traceQuestIds
-    if not dict then
-        return
-    end
-    for category, questId in pairs(dict) do
-        self._TrackQuestDict[category] = questId
-    end
+function XBigWorldQuestModel:InitTrackData(currentTrackId, lastTrackId)
+    self._CurrentTrackQuestId = currentTrackId
+    self._LastTrackQuestId = lastTrackId
 end
 
---- 当前正在追踪的任务
----@return number
---------------------------
-function XBigWorldQuestModel:GetTrackQuestId(category)
-    local questId = self._TrackQuestDict[category] or 0
-    return questId
+function XBigWorldQuestModel:GetTrackQuestId()
+    return self._CurrentTrackQuestId
 end
 
---- 设置当前类型的追踪的任务Id
-function XBigWorldQuestModel:SetTrackQuestId(category, questId)
-    self._TrackQuestDict[category] = questId
+function XBigWorldQuestModel:SetTrackQuestId(questId)
+    self._LastTrackQuestId = self._CurrentTrackQuestId
+    self._CurrentTrackQuestId = questId
+end
+
+function XBigWorldQuestModel:SetTrackQuestIdLocal(questId)
+    self._CurrentTrackQuestId = questId
 end
 
 function XBigWorldQuestModel:IsTrackQuest(questId)
     if not questId or questId <= 0 then
         return false
     end
-    local category = self:GetQuestCategory(questId)
-    return self:GetTrackQuestId(category) == questId
+    return self._CurrentTrackQuestId == questId
+end
+
+function XBigWorldQuestModel:TryRevertTrackQuest()
+    if not self._IsRevert then
+        return false
+    end
+    self._CurrentTrackQuestId = self._LastTrackQuestId
+    self._LastTrackQuestId = 0
+    self._IsRevert = false
+    return true
+end
+
+function XBigWorldQuestModel:MarkRevertTrackQuest()
+    self._IsRevert = true
+    self._LastTrackQuestId = self._CurrentTrackQuestId
 end
 
 function XBigWorldQuestModel:CheckQuestFinish(questId)
@@ -274,6 +323,24 @@ function XBigWorldQuestModel:IsDefaultTrackQuest(questId)
     return t and t.IsDefaultTrack or false
 end
 
+function XBigWorldQuestModel:GetQuestFinishTip(questId)
+    local t = self:GetQuestTemplate(questId)
+
+    return t and t.FinishTip
+end
+
+function XBigWorldQuestModel:GetQuestTrackPriority(questId)
+    local t = self:GetQuestTemplate(questId)
+
+    return t and t.TrackPriority or 0
+end
+
+function XBigWorldQuestModel:GetQuestSystemUiStyleId(questId)
+    local t = self:GetQuestTemplate(questId)
+
+    return t and t.SystemUiStyleId or 0
+end
+
 --- 获取任务步骤配置
 ---@param stepId number
 ---@return XTableDlcQuestStep
@@ -310,9 +377,13 @@ function XBigWorldQuestModel:GetQuestIdByObjectiveId(stepId)
     return questId
 end
 
+function XBigWorldQuestModel:GetStepObjectiveIdsByStepId(stepId)
+    return CsQuestConfig.GetStepObjectiveIdsByStepId(stepId)
+end
+
 --- 获取步骤流程配置
 ---@param objectiveId number
----@return XTableDlcQuestStepObjective
+---@return XTableDlcQuestObjective
 --------------------------
 function XBigWorldQuestModel:GetQuestStepObjectiveTemplate(objectiveId)
     local template = CsQuestConfig.GetQuestStepObjectiveTemplate(objectiveId)
@@ -322,16 +393,6 @@ function XBigWorldQuestModel:GetQuestStepObjectiveTemplate(objectiveId)
     end
     return template
 end
-
-function XBigWorldQuestModel:GetObjectiveType(objectiveId)
-    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
-    return template and template.Type or 0
-end
-
--- function XBigWorldQuestModel:GetObjectiveStepId(objectiveId)
---     local template = self:GetQuestStepObjectiveTemplate(objectiveId)
---     return template and template.StepId or 0
--- end
 
 function XBigWorldQuestModel:GetObjectiveMaxProgress(objectiveId)
     local template = self:GetQuestStepObjectiveTemplate(objectiveId)
@@ -348,35 +409,42 @@ function XBigWorldQuestModel:GetObjectiveDesc(objectiveId)
     return template and template.Description or ""
 end
 
---- 获取任务步骤列表, 从C#获取内容，只能在初始化调用，后续需要获取通过XSGQuest
----@param questId number
----@return number[]
---------------------------
-function XBigWorldQuestModel:GetQuestStepIdsByQuestId(questId)
-    local csList = CsQuestConfig.GetQuestStepIdsByQuestId(questId)
-    if not csList or csList.Count <= 0 then
-        return {}
+function XBigWorldQuestModel:GetObjectiveType(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    return template and template.ObjectiveType or -1
     end
-    local list = {}
 
-    for i = 0, csList.Count - 1 do
-        list[#list + 1] = csList[i]
+function XBigWorldQuestModel:GetObjectiveDeliveryItemDict(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    local dict = template and template.RequiredItemInfoDict or nil
+    if not dict then
+        return
     end
-    return list
+    return XTool.CsMap2LuaTable(dict)
 end
 
---- 获取任务步骤流程列表,从C#获取内容，只能在初始化调用，后续需要获取通过XSGStep
----@param stepId number
----@return number[]
---------------------------
-function XBigWorldQuestModel:GetStepObjectiveIdsByStepId(stepId)
-    local csList = CsQuestConfig.GetStepObjectiveIdsByStepId(stepId)
-    local list = {}
+function XBigWorldQuestModel:GetObjectiveDeliveryTitle(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    return template and template.DeliverTitle or ""
+end
 
-    for i = 0, csList.Count - 1 do
-        list[#list + 1] = csList[i]
+function XBigWorldQuestModel:GetObjectiveDeliveryDesc(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    return template and template.DeliverDesc or ""
+end
+
+function XBigWorldQuestModel:GetObjectiveItemsDeliverType(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    local type = template and template.ItemsDeliverType or nil
+    if not type or not type.GetHashCode then
+        return XMVCA.XBigWorldQuest.EItemsDeliverType.Normal
     end
-    return list
+    return type:GetHashCode()
+end
+
+function XBigWorldQuestModel:GetObjectivePhotoKey(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    return template and template.PhotoKey or 0
 end
 
 --region Quest Group
@@ -521,20 +589,31 @@ function XBigWorldQuestModel:GetQuestTypeTemplate(typeId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableQuestKey.DlcQuestType, typeId)
 end
 
+function XBigWorldQuestModel:GetQuestTypePriority(typeId)
+    local t = self:GetQuestTypeTemplate(typeId)
+    return t and t.Priority or math.maxinteger
+end
+
 function XBigWorldQuestModel:PopupTaskObtain(questId, isFinish)
-    local isShield = isFinish and self:CheckPopViewOpenWhenQuestFinish(questId)
-            or self:CheckPopViewOpenWhenQuestReceive(questId) 
-    if isShield then
+    local t = self:GetQuestTemplate(questId)
+    local isShield
+    if isFinish then
+        isShield = self:CheckPopViewOpenWhenQuestFinish(questId)
+    else
+        isShield = self:CheckPopViewOpenWhenQuestReceive(questId)
+    end
+    local popViewType = t and t.PopViewType or PopViewType.None
+    if isShield or popViewType == PopViewType.None then
         return
     end
-    local t = self:GetQuestTemplate(questId)
-    local popViewType = t and t.PopViewType or PopViewType.Small
     local uiName = PopViewType2UiName[popViewType]
     if string.IsNilOrEmpty(uiName) then
         XLog.Error(string.format("任务:%s, 弹窗类型:%s, 不存在对应弹窗类型", questId, popViewType))
         return
     end
-    XMVCA.XBigWorldUI:OpenWithFightSequence(uiName, questId, isFinish)
+    --锁住打脸
+    XMVCA.XBigWorldFunction:FreezeFunctionEvent()
+    XMVCA.XBigWorldUI:OpenWithFightSequence(uiName, false, questId, isFinish)
 end
 
 --endregion Config
@@ -626,6 +705,254 @@ function XBigWorldQuestModel:RemoveQuestRedPoint(questId)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH)
 end
 
+--region 邀约任务
+---@return XTableDlcInviteQuest
+function XBigWorldQuestModel:GetInviteQuestTemplate(id, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableInviteQuestKey.DlcInviteQuest, id, noTips)
+end
+
+function XBigWorldQuestModel:GetInviteIds()
+    if self._InviteQuestIds then
+        return self._InviteQuestIds
+    end
+    local list = {}
+    ---@type table<number, XTableDlcInviteQuest>
+    local templates = self._ConfigUtil:GetByTableKey(TableInviteQuestKey.DlcInviteQuest)
+    for id, _ in pairs(templates) do
+        list[#list + 1] = id
+    end
+    self._InviteQuestIds = list
+
+    return list
+end
+
+function XBigWorldQuestModel:GetInviteQuestName(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.Name
+end
+
+function XBigWorldQuestModel:GetInviteQuestPriority(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.Priority or 0
+end
+
+function XBigWorldQuestModel:GetInviteQuestCondition(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.Condition or 0
+end
+
+function XBigWorldQuestModel:GetInviteQuestModelId(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.ModelId
+end
+
+function XBigWorldQuestModel:GetInviteQuestRolePath(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.RolePath
+end
+
+function XBigWorldQuestModel:GetInviteQuestRoleIcon(id, noTips)
+    local t = self:GetInviteQuestTemplate(id, noTips)
+    return t and t.RoleIcon
+end
+
+function XBigWorldQuestModel:GetInviteQuestTotalRewardId(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.TotalRewardId or 0
+end
+
+function XBigWorldQuestModel:GetInviteQuestResultIds(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.ResultIds
+end
+
+function XBigWorldQuestModel:GetInviteQuestTipText(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.TipText
+end
+
+function XBigWorldQuestModel:GetInviteQuestPopTipText(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.PopTipText
+end
+
+---@return XTableDlcInviteQuestResult
+function XBigWorldQuestModel:GetInviteQuestResultTemplate(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableInviteQuestKey.DlcInviteQuestResult, id)
+end
+
+function XBigWorldQuestModel:GetInviteQuestResultName(id)
+    local t = self:GetInviteQuestResultTemplate(id)
+    return t and t.Name
+end
+
+function XBigWorldQuestModel:GetInviteQuestResultBanner(id)
+    local t = self:GetInviteQuestResultTemplate(id)
+    return t and t.Banner
+end
+
+function XBigWorldQuestModel:GetInviteQuestResultDesc(id)
+    local t = self:GetInviteQuestResultTemplate(id)
+    return t and t.Desc
+end
+
+function XBigWorldQuestModel:GetInviteQuestResultCGAsset(id)
+    local t = self:GetInviteQuestResultTemplate(id)
+    return t and t.CGAsset
+end
+
+function XBigWorldQuestModel:GetInviteQuestResultRewardId(id)
+    local t = self:GetInviteQuestResultTemplate(id)
+    return t and t.RewardId or 0
+end
+
+function XBigWorldQuestModel:AddFinishInviteResult(resultId)
+    self._FinishInviteResultDict[resultId] = true
+end
+
+function XBigWorldQuestModel:CheckInviteResultFinish(resultId)
+    return self._FinishInviteResultDict[resultId] ~= nil
+end
+
+function XBigWorldQuestModel:IsFirstFinishResult()
+    local res = true
+    local cnt = 0
+    for resId, status in pairs(self._FinishInviteResultDict) do
+        if status then
+            cnt = cnt + 1
+        end
+
+        if cnt >= 2 then
+            res = false
+            break
+        end
+    end
+    return res
+end
+
+function XBigWorldQuestModel:ReceiveInviteReward(questId, count)
+    if not self._ReceiveInviteReward then
+        self._ReceiveInviteReward = {}
+    end
+    self._ReceiveInviteReward[questId] = count
+end
+
+function XBigWorldQuestModel:CheckInviteRewardReceived(questId)
+    if not self._ReceiveInviteReward then
+        return false
+    end
+    return self._ReceiveInviteReward[questId] ~= nil
+end
+
+function XBigWorldQuestModel:InitInviteInfo(inviteInfo)
+    if not inviteInfo then
+        return
+    end
+    local unlockResultIds = inviteInfo.UnlockedInviteQuestResultIds
+    if not XTool.IsTableEmpty(unlockResultIds) then
+        for _, v in ipairs(unlockResultIds) do
+            self._FinishInviteResultDict[v] = true
+        end
+    end
+
+    self._ReceiveInviteReward = inviteInfo.ReceivedRewardInviteQuestIds or {}
+end
+
+function XBigWorldQuestModel:IsUnderTakenInviteQuest()
+    if XTool.IsTableEmpty(self._QuestDataDict) then
+        return false
+    end
+    for questId, quest in pairs(self._QuestDataDict) do
+        if quest:IsInProgress() 
+                and self:GetQuestCategory(questId) == XMVCA.XBigWorldQuest.QuestCategory.InviteQuest then
+            return true
+        end
+    end
+    return false
+end
+
+function XBigWorldQuestModel:CheckPhotoQuestNeedUpload()
+    if not self._QuestDataDict or XTool.IsTableEmpty(self._QuestDataDict) then
+        return false
+    end
+
+    local objId = 0
+    local isNeedUpload = false
+    for _, quest in pairs(self._QuestDataDict) do
+        if quest:IsInProgress() then
+            local objectDict = quest:GetStepObjectiveIds()
+            if objectDict then
+                for objectiveId, _ in pairs(objectDict) do
+                    local photoKey = self:GetObjectivePhotoKey(objectiveId)
+                    if photoKey ~= 0 then
+                        isNeedUpload = true
+                        objId = objectiveId
+                        break
+                    end
+                end
+            end
+        end
+        if isNeedUpload then break end
+    end
+    return isNeedUpload, objId
+end
+
+--endregion 邀约任务配置
+
+--region 环境剧情
+
+---@return XTableDlcEnvironmentQuest
+function XBigWorldQuestModel:GetEnvironmentQuestTemplate(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableEnvironmentQuestKey.DlcEnvironmentQuest, id)
+end
+
+function XBigWorldQuestModel:GetEnvironmentIds()
+    if self._EnvironmentIds then
+        return self._EnvironmentIds
+    end
+    local ids = {}
+    local index = 0
+    local templates = self._ConfigUtil:GetByTableKey(TableEnvironmentQuestKey.DlcEnvironmentQuest)
+    for id, _ in pairs(templates) do
+        ids[index + 1] = id
+        index = index + 1
+    end
+    self._EnvironmentIds = ids
+    return ids
+end
+
+function XBigWorldQuestModel:GetEnvironmentQuestName(id)
+    local t = self:GetEnvironmentQuestTemplate(id)
+    return t and t.Name or ""
+end
+
+function XBigWorldQuestModel:GetEnvironmentQuestRoleIcon(id)
+    local t = self:GetEnvironmentQuestTemplate(id)
+    return t and t.RoleIcon or nil
+end
+
+function XBigWorldQuestModel:GetEnvironmentQuestPriority(id)
+    local t = self:GetEnvironmentQuestTemplate(id)
+    return t and t.Priority or 0
+end
+
+function XBigWorldQuestModel:GetEnvironmentQuestObjectiveIds(id)
+    local t = self:GetEnvironmentQuestTemplate(id)
+    return t and t.ObjectiveIds
+end
+
+function XBigWorldQuestModel:GetEnvironmentQuestShowReward(id)
+    local t = self:GetEnvironmentQuestTemplate(id)
+    return t and t.ShowReward or 0
+end
+
+function XBigWorldQuestModel:GetEnvironmentQuestSkipId(id)
+    local t = self:GetEnvironmentQuestTemplate(id)
+    return t and t.SkipId or 0
+end
+
+--endregion 环境剧情
+
 --region 数据表定义
 
 ---@class XTableDlcQuest
@@ -649,6 +976,9 @@ end
 ---@field ShieldPopViewType number
 ---@field PopViewType number
 ---@field FirstStatusBarPlay boolean
+---@field FinishTip boolean
+---@field TrackPriority number
+---@field SystemUiStyleId number 任务相关界面样式表Id
 
 
 ---@class XTableDlcQuestStep
@@ -662,17 +992,16 @@ end
 ---@field FirstObjectiveId number
 
 
----@class XTableDlcQuestStepObjective
+---@class XTableDlcQuestObjective
 ---@field Id number
----@field Type number
+---@field ObjectiveType number
 ---@field MaxProgress number
 ---@field Title string
 ---@field Description string
----@field QuestItemId number[]
----@field ItemGetType number[]
----@field ItemGetUnit number[]
----@field ItemGetCount number[]
----@field InternalDesc string
+---@field DeliveryItemsTargetDict table<number, number> 需要交付的道具(ObjectiveType == DeliverItems)
+---@field DeliverTitle string 交付Title(ObjectiveType == DeliverItems)
+---@field DeliverDesc string 交付Title(ObjectiveType == DeliverItems)
+---@field ItemsDeliverType number 交付Title(ObjectiveType == DeliverItems)
 
 --endregion 数据表定义
 

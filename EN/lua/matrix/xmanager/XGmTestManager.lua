@@ -923,6 +923,12 @@ local function AddDlcUse()
     end)
 end
 
+local function AddBigWorldUse()
+    Panel:AddButton("无人机玩法", function()
+        XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneMain")
+    end)
+end
+
 -- 日志打印
 local function AddLogFunction()
     Panel:AddButton("开启日志打印", function()
@@ -1496,6 +1502,10 @@ local function AddSubPackageFunction()
         XMVCA.XSubPackage:AddResToDownload(ResId)
     end)
 
+    Panel:AddButton("卸载ResId", function()
+        XMVCA.XSubPackage:UninstallResourceByResId(ResId)
+    end)
+
     local SubPackageId
     Panel:AddInput(
         "SubPackageId:",
@@ -1523,6 +1533,7 @@ function XGmTestManager.Init()
     Panel:AddSubMenu("战斗测试", AddFightUse)
     Panel:AddSubMenu("公会宿舍", AddGuildDormUse)
     Panel:AddSubMenu("DLC测试", AddDlcUse)
+    Panel:AddSubMenu("大世界测试", AddBigWorldUse)
     Panel:AddSubMenu("日志打印", AddLogFunction)
     --Panel:AddButton("庙会", function()
     --    XLuaUiManager.Open("UiTempleBattleEditor")

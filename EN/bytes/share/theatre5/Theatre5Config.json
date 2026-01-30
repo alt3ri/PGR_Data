@@ -212,7 +212,7 @@
     {
         "Key": "PveVersion",
         "Desc": "PVE Mode Version Number",
-        "Values": "['4']"
+        "Values": "['5']"
     },
     {
         "Key": "SkipSotryPage",
@@ -268,5 +268,30 @@
         "Key": "MinPvpFinishScores",
         "Desc": "The guarantee system triggers after clearing with 10 wins (guarantee scores vary by remaining HP)",
         "Values": "['10', '10', '15', '15', '15']"
+    },
+    {
+        "Key": "MissionFreshCnt",
+        "Desc": "Refresh Limit per Slot in Mission Selection",
+        "Values": "['1']"
+    },
+    {
+        "Key": "CharacterInitExp",
+        "Desc": "PvP/PvE Character Initial EXP",
+        "Values": "['0']"
+    },
+    {
+        "Key": "PvpMultiplierLimit",
+        "Desc": "PvP Multiplier Limit",
+        "Values": "['0', '0', '0', '0', '0']"
+    },
+    {
+        "Key": "PveMultiplierLimit",
+        "Desc": "PvE Multiplier Limit",
+        "Values": "['0', '0', '0', '0', '0']"
+    },
+    {
+        "Key": "MissionLevelUpForRound",
+        "Desc": "Upgrades Per Turn",
+        "Values": "['1']"
     }
 ]

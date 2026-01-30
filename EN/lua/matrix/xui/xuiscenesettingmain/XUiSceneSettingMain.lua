@@ -5,6 +5,7 @@ local BatteryComponent = CS.XUiBattery
 local DateStartTime = CS.XGame.ClientConfig:GetString("BackgroundChangeTimeStr")
 local DateEndTime = CS.XGame.ClientConfig:GetString("BackgroundChangeTimeEnd")
 local LowPowerValue = CS.XGame.ClientConfig:GetFloat("UiMainLowPowerValue")
+local Dropdown = CS.UnityEngine.UI.Dropdown
 
 function XUiSceneSettingMain:OnAwake()
     self.FirstLoad = true
@@ -23,6 +24,7 @@ end
 function XUiSceneSettingMain:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnBack, self.Close)
     XUiHelper.RegisterClickEvent(self, self.ToggleRandomScene, self.OnToggleRandomSceneClick)
+    XUiHelper.RegisterClickEvent(self, self.DropEnvMusic, self.OnClickDropEnvMusic)
     self.ToggleRandomScene.gameObject:SetActiveEx(CS.XGame.ClientConfig:GetInt("SetToggleRandomSceneVisible") == 1)
 
     -- 打开助理面板
@@ -90,6 +92,14 @@ function XUiSceneSettingMain:InitButton()
     local XUiTextScrolling = require("XUi/XUiTaikoMaster/XUiTaikoMasterFlowText")
     self.NameTextScrolling = XUiTextScrolling.New(self.TxtName ,self.TxtNameMask)
     self.NameTextScrolling:Stop()
+
+    ---下拉列表
+    local op1 = XMVCA.XSwitchableScene:GetClientConfig("DropData")
+    local op2 = XMVCA.XSwitchableScene:GetClientConfig("DropPower")
+    local op4 = XMVCA.XSwitchableScene:GetClientConfig("DropGyro")
+    self:InitDrop(self.DropDate, op1, handler(self, self.OnClickDropData))
+    self:InitDrop(self.DropPower, op2, handler(self, self.OnClickDropPower))
+    self:InitDrop(self.DropGyro, op4, handler(self, self.OnClickDropGyro))
 end
 
 function XUiSceneSettingMain:CheckBtnScreenRedPoint(count)
@@ -234,6 +244,16 @@ function XUiSceneSettingMain:OnToggleRandomSceneClick(fun)
             fun()
         end
     end)
+end
+
+function XUiSceneSettingMain:OnClickDropEnvMusic()
+    local sceneSfxControl = self:GetSceneSFXControl()
+    if not sceneSfxControl then
+        return
+    end
+
+    local isMute = self.DropEnvMusic.isOn
+    sceneSfxControl:SetMuteAndSave(not isMute)
 end
 
 function XUiSceneSettingMain:InitDynamicTable()
@@ -430,6 +450,7 @@ function XUiSceneSettingMain:RefreshDynamicTableScene()
     end
 
     self.DynamicTableScene:ReloadDataASync(self.CurSelectedBackgroundIndex)
+    self:RefreshDropDown()
 end
 
 function XUiSceneSettingMain:OnDynamicTableEventScene(event, index, grid)
@@ -473,6 +494,7 @@ function XUiSceneSettingMain:OnDynamicTableEventScene(event, index, grid)
         local template = XDataCenter.PhotographManager.GetSceneTemplateById(sceneId)
         local scenePath, modelPath = XSceneModelConfigs.GetSceneAndModelPathById(template.SceneModelId)
         self:LoadUiScene(scenePath, modelPath, function() self:OnUiSceneLoaded(self.FirstLoad, scenePath) end, false)
+        self:RefreshDropDown()
     end
 end
 
@@ -502,6 +524,7 @@ function XUiSceneSettingMain:OnUiSceneLoaded(firstload, scenePath)
     self:RefreshSyncBtnState() -- 右下角按钮
     --刷新右上角信息栏显示
     self:RefreshSceneInfo()
+    self:RefreshEvnirmentSoundControl()
     -- self.Parent:RefreshRightTagPanel()
 
     -- 恢复相机
@@ -517,6 +540,7 @@ function XUiSceneSettingMain:OnUiSceneLoaded(firstload, scenePath)
 
     self.FirstLoad = false
     self.LastScenePath = scenePath
+    self.SwitchableScene:Play(self.CurSelectedBackgroundId, self.UiSceneInfo.Transform)
 end
 
 -- [场景电池相关]
@@ -573,33 +597,77 @@ function XUiSceneSettingMain:UpdateBatteryMode()
         end
     end
 
+    --v4.2新增场景控制功能
+    local option = XMVCA.XSwitchableScene:GetSceneSetting(self.CurSelectedBackgroundId)
     local type = XPhotographConfigs.GetBackgroundTypeById(self.CurSelectedBackgroundId)
-    if type == XPhotographConfigs.BackGroundType.PowerSaved then
-        if BatteryComponent.IsCharging then --充电状态
-            self:PlayBatteryModeAnimation(false,chargeAnimator)
-            XDataCenter.PhotographManager.UpdatePreviewState(true, true)
-        else
-            if BatteryComponent.BatteryLevel > LowPowerValue then -- 比较电量
-                self:PlayBatteryModeAnimation(false,chargeAnimator)
-                XDataCenter.PhotographManager.UpdatePreviewState(true, true)
+    if type == XPhotographConfigs.BackGroundType.Gyro then
+        return
+    elseif type == XPhotographConfigs.BackGroundType.PowerSaved then
+        --电量模式判断
+        if option == XEnumConst.SwitchableScene.Setting.Power.Auto then
+            if BatteryComponent.IsCharging then
+                --充电状态
+                self:PlayLowToFull(chargeAnimator)
             else
-                self:PlayBatteryModeAnimation(true,chargeAnimator)
-                XDataCenter.PhotographManager.UpdatePreviewState(false, true)
+                -- 比较电量
+                if BatteryComponent.BatteryLevel > LowPowerValue then
+                    self:PlayLowToFull(chargeAnimator)
+                else
+
+                    self:PlayFullToLow(chargeAnimator)
+                end
             end
+        elseif option == XEnumConst.SwitchableScene.Setting.Power.Full then
+            self:PlayFull(chargeAnimator)
+        else
+            self:PlayLow(chargeAnimator)
         end
     else
         --时间模式判断
-        local startTime = XTime.ParseToTimestamp(DateStartTime)
-        local endTime = XTime.ParseToTimestamp(DateEndTime)
-        local nowTime = XTime.ParseToTimestamp(CS.System.DateTime.Now:ToLocalTime():ToString())
-        if startTime > nowTime and nowTime > endTime then   -- 比较时间
-            self:PlayBatteryModeAnimation(false,chargeAnimator)
-            XDataCenter.PhotographManager.UpdatePreviewState(true, true)
+        if option == XEnumConst.SwitchableScene.Setting.Data.Auto then
+            local startTime = XTime.ParseToTimestamp(DateStartTime)
+            local endTime = XTime.ParseToTimestamp(DateEndTime)
+            local nowTime = XTime.ParseToTimestamp(CS.System.DateTime.Now:ToLocalTime():ToString())
+            if startTime > nowTime and nowTime > endTime then
+                -- 比较时间
+                self:PlayLowToFull(chargeAnimator)
+            else
+                self:PlayFullToLow(chargeAnimator)
+            end
+        elseif option == XEnumConst.SwitchableScene.Setting.Data.Day then
+            self:PlayFull(chargeAnimator)
         else
-            self:PlayBatteryModeAnimation(true,chargeAnimator)
-            XDataCenter.PhotographManager.UpdatePreviewState(false, true)
+            self:PlayLow(chargeAnimator)
         end
     end
+end
+
+function XUiSceneSettingMain:PlayLowToFull(chargeAnimator)
+    self:PlayBatteryModeAnimation(false, chargeAnimator)
+    XDataCenter.PhotographManager.UpdatePreviewState(true, true)
+end
+
+function XUiSceneSettingMain:PlayFullToLow(chargeAnimator)
+    self:PlayBatteryModeAnimation(true, chargeAnimator)
+    XDataCenter.PhotographManager.UpdatePreviewState(false, true)
+end
+
+function XUiSceneSettingMain:PlayFull(chargeAnimator)
+    if chargeAnimator then
+        chargeAnimator:Play("Full")
+    end
+    self.CurBatteryMode = XPhotographConfigs.BackGroundState.Full
+    self.fullTimeLine.gameObject:SetActiveEx(true)
+    XDataCenter.PhotographManager.UpdatePreviewState(true, true)
+end
+
+function XUiSceneSettingMain:PlayLow(chargeAnimator)
+    if chargeAnimator then
+        chargeAnimator:Play("Low")
+    end
+    self.CurBatteryMode = XPhotographConfigs.BackGroundState.Low
+    self.chargeTimeLine.gameObject:SetActiveEx(true)
+    XDataCenter.PhotographManager.UpdatePreviewState(false, true)
 end
 
 -- [场景电池相关]
@@ -769,6 +837,10 @@ function XUiSceneSettingMain:SortSceneIdList(list)
 end
 
 function XUiSceneSettingMain:OnStart()
+    ---@type XUiPanelSwitchableSceneAnim
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self.TxtPcTip.text = XUiHelper.GetText("SwitchableScenePcTip")
+    
     local curSceneId = XDataCenter.PhotographManager.GetCurSceneId()
     self.CurSelectedBackgroundId = curSceneId    
     local curSceneTemplate = XDataCenter.PhotographManager.GetSceneTemplateById(curSceneId)
@@ -803,9 +875,11 @@ function XUiSceneSettingMain:OnDisable()
         self.ClockTimer = nil
     end
     self.LastScenePath = nil
+    self.SwitchableScene:Stop()
 end
 
 function XUiSceneSettingMain:OnDestroy()
+    self.SwitchableScene:OnDestory()
     XEventManager.RemoveEventListener(XEventId.EVENT_FAVORABILITY_ASSISTLIST_CHANGE, self.RefreshPanelAssistantByServerSync, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PHOTO_SYNC_CHANGE_TO_MAIN, self.RefreshPanelSceneByServerSync, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PHOTO_SYNC_CHANGE_TO_MAIN, self.RefreshSyncBtnState, self)
@@ -825,5 +899,93 @@ function XUiSceneSettingMain:StopClockTime()
         self.ClockTimer = nil
     end
 end
+
+--region 场景切换选项
+
+---@param comp XUiComponent.XUiDropdown
+---@param words string[]
+function XUiSceneSettingMain:InitDrop(comp, words, callBack)
+    comp:ClearOptions()
+    for _, word in ipairs(words) do
+        local op = Dropdown.OptionData()
+        op.text = word
+        comp.options:Add(op)
+    end
+    comp:RefreshShownValue()
+    comp.onValueChanged:AddListener(callBack)
+end
+
+function XUiSceneSettingMain:OnClickDropData(index)
+    XMVCA.XSwitchableScene:SetSceneSetting(self.CurSelectedBackgroundId, index)
+    if self:InitBatteryUi() then
+        self:UpdateBatteryMode()
+    end
+end
+
+function XUiSceneSettingMain:OnClickDropPower(index)
+    XMVCA.XSwitchableScene:SetSceneSetting(self.CurSelectedBackgroundId, index)
+    if self:InitBatteryUi() then
+        self:UpdateBatteryMode()
+    end
+end
+
+function XUiSceneSettingMain:OnClickDropGyro(index)
+    XMVCA.XSwitchableScene:SetGyroSetting(self.CurSelectedBackgroundId, index)
+end
+
+function XUiSceneSettingMain:RefreshDropDown()
+    local type = XPhotographConfigs.GetBackgroundTypeById(self.CurSelectedBackgroundId)
+    local ops = XMVCA.XSwitchableScene:GetSetting(self.CurSelectedBackgroundId)
+    local mode = XDataCenter.UiPcManager.GetUiPcMode()
+
+    self.DropDate.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Date)
+    self.DropPower.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.PowerSaved)
+    self.DropGyro.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Gyro)
+    self.PanelPcTip.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Gyro and mode == XDataCenter.UiPcManager.XUiPcMode.Pc)
+
+    if type == XPhotographConfigs.BackGroundType.Date then
+        self.DropDate.value = ops[1]
+    elseif type == XPhotographConfigs.BackGroundType.PowerSaved then
+        self.DropPower.value = ops[1]
+    elseif type == XPhotographConfigs.BackGroundType.Gyro then
+        self.DropGyro.value = ops[3]
+    end
+end
+
+function XUiSceneSettingMain:GetSceneSFXControl()
+    local root = self.UiSceneInfo and self.UiSceneInfo.Transform
+    if not root then return nil end
+
+    local groupAudio = root:Find("GroupAudio")
+    if XTool.UObjIsNil(groupAudio) then return nil end
+
+    local sceneSfx2D = groupAudio:Find("SceneSFX2D")
+    if XTool.UObjIsNil(sceneSfx2D) then return nil end
+
+    local ctrl = sceneSfx2D:GetComponent(typeof(CS.XSceneSFXControl))
+    if XTool.UObjIsNil(ctrl) then return nil end
+
+    return ctrl
+end
+
+function XUiSceneSettingMain:RefreshEvnirmentSoundControl()
+    local isEnvMusic = XPhotographConfigs.GetBackgroundHasEnvMusicById(self.CurSelectedBackgroundId)
+    self.DropEnvMusic.gameObject:SetActiveEx(isEnvMusic)
+
+    if not isEnvMusic then
+        return
+    end
+
+    -- 使用抽象接口
+    local sceneSfxControl = self:GetSceneSFXControl()
+    if not sceneSfxControl then
+        return
+    end
+
+    -- 读取缓存静音状态（游戏逻辑：true=开？false=关？你原逻辑不变）
+    self.DropEnvMusic.isOn = not sceneSfxControl:GetCacheMuteState()
+end
+
+--endregion
 
 return XUiSceneSettingMain

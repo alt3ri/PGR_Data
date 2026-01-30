@@ -4,24 +4,28 @@ local XAllTableData = require("XTableAssetCollect/XTableDirectory/XAllTableData"
 local XTableCollectData = require("XTableAssetCollect/XTableCollectData")
 local XTableAssetCollectUtil = require("XTableAssetCollect/XTableAssetCollectUtil")
 local XTableAssetCollectConst = require("XTableAssetCollect/XTableAssetCollectConst")
+local UiRegistry = require("UiRegistry")
+local XCollectUiData = require("XTableAssetCollect/XCollectUiData")
+local string = string
+
+local OriginalGMeta
 
 local FileType = XTableAssetCollectConst.FileType
 local FileTypeLogFileName = XTableAssetCollectConst.FileTypeLogFileName
 local TableSourceType = XTableAssetCollectConst.TableSourceType
+local AutoGenerateFolderPath = XTableAssetCollectConst.AutoGenerateFolderPath
+local ManulFolderPath = XTableAssetCollectConst.ManulFolderPath
 
 local AllTableData
 local CollectDataDic
+local TableModelNameDic
+local SortedUiKeyList
+local CollectUiDataDic
+local UnMatchModelUiDic
 local CurFileType -- 当前文件类型
 local CurFileName -- 当前文件名
 local CurModelName -- 当前模块名
 local CurTableSourceType -- 当前配置表收集方式
-
-local OriginalGMeta
-
-local CollectLogFolderPath = XTableAssetCollectConst.CollectLogFolderPath
-local ModelTableFolderPath = XTableAssetCollectConst.ModelTableFolderPath
-local AutoGenerateFolderPath = XTableAssetCollectConst.AutoGenerateFolderPath
-local StatisticFolderPath = XTableAssetCollectConst.StatisticFolderPath
 
 --收集数据统计
 local AllFileTableCount
@@ -29,6 +33,8 @@ local CollectedTableCount
 local UnCollectedTableCount
 local UncollectedPercent
 local CollectedPathDic
+local TotalUiCount
+local UnMatchModelUiCount
 
 --region 处理配置表信息
 local AddTableInfo = function(path)
@@ -37,6 +43,8 @@ local AddTableInfo = function(path)
 
     local collectData = CollectDataDic[CurFileType]
     collectData:AddTable(CurFileName, CurModelName, path, CurTableSourceType)
+
+    TableModelNameDic[CurModelName] = true
 end
 --endregion
 
@@ -169,7 +177,21 @@ local OnBeforCollect = function()
         [FileType.Fight] = XTableCollectData.New(FileType.Fight),
         [FileType.Common] = XTableCollectData.New(FileType.Common),
         [FileType.Ignore] = XTableCollectData.New(FileType.Ignore),
+        [FileType.ManulConfig] = XTableCollectData.New(FileType.ManulConfig),
     }
+
+    TableModelNameDic = {}
+    SortedUiKeyList = {}
+    CollectUiDataDic = {}
+    UnMatchModelUiDic = {}
+
+    for uiKey, _ in pairs(UiRegistry) do
+        table.insert(SortedUiKeyList, uiKey)
+    end
+
+    table.sort(SortedUiKeyList, function(a, b)
+        return a < b
+    end)
 end
 --endregion
 
@@ -201,15 +223,20 @@ end
 
 --region 收集同目录下的配置表
 local CollectSameDirectoryTable = function()
-    CurTableSourceType = TableSourceType.SameDirectory
-
     local collectData = CollectDataDic[CurFileType]
-
     local fileInfo = collectData:GetFileInfo(CurFileName)
     if not fileInfo then return end
 
+    CurTableSourceType = TableSourceType.SameDirectory
+
     for _, tableInfo in ipairs(fileInfo.tableInfoList) do
         local tablePath = tableInfo.tablePath
+
+        local directoryName = XTableAssetCollectUtil.GetDirectoryName(tablePath)
+        if directoryName == "Client/Fuben" or directoryName == "Share/Fuben" then
+            goto continue
+        end
+
         local sameDirectoryTableList = AllTableData:GetSameDirectoryFilePathList(tablePath)
 
         for _, path in ipairs(sameDirectoryTableList) do
@@ -218,6 +245,8 @@ local CollectSameDirectoryTable = function()
                 AddTableInfo(path)
             end
         end
+
+        :: continue ::
     end
 end
 --endregion
@@ -229,8 +258,8 @@ local CollectMovieTable = function()
 
     for _, tablePath in ipairs(AllTableData.fileTableList) do
         if XTableAssetCollectUtil.IsMovieTable(tablePath) then
-            CurFileName = "Movie"
-            CurModelName = CurFileName
+            CurFileName = FileTypeLogFileName[FileType.Movie]
+            CurModelName = "X" .. CurFileName
             AddTableInfo(tablePath)
         end
     end
@@ -244,23 +273,22 @@ local CollectFightTable = function()
 
     for _, tablePath in ipairs(AllTableData.fileTableList) do
         if XTableAssetCollectUtil.IsFightTable(tablePath) then
-            CurFileName = "Fight"
-            CurModelName = CurFileName
+            CurFileName = FileTypeLogFileName[FileType.Fight]
+            CurModelName = "X" .. CurFileName
             AddTableInfo(tablePath)
         end
     end
 end
 --endregion
 
---region 收集手动配置的表，通用和忽略表
-local CollectManualTable = function(fileType)
+--region 收集手动配置的表
+local CollectManualTable = function(fileType, sourceType)
     CurFileType = fileType
-    CurTableSourceType = TableSourceType.None
+    CurTableSourceType = sourceType
     CurFileName = FileTypeLogFileName[fileType]
-    CurModelName = CurFileName
+    CurModelName = "X" .. CurFileName
 
-    local fileName = FileTypeLogFileName[fileType]
-    local filePath = ModelTableFolderPath .. fileName .. ".tab"
+    local filePath = ManulFolderPath .. CurFileName .. ".tab"
     local tableContent = CS.XTableManager.LoadFileFromDebugDir(filePath)
     local tableLineDataList = string.Split(tableContent, "\r\n")
 
@@ -272,6 +300,37 @@ local CollectManualTable = function(fileType)
         end
     end
 end
+
+local CollectManulConfig = function()
+    CurFileType = FileType.ManulConfig
+    CurTableSourceType = TableSourceType.ManulConfig
+    CurFileName = FileTypeLogFileName[FileType.ManulConfig]
+
+    local filePath = ManulFolderPath .. CurFileName .. ".tab"
+    local tableContent = CS.XTableManager.LoadFileFromDebugDir(filePath)
+    local tableLineDataList = string.Split(tableContent, "\r\n")
+
+    for i = 2, #tableLineDataList do
+        local lineData = string.Split(tableLineDataList[i], "\t")
+
+        if lineData[1] ~= "" then
+            CurModelName = lineData[1]
+
+        elseif lineData[3] ~= "" then
+            local path = lineData[3]
+
+            if string.EndsWith(path, ".tab") then
+                AddTableInfo(path)
+            else
+                local tablePathList = AllTableData:GetAllFileAtDirectory(path)
+                for _, tablePath in ipairs(tablePathList) do
+                    AddTableInfo(tablePath)
+                end
+            end
+        end
+    end
+end
+
 --endregion
 
 --region 收集MVCA
@@ -379,6 +438,38 @@ local CollectTableByManager = function()
 end
 --endregion
 
+--region 收集UI
+local CollectUIPrefab = function()
+    TotalUiCount = 0
+    UnMatchModelUiCount = 0
+
+    for uiKey, luaFilePath in pairs(UiRegistry) do
+        TotalUiCount = TotalUiCount + 1
+
+        local collectUiData = XCollectUiData.New(uiKey)
+        CollectUiDataDic[uiKey] = collectUiData
+
+        local modelUiFolderName = string.match(luaFilePath, "XUi/([^/]+)/")
+        local uiModelName = string.gsub(modelUiFolderName, "^XUi", "")
+        
+        if TableModelNameDic[uiModelName] then
+            collectUiData:SetModelName(uiModelName)
+
+        elseif TableModelNameDic["X" .. uiModelName] then
+            collectUiData:SetModelName("X" .. uiModelName)
+
+        elseif TableModelNameDic["XFuben" .. uiModelName] then
+            collectUiData:SetModelName("XFuben" .. uiModelName)
+
+        else
+            UnMatchModelUiCount = UnMatchModelUiCount + 1
+            UnMatchModelUiDic[uiModelName] = UnMatchModelUiDic[uiModelName] or {}
+            table.insert(UnMatchModelUiDic[uiModelName], uiKey)
+        end
+    end
+end
+--endregion
+
 --region 结束
 local CulculateCollectedData = function()
     AllFileTableCount = #AllTableData.fileTableList
@@ -402,69 +493,130 @@ end
 
 local GenerateCollectTabeData = function()
     for fileType, collectData in pairs(CollectDataDic) do
-        if not XTableAssetCollectConst.SkipGenerateCollectDataType[fileType] then
-            local fileName = FileTypeLogFileName[fileType]
-            local filePath = AutoGenerateFolderPath .. fileName .. ".tab"
+        local fileName = FileTypeLogFileName[fileType]
+        local filePath = AutoGenerateFolderPath .. fileName .. ".tab"
 
-            local content = {}
-            content[#content+1] = "FileName\tModelName\tTablePath\tCollectSource"
-            content[#content+1] = "文件名\t模块名\t配置表路径\t来源"
+        local content = {}
+        local lineDataPattern = "%s\t%s\t%s\t%s"
+        content[#content+1] = string.format(lineDataPattern, "FileName","ModelName","TablePath","CollectSource")
+        content[#content+1] = string.format(lineDataPattern, "文件名","模块名","配置表路径", "来源")
 
-            for _, fileInfo in ipairs(collectData.fileInfoList) do
-                for _, tableInfo in ipairs(fileInfo.tableInfoList) do
-                    content[#content+1] = string.format("%s\t%s\t%s\t%s", fileInfo.fileName, fileInfo.ModelName, tableInfo.tablePath, XTableAssetCollectUtil.GetTableSourceTypeTips(tableInfo.sourceType))
-                end
+        for _, fileInfo in ipairs(collectData.fileInfoList) do
+            content[#content+1] = string.format(lineDataPattern, fileInfo.fileName, "", "", "")
+            for _, tableInfo in ipairs(fileInfo.tableInfoList) do
+                content[#content+1] = string.format(lineDataPattern, "", tableInfo.modelName, tableInfo.tablePath, XTableAssetCollectUtil.GetTableSourceTypeTips(tableInfo.sourceType))
             end
-
-            content = table.concat(content, "\r\n")
-            IO.File.WriteAllText(filePath, content, CS.System.Text.Encoding.GetEncoding("GBK"))
         end
+
+        content = table.concat(content, "\r\n")
+        IO.File.WriteAllText(filePath, content, CS.System.Text.Encoding.GetEncoding("GBK"))
     end
 end
 
 local GenerateAllTableData = function()
     local content = {}
-    content[#content+1] = "FileName\tModelName\tTablePath\tCollectSource"
-    content[#content+1] = "文件名\t模块名\t配置表路径\t来源"
+    local lineDataPattern = "%s\t%s\t%s\t%s"
+    content[#content+1] = string.format(lineDataPattern, "FileName","ModelName","TablePath","CollectSource")
+    content[#content+1] = string.format(lineDataPattern, "文件名","模块名","配置表路径", "来源")
 
-    for fileType, collectData in pairs(CollectDataDic) do
+    for _, collectData in pairs(CollectDataDic) do
         for _, fileInfo in ipairs(collectData.fileInfoList) do
-            content[#content+1] = string.format("%s\t%s\t%s\t%s", fileInfo.fileName, fileInfo.ModelName, "", "")
+            content[#content+1] = string.format(lineDataPattern, fileInfo.fileName, "", "", "")
 
             for _, tableInfo in ipairs(fileInfo.tableInfoList) do
-                content[#content+1] = string.format("%s\t%s\t%s\t%s", "", "", tableInfo.tablePath, XTableAssetCollectUtil.GetTableSourceTypeTips(tableInfo.sourceType))
+                content[#content+1] = string.format(lineDataPattern, "", tableInfo.modelName, tableInfo.tablePath, XTableAssetCollectUtil.GetTableSourceTypeTips(tableInfo.sourceType))
             end
         end
     end
 
     content = table.concat(content, "\r\n")
-    IO.File.WriteAllText(XTableAssetCollectConst.AllTableStatisticDataPath, content, CS.System.Text.Encoding.GetEncoding("GBK"))
+    IO.File.WriteAllText(XTableAssetCollectConst.ModelTableDataPath, content, CS.System.Text.Encoding.GetEncoding("GBK"))
 end
 
-local GenerateAllResourceData = function()
-    CS.TableAssetCollect.TableAssetCollector.GenerateAllResourceData(XTableAssetCollectConst.AllTableStatisticDataPath, XTableAssetCollectConst.AllResourceStatisticDataPath)
-end
+local GenerateModelUiData = function()
+    local content = {}
+    content[#content+1] = "UiKey\tModelName"
+    content[#content+1] = "Ui表的id\t模块名"
 
-local GenerateUncollectTableLog = function()
-    local diffTableLogPath = StatisticFolderPath .. "统计数据.txt"
-    local sw = XTableAssetCollectUtil.GetStreamingWriter(diffTableLogPath)
-
-    sw:WriteLine(string.format("配置表总数：%s, 已收集的配置表总数：%s, 未收集的配置表总数：%s, 未收集百分比：%s", AllFileTableCount, CollectedTableCount, UnCollectedTableCount, UncollectedPercent))
-    
-    for fileType, collectData in pairs(CollectDataDic) do
-        sw:WriteLine(string.format("%s配置表数量: %s", FileTypeLogFileName[fileType], collectData.totalTableCount))
+    for _, uiKey in ipairs(SortedUiKeyList) do
+        local uiData = CollectUiDataDic[uiKey]
+        content[#content+1] = string.format("%s\t%s", uiKey, uiData:GetModelName())
     end
 
-    sw:WriteLine("")
+    content = table.concat(content, "\r\n")
+    IO.File.WriteAllText(XTableAssetCollectConst.ModelUiDataPath, content, CS.System.Text.Encoding.GetEncoding("GBK"))
+end
 
-    for _, fileTablePath in ipairs(AllTableData.fileTableList) do
-        if not CollectedPathDic[fileTablePath] then
-            sw:WriteLine(string.format("未收集的配置表：%s", fileTablePath))
+local GenerateEmptyModelUiData = function()
+    local content = {}
+    content[#content+1] = "UiKey\tModelName"
+    content[#content+1] = "Ui表的id\t模块名"
+
+    for _, uiKey in ipairs(SortedUiKeyList) do
+        local uiData = CollectUiDataDic[uiKey]
+        if uiData:GetModelName() == "" then
+            content[#content+1] = string.format("%s\t%s", uiKey, uiData:GetModelName())
         end
     end
 
-    sw:Flush()
-    sw:Close()
+    content = table.concat(content, "\r\n")
+    IO.File.WriteAllText(XTableAssetCollectConst.EmptyModelUiDataPath, content, CS.System.Text.Encoding.GetEncoding("GBK"))
+end
+
+local GenerateAllModelNameData = function()
+    local content = {}
+
+    for modelName, _ in pairs(TableModelNameDic) do
+        content[#content+1] = modelName
+    end
+
+    table.sort(content, function(a, b)
+        return a < b
+    end)
+
+    content = table.concat(content, "\r\n")
+    IO.File.WriteAllText(XTableAssetCollectConst.AllModelNameDataPath, content, CS.System.Text.Encoding.GetEncoding("GBK"))
+end
+
+local GenerateModelTableStatisticData = function()
+    local content = {}
+
+    content[#content+1] = string.format("配置表总数：%s, 已收集的配置表数：%s, 未收集的配置表数：%s, 未收集百分比：%s", AllFileTableCount, CollectedTableCount, UnCollectedTableCount, UncollectedPercent)
+    
+    for fileType, collectData in pairs(CollectDataDic) do
+        content[#content+1] = string.format("%s配置表数量: %s", FileTypeLogFileName[fileType], collectData.totalTableCount)
+    end
+
+    content[#content+1] = ""
+
+    for _, fileTablePath in ipairs(AllTableData.fileTableList) do
+        if not CollectedPathDic[fileTablePath] then
+            content[#content+1] = string.format("未收集的配置表：%s", fileTablePath)
+        end
+    end
+
+    content = table.concat(content, "\r\n")
+    IO.File.WriteAllText(XTableAssetCollectConst.ModelTableStatisticDataPath, content)
+end
+
+local GenerateModelUiStatisticData = function()
+    local content = {}
+
+    content[#content+1] = string.format("ui总数: %s, 已收集的ui数: %s, 未收集的ui数: %s, 未收集百分比: %s", TotalUiCount, TotalUiCount - UnMatchModelUiCount, UnMatchModelUiCount, UnMatchModelUiCount / TotalUiCount)
+    content[#content+1] = ""
+
+    content[#content+1] = "==========未匹配到对应业务模块名的ui列表=================="
+
+    for modelName, uiKeyList in pairs(UnMatchModelUiDic) do
+        content[#content+1] = string.format("ui模块名:%s", modelName)
+
+        for _, uiKey in ipairs(uiKeyList) do
+            content[#content+1] = string.format("\t%s", uiKey)
+        end
+    end
+
+    content = table.concat(content, "\r\n")
+    IO.File.WriteAllText(XTableAssetCollectConst.ModelUIPrefabStatisticDataPath, content)
 end
 
 local OnFinishCollect = function()
@@ -476,13 +628,17 @@ local OnFinishCollect = function()
 
     GenerateCollectTabeData()
     GenerateAllTableData()
-    GenerateAllResourceData()
-    GenerateUncollectTableLog()
+    GenerateAllModelNameData()
+    GenerateModelUiData()
+    GenerateEmptyModelUiData()
+
+    GenerateModelTableStatisticData()
+    GenerateModelUiStatisticData()
 end
 --endregion
 
 --region 入口
-function XTableManager.CollectTable()
+function XTableManager.CollectModelData()
     RedirectGMeta()
     RedirectXTableManager()
     RedirectXConfigUtil()
@@ -490,13 +646,15 @@ function XTableManager.CollectTable()
 
     OnBeforCollect()
 
-    CollectManualTable(FileType.Common)
-    CollectManualTable(FileType.Ignore)
+    CollectManualTable(FileType.Common, TableSourceType.ManulCommon)
+    CollectManualTable(FileType.Ignore, TableSourceType.ManulIgnore)
+    CollectManulConfig()
     CollectMovieTable()
     CollectFightTable()
     CollectModelTable()
     CollectTableByConfigFile()
     CollectTableByManager()
+    CollectUIPrefab()
 
     OnFinishCollect()
 

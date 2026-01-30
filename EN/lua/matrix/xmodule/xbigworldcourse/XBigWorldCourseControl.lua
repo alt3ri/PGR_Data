@@ -48,6 +48,7 @@ end
 
 function XBigWorldCourseControl:GetValidVersionEntitys()
     local versionEntitys = self:GetVersionEntitys()
+    --todo zjx 这里每帧会执行，这个table考虑从外部传进来
     local result = {}
 
     if not XTool.IsTableEmpty(versionEntitys) then
@@ -107,8 +108,20 @@ function XBigWorldCourseControl:TryOpenRewardTips(rewardId)
 
         XMVCA.XBigWorldUI:OpenGoodsInfo(goodParams)
     else
-        XMVCA.XBigWorldUI:OpenBigWorldObtain(rewardList, XMVCA.XBigWorldService:GetText("TipReward"), nil, true)
+        XMVCA.XBigWorldUI:OpenBigWorldObtain(rewardList, XMVCA.XBigWorldService:GetText("TipReward"), nil, true, false)
     end
+end
+
+function XBigWorldCourseControl:SetSelectVersion(version)
+    self._Model:SetSelectVersion(version)
+end
+
+function XBigWorldCourseControl:GetSelectVersion()
+    local version = self._Model:GetSelectVersion()
+    if not version then
+        return XEnumConst.BWCourse.Version.One
+    end
+    return version
 end
 
 --- region 历程任务
@@ -133,6 +146,14 @@ end
 
 function XBigWorldCourseControl:GetTaskRewardItemIconNoneColor(contentId)
     return self._Model:GetBigWorldCourseContentTaskProgressItemIconByContentId(contentId) or ""
+end
+
+function XBigWorldCourseControl:GetBigWorldCourseContentBannerBg(contentId)
+    return self._Model:GetBigWorldCourseContentBannerBgByContentId(contentId) or ""
+end
+
+function XBigWorldCourseControl:GetBigWorldCourseContentTip(contentId)
+    return self._Model:GetBigWorldCourseTypeContentTipByContentId(contentId) or ""
 end
 
 function XBigWorldCourseControl:GetTaskIdsByContentId(contentId)

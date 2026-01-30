@@ -56,4 +56,8 @@ function XUiLoading:OnStart(stageLoadingType)
         self.TitleText.gameObject:SetActive(false)
     end
 
+end
+
+function XUiLoading:OnDestroy()
+    XEventManager.DispatchEvent(XEventId.EVENT_UILOADING_CLOSED)
 end

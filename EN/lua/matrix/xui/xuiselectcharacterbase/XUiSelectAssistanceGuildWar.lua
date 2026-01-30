@@ -3,33 +3,6 @@ local XUiSelectCharacterBase = require("XUi/XUiSelectCharacterBase/XUiSelectChar
 ---@class XUiSelectAssistanceGuildWar:XUiSelectCharacterBase
 local XUiSelectAssistanceGuildWar = XLuaUiManager.Register(XUiSelectCharacterBase, "UiSelectAssistanceGuildWar")
 
---local supportData = {
---    CanSupportCancel = true,
---    HideBtnRecommend = true,
---    CheckInSupportCb = function(characterId)
---        return XDataCenter.GuildWarManager.GetAssistantCharacterId() == characterId
---    end,
---    SetCharacterCb = function(characterId)
---        XLuaUiManager.Close("UiCharacter")
---        XDataCenter.GuildWarManager.SendAssistant(characterId)
---        return true
---    end,
---    CancelCharacterCb = function(characterId)
---        XLuaUiManager.Close("UiCharacter")
---        XDataCenter.GuildWarManager.CancelAssistant(characterId)
---    end,
---    --显示高优先级图标
---    CheckHighPriority = function(characterId)
---        -- 特攻角色
---        local isSpecialRole = XDataCenter.GuildWarManager.CheckIsSpecialRole(characterId)
---        local icon = false
---        if isSpecialRole then
---            icon = XDataCenter.GuildWarManager.GetSpecialRoleIcon(characterId)
---        end
---        return isSpecialRole, icon
---    end
---}
-
 function XUiSelectAssistanceGuildWar:RefreshMid()
     local character = self.CurCharacter
     if character then

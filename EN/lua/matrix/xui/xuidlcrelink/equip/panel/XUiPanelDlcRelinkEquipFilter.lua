@@ -9,10 +9,16 @@ function XUiPanelDlcRelinkEquipFilter:OnStart(callback)
     self.Callback = callback
 
     self:InitBtnGroup(self.TypeReform, "ReformedType")
-    self:InitBtnGroup(self.TypeNumber, "FactorRemovedType")
+    --self:InitBtnGroup(self.TypeNumber, "FactorRemovedType")
     self:InitBtnGroup(self.TypePosition, "EquipType")
 
+    -- 隐藏删除次数筛选
+    if self.TypeNumber then
+        self.TypeNumber.gameObject:SetActiveEx(false)
+    end
+
     self:InitDynamicTable()
+    self.CurSelectGrid = nil
 end
 
 ---@field btnGroup XUiButtonGroup
@@ -53,13 +59,13 @@ function XUiPanelDlcRelinkEquipFilter:Refresh(equipMainFactorIds, equipFilterCac
             self.TypeReform:CancelSelect()
         end
     end
-    if self.TypeNumber then
-        if XTool.IsNumberValid(self.EquipFilterCache.FactorRemovedType) then
-            self.TypeNumber:SelectIndex(self.EquipFilterCache.FactorRemovedType)
-        else
-            self.TypeNumber:CancelSelect()
-        end
-    end
+    --if self.TypeNumber then
+    --    if XTool.IsNumberValid(self.EquipFilterCache.FactorRemovedType) then
+    --        self.TypeNumber:SelectIndex(self.EquipFilterCache.FactorRemovedType)
+    --    else
+    --        self.TypeNumber:CancelSelect()
+    --    end
+    --end
     if self.TypePosition then
         if XTool.IsNumberValid(self.EquipFilterCache.EquipType) then
             self.TypePosition:SelectIndex(self.EquipFilterCache.EquipType)
@@ -79,13 +85,13 @@ end
 
 function XUiPanelDlcRelinkEquipFilter:SetupDynamicTable()
     local isEmpty = XTool.IsTableEmpty(self.EquipMainFactorIds)
-    if self.TypeCharacteristic then
-        self.TypeCharacteristic.gameObject:SetActiveEx(not isEmpty)
-    end
     if isEmpty then
+        self.DynamicTable:Clear()
+        self.TypeCharacteristic.gameObject:SetActiveEx(false)
         return
     end
 
+    self.TypeCharacteristic.gameObject:SetActiveEx(true)
     self.DynamicTable:SetDataSource(self.EquipMainFactorIds)
     self.DynamicTable:ReloadDataASync()
 end
@@ -101,15 +107,26 @@ function XUiPanelDlcRelinkEquipFilter:OnDynamicTableEvent(event, index, grid)
         grid:Refresh(factorId)
         local isSelected = table.contains(self.EquipFilterCache.FactorIds, factorId)
         grid:SetSelect(isSelected)
-    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
-        local isSelected, i = table.contains(self.EquipFilterCache.FactorIds, factorId)
-        if isSelected then
-            table.remove(self.EquipFilterCache.FactorIds, i)
-            grid:SetSelect(false)
-        else
-            table.insert(self.EquipFilterCache.FactorIds, factorId)
-            grid:SetSelect(true)
+        if isSelected and not self.CurSelectGrid then
+            self.CurSelectGrid = grid
         end
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
+        --单选
+        local curFactorId = self.EquipFilterCache.FactorIds[1] or 0
+        local isSelected = curFactorId == factorId
+        if isSelected then
+            self.EquipFilterCache.FactorIds[1] = nil
+            grid:SetSelect(false)
+            self.CurSelectGrid = nil
+        else
+            self.EquipFilterCache.FactorIds[1] = factorId
+            if self.CurSelectGrid then
+                self.CurSelectGrid:SetSelect(false)
+            end
+            grid:SetSelect(true)
+            self.CurSelectGrid = grid
+        end
+
         self:InvokeCallback()
     end
 end

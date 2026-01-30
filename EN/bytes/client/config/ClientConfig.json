@@ -267,17 +267,17 @@
     {
         "Key": "BabelTowerRankIcon1",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiFubenChallengeMapBoss/BossSingleNo1.png"
+        "Value": "Assets/Product/Texture/Image/Common/BossSingleNo1.png"
     },
     {
         "Key": "BabelTowerRankIcon2",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiFubenChallengeMapBoss/BossSingleNo2.png"
+        "Value": "Assets/Product/Texture/Image/Common/BossSingleNo2.png"
     },
     {
         "Key": "BabelTowerRankIcon3",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiFubenChallengeMapBoss/BossSingleNo3.png"
+        "Value": "Assets/Product/Texture/Image/Common/BossSingleNo3.png"
     },
     {
         "Key": "BackgroundChangeTimeEnd",
@@ -3840,6 +3840,11 @@
         "Value": "Assets/Product/Ui/Prefab/UiDebuggerFightTabMacro.prefab"
     },
     {
+        "Key": "UiDebuggerGyroInfo",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/Prefab/UiDebuggerGyroInfo.prefab"
+    },
+    {
         "Key": "UiFightTopInfectionPrefab",
         "Type": "string",
         "Value": "Assets/Product/Ui/UiFightPrefab/UiFightTopNoiseBar.prefab"
@@ -4280,6 +4285,21 @@
         "Value": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageMainLineBattleBossV215.prefab"
     },
     {
+        "Key": "GridLuosaitaGridStageStory",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/ComponentPrefab/GridStage/GridLuosaitaGridStageStory.prefab"
+    },
+    {
+        "Key": "GridLuosaitaGridStageBattleSpecial",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/ComponentPrefab/GridStage/GridLuosaitaGridStageBattleSpecial.prefab"
+    },
+    {
+        "Key": "GridLuosaitaGridStageBattleBoss",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStageMainLineLuosaitaBattleBoss.prefab"
+    },
+    {
         "Key": "AprilFoolsDayLoginPicPath",
         "Type": "string",
         "Value": "Assets/Product/Texture/Image/UiloginBg/LoginBg.png"
@@ -4607,7 +4627,7 @@
     {
         "Key": "NewFashionFilterShopList",
         "Type": "string",
-        "Value": "501|502|1438"
+        "Value": "501|502|1463|1464"
     },
     {
         "Key": "DrawRecordDropdownItemSelectColor",
@@ -5165,6 +5185,26 @@
         "Value": "0"
     },
     {
+        "Key": "ProximaConnectUi",
+        "Type": "string",
+        "Value": "Assets/Product/ThirdParty/Proxima/UiProximaConnect.prefab"
+    },
+    {
+        "Key": "ProximaStatusUi",
+        "Type": "string",
+        "Value": "Assets/Product/ThirdParty/Proxima/UiProximaStatus.prefab"
+    },
+    {
+        "Key": "ProximaEmbeddedCert",
+        "Type": "string",
+        "Value": "Assets/Product/ThirdParty/Proxima/ProximaEmbeddedCert.pfx"
+    },
+    {
+        "Key": "ProximaWeb",
+        "Type": "string",
+        "Value": "Assets/Product/ThirdParty/Proxima/web.harustatic"
+    },
+    {
         "Key": "MonthCardPlusPackId",
         "Type": "int",
         "Value": "1969"
@@ -5178,6 +5218,11 @@
         "Key": "MonthCardTotalPrice2",
         "Type": "string",
         "Value": "3300+"
+    },
+    {
+        "Key": "LoginVideoPreEndEffectDelayMS",
+        "Type": "int",
+        "Value": "200"
     },
     {
         "Key": "PurchaseLunaRecommendId",
@@ -5198,5 +5243,70 @@
         "Key": "DrawCanLiverWeekTaskGroupIdIndex",
         "Type": "int",
         "Value": "2"
+    },
+    {
+        "Key": "AccumulateExpendShopCanBuyColor",
+        "Type": "string",
+        "Value": "FFFFFF"
+    },
+    {
+        "Key": "AccumulateExpendShopCanNotBuyColor",
+        "Type": "string",
+        "Value": "F32323"
+    },
+    {
+        "Key": "PurchaseRecommendReloadIndexOffset",
+        "Type": "int",
+        "Value": "2"
+    },
+    {
+        "Key": "AprilFoolsDayCondition2026",
+        "Type": "int",
+        "Value": "0"
+    },
+    {
+        "Key": "AprilFoolsDayLoginPicPath2026",
+        "Type": "string",
+        "Value": "Assets/Product/Effect/Prefab/FxUi/FxUiMain/FxUiMainSmokeLiziBg01.prefab"
+    },
+    {
+        "Key": "AprilFoolsDayLoginStartTime2026",
+        "Type": "string",
+        "Value": "2026/4/2 0:00"
+    },
+    {
+        "Key": "AprilFoolsDayLoginEndTime2026",
+        "Type": "string",
+        "Value": "2026/4/3 0:00"
+    },
+    {
+        "Key": "AprilFoolsDaycoordinateX2026",
+        "Type": "float",
+        "Value": "0"
+    },
+    {
+        "Key": "AprilFoolsDaycoordinateY2026",
+        "Type": "float",
+        "Value": "0"
+    },
+    {
+        "Key": "DlcNumBig",
+        "Type": "int",
+        "Value": "160"
+    },
+    {
+        "Key": "DlcNumMiddle",
+        "Type": "int",
+        "Value": "100"
+    },
+    {
+        "Key": "DlcNumSmall",
+        "Type": "int",
+        "Value": "80"
+    },
+    {
+        "Key": "MainLine2PanelTaskStoryListBottom",
+        "Type": "int",
+        "Value": "32"
     }
 ]

@@ -30,6 +30,10 @@ function XBigWorldUi:OnDestroyUi()
         XMVCA.XBigWorldGamePlay:SetFightUiActive(true)
     end
 
+    -- 移除输入 销毁时再切换（不能再隐藏时切换，因为input section移除的时候要先处理再切换），打开新的会有覆盖
+    -- 销毁的时候可以恢复设置，影响到移除input section的列表移除
+    self:ChangeFightInput()
+
     XLuaUi.OnDestroyUi(self)
 end
 
@@ -48,9 +52,6 @@ function XBigWorldUi:OnEnableUi(...)
 end
 
 function XBigWorldUi:OnDisableUi(...)
-    -- 移除输入
-    self:ChangeFightInput()
-
     self:SetCameraControlStatus(true)
     XLuaUi.OnDisableUi(self, ...)
     XUiManager.RemoveControllerTips(self.Name)
@@ -68,13 +69,15 @@ function XBigWorldUi:ChangePauseFight(value)
 end
 
 function XBigWorldUi:ChangeSystemInput()
-    if self._IsChangeInput then
+    if self._IsChangeInput and not self._SysInputChange then
+        self._SysInputChange = true
         XMVCA.XBigWorldGamePlay:ChangeSystemInput()
     end
 end
 
 function XBigWorldUi:ChangeFightInput()
-    if self._IsChangeInput then
+    if self._IsChangeInput and self._SysInputChange then
+        self._SysInputChange = false
         XMVCA.XBigWorldGamePlay:ChangeFightInput()
     end
 end

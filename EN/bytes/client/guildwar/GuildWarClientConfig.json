@@ -46,18 +46,28 @@
     },
     {
         "Key": "SpecialRoleIcon1",
-        "Comment": "Operation Icon 1",
-        "Values": "['Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIcon1.png']"
+        "Comment": "\u7279\u653b\u56fe\u6807\uff08\u4e3b\u8981\u89d2\u8272\uff09\uff0c\u7d22\u5f15\u5bf9\u5e94\u7ec4Id",
+        "Values": "['Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIconNew02.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIconNew01.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIconNew03.png']"
     },
     {
         "Key": "SpecialRoleIcon2",
-        "Comment": "Operation Icon 2",
-        "Values": "['Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIcon2.png']"
+        "Comment": "\u7279\u653b\u56fe\u6807\uff08\u6b21\u8981\u89d2\u8272\uff09\uff0c\u7d22\u5f15\u5bf9\u5e94\u7ec4Id",
+        "Values": "['Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIconNew02.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIconNew01.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIconNew03.png']"
+    },
+    {
+        "Key": "SpeicalRoleIconBg",
+        "Comment": "Operation icon backgrounds, indexed by group ID",
+        "Values": "['Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIconBgNew02.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIconBgNew01.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIconBgNew03.png']"
+    },
+    {
+        "Key": "SpecialRoleTeamName",
+        "Comment": "Operation team names, indexed by group ID",
+        "Values": "['Operation Team 1', 'Operation Team 2', 'Operation Team 3']"
     },
     {
         "Key": "PassRewardShow",
         "Comment": "Difficulty selection screen reward preview",
-        "Values": "['66998', '66999', '67000']"
+        "Values": "['67823', '67824', '67825']"
     },
     {
         "Key": "PlanPath1",
@@ -211,32 +221,77 @@
     },
     {
         "Key": "DragonRageLevelTips",
-        "Comment": "Red Tide Level Description",
-        "Values": "['Red Tide Level increases along with the cycle. Same with the difficulty of all stages.']"
+        "Comment": "Mist Level Description",
+        "Values": "['Mist Level increases along with the cycle. Same with the difficulty of all stages.']"
     },
     {
         "Key": "DragonRageLevel",
-        "Comment": "Red Tide Level Format",
+        "Comment": "Mist Level Format",
         "Values": "['LV.{0}']"
     },
     {
         "Key": "DragonRageToRelicTitle",
-        "Comment": "Red Tide Node to Ruins Pop-Up Window Title",
+        "Comment": "Mist Mode Node to Ruins Pop-Up Window Title",
         "Values": "['The Sovereign has become more violent. The following node(s) has/have become ruins.']"
     },
     {
         "Key": "DragonRageEffectShowLowerLimit",
-        "Comment": "Red Tide Progress Bar Displays Effect Lower Limit Percentage",
+        "Comment": "Mist Mode Progress Bar Displays Effect Lower Limit Percentage",
         "Values": "['0']"
     },
     {
         "Key": "DragonRageSweepTips",
-        "Comment": "Red Tide Mode Available for Auto Clear",
+        "Comment": "Mist Mode Available for Auto Clear",
         "Values": "['Current cycle not manually cleared yet. Auto Clear will grant the points from the previous manual clear.']"
     },
     {
         "Key": "DragonRageRoundNoTips",
         "Comment": null,
         "Values": "['Do not show again this cycle.']"
+    },
+    {
+        "Key": "RoleStationBtnName",
+        "Comment": "Garrison text when selecting a character: (1) normal garrison; (2) character is garrisoned in another stage",
+        "Values": "['Garrison', 'Garrisoned in another stage']"
+    },
+    {
+        "Key": "NoRoleSelectForStation",
+        "Comment": "Prompt shown when confirming garrison without selecting a character",
+        "Values": "['Character not selected']"
+    },
+    {
+        "Key": "RoleStationedOtherNodeTips",
+        "Comment": "Prompt shown when selecting a character already garrisoned at another node",
+        "Values": "['This character is garrisoned in another stage']"
+    },
+    {
+        "Key": "RoleStationedSuccessTips",
+        "Comment": "Popup shown after successfully garrisoning a selected character",
+        "Values": "['Garrisoned']"
+    },
+    {
+        "Key": "RoleStationedRemoveTips",
+        "Comment": "Popup shown after successfully removing a garrisoned character",
+        "Values": "['Withdrawn']"
+    },
+    {
+        "Key": "PanelRoleStationStateShow",
+        "Comment": "Garrison UI title in Stage Details: (1) Available; (2) Garrisoned; (3) Full",
+        "Values": "['Tap to Garrison', 'Garrisoned', 'Frame garrison limit reached']"
+    },
+    {
+        "Key": "PanelRoleStationProgressShow",
+        "Comment": "Garrison progress and effect description in the Stage Details panel",
+        "Values": "['Guild has garrisoned <color=#34AFF8>{0}/{1}</color> frames. On the next cycle refresh, Node HP here will be reduced by <color=#34AFF8>{2}%</color>.']"
+    },
+    {
+        "Key": "CharacterJoinTeamWithStationedTips",
+        "Comment": "Prompt shown when adding a garrisoned character to a team",
+        "Values": "['{0} is currently garrisoned in [{1}]. Withdraw and add to this team?']"
+    },
+    {
+        "Key": "CannotStationedWithMaxTips",
+        "Comment": null,
+        "Values": "['Stage garrison limit reached']"
     }
 ]

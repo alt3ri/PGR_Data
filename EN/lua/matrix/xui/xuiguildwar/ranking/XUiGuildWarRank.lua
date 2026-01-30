@@ -27,6 +27,10 @@ function XUiGuildWarRank:OnAwake()
                 XDataCenter.GuildWarManager.OnActivityEndHandler()
             end
         end)
+
+    if self.BtnInformation then
+        self.BtnInformation:AddEventListener(handler(self, self.OnBtnInformationClick))
+    end
 end
 
 function XUiGuildWarRank:SetBtnTemplateDisable()
@@ -135,6 +139,10 @@ end
 ---param rankingTarget XGuildWarConfig.RankingTarget
 function XUiGuildWarRank:RefreshRankingName(rankingTarget, name)
     self.RankListLut[rankingTarget]:RefreshName(name)
+end
+
+function XUiGuildWarRank:OnBtnInformationClick()
+    XLuaUiManager.Open("UiGuildWarInformation")
 end
 
 return XUiGuildWarRank

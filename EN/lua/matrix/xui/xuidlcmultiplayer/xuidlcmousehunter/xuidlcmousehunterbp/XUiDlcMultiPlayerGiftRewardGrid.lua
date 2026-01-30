@@ -14,10 +14,10 @@ local XUiDlcMultiPlayerGiftRewardGrid = XClass(XUiNode, "XUiDlcMultiPlayerGiftRe
 
 local XUiDlcMultiPlayerGiftRewardGridItem = require("XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMouseHunterBp/XUiDlcMultiPlayerGiftRewardGridItem")
 
-local MainRewardLvColor = CS.UnityEngine.Color(240 / 255, 121 / 255, 50 / 255, 1)
-local MainRewardLvTitleColor = CS.UnityEngine.Color(240 / 255, 121 / 255, 50 / 255, 242 / 255)
-local NormalLvColor = CS.UnityEngine.Color(99 / 255, 115 / 255, 237 / 255, 1)
-local NormalLvTitleColor = CS.UnityEngine.Color(99 / 255, 115 / 255, 237 / 255, 242 / 255)
+local MainRewardLvColor = XUiHelper.Hexcolor2Color("FF6A49")
+-- local MainRewardLvTitleColor = XUiHelper.Hexcolor2Color("ec7351")
+local NormalLvColor = XUiHelper.Hexcolor2Color("FFE18F")
+-- local NormalLvTitleColor = XUiHelper.Hexcolor2Color("ffe18f")
 
 function XUiDlcMultiPlayerGiftRewardGrid:OnStart()
     self.GridItems = {}
@@ -63,15 +63,15 @@ function XUiDlcMultiPlayerGiftRewardGrid:UpdateGrid(list, data)
 
     if mainReward == 1 then
         self.ImgBg:SetRawImage(self._Control:GetDlcMultiplayerConfigConfigByKey("BpMainRewardIcon").Values[1])
-        self.TxtNormalLvTitle.color = MainRewardLvTitleColor
+        -- self.TxtNormalLvTitle.color = MainRewardLvTitleColor
         self.TxtNormalLv.color = MainRewardLvColor
-        self.TxtLocklLvTitle.color = MainRewardLvTitleColor
+        -- self.TxtLocklLvTitle.color = MainRewardLvTitleColor
         self.TxtLockLv.color = MainRewardLvColor
     else
         self.ImgBg:SetRawImage(self._Control:GetDlcMultiplayerConfigConfigByKey("BpNormalRewardIcon").Values[1])
-        self.TxtNormalLvTitle.color = NormalLvTitleColor
+        -- self.TxtNormalLvTitle.color = NormalLvTitleColor
         self.TxtNormalLv.color = NormalLvColor
-        self.TxtLocklLvTitle.color = NormalLvTitleColor
+        -- self.TxtLocklLvTitle.color = NormalLvTitleColor
         self.TxtLockLv.color = NormalLvColor
     end
 end

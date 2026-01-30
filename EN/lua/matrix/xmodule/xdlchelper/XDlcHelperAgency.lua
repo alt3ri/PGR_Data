@@ -93,6 +93,19 @@ function XDlcHelperAgency:CheckLevelPlayCleared(worldType, levelPlayId)
     end
 end
 
+function XDlcHelperAgency:GetAnimExpressionSOGroupId(worldType, fashionId)
+    local agency = self._DlcModelIdGetter[worldType]
+    if agency then
+        if agency.GetAnimExpressionSOGroupId then
+            return agency:GetAnimExpressionSOGroupId(fashionId)
+        else
+            XLog.Error('Agency: '..tostring(agency:GetId())..' 未实现方法：GetAnimExpressionSOGroupId')
+        end
+    else
+        XLog.Error('WorldType: '..tostring(worldType)..' 未注册提供检查副本玩法是否全通接口的Agency')
+    end
+end
+
 --endregion
 
 

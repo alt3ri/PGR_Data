@@ -146,6 +146,7 @@ end
 
 local DoRunLogin = function()
     XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_UI_OPEN)
+    CsXUiManager.Instance:SetRevertAndReleaseLock(true)
     XFightUtil.ClearFight()
     if XDataCenter.MovieManager then
         XDataCenter.MovieManager.StopMovie(true)

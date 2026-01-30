@@ -1,0 +1,466 @@
+[
+    {
+        "Key": "HelpKey",
+        "Params": "['DlcRelink']"
+    },
+    {
+        "Key": "TeachingLevelId",
+        "Params": "['9001']"
+    },
+    {
+        "Key": "TrainingLevelId",
+        "Params": "['9012']"
+    },
+    {
+        "Key": "LevelPassProgressTip",
+        "Params": "['Progress: %s']"
+    },
+    {
+        "Key": "LoadingTipsScrollingTime",
+        "Params": "['3']"
+    },
+    {
+        "Key": "MainCountDownDesc",
+        "Params": "['Ends in %s']"
+    },
+    {
+        "Key": "MainTipsSwitchInterval",
+        "Params": "['5000']"
+    },
+    {
+        "Key": "MainBtnEnterDesc",
+        "Params": "['Start Connection', 'Connecting']"
+    },
+    {
+        "Key": "ChapterCountDownDesc",
+        "Params": "['Unlocks in %s']"
+    },
+    {
+        "Key": "ChapterNotOpenDesc",
+        "Params": "['%s not available']"
+    },
+    {
+        "Key": "LevelUnlockDesc",
+        "Params": "['Clear %s to unlock', 'Unlocks in %s']"
+    },
+    {
+        "Key": "RoomBossLevelLimit",
+        "Params": "['Lv.%s']"
+    },
+    {
+        "Key": "CharacterOccupationName",
+        "Params": "['Attacker', 'Tank', 'Amplifier']"
+    },
+    {
+        "Key": "CharacterOccupationIcon",
+        "Params": "['Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkCharacterIconCha01.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkCharacterIconCha02.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkCharacterIconCha03.png']"
+    },
+    {
+        "Key": "CharacterOccupationIconTwo",
+        "Params": "['Assets/Product/Texture/Image/IconType/IconCharacter3.png', 'Assets/Product/Texture/Image/IconType/IconCharacter1.png', 'Assets/Product/Texture/Image/IconType/IconCharacter2.png']"
+    },
+    {
+        "Key": "EquipOccupationName",
+        "Params": "['Attacker', 'Tank', 'Amplification']"
+    },
+    {
+        "Key": "EquipOccupationIcon",
+        "Params": "['Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkCharacterIconattribute01.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkCharacterIconattribute02.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkCharacterIconattribute03.png']"
+    },
+    {
+        "Key": "EquipTabsDesc",
+        "Params": "['All', 'Attacker', 'Tank', 'Amplifier']"
+    },
+    {
+        "Key": "EquipTabsIcon",
+        "Params": "['Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipTabIcon01.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipTabIcon02.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipTabIcon03.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipTabIcon04.png']"
+    },
+    {
+        "Key": "EquipFilterBtnColor",
+        "Params": "['FFFFFF', 'AABEFF']"
+    },
+    {
+        "Key": "MatchSuccessTips",
+        "Params": "['Pairing successful']"
+    },
+    {
+        "Key": "PlayerEnterRoomTips",
+        "Params": "['%s joined the room']"
+    },
+    {
+        "Key": "RoomNotSelectRoleTips",
+        "Params": "['Select Character']"
+    },
+    {
+        "Key": "RoomNotSelectLevelTips",
+        "Params": "['Select Boss']"
+    },
+    {
+        "Key": "RoomMaxPlayerLevelTips",
+        "Params": "['Max']"
+    },
+    {
+        "Key": "CharacterBtnBattleDesc",
+        "Params": "['Deploy', 'Deployed']"
+    },
+    {
+        "Key": "EquipBagBtnReplaceDesc",
+        "Params": "['Swap', 'Equip', 'Swap']"
+    },
+    {
+        "Key": "EquipReformDeleteTips",
+        "Params": "['Removals left: %s']"
+    },
+    {
+        "Key": "EquipReformDeleteNoTimesTips",
+        "Params": "['No removals remaining for this gear']"
+    },
+    {
+        "Key": "EquipReformDeleteSuccessTips",
+        "Params": "['Trait Removed']"
+    },
+    {
+        "Key": "EquipReformAbsorbNoEquipTips",
+        "Params": "['Select materials for gear enhancement']"
+    },
+    {
+        "Key": "EquipReformAbsorbLockTips",
+        "Params": "['Gear is locked. Please unlock it first.']"
+    },
+    {
+        "Key": "EquipReformAbsorbFullTips",
+        "Params": "['Current gear cannot be enhanced further']"
+    },
+    {
+        "Key": "EquipCapacityDesc",
+        "Params": "['Capacity: %s/%s', 'Capacity: <color=#FF0000>%s/%s</color>']"
+    },
+    {
+        "Key": "EquipDecomposeSelectedCountDesc",
+        "Params": "['Not selected', 'Selected %s']"
+    },
+    {
+        "Key": "EquipDecomposeLockTips",
+        "Params": "['Gear locked']"
+    },
+    {
+        "Key": "EquipDecomposeWearTips",
+        "Params": "['Currently equipped by a character']"
+    },
+    {
+        "Key": "EquipDecomposePresetTips",
+        "Params": "['Gear in preset']"
+    },
+    {
+        "Key": "EquipDecomposeNoSelectTips",
+        "Params": "['Choose gear first']"
+    },
+    {
+        "Key": "EquipPresetNameEmpty",
+        "Params": "['Enter preset name']"
+    },
+    {
+        "Key": "EquipPresetNameTooLong",
+        "Params": "['Name exceeds %s characters']"
+    },
+    {
+        "Key": "EquipPresetRenameSuccess",
+        "Params": "['Preset renamed']"
+    },
+    {
+        "Key": "EquipPresetNameLengthFormat",
+        "Params": "['%s/%s', '<color=#FF0000>%s</color>/%s']"
+    },
+    {
+        "Key": "EquipComposeCountLimitTips",
+        "Params": "['Already at minimum', 'Already at maximum']"
+    },
+    {
+        "Key": "EquipComposeCountZero",
+        "Params": "['Please select synthesis quantity']"
+    },
+    {
+        "Key": "EquipComposeItemNotEnough",
+        "Params": "['Insufficient %s tokens']"
+    },
+    {
+        "Key": "TipTitle",
+        "Params": "['System Notice']"
+    },
+    {
+        "Key": "EquipReplaceWearTipContent",
+        "Params": "['This gear is already equipped by %s. Equip it anyway?', 'Equip', 'Cancel']"
+    },
+    {
+        "Key": "EquipReformAbsorbWearTipContent",
+        "Params": "['This gear is already equipped by %s. Continue absorbing?', 'Absorption', 'Cancel']"
+    },
+    {
+        "Key": "EquipReformAbsorbPresetTipContent",
+        "Params": "['This gear is in a preset. Continue absorbing?', 'Absorption', 'Cancel']"
+    },
+    {
+        "Key": "WearEquipDecomposeTipContent",
+        "Params": "['This gear is already equipped by %s. Continue scrapping?', 'Recycle', 'Cancel']"
+    },
+    {
+        "Key": "PresetEquipDecomposeTipContent",
+        "Params": "['This gear is in a preset. Continue scrapping?', 'Recycle', 'Cancel']"
+    },
+    {
+        "Key": "EquipPresetSetCoverTipContent",
+        "Params": "[\"Overwrite this preset with current character's gear?\", 'Overwrite', 'Cancel']"
+    },
+    {
+        "Key": "EquipPresetSetUseTipContent",
+        "Params": "['Some gear in this preset is used by other characters. Unequip it from them and equip it to the current character?', 'Equip', 'Cancel']"
+    },
+    {
+        "Key": "EquipReformDeleteConfirmTipContent",
+        "Params": "['This trait is high-level. Still want to remove it?', 'Delete', 'Cancel']"
+    },
+    {
+        "Key": "ChangeLeaderConfirmTipContent",
+        "Params": "['Set this teammate as the room host?', 'Confirm', 'Cancel']"
+    },
+    {
+        "Key": "EquipBagFullMatchTipContent",
+        "Params": "['Gear inventory full. Continue matchmaking?', 'Continue', 'Scrap Gear']"
+    },
+    {
+        "Key": "RoomTeamOccupationNotRationalTipContent",
+        "Params": "[\"Your team's class composition is unbalanced and the stage is tough. Proceed anyway?\", 'Continue', 'Cancel']"
+    },
+    {
+        "Key": "RoomTeamEquipAbilityNotRationalTipContent",
+        "Params": "[\"Some teammates' gear is below the recommended level. Continue?\", 'Continue', 'Cancel']"
+    },
+    {
+        "Key": "LikeSuccessDesc",
+        "Params": "['%s gives you a like']"
+    },
+    {
+        "Key": "SwitchStyleSuccessDesc",
+        "Params": "['Form switched to %s']"
+    },
+    {
+        "Key": "EquipPresetSetDefaultName",
+        "Params": "['Preset %s']"
+    },
+    {
+        "Key": "EquipPresetSetUseEmpty",
+        "Params": "['Current preset empty']"
+    },
+    {
+        "Key": "EquipPresetSetUseSuccess",
+        "Params": "['Preset equipped']"
+    },
+    {
+        "Key": "EquipPresetSetUseSameEquip",
+        "Params": "['Identical to preset gear']"
+    },
+    {
+        "Key": "NoWearEquip",
+        "Params": "['No gear equipped']"
+    },
+    {
+        "Key": "PlayerNextLevelDesc",
+        "Params": "['At max']"
+    },
+    {
+        "Key": "PlayerLevelNotEnoughCoinColor",
+        "Params": "['0F70BC', 'ff0000']"
+    },
+    {
+        "Key": "PlayerLevelNotEnoughCoinDesc",
+        "Params": "['Insufficient %s. You can scrap gear to get more.']"
+    },
+    {
+        "Key": "PlayerLevelUpConditionDesc",
+        "Params": "['Clear any stage on %s difficulty']"
+    },
+    {
+        "Key": "SettlementFailTips",
+        "Params": "['It is recommended to increase Gear Level via Gear - Enhancement.', 'Build a balanced team with the right class combination.', \"Smart gear combinations can boost your character's power.\", 'Use Ultimate skills and Signature synergies strategically to turn the tide of battle.']"
+    },
+    {
+        "Key": "SkillDetailSecondTitle",
+        "Params": "['Skill Effect']"
+    },
+    {
+        "Key": "SkillDamageSliderColor",
+        "Params": "['AEBDFC', 'ffc85f']"
+    },
+    {
+        "Key": "ShopTaskTagName",
+        "Params": "['Shop', 'Mission']"
+    },
+    {
+        "Key": "ShopItemTextColor",
+        "Params": "['FFFFFFFF', 'Fa7d81']"
+    },
+    {
+        "Key": "ShopCanBuyColor",
+        "Params": "['FFFFFFFF', 'Fa7d81']"
+    },
+    {
+        "Key": "MainPreviewRewardId",
+        "Params": "['67888']"
+    },
+    {
+        "Key": "SettlementResultBg",
+        "Params": "['Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkSettlementBg.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkSettlementBgFailure.png']"
+    },
+    {
+        "Key": "SettlementResultEffect",
+        "Params": "['Assets/Product/Effect/DlcPrefab/FxRelink/Prefeb/FxUi/FxUiDlcRelinkSettlementWinNew/FxUiDlcRelinkSettlementWin01.prefab', 'Assets/Product/Effect/DlcPrefab/FxRelink/Prefeb/FxUi/FxUiDlcRelinkSettlementWinNew/FxUiDlcRelinkSettlementFailure01.prefab']"
+    },
+    {
+        "Key": "DefaultRankText",
+        "Params": "['N/A']"
+    },
+    {
+        "Key": "SkillDetailCdFormat",
+        "Params": "['%ss']"
+    },
+    {
+        "Key": "SettlementResearchTitle",
+        "Params": "['Research Progress: <color=#9db1e9>%s</color>', 'Research Progress: <color=#9db1e9>%s (Max)</color>']"
+    },
+    {
+        "Key": "EquipSlotNoUnlock",
+        "Params": "['Locked', 'Slots unlock at Research Lv.8', 'Equip class gear to unlock slots']"
+    },
+    {
+        "Key": "EquipBagEmpty",
+        "Params": "['No gear obtained yet']"
+    },
+    {
+        "Key": "RoomWaitAllReadyTips",
+        "Params": "['Waiting for teammates']"
+    },
+    {
+        "Key": "InvitedUnlockedLevel",
+        "Params": "['40']"
+    },
+    {
+        "Key": "InvitedUnlockLevelTips",
+        "Params": "['Unlocks at Commandant Lv.%s']"
+    },
+    {
+        "Key": "InviteButtonText",
+        "Params": "['Invite', 'Invited (%ss)']"
+    },
+    {
+        "Key": "InviteCdTips",
+        "Params": "['You can invite again in %ss']"
+    },
+    {
+        "Key": "WikiTypeTabNormalIcon",
+        "Params": "['Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon05.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon06.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon07.png']"
+    },
+    {
+        "Key": "WikiTypeTabSelectIcon",
+        "Params": "['Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon02.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon03.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon08.png']"
+    },
+    {
+        "Key": "LoadingReturnRoomTips",
+        "Params": "['A team member has disconnected. Please restart the operation.']"
+    },
+    {
+        "Key": "SelectTrainingTip",
+        "Params": "['Other players in the room. Unable to enter.']"
+    },
+    {
+        "Key": "TrainingCreateRoomTip",
+        "Params": "['The current stage does not support Co-op. Create the room anyway?']"
+    },
+    {
+        "Key": "FirstPlayTeachingLevelTip",
+        "Params": "['Please tap Start Battle to complete the tutorial first.']"
+    },
+    {
+        "Key": "TutorialLevelName",
+        "Params": "['Tutorial Stage', 'Training Stage']"
+    },
+    {
+        "Key": "CharacterNoEquipCannotRecordPreset",
+        "Params": "['Current character has no gear. Cannot overwrite preset.']"
+    },
+    {
+        "Key": "RoomEquipAbilityNotRationalTips",
+        "Params": "['The total level of character gear is below the requirement. Cannot join matchmaking.']"
+    },
+    {
+        "Key": "RoomLeaderEquipAbilityNotRationalTips",
+        "Params": "['The total level of character gear is below the requirement. Cannot open the room.']"
+    },
+    {
+        "Key": "RoomBossLevelBgColor",
+        "Params": "['FFFFFF', 'A5E0F8', 'E0A2DF', 'FFD170', 'FF8981']"
+    },
+    {
+        "Key": "EquipSlotExpandTip",
+        "Params": "['Special Module Gear Slot Unlocked']"
+    },
+    {
+        "Key": "TipsInBlessing",
+        "Params": "['Trait Level +1 (Class Gear Enhancement Active)']"
+    },
+    {
+        "Key": "TipsNotEffective",
+        "Params": "['Extra enhancement not applied (incompatible class gear type)']"
+    },
+    {
+        "Key": "WifiSwitchTips",
+        "Params": "['Mobile network detected. Wi-Fi is recommended. Continue anyway?']"
+    },
+    {
+        "Key": "BecomeLeaderTips",
+        "Params": "['You have become the room host.']"
+    },
+    {
+        "Key": "ForbidSelectRoleTip",
+        "Params": "['Cannot change characters in tutorial stages.']"
+    },
+    {
+        "Key": "TeachingNotPassedTips",
+        "Params": "['Tutorial stage incomplete']"
+    },
+    {
+        "Key": "EquipComposeInputTip",
+        "Params": "['Please enter a positive integer']"
+    },
+    {
+        "Key": "RankDefaultTimeText",
+        "Params": "['N/A']"
+    },
+    {
+        "Key": "EquipReformSelectSameEquipTip",
+        "Params": "['Cannot equip identical gear']"
+    },
+    {
+        "Key": "TeachingLevelGuideId",
+        "Params": "['0']"
+    },
+    {
+        "Key": "BattleSettleShowTitleMaxCount",
+        "Params": "['4']"
+    },
+    {
+        "Key": "GlobalMatchRewardDesc",
+        "Params": "['Extra Gear Rewards (<color=#a1b9ff>%s</color><color=#a1b9ff>/%s</color>)', 'Extra Gear Rewards (<color=#fa7d81>%s</color><color=#a1b9ff>/%s</color>)']"
+    },
+    {
+        "Key": "GlobalMatchDetailTipContent",
+        "Params": "['1. After enabling Global Matchmaking, you will quickly join a room for any available stage.\\\\n2. Complete challenges through Global Matchmaking to obtain additional gear rewards.\\\\n3. The number of extra gear rewards available refreshes daily at 5:00.']"
+    },
+    {
+        "Key": "GlobalMatchDisableChooseBossTip",
+        "Params": "['Cannot select stages during Global Matchmaking.']"
+    },
+    {
+        "Key": "ChooseBossBtnName",
+        "Params": "['Stage not selected', 'Random Stage']"
+    }
+]

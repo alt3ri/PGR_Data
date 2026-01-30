@@ -24,6 +24,7 @@ local RequestProto = {
     DlcSetAbilityLimitRequest = "DlcSetAbilityLimitRequest", -- 修改房间战力限制
     CancelJoinWorldRequest = "CancelJoinWorldRequest", -- 取消重连
     -- DlcBackOnlineRequest = "DlcBackOnlineRequest", -- 重连dlc世界
+    DlcPreCheckReconnectRequest = "DlcPreCheckReconnectRequest", -- 重连前置检查
 }
 
 function XDlcRoomAgency:OnInit()
@@ -128,10 +129,14 @@ function XDlcRoomAgency:_OnAppStateChange(isPause)
 end
 
 function XDlcRoomAgency:IsSelfReady()
+    if not self:IsInRoom() then
+        return false
+    end
+
     if self:GetRoomProxy() and self:GetRoomProxy():GetTeam() then
         local team = self:GetRoomProxy():GetTeam()
         local selfMem = team:GetSelfMember()
-        return not selfMem:IsLeader() and selfMem:IsReady()
+        return selfMem and not selfMem:IsLeader() and selfMem:IsReady()
     end
 
     return false
@@ -335,7 +340,7 @@ function XDlcRoomAgency:DialogTipCancelMatch(callBack)
 end
 
 --- 创建教学房间
-function XDlcRoomAgency:CreateRoomTutorial(worldId, levelId)
+function XDlcRoomAgency:CreateRoomTutorial(worldId, levelId, cb)
     local replyFunc = function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
@@ -345,6 +350,9 @@ function XDlcRoomAgency:CreateRoomTutorial(worldId, levelId)
         XDataCenter.SetManager.SetFocusTypeDlcHunt(XSetConfigs.FocusTypeDlcHunt.Auto)
         self:_OnCreateRoom(res.RoomData, true)
         self._Room:SetTutorialLevelId(levelId)
+        if cb then
+            cb()
+        end
     end
 
     self:ReqCreateRoom(worldId, levelId, nil, false, false, replyFunc)
@@ -543,13 +551,12 @@ end
 ---@param nodeId string
 ---@param worldId number
 ---@param createTime number
----@param callback function
-function XDlcRoomAgency:ClickEnterRoomHref(roomId, nodeId, worldId, createTime, callback)
-    if not self:_CheckAgencyClickHrefCanEnter(roomId, nodeId, worldId, createTime) then
+function XDlcRoomAgency:ClickEnterRoomHref(roomId, nodeId, worldId, levelId, createTime)
+    if not self:_CheckAgencyClickHrefCanEnter(roomId, nodeId, worldId, levelId, createTime) then
         return
     end
 
-    self:ReqEnterTargetWorld(roomId, nodeId, false, worldId, true, callback)
+    self:ReqEnterTargetWorld(roomId, nodeId, false, worldId, levelId, true)
 end
 
 function XDlcRoomAgency:CancelReconnectToWorld(callback)
@@ -685,10 +692,11 @@ function XDlcRoomAgency:ReqSetAutoMatch(autoMatch)
     }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
+        else
+            self._Model:SetRoomAutoMatching(autoMatch)
         end
 
-        self._Model:SetRoomAutoMatching(autoMatch)
-        XEventManager.DispatchEvent(XEventId.EVENT_DLC_ROOM_AUTO_MATCH_CHANGE, autoMatch)
+        XEventManager.DispatchEvent(XEventId.EVENT_DLC_ROOM_AUTO_MATCH_CHANGE)
     end)
 end
 
@@ -836,11 +844,11 @@ function XDlcRoomAgency:ReqReconnectRoom(callback)
     end)
 end
 
-function XDlcRoomAgency:ReqEnterTargetWorld(roomId, nodeId, isRejoin, worldId, isInvite, callback)
+function XDlcRoomAgency:ReqEnterTargetWorld(roomId, nodeId, isRejoin, worldId, levelId, isInvite)
     if not XMVCA.XSubPackage:CheckSubpackage() then
         return
     end
-    if self:__CheckHasChangeProtocol("ReqEnterTargetWorld", roomId, nodeId, isRejoin, worldId, isInvite, callback) then
+    if self:__CheckHasChangeProtocol("ReqEnterTargetWorld", roomId, nodeId, isRejoin, worldId, levelId, isInvite) then
         return
     end
 
@@ -849,6 +857,7 @@ function XDlcRoomAgency:ReqEnterTargetWorld(roomId, nodeId, isRejoin, worldId, i
         NodeId = nodeId,
         IsRejoin = isRejoin,
         WorldId = worldId,
+        LevelId = levelId,
         IsInvite = isInvite,
     }, function(res)
         if res.Code ~= XCode.Success then
@@ -856,8 +865,8 @@ function XDlcRoomAgency:ReqEnterTargetWorld(roomId, nodeId, isRejoin, worldId, i
             return
         end
         self:_OnCreateRoom(res.RoomData, false)
-        if callback then
-            callback()
+        if self._Room then
+            self._Room:OnCustomEnterTargetRoom()
         end
     end)
 end
@@ -966,6 +975,29 @@ function XDlcRoomAgency:ReqCancelJoinWorld(worldNo, playerId, token, callback)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
         end
+        if callback then
+            callback()
+        end
+    end)
+end
+
+--- 进入玩法重连检查
+---@param worldType number 玩法类型
+---@param callback function 重连检查成功回调
+function XDlcRoomAgency:ReqPreCheckReconnect(worldType, callback)
+    if self:__CheckHasChangeProtocol("ReqPreCheckReconnect", callback) then
+        return
+    end
+
+    local req = {
+        WorldType = worldType,
+    }
+    XNetwork.Call(RequestProto.DlcPreCheckReconnectRequest, req, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
         if callback then
             callback()
         end
@@ -1124,9 +1156,9 @@ function XDlcRoomAgency:_OnJoinWorld(response, isRejoin)
             CS.StatusSyncFight.XFightClient.ExitFight(true)
         end
         if not self:IsSettled() then
-            self._Model:ClearAll()
             self:Settlement()
             self:_OnDisconnect()
+            self._Model:ClearAll()
         end
     end
     local connectCb = function(isSuccess)
@@ -1397,11 +1429,11 @@ function XDlcRoomAgency:_CheckAwaitSelect(selectType)
     return self._IsSelecting[selectType]
 end
 
-function XDlcRoomAgency:_CheckAgencyClickHrefCanEnter(roomId, nodeId, worldId, createTime)
+function XDlcRoomAgency:_CheckAgencyClickHrefCanEnter(roomId, nodeId, worldId, levelId, createTime)
     local agency = XMVCA.XDlcWorld:GetAgencyByWorldId(worldId)
 
     if agency then
-        return agency:DlcCheckClickHrefCanEnter(roomId, nodeId, worldId, createTime)
+        return agency:DlcCheckClickHrefCanEnter(roomId, nodeId, worldId, levelId, createTime)
     else
         return false
     end
@@ -1633,5 +1665,110 @@ function XDlcRoomAgency:OnDlcRoomRemoveNotify()
 end
 
 -- endregion
+function XDlcRoomAgency:ClickCount(count)
+    local dict = {}
+    dict.mouseHunterCompetition = count
+    CS.XRecord.Record(dict, "900014", "ClickCount")
+end
+
+--region 单机战斗
+
+function XDlcRoomAgency:RequestDlcSingleEnterFight(worldId, levelId, successCb, errorCb)
+    XNetwork.Call("DlcSingleEnterFightRequest", { WorldId = worldId, LevelId = levelId }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            if errorCb then
+                errorCb()
+            end
+            return
+        end
+
+        if XFightUtil.IsFighting() then
+            XLog.Error("请求Relink单机战斗失败：处于其他战斗中...")
+            return
+        end
+
+        local worldData = res.WorldData
+        local args = self:_GetXFightClientArgs()
+        local csWorldData = self:_GetXWorldData(worldData, levelId)
+
+        self._Model:ClearFightBeginData()
+        self._Model:SetFightBeginWorldDataBySource(worldData)
+
+        XLuaUiManager.Remove("UiDialog")
+        XLuaUiManager.Open("UiDlcRelinkLoadingNew")
+
+        CS.StatusSyncFight.XFightClient.RequestExitFight()
+        CS.StatusSyncFight.XFightClient.EnterFight(csWorldData, XPlayer.Id, args)
+
+        if successCb then
+            successCb(worldData)
+        end
+    end)
+end
+
+--v4.2特殊处理 教学关和训练关没有结算界面
+function XDlcRoomAgency:_GetXFightClientArgs()
+    local args = CS.StatusSyncFight.XFightClientArgs()
+    --加载进度回调
+    args.LoadProgressCb = function(process)
+        XEventManager.DispatchEvent(XEventId.EVENT_DLC_SELF_RECONNECT_LOADING_PROCESS, XPlayer.Id, process)
+    end
+    --关闭 loading ui
+    args.CloseLoadingUiCb = function()
+        XLuaUiManager.SafeClose("UiDlcRelinkLoadingNew")
+    end
+    --结算
+    args.SettleCb = function(result, summary)
+        self:RequestNormalSettle(result, summary)
+    end
+    --客户端本地中断游戏
+    args.InterruptFightCb = function(result, summary)
+        self:RequestNormalSettle(result, summary)
+    end
+    return args
+end
+
+function XDlcRoomAgency:_GetXWorldData(worldData, levelId)
+    local csWorldData = CS.XWorldData()
+    csWorldData.Online = worldData.Online
+    csWorldData.RoomId = worldData.RoomId
+    csWorldData.WorldId = worldData.WorldId
+    csWorldData.LevelId = worldData.LevelId
+    csWorldData.MissionId = worldData.MissionId
+    csWorldData.RebootId = worldData.RebootId
+    csWorldData.IsTeaching = worldData.IsTeaching
+    csWorldData.IsLocalDebug = worldData.IsLocalDebug
+    csWorldData.WorldType = worldData.WorldType
+    csWorldData.ServerControllerSeed = worldData.ServerControllerSeed
+    csWorldData.IsSingleOnline = worldData.IsSingleOnline
+    csWorldData.AutoChessGameplayData = CS.XAutoChessGameplayData()
+
+    if not XTool.IsTableEmpty(worldData.Players) then
+        for i, v in ipairs(worldData.Players) do
+            csWorldData.Players:Add(self:_GetXWorldPlayerData(v))
+        end
+    end
+
+    return csWorldData
+end
+
+function XDlcRoomAgency:_GetXWorldPlayerData(playerDataServer)
+    local worldPlayerData = CS.XWorldPlayerData()
+    worldPlayerData.Id = playerDataServer.Id
+    worldPlayerData.Name = playerDataServer.Name
+    worldPlayerData.NpcList = playerDataServer.NpcList
+    return worldPlayerData
+end
+
+---请求游戏正常结算
+function XDlcRoomAgency:RequestNormalSettle(result, summaryData)
+    local contentBytes = result:GetFightsResultsBytes()
+    XNetwork.CallWithAutoHandleErrorCode("DlcSingleFightSettleRequest", contentBytes, function(res)
+        XMVCA.XDlcRelink:RecordTeachingLevel(res.DlcFightSettleData)
+    end, true)
+end
+
+--endregion
 
 return XDlcRoomAgency

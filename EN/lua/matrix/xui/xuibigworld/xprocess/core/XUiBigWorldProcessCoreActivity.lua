@@ -1,5 +1,6 @@
 local XUiGridBWItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 local XUiBigWorldProcessCoreTip = require("XUi/XUiBigWorld/XProcess/Core/Tip/XUiBigWorldProcessCoreTip")
+local XUiGirdBigWorldProcessCoreExtra = require("XUi/XUiBigWorld/XProcess/Core/Grid/XUiGirdBigWorldProcessCoreExtra")
 
 ---@class XUiBigWorldProcessCoreActivity : XUiNode
 ---@field ImgBg UnityEngine.UI.RawImage
@@ -20,8 +21,11 @@ function XUiBigWorldProcessCoreActivity:OnStart()
     ---@type XUiGridBWItem[]
     self._RewardGridList = {}
     ---@type XUiBigWorldProcessCoreTip
-    self._TipUi = XUiBigWorldProcessCoreTip.New(self.ListProgress, self)
-
+    self._TipUi = XUiBigWorldProcessCoreTip.New(self.PanelState or self.ListProgress, self)
+    
+    
+    self._ExtraGridList = {}
+    
     self:_InitUi()
     self:_RegisterButtonClicks()
 end
@@ -70,18 +74,38 @@ function XUiBigWorldProcessCoreActivity:OnBtnOngoingClick()
     end
 end
 
+function XUiBigWorldProcessCoreActivity:OnBtnAdvanceClick()
+    if not self._Entity or not self._Entity:IsShowEarlyAccess() then
+        if self.BtnAdvance then
+            self.BtnAdvance.gameObject:SetActiveEx(false)
+        end
+        return
+    end
+    self._Entity:OpenPopupAdvance()
+end
+
 ---@param elementEntity XBWCourseCoreElementEntity
 function XUiBigWorldProcessCoreActivity:Refresh(elementEntity)
     self._Entity = elementEntity
     self.TxtName.text = elementEntity:GetName()
     self.TagNew.gameObject:SetActiveEx(elementEntity:IsNew())
-    self.BtnGo.gameObject:SetActiveEx(elementEntity:IsSkip())
+    local showSkip = elementEntity:IsSkip()
+    local btnSkipName = elementEntity:GetSkipBtnName() 
+    if showSkip and btnSkipName then
+        self.BtnGo:SetNameByGroup(0, btnSkipName)
+    end
+    self.BtnGo.gameObject:SetActiveEx(showSkip)
+    if self.BtnAdvance then
+        self.BtnAdvance.gameObject:SetActiveEx(elementEntity:IsShowEarlyAccess())
+    end
     self.BtnGo:ShowReddot(elementEntity:IsSkipStateChange())
     self._TipUi:Refresh(elementEntity)
     self:_RefreshHelp(elementEntity)
     self:_RefreshLocked(elementEntity)
     self:_RefreshReward(elementEntity)
     self:_RefreshBackground(elementEntity)
+    self:_RefreshExtra()
+    self:_RefreshComplete(not showSkip and elementEntity:IsComplete())
     elementEntity:RecordSkipState()
 end
 
@@ -90,6 +114,9 @@ function XUiBigWorldProcessCoreActivity:_RegisterButtonClicks()
     self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
     self.BtnGo:AddEventListener(handler(self, self.OnBtnGoClick))
     self.BtnOngoing:AddEventListener(handler(self, self.OnBtnOngoingClick))
+    if self.BtnAdvance then
+        self.BtnAdvance:AddEventListener(handler(self, self.OnBtnAdvanceClick))
+    end
 end
 
 function XUiBigWorldProcessCoreActivity:_RegisterListeners()
@@ -119,7 +146,7 @@ end
 
 ---@param elementEntity XBWCourseCoreElementEntity
 function XUiBigWorldProcessCoreActivity:_RefreshLocked(elementEntity)
-    self.BtnOngoing.gameObject:SetActiveEx(not elementEntity:IsSkip())
+    self.BtnOngoing.gameObject:SetActiveEx(not elementEntity:IsSkip() and not elementEntity:IsComplete())
 end
 
 ---@param elementEntity XBWCourseCoreElementEntity
@@ -157,6 +184,27 @@ function XUiBigWorldProcessCoreActivity:_RefreshReward(elementEntity)
     for i = index, #self._RewardGridList do
         self._RewardGridList[i]:Close()
     end
+end
+
+function XUiBigWorldProcessCoreActivity:_RefreshExtra()
+    if not self._Entity then
+        XTool.UpdateDynamicItem(self._ExtraGridList, nil, self.GirdExtra, XUiGirdBigWorldProcessCoreExtra, self)
+        return
+    end
+    local extra = self._Entity:GetExtraItems()
+    XTool.UpdateDynamicItem(self._ExtraGridList, extra, self.GirdExtra, XUiGirdBigWorldProcessCoreExtra, self)
+end
+
+function XUiBigWorldProcessCoreActivity:_RefreshComplete(showComplete)
+    if not self.ImgCompete then
+        return
+    end
+    self.ImgCompete.gameObject:SetActiveEx(showComplete)
+end
+
+---@return XBWCourseCoreElementEntity
+function XUiBigWorldProcessCoreActivity:GetEntity()
+    return self._Entity
 end
 
 return XUiBigWorldProcessCoreActivity

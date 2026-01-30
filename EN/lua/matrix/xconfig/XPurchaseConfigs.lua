@@ -158,6 +158,21 @@ XPurchaseConfigs.XPurchaseRewardGoodsType = {
     Random = 2
 }
 
+--- 埋点相关，记录玩家是在哪个页签购买的礼包
+XPurchaseConfigs.TabRecordType = {
+    Draw = 101, -- 研发-礼包
+}
+
+XPurchaseConfigs.TabRecordIndexMap = {
+    [1] = true, -- 热门推荐
+    [2] = true, -- 补给
+    [3] = true, -- 月卡
+}
+
+XPurchaseConfigs.PurchaseBuyCustomParamKeys = {
+    RecordFrom = 'FromMsg', -- 埋点记录来源
+}
+
 
 XPurchaseConfigs.LjczLookStateKey = "LJCZ_LOOK_STATE_KEY"
 XPurchaseConfigs.PurchaseLJCZDefaultLookStateKey = "PurchaseLJCZDefaultLookState"

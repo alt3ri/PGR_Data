@@ -4,8 +4,8 @@ local Base = require("Character/BigWorld/XBigWorldEcologyCharBase")
 ---@class XNPC_Karenina : XBigWorldEcologyCharBase
 local XNPC_Karenina = XDlcScriptManager.RegCharScript(6071, "XNPC_Karenina", Base)
 
-function XNPC_Karenina:Init()
-    Base.Init(self)
+function XNPC_Karenina:CommonInit()
+    Base.CommonInit(self)
     -- 卡列妮娜NPC冲突屏蔽脚本
     -- 参数1:QuestId, 参数2:开始ObjectiveId, 参数3:Objective状态, 参数4:结束ObjectiveId, 参数5:Objective状态,
     -- 在任务2001下，开始的目标20010102，目标状态开始，结束的目标20010105，目标状态结束

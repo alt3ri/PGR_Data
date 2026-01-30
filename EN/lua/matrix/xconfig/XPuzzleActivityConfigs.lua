@@ -1,5 +1,5 @@
-local TABLE_PUZZLE_ACTIVITY_PATH = "Share/MiniActivity/PuzzleActivity.tab"
-local TABLE_PUZZLE_ACTIVITY_PIECE_PATH = "Share/MiniActivity/PuzzleActivityPiece.tab"
+local TABLE_PUZZLE_ACTIVITY_PATH = "Share/MiniActivity/Puzzle/PuzzleActivity.tab"
+local TABLE_PUZZLE_ACTIVITY_PIECE_PATH = "Share/MiniActivity/Puzzle/PuzzleActivityPiece.tab"
 
 local PuzzleActivityTemplates = nil
 local PuzzleActivityPieceTemplates = nil

@@ -118,6 +118,16 @@ function XBigWorldQuestStep:TryGetObjective(objectiveId)
     return objectiveData
 end
 
+function XBigWorldQuestStep:CreateTempFinishedObjectiveData(objectiveId)
+    local questId = XMVCA.XBigWorldQuest:GetQuestIdByStepId(self._StepId)
+    if not XMVCA.XBigWorldQuest:CheckObjectiveFinish(questId, objectiveId) then
+        XLog.Error("存在未完成的Objective数据，无法创建一个临时未完成的Objective数据: " .. objectiveId )
+        return
+    end
+    local objectiveData = self:TryGetObjective(objectiveId)
+    return objectiveData
+end
+
 ---@return table<number, XBigWorldQuestObjective>
 function XBigWorldQuestStep:GetObjectiveDict()
     return self._ObjectiveDict
@@ -257,6 +267,46 @@ function XBigWorldQuest:GetObjective(objectiveId)
     end
 
     return nil
+end
+
+function XBigWorldQuest:GetStepObjectiveIds(stepId)
+    if not self._StepDict then
+        return nil
+    end
+
+    local stepData
+    if stepId then
+        stepData = self:GetStep(stepId)
+
+        if not stepData then
+            return nil
+        end
+        local objectiveIds = {}
+        local dict = stepData:GetObjectiveDict()
+        if dict then
+            for objId, objectInfo in pairs(dict) do
+                if not objectInfo:IsRunning() then
+                    objectiveIds[objId] = objectInfo
+                end
+            end
+        end
+        return objectiveIds
+    else
+        local objectiveIds = {}
+        for _, data in pairs(self._StepDict) do
+            if data:IsActive() then
+                local dict = data:GetObjectiveDict()
+                if dict then
+                    for objId, objectInfo in pairs(dict) do
+                        if objectInfo:IsRunning() then
+                            objectiveIds[objId] = objectInfo
+                        end
+                    end
+                end
+            end
+        end
+        return objectiveIds
+    end
 end
 
 function XBigWorldQuest:GetState()

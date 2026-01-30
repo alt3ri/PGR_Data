@@ -37,11 +37,11 @@ function XBigWorldCharacterAgency:InitEvent()
 end
 
 function XBigWorldCharacterAgency:OnTrialNpcJoinTeam(data)
-    self._Model:UpdateTrialCharacterIds(data.TrialNpcCharacterIds, data.Cover, data.CurCharacterId)
+    self._Model:UpdateTrialCharacterIds(data.TrialNpcConfigs, data.Cover, data.CurCharacterId)
 end
 
 function XBigWorldCharacterAgency:OnTrialNpcLeaveTeam()
-    self._Model:ClearTrialCharacterIds()
+    self:ClearTrialCharacterIds()
 end
 
 function XBigWorldCharacterAgency:OnRelease()
@@ -245,6 +245,11 @@ function XBigWorldCharacterAgency:ExGetDlcModelIdByCharacterData(characterData)
     end
 
     return XMVCA.XBigWorldCharacter:GetModelIdByFashionId(fashionId)
+end
+
+function XBigWorldCharacterAgency:GetAnimExpressionSOGroupId(fashionId)
+    local template = self._Model:GetDlcFashionTemplate(fashionId)
+    return  template and template.AnimExpressionSOGroupId or 0
 end
 
 --endregion 角色配置
@@ -613,6 +618,10 @@ end
 
 function XBigWorldCharacterAgency:CheckCharacterTrial(characterId)
     return self._Model:CheckTrialCharacter(characterId)
+end
+
+function XBigWorldCharacterAgency:ClearTrialCharacterIds()
+    self._Model:ClearTrialCharacterIds()
 end
 
 -- endregion

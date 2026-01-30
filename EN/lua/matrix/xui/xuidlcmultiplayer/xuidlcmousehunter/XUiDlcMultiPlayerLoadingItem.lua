@@ -1,7 +1,7 @@
-local XUiDlcMultiPlayerTitleCommon = require(
-"XUi/XUiDlcMultiPlayer/XUiDlcMultiPlayerCommon/XUiDlcMultiPlayerTitleCommon")
+local XUiDlcMultiPlayerTitleCommon = require("XUi/XUiDlcMultiPlayer/XUiDlcMultiPlayerCommon/XUiDlcMultiPlayerTitleCommon")
 
 ---@class XUiDlcMultiPlayerLoadingItem : XUiNode
+---@field Parent XUiDlcMultiPlayerLoading
 ---@field RImgHead UnityEngine.UI.RawImage
 ---@field TxtName UnityEngine.UI.Text
 ---@field TxtNum UnityEngine.UI.Text
@@ -19,6 +19,8 @@ local CampEnum = XMVCA.XDlcMultiMouseHunter.DlcMouseHunterCamp
 function XUiDlcMultiPlayerLoadingItem:OnStart(playerData)
     self._IsFinish = false
     self._TitleGrid = nil
+    ---@type UiObject[]
+    self._SkillGridList = {}
 
     self:_Init(playerData)
 end
@@ -49,6 +51,7 @@ function XUiDlcMultiPlayerLoadingItem:_Init(playerData)
     local customData = playerData:GetCustomData()
     local camp = playerData:GetCamp()
 
+    -- 头像、名字、进度
     self.TxtName.text = playerData:GetNickname()
     self.TxtNum.text = "0%"
     self.ImgProgress.fillAmount = 0
@@ -56,18 +59,44 @@ function XUiDlcMultiPlayerLoadingItem:_Init(playerData)
     self.ImgProgress.gameObject:SetActiveEx(true)
     self.RImgHead:SetRawImage(icon)
 
+    -- 阵营图标
+    local skillIds
     if camp == CampEnum.Cat then
-        local skillConfig = self._Control:GetDlcMultiplayerSkillConfigById(playerData:GetCatSkillId())
-        self.TxtSkillName.text = skillConfig.Name
-        self.ImgSkill:SetRawImage(skillConfig.Icon)
+        skillIds = playerData:GetCatSkillIds()
         self.ImgCamp:SetRawImage(self._Control:GetDlcMultiplayerConfigConfigByKey("LoadingCatIcon").Values[1])
     elseif camp == CampEnum.Mouse then
-        local skillConfig = self._Control:GetDlcMultiplayerSkillConfigById(playerData:GetMouseSkillId())
-        self.TxtSkillName.text = skillConfig.Name
-        self.ImgSkill:SetRawImage(skillConfig.Icon)
+        skillIds = playerData:GetMouseSkillIds()
         self.ImgCamp:SetRawImage(self._Control:GetDlcMultiplayerConfigConfigByKey("LoadingMouseIcon").Values[1])
     end
 
+    -- 技能图标
+    if XTool.IsTableEmpty(skillIds) then
+        self.PanelSkill.gameObject:SetActiveEx(false)
+    else
+        self.PanelSkill.gameObject:SetActiveEx(true)
+        for index, skillId in ipairs(skillIds) do
+            local grid = self._SkillGridList[index]
+            if not grid then
+                grid = index == 1 and self.GridSkill or XUiHelper.Instantiate(self.GridSkill, self.PanelSkill)
+                self._SkillGridList[index] = grid
+            end
+            grid.gameObject:SetActiveEx(true)
+            local skillConfig = self._Control:GetDlcMultiplayerSkillConfigById(skillId)
+            local rawImage = grid:GetObject("ImgSkill")
+            rawImage:SetRawImage(skillConfig.Icon)
+            if camp == CampEnum.Cat then
+                rawImage.color = XUiHelper.Hexcolor2Color("588975")
+            elseif camp == CampEnum.Mouse then
+                rawImage.color = XUiHelper.Hexcolor2Color("A54939")
+            end
+        end
+
+        for i = #skillIds + 1, #self._SkillGridList do
+            self._SkillGridList[i].gameObject:SetActiveEx(false)
+        end
+    end
+
+    -- 称号
     if customData and not customData:IsClear() then
         local titleId = customData:GetTitleId()
 
@@ -83,4 +112,4 @@ end
 
 -- endregion
 
-return XUiDlcMultiPlayerLoadingItem
+return XUiDlcMultiPlayerLoadingItem

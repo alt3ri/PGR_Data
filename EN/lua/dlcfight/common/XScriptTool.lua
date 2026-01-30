@@ -196,7 +196,10 @@ end
 ---@param posB UnityEngine.Vector3
 ---@return number
 function XScriptTool.Distance(posA, posB)
-    return Vector3.Distance(posA, posB)
+    local num1 = posA.x - posB.x;
+    local num2 = posA.y - posB.y;
+    local num3 = posA.z - posB.z;
+    return math.sqrt(num1 * num1 + num2 * num2 + num3 * num3);
 end
 
 ---判断向量是否相等

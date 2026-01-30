@@ -39,7 +39,9 @@ function XUiDlcRelinkRank:InitBtnTab()
     for index, levelId in ipairs(self.LevelIdList) do
         local btn = XUiHelper.Instantiate(self.BtnTabBoss, self.PanelBtnGroup.transform)
         btn.gameObject:SetActiveEx(true)
-        btn:SetNameByGroup(0, self._Control:GetLevelName(levelId))
+        local chapterId = self._Control:GetLevelChapterId(levelId)
+        local chapterName = self._Control:GetChapterName(chapterId)
+        btn:SetNameByGroup(0, chapterName)
         btnTabList[index] = btn
     end
     self.PanelBtnGroup:Init(btnTabList, handler(self, self.OnBtnTabClick))
@@ -73,13 +75,15 @@ function XUiDlcRelinkRank:SetupDynamicTable()
         return
     end
     self.DynamicTable:SetDataSource(self.RankInfos)
-    self.DynamicTable:ReloadDataASync(1)
+    self.DynamicTable:ReloadDataSync(1)
 end
 
 ---@param grid XUiGridDlcRelinkPlayerRank
 function XUiDlcRelinkRank:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self.RankInfos[index], index, false)
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        self:PlayGridAnimation()
     end
 end
 
@@ -101,9 +105,27 @@ function XUiDlcRelinkRank:OpenMyRank()
     self.PanelMyRankUi:Refresh(myRankInfo, myRank, true)
 end
 
+function XUiDlcRelinkRank:PlayGridAnimation()
+    ---@type XUiGridDlcRelinkPlayerRank[]
+    local grids = self.DynamicTable:GetGrids()
+    if XTool.IsTableEmpty(grids) then
+        return
+    end
+
+    for index, grid in ipairs(grids) do
+        grid:Close()
+        local delay = (index - 1) * 100
+        local timerId = XScheduleManager.ScheduleOnce(function()
+            grid:Open()
+            grid:PlayAnimationWithMask("PlayerRankEnable")
+        end, delay)
+        self:_AddTimerId(timerId)
+    end
+end
+
 function XUiDlcRelinkRank:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
     self:BindHelpBtn(self.BtnHelp, self._Control:GetClientConfig("HelpKey"))
 end
 

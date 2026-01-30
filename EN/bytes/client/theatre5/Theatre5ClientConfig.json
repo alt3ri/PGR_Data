@@ -113,7 +113,7 @@
     },
     {
         "Key": "EnterChapterStoryTips",
-        "Values": "['The upcoming chapter contains \\\\nextensive story content that requires significant time to read. Continue?']"
+        "Values": "['The upcoming chapter contains extensive story content that requires significant time to read. Continue?']"
     },
     {
         "Key": "GoodsPriceShowOnSellout",
@@ -197,7 +197,7 @@
     },
     {
         "Key": "PVPNotOpenTips",
-        "Values": "['Mode is not available yet']"
+        "Values": "['Mode is not available yet', 'Available in {0}']"
     },
     {
         "Key": "RepeatChapterChacterDesc",
@@ -261,19 +261,19 @@
     },
     {
         "Key": "PvpPopUpTitle",
-        "Values": "['Path of Revelation', 'Final Chapter']"
+        "Values": "['Desperado Clash', 'New Season']"
     },
     {
         "Key": "PvpPopUpContent1",
-        "Values": "['New Story Content', 'Join Nirvatia and step into the Final Chapter together.']"
+        "Values": "['New Commission System', 'Mammon Agency is preparing the commission.']"
     },
     {
         "Key": "PvpPopUpContent2",
-        "Values": "['New Stamp Rewards']"
+        "Values": "[\"New Mammon's Blessings\"]"
     },
     {
         "Key": "PvpPopUpContent3",
-        "Values": "['New Shop Rewards']"
+        "Values": "['Season Limited-Time Rewards']"
     },
     {
         "Key": "PvpPopUpImgNameplate",
@@ -298,5 +298,89 @@
     {
         "Key": "PopUpversion",
         "Values": "['1']"
+    },
+    {
+        "Key": "MissionLevelUpCostLinks",
+        "Values": "['{0}', '{0}/{1}', '{0}/{1}/{2}', '{0}/{1}/{2}/{3}', '{0}/{1}/{2}/{3}/{4}', '{0}/{1}/{2}/{3}/{4}/{5}']"
+    },
+    {
+        "Key": "MissionLevelUpCostHighLine",
+        "Values": "['<color=#F9E6A5>{0}</color>']"
+    },
+    {
+        "Key": "MissionRewardLinks",
+        "Values": "['{0}', '{0}/{1}', '{0}/{1}/{2}', '{0}/{1}/{2}/{3}', '{0}/{1}/{2}/{3}/{4}', '{0}/{1}/{2}/{3}/{4}/{5}']"
+    },
+    {
+        "Key": "MissionRewardHighLine",
+        "Values": "['<color=#EAC572>{0}</color>']"
+    },
+    {
+        "Key": "MissionLvFormat",
+        "Values": "['Lv.{0}', 'MAX']"
+    },
+    {
+        "Key": "MissionMaxLevelLabel",
+        "Values": "['Max rank reached']"
+    },
+    {
+        "Key": "MissionCompleteLabel",
+        "Values": "[\"Mammon's Blessing activated\"]"
+    },
+    {
+        "Key": "MissionGridLevelLabel",
+        "Values": "['Lv.{0}', 'MAX']"
+    },
+    {
+        "Key": "MissionLevelUpNoEnoughGold",
+        "Values": "['Insufficient coins to rank up']"
+    },
+    {
+        "Key": "NoMissionTips",
+        "Values": "['Commission available after 1 round', 'Mammon Agency is preparing the commission.']"
+    },
+    {
+        "Key": "MissionGridTitle",
+        "Values": "['Commission', 'Settling Commission']"
+    },
+    {
+        "Key": "MissonIsLockInBook",
+        "Values": "['Not yet found']"
+    },
+    {
+        "Key": "MissionLevelUpNoTimes",
+        "Values": "['Blessing already ranked up this round']"
+    },
+    {
+        "Key": "PVPNotStartTips",
+        "Values": "['Available in {0}', 'Locked']"
+    },
+    {
+        "Key": "PVPReasonTips",
+        "Values": "['{0} Available in {1}', '{0}  Season has started']"
+    },
+    {
+        "Key": "PVPReasonTimeDuration",
+        "Values": "['{0}.{1}-{2}.{3}']"
+    },
+    {
+        "Key": "MissionLevelUpInSkillSelectionPart",
+        "Values": "['Cannot rank up Blessing before skill selection']"
+    },
+    {
+        "Key": "MissionFinishTipsInSkillChoicePart",
+        "Values": "['Commission Settling Soon']"
+    },
+    {
+        "Key": "Theatre5MissionConditionTableDefine",
+        "Values": "['Desc', 'ConditionTarget', 'TriggerCondition', 'IsConditionAnd', 'ConditionParams', 'ConditionCompares', 'ConditionCompareValues', 'DescShowParam']"
+    },
+    {
+        "Key": "MissionStateLabelInRoundSettle",
+        "Values": "['No Commission Accepted', 'Commission in Progress']"
+    },
+    {
+        "Key": "MissionStateLabelInFinalSettle",
+        "Values": "['No Commission Accepted', 'Commission in Progress']"
     }
 ]

@@ -1,5 +1,6 @@
 ---@class XUiBigWorldTip : XBigWorldUi
 local XUiBigWorldTip = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldTip")
+local XUiPanelNameplate = require("XUi/XUiNameplate/XUiPanelNameplate")
 
 function XUiBigWorldTip:OnAwake()
     self:InitUi()
@@ -40,7 +41,7 @@ function XUiBigWorldTip:UpdateView()
     local data = self._Data
     self:ResetUi()
     if type(data) == "number" then
-        self._TemplateId = data
+        self.TemplateId = data
     else
         if data.IsTempItemData then
             self:SetTempGoodsInfo(data)
@@ -70,19 +71,29 @@ function XUiBigWorldTip:SetTempGoodsInfo(data)
         self.TxtCount.gameObject:SetActiveEx(true)
         self.CountTitle.gameObject:SetActiveEx(true)
     end
-    -- 图标
-    if self.RImgIcon and self.RImgIcon:Exist() and data.Icon then
-        self.RImgIcon:SetRawImage(data.Icon)
-        self.RImgIcon.gameObject:SetActiveEx(true)
+    
+    local rewardType = XArrangeConfigs.GetType(data.TemplateId)
+    if rewardType == XRewardManager.XRewardType.Nameplate then
+        -- 铭牌 需要关闭图标和品质显示
+        self.RImgIcon.gameObject:SetActiveEx(false)
+        self.ImgQuality.gameObject:SetActiveEx(false)
+    else
+        -- 图标
+        if self.RImgIcon and self.RImgIcon:Exist() and data.Icon then
+            self.RImgIcon:SetRawImage(data.Icon)
+            self.RImgIcon.gameObject:SetActiveEx(true)
+        end
+        -- 品质底图
+        if self.ImgQuality and data.Quality then
+            XUiHelper.SetQualityIcon(self, self.ImgQuality, data.Quality)
+            self.ImgQuality.gameObject:SetActiveEx(true)
+        end
     end
-    -- 品质底图
-    if self.ImgQuality and data.Quality then
-        XUiHelper.SetQualityIcon(self, self.ImgQuality, data.Quality)
-        self.ImgQuality.gameObject:SetActiveEx(true)
-    end
+    -- 铭牌
+    self:_UpdateNameplate(rewardType)
     -- 世界观描述
     if self.TxtWorldDesc and data.WorldDesc then
-        self.TxtWorldDesc.text = data.WorldDesc
+        self.TxtWorldDesc.text = XUiHelper.ConvertLineBreakSymbol(data.WorldDesc)
         self.ImgQuality.gameObject:SetActiveEx(true)
     end
     -- 描述
@@ -97,10 +108,10 @@ function XUiBigWorldTip:SetGoodsInfo(data)
     local tipNotShowCount = false
     
     local params = XMVCA.XBigWorldService:GetGoodsShowParamsByTemplateId(self.TemplateId)
-
+    local rewardType = params.RewardType
     -- 表情包和聊天框不显示数量
-    if params.RewardType == XRewardManager.XRewardType.ChatEmoji
-            or params.RewardType == XRewardManager.XRewardType.ChatBoard then
+    if rewardType == XRewardManager.XRewardType.ChatEmoji
+            or rewardType == XRewardManager.XRewardType.ChatBoard then
         tipNotShowCount = true
     end
 
@@ -127,24 +138,38 @@ function XUiBigWorldTip:SetGoodsInfo(data)
             self.CountTitle.gameObject:SetActiveEx(true)
         end
     end
+    if rewardType == XRewardManager.XRewardType.Nameplate then
+        -- 铭牌 需要关闭图标和品质显示
+        self.RImgIcon.gameObject:SetActiveEx(false)
+        self.ImgQuality.gameObject:SetActiveEx(false)
+    else
+        -- 图标
+        if self.RImgIcon and self.RImgIcon:Exist() then
+            local icon = params.Icon
 
-    -- 图标
-    if self.RImgIcon and self.RImgIcon:Exist() then
-        local icon = params.Icon
+            if params.BigIcon then
+                icon = params.BigIcon
+            end
 
-        if params.BigIcon then
-            icon = params.BigIcon
+            if icon and #icon > 0 then
+                self.RImgIcon:SetRawImage(icon)
+                self.RImgIcon.gameObject:SetActiveEx(true)
+            end
+
+            if self.ImgBlackBg then
+                self.ImgBlackBg.gameObject:SetActiveEx(false)
+            end
         end
 
-        if icon and #icon > 0 then
-            self.RImgIcon:SetRawImage(icon)
-            self.RImgIcon.gameObject:SetActiveEx(true)
-        end
-
-        if self.ImgBlackBg then
-            self.ImgBlackBg.gameObject:SetActiveEx(false)
+        -- 品质底图
+        if self.ImgQuality and params.Quality then
+            XUiHelper.SetQualityIcon(self, self.ImgQuality, params.Quality)
+            self.ImgQuality.gameObject:SetActiveEx(false)
         end
     end
+
+    -- 铭牌
+    self:_UpdateNameplate(rewardType)
 
     -- 特效
     if self.HeadIconEffect then
@@ -171,11 +196,6 @@ function XUiBigWorldTip:SetGoodsInfo(data)
         end
     end
 
-    -- 品质底图
-    if self.ImgQuality and params.Quality then
-        XUiHelper.SetQualityIcon(self, self.ImgQuality, params.Quality)
-        self.ImgQuality.gameObject:SetActiveEx(false)
-    end
 
     -- 世界观描述
     if self.TxtWorldDesc then
@@ -187,7 +207,7 @@ function XUiBigWorldTip:SetGoodsInfo(data)
         end
 
         if worldDesc and #worldDesc then
-            self.TxtWorldDesc.text = worldDesc
+            self.TxtWorldDesc.text = XUiHelper.ConvertLineBreakSymbol(worldDesc)
             self.TxtWorldDesc.gameObject:SetActiveEx(true)
         end
     end
@@ -199,6 +219,45 @@ function XUiBigWorldTip:SetGoodsInfo(data)
             self.TxtDescription.text = desc
             self.TxtDescription.gameObject:SetActiveEx(true)
         end
+    end
+end
+
+function XUiBigWorldTip:_UpdateNameplate(rewardType)
+    if not self.PanelNamePlate then
+        local prefab = self.InfoBg:LoadPrefab(XMedalConfigs.XNameplatePanelPath)
+        
+        local rectTransform = prefab.transform:GetComponent("RectTransform")
+        if rectTransform then
+            local vX = 0
+            local vY = 0
+            local scale = CS.UnityEngine.Vector3(1, 1, 1)
+            if self.Bg then
+                local tmpTrans = self.Bg:GetComponent("RectTransform")
+                local vect = tmpTrans.anchoredPosition
+                rectTransform.anchorMin = tmpTrans.anchorMin
+                rectTransform.anchorMax = tmpTrans.anchorMax
+                vX = vect.x
+                vY = vect.y
+                local bgX= self.Bg:GetComponent("RectTransform").sizeDelta.x
+                local bgScale = self.Bg.transform.localScale.x
+                local realBgWidth = bgX * bgScale
+                local tempX = rectTransform.sizeDelta.x
+                local scaleNum = 0.9 * realBgWidth/tempX
+                scale = CS.UnityEngine.Vector3(scaleNum, scaleNum, scaleNum)  -- 铭牌大小为标准背景宽高的90%防止超出格子
+            end
+            rectTransform.anchoredPosition = CS.UnityEngine.Vector2(vX, vY)
+            rectTransform.localScale = scale
+        end
+        self.PanelNamePlate = XUiPanelNameplate.New(prefab, self)
+    end
+
+    if rewardType ~= XRewardManager.XRewardType.Nameplate then
+        if self.PanelNamePlate then
+            self.PanelNamePlate.GameObject:SetActiveEx(false)
+        end
+    else
+        self.PanelNamePlate.GameObject:SetActiveEx(true)
+        self.PanelNamePlate:UpdateDataById(self.TemplateId)
     end
 end
 

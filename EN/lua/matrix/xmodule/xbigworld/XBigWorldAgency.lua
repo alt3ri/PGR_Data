@@ -16,6 +16,7 @@ function XBigWorldAgency:OnInit()
         ModuleId.XBigWorldFunction,
         ModuleId.XBigWorldCommon,
         ModuleId.XBigWorldQuest,
+        ModuleId.XBigWorldNews,
         ModuleId.XBigWorldResource,
         ModuleId.XBigWorldInstance,
         --具体玩法
@@ -45,10 +46,33 @@ function XBigWorldAgency:InitEvent()
     XMVCA.XDlcHelper:AddDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.BigWorld, self)
     
     XMVCA.XBigWorldUI:AddFightUiCb("UiBigWorldFirstPerson", handler(self, self.OnFightOpenFirstPerson))
+    
+    self:InitConditionCheck()
 end
 
 function XBigWorldAgency:RemoveEvent()
     XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.BigWorld, self)
+    self:ReleaseConditionCheck()
+end
+
+function XBigWorldAgency:InitConditionCheck()
+    XMVCA.XBigWorldService:RegisterConditionFunc(10101008, handler(self, self.CheckParamMarkedCondition))
+    
+    self:OnInitConditionCheck()
+end
+
+function XBigWorldAgency:ReleaseConditionCheck()
+    if not XMVCA:IsRegisterAgency(ModuleId.XBigWorldService) then
+        return
+    end
+    XMVCA.XBigWorldService:UnRegisterConditionFunc(10101008)
+    self:OnReleaseConditionCheck()
+end
+
+function XBigWorldAgency:OnInitConditionCheck()
+end
+
+function XBigWorldAgency:OnReleaseConditionCheck()
 end
 
 --- 初始化X3C注册,
@@ -67,6 +91,7 @@ function XBigWorldAgency:InitX3C()
     register(X3C_CMD.CMD_QUEST_STEP_STATE_CHANGED, XMVCA.XBigWorldQuest.OnStepChanged, XMVCA.XBigWorldQuest)
     register(X3C_CMD.CMD_QUEST_STEP_OBJECTIVE_CHANGED, XMVCA.XBigWorldQuest.OnObjectiveChanged, XMVCA.XBigWorldQuest)
     register(X3C_CMD.CMD_NOTIFY_OPEN_QUEST_DELIVERY, XMVCA.XBigWorldQuest.OpenPopupDelivery, XMVCA.XBigWorldQuest)
+    register(X3C_CMD.CMD_OPEN_QUEST_PROCESS_POP, XMVCA.XBigWorldQuest.PopupTaskObtainByFight, XMVCA.XBigWorldQuest)
 
     -- 大世界角色
     -- 大世界角色加载完毕
@@ -86,6 +111,7 @@ function XBigWorldAgency:InitX3C()
     register(X3C_CMD.CMD_PLAYER_ENTER_SCENE_REGION, XMVCA.XBigWorldMap.OnPlayerEnterArea, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_PLAYER_EXIT_SCENE_REGION, XMVCA.XBigWorldMap.OnPlayerExitArea, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_ADD_QUEST_MAP_PIN, XMVCA.XBigWorldMap.OnAddQuestMapPin, XMVCA.XBigWorldMap)
+    register(X3C_CMD.CMD_SET_MAP_PIN_SHOW_TYPE, XMVCA.XBigWorldMap.OnMapPinShowTypeChange, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_REMOVE_QUEST_MAP_PIN, XMVCA.XBigWorldMap.OnRemoveQuestMapPin, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_REMOVE_QUEST_ALL_MAP_PIN, XMVCA.XBigWorldMap.OnRemoveQuestAllMapPins, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_START_TRACK_QUEST_MAP_PIN, XMVCA.XBigWorldMap.OnTrackQuestMapPin, XMVCA.XBigWorldMap)
@@ -93,7 +119,9 @@ function XBigWorldAgency:InitX3C()
     register(X3C_CMD.CMD_TELEPORT_PLAYER_COMPLETE, XMVCA.XBigWorldMap.OnTeleportComplete, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_SET_MAP_PIN_ASSISTED_TRACK, XMVCA.XBigWorldMap.OnAssistedTrackMapPin, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_UPDATE_MAP_PIN_POSITION, XMVCA.XBigWorldMap.OnUpdateMapPinPosition, XMVCA.XBigWorldMap)
+    register(X3C_CMD.CMD_GET_LITTLE_MAP_RADIUS, XMVCA.XBigWorldMap.OnGetLittleMapRadius, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_FIGHT_OPEN_BIG_MAP, XMVCA.XBigWorldMap.OnOpenBigMap, XMVCA.XBigWorldMap)
+    register(X3C_CMD.CMD_MAP_PIN_OUT_OF_LITTLE_MAP_RANGE, XMVCA.XBigWorldMap.OnLittleMapPinRemove, XMVCA.XBigWorldMap)
 
     -- 通用功能
     register(X3C_CMD.CMD_OPEN_CONFIRM_POPUP_UI, XMVCA.XBigWorldUI.OpenConfirmPopupUiWithCmd, XMVCA.XBigWorldUI)
@@ -107,6 +135,7 @@ function XBigWorldAgency:InitX3C()
     register(X3C_CMD.CMD_CAMERA_PHOTOGRAPH_NOTIFY_CUR_SCALE_RANGE, XMVCA.XBigWorldAlbum.NotifyCurScaleRange, XMVCA.XBigWorldAlbum)
     register(X3C_CMD.CMD_CAMERA_PHOTOGRAPH_DETECTED_ACTORS_CHANGED, XMVCA.XBigWorldAlbum.NotifyActorChange, XMVCA.XBigWorldAlbum)
     register(X3C_CMD.CMD_CAMERA_OPEN_PHOTOGRAPH_UI, XMVCA.XBigWorldAlbum.OpenPhotoGraphUi, XMVCA.XBigWorldAlbum)
+    register(X3C_CMD.CMD_CAMERA_TAKE_PHOTOGRAPH_SILENT, XMVCA.XBigWorldAlbum.TakePhotoSilent, XMVCA.XBigWorldAlbum)
     register(X3C_CMD.CMD_REQUEST_SKIP_INTERFACE, XMVCA.XBigWorldFunction.OnSkipInterface, XMVCA.XBigWorldFunction)
     register(X3C_CMD.CMD_TRY_ACTIVE_GUIDE, XMVCA.XBigWorldGamePlay.TryActiveGuide, XMVCA.XBigWorldGamePlay)
 
@@ -192,6 +221,7 @@ function XBigWorldAgency:OnEnterFight()
 end
 
 function XBigWorldAgency:ExitFight()
+    XMVCA.XBigWorldNews:SaveAllLocalData()
     XMVCA.XBigWorldFunction:RemoveFunctionControllerByMethod(XMVCA.XBigWorldFunction.FunctionType.Perspective, self,
             self.OnPerspectiveChangeControlState)
     self:CloseHud()
@@ -238,16 +268,19 @@ function XBigWorldAgency:UpdatePlayerData(res)
         return
     end
     self._Model:UpdateFinishGuideDict(res.BigWorldGuideData)
+    self._Model:InitCustomParam(res.CustomParamMarkData)
     self:InitPerspective(res.FovData)
     XMVCA.XBigWorldInstance:InitLevelPlayData(res.LevelPlayDatas)
     XMVCA.XBigWorldCommanderDIY:UpdateData(res.Gender, res.CommanderWearFashionDict, res.CommanderFashionBags, res.CharacterInitialized)
     XMVCA.XBigWorldCharacter:UpdateTeam(res.CurrentTeamId, res.TeamDict)
     XMVCA.XBigWorldCharacter:UpdateCharacter(res.CharacterWearFashionDict)
-    XMVCA.XBigWorldQuest:UpdateData(res.TraceQuestIds)
+    XMVCA.XBigWorldQuest:UpdateData(res.TraceQuestIds, res.TraceQuestData ,res.InviteQuestInfo)
     XMVCA.XBigWorldMessage:UpdateAllMessageData(res.BigWorldMessageDict)
     XMVCA.XBigWorldMap:UpdateTrackMapPin(res.MapTrackPinData)
     XMVCA.XBigWorldMap:UpdateAllActivateTeleporter(res.TeleporterData)
     XMVCA.XBigWorldTeach:UpdateTeachUnlockServerData(res.BigWorldHelpCourseList)
+    XMVCA.XBigWorldNews:InitPopupNews(res.NewsPopupData)
+    XMVCA.XBigWorldAlbum:UpdateBigWorldPhotographData(res.BigWorldPhotographData, true)
     self:OnUpdatePlayerData(res)
 end
 
@@ -402,10 +435,12 @@ function XBigWorldAgency:OpenPhoto(isSequence, ...)
     if not XMVCA.XBigWorldFunction:DetectionFunction(XMVCA.XBigWorldFunction.FunctionId.BigWorldAlbum) then
         return
     end
-    if isSequence then
-        XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPhotographControl", ...)
+
+    local t = XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CAMERA_PHOTOGRAPH_CAN_OPEN)
+    if t.CanOpen then
+        XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPhotographControl", not isSequence, ...)
     else
-        XMVCA.XBigWorldUI:Open("UiBigWorldPhotographControl", ...)
+        XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("CurStatusCannotOpen"))
     end
 end
 
@@ -465,12 +500,12 @@ end
 function XBigWorldAgency:UnloadGuide()
 end
 
----@return table<number, XTableGuideGroup>
+---@return table<number, XTableBigworldGuideGroup>
 function XBigWorldAgency:GetBigWorldGuideGroupTemplates()
     return self._Model:GetBigWorldGuideGroupTemplates()
 end
 
----@return XTableGuideGroup
+---@return XTableBigworldGuideGroup
 function XBigWorldAgency:GetBigWorldGuideGroupTemplateById(guideId)
     return self._Model:GetBigWorldGuideGroupTemplateById(guideId)
 end
@@ -502,6 +537,31 @@ function XBigWorldAgency:BigWorldNotifyReward(data)
         return
     end
     XMVCA.XBigWorldUI:OpenBigWorldRewardGoods(data.RewardGoodsList)
+end
+
+function XBigWorldAgency:RequestBigWorldMarkParam(paramId, isUnmark, cb)
+    if not paramId or paramId <= 0 then
+        XLog.Warning("RequestBigWorldMarkParam paramId is invalid")
+        return
+    end
+    if self:CheckParamMarked(paramId) then
+        XLog.Error("RequestBigWorldMarkParam paramId is already marked")
+        return
+    end
+    XNetwork.Call("BigWorldMarkCustomParamRequest", { Id = paramId, IsUnmark = isUnmark }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        if isUnmark then
+            self._Model:RemoveCustomParam(paramId)
+        else
+            self._Model:AddCustomParam(paramId)
+        end
+        if cb then
+            cb()
+        end
+    end)
 end
 
 --endregion
@@ -593,6 +653,21 @@ function XBigWorldAgency:OnInputMapResume()
     CS.XInputManager.SetCurInputMap(peek)
 end
 
+function XBigWorldAgency:CheckParamMarked(paramId)
+    return self._Model:CheckParamMarked(paramId)
+end
+
+---@param template XTableCondition
+function XBigWorldAgency:CheckParamMarkedCondition(template)
+    local paramId = template.Params[1]
+    local isMarked = template.Params[2] == 1
+    if not paramId or paramId <= 0 then
+        XLog.Error("CheckParamMarkedCondition paramId is invalid", template.Id)
+        return true, ""
+    end
+    return self:CheckParamMarked(paramId) == isMarked, template.Desc
+end
+
 --region DLC区分 - 大世界
 
 function XBigWorldAgency:ExGetDlcModelIdByCharacterData(characterData)
@@ -609,6 +684,10 @@ end
 
 function XBigWorldAgency:CheckLevelPlayCleared(levelPlayId)
     return XMVCA.XBigWorldInstance:CheckLevelPlayCleared(levelPlayId)
+end
+
+function XBigWorldAgency:GetAnimExpressionSOGroupId(fashionId)
+    return XMVCA.XBigWorldCharacter:GetAnimExpressionSOGroupId(fashionId)
 end
 
 --endregion

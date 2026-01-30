@@ -41,8 +41,8 @@ function XUiDlcMultiPlayerInvitationPopup:OnBtnSureClick()
             local worldId = tonumber(params[3])
             local roomId = params[4]
             local nodeId = params[7]
-
-            XMVCA.XDlcRoom:ClickEnterRoomHref(roomId, nodeId, worldId, self._InviteData.CreateTime)
+            local levelId = tonumber(params[8])
+            XMVCA.XDlcRoom:ClickEnterRoomHref(roomId, nodeId, worldId, levelId, self._InviteData.CreateTime)
         end
     end
 

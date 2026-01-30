@@ -1,10 +1,10 @@
 local XHtmlHandler = require("XUi/XUiGameNotice/XHtmlHandler")
 local ResFileType = "matrix" --暂时只支持这个目录的更新
 local PreloadIndexName = "preindex"
-local IndexName = "index"
+-- local IndexName = "index"
 
-local TIMEOUT = 10 * 1000
-local READ_TIMEOUT = 15 * 1000
+local TIMEOUT = 10000 -- 10 * 1000
+local READ_TIMEOUT = 15000 -- 15 * 1000
 local RETRY = 10
 
 --CS层引用
@@ -14,10 +14,9 @@ local CsTool = CS.XTool
 local CsApplication = CS.XApplication
 local UnityApplication = CS.UnityEngine.Application
 local UnityRuntimePlatform = CS.UnityEngine.RuntimePlatform
-local CSPlayerPrefs = CS.UnityEngine.PlayerPrefs
+-- local CSPlayerPrefs = CS.UnityEngine.PlayerPrefs
 local DownloadType = DOWNLOAD_SOURCE.PRELOAD
-
-local DOWNLOADING = false
+-- local DOWNLOADING = false
 
 local SingleThread = 1 --单线程数量
 local MultiThread = 5 --多线程数量
@@ -30,7 +29,7 @@ local XLaunchPreloadModuleCls = require("XLaunchPreloadModule")
 ---@field private _Model XPreloadModel
 local XPreloadAgency = XClass(XAgency, "XPreloadAgency")
 function XPreloadAgency:OnInit()
-
+    -- 是否dlc构建
     self.IsDlcBuild = CsInfo.IsDlcBuild
 
     ---@type XLaunchPreloadModule
@@ -489,8 +488,7 @@ end
 
 ---下载预下载index文件
 function XPreloadAgency:DownloadPreloadIndex()
-    local preloadVersion = self._Model:GetPreloadVersion()
-    local indexUrl = self._PreloadCdnUrl .. "/" .. preloadVersion .. "/" .. ResFileType .. "/" .. PreloadIndexName
+    local indexUrl = self:GetUrlByName(PreloadIndexName)
     local sha1 = self._Model:GetPreloadSha()
     local size = self._Model:GetPreloadSize()
     local downloader = CS.XUriPrefixDownloader.CreateBySource(DownloadType, indexUrl, self._LocalPreloadIndexPath, false, sha1, size, TIMEOUT, RETRY, READ_TIMEOUT)
@@ -712,10 +710,17 @@ function XPreloadAgency:Print()
 
         local nodeInfo = ""
         for _, node in pairs(self._CurDownloader.RunningList) do
-            nodeInfo = nodeInfo .. node.ResourceName .. ":" .. node.CurrentSize .. "/" .. node.CheckSize .. " State: " .. tostring(node.State) .. "\n"
+            nodeInfo = string.format("%s%s:%s/%s State: %s\n", nodeInfo, node.ResourceName, node.CurrentSize, node.CheckSize, tostring(node.State))
         end
         XLog.Debug("nodeInfo: " .. nodeInfo)
     end
+end
+
+-- 获取URL路径
+function XPreloadAgency:GetUrlByName(name)
+    local preloadVersion = self._Model:GetPreloadVersion()
+    -- {[self._PreloadCdnUrl]=(c/p/pn/baseVersion/p)}/(preloadVersion)/(ResFileType)->{(c/p/pn/version/p)}/(preloadVersion)/predownload/(ResFileType)
+    return string.format("%s/%s/predownload/%s/%s", self._PreloadCdnUrl, preloadVersion, ResFileType, name)
 end
 
 --多线程下载
@@ -731,8 +736,6 @@ function XPreloadAgency:MultiThreadDownload()
     --self._CurDownloadThreadCount = SingleThread --开始的时候是单线程的(不在只是单线程了)
     self._AutoResumeDownload = false
 
-    local preloadVersion = self._Model:GetPreloadVersion()
-
     self._CurDownloader = CS.XMTDownloadCenter()
     self._CurDownloader:SetThreadNumber(self._CurDownloadThreadCount) --先设置一次线程数量
     self._CurTaskGroup = CS.XMTDownloadTaskGroup(1)
@@ -740,8 +743,8 @@ function XPreloadAgency:MultiThreadDownload()
     --self._CurTaskGroup.NotifyProgressChanged = self._OnDownloadProgressUpdate --使用定时器
 
     for name, info in pairs(self._AllDownloadAssets) do
-        local url = string.format("%s/%s/%s/%s", self._PreloadCdnUrl, preloadVersion, ResFileType, name)
-        local path = self._PreloadDirPath .. "/" .. ResFileType .. "/" .. name
+        local url = self:GetUrlByName(name)
+        local path = string.format("%s/%s/%s", self._PreloadDirPath, ResFileType, name)
         local sha1 = info[2]
         local fileSize = info[3]
         self._CurTaskGroup:AddTask(url, path, fileSize, sha1)
@@ -1042,18 +1045,18 @@ end
 ---初始化一些路径, 比如本地保存路径, 远程cdn路径
 function XPreloadAgency:InitPath()
     self._DocumentDirPath = UnityApplication.persistentDataPath .. "/document"
-
     self._PreloadDirPath = UnityApplication.persistentDataPath .. "/preload"
-    self._LocalPreloadIndexPath = self._PreloadDirPath .. "/" .. ResFileType .. "/" .. PreloadIndexName
+    self._LocalPreloadIndexPath = string.format("%s/%s/%s", self._PreloadDirPath, ResFileType, PreloadIndexName)
+    local baseVersion = CsInfo.Version -- self._Model:GetPreloadBaseVersion()
 
     if UnityApplication.platform == UnityRuntimePlatform.Android then
-        self._PreloadCdnUrl = "client/patch/" .. CS.XInfo.Identifier .. "/" .. self._Model:GetPreloadBaseVersion() .. "/android"
+        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s", CS.XInfo.Identifier, baseVersion, "android")
     elseif UnityApplication.platform == UnityRuntimePlatform.IPhonePlayer then
-        self._PreloadCdnUrl = "client/patch/" .. CS.XInfo.Identifier .. "/" .. self._Model:GetPreloadBaseVersion() .. "/ios"
+        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s", CS.XInfo.Identifier, baseVersion, "ios")
     elseif UnityApplication.platform == UnityRuntimePlatform.WindowsEditor then
-        self._PreloadCdnUrl = "client/patch/" .. CS.XInfo.Identifier .. "/" .. self._Model:GetPreloadBaseVersion() .. "/android"
+        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s", CS.XInfo.Identifier, baseVersion, "android")
     elseif UnityApplication.platform == UnityRuntimePlatform.WindowsPlayer then
-        self._PreloadCdnUrl = "client/patch/" .. CS.XInfo.Identifier .. "/" .. self._Model:GetPreloadBaseVersion() .. "/standalone"
+        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s", CS.XInfo.Identifier, baseVersion, "standalone")
     end
 end
 

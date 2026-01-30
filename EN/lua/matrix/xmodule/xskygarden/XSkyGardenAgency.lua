@@ -13,16 +13,18 @@ function XSkyGardenAgency:OnInit()
         ModuleId.XSkyGardenCafe,
         ModuleId.XSkyGardenShoppingStreet,
         ModuleId.XSkyGardenDorm,
-        
+        ModuleId.XSkyGardenDroneGame,
     }
 end
 
 function XSkyGardenAgency:OnEnterFight()
+    XMVCA.XFubenSkyGarden:ClearProgressTip()
     XMVCA.XBigWorldGamePlay:MarkSkyGardenEntryRedPoint()
+    local graphicsQuality = CS.XQualityManager.Instance:GetCurQualitySettings()
+    CS.XProfilingLuaUtils.PostValueI_1("SkyGarden", "QualitySetting", graphicsQuality)
 end
 
 function XSkyGardenAgency:OnExitFight()
-    XMVCA.XFubenSkyGarden:ClearProgressTip()
 end
 
 function XSkyGardenAgency:OnInitX3C()
@@ -45,6 +47,9 @@ function XSkyGardenAgency:OnInitX3C()
     register(X3C_CMD.CMD_DORMITORY_OPERATE_PHOTO_WALL, XMVCA.XSkyGardenDorm.OpenPhotoWall, XMVCA.XSkyGardenDorm)
     register(X3C_CMD.CMD_DORMITORY_OPERATE_FRAME_WALL, XMVCA.XSkyGardenDorm.OpenGiftWall, XMVCA.XSkyGardenDorm)
     register(X3C_CMD.CMD_DORMITORY_CHANGE_DORMITORY_SKIN, XMVCA.XSkyGardenDorm.OpenFashion, XMVCA.XSkyGardenDorm)
+
+    --无人机
+    register(X3C_CMD.CMD_UAV_CHAPTER_SELECT_VIEW_SWITCH_COMPLETE , XMVCA.XSkyGardenDroneGame.OnChapterSelectViewSwitchCompleteCmd, XMVCA.XSkyGardenDroneGame)
 end
 
 function XSkyGardenAgency:OnExit()

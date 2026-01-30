@@ -91,6 +91,9 @@ function XUiDlcMultiPlayerDataGridPlayer:Refresh(data, isSelfCampWin)
             self.ImgDeath.gameObject:SetActiveEx(false)
             self.ImgLife.gameObject:SetActiveEx(false)
         end
+
+        self.RImgCat.gameObject:SetActiveEx(data:IsCatCamp())
+        self.RImgMouse.gameObject:SetActiveEx(data:IsMouseCamp())
     end
 end
 

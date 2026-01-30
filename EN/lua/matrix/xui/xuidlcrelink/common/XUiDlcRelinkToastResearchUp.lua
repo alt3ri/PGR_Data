@@ -3,7 +3,7 @@
 local XUiDlcRelinkToastResearchUp = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkToastResearchUp")
 
 function XUiDlcRelinkToastResearchUp:OnAwake()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkToastResearchUp:OnStart(oldLevel, curLevel)

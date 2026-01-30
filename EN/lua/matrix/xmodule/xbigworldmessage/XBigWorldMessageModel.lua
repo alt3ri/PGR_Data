@@ -20,6 +20,7 @@ function XBigWorldMessageModel:OnInit()
     self._MessageReadRecord = false
 
     self._IsShieldUnReadMessage = false
+    self._IsShieldMessageTip = false
 
     self:_InitTableKey()
 end
@@ -150,6 +151,10 @@ function XBigWorldMessageModel:UpdateMessageData(messageId, stepId, isFinish)
 
     self._MessageMap[messageId]:UpdateFinishState(isFinish)
     self._MessageMap[messageId]:AddStepId(stepId)
+
+    if isFinish then
+        self:TryRemoveUnReadMessageData(messageId)
+    end
 end
 
 function XBigWorldMessageModel:UpdateAllMessageData(messages)
@@ -194,7 +199,7 @@ function XBigWorldMessageModel:UpdateAllMessageData(messages)
                 if messageData.State ~= XEnumConst.BWMessage.MessageState.Finish then
                     local messageType = self:GetBigWorldMessageTypeById(messageId)
 
-                    if messageType == XEnumConst.BWMessage.MessageType.ForcePlay then
+                    if messageType ~= XEnumConst.BWMessage.MessageType.Normal then
                         self._ForceMessageQueue:Enqueue(messageData)
                     end
 
@@ -227,12 +232,20 @@ function XBigWorldMessageModel:GetForceMessageData(isUnDequeue)
     return self._ForceMessageQueue:Dequeue()
 end
 
+---@return XBWMessageData
 function XBigWorldMessageModel:PeekForceMessageData()
     return self._ForceMessageQueue:Peek()
 end
 
 function XBigWorldMessageModel:DequeueForceMessageData()
     return self._ForceMessageQueue:Dequeue()
+end
+
+function XBigWorldMessageModel:EnqueueFrontForceMessageData(messageData)
+    if not self._ForceMessageQueue then
+        return
+    end
+    self._ForceMessageQueue:EnqueueFront(messageData)
 end
 
 function XBigWorldMessageModel:HasForceMessageData()
@@ -255,6 +268,14 @@ end
 
 function XBigWorldMessageModel:GetIsShieldUnReadMessage()
     return self._IsShieldUnReadMessage
+end
+
+function XBigWorldMessageModel:SetIsShieldMessageTip(isShield)
+    self._IsShieldMessageTip = isShield or false
+end
+
+function XBigWorldMessageModel:GetIsShieldMessageTip()
+    return self._IsShieldMessageTip
 end
 
 function XBigWorldMessageModel:SetMessageRecord(messageId)

@@ -25,12 +25,10 @@ function XUiDlcRelinkPopupEquipReformResult:OnStart(attributeSlot)
         grid:Open()
         grid:Refresh(attributeSlot.Attributes[i])
     end
-
-    self:PlayAnimation("AniObtain")
 end
 
 function XUiDlcRelinkPopupEquipReformResult:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
 end
 
 function XUiDlcRelinkPopupEquipReformResult:OnBtnBackClick()

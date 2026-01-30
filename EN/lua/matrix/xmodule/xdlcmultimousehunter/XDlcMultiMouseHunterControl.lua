@@ -113,7 +113,10 @@ end
 
 function XDlcMultiMouseHunterControl:OpenUiDlcMultiPlayerCompetition(matchingTime)
     self:OpenMatchingPopupUi(matchingTime)
-    XLuaUiManager.Open("UiDlcMultiPlayerCompetition")
+    if not XLuaUiManager.IsUiShow("UiDlcMultiPlayerRoomCute") then
+        return
+    end
+        XLuaUiManager.Open("UiDlcMultiPlayerCompetition")
 end
 
 function XDlcMultiMouseHunterControl:OpenShopUi(matchingTime)
@@ -860,7 +863,7 @@ function XDlcMultiMouseHunterControl:RequestFinishAllBpTask(taskType)
             table.insert(allTaskIds, v.Id)
         end
     end
-    
+
     if not allTaskIds then
         return
     end
@@ -893,25 +896,22 @@ end
 --endregion
 
 --region 技能
-function XDlcMultiMouseHunterControl:RequestDlcMultiplayerSelectSkill(catSkillId, mouseSkillId, callback)
-    local hasData, skillData = self:TryGetSkillData()
-    if hasData and skillData.SelectCatSkillId == catSkillId and skillData.SelectMouseSkillId == mouseSkillId then
-        if callback then
-            callback()
-        end
-        return
-    end
-
-    XMVCA.XDlcMultiMouseHunter:RequestDlcMultiplayerSelectSkill(catSkillId, mouseSkillId, callback)
+--- 请求选择技能
+---@param catSkillIds number[] 猫技能Id列表
+---@param mouseSkillIds number[] 老鼠技能Id列表
+---@param callback function 回调
+function XDlcMultiMouseHunterControl:RequestDlcMultiplayerSelectSkill(catSkillIds, mouseSkillIds, callback)
+    XMVCA.XDlcMultiMouseHunter:RequestDlcMultiplayerSelectSkill(catSkillIds, mouseSkillIds, callback)
 end
 
+---@return boolean, XDlcMultiMouseHunterSkillData
 function XDlcMultiMouseHunterControl:TryGetSkillData()
     return self._Model:TryGetSkillData()
 end
 
 function XDlcMultiMouseHunterControl:CheckSkillUnlock(skillId)
     local hasData, skillData = self:TryGetSkillData()
-    return hasData and skillData.UnlockSkills[skillId] == true or false
+    return hasData and skillData.UnlockSkills and skillData.UnlockSkills[skillId] == true or false
 end
 
 function XDlcMultiMouseHunterControl:GetDlcMultiplayerSkillConfigById(id)
@@ -933,7 +933,7 @@ end
 function XDlcMultiMouseHunterControl:CheckNewSkillCampRedPoint(camp)
     local CampEnum = XMVCA.XDlcMultiMouseHunter.DlcMouseHunterCamp
     local activityConfig = self:GetDlcMultiplayerActivityConfig()
-    if not activityConfig then 
+    if not activityConfig then
         return false
     end
 
@@ -963,5 +963,17 @@ end
 function XDlcMultiMouseHunterControl:DlcInitFight()
     XMVCA.XDlcMultiMouseHunter:DlcInitFight()
 end
+
+--region 弹幕
+function XDlcMultiMouseHunterControl:GetDanmakuPools()
+    return self._Model:GetDanmakuPools()
+end
+--endregion
+
+--region 点击次数
+function XDlcMultiMouseHunterControl:GetMonsterClickCount()
+    return self._Model:GetMonsterClickCount()
+end
+--endregion
 
 return XDlcMultiMouseHunterControl

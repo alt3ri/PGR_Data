@@ -44,6 +44,24 @@
 ---@field SpecificVal number@特定变量
 ---@field SpecificRateVal number@特定变量万分比
 
+
+--- 任务
+---@class Theatre5Mission
+---@field MissionId
+---@field MissionBounty Theatre5MissionBounty
+---@field MissionCondition Theatre5MissionCondition
+---@field MissionState @任务状态
+---@field MissionRelicId number @领取的道具
+
+---@class Theatre5MissionBounty
+---@field Bounty number@条件id(Theatre5Mission表的Bounty)
+---@field BountyLevel number@奖励等级
+
+---@class Theatre5MissionCondition
+---@field ConditionId number@条件id(Theatre5MissionCondition表的id)
+---@field ConditionCounter number@条件计数器
+
+
 --endregion
 
 --- 局内数据基类
@@ -59,11 +77,29 @@
 ---@field BagData XTheatre5BagData
 ---@field SkillChoiceData Theatre5SkillChoiceData
 ---@field CheckFailTimes number
+---@field Missioning Theatre5Mission @当前接取的任务
+---@field ChooseMissions table<number, Theatre5Mission> @接取界面随机的任务
+---@field FreshMissionCounts table<number, number> @任务接取界面的刷新次数, key任务id，value剩余刷新次数
+---@field FreshMissionBounty number[] @刷新过程中用到的[奖励],接取任务后清除
+---@field FreshMissionCondition number[] @刷新过程中用到的[条件],接取任务后清除
+---@field MissionLevelUpForRound number @每回合升级次数
+---@field ChooseMissionBounty @领取过的任务, 需要额外传入
 local XTheatre5AdventureDataBase = XClass(nil, 'XTheatre5AdventureDataBase')
 
 function XTheatre5AdventureDataBase:Ctor()
     self._TempBuffList = {}
     self._TempAttrList = {}
+
+    if XMain.IsEditorDebug then
+        self._ObsoleteMeta = {
+            __index = function(table, key)
+                XLog.Error('读取遗弃的数据，table：' .. tostring(table) .. ' key: ' .. tostring(key))
+            end,
+            __newindex = function(table, key, value)
+                XLog.Error('写入遗弃的数据，table：' .. tostring(table) .. ' key: ' .. tostring(key) .. ' value: ' .. tostring(value))
+            end
+        }
+    end
 end
 
 function XTheatre5AdventureDataBase:ClearAdventureData()
@@ -78,6 +114,11 @@ function XTheatre5AdventureDataBase:ClearData()
     self:ClearEventData()
     self.RandomRelics = {}
     self.EffectFreeRefreshCnt = 0
+    self.Missioning = nil
+    self.ChooseMissions = nil
+    self.FreshMissionCounts = nil
+    self.FreshMissionBounty = nil
+    self.FreshMissionCondition = nil
 end
 
 --region 基础信息
@@ -100,7 +141,7 @@ function XTheatre5AdventureDataBase:UpdateRoundNum(roundNum)
 end
 
 --- 更新游玩状态
-function XTheatre5AdventureDataBase:UpdateCurPlayStatus(status)
+function XTheatre5AdventureDataBase:UpdateCurPlayStatus(status, ignoreTrigger)
     if status then
         self.Status = status
         XLog.Debug("[XTheatre5AdventureDataBase] 更改游戏状态:", status)
@@ -109,7 +150,9 @@ function XTheatre5AdventureDataBase:UpdateCurPlayStatus(status)
                 or status == XMVCA.XTheatre5.EnumConst.PlayStatus.ChoiceSkill
         then
             XLog.Debug("[XTheatre5AdventureDataBase] 触发中断事件")
-            XMVCA.XTheatre5:TriggerInterruptEvent()
+            if not ignoreTrigger then
+                XMVCA.XTheatre5:TriggerInterruptEvent()
+            end
         end
         XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_REFRESH_LEVEL_EXP)
     end
@@ -657,6 +700,23 @@ function XTheatre5AdventureDataBase:UpdateFullShopData(shopData)
     XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_REFRESH_LEVEL_EXP)
 end
 
+function XTheatre5AdventureDataBase:UpdateShopGoodsByReplaced(replaceShopGoods)
+    if not XTool.IsTableEmpty(replaceShopGoods) then
+        for index, goods in pairs(replaceShopGoods) do
+            local oldGoods = self.ShopData.Goods[index]
+
+            if oldGoods then
+                oldGoods.IsObsolete = true
+                oldGoods.ItemInfo.IsObsolete = true
+            end
+
+            self.ShopData.Goods[index] = goods
+        end
+        
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_REFRESH_STORE_SHOW)
+    end
+end
+
 function XTheatre5AdventureDataBase:GetShopId()
     return self.ShopData and self.ShopData.ShopId or 0
 end
@@ -811,7 +871,7 @@ end
 
 --endregion
 
--- v4.0 二期新增
+--region v4.0 二期新增
 -- 角色等级
 function XTheatre5AdventureDataBase:GetCharacterLevel()
     return self.CharacterLv
@@ -975,5 +1035,140 @@ function XTheatre5AdventureDataBase:GetRelicById(instanceId)
         return self.BagData.RelicDict[instanceId]
     end
 end
+
+--endregion
+
+--region v4.2 任务
+
+function XTheatre5AdventureDataBase:UpdateFreshMissionCnt(cnt, positionId)
+    if self.FreshMissionCounts == nil then
+        self.FreshMissionCounts = {}
+    end
+    
+    self.FreshMissionCounts[positionId] = cnt
+end
+
+function XTheatre5AdventureDataBase:UpdateChooseMissions(missions)
+    if XMain.IsEditorDebug then
+        if self.ChooseMissions then
+            setmetatable(self.ChooseMissions, self._ObsoleteMeta)
+        end
+    end
+
+    self.ChooseMissions = missions
+end
+
+function XTheatre5AdventureDataBase:UpdateMissionInChoose(pos, mission)
+    if self.ChooseMissions == nil then
+        self.ChooseMissions = {}
+    end
+
+    if XMain.IsEditorDebug then
+        local oldMission = self.ChooseMissions[pos]
+
+        if oldMission and self._ObsoleteMeta then
+            setmetatable(oldMission, self._ObsoleteMeta)
+        end
+    end
+
+    self.ChooseMissions[pos] = mission
+end
+
+function XTheatre5AdventureDataBase:UpdateCurMissioning(mission)
+    if XMain.IsEditorDebug then
+        if self.Missioning and self._ObsoleteMeta then
+            setmetatable(self.Missioning, self._ObsoleteMeta)
+        end
+    end
+
+    self.Missioning = mission
+end
+
+function XTheatre5AdventureDataBase:UpdateCurMissionLevel(newLevel)
+    if self.Missioning then
+        self.Missioning.MissionBounty.BountyLevel = newLevel
+    end
+end
+
+function XTheatre5AdventureDataBase:UpdateCurMissionState(newState)
+    if self.Missioning then
+        self.Missioning.MissionState = newState
+    end
+end
+
+function XTheatre5AdventureDataBase:UpdateCurMissionGetItemId(itemId)
+    if self.Missioning then
+        self.Missioning.MissionRelicId = itemId
+    end
+end
+
+function XTheatre5AdventureDataBase:UpdateChooseMissionBounty(missions)
+    self.ChooseMissionBounty = missions
+end
+
+function XTheatre5AdventureDataBase:AddChooseMissionBounty(missionBounty)
+    if self.ChooseMissionBounty then
+        if not self:CheckHasBounty(missionBounty) then
+            table.insert(self.ChooseMissionBounty, missionBounty)
+        end
+    else
+        self.ChooseMissionBounty = {[1] = missionBounty}
+    end
+end
+
+function XTheatre5AdventureDataBase:UpdateMissionLevelUpForRound(missionLevelUpForRound)
+    self.MissionLevelUpForRound = missionLevelUpForRound
+end
+
+function XTheatre5AdventureDataBase:ClearChooseMissionsAfterEndChoose()
+    self.ChooseMissions = nil
+    self.FreshMissionCounts = nil
+    self.FreshMissionBounty = nil
+    self.FreshMissionCondition = nil
+end
+
+function XTheatre5AdventureDataBase:GetChooseMissions()
+    return self.ChooseMissions
+end
+
+function XTheatre5AdventureDataBase:HasChooseMissions()
+    return not XTool.IsTableEmpty(self.ChooseMissions)
+end
+
+function XTheatre5AdventureDataBase:GetChooseMissionByPos(pos)
+    if not XTool.IsTableEmpty(self.ChooseMissions) then
+        return self.ChooseMissions[pos]
+    end
+end
+
+function XTheatre5AdventureDataBase:GetFreshCountByPos(pos)
+    if not XTool.IsTableEmpty(self.FreshMissionCounts) then
+        return self.FreshMissionCounts[pos] or 0
+    end
+    
+    return 0
+end
+
+function XTheatre5AdventureDataBase:GetCurMission()
+    return self.Missioning
+end
+
+function XTheatre5AdventureDataBase:CheckHasBounty(bounty)
+    if XTool.IsTableEmpty(self.ChooseMissionBounty) then
+        return false
+    end
+    
+    return table.contains(self.ChooseMissionBounty, bounty)
+end
+
+function XTheatre5AdventureDataBase:GetUnlockBountyList()
+    return self.ChooseMissionBounty
+end
+
+function XTheatre5AdventureDataBase:GetMissionLevelUpForRound()
+    return self.MissionLevelUpForRound
+end
+
+--endregion
 
 return XTheatre5AdventureDataBase

@@ -38,7 +38,7 @@ function XUiGridBWItem:OnClick()
     XMVCA.XBigWorldUI:OpenGoodsInfo(self._GoodsParams)
 end
 
---- 兼容某写动态创建接口
+--- 兼容某些动态创建接口
 --------------------------
 function XUiGridBWItem:Update(data)
     self:Refresh(data)

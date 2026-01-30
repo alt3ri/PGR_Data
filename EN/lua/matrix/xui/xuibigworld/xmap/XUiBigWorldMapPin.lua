@@ -9,6 +9,8 @@ local XUiBigWorldMapPinTag = require("XUi/XUiBigWorld/XMap/XUiBigWorldMapPinTag"
 ---@field BtnSelect XUiComponent.XUiButton
 ---@field CanvasGroup UnityEngine.CanvasGroup
 ---@field _Target UnityEngine.RectTransform
+---@field Parent XUiBigWorldMap
+---@field _Target UnityEngine.RectTransform
 local XUiBigWorldMapPin = XClass(XUiNode, "XUiBigWorldMapPin")
 
 function XUiBigWorldMapPin:OnStart(target, targetParent, isAssistedPosition)
@@ -32,9 +34,10 @@ function XUiBigWorldMapPin:OnStart(target, targetParent, isAssistedPosition)
     ---@type XBWMapInterfaceBase
     self._Interface = false
 
+    self._TargetPrefab = target
+    self._TargetPrefabParent = targetParent
     self:_RegisterButtonClick()
     self:_InitUi()
-    self:_InitTarget(target, targetParent)
 end
 
 function XUiBigWorldMapPin:OnBtnPinClick()
@@ -135,8 +138,13 @@ end
 
 ---@param pinData XBWMapPinData
 function XUiBigWorldMapPin:Refresh(levelId, pinData, interface)
+    if XTool.UObjIsNil(self.GameObject) then
+        XLog.Warning("XUiBigWorldMapPin:Refresh self.GameObject is nil")
+        return
+    end
     self:SetPinData(levelId, pinData)
     self:SetInterface(interface)
+    self:_InitTarget()
     self:RefreshStyle(pinData)
     self:_RefreshPosition(pinData)
     self:_RefreshTag(pinData)
@@ -149,6 +157,7 @@ function XUiBigWorldMapPin:RefreshOriginalPosition()
 end
 
 function XUiBigWorldMapPin:RefreshPosition(x, y)
+    if XTool.UObjIsNil(self._Target) then return end
     self._Target:SetAnchoredPosition(x, y)
 end
 
@@ -302,12 +311,15 @@ function XUiBigWorldMapPin:_InitTransformBind()
     end
 end
 
-function XUiBigWorldMapPin:_InitTarget(target, targetParent)
+function XUiBigWorldMapPin:_InitTarget()
     self:_InitTransformBind()
 
-    if XTool.UObjIsNil(self._Target) then
-        self._Target = XUiHelper.Instantiate(target, targetParent)
-    end
+    -- 小地图的data和绑定数据可能不一致
+    self._Target = self.Parent:GetOrCreateTarget(self._PinData.PinId, self._TargetPrefab, self._TargetPrefabParent)
+    -- if XTool.UObjIsNil(self._Target) then
+    --     self._Target = self.Parent:GetOrCreateTarget(self._PinData.PinId, self._TargetPrefab, self._TargetPrefabParent)
+    --     self._Target.name = self._PinData.PinId .. " " .. self._PinData.Name
+    -- end
     if not XTool.UObjIsNil(self._TransformBind) then
         self._TransformBind:SetTarget(self._Target)
     end

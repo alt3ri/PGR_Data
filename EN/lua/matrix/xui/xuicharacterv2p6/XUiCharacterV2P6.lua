@@ -62,6 +62,8 @@ function XUiCharacterV2P6:InitFilter()
         -- 记录最后一次点击选择的角色和标签
         local curTagName = self.PanelFilter.CurSelectTagBtn.gameObject.name
         XMVCA.XCommonCharacterFilter:RecordLastTag(self.Name, curTagName, character.Id)
+
+        XDataCenter.GuideManager.CheckGuideOpen()
     end
 
     local refreshFun = function (index, grid, char)

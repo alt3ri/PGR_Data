@@ -14,6 +14,20 @@ XNoticeManagerCreator = function()
     local InGameNoticeReadList = {}
     local InGameNoticeMap = {}
     local InGameNoticeReadKey = "_InGameNoticeReadKey"
+    
+    -- 服务端已读记录（用于判断蓝点）
+    -- key: noticeId_modifyTime, value: true
+    local _ServerGameNoticeRecords = {}
+    
+    -- 是否已执行首次同步
+    local _HasSyncedGameNoticeToServer = false
+    
+    -- 公告同步队列（使用 serverKey 作为唯一标识）
+    local _SyncQueue = {}
+    -- 同步队列定时器
+    local _SyncQueueTimer = nil
+    -- 同步队列发送间隔（秒）
+    local SYNC_QUEUE_INTERVAL = 1
     local InGameAutoPopupMap
     local PreloadNotice = nil --预下载公告
 
@@ -74,7 +88,7 @@ XNoticeManagerCreator = function()
         [XNoticeType.ScrollText] = 30,
         [XNoticeType.ScrollPic] = 60,
         [XNoticeType.InGame] = 120,
-        [XNoticeType.Login] = 0,
+        -- [XNoticeType.Login] = 0, Login公告有独立的处理逻辑，不应该在定时器中请求
         [XNoticeType.SubMenu] = 120,
     }
 
@@ -215,29 +229,236 @@ XNoticeManagerCreator = function()
         return key .. InGameNoticeReadKey
     end
 
-    function XNoticeManager.SaveInGameNoticeReadList()
-        if not InGameNoticeReadList then
+    -- v4.2 从4.2版本开始, 公告红点的数据保存到服务端, 此函数已废弃
+    -- function XNoticeManager.SaveInGameNoticeReadList()
+    --     if not InGameNoticeReadList then
+    --         return
+    --     end
+
+    --     local saveContent = ""
+    --     local splitMark = "\n"
+    --     for _, v in pairs(InGameNoticeReadList) do
+    --         local list = {}
+    --         tableInsert(list, v.Id)
+    --         tableInsert(list, v.Index)
+    --         tableInsert(list, (v.IsRead and 1 or 0))
+    --         tableInsert(list, v.EndTime)
+    --         tableInsert(list, v.ModifyTime)
+
+    --         local tempStr = table.concat(list, "\t")
+    --         saveContent = string.format("%s%s%s", tempStr, splitMark, saveContent)
+    --     end
+
+    --     CS.UnityEngine.PlayerPrefs.SetString(XNoticeManager.GetInGameNoticeReadKey(), saveContent)
+    --     CS.UnityEngine.PlayerPrefs.Save()
+
+    --     XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_NOTICE_READ_CHANGE)
+    -- end
+    
+    ---初始化服务端游戏公告已读记录
+    ---@param gameNoticeRecords table 服务端返回的已读记录 {GameNoticeInfos = {{NoticeId = string, ModifyTime = int, EndTime = int}}}
+    function XNoticeManager.InitGameNoticeRecordsFromServer(gameNoticeRecords)
+        _ServerGameNoticeRecords = {}
+        
+        if not gameNoticeRecords or not gameNoticeRecords.GameNoticeInfos then
             return
         end
-
-        local saveContent = ""
-        local splitMark = "\n"
-        for _, v in pairs(InGameNoticeReadList) do
-            local list = {}
-            tableInsert(list, v.Id)
-            tableInsert(list, v.Index)
-            tableInsert(list, (v.IsRead and 1 or 0))
-            tableInsert(list, v.EndTime)
-            tableInsert(list, v.ModifyTime)
-
-            local tempStr = table.concat(list, "\t")
-            saveContent = string.format("%s%s%s", tempStr, splitMark, saveContent)
+        
+        -- 存储服务端已读记录（key: noticeId_modifyTime）
+        for _, serverRecord in ipairs(gameNoticeRecords.GameNoticeInfos) do
+            local noticeId = serverRecord.NoticeId
+            local modifyTime = serverRecord.ModifyTime
+            -- 服务端增加EndTime字段, 但是客户端暂时没有处理
+            -- local endTime = serverRecord.EndTime
+            local serverKey = string.format("%s_%s", noticeId or "", tostring(modifyTime or ""))
+            _ServerGameNoticeRecords[serverKey] = true
         end
-
-        CS.UnityEngine.PlayerPrefs.SetString(XNoticeManager.GetInGameNoticeReadKey(), saveContent)
-        CS.UnityEngine.PlayerPrefs.Save()
-
+        
+        -- 如果 InGameNoticeReadList 已存在，立即更新已读状态
+        if InGameNoticeReadList then
+            for dataKey, readInfo in pairs(InGameNoticeReadList) do
+                local serverKey = string.format("%s_%s", readInfo.Id or "", tostring(readInfo.ModifyTime or ""))
+                if _ServerGameNoticeRecords[serverKey] then
+                    readInfo.IsRead = true
+                end
+            end
+        end
+        
         XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_NOTICE_READ_CHANGE)
+    end
+    
+    ---将公告加入同步队列
+    ---@param serverKey string 服务端记录key
+    ---@param noticeId string 公告ID
+    ---@param modifyTime number 修改时间
+    ---@param endTime number 结束时间
+    local function AddToSyncQueue(serverKey, noticeId, modifyTime, endTime)
+        -- 如果已经在队列中，不需要重复添加
+        if _SyncQueue[serverKey] then
+            return
+        end
+        
+        -- 加入队列
+        _SyncQueue[serverKey] = {
+            NoticeId = noticeId,
+            ModifyTime = modifyTime,
+            EndTime = endTime
+        }
+        
+        -- 启动定时器
+        if not _SyncQueueTimer then
+            _SyncQueueTimer = XScheduleManager.ScheduleForever(function()
+                XNoticeManager.FlushSyncQueue()
+            end, SYNC_QUEUE_INTERVAL * 1000)
+        end
+    end
+    
+    ---刷新同步队列，发送所有待同步的公告
+    function XNoticeManager.FlushSyncQueue()
+        if not _SyncQueue or not next(_SyncQueue) then
+            -- 队列为空，停止定时器
+            if _SyncQueueTimer then
+                XScheduleManager.UnSchedule(_SyncQueueTimer)
+                _SyncQueueTimer = nil
+            end
+            return
+        end
+        
+        -- 收集队列中的所有公告
+        local gameNoticeInfos = {}
+        for serverKey, info in pairs(_SyncQueue) do
+            table.insert(gameNoticeInfos, {
+                NoticeId = info.NoticeId,
+                ModifyTime = info.ModifyTime,
+                EndTime = info.EndTime
+            })
+        end
+        
+        -- 清空队列
+        _SyncQueue = {}
+        
+        -- 停止定时器
+        if _SyncQueueTimer then
+            XScheduleManager.UnSchedule(_SyncQueueTimer)
+            _SyncQueueTimer = nil
+        end
+        
+        -- 构造请求
+        local req = {
+            GameNoticeInfos = gameNoticeInfos
+        }
+        
+        -- 发送到服务端
+        XNetwork.Call("SyncReadGameNoticeRequest", req, function(res)
+            if res.Code == XCode.Success then
+                -- 同步成功，更新服务端记录缓存
+                for _, info in ipairs(gameNoticeInfos) do
+                    local serverKey = string.format("%s_%s", info.NoticeId, tostring(info.ModifyTime))
+                    _ServerGameNoticeRecords[serverKey] = true
+                end
+            end
+        end)
+    end
+    
+    ---同步单个公告已读到服务端（加入队列，延迟发送）
+    ---因为TabBtnList可以连续触发, 如果立即发送, 会引发服务端cd报错
+    ---@param dataKey string 公告数据key
+    function XNoticeManager.SyncGameNoticeReadToServer(dataKey)
+        if not InGameNoticeReadList or not InGameNoticeReadList[dataKey] then
+            return
+        end
+        
+        local readInfo = InGameNoticeReadList[dataKey]
+        if not readInfo.IsRead then
+            return
+        end
+        
+        -- 只同步未过期的公告
+        if readInfo.EndTime <= XTime.GetServerNowTimestamp() then
+            return
+        end
+        
+        -- 检查是否正在首次同步中，如果是则等待首次同步完成（避免重复发送）
+        if not _HasSyncedGameNoticeToServer then
+            -- 首次同步还未完成，等待首次同步完成后再发送
+            -- 首次同步会一次性发送所有已读公告，包括这个公告
+            return
+        end
+        
+        -- 检查是否已经同步过（避免重复发送）
+        local serverKey = string.format("%s_%s", readInfo.Id, tostring(readInfo.ModifyTime))
+        if _ServerGameNoticeRecords[serverKey] then
+            -- 已经同步过，不需要再次发送
+            return
+        end
+        
+        -- 立即更新缓存，避免重复加入队列
+        _ServerGameNoticeRecords[serverKey] = true
+        
+        -- 加入同步队列，延迟发送
+        AddToSyncQueue(serverKey, readInfo.Id, readInfo.ModifyTime, readInfo.EndTime)
+    end
+    
+    ---首次同步本地已读公告到服务端
+    ---触发条件：版本更新后首次打开公告界面时
+    function XNoticeManager.TryFirstSyncGameNoticeRead()
+        if _HasSyncedGameNoticeToServer then
+            return
+        end
+        
+        if not InGameNoticeReadList then
+            _HasSyncedGameNoticeToServer = true
+            return
+        end
+        
+        -- 收集已读且未过期的公告，但排除已经同步过的（避免重复发送）
+        -- 使用 noticeId_modifyTime 作为唯一标识，避免同一个公告的多个 Content 项重复发送
+        local seenKeys = {}
+        local gameNoticeInfos = {}
+        for dataKey, readInfo in pairs(InGameNoticeReadList) do
+            if readInfo.IsRead and readInfo.EndTime > XTime.GetServerNowTimestamp() then
+                local serverKey = string.format("%s_%s", readInfo.Id, tostring(readInfo.ModifyTime))
+                -- 检查是否已经同步过或已经在待同步列表中
+                if not _ServerGameNoticeRecords[serverKey] and not seenKeys[serverKey] then
+                    -- 还没有同步过，加入待同步列表
+                    table.insert(gameNoticeInfos, {
+                        NoticeId = readInfo.Id,
+                        ModifyTime = readInfo.ModifyTime,
+                        EndTime = readInfo.EndTime
+                    })
+                    -- 标记已处理，避免重复
+                    seenKeys[serverKey] = true
+                    -- 立即更新缓存，避免在请求发送期间重复发送
+                    _ServerGameNoticeRecords[serverKey] = true
+                end
+            end
+        end
+        
+        if #gameNoticeInfos == 0 then
+            _HasSyncedGameNoticeToServer = true
+            return
+        end
+        
+        -- 构造请求
+        local req = {
+            GameNoticeInfos = gameNoticeInfos
+        }
+        
+        -- 发送到服务端
+        XNetwork.Call("SyncReadGameNoticeRequest", req, function(res)
+            if res.Code == XCode.Success then
+                -- 同步成功，标记已同步
+                _HasSyncedGameNoticeToServer = true
+                -- 缓存已经在发送前更新，这里不需要再次更新
+            else
+                -- 如果同步失败，回滚缓存，允许下次重试
+                for _, info in ipairs(gameNoticeInfos) do
+                    local serverKey = string.format("%s_%s", info.NoticeId, tostring(info.ModifyTime))
+                    _ServerGameNoticeRecords[serverKey] = nil
+                end
+                -- 不设置 _HasSyncedGameNoticeToServer = true，允许下次重试
+            end
+        end)
     end
 
     function XNoticeManager.ReadInGameNoticeReadList()
@@ -260,10 +481,13 @@ XNoticeManagerCreator = function()
                     local readInfo = {
                         Id = tostring(tab[1]),
                         Index = tonumber(tab[2]),
-                        IsRead = tonumber(tab[3]) > 0,
+                        IsRead = (tonumber(tab[3]) or 0) > 0,
                         EndTime = tonumber(tab[4]),
                         ModifyTime = tonumber(tab[5]),
                     }
+                    if readInfo.IsRead == nil then
+                        readInfo.IsRead = false
+                    end
                     if readInfo.ModifyTime and readInfo.EndTime and readInfo.EndTime > XTime.GetServerNowTimestamp() then
                         local dataKey = XNoticeManager.GetGameNoticeReadDataKey(readInfo, readInfo.Index)
                         InGameNoticeReadList[dataKey] = readInfo
@@ -546,8 +770,12 @@ XNoticeManagerCreator = function()
         if not notice then
             return
         end
-
+        
         if NowPicNotice and NowPicNotice.Id == notice.Id and NowPicNotice.ModifyTime == notice.ModifyTime then
+            return
+        end
+
+        if not XNoticeManager.CheckNoticeValid(notice) then
             return
         end
 
@@ -561,78 +789,19 @@ XNoticeManagerCreator = function()
         if not NowPicNotice then
             return
         end
-
+        
+        local now = XTime.GetServerNowTimestamp()
         local scrollPicList = {}
         for _, v in ipairs(NowPicNotice.Content) do
             local isOpen = true
-
+            
             if not v.BeginTime or not v.EndTime or not v.AppearanceDay or not v.AppearanceTime
                     or not v.DisappearanceCondition or not v.AppearanceCondition then
                 isOpen = false
             end
 
-            if isOpen then
+            if not XNoticeManager.CheckNoticeContentValid(v, now) then
                 isOpen = false
-                if XTime.GetServerNowTimestamp() >= tonumber(v.BeginTime) and XTime.GetServerNowTimestamp() < tonumber(v.EndTime) then
-                    --是否在开放区间内（日期）
-                    isOpen = true
-                end
-            end
-
-            if isOpen then
-                isOpen = false
-                if #v.AppearanceDay > 0 then
-                    for _, day in ipairs(v.AppearanceDay) do
-                        if day == XDataCenter.FubenDailyManager.GetNowDayOfWeekByRefreshTime() then
-                            --是否位于可以显示的周目
-                            isOpen = true
-                        end
-                    end
-                else
-                    isOpen = true
-                end
-            end
-
-            if isOpen then
-                isOpen = false
-                if #v.AppearanceTime > 0 then
-                    for _, time in ipairs(v.AppearanceTime) do
-                        if XTime.GetServerNowTimestamp() - XTime.GetTodayTime(0, 0, 0) >= time[1] and XTime.GetServerNowTimestamp() - XTime.GetTodayTime(0, 0, 0) < time[2] then
-                            --是否位于可以显示的时间段
-                            isOpen = true
-                        end
-                    end
-                else
-                    isOpen = true
-                end
-            end
-
-            if isOpen then
-                if #v.DisappearanceCondition > 0 then
-                    for _, condition in ipairs(v.DisappearanceCondition) do
-                        --是否符合不显示的条件
-                        if XConditionManager.CheckCondition(condition) then
-                            isOpen = false
-                        end
-                    end
-                end
-            end
-
-            if isOpen then
-                if #v.AppearanceCondition > 0 then
-                    for _, condition in ipairs(v.AppearanceCondition) do
-                        if not XConditionManager.CheckCondition(condition) then
-                            --是否不符合显示条件
-                            isOpen = false
-                        end
-                    end
-                end
-            end
-
-            if isOpen then
-                if not XNoticeManager.IsWhiteIp(v.WhiteLists) and not XNoticeManager.IsWhiteDevice(v.DeviceLists) then
-                    isOpen = false
-                end
             end
 
             if isOpen then
@@ -640,7 +809,7 @@ XNoticeManagerCreator = function()
                 table.insert(scrollPicList, v)
             end
         end
-
+        
         return scrollPicList
     end
     ----------------------Scroll Pic end----------------------
@@ -686,6 +855,49 @@ XNoticeManagerCreator = function()
             end
         end
 
+        -- 先收集所有当前公告的 dataKey，用于清理已删除的公告记录
+        local allCurrentDataKeys = {}
+        for _, v in pairs(InGameNoticeMap) do
+            for _, noticeData in pairs(v) do
+                for i, _ in pairs(noticeData.Content) do
+                    local dataKey = XNoticeManager.GetGameNoticeReadDataKey(noticeData, i)
+                    allCurrentDataKeys[dataKey] = true
+                end
+            end
+        end
+        
+        -- 清理已删除的公告记录（不在当前公告列表中的记录）
+        if InGameNoticeReadList then
+            for dataKey, _ in pairs(InGameNoticeReadList) do
+                if not allCurrentDataKeys[dataKey] then
+                    InGameNoticeReadList[dataKey] = nil
+                end
+            end
+        end
+        
+        -- 清理已删除的公告在服务端记录中的缓存（不在当前公告列表中的记录）
+        if _ServerGameNoticeRecords then
+            for serverKey, _ in pairs(_ServerGameNoticeRecords) do
+                -- serverKey 格式: "noticeId_modifyTime"
+                -- 检查是否在当前公告列表中
+                local found = false
+                for _, v in pairs(InGameNoticeMap) do
+                    for _, noticeData in pairs(v) do
+                        local expectedServerKey = string.format("%s_%s", noticeData.Id, tostring(noticeData.ModifyTime))
+                        if serverKey == expectedServerKey then
+                            found = true
+                            break
+                        end
+                        if found then break end
+                    end
+                    if found then break end
+                end
+                if not found then
+                    _ServerGameNoticeRecords[serverKey] = nil
+                end
+            end
+        end
+        
         for _, v in pairs(InGameNoticeMap) do
             XNoticeManager.InitInGameReadList(v)
 
@@ -694,6 +906,9 @@ XNoticeManagerCreator = function()
             end
             table.sort(v, sortFunc)
         end
+        
+        -- 所有公告类型处理完成后，触发红点刷新事件
+        XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_NOTICE_READ_CHANGE)
     end
 
     function XNoticeManager.GetInGameNoticeMap(type)
@@ -728,11 +943,13 @@ XNoticeManagerCreator = function()
         if not InGameNoticeMap or not InGameNoticeMap[type] then
             return false
         end
-
+        
         for _, notice in pairs(InGameNoticeMap[type]) do
-            for i, _ in ipairs(notice.Content) do
-                if XNoticeManager.CheckInGameNoticeRedPointIndividual(notice, i) then
-                    return true
+            if notice and notice.Content then
+                for i, _ in ipairs(notice.Content) do
+                    if XNoticeManager.CheckInGameNoticeRedPointIndividual(notice, i) then
+                        return true
+                    end
                 end
             end
         end
@@ -748,19 +965,43 @@ XNoticeManagerCreator = function()
             InGameNoticeReadList = {}
         end
 
+        -- 收集当前公告列表中的所有 dataKey
+        local currentDataKeys = {}
         for _, noticeData in pairs(noticeList) do
             for i, _ in pairs(noticeData.Content) do
                 local dataKey = XNoticeManager.GetGameNoticeReadDataKey(noticeData, i)
+                currentDataKeys[dataKey] = true
+                
                 if not InGameNoticeReadList[dataKey] then
-                    InGameNoticeReadList[dataKey] = {}
+                    InGameNoticeReadList[dataKey] = {
+                        Id = noticeData.Id,
+                        EndTime = noticeData.EndTime,
+                        Index = i,
+                        ModifyTime = noticeData.ModifyTime,
+                        IsRead = false
+                    }
+                else
+                    -- 更新可能变化的字段
                     InGameNoticeReadList[dataKey].Id = noticeData.Id
                     InGameNoticeReadList[dataKey].EndTime = noticeData.EndTime
                     InGameNoticeReadList[dataKey].Index = i
-                    InGameNoticeReadList[dataKey].IsRead = false
                     InGameNoticeReadList[dataKey].ModifyTime = noticeData.ModifyTime
+                    if InGameNoticeReadList[dataKey].IsRead == nil then
+                        InGameNoticeReadList[dataKey].IsRead = false
+                    end
+                end
+                
+                -- 检查服务端数据，如果已读则更新状态（优先于本地数据）
+                local serverKey = string.format("%s_%s", noticeData.Id or "", tostring(noticeData.ModifyTime or ""))
+                if _ServerGameNoticeRecords[serverKey] then
+                    InGameNoticeReadList[dataKey].IsRead = true
                 end
             end
         end
+        
+        -- 注意：清理逻辑已在 HandleRequestInGameNotice 中统一处理（基于所有类型的数据）
+        -- 这里不需要再次清理，因为 currentDataKeys 只包含当前类型的数据，
+        -- 如果在这里清理会误删其他类型的记录
 
         XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_NOTICE_READ_CHANGE)
     end
@@ -770,17 +1011,40 @@ XNoticeManagerCreator = function()
     end
 
     function XNoticeManager.CheckInGameNoticeRedPointIndividual(notice, index)
-        if not InGameNoticeReadList then
+        -- 蓝点规则：通过（公告ID，ModifyTime）确认公告是否已读
+        -- 优先使用服务端数据判断，如果没有则使用本地数据
+        
+        if not notice or notice.BluePoint ~= 1 then
             return false
+        end
+        
+        local noticeId = notice.Id
+        local modifyTime = notice.ModifyTime
+        
+        -- 优先检查服务端数据
+        local serverKey = string.format("%s_%s", noticeId or "", tostring(modifyTime or ""))
+        if _ServerGameNoticeRecords[serverKey] then
+            return false
+        end
+        
+        -- 如果没有服务端数据，使用本地数据判断
+        if not InGameNoticeReadList then
+            return true
         end
 
         local redPointKey = XNoticeManager.GetGameNoticeReadDataKey(notice, index)
+        local readInfo = InGameNoticeReadList[redPointKey]
         
-        if not InGameNoticeReadList[redPointKey] then
-            return false
+        if not readInfo then
+            return true
         end
         
-        return (not InGameNoticeReadList[redPointKey].IsRead and notice.BluePoint == 1)
+        -- 确保 IsRead 字段存在
+        if readInfo.IsRead == nil then
+            readInfo.IsRead = false
+        end
+        
+        return not readInfo.IsRead
     end
 
     function XNoticeManager.ChangeInGameNoticeReadStatus(dataKey, isRead)
@@ -788,8 +1052,19 @@ XNoticeManagerCreator = function()
             return
         end
 
+        if not InGameNoticeReadList[dataKey] then
+            return
+        end
+        
         InGameNoticeReadList[dataKey].IsRead = isRead
-        XNoticeManager.SaveInGameNoticeReadList()
+        -- 已读状态已同步到服务端，不再需要保存到本地 PlayerPrefs
+        
+        -- 如果标记为已读，立即同步到服务端
+        if isRead then
+            XNoticeManager.SyncGameNoticeReadToServer(dataKey)
+        end
+        
+        XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_NOTICE_READ_CHANGE)
     end
     ----------------------InGame Notice end----------------------
     -------------------------Sub Menu beg------------------------
@@ -1031,7 +1306,7 @@ XNoticeManagerCreator = function()
             end
         end
         CS.XRecord.Record("24004", "RequestLoginNoticeStart")
-        XNoticeManager.RequestNotice(XNoticeType.Login, requestCb, requestCb, RequestInterval[XNoticeType.Login])
+        XNoticeManager.RequestNotice(XNoticeType.Login, requestCb, requestCb)
     end
 
     function XNoticeManager.AutoOpenLoginNotice()
@@ -1146,6 +1421,9 @@ XNoticeManagerCreator = function()
         for _, info in ipairs(infoList) do
             XNoticeManager.MarkInGameNoticeAutoMap(info.Id, info.ModifyTime)
         end
+
+        -- 首次打开公告界面时，尝试首次同步本地已读数据到服务端
+        XNoticeManager.TryFirstSyncGameNoticeRead()
 
         XLuaUiManager.Open("UiAnnouncement", announcementType, defaultId)
         
@@ -1409,17 +1687,20 @@ XNoticeManagerCreator = function()
     --    return s
     --end
 
+    --- 检查公告是否有效
+    ---【起始时间、白名单、渠道】
     function XNoticeManager.CheckNoticeValid(notice, nowTime)
         if not notice then
             return false
         end
 
         nowTime = nowTime or XTime.GetServerNowTimestamp()
-        if nowTime < notice.BeginTime then
+        
+        if XTool.IsNumberValidEx(notice.BeginTime) and nowTime < notice.BeginTime then
             return false
         end
 
-        if nowTime > notice.EndTime then
+        if XTool.IsNumberValidEx(notice.EndTime) and nowTime > notice.EndTime then
             return false
         end
 
@@ -1432,6 +1713,83 @@ XNoticeManagerCreator = function()
         end
         
         return true
+    end
+    
+    --- 检查公告内容有效性
+    function XNoticeManager.CheckNoticeContentValid(content, nowTime)
+        if not content then
+            return false
+        end
+
+        nowTime = nowTime or XTime.GetServerNowTimestamp()
+
+        -- 基本时间及白名单检查
+        if XTool.IsNumberValidEx(content.BeginTime) and nowTime < content.BeginTime then
+            return false
+        end
+
+        if XTool.IsNumberValidEx(content.EndTime) and nowTime > content.EndTime then
+            return false
+        end
+
+        if not XNoticeManager.IsWhiteIp(content.WhiteLists) and not XNoticeManager.IsWhiteDevice(content.DeviceLists) then
+            return false
+        end
+        
+        -- 其他条件检查
+        local isValid = true
+        
+        if isValid then
+            if XTool.GetTableCount(content.AppearanceDay) > 0 then
+                isValid = false
+                for _, day in ipairs(content.AppearanceDay) do
+                    if day == XDataCenter.FubenDailyManager.GetNowDayOfWeekByRefreshTime() then
+                        --是否位于可以显示的周目
+                        isValid = true
+                    end
+                end
+            end
+        end
+
+        if isValid then
+            if XTool.GetTableCount(content.AppearanceTime) > 0 then
+                isValid = false
+                
+                local todayTime = XTime.GetTodayTime(0, 0, 0)
+                local passTime = nowTime - todayTime
+                
+                for _, time in ipairs(content.AppearanceTime) do
+                    if passTime >= time[1] and passTime < time[2] then
+                        --是否位于可以显示的时间段
+                        isValid = true
+                    end
+                end
+            end
+        end
+
+        if isValid then
+            if XTool.GetTableCount(content.DisappearanceCondition) > 0 then
+                for _, condition in ipairs(content.DisappearanceCondition) do
+                    --是否符合不显示的条件
+                    if XConditionManager.CheckCondition(condition) then
+                        isValid = false
+                    end
+                end
+            end
+        end
+
+        if isValid then
+            if XTool.GetTableCount(content.AppearanceCondition) > 0 then
+                for _, condition in ipairs(content.AppearanceCondition) do
+                    if not XConditionManager.CheckCondition(condition) then
+                        --是否不符合显示条件
+                        isValid = false
+                    end
+                end
+            end
+        end
+        
+        return isValid
     end
     
     function XNoticeManager.CheckChannelAndPlatform(notice)
@@ -1560,10 +1918,13 @@ XNoticeManagerCreator = function()
         --if ((not nowTime) or (not noticeType) or (not interval)) then
         --    XLog.Warning("XNoticeManager nowTime", nowTime,"noticeType", noticeType,"LastRequestTime", LastRequestTime[noticeType],"interval", interval)
         --end
-        if LastRequestTime[noticeType] and LastRequestTime[noticeType] > 0
-                and nowTime - LastRequestTime[noticeType] < interval then
-            if unaskedCb then unaskedCb() end
-            return
+        -- 兼容 interval 为 0 的情况：如果 interval 为 0 或 nil，不进行时间间隔检查，直接请求
+        if interval and interval > 0 then
+            if LastRequestTime[noticeType] and LastRequestTime[noticeType] > 0
+                    and nowTime - LastRequestTime[noticeType] < interval then
+                if unaskedCb then unaskedCb() end
+                return
+            end
         end
         LastRequestTime[noticeType] = nowTime
 
@@ -1583,9 +1944,9 @@ XNoticeManagerCreator = function()
             end
 
             if request.isNetworkError or
-                    request.isHttpError or
-                    not request.downloadHandler or
-                    string.IsNilOrEmpty(request.downloadHandler.text) then
+                request.isHttpError or
+                not request.downloadHandler or
+                string.IsNilOrEmpty(request.downloadHandler.text) then
                 if failCb then
                     failCb()
                 end
@@ -1649,6 +2010,14 @@ XNoticeManagerCreator = function()
             XScheduleManager.UnSchedule(NoticeRequestTimer)
             NoticeRequestTimer = nil
         end
+        
+        -- 清理同步队列
+        if _SyncQueueTimer then
+            XScheduleManager.UnSchedule(_SyncQueueTimer)
+            _SyncQueueTimer = nil
+        end
+        _SyncQueue = {}
+        _HasSyncedGameNoticeToServer = false
 
         for _, v in pairs(NoticePicList) do
             if v and v:Exist() then
@@ -1702,7 +2071,11 @@ XNoticeManagerCreator = function()
         end)
     end
 
- 
+    function XNoticeManager.DebugLogInGameNoticeReadList()
+        if XMain.IsDebug then
+            XLog.Debug(InGameNoticeMap)
+        end
+    end
 
     XNoticeManager.Init()
     return XNoticeManager

@@ -32,11 +32,21 @@ function XBWSkipBase:IsAllowSkip(isNoTips)
         if XTool.IsNumberValid(conditionId) then
             local isSuccess, tips = XMVCA.XBigWorldService:CheckCondition(conditionId)
 
-            if not isSuccess and not isNoTips then
-                XMVCA.XBigWorldUI:TipMsg(tips)
+            if not isSuccess then
+                if not isNoTips then
+                    XMVCA.XBigWorldUI:TipMsg(tips)
+                end
+                return false
             end
-
-            return isSuccess
+        end
+        
+        conditionId = XMVCA.XBigWorldSkipFunction:GetSkipFinishConditionIdBySkipId(self:GetId())
+        if XTool.IsNumberValid(conditionId) then
+            --完成了就不跳转了
+            local isFinish, _ = XMVCA.XBigWorldService:CheckCondition(conditionId)
+            if isFinish then
+                return false
+            end
         end
 
         return true

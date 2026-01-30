@@ -82,7 +82,7 @@ function XResource:Complete()
     XMVCA.XSubPackage:Print(string.format("[SubPackage] Resource(%s) Download Complete!", self._Id))
 end
 
-function XResource:IsComplete()
+function XResource:IsStateComplete()
     return self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
 end
 

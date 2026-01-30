@@ -7,8 +7,8 @@ local XInputMapId = CS.XInputMapId
 
 function XUiVideoPlayer:OnAwake()
     if XDataCenter.UiPcManager.IsPc() then
-        self.BtnAuto = self.Transform:Find("SafeAreaContentPane/BtnAuto/BtnAutoPC"):GetComponent("XUiButton")
-        self.BtnSkip = self.Transform:Find("SafeAreaContentPane/BtnSkip/BtnSkipPC"):GetComponent("XUiButton")
+        self.BtnAuto = self.BtnAutoPC or self.Transform:Find("SafeAreaContentPane/BtnAuto/BtnAutoPC"):GetComponent("XUiButton")
+        self.BtnSkip = self.BtnSkipPC or self.Transform:Find("SafeAreaContentPane/BtnSkip/BtnSkipPC"):GetComponent("XUiButton")
 
         self.BtnAuto:GetComponentInChildren(typeof(CS.XUiPc.XUiPcCustomKey)):SetKey(XInputMapId.Video, XInputMapId.System, ToInt32(CS.XVideoOperationKey.Pause), XOperationType.Video)
         self.BtnSkip:GetComponentInChildren(typeof(CS.XUiPc.XUiPcCustomKey)):SetKey(XInputMapId.Video, XInputMapId.System, ToInt32(CS.XVideoOperationKey.Stop), XOperationType.Video)

@@ -20,6 +20,9 @@ function XCameraHelper.ScreenShot(image, beginCb, cb)
         local screenShot = XCameraHelper.DoScreenShot(image)
         if cb then
             cb(screenShot)
+        else
+            CS.UnityEngine.Object.Destroy(screenShot)
+            XLog.Error("XCameraHelper.ScreenShot Texture need to release")
         end
     end)
 end
@@ -57,7 +60,7 @@ function XCameraHelper.DoScreenShot(image)
     -- local currentRT = CS.UnityEngine.RenderTexture.active 
     -- -- 激活rt 读取像素
     -- CS.UnityEngine.RenderTexture.active = rt;
-    local screenShot = CS.UnityEngine.Texture2D(rect.width, rect.height, CS.UnityEngine.TextureFormat.RGB24, false);
+    local screenShot = XTool.GenTexture2DReleaseManually(rect.width, rect.height, CS.UnityEngine.TextureFormat.RGB24, false);
     screenShot:ReadPixels(rect, 0, 0);
     screenShot:Apply();
 
@@ -107,6 +110,9 @@ function XCameraHelper.ScreenShotNew(image, camera, cb, beginCb)
         image.sprite = sprite
         if cb then
             cb(texture)
+        else
+            CS.UnityEngine.Object.Destroy(texture)
+            XLog.Error("XCameraHelper.ScreenShotNew Texture need to release")
         end
     end)
 end
@@ -152,6 +158,9 @@ function XCameraHelper.ScreenShotNewNoImage(camera, cb, beginCb)
     CS.XScreenCapture.ScreenCaptureWithCallBack(camera, function(texture)
         if cb then
             cb(texture)
+        else
+            CS.UnityEngine.Object.Destroy(texture)
+            XLog.Error("XCameraHelper.ScreenShotNewNoImage Texture need to release")
         end
     end)
 end
@@ -214,6 +223,9 @@ function XCameraHelper.PhotographWithFixedRatio(image, cb, beginCb, showPanelPre
         CS.UnityEngine.Object.Destroy(photographNode)
         if cb then
             cb(renderTexture)
+        else
+            CS.UnityEngine.Object.Destroy(renderTexture)
+            XLog.Error("XCameraHelper.PhotographWithFixedRatio RenderTexture need to release")
         end
     end, beginCb)
 end

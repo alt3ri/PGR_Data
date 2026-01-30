@@ -28,7 +28,7 @@
         "Ability": 100.0,
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongGandianshanbi.png",
         "Name": "Matrix Lightning",
-        "Description": "Movement Speed greatly increases and all enemies' Extra DMG Reduction decreases by 10% in Matrix.",
+        "Description": "Movement Speed greatly increases and all enemies' Extra DMG Reduction decreases by 10% in Matrix/during Hypermatrix Deduction.",
         "DesLinkCharacterSkillId": null,
         "Account": null
     },
@@ -204,7 +204,7 @@
         "Ability": 100.0,
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool7.png",
         "Name": "Resonant Echo",
-        "Description": "The duration of effect inflicted by Tank class skill increases to 8s. Repeated triggering refreshes the duration.",
+        "Description": "The duration of effect inflicted by Tank/Breaker class skill increases to 8s. Duration resets every time the effect is triggered.",
         "DesLinkCharacterSkillId": null,
         "Account": null
     },
@@ -2779,6 +2779,39 @@
         "Icon": null,
         "Name": "Neo-Dimensional Punk",
         "Description": "ATK increases by 10%. While in Data Domain, Extra DMG Bonus increases by 35%. When Teddy: Spectre casts Signature - Data Domain: Barrier Rift without carrying an Exposure Mark, she gains 1/2/3 background Signature charges based on the number of Neon Orb colors recorded. Each time allies cast their Signature Move, she gains 75 Signature Energy, up to three times. When switched in, if there is sufficient Signature Energy, she automatically casts Data Domain: New Dimension Expansion. If Teddy: Spectre enters battle carrying an Exposure Mark, Extra DMG Bonus of Pulse Noise Penetration increases by 100%.",
+        "DesLinkCharacterSkillId": null,
+        "Account": "ATK Boost"
+    },
+    {
+        "Id": 2624001,
+        "BornMagic": "[512429]",
+        "SubSkillId": null,
+        "Ability": null,
+        "Icon": null,
+        "Name": "Aftershock System",
+        "Description": "ATK increases by 5%.",
+        "DesLinkCharacterSkillId": null,
+        "Account": null
+    },
+    {
+        "Id": 2625001,
+        "BornMagic": "[512430]",
+        "SubSkillId": null,
+        "Ability": null,
+        "Icon": null,
+        "Name": "Mirage Amplifier",
+        "Description": "Dark DMG increases by 10%.",
+        "DesLinkCharacterSkillId": null,
+        "Account": "Beginner Transition"
+    },
+    {
+        "Id": 2626001,
+        "BornMagic": "[512431]",
+        "SubSkillId": null,
+        "Ability": null,
+        "Icon": null,
+        "Name": "Type-3 Amalgamation",
+        "Description": "ATK increases by 10%. Base DMG of Twin Rotation increases by 100%. Sin Engraving's DMG boost increases by 50%.",
         "DesLinkCharacterSkillId": null,
         "Account": "ATK Boost"
     }

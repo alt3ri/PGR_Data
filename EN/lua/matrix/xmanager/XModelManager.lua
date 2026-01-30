@@ -9,9 +9,12 @@ local UIMODEL_TABLE_PATH = "Client/ResourceLut/Model/UIModel.tab"
 local DLC_MODEL_TABLE_PATH = "Client/StatusSyncFight/ResourceLut/Model/Model.tab"
 local SPECIAL_UIMODEL_PATH = "Client/ResourceLut/Model/SpecialUiModel.tab"
 local Ui_MODEL_CAMERA_PATH = "Client/Ui/UiModelCamera.tab"
+local UI_MODEL_CAMERA_NAME_AUTO_PATH = "Client/Ui/UiModelCameraNameAuto.tab"
 local UI_MODEL_NODE_ACTIVE_PATH = "Client/Ui/UiModelBoneActive.tab"
+local UI_MODEL_BONE_ACTIVE_NAME_AUTO = "Client/Ui/UiModelBoneActiveNameAuto.tab"
 local UI_MODEL_OFF_WEAPON_BONE_BIND = "Client/Ui/UiModelOffWeaponBoneBind.tab"
 local UI_SPECIAL_MODEL_CAMERA_PATH = "Client/Ui/UiSpecialModelCamera.tab"
+local UI_SPECIAL_MODEL_CAMERA_NAME_AUTO_PATH = "Client/Ui/UiSpecialModelCameraNameAuto.tab"
 local XEquipModel = require("XEntity/XEquip/XEquipModel")
 local Vector3 = CS.UnityEngine.Vector3
 
@@ -78,8 +81,14 @@ XModelManager.MODEL_UINAME = {
 --local RoleModelPool = {} --保存模型
 local UiModelTransformTemplates = {} -- Ui模型位置配置表
 local UiModelTransformNameAutoTemplates = {} -- Ui模型位置配置key值对应表
+---@type XTableUiModelCamera[]
 local UiModelCameraTemplates = {} -- Ui模型相机配置表
+---@type XTableUiModelCameraNameAuto[]
+local UiModelCameraNameAutoTemplates = {} -- Ui模型相机配置key值对应表
+---@type XTableUiSpecialModelCamera[]
 local UiSpecialModelCameraTemplates = {} -- Ui特殊模型相机配置表
+---@type XTableUiSpecialModelCameraNameAuto[]
+local UiSpecialModelCameraNameAutoTemplates = {} -- Ui特殊模型相机配置key值对应表
 local UiSceneTransformTemplates = {} -- Ui模型位置配置表
 local ModelTemplates = {} -- 模型相关配置
 --local HXResReplace = false -- 和谐资源替换
@@ -88,7 +97,10 @@ local DlcModelTemplates = {} --Dlc 模型
 local SpecialUiModel = {}
 local LuaBehaviourDict = {} -- 武器生命周期对象
 local CameraDefaultDic = {} -- 相机默认参数字典
-local UiModelNodeActiveMap = {} --uiName + modelId -> Id
+---@type XTableUiModelBoneActive[]
+local UiModelBoneActiveMap = {} --uiName + modelId -> Id
+---@type XTableUiModelBoneActiveNameAuto[]
+local UiModelBoneActiveNameAutoMap = {}
 local UiModelWeaponBindTemplates = nil --特定模型关闭武器绑定角色骨骼
 ---@type table<string,table<number,number[]>> uiName delayType timer 
 local DisplayDelayTimers = nil
@@ -124,35 +136,14 @@ function XModelManager.Init()
         UiSceneTransformTemplates[config.UiName][config.SceneUrl] = config
     end
 
-    local cameraTab = XTableManager.ReadAllByIntKey(Ui_MODEL_CAMERA_PATH, XTable.XTableUiModelCamera, "Id")
-    for _, config in pairs(cameraTab) do
-        if not UiModelCameraTemplates[config.UiName] then
-            UiModelCameraTemplates[config.UiName] = {}
-        end
-        if not UiModelCameraTemplates[config.UiName][config.ModelName] then
-            UiModelCameraTemplates[config.UiName][config.ModelName] = {}
-        end
-        table.insert(UiModelCameraTemplates[config.UiName][config.ModelName], config)
-    end
+    UiModelCameraTemplates = XTableManager.ReadByIntKey(Ui_MODEL_CAMERA_PATH, XTable.XTableUiModelCamera, "Id")
+    UiModelCameraNameAutoTemplates = XTableManager.ReadByStringKey(UI_MODEL_CAMERA_NAME_AUTO_PATH, XTable.XTableUiModelCameraNameAuto, "Id")
 
-    local specialCameraTab = XTableManager.ReadAllByIntKey(UI_SPECIAL_MODEL_CAMERA_PATH, XTable.XTableUiSpecialModelCamera, "Id")
-    for _, config in pairs(specialCameraTab) do
-        if not UiSpecialModelCameraTemplates[config.UiName] then
-            UiSpecialModelCameraTemplates[config.UiName] = {}
-        end
-        if not UiSpecialModelCameraTemplates[config.UiName][config.CharacterId] then
-            UiSpecialModelCameraTemplates[config.UiName][config.CharacterId] = {}
-        end
-        table.insert(UiSpecialModelCameraTemplates[config.UiName][config.CharacterId], config)
-    end
+    UiSpecialModelCameraTemplates = XTableManager.ReadByIntKey(UI_SPECIAL_MODEL_CAMERA_PATH, XTable.XTableUiSpecialModelCamera, "Id")
+    UiSpecialModelCameraNameAutoTemplates = XTableManager.ReadByStringKey(UI_SPECIAL_MODEL_CAMERA_NAME_AUTO_PATH, XTable.XTableUiSpecialModelCameraNameAuto, "Id")
 
-    UiModelNodeActiveMap = {}
-    local uiModelNodeActive = XTableManager.ReadByIntKey(UI_MODEL_NODE_ACTIVE_PATH, XTable.XTableUiModelBoneActive, "Id")
-    for _, template in pairs(uiModelNodeActive) do
-        local actionId, modelId = template.ActionId, template.ModelName
-        UiModelNodeActiveMap[actionId] = UiModelNodeActiveMap[actionId] or {}
-        UiModelNodeActiveMap[actionId][modelId] = template
-    end
+    UiModelBoneActiveMap = XTableManager.ReadByIntKey(UI_MODEL_NODE_ACTIVE_PATH, XTable.XTableUiModelBoneActive, "Id")
+    UiModelBoneActiveNameAutoMap = XTableManager.ReadByStringKey(UI_MODEL_BONE_ACTIVE_NAME_AUTO, XTable.XTableUiModelBoneActiveNameAuto, "Id")
 
     -- 读取和谐配置 lua
     --local XModelHX = require("XModule/XModel/XModelHX")
@@ -288,11 +279,14 @@ function XModelManager.CheckUiModelNodeActive(actionName, modelId, model)
     if XTool.UObjIsNil(model) or string.IsNilOrEmpty(actionName) or string.IsNilOrEmpty(modelId) then
         return false
     end
-    local map = UiModelNodeActiveMap[actionName]
-    if XTool.IsTableEmpty(map) then
+    local actionId = UiModelBoneActiveNameAutoMap[actionName]
+    local modelNameId = UiModelBoneActiveNameAutoMap[modelId]
+    if not actionId or not modelNameId then
         return false
     end
-    local template = map[modelId]
+    -- 源表工具特殊处理
+    local id = actionId.Value * 10000 + modelNameId.Value
+    local template = UiModelBoneActiveMap[id]
     if not template then
         return false
     end
@@ -389,10 +383,11 @@ function XModelManager.GetRoleModelConfig(uiName, modelName)
     end
 end
 
--- 获取相机配置信息
+---获取相机配置信息
 ---@param uiName string UI名
 ---@param modelName string 模型名
 ---@param characterId number 角色Id
+---@return XTableUiModelCamera|XTableUiSpecialModelCamera
 function XModelManager.GetRoleCameraConfigList(uiName, modelName, characterId)
     local templates = XModelManager.GetModelCameraTemplates(uiName, modelName)
     if XTool.IsTableEmpty(templates) then
@@ -402,34 +397,39 @@ function XModelManager.GetRoleCameraConfigList(uiName, modelName, characterId)
     return templates
 end
 
--- 获取模型相机配置
+---获取模型相机配置
 ---@param uiName string UI名
 ---@param modelName string 模型名
+---@return XTableUiModelCamera
 function XModelManager.GetModelCameraTemplates(uiName, modelName)
     if not uiName or not modelName then
         XLog.Error("XModelManager.GetModelCameraTemplates 函数错误: 参数uiName和modelName都不能为空")
         return
     end
-    if UiModelCameraTemplates[uiName] then
-        return UiModelCameraTemplates[uiName][modelName]
+    local uiNameId = UiModelCameraNameAutoTemplates[uiName]
+    local modelNameId = UiModelCameraNameAutoTemplates[modelName]
+    if uiNameId and modelNameId then
+        -- 源表工具特殊处理
+        local id = uiNameId.Value * 1000 + modelNameId.Value
+        return UiModelCameraTemplates[id]
     end
     return nil
 end
 
--- 获取特殊模型相机配置
+---获取特殊模型相机配置
 ---@param uiName string UI名
 ---@param characterId number 角色Id
+---@return XTableUiSpecialModelCamera
 function XModelManager.GetSpecialModelCameraTemplates(uiName, characterId)
     if not uiName then
         XLog.Error("XModelManager.GetSpecialModelCameraTemplates 函数错误: 参数uiName不能为空")
         return
     end
-    if UiSpecialModelCameraTemplates[uiName] then
-        if not XTool.IsNumberValid(characterId) then
-            XLog.Error("XModelManager.GetSpecialModelCameraTemplates 函数错误: 参数characterId不能为空")
-            return
-        end
-        return UiSpecialModelCameraTemplates[uiName][characterId]
+    local uiNameId = UiSpecialModelCameraNameAutoTemplates[uiName]
+    if uiNameId then
+        -- 源表工具特殊处理
+        local id = uiNameId.Value * 10000000 + characterId --角色Id有7位
+        return UiSpecialModelCameraTemplates[id]
     end
     return nil
 end
@@ -517,27 +517,6 @@ local setModeTransform = function(target, config)
             config.ScaleY == 0 and 1 or config.ScaleY,
             config.ScaleZ == 0 and 1 or config.ScaleZ
     )
-end
-
-local setModelCamera = function(target, config)
-    if not target or not config then
-        return
-    end
-
-    if config.FieldOfView > 0 then
-        ---@type Cinemachine.CinemachineVirtualCamera
-        local virtualCamera = target.gameObject:GetComponent("CinemachineVirtualCamera")
-        if XTool.UObjIsNil(virtualCamera) then
-            XLog.Error(string.format("未能找到虚拟相机组件, 相机名：%s 模型名：%s", target.gameObject.name, config.ModelName))
-        else
-            local newLens = virtualCamera.m_Lens
-            newLens.FieldOfView = config.FieldOfView
-            virtualCamera.m_Lens = newLens
-        end
-    end
-
-    target.transform.localPosition = CS.UnityEngine.Vector3(config.PositionX, config.PositionY, config.PositionZ)
-    target.transform.localEulerAngles = CS.UnityEngine.Vector3(config.RotationX, config.RotationY, config.RotationZ)
 end
 
 --- 复原虚拟相机设置
@@ -637,24 +616,39 @@ function XModelManager.SetRoleCamera(name, cameraRoot, uiName, characterId)
     end
     CameraDefaultDic[uiName] = nil
 
-    local configList = XModelManager.GetRoleCameraConfigList(uiName, name, characterId)
-    if not configList or not next(configList) then
+    local config = XModelManager.GetRoleCameraConfigList(uiName, name, characterId)
+    if not config or XTool.IsTableEmpty(config.CameraName) then
         return
     end
 
-    for _, config in pairs(configList or {}) do
-        local camera = cameraRoot:FindTransform(config.CameraName)
+    for i, camName in ipairs(config.CameraName) do
+        local camera = cameraRoot:FindTransform(camName)
         if camera then
             CameraDefaultDic[uiName] = CameraDefaultDic[uiName] or {}
-            if not CameraDefaultDic[uiName][config.CameraName] then
-                CameraDefaultDic[uiName][config.CameraName] = {
+            if not CameraDefaultDic[uiName][camName] then
+                CameraDefaultDic[uiName][camName] = {
                     Position = camera.transform.position,
                     Rotation = camera.transform.rotation,
                     EulerAngles = camera.transform.rotation.eulerAngles,
                     VirtualFov = getVirtualCameraFov(camera)
                 }
             end
-            setModelCamera(camera, config)
+
+            local fov = config.FieldOfView[i]
+            if fov and fov > 0 then
+                ---@type Cinemachine.CinemachineVirtualCamera
+                local virtualCamera = camera.gameObject:GetComponent("CinemachineVirtualCamera")
+                if XTool.UObjIsNil(virtualCamera) then
+                    XLog.Error(string.format("未能找到虚拟相机组件, 相机名：%s 模型名：%s", camera.gameObject.name, config.ModelName))
+                else
+                    local newLens = virtualCamera.m_Lens
+                    newLens.FieldOfView = fov
+                    virtualCamera.m_Lens = newLens
+                end
+            end
+
+            camera.transform.localPosition = CS.UnityEngine.Vector3(config.PositionX[i], config.PositionY[i], config.PositionZ[i])
+            camera.transform.localEulerAngles = CS.UnityEngine.Vector3(config.RotationX[i], config.RotationY[i], config.RotationZ[i])
         end
     end
 end

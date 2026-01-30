@@ -8,9 +8,11 @@ function XChar1200:Ctor(proxy)
     self._proxy = proxy
 end
 
-function XChar1200:Init()
-    Base.Init(self)
-    XLog.Warning("公共NPC加载完成")
+function XChar1200:ScriptInit(isGainControl)
+    if not isGainControl then
+        -- 公共Npc标记
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000510, 1)
+    end
 end
 
 ---@param dt number @ delta time
@@ -22,159 +24,138 @@ end
 ---@param eventArgs userdata
 function XChar1200:HandleEvent(eventType, eventArgs)
     Base.HandleEvent(self, eventType, eventArgs)
-    if eventType == EWorldEvent.FullChainSkillStart then
-        self:OnFullChainSkillStart(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
-    end
-    if eventType == EWorldEvent.FullChainSkillEnd then
-        self:OnFullChainSkillEnd(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
-    end
-    if eventType == EWorldEvent.CastFullChainFinalSkill then
-        self:OnCastFullChainFinalSkill(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
-    end
-    if eventType == EWorldEvent.FullChainStageEnd then
-        self:OnFullChainStageEnd(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
-    end
-end
-
----FullChain开启连锁
----@param gameplayActive number 是否开启玩法
----@param isInChain number 是否在连锁状态
----@param chainRemainTime number 连锁剩余时间
----@param chainNpc number 正在锁链的Npc
----@param chainLevel number 当前连锁段数
-function XChar1200:OnFullChainSkillStart(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
-    if( chainLevel == 1) then
-        XLog.Warning("1阶段连携")
-        local players = self._proxy:GetPlayerNpcList()
-        for k, playerID in ipairs(players) do
-            self._proxy:ApplyMagic(self._uuid, playerID, 12001001, 100)
-        end
-    elseif ( chainLevel == 2) then
-        XLog.Warning("2阶段连携")
-        local players = self._proxy:GetPlayerNpcList()
-        for k, playerID in ipairs(players) do
-            self._proxy:ApplyMagic(self._uuid, playerID, 12002001, 100)
-        end
-    elseif ( chainLevel == 3) then
-        XLog.Warning("3阶段连携")
-        local players = self._proxy:GetPlayerNpcList()
-        for k, playerID in ipairs(players) do
-            self._proxy:ApplyMagic(self._uuid, playerID, 12003001, 100)
-        end
-    end
-end
-
----FullChain连锁结束
----@param gameplayActive number 是否开启玩法
----@param isInChain number 是否在连锁状态
----@param chainRemainTime number 连锁剩余时间
----@param chainNpc number 正在锁链的Npc
----@param chainLevel number 当前连锁段数
-function XChar1200:OnFullChainSkillEnd(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
-    XLog.Warning("奥义连携结束" .. chainLevel)
-end
-
----FullChainSkill释放！
----@param gameplayActive number 是否开启玩法
----@param isInChain number 是否在连锁状态
----@param chainRemainTime number 连锁剩余时间
----@param chainNpc number 正在锁链的Npc
----@param chainLevel number 当前连锁段数
-function XChar1200:OnCastFullChainFinalSkill(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
-local players = self._proxy:GetPlayerNpcList()
-    for k, playerID in ipairs(players) do
-        self._proxy:ApplyMagic(self._uuid, playerID, 12003002, 100)
-        self._proxy:ApplyMagic(self._uuid, playerID, 12002002, 100)
-        self._proxy:ApplyMagic(self._uuid, playerID, 12001002, 100)
-    end
-    
-    XLog.Warning("释放奥义连携终结技" .. chainLevel)
-    local targetNpc = self._proxy:SearchNpc(self._uuid, ENpcCampType.Camp2, 4, 100, -1)
-    -- --无战斗目标释放技能
-    if (targetNpc == 0) or (not targetNpc) then
-        self._proxy:CastAction(self._uuid, 1200001)
-        return
-    end
-
-    --有战斗目标释放技能
-    local targetPos = self._proxy:GetNpcPosition(targetNpc)
-    
-    self._proxy:SetFightTarget(self._uuid, targetNpc)      --设置战斗目标
-    self._proxy:CastActionToTarget(self._uuid, 1200001, targetNpc)
-end
-
----FullChainSkill释放！
----@param gameplayActive number 是否开启玩法
----@param isInChain number 是否在连锁状态
----@param chainRemainTime number 连锁剩余时间
----@param chainNpc number 正在锁链的Npc
----@param chainLevel number 当前连锁段数
-function XChar1200:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
-    XLog.Warning("奥义连携阶段结束" .. chainLevel)
-    local players = self._proxy:GetPlayerNpcList()
-    for k, playerID in ipairs(players) do
-        self._proxy:ApplyMagic(self._uuid, playerID, 12003002, 100)
-        self._proxy:ApplyMagic(self._uuid, playerID, 12002002, 100)
-        self._proxy:ApplyMagic(self._uuid, playerID, 12001002, 100)
-    end
 end
 
 function XChar1200:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    XLog.Warning("开始注册")
+    --XLog.Warning("开始注册")
 
-    --self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionBefore)         -- OnNpcCastActionBeforeEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)         -- OnNpcCastActionAfterEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionByInputActionBefore)         -- OnNpcCastActionByInputActionBeforeEvent
-    --self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)         -- OnNpcExitActionEvent
-    --self._proxy:RegisterEvent(EWorldEvent.NpcDie)               -- OnNpcDieEvent
-    --self._proxy:RegisterEvent(EWorldEvent.NpcRevive)            -- OnNpcReviveEvent
-    --self._proxy:RegisterEvent(EWorldEvent.NpcLoadComplete)      -- OnNpcLoadCompleteEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcDodge)               --OnNpcDodge
-    --self._proxy:RegisterEvent(EWorldEvent.Behavior2ScriptMsg)   -- OnBehavior2ScriptMsgEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)           -- OnNpcAddBuffEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)        -- OnNpcRemoveBuffEvent
-    --self._proxy:RegisterEvent(EWorldEvent.MissileHit)           -- OnMissileHitEvent
-    --self._proxy:RegisterEvent(EWorldEvent.MissileDead)          -- OnMissileDeadEvent
-    --self._proxy:RegisterEvent(EWorldEvent.MissileCreate)        -- OnMissileCreateEvent
-    self._proxy:RegisterEvent(EWorldEvent.LockTargetChanged)      -- OnLockTargetChanged
-    self._proxy:RegisterEvent(EWorldEvent.FullChainSkillStart)      --OnFullChainSkillStart
-    self._proxy:RegisterEvent(EWorldEvent.FullChainSkillEnd)        --OnFullChainSkillEnd
-    self._proxy:RegisterEvent(EWorldEvent.CastFullChainFinalSkill)        --OnCastFullChainFinalSkill
-    self._proxy:RegisterEvent(EWorldEvent.FullChainStageEnd)        --OnFullChainStageEnd
-    XLog.Warning("Relink基类注册事件")
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionBefore)              -- OnNpcCastActionBeforeEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)               -- OnNpcCastActionAfterEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionByInputActionBefore) -- OnNpcCastActionByInputActionBeforeEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcDodge)      --OnNpcDodge
+    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)    -- OnNpcAddBuffEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff) -- OnNpcRemoveBuffEvent
+    self._proxy:RegisterEvent(EWorldEvent.FullChainSkillStart)     --OnFullChainSkillStart
+    self._proxy:RegisterEvent(EWorldEvent.FullChainSkillEnd)       --OnFullChainSkillEnd
+    self._proxy:RegisterEvent(EWorldEvent.CastFullChainFinalSkill) --OnCastFullChainFinalSkill
+    self._proxy:RegisterEvent(EWorldEvent.FullChainStageEnd)       --OnFullChainStageEnd
+    self._proxy:RegisterEvent(EWorldEvent.FullChainShowStart)
+    self._proxy:RegisterEvent(EWorldEvent.NpcBrokenAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcEnterOverDrive)
+    self._proxy:RegisterEvent(EWorldEvent.NpcODBreakAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcWaitReboot)
+
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcAfterSyncCounterSuccess, self._uuid) -- OnNpcAfterSyncCounterSuccess
+
+    self._proxy:RegisterLuaEvent(EFightLuaEvent.RelinkCounterSuccess)
+    self._proxy:RegisterLuaEvent(EFightLuaEvent.RelinkCastCounterSkill)
+    self._proxy:RegisterLuaEvent(EFightLuaEvent.RelinkMonsterCastPowerfulSkill)
+    --XLog.Warning("Relink基类注册事件")
+end
+
+--region 事件回调
+
+function XChar1200:OnFullChainSkillStart(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel, curChainStartNpcId)
+    --添加充能限制
+    self._proxy:ApplyMagic(self._uuid, curChainStartNpcId, 1200008)
+
+    local players = self._proxy:GetPlayerNpcList()
+    for i, playerID in pairs(players) do
+        if playerID == curChainStartNpcId then goto continue end
+        --XLog.Warning("添加能量 " .. tostring(curChainStartNpcId) .. " " .. tostring(playerID))
+        if self._proxy:CheckBuffByKind(playerID, 1200008) then goto continue end
+        --XLog.Error("添加能量" .. playerID)
+        self._proxy:ApplyMagic(self._uuid, playerID, 12000109)
+        ::continue::
+    end
+end
+
+function XChar1200:OnFullChainSkillEnd(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel)
+    --XLog.Warning("奥义连携结束" .. chainLevel)
+end
+
+function XChar1200:OnCastFullChainFinalSkill(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel)
+    --XLog.Warning("释放奥义连携终结技" .. chainLevel)
+    local targetNpc = self._proxy:SearchNpc(self._uuid, ENpcCampType.Camp2, 4, 999, -1)
+    -- --无战斗目标释放技能
+    if (targetNpc == 0) or (not targetNpc) then
+        XLog.Warning("无目标释放爆炸")
+        self._proxy:CastAction(self._uuid, 1200001)
+        return
+    end
+    --有战斗目标释放技能
+    local targetPos = self._proxy:GetNpcPosition(targetNpc)
+    XLog.Warning("有目标释放爆炸")
+    self._proxy:CastActionToPosition(self._uuid,1200001,targetPos)
+    self._proxy:ApplyMagic(self._uuid, targetNpc, 12000110)
+end
+
+-- function XChar1200:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
+--     --XLog.Warning("奥义连携阶段结束" .. chainLevel)
+--     self:ApplyMagicsToAllPlayer({12003002, 12002002, 12001002}, 100)
+-- end
+
+function XChar1200:OnFullChainShowStart(gameplayActive, chainNpcList, chainLevel)
+    --给所有人加无敌
+    self:ApplyMagicToAllPlayer(12001001,1)
+end
+
+function XChar1200:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel)
+    --删除充能限制
+    self:ApplyMagicToAllPlayer(1200009, 1)
 end
 
 function XChar1200:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-
-    if (buffId == 12000106) then
-        local players = self._proxy:GetPlayerNpcList()
-        for k, playerID in ipairs(players) do
-            self._proxy:ApplyMagic(self._uuid, playerID, 12000106, 100)
-        end
+    if npcUUID ~= self._uuid then
+        return
     end
-    
-    if (buffId == 12000103) then
-        local players = self._proxy:GetPlayerNpcList()
-        for k, playerID in ipairs(players) do
-            self._proxy:ApplyMagic(self._uuid, playerID, 12000103, 100)
-        end
+    if buffId == 12001002 then
+        self:ApplyMagicToAllPlayer(12001002, 1)
+    end
+    if buffId == 12000106 then
+        self:ApplyMagicToAllPlayer(12000106, 1)
     end
 
-    if (buffId == 12000104) then
-        local players = self._proxy:GetPlayerNpcList()
-        for k, playerID in ipairs(players) do
-            self._proxy:ApplyMagic(self._uuid, playerID, 12000104, 100)
-        end
+    if buffId == 12000103 then
+        self:ApplyMagicToAllPlayer(12000103, 1)
     end
 
-    if (buffId == 12000105) then
-        local players = self._proxy:GetPlayerNpcList()
-        for k, playerID in ipairs(players) do
-            self._proxy:ApplyMagic(self._uuid, playerID, 12000105, 100)
+    if buffId == 12000104 then
+        self:ApplyMagicToAllPlayer(12000104, 1)
+    end
+
+    if buffId == 12000105 then
+        self:ApplyMagicToAllPlayer(12000105, 1)
+    end
+end
+
+function XChar1200:OnNpcAfterSyncCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
+end
+--endregion
+
+--region 效果相关封装
+function XChar1200:ApplyMagicToTarget(targetId, magicId, level)
+    if targetId == nil or not self._proxy:CheckNpc(targetId) then
+        return
+    end
+
+    self._proxy:ApplyMagic(self._uuid, targetId, magicId, level)
+end
+
+function XChar1200:ApplyMagicToAllPlayer(magicId, level)
+    for i, player in ipairs(self._proxy:GetPlayerNpcList()) do
+        self:ApplyMagicToTarget(player, magicId, level)
+    end
+end
+
+function XChar1200:ApplyMagicsToAllPlayer(magicIds, level)
+    for i, player in ipairs(self._proxy:GetPlayerNpcList()) do
+        for j, magicId in ipairs(magicIds) do
+            self:ApplyMagicToTarget(player, magicId, level)
         end
     end
 end
+--endregion
 
 return XChar1200

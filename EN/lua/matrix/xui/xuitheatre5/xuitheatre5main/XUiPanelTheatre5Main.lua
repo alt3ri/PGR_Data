@@ -6,6 +6,8 @@ local XUiTheatre5MainTeaching = require("XUi/XUiTheatre5/XUiTheatre5Main/XUiThea
 local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
+local Day = 3600 * 24
+
 function XUiPanelTheatre5Main:OnStart()
     self:Init()
     
@@ -140,7 +142,13 @@ end
 --- 进入游戏点击事件
 function XUiPanelTheatre5Main:OnBtnBattleClickEvent()
     if not self.PVPEnable then
-        XUiManager.TipMsg(self._Control:GetClientConfigPVPNotOpenTips())
+        local format = self._Control:GetClientConfigPVPNotOpenTips(self.PVPNotStart)
+
+        if string.find(format, '{0}') then
+            format = XUiHelper.FormatText(format, self._LeftTimeStr)
+        end
+        
+        XUiManager.TipMsg(format)
         return
     end
 
@@ -371,6 +379,37 @@ function XUiPanelTheatre5Main:_ShowWhenNotInTime()
 
     if self.BtnRetreat then
         self.BtnRetreat.gameObject:SetActiveEx(false)
+    end
+    
+    local timeId = self._Control.PVPControl:GetFuturePVPActivityTimeId()
+
+    if not XTool.IsNumberValidEx(timeId) then
+        return
+    end
+    
+    -- 判断时间，如果是未来会开启，则显示静态文本：x日后开启
+    local startTime = XFunctionManager.GetStartTimeByTimeId(timeId)
+    local now = XTime.GetServerNowTimestamp()
+
+    if now < startTime then
+        local startLeftTime = startTime - now
+        local leftTimeStr = XUiHelper.GetTime(startLeftTime, XUiHelper.TimeFormatType.ACTIVITY)
+        -- 将时间定格下来，只在重新进入界面时刷新
+        self._LeftTimeStr = leftTimeStr
+        
+        leftTimeStr = XUiHelper.FormatText(self._Control:GetClientConfigPVPNotStartTips(false), leftTimeStr)
+        
+        if self.BtnBattle then
+            self.BtnBattle:SetNameByGroup(2, leftTimeStr)
+        end
+        
+        self.PVPNotStart = true
+    else
+        if self.BtnBattle then
+            self.BtnBattle:SetNameByGroup(2, self._Control:GetClientConfigPVPNotStartTips(true))
+        end
+
+        self.PVPNotStart = false
     end
 
     self.PVPEnable = false

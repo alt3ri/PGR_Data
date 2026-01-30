@@ -7,6 +7,7 @@ local XUiGridDlcRelinkEquipAttribute = require("XUi/XUiDlcRelink/Equip/Grid/XUiG
 ---@field BtnFilter XUiComponent.XUiButton
 local XUiDlcRelinkEquipBag = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkEquipBag")
 
+local EquipSlotIndex = XEnumConst.DlcRelink.EquipSlotIndex
 local BtnOperateType = {
     Replace = 1, -- 替换（同角色不同槽位，交换）
     Wear = 2, -- 穿戴（当前槽为空）
@@ -41,11 +42,11 @@ function XUiDlcRelinkEquipBag:OnStart(characterId, slotIndex)
     end)
 
     self.CharacterId = characterId
-    self.CurSelectSlotIndex = XTool.IsNumberValid(slotIndex) and slotIndex or XEnumConst.DlcRelink.EquipSlotIndex.MainSlot
+    self.CurSelectSlotIndex = XTool.IsNumberValid(slotIndex) and slotIndex or EquipSlotIndex.MainSlot
     self.CurSelectSlotEquipUid = self._Control:GetEquipUidByCharacterId(self.CharacterId, self.CurSelectSlotIndex)
 
-    self.EquipOccupationDefaultIndex = 1 -- 进入时默认选择的职业Tab
-    self.CurSelectEquipOccupationIndex = 0
+    self.DefaultSelectTabIndex = 0 -- 进入时默认选择的Tab下标
+    self.CurSelectTabIndex = -1 -- 当前选择的Tab下标
 
     self.CurSelectGrid = nil
     self.CurSelectEquipUid = 0
@@ -59,21 +60,35 @@ end
 
 function XUiDlcRelinkEquipBag:OnEnable()
     self.Super.OnEnable(self)
+    self:ValidateEquipSlotData()
     self:RefreshPanelEquipment()
-    self.PanelTab:SelectIndex(self.EquipOccupationDefaultIndex)
-    self.BtnFilter:SetSpriteVisible(false)
+    self.PanelTab:SelectIndex(self.DefaultSelectTabIndex)
+end
+
+function XUiDlcRelinkEquipBag:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_DLC_RELINK_EQUIP_COMPOSE_SUCCESS,
+    }
+end
+
+function XUiDlcRelinkEquipBag:OnNotify(event, ...)
+    if event == XEventId.EVENT_DLC_RELINK_EQUIP_COMPOSE_SUCCESS then
+        self:SetupDynamicTable()
+    end
 end
 
 function XUiDlcRelinkEquipBag:OnDisable()
     self.Super.OnDisable(self)
     self.EquipFilterCache = {}
     -- 记录当前职业Tab为下次默认选择
-    if self.CurSelectEquipOccupationIndex > 0 then
-        self.EquipOccupationDefaultIndex = self.CurSelectEquipOccupationIndex
+    if self.CurSelectTabIndex >= 0 then
+        self.DefaultSelectTabIndex = self.CurSelectTabIndex
     end
-    self.CurSelectEquipOccupationIndex = 0
+    self.CurSelectTabIndex = -1
     -- 记录所有装备已查看状态
     self._Control:RecordAllEquipViewed()
+    -- 是否进行槽位数据验证
+    self.IsNeedValidateEquipSlotData = true
 end
 
 --region 进入默认选择逻辑
@@ -125,7 +140,7 @@ function XUiDlcRelinkEquipBag:EnsureInitialSelection()
     if XTool.IsNumberValid(self.CurSelectSlotEquipUid) then
         local occupationType = self:GetEquipOccupationTypeByUid(self.CurSelectSlotEquipUid)
         if XTool.IsNumberValid(occupationType) then
-            self.EquipOccupationDefaultIndex = occupationType
+            self.DefaultSelectTabIndex = occupationType
         end
         return
     end
@@ -135,11 +150,8 @@ function XUiDlcRelinkEquipBag:EnsureInitialSelection()
     local hasAnyEquip = not XTool.IsTableEmpty(unWeareEquipUids)
 
     if hasAnyEquip then
-        -- 情况2：背包有装备，选中背包第一件
-        local _, occupationType = self:FindFirstAvailableBagEquip(unWeareEquipUids)
-        if XTool.IsNumberValid(occupationType) then
-            self.EquipOccupationDefaultIndex = occupationType
-        end
+        -- 情况2：背包有装备，选中全部页签
+        self.DefaultSelectTabIndex = 0
     else
         -- 情况3：背包无装备，按优先级找已穿戴
         local slot, uid = self:FindFirstWornEquipByPriority()
@@ -148,13 +160,13 @@ function XUiDlcRelinkEquipBag:EnsureInitialSelection()
             self.CurSelectSlotEquipUid = uid
             local occupationType = self:GetEquipOccupationTypeByUid(uid)
             if XTool.IsNumberValid(occupationType) then
-                self.EquipOccupationDefaultIndex = occupationType
+                self.DefaultSelectTabIndex = occupationType
             end
         else
-            -- 默认到主槽 + 职业1
-            self.CurSelectSlotIndex = XEnumConst.DlcRelink.EquipSlotIndex.MainSlot
+            -- 默认到主槽 + 全部
+            self.CurSelectSlotIndex = EquipSlotIndex.MainSlot
             self.CurSelectSlotEquipUid = 0
-            self.EquipOccupationDefaultIndex = 1
+            self.DefaultSelectTabIndex = 0
         end
     end
 end
@@ -163,10 +175,29 @@ end
 
 --region 左侧装备槽位
 
+-- 验证槽位数据
+function XUiDlcRelinkEquipBag:ValidateEquipSlotData()
+    if not self.IsNeedValidateEquipSlotData then
+        return
+    end
+    self.IsNeedValidateEquipSlotData = false
+
+    local isUnLock = self._Control:CheckEquipSlotIsUnlocked(self.CharacterId, self.CurSelectSlotIndex)
+    if not isUnLock then
+        -- 当前槽位已锁定，切回主槽
+        self.CurSelectSlotIndex = EquipSlotIndex.MainSlot
+    end
+
+    local equipUid = self._Control:GetEquipUidByCharacterId(self.CharacterId, self.CurSelectSlotIndex)
+    if equipUid ~= self.CurSelectSlotEquipUid then
+        -- 当前槽位装备已变化，更新记录
+        self.CurSelectSlotEquipUid = equipUid
+    end
+end
+
 function XUiDlcRelinkEquipBag:RefreshPanelEquipment()
     -- 装备总战力
-    local totalAbility = self._Control:GetEquipTotalAbilityByCharacterId(self.CharacterId)
-    self.TxtLv.text = string.format(self._Control:GetClientConfig("EquipLevelDesc"), totalAbility)
+    self.TxtLv.text = self._Control:GetEquipTotalAbilityByCharacterId(self.CharacterId)
     -- 装备槽位
     local equipSlotIndexMap = self._Control:GetEquipSlotIndexMap()
     for index, slotIndex in ipairs(equipSlotIndexMap) do
@@ -204,13 +235,11 @@ function XUiDlcRelinkEquipBag:OnEquipSlotCallBack(grid)
         return
     end
     self:SetCurrentSlot(slotIndex)
-    -- 重置职业选择并刷新列表
-    self.CurSelectEquipOccupationIndex = 0
-    self.CurSelectEquipUid = 0
-    self.CurSelectGrid = nil
-    self.EquipFilterCache = {}
-
-    local defaultIndex = self:GetDefaultSelectEquipOccupationIndex()
+    local defaultIndex = self.CurSelectTabIndex
+    if defaultIndex < 0 then
+        defaultIndex = self:GetDefaultSelectEquipOccupationIndex()
+    end
+    self.CurSelectTabIndex = -1
     self.PanelTab:SelectIndex(defaultIndex)
 end
 
@@ -238,7 +267,7 @@ function XUiDlcRelinkEquipBag:GetDefaultSelectEquipOccupationIndex()
             end
         end
     end
-    return 1
+    return 0
 end
 
 -- 构建当前装备穿戴快照
@@ -297,6 +326,7 @@ function XUiDlcRelinkEquipBag:RefreshEquipTotalAttribute()
         end
         grid:Open()
         grid:CustomRefresh(attribute)
+        grid:SetBg(index % 2 ~= 0)
     end
 
     for i = #totalAttributes + 1, #self.EquipTotalAttributeGridList do
@@ -307,12 +337,8 @@ function XUiDlcRelinkEquipBag:RefreshEquipTotalAttribute()
     end
 end
 
--- 检查当前选中的槽位是否为扩展槽位且主槽位已穿戴装备
 function XUiDlcRelinkEquipBag:CheckExtendSlotAndMainSlotWearEquip()
-    local isExtendSlot = self._Control:CheckIsExpandSlotIndex(self.CurSelectSlotIndex)
-    local mainEquipUid = self._Control:GetEquipUidByCharacterId(self.CharacterId, XEnumConst.DlcRelink.EquipSlotIndex.MainSlot)
-    local isMainSlotWearEquip = XTool.IsNumberValid(mainEquipUid)
-    return isExtendSlot and isMainSlotWearEquip
+    return self.CurSelectSlotIndex >= EquipSlotIndex.NormalExpandBegin and self.CurSelectSlotIndex < EquipSlotIndex.NormalSlotBegin
 end
 
 --endregion
@@ -321,25 +347,42 @@ end
 
 function XUiDlcRelinkEquipBag:InitPanelTab()
     self.EquipBtnTabList = {}
-    local tabDescList = self._Control:GetClientConfigParams("EquipTabsDesc")
-    for _, tabDesc in ipairs(tabDescList) do
+    -- 收集并排序
+    local sortedTagTypes = {}
+    for key, value in pairs(self._Control.EquipTagType) do
+        table.insert(sortedTagTypes, { Key = key, Value = value })
+    end
+    table.sort(sortedTagTypes, function(a, b)
+        return a.Value < b.Value
+    end)
+    -- 创建Tab按钮
+    for _, tagTypeInfo in ipairs(sortedTagTypes) do
+        local index = tagTypeInfo.Value
         ---@type XUiComponent.XUiButton
         local btnTab = XUiHelper.Instantiate(self.BtnTab, self.PanelTab.transform)
         btnTab.gameObject:SetActiveEx(true)
+
+        local tabDesc = self._Control:GetClientConfig("EquipTabsDesc", index + 1)
         btnTab:SetNameByGroup(0, tabDesc)
-        table.insert(self.EquipBtnTabList, btnTab)
+
+        local tabIcon = self._Control:GetClientConfig("EquipTabsIcon", index + 1)
+        btnTab:SetSprite(tabIcon)
+
+        self.EquipBtnTabList[index] = btnTab
     end
     self.PanelTab:Init(self.EquipBtnTabList, handler(self, self.OnEquipBtnTabClick))
 end
 
 function XUiDlcRelinkEquipBag:OnEquipBtnTabClick(index)
-    if self.CurSelectEquipOccupationIndex == index then
+    if self.CurSelectTabIndex == index then
         return
     end
-    self.CurSelectEquipOccupationIndex = index
+    self.CurSelectTabIndex = index
     -- 重置装备筛选缓存
     self.EquipFilterCache = {}
     self:SetupDynamicTable()
+    self:RefreshEquipFilter()
+    self:RefreshEquipTabRedPoint()
 end
 
 function XUiDlcRelinkEquipBag:InitDynamicTable()
@@ -351,21 +394,21 @@ end
 
 function XUiDlcRelinkEquipBag:SetupDynamicTable()
     -- 装备类型(默认筛选条件)
-    self.EquipFilterCache.EquipType = self.CurSelectSlotIndex == XEnumConst.DlcRelink.EquipSlotIndex.MainSlot and XEnumConst.DlcRelink.EquipType.Main or XEnumConst.DlcRelink.EquipType.Normal
-    self.EquipUidList = self._Control:GetEquipUidListByOccupationType(self.CurSelectEquipOccupationIndex, { Context = "Equip", CharacterId = self.CharacterId, Filter = self.EquipFilterCache })
+    self.EquipFilterCache.EquipType = self.CurSelectSlotIndex == EquipSlotIndex.MainSlot and XEnumConst.DlcRelink.EquipType.Main or XEnumConst.DlcRelink.EquipType.Normal
+    self.EquipUidList = self._Control:GetEquipUidListByTagType(self.CurSelectTabIndex, self._Control.EquipUiType.Bg, self.EquipFilterCache, self.CharacterId)
     local isEmpty = XTool.IsTableEmpty(self.EquipUidList)
     self.None.gameObject:SetActiveEx(isEmpty)
     if isEmpty then
         self.DynamicTable:Clear()
-        self.CurSelectEquipUid = 0
+        self.CurSelectEquipUid = self.CurSelectSlotEquipUid
         self.CurSelectGrid = nil
         self:RefreshEquipDetail()
         return
     end
 
-    local index = self:GetDefaultSelectEquipUidIndex()
-    self.CurSelectEquipUid = self.EquipUidList[index]
+    self.CurSelectEquipUid = self.CurSelectSlotEquipUid
     self.CurSelectGrid = nil
+    local index = self:GetDefaultSelectEquipUidIndex()
 
     self.DynamicTable:SetDataSource(self.EquipUidList)
     self.DynamicTable:ReloadDataSync(index)
@@ -375,6 +418,14 @@ function XUiDlcRelinkEquipBag:GetDefaultSelectEquipUidIndex()
     if XTool.IsNumberValid(self.CurSelectSlotEquipUid) then
         for i, uid in ipairs(self.EquipUidList) do
             if uid == self.CurSelectSlotEquipUid then
+                return i
+            end
+        end
+    else
+        for i, uid in ipairs(self.EquipUidList) do
+            local wearCharacterId = self._Control:GetEquipWearCharacterId(uid)
+            if not XTool.IsNumberValid(wearCharacterId) then
+                self.CurSelectEquipUid = uid
                 return i
             end
         end
@@ -388,14 +439,16 @@ function XUiDlcRelinkEquipBag:OnDynamicTableEvent(event, index, grid)
         local equipUid = self.EquipUidList[index]
         grid:Refresh(equipUid)
         grid:SetHead(self._Control:GetEquipWearCharacterId(equipUid))
+        grid:SetPreset(self._Control:CheckEquipIsPresetByEquipUid(equipUid))
         local isSelected = equipUid == self.CurSelectEquipUid
         grid:SetSelect(isSelected)
         if isSelected and not self.CurSelectGrid then
             self.CurSelectGrid = grid
-            self:RefreshEquipDetail()
             self:RecordEquipViewed()
         end
         grid:SetRedDot(not self._Control:CheckEquipViewed(equipUid))
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        self:RefreshEquipDetail()
     end
 end
 
@@ -423,6 +476,35 @@ function XUiDlcRelinkEquipBag:RecordEquipViewed()
     self._Control:RecordEquipViewed(self.CurSelectEquipUid)
     if self.CurSelectGrid then
         self.CurSelectGrid:SetRedDot(false)
+    end
+    self:RefreshEquipTabRedPoint()
+end
+
+function XUiDlcRelinkEquipBag:RefreshEquipTabRedPoint()
+    local equipDataList = self._Control:GetEquipsDataList()
+    local equipType = self.EquipFilterCache.EquipType
+    local tabRedDict = {}
+
+    if not XTool.IsTableEmpty(equipDataList) then
+        for _, equipData in pairs(equipDataList) do
+            local templateId = equipData:GetTemplateId()
+            if equipType == self._Control:GetEquipType(templateId) then
+                local occupationType = self._Control:GetEquipOccupationType(templateId)
+                if not tabRedDict[occupationType] then
+                    local equipUid = equipData:GetUid()
+                    if not self._Control:CheckEquipViewed(equipUid) then
+                        tabRedDict[occupationType] = true
+                        -- 全部Tab红点
+                        tabRedDict[self._Control.EquipTagType.All] = true
+                    end
+                end
+            end
+        end
+    end
+
+    for i = 0, #self.EquipBtnTabList do
+        local isRed = tabRedDict[i] or false
+        self.EquipBtnTabList[i]:ShowReddot(isRed)
     end
 end
 
@@ -503,7 +585,8 @@ end
 
 function XUiDlcRelinkEquipBag:RefreshFilterBtn()
     local isFilter = self:CheckFilterCache()
-    self.BtnFilter:SetNameByGroup(0, self._Control:GetClientConfig("EquipFilterBtnDesc", isFilter and 2 or 1))
+    local color = self._Control:GetClientConfig("EquipFilterBtnColor", isFilter and 2 or 1)
+    self.BtnFilter:SetImgRGB(XUiHelper.Hexcolor2Color(color))
 end
 
 -- 检查当前筛选条件是否有生效
@@ -512,9 +595,7 @@ function XUiDlcRelinkEquipBag:CheckFilterCache()
         return false
     end
 
-    if XTool.IsNumberValid(self.EquipFilterCache.ReformedType)
-        or XTool.IsNumberValid(self.EquipFilterCache.FactorRemovedType)
-        or not XTool.IsTableEmpty(self.EquipFilterCache.FactorIds) then
+    if XTool.IsNumberValid(self.EquipFilterCache.ReformedType) or not XTool.IsTableEmpty(self.EquipFilterCache.FactorIds) then
         return true
     end
 
@@ -523,18 +604,32 @@ end
 
 --endregion
 
+--region 筛选相关
+
+function XUiDlcRelinkEquipBag:RefreshEquipFilter()
+    ---@type XUiDlcRelinkPopupFilter
+    local luaUi = XLuaUiManager.GetTopLuaUi("UiDlcRelinkPopupFilter")
+    if luaUi then
+        local equipMainFactorIds = self._Control:GetEquipMainFactorIds(self.EquipUidList)
+        luaUi:RefreshFilter(equipMainFactorIds, self.EquipFilterCache)
+    end
+end
+
+--endregion
+
 function XUiDlcRelinkEquipBag:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnAttribute, self.OnBtnAttributeClick)
-    self:RegisterClickEvent(self.BtnReform, self.OnBtnReformClick)
-    self:RegisterClickEvent(self.BtnReplace, self.OnBtnReplaceClick)
-    self:RegisterClickEvent(self.BtnRemove, self.OnBtnRemoveClick)
-    self:RegisterClickEvent(self.BtnFilter, self.OnBtnFilterClick)
-    self:RegisterClickEvent(self.BtnBreakdown, self.OnBtnBreakdownClick)
-    self:RegisterClickEvent(self.BtnSynthesis, self.OnBtnSynthesisClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnAttribute:AddEventListener(handler(self, self.OnBtnAttributeClick))
+    self.BtnReform:AddEventListener(handler(self, self.OnBtnReformClick))
+    self.BtnReplace:AddEventListener(handler(self, self.OnBtnReplaceClick))
+    self.BtnRemove:AddEventListener(handler(self, self.OnBtnRemoveClick))
+    self.BtnFilter:AddEventListener(handler(self, self.OnBtnFilterClick))
+    self.BtnBreakdown:AddEventListener(handler(self, self.OnBtnBreakdownClick))
+    self.BtnSynthesis:AddEventListener(handler(self, self.OnBtnSynthesisClick))
 end
 
 function XUiDlcRelinkEquipBag:OnBtnBackClick()
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupFilter")
     self:Close()
 end
 
@@ -573,11 +668,9 @@ function XUiDlcRelinkEquipBag:OnBtnReplaceClick()
     local onWearEquip = function()
         self.CurSelectSlotEquipUid = self.CurSelectEquipUid
         self:RefreshPanelEquipment()
-        self:RefreshEquipTotalAttribute()
-        if self.CurSelectGrid then
-            self.CurSelectGrid:SetHead(self.CharacterId)
-        end
-        self:RefreshBtn()
+        self:SetupDynamicTable()
+        -- 检查引导
+        XDataCenter.GuideManager.CheckGuideOpen()
     end
 
     local operateType, wearCharacterId = self:GetOperateType()
@@ -614,23 +707,23 @@ function XUiDlcRelinkEquipBag:OnBtnRemoveClick()
     self._Control:RequestUnWearEquip(self.CharacterId, self.CurSelectSlotIndex, function()
         self.CurSelectSlotEquipUid = 0
         self:RefreshPanelEquipment()
-        self:RefreshEquipTotalAttribute()
-        if self.CurSelectGrid then
-            self.CurSelectGrid:SetHead(0)
-        end
-        self:RefreshBtn()
+        self:SetupDynamicTable()
     end)
 end
 
 -- 打开筛选弹窗
 function XUiDlcRelinkEquipBag:OnBtnFilterClick()
-    self.BtnFilter:SetSpriteVisible(true)
-    local equipUidList = self._Control:GetEquipUidListByOccupationType(self.CurSelectEquipOccupationIndex)
+    if XLuaUiManager.IsUiShow("UiDlcRelinkPopupFilter") then
+        XLuaUiManager.Close("UiDlcRelinkPopupFilter")
+        return
+    end
+
+    local filterCache = {}
+    filterCache.EquipType = self.CurSelectSlotIndex == EquipSlotIndex.MainSlot and XEnumConst.DlcRelink.EquipType.Main or XEnumConst.DlcRelink.EquipType.Normal
+    local equipUidList = self._Control:GetEquipUidListByTagType(self.CurSelectTabIndex, self._Control.EquipUiType.Bg, filterCache)
     local equipMainFactorIds = self._Control:GetEquipMainFactorIds(equipUidList)
     XLuaUiManager.Open("UiDlcRelinkPopupFilter", equipMainFactorIds, self.EquipFilterCache, true, function()
         self:SetupDynamicTable()
-    end, function()
-        self.BtnFilter:SetSpriteVisible(false)
     end)
 end
 

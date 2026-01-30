@@ -13,6 +13,9 @@ local TableKey =
     MainLine2EggsTreasure = { },
 }
 
+local tableInsert = table.insert
+local tableRemove = table.remove
+
 ---@class XMainLine2Model : XModel
 local XMainLine2Model = XClass(XModel, "XMainLine2Model")
 function XMainLine2Model:OnInit()
@@ -250,6 +253,12 @@ end
 function XMainLine2Model:GetMainSettlementBg(mainId)
     local config = self:GetConfigMain(mainId)
     return config and config.SettlementBg or ""
+end
+
+-- 获取主章节任务组Id
+function XMainLine2Model:GetMainTaskGroupId(mainId)
+    local config = self:GetConfigMain(mainId)
+    return config and config.TaskGroupId or 0
 end
 
 -- 章节是否存在
@@ -1009,7 +1018,7 @@ function XMainLine2Model:IsStageUnlock(stageId)
         return isUnlock, desc
     end
 
-    return true
+    return true, ""
 end
 
 --- 关卡是否显示
@@ -1035,6 +1044,24 @@ function XMainLine2Model:IsStagePass(stageId)
 
     local isPass = XMVCA:GetAgency(ModuleId.XFuben):CheckStageIsPass(stageId)
     return isPass
+end
+
+--- 获取关卡的通关进度
+---@param stageId number 关卡Id
+function XMainLine2Model:GetStageProgress(stageId)
+    local conditions = self:GetStageProgressConditions(stageId)
+    if #conditions > 0 then
+        local reachCnt = 0
+        for _, condition in ipairs(conditions) do
+            local isReach, desc = XConditionManager.CheckCondition(condition)
+            if isReach then
+                reachCnt = reachCnt + 1
+            end
+        end
+        return reachCnt, #conditions
+    end
+
+    return 0, 0
 end
 
 --- 获取关卡成就完成情况
@@ -1176,18 +1203,61 @@ end
 -- 缓存主章节释放的数据
 function XMainLine2Model:CacheMainReleaseData(mainId, data)
     self.CacheMainReleaseDataDic = self.CacheMainReleaseDataDic or {}
-    self.CacheMainReleaseDataDic[mainId] = data
+    local mainData = self.CacheMainReleaseDataDic[mainId]
+    if not mainData then
+        mainData = {}
+        self.CacheMainReleaseDataDic[mainId] = mainData
+    end
+    
+    local OFFSET_TIME = 2 -- 超过2秒，视为新一轮的CsXUiManager.Instance:ReleaseAll(CsXUiType.Normal)
+
+    -- 第一次存数据/数据已转存至HistoryQueue
+    if not mainData.Queue then
+        mainData.Queue = {}
+        mainData.LastQueueTime = XTime.GetServerNowTimestamp()
+        
+    -- 新一轮的CsXUiManager.Instance:ReleaseAll(CsXUiType.Normal)
+    elseif XTime.GetServerNowTimestamp() - mainData.LastQueueTime > OFFSET_TIME then
+        self:InsertQueueToHistoryQueue(mainData)
+        mainData.Queue = {}
+        mainData.LastQueueTime = XTime.GetServerNowTimestamp()
+    end
+    tableInsert(mainData.Queue, data)
 end
 
 -- 获取主章节上次释放时的数据
 function XMainLine2Model:GetMainReleaseData(mainId, isRemove)
-    if self.CacheMainReleaseDataDic then
-        local data = self.CacheMainReleaseDataDic[mainId]
-        if isRemove then
-            self.CacheMainReleaseDataDic[mainId] = nil
-        end
-        return data
+    if not self.CacheMainReleaseDataDic then return end
+    
+    local mainData = self.CacheMainReleaseDataDic[mainId]
+    if not mainData then return end
+    
+    -- 战斗结束第一次弹出界面时，将Queue数据存入HistoryQueue
+    self:InsertQueueToHistoryQueue(mainData)
+    
+    -- 无数据
+    if not mainData.HistoryQueue or #mainData.HistoryQueue == 0 then return end
+    
+    -- 返回第一个数据
+    if isRemove then
+        return tableRemove(mainData.HistoryQueue, 1)
+    else
+        return mainData.HistoryQueue[1]
     end
+end
+
+-- 将Queue数据插入HistoryQueue
+function XMainLine2Model:InsertQueueToHistoryQueue(mainData)
+    if not mainData.Queue then return end
+    
+    local queue = mainData.Queue
+    if mainData.HistoryQueue then
+        for _, d in ipairs(mainData.HistoryQueue) do
+            tableInsert(queue, d)
+        end
+    end
+    mainData.HistoryQueue = queue
+    mainData.Queue = nil
 end
 
 -- 获取章节上一次的解锁入口下标

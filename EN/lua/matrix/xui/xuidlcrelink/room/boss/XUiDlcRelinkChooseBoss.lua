@@ -27,6 +27,9 @@ function XUiDlcRelinkChooseBoss:OnStart()
     self.LevelId = self._Control:GetCurrentSelectLevelId()
 
     self.WheelSensitivity = self.PanelDrag.WheelSensitivity
+
+    self.BtnTraining.gameObject:SetActiveEx(XTool.IsNumberValid(self._Control:GetTrainingLevelId()))
+    self.BtnTeaching.gameObject:SetActiveEx(XTool.IsNumberValid(self._Control:GetTeachingLevelId()))
 end
 
 function XUiDlcRelinkChooseBoss:OnEnable()
@@ -44,6 +47,7 @@ function XUiDlcRelinkChooseBoss:InitChapterGrid()
     self.BossGridList = {}
     local chapterIds = self._Control:GetActivityChapterIds()
     if XTool.IsTableEmpty(chapterIds) then
+        XLog.Error("XUiDlcRelinkChooseBoss:InitChapterGrid error: chapterIds is empty")
         return
     end
 
@@ -163,11 +167,50 @@ function XUiDlcRelinkChooseBoss:OnPanelDetailClose()
 end
 
 function XUiDlcRelinkChooseBoss:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnTeaching:AddEventListener(handler(self, self.OnBtnTeachingClick))
+    self.BtnTraining:AddEventListener(handler(self, self.OnBtnTrainingClick))
+    self.BtnBubbleClose:AddEventListener(handler(self, self.OnPanelDetailClose))
 end
 
 function XUiDlcRelinkChooseBoss:OnBtnBackClick()
     self:Close()
+end
+
+function XUiDlcRelinkChooseBoss:SelectSpecialLevel(levelId)
+    if XMVCA.XDlcRoom:IsMatching() then
+        self._Control:OpenCommonTipCode(XCode.MatchPlayerIsMatching)
+        return
+    end
+
+    local isNeedQuit = false
+    if XMVCA.XDlcRoom:IsInRoom() then
+        --房间内有其他玩家时，无法选择训练关\教学关
+        local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
+        if team and team:GetMemberAmount() > 1 then
+            self._Control:OpenCommonTipText("SelectTrainingTip")
+            return
+        end
+        --房间为空时，自动退出房间回到单人
+        isNeedQuit = true
+    end
+
+    local chapterId = self._Control:GetLevelChapterId(levelId)
+    self._Control:SetCurrentSelectLevelData(chapterId, levelId)
+
+    if isNeedQuit then
+        XMVCA.XDlcRoom:Quit(handler(self, self.Close))
+    else
+        self:Close()
+    end
+end
+
+function XUiDlcRelinkChooseBoss:OnBtnTeachingClick()
+    self:SelectSpecialLevel(self._Control:GetTeachingLevelId())
+end
+
+function XUiDlcRelinkChooseBoss:OnBtnTrainingClick()
+    self:SelectSpecialLevel(self._Control:GetTrainingLevelId())
 end
 
 return XUiDlcRelinkChooseBoss

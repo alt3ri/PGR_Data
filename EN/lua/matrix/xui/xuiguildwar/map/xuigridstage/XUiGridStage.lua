@@ -33,11 +33,15 @@ function XUiGridStage:Ctor(ui, base)
     self:DoSelect(false)
     
     self.ComDragonRage = require('XUi/XUiGuildWar/Map/XUiGridStageCom/XUiGridComDragonRage').New(self)
+
+    if not self.ImgStayBg then
+        self.ImgStayBg = self.Transform:Find('ImgStayBg')
+    end
 end
 
 function XUiGridStage:SetButtonCallBack()
     self.BtnStage.CallBack = function()
-        if not self.StageNode then
+        if not XTool.IsNumberValidEx(self.StageNodeId) then
             XLog.Error("[XUiGridStageTerm4] stageNode is empty, i dont know how it occur")
             XDataCenter.GuildWarManager.GetActivityData()
             return
@@ -48,7 +52,11 @@ end
 
 ---@param nodeEntity XGWNode
 function XUiGridStage:UpdateGrid(nodeEntity, IsPathEdit, IsActionPlaying, isPathEditOver)
-    self.StageNode = nodeEntity
+    -- 存在偶现的表现层与数据层不一致导致的显示错误、进战斗失败
+    -- 4.2：先让Ui节点解除对数据实体的引用
+    self.StageNodeId = nodeEntity:GetId()
+    self.StageNodeUid = nodeEntity:GetUID()
+
     self.IsPathEdit = IsPathEdit
     self.IsActionPlaying = IsActionPlaying
     if nodeEntity then
@@ -125,23 +133,43 @@ function XUiGridStage:UpdateGrid(nodeEntity, IsPathEdit, IsActionPlaying, isPath
 
         self:ShowStageName(self.IsSelect or nodeEntity:GetIsPlayerNode())
         
-        self:DoPathMark(self.StageNode:GetIsPlanNode())
+        self:DoPathMark(nodeEntity:GetIsPlanNode())
+        
+        -- 判断是否驻扎
+        self:RefreshStationedShow()
     end
 end
 
 --- 龙怒系统存在隐藏节点（不显示但其他移动等逻辑依然有效）
 function XUiGridStage:SetNodeEntityOnly(nodeEntity)
-    self.StageNode = nodeEntity
+    -- 存在偶现的表现层与数据层不一致导致的显示错误、进战斗失败
+    -- 4.2：先让Ui节点解除对数据实体的引用
+    self.StageNodeId = nodeEntity:GetId()
+    self.StageNodeUid = nodeEntity:GetUID()
+end
+
+function XUiGridStage:RefreshStationedShow()
+    local isHasStationed =  XMVCA.XGuildWar.RoleStationAgency:CheckNodeIsAnyCharacterStationed(self.StageNodeId)
+
+    if self.ImgStayBg then
+        self.ImgStayBg.gameObject:SetActiveEx(isHasStationed)
+    end
 end
 
 --获取节点关卡索引名
 function XUiGridStage:GetStageIndexName()
-    return self.StageNode and self.StageNode:GetStageIndexName()
+    local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId, true)
+
+    if nodeEntity then
+        return nodeEntity:GetStageIndexName()
+    end
+    
+    return ''
 end
 
 --获取节点ID
 function XUiGridStage:GetNodeId()
-    self.StageNode:GetId()
+    return self.StageNodeId
 end
 
 --获取是否计划路线中的节点
@@ -163,7 +191,14 @@ function XUiGridStage:DoSelect(IsSelect, IsShowSelectTag)
     if IsSelect then
         self:ShowStageName(true)
     else
-        self:ShowStageName(self.StageNode and self.StageNode:GetIsPlayerNode())
+        local isPlayerNode = false
+        local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId, true)
+        
+        if nodeEntity then
+            isPlayerNode = nodeEntity:GetIsPlayerNode()
+        end
+        
+        self:ShowStageName(isPlayerNode)
     end
 end
 
@@ -190,14 +225,20 @@ end
 
 --isAuto 是否自动跳转
 function XUiGridStage:OnBtnStageClick(selectedNodeId, isAuto)
-    if self.IsPathEdit then
-        if self.StageNode:GetIsBaseNode() then
-            XUiManager.TipText("GuildWarBaseMarkHint")
-            return
+    local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId, true)
+
+    if nodeEntity then
+        if self.IsPathEdit then
+            if nodeEntity:GetIsBaseNode() then
+                XUiManager.TipText("GuildWarBaseMarkHint")
+                return
+            end
+            self.Base:AddPath(self.StageNodeId, self)
+        else
+            XLuaUiManager.Open("UiGuildWarStageDetail", nodeEntity, false)
         end
-        self.Base:AddPath(self.StageNode:GetId(), self)
     else
-        XLuaUiManager.Open("UiGuildWarStageDetail", self.StageNode, false)
+        XLog.Error('找不到指定节点的实体数据，nodeId：' .. tostring(self.StageNodeId))
     end
 end
 

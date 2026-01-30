@@ -36,6 +36,7 @@ function XTheatre5Agency:InitRpc()
     XRpc.NotifyTheatre5AddItem = handler(self, self.OnNotifyTheatre5AddItem)
     XRpc.NotifyTheatre5BagDataUpdate = handler(self, self.OnNotifyTheatre5BagDataUpdate)
     XRpc.NotifyTheatre5Effect = handler(self, self.OnNotifyTheatre5Effect)
+    XRpc.NotifyTheatre5Mission = handler(self, self.OnNotifyTheatre5Mission)
 end
 
 function XTheatre5Agency:InitEvent()
@@ -46,6 +47,10 @@ function XTheatre5Agency:RemoveEvent()
 
 end
 
+function XTheatre5Agency:ResetAll()
+    self:ClearDataInGame()
+end
+
 function XTheatre5Agency:OnRelease()
     self.PVPCom:Release()
     self.PVPCom = nil
@@ -53,6 +58,15 @@ function XTheatre5Agency:OnRelease()
     self.PVEAgency = nil
     self.BattleCom:Release()
     self.BattleCom = nil
+    
+    self:ClearDataInGame()
+
+    XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.AutoChess, self)
+
+end
+
+function XTheatre5Agency:ClearDataInGame()
+    -- 清空定时器相关
     if self._TimerCheckInterrupt then
         XScheduleManager.UnSchedule(self._TimerCheckInterrupt)
         self._TimerCheckInterrupt = nil
@@ -62,8 +76,9 @@ function XTheatre5Agency:OnRelease()
         self._TimerCheckLevelUpdate = nil
     end
 
-    XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.AutoChess, self)
-
+    self._LockMissionFinishPop = nil
+    self._LockMissionReward = nil
+    self._LockMissionChoose = nil
 end
 
 --region overrride
@@ -124,7 +139,7 @@ end
 
 --- 通用跳转接口（SkipId）
 ---@param skipDatas XTable.XTableSkipFunctional
-function XTheatre5Agency:ExOnSkip(skipDatas)
+function XTheatre5Agency:ExOnSkip()
     if self:ExOpenMainUi() then
         return true
     end
@@ -185,8 +200,9 @@ function XTheatre5Agency:RequestTheatre5SkillChoice(instanceId, isEquipped, targ
         end
 
         local newStatus = XTool.IsNumberValid(res.Status) and res.Status or XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping
-
-        self._Model.CurAdventureData:UpdateCurPlayStatus(newStatus)
+        
+        self._Model.CurAdventureData:UpdateChooseMissions(res.ChooseMissions)
+        self._Model.CurAdventureData:UpdateCurPlayStatus(newStatus, true)
         -- 清空技能三选一数据
         self._Model.CurAdventureData:UpdateFullSkillChoiceData(nil)
 
@@ -229,7 +245,11 @@ function XTheatre5Agency:RequestTheatre5EnterShop(cb)
         end
         self._Model.CurAdventureData:UpdateEnterShopCnt(res.EnterShopCnt)
         self._Model.CurAdventureData:UpdateCurPlayStatus(res.Status)
+        self._Model.CurAdventureData:UpdateChooseMissions(res.ChooseMissions)
 
+        -- 每回合进商店清空升级次数
+        self._Model.CurAdventureData:UpdateMissionLevelUpForRound(0)
+        
         if cb then
             cb(true)
         end
@@ -414,6 +434,9 @@ function XTheatre5Agency:OnNotifyTheatre5ActivityData(data)
     self._Model.PVPAdventureData:UpdatePVPAdventureData(theatre5DataDb.PvpAdventureData)
     self._Model.PVPCharacterData:UpdatePVPCharacters(theatre5DataDb.Characters)
     self._Model.PVEAdventureData:UpdatePVEAdventureData(theatre5DataDb.PveAdventureData)
+    
+    self._Model.PVPAdventureData:UpdateChooseMissionBounty(theatre5DataDb.PvpChooseMissionBounty)
+    self._Model.PVEAdventureData:UpdateChooseMissionBounty(theatre5DataDb.PveChooseMissionBounty)
 
     --rouge
     self._Model.PVERougeData:UpdatePveCharacters(theatre5DataDb.PveCharacters)
@@ -426,6 +449,8 @@ function XTheatre5Agency:OnNotifyTheatre5ActivityData(data)
 
     self._Model:SetCharacterWinGameCountData(theatre5DataDb.CommonFightCnt)
     self._Model:UpdateRelicCollects(theatre5DataDb.RelicCollects)
+    
+    self.PVEAgency:AfterActivityDataNotify()
 end
 
 function XTheatre5Agency:OnNotifyTheatre5UnlockCharacter(data)
@@ -464,6 +489,15 @@ function XTheatre5Agency:OnNotifyTheatre5BagDataUpdate(data)
     self._Model.CurAdventureData:UpdateFullBagData(data.BagData)
 end
 
+function XTheatre5Agency:OnNotifyTheatre5Mission(data)
+    self._Model.CurAdventureData:UpdateCurMissioning(data.Mission)
+    self:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_CUR_MISSION)
+
+    -- 只在商店阶段，可以自由触发
+    if self._Model.CurAdventureData:GetCurPlayStatus() == self.EnumConst.PlayStatus.Shopping then
+        self:TriggerInterruptEvent()
+    end
+end
 --endregion
 
 --region Network - Characters
@@ -493,6 +527,123 @@ function XTheatre5Agency:RequestTheatre5CharacterSkinSet(characterId, fashionId,
     end)
 end
 
+--endregion
+
+--region Network - Mission
+
+--- 任务选择刷新任务
+function XTheatre5Agency:RequestTheatre5MissionFresh(positionId, cb)
+    XNetwork.Call("Theatre5MissionFreshRequest", { PositionId = positionId }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        self._Model.CurAdventureData:UpdateFreshMissionCnt(res.FreshMissionCnt, positionId)
+        self._Model.CurAdventureData:UpdateMissionInChoose(positionId, res.FreshMission)
+
+        if cb then
+            cb()
+        end
+    end)
+end
+
+--- 选择任务
+function XTheatre5Agency:RequestTheatre5MissionChoose(positionId, cb)
+    if self._LockMissionChoose then
+        return
+    end
+
+    self._LockMissionChoose = true
+    
+    XNetwork.Call("Theatre5MissionChooseRequest", { PositionId = positionId }, function(res)
+        self._LockMissionChoose = false
+        
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        self._Model.CurAdventureData:ClearChooseMissionsAfterEndChoose()
+        self._Model.CurAdventureData:UpdateCurMissioning(res.ChooseMission)
+        -- 更新已解锁任务客户端缓存
+        if res.ChooseMission then
+            local bounty = res.ChooseMission.MissionBounty.Bounty
+            self._Model.CurAdventureData:AddChooseMissionBounty(bounty)
+        end
+        
+        self:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_CUR_MISSION)
+        if cb then
+            cb()
+        end
+    end)
+end
+
+--- 升级任务
+function XTheatre5Agency:RequestTheatre5MissionLevelUp(curLevel, cb)
+    XNetwork.Call("Theatre5MissionLevelUpRequest", { CurLevel = curLevel }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        -- 刷新数据
+        self._Model.CurAdventureData:UpdateCurMissionLevel(res.CurLevel)
+
+        if XTool.IsNumberValidEx(res.CostGoldNum) then
+            local newGoldNum = math.max(0, self._Model.CurAdventureData:GetGoldNum() - res.CostGoldNum)
+            self._Model.CurAdventureData:UpdateGoldNum(newGoldNum)
+        end
+        
+        -- 当前回合刷新次数+1
+        self._Model.CurAdventureData:UpdateMissionLevelUpForRound(self._Model.CurAdventureData:GetMissionLevelUpForRound() + 1)
+        
+        if cb then
+            cb()
+        end
+    end)
+end
+
+-- 请求领取任务奖励
+function XTheatre5Agency:RequestTheatre5MissionReward(chooseItemId, cb)
+    -- 锁定
+    if self._LockMissionReward then
+        return
+    end
+    
+    -- 判断任务状态
+    local mission = self._Model.CurAdventureData:GetCurMission()
+
+    if not mission or mission.MissionState ~= XMVCA.XTheatre5.EnumConst.Theatre5MissionState.HasFinish then
+        return
+    end
+
+    self._LockMissionReward = true
+
+    XNetwork.Call("Theatre5MissionRewardRequest", { ChooseItemId = chooseItemId }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            if cb then
+                cb(false)
+            end
+
+            self._LockMissionReward = nil
+            return
+        end
+
+        self._Model.CurAdventureData:UpdateCurMissionState(res.MissionState)
+        self._Model.CurAdventureData:UpdateCurMissionGetItemId(chooseItemId)
+        
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_UPDATE_BAG)
+        self:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_CUR_MISSION)
+        
+        if cb then
+            cb(true)
+        end
+
+        self._LockMissionReward = nil
+    end)
+end
 --endregion
 
 --region Config - Battle
@@ -996,6 +1147,51 @@ function XTheatre5Agency:HasRelicToSelect()
     return false
 end
 
+-- 任务未选择
+function XTheatre5Agency:HasMissionToSelect()
+    if self._Model.CurAdventureData then
+        return self._Model.CurAdventureData:HasChooseMissions()
+    end
+end
+
+--- 任务可结算
+function XTheatre5Agency:CheckMissionCanGetReward()
+    -- 任务只能在商店状态下才能结算
+    if self._Model.CurAdventureData:GetCurPlayStatus() ~= XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping then
+        return
+    end
+    
+    local mission = self._Model.CurAdventureData:GetCurMission()
+
+    if mission and mission.MissionState == XMVCA.XTheatre5.EnumConst.Theatre5MissionState.HasFinish then
+        if self._LockMissionFinishPop then
+            return
+        end
+        -- 锁住防止弹多次
+        self._LockMissionFinishPop = true
+        -- 打开选择界面
+        if self._Model:CheckMissionHasMultyRewards(mission.MissionBounty.Bounty, mission.MissionBounty.BountyLevel) then
+            XLuaUiManager.OpenWithCloseCallback('UiTheatre5PopupTaskSettlement', function()
+                XLuaUiManager.OpenWithCloseCallback('UiTheatre5PopupChooseTaskReward', function()
+                    self._LockMissionFinishPop = nil
+                end, mission)
+            end)
+        else
+            local bountyId = self._Model:GetMissionBountyComboId(mission.MissionBounty.Bounty, mission.MissionBounty.BountyLevel)
+            local bountyCfg = self._Model:GetTheatre5MissionBountyCfgById(bountyId)
+
+            if bountyCfg then
+                XLuaUiManager.OpenWithCloseCallback('UiTheatre5PopupTaskSettlement', function()
+                    self:RequestTheatre5MissionReward(bountyCfg.BountyItem[1], function(success)
+                        self._LockMissionFinishPop = nil
+                    end)
+                end)
+                
+            end
+        end
+    end
+end
+
 function XTheatre5Agency:OnNotifyTheatre5Effect(data)
     self._Model.CurAdventureData:UpdateEffectQueue(data.EffectQueue)
     self:HandleEvents()
@@ -1107,6 +1303,16 @@ function XTheatre5Agency:_HandleEvent(event)
         self._Model.CurAdventureData:UpdateHealth(data.NewHp)
         return
     end
+    -- 在指定{randomGroup}去重抽取{x}次以替换当前商店货物
+    if event.Type == self.EnumConst.Theatre5EffectType.ReplaceShopGoods then
+        local data = event.ReplaceShopGoodsResult
+
+        if data then
+            local replaceGoods = data.ReplaceShopGoods
+            self._Model.CurAdventureData:UpdateShopGoodsByReplaced(replaceGoods)
+        end
+        return
+    end
     XLog.Error("[XTheatre5Agency] 未处理的事件：" .. tostring(event.Type))
 end
 
@@ -1135,6 +1341,19 @@ function XTheatre5Agency:TriggerInterruptEvent(callback)
                 XLuaUiManager.Open("UiTheatre5PVEPopupChooseReward", XMVCA.XTheatre5.EnumConst.ChooseRewardType.Relic, callback)
             end
             return
+        end
+        
+        -- 任务相关需要进了商店再弹出
+        if XLuaUiManager.IsStackUiOpen('UiTheatre5BattleShop') then
+            -- 任务选择
+            if self:HasMissionToSelect() then
+                if not XLuaUiManager.IsStackUiOpen('UiTheatre5ChooseTask') then
+                    XLuaUiManager.OpenWithCloseCallback('UiTheatre5ChooseTask', callback)
+                end
+            end
+
+            -- 任务结算
+            self:CheckMissionCanGetReward()
         end
 
         -- 自动升级

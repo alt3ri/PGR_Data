@@ -29,12 +29,12 @@ local PlayTypeList = {
 }
 --节点类型对应的节点代码 没写的默认是XUiGridStage
 local NodeType2StageGrid = {
-    [XGuildWarConfig.NodeType.PandaRoot] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStagePanda"),
-    [XGuildWarConfig.NodeType.TwinsRoot] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStageTwins"),
-    [XGuildWarConfig.NodeType.Term3SecretRoot] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStageSecret"),
+    --[XGuildWarConfig.NodeType.PandaRoot] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStagePanda"),
+    --[XGuildWarConfig.NodeType.TwinsRoot] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStageTwins"),
+    --[XGuildWarConfig.NodeType.Term3SecretRoot] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStageSecret"),
     [XGuildWarConfig.NodeType.Blockade] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStageBlock"),
     [XGuildWarConfig.NodeType.Term4BossRoot] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStageTerm4"),
-    [XGuildWarConfig.NodeType.Resource] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStageResource"),
+    --[XGuildWarConfig.NodeType.Resource] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStageResource"),
     [XGuildWarConfig.NodeType.NodeBoss7] = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStageBoss7"),
 }
 --类型节点对应的预制体路径
@@ -302,6 +302,7 @@ function XUiPanelStage:AddEventListener()
     
     XEventManager.AddEventListener(XEventId.EVENT_GUILDWAR_DEFEND_UPDATE,self.RefreshResourcesNode,self)
     --XEventManager.AddEventListener(XEventId.EVENT_GUILDWAR_ATTACKINFO_UPDATE,self.RefreshResourcesNodeState,self)
+    XEventManager.AddEventListener(XEventId.EVENT_GUILDWAR_PLAYER_STATION_CHANGE, self.RefreshStationedShow, self)
 end
 --移除监听
 function XUiPanelStage:RemoveEventListener()
@@ -345,6 +346,7 @@ function XUiPanelStage:RemoveEventListener()
 
     XEventManager.RemoveEventListener(XEventId.EVENT_GUILDWAR_DEFEND_UPDATE,self.RefreshResourcesNode,self)
     --XEventManager.RemoveEventListener(XEventId.EVENT_GUILDWAR_ATTACKINFO_UPDATE,self.RefreshResourcesNodeState,self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_GUILDWAR_PLAYER_STATION_CHANGE, self.RefreshStationedShow, self)
 
 end
 
@@ -740,7 +742,7 @@ end
 
 --开启电影模式(其实就是播放动画时 出现上下黑边 表现得像看电影一样)
 function XUiPanelStage:OpenMovieMode(cb, actionGroup)
-    local IsHistory = self.BattleManager:CheckIsHistoryAction()
+    local IsHistory = self._Control.ActionQueueControl:GetIsHistoryAction()
     self:LookAllMap(true, cb)
     self.Base.ReviewPanel:ShowPanel(IsHistory and
             XGuildWarConfig.ActionShowType.History or
@@ -1217,6 +1219,15 @@ function XUiPanelStage:ShowNewGameThough(actionGroup)
     if XLuaUiManager.IsMaskShow(XGuildWarConfig.MASK_KEY) then
         XLuaUiManager.SetMask(false, XGuildWarConfig.MASK_KEY)
     end
+    
+    -- 简单加个保底
+    for i = 1, 10 do
+        if XLuaUiManager.IsMaskShow(XGuildWarConfig.MASK_KEY) then
+            XLuaUiManager.SetMask(false, XGuildWarConfig.MASK_KEY)
+        else
+            break
+        end
+    end
 
     local callBackFinish = function()
         XLuaUiManager.SetMask(true, XGuildWarConfig.MASK_KEY)
@@ -1333,13 +1344,15 @@ function XUiPanelStage:AddPath(nodeId, grid)
         end
     else
         --增加节点操作
+        ---@type XUiGridStage
         local lastStageGrid --路线最后的节点
         if #self.PathList == 0 then
             lastStageGrid = self.GridStageDic[BASENODE_INDEX]:GetCurShowGrid() --默认第一个节点是基地
         else
             lastStageGrid = self.NodeId2GridStageDic[self.PathList[#self.PathList]] --路线最后节点
         end
-        local lastNode = lastStageGrid.StageNode
+        local lastNode = XDataCenter.GuildWarManager.GetNode(lastStageGrid.StageNodeId, true)
+
         local lastChildNodes = lastNode:GetNextNodes()
         local operationSuccess = false
         for _, childNode in ipairs(lastChildNodes) do
@@ -1536,6 +1549,18 @@ function XUiPanelStage:ClearAllTimer()
     end
 
     self.TimerMap = {}
+end
+
+function XUiPanelStage:RefreshStationedShow()
+    if self.GridStageDic then
+        for i, v in pairs(self.GridStageDic) do
+            local gridStage = v:GetCurShowGrid()
+
+            if gridStage then
+                gridStage:RefreshStationedShow()
+            end
+        end
+    end
 end
 
 return XUiPanelStage

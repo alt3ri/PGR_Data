@@ -115,7 +115,7 @@ function XUiBigWorldPhotographPopupAlbumDetail:_OnBtnSave()
             XLog.Debug("照片保存失败 Code：" .. errorCode)
             return
         end
-        XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_P_SaveSucess"))
+        XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("BigWorldPhotoSaveSuccessTip", CS.XTool.GetPhotoAlbumPath()))
     end)
 end
 

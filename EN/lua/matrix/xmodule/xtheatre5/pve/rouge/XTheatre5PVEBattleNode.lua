@@ -123,13 +123,19 @@ function XTheatre5PVEBattleNode:ChapterCompleted()
     if isOpen then
         XLuaUiManager.CloseAllUpperUi(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameMode.PVE) 
     else
-        ---@type XTableTheatre5PveStoryLineContent
-        local cfg = self._MainModel:GetStoryLineContentCfg(self._StoryLineContentId)
+        -- 需要判断是不是故事模式，复刷关没有故事线
+        if XTool.IsNumberValidEx(self._StoryLineContentId) then
+            ---@type XTableTheatre5PveStoryLineContent
+            local cfg = self._MainModel:GetStoryLineContentCfg(self._StoryLineContentId)
 
-        if cfg and cfg.IsTickOutToTitle then
-            -- 如果本来就要踢出选人界面，那就不用再打开了
-            XLuaUiManager.SafeClose('UiTheatre5Settlement')
+            if cfg and cfg.IsTickOutToTitle then
+                -- 如果本来就要踢出选人界面，那就不用再打开了
+                XLuaUiManager.SafeClose('UiTheatre5Settlement')
+            else
+                XLuaUiManager.PopThenOpen(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameMode.PVE)
+            end
         else
+            -- 非故事线中按照旧的逻辑就行
             XLuaUiManager.PopThenOpen(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameMode.PVE)
         end
     end

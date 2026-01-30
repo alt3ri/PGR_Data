@@ -52,6 +52,10 @@ function XUiGridDlcRelinkMultiPlayerChar:GetCharacterId()
         return member and member:GetCharacterId() or 0
     else
         if self.Index == XEnumConst.DlcRelink.DefaultSelfIndex then
+            local lockCharacterId = self._Control:GetCurLevelLockCharacter()
+            if XTool.IsNumberValid(lockCharacterId) then
+                return lockCharacterId
+            end
             return self._Control:GetFightCharacterId()
         else
             return 0
@@ -63,9 +67,9 @@ end
 
 --region 刷新
 
-local function SetActive(go, active)
-    if go and go.SetActiveEx then
-        go:SetActiveEx(active)
+local function SetActive(panel, active)
+    if not XTool.UObjIsNil(panel) then
+        panel.gameObject:SetActiveEx(active)
     end
 end
 
@@ -73,6 +77,7 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshState()
     local isInRoom = XMVCA.XDlcRoom:IsInRoom()
     local name = ""
     local isSelf, isCharacterId, isSelfLeader, isLeader, isReady = false, false, false, false, false
+    local isLock = self._Control:IsCurLevelLockCharacter()
 
     if isInRoom then
         local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
@@ -89,20 +94,24 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshState()
         name = isSelf and XPlayer.Name or ""
     end
 
-    SetActive(self.PanelCharacterBg.gameObject, isCharacterId or isSelf)
-    SetActive(self.BtnExchange.gameObject, isInRoom and not isSelf and isSelfLeader and isCharacterId)
-    SetActive(self.BtnKick.gameObject, isInRoom and not isSelf and isSelfLeader and isCharacterId)
-    SetActive(self.BtnChat.gameObject, isSelf and isCharacterId)
-    SetActive(self.BtnInfo.gameObject, (isInRoom or isSelf) and isCharacterId)
+    SetActive(self.PanelCharacterBg, (isInRoom or isSelf) and not isCharacterId and not isLock)
+    SetActive(self.BtnExchange, isInRoom and not isSelf and isSelfLeader and isCharacterId)
+    SetActive(self.BtnKick, isInRoom and not isSelf and isSelfLeader and isCharacterId)
+    SetActive(self.BtnInfo, (isInRoom or isSelf) and isCharacterId)
     if self.BtnInfo then
-        self.BtnInfo:SetButtonState(isSelf and CS.UiButtonState.Disable or CS.UiButtonState.Normal)
         self.BtnInfo:SetNameByGroup(0, name)
     end
-    SetActive(self.ImgLeader.gameObject, isInRoom and isLeader)
-    SetActive(self.PanelReady.gameObject, isInRoom and not isLeader and isCharacterId)
-    SetActive(self.ImgReadyOn.gameObject, isInRoom and isReady)
-    SetActive(self.ImgReadyOff.gameObject, isInRoom and not isReady)
-    SetActive(self.GridAdd.gameObject, (isInRoom or isSelf) and not isCharacterId)
+    SetActive(self.ImgLeader, isInRoom and isLeader)
+    SetActive(self.PanelReady, isInRoom and not isLeader and isCharacterId)
+    SetActive(self.ImgReadyOn, isInRoom and isReady)
+    SetActive(self.ImgReadyOff, isInRoom and not isReady)
+    SetActive(self.GridAdd, (isInRoom or isSelf) and not isCharacterId and not isLock)
+
+    if isSelf and self._IsLeader == false and isLeader then
+        self._Control:OpenCommonTipText('BecomeLeaderTips', 1)
+    end
+
+    self._IsLeader = isLeader
 end
 
 function XUiGridDlcRelinkMultiPlayerChar:RefreshCharacterModel()
@@ -123,25 +132,38 @@ end
 
 function XUiGridDlcRelinkMultiPlayerChar:RefreshInfo()
     local isInRoom = XMVCA.XDlcRoom:IsInRoom()
-    local occupationType, totalAbility = 0, 0
+    local characterId, styleType, totalAbility = 0, 0, 0
     if isInRoom then
         local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
         local member = team and team:GetMember(self.Index)
-        occupationType = member and member:GetOccupationType()
+        characterId = member and member:GetCharacterId()
+        styleType = member and member:GetStyleType()
         totalAbility = member and member:GetRelinkEquipTotalAbility()
     else
-        local characterId = self._Control:GetFightCharacterId()
-        occupationType = self._Control:GetOccupationTypeByCharacterId(characterId)
+        characterId = self._Control:GetFightCharacterId()
+        styleType = self._Control:GetStyleTypeByCharacterId(characterId)
         totalAbility = self._Control:GetEquipTotalAbilityByCharacterId(characterId)
     end
+
+    if not XTool.IsNumberValid(characterId) then
+        return
+    end
     -- 职业图标
-    local occupationIcon = self._Control:GetClientConfig("CharacterOccupationIcon", occupationType)
+    local occupationIcon = self._Control:GetCharacterOccupationIcon(characterId, styleType)
     if not string.IsNilOrEmpty(occupationIcon) then
         self.BtnInfo:SetRawImage(occupationIcon)
     end
     -- 装备战力
-    local ability = string.format(self._Control:GetClientConfig("EquipLevelDesc"), totalAbility)
-    self.BtnInfo:SetNameByGroup(1, ability)
+    self.BtnInfo:SetNameByGroup(1, totalAbility)
+    -- 等级限制
+    local levelId = self._Control:GetCurrentSelectLevelId()
+    local isEnough = true
+    if XTool.IsNumberValid(levelId) then
+        local abilityLimit = self._Control:GetLevelAbilityLimit(levelId)
+        isEnough = totalAbility >= abilityLimit
+    end
+    SetActive(self.LvNormal, isEnough)
+    SetActive(self.LvNotEnough, not isEnough)
 end
 
 function XUiGridDlcRelinkMultiPlayerChar:RefreshChat(chatData, receiveTime)
@@ -170,6 +192,7 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshChat(chatData, receiveTime)
         self.PanelChat.gameObject:SetActiveEx(true)
         self.PanelDailog.gameObject:SetActiveEx(not isEmoji)
         self.PanelEmoji.gameObject:SetActiveEx(isEmoji)
+        self.PanelChatEnable.gameObject:SetActiveEx(true)
         self.PanelChatEnable:PlayTimelineAnimation()
     else
         self.PanelChat.gameObject:SetActiveEx(false)
@@ -181,18 +204,28 @@ function XUiGridDlcRelinkMultiPlayerChar:StopChatTimer()
         XScheduleManager.UnSchedule(self.ChatTimer)
         self.ChatTimer = nil
     end
+    self.PanelChatEnable.gameObject:SetActiveEx(false)
+    self.PanelChat.gameObject:SetActiveEx(false)
 end
 
+--- 任何一种方式离开房间时执行
+function XUiGridDlcRelinkMultiPlayerChar:RefreshOnRoomLeave()
+    self._IsLeader = nil
+end
+
+--- 任何一种方式进入房间时执行
+function XUiGridDlcRelinkMultiPlayerChar:RefreshBeforeIntoRoom()
+    self._IsLeader = nil
+end
 --endregion
 
 --region UI事件注册
 
 function XUiGridDlcRelinkMultiPlayerChar:RegisterUiEvents()
-    XUiHelper.RegisterClickEvent(self, self.BtnExchange, self.OnBtnExchangeClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnKick, self.OnBtnKickClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnInfo, self.OnBtnInfoClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnAdd, self.OnBtnAddClick, true, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnChat, self.OnBtnChatClick, true, true)
+    self.BtnExchange:AddEventListener(handler(self, self.OnBtnExchangeClick))
+    self.BtnKick:AddEventListener(handler(self, self.OnBtnKickClick))
+    self.BtnInfo:AddEventListener(handler(self, self.OnBtnInfoClick))
+    self.BtnAdd:AddEventListener(handler(self, self.OnBtnAddClick))
 end
 
 function XUiGridDlcRelinkMultiPlayerChar:OnBtnExchangeClick()
@@ -249,6 +282,12 @@ function XUiGridDlcRelinkMultiPlayerChar:OnBtnKickClick()
 end
 
 function XUiGridDlcRelinkMultiPlayerChar:OnBtnInfoClick()
+    --关卡锁定了角色 不允许更换
+    if self._Control:IsCurLevelLockCharacter() then
+        self._Control:OpenCommonTipText("ForbidSelectRoleTip")
+        return
+    end
+
     local isInRoom = XMVCA.XDlcRoom:IsInRoom()
     if not isInRoom then
         if self.Index == XEnumConst.DlcRelink.DefaultSelfIndex then
@@ -268,17 +307,23 @@ function XUiGridDlcRelinkMultiPlayerChar:OnBtnInfoClick()
         return
     end
 
-    local selfMember = team:GetSelfMember()
-    if selfMember and selfMember:IsReady() then
-        self._Control:OpenCommonTipMsg(XUiHelper.GetText("DlcMultiplayerInReady"))
-        return
-    end
+    --local selfMember = team:GetSelfMember()
+    --if selfMember and selfMember:IsReady() then
+    --    self._Control:OpenCommonTipMsg(XUiHelper.GetText("DlcMultiplayerInReady"))
+    --    return
+    --end
 
     -- 查看他人角色
     self:OpenOtherRole(member)
 end
 
 function XUiGridDlcRelinkMultiPlayerChar:OnBtnAddClick()
+    --关卡锁定了角色 不允许更换
+    if self._Control:IsCurLevelLockCharacter() then
+        self._Control:OpenCommonTipText("ForbidSelectRoleTip")
+        return
+    end
+
     local isInRoom = XMVCA.XDlcRoom:IsInRoom()
     -- 不在房间: 仅自己可选角色
     if not isInRoom then
@@ -298,12 +343,14 @@ function XUiGridDlcRelinkMultiPlayerChar:OnBtnAddClick()
     local isSelf = member and member:IsSelf()
 
     -- 准备中禁止操作(除自身外)
+    --[[
     if selfMember and selfMember:IsReady() then
         if not isSelf then
             self._Control:OpenCommonTipMsg(XUiHelper.GetText("DlcMultiplayerInReady"))
             return
         end
     end
+    --]]
 
     local characterId = member and member:GetCharacterId()
     if isSelf then
@@ -319,10 +366,6 @@ function XUiGridDlcRelinkMultiPlayerChar:OnBtnAddClick()
 
     -- 查看他人角色
     self:OpenOtherRole(member)
-end
-
-function XUiGridDlcRelinkMultiPlayerChar:OnBtnChatClick()
-    XLuaUiManager.Open("UiDlcRelinkPopupExchangeWheel")
 end
 
 -- 查看他人角色

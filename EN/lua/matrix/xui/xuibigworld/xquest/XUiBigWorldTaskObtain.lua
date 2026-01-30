@@ -19,6 +19,8 @@ function XUiBigWorldTaskObtain:OnAwake()
 end
 
 function XUiBigWorldTaskObtain:OnStart(questId, isFinish)
+    local systemModuleId = XMVCA.XBigWorldQuest:GetQuestSystemUiStyleId(questId)
+    XMVCA.XBigWorldUI:ChangeTheme(XMVCA.XBigWorldUI.UiThemeModule.Quest, systemModuleId)
     self._QuestId = questId
     self._IsFinish = isFinish
     self:InitView()
@@ -40,7 +42,9 @@ function XUiBigWorldTaskObtain:InitUi()
 end
 
 function XUiBigWorldTaskObtain:InitCb()
-    self.BtnClose:AddEventListener(handler(self, self.Close))
+    if self.BtnClose then
+        self.BtnClose:AddEventListener(handler(self, self.Close))
+    end
 end
 
 function XUiBigWorldTaskObtain:InitView()
@@ -50,7 +54,12 @@ function XUiBigWorldTaskObtain:InitView()
     local isFinish = self._IsFinish
     self.TxtDetail.text = self._Control:GetQuestName(questId)
     if self.ImgIcon then
-        self.ImgIcon:SetSprite(self._Control:GetQuestIcon(questId))
+        local sprite = self._Control:GetQuestIcon(questId)
+        if string.IsNilOrEmpty(sprite) then
+            XLog.Error(string.format("任务:%s 未配置任务图标", questId))
+        else
+            self.ImgIcon:SetSprite(sprite)
+        end
     end
     self.ImgClear.gameObject:SetActiveEx(isFinish)
     self.ImgReceive.gameObject:SetActiveEx(not isFinish)
@@ -80,4 +89,6 @@ function XUiBigWorldTaskObtain:SendCmd()
         QuestId = questId,
         State = state
     })
-end
+end
+
+return XUiBigWorldTaskObtain

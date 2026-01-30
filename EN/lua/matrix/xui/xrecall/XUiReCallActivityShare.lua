@@ -48,20 +48,9 @@ end
 
 function XUiReCallActivityShare:OnDestroy()
     XDataCenter.PhotographManager.ClearTextureCache()
-    self:DestoryTexture()
     XEventManager.RemoveEventListener(XEventId.EVENT_PHOTO_SHARE_SUCCESS, self.OnShareSuccessCb)
 end
 
-function XUiReCallActivityShare:DestoryTexture()
-    if self.ShareTexture ~= nil then
-        CS.UnityEngine.Object.Destroy(self.ShareTexture)
-    end
-    if self.SaveTexture ~= nil then
-        CS.UnityEngine.Object.Destroy(self.SaveTexture)
-    end
-    self.ShareTexture = nil
-    self.SaveTexture = nil
-end
 function XUiReCallActivityShare:InitUiAfterAuto()
     self.CapturePanel = XUiPhotographCapturePanel.New(self, self.PanelCapture)
     self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK)
@@ -94,7 +83,6 @@ function XUiReCallActivityShare:Photograph()
     end
     local RecallPhotoPanelPath = CS.XGame.ClientConfig:GetString("RecallPhotoPanelPath")
 
-    local Texture2D = CS.UnityEngine.Texture2D
     local RenderTexture = CS.UnityEngine.RenderTexture
     local Graphics = CS.UnityEngine.Graphics
     local Rect = CS.UnityEngine.Rect
@@ -104,7 +92,7 @@ function XUiReCallActivityShare:Photograph()
         Graphics.Blit(source, rt)
 
         CS.UnityEngine.RenderTexture.active = rt
-        local result = Texture2D(width, height, CS.UnityEngine.TextureFormat.RGBA32, false)
+        local result = XTool.GenTexture2DReleaseManually(width, height, CS.UnityEngine.TextureFormat.RGBA32, false)
         result:ReadPixels(Rect(0, 0, width, height), 0, 0)
         result:Apply()
 
@@ -116,9 +104,9 @@ function XUiReCallActivityShare:Photograph()
 
     XCameraHelper.PhotographWithFixedRatio(self.CapturePanel.ImagePhoto, function(shot)
         -- 把合成后的图片渲染到游戏UI中的照片展示(最终要分享的图片)
-        self:DestoryTexture()
-        self.ShareTexture = shot
-        self.SaveTexture = resizeTexture(shot,XCameraHelper.SCREEN_SHOT_WIDTH,XCameraHelper.SCREEN_SHOT_HEIGHT)
+        self:AddCacheTexture(shot, 1)
+        local tex2 = resizeTexture(shot,XCameraHelper.SCREEN_SHOT_WIDTH,XCameraHelper.SCREEN_SHOT_HEIGHT)
+        self:AddCacheTexture(tex2, 2)
         self.PhotoName = "[" .. tostring(XPlayer.Id) .. "]" .. XTime.GetServerNowTimestamp()
         self:PlayAnimation("Shanguang")
         self:PlayAnimation("Photo", function()

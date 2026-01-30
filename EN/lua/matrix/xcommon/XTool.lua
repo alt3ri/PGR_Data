@@ -17,6 +17,17 @@ XTool = XTool or
             _IsAutoRefreshOnNextFrame = true
         }
 
+XTool.GenTexture2DReleaseManually = function(width, height, textureFormat, mipChain)
+    if mipChain == nil then
+        mipChain = true
+    end
+    local tex = CS.UnityEngine.Texture2D(width, height, textureFormat or CS.UnityEngine.TextureFormat.RGBA32, mipChain)
+    if XMain.IsDebug then
+        tex.name = string.gsub(debug.traceback(), "\n", " ")
+    end
+    return tex
+end
+
 XTool.UObjIsNil = function(uobj)
     return uobj == nil or not uobj:Exist()
 end
@@ -97,6 +108,7 @@ XTool.CsHashSet2LuaTable = function(hashSet)
 
     while e:MoveNext() do
         ret[index] = e.Current
+        index = index + 1
     end
     e:Dispose()
 
@@ -1267,7 +1279,7 @@ function XTool.UpdateDynamicItemLazy(gridArray, dataArray, uiObject, class, pare
     lazyLoad()
 end
 
-function XTool.UpdateDynamicGridCommon(gridArray, dataArray, uiObject, parent)
+function XTool.UpdateDynamicGridCommon(gridArray, dataArray, uiObject, parent, params)
     if #gridArray == 0 then
         uiObject.gameObject:SetActiveEx(false)
     end
@@ -1279,7 +1291,7 @@ function XTool.UpdateDynamicGridCommon(gridArray, dataArray, uiObject, parent)
             gridArray[i] = grid
         end
         grid.GameObject:SetActiveEx(true)
-        grid:Refresh(dataArray[i])
+        grid:Refresh(dataArray[i], params)
     end
     for i = #dataArray + 1, #gridArray do
         local grid = gridArray[i]
@@ -1496,69 +1508,69 @@ end
 --region transform设置相关
 XTool.SetPosition = function(go, x, y, z)
     if not XTool.UObjIsNil(go) then
-        CS.XUnityEx.SetPosition(go.transform, x, y, z)
+        go.transform:SetPosition(x, y, z)
     end    
 end
 
 XTool.GetPosition = function(go)
     if not XTool.UObjIsNil(go) then
-        return CS.XUnityEx.GetPosition(go.transform, 0, 0, 0)
+        return go.transform:GetPosition(0, 0, 0)
     end
     return 0,0,0
 end
 
 XTool.SetLocalPosition = function(go, x, y, z)
     if not XTool.UObjIsNil(go) then
-        CS.XUnityEx.SetLocalPosition(go.transform, x, y, z)
+        go.transform:SetLocalPosition(x, y, z)
     end
 end
 
 XTool.GetLocalPosition = function(go)
     if not XTool.UObjIsNil(go) then
-        return CS.XUnityEx.GetLocalPosition(go.transform, 0, 0, 0)
+        return go.transform:GetLocalPosition(0, 0, 0)
     end
     return 0,0,0
 end
 
 XTool.SetLocalScale = function(go, x, y, z)
     if not XTool.UObjIsNil(go) then
-        CS.XUnityEx.SetLocalScale(go.transform, x, y, z)
+        go.transform:SetLocalScale(x, y, z)
     end
 end
 
 XTool.GetLocalScale = function(go)
     if not XTool.UObjIsNil(go) then
-        return CS.XUnityEx.GetLocalScale(go.transform, 0, 0, 0)
+        return go.transform:GetLocalScale(0, 0, 0)
     end
 end
 
 XTool.SetLocalRotation = function(go, x, y, z)
     if not XTool.UObjIsNil(go) then
-        CS.XUnityEx.SetLocalRotation(go.transform, x, y, z)
+        go.transform:SetLocalRotation(x, y, z)
     end
 end
 
-XTool.SetRotation = function(go, x, y,z,w )
+XTool.SetRotation = function(go, x, y, z, w)
     if not XTool.UObjIsNil(go) then
-        CS.XUnityEx.SetRotation(go.transform, x, y, z, w)
+        go.transform:SetRotation(x, y, z, w)
     end
 end
 
 XTool.GetLocalRotation = function(go)
     if not XTool.UObjIsNil(go) then
-        return CS.XUnityEx.GetLocalRotation(go.transform, 0, 0, 0)
+        return go.transform:GetLocalRotation(0, 0, 0)
     end
 end
 
 XTool.GetUIRectWidthHeight = function(go)
     if not XTool.UObjIsNil(go) then
-        return CS.XUnityEx.GetUIRectWidthHeight(go.transform, 0, 0)
+        return go.transform:GetUIRectWidthHeight(0, 0)
     end
 end
 
 XTool.SetUISizeDelta = function(go, x, y)
     if not XTool.UObjIsNil(go) then
-        return CS.XUnityEx.SetUISizeDelta(go.transform, x, y)
+        return go.transform:SetUISizeDelta(x, y)
     end
 end
 

@@ -4,9 +4,6 @@ local DEBUG_SHOW_SHARE_IMAGE = true
 
 function XUiNewRegressionForwardScreenShot:OnDestroy()
     XDataCenter.PhotographManager.ClearTextureCache()
-    if self.ShareTexture then
-        CS.UnityEngine.Object.Destroy(self.ShareTexture)
-    end
 end
 
 function XUiNewRegressionForwardScreenShot:OnAwake()
@@ -39,6 +36,7 @@ end
 
 function XUiNewRegressionForwardScreenShot:Photograph(callback)
     XCameraHelper.ScreenShotNew(self.ImagePhoto, self.CameraCupture, function(screenShot)
+        self:AddCacheTexture(screenShot)
         -- 把合成后的图片渲染到游戏UI中的照片展示(最终要分享的图片)
         CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Hud, CS.XUiManager.Instance.UiCamera)
         self.ShareTexture = screenShot

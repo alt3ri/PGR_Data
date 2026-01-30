@@ -4,7 +4,7 @@ local XUiGridDlcRelinkCharacterSkill = XClass(XUiNode, "XUiGridDlcRelinkCharacte
 
 function XUiGridDlcRelinkCharacterSkill:OnStart(callBack)
     self.CallBack = callBack
-    XUiHelper.RegisterClickEvent(self, self.BtnSkill, self.OnBtnSkillClick, true, true)
+    self.BtnSkill:AddEventListener(handler(self, self.OnBtnSkillClick))
     self.ImgSelect.gameObject:SetActiveEx(false)
     self.ImgLock.gameObject:SetActiveEx(false)
     self.Red.gameObject:SetActiveEx(false)
@@ -30,7 +30,7 @@ function XUiGridDlcRelinkCharacterSkill:Refresh(skillId, characterId, isRemodel,
         self.IconSkill:SetRawImage(skillIcon)
     end
     -- 技能名称
-    self.TxtName.text = self._Control:GetSkillDescName(skillId)
+    self.TxtName.text = self._Control:GetSkillDescTypeDesc(skillId)
     -- 技能伤害进度条
     local curDamage = self._Control:GetSkillCurrentDamage(skillId, characterId, isNotSelf)
     local maxDamage = self._Control:GetSkillMaxDamageLimit(skillId, characterId, isNotSelf)
@@ -53,6 +53,11 @@ end
 -- 红点
 function XUiGridDlcRelinkCharacterSkill:SetRedDot(isRed)
     self.Red.gameObject:SetActiveEx(isRed)
+end
+
+-- 设置是否响应穿透事件
+function XUiGridDlcRelinkCharacterSkill:SetRespondPassEvent(isRespond)
+    self.BtnSkill.IsRespondPassEvent = isRespond
 end
 
 function XUiGridDlcRelinkCharacterSkill:OnBtnSkillClick()

@@ -105,6 +105,8 @@ function XBuffScript1015904:Update(dt)
         if isEnhBuff2Active and self.enhDurTimer == 0 then
             self.enhDurTimer = self._proxy:GetNpcTime(self._uuid) + self.enhDurTime
             self._proxy:SetAutoChessGemActiveState(self._uuid, self.enhRuneIdDict[2])
+            self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.enhRuneIdDict[2], 1)  --记录一次触发
+
         end
         if self._proxy:GetNpcTime(self._uuid) > self.enhDurTimer then
             self._proxy:RemoveBuff(self._uuid, self.signalId)
@@ -147,6 +149,7 @@ function XBuffScript1015904:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         --增强Buff[1]特效
         if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[1]) then
             self._proxy:SetAutoChessGemActiveState(self._uuid, self.enhRuneIdDict[1])
+            self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.enhRuneIdDict[1], 1)  --记录一次触发
         end
     end
 end

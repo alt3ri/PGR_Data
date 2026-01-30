@@ -71,7 +71,7 @@ function XUiGridAssignDeployMember:Refresh(groupId, teamOrder, teamData, memberO
         self.AmplifierEffect.gameObject:SetActiveEx(false)
         if obsCarrer ~= XEnumConst.CHARACTER.Career.None and XTool.IsNumberValid(obsPos) and obsPos == memberOrder then
             carrerIconPath = XMVCA.XCharacter:GetNpcTypeIconObs(obsCarrer)
-            if obsCarrer == XEnumConst.CHARACTER.Career.Tank then
+            if obsCarrer == XEnumConst.CHARACTER.Career.Tank or obsCarrer == XEnumConst.CHARACTER.Career.Breaker then
                 self.TankEffect.gameObject:SetActiveEx(true)
             elseif obsCarrer == XEnumConst.CHARACTER.Career.Amplifier then
                 self.AmplifierEffect.gameObject:SetActiveEx(true)

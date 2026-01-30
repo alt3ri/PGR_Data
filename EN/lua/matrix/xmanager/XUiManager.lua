@@ -347,6 +347,7 @@ function XUiManager.OpenUiObtain(data, title, closeCallback, sureCallback, horiz
         XLuaUiManager.Open("UiObtain", data, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
     end
 end
+
 function XUiManager.OpenUiAreaWarObtain(data,areaWarItems, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
     if not CS.XFightInterface.IsOutFight then
         return -- 战斗不弹
@@ -361,6 +362,22 @@ function XUiManager.OpenUiAreaWarObtain(data,areaWarItems, title, closeCallback,
         XLuaUiManager.Open("UiAreaWarObtain", data, areaWarItems,title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
     end
 end
+
+function XUiManager.OpenUiObtainByUi(uiName,data, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+    if not CS.XFightInterface.IsOutFight then
+        return -- 战斗不弹
+    end
+
+    -- 等待父级ui中列表异步刷新完成，以保证弹窗的截图效果正常
+    if XUiManager.IsTableAsyncLoading() then
+        XUiManager.WaitTableLoadComplete(function()
+            XLuaUiManager.Open(uiName, data, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+        end)
+    else
+        XLuaUiManager.Open(uiName, data, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+    end
+end
+
 function XUiManager.OpenUiTipReward(data, title, closeCallback, sureCallback)
     XLuaUiManager.Open("UiTipReward", data, title, closeCallback, sureCallback)
 end
@@ -690,15 +707,20 @@ function XUiManager.AddControllerTips(openUiName)
     end
 
     local sort = config.Sort or 0
-    local insertIndex = 1
+    local insertIndex = 0
     for i = #ControllerTipsList, 1, -1 do
         local uiName = ControllerTipsList[i]
         local lastConfig = tipsMap[uiName]
-        if lastConfig and lastConfig.Sort and sort >= lastConfig.Sort then
+        if lastConfig and lastConfig.Sort and sort > lastConfig.Sort then
             insertIndex = i
+            break
         end
     end
-    table.insert(ControllerTipsList, insertIndex, openUiName)
+    if insertIndex > 0 then
+        table.insert(ControllerTipsList, insertIndex, openUiName)
+    else
+        table.insert(ControllerTipsList, openUiName)
+    end
     XUiManager._ShowUiControllerTips()
 end
 

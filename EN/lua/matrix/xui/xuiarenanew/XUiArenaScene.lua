@@ -184,6 +184,23 @@ function XUiArenaScene:GetCurrentSelectIndex()
     return self._CurrentSelectIndex
 end
 
+--- 根据索引获取zone（用于显示新纪录标记）
+---@param index number zone的索引（从1开始，对应areaShowList的索引）
+---@return XUiArenaSceneZone|nil
+function XUiArenaScene:GetZoneByIndex(index)
+    if not self._ZoneList or XTool.IsTableEmpty(self._ZoneList) then
+        return nil
+    end
+    
+    -- 计算zone在_ZoneList中的实际索引（需要考虑startIndex）
+    local actualIndex = index - self._StartIndex
+    if actualIndex > 0 and actualIndex <= #self._ZoneList then
+        return self._ZoneList[actualIndex]
+    end
+    
+    return nil
+end
+
 function XUiArenaScene:Destroy()
     self._ZoneList = {}
     self._StartIndex = 0

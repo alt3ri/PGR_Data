@@ -2,6 +2,7 @@ XMain = XMain or {}
 XMain.IsClient = CS.StatusSyncFight.XFightConfig.IsClient
 -- 战斗lua在客户端和服务端都有运行,由XFightConfig.IsDebug自行处理好客户端和服务端的不同情况
 XMain.IsDebug = CS.StatusSyncFight.XFightConfig.IsDebug
+XMain.IsUnityEditor = CS.StatusSyncFight.XFightConfig.IsUnityEditor
 
 local lockGMeta = {
     __newindex = function(t, k)
@@ -16,7 +17,8 @@ function LuaLockG()
     setmetatable(_G, lockGMeta)
 end
 
-if XMain.IsDebug and XMain.IsClient then
+-- Unity编辑器下才连接，避免工程+Win包双客户端调试时都连接
+if XMain.IsDebug and XMain.IsClient and XMain.IsUnityEditor then
     -- 初始化lua调试器，不同设备安装的路径可能不一样，可自行选择在这里粘贴调试配置里给出的启动代码
 end
 

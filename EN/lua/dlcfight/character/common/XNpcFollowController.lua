@@ -292,9 +292,7 @@ end
 --region Target
 ---@protected
 function XNpcFollowController:GetTargetDistance()
-    local selfPos = self._proxy:GetNpcPosition(self._uuid)
-    local targetPos = self:GetTargetPos()
-    return XScriptTool.Distance(selfPos, targetPos)
+    return self._proxy:CalcNpcDistance(self._uuid, self._targetNpcUUID)
 end
 
 ---@protected

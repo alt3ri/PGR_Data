@@ -75,33 +75,39 @@ function XUiBigWorldProcessCoreTip:_RefreshLocked(elementEntity)
             grid:Close()
         end
     end
+    self._IsLock = isLock
 end
 
 ---@param elementEntity XBWCourseCoreElementEntity
 function XUiBigWorldProcessCoreTip:_RefreshProgress(elementEntity)
-    if not elementEntity:IsLocked() then
+    if not self._IsLock and self.ListProgress then
+        self.ListProgress.gameObject:SetActiveEx(true)
+    end
+    local index = 1
+    if not self._IsLock then
         local progressData = elementEntity:GetProgressTipData()
-        local index = 1
-
         if not XTool.IsTableEmpty(progressData) then
             for _, progress in pairs(progressData) do
                 local grid = self._GridList[index]
 
                 if not grid then
-                    local gridUi = XUiHelper.Instantiate(self.GridProgress, self.Transform)
+                    local gridUi = XUiHelper.Instantiate(self.GridProgress, self.GridProgress.transform.parent)
 
                     grid = XUiBigWorldProcessCoreTipGrid.New(gridUi, self)
                     self._GridList[index] = grid
                 end
-                
+                grid.GameObject.name = "Index" .. index
                 grid:Open()
                 grid:Refresh(progress.Title, progress.Progress, progress.IsComplete)
                 index = index + 1
             end
         end
-        for i = index, #self._GridList do
-            self._GridList[i]:Close()
-        end
+    end
+    for i = index, #self._GridList do
+        self._GridList[i]:Close()
+    end
+    if self._IsLock and self.ListProgress then
+        self.ListProgress.gameObject:SetActiveEx(false)
     end
 end
 

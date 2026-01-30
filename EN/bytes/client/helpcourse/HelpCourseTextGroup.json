@@ -37,7 +37,7 @@
     },
     {
         "Id": 1021101,
-        "Texts": "['\u2460. View <color=#0E70BD>victory objectives</color> and <color=#0E70BD>special card rules</color> here.', '\u2461. <color=#0E70BD>Change the assistant character</color> here.', '\u2462. <color=#0E70BD>View opponent and switch games</color> here.', '\u2463. Complete games to earn <color=#0E70BD>Double Seventh Festival Coins</color> and use them to <color=#0E70BD>unlock character dating stories</color>.', '\u2464. Claim <color=#0E70BD>event rewards</color> or view <color=#0E70BD>character dating stories</color> here.']"
+        "Texts": "['\u2460. View <color=#0E70BD>victory objectives</color> and <color=#0E70BD>special card rules</color> here.', '\u2461. <color=#0E70BD>Change the assistant character</color> here.', '\u2462. <color=#0E70BD>View opponent and switch games</color> here.', \"\u2463. Complete games to earn <color=#0E70BD>Valentine's Day event items</color> and use them to <color=#0E70BD>unlock character dating stories</color>.\", '\u2464. Claim <color=#0E70BD>event rewards</color> or view <color=#0E70BD>character dating stories</color> here.']"
     },
     {
         "Id": 1021102,
@@ -45,7 +45,7 @@
     },
     {
         "Id": 1021103,
-        "Texts": "['\u2460. You can use <color=#0E70BD>Double Seventh Festival Coins</color> earned from games to invite characters and unlock their <color=#0E70BD>dating stories</color>.']"
+        "Texts": "[\"\u2460. You can use <color=#0E70BD>Valentine's Day event items</color> earned from games to invite characters and unlock their <color=#0E70BD>dating stories</color>.\"]"
     },
     {
         "Id": 1022101,
@@ -196,6 +196,14 @@
         "Texts": "['\u2460. <color=#0E70BD>Alchemy Hammer</color> can enhance 5\u2605 Runes, further improving their combat power.']"
     },
     {
+        "Id": 1021614,
+        "Texts": "['\u2460. Upon accepting a commission, you can view its <color=#0E70BD>completion conditions</color> and associated <color=#0E70BD>Blessings</color>, including their strength at each rank and the cost to rank up.', \"\u2461. Tap the <color=#0E70BD>Refresh</color> button to replace a commission you don't want. This can be done only once per slot.\"]"
+    },
+    {
+        "Id": 1021615,
+        "Texts": "['\u2460. After a commission is accepted, the <color=#0E70BD>commission progress</color> is displayed above. Tap Blessing to review <color=#0E70BD>commission details</color>. Use the button below to spend coins for a <color=#0E70BD>Blessing Rank-Up</color>. You may rank up only once per turn. Once the commission is completed, you cannot perform further rank-ups.']"
+    },
+    {
         "Id": 1020301,
         "Texts": "['\u2460. Bubble Block: Merge it to the target size to increase the Dream Depth and clear the board.', '\u2461. Dormant Wavelength: The size your Bubble Block needs to reach to trigger an upgrade.']"
     },
@@ -334,5 +342,117 @@
     {
         "Id": 1021404,
         "Texts": "['\u2460. Troubleshooting Mode: Can be collected after entering the Pursuit Phase. When picked up, <color=#0E70BD>defeats enemies on contact</color> for a short duration.', '\u2461.Syntax Highlighting: Restores HP when picked up.', '\u2462. Loop Breakpoint: Touch to teleport between breakpoints of the same color.', '\u2463. Step Debugging: When picked up, slows down all errors, making troubleshooting easier.', '\u2464. Quick Traversal: When picked up, moves faster for a duration.']"
+    },
+    {
+        "Id": 1011101,
+        "Texts": "['\u2460.\u7d2f\u8ba1\u79ef\u5206\uff0c\u5373\u53ef\u83b7\u5f97\u5bf9\u5e94\u5956\u52b1', '\u2461.\u70b9\u51fb<color=#0E70BD>\u5f00\u59cb\u6e38\u620f</color>\uff0c\u63b7\u4e0b\u9ab0\u5b50\u3002']"
+    },
+    {
+        "Id": 1011102,
+        "Texts": "['\u2460.\u6bcf\u6b21\u63b7\u9ab0\u5b50\u540e\uff0c\u5747\u53ef\u6839\u636e\u6295\u63b7\u7ed3\u679c\u9009\u62e9\u4e00\u9879\uff1a', 'A.1\u30012\u30013\u70b9\u7684\u9ab0\u5b50\u6570\u76ee\u8d8a\u591a\uff0c\u5f97\u5206\u8d8a\u9ad8', 'B.4\u30015\u70b9\u7684\u9ab0\u5b50\u6570\u76ee\u8d8a\u591a\uff0c\u5f97\u5206\u8d8a\u9ad8; \u6839\u636e\u9009\u9879<color=#0E70BD>\u9009\u62e9\u6b21\u6570</color>\uff0c\u8fd8\u53ef\u4ee5\u83b7\u5f97<color=#0E70BD>\u989d\u5916\u79ef\u5206</color>', 'C.6\u70b9\u7684\u9ab0\u5b50\u6570\u76ee\u8d8a\u591a\uff0c\u83b7\u5f97\u6807\u8bb0\u8d8a\u591a\uff1b\u7d2f\u8ba1\u6807\u8bb0\u83b7\u53d6<color=#0E70BD>\u9ad8\u989d\u79ef\u5206</color>']"
+    },
+    {
+        "Id": 1011103,
+        "Texts": "['\u2460.\u70b9\u51fb\u786e\u8ba4\uff0c\u5373\u53ef\u6839\u636e\u5f53\u524d\u6295\u63b7\u7ed3\u679c\u4e0e\u9009\u62e9\u9009\u9879\u83b7\u53d6\u79ef\u5206\u3002\u9700\u8981\u6d88\u8017<color=#0E70BD>\u7ea2\u9163\u7b79\u7801</color>\u624d\u80fd\u8fdb\u884c\u786e\u8ba4\u64cd\u4f5c\u3002', '\u2461.\u5bf9\u6295\u63b7\u7ed3\u679c\u4e0d\u6ee1\u610f\u53ef<color=#0E70BD>\u91cd\u65b0\u6295\u63b7</color>\uff0c\u91cd\u65b0\u6295\u63b7\u65e0\u6d88\u8017\u3002']"
+    },
+    {
+        "Id": 1019301,
+        "Texts": "['\u2460. This event introduces the <color=#0E70BD>cheese</color> mechanic. Cheese will randomly appear on the battlefield at regular intervals. After collecting a set amount of Cheese, both the cats and the rats can use their powerful <color=#0E70BD>Faction Skills</color>.']"
+    },
+    {
+        "Id": 1019302,
+        "Texts": "['\u2460. After collecting cheese, the rats gain points faster but suffer a slight Movement Speed reduction.', '\u2461. Eating cheese removes both the Movement Speed reduction and the increased point gain effects. After collecting and eating <color=#0E70BD>3</color> pieces of cheese, you will enter <color=#0E70BD>Stealth</color> for a short duration.']"
+    },
+    {
+        "Id": 1019303,
+        "Texts": "['\u2460. After the cats collect a specified amount of cheese, the <color=#0E70BD>Pointer</color> skill is automatically triggered. Each cat can randomly <color=#0E70BD>mark the location of one rat</color> for a short time.']"
+    },
+    {
+        "Id": 1019304,
+        "Texts": "['\u2460. In this event, you can bring two skills into a match. Skills have <color=#0E70BD>limited uses</color> and cannot be used once all uses are exhausted.']"
+    },
+    {
+        "Id": 1019305,
+        "Texts": "['\u2460. Picking up <color=#0E70BD>Item Crates</color> on the battlefield restores all skill uses to their maximum.']"
+    },
+    {
+        "Id": 1019306,
+        "Texts": "['\u2460. Change the skills you bring into the match here.']"
+    },
+    {
+        "Id": 1019307,
+        "Texts": "['\u2460. Both the cats and the rats can bring two skills into a match. Tap here to change your equipped skills.']"
+    },
+    {
+        "Id": 1019308,
+        "Texts": "['\u2460. Tap an equipped skill icon to unequip it, then tap another skill icon to equip a new one.', '\u2461. After finishing your selection, tap here to save your equipped skills.']"
+    },
+    {
+        "Id": 1019309,
+        "Texts": "['\u2460. This event opens <color=#0E70BD>2 maps</color> each day and <color=#0E70BD>they cannot be changed manually</color>. Maps rotate automatically at <color=#0E70BD>05:00</color> and <color=#0E70BD>17:00</color> each day.', '\u2461. Invite friends here to form a squad. Each squad can have up to <color=#0E70BD>3 players</color>.', '\u2462. <color=#0E70BD>Tap Start Matching</color> after your squad is ready. Once matched, you will <color=#0E70BD>enter the battle immediately</color>.']"
+    },
+    {
+        "Id": 1019310,
+        "Texts": "['\u2460. Complete Prestige Missions to <color=#0E70BD>increase Prestige Level</color> and earn generous <color=#0E70BD>rewards</color>.', '\u2461. A limited amount of <color=#0E70BD>Prestige EXP</color> can be earned daily through battles. Once the limit is reached, matches will no longer grant rewards for the day and will <color=#0E70BD>reset the next day</color>.', '\u2462. After a match ends, various <color=#0E70BD>special achievements</color> can be unlocked. Equipped achievements can be displayed in the gameplay interface.']"
+    },
+    {
+        "Id": 1022201,
+        "Texts": "['\u2460. <color=#0E70BD>Resistance reduction effects</color> applied by <color=#0E70BD>Tank and Breaker characters</color> appear in the dedicated effect panel. Resistance reduction effects applied by <color=#0E70BD>Breaker characters</color> also display additional visual effects.', \"\u2461. When multiple resistance reduction effects are applied to the same enemy, the dedicated effect bar will prioritize displaying the <color=#0E70BD>effect with the highest level</color>. Other active resistance reduction or damage reduction effects will still appear below the enemy's health bar.\"]"
+    },
+    {
+        "Id": 1022301,
+        "Texts": "['\u2460. <color=#0E70BD>Activate the Projection Visor to access the holographic simulation battlefield and form a Hyperlink Array with your allies</color>.', '\u2461. Complete event missions to claim Simulation Quantum, which can be exchanged for rewards at the Quantum Exchange.', '\u2462. Daily Supply is available here. Can be claimed once per day and resets daily.']"
+    },
+    {
+        "Id": 1022302,
+        "Texts": "['\u2460. Spend Data Storage Boxes to upgrade your Research Level. Each upgrade gives your members stronger base stats.', '\u2461. Tap here to check your members and their <color=#0E70BD>equipment modules</color>. Deploy a character to <color=#0E70BD>begin combat</color>.']"
+    },
+    {
+        "Id": 1022303,
+        "Texts": "['\u2460. Each member has a unique <color=#0E70BD>battle class</color> and comes with <color=#0E70BD>two combat forms</color>.', \"\u2461. Switching <color=#0E70BD>combat forms</color> changes the member's skills. You can view the skill details here.\", '\u2462. Tap to enter a combat stage using the selected member.']"
+    },
+    {
+        "Id": 1022304,
+        "Texts": "[\"\u2460. Equipping equipment boosts a member's skills and stats. You can view their full stat details here.\", '\u2461. Each member has 1 class equipment slot, 2 special module equipment slots, and 2 module equipment slots. The 2 module equipment slots unlock after reaching Research Level 8 and equipping class equipment.', '\u2462. Set up multiple equipment presets here so your characters can quickly switch between loadouts.']"
+    },
+    {
+        "Id": 1022305,
+        "Texts": "['\u2460. Equipment Level depends on its quality and the Traits it carries.', '\u2461. Every piece of equipment starts with one Main Trait. Equipping the same type of equipment in both the special module equipment slots and the class equipment slot grants a <color=#0E70BD>Main Trait Level boost</color>;', '\u2462. You can add Sub-Traits by inheriting Main Traits from other equipment. Higher-quality equipment has more Sub-Trait slots.']"
+    },
+    {
+        "Id": 1022306,
+        "Texts": "[\"\u2460. This section shows a total stat preview comparing your current equipment with the selected replacement. Tap to see each Trait's detailed effects.\", '\u2461. Equipment is divided into three types: Attacker, Tank, and Amplifier.', '\u2462. Tap here to quickly filter for the equipment you need.']"
+    },
+    {
+        "Id": 1022307,
+        "Texts": "['\u2460. You can scrap equipment here. <color=#0E70BD>Scrapping unneeded equipment returns Data Storage Boxes</color>.', '\u2461. You can <color=#0E70BD>reforge</color> equipment here, consuming Data Storage Boxes to get new equipment.', '\u2462. Tap to <color=#0E70BD>enhance</color> equipment by <color=#0E70BD>inheriting</color> Traits from other equipment to fill its Sub-Traits.']"
+    },
+    {
+        "Id": 1022308,
+        "Texts": "['\u2460. Tap here to switch the piece of equipment you want to <color=#0E70BD>enhance</color>.', '\u2461. <color=#0E70BD>Tap here to choose the equipment that will be consumed as enhancement material</color>.', '\u2462. This section shows the Traits of the equipment being <color=#0E70BD>consumed</color>. If the <color=#0E70BD>consumed</color> equipment has multiple Traits, <color=#0E70BD>one Trait will be inherited at random</color>.']"
+    },
+    {
+        "Id": 1022309,
+        "Texts": "['\u2460. You can <color=#0E70BD>reforge</color> random equipment or equipment with <color=#0E70BD>targeted Traits</color> when reforging. <color=#0E70BD>Targeted reforging</color> consumes more Data Storage Boxes.', '\u2461. After selecting how many pieces of equipment to <color=#0E70BD>reforge</color>, the required Data Storage Boxes will be shown below. Tap <color=#0E70BD>Reforge</color> to obtain the equipment.']"
+    },
+    {
+        "Id": 1022310,
+        "Texts": "[\"\u2460. Tap here to customize the <color=#0E70BD>messages</color> you'll use in battle.\", '\u2461. After selecting a challenge stage, prepare for combat by creating a <color=#0E70BD>channel</color> or joining an <color=#0E70BD>existing one</color>.']"
+    },
+    {
+        "Id": 1022311,
+        "Texts": "['\u2460. You can set your <color=#0E70BD>messages</color> to use <color=#0E70BD>stamps</color> or <color=#0E70BD>preset text</color>.', '\u2461. Drag the desired <color=#0E70BD>stamp</color> or <color=#0E70BD>text</color> into the wheel.', '\u2462. Tap Save to use your customized <color=#0E70BD>Quick Message Wheel</color> in battle.']"
+    },
+    {
+        "Id": 1022312,
+        "Texts": "['\u2460. This event features two <color=#0E70BD>combat targets</color>. Tap to select which <color=#0E70BD>combat target</color> you want to challenge.', '\u2461. Select your preferred difficulty here. Higher-difficulty stages require a certain equipment level before you can join other channels.', '\u2462. View the Simulation Quantum and equipment you can earn from completing the challenge stage.']"
+    },
+    {
+        "Id": 1022313,
+        "Texts": "['\u2460. The channel leader can remove other players from the channel.', \"\u2461. This section shows the player's equipment level.\", '\u2462. Empty slots in the <color=#0E70BD>channel</color> can be filled by inviting friends or by <color=#0E70BD>opening the channel</color> to <color=#0E70BD>match with other players</color>.']"
+    },
+    {
+        "Id": 1022314,
+        "Texts": "['\u2460. The leader can change the current challenge stage. Tap to return to the stage selection screen and choose again.', '\u2461. Once all players are ready, tap here to start the combat operation.']"
     }
 ]

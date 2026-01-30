@@ -129,8 +129,8 @@
         "UiName": "UiBigWorldMap",
         "Sort": null,
         "IsShow": true,
-        "KeyCode": "[1023, 330, 331, 330]",
-        "KeyText": "['Move Cursor', 'Tap', 'Return', 'Hold to Drag Map']"
+        "KeyCode": "[1023, 330, 331, 330, 1012, 1011]",
+        "KeyText": "['Move Cursor', 'Tap', 'Return', 'Hold to Drag Map', 'Floor Switch', 'Area Switch']"
     },
     {
         "UiName": "UiBigWorldMap/UiBigWorldMapDetail",
@@ -257,5 +257,54 @@
         "IsShow": true,
         "KeyCode": "[1023, 1025, 330, 331]",
         "KeyText": "['Move Cursor', 'Slide List', 'Select', 'Return']"
+    },
+    {
+        "UiName": "UiBigWorldPopupDelivery",
+        "Sort": null,
+        "IsShow": true,
+        "KeyCode": "[1023, 330, 331]",
+        "KeyText": "['Move Cursor', 'Tap', 'Return']"
+    },
+    {
+        "UiName": "UiBigWorldPopupNews",
+        "Sort": null,
+        "IsShow": true,
+        "KeyCode": "[1023, 1025, 330, 331]",
+        "KeyText": "['Move Cursor', 'Slide List', 'Tap', 'Return']"
+    },
+    {
+        "UiName": "UiBigWorldMapOverview",
+        "Sort": null,
+        "IsShow": true,
+        "KeyCode": "[1023, 330, 331]",
+        "KeyText": "['Move Cursor', 'Tap', 'Return']"
+    },
+    {
+        "UiName": "UiBigWorldTaskMainInvitation",
+        "Sort": null,
+        "IsShow": true,
+        "KeyCode": "[1023, 330, 331]",
+        "KeyText": "['Move Cursor', 'Tap', 'Return']"
+    },
+    {
+        "UiName": "UiBigWorldTextDialog",
+        "Sort": null,
+        "IsShow": true,
+        "KeyCode": "[1023, 1025, 331]",
+        "KeyText": "['Move Cursor', 'Slide List', 'Return']"
+    },
+    {
+        "UiName": "UiBigWorldPopupAdvance",
+        "Sort": null,
+        "IsShow": true,
+        "KeyCode": "[1023, 1024, 330, 331]",
+        "KeyText": "['Move Cursor', 'Slide List', 'Tap', 'Return']"
+    },
+    {
+        "UiName": "UiBigWorldPopupEnvironmentalStory",
+        "Sort": null,
+        "IsShow": true,
+        "KeyCode": "[1023, 1024, 330, 331]",
+        "KeyText": "['Move Cursor', 'Slide List', 'Tap', 'Return']"
     }
 ]

@@ -124,6 +124,11 @@ function XBuffScript1015700:Init()
     self.enhBuff8SignalId = 1015949 --标记ID
     self.enhBuff8Prob = 20          --若Buff[8]运行时，概率需替换为20%
 
+    --1016355 - 饰品61161~61165 - 触发次数统计相关
+    self.buffLevelGroupId= {1016355, 1016356, 1016357, 1016358, 1016359}  --5个等级
+    self.currentBuffLevelGroupId = 0
+    self.signalAwakeForMission = 1016416 -- 定时、概率触发传递标记buff
+
     ------------执行------------
     self._proxy:ApplyMagic(self._uuid, self._uuid, self.signalCtrlId, 1)   --为自己添加【定时】管理Buff
 
@@ -152,6 +157,14 @@ function XBuffScript1015700:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[2]) then
             self.maxStacks = self.enhBuff2maxStacks
         end
+
+        --记录是否挂任务奖励buff
+        for _, buffGroupThisLevel in ipairs(self.buffLevelGroupId) do
+            if self._proxy:CheckBuffByKind(self._uuid, buffGroupThisLevel) then
+                self.currentBuffLevelGroupId = buffGroupThisLevel
+            end
+        end
+
     end
 
     --达到层数上限时，不进行后续逻辑
@@ -197,6 +210,12 @@ function XBuffScript1015700:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
             self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
             --进行一次成功触发标记，触发Buff[1]效果
             self._proxy:ApplyMagic(self._uuid, self._uuid, self.enhBuffSuccessSignal, self.magicLevel, 0, magicStacks)
+
+            --有挂任务奖励buff，则传递1次触发标记buff
+            if self.currentBuffLevelGroupId ~= 0 then
+                self._proxy:ApplyMagic(self._uuid, self._uuid, self.signalAwakeForMission, 1)
+            end
+
         end
     end
 end

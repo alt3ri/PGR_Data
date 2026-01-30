@@ -16,4 +16,10 @@ function XGridAffix:Refresh(data)
     self.Image:SetRawImage(data.AffixData.Icon)
 end
 
+function XGridAffix:RefreshExclusiveBuff(data)
+    self.TxtName.text = data.Name
+    self.TxtSkillDesc.text = data.Description
+    self.Image:SetRawImage(data.Icon)
+end
+
 return XGridAffix

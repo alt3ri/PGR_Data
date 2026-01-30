@@ -1,89 +1,67 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiGridBWDelivery = require("XUi/XUiBigWorld/XQuest/Grid/XUiGridBWDelivery")
 ---@class XUiPanelBWDelivery : XUiNode
 ---@field GameObject UnityEngine.GameObject
 ---@field Transform UnityEngine.Transform
 ---@field Parent XUiBigWorldPopupDelivery
----@field _Control
+---@field _GirdItems XUiGridBWDelivery[]
 local XUiPanelBWDelivery = XClass(XUiNode, "XUiPanelBWDelivery")
 
-local ColorEnum = {
-    FirNoneEnough = "#B72424",
-    SecNoneEnough = "#000000",
+function XUiPanelBWDelivery:OnStart()
+    self._GirdItems = {}
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnRequire:AddEventListener(handler(self, self.OnBtnRequireClick))
+end
 
-    FirEnough = "#fff100",
-    SecEnough = "#fff100",
-}
-
-function XUiPanelBWDelivery:OnStart(title, isWarehouse)
-    if not string.IsNilOrEmpty(title) then
-        self.Txt.text = title
-    end
-    self._IsWarehouse = isWarehouse
-    self:InitCb()
-    self:InitView()
+function XUiPanelBWDelivery:OnEnable()
+    self.Parent:PlayAnimation("PanelRightEnable")
 end
 
 function XUiPanelBWDelivery:InitCb()
 end
 
 function XUiPanelBWDelivery:InitView()
-    self.Grid.gameObject:SetActiveEx(false)
+end
 
-    self._DynamicTable = XDynamicTableNormal.New(self.PanelList)
-    local clickProxy
-    if self._IsWarehouse then
-        clickProxy = function(itemParams) self:OnClickItemProxy(itemParams) end
-    end
+function XUiPanelBWDelivery:Refresh(objectiveId, itemList)
+    self.TxtTitle.text = XMVCA.XBigWorldQuest:GetObjectiveDeliveryTitle(objectiveId)
+    self.TxtDesc.text = XMVCA.XBigWorldQuest:GetObjectiveDeliveryDesc(objectiveId)
     
-    self._DynamicTable:SetProxy(require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem"), self, clickProxy)
-    self._DynamicTable:SetDelegate(self)
+    XTool.UpdateDynamicItem(self._GirdItems, self:SortDeliver(itemList), self.GridItem, XUiGridBWDelivery, self)
 end
 
-function XUiPanelBWDelivery:RefreshView(consumes)
-    self._DataList = consumes
-    self:SetupDynamicTable()
+function XUiPanelBWDelivery:OnBtnCloseClick()
+    self.Parent:DoClose()
 end
 
-function XUiPanelBWDelivery:SetupDynamicTable()
-    local isEmpty = XTool.IsTableEmpty(self._DataList)
-    self.PanelEmpty.gameObject:SetActiveEx(isEmpty)
-    if isEmpty then
-        return
+function XUiPanelBWDelivery:OnBtnRequireClick()
+    self.Parent:DoDeliver()
+end
+
+function XUiPanelBWDelivery:DoDeliverToBag(data, isBag)
+    self.Parent:DoDeliverToBag(data, isBag)
+end
+
+function XUiPanelBWDelivery:DoBagToDeliver(data)
+    self.Parent:DoBagToDeliver(data)
+end
+
+function XUiPanelBWDelivery:IsManualDeliver()
+    return self.Parent:IsManualDeliver()
+end
+
+function XUiPanelBWDelivery:SortDeliver(list)
+    if XTool.IsTableEmpty(list) or #list == 1 then
+        return list
     end
-
-    self._DynamicTable:SetDataSource(self._DataList)
-    self._DynamicTable:ReloadDataSync()
-end
-
----@param grid XUiGridBWItem
-function XUiPanelBWDelivery:OnDynamicTableEvent(evt, index, grid)
-    if evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-        local data = self._DataList[index]
-        grid:Refresh(data)
-        self:RefreshProgressNum(evt, index, grid)
-    end
-end
-
-function XUiPanelBWDelivery:RefreshProgressNum(evt, index, grid)
-    local data = self._DataList[index]
-    local count = self._IsWarehouse and XMVCA.XBigWorldService:GetQuestItemCount(data.Id) or data.Select
-    local color1, color2
-    if count >= data.Total then
-        color1 = ColorEnum.FirEnough
-        color2 = ColorEnum.SecEnough
-    else
-        color1 = ColorEnum.FirNoneEnough
-        color2 = ColorEnum.SecNoneEnough
-    end
-    grid:RefreshProgressNum(data.Select, data.Total, color1, color2)
-end
-
-function XUiPanelBWDelivery:OnClickItemProxy(itemParams)
-    if not itemParams then
-        return
-    end
-
-    self.Parent:OnSelectItemInWarehouse(itemParams.TemplateId)
+    table.sort(list, function(a, b)
+        local sortA = a.Sort or 0
+        local sortB = b.Sort or 0
+        if sortA ~= 0 and sortB ~= 0 then
+            return sortA < sortB
+        end
+        return sortA > sortB
+    end)
+    return list
 end
 
 return XUiPanelBWDelivery

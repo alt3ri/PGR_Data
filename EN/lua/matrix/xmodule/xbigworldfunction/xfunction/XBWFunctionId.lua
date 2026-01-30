@@ -11,6 +11,8 @@ local functionId = {
     
     SgDorm = 200003, --空花宿舍
 
+    SgDroneGame = 200008, --空花无人机
+
     BigWorldCourse = 200004, --大世界历程
 
     BigWorldMessage = 200005, --大世界短信
@@ -18,6 +20,10 @@ local functionId = {
     BigWorldAlbum = 200006, --大世界相册
     
     BigWorldPerspective = 200007, --大世界视角切换
+    
+    BigWorldInviteQuest = 200009, --大世界邀约任务
+    
+    BigWorldNews = 200010, --大世界新闻
     
     --endregion
 }

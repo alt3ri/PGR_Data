@@ -55,6 +55,7 @@ end
 
 function XUiGridSingleDialog:StopTypeWriter()
     self.TypeWriter:Stop()
+    self.TypeWriter:ShowAllText()
 end
 
 return XUiGridSingleDialog

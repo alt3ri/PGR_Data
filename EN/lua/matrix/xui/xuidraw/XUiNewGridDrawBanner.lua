@@ -364,6 +364,14 @@ function XUiNewGridDrawBanner:SetImage(imageList)
         end
         return
     end
+
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.Base.GroupId) then
+        if self.RImgBg then self.RImgBg.gameObject:SetActiveEx(false) end
+        if self.RImgRole then self.RImgRole.gameObject:SetActiveEx(false) end
+        if self.RImgName then self.RImgName.gameObject:SetActiveEx(false) end
+        if self.BtnSkip then self.BtnSkip.gameObject:SetActiveEx(false) end
+        return
+    end
     if not imageList then
         return
     end
@@ -410,6 +418,11 @@ end
 
 function XUiNewGridDrawBanner:SetTextByResourceIds(resourceIds)
     if self.Base:CheckIsNewDraw() then
+        self:SetTextActive(false)
+        return
+    end
+
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.Base.GroupId) then
         self:SetTextActive(false)
         return
     end

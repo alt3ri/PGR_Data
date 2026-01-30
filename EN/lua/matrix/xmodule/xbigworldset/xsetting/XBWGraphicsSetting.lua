@@ -4,6 +4,89 @@ local XBWSettingValue = require("XModule/XBigWorldSet/XSetting/XBWSettingValue")
 ---@class XBWGraphicsSetting : XBWSettingBase
 local XBWGraphicsSetting = XClass(XBWSettingBase, "XBWGraphicsSetting")
 
+local RecordValue = {
+    [1] = {
+        key = "GraphicsQuality",
+        XBWSettingValue = "_GraphicsQualityValue"
+    },
+    [2] = {
+        key = "GraphicsLevel",
+        XBWSettingValue = "_GraphicsLevelValue"
+    },
+    [3] = {
+        key = "EffectLevel",
+        XBWSettingValue = "_EffectLevelValue"
+    },
+    [4] = {
+        key = "OtherEffectLevel",
+        XBWSettingValue = "_OtherEffectLevelValue"
+    },
+    [5] = {
+        key = "ShadowLevel",
+        XBWSettingValue = "_ShadowLevelValue"
+    },
+    [6] = {
+        key = "MirrorLevel",
+        XBWSettingValue = "_MirrorLevelValue"
+    },
+    [7] = {
+        key = "ResolutionLevel",
+        XBWSettingValue = "_ResolutionLevelValue"
+    },
+    [8] = {
+        key = "DistortionLevel",
+        XBWSettingValue = "_DistortionLevelValue"
+    },
+    [9] = {
+        key = "FrameRateLevel",
+        XBWSettingValue = "_FrameRateLevelValue"
+    },
+    [10] = {
+        key = "BigWorldFrameRateLevel",
+        XBWSettingValue = "_BigWorldFrameRateLevelValue"
+    },
+    [11] = {
+        key = "BloomLevel",
+        XBWSettingValue = "_BloomLevelValue"
+    },
+    [12] = {
+        key = "HDR",
+        XBWSettingValue = "_HDRValue"
+    },
+    [13] = {
+        key = "FAXX",
+        XBWSettingValue = "_FAXXValue"
+    },
+    [14] = {
+        key = "VSync",
+        XBWSettingValue = "_VSyncValue"
+    },
+    [15] = {
+        key = "FullScreen",
+        XBWSettingValue = "_FullScreenValue"
+    },
+    [16] = {
+        key = "ScreenResolution",
+        XBWSettingValue = "_ScreenResolutionValue"
+    },
+    [17] = {
+        key = "SceneQualityLevel",
+        XBWSettingValue = "_SceneQualityLevel"
+    },
+    [18] = {
+        key = "RoleQualityLevel",
+        XBWSettingValue = "_RoleQualityLevel"
+    },
+    [19] = {
+        key = "LightingQualityLevel",
+        XBWSettingValue = "_LightingQualityLevel"
+    },
+    [20] = {
+        key = "CharacterShadowLevel",
+        XBWSettingValue = "_CharacterShadowLevel"
+    }
+}
+
 local Value2FuncName = {
     -- _RenderScaleLevel = {
     --     GetFunc = "GetRenderScaleLevel",
@@ -144,6 +227,21 @@ function XBWGraphicsSetting:SaveChange()
 
         self._FullScreenValue:SaveChange()
     end
+end
+
+function XBWGraphicsSetting:RecordDataToDict()
+    local dict = {}
+    for i = 1, #RecordValue do
+        local value = self[RecordValue[i].XBWSettingValue]
+        if value then
+            if RecordValue[i].handler then
+                dict[RecordValue[i].key] = tostring(RecordValue[i].handler(value:GetValue()))
+            else
+                dict[RecordValue[i].key] = tostring(value:GetValue())
+            end
+        end
+    end
+    return dict
 end
 
 function XBWGraphicsSetting:IsChanged()

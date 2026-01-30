@@ -10,6 +10,7 @@ local XUiModelTheatre5PVPCharacter3D = require('XUi/XUiTheatre5/XUiTheatre5Battl
 local XUiPanelTheatre5Bag = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/XUiPanelTheatre5Bag')
 local XUiTheatre5Level = require("XUi/XUiTheatre5/XUiTheatre5Level/XUiTheatre5Level")
 local XUiTheatre5RelicPanel = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/XUiTheatre5RelicPanel')
+local XUiTheatre5MissionPanelInCheck = require('XUi/XUiTheatre5/XUiTheatre5PVECheckCharacter/XUiTheatre5MissionPanelInCheck')
 
 function XUiTheatre5PVECheckCharacter:OnAwake()
     self:AddUIListener()
@@ -32,6 +33,9 @@ function XUiTheatre5PVECheckCharacter:OnStart()
     self.Model3D = XUiModelTheatre5PVPCharacter3D.New(self.UiModelGo, self)
     ---@type XUiPanelTheatre5Bag
     self.PanelBag = XUiPanelTheatre5Bag.New(self.ListBag, self, XMVCA.XTheatre5.EnumConst.ItemContainerType.NormalDetails)
+    ---@type XUiTheatre5MissionPanelInCheck
+    self.PanelMission = XUiTheatre5MissionPanelInCheck.New(self.PanelTask, self)
+    
     self.PanelSkill:Open()
     self.PanelGem:Open()
     self:InitCharacter3D()

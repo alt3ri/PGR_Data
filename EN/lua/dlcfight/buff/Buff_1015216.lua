@@ -26,10 +26,10 @@ end
 
 --region EventCallBack
 function XBuffScript1015216:InitEventCallBackRegister()
-    self._proxy:RegisterEvent(EWorldEvent.NpcChangeProtector)
+    self._proxy:RegisterEvent(EWorldEvent.NpcHurtProtector)
 end
 
-function XBuffScript1015216:XNpcChangeProtectorArgs(LauncherId, TargetId, Value, TotalValue)
+function XBuffScript1015216:XNpcHurtProtectorArgs(LauncherId, TargetId, Value, TotalValue)
     -- 己方的护盾减少
     if TargetId == self._uuid and Value < 0 then
         -- 护盾还在时

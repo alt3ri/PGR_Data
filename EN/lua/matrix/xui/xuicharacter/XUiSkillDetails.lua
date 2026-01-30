@@ -120,6 +120,11 @@ function XUiSkillDetails:RefreshViewData()
     self.TxtName.text = self.Skill.Name
     self.TxtNameEn.text = self.Skill.EnName
     self.SkillIcon:SetRawImage(self.Skill.Icon)
+
+    local characterCarrer = XMVCA.XCharacter:GetCharacterCareer(self.CharacterId)
+    local EnumCarrer = XEnumConst.CHARACTER.Career
+    local isShowBtnHelper = (characterCarrer == EnumCarrer.Breaker or characterCarrer == EnumCarrer.Tank)
+    self.BtnHelp.gameObject:SetActiveEx(isShowBtnHelper)
 end
 
 function XUiSkillDetails:RefreshSkillInfo()
@@ -243,6 +248,7 @@ function XUiSkillDetails:RegisterUiEvents()
     XUiHelper.RegisterClickEvent(self, self.BtnNext, self.OnBtnNext)
     XUiHelper.RegisterClickEvent(self, self.BtnLast, self.OnBtnLast)
     XUiHelper.RegisterClickEvent(self, self.Toggle, self.OnToggle)
+    self:BindHelpBtn(self.BtnHelp, "UiSkillDetailsHelp")
 end
 --region 按钮相关
 

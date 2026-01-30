@@ -5,10 +5,13 @@ local XDlcRelinkOtherMemberControl = require("XModule/XDlcRelink/SubControl/XDlc
 ---@field OtherMemberControl XDlcRelinkOtherMemberControl
 local XDlcRelinkControl = XClass(XControl, "XDlcRelinkControl")
 function XDlcRelinkControl:OnInit()
+    --性能大盘内存标记
+    CS.XProfilingLuaUtils.PerfSightRelinkProcessEnter()
+    CS.XProfilingLuaUtils.MarkPerfSightRelinkProcessInStart()
     self.OtherMemberControl = self:AddSubControl(XDlcRelinkOtherMemberControl)
 
     self.RequestName = {
-        DlcRelinkSwitchOccupationTypeRequest = "DlcRelinkSwitchOccupationTypeRequest", -- 切换职业
+        DlcRelinkSwitchStyleTypeRequest = "DlcRelinkSwitchStyleTypeRequest", -- 切换风格
         DlcRelinkSwitchBattleCharacterRequest = "DlcRelinkSwitchBattleCharacterRequest", -- 切换出战角色
         DlcRelinkBuyExpRequest = "DlcRelinkBuyExpRequest", -- 购买经验
         DlcRelinkSignRequest = "DlcRelinkSignRequest", -- 签到
@@ -26,6 +29,8 @@ function XDlcRelinkControl:OnInit()
         DlcRelinkEquipBreakRequest = "DlcRelinkEquipBreakRequest", -- 装备分解
         DlcRelinkEquipRemoveFactorRequest = "DlcRelinkEquipRemoveFactorRequest", -- 装备移除属性
         DlcRelinkQueryRankRequest = "DlcRelinkQueryRankRequest", -- 查询排行榜
+        DlcRelinkSwitchGlobalMatchFlagRequest = "DlcRelinkSwitchGlobalMatchFlagRequest", -- 切换全局匹配标记
+        DlcRelinkLikeRequest = "DlcRelinkLikeRequest", -- 点赞
     }
 
     self.FriendCache = nil
@@ -43,6 +48,8 @@ function XDlcRelinkControl:OnInit()
     ---@type table<number, number> key:UiSlotIndex value:EquipSlotIndex
     self.EquipSlotIndexMap = nil -- 装备栏位索引映射
     self.EquipSlotIndexMapMeta = nil -- 装备栏位索引映射元表
+
+    self:InitEnum()
 end
 
 function XDlcRelinkControl:AddAgencyEvent()
@@ -51,6 +58,7 @@ function XDlcRelinkControl:AddAgencyEvent()
     XEventManager.AddEventListener(XEventId.EVENT_DLC_ROOM_MATCH_SUCCESS, self.OnMatchSuccess, self)
     XEventManager.AddEventListener(XEventId.EVENT_DLC_ROOM_PLAYER_ENTER, self.OnPlayerEnterRoom, self)
     XEventManager.AddEventListener(XEventId.EVENT_DLC_RECEIVE_INVITE, self.OnReceiveInvite, self)
+    XEventManager.AddEventListener(XEventId.EVENT_DLC_RELINK_MATE_LOAD_FAIL, self.OnMateLoadFail, self)
 end
 
 function XDlcRelinkControl:RemoveAgencyEvent()
@@ -59,6 +67,7 @@ function XDlcRelinkControl:RemoveAgencyEvent()
     XEventManager.RemoveEventListener(XEventId.EVENT_DLC_ROOM_MATCH_SUCCESS, self.OnMatchSuccess, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_DLC_ROOM_PLAYER_ENTER, self.OnPlayerEnterRoom, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_DLC_RECEIVE_INVITE, self.OnReceiveInvite, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_DLC_RELINK_MATE_LOAD_FAIL, self.OnMateLoadFail, self)
 end
 
 function XDlcRelinkControl:OnRelease()
@@ -69,6 +78,8 @@ function XDlcRelinkControl:OnRelease()
     self.QueryRankData = nil
     self.EquipSlotIndexMap = nil
     self.EquipSlotIndexMapMeta = nil
+    CS.XProfilingLuaUtils.MarkPerfSightRelinkProcessInEnd()
+    CS.XProfilingLuaUtils.PerfSightRelinkProcessExit()
 end
 
 --- 使用UI栈同步control的卸载
@@ -76,24 +87,58 @@ function XDlcRelinkControl:UseUiStackOperationRef()
     return true
 end
 
+function XDlcRelinkControl:InitEnum()
+    -- 装备标签类型
+    self.EquipTagType = {
+        All = 0, -- 全部
+        Attack = 1, -- 进攻
+        Armor = 2, -- 装甲
+        Amplitude = 3, -- 增幅
+    }
+    -- 装备界面类型
+    self.EquipUiType = {
+        Bg = 1, -- 背包
+        Reform = 2, -- 改造
+        Decompose = 3, -- 分解
+    }
+    -- 结算称号比较类型
+    self.SettleTitleCompareType = {
+        Bigger = 1,
+        BiggerEquals = 2,
+        Equals = 3,
+        Smaller = 4,
+        SmallerEquals = 5,
+        --- 是否将数值转换为比例值
+        PercentInMembers = 10,
+        --- 当前玩家该值是否全员最大
+        MaxInMembers = 100,
+        --- 当前玩家该值是否全员最小
+        MinInMembers = 200,
+        --- 指定全员对应key一起比较（且逻辑）
+        AllMembersCompareWithAnd = 300,
+        --- 指定全员对应key一起比较（或逻辑）
+        AllMembersCompareWithOr = 400,
+    }
+end
+
 --region 请求协议相关
 
---- 切换角色职业
+--- 切换角色风格
 ---@param characterId number 角色Id
----@param occupationType number 职业类型
+---@param styleType number 风格类型
 ---@param cb function 回调函数
-function XDlcRelinkControl:RequestSwitchOccupationType(characterId, occupationType, cb)
+function XDlcRelinkControl:RequestSwitchStyleType(characterId, styleType, cb)
     local request = {
         CharacterId = characterId,
-        OccupationType = occupationType,
+        StyleType = styleType,
     }
-    XNetwork.Call(self.RequestName.DlcRelinkSwitchOccupationTypeRequest, request, function(res)
+    XNetwork.Call(self.RequestName.DlcRelinkSwitchStyleTypeRequest, request, function(res)
         if res.Code ~= XCode.Success then
             self:OpenCommonTipCode(res.Code)
             return
         end
-        self._Model.ActivityData:SetCharacterOccupationType(res.CharacterId, res.OccupationType)
-        XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_SWITCH_OCCUPATION, res.CharacterId)
+        self._Model.ActivityData:SetCharacterStyleType(res.CharacterId, res.StyleType)
+        XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_SWITCH_STYLE, res.CharacterId)
         if cb then cb() end
     end)
 end
@@ -111,7 +156,6 @@ function XDlcRelinkControl:RequestSwitchBattleCharacter(id, cb)
             return
         end
         self._Model.ActivityData:SetFightCharacterId(res.CharacterId)
-        XEventManager.DispatchEvent(XEventId.EVENT_DLC_ROOM_SELECT_CHARACTER, res.CharacterId, XEnumConst.DlcRoom.RoomSelect.Character)
         if cb then cb() end
     end)
 end
@@ -252,7 +296,6 @@ function XDlcRelinkControl:RequestUnWearEquip(characterId, equipSlotIndex, cb)
             self:OpenCommonTipCode(res.Code)
             return
         end
-        self._Model.ActivityData:UnWearEquipByCharacterId(characterId, equipSlotIndex)
         if cb then cb() end
     end)
 end
@@ -334,17 +377,20 @@ end
 --- 装备合成
 ---@param composeId number 合成Id
 ---@param count number 合成数量
+---@param factorId number 定向合成时选择的词条Id
 ---@param cb function 回调函数
-function XDlcRelinkControl:RequestEquipCompose(composeId, count, cb)
+function XDlcRelinkControl:RequestEquipCompose(composeId, count, factorId, cb)
     local request = {
         ComposeId = composeId,
         Count = count,
+        SelectedFactorId = factorId,
     }
     XNetwork.Call(self.RequestName.DlcRelinkEquipComposeRequest, request, function(res)
         if res.Code ~= XCode.Success then
             self:OpenCommonTipCode(res.Code)
             return
         end
+        XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_EQUIP_COMPOSE_SUCCESS)
         if cb then cb(res.EquipRewardGoodsList) end
     end)
 end
@@ -397,6 +443,42 @@ function XDlcRelinkControl:RequestQueryRank(levelId, cb)
             return
         end
         self:UpdateQueryRankData(res)
+        if cb then cb() end
+    end)
+end
+
+--- 切换全局匹配标记
+---@param enabled boolean 全局匹配标记
+---@param cb function 回调函数
+function XDlcRelinkControl:RequestSwitchGlobalMatchFlag(enabled, cb)
+    local request = {
+        Enabled = enabled,
+    }
+    XNetwork.Call(self.RequestName.DlcRelinkSwitchGlobalMatchFlagRequest, request, function(res)
+        if res.Code ~= XCode.Success then
+            self:OpenCommonTipCode(res.Code)
+            if cb then cb() end
+            return
+        end
+        self._Model.GlobalMatchEnabled = enabled
+        XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_GLOBAL_MATCH_FLAG_CHANGE)
+        if cb then cb() end
+    end)
+end
+
+--- 点赞
+---@param playerId number 玩家Id
+---@param cb function 回调函数
+function XDlcRelinkControl:RequestLike(playerId, cb)
+    local request = {
+        PlayerId = playerId,
+    }
+    XNetwork.Call(self.RequestName.DlcRelinkLikeRequest, request, function(res)
+        if res.Code ~= XCode.Success then
+            self:OpenCommonTipCode(res.Code)
+            return
+        end
+        self._Model:AddLikeInfoCache(XPlayer.Id, playerId)
         if cb then cb() end
     end)
 end
@@ -539,6 +621,7 @@ end
 ---@param chapterId number 章节ID
 ---@param levelId number 等级ID
 function XDlcRelinkControl:SetCurrentSelectLevelData(chapterId, levelId)
+    self:RecordSelectLevelDataCache(chapterId, levelId)
     if not XTool.IsNumberValid(chapterId) or not XTool.IsNumberValid(levelId) then
         self.CurSelectLevelData = nil
         return
@@ -560,6 +643,14 @@ function XDlcRelinkControl:GetCurrentSelectChapterId()
             return nil
         end
         return self:GetLevelChapterId(roomData:GetLevelId())
+    end
+
+    if self:IsGlobalMatchEnabled() then
+        return 0
+    end
+
+    if not self.CurSelectLevelData then
+        self.CurSelectLevelData = self:GetSelectLevelDataCache()
     end
 
     if self.CurSelectLevelData then
@@ -584,6 +675,14 @@ function XDlcRelinkControl:GetCurrentSelectLevelId()
         return roomData:GetLevelId()
     end
 
+    if self:IsGlobalMatchEnabled() then
+        return 0
+    end
+
+    if not self.CurSelectLevelData then
+        self.CurSelectLevelData = self:GetSelectLevelDataCache()
+    end
+
     if self.CurSelectLevelData then
         return self.CurSelectLevelData.LevelId
     end
@@ -593,11 +692,56 @@ end
 
 --- 获取默认关卡Id 未通关则返回配置默认关卡Id 否则返回0
 function XDlcRelinkControl:GetDefaultLevelId()
-    local levelId = tonumber(self:GetClientConfig("DefaultLevelId"))
+    local levelId = self:GetTeachingLevelId()
     if XTool.IsNumberValid(levelId) and not self:CheckLevelPassed(levelId) then
         return levelId
     end
     return 0
+end
+
+---是否教学/训练关
+function XDlcRelinkControl:IsTutorialChapter()
+    local levelId = self:GetCurrentSelectLevelId()
+    if XTool.IsNumberValid(levelId) then
+        local chapterId = self:GetLevelChapterId(levelId)
+        local config = self._Model:GetChapterConfig(chapterId)
+        return config.IsTutorial
+    end
+    return false
+end
+
+---获取当前关卡强制选择的角色Id
+function XDlcRelinkControl:GetCurLevelLockCharacter()
+    local levelId = self:GetCurrentSelectLevelId()
+    if XTool.IsNumberValid(levelId) then
+        local levelCfg = self._Model:GetLevelConfig(levelId)
+        if XTool.IsNumberValid(levelCfg.LockCharacterId) then
+            local charCfg = self._Model:GetCharacterConfig(levelCfg.LockCharacterId)
+            return charCfg.CharacterId
+        end
+    end
+    return nil
+end
+
+function XDlcRelinkControl:IsCurLevelLockCharacter()
+    return XTool.IsNumberValid(self:GetCurLevelLockCharacter())
+end
+
+---教学关是否通关
+function XDlcRelinkControl:IsTeachingLevelPass()
+    local levelId = self:GetTeachingLevelId()
+    if XTool.IsNumberValid(levelId) then
+        return self._Model:IsTutorialPassed()
+    end
+    return true
+end
+
+function XDlcRelinkControl:GetTeachingLevelId()
+    return self._Model:GetTeachingLevelId()
+end
+
+function XDlcRelinkControl:GetTrainingLevelId()
+    return self._Model:GetTrainingLevelId()
 end
 
 --endregion
@@ -621,7 +765,7 @@ end
 -- 处理活动结束
 function XDlcRelinkControl:HandleActivityEnd()
     XLuaUiManager.RunMain(true)
-    self:OpenCommonTipMsg(XUiHelper.GetText("CommonActivityEnd"))
+    XUiManager.TipText("CommonActivityEnd")
 end
 
 -- 获取活动名称
@@ -659,10 +803,10 @@ function XDlcRelinkControl:GetActivityChapterIds()
     return self._Model:GetActivityChapterIds()
 end
 
--- 获取视频路径
-function XDlcRelinkControl:GetActivityVideoUrl()
+-- 获取视频配置Id
+function XDlcRelinkControl:GetActivityVideoConfigId()
     local config = self._Model:GetActivityConfig()
-    return config and config.VideoUrl or ""
+    return config and config.VideoConfigId or 0
 end
 
 -- 获取提示列表
@@ -677,22 +821,7 @@ end
 
 --- 检测章节是否解锁
 function XDlcRelinkControl:CheckChapterUnlock(chapterId)
-    if not XTool.IsNumberValid(chapterId) then
-        return false
-    end
-
-    local timeId = self:GetChapterTimeId(chapterId)
-    if timeId > 0 and not XFunctionManager.CheckInTimeByTimeId(timeId) then
-        return false
-    end
-
-    local conditionIds = self:GetChapterConditionIds(chapterId)
-    for _, conditionId in ipairs(conditionIds) do
-        if conditionId > 0 and not XConditionManager.CheckCondition(conditionId) then
-            return false
-        end
-    end
-    return true
+    return self._Model:CheckChapterUnlock(chapterId)
 end
 
 --- 检测章节是否通关
@@ -766,13 +895,11 @@ function XDlcRelinkControl:GetLastUnlockedChapterId()
 end
 
 function XDlcRelinkControl:GetChapterTimeId(chapterId)
-    local config = self._Model:GetChapterConfig(chapterId)
-    return config and config.TimeId or 0
+    return self._Model:GetChapterTimeId(chapterId)
 end
 
 function XDlcRelinkControl:GetChapterConditionIds(chapterId)
-    local config = self._Model:GetChapterConfig(chapterId)
-    return config and config.Condition or {}
+    return self._Model:GetChapterConditionIds(chapterId)
 end
 
 function XDlcRelinkControl:GetChapterLevelIds(chapterId)
@@ -807,6 +934,11 @@ end
 function XDlcRelinkControl:GetChapterTrueOccupations(chapterId)
     local config = self._Model:GetChapterConfig(chapterId)
     return config and config.TrueOccupations or {}
+end
+
+function XDlcRelinkControl:GetChapterIsTutorial(chapterId)
+    local config = self._Model:GetChapterConfig(chapterId)
+    return config and config.IsTutorial or false
 end
 
 --endregion
@@ -876,16 +1008,16 @@ function XDlcRelinkControl:GetAllWearEquipUids()
     return equipUids
 end
 
---- 获取角色职业类型
-function XDlcRelinkControl:GetOccupationTypeByCharacterId(characterId, isNotSelf)
+--- 获取角色风格类型
+function XDlcRelinkControl:GetStyleTypeByCharacterId(characterId, isNotSelf)
     if isNotSelf then
-        return self.OtherMemberControl:GetOccupationType()
+        return self.OtherMemberControl:GetStyleType()
     end
     local characterData = self:GetCharacterDataByCharacterId(characterId)
     if not characterData then
         return 0
     end
-    return characterData:GetOccupationType()
+    return characterData:GetStyleType()
 end
 
 --- 获取角色属性列表
@@ -897,8 +1029,8 @@ function XDlcRelinkControl:GetCharacterAttributesByCharacterId(characterId, isNo
         return {}
     end
 
-    local occupationType = self:GetOccupationTypeByCharacterId(characterId, isNotSelf)
-    local npcId = self:GetCharacterNpcId(characterId, occupationType)
+    local styleType = self:GetStyleTypeByCharacterId(characterId, isNotSelf)
+    local npcId = self:GetCharacterNpcId(characterId, styleType)
     if not XTool.IsNumberValid(npcId) then
         return {}
     end
@@ -929,18 +1061,18 @@ end
 
 --- 获取角色配置列表
 ---@param characterId number 角色Id
----@return table<number, XTableDlcRelinkCharacter> key: occupationType value: 角色配置
+---@return table<number, XTableDlcRelinkCharacter> key: styleType value: 角色配置
 function XDlcRelinkControl:GetCharacterConfigs(characterId)
     if not XTool.IsNumberValid(characterId) then
         return {}
     end
 
     local configs = {}
-    for _, occupationType in pairs(XEnumConst.DlcRelink.OccTypeEnum) do
-        local configId = self:GetCharacterConfigId(characterId, occupationType)
+    for _, styleType in pairs(XEnumConst.DlcRelink.StyleTypeEnum) do
+        local configId = self:GetCharacterConfigId(characterId, styleType)
         local config = self._Model:GetCharacterConfig(configId, true)
         if config then
-            configs[occupationType] = config
+            configs[styleType] = config
         end
     end
     return configs
@@ -948,15 +1080,15 @@ end
 
 --- 获取角色技能Id列表
 ---@param characterId number 角色Id
----@param occupationType number 职业类型
+---@param styleType number 风格类型
 ---@param isNotSelf boolean 是否非自己角色（默认为false）
 ---@return table<number> 技能Id列表
-function XDlcRelinkControl:GetCharacterSkillIdsByCharacterId(characterId, occupationType, isNotSelf)
+function XDlcRelinkControl:GetCharacterSkillIdsByCharacterId(characterId, styleType, isNotSelf)
     if isNotSelf then
-        return self.OtherMemberControl:GetCharacterSkillIdsByCharacterId(characterId, occupationType)
+        return self.OtherMemberControl:GetCharacterSkillIdsByCharacterId(characterId, styleType)
     end
 
-    local skillIds = self:GetCharacterSkillIds(characterId, occupationType)
+    local skillIds = self:GetCharacterSkillIds(characterId, styleType)
     if XTool.IsTableEmpty(skillIds) then
         return {}
     end
@@ -972,28 +1104,36 @@ function XDlcRelinkControl:GetCharacterSkillIdsByCharacterId(characterId, occupa
         return skillIds
     end
 
-    local affectedSkillId = self:GetFactorAffectedSkillId(attribute.FactorId, attribute.Level)
-    local newSkillId = self:GetFactorNewSkillId(attribute.FactorId, attribute.Level)
-    if not XTool.IsNumberValid(affectedSkillId) or not XTool.IsNumberValid(newSkillId) then
+    local affectedSkillIds = self:GetFactorAffectedSkillIds(attribute.FactorId, attribute.Level)
+    local newSkillIds = self:GetFactorNewSkillIds(attribute.FactorId, attribute.Level)
+    if XTool.IsTableEmpty(affectedSkillIds) or XTool.IsTableEmpty(newSkillIds) then
         return skillIds
     end
 
-    for i, skillId in ipairs(skillIds) do
-        if skillId == affectedSkillId then
-            skillIds[i] = newSkillId
-            break
+    local skillReplaceMap = {}
+    for i, affectedSkillId in ipairs(affectedSkillIds) do
+        local newSkillId = newSkillIds[i]
+        if XTool.IsNumberValid(affectedSkillId) and XTool.IsNumberValid(newSkillId) then
+            skillReplaceMap[affectedSkillId] = newSkillId
+        end
+    end
+
+    for index, skillId in ipairs(skillIds) do
+        local newSkillId = skillReplaceMap[skillId]
+        if XTool.IsNumberValid(newSkillId) then
+            skillIds[index] = newSkillId
         end
     end
     return skillIds
 end
 
---- 检查角色职业是否已解锁
-function XDlcRelinkControl:CheckCharacterOccupationUnlock(characterId, occupationType)
-    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(occupationType) then
+--- 检查角色风格是否已解锁
+function XDlcRelinkControl:CheckCharacterStyleUnlock(characterId, styleType)
+    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(styleType) then
         return false
     end
 
-    local conditionIds = self:GetCharacterConditionIds(characterId, occupationType)
+    local conditionIds = self:GetCharacterConditionIds(characterId, styleType)
     for _, conditionId in ipairs(conditionIds) do
         if conditionId > 0 and not XConditionManager.CheckCondition(conditionId) then
             return false
@@ -1003,80 +1143,92 @@ function XDlcRelinkControl:CheckCharacterOccupationUnlock(characterId, occupatio
 end
 
 --- 获取角色配置Id
-function XDlcRelinkControl:GetCharacterConfigId(characterId, occupationType)
-    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(occupationType) then
+function XDlcRelinkControl:GetCharacterConfigId(characterId, styleType)
+    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(styleType) then
         return 0
     end
-    return characterId * 10 + occupationType
+    return characterId * 10 + styleType
 end
 
-function XDlcRelinkControl:GetCharacterCharacterId(characterId, occupationType)
-    local configId = self:GetCharacterConfigId(characterId, occupationType)
+function XDlcRelinkControl:GetCharacterStyleName(characterId, styleType)
+    local configId = self:GetCharacterConfigId(characterId, styleType)
     local config = self._Model:GetCharacterConfig(configId)
-    return config and config.CharacterId or 0
+    return config and config.StyleName or ""
 end
 
-function XDlcRelinkControl:GetCharacterOccupationType(characterId, occupationType)
-    local configId = self:GetCharacterConfigId(characterId, occupationType)
+function XDlcRelinkControl:GetCharacterStyleIcon(characterId, styleType)
+    local configId = self:GetCharacterConfigId(characterId, styleType)
+    local config = self._Model:GetCharacterConfig(configId)
+    return config and config.StyleIcon or ""
+end
+
+function XDlcRelinkControl:GetCharacterStyleDesc(characterId, styleType)
+    local configId = self:GetCharacterConfigId(characterId, styleType)
+    local config = self._Model:GetCharacterConfig(configId)
+    return config and config.StyleDesc or ""
+end
+
+function XDlcRelinkControl:GetCharacterOccupationType(characterId, styleType)
+    local configId = self:GetCharacterConfigId(characterId, styleType)
     local config = self._Model:GetCharacterConfig(configId)
     return config and config.OccupationType or 0
 end
 
-function XDlcRelinkControl:GetCharacterOccupationDesc(characterId, occupationType)
-    local configId = self:GetCharacterConfigId(characterId, occupationType)
-    local config = self._Model:GetCharacterConfig(configId)
-    return config and config.OccupationDesc or ""
-end
-
-function XDlcRelinkControl:GetCharacterIsDefaultTag(characterId, occupationType)
-    local configId = self:GetCharacterConfigId(characterId, occupationType)
+function XDlcRelinkControl:GetCharacterIsDefaultTag(characterId, styleType)
+    local configId = self:GetCharacterConfigId(characterId, styleType)
     local config = self._Model:GetCharacterConfig(configId)
     return config and config.IsDefaultTag or 0
 end
 
-function XDlcRelinkControl:GetCharacterNpcId(characterId, occupationType)
-    local configId = self:GetCharacterConfigId(characterId, occupationType)
+function XDlcRelinkControl:GetCharacterNpcId(characterId, styleType)
+    local configId = self:GetCharacterConfigId(characterId, styleType)
     local config = self._Model:GetCharacterConfig(configId)
     return config and config.NpcId or 0
 end
 
-function XDlcRelinkControl:GetCharacterConditionIds(characterId, occupationType)
-    local configId = self:GetCharacterConfigId(characterId, occupationType)
+function XDlcRelinkControl:GetCharacterConditionIds(characterId, styleType)
+    local configId = self:GetCharacterConfigId(characterId, styleType)
     local config = self._Model:GetCharacterConfig(configId)
     return config and config.Condition or {}
 end
 
-function XDlcRelinkControl:GetCharacterSkillIds(characterId, occupationType)
-    local configId = self:GetCharacterConfigId(characterId, occupationType)
+function XDlcRelinkControl:GetCharacterSkillIds(characterId, styleType)
+    local configId = self:GetCharacterConfigId(characterId, styleType)
     local config = self._Model:GetCharacterConfig(configId)
     return config and config.SkillIds or {}
 end
 
+function XDlcRelinkControl:GetCharacterJumpWikiId(characterId, styleType)
+    local configId = self:GetCharacterConfigId(characterId, styleType)
+    local config = self._Model:GetCharacterConfig(configId)
+    return config and config.JumpWikiId
+end
+
 --endregion
 
---region 职业相关
+--region 风格和职业相关
 
-function XDlcRelinkControl:GetOccupationNameByCharacterId(characterId)
-    local occupationType = self:GetOccupationTypeByCharacterId(characterId)
+function XDlcRelinkControl:GetCharacterOccupationName(characterId, styleType)
+    local occupationType = self:GetCharacterOccupationType(characterId, styleType)
     return self:GetClientConfig("CharacterOccupationName", occupationType) or ""
 end
 
-function XDlcRelinkControl:GetOccupationIconByCharacterId(characterId)
-    local occupationType = self:GetOccupationTypeByCharacterId(characterId)
+function XDlcRelinkControl:GetCharacterOccupationIcon(characterId, styleType)
+    local occupationType = self:GetCharacterOccupationType(characterId, styleType)
     return self:GetClientConfig("CharacterOccupationIcon", occupationType) or ""
 end
 
-function XDlcRelinkControl:GetOccupationDescByCharacterId(characterId)
-    local occupationType = self:GetOccupationTypeByCharacterId(characterId)
-    return self:GetCharacterOccupationDesc(characterId, occupationType)
+function XDlcRelinkControl:GetCharacterOccupationIconTwo(characterId, styleType)
+    local occupationType = self:GetCharacterOccupationType(characterId, styleType)
+    return self:GetClientConfig("CharacterOccupationIconTwo", occupationType) or ""
 end
 
-function XDlcRelinkControl:GetOccupationNameByEquipId(equipId)
+function XDlcRelinkControl:GetEquipOccupationName(equipId)
     local equipOccupationType = self:GetEquipOccupationType(equipId)
     return self:GetClientConfig("EquipOccupationName", equipOccupationType) or ""
 end
 
-function XDlcRelinkControl:GetOccupationIconByEquipId(equipId)
+function XDlcRelinkControl:GetEquipOccupationIcon(equipId)
     local equipOccupationType = self:GetEquipOccupationType(equipId)
     return self:GetClientConfig("EquipOccupationIcon", equipOccupationType) or ""
 end
@@ -1094,11 +1246,11 @@ function XDlcRelinkControl:GetLevelFinishTime(levelId)
 end
 
 --- 获取等级通关次数
-function XDlcRelinkControl:GetLevelPassTime(levelId)
+function XDlcRelinkControl:GetLevelPassCount(levelId)
     if not self._Model.ActivityData then
         return 0
     end
-    return self._Model.ActivityData:GetLevelPassTime(levelId)
+    return self._Model.ActivityData:GetLevelPassCount(levelId)
 end
 
 --- 获取排行榜等级Id列表
@@ -1156,7 +1308,7 @@ function XDlcRelinkControl:GetLevelUnlockDesc(levelId)
     if timeId > 0 and not XFunctionManager.CheckInTimeByTimeId(timeId) then
         local remainTime = XFunctionManager.GetStartTimeByTimeId(timeId) - XTime.GetServerNowTimestamp()
         if remainTime > 0 then
-            return string.format(self:GetClientConfig("LevelUnlockDesc", 2), XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME))
+            return string.format(self:GetClientConfig("LevelUnlockDesc", 2), XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.MOE_WAR))
         end
     end
 
@@ -1224,24 +1376,29 @@ function XDlcRelinkControl:GetLevelDropIds(levelId)
     return config and config.DropIds or {}
 end
 
-function XDlcRelinkControl:GetLevelFirstExp(levelId)
-    local config = self._Model:GetLevelConfig(levelId)
-    return config and config.FirstExp or 0
-end
-
-function XDlcRelinkControl:GetLevelExp(levelId)
-    local config = self._Model:GetLevelConfig(levelId)
-    return config and config.Exp or 0
-end
-
 function XDlcRelinkControl:GetLevelFirstCoin(levelId)
     local config = self._Model:GetLevelConfig(levelId)
     return config and config.FirstCoin or 0
 end
 
-function XDlcRelinkControl:GetLevelLevelLimit(levelId)
+function XDlcRelinkControl:GetLevelCoin(levelId)
     local config = self._Model:GetLevelConfig(levelId)
-    return config and config.LevelLimit or 0
+    return config and config.Coin or 0
+end
+
+function XDlcRelinkControl:GetLevelFirstGold(levelId)
+    local config = self._Model:GetLevelConfig(levelId)
+    return config and config.FirstGold or 0
+end
+
+function XDlcRelinkControl:GetLevelGold(levelId)
+    local config = self._Model:GetLevelConfig(levelId)
+    return config and config.Gold or 0
+end
+
+function XDlcRelinkControl:GetLevelAbilityLimit(levelId)
+    local config = self._Model:GetLevelConfig(levelId)
+    return config and config.AbilityLimit or 0
 end
 
 function XDlcRelinkControl:GetLevelLoadingTips(levelId)
@@ -1268,14 +1425,15 @@ function XDlcRelinkControl:GetBossSkillDescName(skillId)
     return config and config.Name or ""
 end
 
-function XDlcRelinkControl:GetBossSkillDescVideoUrl(skillId)
+function XDlcRelinkControl:GetBossSkillDescVideoConfigId(skillId)
     local config = self._Model:GetBossSkillDescConfig(skillId)
-    return config and config.VideoUrl or ""
+    return config and config.VideoConfigId or 0
 end
 
 function XDlcRelinkControl:GetBossSkillDescDesc(skillId)
     local config = self._Model:GetBossSkillDescConfig(skillId)
-    return config and config.Desc or ""
+    local desc = config and config.Desc or ""
+    return XUiHelper.ConvertLineBreakSymbol(desc)
 end
 
 function XDlcRelinkControl:GetBossSkillDescTags(skillId)
@@ -1374,15 +1532,6 @@ function XDlcRelinkControl:CheckPlayerLevelUpCondition(level)
         return false, ""
     end
 
-    -- 检查条件
-    local conditionId = self:GetPlayerLevelConditionId(level)
-    if XTool.IsNumberValid(conditionId) then
-        local isOpen, desc = XConditionManager.CheckCondition(conditionId)
-        if not isOpen then
-            return false, desc
-        end
-    end
-
     -- 检查通关条件
     local finishOneOfLevelIds = self:GetPlayerLevelFinishOneOfLevelIds(level)
     if not XTool.IsTableEmpty(finishOneOfLevelIds) then
@@ -1391,14 +1540,16 @@ function XDlcRelinkControl:CheckPlayerLevelUpCondition(level)
                 return true, ""
             end
         end
-        local levelNameList = {}
+        -- 目前配置保证都是同难度关卡，名字只取第一个
+        local showLevelName = ''
         for _, levelId in ipairs(finishOneOfLevelIds) do
             local levelName = self:GetLevelName(levelId)
-            if levelName then
-                table.insert(levelNameList, levelName)
+
+            if string.IsNilOrEmpty(showLevelName) then
+                showLevelName = levelName
             end
         end
-        local desc = string.format(self:GetClientConfig("PlayerLevelUpConditionDesc"), table.concat(levelNameList, ","))
+        local desc = string.format(self:GetClientConfig("PlayerLevelUpConditionDesc"), showLevelName)
         return false, desc
     end
     return true, ""
@@ -1422,11 +1573,6 @@ end
 function XDlcRelinkControl:GetPlayerLevelExtraSlotLimit(level)
     local config = self._Model:GetPlayerLevelConfig(level)
     return config and config.ExtraSlotLimit or 0
-end
-
-function XDlcRelinkControl:GetPlayerLevelConditionId(level)
-    local config = self._Model:GetPlayerLevelConfig(level)
-    return config and config.ConditionId or 0
 end
 
 function XDlcRelinkControl:GetPlayerLevelAttributeNames(level)
@@ -1573,91 +1719,78 @@ function XDlcRelinkControl:SortEquipEntriesCommon(entries)
     end)
 end
 
---- 装备界面：当前角色穿戴置顶，其它角色穿戴置底，其余按通用排序
----@param entries { Uid:number, Quality:number, Ability:number, WearerId:number }
+--- 装备排序方法
+--- 规则：当前角色置顶（可以为空）、其它角色置底、类型降序 > 品质降序 > 等级降序 > 职业(tagType为All时才有)升序 > Uid升序
+---@param entries { Uid:number, Type:number, Quality:number, Ability:number, OccupationType:number, WearerId:number } 装备列表
+---@param tagType number 标签类型
+---@param uiType string 界面类型
 ---@param characterId number 当前角色Id
-function XDlcRelinkControl:SortEquipEntriesForEquipUi(entries, characterId)
-    if XTool.IsTableEmpty(entries) or #entries <= 1 or not XTool.IsNumberValid(characterId) then
+function XDlcRelinkControl:SortEquipEntriesUnified(entries, tagType, uiType, characterId)
+    if XTool.IsTableEmpty(entries) or #entries <= 1 then
         return
     end
 
+    local isReverse = uiType and uiType == self.EquipUiType.Decompose  -- 分解界面排序取反
+    local hasTagType = tagType and tagType == self.EquipTagType.All  -- 是否需要按职业排序
+
+    -- 设置穿戴优先级
     for i = 1, #entries do
         local wearer = entries[i].WearerId or 0
-        local isCur = XTool.IsNumberValid(wearer) and wearer == characterId
-        local isOther = XTool.IsNumberValid(wearer) and wearer ~= characterId
-        entries[i].WearRank = isCur and 0 or (isOther and 2 or 1)
-    end
-
-    table.sort(entries, function(a, b)
-        if a.WearRank ~= b.WearRank then
-            return a.WearRank < b.WearRank
-        end
-        if a.Quality ~= b.Quality then
-            return a.Quality > b.Quality
-        end
-        if a.Ability ~= b.Ability then
-            return a.Ability > b.Ability
-        end
-        return a.Uid < b.Uid
-    end)
-end
-
---- 改造界面：过滤掉当前选中装备，角色穿戴装备置底，其余按通用排序
----@param entries { Uid:number, Quality:number, Ability:number, WearerId:number }
----@param curEquipUid number 当前选中装备Uid
----@return table[] 过滤后的装备列表
-function XDlcRelinkControl:FilterAndSortEquipEntriesForReformUi(entries, curEquipUid)
-    if XTool.IsTableEmpty(entries) or #entries <= 1 then
-        return entries or {}
-    end
-
-    local filteredEntries = {}
-    for i = 1, #entries do
-        local wearer = entries[i].WearerId or 0
-        if not XTool.IsNumberValid(curEquipUid) or entries[i].Uid ~= curEquipUid then
+        if uiType == self.EquipUiType.Bg and XTool.IsNumberValid(characterId) then
+            -- 装备界面：当前角色穿戴置顶(0)，其它角色穿戴置底(2)，未穿戴居中(1)
+            local isCur = XTool.IsNumberValid(wearer) and wearer == characterId
+            local isOther = XTool.IsNumberValid(wearer) and wearer ~= characterId
+            entries[i].WearRank = isCur and 0 or (isOther and 2 or 1)
+        else
+            -- 改造/分解界面：未穿戴置顶(0)，已穿戴置底(1)    
             entries[i].WearRank = XTool.IsNumberValid(wearer) and 1 or 0
-            table.insert(filteredEntries, entries[i])
         end
     end
 
-    table.sort(filteredEntries, function(a, b)
-        if a.WearRank ~= b.WearRank then
-            return a.WearRank < b.WearRank
-        end
-        if a.Quality ~= b.Quality then
-            return a.Quality > b.Quality
-        end
-        if a.Ability ~= b.Ability then
-            return a.Ability > b.Ability
-        end
-        return a.Uid < b.Uid
-    end)
-    return filteredEntries
-end
-
---- 分解界面：角色穿戴装备置底，其余按通用排序取反
----@param entries { Uid:number, Quality:number, Ability:number, WearerId:number }
-function XDlcRelinkControl:SortEquipEntriesForDecomposeUi(entries)
-    if XTool.IsTableEmpty(entries) or #entries <= 1 then
-        return
-    end
-
-    for i = 1, #entries do
-        local wearer = entries[i].WearerId or 0
-        entries[i].WearRank = XTool.IsNumberValid(wearer) and 1 or 0
-    end
-
+    -- 排序
     table.sort(entries, function(a, b)
+        -- 1. 穿戴优先级
         if a.WearRank ~= b.WearRank then
             return a.WearRank < b.WearRank
         end
+        -- 2. 类型降序
+        if a.Type and b.Type and a.Type ~= b.Type then
+            if isReverse then
+                return a.Type < b.Type
+            else
+                return a.Type > b.Type
+            end
+        end
+        -- 3. 品质降序
         if a.Quality ~= b.Quality then
-            return a.Quality < b.Quality
+            if isReverse then
+                return a.Quality < b.Quality
+            else
+                return a.Quality > b.Quality
+            end
         end
+        -- 4. 等级降序
         if a.Ability ~= b.Ability then
-            return a.Ability < b.Ability
+            if isReverse then
+                return a.Ability < b.Ability
+            else
+                return a.Ability > b.Ability
+            end
         end
-        return a.Uid > b.Uid
+        -- 5. 职业升序（仅当tagType为All时）
+        if hasTagType and a.OccupationType and b.OccupationType and a.OccupationType ~= b.OccupationType then
+            if isReverse then
+                return a.OccupationType > b.OccupationType
+            else
+                return a.OccupationType < b.OccupationType
+            end
+        end
+        -- 6. Uid升序/降序
+        if isReverse then
+            return a.Uid > b.Uid
+        else
+            return a.Uid < b.Uid
+        end
     end)
 end
 
@@ -1710,46 +1843,45 @@ end
 
 --endregion
 
---- 根据职业类型获取装备Uid列表
----@param occupationType number 职业类型
----@param opts { Context:string, CharacterId:number, SelectedEquipUid:number, Filter:XDlcRelinkEquipFilterCache } 可选参数 Context ->"Equip"|"Reform"|"Decompose"
+--- 根据标签类型获取装备Uid列表
+---@param tagType number 标签类型
+---@param uiType number 界面类型
+---@param filter XDlcRelinkEquipFilterCache 筛选缓存
+---@param characterId number 角色Id
 ---@return table<number> 装备Uid列表
-function XDlcRelinkControl:GetEquipUidListByOccupationType(occupationType, opts)
-    if not XTool.IsNumberValid(occupationType) then
-        return {}
-    end
-
+function XDlcRelinkControl:GetEquipUidListByTagType(tagType, uiType, filter, characterId)
     local equipDataList = self:GetEquipsDataList()
     if XTool.IsTableEmpty(equipDataList) then
         return {}
     end
 
     local entries = {}
-    opts = opts or {}
-    local filter = opts.Filter
-
     for _, equipData in pairs(equipDataList) do
         local templateId = equipData:GetTemplateId()
-        if self:GetEquipOccupationType(templateId) == occupationType and self:CheckEquipMatchFilter(equipData, filter) then
+        local occupationType = self:GetEquipOccupationType(templateId)
+
+        -- 检查是否匹配标签类型
+        local isMatchTag = tagType == self.EquipTagType.All or tagType == occupationType
+        if not isMatchTag then
+            goto CONTINUE
+        end
+
+        if self:CheckEquipMatchFilter(equipData, filter) then
             local equipUid = equipData:GetUid()
+            local type = self:GetEquipType(templateId)
             local quality = self:GetEquipQuality(templateId)
             local ability = equipData:GetEquipAbility()
             local wearerId = self:GetEquipWearCharacterId(equipUid)
-            table.insert(entries, { Uid = equipUid, Quality = quality, Ability = ability, WearerId = wearerId })
+            table.insert(entries, { Uid = equipUid, Type = type, Quality = quality, Ability = ability, WearerId = wearerId, OccupationType = occupationType })
         end
+
+        :: CONTINUE ::
     end
 
-    local context = opts.Context
-    if context == "Equip" then
-        self:SortEquipEntriesForEquipUi(entries, opts.CharacterId)
-    elseif context == "Reform" then
-        entries = self:FilterAndSortEquipEntriesForReformUi(entries, opts.SelectedEquipUid)
-    elseif context == "Decompose" then
-        self:SortEquipEntriesForDecomposeUi(entries)
-    else
-        self:SortEquipEntriesCommon(entries)
-    end
+    -- 排序
+    self:SortEquipEntriesUnified(entries, tagType, uiType, characterId)
 
+    -- 提取Uid列表
     local equipUids = {}
     for i = 1, #entries do
         equipUids[i] = entries[i].Uid
@@ -1989,17 +2121,24 @@ function XDlcRelinkControl:GetEquipMaxAbilityByUid(equipUid, isNotSelf)
     local ability = self:GetEquipAbility(templateId)
 
     -- 主属性战力
-    local mainSkillFactorId = self:GetEquipMainSkillFactorId(templateId)
     for _, attribute in pairs(equipData:GetMainFactors()) do
+        local mainSkillFactorId = self:GetEquipMainSkillFactorId(attribute.EquipTemplate)
         if mainSkillFactorId ~= attribute.FactorId then
             ability = ability + self:GetAttributeAbilityInternal(attribute)
+        else
+            ability = ability + self:GetEquipMainSkillFactorAbility(attribute.EquipTemplate)
         end
     end
 
     -- 副属性战力
     for _, slotsValue in pairs(equipData:GetAttributeSlots()) do
         for _, attribute in pairs(slotsValue.Attributes) do
-            ability = ability + self:GetAttributeAbilityInternal(attribute)
+            local mainSkillFactorId = self:GetEquipMainSkillFactorId(attribute.EquipTemplate)
+            if mainSkillFactorId ~= attribute.FactorId then
+                ability = ability + self:GetAttributeAbilityInternal(attribute)
+            else
+                ability = ability + self:GetEquipMainSkillFactorAbility(attribute.EquipTemplate)
+            end
         end
     end
 
@@ -2061,9 +2200,9 @@ function XDlcRelinkControl:CalcExtendAddFactor(equipUids, isNotSelf)
         if XTool.IsNumberValid(extendEquipUid) then
             local extendTemplateId = self:GetEquipTemplateIdByEquipUid(extendEquipUid, isNotSelf)
             if XTool.IsNumberValid(extendTemplateId) and mainOcc == self:GetEquipOccupationType(extendTemplateId) then
-                local extendAttr = self:GetEquipMainFactorByUid(extendEquipUid, false, isNotSelf)
-                if extendAttr and XTool.IsNumberValid(extendAttr.FactorId) then
-                    result[extendAttr.FactorId] = (result[extendAttr.FactorId] or 0) + addFactorLevel
+                local extendAttrs = self:GetEquipAllMainFactorByUid(extendEquipUid, isNotSelf)
+                for _, attribute in pairs(extendAttrs) do
+                    result[attribute.FactorId] = (result[attribute.FactorId] or 0) + addFactorLevel
                 end
             end
         end
@@ -2087,26 +2226,26 @@ function XDlcRelinkControl:AccumulateEquipAttributes(equipUids, extendAddFactors
         if not XTool.IsNumberValid(factorId) or not XTool.IsNumberValid(level) then
             return
         end
+
         local entry = attributeMap[factorId]
         if entry then
-            entry.CurLevel = entry.CurLevel + level
+            -- 根据叠加类型累加等级
+            local levelOverlyingType = self:GetFactorDescLevelOverlyingType(factorId)
+            if levelOverlyingType == XEnumConst.DlcRelink.FactorLevelOverlyingType.Overlying then
+                entry.CurLevel = entry.CurLevel + level
+            elseif levelOverlyingType == XEnumConst.DlcRelink.FactorLevelOverlyingType.UseMax then
+                entry.CurLevel = math.max(entry.CurLevel, level)
+            end
         elseif createIfMissing then
-            attributeMap[factorId] = {
-                FactorId = factorId,
-                IsSkill = isSkill or false,
-                CurLevel = level,
-            }
+            attributeMap[factorId] = { FactorId = factorId, IsSkill = isSkill or false, CurLevel = level }
         end
     end
 
     for _, equipUid in pairs(equipUids) do
-        -- 配置Id
-        local templateId = self:GetEquipTemplateIdByEquipUid(equipUid, isNotSelf)
-        local mainSkillFactorId = self:GetEquipMainSkillFactorId(templateId)
-
         -- 主属性
         local mainFactors = self:GetEquipAllMainFactorByUid(equipUid, isNotSelf)
         for _, attribute in pairs(mainFactors) do
+            local mainSkillFactorId = self:GetEquipMainSkillFactorId(attribute.EquipTemplate)
             local factorId = attribute.FactorId
             AddAttr(factorId, factorId == mainSkillFactorId, attribute.Level, true)
         end
@@ -2115,7 +2254,9 @@ function XDlcRelinkControl:AccumulateEquipAttributes(equipUids, extendAddFactors
         local attributeSlots = self:GetEquipAllDeputyFactorByUid(equipUid, isNotSelf)
         for _, slotsValue in pairs(attributeSlots) do
             for _, attribute in pairs(slotsValue.Attributes) do
-                AddAttr(attribute.FactorId, false, attribute.Level, true)
+                local mainSkillFactorId = self:GetEquipMainSkillFactorId(attribute.EquipTemplate)
+                local factorId = attribute.FactorId
+                AddAttr(factorId, factorId == mainSkillFactorId, attribute.Level, true)
             end
         end
     end
@@ -2171,64 +2312,76 @@ function XDlcRelinkControl:GetTotalAttributes(characterId, curPlayerLevel, equip
     local equipAttributes = self:GetEquipTotalAttributeList(equipUids, isNotSelf)
 
     local attributeDict = {}
-    -- 获取或创建属性项
-    local function GetOrCreate(attrStr)
-        local entry = attributeDict[attrStr]
-        if not entry then
-            entry = {
-                AttrStr = attrStr,
-                CharacterValue = 0,
-                PlayerValue = 0,
-                EquipValue = 0,
-            }
-            attributeDict[attrStr] = entry
-        end
-        return entry
-    end
 
     -- 角色基础属性
     for attrStr, attrValue in pairs(characterAttributes) do
         if XTool.IsNumberValid(attrValue) then
-            local entry = GetOrCreate(attrStr)
-            entry.CharacterValue = attrValue
+            attributeDict[attrStr] = { AttrStr = attrStr, CharacterValue = attrValue, PlayerValue = 0, EquipValue = 0 }
         end
     end
 
     -- 玩家等级属性
     for attrStr, attrValue in pairs(playerAttributes) do
         if XTool.IsNumberValid(attrValue) then
-            local entry = GetOrCreate(attrStr)
-            entry.PlayerValue = entry.PlayerValue + attrValue
+            local entry = attributeDict[attrStr]
+            if entry then
+                entry.PlayerValue = entry.PlayerValue + attrValue
+            else
+                attributeDict[attrStr] = { AttrStr = attrStr, CharacterValue = 0, PlayerValue = attrValue, EquipValue = 0 }
+            end
         end
     end
 
-    -- 装备属性（非技能类）
+    -- 装备属性数据结构: { [attrStr] = { [attrType] = value } }
+    local equipAttrData = {}
+    -- 装备属性（非技能属性）
     for _, attribute in pairs(equipAttributes) do
         if not attribute.IsSkill then
             local factorId = attribute.FactorId
             local curLevel = attribute.CurLevel
             local params = self:GetFactorParams(factorId, curLevel)
-            local attrStr = self:GetFactorDescAttributeName(factorId)
             local attrValue = (params and params[1]) or 0
+
             if XTool.IsNumberValid(attrValue) then
-                local entry = GetOrCreate(attrStr)
-                entry.EquipValue = entry.EquipValue + attrValue
+                local attrStr = self:GetFactorDescAttributeName(factorId)
+                local attrType = self:GetFactorDescAttributeType(factorId)
+
+                if not string.IsNilOrEmpty(attrStr) then
+                    -- 初始化属性数据结构
+                    if not equipAttrData[attrStr] then
+                        equipAttrData[attrStr] = {}
+                    end
+                    equipAttrData[attrStr][attrType] = (equipAttrData[attrStr][attrType] or 0) + attrValue
+                end
             end
         end
     end
 
-    -- 过滤与排序
-    local totalAttributes = {}
-    for attrStr, attribute in pairs(attributeDict) do
-        if self:CheckCharacterAttribExist(attrStr) then
-            attribute.Order = self:GetCharacterAttribOrder(attrStr)
-            table.insert(totalAttributes, attribute)
-        end
-    end
-    table.sort(totalAttributes, function(a, b)
-        return a.Order < b.Order
-    end)
+    -- 计算装备属性值
+    -- 公式: 最终值 = (CharacterValue * (1 + 类型2百分比) + PlayerValue + 类型1基础值) * (1 + 类型4百分比) + 类型3固定值
+    -- 装备值 = 最终值 - CharacterValue - PlayerValue
+    for attrStr, values in pairs(equipAttrData) do
+        local origin = values[XEnumConst.DlcRelink.FactorAttributeType.Origin] or 0
+        local basePercentage = values[XEnumConst.DlcRelink.FactorAttributeType.BasePercentage] or 0
+        local extraFixed = values[XEnumConst.DlcRelink.FactorAttributeType.ExtraFixed] or 0
+        local extraPercentage = values[XEnumConst.DlcRelink.FactorAttributeType.ExtraPercentage] or 0
 
+        local entry = attributeDict[attrStr]
+        if not entry then
+            entry = { AttrStr = attrStr, CharacterValue = 0, PlayerValue = 0, EquipValue = 0 }
+            attributeDict[attrStr] = entry
+        end
+
+        -- 根据公式计算装备值
+        local finalValue = (entry.CharacterValue * (1 + basePercentage / 10000) + entry.PlayerValue + origin) * (1 + extraPercentage / 10000) + extraFixed
+        entry.EquipValue = math.floor(finalValue + 0.5) - entry.CharacterValue - entry.PlayerValue
+    end
+
+    -- 转换为列表返回
+    local totalAttributes = {}
+    for _, attribute in pairs(attributeDict) do
+        table.insert(totalAttributes, attribute)
+    end
     return totalAttributes
 end
 
@@ -2244,19 +2397,15 @@ function XDlcRelinkControl:GetEquipMainFactorIds(equipUidList)
     for _, equipUid in pairs(equipUidList) do
         local equipData = self:GetEquipDataByUid(equipUid)
         if equipData then
-            local templateId = equipData:GetTemplateId()
-            local mainSkillFactorId = self:GetEquipMainSkillFactorId(templateId)
             for _, attribute in pairs(equipData:GetMainFactors()) do
-                if attribute.FactorId ~= mainSkillFactorId then
-                    factorIdSet[attribute.FactorId] = true
-                end
+                factorIdSet[attribute.FactorId] = true
             end
         end
     end
 
     local factorIds = {}
     for factorId in pairs(factorIdSet) do
-        factorIds[#factorIds + 1] = factorId
+        table.insert(factorIds, factorId)
     end
     table.sort(factorIds)
     return factorIds
@@ -2400,6 +2549,11 @@ function XDlcRelinkControl:GetEquipMainSkillFactorLevel(equipId)
     return config and config.MainSkillFactorLevel or 0
 end
 
+function XDlcRelinkControl:GetEquipMainSkillFactorAbility(equipId)
+    local config = self._Model:GetEquipConfig(equipId)
+    return config and config.MainSkillFactorAbility or 0
+end
+
 function XDlcRelinkControl:GetEquipMainFactorId(equipId)
     local config = self._Model:GetEquipConfig(equipId)
     return config and config.MainFactorId or 0
@@ -2433,6 +2587,11 @@ end
 function XDlcRelinkControl:GetEquipAbility(equipId)
     local config = self._Model:GetEquipConfig(equipId)
     return config and config.Ability or 0
+end
+
+---@return XTableDlcRelinkEquip
+function XDlcRelinkControl:GetMaxQualityEquipByFactor(factor)
+    return self._Model:GetMaxQualityEquipByFactor(factor)
 end
 
 --endregion
@@ -2505,16 +2664,22 @@ function XDlcRelinkControl:GetFactorDesc(factorId, level)
     return config and config.Desc or ""
 end
 
-function XDlcRelinkControl:GetFactorAffectedSkillId(factorId, level)
+function XDlcRelinkControl:GetFactorSkillDesc(factorId, level)
     local configId = self:GetFactorConfigId(factorId, level)
     local config = self._Model:GetFactorConfig(configId)
-    return config and config.AffectedSkillId or 0
+    return config and config.SkillDesc or ""
 end
 
-function XDlcRelinkControl:GetFactorNewSkillId(factorId, level)
+function XDlcRelinkControl:GetFactorAffectedSkillIds(factorId, level)
     local configId = self:GetFactorConfigId(factorId, level)
     local config = self._Model:GetFactorConfig(configId)
-    return config and config.NewSkillId or 0
+    return config and config.AffectedSkillIds or {}
+end
+
+function XDlcRelinkControl:GetFactorNewSkillIds(factorId, level)
+    local configId = self:GetFactorConfigId(factorId, level)
+    local config = self._Model:GetFactorConfig(configId)
+    return config and config.NewSkillIds or {}
 end
 
 --endregion
@@ -2526,6 +2691,11 @@ function XDlcRelinkControl:GetFactorDescAttributeName(factorId)
     return config and config.AttributeName or ""
 end
 
+function XDlcRelinkControl:GetFactorDescAttributeDetailShowType(factorId)
+    local config = self._Model:GetFactorDescConfig(factorId)
+    return config and config.DetailShowType or 1
+end
+
 function XDlcRelinkControl:GetFactorDescName(factorId)
     local config = self._Model:GetFactorDescConfig(factorId)
     return config and config.Name or ""
@@ -2533,7 +2703,8 @@ end
 
 function XDlcRelinkControl:GetFactorDescDesc(factorId)
     local config = self._Model:GetFactorDescConfig(factorId)
-    return config and config.Desc or ""
+    local desc = config and config.Desc or ""
+    return XUiHelper.ConvertLineBreakSymbol(desc)
 end
 
 function XDlcRelinkControl:GetFactorDescIsPercent(factorId)
@@ -2549,6 +2720,20 @@ end
 function XDlcRelinkControl:GetFactorDescOrder(factorId)
     local config = self._Model:GetFactorDescConfig(factorId)
     return config and config.Order or 0
+end
+
+function XDlcRelinkControl:GetFactorDescAttributeType(factorId)
+    local config = self._Model:GetFactorDescConfig(factorId)
+    return config and config.AttributeType or 0
+end
+
+function XDlcRelinkControl:GetFactorDescLevelOverlyingType(factorId)
+    local config = self._Model:GetFactorDescConfig(factorId)
+    return config and config.LevelOverlyingType or 0
+end
+
+function XDlcRelinkControl:GetFactorDescConfigs()
+    return self._Model:GetFactorDescConfigs()
 end
 
 --endregion
@@ -2620,17 +2805,28 @@ function XDlcRelinkControl:GetBreakRewardGoods(equipUidList)
 
     local itemId2Count = {}
     for _, equipUid in pairs(equipUidList) do
+        -- 装备副词条分解
+        local attributeSlots = self:GetEquipAllDeputyFactorByUid(equipUid)
+        for _, slotsValue in pairs(attributeSlots) do
+            for _, attribute in pairs(slotsValue.Attributes) do
+                local fixOutputId = self:GetBreakFixOutputId(attribute.EquipTemplate)
+                local factorOutputCount = self:GetBreakFactorOutputCount(attribute.EquipTemplate)
+                for index, outputId in pairs(fixOutputId) do
+                    local factorCount = factorOutputCount[index] or 0
+                    if XTool.IsNumberValid(outputId) and factorCount > 0 then
+                        itemId2Count[outputId] = (itemId2Count[outputId] or 0) + factorCount
+                    end
+                end
+            end
+        end
+        -- 装备本身分解
         local equipTemplateId = self:GetEquipTemplateIdByEquipUid(equipUid)
-        local subFactorCount = self:GetEquipDeputyAttributeTotalCount(equipUid)
         local fixOutputId = self:GetBreakFixOutputId(equipTemplateId)
         local fixOutputCount = self:GetBreakFixOutputCount(equipTemplateId)
-        local factorOutputCount = self:GetBreakFactorOutputCount(equipTemplateId)
         for index, outputId in pairs(fixOutputId) do
             local fixCount = fixOutputCount[index] or 0
-            local factorCount = factorOutputCount[index] or 0
-            local totalCount = fixCount + subFactorCount * factorCount
-            if XTool.IsNumberValid(outputId) and totalCount > 0 then
-                itemId2Count[outputId] = (itemId2Count[outputId] or 0) + totalCount
+            if XTool.IsNumberValid(outputId) and fixCount > 0 then
+                itemId2Count[outputId] = (itemId2Count[outputId] or 0) + fixCount
             end
         end
     end
@@ -2754,10 +2950,10 @@ function XDlcRelinkControl:GetUsedEquipPresetCount()
 end
 
 --- 获取预设装备名称
-function XDlcRelinkControl:GetEquipPresetSetNameByIndex(index)
+function XDlcRelinkControl:GetEquipPresetSetNameByIndex(index, isDefault)
     local presetSetData = self:GetEquipPresetSetDataByIndex(index)
     local name = presetSetData and presetSetData.Name or ""
-    if string.IsNilOrEmpty(name) then
+    if string.IsNilOrEmpty(name) and isDefault then
         name = string.format(self:GetClientConfig("EquipPresetSetDefaultName"), index)
     end
     return name
@@ -2931,6 +3127,30 @@ end
 
 --region 角色属性表相关
 
+function XDlcRelinkControl:GetCharacterAttributeList(characterId, isNotSelf)
+    local curPlayerLevel, equipUids
+    if isNotSelf then
+        curPlayerLevel = self.OtherMemberControl:GetPlayerLevel()
+        equipUids = self.OtherMemberControl:GetWearEquipUids()
+    else
+        curPlayerLevel = self:GetCurrentPlayerLevel()
+        equipUids = self:GetWearEquipUidsByCharacterId(characterId)
+    end
+
+    local totalAttributes = self:GetTotalAttributes(characterId, curPlayerLevel, equipUids, isNotSelf)
+    local attributeList = {}
+    for _, attribute in pairs(totalAttributes) do
+        if self:CheckCharacterAttribExist(attribute.AttrStr) then
+            attribute.Order = self:GetCharacterAttribOrder(attribute.AttrStr)
+            table.insert(attributeList, attribute)
+        end
+    end
+    table.sort(attributeList, function(a, b)
+        return a.Order < b.Order
+    end)
+    return attributeList
+end
+
 function XDlcRelinkControl:CheckCharacterAttribExist(key)
     return self._Model:GetCharacterAttribConfig(key, true) ~= nil
 end
@@ -3032,7 +3252,7 @@ function XDlcRelinkControl:GetSkillMaxDamageLimit(skillId, characterId, isNotSel
     end
 
     local dmgLimitPValue = self:GetTotalAttributeValue(characterId, "DmgLimitP", isNotSelf)
-    return math.floor(baseDamageLimit * (1 + dmgLimitPValue / 10000))
+    return math.round(baseDamageLimit * (1 + dmgLimitPValue / 10000))
 end
 
 --- 获取技能属性类型映射
@@ -3083,6 +3303,11 @@ end
 function XDlcRelinkControl:GetSkillDescName(id)
     local config = self._Model:GetSkillDescConfig(id)
     return config and config.Name or ""
+end
+
+function XDlcRelinkControl:GetSkillDescSubtitle(id)
+    local config = self._Model:GetSkillDescConfig(id)
+    return config and config.Subtitle or ""
 end
 
 function XDlcRelinkControl:GetSkillDescDesc(id)
@@ -3140,9 +3365,9 @@ function XDlcRelinkControl:GetSkillDescEntryDesc(id)
     return config and config.EntryDesc or {}
 end
 
-function XDlcRelinkControl:GetSkillDescVideoUrl(id)
+function XDlcRelinkControl:GetSkillDescVideoConfigId(id)
     local config = self._Model:GetSkillDescConfig(id)
-    return config and config.VideoUrl or ""
+    return config and config.VideoConfigId or 0
 end
 
 function XDlcRelinkControl:GetSkillDescSecondSkill(id)
@@ -3181,12 +3406,16 @@ function XDlcRelinkControl:GetFirstUnCompleteTaskId()
     end
 
     for _, id in ipairs(ids) do
-        local taskIds = self:GetShopTaskParamId(id)
-        if not XTool.IsTableEmpty(taskIds) then
-            for _, taskId in ipairs(taskIds) do
-                local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
-                if taskData and taskData.State ~= XDataCenter.TaskManager.TaskState.Finish then
-                    return taskId
+        local params = self:GetShopTaskParamId(id)
+        local taskTimelineId = params and params[1] or 0
+        if XTool.IsNumberValidEx(taskTimelineId) then
+            local taskDataList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelineId)
+            if not XTool.IsTableEmpty(taskDataList) then
+                for _, taskData in ipairs(taskDataList) do
+                    local taskId = taskData.Id
+                    if taskData and taskData.State ~= XDataCenter.TaskManager.TaskState.Finish then
+                        return taskId
+                    end
                 end
             end
         end
@@ -3226,15 +3455,15 @@ function XDlcRelinkControl:GetShowLevelFirstRewardGoods(levelId)
 
     local rewardGoods = {}
     local showRewardIds = {}
-    -- 1.经验货币
-    local firstExp = self:GetLevelFirstExp(levelId)
-    if firstExp > 0 then
-        table.insert(rewardGoods, XRewardManager.CreateRewardGoods(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin, firstExp))
-    end
-    -- 2.商店货币
+    -- 1.货币
     local firstCoin = self:GetLevelFirstCoin(levelId)
     if firstCoin > 0 then
         table.insert(rewardGoods, XRewardManager.CreateRewardGoods(XDataCenter.ItemManager.ItemId.DlcRelinkStoreCoin, firstCoin))
+    end
+    -- 2.金币
+    local firstGold = self:GetLevelFirstGold(levelId)
+    if firstGold > 0 then
+        table.insert(rewardGoods, XRewardManager.CreateRewardGoods(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin, firstGold))
     end
     -- 3.首通掉落
     local firstShowGroupId = self:GetLevelFirstShowGroupId(levelId)
@@ -3259,10 +3488,15 @@ function XDlcRelinkControl:GetShowLevelRewardGoods(levelId)
 
     local rewardGoods = {}
     local showRewardIds = {}
-    -- 1.经验货币
-    local exp = self:GetLevelExp(levelId)
-    if exp > 0 then
-        table.insert(rewardGoods, XRewardManager.CreateRewardGoods(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin, exp))
+    -- 1.货币
+    local coinCount = self:GetLevelCoin(levelId)
+    if coinCount > 0 then
+        table.insert(rewardGoods, XRewardManager.CreateRewardGoods(XDataCenter.ItemManager.ItemId.DlcRelinkStoreCoin, coinCount))
+    end
+    -- 2.金币
+    local goldCount = self:GetLevelGold(levelId)
+    if goldCount > 0 then
+        table.insert(rewardGoods, XRewardManager.CreateRewardGoods(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin, goldCount))
     end
     -- 3.普通掉落
     local showGroupId = self:GetLevelShowGroupId(levelId)
@@ -3292,6 +3526,16 @@ end
 function XDlcRelinkControl:GetShowLevelDropDesc(id)
     local config = self._Model:GetShowLevelDropConfig(id)
     return config and config.Desc or ""
+end
+
+function XDlcRelinkControl:GetShowLevelDropQuality(id)
+    local config = self._Model:GetShowLevelDropConfig(id)
+    return config and config.Quality or 0
+end
+
+function XDlcRelinkControl:GetShowLevelDropQualityIcon(id)
+    local quality = self:GetShowLevelDropQuality(id)
+    return self:GetEquipQualityAssets(quality)
 end
 
 --endregion
@@ -3392,6 +3636,22 @@ function XDlcRelinkControl:GetEquipPresetBeginId()
     return tonumber(num) or 0
 end
 
+---定向合成出现条件（返回值是string[]需要转成number[]）
+function XDlcRelinkControl:GetTargetingComposeConsumeConditionIds()
+    return self._Model:GetConfigParams("TargetingComposeConsumeConditionIds")
+end
+
+--- 全局匹配开启条件 (返回值是string[]需要转成number[]）
+function XDlcRelinkControl:GetGlobalMatchEnableConditionIds()
+    return self._Model:GetConfigParams("GlobalMatchEnableCondition")
+end
+
+--- 全局匹配奖励每日掉落次数
+function XDlcRelinkControl:GetTotalGlobalMatchRewardTimes()
+    local num = self:GetConfig("GlobalMatchRewardTimes")
+    return tonumber(num) or 0
+end
+
 --endregion
 
 --region 客户端配置表相关
@@ -3412,6 +3672,7 @@ end
 --region 房间相关
 
 function XDlcRelinkControl:OnBeginMatching()
+    XDataCenter.GuideManager.SetDisableGuide(true)
     XLuaUiManager.Open("UiDlcRelinkMatching")
 end
 
@@ -3421,10 +3682,11 @@ function XDlcRelinkControl:OnCancelMatching()
     if luaUi then
         luaUi:OnClose()
     end
+    XDataCenter.GuideManager.SetDisableGuide(false)
 end
 
 function XDlcRelinkControl:OnMatchSuccess()
-    self:OpenCommonTipText("MatchSuccessTips")
+    --self:OpenCommonTipText("MatchSuccessTips")
 end
 
 function XDlcRelinkControl:OnPlayerEnterRoom(playerId)
@@ -3446,12 +3708,20 @@ end
 
 --- 玩家收到邀请处理
 function XDlcRelinkControl:OnReceiveInvite()
-    if CS.XFight.IsRunning
-        or XLuaUiManager.IsUiShow("UiDlcRelinkLoadingNew")
-        or XLuaUiManager.IsUiShow("UiDlcRelinkSettlementNew") then
+    -- 引导中不处理邀请
+    if XDataCenter.GuideManager.CheckIsInGuide() then
+        return
+    end
+    -- 只在主界面和房间界面处理邀请
+    if not XLuaUiManager.IsUiShow("UiDlcRelinkMain") and not XLuaUiManager.IsUiShow("UiDlcRelinkRoom") then
         return
     end
     XMVCA.XDlcRoom:CheckReceiveInvitation()
+end
+
+--- 匹配加载失败处理
+function XDlcRelinkControl:OnMateLoadFail()
+    self:CommonRunRelinkRoomUiHandle(self:GetClientConfig("LoadingReturnRoomTips"))
 end
 
 --- 检查是否可以同步数据到匹配服务器
@@ -3483,26 +3753,105 @@ function XDlcRelinkControl:CommonRunMainUiHandle()
     XLuaUiManager.RunMain(isNotDialogTip)
 end
 
---- 打开或返回房间界面
-function XDlcRelinkControl:OpenOrReturnRoom()
-    local uiName = "UiDlcRelinkRoom"
+--- 通用返回Relink主界面处理
+function XDlcRelinkControl:CommonRunRelinkMainUiHandle(tipContent, callback)
+    local uiName = "UiDlcRelinkMain"
+    local function openMainCallback()
+        if not string.IsNilOrEmpty(tipContent) then
+            self:OpenCommonTipMsg(tipContent)
+        end
+        if callback then
+            callback()
+        end
+    end
     if XLuaUiManager.IsStackUiOpen(uiName) then
-        XLuaUiManager.CloseAllUpperUi(uiName)
+        XLuaUiManager.CloseAllUpperUiWithCallback(uiName, openMainCallback)
     else
-        XLuaUiManager.Open(uiName)
+        XLuaUiManager.OpenWithCallback(uiName, openMainCallback)
     end
 end
 
---- 打开主界面和打开或返回房间界面
-function XDlcRelinkControl:OpenMainAndReturnRoom()
-    local uiName = "UiDlcRelinkMain"
-    if XLuaUiManager.IsStackUiOpen(uiName) then
-        self:OpenOrReturnRoom()
+--- 通过返回Relink房间界面处理
+function XDlcRelinkControl:CommonRunRelinkRoomUiHandle(tipContent, callback)
+    local mainUiName = "UiDlcRelinkMain"
+    local roomUiName = "UiDlcRelinkRoom"
+    local function openRoomCallback()
+        if not string.IsNilOrEmpty(tipContent) then
+            self:OpenCommonTipMsg(tipContent)
+        end
+        if callback then
+            callback()
+        end
+    end
+    if XLuaUiManager.IsStackUiOpen(mainUiName) then
+        if XLuaUiManager.IsStackUiOpen(roomUiName) then
+            XLuaUiManager.CloseAllUpperUiWithCallback(roomUiName, openRoomCallback)
+        else
+            XLuaUiManager.OpenWithCallback(roomUiName, openRoomCallback)
+        end
     else
-        XLuaUiManager.OpenWithCallback(uiName, function()
-            self:OpenOrReturnRoom()
+        XLuaUiManager.OpenWithCallback(mainUiName, function()
+            XLuaUiManager.OpenWithCallback(roomUiName, openRoomCallback)
         end)
     end
+end
+
+--- 检查当前队伍职业是否合理
+---@param team XDlcTeam 队伍对象
+---@param chapterId number 章节Id
+---@return boolean, number[] 是否合理, 缺少的职业列表
+function XDlcRelinkControl:CheckTeamOccupationRational(team, chapterId)
+    if not team then
+        return false, {}
+    end
+
+    local trueOccupationList = self:GetChapterTrueOccupations(chapterId)
+    if XTool.IsTableEmpty(trueOccupationList) then
+        return true, {}
+    end
+
+    -- 收集队伍中已有的职业类型
+    local occupationMap = {}
+    local amount = team:GetMemberNumber()
+    for pos = 1, amount do
+        local member = team:GetMember(pos)
+        if member and not member:IsEmpty() then
+            local occupationType = self:GetCharacterOccupationType(member:GetCharacterId(), member:GetStyleType())
+            occupationMap[occupationType] = true
+        end
+    end
+
+    -- 检查缺失的职业类型
+    local lackOccupationList = {}
+    for _, occupationType in ipairs(trueOccupationList) do
+        if not occupationMap[occupationType] then
+            table.insert(lackOccupationList, occupationType)
+        end
+    end
+
+    return #lackOccupationList == 0, lackOccupationList
+end
+
+--- 检查当前队伍装备战力是否合理
+---@param team XDlcTeam 队伍对象
+---@param abilityLimit number 战力限制
+---@return boolean 是否合理
+function XDlcRelinkControl:CheckTeamEquipAbilityRational(team, abilityLimit)
+    if not team then
+        return false
+    end
+
+    local amount = team:GetMemberNumber()
+    for pos = 1, amount do
+        local member = team:GetMember(pos)
+        if member and not member:IsEmpty() then
+            local totalAbility = member:GetRelinkEquipTotalAbility()
+            if totalAbility < abilityLimit then
+                return false
+            end
+        end
+    end
+    return true
 end
 
 --endregion
@@ -3585,8 +3934,8 @@ function XDlcRelinkControl:OpenCommonTipText(key, index, type)
     self:OpenCommonTipMsg(msg, type)
 end
 
-function XDlcRelinkControl:OpenCommonTipSuccess(msg, hideCloseMark)
-    self:OpenCommonTipMsg(msg, XUiManager.UiTipType.Success, nil, hideCloseMark)
+function XDlcRelinkControl:OpenCommonTipSuccess(msg, cb, hideCloseMark)
+    self:OpenCommonTipMsg(msg, XUiManager.UiTipType.Success, cb, hideCloseMark)
 end
 
 function XDlcRelinkControl:OpenCommonTipError(msg)
@@ -3611,31 +3960,85 @@ function XDlcRelinkControl:GetSettlementCacheData()
     return self._Model.SettlementCacheData or {}
 end
 
+-- 设置结算缓存关卡数据
+function XDlcRelinkControl:SetSettlementCacheLevelData(levelId)
+    self._Model.SettlementCacheData = self._Model.SettlementCacheData or {}
+    self._Model.SettlementCacheData.LevelId = levelId
+    self._Model.SettlementCacheData.IsPassed = self:CheckLevelPassed(levelId)
+end
+
+-- 检查结算缓存关卡数据是否为首次通关
+function XDlcRelinkControl:CheckSettlementCacheLevelFirstPass(levelId)
+    local cacheData = self:GetSettlementCacheData()
+    local isValid = cacheData and XTool.IsNumberValid(cacheData.LevelId) and cacheData.LevelId == levelId
+    return isValid and not cacheData.IsPassed and self:CheckLevelPassed(levelId) or false
+end
+
+--endregion
+
+--region 百科全书相关
+
+---@return XTableDlcRelinkWiki
+function XDlcRelinkControl:GetWikiConfigById(id)
+    return self._Model:GetWikiConfigById(id)
+end
+
+---@return XTableDlcRelinkWiki[]
+function XDlcRelinkControl:GetWikiConfigs()
+    return self._Model:GetWikiConfigs()
+end
+
+function XDlcRelinkControl:GetHasWikiBeenViewed(wikiId)
+    return self._Model:GetHasWikiBeenViewed(wikiId)
+end
+
+function XDlcRelinkControl:SetWikiHasBeenViewed(wikiId)
+    self._Model:SetWikiHasBeenViewed(wikiId)
+end
+
+--endregion
+
+--region 机制教学相关
+
+---@return XTableDlcRelinkMechanismTeach
+function XDlcRelinkControl:GetMechanismTeachById(id)
+    return self._Model:GetMechanismTeachById(id)
+end
+
+---@return XTableDlcRelinkMechanismTeach
+function XDlcRelinkControl:GetMechanismTeachByLevelId(levelId)
+    return self._Model:GetMechanismTeachByLevelId(levelId)
+end
+
+function XDlcRelinkControl:SetMechanismTeachHasBeenViewed(id)
+    self._Model:SetMechanismTeachHasBeenViewed(id)
+end
+
 --endregion
 
 --region 本地信息相关
 
---- 获取角色职业查看状态的存储Key
-function XDlcRelinkControl:GetCharacterOccupationViewedKey(characterId, occupationType)
+--- 获取角色风格查看状态的存储Key
+function XDlcRelinkControl:GetCharacterStyleViewedKey(characterId, styleType)
     local activityId = self._Model.ActivityData and self._Model.ActivityData:GetActivityId() or 0
-    return string.format("DlcRelinkCharacterOccupationViewed_%s_%s_%s_%s", XPlayer.Id, activityId, characterId, occupationType)
+    return string.format("DlcRelinkCharacterStyleViewed_%s_%s_%s_%s", XPlayer.Id, activityId, characterId, styleType)
 end
 
---- 检查角色职业是否已查看
-function XDlcRelinkControl:CheckCharacterOccupationViewed(characterId, occupationType)
-    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(occupationType) then
+--- 检查角色风格是否已查看
+function XDlcRelinkControl:CheckCharacterStyleViewed(characterId, styleType)
+    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(styleType) then
         return false
     end
-    local key = self:GetCharacterOccupationViewedKey(characterId, occupationType)
+    local key = self:GetCharacterStyleViewedKey(characterId, styleType)
     return XSaveTool.GetData(key) or false
 end
 
---- 记录角色职业为已查看
-function XDlcRelinkControl:RecordCharacterOccupationViewed(characterId, occupationType)
-    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(occupationType) then
+--- 记录角色风格为已查看
+function XDlcRelinkControl:RecordCharacterStyleViewed(characterId, styleType)
+    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(styleType) then
         return
     end
-    local key = self:GetCharacterOccupationViewedKey(characterId, occupationType)
+    local key = self:GetCharacterStyleViewedKey(characterId, styleType)
     if not XSaveTool.GetData(key) then
         XSaveTool.SaveData(key, true)
     end
@@ -3690,6 +4093,55 @@ function XDlcRelinkControl:RecordAllEquipViewed()
     end
 end
 
+--- 获取缓存的关卡和章节的存储Key
+function XDlcRelinkControl:GetSelectLevelDataKey()
+    local activityId = self._Model.ActivityData and self._Model.ActivityData:GetActivityId() or 0
+    return string.format("DlcRelinkSelectLevelData_%s_%s", XPlayer.Id, activityId)
+end
+
+--- 获取缓存的关卡和章节
+function XDlcRelinkControl:GetSelectLevelDataCache()
+    local key = self:GetSelectLevelDataKey()
+    local data = XSaveTool.GetData(key)
+    if data and XTool.IsNumberValid(data.ChapterId) and XTool.IsNumberValid(data.LevelId) and not self:GetChapterIsTutorial(data.ChapterId) then
+        if not self:CheckLevelPassed(data.LevelId) then
+            return nil
+        end
+        return data
+    end
+    return nil
+end
+
+--- 记录缓存的关卡和章节
+function XDlcRelinkControl:RecordSelectLevelDataCache(chapterId, levelId)
+    local key = self:GetSelectLevelDataKey()
+    local data = false
+    if XTool.IsNumberValid(chapterId) and XTool.IsNumberValid(levelId) and not self:GetChapterIsTutorial(chapterId) then
+        data = { ChapterId = chapterId, LevelId = levelId }
+    end
+    XSaveTool.SaveData(key, data)
+end
+
+--- 获取技能描述是否为详细
+function XDlcRelinkControl:GetSkillDescIsDetail()
+    return self._Model:GetSkillDescIsDetail()
+end
+
+--- 设置技能描述是否为详细
+function XDlcRelinkControl:SetSkillDescIsDetail(isDetail)
+    self._Model:SetSkillDescIsDetail(isDetail)
+end
+
+--- 获取装备描述是否为详细
+function XDlcRelinkControl:GetEquipAttrDescIsDetail()
+    return self._Model:GetEquipAttrDescIsDetail()
+end
+
+--- 设置装备描述是否为详细
+function XDlcRelinkControl:SetEquipAttrDescIsDetail(isDetail)
+    self._Model:SetEquipAttrDescIsDetail(isDetail)
+end
+
 --endregion
 
 --region 红点相关
@@ -3720,45 +4172,49 @@ function XDlcRelinkControl:CheckShopTaskRedPointByConfigId(configId)
         return false
     end
 
-    local taskIds = self:GetShopTaskParamId(configId)
-    if XTool.IsTableEmpty(taskIds) then
+    local taskTimelineIds = self:GetShopTaskParamId(configId)
+    if XTool.IsTableEmpty(taskTimelineIds) then
         return false
     end
 
-    for _, taskId in ipairs(taskIds) do
-        local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
-        if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
-            return true
+    for _, taskTimelineId in ipairs(taskTimelineIds) do
+        local taskDataList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelineId)
+        if not XTool.IsTableEmpty(taskDataList) then
+            for _, taskData in ipairs(taskDataList) do
+                if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
+                    return true
+                end
+            end
         end
     end
     return false
 end
 
---- 检查角色职业是否有新解锁的红点
-function XDlcRelinkControl:CheckCharacterOccupationHasNewUnlock(characterId, occupationType)
-    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(occupationType) then
+--- 检查角色风格是否有新解锁的红点
+function XDlcRelinkControl:CheckCharacterStyleHasNewUnlock(characterId, styleType)
+    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(styleType) then
         return false
     end
-    -- 职业未解锁，不显示红点
-    if not self:CheckCharacterOccupationUnlock(characterId, occupationType) then
+    -- 风格未解锁，不显示红点
+    if not self:CheckCharacterStyleUnlock(characterId, styleType) then
         return false
     end
-    -- 职业已查看，不显示红点
-    if self:CheckCharacterOccupationViewed(characterId, occupationType) then
+    -- 风格已查看，不显示红点
+    if self:CheckCharacterStyleViewed(characterId, styleType) then
         return false
     end
     return true
 end
 
---- 检查当前角色是否有新解锁的职业红点
-function XDlcRelinkControl:CheckCharacterHasAnyNewOccupation(characterId)
+--- 检查当前角色是否有新解锁的风格红点
+function XDlcRelinkControl:CheckCharacterHasAnyNewStyle(characterId)
     if not XTool.IsNumberValid(characterId) then
         return false
     end
-    for _, occupationType in pairs(XEnumConst.DlcRelink.OccTypeEnum) do
-        local configId = self:GetCharacterConfigId(characterId, occupationType)
+    for _, styleType in pairs(XEnumConst.DlcRelink.StyleTypeEnum) do
+        local configId = self:GetCharacterConfigId(characterId, styleType)
         local config = self._Model:GetCharacterConfig(configId, true)
-        if config and self:CheckCharacterOccupationHasNewUnlock(characterId, occupationType) then
+        if config and self:CheckCharacterStyleHasNewUnlock(characterId, styleType) then
             return true
         end
     end
@@ -3779,11 +4235,331 @@ function XDlcRelinkControl:CheckPlayerLevelUpRedPoint()
     end
     -- 消耗材料不足，无红点
     local needCost = self:GetUpgradeNeedCostCoin()
-    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkExpCoin)
+    local hasCost = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin)
     if hasCost < needCost then
         return false
     end
     return true
+end
+
+--endregion
+
+--region 网络切换提示
+
+function XDlcRelinkControl:CheckNeedPopWifiTips()
+    -- 有引导时不弹
+    if XDataCenter.GuideManager.CheckIsInGuide() then
+        return
+    end
+
+    local isWifi = CS.XNetworkReachability.IsViaLocalArea()
+
+    -- 当前网络连接wifi或者不需要提示则跳过
+    if isWifi or not self._Model:CheckNeedPopWifiTips() then
+        return
+    end
+    local title = self:GetClientConfig("TipTitle")
+    local data = self:GetClientConfig("WifiSwitchTips")
+
+    -- 只弹提示, 确认和取消都不需要其他动作
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.Tip_Big)
+    XLuaUiManager.OpenWithCloseCallback("UiDlcRelinkPopupCommon", function()
+        if self._Model then
+            self._Model:ClearWifiTipsPopMark()
+        end
+    end, title, data)
+end
+
+--endregion
+
+--region 战斗称号
+function XDlcRelinkControl:GetBattleTitleIdsByCustomData(customDatas, ownPlayerId)
+    if not customDatas then
+        return
+    end
+
+    local cfgs = self._Model:GetMedalTagConfigs()
+
+    local battleTitleIdMap = {}
+    local player2Data = {}
+
+    if cfgs then
+        -- 遍历规则要求：
+        -- 配置上Id按照连续流水配，并且高级的在低级的后面
+        -- 这样才能确保按顺序遍历，且高级称号能够覆盖掉低级称号
+        for i, v in pairs(cfgs) do
+            local isSatisfy = true
+
+            if not XTool.IsTableEmpty(v.CompareKeys) then
+                for index, key in pairs(v.CompareKeys) do
+                    local targetVal = v.CompareValues[index] or 0
+                    local opType = v.CompareTypes[index] or 0
+
+                    if not self:_CheckResult(customDatas, key, opType, targetVal, ownPlayerId, player2Data) then
+                        isSatisfy = false
+                        break
+                    end
+                end
+            end
+
+            if isSatisfy then
+                battleTitleIdMap[v.Id] = true
+
+                if not XTool.IsTableEmpty(v.CoverIds) then
+                    for _, coverId in pairs(v.CoverIds) do
+                        battleTitleIdMap[coverId] = nil
+                    end
+                end
+            end
+        end
+    end
+
+    -- 转成列表
+    local list = nil
+
+    if not XTool.IsTableEmpty(battleTitleIdMap) then
+        list = {}
+
+        for id, _ in pairs(battleTitleIdMap) do
+            table.insert(list, id)
+        end
+
+        -- 按照Id降序排序
+        table.sort(list, function(a, b)
+            local aCfg = self._Model:GetMedalTagConfig(a)
+            local bCfg = self._Model:GetMedalTagConfig(b)
+
+            local aPriority = aCfg and aCfg.Priority or 0
+            local bPriority = bCfg and bCfg.Priority or 0
+
+            return aPriority > bPriority
+        end)
+
+        local curCount = XTool.GetTableCount(list)
+        local maxCount = self._Model:GetClientConfigBattleSettleShowTitleMaxCount()
+
+        if curCount > maxCount then
+            for i = maxCount + 1, curCount do
+                list[i] = nil
+            end
+        end
+    end
+
+    return list
+end
+
+---@param player2ValueData table<number, number> @用于table复用的对象，存的是各个玩家用于比较的值
+function XDlcRelinkControl:_CheckResult(customDatas, key, opType, rightVal, ownPlayerId, player2ValueData)
+    local customData = customDatas[ownPlayerId]
+    local ownReocrd = customData and customData.Dict or {}
+    local leftValue = ownReocrd[key] or 0
+
+    local totalValue = 0
+    local maxValue = 0
+    local minValue = math.maxinteger
+    local leftPercentValue = leftValue
+
+    local leftValOp = math.floor((math.fmod(opType, 100)))
+
+    player2ValueData = player2ValueData or {}
+
+
+    -- 默认收集所有玩家该key的总值和上下限
+    for playerId, v in pairs(customDatas) do
+        if v.Dict then
+            local val = v.Dict[key] or 0
+
+            totalValue = totalValue + val
+
+            if val > maxValue then
+                maxValue = val
+            end
+
+            if val < minValue then
+                minValue = val
+            end
+
+            player2ValueData[playerId] = val
+        else
+            player2ValueData[playerId] = 0
+        end
+    end
+
+    -- 判断是否需要对左操作数进行处理
+    -- 后续扩展时从最大的十位数开始向下依次判断
+    if leftValOp >= self.SettleTitleCompareType.PercentInMembers then
+        -- 需要将各个玩家该key值转换为比例数
+        if totalValue > 0 then
+            -- 配置表整型，比例数*100
+            for playerId, _ in pairs(customDatas) do
+                player2ValueData[playerId] = player2ValueData[playerId] / totalValue * 100
+            end
+            leftPercentValue = player2ValueData[ownPlayerId] or 0
+        end
+    end
+
+    -- 获取表示比较运算符的部分
+    local compareOp = opType
+
+    if compareOp >= 100 then
+        compareOp = math.fmod(compareOp, 100)
+    end
+
+    if compareOp >= 10 then
+        compareOp = math.fmod(compareOp, 10)
+    end
+
+    -- 判断是否有特殊的判断
+    if opType >= self.SettleTitleCompareType.AllMembersCompareWithOr then
+        -- 判断全员中任意值是否满足运算
+        for i, value in pairs(player2ValueData) do
+            if self:_CheckCompareResult(value, compareOp, rightVal) then
+                return true
+            end
+        end
+
+        -- 没有值或不满足
+        return false
+    elseif opType >= self.SettleTitleCompareType.AllMembersCompareWithAnd then
+        -- 没有值则不满足
+        if XTool.IsTableEmpty(player2ValueData) then
+            return false
+        end
+
+        -- 判断全员中所有值是否满足运算
+        for i, value in pairs(player2ValueData) do
+            if not self:_CheckCompareResult(value, compareOp, rightVal) then
+                return false
+            end
+        end
+
+        return true
+
+    elseif opType >= self.SettleTitleCompareType.MinInMembers then
+        -- 如果全都是0的话则不生效
+        if maxValue == 0 and minValue == 0 then
+            return false
+        end
+
+        return leftValue <= minValue
+    elseif opType >= self.SettleTitleCompareType.MaxInMembers then
+        -- 如果全都是0的话则不生效
+        if maxValue == 0 and minValue == 0 then
+            return false
+        end
+
+        return leftValue >= maxValue
+    else
+        -- 右侧变量初始化时已经赋值为leftValue，如果没有经过百分比处理，这里不影响数值
+        leftValue = leftPercentValue
+
+        return self:_CheckCompareResult(leftValue, compareOp, rightVal)
+    end
+end
+
+function XDlcRelinkControl:_CheckCompareResult(leftVal, opType, rightVal)
+    if opType == self.SettleTitleCompareType.Bigger then
+        return leftVal > rightVal
+    elseif opType == self.SettleTitleCompareType.BiggerEquals then
+        return leftVal >= rightVal
+    elseif opType == self.SettleTitleCompareType.Equals then
+        return leftVal == rightVal
+    elseif opType == self.SettleTitleCompareType.Smaller then
+        return leftVal < rightVal
+    elseif opType == self.SettleTitleCompareType.SmallerEquals then
+        return leftVal <= rightVal
+    end
+
+    return false
+end
+
+---@param customData table<any, any>
+function XDlcRelinkControl:GetFixedScore(customData)
+    local score = 0
+
+    local battleReocrd = customData and customData.Dict or nil
+
+    if not XTool.IsTableEmpty(battleReocrd) then
+        for key, value in pairs(battleReocrd) do
+            local fixedVal = self:GetFixedValue(key, value)
+
+            score = score + fixedVal
+        end
+    end
+
+    return math.ceil(score)
+end
+
+function XDlcRelinkControl:GetFixedValue(key, value)
+    if not XTool.IsNumberValidEx(value) then
+        return 0
+    end
+
+    local factorCfg = self._Model:GetDlcRelinkSummaryFactorConfig(key, true)
+
+    if factorCfg then
+        local factor = factorCfg.Factor or 0
+
+        return value * factor
+    else
+        -- 没有配置视为不计入分数
+        return 0
+    end
+end
+--endregion
+
+--region 全局匹配相关
+
+--- 获取今日全局匹配奖励获取次数
+function XDlcRelinkControl:GetGlobalMatchRewardTimes()
+    if not self._Model.ActivityData then
+        return 0
+    end
+    return self._Model.ActivityData:GetGlobalMatchRewardTimes()
+end
+
+--- 检查全局匹配开启条件是否达成
+function XDlcRelinkControl:CheckGlobalMatchEnableCondition()
+    local conditionIds = self:GetGlobalMatchEnableConditionIds()
+    if XTool.IsTableEmpty(conditionIds) then
+        return true
+    end
+    for _, conditionId in ipairs(conditionIds) do
+        if not XConditionManager.CheckCondition(tonumber(conditionId)) then
+            return false
+        end
+    end
+    return true
+end
+
+--- 是否开启了全局匹配
+function XDlcRelinkControl:IsGlobalMatchEnabled()
+    return self._Model.GlobalMatchEnabled
+end
+
+--endregion
+
+--region 点赞相关
+
+--- 获取玩家被点赞次数
+---@param playerId number 玩家Id
+function XDlcRelinkControl:GetPlayerLikeCount(playerId)
+    if not self._Model.LikeInfoCache then
+        return 0
+    end
+
+    local count = 0
+    for _, toPlayerMap in pairs(self._Model.LikeInfoCache) do
+        if toPlayerMap and toPlayerMap[playerId] then
+            count = count + 1
+        end
+    end
+    return count
+end
+
+--- 清理点赞缓存数据
+function XDlcRelinkControl:ClearLikeInfoCache()
+    self._Model.LikeInfoCache = nil
 end
 
 --endregion
@@ -3805,6 +4581,8 @@ return XDlcRelinkControl
 ---@field LastExp number 上次研发经验
 ---@field CurLevel number 当前研发等级
 ---@field CurExp number 当前研发经验
+---@field LevelId number 关卡Id
+---@field IsPassed boolean 关卡是否已通关
 
 ---@class XDlcRelinkQueryRank
 ---@field TotalCount number 排行榜总队伍数

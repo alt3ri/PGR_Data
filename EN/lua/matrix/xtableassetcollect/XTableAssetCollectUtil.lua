@@ -1,4 +1,6 @@
 local IO = CS.System.IO
+local Directory = IO.Directory
+local Path = IO.Path
 local XTableAssetCollectConst = require("XTableAssetCollect/XTableAssetCollectConst")
 local TableSourceTypeTips = XTableAssetCollectConst.TableSourceTypeTips
 local FileType = XTableAssetCollectConst.FileType
@@ -9,7 +11,7 @@ this.GetFileTableList = function()
     local resultList = {}
 
     for _, path in ipairs(XTableAssetCollectConst.NeedCollectTableFolderList) do
-        local files = IO.Directory.GetFiles(path, "*.*", IO.SearchOption.AllDirectories);
+        local files = Directory.GetFiles(path, "*.*", IO.SearchOption.AllDirectories);
         local len = files.Length
         for i = 0, len - 1 do
             local file = files[i]
@@ -30,7 +32,7 @@ end
 
 this.GetLuaFilePathList = function(customeDirectory)
     local configDirectory = XTableAssetCollectConst.LuaFileDirectory .. customeDirectory
-    return IO.Directory.GetFiles(configDirectory, "*.lua", IO.SearchOption.AllDirectories)
+    return Directory.GetFiles(configDirectory, "*.lua", IO.SearchOption.AllDirectories)
 end
 
 this.NeedIgnoreSameDirectoryFile = function(filePath)
@@ -157,6 +159,11 @@ end
 
 this.IsAssetPath = function(path)
     return this.matchAssetPath(path) or this.matchExternalPath(path) or this.matchPackagesPath(path)
+end
+
+this.GetDirectoryName = function(path)
+    local result = string.match(path, "^(.*)/[^/]*$")
+    return result
 end
 
 return this

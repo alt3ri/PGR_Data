@@ -762,7 +762,8 @@ end
 --战斗页签红点（自定义按键冲突）
 function XUiSet:OnCheckFightSetNews(count)
     self.BtnFight:ShowReddot(count >= 0)
-    self.BtnFight:ShowTag(count >= 0 and not CS.XCustomUi.Instance.IsOpenUiFightCustomRed)
+    local isOpenUiFightCustomRed = XKeyPadManager.IsOpenUiFightCustomRed()
+    self.BtnFight:ShowTag(count >= 0 and not isOpenUiFightCustomRed)
 end
 
 function XUiSet:OnBtnUserAgreement()

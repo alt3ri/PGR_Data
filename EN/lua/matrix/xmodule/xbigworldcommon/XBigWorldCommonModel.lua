@@ -3,10 +3,21 @@ local XBWCommonSequentialData = require("XModule/XBigWorldCommon/XData/XSequenti
 ---@class XBigWorldCommonModel : XModel
 local XBigWorldCommonModel = XClass(XModel, "XBigWorldCommonModel")
 
+local TableKey = {
+    BigWorldCommonValues = {
+        Identifier = "Key",
+        ReadFunc = XConfigUtil.ReadType.String,
+        DirPath = XConfigUtil.DirectoryType.Client,
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
+}
+
 function XBigWorldCommonModel:OnInit()
     self._IsRegisterSequentialExecute = false
     ---@type table<number, XBWSequentialDataBase>
     self._SequentialJobs = {}
+
+    self._ConfigUtil:InitConfigByTableKey("BigWorld/Common", TableKey)
 end
 
 function XBigWorldCommonModel:ClearPrivate()
@@ -120,6 +131,13 @@ function XBigWorldCommonModel:OnSequentialExecute(_, args)
             self:ExecuteSequentialJob(id)
         end
     end
+end
+
+---@return string[]
+function XBigWorldCommonModel:GetCommonValues(key)
+    local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.BigWorldCommonValues, key)
+
+    return config and config.Values or nil
 end
 
 return XBigWorldCommonModel

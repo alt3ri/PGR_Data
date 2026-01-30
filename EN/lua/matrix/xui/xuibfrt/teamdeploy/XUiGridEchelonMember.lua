@@ -323,38 +323,38 @@ function XUiGridEchelonMember:OnOpenBattleRoleRoomDetail()
         end,
     }
 
-    -- ✅ 关键：用当前梯队缓存的那支 Team，而不是全局 _TeamData
-    local team = XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam(self.EchelonIndex)
-    if not team then
-        local createTeamData = {
-            EchelonIndex = self.EchelonIndex,
-            BfrtGroupId = self.GroupId,
-            EchelonId = self.EchelonId,
-            TeamCharacterIdList = self.TeamList[self.EchelonIndex],
-        }
-        team = XDataCenter.BfrtManager.GetTeam(createTeamData)
-        XDataCenter.BfrtManager.SetGirdEchelonIndexTempTeam(team, self.EchelonIndex)
-    end
+    -- [修改点] 增加 EchelonType 字段
+    local teamQuery = {
+        BfrtGroupId = self.GroupId,
+        EchelonIndex = self.EchelonIndex,
+        EchelonId = self.EchelonId,
+        EchelonType = self.EchelonType -- [新增] 必传！否则会默认去拿作战队
+    }
+    local team = XDataCenter.BfrtManager.GetTeam(teamQuery)
+    
+    XDataCenter.BfrtManager.SetCurSelectTeamIdx(self.EchelonIndex)     -- [必须加]
+    XDataCenter.BfrtManager.SetCurSelectFightType(self.EchelonType)    -- [必须加]
 
     RunAsyn(function()
-        -- 硬编码，这个界面过度依赖页面数据
         XLuaUiManager.Open("UiBattleRoomRoleDetail", self.StageId, team, self.MemberIndex, self:GetProxyInstance(viewData))
     end)
 end
 
 function XUiGridEchelonMember:OnBtnClickClick()
-    local createTeamData = {
+    -- [修改点]：构造查询参数
+    local teamQuery = {
         EchelonIndex = self.EchelonIndex,
         BfrtGroupId = self.GroupId,
         EchelonId = self.EchelonId,
-        TeamCharacterIdList = self.TeamList[self.EchelonIndex],
+        EchelonType = self.EchelonType -- [新增] 必传！
     }
-    local tempTeamdata = self.TeamTeamDataDic[self.EchelonIndex] or XDataCenter.BfrtManager.GetTeam(createTeamData)
-    self.TeamTeamDataDic[self.EchelonIndex] = tempTeamdata
-    XDataCenter.BfrtManager.SetGirdEchelonIndexTempTeam(tempTeamdata, self.EchelonIndex)
+    local team = XDataCenter.BfrtManager.GetTeam(teamQuery)
+    
     XDataCenter.BfrtManager.SetCurSelectTeamIdx(self.EchelonIndex)
     XDataCenter.BfrtManager.SetCurSelectFightType(self.EchelonType)
-    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId, tempTeamdata, XUiBattleRoleRoomDefaultProxy)
+    
+    -- 传入这个真正的 team 对象
+    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId, team, XUiBattleRoleRoomDefaultProxy)
 end
 --endregion
 

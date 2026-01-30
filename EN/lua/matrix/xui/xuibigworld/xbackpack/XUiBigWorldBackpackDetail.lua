@@ -74,7 +74,7 @@ function XUiBigWorldBackpackDetail:OnBtnConfirmClick()
         XMVCA.XBigWorldService:UseItem(self._ItemId, nil, self._UseCount, function(rewardGoodsList)
             XMVCA.XBigWorldUI:OpenBigWorldObtain(rewardGoodsList, nil, function()
                 self.Parent:RefreshType(true)
-            end)
+            end, true)
         end)
     end
 end
@@ -116,13 +116,13 @@ function XUiBigWorldBackpackDetail:Refresh(itemParams, goodsParams, isQuest)
     if string.IsNilOrEmpty(desc) then
         self.TxtDetail.gameObject:SetActiveEx(false)
     else
-        self.TxtDetail.text = desc
+        self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(desc)
         self.TxtDetail.gameObject:SetActiveEx(true)
     end
     if string.IsNilOrEmpty(desc) then
         self.ItemObtain.gameObject:SetActiveEx(false)
     else
-        self.TxtExp.text = worldDesc
+        self.TxtExp.text = XUiHelper.ReplaceTextNewLine(worldDesc)
         self.ItemObtain.gameObject:SetActiveEx(true)
     end
     if itemParams.IsUseBigIcon then

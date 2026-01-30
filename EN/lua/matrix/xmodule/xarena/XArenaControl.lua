@@ -158,6 +158,19 @@ function XArenaControl:SetAreaDataStagePoint(areaId, point)
     self._Model:SetAreaDataPointByAreaId(areaId, point)
 end
 
+--- 获取结算数据（Point 和 OldPoint，用于新纪录检查）
+---@param distributeType number DistributeType值
+---@return table|nil 包含 Point 和 OldPoint 的表格，如果不存在则返回 nil
+function XArenaControl:GetSettlePointByDistributeType(distributeType)
+    return self._Model:GetSettlePointByDistributeType(distributeType)
+end
+
+--- 清除结算数据（检查完新纪录后清除）
+---@param distributeType number DistributeType值
+function XArenaControl:ClearSettlePointByDistributeType(distributeType)
+    self._Model:ClearSettlePointByDistributeType(distributeType)
+end
+
 -- endregion
 
 -- region Check
@@ -298,6 +311,13 @@ function XArenaControl:GetAreaStageLastStageIdById(arenaId)
         return 0
     end
 
+    local activityData = self._Model:GetActivityData()
+    local arenaIndex = activityData and activityData:GetArenaIndex()
+    
+    if XTool.IsNumberValid(arenaIndex) and arenaIndex > 0 and arenaIndex <= #stageIds then
+        return stageIds[arenaIndex]
+    end
+
     return stageIds[#stageIds]
 end
 
@@ -331,6 +351,16 @@ end
 
 function XArenaControl:GetAreaStageDescByAreaId(areaId)
     return self._Model:GetAreaStageDescById(areaId)
+end
+
+function XArenaControl:GetAreaStageDistributeTypeByAreaId(areaId)
+    return self._Model:GetAreaStageDistributeTypeById(areaId)
+end
+
+--- 获取区域数据
+---@return XArenaAreaData|nil
+function XArenaControl:GetArenaAreaData()
+    return self._Model:GetArenaAreaData()
 end
 
 function XArenaControl:GetBuffDetailsIconById(buffId)
@@ -682,13 +712,7 @@ function XArenaControl:GetContributeScoreByChallengeId(groupRank, challengeId, p
 end
 
 function XArenaControl:GetMarkIdByAreaId(areaId)
-    local stageId = self:GetAreaStageLastStageIdById(areaId)
-
-    if XTool.IsNumberValid(stageId) then
-        return self._Model:GetArenaStageMarkIdByStageId(stageId) or 0
-    end
-
-    return 0
+    return self._Model:GetAreaStageMarkIdById(areaId) or 0
 end
 
 function XArenaControl:IsMarkShowEnemyHp(markId)

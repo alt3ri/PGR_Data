@@ -60,22 +60,28 @@ end
 function XUiDlcRelinkMatching:OnMatchSuccess()
     self.IsMatchSuccess = true
     self:StopMatchingTimer()
-    self.TxtTime.text = self._Control:GetClientConfig("MatchSuccessTips") or ""
-    XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self._Control:OpenOrReturnRoom()
+    local matchSuccessTips = self._Control:GetClientConfig("MatchSuccessTips")
+
+    if XUiManager.CheckTopUi(CsXUiType.Normal, "UiDlcRelinkRoom") then
+        self._Control:OpenCommonTipSuccess(matchSuccessTips)
         self:Close()
-    end, 1000)
+    else
+        self._Control:OpenCommonTipSuccess(matchSuccessTips, function()
+            if XTool.UObjIsNil(self.GameObject) then
+                return
+            end
+            self._Control:CommonRunRelinkRoomUiHandle()
+            self:Close()
+        end, true)
+    end
 end
 
 function XUiDlcRelinkMatching:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnMatching, self.OnBtnMatchingClick)
+    self.BtnMatching:AddEventListener(handler(self, self.OnBtnMatchingClick))
 end
 
 function XUiDlcRelinkMatching:OnBtnMatchingClick()
-    self._Control:OpenOrReturnRoom()
+    self._Control:CommonRunRelinkRoomUiHandle()
 end
 
 return XUiDlcRelinkMatching

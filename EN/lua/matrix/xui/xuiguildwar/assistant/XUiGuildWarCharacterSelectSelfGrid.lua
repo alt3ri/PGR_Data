@@ -1,6 +1,7 @@
 local XUiBattleRoomRoleGrid = require("XUi/XUiNewRoomSingle/XUiBattleRoomRoleGrid")
 
 ---@class XUiGuildWarCharacterSelectSelfGrid:XUiBattleRoomRoleGrid
+---@field _Control XGuildWarControl
 local XUiGuildWarCharacterSelectSelfGrid = XClass(XUiBattleRoomRoleGrid, "XUiGuildWarCharacterSelectSelfGrid")
 
 function XUiGuildWarCharacterSelectSelfGrid:Ctor(ui)
@@ -28,15 +29,30 @@ function XUiGuildWarCharacterSelectSelfGrid:UpdateCharacter()
     end
 
      --特攻角色
-    local isSpecialRole = XDataCenter.GuildWarManager.CheckIsSpecialRole(characterId)
+    local isSpecialRole = XMVCA.XGuildWar.SpecialRoleAgency:CheckIsSpecialRole(characterId)
     self.PanelHighPriority.gameObject:SetActiveEx(isSpecialRole)
 
      --特攻图标
     if isSpecialRole then
-        local icon = XDataCenter.GuildWarManager.GetSpecialRoleIcon(characterId)
+        local icon = XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialRoleIcon(characterId)
         if icon then
             self.RImgGuildWarUP:SetRawImage(icon)
         end
+        
+        local iconBg = XMVCA.XGuildWar.SpecialRoleAgency:GetSpecialRoleIconBgByRoleId(characterId)
+
+        if not string.IsNilOrEmpty(iconBg) then
+            if self.GuildWarUpTagBg then
+                self.GuildWarUpTagBg:SetRawImage(iconBg)
+            end
+        end
+    end
+    
+    -- 驻扎图标
+    local isStationed = self._Control.RoleStationControl:CheckCharacterIsStationedAnyNode(characterId)
+
+    if self.PanelStaying then
+        self.PanelStaying.gameObject:SetActiveEx(isStationed)
     end
 end
 

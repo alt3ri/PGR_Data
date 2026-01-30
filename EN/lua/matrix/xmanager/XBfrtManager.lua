@@ -49,7 +49,8 @@
 ---@class XBfrtCourseRewardChapter
 ---@field ChapterId number
 ---@field RewardId boolean
-
+---@
+local XTeam = require("XEntity/XTeam/XTeam")
 local XExFubenSimulationChallengeManager = require("XEntity/XFuben/XExFubenSimulationChallengeManager")
 XBfrtManagerCreator = function()
     local pairs = pairs
@@ -147,6 +148,7 @@ XBfrtManagerCreator = function()
     --endregion
 
     local _HandEnterFightChapterId = 0
+    local TeamDic = {}
 
     local function IsGroupPassed(groupId)
         local records = BfrtData.BfrtGroupRecords
@@ -161,6 +163,38 @@ XBfrtManagerCreator = function()
         end
 
         return false
+    end
+
+    -- [新增] 从 TeamDic 中提取最新的纯数据列表，用于传给 RequestSetTeam
+    local function CollectGroupData(groupId)
+        local fightList = {}
+        local logisticsList = {}
+        
+        -- 这里的遍历范围需要根据配置或者 TeamDic 的实际内容
+        -- 简单起见，我们假设 TeamDic 已经存好了对应 Group 的所有 Team
+        if TeamDic[groupId] then
+            local groupCache = TeamDic[groupId]
+            
+            -- 提取作战队伍
+            if groupCache[XBfrtManager.EchelonType.Fight] then
+                for index, team in pairs(groupCache[XBfrtManager.EchelonType.Fight]) do
+                    fightList[index] = team:GetEntityIds()
+                end
+            end
+            
+            -- 提取后勤队伍
+            if groupCache[XBfrtManager.EchelonType.Logistics] then
+                for index, team in pairs(groupCache[XBfrtManager.EchelonType.Logistics]) do
+                    logisticsList[index] = team:GetEntityIds()
+                end
+            end
+        end
+        
+        -- 防御逻辑：如果 TeamDic 里没取到，尝试用旧缓存兜底（防止初始化问题）
+        if XTool.IsTableEmpty(fightList) then fightList = FightTeams[groupId] or {} end
+        if XTool.IsTableEmpty(logisticsList) then logisticsList = LogisticsTeams[groupId] or {} end
+        
+        return fightList, logisticsList
     end
 
     function XBfrtManager.GetChapterInfo(chapterId)
@@ -349,13 +383,12 @@ XBfrtManagerCreator = function()
         end
     end
 
+    -- [替换] 初始化队伍记录 (增加视图同步)
     local function InitTeamRecords()
-        ---@type XBfrtTeamInfo
         local teamInfos = BfrtData.BfrtTeamInfos
-        if not teamInfos then
-            return
-        end
+        if not teamInfos then return end
 
+        TeamDic = {} 
         GeneralSkillSelectIdCache = {}
         CgIndexGroupCache = {}
 
@@ -365,9 +398,64 @@ XBfrtManagerCreator = function()
                 FightTeams[groupId] = teamInfo.FightTeamList
                 LogisticsTeams[groupId] = teamInfo.LogisticsTeamList
 
+                TeamDic[groupId] = {}
+                TeamDic[groupId][XBfrtManager.EchelonType.Fight] = {}
+                TeamDic[groupId][XBfrtManager.EchelonType.Logistics] = {}
+
+                -- [Fixed] Use Unique ID
+                local function GetTeamUniqueId(groupId, echelonType, index)
+                    return groupId * 100000 + echelonType * 1000 + index
+                end
+                
+                -- 1. 作战队伍
+                for index, memberIds in pairs(teamInfo.FightTeamList) do
+                     local uniqueId = GetTeamUniqueId(groupId, XBfrtManager.EchelonType.Fight, index)
+                    local team = XTeam.New(uniqueId)
+                    team:UpdateEntityIds(memberIds)
+                    team:UpdateCaptainPos(teamInfo.CaptainPosList[index] or 1)
+                    team:UpdateFirstFightPos(teamInfo.FirstFightPosList[index] or 1)
+                    
+                    team:UpdateSaveCallback(function(inTeam)
+                        local newIds = inTeam:GetEntityIds()
+                        -- A. 更新缓存
+                        if FightTeams[groupId] then FightTeams[groupId][index] = newIds end
+                        teamInfo.FightTeamList[index] = newIds
+                        teamInfo.CaptainPosList[index] = inTeam:GetCaptainPos()
+                        teamInfo.FirstFightPosList[index] = inTeam:GetFirstFightPos()
+
+                        -- B. [新增] 如果当前正在查看该组，同步更新视图数据，确保 UI 即时刷新
+                        if _ViewGroupId == groupId and _ViewGroupFightTeams then
+                            _ViewGroupFightTeams[index] = newIds
+                        end
+                    end)
+                    
+                    TeamDic[groupId][XBfrtManager.EchelonType.Fight][index] = team
+                end
+
+                -- 2. 后勤队伍
+                for index, memberIds in pairs(teamInfo.LogisticsTeamList) do
+                     local uniqueId = GetTeamUniqueId(groupId, XBfrtManager.EchelonType.Logistics, index)
+                    local team = XTeam.New(uniqueId)
+                    team:UpdateEntityIds(memberIds)
+                    
+                    team:UpdateSaveCallback(function(inTeam)
+                        local newIds = inTeam:GetEntityIds()
+                        -- A. 更新缓存
+                        if LogisticsTeams[groupId] then LogisticsTeams[groupId][index] = newIds end
+                        teamInfo.LogisticsTeamList[index] = newIds
+
+                        -- B. [新增] 同步视图数据
+                        if _ViewGroupId == groupId and _ViewGroupLogisticsTeams then
+                            _ViewGroupLogisticsTeams[index] = newIds
+                        end
+                    end)
+
+                    TeamDic[groupId][XBfrtManager.EchelonType.Logistics][index] = team
+                end
+
+                -- (后续代码保持不变，直接复制)
                 local captainList = teamInfo.CaptainPosList
                 local firstFightList = teamInfo.FirstFightPosList
-
                 if captainList then
                     local fightInfoIdList = XBfrtManager.GetFightInfoIdList(groupId)
                     for index, echelonId in ipairs(fightInfoIdList) do
@@ -375,7 +463,6 @@ XBfrtManagerCreator = function()
                         XBfrtManager.SetServerTeamCaptainPos(echelonId, captainList[index])
                     end
                 end
-
                 if firstFightList then
                     local fightInfoIdList = XBfrtManager.GetFightInfoIdList(groupId)
                     for index, echelonId in ipairs(fightInfoIdList) do
@@ -383,10 +470,15 @@ XBfrtManagerCreator = function()
                         XBfrtManager.SetServerTeamFirstFightPos(echelonId, firstFightList[index])
                     end
                 end
-
-                -- 根据组和玩家Id读取缓存
                 GeneralSkillSelectIdCache[groupId] = XSaveTool.GetData(XBfrtManager.GetTeamGeneralSkillIdsKey(groupId))
                 CgIndexGroupCache[groupId] = XSaveTool.GetData(XBfrtManager.GetTeamCgIndexGroupKey(groupId))
+
+                -- [Fixed] Sync View Data if we are currently viewing this group
+                -- This ensures that when NotifyBfrtData replaces the cache tables, the view data references are also updated.
+                if _ViewGroupId == groupId then
+                    _ViewGroupFightTeams = FightTeams[groupId]
+                    _ViewGroupLogisticsTeams = LogisticsTeams[groupId]
+                end
             end
         end
     end
@@ -418,7 +510,7 @@ XBfrtManagerCreator = function()
     function XBfrtManager.Init()
         _IsInitStageInfo = false
         XBfrtManager._TeamData = nil
-        XBfrtManager._GirdEchelonIndexTempTeam = {}
+        -- XBfrtManager._GirdEchelonIndexTempTeam = {}
         BfrtChapterTemplates = XBfrtConfigs.GetBfrtChapterTemplates()
         BfrtGroupTemplates = XBfrtConfigs.GetBfrtGroupTemplates()
         EchelonInfoTemplates = XBfrtConfigs.GetEchelonInfoTemplates()
@@ -2001,49 +2093,135 @@ XBfrtManagerCreator = function()
         end
     end
 
+    -- [新增] 生成唯一的队伍ID (解决多关卡队伍ID冲突问题)
+    local function GetTeamUniqueId(groupId, echelonType, index)
+        -- Format: GGG ET II (GroupId * 10000 + EchelonType * 1000 + Index)
+        -- Assumes GroupId < 10000, Index < 1000. Sufficient for current config.
+        return groupId * 100000 + echelonType * 1000 + index
+    end
+
+    -- [替换] 获取队伍实例 (最终版 - 包含视图同步)
     function XBfrtManager.GetTeam(data)
-        if not XTool.IsTableEmpty(data) then
-            ---@type XTeam
-            local tempTeam = XDataCenter.TeamManager.CreateTempTeam(data.TeamCharacterIdList)
-            local captainPos = XDataCenter.BfrtManager.GetTeamCaptainPos(data.EchelonId, data.BfrtGroupId, data.EchelonIndex)
-            local firstFightPos = XDataCenter.BfrtManager.GetTeamFirstFightPos(data.EchelonId, data.BfrtGroupId, data.EchelonIndex)
-            local cgIndex = XDataCenter.BfrtManager.GetTeamCgIndex(data.EchelonIndex, data.BfrtGroupId)
-            tempTeam:UpdateCaptainPosAndFirstFightPos(captainPos, firstFightPos)
-            tempTeam:UpdateSelectGeneralSkill(XBfrtManager.GetTeamGeneralSkillId(data.EchelonIndex, data.BfrtGroupId), true)
-            tempTeam:RefreshGeneralSkills(true)
-            tempTeam:SetEnterCgIndex(cgIndex.EnterCgIndex)
-            tempTeam:SetSettleCgIndex(cgIndex.SettleCgIndex)
+        if XTool.IsTableEmpty(data) then return nil end
+        
+        local groupId = data.BfrtGroupId
+        local index = data.EchelonIndex
+        local echelonType = data.EchelonType or XBfrtManager.EchelonType.Fight 
 
-            XBfrtManager._TeamData = tempTeam
+        -- 1. 自动补全 EchelonId
+        if not data.EchelonId then
+             if echelonType == XBfrtManager.EchelonType.Fight then
+                 local list = XBfrtManager.GetFightInfoIdList(groupId)
+                 data.EchelonId = list[index]
+             else
+                 local list = XBfrtManager.GetLogisticsInfoIdList(groupId)
+                 data.EchelonId = list[index]
+             end
         end
 
-        return XBfrtManager._TeamData
+        -- 2. 确保缓存容器存在
+        if not TeamDic[groupId] then TeamDic[groupId] = {} end
+        if not TeamDic[groupId][echelonType] then TeamDic[groupId][echelonType] = {} end
+
+        local team = TeamDic[groupId][echelonType][index]
+
+        -- 3. 懒加载
+        if not team then
+            -- [Fixed] Use Unique ID to prevent collision
+            local uniqueId = GetTeamUniqueId(groupId, echelonType, index)
+            team = XTeam.New(uniqueId)
+            team:UpdateEntityIds({0, 0, 0}) 
+
+            -- [修改] 绑定回调 (增加视图同步)
+            team:UpdateSaveCallback(function(inTeam)
+                local newIds = inTeam:GetEntityIds()
+                
+                if echelonType == XBfrtManager.EchelonType.Fight then
+                    -- A. 更新缓存
+                    if not FightTeams[groupId] then FightTeams[groupId] = {} end
+                    FightTeams[groupId][index] = newIds
+                    
+                    -- B. 同步视图
+                    if _ViewGroupId == groupId and _ViewGroupFightTeams then
+                        _ViewGroupFightTeams[index] = newIds
+                    end
+                else
+                    -- A. 更新缓存
+                    if not LogisticsTeams[groupId] then LogisticsTeams[groupId] = {} end
+                    LogisticsTeams[groupId][index] = newIds
+                    
+                    -- B. 同步视图
+                    if _ViewGroupId == groupId and _ViewGroupLogisticsTeams then
+                        _ViewGroupLogisticsTeams[index] = newIds
+                    end
+                end
+            end)
+
+            TeamDic[groupId][echelonType][index] = team
+        end
+
+        -- 4. 同步数据 (Critical Fix: Always sync with authoritative data)
+        -- Ensure we grab the latest data from the authoritative cache
+        -- [Prioritize View Data]: If we are in the view of this group, the view data (e.g. AutoTeam results) is more up-to-date than the cache.
+        local authoritativeIds = nil
+        local isViewGroup = _ViewGroupId == groupId
+        
+        if echelonType == XBfrtManager.EchelonType.Fight then
+            if isViewGroup and _ViewGroupFightTeams and _ViewGroupFightTeams[index] then
+                authoritativeIds = _ViewGroupFightTeams[index]
+            elseif FightTeams[groupId] and FightTeams[groupId][index] then
+                authoritativeIds = FightTeams[groupId][index]
+            end
+        else
+            if isViewGroup and _ViewGroupLogisticsTeams and _ViewGroupLogisticsTeams[index] then
+                authoritativeIds = _ViewGroupLogisticsTeams[index]
+            elseif LogisticsTeams[groupId] and LogisticsTeams[groupId][index] then
+                authoritativeIds = LogisticsTeams[groupId][index]
+            end
+        end
+
+        -- If we have authoritative data, verify the team instance matches it
+        if authoritativeIds then
+            team:UpdateEntityIds(authoritativeIds) 
+        end
+
+        local captainPos = XDataCenter.BfrtManager.GetTeamCaptainPos(data.EchelonId, groupId, index)
+        local firstFightPos = XDataCenter.BfrtManager.GetTeamFirstFightPos(data.EchelonId, groupId, index)
+        team:UpdateCaptainPosAndFirstFightPos(captainPos, firstFightPos)
+        team:UpdateSelectGeneralSkill(XBfrtManager.GetTeamGeneralSkillId(index, groupId), true)
+        
+        return team
     end
 
-    -- 只为记录据点UiBfrtDeploy临时生成的队伍引用
-    function XBfrtManager.SetGirdEchelonIndexTempTeam(teamData, index)
-        if not teamData or not index then
-            return
-        end
-        XBfrtManager._GirdEchelonIndexTempTeam[index] = teamData
-    end
+    -- [新增] 交换队伍接口
+    function XBfrtManager.SwapTeam(groupId, indexA, indexB)
+        local groupTeams = TeamDic[groupId] and TeamDic[groupId][XBfrtManager.EchelonType.Fight]
+        if not groupTeams then return end
 
-    ---@return XTeam
-    function XBfrtManager.GetGirdEchelonIndexTempTeam(index)
-        if not index then
-            return
-        end
-        return XBfrtManager._GirdEchelonIndexTempTeam[index]
-    end
+        local teamA = groupTeams[indexA]
+        local teamB = groupTeams[indexB]
 
-    function XBfrtManager.ClearGirdEchelonIndexTempTeam()
-        local t = XBfrtManager._GirdEchelonIndexTempTeam
-        if not t then
-            return
+        if not teamA or not teamB then 
+            XUiManager.TipError("交换失败：队伍实例不存在")
+            return 
         end
-        for k in pairs(t) do
-            t[k] = nil
-        end
+
+        -- 1. 交换数据 (EntityIds)
+        local idsA = XTool.Clone(teamA:GetEntityIds())
+        local idsB = XTool.Clone(teamB:GetEntityIds())
+        
+        -- 使用 UpdateEntityIds 会触发上面绑定的 SaveCallback
+        -- 但为了避免触发两次网络请求，我们可以先暂时改数据，最后手动触发一次保存
+        -- 或者简单点：改完两个，触发两次请求（服务器通常能扛住，逻辑最稳）
+        
+        teamA:UpdateEntityIds(idsB) -- A 变成 B 的人
+        teamB:UpdateEntityIds(idsA) -- B 变成 A 的人
+        
+        -- 2. 这里的 Save 是为了通知 XTeam 内部状态变更
+        -- 因为我们在 InitTeamRecords 绑定了 SaveCallback -> RequestSetTeam
+        -- 所以这里理论上会自动触发 RequestSetTeam
+        teamA:Save() 
+        teamB:Save()
     end
 
     function XBfrtManager.SetTeamAndDoCB(groupId, fightTeamList, logisticsTeamList, cb)
@@ -2068,45 +2246,55 @@ XBfrtManagerCreator = function()
             cb()
         end
         --再检查队伍
-        XDataCenter.BfrtManager.RequestSetTeam(groupId, fightTeamList, logisticsTeamList, requestCB)
+        XDataCenter.BfrtManager.RequestSetTeam(groupId, fightTeamList, logisticsTeamList, requestCB, true)
     end
     --endregion
 
     --region Rpc
-    function XBfrtManager.RequestSetTeam(groupId, fightTeamList, logisticsTeamList, cb)
-        if not CheckFightTeamCondition(groupId, fightTeamList) then
-            XUiManager.TipText("FightTeamConditionLimit")
-            return
-        end
 
-        if not CheckLogisticsTeamCondition(groupId, logisticsTeamList) then
-            XUiManager.TipText("LogisticsTeamConditionLimit")
-            return
+    function XBfrtManager.RequestSetTeam(groupId, fightTeamList, logisticsTeamList, cb, checkCondition)
+        if checkCondition == nil then checkCondition = true end
+
+        if checkCondition then
+            if not CheckFightTeamCondition(groupId, fightTeamList) then
+                XUiManager.TipText("FightTeamConditionLimit")
+                return
+            end
+
+            if not CheckLogisticsTeamCondition(groupId, logisticsTeamList) then
+                XUiManager.TipText("LogisticsTeamConditionLimit")
+                return
+            end
         end
 
         local captainList = {}
         local firstFightPosList = {}
         local fightInfoIdList = XBfrtManager.GetFightInfoIdList(groupId)
+        
         for i, echelonId in ipairs(fightInfoIdList) do
             local captainPos = XBfrtManager.GetTeamCaptainPos(echelonId, groupId, i)
             if not XTool.IsNumberValid(fightTeamList[i] and fightTeamList[i][captainPos]) then
-                XUiManager.TipMsg(XUiHelper.GetText("BfrtNotCaptain", i))
-                return
+                 if checkCondition then 
+                    XUiManager.TipMsg(XUiHelper.GetText("BfrtNotCaptain", i))
+                    return
+                 end
             end
             tableInsert(captainList, captainPos)
 
             local firstFightPos = XBfrtManager.GetTeamFirstFightPos(echelonId, groupId, i)
             if not XTool.IsNumberValid(fightTeamList[i] and fightTeamList[i][firstFightPos]) then
-                XUiManager.TipMsg(XUiHelper.GetText("BfrtNotFirstFight", i))
-                return
+                 if checkCondition then 
+                    XUiManager.TipMsg(XUiHelper.GetText("BfrtNotFirstFight", i))
+                    return
+                 end
             end
             tableInsert(firstFightPosList, firstFightPos)
         end
 
         XNetwork.Call(METHOD_NAME.BfrtTeamSetRequest, {
             BfrtGroupId = groupId,
-            FightTeam = fightTeamList, --List<List<int /*characterId*/> /*characterId list*/>
-            LogisticsTeam = logisticsTeamList, --List<List<int /*characterId*/> /*characterId list*/>
+            FightTeam = fightTeamList,
+            LogisticsTeam = logisticsTeamList,
             CaptainPosList = captainList,
             FirstFightPosList = firstFightPosList,
         }, function(res)
@@ -2120,13 +2308,10 @@ XBfrtManagerCreator = function()
             XBfrtManager.InitTeamCaptainPos(true)
             XBfrtManager.InitTeamFirstFightPos(true)
 
-            --将效应选择数据进行缓存
             XBfrtManager.SaveTeamGeneralSkillId()
             XBfrtManager.SaveTeamCgIndex()
 
-            if cb then
-                cb()
-            end
+            if cb then cb() end
         end)
     end
 

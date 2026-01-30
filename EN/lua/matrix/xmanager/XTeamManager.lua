@@ -671,7 +671,7 @@ XTeamManagerCreator = function()
                         local weaponData = xTeamPrefab:GetWeaponData(pos)
                         local weaponEquipId = weaponData and weaponData.EquipId
                         if XTool.IsNumberValid(weaponEquipId) then
-                            XMVCA.XEquip:OnEquipPutOnSuccess(entityId, weaponEquipId)
+                            XMVCA.XEquip:OnEquipPutOnSuccess(entityId, weaponEquipId, true)
                         end
 
                         -- 穿意识
@@ -680,7 +680,7 @@ XTeamManagerCreator = function()
                             for slot, v in pairs(allAwarenessData) do
                                 local awarenessEquipId = v.EquipId
                                 if XTool.IsNumberValid(awarenessEquipId) then
-                                    XMVCA.XEquip:OnEquipPutOnSuccess(entityId, awarenessEquipId)
+                                    XMVCA.XEquip:OnEquipPutOnSuccess(entityId, awarenessEquipId, true)
                                 end
                             end
                         end

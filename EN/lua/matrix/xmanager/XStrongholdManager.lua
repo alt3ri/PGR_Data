@@ -2199,6 +2199,19 @@ XStrongholdManagerCreator = function()
         return false
     end
 
+    function XStrongholdManager.CheckInTeamListWithOutPlayerId(characterId, teamList, notCheckTeamId)
+        if not IsNumberValid(characterId) then
+            return false
+        end
+        teamList = teamList or _TeamList
+        for _, team in pairs(teamList) do
+            if team:GetId() ~= notCheckTeamId and team:CheckInTeamWithOutPlayerId(characterId) then
+                return true, team:GetId()
+            end
+        end
+        return false
+    end
+
     function XStrongholdManager.GetCharacterInTeamId(characterId, teamList, playerId)
         if not IsNumberValid(characterId) then
             return 0

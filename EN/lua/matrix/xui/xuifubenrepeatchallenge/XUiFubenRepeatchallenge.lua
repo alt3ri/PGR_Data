@@ -239,7 +239,7 @@ end
 --点击商店按钮
 function XUiFubenRepeatchallenge:OnBtnShopClick()
     local skipId = XDataCenter.FubenRepeatChallengeManager.GetActivityConfig().ShopSkipId
-    XFunctionManager.SkipInterface(skipId, true)
+    XFunctionManager.SkipInterface(skipId, 'XUiFubenRepeatchallenge', true)
 end
 
 --点击进入关卡

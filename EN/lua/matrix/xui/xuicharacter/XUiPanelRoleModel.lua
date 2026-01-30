@@ -2504,7 +2504,7 @@ showDefaultFx)
 
         local proxy = self:GetRenderingProxy()
         if proxy then
-            proxy:ReplaceWeaponPart(fxPath, modelInfo.LiberationFx)
+            proxy:ReplaceWeaponPart(rootTransform.name, modelInfo.LiberationFx)
         end
         -- self:FixAurolePos(modelInfo.LiberationFx, characterId, modelInfo)
     else
@@ -2588,6 +2588,9 @@ function XUiPanelRoleModel:SetCharacterModelNodeEffectMappingPrefab(config)
             local effectParent = CS.UnityEngine.GameObject(effectParentName)
             self.NodeEffectMappingPrefabPool[effectParentName] = effectParent
             effectParent.transform:SetParent(targerParentNode)
+            effectParent.transform.localPosition = CS.UnityEngine.Vector3.zero
+            effectParent.transform.localRotation = CS.UnityEngine.Quaternion.identity
+            effectParent.transform.localScale = CS.UnityEngine.Vector3.one
             local effectGo = effectParent:LoadPrefab(prefabName)
             if config.IsDontRotate then
                 effectGo.transform:SetParent(characerModelTransform)

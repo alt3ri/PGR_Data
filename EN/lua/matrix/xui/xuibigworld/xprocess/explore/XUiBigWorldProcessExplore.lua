@@ -8,6 +8,7 @@ local XUiBigWorldProcessExploreGrid = require("XUi/XUiBigWorld/XProcess/Explore/
 ---@field GridExplore UnityEngine.RectTransform
 ---@field Parent XUiBigWorldProcess
 ---@field _Control XBigWorldCourseControl
+---@field TxtTips UnityEngine.UI.Text
 local XUiBigWorldProcessExplore = XClass(XUiBWProcessPlayerBase, "XUiBigWorldProcessExplore")
 
 function XUiBigWorldProcessExplore:OnStart()
@@ -74,6 +75,8 @@ function XUiBigWorldProcessExplore:Refresh(contentEntity)
     self:_RefreshRedPoint()
     self:_RefreshProgress(contentEntity)
     self:_RefreshDynamicTable(contentEntity:GetExploreEntitysWithSorting())
+    self:_RefreshBannerBg(contentEntity)
+    self:_RefreshTips(contentEntity)
 end
 
 ---@return XDynamicTableNormal
@@ -116,6 +119,7 @@ end
 
 function XUiBigWorldProcessExplore:_InitUi()
     self.GridExplore.gameObject:SetActiveEx(false)
+    self.ImgBg = self.ImgBg or self.Transform:Find("PanelAccumulate/ImgBg"):GetComponent("RawImage")
 end
 
 ---@param contentEntity XBWCourseContentEntity
@@ -151,6 +155,28 @@ function XUiBigWorldProcessExplore:_RefreshRedPoint()
     end
 
     self.BtnReward:ShowReddot(self._Entity:IsAchieved())
+end
+
+---@param exploreEntity XBWCourseContentEntity
+function XUiBigWorldProcessExplore:_RefreshBannerBg(exploreEntity)
+    if not self.ImgBg then
+        return
+    end
+    self.ImgBg:SetRawImage(exploreEntity:GetBigWorldCourseContentBannerBg())
+end
+
+---@param exploreEntity XBWCourseContentEntity
+function XUiBigWorldProcessExplore:_RefreshTips(exploreEntity)
+    local tip = exploreEntity:GetBigWorldCourseContentTip()
+    if string.IsNilOrEmpty(tip) then
+        self.TxtTips.gameObject:SetActiveEx(false)
+    else
+        self.TxtTips.gameObject:SetActiveEx(true)
+        self.TxtTips.text = tip
+    end
+end
+
+function XUiBigWorldProcessExplore:OnVersionChanged()
 end
 
 return XUiBigWorldProcessExplore

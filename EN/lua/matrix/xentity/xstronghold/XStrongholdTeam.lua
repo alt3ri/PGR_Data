@@ -170,6 +170,16 @@ function XStrongholdTeam:CheckInTeam(characterId, playerId)
     return false, 0
 end
 
+function XStrongholdTeam:CheckInTeamWithOutPlayerId(characterId)
+    if not IsNumberValid(characterId) then return false end
+    for _, member in pairs(self._TeamMemberDic) do
+        if XTool.IsNumberValid(characterId) and member:GetCharacterId() == characterId then
+            return true, member:GetPos()
+        end
+    end
+    return false, 0
+end
+
 function XStrongholdTeam:GetInTeamMemberByCharacterId(characterId, playerId)
     if not IsNumberValid(characterId) then return end
     for _, member in pairs(self._TeamMemberDic) do
@@ -544,17 +554,22 @@ function XStrongholdTeam:GetOrCreateTempTeam()
         self:SetCaptainPos(xTeam:GetCaptainPos())
         self:SetFirstPos(xTeam:GetFirstFightPos())
         local members = XTool.Clone(self:GetAllMembers())
-        for pos, id in pairs(xTeam.EntitiyIds) do
-            local newMember = nil
-            for pos2, member in pairs(members) do
-                if XTool.IsNumberValid(id) and member:GetRoleId() == id and pos == pos2 then
-                    newMember = member
-                    break
-                end
+        local charIdToDataDic = {}
+        for pos2, member in pairs(members) do
+            if member then
+                local data = 
+                {
+                    PlayerId = member:GetPlayerId(),
+                    RobotId = member:GetRobotId(),
+                    Ability = member:GetAbility(),
+                }
+                charIdToDataDic[member:GetRoleId()] = data
             end
-            if newMember then
-                self:SetMember(pos, newMember:GetCharacterId(), newMember:GetPlayerId(), newMember:GetRobotId(), newMember:GetAbility())
-            end
+        end
+
+        local entityIds = xTeam:GetEntityIds()
+        for pos, id in pairs(entityIds) do
+            self:SetMember(pos, id, XTool.IsNumberValid(id) and charIdToDataDic[id].PlayerId,  XTool.IsNumberValid(id) and charIdToDataDic[id].RobotId, XTool.IsNumberValid(id) and charIdToDataDic[id].Ability)
         end
         -- 继承XTeam的效应技能选择数据
         self.SelectedGeneralSkill = xTeam:GetCurGeneralSkill()

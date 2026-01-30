@@ -8,9 +8,11 @@ function XBWSkipActivityMain:Skip()
     local params = self:GetParams()
     if XTool.IsTableEmpty(params) then
         XLog.Error("跳转失败, 参数异常!")
-        return
+        return false
     end
     self:OpenMainUi()
+
+    return true
 end
 
 function XBWSkipActivityMain:OpenMainUi()

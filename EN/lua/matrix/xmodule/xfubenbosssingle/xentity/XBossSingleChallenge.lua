@@ -13,6 +13,7 @@ function XBossSingleChallenge:Ctor()
     self._SelfRankInfo = nil
     self._ModelId = nil
     self._BossId = 0
+    self._FeatureGroupId = 0
     self._IsEmpty = true
 end
 
@@ -25,6 +26,7 @@ function XBossSingleChallenge:SetDataWithBossSingleData(bossSingle)
     local count = math.min(#featureIds, #stageIds)
 
     self._BossId = XMVCA.XFubenBossSingle:GetSectionIdById(sectionId)
+    self._FeatureGroupId = featureGroupId
     self._FeatureMap = {}
     self._IsEmpty = false
     if count ~= 0 then
@@ -182,6 +184,10 @@ end
 
 function XBossSingleChallenge:GetBossId()
     return self._BossId or 0
+end
+
+function XBossSingleChallenge:GetFeatureGroupId()
+    return self._FeatureGroupId or 0
 end
 
 function XBossSingleChallenge:SetSelfRankInfo(info)

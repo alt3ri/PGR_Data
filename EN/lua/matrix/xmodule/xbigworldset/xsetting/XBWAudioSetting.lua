@@ -4,6 +4,45 @@ local XBWSettingValue = require("XModule/XBigWorldSet/XSetting/XBWSettingValue")
 ---@class XBWAudioSetting : XBWSettingBase
 local XBWAudioSetting = XClass(XBWSettingBase, "XBWAudioSetting")
 
+local RecordDataHandler = {
+    floatToInt = function(value)
+        return math.floor(value * 100)
+    end
+}
+local RecordValue = {
+    [1] = {
+        key = "FashionVoice",
+        XBWSettingValue = "_FashionVoiceValue",
+    },
+    [2] = {
+        key = "MusicVolume",
+        XBWSettingValue = "_MusicVolumeValue",
+        handler = RecordDataHandler.floatToInt
+    },
+    [3] = {
+        key = "SoundVolume",
+        XBWSettingValue = "_SoundVolumeValue",
+        handler = RecordDataHandler.floatToInt
+    },
+    [4] = {
+        key = "VoiceVolume",
+        XBWSettingValue = "_VoiceVolumeValue",
+        handler = RecordDataHandler.floatToInt
+    },
+    [5] = {
+        key = "CvType",
+        XBWSettingValue = "_CvTypeValue"
+    },
+    [6] = {
+        key = "VolumeControl",
+        XBWSettingValue = "_VolumeControlValue"
+    },
+    [7] = {
+        key = "MuteInBackground",
+        XBWSettingValue = "_MuteInBackgroundValue"
+    }
+}
+
 function XBWAudioSetting:InitValue()
     self:_InitFashionVoiceValue()
     self:_InitMusicVolumeValue()
@@ -153,6 +192,21 @@ function XBWAudioSetting:SetMuteInBackgroundValue(value)
     if self._MuteInBackgroundValue then
         self._MuteInBackgroundValue:SetValue(value)
     end
+end
+
+function XBWAudioSetting:RecordDataToDict()
+    local dict = {}
+    for i = 1, #RecordValue do
+        local value = self[RecordValue[i].XBWSettingValue]
+        if value then
+            if RecordValue[i].handler then
+                dict[RecordValue[i].key] = tostring(RecordValue[i].handler(value:GetValue()))
+            else
+                dict[RecordValue[i].key] = tostring(value:GetValue())
+            end
+        end
+    end
+    return dict
 end
 
 -- endregion

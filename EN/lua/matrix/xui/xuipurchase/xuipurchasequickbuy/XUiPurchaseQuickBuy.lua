@@ -41,7 +41,7 @@ end
 
 function XUiPurchaseQuickBuy:OnBtnCancelClick()
     if self.CancelReplaceCb then
-        self.CancelReplaceCb()
+        self.CancelReplaceCb(self._Index)
     else
         self:Close()
         XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self._Index)

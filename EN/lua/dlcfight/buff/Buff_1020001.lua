@@ -17,34 +17,15 @@ function XBuffScript1020001:Init() --初始化
                 return
             end
             local Position = self._proxy:GetNpcPosition(target)--获取目标位置
-            self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-            if self._proxy:GetBuffStacks(self._uuid, 1016242) == 2 then
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-            elseif self._proxy:GetBuffStacks(self._uuid, 1016242) == 3 then
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-            elseif self._proxy:GetBuffStacks(self._uuid, 1016242) == 4 then
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-            elseif self._proxy:GetBuffStacks(self._uuid, 1016242) == 5 then
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-            elseif self._proxy:GetBuffStacks(self._uuid, 1016242) == 6 then
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-            elseif self._proxy:GetBuffStacks(self._uuid, 1016242) == 7 then
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
+            self.BuffStacks = self._proxy:GetBuffStacks(self._uuid, 1016242)
+            if self._proxy:CheckBuffByKind(self._uuid, 1016374) then
+                for i = 1, self.BuffStacks do
+                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200109,Position,Position,1)--伤害子弹
+                end
+            else
+                for i = 1, self.BuffStacks do
+                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10200108,10200108,Position,Position,1)--伤害子弹
+                end
             end
         end)
         self._proxy:AddTimerTask(5, function()--延迟5秒后，死亡

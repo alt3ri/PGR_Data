@@ -153,7 +153,7 @@ function XEquipModel:DeleteEquips(equipIds)
     for _, equipId in ipairs(equipIds) do
         local equip = self:GetEquip(equipId)
         if equip:IsWearing() then
-            charIdDic[tmpEquip.CharacterId] = true
+            charIdDic[equip.CharacterId] = true
         end
         self:DeleteEquip(equipId)
     end

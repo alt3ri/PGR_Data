@@ -85,20 +85,7 @@ function XUiGridFashionSuitFashion:AddClickEvt()
 end
 
 function XUiGridFashionSuitFashion:OpenDetail()
-    local hasOpenShopIds = {}
-    local shopIds = self._Control:GetSuitShopIds(self.Parent._Id)
-    for _, shopId in pairs(shopIds) do
-        if XShopManager.IsShopOpen(shopId) then
-            table.insert(hasOpenShopIds, shopId)
-        end
-    end
-    if XTool.IsTableEmpty(hasOpenShopIds) then
-        XLuaUiManager.Open("UiFashionSuitDetail", self._SuitId, self._Id)
-    else
-        XShopManager.GetShopInfoList(hasOpenShopIds, function()
-            XLuaUiManager.Open("UiFashionSuitDetail", self._SuitId, self._Id)
-        end, XShopManager.ActivityShopType.FashionShop)
-    end
+    XMVCA.XShop:OpenFashionDetailUi(self._Id, nil, { suitId = self._SuitId })
 end
 
 return XUiGridFashionSuitFashion
