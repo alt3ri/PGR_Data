@@ -85,6 +85,9 @@ XGuideManagerCreator = function()
         UiBigWorldBlackMaskLoading      = true,
         UiBigWorldBlackMaskNormal       = true,
         UiBigWorldShowLoading           = true,
+        UiDlcRelinkPopupInvitation      = true,
+        UiDlcRelinkToastCommon          = true,
+        UiDlcRelinkToastCommonSmall     = true,
     }
     local NextGridCb = nil
     local CbProxy = nil
@@ -305,7 +308,7 @@ XGuideManagerCreator = function()
                 end
             end
 
-            if active and XGuideManager.TryActiveGuide(guideTemplate) then
+            if active and XGuideManager.TryActiveGuide(guideTemplate, true) then
                 break
             end
         end
@@ -339,7 +342,7 @@ XGuideManagerCreator = function()
     
     ---- 尝试启动引导
     ---@param guideTemplate XTableGuideGroup
-    function XGuideManager.TryActiveGuide(guideTemplate)
+    function XGuideManager.TryActiveGuide(guideTemplate, isUiOpen)
         if not guideTemplate then
             return false
         end
@@ -354,21 +357,7 @@ XGuideManagerCreator = function()
         
         local active = false
         --栈顶UiName
-        local uiName = CsXUiManager.Instance:GetTopParentUiName()
-        local index = 1
-        --过滤掉不需要引导的UI
-        while true do
-            --保底
-            if string.IsNilOrEmpty(uiName) then
-                break
-            end
-            --战斗的UI不参与系统引导
-            if not (SKIP_CHECK_UI_NAME[uiName] or XUiManager.IsFightUi(uiName)) then
-                break
-            end
-            uiName = CsXUiManager.Instance:GetTopXUiName(index)
-            index = index + 1
-        end
+        local uiName = CurrentProxy:GetTopUiName(SKIP_CHECK_UI_NAME)
         local activeUis = string.Split(guideTemplate.ActiveUi, '|')
         if not XTool.IsTableEmpty(activeUis) then
             for _, achieveUi in pairs(activeUis) do
@@ -390,7 +379,7 @@ XGuideManagerCreator = function()
         
         --RunningGuideTemplate = guideTemplate
         --XGuideManager.PlayGuide(guideTemplate.Id)
-        CurrentProxy:ExecuteGuide(guideTemplate)
+        CurrentProxy:ExecuteGuide(guideTemplate, isUiOpen)
         return true
     end
     

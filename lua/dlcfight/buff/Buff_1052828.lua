@@ -9,7 +9,7 @@ function XBuffScript1052828:Init()
     --初始化
     Base.Init(self)
     ------------配置------------
-    XLog.Warning("Buff脚本已加载"..1052828)
+    --XLog.Warning("Buff脚本已加载"..1052828)
 end
 
 ---@param dt number @ delta time 
@@ -23,7 +23,7 @@ end
 --region EventCallBack
 function XBuffScript1052828:InitEventCallBackRegister()
     Base.InitEventCallBackRegister(self)
-    XLog.Warning("注册伤害事件")
+    --XLog.Warning("注册伤害事件")
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage) --注册伤害事件
 end
 

@@ -195,7 +195,7 @@ function XBWCourseCoreEntity:GetElementEntitysWithSort()
             return not isCompleteA
         end
 
-        return elementA:GetElementId() < elementB:GetElementId()
+        return elementA:GetSortIndex() < elementB:GetSortIndex()
     end)
 
     return result

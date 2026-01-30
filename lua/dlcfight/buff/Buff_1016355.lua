@@ -16,10 +16,8 @@ function XBuffScript1016355:Init()
 
     self.battleStartBuffId = 1015992    --战斗开始标记buff
     self.magicLevel = 1
-    self.signalIdArr = {
-        1015911, --【定时】状态标记，标记管理脚本见1015910
-        1015743         --【概率触发】标记
-    }
+    self.signalAwakeForMissionArr = {1016416,1015595,1015744 } -- 定时、概率触发传递标记buff
+
     ------------执行------------
 
 end
@@ -43,17 +41,20 @@ function XBuffScript1016355:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
     if npcUUID == self._uuid and buffId == self.battleStartBuffId then
         for thisLevel, buffGroupThisLevel in ipairs(self.buffLevelGroupId) do
             if self._proxy:CheckBuffByKind(self._uuid, buffGroupThisLevel) then
-                self.magicLevel=thisLevel
+                self.magicLevel = thisLevel
                 self.currentRuneActiveCounterCal = self.runeActiveCounterCal[thisLevel]
             end
         end
     end
 
     --如果不是【定时】标记和【概率触发】标记，则返回
-    if npcUUID == self._uuid and (buffId==self.signalIdArr[1] or buffId ==self.signalIdArr[2]) then
+    local signalAwakeForMission = buffId==self.signalAwakeForMissionArr[1] or buffId==self.signalAwakeForMissionArr[2] or buffId==self.signalAwakeForMissionArr[3]
+    if npcUUID == self._uuid and signalAwakeForMission then
         self.runeActiveCounter = self.runeActiveCounter + 1
         if self.runeActiveCounter >= self.currentRuneActiveCounterCal then
-            self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
+            for _, magicId in ipairs(self.magicIds) do
+                self._proxy:ApplyMagic(self._uuid,self._uuid,magicId, self.magicLevel)
+            end
             self.runeActiveCounter = self.runeActiveCounter - self.currentRuneActiveCounterCal
         end
     end

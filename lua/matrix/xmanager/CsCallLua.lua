@@ -73,6 +73,11 @@ function Fuben.CloseGuideUI()
     end
 end
 
+function Fuben.GetStageName(stageId)
+    local _, stageName = XMVCA.XFuben:GetFubenNames(stageId)
+    return stageName
+end
+
 function Character.GetFightCharHeadIcon(character, characterId)
     return XMVCA.XCharacter:GetFightCharHeadIcon(character, characterId)
 end

@@ -198,6 +198,14 @@ function XBWCourseContentEntity:GetBigWorldCourseContentBannerBg()
     return ""
 end
 
+function XBWCourseContentEntity:GetBigWorldCourseContentTip()
+    if not self:IsNil() then
+        return self._OwnControl:GetBigWorldCourseContentTip(self:GetContentId())
+    end
+
+    return ""
+end
+
 ---@return XBWCourseExploreEntity[]
 function XBWCourseContentEntity:GetExploreEntitys()
     return self._ExploreEntitys or {}

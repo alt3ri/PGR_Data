@@ -14,7 +14,7 @@ function XFindPath2OtherTransition:InitOther(targetPos, checkDistance)
     if checkDistance ~= nil and checkDistance > 0 then
         self._checkDistance = checkDistance
     else
-        self._checkDistance = 5
+        self._checkDistance = 0.1
     end
 end
 

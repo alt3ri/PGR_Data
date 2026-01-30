@@ -82,7 +82,13 @@ function XUiDlcMultiPlayerLoadingItem:_Init(playerData)
             end
             grid.gameObject:SetActiveEx(true)
             local skillConfig = self._Control:GetDlcMultiplayerSkillConfigById(skillId)
-            grid:GetObject("ImgSkill"):SetRawImage(skillConfig.Icon)
+            local rawImage = grid:GetObject("ImgSkill")
+            rawImage:SetRawImage(skillConfig.Icon)
+            if camp == CampEnum.Cat then
+                rawImage.color = XUiHelper.Hexcolor2Color("588975")
+            elseif camp == CampEnum.Mouse then
+                rawImage.color = XUiHelper.Hexcolor2Color("A54939")
+            end
         end
 
         for i = #skillIds + 1, #self._SkillGridList do

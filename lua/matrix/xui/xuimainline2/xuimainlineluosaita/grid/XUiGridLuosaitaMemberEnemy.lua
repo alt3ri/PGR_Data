@@ -33,6 +33,8 @@ function XUiGridLuosaitaMemberEnemy:Refresh(posInfo)
     local curHp = self._Control:GetPositionCurHp(posId)
     local curAttack = self._Control:GetPositionCurAttack(posId)
 
+    local head = self._Control:GetConfig():GetEnemyHead(enemyId)
+    self.RImgHead:SetRawImage(head)
     self.TxtAttack.text = tostring(curAttack)
     self.TxtHP.text = tostring(curHp)
     local docIds = self.UiMain._Control:GetConfig():GetEnemyDocIds(enemyId)
@@ -46,10 +48,28 @@ function XUiGridLuosaitaMemberEnemy:Refresh(posInfo)
     if not isShow then
         self:Close()
     end
+
+    -- 首次显示播放Enable动画
+    if isShow and self.LastIsShow == false then
+        self:PlayAnimation("AnimEnable")
+    end
+    self.LastIsShow = isShow
 end
 
 function XUiGridLuosaitaMemberEnemy:OnDestory()
     self._LastScreenPoint = nil
+end
+
+-- 播放死亡动画
+function XUiGridLuosaitaMemberEnemy:PlayAnimDead(cb)
+    self:PlayAnimationWithMask("AnimDead", function()
+        if cb then cb() end
+    end)
+end
+
+-- 显示/隐藏选中特效
+function XUiGridLuosaitaMemberEnemy:ShowSelectEffect(isShow)
+    self.FxUiSelect.gameObject:SetActiveEx(isShow)
 end
 
 function XUiGridLuosaitaMemberEnemy:IsInSize(screenPointV2)

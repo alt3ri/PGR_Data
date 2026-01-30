@@ -15,17 +15,17 @@ function XUiPanelTheatre5MissionMiniDetail:OnEnable()
         self.BtnBagMaskDetailShow.gameObject:SetActiveEx(true)
     end
     self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_HIDE_ITEM_DETAIL)
-    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_HIDE_ITEM_DETAIL, self.Close, self)
+    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_HIDE_ITEM_DETAIL, self.CloseWithAnimation, self)
 end
 
 function XUiPanelTheatre5MissionMiniDetail:OnDisable()
     if self.BtnBagMaskDetailShow then
         self.BtnBagMaskDetailShow.gameObject:SetActiveEx(false)
     end
-    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_HIDE_ITEM_DETAIL, self.Close, self)
+    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_HIDE_ITEM_DETAIL, self.CloseWithAnimation, self)
 end
 
-function XUiPanelTheatre5MissionMiniDetail:RefreshDetail(itemId, level)
+function XUiPanelTheatre5MissionMiniDetail:RefreshDetail(itemId, level, isMaxLevel)
     local itemCfg = self._Control:GetTheatre5ItemCfgById(itemId)
 
     if itemCfg then
@@ -41,7 +41,7 @@ function XUiPanelTheatre5MissionMiniDetail:RefreshDetail(itemId, level)
         
         -- 奖励等级
         if self.TxtLv then
-            self.TxtLv.text = XMVCA.XTheatre5:GetClientConfig('MissionLvFormat', 1, level)
+            self.TxtLv.text = self._Control.MissionControl:GetClientConfigMissionLvFormat(level, isMaxLevel)
         end
     end
     
@@ -57,7 +57,27 @@ function XUiPanelTheatre5MissionMiniDetail:RefreshDetail(itemId, level)
     end
 end
 
+function XUiPanelTheatre5MissionMiniDetail:CloseWithAnimation(cb)
+    local isAnimaStart = false
 
+    self:PlayAnimationWithMask('Disable', function()
+        self:Close()
+
+        if cb then
+            cb()
+        end
+    end, function()
+        isAnimaStart = true
+    end)
+
+    if not isAnimaStart then
+        self:Close()
+
+        if cb then
+            cb()
+        end
+    end
+end
 
 
 return XUiPanelTheatre5MissionMiniDetail

@@ -6,6 +6,18 @@ local BOSS_MAX_COUNT = 3
 function XUiPanelBossStage:OnStart(bossList)
     self._BossList = bossList
     self._GroupId = {}
+    
+    -- 初始化PanelDetail，默认隐藏
+    self.PanelDetail = self.PanelDetail or self.Transform:FindTransform("PanelDetail")
+    if self.PanelDetail then
+        self.PanelDetail.gameObject:SetActiveEx(false)
+    end
+    -- 拖尾特效节点
+    self.FxTuowei = self.FxTuowei or self.Transform:FindTransform("FxTuowei")
+    if self.FxTuowei then
+        self.FxTuowei.gameObject:SetActiveEx(false)
+    end
+    
     self:_RegisterButtonListeners()
 end
 
@@ -16,6 +28,24 @@ end
 
 function XUiPanelBossStage:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_SYNC, self._Refresh, self)
+    
+    -- 清理延迟隐藏的定时器
+    if self._HidePanelTimer then
+        XScheduleManager.UnSchedule(self._HidePanelTimer)
+        self._HidePanelTimer = nil
+    end
+    
+    -- 清理回调
+    self._ChallengeUnlockPanelCallback = nil
+
+    if self._TrailTimer then
+        XScheduleManager.UnSchedule(self._TrailTimer)
+        self._TrailTimer = nil
+    end
+    if self._TrailDelayTimer then
+        XScheduleManager.UnSchedule(self._TrailDelayTimer)
+        self._TrailDelayTimer = nil
+    end
 end
 
 function XUiPanelBossStage:_RegisterButtonListeners()
@@ -93,10 +123,197 @@ function XUiPanelBossStage:_RefreshPanelMode()
 
     if effect then
         local isFirst = bossSingle:GetIsFirstUnlockChallenge()
-
-        effect.gameObject:SetActiveEx(isOpen and isFirst)
-        bossSingle:UnlockChallenge()
+        
+        -- 如果是第一次解锁且开放，先弹出PanelDetail，关闭后再播放特效
+        if isOpen and isFirst then
+            -- 先确保按钮特效关闭，等待拖尾结束后再开启
+            effect.gameObject:SetActiveEx(false)
+            self:_ShowChallengeUnlockPanel(function()
+                -- PanelDetail关闭后的回调，播放特效
+                if effect then
+                    effect.gameObject:SetActiveEx(true)
+                end
+                bossSingle:UnlockChallenge()
+            end)
+        else
+            effect.gameObject:SetActiveEx(false)
+        end
     end
+end
+
+--- 显示鏖战点解锁面板
+---@param callback function 面板关闭后的回调
+function XUiPanelBossStage:_ShowChallengeUnlockPanel(callback)
+    if not self.PanelDetail then
+        XLog.Warning("[XUiPanelBossStage] PanelDetail节点不存在")
+        if callback then
+            callback()
+        end
+        return
+    end
+
+    -- 获取鏖战点的bossId
+    local challengeData = self._Control:GetBossSingleChallengeData()
+    if not challengeData then
+        XLog.Warning("[XUiPanelBossStage] challengeData为空，无法显示解锁面板")
+        if callback then
+            callback()
+        end
+        return
+    end
+
+    local bossId = challengeData:GetBossId()
+    if not bossId or bossId <= 0 then
+        XLog.Warning("[XUiPanelBossStage] bossId无效，无法显示解锁面板")
+        if callback then
+            callback()
+        end
+        return
+    end
+
+    -- 清理之前的定时器
+    if self._HidePanelTimer then
+        XScheduleManager.UnSchedule(self._HidePanelTimer)
+        self._HidePanelTimer = nil
+    end
+    if self._TrailTimer then
+        XScheduleManager.UnSchedule(self._TrailTimer)
+        self._TrailTimer = nil
+    end
+    if self._TrailDelayTimer then
+        XScheduleManager.UnSchedule(self._TrailDelayTimer)
+        self._TrailDelayTimer = nil
+    end
+
+    -- 获取boss图片和名字
+    local bossIcon = self._Control:GetBossIcon(bossId)
+    local bossName = self._Control:GetBossName(bossId)
+
+    -- 设置boss图片
+    if self.BossSingleTab and bossIcon then
+        self.BossSingleTab:SetRawImage(bossIcon)
+    end
+
+    -- 本期铭牌图标：从能获得的奖励最高的里面查找铭牌
+    local nameplateIcon = self:_GetHighestAvailableNameplateIcon()
+    if self.ImgUiNameplate and nameplateIcon then
+        self.ImgUiNameplate:SetImage(nameplateIcon)
+    end
+
+    -- 显示PanelDetail
+    self.PanelDetail.gameObject:SetActiveEx(true)
+
+    -- 保存回调
+    self._ChallengeUnlockPanelCallback = callback
+
+    -- 先显示detail 0.6秒，再播放拖尾飞到BtnMode
+    local delay = 1
+    self._TrailDelayTimer = XScheduleManager.ScheduleOnce(function()
+        self._TrailDelayTimer = nil
+        self:_PlayTrailToBtnMode(function()
+            if self.PanelDetail and not XTool.UObjIsNil(self.PanelDetail) then
+                self.PanelDetail.gameObject:SetActiveEx(false)
+            end
+            if self._ChallengeUnlockPanelCallback then
+                self._ChallengeUnlockPanelCallback()
+                self._ChallengeUnlockPanelCallback = nil
+            end
+        end)
+    end, delay * XScheduleManager.SECOND)
+
+    XLog.Debug("[XUiPanelBossStage] 显示鏖战点解锁面板，bossId: " .. bossId .. ", bossName: " .. (bossName or ""))
+end
+
+--- 获取能获得的奖励最高的铭牌图标
+---@return string|nil 铭牌图标路径
+function XUiPanelBossStage:_GetHighestAvailableNameplateIcon()
+    local bossSingleData = self._Control:GetBossSingleData()
+    if not bossSingleData then
+        return nil
+    end
+
+    local levelType = bossSingleData:GetBossSingleLevelType()
+    local configs = self._Control:GetScoreRewardConfig(levelType)
+    if not configs or #configs == 0 then
+        return nil
+    end
+
+    local totalScore = bossSingleData:GetBossSingleTotalScoreBestRecord()
+    local highestScoreConfig = nil
+    local highestScore = 0
+
+    -- 找到能获得的最高分数奖励配置
+    for i = 1, #configs do
+        local config = configs[i]
+        if config and config.Score and totalScore >= config.Score then
+            if config.Score > highestScore then
+                highestScore = config.Score
+                highestScoreConfig = config
+            end
+        end
+    end
+
+    if not highestScoreConfig or not highestScoreConfig.RewardId then
+        return nil
+    end
+
+    -- 从奖励列表中找到铭牌类型的奖励
+    local rewardList = XRewardManager.GetRewardList(highestScoreConfig.RewardId)
+    if not rewardList then
+        return nil
+    end
+
+    for _, reward in ipairs(rewardList) do
+        if reward and reward.RewardType == XRewardManager.XRewardType.Nameplate then
+            -- 找到铭牌奖励，获取铭牌图标
+            local nameplateId = reward.TemplateId
+            if nameplateId and nameplateId > 0 then
+                -- GetNameplateIcon 可能返回两个值（icon, title）或一个值（icon）
+                local icon, title = XMedalConfigs.GetNameplateIcon(nameplateId)
+                if icon and icon ~= "" then
+                    return icon
+                end
+            end
+        end
+    end
+
+    return nil
+end
+
+--- 拖尾飞向 BtnMode
+---@param callback function
+function XUiPanelBossStage:_PlayTrailToBtnMode(callback)
+    if not self.FxTuowei or not self.BtnMode then
+        if callback then
+            callback()
+        end
+        return
+    end
+
+    local startPos = self.FxTuowei.position
+    local duration = 1
+    local elapsed = 0
+
+    self.FxTuowei.gameObject:SetActiveEx(true)
+    self.FxTuowei.position = startPos
+
+    self._TrailTimer = XScheduleManager.ScheduleForever(function()
+        elapsed = elapsed + CS.UnityEngine.Time.deltaTime
+        local t = math.min(elapsed / duration, 1)
+        -- 实时获取目标位置
+        local targetPos = self.BtnMode.transform.position
+        local pos = CS.UnityEngine.Vector3.Lerp(startPos, targetPos, t)
+        self.FxTuowei.position = pos
+
+        if t >= 1 then
+            XScheduleManager.UnSchedule(self._TrailTimer)
+            self._TrailTimer = nil
+            self.FxTuowei.gameObject:SetActiveEx(false)
+            if callback then
+                callback()
+            end
+        end
+    end, 0)
 end
 
 function XUiPanelBossStage:_Refresh()

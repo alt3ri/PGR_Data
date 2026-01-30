@@ -17,11 +17,13 @@ function XUiMainLine2Chapter:OnStart(mainId, chapterId, stageId, isOpenStageDeta
     self.ChapterIds = self._Control:GetMainChapterIds(mainId)
 
     -- 进战斗/播剧情后恢复界面
-    local resumeData = self._Control:GetMainReleaseData(self.MainId, true)
-    if resumeData then 
-        self.CurChapterId = resumeData.ChapterId
-        self:SetLastClickStageId(resumeData.LastClickStageId)
-        self.IsOpenStageDetail = false
+    if self.IsResume then
+        local resumeData = self._Control:GetMainReleaseData(self.MainId, true)
+        if resumeData then
+            self.CurChapterId = resumeData.ChapterId
+            self:SetLastClickStageId(resumeData.LastClickStageId)
+            self.IsOpenStageDetail = false
+        end
     end
     
     -- 未播放章节切换效果
@@ -94,6 +96,10 @@ function XUiMainLine2Chapter:OnRelease()
     self.ChapterLinkGos = nil
     self.BtnDifficultUiObjs = nil
     self.BtnDifficults = nil
+end
+
+function XUiMainLine2Chapter:OnResume(value)
+    self.IsResume = true
 end
 
 function XUiMainLine2Chapter:OnReleaseInst()

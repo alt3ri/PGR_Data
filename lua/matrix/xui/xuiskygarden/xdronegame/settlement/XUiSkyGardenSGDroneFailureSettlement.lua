@@ -21,8 +21,6 @@ function XUiSkyGardenSGDroneFailureSettlement:OnStart()
     ---@type XUiSkyGardenSGDroneFailureSettlementGrid[]
     self._ProgressGrids = {}
 
-    self._IsPlaying = false
-
     self:_InitUi()
     self:_RegisterButtonClicks()
 end
@@ -51,18 +49,6 @@ function XUiSkyGardenSGDroneFailureSettlement:OnBtnConfirmClick()
     CS.XBigWorldGame.XSkyGarden.XDroneGame.XSGDGInstance.RestoreGame()
 end
 
-function XUiSkyGardenSGDroneFailureSettlement:OnBtnVideoClick()
-    if self._IsPlaying then
-        self.VideoPlayer:Stop()
-        self._IsPlaying = false
-        self.ImagePlay.gameObject:SetActiveEx(true)
-    else
-        self.VideoPlayer:Prepare()
-        self._IsPlaying = true
-        self.ImagePlay.gameObject:SetActiveEx(false)
-    end
-end
-
 function XUiSkyGardenSGDroneFailureSettlement:Refresh(droneId, progressCount, currentProgress, hasArchive)
     if not hasArchive then
         self.BtnConfirm:SetDisable(true, false)
@@ -78,7 +64,6 @@ function XUiSkyGardenSGDroneFailureSettlement:_RegisterButtonClicks()
     -- 在此处注册按钮事件
     self.BtnCancel:AddEventListener(Handler(self, self.OnBtnCancelClick))
     self.BtnConfirm:AddEventListener(Handler(self, self.OnBtnConfirmClick))
-    self.BtnVideo:AddEventListener(Handler(self, self.OnBtnVideoClick))
 end
 
 function XUiSkyGardenSGDroneFailureSettlement:_RegisterListeners()
@@ -129,11 +114,13 @@ end
 function XUiSkyGardenSGDroneFailureSettlement:_RefreshDrone(droneId)
     local videoId = self._Control:GetDroneTeachingVideoId(droneId)
 
+    self.BtnVideo.gameObject:SetActiveEx(false)
+    self.ImgPlay.gameObject:SetActiveEx(false)
     if XTool.IsNumberValid(videoId) then
+        self.VideoPlayer.VideoPlayerInst.loop = true
         self.Visual.gameObject:SetActiveEx(true)
         self.VideoPlayer:SetInfoByVideoId(videoId)
-    else
-        self.Visual.gameObject:SetActiveEx(false)
+        self.VideoPlayer:Prepare()
     end
 
     self.TxtTeach.text = self._Control:GetDroneDescription(droneId)

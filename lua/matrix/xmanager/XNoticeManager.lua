@@ -256,7 +256,7 @@ XNoticeManagerCreator = function()
     -- end
     
     ---初始化服务端游戏公告已读记录
-    ---@param gameNoticeRecords table 服务端返回的已读记录 {GameNoticeInfos = {{NoticeId = string, ModifyTime = int}}}
+    ---@param gameNoticeRecords table 服务端返回的已读记录 {GameNoticeInfos = {{NoticeId = string, ModifyTime = int, EndTime = int}}}
     function XNoticeManager.InitGameNoticeRecordsFromServer(gameNoticeRecords)
         _ServerGameNoticeRecords = {}
         
@@ -268,6 +268,8 @@ XNoticeManagerCreator = function()
         for _, serverRecord in ipairs(gameNoticeRecords.GameNoticeInfos) do
             local noticeId = serverRecord.NoticeId
             local modifyTime = serverRecord.ModifyTime
+            -- 服务端增加EndTime字段, 但是客户端暂时没有处理
+            -- local endTime = serverRecord.EndTime
             local serverKey = string.format("%s_%s", noticeId or "", tostring(modifyTime or ""))
             _ServerGameNoticeRecords[serverKey] = true
         end
@@ -289,7 +291,8 @@ XNoticeManagerCreator = function()
     ---@param serverKey string 服务端记录key
     ---@param noticeId string 公告ID
     ---@param modifyTime number 修改时间
-    local function AddToSyncQueue(serverKey, noticeId, modifyTime)
+    ---@param endTime number 结束时间
+    local function AddToSyncQueue(serverKey, noticeId, modifyTime, endTime)
         -- 如果已经在队列中，不需要重复添加
         if _SyncQueue[serverKey] then
             return
@@ -298,7 +301,8 @@ XNoticeManagerCreator = function()
         -- 加入队列
         _SyncQueue[serverKey] = {
             NoticeId = noticeId,
-            ModifyTime = modifyTime
+            ModifyTime = modifyTime,
+            EndTime = endTime
         }
         
         -- 启动定时器
@@ -325,7 +329,8 @@ XNoticeManagerCreator = function()
         for serverKey, info in pairs(_SyncQueue) do
             table.insert(gameNoticeInfos, {
                 NoticeId = info.NoticeId,
-                ModifyTime = info.ModifyTime
+                ModifyTime = info.ModifyTime,
+                EndTime = info.EndTime
             })
         end
         
@@ -391,7 +396,7 @@ XNoticeManagerCreator = function()
         _ServerGameNoticeRecords[serverKey] = true
         
         -- 加入同步队列，延迟发送
-        AddToSyncQueue(serverKey, readInfo.Id, readInfo.ModifyTime)
+        AddToSyncQueue(serverKey, readInfo.Id, readInfo.ModifyTime, readInfo.EndTime)
     end
     
     ---首次同步本地已读公告到服务端
@@ -418,7 +423,8 @@ XNoticeManagerCreator = function()
                     -- 还没有同步过，加入待同步列表
                     table.insert(gameNoticeInfos, {
                         NoticeId = readInfo.Id,
-                        ModifyTime = readInfo.ModifyTime
+                        ModifyTime = readInfo.ModifyTime,
+                        EndTime = readInfo.EndTime
                     })
                     -- 标记已处理，避免重复
                     seenKeys[serverKey] = true
@@ -764,8 +770,12 @@ XNoticeManagerCreator = function()
         if not notice then
             return
         end
-
+        
         if NowPicNotice and NowPicNotice.Id == notice.Id and NowPicNotice.ModifyTime == notice.ModifyTime then
+            return
+        end
+
+        if not XNoticeManager.CheckNoticeValid(notice) then
             return
         end
 
@@ -779,78 +789,19 @@ XNoticeManagerCreator = function()
         if not NowPicNotice then
             return
         end
-
+        
+        local now = XTime.GetServerNowTimestamp()
         local scrollPicList = {}
         for _, v in ipairs(NowPicNotice.Content) do
             local isOpen = true
-
+            
             if not v.BeginTime or not v.EndTime or not v.AppearanceDay or not v.AppearanceTime
                     or not v.DisappearanceCondition or not v.AppearanceCondition then
                 isOpen = false
             end
 
-            if isOpen then
+            if not XNoticeManager.CheckNoticeContentValid(v, now) then
                 isOpen = false
-                if XTime.GetServerNowTimestamp() >= tonumber(v.BeginTime) and XTime.GetServerNowTimestamp() < tonumber(v.EndTime) then
-                    --是否在开放区间内（日期）
-                    isOpen = true
-                end
-            end
-
-            if isOpen then
-                isOpen = false
-                if #v.AppearanceDay > 0 then
-                    for _, day in ipairs(v.AppearanceDay) do
-                        if day == XDataCenter.FubenDailyManager.GetNowDayOfWeekByRefreshTime() then
-                            --是否位于可以显示的周目
-                            isOpen = true
-                        end
-                    end
-                else
-                    isOpen = true
-                end
-            end
-
-            if isOpen then
-                isOpen = false
-                if #v.AppearanceTime > 0 then
-                    for _, time in ipairs(v.AppearanceTime) do
-                        if XTime.GetServerNowTimestamp() - XTime.GetTodayTime(0, 0, 0) >= time[1] and XTime.GetServerNowTimestamp() - XTime.GetTodayTime(0, 0, 0) < time[2] then
-                            --是否位于可以显示的时间段
-                            isOpen = true
-                        end
-                    end
-                else
-                    isOpen = true
-                end
-            end
-
-            if isOpen then
-                if #v.DisappearanceCondition > 0 then
-                    for _, condition in ipairs(v.DisappearanceCondition) do
-                        --是否符合不显示的条件
-                        if XConditionManager.CheckCondition(condition) then
-                            isOpen = false
-                        end
-                    end
-                end
-            end
-
-            if isOpen then
-                if #v.AppearanceCondition > 0 then
-                    for _, condition in ipairs(v.AppearanceCondition) do
-                        if not XConditionManager.CheckCondition(condition) then
-                            --是否不符合显示条件
-                            isOpen = false
-                        end
-                    end
-                end
-            end
-
-            if isOpen then
-                if not XNoticeManager.IsWhiteIp(v.WhiteLists) and not XNoticeManager.IsWhiteDevice(v.DeviceLists) then
-                    isOpen = false
-                end
             end
 
             if isOpen then
@@ -858,7 +809,7 @@ XNoticeManagerCreator = function()
                 table.insert(scrollPicList, v)
             end
         end
-
+        
         return scrollPicList
     end
     ----------------------Scroll Pic end----------------------
@@ -1355,7 +1306,7 @@ XNoticeManagerCreator = function()
             end
         end
         CS.XRecord.Record("24004", "RequestLoginNoticeStart")
-        XNoticeManager.RequestNotice(XNoticeType.Login, requestCb, requestCb, RequestInterval[XNoticeType.Login])
+        XNoticeManager.RequestNotice(XNoticeType.Login, requestCb, requestCb)
     end
 
     function XNoticeManager.AutoOpenLoginNotice()
@@ -1736,17 +1687,20 @@ XNoticeManagerCreator = function()
     --    return s
     --end
 
+    --- 检查公告是否有效
+    ---【起始时间、白名单、渠道】
     function XNoticeManager.CheckNoticeValid(notice, nowTime)
         if not notice then
             return false
         end
 
         nowTime = nowTime or XTime.GetServerNowTimestamp()
-        if nowTime < notice.BeginTime then
+        
+        if XTool.IsNumberValidEx(notice.BeginTime) and nowTime < notice.BeginTime then
             return false
         end
 
-        if nowTime > notice.EndTime then
+        if XTool.IsNumberValidEx(notice.EndTime) and nowTime > notice.EndTime then
             return false
         end
 
@@ -1759,6 +1713,83 @@ XNoticeManagerCreator = function()
         end
         
         return true
+    end
+    
+    --- 检查公告内容有效性
+    function XNoticeManager.CheckNoticeContentValid(content, nowTime)
+        if not content then
+            return false
+        end
+
+        nowTime = nowTime or XTime.GetServerNowTimestamp()
+
+        -- 基本时间及白名单检查
+        if XTool.IsNumberValidEx(content.BeginTime) and nowTime < content.BeginTime then
+            return false
+        end
+
+        if XTool.IsNumberValidEx(content.EndTime) and nowTime > content.EndTime then
+            return false
+        end
+
+        if not XNoticeManager.IsWhiteIp(content.WhiteLists) and not XNoticeManager.IsWhiteDevice(content.DeviceLists) then
+            return false
+        end
+        
+        -- 其他条件检查
+        local isValid = true
+        
+        if isValid then
+            if XTool.GetTableCount(content.AppearanceDay) > 0 then
+                isValid = false
+                for _, day in ipairs(content.AppearanceDay) do
+                    if day == XDataCenter.FubenDailyManager.GetNowDayOfWeekByRefreshTime() then
+                        --是否位于可以显示的周目
+                        isValid = true
+                    end
+                end
+            end
+        end
+
+        if isValid then
+            if XTool.GetTableCount(content.AppearanceTime) > 0 then
+                isValid = false
+                
+                local todayTime = XTime.GetTodayTime(0, 0, 0)
+                local passTime = nowTime - todayTime
+                
+                for _, time in ipairs(content.AppearanceTime) do
+                    if passTime >= time[1] and passTime < time[2] then
+                        --是否位于可以显示的时间段
+                        isValid = true
+                    end
+                end
+            end
+        end
+
+        if isValid then
+            if XTool.GetTableCount(content.DisappearanceCondition) > 0 then
+                for _, condition in ipairs(content.DisappearanceCondition) do
+                    --是否符合不显示的条件
+                    if XConditionManager.CheckCondition(condition) then
+                        isValid = false
+                    end
+                end
+            end
+        end
+
+        if isValid then
+            if XTool.GetTableCount(content.AppearanceCondition) > 0 then
+                for _, condition in ipairs(content.AppearanceCondition) do
+                    if not XConditionManager.CheckCondition(condition) then
+                        --是否不符合显示条件
+                        isValid = false
+                    end
+                end
+            end
+        end
+        
+        return isValid
     end
     
     function XNoticeManager.CheckChannelAndPlatform(notice)
@@ -1887,10 +1918,13 @@ XNoticeManagerCreator = function()
         --if ((not nowTime) or (not noticeType) or (not interval)) then
         --    XLog.Warning("XNoticeManager nowTime", nowTime,"noticeType", noticeType,"LastRequestTime", LastRequestTime[noticeType],"interval", interval)
         --end
-        if LastRequestTime[noticeType] and LastRequestTime[noticeType] > 0
-                and nowTime - LastRequestTime[noticeType] < interval then
-            if unaskedCb then unaskedCb() end
-            return
+        -- 兼容 interval 为 0 的情况：如果 interval 为 0 或 nil，不进行时间间隔检查，直接请求
+        if interval and interval > 0 then
+            if LastRequestTime[noticeType] and LastRequestTime[noticeType] > 0
+                    and nowTime - LastRequestTime[noticeType] < interval then
+                if unaskedCb then unaskedCb() end
+                return
+            end
         end
         LastRequestTime[noticeType] = nowTime
 

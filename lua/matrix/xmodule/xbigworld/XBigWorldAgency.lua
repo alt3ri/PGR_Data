@@ -121,6 +121,7 @@ function XBigWorldAgency:InitX3C()
     register(X3C_CMD.CMD_UPDATE_MAP_PIN_POSITION, XMVCA.XBigWorldMap.OnUpdateMapPinPosition, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_GET_LITTLE_MAP_RADIUS, XMVCA.XBigWorldMap.OnGetLittleMapRadius, XMVCA.XBigWorldMap)
     register(X3C_CMD.CMD_FIGHT_OPEN_BIG_MAP, XMVCA.XBigWorldMap.OnOpenBigMap, XMVCA.XBigWorldMap)
+    register(X3C_CMD.CMD_MAP_PIN_OUT_OF_LITTLE_MAP_RANGE, XMVCA.XBigWorldMap.OnLittleMapPinRemove, XMVCA.XBigWorldMap)
 
     -- 通用功能
     register(X3C_CMD.CMD_OPEN_CONFIRM_POPUP_UI, XMVCA.XBigWorldUI.OpenConfirmPopupUiWithCmd, XMVCA.XBigWorldUI)
@@ -434,7 +435,13 @@ function XBigWorldAgency:OpenPhoto(isSequence, ...)
     if not XMVCA.XBigWorldFunction:DetectionFunction(XMVCA.XBigWorldFunction.FunctionId.BigWorldAlbum) then
         return
     end
-    XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPhotographControl", not isSequence, ...)
+
+    local t = XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CAMERA_PHOTOGRAPH_CAN_OPEN)
+    if t.CanOpen then
+        XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPhotographControl", not isSequence, ...)
+    else
+        XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("CurStatusCannotOpen"))
+    end
 end
 
 function XBigWorldAgency:OpenTeaching()
@@ -493,12 +500,12 @@ end
 function XBigWorldAgency:UnloadGuide()
 end
 
----@return table<number, XTableGuideGroup>
+---@return table<number, XTableBigworldGuideGroup>
 function XBigWorldAgency:GetBigWorldGuideGroupTemplates()
     return self._Model:GetBigWorldGuideGroupTemplates()
 end
 
----@return XTableGuideGroup
+---@return XTableBigworldGuideGroup
 function XBigWorldAgency:GetBigWorldGuideGroupTemplateById(guideId)
     return self._Model:GetBigWorldGuideGroupTemplateById(guideId)
 end

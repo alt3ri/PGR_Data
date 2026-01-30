@@ -5,22 +5,27 @@ local XBuffScript10511013 = XDlcScriptManager.RegBuffScript(10511013, "XBuffScri
 
 --效果说明：添加该buff时检测自身伤口层数，让buff来源创建子弹攻击怪物
 
-function XBuffScript10511013:Init()
+function XBuffScript10511013:ScriptInit(isGainControl)
     --初始化
-    Base.Init(self)
+    Base.ScriptInit(self, isGainControl)
     ------------配置------------
     self.CureEquipdelayTime = 0.13
     self.DelayTime = 0.5
     self._cureEquipSwitch = false
-    --设置核心插件子弹发射ID
-    self._lunchId = {}
-    self._lunchId[1] = 10511011
-    self._lunchId[2] = 10511012
-    self._lunchId[3] = 10511013
-    self._lunchId[4] = 10511014
-
     ------------执行------------
     self.CureEquipdelayTimer = self._proxy:GetFightTime() + self.DelayTime
+
+    --存储Timer信息到黑板值
+    if isGainControl then
+        local hasKey, val = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid, 10511013)
+        if hasKey then
+            self.CureEquipdelayTimer = val
+        end
+    else
+        self._proxy:RegisterBBSync(XVarDomain.Npc, self._uuid, 10511013)
+        self._proxy:SetBBFloat(XVarDomain.Npc, self._uuid, 10511013, self.CureEquipdelayTimer)
+    end
+
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
     self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)
 end
@@ -30,13 +35,11 @@ function XBuffScript10511013:Update(dt)
     --每帧执行
     Base.Update(self, dt)
     if self._cureEquipSwitch then
+        --判断NPC是否存活
+        if self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Death, -1) then
+            return
+        end
         if self._proxy:CheckBuffByKind(self._uuid, 10511012) then
-            if self._proxy:CheckBuffByKind(self._casterUUID,1051101) then
-                self._proxy:LaunchMissile(self._casterUUID, self._uuid, self._lunchId[self._proxy:Random(1,4)], 10511011, 1)
-            end
-            if self._proxy:CheckBuffByKind(self._casterUUID,1051102) then
-                self._proxy:LaunchMissile(self._casterUUID, self._uuid, self._lunchId[self._proxy:Random(1,4)], 10511021, 1)
-            end
             self._cureEquipSwitch = false
             self._proxy:RemoveBuffByKindAndCount(self._uuid,10511012,1)
         else
@@ -46,6 +49,7 @@ function XBuffScript10511013:Update(dt)
     if (self._proxy:GetFightTime() > self.CureEquipdelayTimer) then
         self._cureEquipSwitch = true
         self.CureEquipdelayTimer = self._proxy:GetFightTime() + self.CureEquipdelayTime
+        self._proxy:SetBBFloat(1, self._uuid, 10511013, self.CureEquipdelayTimer)
     end
 end
 

@@ -17,4 +17,8 @@ function XUiRadioSignPopupHall:OnStart(content)
     XDataCenter.GuideManager.CheckGuideOpen()
 end
 
+function XUiRadioSignPopupHall:OnDisable()
+    XDataCenter.FunctionEventManager.OnFunctionEventCompleted()
+end
+
 return XUiRadioSignPopupHall

@@ -133,6 +133,42 @@ function XSGDroneChapterEntity:GetIcon()
     return ""
 end
 
+function XSGDroneChapterEntity:GetLockTip()
+    local timeId = self:GetTimeId()
+
+    if not XFunctionManager.CheckInTimeByTimeId(timeId, true) then
+        return self._OwnControl:GetChapterLockTip(1)
+    end
+
+    local conditionId = self:GetConditionId()
+
+    if XTool.IsNumberValid(conditionId) then
+        local isSuccess, tip = XMVCA.XBigWorldService:CheckCondition(conditionId)
+
+        if not isSuccess then
+            return tip or ""
+        end
+    end
+
+    local stageEntities = self:GetStageList()
+    local isStageUnlock = false
+
+    if not XTool.IsTableEmpty(stageEntities) then
+        for _, stageEntity in pairs(stageEntities) do
+            if stageEntity:IsUnlock() then
+                isStageUnlock = true
+                break
+            end
+        end
+    end
+
+    if not isStageUnlock then
+        return self._OwnControl:GetChapterLockTip(2)
+    end
+
+    return ""
+end
+
 ---@return XSGDroneStageEntity[]
 function XSGDroneChapterEntity:GetStageList()
     return self._StageList

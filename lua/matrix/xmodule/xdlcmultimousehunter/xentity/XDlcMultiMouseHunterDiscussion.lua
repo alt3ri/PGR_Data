@@ -128,10 +128,16 @@ function XDlcMultiMouseHunterDiscussion:GetCamp2Ratio()
 end
 
 function XDlcMultiMouseHunterDiscussion:GetCamp1RatioStr()
+    if not self._Ratio then
+        return XUiHelper.GetText("MultiMouseHunterStatistics")
+    end
     return string.format("%.1f%%", self:GetCamp1Ratio() / 10)
 end
 
 function XDlcMultiMouseHunterDiscussion:GetCamp2RatioStr()
+    if self:GetCamp2Ratio() == self:GetDiscussionTotalRatio() then
+        return XUiHelper.GetText("MultiMouseHunterStatistics")
+    end
     return string.format("%.1f%%", self:GetCamp2Ratio() / 10)
 end
 
@@ -157,10 +163,16 @@ function XDlcMultiMouseHunterDiscussion:GetPlayerCamp2Ratio()
 end
 
 function XDlcMultiMouseHunterDiscussion:GetPlayerCamp1RatioStr()
+    if  self:GetPlayerCamp1Ratio() == 0 then
+        return XUiHelper.GetText("MultiMouseHunterStatistics")
+    end
     return string.format("%.1f%%", self:GetPlayerCamp1Ratio() / 10)
 end
 
 function XDlcMultiMouseHunterDiscussion:GetPlayerCamp2RatioStr()
+    if self:GetPlayerCamp2Ratio() == self:GetDiscussionTotalRatio() then
+        return XUiHelper.GetText("MultiMouseHunterStatistics")
+    end
     return string.format("%.1f%%", self:GetPlayerCamp2Ratio() / 10)
 end
 

@@ -209,9 +209,9 @@ function XDlcRelinkOtherMemberControl:GetEquipMaxAbilityByEquipUid(equipUid)
     local templateId = equip.TemplateId
     local ability = self._MainControl:GetEquipAbility(templateId)
 
-    -- 主属性战力（包含主技能属性战力）
-    local mainSkillFactorId = self._MainControl:GetEquipMainSkillFactorId(templateId)
+    -- 主属性战力
     for _, attribute in pairs(equip.MainFactors or {}) do
+        local mainSkillFactorId = self._MainControl:GetEquipMainSkillFactorId(attribute.EquipTemplate)
         if mainSkillFactorId ~= attribute.FactorId then
             ability = ability + self._MainControl:GetAttributeAbilityInternal(attribute)
         else
@@ -222,7 +222,12 @@ function XDlcRelinkOtherMemberControl:GetEquipMaxAbilityByEquipUid(equipUid)
     -- 副属性战力
     for _, slotsValue in pairs(equip.AttributeSlots or {}) do
         for _, attribute in pairs(slotsValue.Attributes) do
-            ability = ability + self._MainControl:GetAttributeAbilityInternal(attribute)
+            local mainSkillFactorId = self._MainControl:GetEquipMainSkillFactorId(attribute.EquipTemplate)
+            if mainSkillFactorId ~= attribute.FactorId then
+                ability = ability + self._MainControl:GetAttributeAbilityInternal(attribute)
+            else
+                ability = ability + self._MainControl:GetEquipMainSkillFactorAbility(attribute.EquipTemplate)
+            end
         end
     end
 

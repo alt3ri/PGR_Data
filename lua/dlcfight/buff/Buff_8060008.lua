@@ -3,13 +3,15 @@ local Base = require("Buff/BuffBase/XBuffBase")
 ---@class XBuffScript8060008 : XBuffBase
 local XBuffScript8060008 = XDlcScriptManager.RegBuffScript(8060008, "XBuffScript8060008", Base)
 --效果说明：有护盾加攻
+function XBuffScript8060008:Ctor()
+    self.magicId=8060009
+end
 
-function XBuffScript8060008:Init()
+function XBuffScript8060008:ScriptInit(isGainControl)
     --初始化
-    Base.Init(self)
+    Base.ScriptInit(self,isGainControl)
     ------------配置------------
     self.magicLevel=1 --等新接口直接获取自己的BUFF等级
-    self.magicId=8060009
     ------------执行------------
     self.hasLevel=false
 end

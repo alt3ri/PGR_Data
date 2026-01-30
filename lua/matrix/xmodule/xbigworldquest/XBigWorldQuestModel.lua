@@ -47,6 +47,9 @@ local QuestViewShield = {
 }
 
 local PopViewType = {
+    --不开弹窗
+    None = 0,
+    
     --通用
     Small = 1,
     
@@ -374,6 +377,10 @@ function XBigWorldQuestModel:GetQuestIdByObjectiveId(stepId)
     return questId
 end
 
+function XBigWorldQuestModel:GetStepObjectiveIdsByStepId(stepId)
+    return CsQuestConfig.GetStepObjectiveIdsByStepId(stepId)
+end
+
 --- 获取步骤流程配置
 ---@param objectiveId number
 ---@return XTableDlcQuestObjective
@@ -424,15 +431,20 @@ end
 function XBigWorldQuestModel:GetObjectiveDeliveryDesc(objectiveId)
     local template = self:GetQuestStepObjectiveTemplate(objectiveId)
     return template and template.DeliverDesc or ""
-    end
+end
 
 function XBigWorldQuestModel:GetObjectiveItemsDeliverType(objectiveId)
     local template = self:GetQuestStepObjectiveTemplate(objectiveId)
     local type = template and template.ItemsDeliverType or nil
     if not type or not type.GetHashCode then
         return XMVCA.XBigWorldQuest.EItemsDeliverType.Normal
-end
+    end
     return type:GetHashCode()
+end
+
+function XBigWorldQuestModel:GetObjectivePhotoKey(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    return template and template.PhotoKey or 0
 end
 
 --region Quest Group
@@ -590,10 +602,10 @@ function XBigWorldQuestModel:PopupTaskObtain(questId, isFinish)
     else
         isShield = self:CheckPopViewOpenWhenQuestReceive(questId)
     end
-    if isShield then
+    local popViewType = t and t.PopViewType or PopViewType.None
+    if isShield or popViewType == PopViewType.None then
         return
     end
-    local popViewType = t and t.PopViewType or PopViewType.Small
     local uiName = PopViewType2UiName[popViewType]
     if string.IsNilOrEmpty(uiName) then
         XLog.Error(string.format("任务:%s, 弹窗类型:%s, 不存在对应弹窗类型", questId, popViewType))
@@ -695,8 +707,8 @@ end
 
 --region 邀约任务
 ---@return XTableDlcInviteQuest
-function XBigWorldQuestModel:GetInviteQuestTemplate(id)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableInviteQuestKey.DlcInviteQuest, id)
+function XBigWorldQuestModel:GetInviteQuestTemplate(id, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableInviteQuestKey.DlcInviteQuest, id, noTips)
 end
 
 function XBigWorldQuestModel:GetInviteIds()
@@ -739,8 +751,8 @@ function XBigWorldQuestModel:GetInviteQuestRolePath(id)
     return t and t.RolePath
 end
 
-function XBigWorldQuestModel:GetInviteQuestRoleIcon(id)
-    local t = self:GetInviteQuestTemplate(id)
+function XBigWorldQuestModel:GetInviteQuestRoleIcon(id, noTips)
+    local t = self:GetInviteQuestTemplate(id, noTips)
     return t and t.RoleIcon
 end
 
@@ -802,6 +814,22 @@ function XBigWorldQuestModel:CheckInviteResultFinish(resultId)
     return self._FinishInviteResultDict[resultId] ~= nil
 end
 
+function XBigWorldQuestModel:IsFirstFinishResult()
+    local res = true
+    local cnt = 0
+    for resId, status in pairs(self._FinishInviteResultDict) do
+        if status then
+            cnt = cnt + 1
+        end
+
+        if cnt >= 2 then
+            res = false
+            break
+        end
+    end
+    return res
+end
+
 function XBigWorldQuestModel:ReceiveInviteReward(questId, count)
     if not self._ReceiveInviteReward then
         self._ReceiveInviteReward = {}
@@ -841,6 +869,32 @@ function XBigWorldQuestModel:IsUnderTakenInviteQuest()
         end
     end
     return false
+end
+
+function XBigWorldQuestModel:CheckPhotoQuestNeedUpload()
+    if not self._QuestDataDict or XTool.IsTableEmpty(self._QuestDataDict) then
+        return false
+    end
+
+    local objId = 0
+    local isNeedUpload = false
+    for _, quest in pairs(self._QuestDataDict) do
+        if quest:IsInProgress() then
+            local objectDict = quest:GetStepObjectiveIds()
+            if objectDict then
+                for objectiveId, _ in pairs(objectDict) do
+                    local photoKey = self:GetObjectivePhotoKey(objectiveId)
+                    if photoKey ~= 0 then
+                        isNeedUpload = true
+                        objId = objectiveId
+                        break
+                    end
+                end
+            end
+        end
+        if isNeedUpload then break end
+    end
+    return isNeedUpload, objId
 end
 
 --endregion 邀约任务配置

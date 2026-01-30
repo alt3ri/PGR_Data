@@ -63,6 +63,15 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcWaitReboot then
         self:OnNpcWaitRebootEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.KillerUUID, eventArgs.MagicId, eventArgs.DeathType, eventArgs.DeathId, eventArgs.RebootType, eventArgs.RebootId)
     end
+    if eventType == EWorldEvent.NpcWaitRescue then
+        self:OnNpcWaitRescueEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.KillerUUID, eventArgs.MagicId, eventArgs.DeathType, eventArgs.DeathId, eventArgs.RebootType, eventArgs.RebootId)
+    end
+    if eventType == EWorldEvent.OnNpcBeginRescue then
+        self:OnNpcBeginRescueEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.RescuerUUID)
+    end
+    if eventType == EWorldEvent.OnNpcEndRescue then
+        self:OnNpcEndRescueEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.RescuerUUID)
+    end
     if eventType == EWorldEvent.NpcRevive then
         self:OnNpcReviveEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer)
     end
@@ -201,6 +210,9 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.FullChainStageEnd then
         self:OnFullChainStageEnd(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpcList, eventArgs.ChainLevel)
     end
+    if eventType == EWorldEvent.FullChainShowStart then
+        self:OnFullChainShowStart(eventArgs.GamePlayActive, eventArgs.ChainNpcList, eventArgs.ChainLevel)
+    end
 end
 
 ---@param eventType number 来自EFightLuaEvent
@@ -328,6 +340,38 @@ end
 ---@param rebootType number
 ---@param rebootId number
 function XFightBase:OnNpcWaitRebootEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
+end
+
+---Npc等待救援
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param killerUUID number
+---@param magicId number
+---@param deathType number
+---@param deathId number
+---@param rebootType number
+---@param rebootId number
+function XFightBase:OnNpcWaitRescueEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
+end
+
+---Npc开始救援
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param rescuerUUID number 救援者UUID
+function XFightBase:OnNpcBeginRescueEvent(npcUUID, npcPlaceId, npcKind, isPlayer, rescuerUUID)
+end
+
+---Npc结束救援
+---@param npcUUID number
+---@param npcPlaceId number
+---@param npcKind number
+---@param isPlayer boolean
+---@param rescuerUUID number 救援者UUID
+function XFightBase:OnNpcEndRescueEvent(npcUUID, npcPlaceId, npcKind, isPlayer, rescuerUUID)
 end
 
 ---Npc复活
@@ -729,6 +773,14 @@ end
 ---@param chainLevel number 当前连锁段数
 function XFightBase:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel)
 end
+
+---FullChainSkill表演开始
+---@param gameplayActive number 是否开启玩法
+---@param chainNpcList number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+function XFightBase:OnFullChainShowStart(gameplayActive, chainNpcList, chainLevel)
+end
+
 --endregion
 
 --endregion

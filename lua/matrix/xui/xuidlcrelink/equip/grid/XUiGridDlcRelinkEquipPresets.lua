@@ -127,6 +127,7 @@ function XUiGridDlcRelinkEquipPresets:OnBtnCoverConfirm()
         self:RefreshInfo()
         self:RefreshEquipment()
         self:RefreshBtn()
+        self.Parent:RefreshPresetCount()
     end)
 end
 

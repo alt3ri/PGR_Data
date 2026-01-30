@@ -335,7 +335,6 @@ end
 
 function XUiBigWorldMap:OnEnterLevel()
     self:_CloseOther()
-    self:Close()
 end
 
 function XUiBigWorldMap:OnPinDetailClose()
@@ -592,7 +591,8 @@ function XUiBigWorldMap:_RefreshPin()
             local isDisplaying = pinData:IsDisplaying()
 
             if pinData:IsAiMemoryGroup() then
-                isDisplaying = self._IsShowCharactorPos
+                isDisplaying = self._IsShowCharactorPos and isDisplaying
+
                 if not self._hasAiMemory then
                     self._hasAiMemory = self._LevelId == pinData.LevelId
                 end
@@ -602,7 +602,7 @@ function XUiBigWorldMap:_RefreshPin()
                 self:_RefreshPinNode(index, pinData)
                 index = index + 1
             end
-            if isDisplaying and pinData:IsRadiusPin() then
+            if isDisplaying and pinData:IsBigMapRadiusPin() then
                 self:_RefreshPinArea(areaIndex, pinData)
                 areaIndex = areaIndex + 1
             end
@@ -975,12 +975,14 @@ function XUiBigWorldMap:_CloseDetail()
 end
 
 function XUiBigWorldMap:_CloseOther()
-    XMVCA.XBigWorldUI:SafeClose("UiBigWorldMenu")
-    XMVCA.XBigWorldUI:SafeClose("UiBigWorldTaskMain")
-    XMVCA.XBigWorldUI:SafeClose("UiBigWorldMessage")
-    XMVCA.XBigWorldUI:SafeClose("UiBigWorldPopupMessage")
-    XMVCA.XBigWorldUI:SafeClose("UiBigWorldPopupMessageSingle")
-    XMVCA.XBigWorldUI:SafeClose("UiBigWorldProcess")
+    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldMenu")
+    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldTaskMain")
+    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldMessage")
+    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldPopupMessage")
+    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldPopupMessageSingle")
+    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldProcess")
+
+    XMVCA.XBigWorldUI:RunMain()
 end
 
 function XUiBigWorldMap:_ActiveSlider(isActive)

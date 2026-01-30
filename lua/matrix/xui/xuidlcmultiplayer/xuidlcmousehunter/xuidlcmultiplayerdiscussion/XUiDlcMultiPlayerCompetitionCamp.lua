@@ -1,6 +1,6 @@
 ---@class XUiDlcMultiPlayerCompetitionCamp : XUiNode
 ---@field private _Control XDlcMultiMouseHunterControl
----@field CtrlDiscussion XUiComponent.XUiStateControl
+
 local XUiDlcMultiPlayerCompetitionCamp = XClass(XUiNode, "XUiDlcMultiPlayerCompetitionCamp")
 
 local CampEnum = XMVCA.XDlcMultiMouseHunter.DlcMultiplayerDiscussionCamp
@@ -13,7 +13,7 @@ local LeftColorGroup = {
     },
     disableGroup = {
         "908e82",
-        "5e7fbc",
+        "5e7f6c",
         "9a9790",
         "8e8b85"
     },
@@ -38,7 +38,7 @@ local RightColorGroup = {
         "fff9e8",
         "ebe4d6"
     },
-    diableGroup = {
+    disableGroup = {
         "96907f",
         "9c8266",
         "9e9a90",
@@ -58,19 +58,16 @@ local RightColorGroup = {
     }
 
 }
+
 function XUiDlcMultiPlayerCompetitionCamp:OnStart(camp)
     self._CurCamp = camp
-    if camp == 1 then
+    if camp == CampEnum.Camp1 then
         self.ColorGroup = LeftColorGroup
     else
         self.ColorGroup = RightColorGroup
     end
     self.TxtDiscussionSupport.text = XUiHelper.GetText("MultiMouseHunterChoice")
-
-    self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[1])
-    self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[2])
-    self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[3])
-    self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[4])
+    self.BtnSupport:AddEventListener(handler(self, self.OnClickBtnSupport))
 end
 
 -- 根据阵营设置标题和描述
@@ -113,40 +110,6 @@ function XUiDlcMultiPlayerCompetitionCamp:_SetRateByCamp(discussion, mode)
     end
 end
 
--- 设置标题样式（颜色、轮廓、引号）
-function XUiDlcMultiPlayerCompetitionCamp:_ApplyTitleStyle(isSelected, addQuotes, mode)
-    if not mode then
-        if isSelected then
-            self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[1])
-            self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[2])
-            self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[3])
-            self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[4])
-        else
-            self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[1])
-            self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[2])
-            self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[3])
-            self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[4])
-        end
-    end
-
-    if mode == "fail" then
-        self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[1])
-        self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[2])
-        self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[3])
-        self.TxtDiscussionReward.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[4])
-        self.TxtDiscussionRewardCount.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[4])
-    elseif mode == "vote" then
-        self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[1])
-        self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[2])
-        self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[3])
-        self.TxtDiscussionReward.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[4])
-        self.TxtDiscussionRewardCount.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[4])
-    end
-    if addQuotes then
-        self.TxtDiscussionTitle.text = string.format("“%s”", self.TxtDiscussionTitle.text)
-    end
-end
-
 -- 设置奖励UI
 function XUiDlcMultiPlayerCompetitionCamp:_SetRewardUi(isVictory)
     local activityConfig = self._Control:GetDlcMultiplayerActivityConfig()
@@ -162,76 +125,150 @@ function XUiDlcMultiPlayerCompetitionCamp:_SetRewardUi(isVictory)
     end
 end
 
----@param discussion XDlcMultiMouseHunterDiscussion
-function XUiDlcMultiPlayerCompetitionCamp:VoteUnSelect(discussion)
-    self.CtrlDiscussion:ChangeState("VoteUnSelect")
-    self:_SetTitleAndDescByCamp(discussion:GetTable())
-
-    self:_ApplyTitleStyle(false)
+function XUiDlcMultiPlayerCompetitionCamp:FailStateStyle()
+    self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[1])
+    self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[2])
+    self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[3])
+    self.TxtDiscussionReward.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[4])
+    self.TxtDiscussionRewardCount.color = XUiHelper.Hexcolor2Color(self.ColorGroup.failGroup[4])
+    
 end
 
----@param discussion XDlcMultiMouseHunterDiscussion
-function XUiDlcMultiPlayerCompetitionCamp:VoteUnSelect_Select(discussion)
-    self.CtrlDiscussion:ChangeState("VoteUnSelect")
-    self:_SetTitleAndDescByCamp(discussion:GetTable())
-
-    self:_ApplyTitleStyle(true)
+function XUiDlcMultiPlayerCompetitionCamp:VoteStateStyle()
+    self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[1])
+    self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[2])
+    self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[3])
+    self.TxtDiscussionReward.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[4])
+    self.TxtDiscussionRewardCount.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[4])
 end
 
----@param discussion XDlcMultiMouseHunterDiscussion
-function XUiDlcMultiPlayerCompetitionCamp:VoteUnSelect_UnSelect(discussion)
-    self.CtrlDiscussion:ChangeState("VoteUnSelect")
-    self:_SetTitleAndDescByCamp(discussion:GetTable())
-    self:_ApplyTitleStyle(false, true)
+function XUiDlcMultiPlayerCompetitionCamp:SelectStateStyle()
+    self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[1])
+    self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[2])
+    self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[3])
+    self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[4])
+    
 end
 
----@param discussion XDlcMultiMouseHunterDiscussion
-function XUiDlcMultiPlayerCompetitionCamp:VoteSelect(discussion)
-    self.CtrlDiscussion:ChangeState("VoteSelect")
-
-    self:_SetTitleAndDescByCamp(discussion:GetTable())
-    self:_SetRateByCamp(discussion, "vote")
-
-    local isSelected = self._CurCamp == discussion:GetPlayerCamp()
-    self:_ApplyTitleStyle(isSelected, not isSelected, "vote")
-    self.ImgSupport.gameObject:SetActiveEx(isSelected)
+function XUiDlcMultiPlayerCompetitionCamp:NormalStateStyle()
+    self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[1])
+    self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[2])
+    self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[3])
+    self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[4])
 end
 
----@param discussion XDlcMultiMouseHunterDiscussion
-function XUiDlcMultiPlayerCompetitionCamp:DisplayVictory(discussion)
-    self.CtrlDiscussion:ChangeState("DisplayVictory")
+function XUiDlcMultiPlayerCompetitionCamp:UnSelectStyle()
+    self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[1])
+    self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[2])
+    self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[3])
+    self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[4])
 
-    self:_SetRewardUi(true)
-    local discussionConfig = discussion:GetPlayerTable() or discussion:GetTable()
+end
 
-    if self._CurCamp == CampEnum.Camp1 then
-        self.TxtDiscussionTitle.text = discussionConfig.Camp1
-        self.TxtDiscussionRate.text = discussion:GetPlayerCamp1RatioStr()
-        self.TxtDiscussionVictory.text = XUiHelper.GetText("MultiMouseHunterVoteVictory", discussionConfig.Camp1)
-    elseif self._CurCamp == CampEnum.Camp2 then
-        self.TxtDiscussionTitle.text = discussionConfig.Camp2
-        self.TxtDiscussionRate.text = discussion:GetPlayerCamp2RatioStr()
-        self.TxtDiscussionVictory.text = XUiHelper.GetText("MultiMouseHunterVoteVictory", discussionConfig.Camp2)
+function XUiDlcMultiPlayerCompetitionCamp:OnClickBtnSupport()
+    if self == self.Parent:GetBlueCamp() then
+        self.Parent:GetBlueCamp():PreviewSelected()
+        self.Parent:GetRedCamp():PreviewUnSelected()
     else
-        self.TxtDiscussionTitle.text = ""
-        self.TxtDiscussionRate.text = ""
-        self.TxtDiscussionVictory.text = ""
+        self.Parent:GetRedCamp():PreviewSelected()
+        self.Parent:GetBlueCamp():PreviewUnSelected()
     end
 
-    self:_ApplyTitleStyle(true, false)
-    self.ImgSupport.gameObject:SetActiveEx(self._CurCamp == discussion:GetPlayerCamp())
+
+    --todo刷新样式
 end
 
----@param discussion XDlcMultiMouseHunterDiscussion
-function XUiDlcMultiPlayerCompetitionCamp:DisplayFail(discussion)
-    self.CtrlDiscussion:ChangeState("DisplayFail")
-
-    local discussionConfig = discussion:GetPlayerTable() or discussion:GetTable()
-    self:_SetRewardUi(false)
+function XUiDlcMultiPlayerCompetitionCamp:IsPlayerSelectCamp()
+    return self._CurCamp == self.Discussion:GetPlayerCamp()
+end
+function XUiDlcMultiPlayerCompetitionCamp:IsCurCampVictory()
+    return (self._CurCamp == CampEnum.Camp1 and self.Discussion:IsPlayerCamp1Vectory()) or
+    (self._CurCamp == CampEnum.Camp2 and self.Discussion:IsPlayerCamp2Vectory())
+end
+function XUiDlcMultiPlayerCompetitionCamp:RefreshUnSelect(discussion)
+    self.Discussion = discussion
+    local discussionConfig = self.Discussion:GetPlayerTable() or self.Discussion:GetTable()
     self:_SetTitleAndDescByCamp(discussionConfig)
-    self:_SetRateByCamp(discussion, "fail")
-    self:_ApplyTitleStyle(false, true, "fail")
-    self.ImgSupport.gameObject:SetActiveEx(self._CurCamp == discussion:GetPlayerCamp())
+    self:NormalStateStyle()
+    self.CtrlDiscussion:ChangeState("VoteNormal")
+    -- self.BtnSupport:SetButtonState(CS.UiButtonState.Select)
 end
+
+function XUiDlcMultiPlayerCompetitionCamp:RefreshSelected(discussion)
+    self.Discussion = discussion
+    local discussionConfig = self.Discussion:GetPlayerTable() or self.Discussion:GetTable()
+    self:_SetTitleAndDescByCamp(discussionConfig)
+    self.BtnSupport.enabled = false
+    -- self.BtnSupport:SetDisable(true)
+    if self._CurCamp == discussion:GetPlayerCamp() then
+        self.CtrlDiscussion:ChangeState("VoteSelected")
+        self:SelectStateStyle()
+        local str = discussionConfig.Camp1
+        if self._CurCamp == CampEnum.Camp2 then
+            str = discussionConfig.Camp2
+        end
+        self.BtnSupport:SetName(XUiHelper.GetText("MultiMouseHunterSubVote",str))
+    else
+        self.CtrlDiscussion:ChangeState("VoteUnSelected")
+        self.BtnSupport:SetDisable(true)
+        self:UnSelectStyle()
+        self.BtnSupport:SetName(XUiHelper.GetText("MultiMouseHunterSubVoted"))
+        self.PanelChoose.gameObject:SetActiveEx(false)
+    end
+    self:_SetRateByCamp(discussion)
+    -- 
+end
+
+function XUiDlcMultiPlayerCompetitionCamp:RefreshShow(discussion)
+    self.Discussion = discussion
+    self.BtnSupport.enabled = false
+    self.ImgSupport.gameObject:SetActiveEx(self:IsPlayerSelectCamp())
+    self:_SetRewardUi(self:IsCurCampVictory())
+    local discussionConfig = self.Discussion:GetPlayerTable() or self.Discussion:GetTable()
+    self:_SetTitleAndDescByCamp(discussionConfig)
+    if self:IsCurCampVictory() then
+        self.CtrlDiscussion:ChangeState("DisplayVictory")
+        if discussion:GetPlayerCamp() ~= CampEnum.None then
+            self:VoteStateStyle()
+        else
+            self:NormalStateStyle()
+        end
+        self:_SetRateByCamp(discussion, "vote")
+    else
+        self.CtrlDiscussion:ChangeState("DisplayFail")
+        if discussion:GetPlayerCamp() ~= CampEnum.None then
+            self:FailStateStyle()
+        else
+            self:NormalStateStyle()
+        end
+        self:_SetRateByCamp(discussion, "fail")
+    end
+end
+
+function XUiDlcMultiPlayerCompetitionCamp:PreviewSelected()
+    self.CtrlDiscussion:ChangeState("VoteSelect")
+    local discussionConfig = self.Discussion:GetPlayerTable() or self.Discussion:GetTable()
+    self:_SetTitleAndDescByCamp(discussionConfig)
+    self:SelectStateStyle()
+    self.BtnSupport:SetDisable(false)
+    self.Parent:SetSelectCamp(self._CurCamp)
+    local str = discussionConfig.Camp1
+    if self._CurCamp == CampEnum.Camp2 then
+        str = discussionConfig.Camp2
+    end
+    self.BtnSupport:SetName(XUiHelper.GetText("MultiMouseHunterSubVote", str))
+    self.Parent.BtnVote:SetName(XUiHelper.GetText("MultiMouseHunterVote",str))
+    self.Parent.BtnVote:SetDisable(false)
+    self.Parent.BtnVote.enabled = true
+end
+function XUiDlcMultiPlayerCompetitionCamp:PreviewUnSelected()
+    self.CtrlDiscussion:ChangeState("VoteUnSelect")
+    local discussionConfig = self.Discussion:GetPlayerTable() or self.Discussion:GetTable()
+    self:_SetTitleAndDescByCamp(discussionConfig)
+    self:UnSelectStyle()
+    self.BtnSupport:SetDisable(true)
+    self.BtnSupport:SetName(XUiHelper.GetText("MultiMouseHunterSubVoted"))
+end
+
 
 return XUiDlcMultiPlayerCompetitionCamp

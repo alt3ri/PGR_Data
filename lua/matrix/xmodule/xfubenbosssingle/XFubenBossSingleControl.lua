@@ -420,9 +420,10 @@ end
 
 function XFubenBossSingleControl:GetChooseLevelTypeNeedScore()
     local data = self:GetBossSingleData()
-    -- todo by zlb 这里是错的，+1不一定就等于下一关，到时候找橙子问一下，这要怎么改
     local levelType = data:GetBossSingleLevelType() + 1
-    local bossSingleGradeCfg = self._Model:GetBossSingleGradeConfigByLevelType(levelType)
+    -- +1不一定就等于下一关, 要根据配置表判断, 但是读入一个配置太浪费了, 所以单纯noTips, 没有配置, 保持原状就好
+    local noTips = true
+    local bossSingleGradeCfg = self._Model:GetBossSingleGradeConfigByLevelType(levelType, noTips)
 
     if bossSingleGradeCfg and bossSingleGradeCfg.NeedScore then
         return bossSingleGradeCfg.NeedScore
@@ -632,13 +633,75 @@ function XFubenBossSingleControl:GetBossCurSettleScore(settleStageId, settleScor
         return score
     end
 
-    local stageList = self:GetBossStageList(bossId)
+    -- 如果是鏖战点（挑战模式），只计算讨伐值最高的前2个关卡
+    if self:IsBossSingleChallenge() then
+        local challengeData = self:GetBossSingleChallengeData()
+        if challengeData and not challengeData:GetIsEmpty() then
+            -- 按照 __InitFeatureRecordTag 的逻辑：收集所有有记录的关卡，排序后取前2个
+            local stageScoreList = {}
+            local featureCount = challengeData:GetFeatureCount()
+            
+            -- 遍历所有挑战关卡（鏖战点的关卡）
+            for i = 1, featureCount do
+                local feature = challengeData:GetFeatureByIndex(i)
+                if feature then
+                    local stageId = feature:GetStageId()
+                    local stageScore = 0
 
-    for _, stageId in ipairs(stageList) do
-        if stageId == settleStageId then
-            score = score + settleScore
+                    if stageId == settleStageId then
+                        -- 当前结算的关卡：只有当结算分数比原本的记录高时，才使用结算分数
+                        local savedScore = feature:GetScore()
+                        if settleScore > savedScore then
+                            stageScore = settleScore
+                        else
+                            stageScore = savedScore
+                        end
+                    else
+                        -- 其他关卡使用已保存的分数
+                        stageScore = feature:GetScore()
+                    end
+
+                    -- 只统计有记录的关卡（有角色或分数大于0）
+                    -- 当前结算关卡总是参与计算（即使还没有保存记录）
+                    if feature:GetIsRecord() or stageId == settleStageId then
+                        table.insert(stageScoreList, {
+                            StageId = stageId,
+                            Score = stageScore
+                        })
+                    end
+                end
+            end
+            
+            -- 如果计分关卡数量 <= 2，直接累加
+            if #stageScoreList <= 2 then
+                for _, item in ipairs(stageScoreList) do
+                    score = score + item.Score
+                end
+            else
+                -- 按讨伐值从高到低排序（与 __InitFeatureRecordTag 的逻辑一致）
+                table.sort(stageScoreList, function(itemA, itemB)
+                    return itemA.Score > itemB.Score
+                end)
+                
+                -- 只取前2个最高讨伐值
+                for i = 1, math.min(2, #stageScoreList) do
+                    score = score + stageScoreList[i].Score
+                end
+            end
         else
-            score = score + self:GetBossStageScore(stageId)
+            -- 如果没有挑战数据，使用当前结算分数
+            score = settleScore
+        end
+    else
+        -- 普通模式：累加所有关卡的讨伐值
+        local stageList = self:GetBossStageList(bossId)
+
+        for _, stageId in ipairs(stageList) do
+            if stageId == settleStageId then
+                score = score + settleScore
+            else
+                score = score + self:GetBossStageScore(stageId)
+            end
         end
     end
 

@@ -6,14 +6,10 @@ function XUiMainLineLuosaitaPopupFileDetail:OnAwake()
     self:RegisterUiEvents()
 end
 
-function XUiMainLineLuosaitaPopupFileDetail:OnStart(sectionId, docId, openCb, closeCb)
+function XUiMainLineLuosaitaPopupFileDetail:OnStart(sectionId, docId, closeCb)
     self.SectionId = sectionId
     self.DocId = docId
     self.CloseCb = closeCb
-
-    if openCb then
-        openCb()
-    end
 end
 
 function XUiMainLineLuosaitaPopupFileDetail:OnEnable()
@@ -28,7 +24,7 @@ end
 function XUiMainLineLuosaitaPopupFileDetail:OnBtnCloseClick()
     local sectionInfo = self._Control:GetSectionInfo(self.SectionId)
     local docId = sectionInfo:GetUnUseDocId()
-    if docId then
+    if docId and self.DocId ~= docId then
         self.DocId = docId
         self:Refresh()
         -- TODO 切换下一个文件动画
@@ -53,6 +49,12 @@ function XUiMainLineLuosaitaPopupFileDetail:Refresh()
     local sectionInfo = self._Control:GetSectionInfo(self.SectionId)
     if not sectionInfo:IsDocUse(self.DocId) then
         XMVCA.XMainLineLuosaita:RequestMainLineLuosaitaUseDoc(self.SectionId, self.DocId)
+    end
+
+    -- 增加文件回顾蓝点
+    local docType = self._Control:GetConfig():GetDocumentType(self.DocId)
+    if docType == XMVCA.XMainLineLuosaita.EnumConst.DOCUMENT_TYPE.STORY then
+        self._Control:SetDocumentReviewRed(true)
     end
 end
 

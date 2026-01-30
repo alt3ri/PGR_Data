@@ -1,5 +1,6 @@
 local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+---@class XUiShopItem : XLuaUi
 local XUiShopItem = XLuaUiManager.Register(XLuaUi, "UiShopItem")
 local MAX_COUNT = CS.XGame.Config:GetInt("ShopBuyGoodsCountLimit")
 local ColorRed = CS.XGame.ClientConfig:GetString("ShopCanNotBuyColor")

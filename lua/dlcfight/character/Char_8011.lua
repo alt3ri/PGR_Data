@@ -13,7 +13,7 @@ function XChar8011:ScriptInit(isGainControl)
 
     -- 启用白龙软狂暴机制
     self._enableSoftFury = true
-    self._softFuryTime = 480
+    self._softFuryTime = 405
 
     --- DPS检测护盾值magic
     self._ultraDpsCheckProtectorMagic = 8005571

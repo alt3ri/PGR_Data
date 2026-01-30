@@ -17,7 +17,7 @@ end
 ---@param equipUid number 装备Uid
 ---@param targetTransform UnityEngine.RectTransform 目标节点
 ---@param callBack function 关闭回调
----@param extraData { SlotIndex:number, MainEquipUid:number, IsNotSelf:boolean } 额外数据
+---@param extraData { SlotIndex:number, MainEquipUid:number, IsNotSelf:boolean, IsEventPass:boolean } 额外数据
 function XUiDlcRelinkBubbleEquipDetail:OnStart(equipUid, targetTransform, callBack, extraData)
     self.EquipUid = equipUid
     self.TargetTransform = targetTransform
@@ -25,6 +25,7 @@ function XUiDlcRelinkBubbleEquipDetail:OnStart(equipUid, targetTransform, callBa
     self.SlotIndex = extraData and extraData.SlotIndex or 0
     self.MainEquipUid = extraData and extraData.MainEquipUid or 0
     self.IsNotSelf = extraData and extraData.IsNotSelf or false
+    self.IsEventPass = extraData and extraData.IsEventPass or false
 
     self:RefreshEquipDetail()
     self:RefreshPanelSkill()
@@ -34,6 +35,10 @@ function XUiDlcRelinkBubbleEquipDetail:OnStart(equipUid, targetTransform, callBa
 
     -- 以SafeAreaContentPane节点为根节点进行位置计算
     self.Root = self.EquipDetailNode.Transform.parent
+
+    if self.IsEventPass then
+        self.BtnClose.IsEventPass = true
+    end
 end
 
 function XUiDlcRelinkBubbleEquipDetail:OnEnable()
@@ -225,10 +230,10 @@ function XUiDlcRelinkBubbleEquipDetail:RegisterUiEvents()
 end
 
 function XUiDlcRelinkBubbleEquipDetail:OnBtnCloseClick()
-    self:Close()
     if self.CallBack then
         self.CallBack()
     end
+    self:Close()
 end
 
 return XUiDlcRelinkBubbleEquipDetail

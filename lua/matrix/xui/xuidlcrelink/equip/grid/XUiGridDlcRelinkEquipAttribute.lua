@@ -2,6 +2,29 @@
 ---@field private _Control XDlcRelinkControl
 local XUiGridDlcRelinkEquipAttribute = XClass(XUiNode, "XUiGridDlcRelinkEquipAttribute")
 
+function XUiGridDlcRelinkEquipAttribute:OnStart(detailGo)
+    self.DetailGo = detailGo
+
+    if self.DetailGo then
+        self.DetailGo.gameObject:SetActiveEx(false)
+        ---@type UiObject
+        self.DetailGoUiObject = self.DetailGo.gameObject:GetComponent(typeof(CS.UiObject))
+    end
+end
+
+function XUiGridDlcRelinkEquipAttribute:OnDisable()
+    if self.DetailGo then
+        self.DetailGo.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiGridDlcRelinkEquipAttribute:MoveToParentLatest()
+    self.Transform:SetAsLastSibling()
+    if self.DetailGo then
+        self.DetailGo.transform:SetAsLastSibling()
+    end
+end
+
 ---@param attribute XDlcRelinkEquipAttribute
 function XUiGridDlcRelinkEquipAttribute:Refresh(attribute)
     --self:SetBg(isSkillAttribute)
@@ -11,9 +34,45 @@ function XUiGridDlcRelinkEquipAttribute:Refresh(attribute)
     self:SetNormal(attribute.FactorId, attribute.Level, isMaxLevel)
 end
 
+function XUiGridDlcRelinkEquipAttribute:RefreshDetailShow(isShow, attribute, forceRefresh)
+    if not self:IsNodeShow() then
+        return
+    end
+
+    if isShow then
+        local validShow = false
+        
+        if self.DetailGoUiObject then
+            local txt = self.DetailGoUiObject:GetObject('DetailTxt')
+
+            if txt then
+                local desc = self._Control:GetFactorDescDesc(attribute.FactorId, attribute.Level)
+
+                if not string.IsNilOrEmpty(desc) then
+                    txt.text =  desc
+
+                    validShow = true
+                end
+            end
+        end
+
+        if self.DetailGo then
+            self.DetailGo.gameObject:SetActiveEx(validShow)
+
+            if validShow and forceRefresh then
+                CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.DetailGo)
+            end
+        end
+    else
+        if self.DetailGo then
+            self.DetailGo.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
 ---@param data { FactorId: number, IsSkill:boolean, CurLevel:number }
 function XUiGridDlcRelinkEquipAttribute:CustomRefresh(data)
-    self:SetBg(data.IsSkill)
+    --self:SetBg(data.IsSkill)
     self:SetLevelText(data.CurLevel)
     self:SetName(data.FactorId)
     local maxLevel = self._Control:GetFactorDescMaxLevel(data.FactorId)
@@ -21,7 +80,7 @@ function XUiGridDlcRelinkEquipAttribute:CustomRefresh(data)
     self:SetNormal(data.FactorId, data.CurLevel, isMaxLevel)
 end
 
----@param data { FactorId: number, IsSkill:boolean, IsCur:boolean, Level:number }
+---@param data { FactorId: number, IsSkill:boolean, IsCur:boolean, Level:number, IsShowSkillDesc: boolean }
 function XUiGridDlcRelinkEquipAttribute:RefreshAttributeDetails(data)
     self.PanelCur.gameObject:SetActiveEx(data.IsCur)
     self:SetLevelText(data.Level)
@@ -30,11 +89,24 @@ function XUiGridDlcRelinkEquipAttribute:RefreshAttributeDetails(data)
         local isMaxLevel = data.Level >= maxLevel
         self.Normal.gameObject:SetActiveEx(not isMaxLevel)
         self.Max.gameObject:SetActiveEx(isMaxLevel)
-        self.TxtNum.text = self._Control:GetFactorDesc(data.FactorId, data.Level)
+
+        if data.IsShowSkillDesc then
+            self.TxtNum.text = self._Control:GetFactorSkillDesc(data.FactorId, data.Level)
+        else
+            self.TxtNum.text = self._Control:GetFactorDesc(data.FactorId, data.Level)
+        end
     else
         local maxLevel = self._Control:GetFactorDescMaxLevel(data.FactorId)
         local isMaxLevel = data.Level >= maxLevel
         self:SetNormal(data.FactorId, data.Level, isMaxLevel)
+    end
+    -- 设置背景交替显示
+    local isShowBg1 = data.Level % 2 ~= 0
+    if self.Image1 then
+        self.Image1.gameObject:SetActiveEx(isShowBg1)
+    end
+    if self.Image2 then
+        self.Image2.gameObject:SetActiveEx(not isShowBg1)
     end
 end
 

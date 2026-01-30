@@ -33,17 +33,32 @@ function XUiSkyGardenSGDroneChapter:OnAwake()
 
     self._ChapterButtons = {}
 
+    self._CurrentSelectChapterIndex = 0
+
+    self._PcKey = {
+        Right = 304,
+        Left = 305,
+        Confirm = 152,
+    }
+    self._PcKeyGap = 0.3
+    self._LeftTime = 0
+    self._RightTime = 0
+
+    self._Timer = false
+
     self:_InitUi()
     self:_InitChapters()
     self:_RegisterButtonClicks()
 end
 
 function XUiSkyGardenSGDroneChapter:OnStart()
+    self._Control:RegisterPCEvent()
 end
 
 function XUiSkyGardenSGDroneChapter:OnEnable()
     self._Control:SendSwitchChapterSelectViewCmd()
     self:_RefreshChapter()
+    self:_RegisterPCEvent()
     self:_RefreshShopRewards()
     self:_RegisterListeners()
     self:_RegisterSchedules()
@@ -51,11 +66,13 @@ function XUiSkyGardenSGDroneChapter:OnEnable()
 end
 
 function XUiSkyGardenSGDroneChapter:OnDisable()
+    self:_UnregisterPCEvent()
     self:_RemoveListeners()
     self:_RemoveSchedules()
 end
 
 function XUiSkyGardenSGDroneChapter:OnDestroy()
+    self._Control:UnregisterPCEvent()
 end
 
 function XUiSkyGardenSGDroneChapter:_RegisterButtonClicks()
@@ -72,6 +89,71 @@ function XUiSkyGardenSGDroneChapter:OnBtnBackClick()
     self:Close()
 end
 
+function XUiSkyGardenSGDroneChapter:OnPressPCKeyHandle(inputDeviceType, key, operationType)
+    if XTool.IsTableEmpty(self._ChapterButtons) then
+        return
+    end
+
+    if key == self._PcKey.Right then
+        local currentTime = CS.UnityEngine.Time.realtimeSinceStartup
+
+        if currentTime - self._RightTime < self._PcKeyGap then
+            return
+        end
+
+        self._RightTime = currentTime
+        self:SelectChapter(math.min(self._CurrentSelectChapterIndex + 1, #self._ChapterButtons))
+    elseif key == self._PcKey.Left then
+        local currentTime = CS.UnityEngine.Time.realtimeSinceStartup
+
+        if currentTime - self._LeftTime < self._PcKeyGap then
+            return
+        end
+
+        self._LeftTime = currentTime
+        self:SelectChapter(math.max(self._CurrentSelectChapterIndex - 1, 1))
+    elseif key == self._PcKey.Confirm then
+        if self._Timer then
+            return
+        end
+
+        local chapter = self._Chapters[self._CurrentSelectChapterIndex]
+
+        if chapter then
+            self._Timer = XScheduleManager.ScheduleNextFrame(function()
+                self._Timer = false
+                XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneStage", chapter)
+            end)
+        end
+    end
+end
+
+function XUiSkyGardenSGDroneChapter:SelectChapter(index)
+    if XTool.IsTableEmpty(self._ChapterButtons) then
+        return
+    end
+    if index <= 0 or index > #self._ChapterButtons then
+        return
+    end
+    if self._CurrentSelectChapterIndex == index then
+        return
+    end
+
+    local button = self._ChapterButtons[self._CurrentSelectChapterIndex]
+
+    if button then
+        button:SetButtonState(CS.UiButtonState.Normal)
+    end
+
+    self._CurrentSelectChapterIndex = index
+    
+    button = self._ChapterButtons[index]
+
+    if button then
+        button:SetButtonState(CS.UiButtonState.Select)
+    end
+end
+
 function XUiSkyGardenSGDroneChapter:_RegisterListeners()
     -- 在此处注册事件监听
 end
@@ -86,11 +168,23 @@ end
 
 function XUiSkyGardenSGDroneChapter:_RemoveSchedules()
     -- 在此处移除定时器
+    if self._Timer then
+        XScheduleManager.UnSchedule(self._Timer)
+        self._Timer = false
+    end
 end
 
 function XUiSkyGardenSGDroneChapter:_RegisterRedPointEvents()
     -- 在此处注册红点事件
     -- self:AddRedPointEvent(...)
+end
+
+function XUiSkyGardenSGDroneChapter:_RegisterPCEvent()
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SKY_GARDEN_DRONE_KEY_PRESS_NOTIFY, self.OnPressPCKeyHandle, self)
+end
+
+function XUiSkyGardenSGDroneChapter:_UnregisterPCEvent()
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SKY_GARDEN_DRONE_KEY_PRESS_NOTIFY, self.OnPressPCKeyHandle, self)
 end
 
 function XUiSkyGardenSGDroneChapter:_InitUi()
@@ -138,13 +232,17 @@ function XUiSkyGardenSGDroneChapter:_RefreshChapter()
             button:SetSprite(chapter:GetIcon())
 
             if not chapter:IsUnlock() then
-                button:SetDisable(true, false)
+                button:SetDisable(true)
             else
                 button:SetDisable(false)
             end
 
             button.CallBack = function()
-                XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneStage", chapter)
+                if chapter:IsUnlock() then
+                    XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneStage", chapter)
+                else
+                    XMVCA.XBigWorldUI:TipMsg(chapter:GetLockTip())
+                end
             end
         end
     end

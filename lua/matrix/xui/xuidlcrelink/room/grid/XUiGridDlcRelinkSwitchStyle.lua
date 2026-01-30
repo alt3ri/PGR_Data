@@ -74,6 +74,10 @@ function XUiGridDlcRelinkSwitchStyle:OnBtnSelectClick()
         return
     end
 
+    if not self._Control:AbleSyncDataToMatchServer() then
+        return
+    end
+
     self._Control:RequestSwitchStyleType(self.Config.CharacterId, self.Config.StyleType, function()
         if XTool.UObjIsNil(self.GameObject) then
             return

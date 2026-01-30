@@ -90,6 +90,9 @@ local dlcEventId = {
     -- 重置Buff预览
     EVENT_CAFE_RESET_BUFF_PREVIEW = NewId(),
 
+    -- 小地图图钉隐藏
+    EVENT_LITTLE_MAP_PIN_HIDE = NewId(),
+
     -- 追踪图钉
     EVENT_MAP_PIN_TRACK_CHANGE = NewId(),
 
@@ -287,6 +290,9 @@ local dlcEventId = {
 
     -- 无人机切换关卡完成
     EVENT_SKY_GARDEN_DRONE_CHAPTER_SELECT_VIEW_SWITCH_COMPLETE = NewId(),
+
+    -- 无人机按键广播
+    EVENT_SKY_GARDEN_DRONE_KEY_PRESS_NOTIFY = NewId(),
 
     -- 预览视频播放结束
     EVENT_BIG_WORLD_PREVIEW_VIDEO_FINISH = NewId(),

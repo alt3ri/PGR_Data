@@ -1106,6 +1106,16 @@ function XTheatre5AdventureDataBase:UpdateChooseMissionBounty(missions)
     self.ChooseMissionBounty = missions
 end
 
+function XTheatre5AdventureDataBase:AddChooseMissionBounty(missionBounty)
+    if self.ChooseMissionBounty then
+        if not self:CheckHasBounty(missionBounty) then
+            table.insert(self.ChooseMissionBounty, missionBounty)
+        end
+    else
+        self.ChooseMissionBounty = {[1] = missionBounty}
+    end
+end
+
 function XTheatre5AdventureDataBase:UpdateMissionLevelUpForRound(missionLevelUpForRound)
     self.MissionLevelUpForRound = missionLevelUpForRound
 end
@@ -1149,6 +1159,10 @@ function XTheatre5AdventureDataBase:CheckHasBounty(bounty)
     end
     
     return table.contains(self.ChooseMissionBounty, bounty)
+end
+
+function XTheatre5AdventureDataBase:GetUnlockBountyList()
+    return self.ChooseMissionBounty
 end
 
 function XTheatre5AdventureDataBase:GetMissionLevelUpForRound()

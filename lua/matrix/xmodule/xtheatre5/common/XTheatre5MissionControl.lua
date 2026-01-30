@@ -61,10 +61,13 @@ function XTheatre5MissionControl:GetCurMissionItemId()
 end
 
 function XTheatre5MissionControl:GetMatchEnemyMissionData()
-    local enemeyData = self._Model.CurAdventureData:GetCurMatchedEnemy()
+    -- pvp和pve的匹配敌人数据结构不一样
+    if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
+        local enemeyData = self._Model.CurAdventureData:GetCurMatchedEnemy()
 
-    if enemeyData then
-        return enemeyData.MissionId, enemeyData.MissionBountyLevel, enemeyData.MissionRelicId
+        if enemeyData then
+            return enemeyData.MissionId, enemeyData.MissionBountyLevel, enemeyData.MissionRelicId
+        end
     end
 end
 --endregion
@@ -101,18 +104,23 @@ function XTheatre5MissionControl:GetTableMissionConditionDescById(id, notips)
         if string.find(cfg.Desc, '{.+}') then
             local fixedDesc = cfg.Desc
             
-            -- 插值规则是直接用表头
-            for key, valType in pairs(XTable.XTableTheatre5MissionCondition) do
-                -- 需要判断是值还是表
-                if type(cfg[key]) == 'table' then
-                    -- 表的话需要遍历
-                    for i, v in pairs(cfg[key]) do
-                        local format = '{' .. tostring(key) .. '%[' .. tostring(i) .. '%]}'
-                        fixedDesc = string.gsub(fixedDesc, format, tostring(v))
+            -- 获取配置到配置表里的表头定义
+            local fieldNames = self._Model:GetTheatre5ClientConfigTextArray('Theatre5MissionConditionTableDefine')
+
+            if not XTool.IsTableEmpty(fieldNames) then
+                -- 插值规则是直接用表头
+                for _, key in pairs(fieldNames) do
+                    -- 需要判断是值还是表
+                    if type(cfg[key]) == 'table' then
+                        -- 表的话需要遍历
+                        for i, v in pairs(cfg[key]) do
+                            local format = '{' .. tostring(key) .. '%[' .. tostring(i) .. '%]}'
+                            fixedDesc = string.gsub(fixedDesc, format, tostring(v))
+                        end
+                    else
+                        -- 值的话直接替换
+                        fixedDesc = string.gsub(fixedDesc, '{' .. tostring(key) .. '}', tostring(cfg[key]))
                     end
-                else
-                    -- 值的话直接替换
-                    fixedDesc = string.gsub(fixedDesc, '{' .. tostring(key) .. '}', tostring(cfg[key]))
                 end
             end
             
@@ -193,8 +201,8 @@ function XTheatre5MissionControl:GetMissionLevelUpCost(bountyId, curLevel)
 end
 
 --- 获取任务的奖励描述
-function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSingle, targetItemId)
-    local descFormat = self:GetMissionRewardDescFormat(bountyId)
+function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSingle, itemIndex, descTargetLevel)
+    local descFormat = self:GetMissionRewardDescFormat(bountyId, itemIndex, descTargetLevel)
     local highlineLabel = self._Model:GetTheatre5ClientConfigText('MissionRewardHighLine')
     
     local isAimLevel = XTool.IsNumberValidEx(curLevel)
@@ -228,7 +236,7 @@ function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSing
     end
     
     -- 需要根据参数来知道有多少个插值位, 因为每个等级的插值位是一致的，以1级为准即可
-    local tmpItemCfg = self:GetItemCfgByMissionBountyId(bountyId, 1)
+    local tmpItemCfg = self:GetItemCfgByMissionBountyId(bountyId, 1, itemIndex)
     local insertCount = 0
 
     if tmpItemCfg then
@@ -245,7 +253,7 @@ function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSing
             local compareStr = nil
 
             for i, v in ipairs(group) do
-                local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, v.Level)
+                local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, v.Level, itemIndex)
 
                 local desc = itemCfg.DescDigit[insertPos]
 
@@ -260,7 +268,7 @@ function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSing
             -- 如果存在参数差异，则按照原规则显示
             if not isFullSameParam then
                 for i, v in ipairs(group) do
-                    local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, v.Level)
+                    local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, v.Level, itemIndex)
 
                     local desc = itemCfg.DescDigit[insertPos]
 
@@ -282,7 +290,7 @@ function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSing
                 table.insert(paramsGroup, tmpParam)
             else
                 -- 否则只显示其中一个等级的参数即可
-                local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, 1)
+                local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, 1, itemIndex)
 
                 local desc = itemCfg.DescDigit[insertPos]
 
@@ -299,7 +307,7 @@ function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSing
             local compareStr = nil
 
             for i, v in ipairs(group) do
-                local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, v.Level)
+                local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, v.Level, itemIndex)
 
                 local desc = itemCfg.DescDigit[insertPos]
 
@@ -315,7 +323,7 @@ function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSing
                 local params = {}
 
                 for i, v in ipairs(group) do
-                    local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, v.Level)
+                    local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, v.Level, itemIndex)
                     local desc = itemCfg.DescDigit[insertPos]
 
                     table.insert(params, desc)
@@ -333,7 +341,7 @@ function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSing
                 table.insert(paramsGroup, tmpParam)
             else
                 -- 否则只显示其中一个等级的参数即可
-                local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, 1)
+                local itemCfg = self:GetItemCfgByMissionBountyId(bountyId, 1, itemIndex)
 
                 local desc = itemCfg.DescDigit[insertPos]
 
@@ -344,21 +352,46 @@ function XTheatre5MissionControl:GetMissionRewardDesc(bountyId, curLevel, isSing
         end
     end
     
-    return XUiHelper.FormatText(descFormat, table.unpack(paramsGroup))
+    -- 开发模式下检查
+    if XMain.IsEditorDebug then
+        local finalContent = ''
+
+        xpcall(function()
+            finalContent = XUiHelper.FormatText(descFormat, table.unpack(paramsGroup))
+        end, function(msg)
+            XLog.Error(msg, descFormat, paramsGroup)
+        end)
+        
+        return finalContent
+    else
+        return XUiHelper.FormatText(descFormat, table.unpack(paramsGroup))
+    end
+    
 end
 
 --- 获取任务奖励的描述（固定只读等级1的文本）（没有完成才需要通过任务来找）
-function XTheatre5MissionControl:GetMissionRewardDescFormat(bountyId)
-    local id = self._Model:GetMissionBountyComboId(bountyId, 1)
+function XTheatre5MissionControl:GetMissionRewardDescFormat(bountyId, index, targetLevel)
+    -- 默认只读等级1的文本，但图鉴等地方可能用的其他等级的文本
+    targetLevel = targetLevel or 1
+    local id = self._Model:GetMissionBountyComboId(bountyId, targetLevel)
     local bountyCfg = self._Model:GetTheatre5MissionBountyCfgById(id)
 
     if bountyCfg then
-        local itemId = bountyCfg.BountyPackShow
-        
-        local itemCfg = self._Model:GetTheatre5ItemCfgById(itemId)
+        local itemId = nil
 
-        if itemCfg then
-            return itemCfg.Desc
+        if XTool.IsNumberValidEx(index) then
+            itemId = bountyCfg.BountyItem and bountyCfg.BountyItem[index] or nil
+        else
+            itemId = bountyCfg.BountyPackShow
+        end
+
+        if XTool.IsNumberValidEx(itemId) then
+
+            local itemCfg = self._Model:GetTheatre5ItemCfgById(itemId)
+
+            if itemCfg then
+                return itemCfg.Desc
+            end
         end
     end
     
@@ -368,16 +401,26 @@ function XTheatre5MissionControl:GetMissionRewardDescFormat(bountyId)
 end
 
 --- 获取任务奖励对应的道具配置（未完成时才需要通过任务来找）
-function XTheatre5MissionControl:GetItemCfgByMissionBountyId(bountyId, level)
+function XTheatre5MissionControl:GetItemCfgByMissionBountyId(bountyId, level, index)
     local id = self._Model:GetMissionBountyComboId(bountyId, level)
     local bountyCfg = self._Model:GetTheatre5MissionBountyCfgById(id)
 
     if bountyCfg then
-        local itemId = bountyCfg.BountyPackShow
+        if XTool.IsNumberValidEx(index) and XTool.IsNumberValidEx(bountyCfg.BountyItem[index]) then
+            -- 指定了获取的是实际奖励中对应索引的奖励
+            local itemId = bountyCfg.BountyItem[index]
 
-        local itemCfg = self._Model:GetTheatre5ItemCfgById(itemId)
+            local itemCfg = self._Model:GetTheatre5ItemCfgById(itemId)
 
-        return itemCfg
+            return itemCfg
+        else
+            local itemId = bountyCfg.BountyPackShow
+
+            local itemCfg = self._Model:GetTheatre5ItemCfgById(itemId)
+
+            return itemCfg
+        end
+        
     end
 end
 
@@ -464,6 +507,27 @@ end
 function XTheatre5MissionControl:GetClientConfigMissionFinishTipsInSkillChoicePart()
     return self._Model:GetTheatre5ClientConfigText('MissionFinishTipsInSkillChoicePart')
 end
+
+--- 回合结算无任务奖励状态描述，1是未接取，2是未完成
+function XTheatre5MissionControl:GetClientConfigMissionStateLabelInRoundSettle(isGetMission)
+    return self._Model:GetTheatre5ClientConfigText('MissionStateLabelInRoundSettle', isGetMission and 2 or 1)
+end
+
+--- 最终结算无任务奖励状态描述，1是未接取，2是未完成
+function XTheatre5MissionControl:GetClientConfigMissionStateLabelInFinalSettle(isGetMission)
+    return self._Model:GetTheatre5ClientConfigText('MissionStateLabelInFinalSettle', isGetMission and 2 or 1)
+end
+
+function XTheatre5MissionControl:GetClientConfigMissionLvFormat(level, isMax)
+    local desc = self._Model:GetTheatre5ClientConfigText('MissionLvFormat', isMax and 2 or 1)
+
+    if isMax then
+        -- 顶级描述无插值
+        return desc
+    else
+        return XUiHelper.FormatText(desc, level)
+    end
+end
 --endregion
 
 --region Condition
@@ -512,6 +576,144 @@ function XTheatre5MissionControl:CheckHasMissionLevelUpTimes()
     local curTimes = self._Model.CurAdventureData:GetMissionLevelUpForRound()
     
     return curTimes < limitTimes
+end
+
+--endregion
+
+--region 图鉴
+
+--- 根据服务端记录的已解锁的bounty，构建临时的已解锁item缓存
+--- 因为有些bounty是不显示的，但是它们使用的item与其他bounty存在重复，而图鉴显示是以道具为单位，因此这样做可以简单地兼容
+function XTheatre5MissionControl:InitUnlockMissionItemCache()
+    self._UnlockMissionItemIds = {}
+    
+    local pvpUnlockBountyList = self._Model.PVPAdventureData:GetUnlockBountyList()
+    local pveUnlockBountyList = self._Model.PVEAdventureData:GetUnlockBountyList()
+
+    self:_MarkBountyItemUnlockByBountyList(pvpUnlockBountyList)
+    self:_MarkBountyItemUnlockByBountyList(pveUnlockBountyList)
+end
+
+function XTheatre5MissionControl:ReleaseUnlockMissionItemCache()
+    self._UnlockMissionItemIds = nil
+end
+
+function XTheatre5MissionControl:_MarkBountyItemUnlockByBountyList(unlockBountyList)
+    if not XTool.IsTableEmpty(unlockBountyList) then
+        for i, bounty in pairs(unlockBountyList) do
+            -- 这里需要遍历bounty表，进入图鉴显示本来就会全加载的，因此这里遍历没关系
+            local bountyCfgs = self._Model:GetTheatre5MissionBountyGroupByBountyId(bounty)
+            -- 读出来的是按等级顺序的配置
+            local maxLevelBountyCfg = bountyCfgs[#bountyCfgs]
+
+            -- 将最高级bounty对应的所有道具id标记为已解锁
+            self._UnlockMissionItemIds[maxLevelBountyCfg.BountyPackShow] = true
+
+            if not XTool.IsTableEmpty(maxLevelBountyCfg.BountyItem) then
+                for _, itemId in pairs(maxLevelBountyCfg.BountyItem) do
+                    self._UnlockMissionItemIds[itemId] = true
+                end
+            end
+        end
+    end
+end
+
+function XTheatre5MissionControl:_CheckBountyItemIsUnlock(itemId)
+    if self._UnlockMissionItemIds then
+        return self._UnlockMissionItemIds[itemId] or false
+    end
+    
+    return false
+end
+
+--- 获取任务委托奖励的图鉴数据
+function XTheatre5MissionControl:GetDataHandBook()
+    if not self._UnlockMissionItemIds then
+        self:InitUnlockMissionItemCache()
+    end
+
+    ---@type XUiTheatre5SkillHandbookTabGridData
+    local tabOnlyOne = {
+        TagName = "",
+        Id = 0,
+        Items = {},
+        Order = 0,
+        HideTagName = true,
+    }
+    
+    -- 用于去重
+    local itemIdMap = {}
+
+    local missionCfgs = self._Model:GetTheatre5MissionCfgs()
+
+    if missionCfgs then
+        for id, missionCfg in pairs(missionCfgs) do
+            if not missionCfg.HideInHandBook then
+                local bounty = missionCfg.Bounty
+                -- 获取任务最高等级
+                local bountyMaxLevel = self._Model:GetTheatre5MissionBountyMaxLevel(bounty)
+                
+                -- 展示的道具
+                local showItemCfg = self:GetItemCfgByMissionBountyId(bounty, bountyMaxLevel)
+
+                if not itemIdMap[showItemCfg.Id] then
+                    local showItemData = self:_GetItemDataHandBook(showItemCfg, bounty)
+
+                    table.insert(tabOnlyOne.Items, showItemData)
+
+                    itemIdMap[showItemCfg.Id] = true
+                end
+                
+                -- 显示多选奖励中的实际奖励部分
+                local itemIds = self:GetItemIdsByMissionBountyId(missionCfg.Bounty, bountyMaxLevel)
+
+                if XTool.GetTableCount(itemIds) > 1 then
+                    for index, itemId in pairs(itemIds) do
+                        local itemCfg = self._Model:GetTheatre5ItemCfgById(itemId)
+
+                        if not itemIdMap[itemCfg.Id] then
+                            local data = self:_GetItemDataHandBook(itemCfg, bounty, index)
+
+                            table.insert(tabOnlyOne.Items, data)
+
+                            itemIdMap[itemCfg.Id] = true
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+
+    -- 排序
+    table.sort(tabOnlyOne.Items, function(a, b)
+        return a.Order < b.Order
+    end)
+
+    return { tabOnlyOne }
+end
+
+---@param itemCfg XTableTheatre5Item
+---@return XUiTheatre5SkillHandbookItemGridData
+function XTheatre5MissionControl:_GetItemDataHandBook(itemCfg, bounty, itemIndex)
+    local maxLevel = self._Model:GetTheatre5MissionBountyMaxLevel(bounty)
+    
+    ---@type XUiTheatre5SkillHandbookItemGridData
+    local data = {
+        Id = itemCfg.Id,
+        ItemId = itemCfg.Id,
+        Order = itemCfg.Order,
+        Name = itemCfg.Name,
+        Quality = 0,
+        Icon = itemCfg.IconRes,
+        Desc = self:GetMissionRewardDesc(bounty, nil, nil, itemIndex, maxLevel),
+        Tags = itemCfg.Tags,
+        Bounty = bounty,
+        IsUnlock = self:_CheckBountyItemIsUnlock(itemCfg.Id),
+        Index = itemIndex,
+    }
+    
+    return data
 end
 
 --endregion

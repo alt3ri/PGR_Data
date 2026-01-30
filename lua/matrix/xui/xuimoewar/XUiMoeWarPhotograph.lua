@@ -13,7 +13,6 @@ end
 
 function XUiMoeWarPhotograph:OnDestroy()
 	XDataCenter.PhotographManager.ClearTextureCache()
-	CS.UnityEngine.Object.Destroy(self.ShareTexture)	
 end
 
 function XUiMoeWarPhotograph:RegisterButtonEvent()
@@ -33,9 +32,9 @@ end
 function XUiMoeWarPhotograph:Photograph()
 	self:PlayAnimation("Photo")
     XCameraHelper.ScreenShotNew(self.ImagePhoto, self.CameraCupture, function(screenShot)
+        self:AddCacheTexture(screenShot, 2)
         -- 把合成后的图片渲染到游戏UI中的照片展示(最终要分享的图片)
         CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Normal, CS.XUiManager.Instance.UiCamera)
-        self.ShareTexture = screenShot
         self.PhotoName = "[" .. tostring(XPlayer.Id) .. "]" .. XTime.GetServerNowTimestamp()
     end, function()
         CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Normal, self.CameraCupture)

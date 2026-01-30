@@ -7,9 +7,13 @@ function XUiPanelGachaBiankaScene:OnStart()
 end
 
 function XUiPanelGachaBiankaScene:OnDisable()
-    if self._LongAnimTimer then
-        XScheduleManager.UnSchedule(self._LongAnimTimer)
-        self._LongAnimTimer = nil
+    if self._CamLongAnimTimer then
+        XScheduleManager.UnSchedule(self._CamLongAnimTimer)
+        self._CamLongAnimTimer = nil
+    end
+    if self._SceneLongAnimTimer then
+        XScheduleManager.UnSchedule(self._SceneLongAnimTimer)
+        self._SceneLongAnimTimer = nil
     end
 end
 
@@ -31,7 +35,7 @@ function XUiPanelGachaBiankaScene:Init3DSceneInfo()
     --- 卡池场景为白昼 不受电量和实际时间的影响
     local animationRoot = self.Parent.UiSceneInfo.Transform:Find("Animations")
     if not XTool.UObjIsNil(animationRoot) then
-        local fullTimeLine = animationRoot:Find("FullTimeLine"):GetComponent("PlayableDirector")
+        local fullTimeLine = animationRoot:Find("FullTimeLine")
         if fullTimeLine then
             fullTimeLine.gameObject:SetActiveEx(true)
         end
@@ -51,7 +55,8 @@ function XUiPanelGachaBiankaScene:PlayEnableStory()
     self.Panel3D.AnimEnableStory:PlayTimelineAnimation()
 end
 
-function XUiPanelGachaBiankaScene:PlayEnableLong(cb)
+---[镜头]AnimEnableLong和[场景]AnimEnableLong一起播放，场景[AnimEnableLong]播放完后播场景的[AnimEnableGyro]
+function XUiPanelGachaBiankaScene:PlayEnableLong(camAnimCb, sceneAnimCb)
     local timeEnableLong = self.Parent.UiSceneInfo.Transform:Find("Animations/AnimEnableLong")
     local animEnableLong = self.Panel3D.AnimEnableLong:GetComponent("PlayableDirector")
     self.Panel3D.AnimStart1:StopTimelineAnimation()
@@ -62,13 +67,21 @@ function XUiPanelGachaBiankaScene:PlayEnableLong(cb)
         end
         self:_PlayTimeLineAnim(self.Panel3D.AnimEnableLong)
     end)
-    self._LongAnimTimer = XScheduleManager.ScheduleOnce(function()
+    --镜头长入场回调
+    self._CamLongAnimTimer = XScheduleManager.ScheduleOnce(function()
         self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(false)
-        if not XTool.UObjIsNil(timeEnableLong) then
-            timeEnableLong.gameObject:SetActiveEx(false)
-        end
-        cb()
+        camAnimCb()
     end, math.ceil(animEnableLong.duration * XScheduleManager.SECOND))
+    --场景长入场回调
+    if XTool.UObjIsNil(timeEnableLong) then
+        sceneAnimCb()
+    else
+        local pb = timeEnableLong:GetComponent("PlayableDirector")
+        self._SceneLongAnimTimer = XScheduleManager.ScheduleOnce(function()
+            timeEnableLong.gameObject:SetActiveEx(false)
+            sceneAnimCb()
+        end, math.ceil(pb.duration * XScheduleManager.SECOND))
+    end
 end
 
 function XUiPanelGachaBiankaScene:PlayEnableShort()

@@ -11,8 +11,6 @@
 local XUiSkyGardenSGDronePopupDetail = XMVCA.XBigWorldUI:Register(nil, "UiSkyGardenSGDronePopupDetail")
 
 function XUiSkyGardenSGDronePopupDetail:OnAwake()
-    self._IsPlaying = false
-
     self:_InitUi()
     self:_RegisterButtonClicks()
 end
@@ -36,21 +34,8 @@ end
 function XUiSkyGardenSGDronePopupDetail:OnDestroy()
 end
 
-function XUiSkyGardenSGDronePopupDetail:OnBtnVideoClick()
-    if self._IsPlaying then
-        self.VideoPlayer:Stop()
-        self._IsPlaying = false
-        self.ImagePlay.gameObject:SetActiveEx(true)
-    else
-        self.VideoPlayer:Prepare()
-        self._IsPlaying = true
-        self.ImagePlay.gameObject:SetActiveEx(false)
-    end
-end
-
 function XUiSkyGardenSGDronePopupDetail:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnVideo:AddEventListener(Handler(self, self.OnBtnVideoClick))
     self.BtnClose:AddEventListener(Handler(self, self.Close))
 end
 
@@ -87,13 +72,14 @@ end
 function XUiSkyGardenSGDronePopupDetail:_RefreshVideo(droneId)
     local videoId = self._Control:GetDroneTeachingVideoId(droneId)
 
+    self.BtnVideo.gameObject:SetActiveEx(false)
+    self.ImagePlay.gameObject:SetActiveEx(false)
     if XTool.IsNumberValid(videoId) then
-        self._IsPlaying = false
         self.Visual.gameObject:SetActiveEx(true)
         self.BtnVideo.gameObject:SetActiveEx(true)
+        self.VideoPlayer.VideoPlayerInst.loop = true
         self.VideoPlayer:SetInfoByVideoId(videoId)
-    else
-        self.BtnVideo.gameObject:SetActiveEx(false)
+        self.VideoPlayer:Prepare()
     end
 end
 

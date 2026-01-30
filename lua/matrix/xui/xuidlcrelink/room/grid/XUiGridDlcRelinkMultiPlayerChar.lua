@@ -94,7 +94,7 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshState()
         name = isSelf and XPlayer.Name or ""
     end
 
-    SetActive(self.PanelCharacterBg, isCharacterId or isSelf)
+    SetActive(self.PanelCharacterBg, (isInRoom or isSelf) and not isCharacterId and not isLock)
     SetActive(self.BtnExchange, isInRoom and not isSelf and isSelfLeader and isCharacterId)
     SetActive(self.BtnKick, isInRoom and not isSelf and isSelfLeader and isCharacterId)
     SetActive(self.BtnInfo, (isInRoom or isSelf) and isCharacterId)
@@ -110,7 +110,7 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshState()
     if isSelf and self._IsLeader == false and isLeader then
         self._Control:OpenCommonTipText('BecomeLeaderTips', 1)
     end
-    
+
     self._IsLeader = isLeader
 end
 
@@ -192,6 +192,7 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshChat(chatData, receiveTime)
         self.PanelChat.gameObject:SetActiveEx(true)
         self.PanelDailog.gameObject:SetActiveEx(not isEmoji)
         self.PanelEmoji.gameObject:SetActiveEx(isEmoji)
+        self.PanelChatEnable.gameObject:SetActiveEx(true)
         self.PanelChatEnable:PlayTimelineAnimation()
     else
         self.PanelChat.gameObject:SetActiveEx(false)
@@ -203,6 +204,8 @@ function XUiGridDlcRelinkMultiPlayerChar:StopChatTimer()
         XScheduleManager.UnSchedule(self.ChatTimer)
         self.ChatTimer = nil
     end
+    self.PanelChatEnable.gameObject:SetActiveEx(false)
+    self.PanelChat.gameObject:SetActiveEx(false)
 end
 
 --- 任何一种方式离开房间时执行

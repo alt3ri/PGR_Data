@@ -9,6 +9,30 @@ function XTheatre5PVEAgency:Init(ownerAgency, model)
    
 end
 
+function XTheatre5PVEAgency:AfterActivityDataNotify()
+    -- 检查故事线节点
+    local storyLines = self._Model.PVERougeData:GetPveStoryLines()
+    if XTool.IsTableEmpty(storyLines) then
+        return
+    end
+
+    for _, storyLineData in pairs(storyLines) do
+        if XTool.IsNumberValid(storyLineData.CurContentId) then
+            ---@type XTableTheatre5PveStoryLineContent
+            local storyLineContentCfg = self._Model:GetStoryLineContentCfg(storyLineData.CurContentId)
+
+            if storyLineContentCfg and storyLineContentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVENodeType.Deduce then
+                -- 推演节点可能线索推演完了，但是故事线没有推进，需要手动请求推进一次
+                local pveScriptId = storyLineContentCfg.ContentId
+
+                if self._Model.PVERougeData:CheckDuceScriptIsComplete(pveScriptId) then
+                    XMVCA.XTheatre5.PVEAgency:RequestPveStoryLinePromote(storyLineData.StoryLineId, storyLineData.CurContentId)
+                end
+            end
+        end
+    end
+end
+
 --region 协议请求
 
 local function CommonRequestCallbcak(res,cb,func)

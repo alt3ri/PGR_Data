@@ -47,6 +47,10 @@ function XUiBigWorldMessageTips:OnDestroy()
     if self._IsForce then
         self:ChangeInput(false)
     end
+    --如果是需要接Single界面，则流水线则在Single界面才完成
+    if not self._IsOpenedSingle and XTool.IsNumberValid(self._SequentialId) then
+        XMVCA.XBigWorldCommon:FinishSequentialJob(self._SequentialId)
+    end
 end
 
 -- endregion
@@ -58,13 +62,6 @@ function XUiBigWorldMessageTips:OnBtnClickClick()
 end
 
 -- endregion
-
-function XUiBigWorldMessageTips:Close()
-    if XTool.IsNumberValid(self._SequentialId) then
-        XMVCA.XBigWorldCommon:FinishSequentialJob(self._SequentialId)
-    end
-    self.Super.Close(self)
-end
 
 -- region 私有方法
 

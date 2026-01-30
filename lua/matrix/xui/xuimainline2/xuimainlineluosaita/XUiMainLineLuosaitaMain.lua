@@ -21,6 +21,11 @@ function XUiMainLineLuosaitaMain:OnAwake()
 end
 
 function XUiMainLineLuosaitaMain:OnStart()
+    -- 进入玩法才播放动效
+    if not self.ResumeData then
+        self:PlayAnimation("AnimEnableStar")
+    end
+    
     self._MainId = XEnumConst.MAINLINE2.SPECIAL_MAINID.LUOSAITA
     self._UiPanelSectionDic = {}
     
@@ -34,15 +39,63 @@ function XUiMainLineLuosaitaMain:OnEnable()
 end
 
 function XUiMainLineLuosaitaMain:OnResume(data)
-    self.SectionLastPositions = data
+    self.ResumeData = data
 end
 
 function XUiMainLineLuosaitaMain:OnReleaseInst()
     local data = {}
-    for sectionId, panelSection in pairs(self._UiPanelSectionDic) do
-        data[sectionId] = panelSection:GetAreaScaleDragPosition()
-    end
+    local panelSection = self:GetCurPanelSection()
+    data["SectionId"] = self:GetCurSectionId()
+    data["Pos"] = panelSection:GetAreaScaleDragPosition()
+    data["ActivatedAnimDic"] = panelSection:GetActivatedAnimDic()
     return data
+end
+
+-- 获取阶段的恢复位置
+function XUiMainLineLuosaitaMain:GetResumePos(sectionId)
+    if self.ResumeData and self.ResumeData.SectionId == sectionId and not self.ResumeData.IsPosUse then
+        self.ResumeData.IsPosUse = true
+        return self.ResumeData.Pos
+    end
+end
+
+-- 获取阶段恢复时的动画激活记录
+function XUiMainLineLuosaitaMain:GetResumeActivatedAnimDic(sectionId)
+    if self.ResumeData and self.ResumeData.SectionId == sectionId then
+        return self.ResumeData.ActivatedAnimDic
+    end
+end
+
+function XUiMainLineLuosaitaMain:OnGetEvents()
+    return {  
+        XEventId.EVENT_UI_ENABLE, 
+        XEventId.EVENT_UI_DISABLE,
+    }
+end
+
+function XUiMainLineLuosaitaMain:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_MAINLINE_LUOSAITA_ATTACK_PREVIEW,
+        XEventId.EVENT_MAINLINE_LUOSAITA_ATTACK,
+    }
+end
+
+function XUiMainLineLuosaitaMain:OnNotify(evt, ...)
+    local args = { ... }
+    if evt == XEventId.EVENT_UI_ENABLE or evt == XEventId.EVENT_UI_DISABLE then
+        local isTopUi = XLuaUiManager.GetTopUiName() == self.Name
+        self:SetAreaDragEnable(isTopUi)
+    elseif evt == XEventId.EVENT_MAINLINE_LUOSAITA_ATTACK_PREVIEW then
+        local armyNodeName = args[1]
+        local enemyNodeName = args[2]
+        local panelSection = self:GetCurPanelSection()
+        panelSection:GuideAttackPreview(armyNodeName, enemyNodeName)
+    elseif evt == XEventId.EVENT_MAINLINE_LUOSAITA_ATTACK then
+        local armyNodeName = args[1]
+        local enemyNodeName = args[2]
+        local panelSection = self:GetCurPanelSection()
+        panelSection:GuideAttack(armyNodeName, enemyNodeName)
+    end
 end
 
 function XUiMainLineLuosaitaMain:RegisterUiEvents()
@@ -50,8 +103,6 @@ function XUiMainLineLuosaitaMain:RegisterUiEvents()
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnCurDropdown, self.OnBtnCurDropdownClick)
     self:RegisterClickEvent(self.BtnCloseDropdown, self.CloseDropdown)
-    self:RegisterClickEvent(self.BtnGoLeft, self.OnClickFocusTarget)
-    self:RegisterClickEvent(self.BtnGoRight, self.OnClickFocusTarget)
     self:RegisterClickEvent(self.BtnReview, self.OnBtnReviewClick)
     self:RegisterClickEvent(self.BtnMission, self.OnBtnMissionClick)
     self:RegisterClickEvent(self.BtnAchievement, self.OnBtnAchievementClick)
@@ -67,6 +118,9 @@ end
 
 function XUiMainLineLuosaitaMain:OnBtnReviewClick()
     XLuaUiManager.Open("UiMainLineLuosaitaPopupReview", self._CurSectionId)
+    
+    self._Control:SetDocumentReviewRed(false)
+    self:RefreshBtnReview()
 end
 
 function XUiMainLineLuosaitaMain:OnBtnMissionClick()
@@ -83,6 +137,7 @@ function XUiMainLineLuosaitaMain:Refresh()
     self:RefreshDropDown()
     self:RefreshAchievement()
     self:RefreshTask()
+    self:RefreshBtnReview()
     -- XUiPanelLuosaitaSection 在OnEnable刷新
 end
 
@@ -147,17 +202,11 @@ function XUiMainLineLuosaitaMain:RefreshTask()
     self.BtnMission:ShowReddot(isRed)
 end
 
---region 导航按钮
-function XUiMainLineLuosaitaMain:ShowFocusTipsBtn(way)
-    self.BtnGoRight.gameObject:SetActiveEx(way > 0)
-    self.BtnGoLeft.gameObject:SetActiveEx(way < 0)
+-- 刷新文件回顾按钮
+function XUiMainLineLuosaitaMain:RefreshBtnReview()
+    local isRed = self._Control:GetDocumentReviewRed()
+    self.BtnReview:ShowReddot(isRed)
 end
-
-function XUiMainLineLuosaitaMain:OnClickFocusTarget()
-    local panelSection = self:GetCurPanelSection()
-    panelSection:GotoFocusTarget()
-end
---endregion
 
 --region 下拉列表
 -- 初始化下拉列表
@@ -209,7 +258,7 @@ function XUiMainLineLuosaitaMain:OnDynamicTableEvent(event, index, grid)
         local unLock = self._Control:IsSectionUnlock(sectionId)
         if unLock then
             self:CloseDropdown()
-            self:SwitchPanelSection(sectionId)
+            self:SwitchPanelSection(sectionId, true)
         else
             local tips = self._Control:GetConfig():GetConfigString("SectionLock", 1)
             XUiManager.TipMsg(tips)
@@ -228,6 +277,9 @@ function XUiMainLineLuosaitaMain:OpenDropdown()
 
     self._DropDownDynamic:SetDataSource(self._DropDownDates)
     self._DropDownDynamic:ReloadDataSync()
+
+    -- 禁用面板拖拽
+    self:SetAreaDragEnable(false)
 end
 
 function XUiMainLineLuosaitaMain:CloseDropdown()
@@ -238,16 +290,29 @@ function XUiMainLineLuosaitaMain:CloseDropdown()
     self.ImgArrowUpNormal.gameObject:SetActiveEx(false)
     self.ImgArrowDownPress.gameObject:SetActiveEx(true)
     self.ImgArrowUpPress.gameObject:SetActiveEx(false)
+
+    -- 动态滑动列表
+    local grids = self._DropDownDynamic:GetGrids()
+    for _, grid in pairs(grids) do
+        grid:Close()
+    end
+
+    -- 启用面板拖拽
+    self:SetAreaDragEnable(true)
 end
 --endregion
 
 --region XUiPanelLuosaitaSection 阶段面板
 -- 切换阶段面板
-function XUiMainLineLuosaitaMain:SwitchPanelSection(sectionId)
+function XUiMainLineLuosaitaMain:SwitchPanelSection(sectionId, isAnim)
     if self._CurSectionId == sectionId then return end
 
     -- 先请求数据再刷新UI
     XMVCA.XMainLineLuosaita:RequestMainLineLuosaitaEnter(sectionId, function()
+        if isAnim then
+            self:PlayAnimation("AnimSectionList")
+        end
+        
         self:OnSwitchPanelSection(sectionId)
     end)
 end
@@ -271,12 +336,15 @@ function XUiMainLineLuosaitaMain:OnSwitchPanelSection(sectionId)
         panel = XUiPanelLuosaitaSection.New(prefab, self, sectionId)
         self._UiPanelSectionDic[sectionId] = panel
     end
-    
+
     -- 打开阶段面板
     panel:Open()
 
     -- 刷新下拉列表
     self:RefreshDropDown()
+    
+    -- 触发引导
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 -- 获取当前阶段面板
@@ -285,21 +353,18 @@ function XUiMainLineLuosaitaMain:GetCurPanelSection()
     return self._UiPanelSectionDic[self._CurSectionId]
 end
 
+-- 设置拖拽组件是否启用
+function XUiMainLineLuosaitaMain:SetAreaDragEnable(isEnable)
+    local panel = self:GetCurPanelSection()
+    if panel then
+        panel:SetAreaDragEnable(isEnable)
+    end
+end
+
 -- 检测下一阶段是否解锁，自动切换下一阶段
 function XUiMainLineLuosaitaMain:CheckSwitchNextSection()
     local sectionId = self._Control:GetEnterSectionId()
-    self:SwitchPanelSection(sectionId)
-end
-
--- 获取阶段最后的位置
-function XUiMainLineLuosaitaMain:GetSectionLastPosition(sectionId)
-    if not self.SectionLastPositions then 
-        return 
-    end
-    
-    local pos = self.SectionLastPositions[sectionId]
-    self.SectionLastPositions[sectionId] = nil
-    return pos
+    self:SwitchPanelSection(sectionId, true)
 end
 --endregion
 

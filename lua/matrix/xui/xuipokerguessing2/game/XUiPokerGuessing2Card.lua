@@ -16,6 +16,13 @@ function XUiPokerGuessing2Card:OnStart(isPlayerCard)
         self.ImgSpecial.gameObject:SetActiveEx(false)
     end
 
+    if self.PutDownEffect then
+        self.PutDownEffect.gameObject:SetActiveEx(false)
+    end
+    if self.SuccessEffect then
+        self.SuccessEffect.gameObject:SetActiveEx(false)
+    end
+
     self._OriginalParent = self.Transform.parent
     self._ParentOnDrag = false
     self._OriginalSiblingIndex = self.Transform:GetSiblingIndex()
@@ -41,8 +48,9 @@ function XUiPokerGuessing2Card:OnStart(isPlayerCard)
 
     self._PositionZ = 0
 
+    -- 统一去掉白色底，按动画要求去掉
     if self.PanelWhite then
-        self.PanelWhite.gameObject:SetActiveEx(isPlayerCard)
+        self.PanelWhite.gameObject:SetActiveEx(false)
     end
 end
 
@@ -166,6 +174,8 @@ function XUiPokerGuessing2Card:OnDrag(eventData)
     local transform = self.Transform
     transform.position = worldPosition
 
+    transform.localScale = Vector3(1, 1, 1)
+
     self._IsOnOriginalParent = false
 end
 
@@ -188,7 +198,7 @@ function XUiPokerGuessing2Card:OnEndDrag(eventData)
         self:SetPlayerSelected()
         self.Parent:RevertCardParentAndPosition(self)
         self.Parent:SetAllCardPutOnGroup(false)
-        self.Parent:ShowEffectPutDown()
+        self:ShowEffectPutDown()
         self:SetPutOnGround(true)
         XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2DropDownCard)
     else
@@ -229,11 +239,12 @@ function XUiPokerGuessing2Card:PlayAnimationCardToPutDown(duration)
     self._IsPutOnGround = true
     self.Transform:SetParent(self._ParentOnDrag, true)
     self.Transform.localEulerAngles = Vector3(0, 0, 0)
+    self.Transform.localScale = Vector3(1, 1, 1)
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2SelectCard)
     -- 移动到父节点的局部坐标原点，而不是父节点的anchoredPosition3D
     self:DoMove(self.Transform, Vector3.zero, duration, nil, function()
         XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2DropDownCard)
-        self.Parent:ShowEffectPutDown()
+        self:ShowEffectPutDown()
         self._Control:SetEnemySelectedCard(self._Data)
     end)
 end
@@ -271,6 +282,32 @@ function XUiPokerGuessing2Card:PlayAnimationRevealTheCard(callback)
     self:_HideChangedPanel()
     self:TryShowChangedCard(false)
     self:PlayAnimation("ShowCard", callback, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
+end
+
+function XUiPokerGuessing2Card:ShowEffectPutDown()
+    if self.PutDownEffect then
+        self.PutDownEffect.gameObject:SetActiveEx(false)
+        self.PutDownEffect.gameObject:SetActiveEx(true)
+    end
+end
+
+function XUiPokerGuessing2Card:HideEffectPutDown()
+    if self.PutDownEffect then
+        self.PutDownEffect.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiPokerGuessing2Card:ShowEffectSuccess()
+    if self.SuccessEffect then
+        self.SuccessEffect.gameObject:SetActiveEx(false)
+        self.SuccessEffect.gameObject:SetActiveEx(true)
+    end
+end
+
+function XUiPokerGuessing2Card:HideEffectSuccess()
+    if self.SuccessEffect then
+        self.SuccessEffect.gameObject:SetActiveEx(false)
+    end
 end
 
 return XUiPokerGuessing2Card

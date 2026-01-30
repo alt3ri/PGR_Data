@@ -17,7 +17,7 @@ function XUiBigWorldTaskObtainInvitation:InitView()
         end
     end
 
-    local icon = XMVCA.XBigWorldQuest:GetInviteQuestRoleIcon(questId)
+    local icon = XMVCA.XBigWorldQuest:GetInviteQuestRoleIcon(questId, true)
     if self.ImgHeadBg and not string.IsNilOrEmpty(icon) then
         self.ImgHeadBg:SetRawImage(icon)
     end

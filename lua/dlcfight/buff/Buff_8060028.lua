@@ -4,13 +4,16 @@ local Base = require("Buff/BuffBase/XBuffBase")
 local XBuffScript8060028 = XDlcScriptManager.RegBuffScript(8060028, "XBuffScript8060028", Base)
 --效果说明：自动复活有CD
 
-function XBuffScript8060028:Init()
-    --初始化
-    Base.Init(self)
-    ------------配置------------
-    self.magicLevel=1 --等新接口直接获取自己的BUFF等级
+function XBuffScript8060028:Ctor()
     self.magicId=8060029 --复活BUFF
     self.rebornCds={300,280,260,240,220,210,200,190,180,170,160,150,140,130,120,100} --秒
+end
+
+function XBuffScript8060028:ScriptInit(isGainControl)
+    --初始化
+    Base.ScriptInit(self,isGainControl)
+    ------------配置------------
+    self.magicLevel=1 --等新接口直接获取自己的BUFF等级
     self.timer=0 --计时器
     self.hasBuff=false
     self.hasLevel=false
@@ -44,8 +47,8 @@ function XBuffScript8060028:InitEventCallBackRegister()
 end
 
 function XBuffScript8060028:OnNpcGuardianAngelConsume(npcUUID, npcPlaceId, npcKind, isPlayer, buffTemplateId)
-    if npcUUID==self._uuid and buffTemplateId==self.magicId and self._proxy:CheckBuffByKind(self._uuid,self.magicId) then
-        self._proxy:RemoveBuff(self._uuid,self.magicId)--移除BUFF，准备进入倒计时加新的
+    if buffTemplateId~=self.magicId then return end
+    if npcUUID==self._uuid then
         self.timer=self._proxy:GetFightTime(self._uuid)+self.cd --重新加BUFF
         self.hasBuff=false
     end

@@ -54,6 +54,10 @@ function XUiSignWeekCardGridDay:OnDisable()
 
 end
 
+function XUiSignWeekCardGridDay:OnDestroy()
+    self:RemoveRewardTimer()
+end
+
 function XUiSignWeekCardGridDay:RefreshByRewardInfo(rewardInfo, index)
     self.PanelHaveGroup.alpha = 0
     self.PanelHaveReceive.gameObject:SetActiveEx(false)
@@ -133,12 +137,21 @@ end
 function XUiSignWeekCardGridDay:GetWeekCardReward()
     XDataCenter.PurchaseManager.PurchaseGetDailyRewardRequest(self.WeekCardData:GetId(), function(rewards)
         XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
-        RunAsyn(function()
-            asynWaitSecond(0.7)
+        self:RemoveRewardTimer()
+        XLuaUiManager.SetMask(true)
+        self._RewardTimerId = XScheduleManager.ScheduleOnce(function()
+            XLuaUiManager.SetMask(false)
             self:HandlerReward(rewards)
             self.WeekCardData:SetWeekCardGotToday()
-        end)
+        end, 700)
     end)
+end
+
+function XUiSignWeekCardGridDay:RemoveRewardTimer()
+    if self._RewardTimerId then
+        XScheduleManager.UnSchedule(self._RewardTimerId)
+        self._RewardTimerId = nil
+    end
 end
 
 function XUiSignWeekCardGridDay:HandlerReward(rewardItems)

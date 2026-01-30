@@ -36,7 +36,7 @@ function XGuideProxy:OpenUiObtain(...)
 end
 
 ---@param template XTableGuideGroup
-function XGuideProxy:ExecuteGuide(template)
+function XGuideProxy:ExecuteGuide(template, isUiOpen)
     if not template then
         return
     end
@@ -148,6 +148,27 @@ end
 
 function XGuideProxy:ChangeDisableGuide(flag)
     self._GuideFlag = flag
+end
+
+function XGuideProxy:GetTopUiName(skipCheckUiNameDict)
+    --栈顶UiName
+    local uiName = CsXUiManager.Instance:GetTopParentUiName()
+    local index = 1
+    --过滤掉不需要引导的UI
+    while true do
+        --保底
+        if string.IsNilOrEmpty(uiName) then
+            break
+        end
+        --战斗的UI不参与系统引导
+        if not (skipCheckUiNameDict[uiName] or XUiManager.IsFightUi(uiName)) then
+            break
+        end
+        uiName = CsXUiManager.Instance:GetTopXUiName(index)
+        index = index + 1
+    end
+    
+    return uiName
 end
 
 return XGuideProxy

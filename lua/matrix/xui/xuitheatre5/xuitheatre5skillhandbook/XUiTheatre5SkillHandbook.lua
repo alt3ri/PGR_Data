@@ -48,6 +48,8 @@ function XUiTheatre5SkillHandbook:OnAwake()
 end
 
 function XUiTheatre5SkillHandbook:OnStart()
+    self._Control.MissionControl:InitUnlockMissionItemCache()
+    
     self.PanelBtnTab:Init({
         self.BtnTab1,
         self.BtnTab2,
@@ -76,6 +78,8 @@ function XUiTheatre5SkillHandbook:OnDisable()
 end
 
 function XUiTheatre5SkillHandbook:OnDestroy()
+    self._Control.MissionControl:ReleaseUnlockMissionItemCache()
+    
     if self._TimerDelayInit then
         XScheduleManager.UnSchedule(self._TimerDelayInit)
         self:_RemoveTimerIdAndDoCallback(self._TimerDelayInit)
@@ -186,7 +190,7 @@ function XUiTheatre5SkillHandbook:OnSelectItem(data)
     if self.TxtDes then
         if self._Index == Tab.Mission then
             if data.IsUnlock then
-                self.TxtDes.text = self._Control.MissionControl:GetMissionRewardDesc(data.Bounty)
+                self.TxtDes.text = data.Desc
             else
                 self.TxtDes.text = self._Control.MissionControl:GetClientConfigMissonIsLockInBook()
             end

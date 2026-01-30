@@ -2504,7 +2504,7 @@ showDefaultFx)
 
         local proxy = self:GetRenderingProxy()
         if proxy then
-            proxy:ReplaceWeaponPart(fxPath, modelInfo.LiberationFx)
+            proxy:ReplaceWeaponPart(rootTransform.name, modelInfo.LiberationFx)
         end
         -- self:FixAurolePos(modelInfo.LiberationFx, characterId, modelInfo)
     else

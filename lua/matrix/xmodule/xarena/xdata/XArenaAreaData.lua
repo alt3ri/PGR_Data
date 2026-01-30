@@ -15,7 +15,7 @@ function XArenaAreaData:_InitData(data)
     self._AreaShowMap = {}
     self._GroupFightEventsMap = {}
     ---@type table<number, number> key:分区id, value:该分区的最高分
-    self._AreaDistributeMaxPoint = data.AreaDistributeMaxPoint or {}
+    self._AreaDistributeMaxPoint = data.AreaDistributeMaxPointDict or {}
 
     if not XTool.IsTableEmpty(arenaList) then
         for i, arena in pairs(arenaList) do

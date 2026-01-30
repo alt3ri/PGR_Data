@@ -359,4 +359,23 @@ function XTheatre5PVPControl:DoTickoutCallBack()
 end
 --endregion
 
+--- 获取当前版本未来会开放的PVP活动的TimeId
+function XTheatre5PVPControl:GetFuturePVPActivityTimeId()
+    local cfgs = self._Model:GetTheatre5ActivityCfgs()
+
+    if cfgs then
+        -- 找到版本号最大的活动
+        local futureTimeId = nil
+        local maxId = -1
+        for _, cfg in pairs(cfgs) do
+            if cfg.Id > maxId and not XFunctionManager.CheckInTimeByTimeId(cfg.TimeId) then
+                maxId = cfg.Id
+                futureTimeId = cfg.TimeId
+            end
+        end
+        
+        return futureTimeId
+    end
+end
+
 return XTheatre5PVPControl

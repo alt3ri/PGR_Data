@@ -24,12 +24,17 @@ function XUiDrawPurchaseLB:OnEnable()
     self:OnRefresh()
     self:StartLBTimer()
     XDataCenter.UiPcManager.OnUiEnable(self)
+    
+    XDataCenter.PurchaseManager.SetPurchaseBuyCustomParam(XPurchaseConfigs.PurchaseBuyCustomParamKeys.RecordFrom, XPurchaseConfigs.TabRecordType.Draw)
 end
 
 function XUiDrawPurchaseLB:OnDisable()
     self:DestroyTimer()
     XDataCenter.UiPcManager.OnUiDisableAbandoned(true, self)
     self.Parent:Refresh()
+    
+    -- 清除所有临时的自定义参数
+    XDataCenter.PurchaseManager.ClearPurchaseBuyCustomParam()
 end
 
 function XUiDrawPurchaseLB:OnRefresh()

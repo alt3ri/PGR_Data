@@ -9,7 +9,7 @@ function XBuffScript1052903:Init()
     --初始化
     Base.Init(self)
     ------------配置------------
-    XLog.Warning("脚本1052903")
+    --XLog.Warning("脚本1052903")
 
 end
 
@@ -43,7 +43,7 @@ end
 function XBuffScript1052903:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     Base.OnNpcCastActionAfterEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if skillId == 105213 or skillId == 105214 or skillId == 105713 or skillId == 105714 then
-        XLog.Warning("怪物破韧时,获得伤害提升")
+        --XLog.Warning("怪物破韧时,获得伤害提升")
         self._proxy:ApplyMagic(self._uuid,self._uuid,1052831,1) --5秒内标记
         self._proxy:ApplyMagic(self._uuid,self._uuid,1052821,1) --5秒内伤害提升
     end

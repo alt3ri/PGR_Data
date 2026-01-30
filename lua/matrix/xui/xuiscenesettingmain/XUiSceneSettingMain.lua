@@ -451,7 +451,6 @@ function XUiSceneSettingMain:RefreshDynamicTableScene()
 
     self.DynamicTableScene:ReloadDataASync(self.CurSelectedBackgroundIndex)
     self:RefreshDropDown()
-    self:RefreshEvnirmentSoundControl()
 end
 
 function XUiSceneSettingMain:OnDynamicTableEventScene(event, index, grid)
@@ -525,6 +524,7 @@ function XUiSceneSettingMain:OnUiSceneLoaded(firstload, scenePath)
     self:RefreshSyncBtnState() -- 右下角按钮
     --刷新右上角信息栏显示
     self:RefreshSceneInfo()
+    self:RefreshEvnirmentSoundControl()
     -- self.Parent:RefreshRightTagPanel()
 
     -- 恢复相机
@@ -879,6 +879,7 @@ function XUiSceneSettingMain:OnDisable()
 end
 
 function XUiSceneSettingMain:OnDestroy()
+    self.SwitchableScene:OnDestory()
     XEventManager.RemoveEventListener(XEventId.EVENT_FAVORABILITY_ASSISTLIST_CHANGE, self.RefreshPanelAssistantByServerSync, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PHOTO_SYNC_CHANGE_TO_MAIN, self.RefreshPanelSceneByServerSync, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PHOTO_SYNC_CHANGE_TO_MAIN, self.RefreshSyncBtnState, self)
@@ -935,11 +936,12 @@ end
 function XUiSceneSettingMain:RefreshDropDown()
     local type = XPhotographConfigs.GetBackgroundTypeById(self.CurSelectedBackgroundId)
     local ops = XMVCA.XSwitchableScene:GetSetting(self.CurSelectedBackgroundId)
+    local mode = XDataCenter.UiPcManager.GetUiPcMode()
 
     self.DropDate.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Date)
     self.DropPower.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.PowerSaved)
     self.DropGyro.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Gyro)
-    self.PanelPcTip.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Gyro)
+    self.PanelPcTip.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Gyro and mode == XDataCenter.UiPcManager.XUiPcMode.Pc)
 
     if type == XPhotographConfigs.BackGroundType.Date then
         self.DropDate.value = ops[1]
@@ -981,7 +983,7 @@ function XUiSceneSettingMain:RefreshEvnirmentSoundControl()
     end
 
     -- 读取缓存静音状态（游戏逻辑：true=开？false=关？你原逻辑不变）
-    self.DropEnvMusic.isOn = sceneSfxControl:GetCacheMuteState()
+    self.DropEnvMusic.isOn = not sceneSfxControl:GetCacheMuteState()
 end
 
 --endregion

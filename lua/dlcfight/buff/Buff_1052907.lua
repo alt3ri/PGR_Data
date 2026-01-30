@@ -42,7 +42,7 @@ end
 
 function XBuffScript1052907:OnNpcBrokenAfter(launcherUUID, targetUUID, magicId)
     Base.OnNpcBrokenAfter(self,launcherUUID, targetUUID, magicId)
-    XLog.Warning("怪物破韧时,获得伤害提升")
+    --XLog.Warning("怪物破韧时,获得伤害提升")
     if  self._proxy:CheckBuffByKind(self._uuid,1057015) then
         self._proxy:ApplyMagic(self._uuid,self._uuid,1052815,1)
         self._proxy:ApplyMagic(self._uuid,self._uuid,1052813,1)

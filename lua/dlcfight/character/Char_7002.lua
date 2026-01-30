@@ -20,14 +20,12 @@ function XCharHeavyArtillery7002:CommonInit()
     self._proxy:SetNpcCamp(self._uuid, ENpcCampType.Camp1)
     self._maxRaycastLength = 500
     self._placeId = self._proxy:GetNpcPlaceId()
-    self._VcamId = 2
-    self._proxy:SetNpcNodeLockFollow( self._VcamId, "Bip001Neck", { x = 1, y = 0.5, z = 0 }, true)
     self._proxy:SetNpcNodeLockFollow(self._placeId, "Bip001Neck", { x = -1, y = 0.5, z = 0 }, true)
     self._proxy:RegisterEvent(EWorldEvent.GameplayHeavyArtilleryFireTriggerFire)
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
     self._proxy:RegisterEvent(EWorldEvent.MissileCreate)
 
-    XLog.Error("注册成功")
+    XLog.Debug("注册成功")
 end
 
 ---@param dt number @ delta time
@@ -47,15 +45,15 @@ function XCharHeavyArtillery7002:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.MissileCreate then
         local checkSuccess, templateId = self._proxy:MissileUUIDToTemplateId(eventArgs.MissileUUID)
         if templateId == 7002102 then
-            XLog.Error("检测到子弹爆炸")
+            XLog.Debug("检测到子弹爆炸")
             self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002113,1)
-            XLog.Error("重炮射击辅助机命中向后震屏")
+            XLog.Debug("重炮射击辅助机命中向后震屏")
             self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002114,1)
-            XLog.Error("重炮射击辅助机命中向上震屏")
+            XLog.Debug("重炮射击辅助机命中向上震屏")
             self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002115,1)
-            XLog.Error("重炮射击辅助机命中左右震屏")
+            XLog.Debug("重炮射击辅助机命中左右震屏")
             self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002112,1)
-            XLog.Error("重炮射击辅助机命中顿帧")
+            XLog.Debug("重炮射击辅助机命中顿帧")
 
         end
 
@@ -68,26 +66,26 @@ function XCharHeavyArtillery7002:HandleEvent(eventType, eventArgs)
     end
 
     if eventType == EWorldEvent.NpcAddBuff and eventArgs.BuffTableId == 7002108 then
-        XLog.Error("7002108：检测到buff被添加")
+        XLog.Debug("7002108：检测到buff被添加")
 
         self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002119,1)
-        XLog.Error("禁止相机输入")
+        XLog.Debug("禁止相机输入")
         self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002116,1)
-        XLog.Error("相机后退")
+        XLog.Debug("相机后退")
         self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002117,1)
-        XLog.Error("瞄准相机FOV增大")
+        XLog.Debug("瞄准相机FOV增大")
         self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002109,1)
-        XLog.Error("顿帧")
+        XLog.Debug("顿帧")
         self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002110,1)
-        XLog.Error("重炮射击辅助机发射向上震屏")
+        XLog.Debug("重炮射击辅助机发射向上震屏")
         self._proxy:ApplyMagic(self._uuid,self._Playeruuid,7002111,1)
-        XLog.Error("重炮射击辅助机发射向后震屏")
+        XLog.Debug("重炮射击辅助机发射向后震屏")
 
     end
 
 
     if eventType == EWorldEvent.NpcAddBuff and eventArgs.BuffTableId == 7002107 then
-        XLog.Error("7002107：检测到buff被添加")
+        XLog.Debug("7002107：检测到buff被添加")
         self._proxy:SetNpcNodeLockFollow(self._placeId, "Bip001Neck", { x = -1, y = 0.5, z = 0 }, true)
     end
 end

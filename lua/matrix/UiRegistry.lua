@@ -1714,6 +1714,7 @@ local UiRegistry = {
     UiDlcMultiPlayerSettlementBeach = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerSettlementBeach",
     UiDlcMultiPlayerSettlementDorm = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerSettlementDorm",
     UiDlcMultiPlayerSettlementMarket = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerSettlementMarket",
+    UiDlcMultiPlayerSettlementLantern = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerSettlementLantern",
     UiDlcMultiPlayerExchange = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerExchange",
     UiDlcMultiPlayerData = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerData",
     UiBossInshotMain = "XUi/XUiBossInshot/XUiBossInshotMain",
@@ -2321,6 +2322,7 @@ local UiRegistry = {
     UiTheatre5PopupChooseTaskReward = "XUi/XUiTheatre5/XUiTheatre5PopupChooseTaskReward/XUiTheatre5PopupChooseTaskReward",
     UiAccumulateExpendShopMain = "XUi/XUiAccumulateExpendShop/XUiAccumulateExpendShopMain",
     UiAccumulateExpendShopPopupDailyReward = "XUi/XUiAccumulateExpendShop/XUiAccumulateExpendShopObtaion",
+    UiAccumulateExpendShopLog = "XUi/XUiAccumulateExpendShopLog/XUiAccumulateExpendShopLog",
 
     --region 比安卡卡池
     UiGachaBianka402BuyTicket = "XUi/XUiGachaBianka/XUiGachaBiankaBuyTicket",

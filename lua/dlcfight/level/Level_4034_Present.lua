@@ -1,10 +1,5 @@
 local XLevel4034Present = XDlcScriptManager.RegLevelPresentScript(4034)
 
-local EvevatorState = {
-    Disable = 0,
-    Enable = 1,
-}
-
 ---@param proxy XDlcCSharpFuncs
 function XLevel4034Present:Ctor(proxy)
     --构造函数，用于执行与外部无关的内部构造逻辑（例如：创建内部变量等）
@@ -16,10 +11,11 @@ function XLevel4034Present:Init()
     self._proxy:RegisterEvent(EWorldEvent.ActorTrigger)
     self._proxy:RegisterEvent(EWorldEvent.NpcInteractStart)
     self._proxy:RegisterEvent(EWorldEvent.SceneObjectMoveStop)
-    self:InitEvevator()
+    --军备区小电梯
+    self:InitElevator()
 
-    for i, info in pairs(self._evevatorTrigger2Info) do
-        self:TriggerEvevator(info)
+    for i, info in pairs(self._elevatorTrigger2Info) do
+        self:TriggerElevatorMove(info)
     end
 end
 
@@ -31,112 +27,176 @@ end
 ---@param eventType number
 ---@param eventArgs userdata
 function XLevel4034Present:HandleEvent(eventType, eventArgs)
-    if eventType == EWorldEvent.ActorTrigger and eventArgs.TriggerState == ETriggerState.Enter and self._proxy:IsPlayerNpc(eventArgs.EnteredActorUUID) then
-        if self._evevatorFirstFloorCall2Info[eventArgs.HostSceneObjectPlaceId] then
-            self:CallEvevator(self._evevatorFirstFloorCall2Info[eventArgs.HostSceneObjectPlaceId], eventArgs.HostSceneObjectPlaceId)
-        end
-
-        if self._evevatorSecondFloorCall2Info[eventArgs.HostSceneObjectPlaceId] then
-            self:CallEvevator(self._evevatorSecondFloorCall2Info[eventArgs.HostSceneObjectPlaceId], eventArgs.HostSceneObjectPlaceId)
+    --是玩家发起的Trigger
+    if eventType == EWorldEvent.ActorTrigger and self._proxy:IsPlayerNpc(eventArgs.EnteredActorUUID) then
+        if eventArgs.TriggerState == ETriggerState.Enter then
+            --军备区小电梯呼叫
+            self:OnElevatorActorTriggerEnter(eventType, eventArgs)
         end
     end
 
-    if eventType == EWorldEvent.NpcInteractStart then
-        if self._proxy:IsPlayerNpc(eventArgs.LauncherId) then --是玩家发起的交互
-            if self._evevatorTrigger2Info[eventArgs.TargetPlaceId] then
-                self._proxy:LoadSceneObject(self._evevatorTrigger2Info[eventArgs.TargetPlaceId].AirWallPlaceId)
-                self:TriggerEvevator(self._evevatorTrigger2Info[eventArgs.TargetPlaceId])
-                self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, eventArgs.TargetPlaceId, false)
-            end
-        end
+    --是玩家发起的交互
+    if eventType == EWorldEvent.NpcInteractStart and self._proxy:IsPlayerNpc(eventArgs.LauncherId) then
+        self:OnElevatorNpcInteractStart(eventType, eventArgs)
     end
-
+    --移动机关停止
     if eventType == EWorldEvent.SceneObjectMoveStop then
-        if self._evevatorTrigger2Info[eventArgs.SceneObjectId] then
-            self:OptionEvevator(self._evevatorTrigger2Info[eventArgs.SceneObjectId])
-            self._proxy:UnloadSceneObject(self._evevatorTrigger2Info[eventArgs.SceneObjectId].AirWallPlaceId)
-            self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, eventArgs.SceneObjectId, true)
-        end
+        ---小电梯移动解除
+        self:OnElevatorSceneObjectMoveStop(eventType, eventArgs)
     end
 end
 
 function XLevel4034Present:Terminate()
     --脚本结束逻辑（脚本被卸载、Npc死亡、关卡结束......）
-
 end
 
---region 电梯
-function XLevel4034Present:InitEvevator()
-    ---@type table<number, XEvevatorInfo>
-    self._evevatorTrigger2Info = {}
-    ---@type table<number, XEvevatorInfo>
-    self._evevatorFirstFloorCall2Info = {}
-    ---@type table<number, XEvevatorInfo>
-    self._evevatorSecondFloorCall2Info = {}
+--region 军备区小电梯
+local ElevatorState = {
+    Down = 0,
+    Up = 1,
+}
 
-    --self._evevatorInfo1 = self:CreateEvevatorInfo(1100029, 1100031, 1100032, -1, 1, 2,1,2,1100055)
-    --self._evevatorInfo2 = self:CreateEvevatorInfo(1100005, 1100033, 1100034, -1, 1, 2,1,2,1100056)
-    --（第一个电梯的ID，第一个触发器的ID，第二个触发器的ID）
-    ---self._evevatorInfo1 = self:CreateEvevatorInfo(1000008, 1000017, 1000018, -1, 1, 2,1,2,1000014)
-    self._evevatorInfo2 = self:CreateEvevatorInfo(1100006, 1100008, 1100009, -1, 1, 2,1,2,1100007)
+function XLevel4034Present:InitElevator()
+    ---@type table<number, XElevatorInfo>
+    self._elevatorTrigger2Info = {}
+    ---@type table<number, XElevatorInfo>
+    self._elevatorUpFloorCall2Info = {}
+    ---@type table<number, XElevatorInfo>
+    self._elevatorDownFloorCall2Info = {}
+
+    self:CreateElevatorInfo(ElevatorState.Down, 1100006, 1100008, 1100009, 4, 1, 2, 2, 1, 1100007)
 end
 
----@return XEvevatorInfo
-function XLevel4034Present:CreateEvevatorInfo(triggerPlaceId, firstFloor, secondFloor, moveSpeed, targetNodeId, defaultNodeId, OptionUpId, OptionDownId,AirWallPlaceId)
-    ---@type XEvevatorInfo
+---@return XElevatorInfo
+function XLevel4034Present:CreateElevatorInfo(defaultState, triggerPlaceId, callDownPlaceId, callUpPlaceId, moveSpeed, upNodeId, downNodeId, UpOptionId, DownOptionId, AirWallPlaceId)
+    ---@type XElevatorInfo
     local info = {}
-    info.EvevatorState = EvevatorState.Disable
-    info.TriggerPlaceId = triggerPlaceId
-    info.FirstFloor = firstFloor
-    info.SecondFloor = secondFloor
+    info.State = defaultState
+    info.ElevatorPlaceId = triggerPlaceId
+    info.CallDownPlaceId = callDownPlaceId
+    info.CallUpPlaceId = callUpPlaceId
     info.HavePlayerEnterCount = 0
     info.MoveSpeed = moveSpeed
-    info.TargetNodeId = targetNodeId
-    info.DefaultNodeId = defaultNodeId
-    info.OptionUpId = OptionUpId
-    info.OptionDownId = OptionDownId
+    info.UpNodeId = upNodeId
+    info.DownNodeId = downNodeId
+    info.UpOptionId = UpOptionId
+    info.DownOptionId = DownOptionId
     info.AirWallPlaceId = AirWallPlaceId
+    info.Moving = false
+    info.CurMoveTargetNodeId = 0
 
     -- 注册进入字典表
-    self._evevatorTrigger2Info[info.TriggerPlaceId] = info
-    self._evevatorFirstFloorCall2Info[info.FirstFloor] = info
-    self._evevatorSecondFloorCall2Info[info.SecondFloor] = info
+    self._elevatorTrigger2Info[info.ElevatorPlaceId] = info
+    self._elevatorUpFloorCall2Info[info.CallDownPlaceId] = info
+    self._elevatorDownFloorCall2Info[info.CallUpPlaceId] = info
+    self:RefreshElevatorOption(info)
     return info
 end
 
-function XLevel4034Present:OptionEvevator(evevatorInfo)
-    if evevatorInfo.EvevatorState == EvevatorState.Disable then
-        self._proxy:SetSceneObjectInteractOneOptionActive(evevatorInfo.TriggerPlaceId,1)
+---@param elevatorInfo XElevatorInfo
+function XLevel4034Present:RefreshElevatorOption(elevatorInfo)
+    if elevatorInfo.State == ElevatorState.Down then
+        self._proxy:SetSceneObjectInteractOneOptionActive(elevatorInfo.ElevatorPlaceId, elevatorInfo.DownOptionId)
     end
-    if evevatorInfo.EvevatorState == EvevatorState.Enable then
-        self._proxy:SetSceneObjectInteractOneOptionActive(evevatorInfo.TriggerPlaceId,2)
-    end
-end
-
-function XLevel4034Present:TriggerEvevator(evevatorInfo)
-    if evevatorInfo.EvevatorState == EvevatorState.Disable then
-        self._proxy:MoveSceneObjectToNode(evevatorInfo.TriggerPlaceId, evevatorInfo.TargetNodeId, 2)
-    end
-
-    if evevatorInfo.EvevatorState == EvevatorState.Enable then
-        self._proxy:MoveSceneObjectToNode(evevatorInfo.TriggerPlaceId, evevatorInfo.DefaultNodeId, 2)
+    if elevatorInfo.State == ElevatorState.Up then
+        self._proxy:SetSceneObjectInteractOneOptionActive(elevatorInfo.ElevatorPlaceId, elevatorInfo.UpOptionId)
     end
 end
 
-function XLevel4034Present:CallEvevator(evevatorInfo, placeId)
-    -- 从一楼叫回电梯
-    if placeId == evevatorInfo.FirstFloor then
-        evevatorInfo.EvevatorState = EvevatorState.Disable
-        self._proxy:LoadSceneObject(evevatorInfo.AirWallPlaceId)
-        self._proxy:MoveSceneObjectToNode(evevatorInfo.TriggerPlaceId, evevatorInfo.DefaultNodeId, evevatorInfo.MoveSpeed)
+---@param elevatorInfo XElevatorInfo
+function XLevel4034Present:TriggerElevatorMove(elevatorInfo)
+    if elevatorInfo.State == ElevatorState.Down then
+        self:StartElevatorMove(elevatorInfo, elevatorInfo.UpNodeId)
+    elseif elevatorInfo.State == ElevatorState.Up then
+        self:StartElevatorMove(elevatorInfo, elevatorInfo.DownNodeId)
     end
-    -- 从二楼叫回电梯
-    if placeId == evevatorInfo.SecondFloor then
-        evevatorInfo.EvevatorState = EvevatorState.Enable
-        self._proxy:LoadSceneObject(evevatorInfo.AirWallPlaceId)
-        self._proxy:MoveSceneObjectToNode(evevatorInfo.TriggerPlaceId, evevatorInfo.TargetNodeId, evevatorInfo.MoveSpeed)
+end
+
+---@param elevatorInfo XElevatorInfo
+function XLevel4034Present:StartElevatorMove(elevatorInfo, targetMoveNodeId)
+    if elevatorInfo.Moving then
+        return
     end
-    self:OptionEvevator(evevatorInfo)
+    self._proxy:LoadSceneObject(elevatorInfo.AirWallPlaceId)
+    self._proxy:MoveSceneObjectToNode(elevatorInfo.ElevatorPlaceId, targetMoveNodeId, elevatorInfo.MoveSpeed)
+    self._proxy:PlaySound(5500112, ETargetActorType.SceneObject, self._proxy:GetSceneObjectUUID(elevatorInfo.ElevatorPlaceId))
+    -- 关闭交互
+    self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, elevatorInfo.ElevatorPlaceId, false)
+    --播放特效
+    self._proxy:UnBindSceneObjectEffect(elevatorInfo.ElevatorPlaceId,"FxSkyGardenDianti03")
+    self._proxy:UnBindSceneObjectEffect(elevatorInfo.ElevatorPlaceId,"FxSkyGardenDianti06")
+    self:ElevatorEffect(elevatorInfo.ElevatorPlaceId,2)
+
+    elevatorInfo.CurMoveTargetNodeId = targetMoveNodeId
+    elevatorInfo.Moving = true
+end
+
+---@param elevatorInfo XElevatorInfo
+function XLevel4034Present:OnElevatorMoveStop(elevatorInfo)
+    if not elevatorInfo.Moving then
+        return
+    end
+    if elevatorInfo.CurMoveTargetNodeId ==  elevatorInfo.UpNodeId then
+        elevatorInfo.State = ElevatorState.Up
+    elseif elevatorInfo.CurMoveTargetNodeId ==  elevatorInfo.DownNodeId then
+        elevatorInfo.State = ElevatorState.Down
+    end
+    self:RefreshElevatorOption(elevatorInfo)
+    self._proxy:UnloadSceneObject(elevatorInfo.AirWallPlaceId)
+    -- 打开交互
+    self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, elevatorInfo.ElevatorPlaceId, true)
+    self._proxy:UnBindSceneObjectEffect(elevatorInfo.ElevatorPlaceId,"FxSkyGardenDianti04")
+    self:ElevatorEffect(elevatorInfo.ElevatorPlaceId,4)
+    elevatorInfo.Moving = false
+end
+
+---@param elevatorInfo XElevatorInfo
+function XLevel4034Present:CallElevator(elevatorInfo, placeId)
+    -- 从上层叫回电梯
+    if placeId == elevatorInfo.CallUpPlaceId and elevatorInfo.State == ElevatorState.Down then
+        self:StartElevatorMove(elevatorInfo, elevatorInfo.UpNodeId)
+    end
+    -- 从下层叫回电梯
+    if placeId == elevatorInfo.CallDownPlaceId and elevatorInfo.State == ElevatorState.Up then
+        self:StartElevatorMove(elevatorInfo, elevatorInfo.DownNodeId)
+    end
+end
+
+---电梯特效
+function XLevel4034Present:ElevatorEffect(ElevatorPlaceId, EffectState)
+    if EffectState == 1 then
+        self._proxy:BindSceneObjectEffect(ElevatorPlaceId,"FxSkyGardenDianti03",{ x = 0, y = 0, z = 0 },{ x = 0, y = 0, z = 0 },{ x = 1, y = 1, z = 1 })
+    end
+    if EffectState == 2 then
+        self._proxy:BindSceneObjectEffect(ElevatorPlaceId,"FxSkyGardenDianti04",{ x = 0, y = 0, z = 0 },{ x = 0, y = 0, z = 0 },{ x = 1, y = 1, z = 1 })
+    end
+    if EffectState == 3 then
+        self._proxy:BindSceneObjectEffect(ElevatorPlaceId,"FxSkyGardenDianti05",{ x = 0, y = 0, z = 0 },{ x = 0, y = 0, z = 0 },{ x = 1, y = 1, z = 1 })
+    end
+    if EffectState == 4 then
+        self._proxy:BindSceneObjectEffect(ElevatorPlaceId,"FxSkyGardenDianti06",{ x = 0, y = 0, z = 0 },{ x = 0, y = 0, z = 0 },{ x = 1, y = 1, z = 1 })
+    end
+end
+
+function XLevel4034Present:OnElevatorActorTriggerEnter(eventType, eventArgs)
+    if self._elevatorUpFloorCall2Info[eventArgs.HostSceneObjectPlaceId] then
+        self:CallElevator(self._elevatorUpFloorCall2Info[eventArgs.HostSceneObjectPlaceId], eventArgs.HostSceneObjectPlaceId)
+    end
+    if self._elevatorDownFloorCall2Info[eventArgs.HostSceneObjectPlaceId] then
+        self:CallElevator(self._elevatorDownFloorCall2Info[eventArgs.HostSceneObjectPlaceId], eventArgs.HostSceneObjectPlaceId)
+    end
+end
+
+function XLevel4034Present:OnElevatorNpcInteractStart(eventType, eventArgs)
+    if self._elevatorTrigger2Info[eventArgs.TargetPlaceId] then
+        self:TriggerElevatorMove(self._elevatorTrigger2Info[eventArgs.TargetPlaceId])
+    end
+end
+
+function XLevel4034Present:OnElevatorSceneObjectMoveStop(eventType, eventArgs)
+    if self._elevatorTrigger2Info[eventArgs.SceneObjectId] then
+        self:OnElevatorMoveStop(self._elevatorTrigger2Info[eventArgs.SceneObjectId])
+    end
 end
 --endregion
 

@@ -13,25 +13,27 @@ function XLevelScript9012:Init() --初始化逻辑
     self._proxy:RegisterEvent(EWorldEvent.NpcDie)                                       --事件注册：NPC死亡
     --self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)                                   --事件注册：加buff   (eventArgs.NpcUUID,eventArgs.BuffTableId)
 
-    self._localPlayerDeathTimes = 0                                                      -- 初始化本端玩家死亡次数
     self._spawnPoint = {}                                                               --获取点位序号，初始化中获取
     self._isFinishFight = false                                                         --完成战斗的flag
-   
+    self._localNpc = self._proxy:GetLocalPlayerNpcId()
     self._levelTime = 0 
-    self._isReadyToEnd = false                                                                 --关卡时间初始化
-    self._isPlayerWin = false                                                                   --结算结果
-    self._hasSettleLevel = false                                                                --是否已经上传过服务器结果了
+    self._finalDamageTime = 0
+    self._isReadyToEnd = false                                                         --关卡时间初始化
+    self._isPlayerWin = false                                                          --结算结果
+    self._hasSettleLevel = false                                                             --是否已经上传过服务器结果了
     self._currentPhase = 0                                                              --当前阶段
     self._lastPhase = 0                                                                  --上一阶段
     self._playerNpcList = {}                                                            --玩家列表
+    self.LimitTime = 1170
+    self.maxDamage = 99999999                                                           --最大伤害数值
     --拿到玩家列表和关卡编辑器中的所有点位
     self._playerNpcList = self._proxy:GetPlayerNpcList() --获取玩家列表
     for i = 1, 5 do
         self._spawnPoint[i] = self._proxy:GetSpot(i)    --获取关卡编辑器中配置好的点，1为BOSS出生点，2为场地中心，3~5是玩家出生点
     end
-    
+    self._damage = 0
      --初始化怪物配置
-    local monsterId = 8005   --白龙
+    local monsterId = 8012   --木桩白龙
     local monsterCamp= ENpcCampType.Camp2
     local monsterBornPos = self._spawnPoint[1]
     local monsterBornRota = {x = 0, y = 180, z = 0}
@@ -47,23 +49,18 @@ function XLevelScript9012:Init() --初始化逻辑
     -----------------创建怪物--------------------------------------------------------------------------------------------
     self.monster_UUID = self._proxy:GenerateNpc(monsterId, monsterCamp, monsterBornPos, monsterBornRota)
     self._proxy:SetNpcFaceToPosition(self.monster_UUID,self._spawnPoint[3])                --BOSS看向玩家1的位置
-    self._proxy:ApplyMagic(self.monster_UUID,self.NpcNanami,1000489,1) --锁血不死
+    self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,1000446,1) --锁血不死
     -----------------创建公共NPC--------------------------------------------------------------------------------------------
     self.commonNpc_UUID = self._proxy:GenerateNpc(commonNpcId, commonNpcCamp, commonNpcBornPos, commonNpcBornRota)
     self._proxy:SetTeamWorkSkillActive(true,300,5)
     self.playerDeadCountList = {}
     XLog.Debug("开启团队协作系统")
-    -----------------传送玩家位置--------------------------------------------------------------------------------------------
-    for i=1, 3 do
-        if self._proxy:CheckNpc(self._playerNpcList[i]) then
-            self._proxy:SetNpcPosition(self._playerNpcList[i], self._spawnPoint[i+2])                 --传送玩家1位置
-            self._proxy:SetNpcFaceToPosition(self._playerNpcList[i],self._spawnPoint[1])                  --设置看向BOSS的位置
-            self._proxy:StopNpcPerformAnim(self._playerNpcList[i])
-        end
-    end
+    
     ------------初始化配置----------------------------------------------------------------------------------------
-
+    self._proxy:RegisterEvent(EWorldEvent.NpcDamage)  
     XLog.Debug("初始化完毕")
+    self._proxy:SetLevelMemoryInt(40002,0)
+    self._proxy:SetLevelMemoryInt(40003,0)
 end
 
 --region 关卡阶段管理
@@ -110,7 +107,8 @@ function XLevelScript9012:OnEnterPhase(phase)
         self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=false})          --关闭白龙AI，做木桩
     elseif phase == Phase.Battle then
         XLog.Debug("进入Battle阶段")
-        --self._proxy:SetUiActive(UIObjectID,false)                                                                 --UI显示
+        self._proxy:SetLevelMemoryInt(40001,1)
+        --self._proxy:SetUiActive(UIObjectID,false)                            --UI显示
     elseif phase == Phase.WinDelay then
         XLog.Debug("进入胜利过场阶段")
         self._levelEndTime = self._levelTime
@@ -126,12 +124,43 @@ end
 ---@param dt number @ delta time
 function XLevelScript9012:OnUpdatePhase(dt)
     --当前关卡阶段需要一直执行的逻辑在这里实现（一般在这里跳转关卡阶段
-    if self._currentPhase == Phase.Start then                                                               
+    if self._currentPhase == Phase.Start then     
+        -----------------传送玩家位置--------------------------------------------------------------------------------------------
+        for i=1, 3 do
+            if self._proxy:CheckNpc(self._playerNpcList[i]) then
+                self._proxy:SetNpcPosition(self._playerNpcList[i], self._spawnPoint[i+2])                 --传送玩家1位置
+                self._proxy:SetNpcFaceToPosition(self._playerNpcList[i],self._spawnPoint[1])                  --设置看向BOSS的位置
+                self._proxy:StopNpcPerformAnim(self._playerNpcList[i])
+            end
+        end                                                          
         self:SetPhase(Phase.Show)  
     elseif self._currentPhase == Phase.Show then   
-             self:SetPhase(Phase.Battle)                                                                             --跳转到战斗阶段
+             self:SetPhase(Phase.Battle)                   --跳转到战斗阶段
     elseif self._currentPhase == Phase.Battle then
+        ------超时判负---------------
+        if self._levelTime >= (self.LimitTime) then        
+            XLog.Debug("战斗超时，判负处理")
+            self._isPlayerWin = false
+            self._isFinishFight = true
+            self._proxy:SetLevelMemoryInt(40001,100)
+            self:SetPhase(Phase.LosedStart)                                     --失败流程
+        elseif self._levelTime >= (self.LimitTime - 11) then 
+            XLog.Debug("超时倒计时")
+            self._proxy:SetLevelMemoryInt(60001,math.floor(self._levelTime))
+            self._proxy:SetLevelMemoryInt(40001,200)
+        end
+        ------正常胜负判断---------------
         self:CheckLevelEnd()                                                        --检测关卡结束
+        self.resetDamageTime = 10 - math.floor( self._levelTime - self._finalDamageTime )
+        if self._damage ~= 0  and  self.resetDamageTime <= 0 then 
+            XLog.Debug("重置伤害")
+            self._damage = 0
+            self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,9001019)--回满血
+        elseif self._damage == 0 then 
+            self._finalDamageTime = self._levelTime 
+        end
+        self._proxy:SetLevelMemoryInt(40002,math.floor(self._damage))
+        self._proxy:SetLevelMemoryInt(40003,self.resetDamageTime)
         if self._isFinishFight then                                                 --是否已经完成战斗的判断
             if self._isPlayerWin then
                 XLog.Debug("战斗阶段准备进入胜利流程")
@@ -169,7 +198,15 @@ end
 ---@param eventType number
 ---@param eventArgs userdata
 function XLevelScript9012:HandleEvent(eventType, eventArgs) --事件响应逻辑
-  
+    if eventType == EWorldEvent.NpcDamage then     --伤害事件
+        if eventArgs.LauncherId == self._localNpc then 
+            self._damage = self._damage + eventArgs.PhysicalDamage + eventArgs.ElementDamage + eventArgs.RealDamage
+            if self._damage >= self.maxDamage then 
+                self._damage = self.maxDamage
+            end
+        end
+        self._finalDamageTime = self._levelTime
+    end
 end
 
 function XLevelScript9012:CheckAllPlayerDead() --检查是否所有玩家都死亡了

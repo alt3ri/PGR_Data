@@ -416,7 +416,7 @@ local function CreateParagraph(paragraph, content)
     local tempContent = content:sub(paragraph.Head.EndPos + 1, paragraph.Tail.BeginPos - 1)
     local _, imgData = GetImg(tempContent)
     if imgData then
-        local texture = CS.UnityEngine.Texture2D(1, 1)
+        local texture = XTool.GenTexture2DReleaseManually(1, 1, nil, false)
         texture:LoadImage(CS.System.Convert.FromBase64String(imgData))
         return { Type = ParagraphType.Pic, Data = texture }
     end

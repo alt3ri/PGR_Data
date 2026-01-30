@@ -17,7 +17,8 @@ function XDlcRelinkRoom:CloseFightUiLoading()
 end
 
 function XDlcRelinkRoom:OnDisconnect()
-    XMVCA.XDlcRelink:CommonRunRelinkRoomUiHandle()
+    -- 断线后，打开界面没有意义，所以覆盖父类方法
+    --XMVCA.XDlcRelink:CommonRunRelinkRoomUiHandle()
 end
 
 function XDlcRelinkRoom:OnRoomLeaderTimeOut()

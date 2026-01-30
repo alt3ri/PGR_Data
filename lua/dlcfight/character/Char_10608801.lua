@@ -54,13 +54,14 @@ local XLuosaitaGardenState = XClass(XEcologyCharAIBaseState, "XLuosaitaGardenSta
 ---@overload
 function XLuosaitaGardenState:InitStateConfig()
     self.StateConfig = {}
-    self.StateConfig.StateEnum = StateEnum.Cinema
+    self.StateConfig.StateEnum = StateEnum.Garden
     self.StateConfig.StateAnim = "Drama_Stand_05"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 1
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
@@ -71,7 +72,7 @@ function XLuosaitaGardenState:InitStateConfig()
         },
         [EEcologyBubbleType.Near] = {
             Name = "301002",
-            TriggerDistance = 6,
+            TriggerDistance = 2.5,
             TriggerCD = 2,
             LoopTime = 3,
         },
@@ -101,8 +102,9 @@ function XLuosaitaGardenState:OnNpcInteractStart(eventArgs)
         return
     end
     self:PlayPerformAnim()
-    self:UpdateOptionActive()
     self.InteractTriggerCount = self.InteractTriggerCount + 1
+    self:UpdateOptionActive()
+
 end
 --endregion
 
@@ -117,11 +119,12 @@ function XLuosaitaCrossPlazaState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.CrossPlaza
     self.StateConfig.StateAnim = "Drama_Stand_16"
-    self.StateConfig.TriggerId = 2
-    self.StateConfig.ShowOptionId = 2
+    self.StateConfig.TriggerId = 1
+    self.StateConfig.ShowOptionId = 3
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
@@ -145,11 +148,12 @@ function XLuosaitaArtGalleryState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.ArtGallery
     self.StateConfig.StateAnim = "Drama_Luosaita_Sad"
-    self.StateConfig.TriggerId = 3
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 4
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
@@ -185,11 +189,12 @@ local XLuosaitaFindPathState = XClass(XEcologyCharAIFindPathState, "XLuosaitaFin
 function XLuosaitaFindPathState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.FindPath
-    self.StateConfig.TriggerId = 4
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 5
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
 
     self.StateConfig.PathBubbleName = "301006"

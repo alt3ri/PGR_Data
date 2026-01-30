@@ -23,6 +23,8 @@ XPurchaseManagerCreator = function()
     local WeekCardData = {}
 
     local PurchaseSelectionData = nil -- 礼包自选数据，仅UI使用，不长期缓存
+    
+    local PurchaseBuyCustomParams = {} -- 礼包购买传给服务端的自定义数据，因为不方便每个入口层层传参，所以统一在Manager内管理
 
     --不显示在研发按钮红点的UiType
     local RejectFreeLBUiType = {
@@ -34,6 +36,8 @@ XPurchaseManagerCreator = function()
         XPurchaseManager.GiftValidCb = function(uiTypeList, cb)
             XDataCenter.PurchaseManager.PurchaseGiftValidTimeCb(uiTypeList, cb)
         end
+
+        PurchaseBuyCustomParams = {}
     end
 
     function XPurchaseManager.InitPurchaseData(purchaseInfoList)
@@ -425,6 +429,7 @@ XPurchaseManagerCreator = function()
             RandomSelectGoodsIds = randomSelectGoodsIds,
             SelectGroups = selectGroups,
             SelectGroupGoodsIds = selectGroupGoodsIds,
+            Param = PurchaseBuyCustomParams,
         }
 
         XNetwork.Call(PurchaseRequest.PurchaseReq, reqContent, function(res)
@@ -1837,6 +1842,20 @@ XPurchaseManagerCreator = function()
             return result
         end
         return false
+    end
+    
+    function XPurchaseManager.SetPurchaseBuyCustomParam(key, value)
+        PurchaseBuyCustomParams[key] = value
+    end
+    
+    function XPurchaseManager.ClearPurchaseBuyCustomParam(key)
+        if key then
+            PurchaseBuyCustomParams[key] = nil
+        else
+            if not XTool.IsTableEmpty(PurchaseBuyCustomParams) then
+                PurchaseBuyCustomParams = {}
+            end
+        end
     end
 
     XPurchaseManager.Init()

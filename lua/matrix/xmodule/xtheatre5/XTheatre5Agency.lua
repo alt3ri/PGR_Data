@@ -78,6 +78,7 @@ function XTheatre5Agency:ClearDataInGame()
 
     self._LockMissionFinishPop = nil
     self._LockMissionReward = nil
+    self._LockMissionChoose = nil
 end
 
 --region overrride
@@ -448,6 +449,8 @@ function XTheatre5Agency:OnNotifyTheatre5ActivityData(data)
 
     self._Model:SetCharacterWinGameCountData(theatre5DataDb.CommonFightCnt)
     self._Model:UpdateRelicCollects(theatre5DataDb.RelicCollects)
+    
+    self.PVEAgency:AfterActivityDataNotify()
 end
 
 function XTheatre5Agency:OnNotifyTheatre5UnlockCharacter(data)
@@ -547,8 +550,15 @@ end
 
 --- 选择任务
 function XTheatre5Agency:RequestTheatre5MissionChoose(positionId, cb)
+    if self._LockMissionChoose then
+        return
+    end
+
+    self._LockMissionChoose = true
     
     XNetwork.Call("Theatre5MissionChooseRequest", { PositionId = positionId }, function(res)
+        self._LockMissionChoose = false
+        
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return
@@ -556,6 +566,11 @@ function XTheatre5Agency:RequestTheatre5MissionChoose(positionId, cb)
 
         self._Model.CurAdventureData:ClearChooseMissionsAfterEndChoose()
         self._Model.CurAdventureData:UpdateCurMissioning(res.ChooseMission)
+        -- 更新已解锁任务客户端缓存
+        if res.ChooseMission then
+            local bounty = res.ChooseMission.MissionBounty.Bounty
+            self._Model.CurAdventureData:AddChooseMissionBounty(bounty)
+        end
         
         self:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_CUR_MISSION)
         if cb then

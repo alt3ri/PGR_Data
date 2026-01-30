@@ -2,6 +2,7 @@
 ---@class XUiGridBWBranchResult : XUiNode
 ---@field _Control XBigWorldQuestControl
 ---@field Parent XUiBigWorldTaskMainInvitation
+---@field _GridCommon XUiGridBWItem
 local XUiGridBWBranchResult = XClass(XUiNode, "XUiGridBWBranchResult")
 
 function XUiGridBWBranchResult:OnStart()
@@ -19,10 +20,8 @@ function XUiGridBWBranchResult:Refresh(questId, resultId, index)
     self.TxtName.gameObject:SetActiveEx(isFinish)
     self.RImgEnding.gameObject:SetActiveEx(isFinish)
     self.PanelLock.gameObject:SetActiveEx(not isFinish)
-    if not isFinish then
-        self:RefreshReward(self._Control:GetInviteQuestResultRewardId(resultId))
-    else
-        self._GridCommon:Close()
+    self:RefreshReward(self._Control:GetInviteQuestResultRewardId(resultId))
+    if isFinish then
         self.TxtName.text = self._Control:GetInviteQuestResultName(resultId)
         self.RImgEnding:SetRawImage(self._Control:GetInviteQuestResultBanner(resultId))
     end
@@ -40,6 +39,7 @@ function XUiGridBWBranchResult:RefreshReward(rewardId)
         local rewardList = XRewardManager.GetRewardList(rewardId)
         if not XTool.IsTableEmpty(rewardList) then
             self._GridCommon:Update(rewardList[1])
+            self._GridCommon:RefreshReceive(XMVCA.XBigWorldQuest:CheckInviteResultFinish(self._ResultId))
         else
             self._GridCommon:Close()
         end

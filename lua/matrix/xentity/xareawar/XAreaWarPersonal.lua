@@ -288,12 +288,12 @@ end
 ---@return number, number
 --------------------------
 function XAreaWarPersonal:GetRescueQuestCount()
-    local finish, undone = 0, 0
+    local rescueCount = XDataCenter.AreaWarManager.GetRescueCount()
+    local finish = self._MaxRescueRewardCount - rescueCount
+    local undone = 0
     for _, data in pairs(self._QuestDict) do
         if data:IsRescue() then
-            if data:IsFinsh() then
-                finish = finish + 1
-            else
+            if not data:IsFinsh() then
                 undone = undone + 1
             end
         end

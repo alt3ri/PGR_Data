@@ -12,7 +12,6 @@ end
 
 function XUiDlcRelinkPopupEquipDecomposeResult:OnStart(rewardGoodsList)
     self:Refresh(rewardGoodsList)
-    self:PlayAnimation("AniObtain")
 end
 
 function XUiDlcRelinkPopupEquipDecomposeResult:OnEnable()

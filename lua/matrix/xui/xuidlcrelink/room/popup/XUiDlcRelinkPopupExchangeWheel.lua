@@ -371,11 +371,14 @@ function XUiDlcRelinkPopupExchangeWheel:ApplyEmojiToWheel(targetIndex, emojiId, 
         self.TempEmojiWheelIds[targetIndex] = emojiId
         self.TempEmojiWheelIds[originIndex] = prev or 0
     else
-        -- 列表拖入：若其它槽已有则清空旧槽
+        -- 列表拖入：交换或移动
         if existedIndex and existedIndex ~= targetIndex then
-            self.TempEmojiWheelIds[existedIndex] = 0
+            local prev = self.TempEmojiWheelIds[targetIndex]
+            self.TempEmojiWheelIds[targetIndex] = emojiId
+            self.TempEmojiWheelIds[existedIndex] = prev or 0
+        else
+            self.TempEmojiWheelIds[targetIndex] = emojiId
         end
-        self.TempEmojiWheelIds[targetIndex] = emojiId
     end
     self:RefreshPanelWheel()
 end

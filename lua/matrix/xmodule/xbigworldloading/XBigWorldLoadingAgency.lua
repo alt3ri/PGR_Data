@@ -178,4 +178,12 @@ function XBigWorldLoadingAgency:IsShowLoading(loadingType)
     return XMVCA.XBigWorldUI:IsShow(uiName)
 end
 
+function XBigWorldLoadingAgency:IsShowAnyLoading()
+    return XMVCA.XBigWorldUI:IsShow("UiBigWorldLoading") 
+            or XMVCA.XBigWorldUI:IsShow("UiBigWorldShowLoading") 
+            or XMVCA.XBigWorldUI:IsShow("UiBigWorldBlackMaskLoading")
+end
+
+
+
 return XBigWorldLoadingAgency

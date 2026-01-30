@@ -52,15 +52,22 @@ function XUiDlcMultiPlayerSkillDescGrid:SetUsing(isUsing, skillIndex)
     for _, panel in ipairs(self.PanelUsingList) do
         panel:GetObject("ImgYuan").gameObject:SetActiveEx(isUsing)
         panel:GetObject("ImgNum").gameObject:SetActiveEx(isUsing)
+ 
         if isUsing and skillIndex then
             panel:GetObject("TxtNum").text = tostring(skillIndex)
         end
     end
+    self.PanelUsingPress:GetObject("ImgChange").gameObject:SetActiveEx(not isUsing)
+    self.PanelUsingPress:GetObject("ImgChangeY").gameObject:SetActiveEx(isUsing)
 end
 
 function XUiDlcMultiPlayerSkillDescGrid:SetChangeState(isChange)
     for _, panel in ipairs(self.PanelUsingList) do
+        if panel ==  self.PanelUsingPress then
+            goto continue
+        end
         panel:GetObject("ImgChange").gameObject:SetActiveEx(isChange)
+        ::continue::
     end
 end
 
@@ -80,6 +87,14 @@ function XUiDlcMultiPlayerSkillDescGrid:OnBtnBuffIconClick()
     if self._Callback then
         self._Callback(self)
     end
+end
+
+function XUiDlcMultiPlayerSkillDescGrid:SetNormalState()
+    self.StateCtrl:ChangeState("normal")
+end
+
+function XUiDlcMultiPlayerSkillDescGrid:SetChangeSkillState()
+    self.StateCtrl:ChangeState("changeSkill")
 end
 
 return XUiDlcMultiPlayerSkillDescGrid

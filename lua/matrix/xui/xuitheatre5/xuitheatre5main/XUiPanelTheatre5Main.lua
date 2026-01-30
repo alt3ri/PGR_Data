@@ -381,14 +381,19 @@ function XUiPanelTheatre5Main:_ShowWhenNotInTime()
         self.BtnRetreat.gameObject:SetActiveEx(false)
     end
     
+    local timeId = self._Control.PVPControl:GetFuturePVPActivityTimeId()
+
+    if not XTool.IsNumberValidEx(timeId) then
+        return
+    end
+    
     -- 判断时间，如果是未来会开启，则显示静态文本：x日后开启
-    local startTime = XFunctionManager.GetStartTimeByTimeId(self.PVPTimeId)
+    local startTime = XFunctionManager.GetStartTimeByTimeId(timeId)
     local now = XTime.GetServerNowTimestamp()
 
     if now < startTime then
         local startLeftTime = startTime - now
-        local leftTimeStr = math.ceil(startLeftTime / Day)
-
+        local leftTimeStr = XUiHelper.GetTime(startLeftTime, XUiHelper.TimeFormatType.ACTIVITY)
         -- 将时间定格下来，只在重新进入界面时刷新
         self._LeftTimeStr = leftTimeStr
         

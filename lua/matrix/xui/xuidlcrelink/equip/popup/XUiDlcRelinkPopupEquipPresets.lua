@@ -14,9 +14,7 @@ function XUiDlcRelinkPopupEquipPresets:OnStart(characterId)
 end
 
 function XUiDlcRelinkPopupEquipPresets:OnEnable()
-    local usedPresetCount = self._Control:GetUsedEquipPresetCount()
-    local maxPresetCount = self._Control:GetEquipPresetMaxNum()
-    self.TxtTitle.text = string.format("%d/%d", usedPresetCount, maxPresetCount)
+    self:RefreshPresetCount()
     self:SetupDynamicTable()
 end
 
@@ -28,8 +26,15 @@ end
 
 function XUiDlcRelinkPopupEquipPresets:OnNotify(event, ...)
     if event == XEventId.EVENT_DLC_RELINK_SYNC_EQUIP_PRESET then
+        self:RefreshPresetCount()
         self:SetupDynamicTable()
     end
+end
+
+function XUiDlcRelinkPopupEquipPresets:RefreshPresetCount()
+    local usedPresetCount = self._Control:GetUsedEquipPresetCount()
+    local maxPresetCount = self._Control:GetEquipPresetMaxNum()
+    self.TxtTitle.text = string.format("%d/%d", usedPresetCount, maxPresetCount)
 end
 
 function XUiDlcRelinkPopupEquipPresets:InitDynamicTable()

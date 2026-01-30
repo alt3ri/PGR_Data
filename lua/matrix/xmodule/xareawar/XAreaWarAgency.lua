@@ -249,15 +249,26 @@ end
 
 -- 检测是否第一次进入玩法
 function XAreaWarAgency:CheckFirstEnter()
+    local nowTime = XTime.GetServerNowTimestamp()
+    if self.LastCheckFirstEnterTime and (nowTime - self.LastCheckFirstEnterTime) < 1 then
+        return
+    end
+    
     -- 配合服务端把收藏室从0级升到1级，服务端需要记录1级的有效人数
     local itemRoom = self._Model:GetItemRoom()
     if itemRoom:GetLv() == 0 then
+        self.LastCheckFirstEnterTime = nowTime
         self:RequestAreaWar4ItemRoomLevelUp()
     end
 end
 
--- 检测结算交易行订单
+-- 检测结算交易行订单，切换页签和定时器都会触发检测
 function XAreaWarAgency:CheckSettleOrders()
+    local nowTime = XTime.GetServerNowTimestamp()
+    if self.LastRequestSellTime and (nowTime - self.LastRequestSellTime) < 1 then
+        return
+    end
+    
     if XDataCenter.GuideManager.CheckIsInGuide() then
         return
     end
@@ -265,7 +276,8 @@ function XAreaWarAgency:CheckSettleOrders()
     local itemRoom = self._Model:GetItemRoom()
     local orderIds = itemRoom:GetSettleOrderIds()
     if #orderIds == 0 then return end
-    
+
+    self.LastRequestSellTime = nowTime
     self:RequestAreaWar4AuctionSell(orderIds, function()
         if not XLuaUiManager.IsUiShow("UiAreaWarPopupRecord") then
             XLuaUiManager.Open("UiAreaWarPopupRecord")

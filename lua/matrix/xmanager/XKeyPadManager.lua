@@ -11,11 +11,17 @@ local RequestProto = {
 -- 是否已经完成首次同步
 local _HasSyncedToServer = false
 
+-- 是否有服务端按键设置数据（用于判断 IsOpenUiFightCustomRed）
+local _HasServerKeyPadData = false
+
 -- Debug模式：禁止同步功能（用于创建新号并设置本地数据，不同步到服务端）
 local _DebugDisableSync = false
 
 -- Debug模式：是否输出日志和生成报告（默认关闭）
 local _DebugEnableLog = false
+
+-- 延时发送定时器ID（用于避免间隔太短导致服务端报错）
+local _SyncTimerId = nil
 
 ---Debug日志输出（仅在Debug模式下输出）
 ---@param message string 日志消息
@@ -117,6 +123,12 @@ end
 ---初始化服务端数据
 ---@param keyPadSetting table 服务端返回的按键设置数据
 function XKeyPadManager.InitFromServer(keyPadSetting)
+    -- PC模式：不同步按键设置，只在本地保存
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
+        DebugLog("[KeyPad] InitFromServer: [PC模式] 跳过从服务端初始化数据，只在本地保存")
+        return
+    end
+    
     -- Debug模式：禁止同步功能
     if _DebugDisableSync then
         DebugLog("[KeyPad] InitFromServer: [Debug模式] 同步功能已禁用，跳过初始化服务端数据")
@@ -138,6 +150,22 @@ function XKeyPadManager.InitFromServer(keyPadSetting)
     
     -- 服务端返回的字段名是 PlayerKeyPadSettingList，需要转换为 KeyPadCustomDataList
     local keyPadCustomDataList = keyPadSetting.PlayerKeyPadSettingList or keyPadSetting.KeyPadCustomDataList
+    
+    -- 判断是否有服务端数据（用于 IsOpenUiFightCustomRed）
+    local hasData = false
+    if keyPadCustomDataList then
+        local count = 0
+        if type(keyPadCustomDataList) == "table" then
+            count = #keyPadCustomDataList
+        else
+            count = keyPadCustomDataList.Count
+        end
+        hasData = count > 0 or (keyPadSetting.CurSchemeId ~= nil and keyPadSetting.CurSchemeId >= 0)
+    else
+        hasData = keyPadSetting.CurSchemeId ~= nil and keyPadSetting.CurSchemeId >= 0
+    end
+    _HasServerKeyPadData = hasData
+    
     if keyPadCustomDataList then
         -- 检查是Lua table还是C# List
         local count = 0
@@ -171,12 +199,18 @@ function XKeyPadManager.InitFromServer(keyPadSetting)
     
     -- 标记已完成同步
     _HasSyncedToServer = true
-    DebugLog("[KeyPad] InitFromServer: 初始化服务端数据完成")
+    DebugLog(string.format("[KeyPad] InitFromServer: 初始化服务端数据完成，HasServerKeyPadData = %s", tostring(_HasServerKeyPadData)))
 end
 
 ---首次同步本地数据到服务端
 ---触发条件：版本更新后首次登录，服务端数据为空，本地存在缓存数据
 function XKeyPadManager.TryFirstSync()
+    -- PC模式：不同步按键设置，只在本地保存
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
+        DebugLog("[KeyPad] TryFirstSync: [PC模式] 跳过首次同步，只在本地保存")
+        return
+    end
+    
     -- Debug模式：禁止同步功能
     if _DebugDisableSync then
         DebugLog("[KeyPad] TryFirstSync: [Debug模式] 同步功能已禁用，跳过同步")
@@ -231,6 +265,8 @@ function XKeyPadManager.TryFirstSync()
     DebugLog("[KeyPad] TryFirstSync: 发送 SyncPlayerKeyPadSettingRequest 请求")
     XNetwork.Call(RequestProto.SyncPlayerKeyPadSettingRequest, req, function(res)
         if res.Code == XCode.Success then
+            -- 同步成功，标记有服务端数据
+            _HasServerKeyPadData = true
             -- 同步成功，清除本地缓存（可选，保留作为备份）
             -- CS.XCustomUi.Instance:ClearLocalKeyPadSetting()
             _HasSyncedToServer = true
@@ -243,7 +279,14 @@ end
 
 ---同步当前按键设置到服务端
 ---在保存按键设置时调用
-function XKeyPadManager.SyncToServer()
+---实际执行同步到服务端的逻辑
+local function DoSyncToServer()
+    -- PC模式：不同步按键设置，只在本地保存
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
+        DebugLog("[KeyPad] SyncToServer: [PC模式] 跳过同步到服务端，只在本地保存")
+        return
+    end
+    
     -- Debug模式：禁止同步功能
     if _DebugDisableSync then
         DebugLog("[KeyPad] SyncToServer: [Debug模式] 同步功能已禁用，跳过同步")
@@ -314,11 +357,29 @@ function XKeyPadManager.SyncToServer()
     DebugLog("[KeyPad] SyncToServer: 发送 RecordPlayerKeyPadSettingRequest 请求")
     XNetwork.Call(RequestProto.RecordPlayerKeyPadSettingRequest, req, function(res)
         if res.Code == XCode.Success then
+            -- 同步成功，标记有服务端数据
+            _HasServerKeyPadData = true
             DebugLog("[KeyPad] SyncToServer: 同步按键设置到服务端成功")
         else
             DebugError(string.format("[KeyPad] SyncToServer: 同步按键设置到服务端失败，错误码 = %s", tostring(res.Code)))
         end
     end)
+end
+
+function XKeyPadManager.SyncToServer()
+    -- 如果已有待发送的定时器，先取消它
+    if _SyncTimerId then
+        XScheduleManager.UnSchedule(_SyncTimerId)
+        _SyncTimerId = nil
+        DebugLog("[KeyPad] SyncToServer: 取消之前的延时发送任务")
+    end
+    
+    -- 延时0.5秒后发送，避免间隔太短导致服务端报错
+    DebugLog("[KeyPad] SyncToServer: 设置延时发送，0.5秒后执行")
+    _SyncTimerId = XScheduleManager.ScheduleOnce(function()
+        _SyncTimerId = nil
+        DoSyncToServer()
+    end, 500)
 end
 
 ---清除本地缓存（用于测试第一次登录）
@@ -358,6 +419,36 @@ end
 ---@return boolean
 function XKeyPadManager.IsDebugEnableLog()
     return _DebugEnableLog
+end
+
+---获取 IsOpenUiFightCustomRed（通过判断是否有服务端按键设置数据）
+---如果有服务端数据，说明用户已经打开过布局设置
+---如果没有服务端数据，检查是否有本地数据（兼容旧数据）
+---@return boolean
+function XKeyPadManager.IsOpenUiFightCustomRed()
+    -- 如果有服务端数据，说明用户已经打开过布局设置
+    if _HasServerKeyPadData then
+        return true
+    end
+    
+    -- 如果没有服务端数据，检查是否有本地数据（兼容旧数据）
+    -- 如果C#层有本地数据，也认为用户已经打开过
+    if CS.XCustomUi.Instance and CS.XCustomUi.Instance.HasLocalKeyPadSetting then
+        local hasLocalData = CS.XCustomUi.Instance:HasLocalKeyPadSetting()
+        if hasLocalData then
+            return true
+        end
+    end
+    
+    -- 检查C#层的旧PlayerPrefs数据（兼容迁移）
+    if CS.UnityEngine.PlayerPrefs.HasKey("IsOpenUiFightCustomRed") then
+        local value = CS.UnityEngine.PlayerPrefs.GetInt("IsOpenUiFightCustomRed", 0)
+        if value ~= 0 then
+            return true
+        end
+    end
+    
+    return false
 end
 
 -- ============================================================================

@@ -107,6 +107,7 @@ function XUiPhotographPortrait:OnDestroy()
     if self.SignBoardPlayer then
         self.SignBoardPlayer:OnDestroy()
     end
+    self.SwitchableScene:OnDestory()
     CS.XResolutionManager.SetIsLandscape(true) 
     -- CS.UnityEngine.Screen.orientation = self.Orientation
     -- 这里不能还原成原来的值，会变成锁死方向。必须改成可自动旋转
@@ -901,11 +902,12 @@ function XUiPhotographPortrait:OnBtnPhotographClick()
             self.CameraCupture.depth = 0
         end
     end
-    XCameraHelper.ScreenShotNew(self.ImgPicture, shotCamera, function()
+    XCameraHelper.ScreenShotNew(self.ImgPicture, shotCamera, function(screenShot2)
+        self:AddCacheTexture(screenShot2, 1)
         -- 将最终图案渲染到ImagePhoto中
         XCameraHelper.ScreenShotNew(self.ImagePhoto, self.CameraCupture, function(screenShot)
             CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Normal, CS.XUiManager.Instance.UiCamera)
-            self.ShareTexture = screenShot
+            self:AddCacheTexture(screenShot, 2)
             self.PhotoName = string.format("[%s]_Portrait_%s", tostring(XPlayer.Id), XTime.GetServerNowTimestamp())
 
             self:PlayAnimation("Shanguang", function()
@@ -952,6 +954,7 @@ function XUiPhotographPortrait:RefreshViewActive(show)
     else
         self.BtnSet.gameObject:SetActiveEx(show)
     end
+    self.PanelSceneChange.gameObject:SetActiveEx(show)
 end
 
 function XUiPhotographPortrait:RefreshBottom(show, ctrlPhotograph)
@@ -1051,6 +1054,11 @@ function XUiPhotographPortrait:UpdateBatteryMode()
     --    return
     --end
 
+    local curSelectSceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
+    if XMVCA.XSwitchableScene:IsSceneGyro(curSelectSceneId) then
+        return
+    end
+
     local animationRoot = self.UiSceneInfo.Transform:Find("Animations")
     if XTool.UObjIsNil(animationRoot) then return end
 
@@ -1064,7 +1072,6 @@ function XUiPhotographPortrait:UpdateBatteryMode()
     fullTimeLine.gameObject:SetActiveEx(false)
     chargeTimeLine.gameObject:SetActiveEx(false)
     
-    local curSelectSceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
     local particleGroupName = XDataCenter.PhotographManager.GetSceneTemplateById(curSelectSceneId).ParticleGroupName
 
     local chargeAnimator

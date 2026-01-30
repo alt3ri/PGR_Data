@@ -110,7 +110,7 @@ function XUiTheatre5GridTaskDetail:RefreshDetail()
 
     -- 奖励等级
     if self.TxtLv then
-        self.TxtLv.text = XMVCA.XTheatre5:GetClientConfig('MissionLvFormat', 1, level)
+        self.TxtLv.text = self._Control.MissionControl:GetClientConfigMissionLvFormat(level, isMaxLevel)
     end
     
     -- 显示链接的花费描述
@@ -158,6 +158,28 @@ function XUiTheatre5GridTaskDetail:OnBtnRefreshClick()
         self:RefreshDetail()
         self:RefreshBtnsShow()
     end)
+end
+
+function XUiTheatre5GridTaskDetail:CloseWithAnimation(cb)
+    local isAnimaStart = false
+    
+    self:PlayAnimationWithMask('Disable', function() 
+        self:Close()
+
+        if cb then
+            cb()
+        end
+    end, function() 
+        isAnimaStart = true
+    end)
+
+    if not isAnimaStart then
+        self:Close()
+
+        if cb then
+            cb()
+        end
+    end
 end
 
 return XUiTheatre5GridTaskDetail

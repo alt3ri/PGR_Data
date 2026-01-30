@@ -17,6 +17,17 @@ XTool = XTool or
             _IsAutoRefreshOnNextFrame = true
         }
 
+XTool.GenTexture2DReleaseManually = function(width, height, textureFormat, mipChain)
+    if mipChain == nil then
+        mipChain = true
+    end
+    local tex = CS.UnityEngine.Texture2D(width, height, textureFormat or CS.UnityEngine.TextureFormat.RGBA32, mipChain)
+    if XMain.IsDebug then
+        tex.name = string.gsub(debug.traceback(), "\n", " ")
+    end
+    return tex
+end
+
 XTool.UObjIsNil = function(uobj)
     return uobj == nil or not uobj:Exist()
 end

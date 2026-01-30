@@ -1193,6 +1193,11 @@ function XFavorabilityAgency:SceneAnimStop()
     end
 end
 
+function XFavorabilityAgency:SceneAnimDestory()
+    if self._Model._sceneAnim then
+        self._Model._sceneAnim:Destory()
+    end
+end
 
 function XFavorabilityAgency:GetSignBoardConfig()
     return self._Model:GetSignBoardConfig()

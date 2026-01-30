@@ -2253,6 +2253,30 @@ function XCharacterAgency:GetCharacterInitialQuality(characterId)
     return self:GetCharMinQuality(characterId)
 end
 
+---判断指定元素下是否存在特定职业的角色（基于全角色模板表）
+---@param elementId number 元素ID (XEnumConst.CHARACTER.Element)
+---@param careerId number 职业类型 (XEnumConst.CHARACTER.Career)
+---@return boolean
+function XCharacterAgency:CheckHasCareerByElement(elementId, careerId)
+    local allCharacters = self:GetModelCharacter() -- 获取 Character.tab 全表
+    if not allCharacters then
+        return false
+    end
+
+    for _, config in pairs(allCharacters) do
+        -- 1. 匹配出生元素
+        if config.Element == elementId then
+            -- 2. 匹配职业类型
+            -- config.Career 是 Career 表的 ID，需要通过 GetNpcTypeTemplate 拿到对应的枚举 Type
+            local careerConfig = self:GetNpcTypeTemplate(config.Career)
+            if careerConfig and careerConfig.Type == careerId then
+                return true
+            end
+        end
+    end
+    return false
+end
+
 -- 职业类型(不是自己的角色也可以用)
 function XCharacterAgency:GetCharacterCareer(characterId)
     if XRobotManager.CheckIsRobotId(characterId) then

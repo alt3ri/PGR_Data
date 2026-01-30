@@ -149,24 +149,34 @@ end
 ---@return boolean, XBigWorldObjectiveData|XBigWorldObjectiveData[]
 function XQuestOperation:GetObjective(step)
     local dict = step:GetObjectiveDict()
-    local isSerial = XMVCA.XBigWorldQuest:IsSerialStep(step:GetId())
-    local isParallel = XMVCA.XBigWorldQuest:IsParallelStep(step:GetId())
+    local stepId = step:GetId()
+    local isSerial = XMVCA.XBigWorldQuest:IsSerialStep(stepId)
+    local isParallel = XMVCA.XBigWorldQuest:IsParallelStep(stepId)
     local data
+    local State = XMVCA.XBigWorldQuest.ObjectiveState
     if isParallel then
         data = {}
-    end
-    local State = XMVCA.XBigWorldQuest.ObjectiveState
-    for _, objective in pairs(dict) do
-        if isSerial then
+        local csList = XMVCA.XBigWorldQuest:GetStepObjectiveIdsByStepId(stepId)
+        for i = 0, csList.Count - 1 do
+            local objectiveId = csList[i]
+            local objective = dict[objectiveId]
+            if not objective then
+                objective = XMVCA.XBigWorldQuest:CreateTempFinishedObjectiveData(step, objectiveId)
+            end
+            local tempData
+            if objective then
+                tempData = self:CreateObjective(objective)
+            end
+            if tempData then
+                data[#data + 1] = tempData
+            end
+        end
+    elseif isSerial then
+        for _, objective in pairs(dict) do
             local state = objective:GetObjectiveState()
             if state ~= State.Finished and state ~= State.InActive then
                 data = self:CreateObjective(objective)
                 break
-            end
-        elseif isParallel then
-            local temp = self:CreateObjective(objective)
-            if temp then
-                data[#data + 1] = temp
             end
         end
     end

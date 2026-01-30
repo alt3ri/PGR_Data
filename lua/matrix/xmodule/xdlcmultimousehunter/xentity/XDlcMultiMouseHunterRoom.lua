@@ -20,8 +20,8 @@ function XDlcMultiMouseHunterRoom:CloseFightUiLoading()
 end
 
 function XDlcMultiMouseHunterRoom:OnDisconnect()
-    XLuaUiManager.Open("UiDlcSettleLose")
-    XLuaUiManager.SafeClose("UiDlcMultiPlayerRoomCute")
+    -- XLuaUiManager.Open("UiDlcSettleLose")
+    -- XLuaUiManager.SafeClose("UiDlcMultiPlayerRoomCute")
 end
 
 function XDlcMultiMouseHunterRoom:OnRoomLeaderTimeOut()

@@ -19,7 +19,7 @@ function XUiDlcRelinkPopupSkillDetail:OnAwake()
     self:RegisterUiEvents()
 
     self.IsShowHurtBubble = false
-    self.IsSimpleDesc = true
+    self.IsSimpleDesc = not self._Control:GetSkillDescIsDetail()
 
     self.SecondSkillIds = {}
     self.CurSecondSkillIndex = 1
@@ -105,7 +105,7 @@ end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshSecondSkill()
     self.CurSecondSkillId = self.SecondSkillIds[self.CurSecondSkillIndex]
-    self.TxtSecondTitle.text = self.CurSecondSkillId == self.SkillId and self._Control:GetClientConfig("SkillDetailSecondTitle") or self._Control:GetSkillDescName(self.CurSecondSkillId)
+    self.TxtSecondTitle.text = self._Control:GetSkillDescSubtitle(self.CurSecondSkillId)
     self:RefreshTagList()
     self:RefreshDesc()
     self:RefreshVideo()
@@ -242,6 +242,9 @@ function XUiDlcRelinkPopupSkillDetail:OnBtnDescClick()
     end
 
     self.IsSimpleDesc = not self.IsSimpleDesc
+    
+    self._Control:SetSkillDescIsDetail(not self.IsSimpleDesc)
+    
     self:RefreshDesc()
 end
 

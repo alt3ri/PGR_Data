@@ -101,12 +101,17 @@ function XUiPanelDlcRelinkCharacterRightOther:OnEquipGridCallBack(grid)
     grid:SetSelect(true)
     self.CurSelectGrid = grid
     self.CurSelectEquipUid = equipUid
-
+    -- 响应穿透事件屏蔽
+    for _, equipGrid in pairs(self.EquipmentGridList) do
+        equipGrid:SetRespondPassEvent(equipGrid ~= grid)
+    end
+    -- 打开气泡详情
     local mainEquipUid = self._Control.OtherMemberControl:GetEquipWearSlotIndexByEquipUid(equipUid)
     XLuaUiManager.Open("UiDlcRelinkBubbleEquipDetail", equipUid, self.PanelEquipment.transform, handler(self, self.OnBubbleEquipDetailClose), {
         SlotIndex = slotIndex,
         MainEquipUid = mainEquipUid,
-        IsNotSelf = true
+        IsNotSelf = true,
+        IsEventPass = true,
     })
 end
 
@@ -174,8 +179,8 @@ function XUiPanelDlcRelinkCharacterRightOther:RefreshInfo()
     -- 角色信息
     local characterId = self.Member:GetCharacterId()
     local styleType = self.Member:GetStyleType()
-    self.TxtName01.text = XMVCA.XCharacter:GetCharacterName(characterId)
-    self.TxtName02.text = XMVCA.XCharacter:GetCharacterTradeName(characterId)
+    self.TxtName01.text = XMVCA.XCharacter:GetCharacterFullNameStr(characterId)
+    self.TxtName02.text = self._Control:GetCharacterStyleName(characterId, styleType)
     -- 角色职业图标和名称
     local occupationIcon = self._Control:GetCharacterOccupationIconTwo(characterId, styleType)
     if not string.IsNilOrEmpty(occupationIcon) then

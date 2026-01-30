@@ -80,7 +80,7 @@ end
 
 function XUiBattleRoleRoomCaptain:OnCloseClicked()
     local viewModel = self.CharacterViewModelDic[self.CurrentCaptainPos]
-    if viewModel and self.ChangeTimes > 1 then
+    if viewModel and self.ChangeTimes > 0 then
         local id = viewModel:GetId()
         if XRobotManager.CheckIsRobotId(id) then
             id = XRobotManager.GetCharacterId(id)

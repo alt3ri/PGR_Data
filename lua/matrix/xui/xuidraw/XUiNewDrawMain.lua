@@ -977,6 +977,13 @@ function XUiNewDrawMain:CheckIsNewDraw()
     return XDataCenter.DrawManager:CheckIsNewDraw(self.GroupId)
 end
 
+function XUiNewDrawMain:UpdateOptionalBtn()
+    local isShow = not self:CheckIsNewDraw() 
+                   and not XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId)
+                   and not (self.CurBanner and self.CurBanner.TargetBtnDetails)
+    self.BtnOptionalDraw.gameObject:SetActiveEx(isShow)
+end
+
 function XUiNewDrawMain:OnSelectUp(drawId)
     local drawInfo = XDataCenter.DrawManager.GetDrawInfo(drawId)
     self.DrawInfo = drawInfo
@@ -1001,7 +1008,7 @@ function XUiNewDrawMain:OnSelectUp(drawId)
         return
     end
     self.CurDrawType = combination.Type
-    self.BtnOptionalDraw.gameObject:SetActiveEx(not self:CheckIsNewDraw() and not XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId))
+    
     local drawAimProbability = XDrawConfigs.GetDrawAimProbability()
     if drawAimProbability[drawId] then
         self.TxtProbability.text = drawAimProbability[drawId].UpProbability or ""
@@ -1012,6 +1019,7 @@ function XUiNewDrawMain:OnSelectUp(drawId)
         self.AllTabEntityList[self.CurSelectId]:DoSelect(self)
         self.CurBanner:UpdateNewDrawChar(DEFAULT_UP_IMG, false)
         self.CurrentSelectTemplateId = nil
+        self:UpdateOptionalBtn()
         return
     end
     self.CurrentSelectTemplateId = combination.GoodsId[1]
@@ -1030,6 +1038,7 @@ function XUiNewDrawMain:OnSelectUp(drawId)
     self.Effect2.gameObject:SetActive(true)
 
     self.CurBanner:UpdateNewDrawChar(self.GoodsShowParams.Icon, isShowQuality, self.GoodsShowParams.QualityIcon)
+    self:UpdateOptionalBtn()
 end
 --endregion
 

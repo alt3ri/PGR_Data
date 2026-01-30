@@ -69,6 +69,7 @@ function XUiPanelDlcRelinkChooseBossDetail:_SetSkillIndex(index)
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:_ApplySkillSelection()
+    self.Parent:PlayAnimation("Qiehuan")
     local skillId = self.CurSkillIds[self.CurSelectSkillIdIndex]
     if not skillId then
         self.TxtDesc.text = ""
@@ -100,6 +101,13 @@ function XUiPanelDlcRelinkChooseBossDetail:GetSkillIds()
 end
 
 function XUiPanelDlcRelinkChooseBossDetail:RefreshSkills()
+    local angerSkillIds = self._Control:GetChapterOdSkills(self.ChapterId)
+    local hasAngerSkills = not XTool.IsTableEmpty(angerSkillIds)
+    self.BtnChange.gameObject:SetActiveEx(hasAngerSkills)
+    if self.IsSkillAngerStatus and not hasAngerSkills then
+        self.IsSkillAngerStatus = false
+    end
+
     self.CurSkillIds = self:GetSkillIds()
     self.SkillCount = #self.CurSkillIds
 
@@ -333,6 +341,10 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshReward()
         grid:SetProxyClickFunc(function()
             XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", grid.TemplateId)
         end)
+        -- 首通标识
+        if grid.ImgClear then
+            grid.ImgClear.gameObject:SetActiveEx(not isPass)
+        end
         grid.GameObject:SetActiveEx(true)
         grid.Transform:SetAsLastSibling()
     end
@@ -343,6 +355,15 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshReward()
         end
     end
     -- 展示奖励
+    -- 按品质降序，id升序排序
+    table.sort(showRewardIds, function(a, b)
+        local qualityA = self._Control:GetShowLevelDropQuality(a)
+        local qualityB = self._Control:GetShowLevelDropQuality(b)
+        if qualityA ~= qualityB then
+            return qualityA > qualityB
+        end
+        return a < b
+    end)
     for index = 1, showRewardCount do
         local grid = self.DropGridList[index]
         if not grid then
@@ -351,6 +372,8 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshReward()
         end
         local showRewardId = showRewardIds[index]
         grid:GetObject("RImgIcon"):SetRawImageEx(self._Control:GetShowLevelDropIcon(showRewardId))
+        grid:GetObject("ImgR"):SetSprite(self._Control:GetShowLevelDropQualityIcon(showRewardId))
+        grid:GetObject("ImgFirst").gameObject:SetActiveEx(not isPass)
         grid:GetObject("BtnClick").CallBack = function()
             local icon = self._Control:GetShowLevelDropIcon(showRewardId)
             local name = self._Control:GetShowLevelDropName(showRewardId)

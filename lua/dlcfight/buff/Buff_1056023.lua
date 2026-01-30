@@ -9,7 +9,7 @@ function XBuffScript1056023:Init()
     --初始化
     Base.Init(self)
     ------------配置------------
-    XLog.Warning("剑气命中buff脚本")
+    --XLog.Warning("剑气命中buff脚本")
     self._proxy:ApplyMagic(self._casterUUID,self._uuid,1056024,1,0,1)
     if not (self._proxy:CheckBuffByKind(self._uuid,1051020)) then
         self._proxy:ApplyMagic(self._casterUUID,self._uuid,1056020)

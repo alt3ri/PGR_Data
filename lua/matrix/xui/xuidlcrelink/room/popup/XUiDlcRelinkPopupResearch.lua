@@ -19,6 +19,7 @@ function XUiDlcRelinkPopupResearch:OnEnable()
     self:RefreshInfo()
     self:RefreshPropertyList()
     self:RefreshRedPoint()
+    self:RefreshLevelUpShow()
 end
 
 function XUiDlcRelinkPopupResearch:RefreshInfo()
@@ -97,6 +98,38 @@ function XUiDlcRelinkPopupResearch:RefreshPropertyList()
     end
 end
 
+function XUiDlcRelinkPopupResearch:RefreshLevelUpShow()
+    local curLevel = self._Control:GetCurrentPlayerLevel()
+    local nextLevel = curLevel + 1
+
+    local isMax = self._Control:GetPlayerLevelIsMax(curLevel)
+
+    local isUnlockUp, lockDesc = false, ''
+
+    if not isMax then
+        isUnlockUp, lockDesc = self._Control:CheckPlayerLevelUpCondition(nextLevel)
+    end
+
+    if self.PanelLock then
+        local isShowLock = not isMax and not isUnlockUp
+        self.PanelLock.gameObject:SetActiveEx(isShowLock)
+
+        if isShowLock then
+            if self.TxtLock then
+                self.TxtLock.text = lockDesc
+            end
+        end
+    end
+
+    if self.PanelMax then
+        self.PanelMax.gameObject:SetActiveEx(isMax)
+    end
+
+    if self.PanelBottom then
+        self.PanelBottom.gameObject:SetActiveEx(not isMax and isUnlockUp)
+    end
+end
+
 function XUiDlcRelinkPopupResearch:RefreshRedPoint()
     local isShowRedPoint = self._Control:CheckPlayerLevelUpRedPoint()
     self.BtnEnter:ShowReddot(isShowRedPoint)
@@ -148,6 +181,7 @@ function XUiDlcRelinkPopupResearch:OnBtnEnterClick()
         self:RefreshInfo()
         self:RefreshPropertyList()
         self:RefreshRedPoint()
+        self:RefreshLevelUpShow()
     end)
 end
 

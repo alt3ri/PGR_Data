@@ -18,13 +18,13 @@ function XSkyGardenAgency:OnInit()
 end
 
 function XSkyGardenAgency:OnEnterFight()
+    XMVCA.XFubenSkyGarden:ClearProgressTip()
     XMVCA.XBigWorldGamePlay:MarkSkyGardenEntryRedPoint()
     local graphicsQuality = CS.XQualityManager.Instance:GetCurQualitySettings()
     CS.XProfilingLuaUtils.PostValueI_1("SkyGarden", "QualitySetting", graphicsQuality)
 end
 
 function XSkyGardenAgency:OnExitFight()
-    XMVCA.XFubenSkyGarden:ClearProgressTip()
 end
 
 function XSkyGardenAgency:OnInitX3C()

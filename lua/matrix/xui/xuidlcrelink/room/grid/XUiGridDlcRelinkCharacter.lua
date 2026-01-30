@@ -27,6 +27,7 @@ end
 function XUiGridDlcRelinkCharacter:OnGetLuaEvents()
     return {
         XEventId.EVENT_DLC_RELINK_SWITCH_STYLE,
+        XEventId.EVENT_DLC_RELINK_USE_EQUIP_PRESET,
     }
 end
 
@@ -36,6 +37,8 @@ function XUiGridDlcRelinkCharacter:OnNotify(event, ...)
         if args[1] == self.CharacterId then
             self:RefreshOccupation()
         end
+    elseif event == XEventId.EVENT_DLC_RELINK_USE_EQUIP_PRESET then
+        self.TxtLv.text = self._Control:GetEquipTotalAbilityByCharacterId(self.CharacterId)
     end
 end
 

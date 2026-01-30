@@ -450,6 +450,12 @@ function XUiPurchase:TabSkip(tab)
     self.CurUiTypes = {}
     self.CurUiNames = {}
 
+    if XPurchaseConfigs.TabRecordIndexMap[tab] then
+        XDataCenter.PurchaseManager.SetPurchaseBuyCustomParam(XPurchaseConfigs.PurchaseBuyCustomParamKeys.RecordFrom, tab)
+    else
+        XDataCenter.PurchaseManager.ClearPurchaseBuyCustomParam(XPurchaseConfigs.PurchaseBuyCustomParamKeys.RecordFrom)
+    end
+    
     -- 充值的读表不需后端数据
     -- 获取充值的UiType, 充值的UiType是不配置在礼包里，默认是不知道哪里写死的1
     local payUiTypes = XPurchaseConfigs.GetPayUiTypes()
@@ -678,7 +684,7 @@ end
 function XUiPurchase:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.SkipToPayPage, self)
     self.Btns = nil
-    if self.IsClearData then
+    if self.IsClearData and not XLuaUiManager.IsUiLoad("UiPurchase")  then
         XDataCenter.PurchaseManager.ClearData()
     end
 
@@ -687,6 +693,9 @@ function XUiPurchase:OnDestroy()
             panel.BuyUiTips:OnDestroy()
         end
     end
+    
+    -- 清除所有临时的自定义参数
+    XDataCenter.PurchaseManager.ClearPurchaseBuyCustomParam()
 end
 
 function XUiPurchase:IsLBUiType(cfg)

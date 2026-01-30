@@ -24,6 +24,7 @@ function XBigWorldQuestAgency:OnInit()
 end
 
 function XBigWorldQuestAgency:OnRelease()
+    self._TempFinishedObjectiveUpdateData = nil
     self:ReleaseConditionCheck()
     self:RemoveShieldController()
 end
@@ -45,13 +46,12 @@ function XBigWorldQuestAgency:NotifyDlcInviteQuestResultReward(data)
         return
     end
     local questId, resultId, rewardItems = data.QuestId, data.ResultId, data.RewardItems
-    self:OpenInvitationDetail(questId, resultId)
     self._Model:AddFinishInviteResult(resultId)
+    self._Model:InitInviteInfo(data.InviteQuestInfo)
     if rewardItems and not XTool.IsTableEmpty(rewardItems) then
         XMVCA.XBigWorldUI:OpenBigWorldRewardGoods(rewardItems)
     end
-
-    self._Model:InitInviteInfo(data.InviteQuestInfo)
+    self:OpenInvitationDetail(questId, resultId, true)
 end
 
 function XBigWorldQuestAgency:NotifyDlcInviteQuestResultNumReward(data)
@@ -487,55 +487,71 @@ function XBigWorldQuestAgency:GetObjectiveListWithStep(stepData, ignoreEmptyTitl
     if XTool.IsTableEmpty(dict) then
         return
     end
-    local mode = self._Model:GetQuestStepExecMode(stepData:GetId())
+    local stepId = stepData:GetId()
+    local mode = self._Model:GetQuestStepExecMode(stepId)
     local isSerial = mode == self.StepExecMode.Serial
     local isParallel = mode == self.StepExecMode.Parallel
     local ObjectiveState = self.ObjectiveState
 
-    local list = {}
-    for _, objective in pairs(dict) do
-        local title = self._Model:GetObjectiveTitle(objective:GetId())
-        if ignoreEmptyTitle and string.IsNilOrEmpty(title) then
-            goto continue
-        end
-        if isSerial then
-            --线性模式
+    if isSerial then
+        local list = {}
+        for _, objective in pairs(dict) do
+            local title = self._Model:GetObjectiveTitle(objective:GetId())
+            if ignoreEmptyTitle and string.IsNilOrEmpty(title) then
+                goto continue1
+            end
+
             local state = objective:GetObjectiveState()
             if state ~= ObjectiveState.Finished and state ~= ObjectiveState.InActive then
                 list[#list + 1] = objective
             end
-        elseif isParallel then
-            --并行模式
-            list[#list + 1] = objective
+
+            :: continue1 ::
         end
-        :: continue ::
+        return list
     end
-    return list
+    
+    if isParallel then
+        local list = {}
+        local csList = self._Model:GetStepObjectiveIdsByStepId(stepId)
+        if not csList or csList.Count <= 0 then
+            return list
+        end
+        for i = 0, csList.Count - 1 do
+            local objectiveId = csList[i]
+            local title = self._Model:GetObjectiveTitle(objectiveId)
+            if ignoreEmptyTitle and string.IsNilOrEmpty(title) then
+                goto continue2
+            end
+            
+            local objective = dict[objectiveId]
+            if not objective then
+                objective = self:CreateTempFinishedObjectiveData(stepData, objectiveId)
+            end
+            if objective then
+                list[#list + 1] = objective
+            end
+            :: continue2 ::
+        end
+        return list
+    end
 end
 
-function XBigWorldQuestAgency:GetObjectiveListWithQuestId(questId, ignoreEmptyTitle)
-    local questData = self._Model:GetQuestData(questId)
-    local step = questData:GetActiveStepData()
-    if not step then
+---@param stepData XBigWorldQuestStep
+function XBigWorldQuestAgency:CreateTempFinishedObjectiveData(stepData, objectiveId)
+    local objective = stepData:CreateTempFinishedObjectiveData(objectiveId)
+    if not objective then
         return
     end
-    return self:GetObjectiveListWithStep(step, ignoreEmptyTitle)
+    local template = self._Model:GetQuestStepObjectiveTemplate(objectiveId)
+    local maxProgress = template and template.MaxProgress or 1
+    self._TempFinishedObjectiveUpdateData.State = self.ObjectiveState.Finished
+    self._TempFinishedObjectiveUpdateData.MaxProgress = maxProgress
+    self._TempFinishedObjectiveUpdateData.CurProgress = maxProgress
+    objective:UpdateData(self._TempFinishedObjectiveUpdateData)
+    
+    return objective
 end
-
-function XBigWorldQuestAgency:GetQuestDisplayProgress(questId, ignoreEmptyTitle)
-    local objectiveList = self:GetObjectiveListWithQuestId(questId, ignoreEmptyTitle)
-    if XTool.IsTableEmpty(objectiveList) then
-        return
-    end
-    local list = {}
-    for _, objective in pairs(objectiveList) do
-        local id = objective:GetId()
-        local progress = self:GetObjectiveProgressDesc(id, objective:GetProgress(), objective:GetMaxProgress())
-        list[#list + 1] = progress
-    end
-    return list
-end
-
 --region Quest Item Config
 
 function XBigWorldQuestAgency:GetQuestItemIcon(templateId)
@@ -580,6 +596,10 @@ end
 
 function XBigWorldQuestAgency:GetGroupIdByQuestId(questId)
     return self._Model:GetGroupIdByQuestId(questId, true)
+end
+
+function XBigWorldQuestAgency:GetStepObjectiveIdsByStepId(stepId)
+    return self._Model:GetStepObjectiveIdsByStepId(stepId)
 end
 
 --endregion Quest Item Config
@@ -659,6 +679,14 @@ function XBigWorldQuestAgency:GetQuestIdByObjectiveId(objectiveId)
     end
 
     return self._Model:GetQuestIdByObjectiveId(objectiveId)
+end
+
+function XBigWorldQuestAgency:GetQuestIdByStepId(stepId)
+    if not XTool.IsNumberValid(stepId) then
+        return 0
+    end
+
+    return self._Model:GetQuestIdByStepId(stepId)
 end
 
 function XBigWorldQuestAgency:GetQuestIcon(questId)
@@ -825,7 +853,7 @@ function XBigWorldQuestAgency:OpenPopupDelivery(luaTable)
         XLog.Error("打开交付界面异常, objectiveId = " .. objectiveId .. "，状态不是进行中")
         return
     end
-    XMVCA.XBigWorldUI:Open("UiBigWorldPopupDelivery", objectiveId)
+    XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPopupDelivery", false, objectiveId)
 end
 
 function XBigWorldQuestAgency:OpenQuestMain(index, questId)

@@ -389,7 +389,7 @@ function XUiDlcRelinkEquipDecompose:RefreshReward()
     for index, rewardGood in ipairs(rewardGoodsList) do
         local grid = self.RewardGridList[index]
         if not grid then
-            local go = XUiHelper.Instantiate(self.GridReward, self.PanelReward)
+            local go = XUiHelper.Instantiate(self.GridReward, self.Reward)
             grid = XUiGridCommon.New(self, go)
             self.RewardGridList[index] = grid
         end
@@ -404,6 +404,14 @@ function XUiDlcRelinkEquipDecompose:RefreshReward()
     for i = #rewardGoodsList + 1, #self.RewardGridList do
         self.RewardGridList[i].GameObject:SetActiveEx(false)
     end
+
+    if self.TxtCount then
+        local totalCount = 0
+        for _, rewardGood in ipairs(rewardGoodsList) do
+            totalCount = totalCount + rewardGood.Count
+        end
+        self.TxtCount.text = string.format("x%d", totalCount)
+    end
 end
 
 --endregion
@@ -412,7 +420,6 @@ function XUiDlcRelinkEquipDecompose:RegisterUiEvents()
     self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self.BtnBreak:AddEventListener(handler(self, self.OnBtnBreakClick))
     self.BtnSelectAll:AddEventListener(handler(self, self.OnBtnSelectAllClick))
-    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
 end
 
 function XUiDlcRelinkEquipDecompose:OnBtnBackClick()
@@ -435,9 +442,10 @@ function XUiDlcRelinkEquipDecompose:OnBtnBreakClick()
         table.insert(equipUidList, equipUid)
     end
     self._Control:RequestEquipBreak(equipUidList, function(rewardList)
-        self:SetupDynamicTable()
-        self:RefreshReward()
         self:RefreshEquipCapacity()
+        local defaultIndex = self.CurSelectTabIndex
+        self.CurSelectTabIndex = -1
+        self.PanelTab:SelectIndex(defaultIndex)
 
         if XTool.IsTableEmpty(rewardList) then
             return
@@ -463,10 +471,6 @@ function XUiDlcRelinkEquipDecompose:CancelSelectAll()
     if self.BtnSelectAll:GetToggleState() then
         self.BtnSelectAll:SetButtonState(XUiButtonState.Normal)
     end
-end
-
-function XUiDlcRelinkEquipDecompose:OnBtnMainUiClick()
-    XLuaUiManager.RunMain()
 end
 
 return XUiDlcRelinkEquipDecompose

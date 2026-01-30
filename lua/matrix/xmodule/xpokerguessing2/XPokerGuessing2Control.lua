@@ -973,6 +973,10 @@ end
 
 ---@param data XUiPokerGuessing2StoryGridData
 function XPokerGuessing2Control:PlayStory(data)
+    if data.StoryId == "" or data.StoryId == nil then
+        XLog.Error("[XPokerGuessing2Control] 剧情Id为空", data.Id)
+        return
+    end
     XSaveTool.SaveData("PokerGuessing2StoryPlayed" .. XPlayer.Id .. data.StoryId, true)
     XDataCenter.MovieManager.PlayMovie(data.StoryId)
 end

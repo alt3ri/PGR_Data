@@ -44,7 +44,7 @@ function XUiDlcMultiPlayerSkillDesc:InitCampData()
 end
 
 function XUiDlcMultiPlayerSkillDesc:RegisterUiEvents()
-  
+
 end
 
 function XUiDlcMultiPlayerSkillDesc:InitView()
@@ -68,13 +68,20 @@ function XUiDlcMultiPlayerSkillDesc:InitView()
     self.SkillContent:Init(self.SkillBtns, function(index)
         local grid = self._SkillGridList[index]
         if self.CurStatus == self.Parent.ViewStatus.ChangeSkill then
+            local count = table.findElementCout(self.SelectSkillIdList, 0)
             grid:OnBtnBuffIconClick()
             grid.BtnBuffIcon:SetButtonState(CS.UiButtonState.Normal)
+        
+            if count > 0 then
+                self:SelectSkillGrid(index)
+                self:RefreshSkillDetail(grid:GetSkillConfig())
+            end
         end
-     
-        self:SelectSkillGrid(index)
+        if self.CurStatus ~= self.Parent.ViewStatus.ChangeSkill then
+            self:SelectSkillGrid(index)
+            self:RefreshSkillDetail(grid:GetSkillConfig())
+        end
 
-        self:RefreshSkillDetail(grid:GetSkillConfig())
         self:Refresh()
     end)
     local tagetIndex = 1
@@ -108,19 +115,16 @@ end
 function XUiDlcMultiPlayerSkillDesc:OnClickChangeSkill(grid)
     local skillId = grid:GetSkillId()
     local isContain, index = table.contains(self.SelectSkillIdList, skillId)
-    if  isContain then
+    if isContain then
         self.SelectSkillIdList[index] = 0
         grid:SetUsing(false)
-        
     else
-         local iszero, zeroIndex = table.contains(self.SelectSkillIdList, 0)
-         if iszero then
+        local iszero, zeroIndex = table.contains(self.SelectSkillIdList, 0)
+        if iszero then
             self.SelectSkillIdList[zeroIndex] = skillId
-            grid:SetUsing(true,zeroIndex)
+            grid:SetUsing(true, zeroIndex)
         end
-    
     end
-
 end
 
 function XUiDlcMultiPlayerSkillDesc:RefreshSkillDetail(skillConfig)
@@ -153,9 +157,15 @@ function XUiDlcMultiPlayerSkillDesc:SetStatus(newStatus)
             break
         end
     end
+    for _, grid in ipairs(self._SkillGridList) do
+        grid:SetNormalState()
+    end
 end
 
 function XUiDlcMultiPlayerSkillDesc:Refresh()
+    if self.Parent == nil then
+        return
+    end
     if self.CurStatus == self.Parent.ViewStatus.Normal then
         self:RefreshNormal()
     elseif self.CurStatus == self.Parent.ViewStatus.ChangeSkill then
@@ -164,8 +174,8 @@ function XUiDlcMultiPlayerSkillDesc:Refresh()
 end
 
 function XUiDlcMultiPlayerSkillDesc:RefreshNormal()
-    
-    self.TxtNum.text = (MAX_SKILL_COUNT - table.findElementCout(self.SelectSkillIdList,0)).."/"..MAX_SKILL_COUNT
+    self.TxtDesChange.gameObject:SetActiveEx(false)
+    self.TxtNum.text = (MAX_SKILL_COUNT - table.findElementCout(self.SelectSkillIdList, 0)) .. "/" .. MAX_SKILL_COUNT
     for index, grid in ipairs(self._SkillGridList) do
         local isContain = table.contains(self.SelectSkillIdList, grid:GetSkillId())
         grid:SetChangeState(isContain)
@@ -175,21 +185,20 @@ function XUiDlcMultiPlayerSkillDesc:RefreshNormal()
 end
 
 function XUiDlcMultiPlayerSkillDesc:RefreshChangeSkill()
-   
     self.TxtDesChange.gameObject:SetActiveEx(true)
-    local  curSkillCount = (MAX_SKILL_COUNT - table.findElementCout(self.SelectSkillIdList,0))
+    local curSkillCount = (MAX_SKILL_COUNT - table.findElementCout(self.SelectSkillIdList, 0))
     local curSkillCountStr = tostring(curSkillCount)
-    if curSkillCount< MAX_SKILL_COUNT then
-        curSkillCountStr = string.format("<color=#FF0000>%s</color>",curSkillCountStr)
+    if curSkillCount < MAX_SKILL_COUNT then
+        curSkillCountStr = string.format("<color=#FF0000>%s</color>", curSkillCountStr)
     end
-    self.TxtNum.text = curSkillCountStr.."/"..MAX_SKILL_COUNT
-    local lockExit = table.contains(self.SelectSkillIdList, 0) 
+    self.TxtNum.text = curSkillCountStr .. "/" .. MAX_SKILL_COUNT
+    local lockExit = table.contains(self.SelectSkillIdList, 0)
     self.Parent:SetCommitStatus()
 
     for _, grid in ipairs(self._SkillGridList) do
         local isContain = table.contains(self.SelectSkillIdList, grid:GetSkillId())
         grid:SetChangeState(isContain)
-        
+
         if lockExit then
             grid:SetMask(false)
         else
@@ -200,6 +209,13 @@ end
 
 function XUiDlcMultiPlayerSkillDesc:GetSelectSkillIdList()
     return XTool.Clone(self.SelectSkillIdList)
+end
+
+function XUiDlcMultiPlayerSkillDesc:ShowChangeAnim()
+
+    for _, grid in ipairs(self._SkillGridList) do
+        grid:SetChangeSkillState()
+    end
 end
 
 return XUiDlcMultiPlayerSkillDesc

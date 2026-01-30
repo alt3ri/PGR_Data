@@ -247,6 +247,7 @@ function XUiFightCaptureV217:OnBtnPhotographClick()
     end
     PhotographLock = true
     XCameraHelper.ScreenShotNew(self.ImagePhoto, CS.XRLManager.Camera.Camera, function(screenShot)
+        self:AddCacheTexture(screenShot, 1)
         -- 把合成后的图片渲染到游戏UI中的照片展示
         CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Normal, CsXUiManager.Instance.UiCamera)
         self.GameObject:SetActiveEx(true)
@@ -271,9 +272,9 @@ function XUiFightCaptureV217:OnBtnPhotoSaveClick()
     XCameraHelper.ScreenShotNew(self.ImagePhotoCopy, CsXUiManager.Instance.UiCamera, function(screenShot)
         -- 二次合成后的图片保存到本地
         CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Normal, CsXUiManager.Instance.UiCamera)
-        self.ShareTexture = screenShot
+        self:AddCacheTexture(screenShot, 2)
         self.PhotoName = "[" .. tostring(XPlayer.Id) .. "]" .. XTime.GetServerNowTimestamp()
-        XDataCenter.PhotographManager.SharePhotoBefore(self.PhotoName, self.ShareTexture, XPlatformShareConfigs.PlatformType.Local)
+        XDataCenter.PhotographManager.SharePhotoBefore(self.PhotoName, screenShot, XPlatformShareConfigs.PlatformType.Local)
         self.ImagePhoto.gameObject:SetActiveEx(true)
         self.ImagePhotoCopy.gameObject:SetActiveEx(false)
         self.PanelRoot.gameObject:SetActiveEx(true)

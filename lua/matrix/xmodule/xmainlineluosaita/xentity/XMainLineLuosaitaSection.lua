@@ -35,6 +35,12 @@ function XMainLineLuosaitaSection:GetBlockInfo(blockId)
     return blockInfo
 end
 
+-- 获取块是否占领
+function XMainLineLuosaitaSection:IsBlockOccupied(blockId)
+    local blockInfo = self:GetBlockInfo(blockId)
+    return blockInfo:IsOccupied()
+end
+
 -- 获取位置数据哈希表
 ---@return table<number, XMainLineLuosaitaPositionInfo>
 function XMainLineLuosaitaSection:GetPositionInfoDic()
@@ -145,7 +151,7 @@ end
 -- 获取解锁的文件Id列表
 function XMainLineLuosaitaSection:GetUnlockDocIds()
     local result = {}
-    for id, _ in ipairs(self._UnlockDocInfoDic) do
+    for id, _ in pairs(self._UnlockDocInfoDic) do
         tableInsert(result, id)
     end
     tableSort(result)
@@ -182,6 +188,7 @@ end
 
 -- 刷新位置数据列表
 function XMainLineLuosaitaSection:RefreshPosInfos(posDatas)
+    self._LastPositionInfoDic = self._PositionInfoDic
     local XMainLineLuosaitaPositionInfo = require("XModule/XMainLineLuosaita/XEntity/XMainLineLuosaitaPositionInfo")
     self._PositionInfoDic = {}
     for _, posData in pairs(posDatas) do
@@ -209,6 +216,31 @@ function XMainLineLuosaitaSection:RefreshCompleteMoveIds(moveIds)
     for _, moveId in pairs(moveIds) do
         self._CompletedMoveDic[moveId] = true
     end
+end
+--endregion
+
+--region 较上一次数据的变化
+-- 位置信息是否是新加的
+function XMainLineLuosaitaSection:IsPosInfoNewAdd(posType, id)
+    if not self._LastPositionInfoDic or not next(self._LastPositionInfoDic) then
+        return false 
+    end
+
+    for _, posInfo in pairs(self._LastPositionInfoDic) do
+        if posType == XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.ARMY and posInfo:GetArmyId() == id then
+            return false
+        elseif posType == XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.ENEMY and posInfo:GetEnemyId() == id then
+            return false
+        elseif posType == XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.CHARACTER and posInfo:GetCharacterId() == id then
+            return false
+        end
+    end
+    return true
+end
+
+-- 清理上次数据缓存
+function XMainLineLuosaitaSection:ClearLastPositionInfoDic()
+    self._LastPositionInfoDic = nil
 end
 --endregion
 

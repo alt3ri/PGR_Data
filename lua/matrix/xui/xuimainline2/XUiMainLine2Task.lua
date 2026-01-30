@@ -16,6 +16,11 @@ function XUiMainLine2Task:OnAwake()
     self.UiObj.PanelCourse.gameObject:SetActiveEx(false)
     self.UiObj.PanelCourseReward.gameObject:SetActiveEx(false)
     
+    -- 修改PanelTaskStoryList参数
+    local bottom = self._Control:GetClientConfigParams("PanelTaskStoryListBottom", 1)
+    local panelTaskStoryList = self.UiObj.PanelTaskStoryList
+    panelTaskStoryList.offsetMin = XLuaVector2.New(panelTaskStoryList.offsetMin.x, tonumber(bottom))
+    
     self:InitButtonGroup()
     self:InitDynamicTable()
     self:RegisterUiEvents()
@@ -99,7 +104,6 @@ end
 function XUiMainLine2Task:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.TaskDatas[index]
-        grid:SetReceiveAll()
         grid:ResetData(data)
         self.GridCount = self.GridCount + 1
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then

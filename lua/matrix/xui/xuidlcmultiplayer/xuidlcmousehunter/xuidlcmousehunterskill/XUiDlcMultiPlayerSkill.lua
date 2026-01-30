@@ -58,9 +58,9 @@ function XUiDlcMultiPlayerSkill:OnSkillChangeClick()
     -- 请求更换技能
     self._Control:RequestDlcMultiplayerSelectSkill(self._CatCamp:GetSelectSkillIdList(),
         self._MouseCamp:GetSelectSkillIdList(), function()
-        -- 提示更换成功
-        XUiManager.TipMsg(self._Control:GetDlcMultiplayerConfigConfigByKey("SkillChangeSuccessTips").Values[1])
-    end)
+            -- 提示更换成功
+            XUiManager.TipMsg(self._Control:GetDlcMultiplayerConfigConfigByKey("SkillChangeSuccessTips").Values[1])
+        end)
 end
 
 function XUiDlcMultiPlayerSkill:SetRejectOther(camp)
@@ -72,19 +72,22 @@ function XUiDlcMultiPlayerSkill:SetRejectOther(camp)
 end
 
 function XUiDlcMultiPlayerSkill:SetAllNormel()
-    
     local isContain = table.contains(self._CatCamp:GetSelectSkillIdList(), 0)
-    isContain =isContain or  table.contains(self._MouseCamp:GetSelectSkillIdList(), 0)
+    isContain = isContain or table.contains(self._MouseCamp:GetSelectSkillIdList(), 0)
     if isContain then
         XUiManager.TipMsg(XUiHelper.GetText("DlcMultiPlayerSkillTips1"))
         return
     end
-    self._CatCamp:SetStatus(self.ViewStatus.Normal)
-    self._MouseCamp:SetStatus(self.ViewStatus.Normal)
-    self.BtnChange.gameObject:SetActiveEx(true)
-    self.BtnCommit.gameObject:SetActiveEx(false)
-    self.BtnClose:SetDisable(false)
-    self:OnSkillChangeClick()
+    self._CatCamp:ShowChangeAnim()
+    self._MouseCamp:ShowChangeAnim()
+    XScheduleManager.ScheduleOnce(function()
+        self._CatCamp:SetStatus(self.ViewStatus.Normal)
+        self._MouseCamp:SetStatus(self.ViewStatus.Normal)
+        self.BtnChange.gameObject:SetActiveEx(true)
+        self.BtnCommit.gameObject:SetActiveEx(false)
+        self.BtnClose:SetDisable(false)
+        self:OnSkillChangeClick()
+    end, 1000)
 end
 
 function XUiDlcMultiPlayerSkill:SetAllChangeSkill()
@@ -93,15 +96,12 @@ function XUiDlcMultiPlayerSkill:SetAllChangeSkill()
     self.BtnChange.gameObject:SetActiveEx(false)
     self.BtnCommit.gameObject:SetActiveEx(true)
     self.BtnClose:SetDisable(true)
-
 end
 
 function XUiDlcMultiPlayerSkill:SetCommitStatus()
     local isContain = table.contains(self._CatCamp:GetSelectSkillIdList(), 0)
-    isContain =isContain or  table.contains(self._MouseCamp:GetSelectSkillIdList(), 0)
+    isContain = isContain or table.contains(self._MouseCamp:GetSelectSkillIdList(), 0)
     self.BtnCommit:SetDisable(isContain)
 end
-
-
 
 return XUiDlcMultiPlayerSkill

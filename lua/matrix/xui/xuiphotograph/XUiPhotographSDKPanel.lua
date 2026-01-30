@@ -75,7 +75,7 @@ function XUiPhotographSDKPanel:AutoRegisterBtn()
     end
     
     self.BtnSave.CallBack = function()
-        XDataCenter.PhotographManager.SharePhotoBefore(self.RootUi.PhotoName, self.RootUi.SaveTexture and self.RootUi.SaveTexture or self.RootUi.ShareTexture, XPlatformShareConfigs.PlatformType.Local)
+        XDataCenter.PhotographManager.SharePhotoBefore(self.RootUi.PhotoName, self:GetParentCacheTexture(), XPlatformShareConfigs.PlatformType.Local)
         if self.RootUi.OnBtnSaveCallBack then
             self.RootUi:OnBtnSaveCallBack()
         end
@@ -137,6 +137,14 @@ function XUiPhotographSDKPanel:OnClickShareBtn(shareId)
     self:Share(shareId)
 end
 
+function XUiPhotographSDKPanel:GetParentCacheTexture()
+    local cacheTexture = self.RootUi.ShareTexture
+    if not cacheTexture then
+        cacheTexture = self.RootUi:GetCacheTexture(2) or self.RootUi:GetCacheTexture(1) or self.RootUi:GetCacheTexture(0)
+    end
+    return cacheTexture
+end
+
 function XUiPhotographSDKPanel:Share(shareId)
     local customText
     if self.RootUi.GetPlatformType2CustomText then
@@ -145,7 +153,7 @@ function XUiPhotographSDKPanel:Share(shareId)
     if DBEUG_SHOW_CUSTOM_SHARE_TEXT then
         XLog.Warning(customText or "其他系统测试分享")
     end
-    XDataCenter.PhotographManager.SharePhoto(self.RootUi.PhotoName, self.RootUi.SaveTexture and self.RootUi.SaveTexture or self.RootUi.ShareTexture, shareId, customText)
+    XDataCenter.PhotographManager.SharePhoto(self.RootUi.PhotoName, self:GetParentCacheTexture(), shareId, customText)
 end
 
 return XUiPhotographSDKPanel

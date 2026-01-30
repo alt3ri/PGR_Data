@@ -9,24 +9,31 @@ function XUiPanelLuosaitaFight:OnStart()
     XTool.InitUiObjectByUi(self.EnemyUi, self.Enemy)
 end
 
+---@param allyData XMainLineLuosaitaPositionInfo
+---@param enemyData XMainLineLuosaitaPositionInfo
 function XUiPanelLuosaitaFight:Refresh(allyData, enemyData)
     local allyCurHp = self._Control:GetPositionCurHp(allyData:GetPosId())
     local allyCurAttack = self._Control:GetPositionCurAttack(allyData:GetPosId())
-    local enemCurHp = self._Control:GetPositionCurHp(enemyData:GetPosId())
-    local enemCurAttack = self._Control:GetPositionCurAttack(enemyData:GetPosId())
+    local enemyCurHp = self._Control:GetPositionCurHp(enemyData:GetPosId())
+    local enemyCurAttack = self._Control:GetPositionCurAttack(enemyData:GetPosId())
 
+    local armyHead = self._Control:GetConfig():GetArmyHead(allyData:GetArmyId())
+    self.AllyUi.RImgHead:SetRawImage(armyHead)
     self.AllyUi.TxtAttack.text = tostring(allyCurAttack)
     self.AllyUi.TxtHP.text = tostring(allyCurHp)
-    if enemCurAttack > 0 then
-        self.AllyPreHp.text = "-" .. tostring( enemCurAttack)
+    if enemyCurAttack > 0 then
+        self.AllyPreHp.text = "-" .. tostring(enemyCurAttack)
     else
         self.AllyPreHp.text = ""
     end 
-    self.AllyUi.ImgDead.gameObject:SetActiveEx(allyCurHp - enemCurAttack<= 0)
-    self.EnemyUi.TxtAttack.text = tostring(enemCurAttack)
-    self.EnemyUi.TxtHP.text = tostring(enemCurHp)
+    self.AllyUi.ImgDead.gameObject:SetActiveEx(allyCurHp - enemyCurAttack <= 0)
+
+    local enemyHead = self._Control:GetConfig():GetEnemyHead(enemyData:GetEnemyId())
+    self.EnemyUi.RImgHead:SetRawImage(enemyHead)
+    self.EnemyUi.TxtAttack.text = tostring(enemyCurAttack)
+    self.EnemyUi.TxtHP.text = tostring(enemyCurHp)
     self.EnemyPreHp.text = "-" .. tostring( allyCurAttack)
-    self.EnemyUi.ImgDead.gameObject:SetActiveEx(enemCurHp - allyCurAttack <= 0)
+    self.EnemyUi.ImgDead.gameObject:SetActiveEx(enemyCurHp - allyCurAttack <= 0)
 end
 
 return XUiPanelLuosaitaFight

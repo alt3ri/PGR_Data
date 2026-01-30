@@ -87,6 +87,7 @@ function XUiDlcMultiPlayerDiscussion:_RefreshVoteUnSelect(discussion)
     self:_RefreshDiscussionTimer(function()
         self:_RefreshTxtDiscussionTime(discussion:GetVoteEndTimestamp())
     end)
+    self.TxtDiscussionTitle.gameObject:SetActiveEx(false)
 end
 
 ---@param discussion XDlcMultiMouseHunterDiscussion
@@ -100,6 +101,7 @@ function XUiDlcMultiPlayerDiscussion:_RefreshVoteSelect(discussion)
     self:_RefreshDiscussionTimer(function()
         self:_RefreshTxtDiscussionTime(discussion:GetVoteEndTimestamp())
     end)
+    self.TxtDiscussionTitle.gameObject:SetActiveEx(true)
 end
 
 ---@param discussion XDlcMultiMouseHunterDiscussion
@@ -111,6 +113,7 @@ function XUiDlcMultiPlayerDiscussion:_RefreshDisplayUnSelect(discussion)
     self:_RefreshDiscussionTimer(function()
         self:_RefreshTxtDiscussionTime(discussion:GetDiscussionEndTimestamp())
     end)
+    self.TxtDiscussionTitle.gameObject:SetActiveEx(false)
 end
 
 ---@param discussion XDlcMultiMouseHunterDiscussion
@@ -124,6 +127,7 @@ function XUiDlcMultiPlayerDiscussion:_RefreshDisplayVictory(discussion)
     self:_RefreshDiscussionTimer(function()
         self:_RefreshTxtDiscussionTime(discussion:GetDiscussionEndTimestamp())
     end)
+    self.TxtDiscussionTitle.gameObject:SetActiveEx(true)
 end
 
 ---@param discussion XDlcMultiMouseHunterDiscussion
@@ -133,10 +137,11 @@ function XUiDlcMultiPlayerDiscussion:_RefreshDisplayFail(discussion)
     self.TxtDiscussionStatus.text = XUiHelper.GetText("MultiMouseHunterDisplayStatus")
     self.TxtDiscussionTitle.text = titleStr
     self.TxtDiscussionRate.text = rateStr
-    self.ImgBg:SetRawImage(self._Control:GetDlcMultiplayerConfigConfigByKey("DiscussionNormalIcon").Values[1])
+    self.ImgBg:SetRawImage(self._Control:GetDlcMultiplayerConfigConfigByKey("DiscussionChoiceIcon").Values[1])
     self:_RefreshDiscussionTimer(function()
         self:_RefreshTxtDiscussionTime(discussion:GetDiscussionEndTimestamp())
     end)
+    self.TxtDiscussionTitle.gameObject:SetActiveEx(true)
 end
 
 ---@param discussion XDlcMultiMouseHunterDiscussion

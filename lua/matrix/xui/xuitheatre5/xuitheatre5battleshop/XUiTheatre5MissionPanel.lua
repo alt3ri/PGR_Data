@@ -127,9 +127,11 @@ function XUiTheatre5MissionPanel:Refresh()
 end
 
 function XUiTheatre5MissionPanel:OnBtnDetailCloseClick()
-    self.TaskDetail:Close()
-    self.DetailRoot.gameObject:SetActiveEx(false)
-    self.BtnDetailClose.gameObject:SetActiveEx(false)
+    self.TaskDetail:CloseWithAnimation(function()
+        self.DetailRoot.gameObject:SetActiveEx(false)
+        self.BtnDetailClose.gameObject:SetActiveEx(false)
+    end)
+    
     self._IsDetailShow = false
 end
 

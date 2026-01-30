@@ -90,6 +90,10 @@ end
 
 -- 刷新锁定状态
 function XUiGridDlcRelinkEquipment:RefreshIsLocked()
+    if self.IsNotSelf or not XTool.IsNumberValid(self.EquipUid) then
+        self.Lock.gameObject:SetActiveEx(false)
+        return
+    end
     local isLocked = self._Control:GetEquipIsLockedByEquipUid(self.EquipUid, self.IsNotSelf)
     self.Lock.gameObject:SetActiveEx(isLocked)
 end
@@ -175,6 +179,11 @@ end
 -- 红点
 function XUiGridDlcRelinkEquipment:SetRedDot(isShow)
     self.Red.gameObject:SetActiveEx(isShow)
+end
+
+-- 设置是否响应穿透事件
+function XUiGridDlcRelinkEquipment:SetRespondPassEvent(isRespond)
+    self.BtnEquip.IsRespondPassEvent = isRespond
 end
 
 function XUiGridDlcRelinkEquipment:OnBtnEquipClick()

@@ -1305,7 +1305,14 @@ XEnumConst = {
         StoryLayoutBgType = { -- 好感度界面背景类型
             Default = 1, -- 默认旧版
             Style3_4 = 2, --3.4新增样式
-        }
+        },
+        CameraAnimStatus = {
+            Play = 1,
+            Pause = 2,
+            Resume = 3,
+            Close = 4,
+            Destory = 5,
+        },
     },
     CONNECTING_LINE = {
         OPERATION_TYPE = {
@@ -3444,7 +3451,14 @@ XEnumConst = {
         FactorAttributeType = {
             Origin = 1, -- 基础值
             BasePercentage = 2, -- 基础百分比加成
+            ExtraFixed = 3, -- 额外固定值
+            ExtraPercentage = 4, -- 额外百分比
         },
+        FactorDetailShowType = { -- 装备详情显示类型
+            Normal = 1, -- 常规
+            Damage = 2, -- 伤害上限
+            SpeicalSkill = 3, -- 特殊技能
+        }
     },
     HelpCourse = {
         UiHelpType = {

@@ -13,7 +13,7 @@ function XBuffScript1015028:Init()
     self.countAttrib = 200    -- 每获得x点额外属性
     self.magicEffect = 100      -- 其他属性转为本属性时的转换比
     self.attrib = ENpcAttrib.Element1AmpP
-    self.addTimes = 200
+    self.addTimes = 120
 
     self.magicIdShield = 1015227
     self.magicIdHeal = 1015335

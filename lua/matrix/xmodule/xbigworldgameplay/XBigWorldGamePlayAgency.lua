@@ -292,6 +292,8 @@ function XBigWorldGamePlayAgency:ExitGame()
     self:ClearBigWorldUI(function()
         self:CsStatusSyncExitFight()
         self:GetCurrentAgency():Exit()
+        --- 清理试用角色
+        XMVCA.XBigWorldCharacter:ClearTrialCharacterIds()
     end)
     CS.XProfilingLuaUtils.PerfSightSkyGardenProcessExit()
 end

@@ -4,6 +4,23 @@ local XBWSettingValue = require("XModule/XBigWorldSet/XSetting/XBWSettingValue")
 ---@class XBWOtherSetting : XBWSettingBase
 local XBWOtherSetting = XClass(XBWSettingBase, "XBWOtherSetting")
 
+local RecordDataHandler = {
+    floatToInt = function(value)
+        return math.floor(value * 100)
+    end
+}
+local RecordValue = {
+    [1] = {
+        key = "ScreenOff",
+        XBWSettingValue = "_ScreenOffValue",
+        handler = RecordDataHandler.floatToInt
+    },
+    [2] = {
+        key = "CursorSize",
+        XBWSettingValue = "_CursorSizeValue"
+    }
+}
+
 function XBWOtherSetting:InitValue()
     self:_InitScreenOffValue()
     self:_InitCursorSizeValue()
@@ -39,6 +56,21 @@ function XBWOtherSetting:SaveChange()
 
         self._CursorSizeValue:SaveChange()
     end
+end
+
+function XBWOtherSetting:RecordDataToDict()
+    local dict = {}
+    for i = 1, #RecordValue do
+        local value = self[RecordValue[i].XBWSettingValue]
+        if value then
+            if RecordValue[i].handler then
+                dict[RecordValue[i].key] = tostring(RecordValue[i].handler(value:GetValue()))
+            else
+                dict[RecordValue[i].key] = tostring(value:GetValue())
+            end
+        end
+    end
+    return dict
 end
 
 function XBWOtherSetting:IsChanged()

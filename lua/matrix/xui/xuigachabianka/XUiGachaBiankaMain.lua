@@ -38,6 +38,8 @@ function XUiGachaBiankaMain:OnStart(gachaId, isPlayEnterAnim, isPlayStoryAnim)
     self._Volume = require("XUi/XUiGachaBianka/Grid/XUiPanelGachaBiankaVolume").New(self.PanelVolume, self)
     self._Volume:HideAll()
     self._Scene = require("XUi/XUiGachaBianka/Grid/XUiPanelGachaBiankaScene").New(self.Transform, self)
+    ---@type XUiPanelSwitchableSceneAnim
+    self._SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
     
     -- 跳过按钮,只有在进入ui时自动刷新1次
     local isSelect = XSaveTool.GetData(self._SkipBtnKey)
@@ -75,6 +77,7 @@ function XUiGachaBiankaMain:OnEnable()
     -- 顺序不能改表
     -- 1.先检测是否需要打开子界面 -- 【需要的话】就不进行enable动画播放 且直接刷新红点
     -- 2.【不需要的话】就开始播放enable动画，且必须在动画播完后再刷新红点
+    local isAutoPlayGyro = true
     self._Scene:Init3DSceneInfo()
     self:RefreshUiShow()
     if self._IsGachaReturnMain then
@@ -82,12 +85,17 @@ function XUiGachaBiankaMain:OnEnable()
         self.GachaButtonsEnable:PlayTimelineAnimation()
         self._Scene:PlayStart1()
     elseif self._CanPlayEnableAnim then
-        self:PlayEnableAnim()
+        local isSkip = self:PlayEnableAnim()
+        if not isSkip then
+            isAutoPlayGyro = false
+        end
     else
         if self._CanPlayStoryAnim then
             self._Scene:PlayExitStageLine()
+            self:PlayAnimationWithMask("AnimStart2")
+        else
+            self:PlayAnimationWithMask("AnimStart1")
         end
-        self:PlayAnimationWithMask("AnimStart1")
         self:RefreshReddot()
         self._Scene:SetXPostFaicalControllerActive(true)
     end
@@ -98,6 +106,9 @@ function XUiGachaBiankaMain:OnEnable()
     end
     self._IsGachaReturnMain = false
     self._CanPlayStoryAnim = false
+    if isAutoPlayGyro then
+        self._SwitchableScene:AutoPlay(self.UiSceneInfo.Transform)
+    end
 end
 
 function XUiGachaBiankaMain:OnDisable()
@@ -107,15 +118,25 @@ function XUiGachaBiankaMain:OnDisable()
 
     -- 离开界面时关闭视线跟随
     self._Scene:SetXPostFaicalControllerActive(false)
+    self._SwitchableScene:Stop()
 end
 
 function XUiGachaBiankaMain:OnDestroy()
+    self._SwitchableScene:OnDestory()
     self._ShowCourseRewardTrigger = nil
     self._DoGachaTrigger = nil
     if self._UiObtainTimer then
         XScheduleManager.UnSchedule(self._UiObtainTimer)
         self._UiObtainTimer = nil
     end
+end
+
+function XUiGachaBiankaMain:Close()
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc and self._FinishCbTrigger ~= nil then
+        --pc端抽卡时不能通过点击Esc关闭界面
+        return
+    end
+    self.Super.Close(self)
 end
 
 -- 记录战斗前后数据
@@ -135,6 +156,10 @@ end
 function XUiGachaBiankaMain:InitButton()
     self:RegisterClickEvent(self.BtnBack, self.Close)
     self:RegisterClickEvent(self.BtnMainUi, function()
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc and self._FinishCbTrigger ~= nil then
+            --pc端抽卡时不能通过点击Home回到主界面
+            return
+        end
         XLuaUiManager.RunMain()
     end)
     self:RegisterClickEvent(self.BtnGacha, function()
@@ -170,6 +195,7 @@ function XUiGachaBiankaMain:PlayEnableAnim()
     self._Scene:SetXPostFaicalControllerActive(false)
 
     local isSkip = XSaveTool.GetData(self._SkipBtnKey)
+    self._SwitchableScene:IsContinuePlay(isSkip)
     ---- 如果勾了跳过演出 就播放短动画 否则播放长动画
     if isSkip then
         self:RefreshReddot()
@@ -183,6 +209,7 @@ function XUiGachaBiankaMain:PlayEnableAnim()
             XSaveTool.SaveData(self._HasBeenKey, 1)
         end
     end
+    return isSkip
 end
 
 function XUiGachaBiankaMain:PlayLongEnableAnim()
@@ -192,6 +219,8 @@ function XUiGachaBiankaMain:PlayLongEnableAnim()
     self._Scene:PlayEnableLong(function()
         self._Volume:PlayEnd()
         self.SafeAreaContentPane.blocksRaycasts = true
+    end, function()
+        self._SwitchableScene:AutoPlay(self.UiSceneInfo.Transform)
     end)
 end
 
@@ -637,10 +666,6 @@ function XUiGachaBiankaMain:OnBtnSkipGachaClick()
 end
 
 function XUiGachaBiankaMain:OnBtnStoryLineClick()
-    self:PlayAnimationWithMask("AnimStart2", handler(self, self.OpenStageLine))
-end
-
-function XUiGachaBiankaMain:OpenStageLine()
     if XLuaUiManager.IsUiLoad("UiGachaBianka402StageLine") then
         self:Close()
     else

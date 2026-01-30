@@ -34,9 +34,9 @@ function XUiGridDlcRelinkTaskPanel:InitDynamicTable()
 end
 
 function XUiGridDlcRelinkTaskPanel:SetupDynamicTable()
-    local taskTimelimitIds = self._Control:GetShopTaskParamId(self.ConfigId)
-    local taskTimelimitId = taskTimelimitIds and taskTimelimitIds[1] or 0
-    self.TaskDataList = XTool.IsNumberValidEx(taskTimelimitId) and XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelimitId) or {}
+    local taskTimelineIds = self._Control:GetShopTaskParamId(self.ConfigId)
+    local taskTimelineId = taskTimelineIds and taskTimelineIds[1] or 0
+    self.TaskDataList = XTool.IsNumberValidEx(taskTimelineId) and XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelineId) or {}
     local isEmpty = XTool.IsTableEmpty(self.TaskDataList)
     self.PanelNoneStoryTask.gameObject:SetActiveEx(isEmpty)
     if isEmpty then
@@ -45,14 +45,18 @@ function XUiGridDlcRelinkTaskPanel:SetupDynamicTable()
     end
 
     self.DynamicTable:SetDataSource(self.TaskDataList)
-    self.DynamicTable:ReloadDataASync(1)
+    self.DynamicTable:ReloadDataSync(1)
 end
 
 ---@param grid XDynamicGridTask
 function XUiGridDlcRelinkTaskPanel:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_INIT then
         grid.ClickFunc = function(reward)
-            XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", reward.TemplateId)
+            if reward.RewardType == XRewardManager.XRewardType.Nameplate then
+                XLuaUiManager.Open("UiNameplateTip", reward.TemplateId, true, true, true)
+            else
+                XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", reward.TemplateId)
+            end
         end
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.TaskDataList[index]
@@ -62,6 +66,8 @@ function XUiGridDlcRelinkTaskPanel:OnDynamicTableEvent(event, index, grid)
                 self:FinishTask()
             end
         end
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        self:PlayGridAnimation()
     end
 end
 
@@ -77,6 +83,27 @@ function XUiGridDlcRelinkTaskPanel:FinishTask()
         XDataCenter.TaskManager.FinishMultiTaskRequest(taskIds, function(rewardGoodsList)
             XLuaUiManager.Open("UiDlcRelinkPopupGetReward", rewardGoodsList)
         end)
+    end
+end
+
+function XUiGridDlcRelinkTaskPanel:PlayGridAnimation()
+    ---@type XDynamicGridTask[]
+    local grids = self.DynamicTable:GetGrids()
+    if XTool.IsTableEmpty(grids) then
+        return
+    end
+
+    for index, grid in ipairs(grids) do
+        grid.GameObject:SetActiveEx(false)
+        local delay = (index - 1) * 100
+        self:DelayCallRaw(function()
+            grid.GameObject:SetActiveEx(true)
+            XUiHelper.PlayUiNodeAnimation(grid.Transform, "GridTaskEnable", function()
+                XLuaUiManager.SetMask(false)
+            end, function()
+                XLuaUiManager.SetMask(true)
+            end)
+        end, delay)
     end
 end
 

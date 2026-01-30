@@ -6,7 +6,7 @@ local XLevelNpcState = require("Common/StateMachine/State/XLevelNpcState")
 ---@field Path Vector3[] 寻路路径
 ---@field CheckDistance number 到达路径点判定距离
 ---@field _curPathPointIndex number 当前所处路径点索引
----@field _curTargetPathPoint number 当前目标路径点
+---@field _curTargetPathPoint Vector3 当前目标路径点
 ---@field _pathPointCount number 路径点数量
 ---@field _isMove boolean 是否在移动
 ---@field _curCheckPathTime boolean 自动检查寻路
@@ -113,6 +113,9 @@ end
 
 ---停止移动
 function XFindPathState:StopMove()
+    if not self._isMove then
+        return
+    end
     self._proxy:NpcStopMove(self._uuid)
     self._proxy:EnableNpcLookAt(self._uuid, self._proxy:GetLocalPlayerNpcId())
     self:SetMoveState(false)

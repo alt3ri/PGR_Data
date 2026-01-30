@@ -16,7 +16,7 @@ function XBigWorldModel:OnInit()
     local config = {
         [GuideTableKey.BigWorldGuideGroup] = {
             readInt,
-            XTable.XTableGuideGroup,
+            XTable.XTableBigworldGuideGroup,
             identifier,
             XConfigUtil.CacheType.Normal,
         },

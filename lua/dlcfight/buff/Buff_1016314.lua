@@ -20,6 +20,7 @@ function XBuffScript1016314:Init()
     self.battleStartBuffId = 1015992    --战斗开始标记buff
     self.targetId = 0
     self.cureSum = 0
+    self.cureIgnoreBuff = 1016417 -- 不读饰品6117x-1016364相关奶
     ------------执行------------
 end
 ---@param dt number @ delta time
@@ -35,6 +36,7 @@ function XBuffScript1016314:InitEventCallBackRegister()
     --按需求解除注释进行注册
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
     self._proxy:RegisterEvent(EWorldEvent.NpcCalcCureAfter)
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageAfter,self._uuid)
 end
 
 function XBuffScript1016314:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
@@ -57,7 +59,7 @@ function XBuffScript1016314:AfterCureCalc(eventArgs)
     local isPlayer = eventArgs.Launcher == self._uuid and eventArgs.Target == self._uuid --奶自己
     local isThisCure = eventArgs.Id == self.healMagic --奶来自该buff
 
-    if eventArgs.Target == self.targetId then --非自奶检测
+    if eventArgs.Target == self.targetId and eventArgs.Id ~= self.cureIgnoreBuff then --非自奶检测
         self.cureSum = eventArgs.FinalValue + self.cureSum
         local magicTimes = math.floor(self.cureSum / self.currentCureTarget)
         for _ = 1, magicTimes do

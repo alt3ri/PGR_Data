@@ -25,11 +25,13 @@ function XUiFubenExtraChapter:OnStart(chapter, stageId, hideDiffTog)
     self.MainId = XFubenExtraChapterConfigs.GetMainIdByChapterId(chapter.ChapterId)
 
     -- 进战斗/播剧情后恢复界面
-    local resumeData = XMVCA.XMainLine2:GetMainReleaseData(self.MainId, true)
-    if resumeData then
-        local configs = XFubenExtraChapterConfigs.GetExtraChapterDetailsCfgs()
-        self.Chapter = configs[resumeData.ChapterId]
-        self:SetLastClickStageId(resumeData.LastClickStageId)
+    if self.IsResume then
+        local resumeData = XMVCA.XMainLine2:GetMainReleaseData(self.MainId, true)
+        if resumeData then
+            local configs = XFubenExtraChapterConfigs.GetExtraChapterDetailsCfgs()
+            self.Chapter = configs[resumeData.ChapterId]
+            self:SetLastClickStageId(resumeData.LastClickStageId)
+        end
     end
     
     self.Opened = false
@@ -133,6 +135,10 @@ function XUiFubenExtraChapter:OnDestroy()
     XRedPointManager.RemoveRedPointEvent(self.RedPointZhouMuId)
     XRedPointManager.RemoveRedPointEvent(self.RedPointIdWhite)
     XRedPointManager.RemoveRedPointEvent(self.RedPointZhouMuIdWhite)
+end
+
+function XUiFubenExtraChapter:OnResume(value)
+    self.IsResume = true
 end
 
 function XUiFubenExtraChapter:OnReleaseInst()

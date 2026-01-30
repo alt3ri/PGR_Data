@@ -176,6 +176,7 @@ function XBigWorldAlbumAgency:TakePhotoSilent(data)
     end
     local rt = CS.XRenderTextureManager.GetTemporary(width, height, 0, CS.UnityEngine.RenderTextureFormat.Default, CS.UnityEngine.RenderTextureReadWrite.Default, false)
     camera.targetTexture = rt
+    XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_TEMPORARY_SET_FIRST_PERSON_PART_ENABLE, { Enable = true, })
     
     XScheduleManager.ScheduleOnce(function()
         cameraGo:SetActive(false)
@@ -183,7 +184,7 @@ function XBigWorldAlbumAgency:TakePhotoSilent(data)
         CS.CameraRenderRequestMangmaner.RenderInCameraRenderingProcess(camera)
         
         CS.UnityEngine.RenderTexture.active = rt
-        local tex = CS.UnityEngine.Texture2D(width, height, CS.UnityEngine.TextureFormat.RGBA32, false)
+        local tex = XTool.GenTexture2DReleaseManually(width, height, CS.UnityEngine.TextureFormat.RGBA32, false)
         tex:ReadPixels(CS.UnityEngine.Rect(0, 0, width, height), 0, 0)
         tex:Apply()
         CS.UnityEngine.RenderTexture.active = nil
@@ -202,10 +203,12 @@ function XBigWorldAlbumAgency:TakePhotoSilent(data)
                 ShotId = data.ShotId or 0,
             })
             
+            XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_TEMPORARY_SET_FIRST_PERSON_PART_ENABLE, { Enable = false, })
             CS.XRenderTextureManager.ReleaseTemporary(rt)
             CS.UnityEngine.Object.DestroyImmediate(tex)
             CS.UnityEngine.Object.DestroyImmediate(cameraGo)
         end, function()
+            XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_TEMPORARY_SET_FIRST_PERSON_PART_ENABLE, { Enable = false, })
             CS.XRenderTextureManager.ReleaseTemporary(rt)
             CS.UnityEngine.Object.DestroyImmediate(tex)
             CS.UnityEngine.Object.DestroyImmediate(cameraGo)
@@ -282,8 +285,8 @@ function XBigWorldAlbumAgency:BigWorldAlbumAddPhotoRequest(isHide, uniqueId, cb,
    )
 end
 
-function XBigWorldAlbumAgency:UploadTakeTexture(isHide, texture, cb, width, height)
-    self:BigWorldAlbumAddPhotoRequest(isHide, 0, function(photoData)
+function XBigWorldAlbumAgency:UploadTakeTexture(isHide, objId, texture, cb, width, height)
+    self:BigWorldAlbumAddPhotoRequest(isHide, objId, function(photoData)
         self:CacheTexture(texture, width, height, photoData.Id, photoData.CheckSalt)
         if cb then cb(photoData) end
     end)

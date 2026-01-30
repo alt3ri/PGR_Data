@@ -16,8 +16,11 @@ local XChar8052 = XDlcScriptManager.RegCharScript(8052, "XChar8052", Base)
 XChar8052.DashMode = { --冲刺技能的流程
     None = 0,
     Start =1,--开始阶段，进行蓄力
-    Loop = 2,--冲刺阶段
-    End = 3,--结束，释放收招技能。
+    Turn = 2,--转身阶段
+    Loop = 3,--冲刺阶段
+    End = 4,-- 结束，释放收招技能阶段
+    ReadyStart=5,--启动时已经做了很多处理，但还没开屏障
+    AlreadySetLevel = 6, --已经设置好关卡了
 }
 
 XChar8052.DashType = { --冲刺类型
@@ -28,10 +31,53 @@ XChar8052.DashType = { --冲刺类型
     Random =4,--随机选点
 }
 
+XChar8052.DashBoundaryState ={
+    None = 0, --无
+    SmallAwake = 1, --初始时候的那一次
+    Small = 2,--小内圈
+    Big = 3, --大外圈
+}
+
+--endregion
+
+--region 同步换端处理部分
+
+--怪物在处理完脚本同步变量后
+function XChar8052:MonsterHandleScriptInitSyncVarAfter()
+
+    local curODState = self:GetCurOverDriveState() --当前OD状态
+    
+    --if self.dashMode ~= XChar8052.DashMode.None then --当前模式不等于0的时候需要重启流程
+    --    --self:DashReStart() --Dash流程重新启动！
+    --end
+    
+    if self:CheckIsOnSoftFury() then --软狂暴的时候设置软狂暴技能组
+        local castGroup={
+            --{--OD：Dash机制
+            --    [805258] = 10,  --Dash机制启动
+            --},
+            {--OD:强力技能
+                [805204]=  50,  --欧拉拳（35）
+                [805277] = 30, --OD光刃二连
+                [805278] = 30, --OD光刃三连
+                [805248] = 10,  --OD连续推进拳
+                [805249] = 50,  --OD瑟提锤
+                [805223] = 10,  --光刃上天
+            },
+        }
+        self:SetCastGroup(castGroup) --设置成新的技能组
+    end
+    
+    ---Break过程中换端直接接上BreakLoop
+    if curODState == Base.OverDriveState.BreakStart or curODState == Base.OverDriveState.BreakLoop then
+        self:ForceSkill(self.breakLoopSkill)
+    end
+
+end
+
 --endregion
 
 --region 怪物配置
-
 ---配置主入口
 function XChar8052:MonsterConfigMain() --怪物配置用
     Base.MonsterConfigMain(self)
@@ -41,21 +87,79 @@ function XChar8052:MonsterConfigMain() --怪物配置用
     self.dodgeMax = 3 --连续闪避次数上限
     self.pushFistODCount = 1 --连续推进拳计数
     self.isAirHaveDodge = false --空中有没有闪避过
-    --self:SetAiActive(false) --关闭怪物AI
-    
+    self._proxy:AddTimerTask(0.8, function() --0.8秒后开启怪物Ai
+        self:SetAiActive(true)
+    end)
     ------怪物自己机制的初始化------
-    self:DashInit() --连续冲刺机制技能初始化
-    --self:AirFireInit() --激光攻击技能初始化
-    self:InitNpcTimer(1,15,10) --闪避CD
-    self:InitNpcTimer(2,30,20) --连续闪避CD，闪避时触发。
-    self:InitNpcTimer(3,99999,20) --Timer3：用来回中释放蓄力大不死斩的
-    self:InitNpcTimer(4,20,20) --回中CD（多久尝试回一次中）
-    
+    --需要同步的变量Key字典
+    self.monsterSubVarSyncKeyDicInitial ={
+        dashMode = 1, --冲刺模式(ok
+        curDashRound=2,--冲刺轮次
+        dashPingZhangBulletUUID =3,--冲刺过程中的屏障子弹UUID
+        dashBoundaryState = 4, --屏障的状态
+    }
+    self.monsterSubSyncValueDic ={
+        dashMode = {Base.SyncValueType.int},
+        curDashRound = {Base.SyncValueType.int},
+        dashPingZhangBulletUUID = {Base.SyncValueType.int},
+        dashBoundaryState = {Base.SyncValueType.int},
+    }
+    self.monsterScriptInitSyncRegisterSkillCdList = { --需要同步的技能CD
+        [805201] = {25,25},--格挡
+        [805202] = {0,5},--反身拳
+        [805203] = {0,5},--上勾拳
+        [805204] = {45,35},--欧拉拳
+        [805205] = {0,0},--格挡反击
+        [805206] = {0,0},--流星冲锋坠
+        [805207] = {20,10},--交叉射击
+        [805208] = {8,15},--推进拳
+        [805209] = {0,30},--下段斩
+        [805216]={0,15},--地面蓄力炮
+        [805221]={6,0}, --移动射击向前
+        [805222]={0,40}, --光刃三连
+        [805223]={40,40}, --光刃上天
+        [805224]={0,30}, --光刃二连
+        [805225]={0,0}, --胸炮浮空版
+        [805226]={30,35}, --胸炮地面起跳版
+        [805227]={45,35}, --升龙腿
+        [805228]={0,10}, --空落锤
+        [805229]={0,35}, --重火锤
+        [805230]={0,15}, --后退斩
+        [805231]={0,0}, --响指波
+        [805232]={10,15}, --瑟提锤
+        [805234]={0,5}, --二连拳
+        [805258]={35,120}, --冲刺机制：启动
+        [805248]={0,60}, --OD：连续Plus推进拳
+        [805249]={0,40}, --OD：瑟提锤
+        [805273]={0,0}, --OD：胸炮浮空版
+        [805274]={30,35}, --OD：胸炮地面起跳版
+        [805275]={0,0}, --OD：蓄力不死斩启动技能
+        [805277]={0,30}, --OD：光刃二连
+        [805278]={0,40}, --OD：光刃三连
+        [805279]={0,40}, --OD：流星冲锋坠
+    }
+    self.monsterScriptInitSyncRegisterNpcTimerList = { --需要同步的NpcTimer
+        [1] = {15,10},--闪避CD
+        [2] = {30,20}, --连续闪避Cd
+        [3] = {0,60}, --回中用来释放大不死斩的Timer
+    }
+
     -----没有用到的东西------------
     self.isSkillConnectLocked = true --设置小辉辉的连招锁
     self.maxConnectCount = 2-- 连招上限
     self.curConnectCount = 1 --当前连招段数
     -----------------------------
+    self.bornSkill = 805282 --出生动画
+    self:DashInit() --连续冲刺机制技能初始化
+end
+
+--软狂暴配置
+function XChar8052:SoftFuryConfig()
+    self.enterSoftFurySkill = 805280 --进入软狂暴的爆气技能
+    self.enterSoftFuryMagicList = { --进入软狂暴时会给自己添加的Magic列表
+        8052130,--软狂暴特效
+        1000512,--软狂暴标记
+    }
 end
 
 --技能释放配置
@@ -88,7 +192,6 @@ function XChar8052:SkillCastConfig()
             [805227] = 10, --升龙腿
         },
         {--二阶段，强力攻击
-            [805222] = 10,  --光刃三连
             [805224] = 10,  --光刃二连
             [805229] = 10,  --重火锤
         },
@@ -112,58 +215,67 @@ function XChar8052:SkillCastConfig()
             [805234]=10,   --二连拳（0）
             [805202]=10,   --反身拳（0）
         },
+        {--保底闪现调整位置
+            [805210]=40,   --前
+            [805211]=40,   --后
+            [805212]=10,   --左
+            [805213]=10,   --右
+        },
     }
 end
 
 ---技能测试配置
 function XChar8052:SkillTestConfig()
     --self:SetSkillTestActive(true)
-    --self.skillTestType = Base.SkillTestType.CustomFuc
-    self.skillTestId = 805225
-    self.skillTestInitialCd = 3--测试初始CD
-    self.skillTestCd = 8
+    --self.skillTestType = Base.SkillTestType.CustomFuc --开启了就会只执行这个函数里面的内容
+    --self:InitSkillCd(805201,0,0) --格挡
+    
+    self.skillTestId = 805277
+    self.skillTestInitialCd = 10--测试初始CD
+    --self.skillTestInitialCd = 1.5--测试初始CD
+    self.skillTestCd = 10
     --self:SetOverDriveValueFull()--满OD
 end
 
 function XChar8052:OnSkillTestTriggerCustomFuc()
-    self:ForceSkillToPosition(805275,self.levelCenterPoint)--向场地中心释放
+    self:ForceSkill(805258)
+    self:ApplyMagicAllPlayer(8052134) --隐藏全场玩家UI
 end
 
----技能测试配置
+-----技能配置
 function XChar8052:SkillConfig()
-    self:InitSkillCd(805201,35,35) --格挡
-    self:InitSkillCd(805202,0,0) --反身拳
-    self:InitSkillCd(805203,0,6) --上勾拳
-    self:InitSkillCd(805204,45,35) --欧拉拳
-    self:InitSkillCd(805205,0,0) --格挡反击
-    self:InitSkillCd(805206,0,0) --流星冲锋坠
-    self:InitSkillCd(805207,20,10) --交叉射击
-    self:InitSkillCd(805208,8,15) --推进拳
-    self:InitSkillCd(805209,0,30) --下段斩
-    self:InitSkillCd(805216,0,15)--地面蓄力炮
-    self:InitSkillCd(805221,6,0) --移动射击向前
-    self:InitSkillCd(805222,0,40) --光刃三连
-    self:InitSkillCd(805223,40,40) --光刃上天
-    self:InitSkillCd(805224,0,30) --光刃二连
-    self:InitSkillCd(805225,0,0) --胸炮浮空版
-    self:InitSkillCd(805226,30,35) --胸炮地面起跳版
-    self:InitSkillCd(805227,45,35) --升龙腿
-    self:InitSkillCd(805228,0,10) --空落锤
-    self:InitSkillCd(805229,0,35) --重火锤
-    self:InitSkillCd(805230,0,15) --后退斩
-    self:InitSkillCd(805231,0,0) --响指波
-    self:InitSkillCd(805232,10,15) --瑟提锤
-    self:InitSkillCd(805234,0,6) --二连拳
-    self:InitSkillCd(805258,35,120) --冲刺机制：启动
-    self:InitSkillCd(805248,0,60) --OD：连续Plus推进拳
-    self:InitSkillCd(805249,0,40) --OD：瑟提锤
-    self:InitSkillCd(805273,0,0) --OD：胸炮浮空版
-    self:InitSkillCd(805274,30,35) --OD：胸炮地面起跳版
-    self:InitSkillCd(805275,0,60) --OD：蓄力不死斩启动技能
-    self:InitSkillCd(805277,0,30) --OD：光刃二连
-    self:InitSkillCd(805278,0,40) --OD：光刃三连
-    self:InitSkillCd(805279,0,40) --OD：流星冲锋坠
-    --self:InitSkillCd(805249,0,40) --OD角力启动
+--    self:InitSkillCd(805201,25,25) --格挡
+--    self:InitSkillCd(805202,0,0) --反身拳
+--    self:InitSkillCd(805203,0,5) --上勾拳
+--    self:InitSkillCd(805204,45,35) --欧拉拳
+--    self:InitSkillCd(805205,0,0) --格挡反击
+--    self:InitSkillCd(805206,0,0) --流星冲锋坠
+--    self:InitSkillCd(805207,20,10) --交叉射击
+--    self:InitSkillCd(805208,8,15) --推进拳
+--    self:InitSkillCd(805209,0,30) --下段斩
+--    self:InitSkillCd(805216,0,15)--地面蓄力炮
+--    self:InitSkillCd(805221,6,0) --移动射击向前
+--    self:InitSkillCd(805222,0,40) --光刃三连
+--    self:InitSkillCd(805223,40,40) --光刃上天
+--    self:InitSkillCd(805224,0,30) --光刃二连
+--    self:InitSkillCd(805225,0,0) --胸炮浮空版
+--    self:InitSkillCd(805226,30,35) --胸炮地面起跳版
+--    self:InitSkillCd(805227,45,35) --升龙腿
+--    self:InitSkillCd(805228,0,10) --空落锤
+--    self:InitSkillCd(805229,0,35) --重火锤
+--    self:InitSkillCd(805230,0,15) --后退斩
+--    self:InitSkillCd(805231,0,0) --响指波
+--    self:InitSkillCd(805232,10,15) --瑟提锤
+--    self:InitSkillCd(805234,0,5) --二连拳
+--    self:InitSkillCd(805258,35,120) --冲刺机制：启动
+--    self:InitSkillCd(805248,0,60) --OD：连续Plus推进拳
+--    self:InitSkillCd(805249,0,40) --OD：瑟提锤
+--    self:InitSkillCd(805273,0,0) --OD：胸炮浮空版
+--    self:InitSkillCd(805274,30,35) --OD：胸炮地面起跳版
+--    self:InitSkillCd(805275,0,60) --OD：蓄力不死斩启动技能
+--    self:InitSkillCd(805277,0,30) --OD：光刃二连
+--    self:InitSkillCd(805278,0,40) --OD：光刃三连
+--    self:InitSkillCd(805279,0,40) --OD：流星冲锋坠
 end
 
 ---韧性系统配置
@@ -223,9 +335,10 @@ function XChar8052:UpdateFightModeBefore()
     Base.UpdateFightModeBefore(self)
     self:HandleActionKeyFrameEventLatest() --尝试在事件列表里执行相应的函数
     self:DashTickCheck() --Dash机制Tick检查
-    self:MortalBladeTickCheck() --不死斩每帧更新
+    self:MortalBladeTickCheck() --不死斩机制释放检查
+    self:OdDashTickCheck() --OD机制技能每帧检测
     --self:AirFirePlayerShieldTickCheck() --浮空机制玩家护盾检查
-    --self:MoveFireTickCheck() --移动射击检查
+    self:MoveFireTickCheck() --移动射击检查
     --self:GoCenterCheck() --回中检查
 end
 
@@ -235,8 +348,27 @@ end
 ---不死斩每帧更新
 function XChar8052:MortalBladeTickCheck()
     
-    self:CastSkillToPosition(805275,self.levelCenterPoint) --尝试向场地中间放蓄力不死斩启动技能
+    --不在软狂暴和OD直接返回
+    if not self:CheckIsOnSoftFury() and not self:CheckCurIsOverDrive() then
+        return
+    end
     
+    --检查不死斩TimerCD情况
+    if not self:CheckNpcTimer(3) then
+        return
+    end
+
+    if not self:CheckSelfActionValid() then --行为不合法的时候返回
+        return
+    end
+
+    ----距离场地中心10m范围内的时候
+    if self:CheckNpcToPosDistanceIgnoreY(self._uuid,self:GetLevelCenterPoint(),10)then
+        self:MortalBladeStart()
+    else
+        self:CastSkillToPosition(805275,self.levelCenterPoint) --尝试向场地中间放蓄力不死斩启动技能
+    end
+    self:NpcTimerEnterCd(3) --启动后进入Cd
 end
 
 --endregion
@@ -246,28 +378,16 @@ end
 ---小辉辉冲刺技能初始化
 function XChar8052:DashInit()
     --默认关闭内外圈
-    --self:c(true,false)
-    --self:DashSetObstacleActive(false,false)
-    --self._proxy:SetObstacleActive(10,false)
-    --self._proxy:SetObstacleActive(11,false)
-    --self._proxy:SetObstacleActive(12,false)
-    --self._proxy:SetObstacleActive(13,false)
-    --self._proxy:SetObstacleActive(14,false)
-    --self._proxy:SetObstacleActive(15,false)
-    --self._proxy:SetObstacleActive(16,false)
-    --self._proxy:SetObstacleActive(17,false)
-    --self:DashSetObstacleActive(true,false)--关闭内圈障碍
-    --self:DashSetObstacleActive(false,false)--关闭外圈障碍
-    XLog.Warning("当前阶段"..self:GetCurPhase())
     -----Dash机制的几个点位保存-----
     self.dashPlayerPointList ={}
     self.dashMonsterPoint = self._proxy:GetSpot(6) --Dash机制BOSS位置
     table.insert(self.dashPlayerPointList,self._proxy:GetSpot(7))--Dash机制玩家1位置
     table.insert(self.dashPlayerPointList,self._proxy:GetSpot(8))--Dash机制玩家2位置
     table.insert(self.dashPlayerPointList,self._proxy:GetSpot(9))--Dash机制玩家3位置
-    self.dashArriveCheckRange = 0
+    -----机制关键要同步的东西--------
     self.curDashRound = 0 --当前冲刺轮次
-    self.dashMode = XChar8052.DashMode.None --默认冲刺没有东西
+    self.dashArriveCheckRange = 0
+    self.dashMode = (XChar8052.DashMode.None)--默认冲刺没有东西
     self.dashCenter = self:GetLevelCenterPoint() --场地中心点作为冲刺的中心点
     self.dashLinkEffect = "FxMb1StarknightLine01" --连线特效名
     self.dashSelectCount = 2 --选点的时候选择到了第几个点
@@ -279,10 +399,10 @@ function XChar8052:DashInit()
     self.dashTipsList = {} --冲刺范围的Line列表
     self.dashPingZhangBulletUUID = nil --冲刺机制屏障子弹的UUID
     ----冲刺范围默认参数----
-    self.dashOrthoCenterVerticalPointOffset =20
-    self.dashOrthoCenterHorizontalPointOffset=20
-    self.dashVerticalOffset =20
-    self.dashHorizontalOffset = 20
+    self.dashOrthoCenterVerticalPointOffset =14
+    self.dashOrthoCenterHorizontalPointOffset=14
+    self.dashVerticalOffset =14
+    self.dashHorizontalOffset = 14
     self:RefreshDashMapPointList() --根据配置的范围刷新冲刺列表
     ----冲刺范围配置----
     
@@ -345,6 +465,85 @@ function XChar8052:DashInit()
     self.dashShunPointList = { --标记起点和终点
     }
     
+    self.dashAboutSkill = { --Dash相关的技能，用来判断是否不在流程中
+        805240,--DashStart开始的技能
+        805241,--DashLoop1
+        805242,--DashLoop2
+        805243,--DashLoop3
+        805251,--转身
+        805239,--Dash的瑟提锤
+        805258,--启动1
+        805250,--启动2
+    }
+    self:DashSetDashBoundaryState(XChar8052.DashBoundaryState.None)
+end
+
+--OD机制技能每帧检测
+function XChar8052:OdDashTickCheck()
+    
+    if not self:CheckSkillCdDone(805258) then --检查启动技能的CD
+        return
+    end
+
+    if self:CheckAnyPlayerInUltra() then
+        return
+    end
+
+    if not self:CheckSelfActionValid() then
+        return
+    end
+
+    if self:CastSkillToTarget(805258) then --释放成功
+        self:ApplyMagicAllPlayer(8052134) --隐藏全场玩家UI
+    end
+    
+end
+
+---冲刺机制回区域检查
+function XChar8052:DashBackAreaCheck()
+    local isOutArea = false --是否在区域外
+    if self.curDashRound == 0 or self.curDashRound == 1 then --最开始的时候
+        if not self._proxy:CheckNpcPositionDistance(self._uuid,self.dashCenter,21,false) then
+            isOutArea = true
+        end
+    elseif not self._proxy:CheckNpcPositionDistance(self._uuid,self.dashCenter,30,false) then--其他情况
+            isOutArea = true
+    end
+    
+    if isOutArea == false then --没有出区域
+        return
+    end
+
+    ----在区域外要做的处理
+    if self.dashMode == XChar8052.DashMode.Loop then --如果是在Loop中的话马上看向下一个点
+        if self.nextDashIndex == 1 then
+            self._proxy:SetNpcPosition(self._uuid,self.dashCenter,false) --传到场地中心
+            self._proxy:SetNpcPosition(self._uuid,self.dashList[self.nextDashIndex],false) --看向第一个点
+            return
+        end
+        if self.nextDashIndex <= #self.dashList then
+            self._proxy:SetNpcPosition(self._uuid,self.dashList[self.nextDashIndex-1],false) --传到起点
+            self._proxy:LookAtPositionImmediately(self._uuid,self.dashList[self.nextDashIndex]) --看向下一个点
+            return
+        else
+            self._proxy:SetNpcPosition(self._uuid,self.dashList[#self.dashList],false) --传送到最后一个点结束
+            self:OnCurDashRoundEnd()
+        end
+        
+    end
+    self._proxy:SetNpcPosition(self._uuid,self.dashCenter,false) --出了场地传回场地中心
+end
+
+--检查是否有玩家在必杀
+function XChar8052:CheckAnyPlayerInUltra()
+    local playerList = self._proxy:GetPlayerNpcList()
+    for i ,player in pairs(playerList)do
+        local suc,actionId,actionType = self._proxy:TryGetCurrentAction(player)
+        if suc and actionType == 2  then--如果有奥义
+            return true
+        end
+    end
+    return false --没有人在奥义
 end
 
 ---刷新冲刺Map点
@@ -427,24 +626,46 @@ function XChar8052:CreatDashTips()
     local _
     --创建屏障子弹
     self:ClearDashTips() --先清空
-    if self.curDashRound == 2 then  --第二轮创建边长40的
-        _,self.dashPingZhangBulletUUID = self._proxy:LaunchMissileFromPosToPos(self._uuid,80520170,80525002,self.dashCenter,self.dashCenter)
-        self:DashSetObstacleActive(true,false)--关闭内圈
-        self:DashSetObstacleActive(false,true)--开启外圈
-    else --第一轮创建边长30的
+    ---30内圈
+    if self.dashBoundaryState == XChar8052.DashBoundaryState.SmallAwake or self.dashBoundaryState == XChar8052.DashBoundaryState.None then
         _,self.dashPingZhangBulletUUID = self._proxy:LaunchMissileFromPosToPos(self._uuid,80520170,80525001,self.dashCenter,self.dashCenter)
         self:DashSetObstacleActive(true,true)--开启内圈
         self:DashSetObstacleActive(false,false)--关闭外圈
+    else -- 40外圈
+        _,self.dashPingZhangBulletUUID = self._proxy:LaunchMissileFromPosToPos(self._uuid,80520170,80525002,self.dashCenter,self.dashCenter)
+        self:DashSetObstacleActive(true,false)--关闭内圈
+        self:DashSetObstacleActive(false,true)--开启外圈
+    end
+end
+
+---重新启动时
+function XChar8052:ReStartCreatDashTips()
+    local _
+    --创建屏障子弹
+    self:ClearDashTips() --先清空
+    ---内圈
+    if self.curDashRound == 1then
+        _,self.dashPingZhangBulletUUID = self._proxy:LaunchMissileFromPosToPos(self._uuid,80520170,80525001,self.dashCenter,self.dashCenter)
+        self:DashSetObstacleActive(true,true)--开启内圈
+        self:DashSetObstacleActive(false,false)--关闭外圈
+    else
+        --外圈
+        _,self.dashPingZhangBulletUUID = self._proxy:LaunchMissileFromPosToPos(self._uuid,80520170,80525002,self.dashCenter,self.dashCenter)
+        self:DashSetObstacleActive(true,false)--关闭内圈
+        self:DashSetObstacleActive(false,true)--开启外圈
     end
     
 end
 
 ---ClearDashTips，清除提示障碍边缘的特效子弹
 function XChar8052:ClearDashTips()
-    if self.dashPingZhangBulletUUID then
-        self._proxy:DestroyMissileByUUID(self.dashPingZhangBulletUUID)
-        self.dashPingZhangBulletUUID = nil
-    end
+    self._proxy:RemoveCurrentNpcMissileByTemplateId(80525001)--内外圈都删除
+    self._proxy:RemoveCurrentNpcMissileByTemplateId(80525002)--内外圈都删除
+    --if self.dashPingZhangBulletUUID then
+    --    XLog.Warning("删除子弹UUID"..self.dashPingZhangBulletUUID)
+    --    self._proxy:DestroyMissileByUUID(self.dashPingZhangBulletUUID)
+    --end
+    self.dashPingZhangBulletUUID = nil
 end
 
 ---小辉辉Dash机制开始布置场地
@@ -455,8 +676,6 @@ function XChar8052:DashStartSetLevel()
         self._proxy:SetNpcRotation(playerUUID,{x=0,y=0,z=0})
         self._proxy:ResetCamera(0,0,true) --这个好像只会设置自己的
     end
-
-    self.curDashRound = 1 --要从第一轮开始
     
     ----Dash初次冲刺范围----
     self.dashOrthoCenterVerticalPointOffset = 14
@@ -465,39 +684,72 @@ function XChar8052:DashStartSetLevel()
     self.dashHorizontalOffset = 14
     self:RefreshDashMapPointList() --根据配置的范围刷新冲刺列表
     self.dashArriveCheckRange = 3 --首次冲刺的判断范围
+    self:DashSetDashBoundaryState(XChar8052.DashBoundaryState.SmallAwake) --初始的那一次
     -------创建场景屏障特效
     self:CreatDashTips()
-    
+    self:DashSetDashMode(XChar8052.DashMode.AlreadySetLevel)--设置好关卡了
+end
+
+---小辉辉Dash设置冲刺模式
+function XChar8052:DashSetDashMode(mode)
+    self.dashMode = mode
+    self:MonsterSubSetVarSyncValue("dashMode",mode)
+    if self.dashMode == XChar8052.DashMode.None then
+        --XLog.Warning("小辉辉的冲刺流程结束")
+    end
 end
 
 ---小辉辉Dash机制开始Go了
 function XChar8052:DashStartGo()
-    self:ForceSkillToNpc(805239,self:GetRandomPlayerInRange(0,999))
-    --self:ApplyMagicOtherAllNpc(8052086) --取消禁止控制相机
-    --随机释放冲刺的爆炸技能
+    self:ForceSkillToNpc(805239,self:GetRandomPlayerInRange(0,999)) --随机向一个玩家释放冲刺机制瑟提锤
 end
 
 ---小辉辉Dash机制ReadyToStart
 function XChar8052:DashReadyStart()
     self._proxy:ApplyMagic(self._uuid,self._uuid,8052089) --不能被玩家索敌/锁定
-    self._proxy:SetNpcPosition(self._uuid,self.dashMonsterPoint) --传送怪物位置
-    self._proxy:SetNpcRotation(self._uuid,{x=0,y=180,z=0})
-    self:ForceSkill(805250) --强制释放这个技能
-    ------随机释放冲刺的爆炸技能
-    self:ApplyMagicAllPlayer(8052085) --所有玩家禁止控制相机
-    self:ApplyMagicAllPlayer(8052301) --所有玩家设置相机偏移
-    self:ApplyMagicAllPlayer(8052302) --所有玩家设置相机偏移
+    self._proxy:SetNpcPosition(self._uuid,self.dashMonsterPoint)   --设置冲刺时怪物位置
+    self._proxy:SetNpcRotation(self._uuid,{x=0,y=180,z=0}) --设置冲刺时怪物朝向
+    
+    ------
+    self:AbortActionAllPlayer() --打断所有玩家的当前Action
+    self:ApplyMagicAllPlayer(8052324) --所有玩家设置相机位置偏移
+    self:ApplyMagicAllPlayer(8052325) --所有玩家设置相机旋转偏移
+    self:ApplyMagicAllPlayer(8052134) --屏蔽所有玩家的UI
+    self._proxy:ApplyMagic(self._uuid,self._uuid,8052135) --免疫Relink特殊伤害受击
+    self:DashSetDashMode(XChar8052.DashMode.ReadyStart)--状态变成了准备开始
+    self:DashSetCurRound(1)
+    self:ForceSkill(805250) --强制释放启动2
+end
+
+---小辉辉Dash技能重新开始
+function XChar8052:DashScriptInitReStart()
+    --XLog.Warning("崔俊豪重启冲刺技能")
+    self:CleanDashLink() --清空连线
+    if self.curDashRound == 1 then
+        --XLog.Warning("冲啊")
+        self.dashOrthoCenterVerticalPointOffset = 14
+        self.dashOrthoCenterHorizontalPointOffset= 14
+        self.dashVerticalOffset = 14
+        self.dashHorizontalOffset = 14
+        self.dashArriveCheckRange = 3 --首次冲刺的判断范围
+        self:RefreshDashMapPointList() --根据配置的范围刷新冲刺列表
+        self:ForceSkillToNpc(805239,self:GetRandomPlayerInRange(0,999)) --随机向一个玩家释放冲刺机制瑟提锤，开始流程
+    end
+
+    if self.curDashRound == 2 then
+        self:ForceSkillToNpc(805239,self:GetRandomPlayerInRange(0,999)) --随机向一个玩家释放冲刺机制瑟提锤，开始流程
+    end
 end
 
 ---小辉辉处理边界
 function XChar8052:DashHandleBoundary()
-    --在砸下来的时候已经加过轮次了
+    --根据护盾的状态来决定
 
-    if self.curDashRound == 1 then
-        
-    end
-    
-    if self.curDashRound == 2 then
+    if self.dashBoundaryState == XChar8052.DashBoundaryState.SmallAwake then
+        self:DashSetDashBoundaryState(XChar8052.DashBoundaryState.Small)
+
+    elseif self.dashBoundaryState == XChar8052.DashBoundaryState.Small then
+
         ----第二次范围边长40----
         self.dashOrthoCenterVerticalPointOffset = 20
         self.dashOrthoCenterHorizontalPointOffset= 20
@@ -508,15 +760,29 @@ function XChar8052:DashHandleBoundary()
         -------创建场景屏障特效
         self:CreatDashTips()
         self:DashProcessBulletControl()
-    end
-    
-    if self.curDashRound > 3 then --结束
+        self._proxy:RemoveBuff(self._uuid,8052076) --移除不能被碰撞
+        self._proxy:RemoveBuff(self._uuid,8052093) --移除无视场景障碍
+        self:DashSetCurRound(2) --当前冲刺该是第二轮了
+        self:DashSetDashBoundaryState(XChar8052.DashBoundaryState.Big)
+    elseif self.dashBoundaryState == XChar8052.DashBoundaryState.Big then
+
         self:ClearDashTips() --清除冲刺提示
         self:DashSetObstacleActive(true,false)--关闭内圈障碍
         self:DashSetObstacleActive(false,false)--关闭外圈障碍
-        self:RemoveBuffAllPlayer(8052301)
-        self:RemoveBuffAllPlayer(8052302)
+        self:RemoveBuffAllPlayer(8052301)--相机坐标偏移
+        self:RemoveBuffAllPlayer(8052302)--相机旋转偏移
         self._proxy:RemoveBuff(self._uuid,8052089)
+        self:RemoveBuffAllPlayer(8052134) --移除隐藏UI的Buff
+        self:RemoveBuffAllPlayer(8052324) --移除位置偏移
+        self:RemoveBuffAllPlayer(8052325)--移除旋转偏移
+        self._proxy:RemoveBuff(self._uuid,8052135) --移除免疫特殊伤害受击
+        self._proxy:RemoveBuff(self._uuid,1000465) --移除锁定Od
+        self._proxy:RemoveBuff(self._uuid,1000469) --取消锁韧
+        self._proxy:RemoveBuff(self._uuid,8052076) --移除不能被碰撞
+        self._proxy:RemoveBuff(self._uuid,8052093) --移除无视场景障碍
+        self:DashSetCurRound(0)
+        self:DashSetDashBoundaryState(XChar8052.DashBoundaryState.None) --结束
+        self:DashSetDashMode(XChar8052.DashMode.None) --结束流程
     end
     
 end
@@ -525,34 +791,39 @@ end
 function XChar8052:DashRefresh()
     self.dashList = {} --清空冲刺列表
     self.dashTestNpcList = {}--清空测试Npc列表
-    self.dashLinkIdList={} --清空LinkID列表
+    self:CleanDashLink()
 end
 
 ---冲刺技能Update
 function XChar8052:DashTickCheck()
-    if self.dashMode == XChar8052.DashMode.Loop then
-        self:OnDashLoop()--循环的时候判断到点或结束
+    if self.dashMode == XChar8052.DashMode.None then --没有进流程就返回
+        return
     end
+    --------在冲刺机制流程里面--------
+    self:DashBackAreaCheck() --回区域检查
+    self:DashLoopTickCheck() --Dash循环检查
+    self:DashReStartCheck() --Dash过程中重启检查
     
 end
 
 ---进入DashStart
 function XChar8052:EnterDashStart()
-    if self.curDashRound >3 then --限制冲刺次数
+    if self.curDashRound ==0 then --无法无缘无辜就启动
         return
     end
+    
     self:DashRefresh() --清空上一轮保存的点
     self.nextDashIndex = 1 --要冲向的点Index是1
     local startPos = nil --冲刺的开始点
     if self.curDashRound ==1 then
-        XLog.Warning("第一次冲刺")
+        --XLog.Warning("第一次冲刺")
         startPos =self:TryGetDashStartPoint()--获得开始的第一个点
     elseif self.curDashRound ==2 then
-        XLog.Warning("第二次冲刺")
+        --XLog.Warning("第二次冲刺")
         startPos = self:TryGetDashStartPoint()--获得开始的第一个点
     elseif self.curDashRound ==3 then
         startPos = self:TryGetDashStartPoint()--获得开始的第一个点
-        XLog.Warning("第三次冲刺")
+        --XLog.Warning("第三次冲刺")
     end
     table.insert(self.dashList,startPos)--插入开始的第一个点。
     
@@ -563,6 +834,55 @@ function XChar8052:EnterDashStart()
     self._proxy:LookAtPositionImmediately(self._uuid,self.dashList[self.nextDashIndex])--看向要冲刺的第一个点
     self.dashSelectCount =2 --冲刺选点之后要选第二个点了
     self:CreatStartDashPosLink() --创建开始时的冲刺线
+end
+
+---DashReStart，重启重启流程
+function XChar8052:DashReStart()
+    local startPos = nil --冲刺的开始点
+    
+    self._proxy:ApplyMagic(self._uuid,self._uuid,8052075) --不能被碰撞
+    self._proxy:ApplyMagic(self._uuid,self._uuid,8052091) --无敌
+    self._proxy:ApplyMagic(self._uuid,self._uuid,8052093) --无视场景障碍
+    
+    if #self.dashList == 0 then --冲刺列表为空就重新选一下点
+        if self.curDashRound == 1 or self.curDashRound == 0 then
+            ----Dash初次冲刺范围----
+            self.dashOrthoCenterVerticalPointOffset = 14
+            self.dashOrthoCenterHorizontalPointOffset= 14
+            self.dashVerticalOffset = 14
+            self.dashHorizontalOffset = 14
+            self.dashArriveCheckRange = 3 --首次冲刺的判断范围
+            self:DashSetCurRound(1)
+            self:DashSetDashBoundaryState(XChar8052.DashBoundaryState.Small)
+        end
+
+        if self.curDashRound == 2 then
+            self.dashOrthoCenterVerticalPointOffset = 20
+            self.dashOrthoCenterHorizontalPointOffset= 20
+            self.dashVerticalOffset = 20
+            self.dashHorizontalOffset = 20
+            self:DashSetCurRound(2)
+            self.dashArriveCheckRange = 5 --第二次速度比较快，到达的范围检测更大
+            self:DashSetDashBoundaryState(XChar8052.DashBoundaryState.Big)
+        end
+
+        self:RefreshDashMapPointList() --根据配置的范围刷新冲刺列表
+        self:ReStartCreatDashTips() ---重新创建屏障
+
+        startPos =self:TryGetDashStartPoint()--获得开始的第一个点
+        table.insert(self.dashList,startPos)--插入开始的第一个点。
+        self:CreatStartDashPosLink() --创建开始时的冲刺线
+        self.nextDashIndex = 1 --重新选点重置下一个点
+        self:ForceSkillToPosition(805240,startPos)--向开始的点释放Start技能
+        self:DashSetDashMode(XChar8052.DashMode.Start) --DashMode设置为Start
+        self._proxy:LookAtPositionImmediately(self._uuid,self.dashList[self.nextDashIndex])--看向要冲刺的第一个点
+        self.dashSelectCount = 2 --冲刺选点之后要选第二个点了
+        return
+    end
+    if #self.dashList > 0 then
+        --本端打断吧
+        self:EnterDashLoop()
+    end
 end
 
 ---进入DashLoop时
@@ -583,7 +903,7 @@ function XChar8052:EnterDashLoop()
     local targetPoint = self.dashList[self.nextDashIndex]
     self:ForceSkillToPosition(dashSkill,targetPoint)--向目标点放冲刺技能
     self._proxy:LookAtPositionImmediately(self._uuid,targetPoint)--看向目标点
-    self.dashMode= XChar8052.DashMode.Loop --进入Loop判断
+    self:DashSetDashMode(XChar8052.DashMode.Loop)--进入Loop判断
 end
 
 ---选点完成后创建连线
@@ -623,6 +943,7 @@ function XChar8052:CleanDashLink()
         self._proxy:RemoveLink(self._uuid,self.dashLinkIdList[self.nextDashIndex])--到达第几个点就删除几个点
     end
     self.dashLinkIdList={}--清空冲刺线
+    self._proxy:RemoveAllNpcPosLink(self._uuid)
 end
 
 ---移除冲刺时的线
@@ -630,13 +951,41 @@ function XChar8052:RemoveDashPosLink()
     self._proxy:RemoveLink(self._uuid,self.dashLinkIdList[self.nextDashIndex])--到达第几个点就删除几个点
 end
 
----当DashLoop的时候
-function XChar8052:OnDashLoop()
-    local nextPointDistance = self._proxy:GetNpcToPositionDistance(self._uuid,self.dashList[self.nextDashIndex])--获取和下一个点的距离
-    --XLog.Warning(nextPointDistance)--和下一个点的距离
-    --判断到达目标点的条件
-    if nextPointDistance <= self.dashArriveCheckRange then --小于这个距离就等于到达了目的地
-        self:OnArrivedDashPoint()
+---冲刺过程中重启检查
+function XChar8052:DashReStartCheck()
+    if not self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Idle, -1) then --不在Idle
+        return
+    end
+    if not self:CheckSelfActionValid() then --不懂不合法
+        return
+    end
+    local suc , actionId,actionType = self._proxy:TryGetCurrentAction(self._uuid)
+    if suc then
+        for i, skillId in pairs(self.dashAboutSkill) do --检查是不是在放相关技能
+            if actionId == skillId then
+                return
+            end
+        end
+    end
+    
+    self:DashReStart() --重启重启！
+    
+end
+
+---DashLoop检查
+function XChar8052:DashLoopTickCheck()
+    if not self.dashMode == XChar8052.DashMode.Loop then --不在循环中跳过
+        return
+    end
+
+    if #self.dashList ==0 then
+        self:DashReStart() --重启重启！
+    else
+        local nextPointDistance = self._proxy:GetNpcToPositionDistance(self._uuid,self.dashList[self.nextDashIndex])--获取和下一个点的距离
+        --判断到达目标点的条件
+        if nextPointDistance <= self.dashArriveCheckRange  then --小于这个距离就等于到达了目的地
+            self:OnArrivedDashPoint()
+        end
     end
 end
 
@@ -735,48 +1084,42 @@ function XChar8052:OnArrivedDashPoint()
         end
     end
 
-    if self.curDashRound == 3 then --第三轮
-        --根据到达点要做的事情
-        if self.nextDashIndex == 2 then
-            self:GetDashPoint(2)--新增获取两次点
-        end
-        if self.nextDashIndex == 3 then
-            self:GetDashPoint(2)--新增获取两次点
-        end
-        if self.nextDashIndex == 4 then
-        end
-        if self.nextDashIndex == 5 then
-        end
-        if self.nextDashIndex == 6 then
-        end
-        if self.nextDashIndex == 7 then
-        end
-        if self.nextDashIndex == 8 then
-        end
-        if self.nextDashIndex == 9 then
-        end
-        if self.nextDashIndex == 10 then
-        end
-    end
+    --if self.curDashRound == 3 then --第三轮
+    --    --根据到达点要做的事情
+    --    if self.nextDashIndex == 2 then
+    --        self:GetDashPoint(2)--新增获取两次点
+    --    end
+    --    if self.nextDashIndex == 3 then
+    --        self:GetDashPoint(2)--新增获取两次点
+    --    end
+    --    if self.nextDashIndex == 4 then
+    --    end
+    --    if self.nextDashIndex == 5 then
+    --    end
+    --    if self.nextDashIndex == 6 then
+    --    end
+    --    if self.nextDashIndex == 7 then
+    --    end
+    --    if self.nextDashIndex == 8 then
+    --    end
+    --    if self.nextDashIndex == 9 then
+    --    end
+    --    if self.nextDashIndex == 10 then
+    --    end
+    --end
 
     ---结束判断，如果结束就结束了---
     if self.nextDashIndex==#self.dashList then --没有可冲的点，当前要结束了。
-    self:OnCurDashRoundEnd()
+        self:OnCurDashRoundEnd()
     return
     end
-
 
     ---还没结束要做的事情---
     self.nextDashIndex = self.nextDashIndex+1 --自增1
     --如果还有冲刺的点就看向下一个点继续冲刺。
     local nextPos = self.dashList[self.nextDashIndex]
-
-    if self.curDashRound == 3 then
-        self:EnterDashLoop()
-        self._proxy:LookAtPositionImmediately(self._uuid,nextPos)--看向下一个点
-    else
-        self:ForceSkillToPosition(805251,nextPos)--转向下一个点
-    end
+    self:ForceSkillToPosition(805251,nextPos)--转向下一个点
+    self:DashSetDashMode(XChar8052.DashMode.Turn) --设置为转身
 end
 
 ---Dash结束
@@ -1124,7 +1467,7 @@ end
 
 ---Action帧事件获点
 function XChar8052:ActionKeyFrameGetDashPoint()
-    local isFirst = #self.dashList == 0 --是否开始第一次选点
+    local isFirst = #self.dashList == 0 --是否之前没有选过点
     if self.curDashRound == 1 then --第一回
         if isFirst then
             self:GetDashPoint(1)
@@ -1189,14 +1532,11 @@ end
 function XChar8052:OnCurDashRoundEnd()
     self.nextDashIndex = self.nextDashIndex+1 --自增1
     self:RemoveDashPosLink()
-    self.curDashRound = self.curDashRound + 1 --回合数+1
     self:CleanDashLink() --保底清除所有冲刺线
-    self.dashMode=XChar8052.DashMode.None --状态设置成无,结束冲刺.
-    self.dashSelectCount = 2 --重置一下Count
+    self:DashSetDashMode(XChar8052.DashMode.End)--状态设置为中场可能会结束流程
     
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052076) --移除不能被碰撞
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052092) --移除无敌
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052094) --移除无视场景障碍
+    self.dashSelectCount = 2 --重置一下Count
+    self._proxy:RemoveBuff(self._uuid,8052091) --移除无敌
     
     self:SetPlayerHardLockSelf() --设置玩家强锁自己    
     self:ForceSkillToPosition(805239,self.dashCenter) --向Dash的中心点放瑟提锤用来结束流程。
@@ -1206,6 +1546,18 @@ function XChar8052:OnCurDashRoundEnd()
     --    self:RemoveBuffAllPlayer(8052302)
     --end
     ----RemoveBuffAllPlayer
+end
+
+---冲刺设置当前冲刺回合（带同步）
+function XChar8052:DashSetCurRound(round)
+    self.curDashRound = round
+    self:MonsterSubSetVarSyncValue("curDashRound",self.curDashRound)
+end
+
+---冲刺设置当前屏障模式(带同步)
+function XChar8052:DashSetDashBoundaryState(state)
+    self.dashBoundaryState = state
+    self:MonsterSubSetVarSyncValue("dashBoundaryState",self.dashBoundaryState)
 end
 
 ---设置障碍激活情况
@@ -1221,6 +1573,11 @@ function XChar8052:DashSetObstacleActive(isInside,active)
         self._proxy:SetObstacleActive(12,active)
         self._proxy:SetObstacleActive(13,active)
     end
+end
+
+---移除所有玩家的ui隐藏
+function XChar8052:DashRemoveAllPlayerUIHide()
+    self:RemoveBuffAllPlayer(8052134)
 end
 
 ---处理Dash技能开始时的子弹控制
@@ -1407,6 +1764,7 @@ end
 --endregion
 
 --region 事件系统执行
+
 ---监听事件，目前仅监听自己发出来的
 function XChar8052:OnNpcSkillActionKeyframeSendEvent(launcher,eventName,skillActionId,keyFrameId,skillId)
     if launcher ~= self._uuid then
@@ -1421,6 +1779,7 @@ function XChar8052:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
         return
     end
     self:ParryMainLogic(npcUUID,buffId)--拼刀主检测
+    self:SoftFuryHitDamageHitCheck(npcUUID,buffId)
 end
 
 ---受到伤害后事件
@@ -1429,11 +1788,12 @@ function XChar8052:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physica
     if targetId ~= self._uuid then
         return
     end
-    --自己受到伤害时
+    --自己受到伤害时检查跟Npc的拼刀
     if self:CheckParryNpc(launcherId) then
         self:ParryToNpc(launcherId)
     end
 end
+
 ---拼刀触发前
 function XChar8052:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag, triggerMissileTemplateId, triggerMissileUUID, contextId)
     --不是自己或不是技能目标触发的不管
@@ -1450,14 +1810,13 @@ function XChar8052:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, tri
     
     if parryType == 1 or parryType == 3 then --打断拼刀
         self:BeParryByNpc(counterNpcUUID)--被普通拼刀
-        
-        --self._proxy:CastWrestle(self._uuid,counterNpcUUID,805201) --进入角力
-
     end
 
     if parryType == 2 then --不打断拼刀
-        self:FreezeFrameLightToNpc(self._uuid)--顿帧
-        self:FreezeFrameLightToNpc(counterNpcUUID)--顿帧
+        --self:FreezeFrameLightToNpc(self._uuid)--顿帧
+        --self:FreezeFrameLightToNpc(counterNpcUUID)--顿帧
+        --XLog.Warning("不打断拼刀")
+        self._proxy:LaunchMissile(self._uuid,triggerNpcUUID,80520150,80520521)--拼刀特效
     end
 
     --if parryType == 3 then --角力
@@ -1487,6 +1846,23 @@ function XChar8052:OnMonsterCastSkillSuccessAfter(skill)
     --有的技能需要
 end
 
+---怪物自己死亡时
+function XChar8052:OnMonsterSelfDie()
+    if self._proxy:CheckBuffByKind(self._uuid,1000512) then--有这个提示的时候
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1000513) --移除这个Buff
+    end
+end
+
+---处理怪物受到伤害时的受击
+function XChar8052:OnMonsterGetDamageBeHit(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
+    XLog.Warning("受击")
+    if self:CheckNpcIsPlayer(launcherId) then
+        self._proxy:LookAtPositionImmediately(self._uuid,self._proxy:GetNpcPosition(launcherId)) --看向目标所在位置
+        self:ForceSkillToNpc(805245,launcherId)
+    else
+        self:ForceSkill(805245)
+    end
+end
 --endregion
 
 --region 角力
@@ -1512,7 +1888,9 @@ end
 
 ---怪物进入OD后
 function XChar8052:MonsterEnterOverDriveAfter()
-    --退出OD后
+    if self:CheckIsOnSoftFury() then --狂暴的时候就不处理了
+        return
+    end
     if self:GetCurPhase() == 1 then --1阶段OD
         self:EnterSkillGiveCd(805201,10) --10秒后格挡
         self:EnterSkillGiveCd(805248,5) --5秒后OD推进拳
@@ -1527,12 +1905,10 @@ function XChar8052:MonsterEnterOverDriveAfter()
     self:EnterSkillGiveCd(805249,25) --10秒后OD瑟提锤
     self:EnterSkillGiveCd(805258,25) --15秒后Dash启动
     self:EnterSkillGiveCd(805252,20) --15秒后浮空机制启动
-    self:EnterSkillGiveCd(805275,20) --15秒后可以释放蓄力不死斩启动
     self:EnterSkillGiveCd(805277,5) --5秒后可以放光刃二连
     self:EnterSkillGiveCd(805278,15) --5秒后可以放光刃二连
     
-    
-    
+    self:NpcTimerEnterGiveCd(3,20) --15秒后可以释放蓄力不死斩
 end
 
 ---怪物退出OD后
@@ -1540,7 +1916,7 @@ function XChar8052:OnMonsterExitBreakAfter()
     self:TryRiseCurPhase() --退出Break时提升阶段
     self:EnterSkillGiveCd(805201,15) --格挡
     --退出OD后
-    self:InitSkillCd(805201,35,35) --格挡
+    self:InitSkillCd(805201,25,25) --格挡
 end
 
 --endregion
@@ -1551,7 +1927,7 @@ end
 
 --endregion
 
---region 小辉辉战斗逻辑
+--region 小辉辉战斗专属逻辑不包括机制
 
 ---回中检查，检查是否要回中
 function XChar8052:GoCenterCheck()
@@ -1570,7 +1946,7 @@ end
 
 ---移动射击时每帧检测
 function XChar8052:MoveFireTickCheck()
-    if not self._proxy:CheckNpcCurrentAction(self._uuid,805221)then --是否在移动射击
+    if not self._proxy:CheckNpcCurrentAction(self._uuid,805221)then --在移动射击的过程中
         return
     end
     
@@ -1580,16 +1956,50 @@ function XChar8052:MoveFireTickCheck()
         return
     end
 
-    if not  (time >= 1.4 and time <=2.6) then
+    if not  (time >= 1.4 and time <=2.6) then --移动射击的后摇
         return
     end
-    
+    local skillList ={
+        [805277] = 10, --OD光刃二连
+        [805278] = 10, --OD光刃三连
+        [805248] = 10,  --OD连续推进拳
+        [805249] = 10,  --OD瑟提锤
+        [805227] = 10, --升龙腿
+        [805224] = 10,  --光刃二连
+        [805216] = 10,  --地面蓄力炮（10）
+        [805229] = 10,  --重火锤
+        [805230] = 10,  --后退斩
+        [805209] = 10 , --下段斩
+        [805232] = 10,  --瑟提锤
+        [805208] = 10,  --中远距离：推进拳（15）
+        [805204]=  10,  --欧拉拳（35）
+        [805207] = 10,  --交叉射击：近距离后退拉开距离（）
+        [805221] = 10,  --超远距离：移动射击（0）远程
+        [805203]=  10,   --上勾拳（0）
+        [805234]=  10,   --二连拳（0）
+        [805202]=  10,   --反身拳（0）
+    }
+    local skill
     ---移动射击且可以衔接的时候
-    if self:CheckTargetDistance(8) then --8m以内有威胁，停止
-        self._proxy:AbortAction(self._uuid,true) --打断当前技能
-        XLog.Warning("停止释放技能")
-        local castGroup = self:GetCastGroup()
-        self:TryCastSkillToTargetByWeights(castGroup)
+    if self:CheckTargetDistance(8) then --优先攻击当前目标，如果当前目标在
+        skill = self:GetAbleSkillByWeightsToNpc(skillList,self:GetTarget())
+        if skill then
+            if self:ForceSkillToTarget(skill) then --如果对目标释放技能成功就直接返回
+                return
+            end 
+        end
+    end
+    
+    --目标太远的时候随机找附近的玩家攻击。
+    for i, npc in pairs(self._proxy:GetPlayerNpcList())do 
+        if self:CheckTargetValidByNpc(npc) and self._proxy:CheckNpcDistance(self._uuid,npc,6) then --活着的6m范围内的玩家
+            skill = self:GetAbleSkillByWeightsToNpc(skillList,npc)
+            if skill then
+                if self:ForceSkillToNpc(skill,npc) then --如果对目标释放技能成功就直接返回
+                    return
+                end
+            end
+        end
     end
 end
 
@@ -1605,7 +2015,84 @@ end
 
 --endregion
 
+--region 软狂暴专区
+
+--进入软狂暴后
+function XChar8052:OnEnterSoftFuryAfter()
+    local castGroup={
+        {--OD：Dash机制
+            [805258] = 10,  --Dash机制启动
+        },
+        {--OD:强力技能
+            [805204]=  50,  --欧拉拳（35）
+            [805277] = 30, --OD光刃二连
+            [805278] = 30, --OD光刃三连
+            [805248] = 10,  --OD连续推进拳
+            [805249] = 50,  --OD瑟提锤
+            [805223] = 10,  --光刃上天
+        },
+    }
+    
+    ----格挡解放---
+    self:InitSkillCd(805201,0,15) --格挡
+    -------------
+    
+    ----闪避解放（但是好像并没有闪避的技能）----
+    self:InitNpcTimer(1,2,8) --闪避CD
+    self:InitNpcTimer(2,15,15) --连续闪避CD，闪避时触发。
+    ----闪避解放----
+    
+    ------OD技能处理一下配置-------------------------------
+    self:InitSkillCd(805204,0,0) --OD：欧拉拳
+    self:InitSkillCd(805249,0,0) --OD：瑟提锤
+    self:InitSkillCd(805248,0,15) --OD：连续Plus推进拳
+    self:InitSkillCd(805277,0,10) --OD：光刃二连
+    self:InitSkillCd(805278,0,10) --OD：光刃三连
+    self:InitSkillCd(805223,15,40) --光刃上天
+    
+    self:InitNpcTimer(3,10,15)--OD：蓄力不死斩启动技能
+    
+    self.skillConfigs[805248].IsNeedODState = false
+    self.skillConfigs[805277].IsNeedODState = false
+    self.skillConfigs[805278].IsNeedODState = false
+    self.skillConfigs[805275].IsNeedODState = false
+    self.skillConfigs[805249].IsNeedODState = false
+    self.skillConfigs[805223].IsNeedODState = false--光刃上天
+    self.skillConfigs[805248].PhaseNeed = {  }--OD：连续Plus推进拳
+    self.skillConfigs[805277].PhaseNeed = {  }--OD：光刃二连
+    self.skillConfigs[805278].PhaseNeed = {  }--OD：光刃三连
+    self.skillConfigs[805275].PhaseNeed = {  }--OD：蓄力不死斩启动技能
+    self.skillConfigs[805249].PhaseNeed = {  }--OD：瑟提锤
+    self.skillConfigs[805223].PhaseNeed = {  }--光刃上天
+    ------OD技能处理一下变成新的-------------------------------
+    
+    self:SetCastGroup(castGroup) --设置成新的技能组
+end
+
+--软狂暴伤害命中标记
+function XChar8052:SoftFuryHitDamageHitCheck(npcUUID,buffId)
+    if buffId ~= 8052132 then
+        return
+    end
+    local buffCount = self._proxy:GetBuffStacks(npcUUID,8052132)
+    local damageMagic = 8052461 --默认8000
+    if buffCount == 2 then --第二次一万
+        damageMagic = 8052462
+    elseif buffCount >= 3 then --三次以上斩杀
+        damageMagic = 8052464
+    elseif buffCount == 4 then
+        damageMagic = 8052463
+    elseif buffCount >= 5 then
+        damageMagic = 8052464
+    end
+    --XLog.Warning("造成了伤害:"..damageMagic)
+    self._proxy:ApplyMagic(self._uuid,npcUUID,damageMagic) --造成伤害
+end
+
+--endregion
+
 --region 闪避
+
 ---闪避
 function XChar8052:DoDodge()
     
@@ -1642,14 +2129,25 @@ end
 function XChar8052:CheckParryNpc(npc)
     local angle = 135
     local buffKind = 8052001
-    
+    if npc ~= self:GetTarget() then --目标检查
+        return false
+    end
+    if not self._proxy:CheckNpc(npc) then--不存在放过
+        return
+    end
+    if not self:CheckTargetValidByNpc(npc) then --放过死人
+        return
+    end
+    if not self:CheckTargetDistance(npc,3.5) then --目标需要在3.5米内
+        return false
+    end
     if not self:CheckSkillCdDone(805201) then --检查格挡技能CD
         return false
     end
-    if not self._proxy:CheckNpcInAngle(self._uuid,npc,angle) then--在自己角度范围内
+    if not self._proxy:CheckNpcInAngle(self._uuid,npc,angle) then--角度范围检查
         return false
     end
-    if not  self._proxy:CheckBuffByKind(self._uuid,buffKind) then--身上没有可以格挡的标记
+    if not  self._proxy:CheckBuffByKind(self._uuid,buffKind) then--可格挡标记检查
         return false
     end
     return true
@@ -1657,20 +2155,10 @@ end
 
 ---被Npc触发格挡（npc）
 function XChar8052:ParryToNpc(triggerNpc)
+    --self:SetTarget(triggerNpc)--设置为战斗目标
     self._proxy:SetNpcFaceToPosition(self._uuid, self._proxy:GetNpcPosition(triggerNpc))--看向触发格挡的Npc
-    self:SetTarget(triggerNpc)--设置为战斗目标
-    self._proxy:SetNpcFaceToPosition(self._uuid, self._proxy:GetNpcPosition(triggerNpc))--看向触发弹刀的Npc
     self:ForceSkillToNpc(805201,triggerNpc)--对触发弹反的Npc释放拼刀技能
-    ---表现调整后面补
-    self:FreezeFrameLightToNpc(self._uuid)--顿帧
-    self:FreezeFrameLightToNpc(triggerNpc)--顿帧
-    self._proxy:ApplyMagic(self._uuid,triggerNpc,8052031,1)--调整镜头广角
-    self._proxy:LaunchMissile(triggerNpc,self._uuid,80520170,80520521,1)--目标对自己发特效
-    
-    --self._proxy:ApplyMagic(self._uuid,self._uuid,8052029,1)--对辉辉顿帧
-    --self._proxy:ApplyMagic(self._uuid,triggerNpc,8052030,1)--对目标顿帧
-    
-    XLog.Warning("向")
+    self._proxy:RemoveBuff(self._uuid,8052001) --删除格挡标记
 end
 
 ---拼刀主逻辑(npcuuid，buffuuid）
@@ -1687,82 +2175,117 @@ end
 
 ---被Npc触发弹刀(npc)
 function XChar8052:BeParryByNpc(triggerNpc)
-    local isOnLand = self._proxy:CheckBuffByKind(self._uuid,8052105)
+    --local isOnLand = self._proxy:CheckBuffByKind(self._uuid,8052105)
+    --if isOnLand then --地面只有一种攻击
+    --    self:HandleBeParry(805245,triggerNpc)
+    --    return
+    --end
     local buffId = 8052033 --检查的BuffID
     local maxCount = 2 --拼刀最大次数
-    local buffCount = 0 --当前拼刀次数
     local phase1Skill = 805233 --小击飞
     local phase2Skill = 805214 --再来一次
     local phase3Skill = 805233 --大击飞
     self:SetTarget(triggerNpc)--设置为战斗目标
-
-    if isOnLand then --地面只有一种攻击
-        self:HandleBeParry(805245,triggerNpc)
-        return
-    end
     
-    if self:GetCurPhase()<=1 then --一阶段被防御直接小击飞
+    --一阶段、不在软狂暴、不在OD时直接击飞结束
+    if self:GetCurPhase()<=1 and (not self:CheckIsOnSoftFury()) and (not self:CheckCurIsOverDrive()) then 
         self:HandleBeParry(phase1Skill,triggerNpc)--一阶段小击飞
         return
     end
-    ----二阶段及以上
+    
+    --当前拼刀层数+1
     self._proxy:ApplyMagic(self._uuid,self._uuid,buffId,1)--拼刀层数增加一层
-    buffCount = self._proxy:GetBuffStacks(self._uuid,buffId) --获取当前拼刀次数
-    if self:CheckCurIsOverDrive() then
-        if buffCount >= 3 then --OD时拼三次
-            self:HandleBeParry(phase3Skill,triggerNpc)--二阶段大击飞结束
-            return
-        end
-    else
-        if buffCount >= 2 then --普通时拼两次
-            self:HandleBeParry(phase3Skill,triggerNpc)--二阶段大击飞结束
-            return
-        end
+    local buffCount = self._proxy:GetBuffStacks(self._uuid,buffId) --获取当前拼刀次数
+    
+    ---二阶段、软狂暴或OD时看拼刀是否到达次数限制，到达时直接结束。
+    if buffCount >= maxCount then --
+        self:HandleBeParry(phase3Skill,triggerNpc)--二阶段击飞结束
+        return
     end
     
-
-    self:HandleBeParry(phase2Skill,triggerNpc)--再来一次
+   
+    
+    self:HandleBeParry(phase2Skill,triggerNpc)--再拼一次
     
 end
 
 ---处理被拼刀（skill,npc）
 function XChar8052:HandleBeParry(skill,npc)
-    self._proxy:SetNpcFaceToPosition(self._uuid, self._proxy:GetNpcPosition(npc))--看向触发弹刀的Npc
-    --self._proxy:LaunchMissile(npc,self._uuid,80520521,1)--目标对自己发特效
+    self._proxy:SetNpcFaceToPosition(self._uuid, self._proxy:GetNpcPosition(npc))--看向触发拼刀的Npc
     self:ForceSkillToNpc(skill,npc)--对触发弹反的Npc释放拼刀技能
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052029,1)--对自己顿帧
-    --self._proxy:ApplyMagic(self._uuid,npc,8052030,1)--对目标顿帧
-    self._proxy:ApplyMagic(npc,npc,8052031,1)--调整镜头广角
 end
 
 --endregion
 
 --region Action帧事件执行
----创建场地不死斩
+---创建OD的场地不死斩
 function XChar8052:CreatSceneMortalBlade()
-    local num = self._proxy:Random(1,4)
-    local posList = {}
-    if num == 1 then
-        posList[1] = {x=self.levelCenterPoint.x,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+25}
-        posList[2] = {x=self.levelCenterPoint.x-15,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-20}
-        posList[3] = {x=self.levelCenterPoint.x+15,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-20}
-    elseif num == 2 then
-        posList[1] = {x=self.levelCenterPoint.x,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-25}
-        posList[2] = {x=self.levelCenterPoint.x-15,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+20}
-        posList[3] = {x=self.levelCenterPoint.x+15,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+20}
-    elseif num == 3 then
-        posList[1] = {x=self.levelCenterPoint.x+25,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z}
-        posList[2] = {x=self.levelCenterPoint.x-20,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-15}
-        posList[3] = {x=self.levelCenterPoint.x-20,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+25}
-    else
-        posList[1] = {x=self.levelCenterPoint.x-25,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z}
-        posList[2] = {x=self.levelCenterPoint.x+20,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-15}
-        posList[3] = {x=self.levelCenterPoint.x+20,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+15}
-    end
+
+    local num = self._proxy:Random(1,4)--四种方位随机出现一种
+    local selfPos = self._proxy:GetNpcPosition(self._uuid) --获取自己的位置
+    local offsetDistance = 21 --圆圈偏移多少
+    local rotaOffset = {
+        [1] = {x=0,y=0,z=0},
+        [2] = {x=0,y=135,z=0},
+        [3] = {x=0,y=225,z=0}
+    }
+    --local offsetList ={
+    --    [1] ={
+    --        [1] = {x=0,y=0,z=25},
+    --        [2] = {x=-15,y=0,z=-20},
+    --        [3] = {x=15,y=0,z=-20}
+    --    },
+    --    [2] ={
+    --        [1] = {x=0,y=0,z=25},
+    --        [2] = {x=-15,y=0,z=-20},
+    --        [3] = {x=15,y=0,z=-20}
+    --    },
+    --    [3] ={
+    --        [1] = {x=0,y=0,z=25},
+    --        [2] = {x=-15,y=0,z=-20},
+    --        [3] = {x=15,y=0,z=-20}
+    --    },
+    --    [4] ={
+    --        [1] = {x=0,y=0,z=25},
+    --        [2] = {x=-15,y=0,z=-20},
+    --        [3] = {x=15,y=0,z=-20}
+    --    }
+    --}
+    local posList={} --确认用来创建三个子弹位置的
+    --posList[1] ={x=selfPos.x+offsetList[1][1].x,y=selfPos.y+offsetList[1][1].y,z=selfPos.z+offsetList[1][1].z} --第一个子弹位置
+    --posList[2] ={x=selfPos.x+offsetList[1][2].x,y=selfPos.y+offsetList[1][2].y,z=selfPos.z+offsetList[1][2].z} --第二个子弹位置
+    --posList[3] ={x=selfPos.x+offsetList[1][3].x,y=selfPos.y+offsetList[1][3].y,z=selfPos.z+offsetList[1][3].z} --第三个子弹位置
+
+    --
+    posList[1]= self._proxy:GetNpcOffsetPositionByFacing(self._uuid,rotaOffset[1],offsetDistance)
+    posList[2]= self._proxy:GetNpcOffsetPositionByFacing(self._uuid,rotaOffset[2],offsetDistance)
+    posList[3]= self._proxy:GetNpcOffsetPositionByFacing(self._uuid,rotaOffset[3],offsetDistance)
     
+    --local posList = {} --
+    --if num == 1 then
+    --    posList[1] = {x=self.levelCenterPoint.x,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+25}
+    --    posList[2] = {x=self.levelCenterPoint.x-15,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-20}
+    --    posList[3] = {x=self.levelCenterPoint.x+15,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-20}
+    --elseif num == 2 then
+    --    posList[1] = {x=self.levelCenterPoint.x,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-25}
+    --    posList[2] = {x=self.levelCenterPoint.x-15,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+20}
+    --    posList[3] = {x=self.levelCenterPoint.x+15,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+20}
+    --elseif num == 3 then
+    --    posList[1] = {x=self.levelCenterPoint.x+25,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z}
+    --    posList[2] = {x=self.levelCenterPoint.x-20,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-15}
+    --    posList[3] = {x=self.levelCenterPoint.x-20,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+25}
+    --else
+    --    posList[1] = {x=self.levelCenterPoint.x-25,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z}
+    --    posList[2] = {x=self.levelCenterPoint.x+20,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z-15}
+    --    posList[3] = {x=self.levelCenterPoint.x+20,y=self.levelCenterPoint.y,z=self.levelCenterPoint.z+15}
+    --end
+    
+    
+    -----在上面位置位置上创建这几个子弹
     self._proxy:LaunchMissileFromPosToPos(self._uuid,80520170,80527614,posList[1],posList[1])
     self._proxy:LaunchMissileFromPosToPos(self._uuid,80520170,80527614,posList[2],posList[2])
     self._proxy:LaunchMissileFromPosToPos(self._uuid,80520170,80527614,posList[3],posList[3])
+
 end
 
 --endregion
@@ -1770,7 +2293,20 @@ end
 --region 连招控制
 
 --尝试执行闪避
+
+--尝试软狂暴时闪避，给强力技能用
+function XChar8052:TrySoftFuryDodge()
+    if not self:CheckIsOnSoftFury() then--非软狂暴时候直接返回
+        return
+    end
+    self:TryDoDodge()
+end
+
+--尝试执行闪避
 function XChar8052:TryDoDodge()
+    local posOffset = {x=0,y=0,z=0} --位置偏转
+    local rotaOffset = {x=0,y=-180,z=0} --旋转偏转
+    local dodgeGroup = {  } --闪避的列表
     if self:CheckNpcTimer(1) then--闪避CD
         self.dodgeRemainCount = 1 --可以闪避一次 
         self:NpcTimerEnterCd(1)
@@ -1784,26 +2320,127 @@ function XChar8052:TryDoDodge()
         self:NpcTimerEnterCd(2) 
     end
     
-    if self:CheckTargetDistance(4) then--目标在2m以内会优先向后撤   
-        self.dodgeGroup = {
-            [805211] = 10, --后
-        }
-    else
-        self.dodgeGroup = {
-            [805211] = 20, --后
-            [805212] = 10, --左
-            [805213] = 10, --右
-        }
-    end
+    local canDodgeList ={ --不同方向是否可以冲刺
+        front = false,
+        back = false,
+        left = false,
+        right = false,
+    }
     
-    self:ForceCastSkillToTargetByWeights(self.dodgeGroup)
+    --有障碍的地方就是False
+    canDodgeList.front =  not self._proxy:CheckNpcRayCastObstacle(self._uuid,posOffset,  {x=0,y=0,z=0} ,3) --前
+    canDodgeList.back =  not self._proxy:CheckNpcRayCastObstacle(self._uuid,posOffset, { x=0,y=180,z=0 },3) --
+    canDodgeList.left =  not self._proxy:CheckNpcRayCastObstacle(self._uuid,posOffset, { x=0,y=270,z=0 },3) --左
+    canDodgeList.right =  not self._proxy:CheckNpcRayCastObstacle(self._uuid,posOffset, { x=0,y=90,z=0 },3) --右
+    
+    if canDodgeList.front and not self:CheckTargetDistance(4) then --需要3m外才会有往前的
+        dodgeGroup[805210] = 20
+        if not self:CheckTargetDistance(10) then --10m外
+            dodgeGroup[805210] = 100
+        elseif not self:CheckTargetDistance(8) then--8-10
+            dodgeGroup[805210] = 40
+        elseif not self:CheckTargetDistance(6) then --6-8
+            dodgeGroup[805210] = 30
+        end
+        if self:CheckTargetDistance(4) then --4m内就别推了哥
+            dodgeGroup[805210] = 0
+        end
+    end
+    if canDodgeList.back then --可以向后
+        dodgeGroup[805211] = 10
+        if self:CheckTargetDistance(2.5) then --靠太近就不往前了
+            dodgeGroup[805211] = 30
+        end
+    end
+    if canDodgeList.left then
+        dodgeGroup[805212] = 10
+        if self.dodgeRemainCount > 1 then --优先左右晃
+            dodgeGroup[805212] = 30
+        end
+    end
+    if canDodgeList.right then
+        dodgeGroup[805213] = 10
+        if self.dodgeRemainCount > 1 then --优先左右晃
+            dodgeGroup[805212] = 30
+        end
+    end
+
+    if (not canDodgeList.front) and (not canDodgeList.back) and  (not canDodgeList.left) and (not canDodgeList.right) then
+        dodgeGroup = nil
+    end
+    if not dodgeGroup  then --没有可以冲刺的就直接返回别冲刺了
+        return false
+    end
+
+    self:ForceCastSkillToTargetByWeights(dodgeGroup)
     self.dodgeRemainCount = self.dodgeRemainCount - 1 
     return true --释放成功
 end
 
+--闪避后衔接
+function XChar8052:DodgeConnect()
+    local posOffset = {x=0,y=0,z=0} --位置偏转
+    local rotaOffset = {x=0,y=-180,z=0} --旋转偏转
+    local dodgeGroup = {  } --闪避的列表
+    if self:CheckNpcTimer(1) then--闪避CD
+        self.dodgeRemainCount = 1 --可以闪避一次 
+        self:NpcTimerEnterCd(1)
+    end
+    if self.dodgeRemainCount<= 0 then --没有次数，释放失败。
+        return false
+    end
+
+    if self:CheckNpcTimer(2) then --连续闪避CD检查
+        self.dodgeRemainCount = self._proxy:Random(2,3) --连续闪避2-3次
+        self:NpcTimerEnterCd(2)
+    end
+
+    local canDodgeList ={ --不同方向是否可以冲刺
+        front = false,
+        back = false,
+        left = false,
+        right = false,
+    }
+
+    --有障碍的地方就是False
+    canDodgeList.front =  not self._proxy:CheckNpcRayCastObstacle(self._uuid,posOffset,  {x=0,y=0,z=0} ,3) --前
+    canDodgeList.back =  not self._proxy:CheckNpcRayCastObstacle(self._uuid,posOffset, { x=0,y=180,z=0 },3) --
+    canDodgeList.left =  not self._proxy:CheckNpcRayCastObstacle(self._uuid,posOffset, { x=0,y=270,z=0 },3) --左
+    canDodgeList.right =  not self._proxy:CheckNpcRayCastObstacle(self._uuid,posOffset, { x=0,y=90,z=0 },3) --右
+
+    if canDodgeList.front and not self:CheckTargetDistance(10) then --10米外可能向前
+        dodgeGroup[805210] = 5
+    end
+    if canDodgeList.back then --可以向后
+        dodgeGroup[805211] = 10
+        if self:CheckTargetDistance(5) then --5m范围内更高概率向后
+            dodgeGroup[805211] = 30
+        end
+    end
+    if canDodgeList.left then
+        dodgeGroup[805212] = 10
+    end
+    if canDodgeList.right then
+        dodgeGroup[805213] = 10
+    end
+
+    if (not canDodgeList.front) and (not canDodgeList.back) and  (not canDodgeList.left) and (not canDodgeList.right) then
+        dodgeGroup = nil
+    end
+    XLog.Warning(dodgeGroup)
+    if not dodgeGroup  then --没有可以冲刺的就直接返回别冲刺了
+        return false
+    end
+
+    self:ForceCastSkillToTargetByWeights(dodgeGroup)
+    self.dodgeRemainCount = self.dodgeRemainCount - 1
+    return true --释放成功
+end
+
+
 --上天：光刃上天衔接
 function XChar8052:AirGoUpConnect()
-    XLog.Warning("光刃上天衔接")
+    --XLog.Warning("光刃上天衔接")
     self.airAttackRemainCount = 3 --光刃上天
     local skillGroup = { --空中攻击起手
         [805217] = 10,--左推1
@@ -1840,9 +2477,7 @@ function XChar8052:JumpLaserConnect()
     self:ForceCastSkillToTargetByWeights(skills)
     
     
-    --[805228]=10,--空落锤
 end
-
 ---上天：升龙腿衔接
 function XChar8052:UpDragonLegConnect()
     --XLog.Warning("升龙腿衔接")
@@ -2041,14 +2676,49 @@ end
 
 ---推进拳衔接
 function XChar8052:PushFistConnect()
-    if self:TryDoDodge() then
-        return
+    --if self:TryDoDodge() then
+    --    return
+    --end
+
+    local skillList ={
+        [805277] = 10, --OD光刃二连
+        [805278] = 10, --OD光刃三连
+        [805248] = 10,  --OD连续推进拳
+        [805249] = 10,  --OD瑟提锤
+        [805227] = 10, --升龙腿
+        [805224] = 10,  --光刃二连
+        [805216] = 10,  --地面蓄力炮（10）
+        [805229] = 10,  --重火锤
+        [805230] = 10,  --后退斩
+        [805209] = 10 , --下段斩
+        [805232] = 50,  --瑟提锤
+        [805208] = 10,  --中远距离：推进拳（15）
+        [805204]=  10,  --欧拉拳（35）
+        [805207] = 10,  --交叉射击：近距离后退拉开距离（）
+        --[805221] = 10,  --超远距离：移动射击（0）远程
+        [805203]=  10,   --上勾拳（0）
+        [805234]=  10,   --二连拳（0）
+        [805202]=  10,   --反身拳（0）
+    }
+    local skill
+    skill = self:GetAbleSkillByWeightsToNpc(skillList,self:GetTarget())
+    if skill then
+        if self:ForceSkillToNpc(skill,self:GetTarget()) then --如果对目标释放技能成功就直接返回
+            return
+        end
+    else
+        local dis = self._proxy:GetNpcDistance(self._uuid,self:GetTarget(),true)
+        if dis >12 then
+            self:ForceSkillToNpc(805232,self:GetTarget())
+            --XLog.Warning("太远了")
+        elseif dis > 5 then
+            self:ForceSkillToNpc(805210,self:GetTarget())
+            --XLog.Warning("推一下")
+        elseif dis < 2.5 then
+            self:ForceSkillToNpc(805211,self:GetTarget()) --2m内往后推
+        end
     end
-    --XLog.Warning("推进拳衔接")
-    --local skills={
-    --    
-    --}
-    --self:TryCastSkillToTargetByWeights(skills)
+    
 end
 
 ---欧拉拳衔接
@@ -2075,7 +2745,11 @@ end
 
 --不死斩启动
 function XChar8052:MortalBladeStart()
-    self:ForceSkillToTarget(805276)
+    if self.isOnSoftFury then--根据是否软狂暴释放不同的不死斩
+        self:ForceSkill(805281) --软狂暴不死斩
+    else
+        self:ForceSkill(805276) --原版不死斩
+    end
 end
 
 --不死斩1衔接

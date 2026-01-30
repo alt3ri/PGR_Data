@@ -364,6 +364,20 @@ function XTheatre5PVERougeData:GetOneNoCompleteScriptId()
     end    
 end
 
+function XTheatre5PVERougeData:CheckDuceScriptIsComplete(scriptId)
+    if XTool.IsTableEmpty(self.PveScripts) then
+        return false
+    end
+
+    for _, scriptData in pairs(self.PveScripts) do
+        if scriptData.ScriptId == scriptId then
+            return scriptData.IsComplete
+        end
+    end
+    
+    return false
+end
+
 function XTheatre5PVERougeData:GetOneNoCompleteDeduceStoryLineId()
     if XTool.IsTableEmpty(self.PveStoryLines) then
         return

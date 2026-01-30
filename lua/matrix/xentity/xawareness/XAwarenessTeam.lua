@@ -56,76 +56,13 @@ function XAwarenessTeam:GetMemberList()
     return self.MemberList
 end
 
-local TANK_CAREERS = {
-    [XEnumConst.CHARACTER.Career.Tank] = true,
-    [XEnumConst.CHARACTER.Career.Breaker] = true,
-}
-local AMPLIFIER_CAREERS = {
-    [XEnumConst.CHARACTER.Career.Amplifier] = true,
-    [XEnumConst.CHARACTER.Career.Support] = true,
-}
-function XAwarenessTeam:GetObservationActiveCareer()
-    if not self.MemberList then return end
-
-    local tankCount = 0
-    local tankPos = 0
-    local amplifierCount = 0
-    local amplifierPos = 0
-    local physicalCount = 0
-    local physicalPos = 0
-    local obsCount = 0
-    local obsPos = 0
-    for i, memberData in pairs(self.MemberList) do
-        local charId = memberData:GetCharacterId()
-        
-        if XTool.IsNumberValid(charId) then
-            local career = XMVCA.XCharacter:GetCharacterCareer(charId)
-            local charElement = XMVCA.XCharacter:GetCharacterElement(charId)
-            local isPhysical = charElement == XEnumConst.CHARACTER.Element.Physical
-            if isPhysical then
-                physicalCount = physicalCount + 1
-                physicalPos = i
-            end
-
-            if TANK_CAREERS[career] then
-                tankCount = tankCount + 1
-                tankPos = i
-            elseif AMPLIFIER_CAREERS[career] then
-                amplifierCount = amplifierCount + 1
-                amplifierPos = i
-            elseif career == XEnumConst.CHARACTER.Career.Observation then
-                obsCount = obsCount + 1
-                obsPos = i
-            end
-    
-        end
+function XAwarenessTeam:GetEntityIdListForObservation()
+    local res = {}
+    local memberList = self:GetMemberList()
+    for i, memberData in ipairs(memberList) do
+        res[i] = memberData:GetCharacterId()
     end
-
-    local res = XEnumConst.CHARACTER.Career.None
-    if tankCount + amplifierCount >=2 then
-        return res
-    end
-    if obsCount ~= 1 then
-        return res
-    end
-    if physicalCount > 1 then
-        return res
-    end
-    if physicalCount == 1 then
-        if self:GetEntityCount() == 2  then
-            return res
-        elseif self:GetEntityCount() == 3 and (physicalPos == tankPos or physicalPos == amplifierPos) then
-            return res
-        end
-    end
-
-    if tankCount == 1 and amplifierCount == 0 then
-        res = XEnumConst.CHARACTER.Career.Amplifier
-    elseif tankCount == 0 and amplifierCount == 1 then
-        res = XEnumConst.CHARACTER.Career.Tank
-    end
-
-    return res, obsPos
+    return res
 end
 
 function XAwarenessTeam:ClearMemberList()

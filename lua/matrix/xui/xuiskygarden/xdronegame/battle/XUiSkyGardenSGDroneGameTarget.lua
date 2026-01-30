@@ -9,6 +9,7 @@ local XUiSkyGardenSGDroneGameTarget = XClass(XUiNode, "XUiSkyGardenSGDroneGameTa
 
 function XUiSkyGardenSGDroneGameTarget:OnStart()
     self._Text = false
+    self._IsFinish = false
 
     self:SetFinish(false)
     self:_RegisterButtonClicks()
@@ -33,6 +34,7 @@ function XUiSkyGardenSGDroneGameTarget:SetText(text)
 end
 
 function XUiSkyGardenSGDroneGameTarget:SetFinish(isFinish)
+    self._IsFinish = isFinish
     self.GridStar:ChangeState(isFinish and "On" or "Off")
     self.TargetScoreOn.gameObject:SetActiveEx(isFinish)
     self.TargetScoreOff.gameObject:SetActiveEx(not isFinish)
@@ -47,6 +49,10 @@ function XUiSkyGardenSGDroneGameTarget:SetProgress(progress, totalProgress)
         self.TargetScoreOn.text = text
         self.TargetScoreOff.text = text
     end
+end
+
+function XUiSkyGardenSGDroneGameTarget:GetIsFinish()
+    return self._IsFinish
 end
 
 function XUiSkyGardenSGDroneGameTarget:_RegisterButtonClicks()

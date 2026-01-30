@@ -4,15 +4,17 @@ local GameplayTag = require("Tools/GameplayTag/GameplayTag")
 
 ---@class XBuffScript8060030 : XBuffBase
 local XBuffScript8060030 = XDlcScriptManager.RegBuffScript(8060030, "XBuffScript8060030", Base)
---效果说明：自动复活有CD
+--效果说明：破韧技增伤
 
-function XBuffScript8060030:Init()
+function XBuffScript8060030:Ctor()
+    self.magicId = 8060031 --增伤BUFF
+end
+
+function XBuffScript8060030:ScriptInit(isGainControl)
     --初始化
-    Base.Init(self)
+    Base.ScriptInit(self,isGainControl)
     ------------配置------------
     self.magicLevel=1 --等新接口直接获取自己的BUFF等级
-    self.magicId=8060031 --复活BUFF
-
     self.hasBuff=false
     self.hasLevel=false
     ------------执行------------
@@ -33,16 +35,21 @@ end
 --region EventCallBack
 function XBuffScript8060030:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCalcDamageBefore)
-    self._proxy:RegisterEvent(EWorldEvent.NpcCalcDamageAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcChangeDamageBeforeCalc)
 end
 
-function XBuffScript8060030:BeforeDamageCalc(eventArgs)
+function XBuffScript8060030:ChangeDamageBeforeCalc(eventArgs)
+    self._uuid = self._proxy:GetSelfBuffNpcUUID()
     local damageMagicId=eventArgs.Id
+    if eventArgs.Launcher ~= self._uuid then
+        return
+    end
     local damageTags=self._proxy:GetMagicTags(damageMagicId)
-    if damageTags[1]==EGameplayTag.Magic_RelinkDamage_HitType_Break --tag是破韧技伤害
-            and not
-    self._proxy:CheckBuffByKind(self._uuid,self.magicId)--没上过BUFF
+    if damageTags and damageTags.Count <= 0 then
+        return
+    end
+    if damageTags[0]==EGameplayTag.Magic_RelinkDamage_HitType_Break --tag是破韧技伤害
+            and not self._proxy:CheckBuffByKind(self._uuid,self.magicId)--没上过BUFF
     then
         self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel) --上BUFF
     else

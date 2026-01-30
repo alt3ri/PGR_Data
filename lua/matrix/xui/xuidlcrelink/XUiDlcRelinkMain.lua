@@ -30,6 +30,7 @@ function XUiDlcRelinkMain:OnStart()
     self.TipSwitchInterval = tonumber(self._Control:GetClientConfig("MainTipsSwitchInterval"))
     self.CurrentTipIndex = -1
     self:InitRewardPreview()
+    self:GlobalMatchAutoSendHandle()
     -- TODO 战斗初始化，先临时放在这里，后续等战斗那边优化后在调整。
     XMVCA.XDlcRelink:DlcInitFight()
 end
@@ -54,14 +55,14 @@ end
 function XUiDlcRelinkMain:OnGetLuaEvents()
     return {
         XEventId.EVENT_DLC_ROOM_KICKOUT,
-        XEventId.EVENT_DLC_RELINK_SYNC_DAILY_SIGN,
+        XEventId.EVENT_DLC_RELINK_DAILY_RESET,
     }
 end
 
 function XUiDlcRelinkMain:OnNotify(event, ...)
     if event == XEventId.EVENT_DLC_ROOM_KICKOUT then
         self:RefreshBtnEnter()
-    elseif event == XEventId.EVENT_DLC_RELINK_SYNC_DAILY_SIGN then
+    elseif event == XEventId.EVENT_DLC_RELINK_DAILY_RESET then
         self:RefreshBtnBox()
     end
 end
@@ -180,6 +181,17 @@ function XUiDlcRelinkMain:RefreshBtnBox()
     local isSign = self._Control:CheckDailySign()
     self.BtnBox:ShowReddot(not isSign)
     self.IconBox.gameObject:SetActiveEx(not isSign)
+end
+
+-- 全局匹配自动发送处理
+function XUiDlcRelinkMain:GlobalMatchAutoSendHandle()
+    if XMVCA.XDlcRoom:IsInRoom() or XMVCA.XDlcRoom:IsMatching() then
+        return
+    end
+    if not self._Control:CheckGlobalMatchEnableCondition() then
+        return
+    end
+    self._Control:RequestSwitchGlobalMatchFlag(self._Control:IsGlobalMatchEnabled())
 end
 
 function XUiDlcRelinkMain:RegisterUiEvents()

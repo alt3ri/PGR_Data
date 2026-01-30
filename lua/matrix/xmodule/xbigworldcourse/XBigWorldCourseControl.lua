@@ -152,6 +152,10 @@ function XBigWorldCourseControl:GetBigWorldCourseContentBannerBg(contentId)
     return self._Model:GetBigWorldCourseContentBannerBgByContentId(contentId) or ""
 end
 
+function XBigWorldCourseControl:GetBigWorldCourseContentTip(contentId)
+    return self._Model:GetBigWorldCourseTypeContentTipByContentId(contentId) or ""
+end
+
 function XBigWorldCourseControl:GetTaskIdsByContentId(contentId)
     return self._Model:GetTaskIdsByContentId(contentId)
 end

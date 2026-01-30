@@ -20,26 +20,39 @@ local StateEnum = {
 ---生态状态坐标
 ---@type table<number, Vector3>
 local StatePos = {
-    [StateEnum.Garden] = {x=478.959, y=192.72, z=1022.99},
-    [StateEnum.Cinema] = {x=569.224, y=194.561, z=979.3866},
-    [StateEnum.ArtGallery] = {x=550.533, y=192.3702, z=833.2363},
+    [StateEnum.Garden] = {x=474.6948, y=192.72, z=1025.204},
+    [StateEnum.Cinema] = {x=597.2913, y=194.2651, z=986.6304},
+    [StateEnum.ArtGallery] = {x=552.583, y=192.356, z=832.691},
 }
 ---寻路路径
 ---@type table<number, Vector3>
 local StatePath = {
     [StateEnum.Garden] = {
         StatePos[StateEnum.Garden],
-        {x=472.130005, y=192.72000, z=1025.81995},
-        {x=492.206604, y=193.626144, z=1020.25391},
-        {x=511.954865, y=193.4375, z=1020.13019},
-        StatePos[StateEnum.ArtGallery],
-    },
-    [StateEnum.ArtGallery] = {
-        StatePos[StateEnum.ArtGallery],
+        {x=472.2758, y=192.72000, z=1022.91},
+        {x=513.3771, y=193.4375, z=1021.204},
+        {x=543.3136, y=192.1723, z=1002.054},
+        {x=560.6064, y=193.0575, z=994.9433},
+        {x=579.475, y=194.0679, z=1002.077},
+        {x=602.694, y=194.0679, z=996.8626},
         StatePos[StateEnum.Cinema],
     },
     [StateEnum.Cinema] = {
         StatePos[StateEnum.Cinema],
+        {x=597.2913, y=194.2651, z=986.6304},
+        {x=602.0005, y=194.2651, z=986.5113},
+        {x=601.3565, y=194.0679, z=996.7715},
+        {x=565.9553, y=193.0384, z=995.5836},
+        StatePos[StateEnum.ArtGallery],
+    },
+    [StateEnum.ArtGallery] = {
+        StatePos[StateEnum.ArtGallery],
+        {x=552.384, y=192.3565, z=832.691},
+        {x=561.3833, y=192.7738, z=834.9805},
+        {x=566.9894, y=192.1259, z=866.3001},
+        {x=512.0649, y=193.4374, z=1019.652},
+        {x=506.185, y=193.4375, z=1020.709},
+        {x=490.7641, y=193.6258, z=1019.966},
         StatePos[StateEnum.Garden],
     },
 }
@@ -55,18 +68,19 @@ local XWanshiGardenState = XClass(XEcologyCharAIBaseState, "XWanshiGardenState")
 function XWanshiGardenState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Garden
-    self.StateConfig.StateAnim = "Drama_Stand_03"
+    self.StateConfig.StateAnim = "Drama_BoardAct1001"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 1
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Near] = {
-            Name = "500709",
-            TriggerDistance = 2.5,
-            TriggerCD = 2,
+            Name = "500707",
+            TriggerDistance = 6,
+            TriggerCD = 5,
             LoopTime = 3,
         }
     }
@@ -83,18 +97,19 @@ local XWanshiCinemaState = XClass(XEcologyCharAIBaseState, "XWanshiCinemaState")
 function XWanshiCinemaState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Cinema
-    self.StateConfig.StateAnim = "Drama_Stand_03"
-    self.StateConfig.TriggerId = 2
+    self.StateConfig.StateAnim = "Drama_Stand_05"
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Near] = {
-            Name = "500707",
-            TriggerDistance = 2.5,
-            TriggerCD = 2,
+            Name = "500708",
+            TriggerDistance = 6,
+            TriggerCD = 5,
             LoopTime = 3,
         }
     }
@@ -111,18 +126,19 @@ local XWanshiArtGalleryState = XClass(XEcologyCharAIBaseState, "XWanshiArtGaller
 function XWanshiArtGalleryState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.ArtGallery
-    self.StateConfig.StateAnim = "Drama_Stand_03"
-    self.StateConfig.TriggerId = 3
+    self.StateConfig.StateAnim = "Drama_Stand_05"
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 3
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Near] = {
-            Name = "500708",
-            TriggerDistance = 2.5,
-            TriggerCD = 2,
+            Name = "500709",
+            TriggerDistance = 6,
+            TriggerCD = 5,
             LoopTime = 3,
         }
     }
@@ -139,11 +155,12 @@ local XWanshiFindPathState = XClass(XEcologyCharAIFindPathState, "XWanshiFindPat
 function XWanshiFindPathState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.FindPath
-    self.StateConfig.TriggerId = 4
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 4
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
 
     self.StateConfig.PathBubbleName = "500710"

@@ -462,10 +462,21 @@
         "TimeId": null
     },
     {
+        "TaskId": 990050,
+        "ContentId": 201,
+        "UnlockType": 3,
+        "UnlockParams": "[50002001]",
+        "ConditionId": null,
+        "Title": "\u7a7a\u57df\u542f\u822a",
+        "UnlockText": "\u53ef\u89e3\u9501\u300c\u7a7a\u57df\u8ff7\u822a\u300d\u73a9\u6cd5",
+        "SkipId": 990050,
+        "TimeId": null
+    },
+    {
         "TaskId": 990051,
         "ContentId": 201,
-        "UnlockType": 1,
-        "UnlockParams": null,
+        "UnlockType": 2,
+        "UnlockParams": "[990050]",
         "ConditionId": null,
         "Title": "\u7a7a\u57df\u8ff7\u822a1-1",
         "UnlockText": null,
@@ -618,12 +629,56 @@
     {
         "TaskId": 990065,
         "ContentId": 201,
-        "UnlockType": 1,
-        "UnlockParams": null,
+        "UnlockType": 2,
+        "UnlockParams": "[990050]",
         "ConditionId": null,
         "Title": "\u51c0\u7a7a\u56de\u58f0",
         "UnlockText": null,
         "SkipId": 990065,
+        "TimeId": null
+    },
+    {
+        "TaskId": 990066,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "UnlockParams": null,
+        "ConditionId": null,
+        "Title": "\u8bb0\u7f8e\u597d\u7684\u56de\u5fc6-1",
+        "UnlockText": null,
+        "SkipId": 990066,
+        "TimeId": null
+    },
+    {
+        "TaskId": 990067,
+        "ContentId": 201,
+        "UnlockType": 2,
+        "UnlockParams": "[990066]",
+        "ConditionId": null,
+        "Title": "\u8bb0\u7f8e\u597d\u7684\u56de\u5fc6-2",
+        "UnlockText": null,
+        "SkipId": 990067,
+        "TimeId": null
+    },
+    {
+        "TaskId": 990068,
+        "ContentId": 201,
+        "UnlockType": 2,
+        "UnlockParams": "[990067]",
+        "ConditionId": null,
+        "Title": "\u8bb0\u7f8e\u597d\u7684\u56de\u5fc6-3",
+        "UnlockText": null,
+        "SkipId": 990068,
+        "TimeId": null
+    },
+    {
+        "TaskId": 990069,
+        "ContentId": 201,
+        "UnlockType": 2,
+        "UnlockParams": "[990068]",
+        "ConditionId": null,
+        "Title": "\u8bb0\u7f8e\u597d\u7684\u56de\u5fc6-4",
+        "UnlockText": null,
+        "SkipId": 990069,
         "TimeId": null
     },
     {
@@ -640,8 +695,8 @@
     {
         "TaskId": 990071,
         "ContentId": 201,
-        "UnlockType": 1,
-        "UnlockParams": null,
+        "UnlockType": 3,
+        "UnlockParams": "[50002001]",
         "ConditionId": null,
         "Title": "\u5e93\u6d1b\u6d1b\u767e\u76f8-1",
         "UnlockText": null,
@@ -704,6 +759,17 @@
         "TimeId": null
     },
     {
+        "TaskId": 990077,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "UnlockParams": null,
+        "ConditionId": null,
+        "Title": "\u9082\u9005\u65f6\u5149-\u9732\u897f\u4e9a",
+        "UnlockText": null,
+        "SkipId": 200111,
+        "TimeId": null
+    },
+    {
         "TaskId": 990078,
         "ContentId": 201,
         "UnlockType": 1,
@@ -712,6 +778,61 @@
         "Title": "\u9082\u9005\u65f6\u5149-\u5e03\u5076\u718a",
         "UnlockText": null,
         "SkipId": 200112,
+        "TimeId": null
+    },
+    {
+        "TaskId": 990079,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "UnlockParams": null,
+        "ConditionId": null,
+        "Title": "\u9082\u9005\u65f6\u5149-\u8587\u62c9",
+        "UnlockText": null,
+        "SkipId": 200113,
+        "TimeId": null
+    },
+    {
+        "TaskId": 990080,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "UnlockParams": null,
+        "ConditionId": null,
+        "Title": "\u9082\u9005\u65f6\u5149-\u6bd4\u5b89\u5361",
+        "UnlockText": null,
+        "SkipId": 200114,
+        "TimeId": null
+    },
+    {
+        "TaskId": 990081,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "UnlockParams": null,
+        "ConditionId": null,
+        "Title": "\u9082\u9005\u65f6\u5149-\u7f57\u585e\u5854",
+        "UnlockText": null,
+        "SkipId": 200115,
+        "TimeId": null
+    },
+    {
+        "TaskId": 990082,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "UnlockParams": null,
+        "ConditionId": null,
+        "Title": "\u9082\u9005\u65f6\u5149-\u4e07\u4e8b",
+        "UnlockText": null,
+        "SkipId": 200116,
+        "TimeId": null
+    },
+    {
+        "TaskId": 990083,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "UnlockParams": null,
+        "ConditionId": null,
+        "Title": "\u9082\u9005\u65f6\u5149-\u91cc",
+        "UnlockText": null,
+        "SkipId": 200117,
         "TimeId": null
     },
     {

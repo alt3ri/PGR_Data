@@ -19,7 +19,7 @@ function XBuffScript1021001:Init() --初始化
             return
         end
         local Position = self._proxy:GetNpcPosition(target)--获取目标位置
-        self.BuffStacks = self._proxy:GetBuffStacks(self._uuid, 1016241)
+        self.BuffStacks = self._proxy:GetBuffStacks(self._uuid, 1016243)
         if self._proxy:CheckBuffByKind(self._uuid, 1016374) then
             for i = 1, self.BuffStacks do
                 self._proxy:LaunchMissileFromPosToPos(self._uuid,10210103,10210132,Position,Position,1)--强化伤害子弹

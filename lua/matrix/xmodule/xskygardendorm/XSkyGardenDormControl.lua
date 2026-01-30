@@ -359,10 +359,15 @@ function XSkyGardenDormControl:CaptureCamera(fileName, func)
     end
     
     CS.XScreenCapture.ScreenCaptureWithCallBack(XMVCA.XBigWorldGamePlay:GetCamera(), function(tex)
-        XUiHelper.Destroy(self._LocalLayoutTex[fileName])
-        if tex then
-            self._LocalLayoutTex[fileName] = tex
+        if not self._LocalLayoutTex then
             CS.XTool.SaveCaptureImg(fileName, tex)
+            XUiHelper.Destroy(tex)
+        else
+            XUiHelper.Destroy(self._LocalLayoutTex[fileName])
+            if tex then
+                self._LocalLayoutTex[fileName] = tex
+                CS.XTool.SaveCaptureImg(fileName, tex)
+            end
         end
         if func then func() end
     end)

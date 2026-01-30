@@ -14,6 +14,9 @@ end
 
 function XUiCommodity:Init(parent)
     self.Parent = parent
+    XDataCenter.ItemManager.AddCountUpdateListener({
+        XDataCenter.ItemManager.ItemId.HongKa
+    }, handler(self, self.RefreshPrice), self)
 end
 
 function XUiCommodity:Refresh(data)
@@ -142,24 +145,26 @@ function XUiCommodity:RefreshPanelSale()
     if self.TxtSaleRate then
         if self.Data.Tags == XShopManager.ShopTags.DisCount then
             if self.Sales < 100 then
-                --self.TxtSaleRate.text = self.Sales / 10 .. CS.XTextManager.GetText("Snap")
                 -- 折扣显示 区分海外国服
-                self.TxtSaleRate.text = XUiHelper.GetDiscountText(self.Sales)
+                if XOverseaManager.IsJPRegion() then
+                    self.TxtSaleRate.text = XUiHelper.GetDiscountTextV2(self.Sales)
+                else
+                    self.TxtSaleRate.text = XUiHelper.GetDiscountText(self.Sales)
+                end
             else
                 hideSales = true
             end
-        end
-        if self.Data.Tags == XShopManager.ShopTags.TimeLimit then
+        elseif self.Data.Tags == XShopManager.ShopTags.TimeLimit then
             self.TxtSaleRate.text = CS.XTextManager.GetText("TimeLimit")
-        end
-        if self.Data.Tags == XShopManager.ShopTags.Recommend then
+        elseif self.Data.Tags == XShopManager.ShopTags.Recommend then
             self.TxtSaleRate.text = CS.XTextManager.GetText("Recommend")
-        end
-        if self.Data.Tags == XShopManager.ShopTags.HotSale then
+        elseif self.Data.Tags == XShopManager.ShopTags.HotSale then
             self.TxtSaleRate.text = CS.XTextManager.GetText("HotSell")
+        elseif self.Data.Tags == XShopManager.ShopTags.Not then
+            hideSales = true
         end
 
-        if self.Data.Tags == XShopManager.ShopTags.Not or hideSales then
+        if hideSales then
             self.TxtSaleRate.gameObject:SetActiveEx(false)
             self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(false)
         else
@@ -168,7 +173,6 @@ function XUiCommodity:RefreshPanelSale()
         end
     end
 end
-
 function XUiCommodity:RefreshPrice()
     local panelCount = #self.PanelPrice
     for i = 1, panelCount do
@@ -330,7 +334,9 @@ function XUiCommodity:OnBtnBuyClick()
     buyData.IsHave = false
     buyData.ItemIcon = self.ItemIcon
     buyData.ItemCount = self.NeedCount
-
+    if self.NeedCount ~= self.Data.ConsumeList[1].Count then
+        buyData.OriginCount = self.Data.ConsumeList[1].Count
+    end
     buyData.GiftRewardId = self.GiftRewardId
     buyData.BuyCallBack = function()
         for _, consume in pairs(self.Data.ConsumeList) do
@@ -355,19 +361,27 @@ function XUiCommodity:OnBtnBuyClick()
             end
         end
 
-        XShopManager.BuyShop(self.Parent:GetCurShopId(), self.Data.Id, BuyCount, function ()
+        XShopManager.BuyShop(self.Parent:GetCurShopId(), self.Data.Id, BuyCount, function (res)
             local text = CS.XTextManager.GetText("BuySuccess")
             XUiManager.TipMsg(text, nil, function()
                 if buyData.GiftRewardId and buyData.GiftRewardId ~= 0 then
                     local rewardGoodList = XRewardManager.GetRewardList(buyData.GiftRewardId)
                     XUiManager.OpenUiObtain(rewardGoodList)
+                elseif  res.IsShowBuyResult and not XTool.IsTableEmpty(res.GoodList) then
+                    XUiManager.OpenUiObtain(res.GoodList)
                 end
             end)
 
-            self.Parent:OnBuySuccessCb()
+            self:OnBuySuccessCb()
         end)
     end
-    XMVCA.XShop:OpenFashionDetailUi(self.Id,buyData,{isWeaponFashion = self.IsWeaponFashion})
+    XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, { isWeaponFashion = self.IsWeaponFashion, updateCb = handler(self, self.OnBuySuccessCb) })
+end
+
+function XUiCommodity:OnBuySuccessCb()
+    if self.Parent and self.Parent.OnBuySuccessCb then
+        self.Parent:OnBuySuccessCb()
+    end
 end
 
 return XUiCommodity

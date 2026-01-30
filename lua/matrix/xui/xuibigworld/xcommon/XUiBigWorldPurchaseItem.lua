@@ -151,7 +151,7 @@ function XUiBigWorldPurchaseItem:_InitConsume()
 end
 
 function XUiBigWorldPurchaseItem:_RefreshMaxCount()
-    if not self._Data or not XTool.IsNumberValid(self._ShopId) then
+    if not self._Data or not XTool.IsNumberValid(self._ShopId) or not XTool.IsNumberValid(self._Consume.Id) then
         return
     end
 
@@ -159,7 +159,9 @@ function XUiBigWorldPurchaseItem:_RefreshMaxCount()
     local onSales = self._Data.OnSales
     local leftSalesGoods = self._MaxCount
     local leftGoodsTimes = self._MaxCount
+    local itemCount = XMVCA.XBigWorldService:GetGoodsCurrentCountByTemplateId(self._Consume.Id)
     local leftShopTimes = XMVCA.XBigWorldService:GetShopLeftBuyTimes(self._ShopId)
+    local maxCount = math.floor(itemCount / self._Consume.Count)
 
     for key, _ in pairs(onSales) do
         table.insert(sortedKeys, key)
@@ -186,7 +188,7 @@ function XUiBigWorldPurchaseItem:_RefreshMaxCount()
         leftGoodsTimes = self._Data.BuyTimesLimit - buyCount
     end
 
-    self._MaxCount = math.min(leftGoodsTimes, leftShopTimes, leftSalesGoods)
+    self._MaxCount = math.min(leftGoodsTimes, leftShopTimes, leftSalesGoods, maxCount)
 end
 
 function XUiBigWorldPurchaseItem:_RefreshItem()

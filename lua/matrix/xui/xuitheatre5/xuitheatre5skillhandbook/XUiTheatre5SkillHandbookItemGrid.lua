@@ -29,6 +29,8 @@ function XUiTheatre5SkillHandbookItemGrid:Update(data)
         -- 目前只有任务有这个功能，其他类型图鉴没有这个字段
         if data.IsUnlock == false then
             self.PanelLock.gameObject:SetActiveEx(true)
+        else
+            self.PanelLock.gameObject:SetActiveEx(false)
         end
     end
 end

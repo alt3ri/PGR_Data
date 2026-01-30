@@ -197,7 +197,7 @@
     },
     {
         "Key": "PVPNotOpenTips",
-        "Values": "['\u73a9\u6cd5\u672a\u5f00\u542f', '{0}\u65e5\u540e\u5f00\u542f']"
+        "Values": "['\u73a9\u6cd5\u672a\u5f00\u542f', '{0}\u540e\u5f00\u542f']"
     },
     {
         "Key": "RepeatChapterChacterDesc",
@@ -265,15 +265,15 @@
     },
     {
         "Key": "PvpPopUpContent1",
-        "Values": "['\u5168\u65b0\u8d5b\u5b63\u5185\u5bb9', '\u5168\u65b0\u8d5b\u5b63\u5185\u5bb9']"
+        "Values": "['\u5168\u65b0\u59d4\u6258\u7cfb\u7edf', '\u739b\u95e8\u4e8b\u52a1\u6240\u6b63\u5728\u51c6\u5907\u59d4\u6258']"
     },
     {
         "Key": "PvpPopUpContent2",
-        "Values": "['\u5168\u65b0\u8d5b\u5b63\u5185\u5bb9']"
+        "Values": "['\u65b0\u589e\u739b\u95e8\u7684\u5609\u8d4f']"
     },
     {
         "Key": "PvpPopUpContent3",
-        "Values": "['\u5168\u65b0\u8d5b\u5b63\u5956\u52b1']"
+        "Values": "['\u8d5b\u5b63\u9650\u65f6\u5956\u52b1']"
     },
     {
         "Key": "PvpPopUpImgNameplate",
@@ -317,7 +317,7 @@
     },
     {
         "Key": "MissionLvFormat",
-        "Values": "['Lv.{0}']"
+        "Values": "['Lv.{0}', 'MAX']"
     },
     {
         "Key": "MissionMaxLevelLabel",
@@ -329,7 +329,7 @@
     },
     {
         "Key": "MissionGridLevelLabel",
-        "Values": "['lv.{0}', 'MAX']"
+        "Values": "['Lv.{0}', 'MAX']"
     },
     {
         "Key": "MissionLevelUpNoEnoughGold",
@@ -337,7 +337,7 @@
     },
     {
         "Key": "NoMissionTips",
-        "Values": "['1\u56de\u5408\u540e\u53ef\u63a5\u53d6\u59d4\u6258']"
+        "Values": "['1\u56de\u5408\u540e\u53ef\u63a5\u53d6\u59d4\u6258', '\u739b\u95e8\u4e8b\u52a1\u6240\u6b63\u5728\u51c6\u5907\u59d4\u6258']"
     },
     {
         "Key": "MissionGridTitle",
@@ -353,11 +353,15 @@
     },
     {
         "Key": "PVPNotStartTips",
-        "Values": "['{0}\u65e5\u540e\u5f00\u542f', '\u672a\u5f00\u542f']"
+        "Values": "['{0}\u540e\u5f00\u542f', '\u672a\u5f00\u542f']"
     },
     {
         "Key": "PVPReasonTips",
-        "Values": "['{0}\u65e5\u540e\u5f00\u542f', '\u8d5b\u5b63\u5df2\u5f00\u542f']"
+        "Values": "['{0}  {1}\u540e\u5f00\u542f', '{0}  \u8d5b\u5b63\u5df2\u5f00\u542f']"
+    },
+    {
+        "Key": "PVPReasonTimeDuration",
+        "Values": "['{0}.{1}-{2}.{3}']"
     },
     {
         "Key": "MissionLevelUpInSkillSelectionPart",
@@ -365,6 +369,18 @@
     },
     {
         "Key": "MissionFinishTipsInSkillChoicePart",
-        "Values": "['\u5b8c\u6210\u6280\u80fd\u9009\u62e9\u540e\uff0c\u5c06\u7ed3\u7b97\u59d4\u6258']"
+        "Values": "['\u5373\u5c06\u7ed3\u7b97\u59d4\u6258']"
+    },
+    {
+        "Key": "Theatre5MissionConditionTableDefine",
+        "Values": "['Desc', 'ConditionTarget', 'TriggerCondition', 'IsConditionAnd', 'ConditionParams', 'ConditionCompares', 'ConditionCompareValues', 'DescShowParam']"
+    },
+    {
+        "Key": "MissionStateLabelInRoundSettle",
+        "Values": "['\u672a\u63a5\u53d6\u59d4\u6258', '\u59d4\u6258\u8fdb\u884c\u4e2d']"
+    },
+    {
+        "Key": "MissionStateLabelInFinalSettle",
+        "Values": "['\u672a\u63a5\u53d6\u59d4\u6258', '\u59d4\u6258\u8fdb\u884c\u4e2d']"
     }
 ]

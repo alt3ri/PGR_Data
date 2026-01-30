@@ -25,6 +25,7 @@ function XUiSkillDetailsForEnhanceV2P6:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnMainUi, function() XLuaUiManager.RunMain() end)
     XUiHelper.RegisterClickEvent(self, self.BtnNext, self.OnBtnNext)
     XUiHelper.RegisterClickEvent(self, self.BtnLast, self.OnBtnLast)
+    self:BindHelpBtn(self.BtnHelp, "UiSkillDetailsHelp")
 end
 
 function XUiSkillDetailsForEnhanceV2P6:InitPanel()
@@ -79,6 +80,11 @@ function XUiSkillDetailsForEnhanceV2P6:RefreshUiShow()
     self.TxtName.text = config.Name
     self.TxtNameEn.text = config.EnName
     self.SkillIcon:SetRawImage(config.Icon)
+
+    local characterCarrer = XMVCA.XCharacter:GetCharacterCareer(self.CharacterId)
+    local EnumCarrer = XEnumConst.CHARACTER.Career
+    local isShowBtnHelper = (characterCarrer == EnumCarrer.Breaker or characterCarrer == EnumCarrer.Tank)
+    self.BtnHelp.gameObject:SetActiveEx(isShowBtnHelper)
 end
 
 function XUiSkillDetailsForEnhanceV2P6:InitSkillBtn()

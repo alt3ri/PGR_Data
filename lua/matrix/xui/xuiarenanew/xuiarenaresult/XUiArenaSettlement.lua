@@ -3,6 +3,9 @@
 ---@field _ResultData table|nil 结算数据（ArenaResult）
 ---@field _WinData table|nil 完整的胜利数据（包含 SettleData, CharExp 等，用于 debug）
 ---@field _AudioInfo any|nil 音效信息
+---@field _AnimationDelayTimerId number|nil 动画延迟定时器ID
+---@field _AnimationPlayTimerId number|nil 动画播放延迟定时器ID
+---@field _IsInAnimationDelay boolean 是否在动画延迟期间（配合Unity动画演出）
 ---@field ListCharacter UnityEngine.RectTransform|nil 角色列表容器
 ---@field GridCharacter1 UnityEngine.RectTransform|nil 角色头像模板
 local XUiArenaSettlement = XLuaUiManager.Register(XLuaUi, "UiArenaSettlement")
@@ -33,6 +36,8 @@ end
 
 function XUiArenaSettlement:OnDestroy()
     self:_UnregisterEventListeners()
+    self:_ClearAnimationDelayTimer()
+    self:_ClearAnimationPlayTimer()
     XDataCenter.AntiAddictionManager.EndFightAction()
 end
 
@@ -62,6 +67,11 @@ function XUiArenaSettlement:OnBtnReFightClick()
         return
     end
 
+    -- 检查是否在动画延迟期间
+    if self._IsInAnimationDelay then
+        return
+    end
+
     self:_StopAudio()
 
     -- 检查是否在结算期间
@@ -87,6 +97,11 @@ end
 
 function XUiArenaSettlement:OnBtnExitFightClick()
     if not self:_CheckCanOperate() then
+        return
+    end
+
+    -- 检查是否在动画延迟期间
+    if self._IsInAnimationDelay then
         return
     end
 
@@ -131,6 +146,37 @@ function XUiArenaSettlement:_StopAudio()
     end
 end
 
+--- 清理动画延迟定时器
+function XUiArenaSettlement:_ClearAnimationDelayTimer()
+    if self._AnimationDelayTimerId then
+        XScheduleManager.UnSchedule(self._AnimationDelayTimerId)
+        self._AnimationDelayTimerId = nil
+    end
+end
+
+--- 清理动画播放定时器
+function XUiArenaSettlement:_ClearAnimationPlayTimer()
+    if self._AnimationPlayTimerId then
+        XScheduleManager.UnSchedule(self._AnimationPlayTimerId)
+        self._AnimationPlayTimerId = nil
+    end
+end
+
+--- 启动动画延迟（延迟3秒后允许操作，配合Unity动画演出）
+function XUiArenaSettlement:_StartAnimationDelay()
+    self:_ClearAnimationDelayTimer()
+    self._IsInAnimationDelay = true
+    
+    -- 延迟3秒后允许操作
+    self._AnimationDelayTimerId = XScheduleManager.ScheduleOnce(function()
+        if XTool.UObjIsNil(self.Transform) then
+            return
+        end
+        self._IsInAnimationDelay = false
+        self._AnimationDelayTimerId = nil
+    end, 3 * XScheduleManager.SECOND)
+end
+
 -- endregion
 
 -- region 界面刷新
@@ -160,14 +206,24 @@ function XUiArenaSettlement:_Refresh()
     -- 刷新副本入口数据
     self._Control:SetIsRefreshMainPage(true)
 
-    -- 播放音效
-    self._AudioInfo = XLuaAudioManager.PlayAudioByType(
-        XLuaAudioManager.SoundType.SFX,
-        XLuaAudioManager.UiBasicsMusic.UiSettle_Win_Number
-    )
+    -- 启动动画延迟（延迟3秒后允许操作，配合Unity动画演出）
+    self:_StartAnimationDelay()
 
-    -- 播放分数动画
-    self:_PlayScoreAnimation(data, markInfo)
+    -- 延迟3秒后播放音效和分数动画（配合Unity动画演出）
+    self:_ClearAnimationPlayTimer()
+    self._AnimationPlayTimerId = XScheduleManager.ScheduleOnce(function()
+        if XTool.UObjIsNil(self.Transform) then
+            return
+        end
+        self._AnimationPlayTimerId = nil
+        -- 播放音效
+        self._AudioInfo = XLuaAudioManager.PlayAudioByType(
+            XLuaAudioManager.SoundType.SFX,
+            XLuaAudioManager.UiBasicsMusic.UiSettle_Win_Number
+        )
+        -- 播放分数动画
+        self:_PlayScoreAnimation(data, markInfo)
+    end, 3 * XScheduleManager.SECOND)
 end
 
 --- 获取标记信息
@@ -186,12 +242,42 @@ end
 ---@param data table 结算数据
 ---@param markInfo table 标记信息
 function XUiArenaSettlement:_InitUIState(data, markInfo)
+    -- 设置文本类型的内容（名称、标题等）
     self.TxtTitle.text = self._Control:GetCurrentEnterAreaStageName()
+    
+    -- 设置数值类型文本的默认值为0
+    self:_InitDefaultValues()
+    
     self.BtnReFight.gameObject:SetActiveEx(true)
-    self.PanelNewRecord.gameObject:SetActiveEx(data.Point > data.OldPoint)
+    self.PanelNewRecord.gameObject:SetActiveEx(data.Point > (data.ArenaMaxPoint or 0))
     self.PanelBossLoseHp.gameObject:SetActiveEx(markInfo.ShowEnemyHp)
     self.PanelSurplusHp.gameObject:SetActiveEx(markInfo.ShowMyHp)
     self.PanelGroupCount.gameObject:SetActiveEx(markInfo.ShowGroup)
+end
+
+--- 初始化数值类型文本的默认值（设置为0）
+function XUiArenaSettlement:_InitDefaultValues()
+    if self.TxtPoint then
+        self.TxtPoint.text = "0"
+    end
+    if self.TxtHighScore then
+        self.TxtHighScore.text = "0"
+    end
+    if self.TxtHitScore then
+        self.TxtHitScore.text = "+0"
+    end
+    if self.TxtRemainHp then
+        self.TxtRemainHp.text = "0%"
+    end
+    if self.TxtRemainHpScore then
+        self.TxtRemainHpScore.text = "+0"
+    end
+    if self.TxtGroupCount then
+        self.TxtGroupCount.text = XUiHelper.GetText("ArenaGrouplScore", 0)
+    end
+    if self.TxtGroupCountScore then
+        self.TxtGroupCountScore.text = "+0"
+    end
 end
 
 --- 播放分数动画
@@ -273,8 +359,9 @@ function XUiArenaSettlement:_UpdateScoreDisplay(data, markInfo, progress)
     end
 
     -- 历史最高分
-    local highScore = math.floor(progress * data.OldPoint)
-    if data.OldPoint >= markInfo.MaxPoint and markInfo.MaxPoint > 0 then
+    -- 4.2 新增字段ArenaMaxPoint(Area), 与4.1的OldPoint功能(Stage)有区分, 如果 data.ArenaMaxPoint 为 nil，则使用 0 作为后备
+    local highScore = math.floor(progress * (data.ArenaMaxPoint or 0))
+    if (data.ArenaMaxPoint or 0) >= markInfo.MaxPoint and markInfo.MaxPoint > 0 then
         self.TxtHighScore.text = highScore .. "/" .. markInfo.MaxPoint
     else
         self.TxtHighScore.text = tostring(highScore)

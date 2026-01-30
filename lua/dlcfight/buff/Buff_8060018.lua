@@ -4,16 +4,19 @@ local Base = require("Buff/BuffBase/XBuffBase")
 local XBuffScript8060018 = XDlcScriptManager.RegBuffScript(8060018, "XBuffScript8060018", Base)
 --效果说明：血量越高攻击加成越高
 
-function XBuffScript8060018:Init()
-    --初始化
-    Base.Init(self)
-    ------------配置------------
-    self.magicLevel=1 --等新接口直接获取自己的BUFF等级
+function XBuffScript8060018:Ctor()
     self.magicIds={8060019,8060020,8060021,8060022} --各个血量区间的攻击BUFF
     self.hpRate01=0.8
     self.hpRate02=0.59
     self.hpRate03=0.39
     self.hpRate04=0.19
+end
+
+function XBuffScript8060018:ScriptInit(isGainControl)
+    --初始化
+    Base.ScriptInit(self,isGainControl)
+    ------------配置------------
+    self.magicLevel=1 --等新接口直接获取自己的BUFF等级
     self.openBuff=false
     self.hasLevel=false
     ------------执行------------

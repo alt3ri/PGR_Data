@@ -38,7 +38,8 @@ function XUiBigWorldTaskPopupEndingDetail:InitView()
     self:RefreshReward(self._Control:GetInviteQuestResultRewardId(self._ResultId))
 
     self.BtnView.gameObject:SetActiveEx(self._IsPCMode)
-    self.BtnAgain.gameObject:SetActiveEx(not self._IsFromInvitation)
+    --策划需求：第一次弹窗时不也显示按钮，避免此时弹窗过多
+    self.BtnAgain.gameObject:SetActiveEx(not self._IsFromInvitation and not XMVCA.XBigWorldQuest:IsFirstFinishResult())
     
     self:RefreshTagNew(self._ShowTag)
 end
@@ -71,14 +72,17 @@ function XUiBigWorldTaskPopupEndingDetail:OnBtnDownloadClick()
         return
     end
     local fileName = string.format("INVITE_%s%s", XTime.GetServerNowTimestamp(), XPlayer.Id)
-    local fileNameWithExt = string.format("%s.png", fileName)
-    if CS.XTool.ExistsCaptureImg(fileNameWithExt) then
-        XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("LocalTextureExist"))
-        return
-    end
-    if CS.XTool.SaveUnreadableTexture(fileName, texture) then
-        XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_SS_SaveSucess"))
-    end
+    --local fileNameWithExt = string.format("%s.png", fileName)
+    --local path = string.format("%s%s", CS.XTool.GetPhotoAlbumPath(), fileNameWithExt)
+    --if CS.System.IO.File.Exists(path) then
+    --    XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("LocalTextureExist"))
+    --    return
+    --end
+    XPermissionManager.GetCameraPermissionToCallback(function()
+        if CS.XTool.SaveUnreadableTexture(fileName, texture) then
+            XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_SS_SaveSucess"))
+        end
+    end)
 end
 
 function XUiBigWorldTaskPopupEndingDetail:OnBtnViewClick()
@@ -86,7 +90,7 @@ function XUiBigWorldTaskPopupEndingDetail:OnBtnViewClick()
         self.BtnView.gameObject:SetActiveEx(false)
         return
     end
-    local path = CS.XTool.GetCaptureImgPath()
+    local path = CS.XTool.GetPhotoAlbumPath()
     path = string.gsub(path, "/", "\\")
     if not CS.System.IO.Directory.Exists(path) then
         CS.System.IO.Directory.CreateDirectory(path)

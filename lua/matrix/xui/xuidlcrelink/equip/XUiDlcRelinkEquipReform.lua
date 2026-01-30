@@ -329,6 +329,7 @@ function XUiDlcRelinkEquipReform:RefreshAttributes()
 
     self:HideEquipAttributes()
 
+    local bgIndex = 1
     -- 主属性
     local mainAttrs = self._Control:GetEquipAllMainFactorByUid(self.CurAbsorbSlotEquipUid)
     if not XTool.IsTableEmpty(mainAttrs) then
@@ -339,7 +340,9 @@ function XUiDlcRelinkEquipReform:RefreshAttributes()
             end
             self.MainAttributes[i]:Open()
             self.MainAttributes[i]:Refresh(mainAttrs[i])
+            self.MainAttributes[i]:SetBg(bgIndex % 2 ~= 0)
             self.MainAttributes[i].Transform:SetAsLastSibling()
+            bgIndex = bgIndex + 1
         end
 
         self.Spacing.gameObject:SetActiveEx(true)
@@ -366,6 +369,8 @@ function XUiDlcRelinkEquipReform:RefreshAttributes()
                 local node = self.DeputyAttributeNodes[index][i]
                 node:Open()
                 node:Refresh(slot.Attributes[i])
+                node:SetBg(bgIndex % 2 ~= 0)
+                bgIndex = bgIndex + 1
             end
         end
     end
@@ -569,7 +574,6 @@ function XUiDlcRelinkEquipReform:RegisterUiEvents()
     self.BtnLock:AddEventListener(handler(self, self.OnBtnLockClick))
     self.BtnAbsorb:AddEventListener(handler(self, self.OnBtnAbsorbClick))
     self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
-    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
 end
 
 function XUiDlcRelinkEquipReform:OnBtnBackClick()
@@ -672,10 +676,6 @@ end
 function XUiDlcRelinkEquipReform:OnBtnCloseClick()
     self.EquipDetailNode:CloseDeleteFactorPanel()
     self.MaskDelete.gameObject:SetActiveEx(false)
-end
-
-function XUiDlcRelinkEquipReform:OnBtnMainUiClick()
-    XLuaUiManager.RunMain()
 end
 
 return XUiDlcRelinkEquipReform

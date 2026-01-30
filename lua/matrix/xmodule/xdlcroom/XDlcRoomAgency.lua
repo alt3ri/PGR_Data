@@ -982,13 +982,17 @@ function XDlcRoomAgency:ReqCancelJoinWorld(worldNo, playerId, token, callback)
 end
 
 --- 进入玩法重连检查
+---@param worldType number 玩法类型
 ---@param callback function 重连检查成功回调
-function XDlcRoomAgency:ReqPreCheckReconnect(callback)
+function XDlcRoomAgency:ReqPreCheckReconnect(worldType, callback)
     if self:__CheckHasChangeProtocol("ReqPreCheckReconnect", callback) then
         return
     end
 
-    XNetwork.Call(RequestProto.DlcPreCheckReconnectRequest, {}, function(res)
+    local req = {
+        WorldType = worldType,
+    }
+    XNetwork.Call(RequestProto.DlcPreCheckReconnectRequest, req, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return
@@ -1152,9 +1156,9 @@ function XDlcRoomAgency:_OnJoinWorld(response, isRejoin)
             CS.StatusSyncFight.XFightClient.ExitFight(true)
         end
         if not self:IsSettled() then
-            self._Model:ClearAll()
             self:Settlement()
             self:_OnDisconnect()
+            self._Model:ClearAll()
         end
     end
     local connectCb = function(isSuccess)
@@ -1706,6 +1710,10 @@ end
 --v4.2特殊处理 教学关和训练关没有结算界面
 function XDlcRoomAgency:_GetXFightClientArgs()
     local args = CS.StatusSyncFight.XFightClientArgs()
+    --加载进度回调
+    args.LoadProgressCb = function(process)
+        XEventManager.DispatchEvent(XEventId.EVENT_DLC_SELF_RECONNECT_LOADING_PROCESS, XPlayer.Id, process)
+    end
     --关闭 loading ui
     args.CloseLoadingUiCb = function()
         XLuaUiManager.SafeClose("UiDlcRelinkLoadingNew")

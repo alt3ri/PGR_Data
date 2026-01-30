@@ -15,6 +15,7 @@ end
 function XDlcRelinkWorldFight:OnFightForceExit(worldType)
     -- 结算数据为空的时候直接返回主界面
     XLuaUiManager.RunMain()
+    XUiManager.TipText("DlcRelinkMateForceExit")
 end
 
 return XDlcRelinkWorldFight

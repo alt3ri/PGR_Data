@@ -23,8 +23,18 @@ function XSkyGardenGuideProxy:IsIntercept()
     --return false
 end
 
-function XSkyGardenGuideProxy:ExecuteGuide(template)
+---@param template XTableBigworldGuideGroup
+function XSkyGardenGuideProxy:ExecuteGuide(template, isUiOpen)
     if not template then
+        return
+    end
+    if template.SequentialId == 2 then
+        isUiOpen = true
+    elseif template.SequentialId == 1 then
+        isUiOpen = false
+    end
+    if isUiOpen then
+        XDataCenter.GuideManager.ExecuteGuide(template)
         return
     end
     for _, guideId in pairs(self._PrepareToGuide) do
@@ -106,6 +116,13 @@ function XSkyGardenGuideProxy:ResetGuideJob()
         self._PrepareToGuide[self._ExecuteGuideId] = nil
         self._ExecuteGuideId = nil
     end
+end
+
+function XSkyGardenGuideProxy:GetTopUiName(skipCheckUiNameDict)
+    if not XMVCA.XBigWorldFunction:IsFunctionEventFree() or XMVCA.XBigWorldLoading:IsShowAnyLoading() then
+        return false
+    end
+    return XGuideProxy.GetTopUiName(self, skipCheckUiNameDict)
 end
 
 return XSkyGardenGuideProxy

@@ -137,8 +137,6 @@ function XUiDlcMultiPlayerRoomCuteGrid:Refresh(isRedisplay)
     local characterId = member:GetCharacterId()
     local isSelf = member:IsSelf()
     local isLeader = member:IsLeader()
-    ---@type XDlcMultiMouseHunterPlayerData
-    local customData = member:GetCustomData()
 
     self.BtnInfo.gameObject:SetActiveEx(true)
     self.BtnInfo:SetButtonState(isSelf and CS.UiButtonState.Disable or CS.UiButtonState.Normal)
@@ -163,7 +161,12 @@ function XUiDlcMultiPlayerRoomCuteGrid:Refresh(isRedisplay)
     end
 
     self:RefreshModel(characterId, isRedisplay)
-    self:RefreshTitle(customData:GetTitleId())
+    ---@type XDlcMultiMouseHunterPlayerData
+    local customData = member:GetCustomData()
+    if customData ~= nil then
+        self:RefreshTitle(customData:GetTitleId())
+    end
+
 end
 
 function XUiDlcMultiPlayerRoomCuteGrid:RefreshChat(chatData, receiveTime)

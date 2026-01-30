@@ -43,7 +43,7 @@ local SkillConditions = {
         DistanceNeed = {8}, 
     },
     [805203] = {--上勾拳
-        DistanceNeed = {5},
+        DistanceNeed = {6},
     },
     [805204] = {--欧拉拳
         DistanceNeed = {8}, --距离要求
@@ -54,11 +54,11 @@ local SkillConditions = {
         IsLockInODState = true,
     },
     [805207] = {--交叉射击
-        DistanceNeed = {10}, --距离要求
+        DistanceNeed = {8}, --距离要求
         PhaseNeed = {2,3,4},
     },
     [805208] = {--推进拳
-        DistanceNeed = {20},
+        DistanceNeed = {15},
         IsLockInODState = true,
     },
     [805209] = {--下段斩（空落锤衔接）
@@ -110,20 +110,22 @@ local SkillConditions = {
         DistanceNeed ={20,999}
     },
     [805227] = {--升龙腿
+        DistanceNeed ={10}
     },
     [805228] = {--空落锤(衔接)
-        Cd=0,
     },
     [805229] = {--重火锤
+        DistanceNeed ={10},
         PhaseNeed = {2,3,4}, -- 阶段要求
     },
     [805230] = {--后退斩
-        PhaseNeed = {2,3,4}, -- 阶段要求
+        DistanceNeed ={20,999},
+        PhaseNeed = {5}, -- 阶段要求
     },
     [805231] = {--响指波
     },
     [805232] = {--瑟提锤
-        DistanceNeed = {10,25},
+        DistanceNeed = {10,9999},
         IsLockInODState = true,
     },
     [805233] = {--拼刀小受击
@@ -178,7 +180,7 @@ local SkillConditions = {
     },
     [805274] ={--OD：胸炮地面起跳版
         PhaseNeed = {2,3,4}, -- 阶段要求
-        DistanceNeed ={20,999}
+        DistanceNeed ={6,999}
     },
     [805275] ={--OD:蓄力不死斩启动技能
         PhaseNeed = {2,3,4}, -- 阶段要求
@@ -199,16 +201,16 @@ local SkillConditions = {
     },
     --------------70AI的技能条件配置-------------------------
     [105215] ={ --70
-        DistanceNeed = {8},
+        DistanceNeed = {9},
     },
     [105216] ={ --70
-        DistanceNeed = {8},
+        DistanceNeed = {13},
     },
     [105217] ={ --70
-        DistanceNeed = {8},
+        DistanceNeed = {13},
     },
     [105218] ={ --70
-        DistanceNeed = {8},
+        DistanceNeed = {13},
     },
 
     --------------丽芙AI的技能条件配置-------------------------

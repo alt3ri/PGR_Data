@@ -17,6 +17,8 @@ end
 
 ----------public start----------
 
+--region 涂装套装
+
 function XFashionSuitAgency:SetFashionSuitData(fashionSuitList)
     self._Model:SetFashionSuitData(fashionSuitList)
 end
@@ -81,6 +83,29 @@ function XFashionSuitAgency:GetFashionSuitId(fashionId)
     end
     return nil
 end
+
+function XFashionSuitAgency:CheckFashionShopOpen(suitId, cb)
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
+        if cb then
+            cb()
+        end
+    end
+    local shopIds = self._Model:GetSuitShopIds(suitId)
+    if XTool.IsTableEmpty(shopIds) then
+        if cb then
+            cb()
+        end
+    else
+        XShopManager.RequestShopValidInfo(shopIds, cb)
+    end
+end
+
+function XFashionSuitAgency:GetSuitShopIds(suitId)
+    return self._Model:GetSuitShopIds(suitId)
+end
+
+--endregion
+
 ----------public end----------
 
 ----------private start----------

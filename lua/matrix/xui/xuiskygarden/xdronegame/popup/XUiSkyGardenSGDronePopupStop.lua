@@ -13,7 +13,6 @@ local XUiSkyGardenSGDronePopupStop = XMVCA.XBigWorldUI:Register(nil, "UiSkyGarde
 
 function XUiSkyGardenSGDronePopupStop:OnAwake()
     self._StageId = 0
-    self._IsPlaying = false
 
     self:_RegisterButtonClicks()
 end
@@ -38,21 +37,12 @@ end
 function XUiSkyGardenSGDronePopupStop:OnDestroy()
 end
 
-function XUiSkyGardenSGDronePopupStop:OnBtnVideoClick()
-    if self._IsPlaying then
-        self.VideoPlayer:Stop()
-        self._IsPlaying = false
-        self.ImagePlay.gameObject:SetActiveEx(true)
-    else
-        self.VideoPlayer:Prepare()
-        self._IsPlaying = true
-        self.ImagePlay.gameObject:SetActiveEx(false)
-    end
-end
-
 function XUiSkyGardenSGDronePopupStop:OnBtnCloseClick()
     self:Close()
-    CS.XBigWorldGame.XSkyGarden.XDroneGame.XSGDGInstance.ResumeGame()
+
+    if CS.XBigWorldGame.XSkyGarden.XDroneGame.XSGDGInstance.Instance.Engine.CurrentState ~= CS.XBigWorldGame.XSkyGarden.XDroneGame.ESGDGEngineState.Save then
+        CS.XBigWorldGame.XSkyGarden.XDroneGame.XSGDGInstance.ResumeGame()
+    end
 end
 
 function XUiSkyGardenSGDronePopupStop:OnBtnConfirmClick()
@@ -86,7 +76,6 @@ end
 
 function XUiSkyGardenSGDronePopupStop:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnVideo:AddEventListener(Handler(self, self.OnBtnVideoClick))
     self.BtnLeave:AddEventListener(Handler(self, self.OnBtnLeaveClick))
     self.BtnCancel:AddEventListener(Handler(self, self.OnBtnCancelClick))
     self.BtnConfirm:AddEventListener(Handler(self, self.OnBtnConfirmClick))
@@ -125,13 +114,13 @@ end
 function XUiSkyGardenSGDronePopupStop:_RefreshVideo(droneId)
     local videoId = self._Control:GetDroneTeachingVideoId(droneId)
 
+    self.BtnVideo.gameObject:SetActiveEx(false)
+    self.ImgPlay.gameObject:SetActiveEx(false)
     if XTool.IsNumberValid(videoId) then
-        self._IsPlaying = false
         self.Visual.gameObject:SetActiveEx(true)
-        self.BtnVideo.gameObject:SetActiveEx(true)
+        self.VideoPlayer.VideoPlayerInst.loop = true
         self.VideoPlayer:SetInfoByVideoId(videoId)
-    else
-        self.BtnVideo.gameObject:SetActiveEx(false)
+        self.VideoPlayer:Prepare()
     end
 end
 

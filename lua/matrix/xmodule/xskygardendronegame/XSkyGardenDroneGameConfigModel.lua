@@ -303,6 +303,12 @@ function XSkyGardenDroneGameConfigModel:GetSgDroneGameDialogueDurationById(id)
     return config.Duration
 end
 
+function XSkyGardenDroneGameConfigModel:GetSgDroneGameDialogueAudioKeyById(id)
+    local config = self:GetSgDroneGameDialogueConfigById(id)
+
+    return config.AudioKey
+end
+
 function XSkyGardenDroneGameConfigModel:GetSgDroneGameDialogueDialogueById(id)
     local config = self:GetSgDroneGameDialogueConfigById(id)
 

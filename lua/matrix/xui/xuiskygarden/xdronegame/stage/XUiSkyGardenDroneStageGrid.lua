@@ -34,11 +34,7 @@ function XUiSkyGardenDroneStageGrid:OnDestroy()
 end
 
 function XUiSkyGardenDroneStageGrid:OnBtnStageClick()
-    if not self._StageEntity then
-        return
-    end
-
-    XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneStageDetail", self._StageEntity)
+    self:OpenDetail()
 end
 
 ---@param stageEntity XSGDroneStageEntity
@@ -55,6 +51,22 @@ function XUiSkyGardenDroneStageGrid:Refresh(stageEntity)
     self.PanelClear.gameObject:SetActiveEx(stageEntity:IsComplete())
 
     self:_RefreshStar(stageEntity)
+end
+
+function XUiSkyGardenDroneStageGrid:SetSelect(isSelect)
+    if isSelect then
+        self.BtnStage:SetButtonState(CS.UiButtonState.Select)
+    else
+        self.BtnStage:SetButtonState(CS.UiButtonState.Normal)
+    end
+end
+
+function XUiSkyGardenDroneStageGrid:OpenDetail()
+    if not self._StageEntity then
+        return
+    end
+
+    XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneStageDetail", self._StageEntity)
 end
 
 function XUiSkyGardenDroneStageGrid:_RegisterButtonClicks()

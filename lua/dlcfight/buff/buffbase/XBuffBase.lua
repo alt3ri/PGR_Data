@@ -8,7 +8,7 @@ local Base = require("Common/XFightBase")
 local XBuffBase = XClass(Base,"XBuffBase")
 
 --region 脚本生命周期
-function XBuffBase:Init() --初始化
+function XBuffBase:_BaseInit() --初始化
     self._uuid = self._proxy:GetSelfBuffNpcUUID()
     self._casterUUID = self._proxy:GetSelfBuffCasterNpcUUID()
     self._buffId = self._proxy:GetSelfBuffId()

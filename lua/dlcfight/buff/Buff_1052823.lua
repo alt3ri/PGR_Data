@@ -9,7 +9,7 @@ function XBuffScript1052823:Init()
     --初始化
     Base.Init(self)
     ------------配置------------
-    XLog.Warning("Buff脚本1052823")
+    --XLog.Warning("Buff脚本1052823")
 end
 
 ---@param dt number @ delta time 

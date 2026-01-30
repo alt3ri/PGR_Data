@@ -484,7 +484,7 @@ function XUiStrongholdBattleRoleRoom:RefreshCharacterRImgType()
         amplifierEffectGo:SetActiveEx(false)
         if obsActiveCarrer ~= XEnumConst.CHARACTER.Career.None and XTool.IsNumberValid(obsPos) and obsPos == pos then
             iconPath = XMVCA.XCharacter:GetNpcTypeIconObs(obsActiveCarrer)
-            if obsActiveCarrer == XEnumConst.CHARACTER.Career.Tank then
+            if obsActiveCarrer == XEnumConst.CHARACTER.Career.Tank or obsActiveCarrer == XEnumConst.CHARACTER.Career.Breaker then
                 tankEffectGo:SetActiveEx(true)
             elseif obsActiveCarrer == XEnumConst.CHARACTER.Career.Amplifier or obsActiveCarrer == XEnumConst.CHARACTER.Career.Support then
                 amplifierEffectGo:SetActiveEx(true)
@@ -847,9 +847,12 @@ function XUiStrongholdBattleRoleRoom:UpdateTeamPrefab(team)
 
     -- 1. 定义单人移动操作
     local function SafeMoveCharacter(characterId, targetIndex)
+        local targetMember = currentTeam:GetMember(targetIndex)
+        local targetOldCharId = targetMember and targetMember:GetInTeamCharacterId() or 0
+        local targetOldPlayerId = targetMember and targetMember:GetPlayerId() or 0
+
         if not XTool.IsNumberValid(characterId) then
-            local member = currentTeam:GetMember(targetIndex)
-            if member then member:SetInTeam(0, 0) end
+            if targetMember then targetMember:SetInTeam(0, 0) end
             XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
             return
         end
@@ -861,13 +864,21 @@ function XUiStrongholdBattleRoleRoom:UpdateTeamPrefab(team)
             local oldMember = oldTeam:GetInTeamMemberByCharacterId(characterId)
             if oldMember then
                 oldMember:SetInTeam(0, 0)
+
+                -- 交换逻辑：将原位置的角色移到旧位置
+                if XTool.IsNumberValid(targetOldCharId) then
+                    local targetCharType = self:GetCharacterType(targetOldCharId)
+                    if oldTeam:ExistDifferentCharacterType(targetCharType) then
+                        oldTeam:Clear()
+                    end
+                    oldMember:SetInTeam(targetOldCharId, targetOldPlayerId)
+                end
             end
         end
 
         -- B. 填入新位置
-        local member = currentTeam:GetMember(targetIndex)
-        if member then
-            member:SetInTeam(characterId, XPlayer.Id)
+        if targetMember then
+            targetMember:SetInTeam(characterId, XPlayer.Id)
         end
 
         -- C. 刷新

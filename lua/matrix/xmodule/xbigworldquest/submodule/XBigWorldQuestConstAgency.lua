@@ -142,6 +142,13 @@ function XBigWorldQuestAgency:InitEnum()
         LevelInValid = 8, -- 场景无效
     }
 
+    self._TempFinishedObjectiveUpdateData = {
+        State = self.ObjectiveState.InActive,
+        MaxProgress = 1,
+        CurProgress = 1,
+        ProgressType = 1,
+    }
+
     self._ReplaceHandler = function(key)
         local v = self.PatternKeyToValue[key]
         return v and tostring(v) or key
@@ -247,7 +254,7 @@ function XBigWorldQuestAgency:CheckQuestReady(questId)
 end
 
 function XBigWorldQuestAgency:CheckStepFinish(stepId)
-    local questId = self._Model:GetQuestIdByStepId(stepId)
+    local questId = self:GetQuestIdByStepId(stepId)
     if questId <= 0 then
         return false
     end

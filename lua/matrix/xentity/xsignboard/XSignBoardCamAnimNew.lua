@@ -4,6 +4,7 @@ local XSignBoardCamAnimNew = XClass(nil, "XSignBoardCamAnimNew")
 local DateStartTime = CS.XGame.ClientConfig:GetString("BackgroundChangeTimeStr")
 local DateEndTime = CS.XGame.ClientConfig:GetString("BackgroundChangeTimeEnd")
 local UiModeAnim = "UiModeAnim"
+local UiAnimMask = "UiSignBoardAnimMask"
 
 function XSignBoardCamAnimNew:Ctor()
     self._UiAnimTimerIds = {}
@@ -108,6 +109,10 @@ function XSignBoardCamAnimNew:Close()
     end
 end
 
+function XSignBoardCamAnimNew:Destory()
+    self:_ResetPlayingUiAnim()
+end
+
 function XSignBoardCamAnimNew:IsFinish()
     if self:Exist() then
         return self.AnimPlayer.time >= self.AnimPlayer.duration
@@ -144,10 +149,18 @@ function XSignBoardCamAnimNew:OnScenePlayStop()
         return
     end
     if XMVCA.XFavorability:CheckIsUseSelfUiAnim(self.SignBoardId, self.UiAnimNodeRoot.name) then
-        XLuaUiManager.SetMask(true)
-        self:_PlayUiAnim("UiEnable", function()
-            XLuaUiManager.SetMask(false)
-        end)
+        self:_ShowMask()
+        self:_PlayUiAnim("UiEnable", handler(self, self._HideMask))
+    end
+end
+
+function XSignBoardCamAnimNew:_ShowMask()
+    XLuaUiManager.SetMask(true, UiAnimMask)
+end
+
+function XSignBoardCamAnimNew:_HideMask()
+    if XLuaUiManager.IsMaskShow(UiAnimMask) then
+        XLuaUiManager.SetMask(false, UiAnimMask)
     end
 end
 
@@ -474,11 +487,15 @@ function XSignBoardCamAnimNew:_RemoveUiAnimTimer()
         XScheduleManager.UnSchedule(timerId)
     end
     self._UiAnimTimerIds = {}
+    if XLuaUiManager.IsMaskShow(UiAnimMask) then
+        XLuaUiManager.SetMask(false, UiAnimMask)
+    end
 end
 
 -- 停止所有动画
 function XSignBoardCamAnimNew:_ResetPlayingUiAnim()
     self:_RemoveUiAnimTimer()
+    self:_HideMask()
     if not self:Exist() then
         return
     end

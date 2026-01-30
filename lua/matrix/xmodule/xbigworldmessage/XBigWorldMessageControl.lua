@@ -146,7 +146,6 @@ end
 
 ---@return XBWMessageEntity
 function XBigWorldMessageControl:GetForceMessageByMessageId(messageId)
-    self._Model:TryRemoveUnReadMessageData(messageId)
     return self:AddEntity(XBWMessageEntity, messageId)
 end
 

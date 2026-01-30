@@ -3,10 +3,10 @@ local Base = require("Buff/BuffBase/XBuffBase")
 ---@class XBuffScript1000489 : XFightBase
 local XBuffScript1000489 = XDlcScriptManager.RegBuffScript(1000489, "XBuffScript1000489", Base)
 
-function XBuffScript1000489:Init()
-    Base.Init(self)
+function XBuffScript1000489:ScriptInit(isGainControl)
+    Base.ScriptInit(self, isGainControl)
 
-    self._proxy:RegisterEvent(EWorldEvent.NpcDamage)
+	self._proxy:RegisterEvent(EWorldEvent.NpcDamage)
 end
 
 function XBuffScript1000489:Update(dt)

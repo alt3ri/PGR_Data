@@ -20,16 +20,18 @@ local StateEnum = {
 ---生态状态坐标
 ---@type table<number, Vector3>
 local StatePos = {
-    [StateEnum.Cinema] = {x=617.937012,y=194.8526,z=1023.58405},
-    [StateEnum.Plaza] = {x=580.0,y=190.5, z=912.1},
-    [StateEnum.ArtGallery] = {x=583.260864, y=192.370224, z=848.190308},
+    [StateEnum.Cinema] = {x=617.938721,y=194.76062,z=1023.96503},
+    [StateEnum.Plaza] = {x=581.5,y=190.5,z=912.6},
+    [StateEnum.ArtGallery] = {x=583.260864,y=192.370224,z=848.190308},
 }
 ---寻路路径
 ---@type table<number, Vector3>
 local StatePath = {
     [StateEnum.Cinema] = {
         StatePos[StateEnum.Cinema],
+        {x=618.2,y=194.8,z=1026.1},
         {x=588.9,y=194.1,z=1010.9},
+        {x=589.2,y=194.1,z=999.8},
         {x=559.9,y=193.0,z=993.8},
         {x=559.9,y=193.0,z=993.8},
         {x=562.7,y=190.8,z=961.6},
@@ -43,6 +45,9 @@ local StatePath = {
     },
     [StateEnum.ArtGallery] = {
         StatePos[StateEnum.ArtGallery],
+        {x=582.3,y=192.4,z=851.7},
+        {x=580.8,y=192.4,z=856.4},
+        {x=592.4,y=192.4,z=854.7},
         {x=599.9,y=192.0,z=842.7},
         {x=600.9,y=191.9,z=869.7},
         {x=599.0,y=188.7,z=890.3},
@@ -51,6 +56,9 @@ local StatePath = {
         {x=610.2,y=194.1,z=966.7},
         {x=584.2,y=194.1,z=969.3},
         {x=584.9,y=194.1,z=997.0},
+        {x=589.6,y=194.1,z=1013.1},
+        {x=602.6,y=194.4,z=1024.7},
+        {x=618.2,y=194.8,z=1026.1},
         StatePos[StateEnum.Cinema],
     },
 }
@@ -66,12 +74,14 @@ local XBuouxiongCinemaState = XClass(XEcologyCharAIBaseState, "XBuouxiongCinemaS
 function XBuouxiongCinemaState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Cinema
-    self.StateConfig.StateAnim = "Drama_Sit_01"
+    self.StateConfig.StateLoopAnim = "Drama_Watching_Loop"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 1
+    self.StateConfig.IgnoreCharCollider = true
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
 end
 
@@ -79,25 +89,19 @@ end
 ---状态进入时
 ---@param lastStateEnum number 上个状态
 function XBuouxiongCinemaState:OnStateEnter(lastStateEnum)
-    ----Vector3(617.937012,194.8526,1023.58405) 这是布偶熊坐下循环的位置 于此记录
-    ----Vector3(617.937012,194.8526,1024.66431) 这是布偶熊坐下时的位置 于此记录
-    ---需要转向一个为 Vector3(617.937012,194.8526,1027.47412)的坐标 用 Turnpos 做
-    -----12.11周包版本进入状态后 传送到 座位上 播放坐姿循环 后续周包用带位移的动画使其坐下，
-    ---12.11周包版本 目前到电影院的寻路不通 先直接在外面播drama了
-    ---注：目前StandUp动作还没制作完毕，待制作完毕后，在退出状态时还需要播放一次StandUp动作
-    self.InteractTriggerCount = 0
-    local CinemaSitTurnPos={x=617.937012,y=194.8526,z=1027.47412}
-    local CinemaSitPos = {x=617.937012,y=194.8526,z=1023.58405}
-    local CinemaSitRot = {x=0,y=0,z=0}
-    self._proxy:SetNpcPosAndRot(self._uuid,CinemaSitPos,CinemaSitRot)
+    self.InteractTriggerCount = 1
+    self._proxy:SetNpcPosition(self._uuid, StatePos[StateEnum.Cinema])
     XEcologyCharAIBaseState.OnStateEnter(self, lastStateEnum)
 end
 
 ---@overload
 function XBuouxiongCinemaState:UpdateOptionActive()
     local optionId = self.StateConfig.ShowOptionId
-    if self.InteractTriggerCount >= 1 then
+    if self.InteractTriggerCount == 2 then
         optionId = 5
+    end
+    if self.InteractTriggerCount >= 3 then
+        optionId = 1
     end
     self._proxy:SetNpcInteractOneOptionActive(self._placeId, optionId)
 end
@@ -109,6 +113,12 @@ function XBuouxiongCinemaState:OnNpcInteractStart(eventArgs)
     end
     self.InteractTriggerCount = self.InteractTriggerCount + 1
     self:UpdateOptionActive()
+    self:PlayPerformLoopAnim()
+end
+
+function XBuouxiongCinemaState:PlayPerformAnim()
+    local CinemaSitTurnPos={x=617.937012,y=194.8526,z=1027.47412}
+    self._proxy:TurnPos(self._uuid,CinemaSitTurnPos,"Drama_Watching")
 end
 --endregion
 
@@ -122,12 +132,14 @@ local XBuouxiongPlazaState = XClass(XEcologyCharAIBaseState, "XBuouxiongPlazaSta
 function XBuouxiongPlazaState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Plaza
-    self.StateConfig.StateAnim = "Drama_Sit_01"
-    self.StateConfig.TriggerId = 2
+    self.StateConfig.StateLoopAnim = "Drama_Watching_Loop"
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
+    self.StateConfig.IgnoreCharCollider = true
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
 end
 
@@ -135,19 +147,14 @@ end
 ---状态进入时
 ---@param lastStateEnum number 上个状态
 function XBuouxiongPlazaState:OnStateEnter(lastStateEnum)
+    self._proxy:SetNpcPosition(self._uuid, StatePos[StateEnum.Plaza])
     XEcologyCharAIBaseState.OnStateEnter(self, lastStateEnum)
-    ----Vector3(581.828125,190.57164,912.443848) 这是布偶熊坐下循环的位置 于此记录
-    ----Vector3(581.358765,190.57164,912.405884) 这是布偶熊坐下时的位置 于此记录
-    ---需要转向一个为 Vector3(579.891968,190.512939,912.443176)的坐标 用 Turnpos 做
-    -----12.11周包版本进入状态后 传送到 座位上 播放坐姿循环 后续周包用带位移的动画使其坐下，
-    ---注：目前StandUp动作还没制作完毕，待制作完毕后，在退出状态时还需要播放一次StandUp动作
-    local PlazaSitTurnPos={x=579.891968,y=190.512939,z=912.443176}
-    local PlazaSitPos = {x=581.828125,y=190.57164,z=912.443848}
-    local PlazaSitRot = {x=0,y=-94.62167,z=0}
-    self._proxy:TurnPos(self._uuid,PlazaSitTurnPos,"Drama_Sit_01",false)
-    self._proxy:SetNpcPosAndRot(self._uuid,PlazaSitPos,PlazaSitRot)
 end
 
+function XBuouxiongPlazaState:PlayPerformAnim()
+    local PlazaSitTurnPos={x=579.891968,y=190.512939,z=912.443176}
+    self._proxy:TurnPos(self._uuid,PlazaSitTurnPos,"Drama_Watching")
+end
 --endregion
 
 
@@ -161,7 +168,7 @@ function XBuouxiongArtGalleryState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.ArtGallery
     self.StateConfig.StateAnim = "Drama_Stand_05"
-    self.StateConfig.TriggerId = 3
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 3
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
@@ -188,7 +195,7 @@ local XBuouxiongFindPathState = XClass(XEcologyCharAIFindPathState, "XBuouxiongF
 function XBuouxiongFindPathState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.FindPath
-    self.StateConfig.TriggerId = 4
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 4
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
@@ -205,6 +212,14 @@ end
 ---@class XCharBuouxiongEcology : XEcologyCharAIBase
 ---@field _stateMachine XStateMachineController 状态机
 local XCharBuouxiongEcology = XDlcScriptManager.RegCharScript(10609401, "XCharBuouxiongEcology", Base)
+
+
+function XCharBuouxiongEcology:TryInitAIEnterState()
+    self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetSceneObjectUUID(1600019), true)
+    self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetSceneObjectUUID(1600020), true)
+    self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetSceneObjectUUID(1600002), true)
+    Base.TryInitAIEnterState(self)
+end
 
 function XCharBuouxiongEcology:InitStateConfigData()
     ---状态点坐标, 
@@ -230,9 +245,9 @@ function XCharBuouxiongEcology:RegisterMachineStateTransition()
     self._stateMachine:AddStateTransition(StateEnum.Cinema, StateEnum.FindPath, XOther2FindPathTransition.New(self._proxy), 30, StatePath[StateEnum.Cinema], 1)
     self._stateMachine:AddStateTransition(StateEnum.Plaza, StateEnum.FindPath, XOther2FindPathTransition.New(self._proxy), 30, StatePath[StateEnum.Plaza], 1)
     self._stateMachine:AddStateTransition(StateEnum.ArtGallery, StateEnum.FindPath, XOther2FindPathTransition.New(self._proxy), 30, StatePath[StateEnum.ArtGallery], 1)
-    self._stateMachine:AddStateTransition(StateEnum.FindPath, StateEnum.Cinema, XFindPath2OtherTransition.New(self._proxy), StatePos[StateEnum.Cinema])
-    self._stateMachine:AddStateTransition(StateEnum.FindPath, StateEnum.Plaza, XFindPath2OtherTransition.New(self._proxy), StatePos[StateEnum.Plaza])
-    self._stateMachine:AddStateTransition(StateEnum.FindPath, StateEnum.ArtGallery, XFindPath2OtherTransition.New(self._proxy), StatePos[StateEnum.ArtGallery])
+    self._stateMachine:AddStateTransition(StateEnum.FindPath, StateEnum.Cinema, XFindPath2OtherTransition.New(self._proxy), StatePos[StateEnum.Cinema], 0.1)
+    self._stateMachine:AddStateTransition(StateEnum.FindPath, StateEnum.Plaza, XFindPath2OtherTransition.New(self._proxy), StatePos[StateEnum.Plaza], 0.5)
+    self._stateMachine:AddStateTransition(StateEnum.FindPath, StateEnum.ArtGallery, XFindPath2OtherTransition.New(self._proxy), StatePos[StateEnum.ArtGallery], 0.5)
 end
 
 return XCharBuouxiongEcology

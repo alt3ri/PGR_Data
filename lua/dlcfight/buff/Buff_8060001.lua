@@ -3,13 +3,15 @@ local Base = require("Buff/BuffBase/XBuffBase")
 ---@class XBuffScript8060001 : XBuffBase
 local XBuffScript8060001 = XDlcScriptManager.RegBuffScript(8060001, "XBuffScript8060001", Base)
 --效果说明：血量越低攻击加成越高
+function XBuffScript8060001:Ctor()
+    self.magicIds={8060002,8060003,8060004,8060005} --各个血量区间的攻击BUFF
+end
 
-function XBuffScript8060001:Init()
+function XBuffScript8060001:ScriptInit(isGainControl)
     --初始化
-    Base.Init(self)
+    Base.ScriptInit(self,isGainControl)
     ------------配置------------
     self.magicLevel=1
-    self.magicIds={8060002,8060003,8060004,8060005} --各个血量区间的攻击BUFF
     self.hpRate01=0.8
     self.hpRate02=0.59
     self.hpRate03=0.39

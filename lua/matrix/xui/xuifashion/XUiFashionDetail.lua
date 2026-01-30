@@ -47,7 +47,6 @@ function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFas
     self.IsShowFashionIconWithoutGift = isShowFashionIconWithoutGift
     self.CustomDesc = customDesc
     self.CustomWeaponFashionId = customWeaponFashionId
-
     if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then 
         --v1.31武器时装
         self.IsHaveFashion = XDataCenter.WeaponFashionManager.CheckHasFashion(self.FashionId) and
@@ -139,7 +138,8 @@ function XUiFashionDetail:InitBuyData()
     self.BtnBuy:SetName(self.BuyData.ItemCount)
     self.RawImageConsume:SetRawImage(self.BuyData.ItemIcon)
     self.TxtLimitBuy.text = self.BuyData.LimitText or ""
-
+    self.BtnBuy:SetNameByGroup(1,self.BuyData.OriginCount or "")
+    self.BtnBuy:ActiveTextByGroup(1,self.BuyData.OriginCount)
     self.BtnBuy.CallBack = function()
         -- v1.28 采购优化 记录时间, 判断是否拦截
         if self.IsNeedCD then

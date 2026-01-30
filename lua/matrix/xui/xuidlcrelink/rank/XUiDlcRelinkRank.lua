@@ -41,8 +41,7 @@ function XUiDlcRelinkRank:InitBtnTab()
         btn.gameObject:SetActiveEx(true)
         local chapterId = self._Control:GetLevelChapterId(levelId)
         local chapterName = self._Control:GetChapterName(chapterId)
-        local levelName = self._Control:GetLevelName(levelId)
-        btn:SetNameByGroup(0, string.format("%s-%s", levelName, chapterName))
+        btn:SetNameByGroup(0, chapterName)
         btnTabList[index] = btn
     end
     self.PanelBtnGroup:Init(btnTabList, handler(self, self.OnBtnTabClick))
@@ -76,13 +75,15 @@ function XUiDlcRelinkRank:SetupDynamicTable()
         return
     end
     self.DynamicTable:SetDataSource(self.RankInfos)
-    self.DynamicTable:ReloadDataASync(1)
+    self.DynamicTable:ReloadDataSync(1)
 end
 
 ---@param grid XUiGridDlcRelinkPlayerRank
 function XUiDlcRelinkRank:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self.RankInfos[index], index, false)
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        self:PlayGridAnimation()
     end
 end
 
@@ -102,6 +103,24 @@ function XUiDlcRelinkRank:OpenMyRank()
     local myRank = self._Control:GetQueryRankMyRank()
     self.PanelMyRankUi:Open()
     self.PanelMyRankUi:Refresh(myRankInfo, myRank, true)
+end
+
+function XUiDlcRelinkRank:PlayGridAnimation()
+    ---@type XUiGridDlcRelinkPlayerRank[]
+    local grids = self.DynamicTable:GetGrids()
+    if XTool.IsTableEmpty(grids) then
+        return
+    end
+
+    for index, grid in ipairs(grids) do
+        grid:Close()
+        local delay = (index - 1) * 100
+        local timerId = XScheduleManager.ScheduleOnce(function()
+            grid:Open()
+            grid:PlayAnimationWithMask("PlayerRankEnable")
+        end, delay)
+        self:_AddTimerId(timerId)
+    end
 end
 
 function XUiDlcRelinkRank:RegisterUiEvents()

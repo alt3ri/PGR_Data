@@ -166,8 +166,13 @@ function XSwitchableSceneAgency:PlaySceneAnim(sceneId, playFullCb, playLowCb)
 end
 
 function XSwitchableSceneAgency:CheckSceneChange(newSceneId)
-    local isShow = self:GetGyroSetting(newSceneId) == XEnumConst.SwitchableScene.Setting.Open
-    self._Model:SetShowGyroTip(isShow)
+    local isPcMode = XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc
+    if isPcMode and self:IsSceneGyro(newSceneId) then
+        local isShow = self:GetGyroSetting(newSceneId) == XEnumConst.SwitchableScene.Setting.Open
+        self._Model:SetShowGyroTip(isShow)
+    else
+        self._Model:SetShowGyroTip(false)
+    end
 end
 
 function XSwitchableSceneAgency:CheckShowGyroTip()
@@ -175,6 +180,17 @@ function XSwitchableSceneAgency:CheckShowGyroTip()
         XUiManager.TipText("SwitchableScenePcTip")
         self._Model:SetShowGyroTip(false)
     end
+end
+
+---是否为支持陀螺仪的场景（该类型的场景没有昼夜/电量切换功能）
+function XSwitchableSceneAgency:IsSceneGyro(sceneId)
+    return XPhotographConfigs.GetBackgroundTypeById(sceneId) == XPhotographConfigs.BackGroundType.Gyro
+end
+
+---当前场景是否支持陀螺仪（该类型的场景没有昼夜/电量切换功能）
+function XSwitchableSceneAgency:IsCurSceneGyro()
+    local sceneId = XDataCenter.PhotographManager.GetCurSceneId()
+    return self:IsSceneGyro(sceneId)
 end
 
 return XSwitchableSceneAgency

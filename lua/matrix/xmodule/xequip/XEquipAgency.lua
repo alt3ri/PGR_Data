@@ -242,11 +242,11 @@ function XEquipAgency:PutOn(characterId, equipId, cb)
     local req = { CharacterId = characterId, Site = site, EquipId = equipId }
     XNetwork.CallWithAutoHandleErrorCode("EquipPutOnRequest", req, function(res)
         -- 更新装备数据
-        self:OnEquipPutOnSuccess(characterId, equipId, cb)
+        self:OnEquipPutOnSuccess(characterId, equipId, nil, cb)
     end)
 end
 
-function XEquipAgency:OnEquipPutOnSuccess(characterId, equipId, cb)
+function XEquipAgency:OnEquipPutOnSuccess(characterId, equipId, doNotPlayVoice, cb)
     local equip = self:GetEquip(equipId)
     local site = self:GetEquipSite(equip.TemplateId)
     local switchCharacterId = equip.CharacterId
@@ -289,7 +289,7 @@ function XEquipAgency:OnEquipPutOnSuccess(characterId, equipId, cb)
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_EQUIP_PUTON_NOTYFY, equipId)
     XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_PUTON_NOTYFY, equipId)
 
-    if isWeapon then
+    if isWeapon and oldEquipId ~= equipId and not doNotPlayVoice then
         XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_PUTON_WEAPON_NOTYFY, characterId, equipId)
     end
 

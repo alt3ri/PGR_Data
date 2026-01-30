@@ -152,6 +152,9 @@ end
 function XUiPurchaseRecommend:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:SetData(self.DynamicTable.DataSource[index + 1], self.SkipFunc, function()
+            if XTool.UObjIsNil(self.RootUi.TabGroup) then
+                return
+            end
             self:OnRefresh()
         end)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_TWEEN_OVER then

@@ -17,8 +17,7 @@ function XBuffScript1016339:Init()
     self.battleStartBuffId = 1015992    --战斗开始标记buff
     self.targetId = 0
     self.magicLevel = 1
-    self.signal1Id = 1015903         --【浑身】状态标记，标记管理脚本见1015902
-    self.signal1CtrlId = 1015902     --【浑身】状态管理Buff
+    self.damageAlready = 0
     self.skillCounter = 0 -- ==999时，已结算
     ------------执行------------
 
@@ -28,40 +27,11 @@ function XBuffScript1016339:Update(dt)
     --每帧执行
     Base.Update(self, dt)
     ------------执行------------
+    local percentHp = self._proxy:GetNpcAttribRate(self._uuid, ENpcAttrib.Life)
 
-end
+    --生命值首次满足触发要求时，出伤
+    if percentHp < 0.8 and self.damageAlready == 0 then
 
---region EventCallBack
-function XBuffScript1016339:InitEventCallBackRegister()
-    --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
-    self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)
-    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageAfter,self._uuid)
-    self._proxy:RegisterLuaEvent(EFightLuaEvent.AutoChessItemSkillComboStart)              --注册技能释放事件
-end
-
-function XBuffScript1016339:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-    --开局时，获得目标
-    if npcUUID == self._uuid and buffId == self.battleStartBuffId then
-        self.targetId = self._proxy:GetFightTargetId(self._uuid)
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self.signal1CtrlId, 1)   --为自己添加【浑身】管理Buff
-    end
-
-end
-
-function XBuffScript1016339:HandleLuaEvent(eventType, eventArgs)
-    --自定义事件
-    Base.HandleLuaEvent(self, eventType, eventArgs)
-    --判断是否已打出结算伤害，未打出则累加
-    if self.skillCounter < 999 then
-        self.skillCounter = self.skillCounter + 1
-    end
-end
-
-function XBuffScript1016339:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-    --退出浑身时，触发出伤结算
-    local isMyselfRemove = casterNpcUUID == self._uuid and npcUUID == self._uuid and  buffId == self.signal1Id
-    if isMyselfRemove and self.skillCounter < 999 then
         --获得该等级的参数
         for thisLevel, buffGroupThisLevel in ipairs(self.buffLevelGroupId) do
             if self._proxy:CheckBuffByKind(self._uuid, buffGroupThisLevel) then
@@ -73,6 +43,36 @@ function XBuffScript1016339:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId,
             end
         end
         self.skillCounter = 999
+        self.damageAlready = 1
+
+    end
+
+
+end
+
+--region EventCallBack
+function XBuffScript1016339:InitEventCallBackRegister()
+    --按需求解除注释进行注册
+    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageAfter,self._uuid)
+    self._proxy:RegisterLuaEvent(EFightLuaEvent.AutoChessItemSkillComboStart)              --注册技能释放事件
+end
+
+function XBuffScript1016339:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    --开局时，获得目标
+    if npcUUID == self._uuid and buffId == self.battleStartBuffId then
+        self.targetId = self._proxy:GetFightTargetId(self._uuid)
+    end
+
+end
+
+function XBuffScript1016339:HandleLuaEvent(eventType, eventArgs)
+    --自定义事件
+    Base.HandleLuaEvent(self, eventType, eventArgs)
+    if eventType == EFightLuaEvent.AutoChessItemSkillComboStart then
+        if self.skillCounter < 999 and eventArgs.NpcUUid == self._uuid then
+            self.skillCounter = self.skillCounter + 1
+        end
     end
 
 end
@@ -80,7 +80,7 @@ end
 function XBuffScript1016339:AfterDamageCalc(eventArgs)
     --出伤修正
     if eventArgs.Launcher == self._uuid and eventArgs.Target == self.targetId and eventArgs.Id == self.damageMagic then
-        local thisDamageCal = GetNpcAttribValue(self._uuid,ENpcAttrib.Attack) * self.currentDamageCal
+        local thisDamageCal = self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.Attack) * self.currentDamageCal
         self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, thisDamageCal , eventArgs.ElementDamage, eventArgs.FinalHackDamage)
     end
 

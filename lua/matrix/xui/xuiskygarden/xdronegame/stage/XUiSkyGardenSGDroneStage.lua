@@ -30,6 +30,8 @@ function XUiSkyGardenSGDroneStage:OnAwake()
     ---@type table<XSGDroneStageEntity, XUiSkyGardenDroneStageGrid>
     self._StageGridMap = false
     ---@type XUiSkyGardenDroneStageGrid[]
+    self._StageGridList =false
+    ---@type XUiSkyGardenDroneStageGrid[]
     self._NormalStageUpGrids = {}
     ---@type XUiSkyGardenDroneStageGrid[]
     self._NormalStageDownGrids = {}
@@ -44,11 +46,18 @@ function XUiSkyGardenSGDroneStage:OnAwake()
     self._PanelAsset = XUiBWPanelAsset.New(self.PanelSpecialTool, self, self._Control:GetShopItemIds())
     self._PanelAsset:Open()
 
-    local layout = self.PanelChapter.gameObject:GetComponent(typeof(CS.UnityEngine.UI.GridLayoutGroup))
+    self._CurrentSelectStageIndex = 0
 
-    if layout then
-        layout.enabled = true
-    end
+    self._PcKey = {
+        Right = 304,
+        Left = 305,
+        Confirm = 152,
+    }
+    self._PcKeyGap = 0.3
+    self._LeftTime = 0
+    self._RightTime = 0
+
+    self._Timer = false
 
     self:_InitUi()
     self:_RegisterButtonClicks()
@@ -70,6 +79,7 @@ function XUiSkyGardenSGDroneStage:OnEnable()
     self._Control:SendSwitchChapterViewCmd(self._ChapterEntity:GetChapterId())
     self:_RefreshTitle()
     self:_RefreshStages()
+    self:_RegisterPCEvent()
     self:_RegisterListeners()
     self:_RegisterSchedules()
     self:_RegisterRedPointEvents()
@@ -78,6 +88,7 @@ end
 function XUiSkyGardenSGDroneStage:OnDisable()
     self._IsShow = false
 
+    self:_UnregisterPCEvent()
     self:_RemoveListeners()
     self:_RemoveSchedules()
 end
@@ -118,6 +129,71 @@ function XUiSkyGardenSGDroneStage:OnBtnTeachClick()
     self:_OpenTeachUi()
 end
 
+function XUiSkyGardenSGDroneStage:OnPressPCKeyHandle(inputDeviceType, key, operationType)
+    if XTool.IsTableEmpty(self._StageGridList) or XMVCA.XBigWorldUI:GetTopUiName() ~= self.Name then
+        return
+    end
+
+    if key == self._PcKey.Right then
+        local currentTime = CS.UnityEngine.Time.realtimeSinceStartup
+
+        if currentTime - self._RightTime < self._PcKeyGap then
+            return
+        end
+
+        self._RightTime = currentTime
+        self:SelectStage(math.min(self._CurrentSelectStageIndex + 1, #self._StageGridList))
+    elseif key == self._PcKey.Left then
+        local currentTime = CS.UnityEngine.Time.realtimeSinceStartup
+
+        if currentTime - self._LeftTime < self._PcKeyGap then
+            return
+        end
+
+        self._LeftTime = currentTime
+        self:SelectStage(math.max(self._CurrentSelectStageIndex - 1, 1))
+    elseif key == self._PcKey.Confirm then
+        if self._Timer then
+            return
+        end
+
+        local currentStage = self._StageGridList[self._CurrentSelectStageIndex]
+
+        if currentStage then
+            self._Timer = XScheduleManager.ScheduleNextFrame(function()
+                self._Timer = false
+                currentStage:OpenDetail()
+            end)
+        end
+    end
+end
+
+function XUiSkyGardenSGDroneStage:SelectStage(index)
+    if XTool.IsTableEmpty(self._StageGridList) then
+        return
+    end
+    if index <= 0 or index > #self._StageGridList then
+        return
+    end
+    if self._CurrentSelectStageIndex == index then
+        return
+    end
+
+    local currentGrid = self._StageGridList[self._CurrentSelectStageIndex]
+
+    if currentGrid then
+        currentGrid:SetSelect(false)
+    end
+
+    self._CurrentSelectStageIndex = index
+    
+    currentGrid = self._StageGridList[index]
+
+    if currentGrid then
+        currentGrid:SetSelect(true)
+    end
+end
+
 function XUiSkyGardenSGDroneStage:_RegisterButtonClicks()
     -- 在此处注册按钮事件
     self.BtnBack:AddEventListener(Handler(self, self.Close))
@@ -148,6 +224,18 @@ end
 
 function XUiSkyGardenSGDroneStage:_RemoveSchedules()
     -- 在此处移除定时器
+    if self._Timer then
+        XScheduleManager.UnSchedule(self._Timer)
+        self._Timer = false
+    end
+end
+
+function XUiSkyGardenSGDroneStage:_RegisterPCEvent()
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SKY_GARDEN_DRONE_KEY_PRESS_NOTIFY, self.OnPressPCKeyHandle, self)
+end
+
+function XUiSkyGardenSGDroneStage:_UnregisterPCEvent()
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SKY_GARDEN_DRONE_KEY_PRESS_NOTIFY, self.OnPressPCKeyHandle, self)
 end
 
 function XUiSkyGardenSGDroneStage:_RegisterRedPointEvents()
@@ -203,6 +291,7 @@ function XUiSkyGardenSGDroneStage:_RefreshStages()
     local branchLineStageIndex = 1
 
     self._StageGridMap = {}
+    self._StageGridList = {}
     for index, stageEntity in ipairs(stageEntities) do
         local grid = nil
 
@@ -273,6 +362,7 @@ function XUiSkyGardenSGDroneStage:_RefreshStages()
         end
 
         self._StageGridMap[stageEntity:GetStageId()] = grid
+        table.insert(self._StageGridList, grid)
 
         grid:Close()
     end

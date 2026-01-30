@@ -83,8 +83,13 @@ function XUiDlcMultiPlayerCompetitionBulletChat:Refresh(discussion)
         return
     end
 
+    if self.RequestLock then
+        return
+    end
+    self.RequestLock = true
     -- 请求弹幕数据
     XMVCA.XDlcMultiMouseHunter:RequestDlcMultiplayerDanmaku(function()
+        self.RequestLock = false
         if XTool.UObjIsNil(self.GameObject) then
             return
         end
@@ -121,8 +126,8 @@ function XUiDlcMultiPlayerCompetitionBulletChat:_LoadConfig()
     self._CachedDanmakuDesc = descConfig and descConfig.Values[1] or ""
 
     -- 获取屏幕尺寸
-    self._ScreenWidth = CS.UnityEngine.Screen.width
-    self._ScreenHeight = CS.UnityEngine.Screen.height
+    self._ScreenWidth = self.PanelBulletChat.rect.width
+    self._ScreenHeight = self.PanelBulletChat.rect.height
 end
 
 function XUiDlcMultiPlayerCompetitionBulletChat:_InitRails()
@@ -136,6 +141,7 @@ function XUiDlcMultiPlayerCompetitionBulletChat:_InitRails()
             YPosition = self._ScreenHeight - self._RailHeight * (i - 0.5), -- 轨道的Y位置
             LastDanmakuTime = 0, -- 上一个弹幕发射的时间戳
             LastDanmakuX = 0, -- 上一个弹幕发射时的X位置
+            LastDanmakuWidth = DanmakuWidth -- 上一个弹幕的宽度
         }
     end
 end
@@ -366,7 +372,7 @@ function XUiDlcMultiPlayerCompetitionBulletChat:_CanShootOnRail(rail, startX, cu
     -- 计算上一个弹幕当前的位置（像素）
     local lastDanmakuCurrentX = rail.LastDanmakuX - (self._DanmakuSpeed * elapsedTime)
     -- 计算上一个弹幕的右边缘位置
-    local lastDanmakuRightEdge = lastDanmakuCurrentX + DanmakuWidth
+    local lastDanmakuRightEdge = lastDanmakuCurrentX + rail.LastDanmakuWidth
     -- 检查是否有足够的空间发射新弹幕（需要有一定的间隔）
     return lastDanmakuRightEdge < startX
 end
@@ -397,8 +403,8 @@ function XUiDlcMultiPlayerCompetitionBulletChat:_ShootDanmaku(danmakuData, rail)
     rail.Count = rail.Count + 1
     rail.LastDanmakuTime = XTime.GetServerNowTimestamp()
     rail.LastDanmakuX = startX
-
-    -- 计算移动距离和时间
+    rail.LastDanmakuWidth = danmakuGrid:GetWidth()
+    -- 计算移动距离和时间   
     local endX = -self._ScreenWidth - danmakuGrid:GetWidth() - DanmakuOffsetX
     local distance = startX - endX
     local moveTime = distance / self._DanmakuSpeed
@@ -516,6 +522,7 @@ function XUiDlcMultiPlayerCompetitionBulletChat:AddOwnDanmakuData(camp)
         end
         table.insert(self[listKey], insertIndex, newDanmakuData)
     end
+    self:_StartDanmakuShoot()
 end
 --endregion
 
@@ -527,6 +534,7 @@ return XUiDlcMultiPlayerCompetitionBulletChat
 ---@field YPosition number 轨道的Y位置
 ---@field LastDanmakuTime number 上一个弹幕发射的时间戳
 ---@field LastDanmakuX number 上一个弹幕发射时的X位置
+---@field LastDanmakuWidth number 上一个弹幕的宽度
 
 ---@class XUiDlcMultiPlayerCompetitionBulletChatActiveDanmaku
 ---@field DanmakuGrid XUiDlcMultiPlayerCompetitionBulletChatGrid 弹幕对象

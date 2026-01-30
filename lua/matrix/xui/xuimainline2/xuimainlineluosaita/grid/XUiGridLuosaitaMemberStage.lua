@@ -69,6 +69,7 @@ function XUiGridLuosaitaMemberStage:OnBtnStageClick()
     elseif detailType == XEnumConst.MAINLINE2.STAGE_DETAIL_TYPE.FIGHT_NORMAL or detailType == XEnumConst.MAINLINE2.STAGE_DETAIL_TYPE.FIGHT_SPECIAL or detailType == XEnumConst.MAINLINE2.STAGE_DETAIL_TYPE.FIGHT_BOSS then
         XLuaUiManager.Open("UiMainLine2DetailBattle", self.StageIds, self.ChapterId, self.MainId)
     end
+    self.Parent:SetIsLastOperationEnemy(false)
 end
 
 -- 刷新关卡信息

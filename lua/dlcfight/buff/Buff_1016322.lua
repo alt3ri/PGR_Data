@@ -2,7 +2,7 @@ local Base = require("Buff/BuffBase/XBuffBase")
 
 ---@class XBuffScript1016322 : XBuffBase
 local XBuffScript1016322 = XDlcScriptManager.RegBuffScript(1016322, "XBuffScript1016322", Base)
---效果说明：失去生命，并对敌人造成伤害，持续10秒
+--在战斗中每秒损失{0}%生命值，同时对敌人造成{1}%自身损失值的伤害，持续10秒
 
 function XBuffScript1016322:Init()
     --初始化

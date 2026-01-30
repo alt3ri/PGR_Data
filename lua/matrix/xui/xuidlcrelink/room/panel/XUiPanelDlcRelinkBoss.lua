@@ -25,30 +25,34 @@ function XUiPanelDlcRelinkBoss:RefreshInfo()
     self.PanelChoosePress.gameObject:SetActiveEx(isHaveBoss)
     self.PanelNotChoosePress.gameObject:SetActiveEx(not isHaveBoss)
 
+    local isGlobalMatch = self._Control:IsGlobalMatchEnabled()
     if isHaveBoss then
         if self.LevelId == self._Control:GetTeachingLevelId() then
-            self.BtnBoss:SetName(self._Control:GetClientConfig("TutorialLevelName", 1))
+            self.BtnBoss:SetNameByGroup(0, self._Control:GetClientConfig("TutorialLevelName", 1))
         elseif self.LevelId == self._Control:GetTrainingLevelId() then
-            self.BtnBoss:SetName(self._Control:GetClientConfig("TutorialLevelName", 2))
+            self.BtnBoss:SetNameByGroup(0, self._Control:GetClientConfig("TutorialLevelName", 2))
         else
-            self.BtnBoss:SetName(self._Control:GetChapterName(self.ChapterId))
+            self.BtnBoss:SetNameByGroup(0, self._Control:GetChapterName(self.ChapterId))
         end
         self.BtnBoss:SetRawImageEx(self._Control:GetChapterRoomIcon(self.ChapterId))
         self:RefreshType(self._Control:GetLevelType(self.LevelId))
         self:RefreshAbilityLimitTips()
         self:RefreshCareerMatchingTips()
     else
+        self.BtnBoss:SetNameByGroup(1, self._Control:GetClientConfig("ChooseBossBtnName", isGlobalMatch and 2 or 1))
         self:RefreshType(0)
     end
 
     local isInRoom = XMVCA.XDlcRoom:IsInRoom()
-    local isSelfLeader = false
     if isInRoom then
         local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
-        isSelfLeader = team and team:IsSelfLeader()
+        local isSelfLeader = team and team:IsSelfLeader()
+        self.NormalIconChange.gameObject:SetActiveEx(isSelfLeader)
+        self.PressIconChange.gameObject:SetActiveEx(isSelfLeader)
+    else
+        self.NormalIconChange.gameObject:SetActiveEx(not isGlobalMatch)
+        self.PressIconChange.gameObject:SetActiveEx(not isGlobalMatch)
     end
-    self.NormalIconChange.gameObject:SetActiveEx(not isInRoom or isSelfLeader)
-    self.PressIconChange.gameObject:SetActiveEx(not isInRoom or isSelfLeader)
 end
 
 function XUiPanelDlcRelinkBoss:RefreshType(levelType)
@@ -128,9 +132,8 @@ end
 
 -- 刷新红点
 function XUiPanelDlcRelinkBoss:RefreshRedPoint()
-    local isTeachingPass = self._Control:IsTeachingLevelPass()
     local isShowRedPoint = XMVCA.XDlcRelink:CheckAllLevelHasNewUnlock()
-    self.BtnBoss:ShowReddot(isTeachingPass and isShowRedPoint)
+    self.BtnBoss:ShowReddot(isShowRedPoint)
 end
 
 function XUiPanelDlcRelinkBoss:OnBtnBossClick()
@@ -140,6 +143,10 @@ function XUiPanelDlcRelinkBoss:OnBtnBossClick()
     end
 
     if not XMVCA.XDlcRoom:IsInRoom() then
+        if self._Control:IsGlobalMatchEnabled() then
+            self._Control:OpenCommonTipText("GlobalMatchDisableChooseBossTip")
+            return
+        end
         self:OpenChooseBoss()
         return
     end

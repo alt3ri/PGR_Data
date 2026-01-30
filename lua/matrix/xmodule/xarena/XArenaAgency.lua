@@ -71,26 +71,23 @@ function XArenaAgency:OpenMainUiFromCommonSkip(skipId)
         local status = activityData:GetStatus()
 
         if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenArena) then
-            -- 获取异步跳转结果Id
-            local skipResultId = XFunctionManager.GetNewResultId()
-
             self._Model:JoinActivityRequest(function(success)
-                if not success then
-                    -- 处理异步跳转结果（埋点相关）
-                    XFunctionManager.AcceptResult(skipResultId, false)
-                end
-
                 self._Model:SetIsRefreshMainPage(false)
+
+                if not success then
+                    XFunctionManager.RecordSkip(skipId)
+                    return
+                end
 
                 local callback = function(groupData, success)
                     if not success or not groupData then
-                        XFunctionManager.AcceptResult(skipResultId, false)
+                        XFunctionManager.RecordSkip(skipId, nil)
                         return
                     end
 
                     XLuaUiManager.Open("UiArenaNew", groupData)
                     -- 处理异步跳转结果（埋点相关）
-                    XFunctionManager.AcceptResult(skipResultId, true)
+                    XFunctionManager.RecordSkip(skipId, nil)
                 end
 
                 if status == XEnumConst.Arena.ActivityStatus.Fight then
@@ -100,7 +97,6 @@ function XArenaAgency:OpenMainUiFromCommonSkip(skipId)
                 end
             end)
 
-            return skipResultId
         end
     end
 
@@ -572,7 +568,12 @@ function XArenaAgency:GetEnterAreaStageNameInfo()
     local chapterName = ""
 
     if XTool.IsNumberValid(areaId) then
-        stageName = self._Model:GetAreaStageNameById(areaId)
+        local selectIndex = self._Model:GetCurrentSelectFightBuffIndex()
+        local buffNameList = self._Model:GetAreaStageBuffNameById(areaId)
+
+        if selectIndex and buffNameList then
+            stageName = buffNameList[selectIndex] or ""
+        end
     end
 
     return chapterName, stageName

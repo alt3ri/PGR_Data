@@ -25,6 +25,8 @@ function XDlcRelinkActivity:Ctor()
     -- 装备预设 key:presetIndex
     ---@type table<number, XDlcRelinkEquipPreset>
     self.EquipPresetSets = {}
+    -- 今日全局匹配奖励获取次数
+    self.GlobalMatchRewardTimes = 0
 end
 
 function XDlcRelinkActivity:NotifyActivityData(data)
@@ -39,6 +41,7 @@ function XDlcRelinkActivity:NotifyActivityData(data)
     self.LevelDict = data.LevelDict or {}
     self.EmojiWheelIds = data.EmojiWheelIds or {}
     self.EquipPresetSets = data.EquipPresetSets or {}
+    self.GlobalMatchRewardTimes = data.GlobalMatchRewardTimes or 0
 end
 
 --region 更新信息
@@ -164,6 +167,11 @@ function XDlcRelinkActivity:SetEquipPresetSetByIndex(presetIndex, presetEquip, p
     self.EquipPresetSets[presetIndex].Name = presetName or ""
 end
 
+-- 设置今日全局匹配奖励获取次数
+function XDlcRelinkActivity:SetGlobalMatchRewardTimes(times)
+    self.GlobalMatchRewardTimes = times or 0
+end
+
 --endregion
 
 --region 获取信息
@@ -257,6 +265,11 @@ function XDlcRelinkActivity:GetEquipPresetSetDataByIndex(presetIndex)
         return nil
     end
     return self.EquipPresetSets[presetIndex]
+end
+
+-- 获取今日全局匹配奖励获取次数
+function XDlcRelinkActivity:GetGlobalMatchRewardTimes()
+    return self.GlobalMatchRewardTimes
 end
 
 --endregion

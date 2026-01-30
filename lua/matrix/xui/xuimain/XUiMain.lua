@@ -231,6 +231,7 @@ function XUiMain:OnDestroy()
     self.RightTop:OnDestroy()
     self.LeftTop:OnDestroy()
     self.RightBottom:OnDestroy()
+    self.SwitchableScene:OnDestory()
     XEventManager.RemoveEventListener(XEventId.EVENT_PRE_ENTER_FIGHT, self.PreEnterFightCallback)
     XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_RIGHTMIDTYPE_CHANGE, self.ForceChangeUiMainRightMidType, self)
     self._IsClose = true

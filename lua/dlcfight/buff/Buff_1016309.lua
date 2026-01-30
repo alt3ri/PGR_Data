@@ -9,7 +9,7 @@ function XBuffScript1016309:Init()
     Base.Init(self)
     ------------配置------------
     self.buffLevelGroupId= {1016309, 1016310, 1016311, 1016312, 1016313}  --5个等级
-    self.damageUpRate={0.2, 0.4, 0.6, 0.8, 1}  --对护盾的伤害倍率
+    self.damageUpRate={0.2, 0.4, 0.6, 0.8, 1}  --对护盾的伤害倍率加值
     self.cureUpRate={0.04, 0.08, 0.12, 0.16, 0.2}  --无护盾时的回血倍率
     self.currentDamageUpRate = 0
     self.currentCureUpRate = 0
@@ -34,7 +34,7 @@ function XBuffScript1016309:InitEventCallBackRegister()
     --按需求解除注释进行注册
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageAfter,self._uuid)
-    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcCureBefore,self._uuid)
+    self._proxy:RegisterEvent(EWorldEvent.NpcCalcCureAfter)
 end
 
 function XBuffScript1016309:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
@@ -44,7 +44,7 @@ function XBuffScript1016309:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         --开局时获得该等级的参数，避免后续持续遍历
         for thisLevel, buffGroupThisLevel in ipairs(self.buffLevelGroupId) do
             if self._proxy:CheckBuffByKind(self._uuid, buffGroupThisLevel) then
-                self.currentDamageUpRate = self.damageUpRate[thisLevel]
+                self.currentDamageUpRate = self.damageUpRate[thisLevel] + 1
                 self.currentCureUpRate = self.cureUpRate[thisLevel]
                 return
             end
@@ -65,7 +65,7 @@ function XBuffScript1016309:AfterDamageCalc(eventArgs)
 
             --无盾，回血
         else
-            self.healCal = self.currentCureUpRate * (eventArgs.PhysicalDamage + eventArgs.ElementDamage)
+            self.healCal = math.ceil(self.currentCureUpRate * (eventArgs.PhysicalDamage + eventArgs.ElementDamage))
             self._proxy:ApplyMagic(self._uuid, self._uuid, self.healMagic, self.magicLevel)
         end
     end
@@ -73,13 +73,11 @@ function XBuffScript1016309:AfterDamageCalc(eventArgs)
 end
 
 function XBuffScript1016309:AfterCureCalc(eventArgs)
-
     local isPlayer = eventArgs.Launcher == self._uuid and eventArgs.Target == self._uuid --奶自己
     local isThisCure = eventArgs.Id == self.healMagic --奶来自该buff
     if isPlayer and isThisCure then
         self._proxy:SetAfterCureMagicContext(eventArgs.ContextId,self.healCal)
         self.healCal = 0
-
     end
 
 end

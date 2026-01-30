@@ -2248,10 +2248,11 @@ XFunctionalSkipManagerCreator = function()
     function XFunctionalSkipManager:SkipToDlcMultiMouseHunter()
         if not XMVCA.XDlcMultiMouseHunter:DlcCheckActivityInTime() then
             XUiManager.TipText("FubenRepeatNotInActivityTime")
-            return
+            return false
         end
         
         XMVCA.XDlcMultiMouseHunter:OpenMainUi()
+        return true
     end
 
     -- 打开签到面板
@@ -2582,5 +2583,13 @@ XFunctionalSkipManagerCreator = function()
         XLuaUiManager.Open("UiPaintingExperiencePassV4P2", param1)
     end
     
+
+    function XFunctionalSkipManager.SkipToInvertCardGame()
+        if XLuaUiManager.IsUiLoad("UiInvertCardGame") then
+            XLuaUiManager.Remove("UiInvertCardGame")
+        end
+        XLuaUiManager.Open("UiInvertCardGame")
+    end
+
     return XFunctionalSkipManager
 end

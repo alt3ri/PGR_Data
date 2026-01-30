@@ -8,6 +8,7 @@ local ipairs = ipairs
 local XUiMainLineLuosaitaPopupReview = XLuaUiManager.Register(XLuaUi, "UiMainLineLuosaitaPopupReview")
 
 function XUiMainLineLuosaitaPopupReview:OnAwake()
+	self.ContentLocalPosition = self.Content.localPosition
 	self.GridFile.gameObject:SetActiveEx(false)
 	self:RegisterUiEvents()
 end
@@ -103,6 +104,10 @@ function XUiMainLineLuosaitaPopupReview:RefreshDocList()
 		local numberOrderString = self._Control:GetConfig():GetConfigString("NumberOrder", 1)
 		uiObj:GetObject("TxtTag").text = stringFormat(numberOrderString, tostring(i))
 	end
+	self.Content.localPosition = self.ContentLocalPosition
+	
+	-- 没有文件提示
+	self.PanelNone.gameObject:SetActiveEx(#docIds == 0)
 end
 
 function XUiMainLineLuosaitaPopupReview:GetSectionIndex(unlockSectionIds, sectionId)

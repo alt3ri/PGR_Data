@@ -160,6 +160,10 @@ end
 
 function XBigWorldServiceModel:ResetAll()
     self._QuestItemMap = {}
+
+    self._ItemMap = {}
+    self._RecoveryItemIds = {}
+    self._ItemTemplateMap = {}
 end
 -- region Quest
 

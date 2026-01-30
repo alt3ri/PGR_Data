@@ -228,6 +228,18 @@ function XMainLineLuosaitaConfig:GetArmyAttack(id)
     local config = self:GetConfigArmy(id)
     return config and config.Attack or 0
 end
+
+---@return number 友军动画播放条件
+function XMainLineLuosaitaConfig:GetArmyAnimConditionId(id)
+    local config = self:GetConfigArmy(id)
+    return config and config.AnimConditionId or 0
+end
+
+---@return number 友军动画名称
+function XMainLineLuosaitaConfig:GetArmyAnimName(id)
+    local config = self:GetConfigArmy(id)
+    return config and config.AnimName or ""
+end
 --endregion
 
 --region MainLineLuosaitaEnemy 敌军表
@@ -337,22 +349,40 @@ function XMainLineLuosaitaConfig:GetConfigCharacters()
     return self._ConfigUtil:GetByTableKey(TableKey.MainLineLuosaitaCharacter)
 end
 
----@return number 角色名称
+---@return string 角色名称
 function XMainLineLuosaitaConfig:GetCharacterName(id)
     local config = self:GetConfigCharacter(id)
     return config and config.Name or ""
 end
 
----@return number 角色详情
+---@return string 角色详情
 function XMainLineLuosaitaConfig:GetCharacterDesc(id)
     local config = self:GetConfigCharacter(id)
     return config and config.Desc or ""
 end
 
----@return number 角色头像
+---@return string 角色头像
 function XMainLineLuosaitaConfig:GetCharacterHead(id)
     local config = self:GetConfigCharacter(id)
     return config and config.Head or ""
+end
+
+---@return string 角色头像边框
+function XMainLineLuosaitaConfig:GetCharacterHeadCircle(id)
+    local config = self:GetConfigCharacter(id)
+    return config and config.HeadCircle or ""
+end
+
+---@return string 角色动画条件
+function XMainLineLuosaitaConfig:GetCharacterAnimConditionId(id)
+    local config = self:GetConfigCharacter(id)
+    return config and config.AnimConditionId or ""
+end
+
+---@return string 角色动画名称
+function XMainLineLuosaitaConfig:GetCharacterAnimName(id)
+    local config = self:GetConfigCharacter(id)
+    return config and config.AnimName or ""
 end
 --endregion
 

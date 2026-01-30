@@ -480,6 +480,10 @@ function XTheatre5Control:GetClientConfigPVPReasonTips(index)
     return self._Model:GetTheatre5ClientConfigText('PVPReasonTips', index)
 end
 
+--- PVP赛季打脸提示显示开启时间范围
+function XTheatre5Control:GetClientConfigPVPReasonTimeDuration()
+    return self._Model:GetTheatre5ClientConfigText('PVPReasonTimeDuration')
+end
 
 --- 奖励、商店界面的时间文本格式
 function XTheatre5Control:GetClientConfigRewardTimeLabel()
@@ -778,46 +782,7 @@ function XTheatre5Control:GetDataHandBook(itemType)
         return { tabOnlyOne }
     end
     if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Mission then
-        ---@type XUiTheatre5SkillHandbookTabGridData
-        local tabOnlyOne = {
-            TagName = "",
-            Id = 0,
-            Items = {},
-            Order = 0,
-            HideTagName = true,
-        }
-        
-        local missionCfgs = self._Model:GetTheatre5MissionCfgs()
-
-        if missionCfgs then
-            for id, v in pairs(missionCfgs) do
-                -- 获取一级道具配置
-                local itemCfg = self.MissionControl:GetItemCfgByMissionBountyId(v.Bounty, 1)
-                
-                ---@type XUiTheatre5SkillHandbookItemGridData
-                local data = {
-                    Id = itemCfg.Id,
-                    ItemId = itemCfg.Id,
-                    Order = itemCfg.Order,
-                    Name = v.Name,
-                    Quality = 0,
-                    Icon = self.MissionControl:GetMissionRewardIcon(v.Bounty),
-                    Desc = self.MissionControl:GetMissionRewardDesc(v.Bounty),
-                    Tags = itemCfg.Tags,
-                    Bounty = v.Bounty,
-                    IsUnlock = self.MissionControl:CheckMissionBountyIsGot(v.Bounty),
-                }
-                
-                table.insert(tabOnlyOne.Items, data)
-            end
-        end
-        
-        -- 排序
-        table.sort(tabOnlyOne.Items, function(a, b)
-            return a.Order < b.Order
-        end)
-        
-        return { tabOnlyOne }
+        return self.MissionControl:GetDataHandBook()
     end
     XLog.Error("[XTheatre5Control] unimplemented item type")
     return {}

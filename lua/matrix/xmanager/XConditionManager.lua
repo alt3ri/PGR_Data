@@ -2702,7 +2702,7 @@ PlayerCondition = {
     [10502] = function(condition)
         local itemId = condition.Params[1]
         local count = condition.Params[2]
-        return XMVCA.XShop:GetAccumulateExpendShopConvertedCount() > count, condition.Desc
+        return XMVCA.XShop:GetAccumulateExpendShopConvertedCount() >= count, condition.Desc
     end,
     --endregion
 
@@ -2727,6 +2727,11 @@ PlayerCondition = {
         local levelId = condition.Params[4]
         local times = condition.Params[5]
         return XMVCA.XDlcRelink:CheckUseCharacterPassLevelTimes(characterId, styleType, chapterId, levelId, times), condition.Desc
+    end,
+    -- Relink-背包界面引导条件
+    [23005] = function(condition)
+        local level = condition.Params[1]
+        return XMVCA.XDlcRelink:CheckBagUiGuideCondition(level), condition.Desc
     end,
     --endregion
 }
@@ -3078,6 +3083,18 @@ local CharacterCondition = {
             end
         end
         return false, condition.Desc
+    end,
+    [13123] = function(condition)
+        local carrer1 = tonumber(condition.Params[1])
+        local carrer2 = tonumber(condition.Params[2])
+        local lastFilterRecordData = XMVCA.XCommonCharacterFilter:GetRecordLastTag(XModelManager.MODEL_UINAME.XUiCharacterV2P6)
+        local charId = lastFilterRecordData and lastFilterRecordData.CharacterId
+        local res1, res2 = false, false
+        if XTool.IsNumberValid(charId) then
+            res1 = carrer1 and XMVCA.XCharacter:GetCharacterCareer(charId) == carrer1
+            res2 = carrer2 and XMVCA.XCharacter:GetCharacterCareer(charId) == carrer2
+        end
+        return res1 or res2, condition.Desc
     end,
 }
 

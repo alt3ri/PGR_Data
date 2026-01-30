@@ -19,7 +19,7 @@ local StateEnum = {
 ---生态状态坐标
 ---@type table<number, Vector3>
 local StatePos = {
-    [StateEnum.Port] = {x=556.6, y=190.8, z=957.5},
+    [StateEnum.Port] = {x=533.1, y=195.5, z=959.5},
     [StateEnum.Cinema] = {x=599.0862,y=194.2651, z=984.3744},
     [StateEnum.Garden] = {x=499.9398, y=189.6071, z=1004.228},
 }
@@ -28,13 +28,17 @@ local StatePos = {
 local StatePath = {
     [StateEnum.Port] = {
         StatePos[StateEnum.Port],
+        {x=563.5,y=190.8,z=957.4},
         {x=560.2,y=191.4,z=971.1},
         {x=541.3,y=192.2,z=992.7},
         {x=600.3,y=194.1,z=993.5},
+
         StatePos[StateEnum.Cinema],
     },
     [StateEnum.Cinema] = {
         StatePos[StateEnum.Cinema],
+        {x=603.8,y=194.1,z=993.4},
+        {x=602.1,y=194.1,z=997.6},
         {x=600.3,y=194.1,z=993.5},
         {x=541.3,y=192.2,z=992.7},
         StatePos[StateEnum.Garden],
@@ -65,6 +69,7 @@ function XAximovCinemaState:InitStateConfig()
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
@@ -94,11 +99,12 @@ function XAximovPortState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Port
     self.StateConfig.StateAnim = "Drama_LookHand"
-    self.StateConfig.TriggerId = 2
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 3
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
@@ -122,11 +128,12 @@ function XAximovGardenState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Garden
     self.StateConfig.StateAnim = "Drama_Stand_10"
-    self.StateConfig.TriggerId = 3
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
@@ -149,11 +156,12 @@ local XAximovFindPathState = XClass(XEcologyCharAIFindPathState, "XAximovFindPat
 function XAximovFindPathState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.FindPath
-    self.StateConfig.TriggerId = 4
+    self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 4
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
     }
 
     self.StateConfig.PathBubbleName = "301304"

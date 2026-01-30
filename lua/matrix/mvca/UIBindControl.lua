@@ -457,6 +457,7 @@ local UIBindControl = {
     UiDlcMultiPlayerSettlementBeach = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerSettlementDorm = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerSettlementMarket = ModuleId.XDlcMultiMouseHunter,
+    UiDlcMultiPlayerSettlementLantern = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerExchange = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerData = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerCompetition = ModuleId.XDlcMultiMouseHunter,
@@ -1137,6 +1138,7 @@ local UIBindControl = {
 
     --region 商店系统
     UiAccumulateExpendShopMain = ModuleId.XShop,
+    UiAccumulateExpendShopLog = ModuleId.XShop,
     --endregion
 }
 

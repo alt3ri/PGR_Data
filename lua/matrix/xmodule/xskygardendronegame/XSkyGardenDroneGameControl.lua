@@ -33,6 +33,8 @@ function XSkyGardenDroneGameControl:OnInit()
 
     self._Dialogues = false
 
+    self._PcPressHandle = Handler(self, self.OnPressPCKeyHandle)
+
     self:SendEnterGameCmd()
 end
 
@@ -46,6 +48,7 @@ end
 
 function XSkyGardenDroneGameControl:OnRelease()
     -- XLog.Error("这里执行Control的释放")
+    self._Dialogues = false
     self:SendLeaveGameCmd()
 end
 
@@ -256,6 +259,16 @@ function XSkyGardenDroneGameControl:GetHiddenUTurnStages()
     return result
 end
 
+function XSkyGardenDroneGameControl:GetChapterLockTip(index)
+    local values = self._Model:GetSgDroneGameConfigValuesByKey("ChapterLockTips")
+
+    if XTool.IsTableEmpty(values) then
+        return ""
+    end
+
+    return values[index] or ""
+end
+
 ---@return XTableSgDroneGameDialogue[]
 function XSkyGardenDroneGameControl:GetDialoguesByType(type)
     if not self._Dialogues then
@@ -287,6 +300,32 @@ function XSkyGardenDroneGameControl:GetTriggeredDialogues()
 
                 table.insert(result[dialogue.TriggerTag], dialogue)
             end
+        end
+    end
+
+    return result
+end
+
+function XSkyGardenDroneGameControl:GetTimerDialogues()
+    local dialogues = self:GetDialoguesByType(XMVCA.XSkyGardenDroneGame.DialogueType.Timer)
+    local result = {}
+
+    if not XTool.IsTableEmpty(dialogues) then
+        for _, dialogue in pairs(dialogues) do
+            table.insert(result, dialogue)
+        end
+    end
+
+    return result
+end
+
+function XSkyGardenDroneGameControl:GetRandomDialogues()
+    local dialogues = self:GetDialoguesByType(XMVCA.XSkyGardenDroneGame.DialogueType.Random)
+    local result = {}
+
+    if not XTool.IsTableEmpty(dialogues) then
+        for _, dialogue in pairs(dialogues) do
+            table.insert(result, dialogue)
         end
     end
 
@@ -379,17 +418,30 @@ function XSkyGardenDroneGameControl:RecordStage(stageId, recordData, collectCoun
     local stageType = self._Model:GetSgDroneGameStageTypeById(stageId)
 
     local record = {
-        ["i_stage_id"] = stageId,  -- 关卡Id
-        ["i_stage_type"] = stageType,  -- 关卡类型 1普通 3困难
-        ["i_node_id"] = recordData.Seed or 0,  -- 种子Id
-        ["i_collect_count"] = collectCount or 0,  -- 收集数量
-        ["i_demage_count"] = recordData.DamageCount or 0,  -- 无人机损毁次数
-        ["i_injure_count"] = recordData.InjuryCount or 0,  -- 无人机受伤次数
-        ["i_restore_count"] = recordData.RestorationCount or 0,  -- 重新开始或从存档点开始次数
-        ["i_settle_type"] = settleType or self.SettleType.Lose,  -- 结算类型 1成功 2失败 3暂离
+        ["i_stage_id"] = stageId, -- 关卡Id
+        ["i_stage_type"] = stageType, -- 关卡类型 1普通 3困难
+        ["i_node_id"] = recordData.Seed or 0, -- 种子Id
+        ["i_collect_count"] = collectCount or 0, -- 收集数量
+        ["i_demage_count"] = recordData.DamageCount or 0, -- 无人机损毁次数
+        ["i_injure_count"] = recordData.InjuryCount or 0, -- 无人机受伤次数
+        ["i_restore_count"] = recordData.RestorationCount or 0, -- 重新开始或从存档点开始次数
+        ["i_settle_type"] = settleType or self.SettleType.Lose, -- 结算类型 1成功 2失败 3暂离
     }
 
     CS.XRecord.Record(record, "1100101", "SkyGardenDroneGame")
+end
+
+function XSkyGardenDroneGameControl:RegisterPCEvent()
+    CS.XInputManager.RegisterOnPress(CS.XInputManager.XOperationType.System, self._PcPressHandle)
+end
+
+function XSkyGardenDroneGameControl:UnregisterPCEvent()
+    CS.XInputManager.UnregisterOnPress(CS.XInputManager.XOperationType.System, self._PcPressHandle)
+end
+
+function XSkyGardenDroneGameControl:OnPressPCKeyHandle(inputDeviceType, key, operationType)
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_SKY_GARDEN_DRONE_KEY_PRESS_NOTIFY,
+        inputDeviceType, key, operationType)
 end
 
 --- region X3C
@@ -560,7 +612,7 @@ function XSkyGardenDroneGameControl:RequestStageSettle(stageId, stageData, callb
     XMessagePack.MarkAsTable(targetProgress)
     XNetwork.Call("SgDroneGameStageSettleRequest", {
         StageId = stageId,
-        CostTime = stageData.CostTime,
+        CostTime = math.floor(stageData.RunningTime),
         Score = stageData.Score,
         TargetProgress = targetProgress,
     }, function(res)

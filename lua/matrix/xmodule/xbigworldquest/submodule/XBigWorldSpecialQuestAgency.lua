@@ -72,6 +72,10 @@ function XBigWorldQuestAgency:CheckInviteResultFinish(resultId)
     return self._Model:CheckInviteResultFinish(resultId)
 end
 
+function XBigWorldQuestAgency:IsFirstFinishResult()
+    return self._Model:IsFirstFinishResult()
+end
+
 function XBigWorldQuestAgency:CheckInviteRewardReceived(questId)
     return self._Model:CheckInviteRewardReceived(questId)
 end
@@ -83,9 +87,12 @@ function XBigWorldQuestAgency:OpenInvitationView(questId)
     XMVCA.XBigWorldUI:Open("UiBigWorldTaskMainInvitation", questId)
 end
 
-function XBigWorldQuestAgency:OpenInvitationDetail(questId, resultId)
+function XBigWorldQuestAgency:OpenInvitationDetail(questId, resultId, isSequence)
     local showTagNew = not self._Model:CheckInviteResultFinish(resultId)
-    XMVCA.XBigWorldUI:Open("UiBigWorldTaskPopupEndingDetail", questId, resultId, showTagNew)
+    if isSequence then
+        return XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldTaskPopupEndingDetail", false, questId, resultId, showTagNew)
+    end
+    return XMVCA.XBigWorldUI:Open("UiBigWorldTaskPopupEndingDetail", questId, resultId, showTagNew)
 end
 
 function XBigWorldQuestAgency:OpenInvitationPopup(questId)
@@ -94,6 +101,10 @@ end
 
 function XBigWorldQuestAgency:IsUnderTakenInviteQuest()
     return self._Model:IsUnderTakenInviteQuest()
+end
+
+function XBigWorldQuestAgency:CheckPhotoQuestNeedUpload()
+    return self._Model:CheckPhotoQuestNeedUpload()
 end
 
 --endregion 邀约任务
@@ -167,8 +178,8 @@ end
 --endregion 环境任务 
 
 --region 配置相关
-function XBigWorldQuestAgency:GetInviteQuestRoleIcon(inviteId)
-    return self._Model:GetInviteQuestRoleIcon(inviteId)
+function XBigWorldQuestAgency:GetInviteQuestRoleIcon(inviteId, noTips)
+    return self._Model:GetInviteQuestRoleIcon(inviteId, noTips)
 end
 
 function XBigWorldQuestAgency:IsInviteQuest(questId)

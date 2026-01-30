@@ -38,12 +38,18 @@ function XCharR5Nanami2:ScriptInit(isGainControl)
     ----存个角力响应对象
     self.WrestleTarget = 0
     --XLog.Warning("现在是1057")
+
+    ----黑板值处理
     ----存超解系数到黑板
     self:RegBB(1057001)
     self:SetBBFloat(1057001,0.001)
     ----存超解值到黑板
     self:RegBB(1057002)
     self:SetBBInt(1057002,self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup2))
+
+    ----重连部分效果初始化保底
+    ----技能组初始化
+    self:ReconnectedCheckSkillGroup()
 end
 
 ----region 黑板值同步封装用，省两个值
@@ -88,7 +94,7 @@ end
 ---@param dt number @ delta time
 function XCharR5Nanami2:Update(dt)
     Base.Update(self, dt)
-    self:TestInputLogic()
+    --self:TestInputLogic()
     self:CheckInputDuringAxeWrestle()
     self:EnergyBarChangeColorCheck()
     self:EnergySwitch()
@@ -183,10 +189,22 @@ function XCharR5Nanami2:OnNpcSkillActionKeyframeSendEvent(launcher,eventName,ski
         self._proxy:CastActionEx(self._uuid,105245,0,5)
     end
 
+    if eventName == "RandomEmoji" then
+        --XLog.Warning("帧事件，极限技或大招随机表情")
+        local index = math.random(1, 3)
+        local messageid = 14
+        if index == 2 then
+            messageid = 15
+        elseif index == 3 then
+            messageid = 16
+        end
+        self._proxy:ShowQuickMessage(messageid)
+    end
+
 end
 
 function XCharR5Nanami2:XNpcChangeProtectorArgs(LauncherId, TargetId, Value, TotalValue)
-    Base.XNpcChangeProtectorArgs(self)
+    Base.XNpcChangeProtectorArgs(self,LauncherId, TargetId, Value, TotalValue)
     --XLog.Warning("TotalValue"..TotalValue)
     --XLog.Warning("Value"..Value)
     if  TargetId == self._uuid and TotalValue > 0 then
@@ -198,11 +216,10 @@ function XCharR5Nanami2:XNpcChangeProtectorArgs(LauncherId, TargetId, Value, Tot
     end
 end
 function XCharR5Nanami2:OnNpcDodge(SourceUUID, AttackerUUID, Type, MissileTemplateId)
-    Base.OnNpcDodge(self)
+    Base.OnNpcDodge(self,SourceUUID, AttackerUUID, Type, MissileTemplateId)
     if (Type == 1) then
         --XLog.Warning("极限闪避成功:")
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1057025, 1)
-
     end
 end
 
@@ -305,16 +322,7 @@ function XCharR5Nanami2:OnNpcCastActionAfterEvent(skillId, launcherId, targetId,
         return
     end
 
-    --攻击流程中闪避蓄力
-    --[[
-    if skillId == 105765 or skillId == 105775 then
-        if self._proxy:CheckBuffByKind(self._uuid,1057007) then
-            XLog.Warning("斧攻击闪避打断增加标记")
-            self._proxy:ApplyMagic(self._uuid,self._uuid,1057008,1,1)
-        end
-
-    end
-    --]]
+    self:SkillCVCast(skillId)
 
     if skillId == self._LimitSkill1 or skillId == self._LimitSkill2 then
         self._proxy:SetTeamWorkSkillNpcRemainUseCount(self._uuid,0)
@@ -324,6 +332,11 @@ function XCharR5Nanami2:OnNpcCastActionAfterEvent(skillId, launcherId, targetId,
         --self.CustomPower2 = self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup2)
         self._proxy:SetBBInt(1, self._uuid, 1057002, self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup2)) --记录峰值
         --XLog.Warning("技能进入时能量点"..self.CustomPower2)
+    end
+
+    if skillId == 105721 or skillId == 105722 then
+        --XLog.Warning("大招期间不被裁切")
+        self._proxy:SetNpcDither(self._uuid,false)
     end
 
     if skillId == 105713 then
@@ -404,7 +417,7 @@ function XCharR5Nanami2:OnNpcCastActionAfterEvent(skillId, launcherId, targetId,
         self:WrestleSuccessCameraNew()
     end
     if skillId == 105271 then
-        XLog.Warning("测试瞬移流程镜头")
+        --XLog.Warning("测试瞬移流程镜头")
         self:SupportBlinkCamera()
     end
     if skillId == 105276 then
@@ -421,7 +434,7 @@ function XCharR5Nanami2:OnNpcExitActionEvent(skillId, launcherId, targetId, targ
         return
     end
     if skillId == 105715 or skillId == 105716 or skillId == 105717 or skillId == 105718 then
-        XLog.Warning("斧攻击退出增加标记")
+        --XLog.Warning("斧攻击退出增加标记")
         self._proxy:ApplyMagic(self._uuid,self._uuid,1057007,1,1)
     end
 
@@ -432,6 +445,10 @@ function XCharR5Nanami2:OnNpcExitActionEvent(skillId, launcherId, targetId, targ
         self._proxy:ApplyMagic(self._uuid,self._uuid,105202,1)
     end
 
+    if skillId == 105721 or skillId == 105722 then
+        --XLog.Warning("裁切还原")
+        self._proxy:SetNpcDither(self._uuid,true)
+    end
 
     if skillId == 105253 then
         --XLog.Warning("剑盾终结攻击退出处理隐藏")
@@ -446,12 +463,83 @@ function XCharR5Nanami2:OnNpcExitActionEvent(skillId, launcherId, targetId, targ
     self._WrestleInputCount = 0
 end
 
+function XCharR5Nanami2:SkillCVCast(skillId)
+    --cv语音播放
+    --剑盾大招
+    if skillId == 105721 then
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052500,1)
+    end
+    --盾斧大招
+    if skillId == 105722 then
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052501,1)
+    end
+    --超解
+    if skillId == 105719 then
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052507,1)
+    end
+    --龙车起始（仅1057）
+    if skillId == 105728 or skillId == 105776  then
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052504,1)
+    end
+    --龙车结束（仅1057）
+    if skillId == 105730 or skillId == 105778  then
+        local index = math.random(1, 2)
+        local magicid = 1052511
+        if index == 2 then
+            magicid = 1052512
+        end
+        self._proxy:ApplyMagic(self._uuid,self._uuid,magicid,1)
+    end
+    --切盾斧随机语音
+    if skillId == 105713  then
+        local index = math.random(1, 2)
+        local magicid = 1052503
+        if index == 2 then
+            magicid = 1052505
+        end
+        self._proxy:ApplyMagic(self._uuid,self._uuid,magicid,1)
+    end
+    --切剑盾随机语音
+    if skillId == 105714  then
+        local index = math.random(1, 2)
+        local magicid = 1052502
+        if index == 2 then
+            magicid = 1052512
+        end
+        self._proxy:ApplyMagic(self._uuid,self._uuid,magicid,1)
+    end
+    --普攻语音
+    if skillId == 105701 or skillId == 105715 then
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052508,1)
+    end
+    --剑盾普攻4随机语音
+    if skillId == 105704  then
+        local index = math.random(1, 2)
+        local magicid = 1052511
+        if index == 2 then
+            magicid = 1052512
+        end
+        self._proxy:ApplyMagic(self._uuid,self._uuid,magicid,1)
+    end
+    --盾斧普攻3概率语音
+    if skillId == 105717  then
+        local index = math.random(1, 2)
+        if index == 2 then
+            self._proxy:ApplyMagic(self._uuid,self._uuid,1052511,1)
+        end
+    end
+    --盾斧普攻4概率语音
+    if skillId == 105718  then
+        local index = math.random(1, 2)
+        if index == 2 then
+            self._proxy:ApplyMagic(self._uuid,self._uuid,1052512,1)
+        end
+    end
+end
 
 --region 按键测试逻辑
 function XCharR5Nanami2:TestInputLogic()
-    --[[
     if self._proxy:IsKeyDown(ENpcOperationKey.Ball4) then
-
         --测试技能释放
         local testskill = 105731
         XLog.Warning("放技能看效果:"..testskill)
@@ -494,7 +582,6 @@ function XCharR5Nanami2:TestInputLogic()
         self._proxy:ApplyMagic(self._uuid,self._uuid,1057020,1)
         XLog.Warning("测试添加镜头效果缓冲")
     end
-    --]]
 end
 --endregion
 
@@ -515,36 +602,68 @@ function XCharR5Nanami2:SkillAtuoCombo()
         self._proxy:CastActionEx(self._uuid,105245,0,5)
         --XLog.Warning("完成攻击动作后回到僵持循环")
     end
-----[[
+    ----[[
     if self._proxy:CheckNpcCurrentAction(self._uuid,105262) and self._skillTimer >= 0.8 then --斧角力攻击动作完成时回到僵持循环的内容
         self._proxy:AbortAction(self._uuid,true)
         self._proxy:CastActionEx(self._uuid,105259,0,5)
         --XLog.Warning("斧完成攻击动作后回到僵持循环")
     end
-----]]
+    ----]]
 
     if self._proxy:CheckNpcCurrentAction(self._uuid,105252) and self._skillTimer >= 1 then
         self._proxy:AbortAction(self._uuid,true)
         --XLog.Warning("终结移动后攻击流程")
-        if self._proxy:CheckBuffByKind(self._uuid,105217) then
-            self._proxy:CastActionEx(self._uuid,105253,0,5)
+        local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+        if locktargetUUID ~= 0 then
+            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
         else
-            self._proxy:CastActionEx(self._uuid,105254,0,5)
+            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
+            if searchtarget == 0 then
+                return
+            end
+            self._proxy:SetSoftLock(self._uuid,searchtarget)
+            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
         end
     end
 
     if self._proxy:CheckNpcCurrentAction(self._uuid,105276) and self._skillTimer >= 0.9 then
         self._proxy:AbortAction(self._uuid,true)
-        XLog.Warning("斧终结移动后攻击流程")
-        if self._proxy:CheckBuffByKind(self._uuid,105218) then
-            self._proxy:CastActionEx(self._uuid,105253,0,5)
+        --XLog.Warning("斧终结移动后攻击流程")
+        local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+        if locktargetUUID ~= 0 then
+            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
         else
-            self._proxy:CastActionEx(self._uuid,105254,0,5)
+            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
+            if searchtarget == 0 then
+                return
+            end
+            self._proxy:SetSoftLock(self._uuid,searchtarget)
+            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
         end
     end
+
+    if self._proxy:CheckNpcCurrentAction(self._uuid,105247) and self._skillTimer >= 1.05 then
+        --XLog.Warning("角力成功清除镜头")
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
+    end
+
+    if self._proxy:CheckNpcCurrentAction(self._uuid,105246) and self._skillTimer >= 0.7 then
+        --XLog.Warning("角力失败清除镜头")
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
+    end
+
+    if self._proxy:CheckNpcCurrentAction(self._uuid,105260) and self._skillTimer >= 0.7 then
+        --XLog.Warning("角力失败清除镜头")
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
+    end
+
+    if self._proxy:CheckNpcCurrentAction(self._uuid,105261) and self._skillTimer >= 0.95 then
+        --XLog.Warning("角力失败清除镜头")
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
+    end
 end
-
-
 --endregion
 
 --region 角力相关表现镜头
@@ -638,7 +757,7 @@ function XCharR5Nanami2:CheckInputDuringAxeWrestle()
     if self.WrestleTarget == self._uuid then
         if  self.AxeWrestleInput == true and self._proxy:IsKeyDown(ENpcOperationKey.RelinkQte) then
             if self._WrestleTimer >= 0.4 then
-                XLog.Warning("斧前顶镜头震动")
+                --XLog.Warning("斧前顶镜头震动")
                 self._proxy:ApplyMagic(self._uuid,self._uuid,1052129,1)
                 self._WrestleInputCount = self._WrestleInputCount +1
                 self._WrestleTimer = 0
@@ -826,6 +945,22 @@ function XCharR5Nanami2:OnExitJumpWeaponShow() -- 出跳跃显示
     end
 end
 
-
+function XCharR5Nanami2:ReconnectedCheckSkillGroup()
+    if self._proxy:CheckBuffByKind(self._uuid,105218) then
+        --XLog.Warning("重连技能组初始化..105218")
+        self._proxy:SetNpcAnimationLayer(self._uuid,1)
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball3,105710) --切换技能组3
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,105713) --切换技能组为龙车1
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105715) --切换技能组为斧红球
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052359,1) --常驻fov增加
+    elseif self._proxy:CheckBuffByKind(self._uuid,105217) then
+        --XLog.Warning("重连技能组初始化..105217")
+        self._proxy:SetNpcAnimationLayer(self._uuid,0)
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball3,105705) --切换技能组3
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,105703) --还原技能组1
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704) --还原技能组2
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052360,1) --移除常驻fov增加
+    end
+end
 --endregion
 return XCharR5Nanami2

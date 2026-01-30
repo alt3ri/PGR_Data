@@ -30,7 +30,6 @@ function XBuffScript1013217:Update(dt)
     end
 
     self.kaiguan = false
-    self._proxy:ApplyMagic(self._uuid, self._uuid, 1013218, 1) --额外护盾
 
     self._proxy:AddTimerTask(10, function()--延迟10秒后，释放技能
      local SelfHp = self._proxy:GetNpcAttribValue(self._uuid,0) -- 检测当前自身血量

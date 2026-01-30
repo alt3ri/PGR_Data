@@ -14,6 +14,13 @@ function XUiDlcRelinkPopupEquipCompose:OnAwake()
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnStart(composeId)
+    -- 设置自动关闭
+    self:SetAutoCloseInfo(self._Control:GetActivityEndTime(), function(isClose)
+        if isClose then
+            self._Control:HandleActivityEnd()
+        end
+    end)
+
     self.ComposeId = composeId
     self.CurComposeCount = 1
 
@@ -33,6 +40,7 @@ function XUiDlcRelinkPopupEquipCompose:OnStart(composeId)
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnEnable()
+    self.Super.OnEnable(self)
     self:RefreshConsumes()
     self:RefreshBtnState()
     self.InputSelect.text = self.CurComposeCount
@@ -45,7 +53,9 @@ function XUiDlcRelinkPopupEquipCompose:UpdateMaxComposeCount()
     else
         self.MaxComposeCount = self._Control:CalculateComposeMaxCount(self.ComposeId)
     end
-    self.MaxComposeCount = math.max(self.MaxComposeCount, 1)
+    local curCount, maxCount = self._Control:GetEquipBagCurCountAndMaxCount()
+    local bagSpace = maxCount > curCount and (maxCount - curCount) or 0
+    self.MaxComposeCount = math.max(1, math.min(self.MaxComposeCount, bagSpace))
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnChooseAttrChange()
@@ -118,7 +128,7 @@ end
 
 function XUiDlcRelinkPopupEquipCompose:BtnAddSelectLongClickCallback(time)
     if self.CurComposeCount >= self.MaxComposeCount then
-        self._Control:OpenCommonTipText("EquipComposeCountLimitTips", 2)
+        self:ShowLimitTip(true)
         return
     end
 
@@ -131,7 +141,7 @@ end
 
 function XUiDlcRelinkPopupEquipCompose:BtnMinusSelectLongClickCallback(time)
     if self.CurComposeCount <= 1 then
-        self._Control:OpenCommonTipText("EquipComposeCountLimitTips", 1)
+        self:ShowLimitTip(false)
         return
     end
 
@@ -154,6 +164,23 @@ function XUiDlcRelinkPopupEquipCompose:OnBtnCloseClick()
     self:Close()
 end
 
+function XUiDlcRelinkPopupEquipCompose:ShowLimitTip(isAdd)
+    local curCount, maxCount = self._Control:GetEquipBagCurCountAndMaxCount()
+    local isFull = false
+    if isAdd then
+        isFull = curCount + self.CurComposeCount >= maxCount
+    else
+        isFull = curCount >= maxCount
+    end
+
+    if isFull then
+        self._Control:OpenCommonTipCode(XCode.RelinkEquipBagIsFull)
+    else
+        local tipType = isAdd and 2 or 1
+        self._Control:OpenCommonTipText("EquipComposeCountLimitTips", tipType)
+    end
+end
+
 function XUiDlcRelinkPopupEquipCompose:OnBtnAddSelectClick()
     if self.CurComposeCount < self.MaxComposeCount then
         self.CurComposeCount = self.CurComposeCount + 1
@@ -161,7 +188,7 @@ function XUiDlcRelinkPopupEquipCompose:OnBtnAddSelectClick()
         self.InputSelect.text = self.CurComposeCount
         self:RefreshBtnState()
     else
-        self._Control:OpenCommonTipText("EquipComposeCountLimitTips", 2)
+        self:ShowLimitTip(true)
     end
 end
 
@@ -172,7 +199,7 @@ function XUiDlcRelinkPopupEquipCompose:OnBtnMinusSelectClick()
         self.InputSelect.text = self.CurComposeCount
         self:RefreshBtnState()
     else
-        self._Control:OpenCommonTipText("EquipComposeCountLimitTips", 1)
+        self:ShowLimitTip(false)
     end
 end
 
@@ -201,6 +228,12 @@ function XUiDlcRelinkPopupEquipCompose:OnBtnComposeClick()
     end
 
     if not self._Control:AbleSyncDataToMatchServer() then
+        return
+    end
+
+    local curCount, maxCount = self._Control:GetEquipBagCurCountAndMaxCount()
+    if curCount + self.CurComposeCount > maxCount then
+        self._Control:OpenCommonTipCode(XCode.RelinkEquipBagIsFull)
         return
     end
 

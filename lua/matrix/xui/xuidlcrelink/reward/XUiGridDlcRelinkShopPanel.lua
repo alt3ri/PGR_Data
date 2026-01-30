@@ -35,7 +35,7 @@ function XUiGridDlcRelinkShopPanel:SetupDynamicTable()
     end
 
     self.DynamicTable:SetDataSource(self.ShopItemList)
-    self.DynamicTable:ReloadDataASync(1)
+    self.DynamicTable:ReloadDataSync(1)
 end
 
 ---@param grid XUiGridShop
@@ -51,6 +51,29 @@ function XUiGridDlcRelinkShopPanel:OnDynamicTableEvent(event, index, grid)
                 XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", data.RewardGoods.TemplateId)
             end)
         end
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        self:PlayGridAnimation()
+    end
+end
+
+function XUiGridDlcRelinkShopPanel:PlayGridAnimation()
+    ---@type XUiGridShop[]
+    local grids = self.DynamicTable:GetGrids()
+    if XTool.IsTableEmpty(grids) then
+        return
+    end
+
+    for index, grid in ipairs(grids) do
+        grid.GameObject:SetActiveEx(false)
+        local delay = (index - 1) * 50
+        self:DelayCallRaw(function()
+            grid.GameObject:SetActiveEx(true)
+            XUiHelper.PlayUiNodeAnimation(grid.Transform, "GridShopEnable", function()
+                XLuaUiManager.SetMask(false)
+            end, function()
+                XLuaUiManager.SetMask(true)
+            end)
+        end, delay)
     end
 end
 

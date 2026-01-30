@@ -5,39 +5,30 @@ local XUiGridDlcRelinkSettlementCharacter = XClass(XUiNode, "XUiGridDlcRelinkSet
 
 function XUiGridDlcRelinkSettlementCharacter:OnStart()
     self.GridTag.gameObject:SetActiveEx(false)
-    self.BtnLike:AddEventListener(handler(self, self.OnBtnLikeClick))
+    self.BtnLike:AddEventListener(handler(self, self.OnBtnLikeClick), true, true, 0.5)
     self.BtnAdd:AddEventListener(handler(self, self.OnBtnAddClick))
     self.BtnReport:AddEventListener(handler(self, self.OnBtnReportClick))
 
     ---@type UiObject[]
     self.GridTabList = {}
     self.IsLiked = false
-    self.LikeCount = 0
 end
 
 function XUiGridDlcRelinkSettlementCharacter:OnGetLuaEvents()
     return {
-        XEventId.EVENT_DLC_ROOM_ADD_LIKE_NOTIFY,
+        XEventId.EVENT_DLC_RELINK_LIKE_NOTIFY,
     }
 end
 
 function XUiGridDlcRelinkSettlementCharacter:OnNotify(event, ...)
-    local args = { ... }
-    if event == XEventId.EVENT_DLC_ROOM_ADD_LIKE_NOTIFY then
-        local fromPlayerId = args[1]
-        local toPlayerId = args[2]
-        if self.PlayerSettleResult and self.PlayerSettleResult.PlayerId == toPlayerId and self.Parent.GetPlayerNameById then
-            self:RefreshLinkBtn()
-            local playerName = self.Parent:GetPlayerNameById(fromPlayerId)
-            local desc = string.format(self._Control:GetClientConfig("LikeSuccessDesc"), playerName)
-            self._Control:OpenCommonLeftTipDialog(desc)
-        end
+    if event == XEventId.EVENT_DLC_RELINK_LIKE_NOTIFY then
+        self:RefreshLikeBtn()
     end
 end
 
 ---@param playerSettleResult XDlcRelinkPlayerSettleResult
----@param customData table<number, number>
-function XUiGridDlcRelinkSettlementCharacter:Refresh(playerSettleResult, customData, fixedScore)
+---@param customDatas table<number, table<number, number>> @第一层是playerId-customdata
+function XUiGridDlcRelinkSettlementCharacter:Refresh(playerSettleResult, customDatas, fixedScore)
     if not playerSettleResult then
         return
     end
@@ -61,11 +52,13 @@ function XUiGridDlcRelinkSettlementCharacter:Refresh(playerSettleResult, customD
     -- 分数
     self.TxtNum.text = fixedScore
     -- 战斗称号
-    local battleTitleIds = self._Control:GetBattleTitleIdsByCustomData(customData)
-    
+    local battleTitleIds = self._Control:GetBattleTitleIdsByCustomData(customDatas, playerSettleResult.PlayerId)
+
     self:RefreshTag(battleTitleIds)
     -- 刷新按钮
     self:RefreshBtnActive()
+    -- 刷新点赞按钮
+    self:RefreshLikeBtn()
 end
 
 function XUiGridDlcRelinkSettlementCharacter:RefreshTag(tagIds)
@@ -75,7 +68,7 @@ function XUiGridDlcRelinkSettlementCharacter:RefreshTag(tagIds)
     end
 
     self.ListTag.gameObject:SetActiveEx(true)
-    for _ , tagId in pairs(tagIds) do
+    for _, tagId in pairs(tagIds) do
         local grid = self.GridTabList[tagId]
         if not grid then
             grid = XUiHelper.Instantiate(self.GridTag, self.ListTag)
@@ -84,7 +77,7 @@ function XUiGridDlcRelinkSettlementCharacter:RefreshTag(tagIds)
         grid.gameObject:SetActiveEx(true)
         grid:GetObject("TxtName").text = self._Control:GetMedalTagName(tagId)
     end
-    
+
     local tagCount = XTool.GetTableCount(tagIds)
 
     for i = tagCount + 1, #self.GridTabList do
@@ -97,15 +90,16 @@ end
 
 function XUiGridDlcRelinkSettlementCharacter:RefreshBtnActive()
     local isSelf = self.PlayerSettleResult.PlayerId == XPlayer.Id
-    self.BtnLike.gameObject:SetActiveEx(not isSelf)
     self.BtnAdd.gameObject:SetActiveEx(not isSelf)
     self.BtnReport.gameObject:SetActiveEx(not isSelf)
 end
 
-function XUiGridDlcRelinkSettlementCharacter:RefreshLinkBtn()
-    self.LikeCount = self.LikeCount + 1
-    self.TxtLikeNum.gameObject:SetActiveEx(self.LikeCount > 1)
-    self.BtnLike:SetDisable(true)
+function XUiGridDlcRelinkSettlementCharacter:RefreshLikeBtn()
+    local likeCount = self._Control:GetPlayerLikeCount(self.PlayerSettleResult.PlayerId)
+    local isSelf = self.PlayerSettleResult.PlayerId == XPlayer.Id
+    self.BtnLike.gameObject:SetActiveEx(likeCount > 0 or not isSelf)
+    self.BtnLike:SetNameByGroup(0, string.format("×%d", likeCount))
+    self.BtnLike:SetDisable(likeCount > 0, not isSelf and not self.IsLiked)
 end
 
 function XUiGridDlcRelinkSettlementCharacter:SetTagBest(isBest)
@@ -122,9 +116,11 @@ function XUiGridDlcRelinkSettlementCharacter:OnBtnLikeClick()
     end
 
     if not self.IsLiked then
-        self.IsLiked = true
-        XMVCA.XDlcRoom:AddLike(self.PlayerSettleResult.PlayerId)
-        self:RefreshLinkBtn()
+        self._Control:RequestLike(self.PlayerSettleResult.PlayerId, function()
+            self.IsLiked = true
+            self:RefreshLikeBtn()
+            self._Control:OpenCommonTipMsg(XUiHelper.GetText("DlcRoomAddLikeSuccess"))
+        end)
     end
 end
 

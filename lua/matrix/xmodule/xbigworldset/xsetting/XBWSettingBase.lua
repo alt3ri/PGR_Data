@@ -25,4 +25,8 @@ function XBWSettingBase:IsChanged()
     return false
 end
 
+function XBWSettingBase:RecordDataToDict()
+    return {}
+end
+
 return XBWSettingBase

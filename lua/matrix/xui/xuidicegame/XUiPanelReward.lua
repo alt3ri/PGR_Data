@@ -2,7 +2,7 @@ local XUiGridReward = require("XUi/XUiDiceGame/XUiGridReward")
 local XUiPanelReward = XClass(nil, "XUiPanelReward")
 
 local TWEEN_TIME_SCORE = 0.5
-local FULL_PROGRESS = 0.9 --缩小实际显示进度,让进度条在最后一个奖励后有一定余长.
+local FULL_PROGRESS = 1 --缩小实际显示进度,让进度条在最后一个奖励后有一定余长.
 
 function XUiPanelReward:Ctor(ui, root)
     self.GameObject = ui.gameObject

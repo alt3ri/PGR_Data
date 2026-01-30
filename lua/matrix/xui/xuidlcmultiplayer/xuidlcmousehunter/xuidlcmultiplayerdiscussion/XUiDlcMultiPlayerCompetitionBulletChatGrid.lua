@@ -35,6 +35,7 @@ function XUiDlcMultiPlayerCompetitionBulletChatGrid:Refresh(danmakuData, discuss
     self.TxtDetail.text = string.format(self._CachedDanmakuDesc, danmakuData.PlayerName or "", title or "", danmakuData.BpLevel or 0)
     -- 设置选中状态
     self.Select.enabled = danmakuData.PlayerId == XPlayer.Id
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._RectTransform)
 end
 
 -- 设置锚点位置

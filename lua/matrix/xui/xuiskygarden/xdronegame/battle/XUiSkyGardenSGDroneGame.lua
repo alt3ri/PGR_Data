@@ -40,6 +40,7 @@ local XUiSkyGardenSGDroneGameProgressGrid = require(
 ---@field ImgAccelerationCount UnityEngine.UI.Image
 ---@field TxtAccelerationCount UnityEngine.UI.Text
 ---@field NoiseEffect UnityEngine.RectTransform
+---@field AudioPlayer XAudioObjectPlayer
 ---@field _Control XSkyGardenDroneGameControl
 local XUiSkyGardenSGDroneGame = XMVCA.XBigWorldUI:Register(nil, "UiSkyGardenSGDroneGame")
 
@@ -77,6 +78,8 @@ function XUiSkyGardenSGDroneGame:OnAwake()
     self._ProgressGrids = {}
     ---@type XUiSkyGardenSGDroneGameScore[]
     self._ScoreCache = {}
+    ---@type XUiSkyGardenSGDroneGameScore[]
+    self._CurrentScore = {}
 
     self._CurrentKeyPromptedType = false
 
@@ -94,6 +97,8 @@ function XUiSkyGardenSGDroneGame:OnAwake()
     self._IsGuidePauseGame = false
     self._IsGuideFocusObject = false
 
+    self._IsMaskActive = false
+
     self._NoiseTimer = false
 
     self._CacheGuideOperator = false
@@ -101,10 +106,14 @@ function XUiSkyGardenSGDroneGame:OnAwake()
     ---@type XTableSgDroneGameDialogue[]
     self._DialogueWaitQueue = {}
 
+    self._RandomDialogueCounts = {}
+
+    self._CurrentDialogueAudioKey = ""
+
     self._HiddenUTurnStages = self._Control:GetHiddenUTurnStages()
     self._TriggeredDialogues = self._Control:GetTriggeredDialogues()
-    self._TimerDialogues = self._Control:GetDialoguesByType(XMVCA.XSkyGardenDroneGame.DialogueType.Timer)
-    self._RandomDialogues = self._Control:GetDialoguesByType(XMVCA.XSkyGardenDroneGame.DialogueType.Random)
+    self._TimerDialogues = self._Control:GetTimerDialogues()
+    self._RandomDialogues = self._Control:GetRandomDialogues()
 
     self:_RegisterButtonClicks()
 end
@@ -113,7 +122,7 @@ function XUiSkyGardenSGDroneGame:OnStart(stageId, mapId, stageData, isHardMode, 
     self._StageId = stageId
     self._IsHardMode = isHardMode
     self._MapId = mapId
-    
+
     self:_InitUi()
     self:_InitGame(stageData.Seed)
     self:_InitMode(isHardMode, easyDroneHp, isEnableAssistance)
@@ -151,10 +160,20 @@ end
 
 function XUiSkyGardenSGDroneGame:OnDestroy()
     self:_RemoveListeners()
+    self.AudioPlayer:StopByKeyName("BGM_DroneGame")
+
+    if not string.IsNilOrEmpty(self._CurrentDialogueAudioKey) then
+        self.AudioPlayer:StopByKeyName(self._CurrentDialogueAudioKey)
+    end
+
     CS.XAudioManager.BgmAreaTriggerEnable = true
 end
 
 function XUiSkyGardenSGDroneGame:OnBtnSpeedUpClick()
+    if self._IsMaskActive then
+        return
+    end
+
     if not self._Cooldowns[CooldownType.Acceleration]:IsCoolingdown() then
         self:_RestoreKeyPrompted(self._Control.KeyPromptedType.Accelerate)
         XSGDGInstance.Instance.DroneManager:SpeedUp()
@@ -162,11 +181,19 @@ function XUiSkyGardenSGDroneGame:OnBtnSpeedUpClick()
 end
 
 function XUiSkyGardenSGDroneGame:OnBtnChangeClick()
+    if self._IsMaskActive then
+        return
+    end
+
     self:_RestoreKeyPrompted(self._Control.KeyPromptedType.UTurn)
     XSGDGInstance.Instance.DroneManager:Reverse()
 end
 
 function XUiSkyGardenSGDroneGame:OnBtnSpecialLockClick()
+    if self._IsMaskActive then
+        return
+    end
+
     if not self._Cooldowns[CooldownType.Launch]:IsCoolingdown() then
         self:_RestoreKeyPrompted(self._Control.KeyPromptedType.LockOn)
         XSGDGInstance.Instance.DroneManager:LockOnAttack()
@@ -174,6 +201,10 @@ function XUiSkyGardenSGDroneGame:OnBtnSpecialLockClick()
 end
 
 function XUiSkyGardenSGDroneGame:OnBtnSpecialLaunchClick()
+    if self._IsMaskActive then
+        return
+    end
+
     if not self._Cooldowns[CooldownType.Launch]:IsCoolingdown() then
         self:_RestoreKeyPrompted(self._Control.KeyPromptedType.Launch)
         XSGDGInstance.Instance.DroneManager:Attack()
@@ -181,6 +212,10 @@ function XUiSkyGardenSGDroneGame:OnBtnSpecialLaunchClick()
 end
 
 function XUiSkyGardenSGDroneGame:OnBtnSpecialSuperClick()
+    if self._IsMaskActive then
+        return
+    end
+
     if not self._Cooldowns[CooldownType.Super]:IsCoolingdown() then
         self:_RestoreKeyPrompted(self._Control.KeyPromptedType.Supercomputing)
         XSGDGInstance.Instance.DroneManager:Supercomputing()
@@ -188,6 +223,10 @@ function XUiSkyGardenSGDroneGame:OnBtnSpecialSuperClick()
 end
 
 function XUiSkyGardenSGDroneGame:OnBtnSpecialJumpClick()
+    if self._IsMaskActive then
+        return
+    end
+
     if not self._Cooldowns[CooldownType.Jump]:IsCoolingdown() then
         self:_RestoreKeyPrompted(self._Control.KeyPromptedType.Jump)
         XSGDGInstance.Instance.DroneManager:Jump()
@@ -195,7 +234,14 @@ function XUiSkyGardenSGDroneGame:OnBtnSpecialJumpClick()
 end
 
 function XUiSkyGardenSGDroneGame:OnBtnStopClick()
-    XSGDGInstance.PauseGame()
+    if self._IsMaskActive then
+        return
+    end
+
+    if XSGDGInstance.Instance.Engine.CurrentState ~= CS.XBigWorldGame.XSkyGarden.XDroneGame.ESGDGEngineState.Save then
+        XSGDGInstance.PauseGame()
+    end
+
     XMVCA.XBigWorldUI:Open("UiSkyGardenSGDronePopupStop", self._StageId, XSGDGInstance.Instance.DroneManager.DroneId)
 end
 
@@ -296,6 +342,7 @@ function XUiSkyGardenSGDroneGame:OnLoadComplete()
     self:_RefreshTarget()
     self:_RefreshProgress()
     self:_RefreshOperator(XSGDGInstance.Instance.DroneManager.DroneIntType)
+    self.AudioPlayer:PlayByKeyName("BGM_DroneGame")
     XMVCA.XBigWorldUI:Close("UiSkyGardenSGDroneLoading")
 end
 
@@ -318,6 +365,7 @@ function XUiSkyGardenSGDroneGame:OnGameRestoreComplete()
     self:_RefreshTarget()
     self:_RefreshProgress()
     self:_PlayNoiseEffect()
+    self:_SetMaskActive(false)
 end
 
 function XUiSkyGardenSGDroneGame:OnGameRestartComplete()
@@ -327,20 +375,21 @@ function XUiSkyGardenSGDroneGame:OnGameRestartComplete()
     self:_RefreshTarget()
     self:_RefreshProgress()
     self:_PlayNoiseEffect()
+    self:_SetMaskActive(false)
 end
 
 function XUiSkyGardenSGDroneGame:OnGameRelease()
+    self:_RemoveListeners()
+    self:_RemoveSchedules()
     XMVCA.XBigWorldUI:SafeClose("UiSkyGardenSGDroneGame")
 end
 
 function XUiSkyGardenSGDroneGame:OnBeginSaveGame()
-    self.Mask.gameObject:SetActiveEx(true)
-    XMVCA.XBigWorldUI:SetMaskActive(true, self.Name)
+    self:_SetMaskActive(true)
 end
 
 function XUiSkyGardenSGDroneGame:OnEndSaveGame()
-    self.Mask.gameObject:SetActiveEx(false)
-    XMVCA.XBigWorldUI:SetMaskActive(false, self.Name)
+    self:_SetMaskActive(false)
     self:_RefreshProgressPoint()
 end
 
@@ -356,8 +405,17 @@ function XUiSkyGardenSGDroneGame:OnBehaviorTriggered(text, score)
     end
 
     if scoreGrid then
+        if #self._CurrentScore >= 1 then
+            local currentScore = table.remove(self._CurrentScore, 1)
+
+            if currentScore then
+                currentScore:Close()
+            end
+        end
+
         scoreGrid:Open()
         scoreGrid:Refresh(text, score)
+        table.insert(self._CurrentScore, scoreGrid)
     end
 end
 
@@ -365,6 +423,10 @@ function XUiSkyGardenSGDroneGame:OnTargetProgressChanged(targetId, progress, tot
     local targetGrid = self._TargetGrids[targetId]
 
     if targetGrid then
+        if isFinish and not targetGrid:GetIsFinish() then
+            self.AudioPlayer:PlayByKeyName("SFX_Achieve")
+        end
+
         targetGrid:SetFinish(isFinish)
         targetGrid:SetProgress(progress, totalProgress)
     end
@@ -382,7 +444,7 @@ end
 
 function XUiSkyGardenSGDroneGame:OnTagTriggered(triggerTag)
     local dialogues = self._TriggeredDialogues[triggerTag]
-    
+
     if not XTool.IsTableEmpty(dialogues) then
         local playDialogues = {}
 
@@ -453,6 +515,13 @@ end
 ---@type XUiSkyGardenSGDroneGameScore
 function XUiSkyGardenSGDroneGame:RestoreScoreGrid(grid)
     table.insert(self._ScoreCache, grid)
+
+    for i, scoreGrid in pairs(self._CurrentScore) do
+        if scoreGrid == grid then
+            table.remove(self._CurrentScore, i)
+            break
+        end
+    end
 end
 
 function XUiSkyGardenSGDroneGame:_RegisterButtonClicks()
@@ -495,6 +564,10 @@ function XUiSkyGardenSGDroneGame:_RegisterListeners()
 end
 
 function XUiSkyGardenSGDroneGame:_RemoveListeners()
+    if not XSGDGInstance.Instance then
+        return
+    end
+
     -- 在此处移除事件监听
     XSGDGInstance.Instance.Bridge.OnGameLoadComplete = nil
     XSGDGInstance.Instance.Bridge.OnGamePrepareComplete = nil
@@ -542,10 +615,16 @@ function XUiSkyGardenSGDroneGame:_RegisterRedPointEvents()
 end
 
 function XUiSkyGardenSGDroneGame:_Update()
+    if not XSGDGInstance.Instance then
+        return
+    end
+
     self:_RefreshProgress()
     self:_RefreshProgressPoint()
 
     local playDialogues = {}
+
+    self._TimeDetail = XSGDGInstance.Instance.Engine.RunningTime
 
     if not XTool.IsTableEmpty(self._TimerDialogues) then
         for _, dialogue in pairs(self._TimerDialogues) do
@@ -556,15 +635,17 @@ function XUiSkyGardenSGDroneGame:_Update()
     end
     if not XTool.IsTableEmpty(self._RandomDialogues) then
         for _, dialogue in pairs(self._RandomDialogues) do
-            if self._TimeDetail > 0 and math.floor(dialogue.Delay % self._TimeDetail) == 0 then
+            local count = self._RandomDialogueCounts[dialogue.Id] or 0
+            local delay = dialogue.Delay * (count + 1)
+
+            if self._TimeDetail > 0 and delay < self._TimeDetail then
                 table.insert(playDialogues, dialogue)
+                self._RandomDialogueCounts[dialogue.Id] = count + 1
             end
         end
     end
 
     self:_PlayDialogues(playDialogues)
-
-    self._TimeDetail = self._TimeDetail + 0.5
 end
 
 function XUiSkyGardenSGDroneGame:_InitUi()
@@ -848,6 +929,18 @@ function XUiSkyGardenSGDroneGame:_DoGuideOperator()
     self._CacheGuideOperator = false
 end
 
+function XUiSkyGardenSGDroneGame:_SetMaskActive(isActive)
+    if self._IsMaskActive ~= isActive then
+        self._IsMaskActive = isActive
+        self.Mask.gameObject:SetActiveEx(isActive)
+        XMVCA.XBigWorldUI:SetMaskActive(isActive, self.Name)
+
+        if isActive then
+            self.AudioPlayer:PlayByKeyName("SFX_Save")
+        end
+    end
+end
+
 function XUiSkyGardenSGDroneGame:_PlayNoiseEffect()
     if not self.NoiseEffect then
         return
@@ -855,13 +948,15 @@ function XUiSkyGardenSGDroneGame:_PlayNoiseEffect()
 
     self:_RemoveNoiseTimer()
 
+    self.AudioPlayer:PlayByKeyName("SFX_Load")
     self.NoiseEffect.gameObject:SetActiveEx(false)
     self.NoiseEffect.gameObject:SetActiveEx(true)
     XMVCA.XBigWorldUI:SetMaskActive(true, self.Name)
     self._NoiseTimer = XScheduleManager.ScheduleOnce(function()
         XMVCA.XBigWorldUI:SetMaskActive(false, self.Name)
+        self.AudioPlayer:StopByKeyName("SFX_Load")
         self._NoiseTimer = false
-    end, XScheduleManager.SECOND * 2)
+    end, XScheduleManager.SECOND * 1)
 end
 
 function XUiSkyGardenSGDroneGame:_PlayDialogues(dialogues)
@@ -884,9 +979,13 @@ function XUiSkyGardenSGDroneGame:_PlayDialogue(dialogue)
                 return
             end
         end
+
+        table.insert(self._DialogueWaitQueue, dialogue)
+        return
     end
 
     self.PanelRole.gameObject:SetActiveEx(true)
+    self.AudioPlayer:PlayByKeyName("SFX_Message")
     self._IsPlayingDialogue = true
 
     self:_RefreshDialogue(dialogue)
@@ -901,8 +1000,32 @@ function XUiSkyGardenSGDroneGame:_PlayDialogue(dialogue)
             self:_PlayDialogue(nextDialogue)
         else
             self.PanelRole.gameObject:SetActiveEx(false)
+
+            if not string.IsNilOrEmpty(self._CurrentDialogueAudioKey) then
+                self.AudioPlayer:StopByKeyName(self._CurrentDialogueAudioKey)
+                self.AudioPlayer:PlayByKeyName("BGM_DroneGame")
+                self._CurrentDialogueAudioKey = ""
+            end
         end
     end, XScheduleManager.SECOND * dialogue.Duration)
+
+    if not string.IsNilOrEmpty(dialogue.AudioKey) then
+        self._CurrentDialogueAudioKey = dialogue.AudioKey
+
+        if not string.IsNilOrEmpty(self._CurrentDialogueAudioKey) then
+            self.AudioPlayer:StopByKeyName(self._CurrentDialogueAudioKey)
+        else
+            self.AudioPlayer:StopByKeyName("BGM_DroneGame")
+        end
+
+        self.AudioPlayer:PlayByKeyName(dialogue.AudioKey)
+    else
+        if not string.IsNilOrEmpty(self._CurrentDialogueAudioKey) then
+            self.AudioPlayer:StopByKeyName(self._CurrentDialogueAudioKey)
+            self.AudioPlayer:PlayByKeyName("BGM_DroneGame")
+            self._CurrentDialogueAudioKey = ""
+        end
+    end
 end
 
 ---@param dialogue XTableSgDroneGameDialogue

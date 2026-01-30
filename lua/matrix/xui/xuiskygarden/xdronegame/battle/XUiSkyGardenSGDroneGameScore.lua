@@ -21,6 +21,7 @@ end
 function XUiSkyGardenSGDroneGameScore:OnDisable()
     self:_RemoveListeners()
     self:_RemoveSchedules()
+    self.Parent:RestoreScoreGrid(self)
 end
 
 function XUiSkyGardenSGDroneGameScore:OnDestroy()
@@ -28,7 +29,13 @@ end
 
 function XUiSkyGardenSGDroneGameScore:Refresh(desc, score)
     self.TxtTimeReward.text = desc
-    self.TxtScore.text = string.format("+%s", score)
+
+    if score and score > 0 then
+        self.TxtScore.text = string.format("+%d", score)
+    else
+        self.TxtScore.text = ""
+    end
+
     self:_RegisterTimer()
 end
 
@@ -61,14 +68,12 @@ end
 function XUiSkyGardenSGDroneGameScore:_RegisterTimer()
     self:_RemoveTimer()
     self._Timer = XScheduleManager.ScheduleOnce(function()
-        self.Parent:RestoreScoreGrid(self)
         self:Close()
     end, XScheduleManager.SECOND * 3)
 end
 
 function XUiSkyGardenSGDroneGameScore:_RemoveTimer()
     if self._Timer then
-        self.Parent:RestoreScoreGrid(self)
         XScheduleManager.UnSchedule(self._Timer)
         self._Timer = false
     end

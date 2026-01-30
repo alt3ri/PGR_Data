@@ -7,9 +7,6 @@ local XUiPanelDlcRelinkCharacterRight = require("XUi/XUiDlcRelink/Room/Panel/XUi
 local XUiDlcRelinkCharacter = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkCharacter")
 
 function XUiDlcRelinkCharacter:OnAwake()
-    if not self:CheckIsReady() then
-        XMVCA.XDlcRoom:BeginSelectCharacter()
-    end
     self.PanelEmptyList.gameObject:SetActiveEx(false)
     self.PanelRight.gameObject:SetActiveEx(false)
     self.GridCharacter.gameObject:SetActiveEx(false)
@@ -37,17 +34,6 @@ end
 function XUiDlcRelinkCharacter:OnEnable()
     self.Super.OnEnable(self)
     self:RefreshCharacterList()
-end
-
-function XUiDlcRelinkCharacter:OnGetLuaEvents()
-    return {
-        XEventId.EVENT_DLC_ROOM_SELECT_CHARACTER,
-        XEventId.EVENT_DLC_MULTIPLAYER_MATCHING_BACK
-    }
-end
-
-function XUiDlcRelinkCharacter:OnNotify(event, ...)
-    self:EndSelectingAndClose()
 end
 
 function XUiDlcRelinkCharacter:OnDisable()
@@ -150,37 +136,7 @@ function XUiDlcRelinkCharacter:RegisterUiEvents()
 end
 
 function XUiDlcRelinkCharacter:OnBtnBackClick()
-    self:EndSelectingAndClose()
-end
-
-function XUiDlcRelinkCharacter:EndSelectingAndClose()
-    if not self:CheckIsReady() then
-        XMVCA.XDlcRoom:EndSelectCharacter()
-    end
     self:Close()
-end
-
---- 检查打开这个界面时玩家是否准备了
-function XUiDlcRelinkCharacter:CheckIsReady()
-    if not XMVCA.XDlcRoom:IsInRoom() then
-        return false
-    end
-    
-    ---@type XDlcTeam
-    local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
-    if not team then
-        return false
-    end
-
-    
-    ---@type XDlcMember
-    local member = team:GetSelfMember()
-
-    if not member then
-        return false
-    end
-    
-    return member:IsReady() or false
 end
 
 return XUiDlcRelinkCharacter

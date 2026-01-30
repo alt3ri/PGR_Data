@@ -109,6 +109,12 @@ function XUiPokerGuessing2Main:UpdateStage()
         end
         self.RewardReceive.gameObject:SetActiveEx(false)
     end
+    
+    -- 更新左右按钮状态
+    local hasLeftStage = index > 1
+    local hasRightStage = index < maxIndex
+    self.BtnLeft:SetButtonState(hasLeftStage and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
+    self.BtnRight:SetButtonState(hasRightStage and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
 end
 
 function XUiPokerGuessing2Main:OnClickPlay()

@@ -21,11 +21,13 @@ function XUiAccumulateExpendShopMain:OnAwake()
 end
 
 function XUiAccumulateExpendShopMain:OnStart(...)
-    -- self._Control:AccumulateExpendShopSign()
+    self._Control:EnterAccumulateExpendShop()
+
     XMVCA.XShop:EnterAccumulateExpendShop()
     self:GetCurActivityConfig()
     self:InitView()
     self:_RegisterButtonClicks()
+    self:CheckTimeEnd()
 end
 
 function XUiAccumulateExpendShopMain:OnDestroy()
@@ -40,15 +42,15 @@ end
 
 function XUiAccumulateExpendShopMain:OnNotify(event, ...)
     if event == XEventId.EVENT_NOTIFY_ACCUMULATE_EXPEND_SHOP_DATA then
+        self:CheckTimeEnd()
         self:RefreshAccumemlateDataTxt()
     end
 end
 
 --region 配置获取
 function XUiAccumulateExpendShopMain:GetCurActivityConfig()
-    self.ShopDataEntity = self._Control:GetModel():GetAccumulateExpendShop()
-    local configId      = self.ShopDataEntity:GetActivityId()
-    self.ActivityConfig = self._Control:GetModel():GetAccumulateExpendShopActivityConfig(configId)
+    self.ShopDataEntity = self._Control:GetAccumulateExpendShopModel()
+    self.ActivityConfig = self.ShopDataEntity:GetActivityConfigs()
     self.ShopId         = self.ActivityConfig.ShopId
     self.IsNextDay      = self.ShopDataEntity:IsSign()
 end
@@ -72,6 +74,8 @@ function XUiAccumulateExpendShopMain:InitView()
     self.RImgGold:SetRawImage(goldIcon)
     self.RImgGold1:SetRawImage(goldIcon)
     self.TxtNum.text = self.ActivityConfig.ItemExchangeRate
+    self.HongkaNum.text = self.ActivityConfig.ItemExchangeRate
+
     self:HideBubble()
 end
 
@@ -82,10 +86,12 @@ function XUiAccumulateExpendShopMain:RefreshAccumemlateDataTxt()
         self.GridReward = self.GridReward or XUiGridCommon.New(self, self.Grid256New)
         self.GridReward:Refresh(rewardItems[1])
         self.PanelDailyReward.gameObject:SetActiveEx(true)
+        self.SignBtn:ShowReddot(true)
     else
         self.PanelDailyReward.gameObject:SetActiveEx(false)
+        self.SignBtn:ShowReddot(false)
     end
-    self.HongkaNum.text = self.ShopDataEntity:GetTotalConsumeCount()
+    -- self.HongkaNum.text = self.ShopDataEntity:GetTotalConsumeCount()
     self.CoinNum.text   = self.ShopDataEntity:GetConvertedCount()
     self.TxtMax.gameObject:SetActiveEx(self.ShopDataEntity:GetConvertedCount() >= self.ActivityConfig.ShopItemMaxCount)
 end
@@ -98,9 +104,10 @@ function XUiAccumulateExpendShopMain:RefreshTime()
         self.SignTxtTime.text = ""
     end
 
-     self.TxtTime.text = XUiHelper.GetInTimeDesc(
-            XFunctionManager.GetStartTimeByTimeId(self.ActivityConfig.TimeId),
-            XFunctionManager.GetEndTimeByTimeId(self.ActivityConfig.TimeId))
+    self.TxtTime.text = XUiHelper.GetInTimeDesc(
+        XFunctionManager.GetStartTimeByTimeId(self.ActivityConfig.TimeId),
+        XFunctionManager.GetEndTimeByTimeId(self.ActivityConfig.TimeId))
+    self:CheckTimeEnd()
 end
 
 function XUiAccumulateExpendShopMain:_RegisterButtonClicks()
@@ -112,9 +119,14 @@ function XUiAccumulateExpendShopMain:_RegisterButtonClicks()
     self.BtnMainUi:AddEventListener(handler(self, XLuaUiManager.RunMain))
     self.BtnClose:AddEventListener(handler(self, self.HideBubble))
     self.BtnTips:AddEventListener(handler(self, self.ShowBubble))
-    self.SignBtn:AddEventListener(function() 
+    self.BtnHelp:AddEventListener(handler(self, self.ShowHelp))
+    self.SignBtn:AddEventListener(function()
         self._Control:AccumulateExpendShopSign()
     end)
+end
+
+function XUiAccumulateExpendShopMain:ShowHelp()
+    XLuaUiManager.Open("UiAccumulateExpendShopLog")
 end
 
 --region 商品展示
@@ -125,7 +137,10 @@ function XUiAccumulateExpendShopMain:ShowShop(shopId)
 end
 
 function XUiAccumulateExpendShopMain:UpdateInfo(shopId)
-    self.GoodsList = XShopManager.GetShopGoodsList(shopId)
+    if XTool.UObjIsNil(self.PanelItemList) then
+        return
+    end
+    self.GoodsList = self.ShopDataEntity:SortGoodList(shopId)
     self.DynamicTable:SetDataSource(self.GoodsList)
     self.DynamicTable:ReloadDataASync()
 end
@@ -189,10 +204,30 @@ function XUiAccumulateExpendShopMain:HideBubble()
 end
 
 function XUiAccumulateExpendShopMain:GetTomorrowTime()
-    self.IsNextDay = self.IsNextDay or XTime.GetSeverTomorrowFreshTime() - XTime.GetServerNowTimestamp() <= 0
-    local timeStr = XUiHelper.GetTime(XTime.GetSeverTomorrowFreshTime() - XTime.GetServerNowTimestamp(),
+    local now = XTime.GetServerNowTimestamp()
+    local todayFreshTime = XTime.GetSeverTodayFreshTime()
+    local tomorrowFreshTime = XTime.GetSeverTomorrowFreshTime()
+    local tempTime = now >= todayFreshTime and tomorrowFreshTime  or todayFreshTime
+
+    self.IsNextDay = self.IsNextDay or tempTime - XTime.GetServerNowTimestamp() <= 0
+    local timeStr = XUiHelper.GetTime(tempTime- XTime.GetServerNowTimestamp(),
         XUiHelper.TimeFormatType.ACTIVITY)
     return timeStr
+end
+
+function XUiAccumulateExpendShopMain:CheckTimeEnd()
+    local configId = self._Control:GetAccumulateExpendShopModel():GetActivityId()
+    if configId == 0 then
+        XUiManager.TipText("ActivityMainLineEnd")
+        XLuaUiManager.RunMain()
+        return
+    end
+    local config = self.ShopDataEntity:GetActivityConfigs()
+    if not config or not XFunctionManager.CheckInTimeByTimeId(config.TimeId) then
+        XUiManager.TipText("ActivityMainLineEnd")
+        XLuaUiManager.RunMain()
+        return
+    end
 end
 
 return XUiAccumulateExpendShopMain

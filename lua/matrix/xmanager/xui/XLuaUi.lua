@@ -85,6 +85,7 @@ function XLuaUi:OnDestroyUi()
     self:StopAllTweener()
     self:ReleaseRedPoint()
     self:DestroyChildNodes()
+    self:RemoveAllCacheTexture()
     self:OnDestroy()
     self:CleanSwitchControlTips()
     XEventManager.DispatchEvent(XEventId.EVENT_UI_DESTROY)
@@ -531,9 +532,14 @@ function XLuaUi:SetActive(active)
     self.UiProxy:SetActive(temp)
 end
 
+-- 判断界面是否被销毁
+function XLuaUi:IsDestroy()
+    return self.UiProxy == nil
+end
+
 --快捷关闭界面
 function XLuaUi:Close()
-    if self.UiProxy == nil then
+    if self:IsDestroy() then
         XLog.Error(self.Name .. "重复Close")
     else
         self.UiProxy:Close()
@@ -541,7 +547,7 @@ function XLuaUi:Close()
 end
 
 function XLuaUi:CloseImmediately()
-    if self.UiProxy == nil then
+    if self:IsDestroy() then
         XLog.Error(self.Name .. "重复CloseImmediately")
     else
         self.UiProxy:CloseImmediately()
@@ -1069,6 +1075,41 @@ function XLuaUi:GetSignalData()
         self.SignalData = XSignalData.New()
     end
     return self.SignalData
+end
+
+function XLuaUi:RemoveCacheTexture(key)
+    if not self._CacheTextureDic then return end
+
+    local texture = self._CacheTextureDic[key]
+    if texture then
+        CS.UnityEngine.Object.Destroy(texture)
+        self._CacheTextureDic[key] = nil
+    end
+end
+
+function XLuaUi:AddCacheTexture(texture, key)
+    if not self._CacheTextureDic then
+        self._CacheTextureDic = {}
+    end
+
+    local defaultKey = key or 0
+    self:RemoveCacheTexture(defaultKey)
+    self._CacheTextureDic[defaultKey] = texture
+end
+
+function XLuaUi:GetCacheTexture(key)
+    if not self._CacheTextureDic then return end
+    local defaultKey = key or 0
+    return self._CacheTextureDic[defaultKey]
+end
+
+function XLuaUi:RemoveAllCacheTexture()
+    if not self._CacheTextureDic then return end
+
+    for _, texture in pairs(self._CacheTextureDic) do
+        CS.UnityEngine.Object.Destroy(texture)
+    end
+    self._CacheTextureDic = nil
 end
 
 -- value : XSignalData

@@ -66,7 +66,7 @@ function XUiPanelTheatre5SettleGameDetail:OnStart(resultData)
 
     if self.BtnMissionDetailClose then
         self.BtnMissionDetailClose:AddEventListener(function()
-            self.TaskDetail:Close()
+            self.TaskDetail:CloseWithAnimation()
             self.BtnMissionDetailClose.gameObject:SetActiveEx(false)
         end)
         self.BtnMissionDetailClose.gameObject:SetActiveEx(false)
@@ -201,12 +201,22 @@ function XUiPanelTheatre5SettleGameDetail:RefreshMissionShow()
             -- 完成情况
             if self.PanelNone then
                 self.PanelNone.gameObject:SetActiveEx(not isComplete)
+
+                if not isComplete then
+                    if self.NoMissionRelicTxt then
+                        self.NoMissionRelicTxt.text = self._Control.MissionControl:GetClientConfigMissionStateLabelInFinalSettle(true)
+                    end
+                end
             end
         else
             self.BtnReward:SetButtonState(CS.UiButtonState.Disable)
             -- 完成情况
             if self.PanelNone then
                 self.PanelNone.gameObject:SetActiveEx(true)
+
+                if self.NoMissionRelicTxt then
+                    self.NoMissionRelicTxt.text = self._Control.MissionControl:GetClientConfigMissionStateLabelInFinalSettle(false)
+                end
             end
         end
         

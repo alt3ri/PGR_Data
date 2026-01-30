@@ -155,12 +155,12 @@ function XUiBigWorldMapDetail:OnBtnGoClick()
         else
             local playerTransform = CS.StatusSyncFight.XFightClient.GetCurrentNpcTransform(false)
             local playerPosition = playerTransform.position
-            local targetPosition = pinData.WorldPosition
-            local quickPosition = quickPinData.WorldPosition
+            local targetPosition = pinData:GetAiMemoryWorldPosition()
+            local quickPosition = quickPinData:GetAiMemoryWorldPosition()
             local playerDistance = math.pow((targetPosition.x - playerPosition.x), 2) +
-                                       math.pow((targetPosition.y - playerPosition.y), 2)
+                                       math.pow((targetPosition.z - playerPosition.z), 2)
             local quickDistance = math.pow((quickPosition.x - targetPosition.x), 2) +
-                                      math.pow((quickPosition.y - targetPosition.y), 2)
+                                      math.pow((quickPosition.z - targetPosition.z), 2)
             local baseline = math.pow(150, 2)
 
             if playerDistance > quickDistance and quickDistance > baseline then

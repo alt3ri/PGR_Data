@@ -137,6 +137,7 @@ function XUiDlcMultiPlayerRoomCute:OnEnable()
 
     self._IsReadyEnterWorld = false
     self._IsRefreshedCharacter = false
+    XEventManager.AddEventListener(XEventId.EVENT_UILOADING_CLOSED, self.CheckGuide, self)
 end
 
 function XUiDlcMultiPlayerRoomCute:OnDisable()
@@ -144,6 +145,7 @@ function XUiDlcMultiPlayerRoomCute:OnDisable()
     self:_RemoveListeners()
 
     self._Control:RegisterEventCacheListeners()
+    XEventManager.RemoveEventListener(XEventId.EVENT_UILOADING_CLOSED, self.CheckGuide, self)
 end
 
 -- endregion
@@ -394,6 +396,7 @@ end
 function XUiDlcMultiPlayerRoomCute:_RegisterSchedules()
     -- 在此处注册定时器
     self:_RegisterActivityTimer()
+
 end
 
 function XUiDlcMultiPlayerRoomCute:_RemoveSchedules()
@@ -855,6 +858,10 @@ end
 
 function XUiDlcMultiPlayerRoomCute:_PlayAnimation(callback)
     self:PlayAnimation("Enable", callback)
+end
+
+function XUiDlcMultiPlayerRoomCute:CheckGuide()
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 -- endregion

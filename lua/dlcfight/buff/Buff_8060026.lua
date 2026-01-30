@@ -4,12 +4,15 @@ local Base = require("Buff/BuffBase/XBuffBase")
 local XBuffScript8060026 = XDlcScriptManager.RegBuffScript(8060026, "XBuffScript8060026", Base)
 --效果说明：支援时获得减伤
 
-function XBuffScript8060026:Init()
+function XBuffScript8060026:Ctor()
+    self.magicId=8060027 --减伤BUFF
+end
+
+function XBuffScript8060026:ScriptInit(isGainControl)
     --初始化
-    Base.Init(self)
+    Base.ScriptInit(self,isGainControl)
     ------------配置------------
     self.magicLevel=1 --等新接口直接获取自己的BUFF等级
-    self.magicId=8060027 --减伤BUFF
     self.hasLevel=false
     ------------执行------------
 end

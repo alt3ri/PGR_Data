@@ -52,7 +52,7 @@
     {
         "Key": "TargetingComposeConsumeConditionIds",
         "Desc": "\u5b9a\u5411\u5408\u6210\u51fa\u73b0\u6761\u4ef6",
-        "Param": "['864000']"
+        "Param": "['864002']"
     },
     {
         "Key": "TutorialLevelId",
@@ -62,6 +62,26 @@
     {
         "Key": "GlobalMatchEnableCondition",
         "Desc": "\u5168\u5c40\u5339\u914d\u5f00\u542f\u6761\u4ef6",
-        "Param": "['864000', '864001']"
+        "Param": "['864006']"
+    },
+    {
+        "Key": "GlobalMatchDropGroupId",
+        "Desc": "\u5168\u5c40\u5339\u914d\u6389\u843d\u5956\u52b1",
+        "Param": "['1016']"
+    },
+    {
+        "Key": "GlobalMatchRewardTimes",
+        "Desc": "\u5168\u5c40\u5339\u914d\u5956\u52b1\u6bcf\u65e5\u6389\u843d\u6b21\u6570",
+        "Param": "['3']"
+    },
+    {
+        "Key": "LoserRewardMaxPercent",
+        "Desc": "\u5931\u8d25\u65f6\u5956\u52b1\u6700\u5927\u500d\u7387",
+        "Param": "['80']"
+    },
+    {
+        "Key": "LoserEffectBossHpPercent",
+        "Desc": "\u5931\u8d25\u65f6\u7684\u5956\u52b1\u83b7\u53d6\u9700\u8981\u6253\u6389\u7684BOSS\u8840\u91cf\u95e8\u69db",
+        "Param": "['15']"
     }
 ]

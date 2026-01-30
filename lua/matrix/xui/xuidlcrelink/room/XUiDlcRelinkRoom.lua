@@ -1,5 +1,6 @@
 local XUiGridDlcRelinkMultiPlayerChar = require("XUi/XUiDlcRelink/Room/Grid/XUiGridDlcRelinkMultiPlayerChar")
 local XUiPanelDlcRelinkBoss = require("XUi/XUiDlcRelink/Room/Panel/XUiPanelDlcRelinkBoss")
+local XUiPanelDlcRelinkGlobal = require("XUi/XUiDlcRelink/Room/Panel/XUiPanelDlcRelinkGlobal")
 ---@class XUiDlcRelinkRoom : XLuaUi
 ---@field private _Control XDlcRelinkControl
 local XUiDlcRelinkRoom = XLuaUiManager.Register(XLuaUi, "UiDlcRelinkRoom")
@@ -91,6 +92,8 @@ function XUiDlcRelinkRoom:OnGetLuaEvents()
         XEventId.EVENT_DLC_ROOM_MATCH, -- 开始匹配
         XEventId.EVENT_DLC_ROOM_CANCEL_MATCH, -- 取消匹配
         XEventId.EVENT_DLC_ROOM_AUTO_MATCH_CHANGE, -- 自动匹配状态改变
+        XEventId.EVENT_DLC_RELINK_GLOBAL_MATCH_FLAG_CHANGE, -- 全局匹配开关状态改变
+        XEventId.EVENT_DLC_RELINK_DAILY_RESET, -- 每日重置
     }
 end
 
@@ -118,6 +121,11 @@ function XUiDlcRelinkRoom:OnNotify(event, ...)
         self:OnCancelMatching()
     elseif event == XEventId.EVENT_DLC_ROOM_AUTO_MATCH_CHANGE then
         self:RefreshAutoMatchButton()
+    elseif event == XEventId.EVENT_DLC_RELINK_GLOBAL_MATCH_FLAG_CHANGE then
+        self:RefreshButtonState()
+        self:RefreshPanelBoss()
+    elseif event == XEventId.EVENT_DLC_RELINK_DAILY_RESET then
+        self:RefreshPanelGlobal()
     end
 end
 
@@ -184,8 +192,9 @@ end
 function XUiDlcRelinkRoom:RefreshButtonState()
     local isInRoom = XMVCA.XDlcRoom:IsInRoom()
     local isTutorial = self._Control:IsTutorialChapter()
+    local isGlobalMatch = self._Control:IsGlobalMatchEnabled()
     self:SwitchButtonLeftState(isInRoom and ButtonLeftState.Leave or ButtonLeftState.Create)
-    self.BtnCreate:SetButtonState(isTutorial and XUiButtonState.Disable or XUiButtonState.Normal)
+    self.BtnCreate:SetButtonState((isTutorial or isGlobalMatch) and XUiButtonState.Disable or XUiButtonState.Normal)
     if isTutorial then
         self:SwitchButtonRightState(ButtonRightState.Fight)
         self:RefreshFightButton(true)
@@ -203,6 +212,10 @@ function XUiDlcRelinkRoom:RefreshButtonState()
         end
         self.BtnOpen.gameObject:SetActiveEx(isLeader)
         self:RefreshAutoMatchButton()
+        if isLeader then
+            -- 检查引导
+            XDataCenter.GuideManager.CheckGuideOpen()
+        end
     else
         local isMatching = XMVCA.XDlcRoom:IsMatching()
         self:SwitchButtonRightState(isMatching and ButtonRightState.Matching or ButtonRightState.Match)
@@ -237,6 +250,22 @@ function XUiDlcRelinkRoom:RefreshPanelBoss()
         self.PanelBossNode:Open()
     end
     self.PanelBossNode:Refresh()
+    self:RefreshPanelGlobal()
+end
+
+function XUiDlcRelinkRoom:RefreshPanelGlobal()
+    if not self.PanelGlobalNode then
+        ---@type XUiPanelDlcRelinkGlobal
+        self.PanelGlobalNode = XUiPanelDlcRelinkGlobal.New(self.PanelGlobal, self)
+    end
+    local isInRoom = XMVCA.XDlcRoom:IsInRoom()
+    local isOpen = self._Control:CheckGlobalMatchEnableCondition()
+    if not isInRoom and isOpen then
+        self.PanelGlobalNode:Open()
+        self.PanelGlobalNode:Refresh()
+    else
+        self.PanelGlobalNode:Close()
+    end
 end
 
 function XUiDlcRelinkRoom:RefreshPanelExp()
@@ -347,6 +376,7 @@ function XUiDlcRelinkRoom:OnEnterRoom()
     self:RefreshMultiPlayerChar()
     self:RefreshButtonState()
     self:RefreshPanelBoss()
+    self:CheckShowMechanismTeach()
 end
 
 function XUiDlcRelinkRoom:OnKickOutRoom()
@@ -394,6 +424,7 @@ end
 ---@param roomData XDlcRoomData
 ---@param changeFlags { IsWorldIdChange : boolean, IsAutoMatchChange :boolean, IsAbilityChange : boolean }
 function XUiDlcRelinkRoom:OnRoomInfoChange(roomData, changeFlags)
+    self:RefreshMultiPlayerChar()
     self:RefreshPanelBoss()
     self:RefreshButtonState()
 end
@@ -434,14 +465,14 @@ function XUiDlcRelinkRoom:RegisterUiEvents()
     self.BtnTask:AddEventListener(handler(self, self.OnBtnTaskClick))
     self.BtnChat:AddEventListener(handler(self, self.OnBtnChatClick))
     self.BtnInvite:AddEventListener(handler(self, self.OnBtnInviteClick))
-    self.BtnOpen:AddEventListener(handler(self, self.OnBtnOpenClick), true, true, 1.2)
-    self.BtnFight:AddEventListener(handler(self, self.OnBtnFightClick))
-    self.BtnMatch:AddEventListener(handler(self, self.OnBtnMatchClick))
-    self.BtnMatching:AddEventListener(handler(self, self.OnBtnMatchingClick))
-    self.BtnReady:AddEventListener(handler(self, self.OnBtnReadyClick))
-    self.BtnCancelReady:AddEventListener(handler(self, self.OnBtnCancelReadyClick))
-    self.BtnLeave:AddEventListener(handler(self, self.OnBtnLeaveClick))
-    self.BtnCreate:AddEventListener(handler(self, self.OnBtnCreateClick))
+    self.BtnOpen:AddEventListener(handler(self, self.OnBtnOpenClick), true, true, 0.5)
+    self.BtnFight:AddEventListener(handler(self, self.OnBtnFightClick), true, true, 0.5)
+    self.BtnMatch:AddEventListener(handler(self, self.OnBtnMatchClick), true, true, 0.5)
+    self.BtnMatching:AddEventListener(handler(self, self.OnBtnMatchingClick), true, true, 0.5)
+    self.BtnReady:AddEventListener(handler(self, self.OnBtnReadyClick), true, true, 0.5)
+    self.BtnCancelReady:AddEventListener(handler(self, self.OnBtnCancelReadyClick), true, true, 0.5)
+    self.BtnLeave:AddEventListener(handler(self, self.OnBtnLeaveClick), true, true, 0.5)
+    self.BtnCreate:AddEventListener(handler(self, self.OnBtnCreateClick), true, true, 0.5)
     self.BtnExp:AddEventListener(handler(self, self.OnBtnExpClick))
     self.BtnEncyclopedia:AddEventListener(handler(self, self.OnBtnEncyclopediaClick))
     self:BindHelpBtn(self.BtnHelp, self._Control:GetClientConfig("HelpKey"))
@@ -456,7 +487,11 @@ function XUiDlcRelinkRoom:OnBtnTaskClick()
 end
 
 function XUiDlcRelinkRoom:OnBtnChatClick()
-    XUiHelper.OpenUiChatServeMain(false, ChatChannelType.Room, ChatChannelType.World)
+    if XMVCA.XDlcRoom:IsInRoom() then
+        XUiHelper.OpenUiChatServeMain(false, ChatChannelType.Room, ChatChannelType.World)
+    else
+        XUiHelper.OpenUiChatServeMain(false, ChatChannelType.World)
+    end
 end
 
 function XUiDlcRelinkRoom:OnBtnInviteClick()
@@ -520,6 +555,13 @@ function XUiDlcRelinkRoom:OnBtnFightClick()
         return
     end
 
+    -- 仓库是否已满
+    local curCount, maxCount = self._Control:GetEquipBagCurCountAndMaxCount()
+    if curCount >= maxCount then
+        self._Control:OpenCommonTipCode(XCode.RelinkEquipBagIsFull)
+        return
+    end
+
     -- 职业不合理 & 装备战力不满足推荐
     local isOccupationRational = self:CheckTeamOccupationRational(team)
     local isEquipAbilityRational = self:CheckTeamEquipAbilityRational(team)
@@ -573,20 +615,23 @@ function XUiDlcRelinkRoom:OnBtnMatchClick()
         return
     end
 
+    local isGlobalMatch = self._Control:IsGlobalMatchEnabled()
     -- 是否选择关卡
     local worldId = self._Control:GetActivityWorldId()
     local levelId = self._Control:GetCurrentSelectLevelId()
-    if not XTool.IsNumberValid(levelId) then
+    if not isGlobalMatch and not XTool.IsNumberValid(levelId) then
         self._Control:OpenCommonTipText("RoomNotSelectLevelTips")
         return
     end
 
     -- 当前角色装备战力是否满足推荐
-    local totalAbility = self._Control:GetEquipTotalAbilityByCharacterId(characterId)
-    local abilityLimit = self._Control:GetLevelAbilityLimit(levelId)
-    if totalAbility < abilityLimit then
-        self._Control:OpenCommonTipText("RoomEquipAbilityNotRationalTips")
-        return
+    if not isGlobalMatch then
+        local totalAbility = self._Control:GetEquipTotalAbilityByCharacterId(characterId)
+        local abilityLimit = self._Control:GetLevelAbilityLimit(levelId)
+        if totalAbility < abilityLimit then
+            self._Control:OpenCommonTipText("RoomEquipAbilityNotRationalTips")
+            return
+        end
     end
 
     -- 装备背包是否已满
@@ -609,7 +654,7 @@ function XUiDlcRelinkRoom:OnBtnMatchClick()
 end
 
 function XUiDlcRelinkRoom:OnReqMatchConfirm(worldId, levelId)
-    if XTool.IsNumberValid(worldId) and XTool.IsNumberValid(levelId) then
+    if XTool.IsNumberValid(worldId) then
         XMVCA.XDlcRoom:ReqMatch(worldId, levelId, true)
     end
 end
@@ -650,13 +695,10 @@ function XUiDlcRelinkRoom:OnBtnCreateClick()
     end
 
     if self._Control:IsTutorialChapter() then
-        local title = self._Control:GetClientConfig("TipTitle")
-        local msg = self._Control:GetClientConfig("TrainingCreateRoomTip")
-        local extraData = { TipsKey = "TrainingLevelCreateRoom" }
-        self._Control:OpenCommonTipDialog(title, msg, nil, function()
-            self._Control:SetCurrentSelectLevelData(nil)
-            self:OnBtnCreateClick()
-        end, extraData)
+        return
+    end
+
+    if self._Control:IsGlobalMatchEnabled() then
         return
     end
 
@@ -686,6 +728,7 @@ end
 function XUiDlcRelinkRoom:OnBtnExpClick()
     XLuaUiManager.Open("UiDlcRelinkPopupResearch", function()
         self:RefreshPanelExp()
+        self:RefreshBtnTask()
     end)
 end
 

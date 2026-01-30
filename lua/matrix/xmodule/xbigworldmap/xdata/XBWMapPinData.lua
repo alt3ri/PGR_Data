@@ -17,6 +17,7 @@ function XBWMapPinData:Ctor()
     self.Radius = 0
     self.DisplayType = XMVCA.XBigWorldMap.MapPinDisplayType.Point
     self.IsOptionalQuestObjective = false
+    self._IsOut = false
 end
 
 function XBWMapPinData:UpdateDisplay(isDisplay)
@@ -135,9 +136,11 @@ end
 
 function XBWMapPinData:IsDisplaying()
     if XTool.IsNumberValid(self.ConditionId) then
-        return XMVCA.XBigWorldService:CheckCondition(self.ConditionId)
+        if not XMVCA.XBigWorldService:CheckCondition(self.ConditionId) then
+            return false
+        end
     end
-    
+
     return self.IsDisplay
 end
 
@@ -188,6 +191,14 @@ function XBWMapPinData:GetWorldPosition(isAssisted)
     return self.WorldPosition
 end
 
+function XBWMapPinData:GetAiMemoryWorldPosition()
+    if self:IsAiMemoryGroup() then
+        return self.TrackPosition or self.WorldPosition
+    end
+
+    return self.WorldPosition
+end
+
 function XBWMapPinData:GetTeleportLevelId()
     if self:IsTeleportLevel() then
         return self.TeleportLevelId
@@ -220,12 +231,24 @@ function XBWMapPinData:IsPointPin()
     return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.Point) ~= 0
 end
 
-function XBWMapPinData:IsRadiusPin()
-    return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.Radius) ~= 0
+function XBWMapPinData:IsLittleMapRadiusPin()
+    return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.LittleMapRadius) ~= 0
+end
+
+function XBWMapPinData:IsBigMapRadiusPin()
+    return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.BigMapRadius) ~= 0
 end
 
 function XBWMapPinData:SetDisplayType(value)
     self.DisplayType = value
+end
+
+function XBWMapPinData:SetIsOut(isOut)
+    self._IsOut = isOut
+end
+
+function XBWMapPinData:IsOut()
+    return self._IsOut
 end
 
 return XBWMapPinData

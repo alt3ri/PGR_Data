@@ -405,9 +405,11 @@ function XUiRestaurantTakePhoto:DoScreenshot()
             XTime.TimestampToGameDateTimeString(XTime.GetServerNowTimestamp(), "yyyy-MM-dd-HH-mm"))
 
     XCameraHelper.ScreenShotNew(self.ImgPicture, self.Camera:GetCamera(), function(screen)
+        self:AddCacheTexture(screen, 1)
         XCameraHelper.ScreenShotNew(self.UiPanelCapture.ImagePhoto, self.CameraCapture, function(shot)
             CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Normal, CS.XUiManager.Instance.UiCamera)
             self.ShareShot = shot
+            self:AddCacheTexture(shot, 2)
             self.PictureName = pictureName
 
             self:ChangeState(XPhotographConfigs.PhotographViewState.Capture)

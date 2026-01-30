@@ -98,7 +98,12 @@ end
 -- 右侧装备气泡展示
 ---@param targetTransform UnityEngine.RectTransform
 function XUiDlcRelinkPopupEquipComposeResult:ShowEquipBubble(equipUid, targetTransform)
-    XLuaUiManager.Open("UiDlcRelinkBubbleEquipDetail", equipUid, targetTransform, handler(self, self.OnBubbleEquipDetailClose))
+    -- 响应穿透事件屏蔽
+    for _, equipGrid in pairs(self.DynamicTable:GetGrids()) do
+        equipGrid:SetRespondPassEvent(equipGrid ~= self.CurSelectGrid)
+    end
+    -- 打开气泡详情
+    XLuaUiManager.Open("UiDlcRelinkBubbleEquipDetail", equipUid, targetTransform, handler(self, self.OnBubbleEquipDetailClose), { IsEventPass = true })
 end
 
 function XUiDlcRelinkPopupEquipComposeResult:OnBubbleEquipDetailClose()
@@ -110,6 +115,7 @@ function XUiDlcRelinkPopupEquipComposeResult:OnBubbleEquipDetailClose()
 end
 
 function XUiDlcRelinkPopupEquipComposeResult:RegisterUiEvents()
+    self.BtnClose.IsRespondPassEvent = false
     self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
     self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
     self.BtnSure:AddEventListener(handler(self, self.OnBtnCloseClick))

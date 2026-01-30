@@ -37,7 +37,7 @@ function XUiTheatre5BattleShop:OnAwake()
         self.FxCoin.gameObject:SetActiveEx(false)
         self._FxCoinPool = XPool.New(function()
             local go = CS.UnityEngine.GameObject.Instantiate(self.FxCoin.gameObject, self.FxCoin.transform.parent)
-            go:SetActiveEx(true)
+            --go:SetActiveEx(true)
             local particlePlayer = go:GetComponent(typeof(CS.XUiPlayParticleSystemGroup))
 
             if particlePlayer then

@@ -2,7 +2,7 @@ local Base = require("Buff/BuffBase/XBuffBase")
 
 ---@class XBuffScript1016300 : XBuffBase
 local XBuffScript1016300 = XDlcScriptManager.RegBuffScript(1016300, "XBuffScript1016300", Base)
---效果说明：敌人生命最大值高于自身最大值healthPercent倍时，造成伤害提升
+--效果说明：敌人生命最大值大等于自身最大值healthPercent倍时，造成伤害提升
 
 function XBuffScript1016300:Init()
     --初始化
@@ -38,11 +38,11 @@ function XBuffScript1016300:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         local hpMaxSelf = self._proxy:GetNpcAttribMaxValue(self._uuid, ENpcAttrib.Life)
         local hpMaxTarget = self._proxy:GetNpcAttribMaxValue(self.targetId, ENpcAttrib.Life)
 
-        for thisLevel, buffGroupThisLevel in ipairs(self.buffGroupId) do
+        for thisLevel, buffGroupThisLevel in ipairs(self.buffLevelGroupId) do
             if self._proxy:CheckBuffByKind(self._uuid, buffGroupThisLevel) then
                 --双方生命值判定
-                local isHealthOk = hpMaxSelf*self.healthPercent[thisLevel] < hpMaxTarget
-                --如果自身生命最大值的{0}%<敌人生命最大值，执行
+                local isHealthOk = hpMaxSelf*self.healthPercent[thisLevel] <= hpMaxTarget
+                --如果自身生命最大值的{0}%<=敌人生命最大值，执行
                 if isHealthOk then
                     for _, magicId in ipairs(self.magicIds) do
                         self._proxy:ApplyMagic(self._uuid,self._uuid,magicId, thisLevel)

@@ -60,7 +60,7 @@ function XUiPanelFashionSuitButtonGroup:UpdateBuyBtn(id)
     self._FashionConfig = XFashionConfigs.GetFashionTemplate(id)
     local isShowBuy, isShowGet, isShowWear
     local state = XDataCenter.FashionManager.GetFashionStatus(self._Id)
-
+    self.ActivityOpen = false
     if state == FashionStatus.UnOwned then
         self._GainType = self._FashionConfig.FashionGainType
         self._GainParams = self._FashionConfig.FashionGainParams
@@ -73,6 +73,7 @@ function XUiPanelFashionSuitButtonGroup:UpdateBuyBtn(id)
             local data
             if XShopManager.IsShopOpen(self._GainParams[1]) then
                 data = XShopManager.GetShopGoodsInfo(self._GainParams[1], self._GainParams[2])
+                self:GetDiscountActivityIsOpen(self._GainParams[1],data)
             end
             self:ShowGoods(data)
         elseif self._GainType == GainType.Skip then
@@ -140,7 +141,11 @@ function XUiPanelFashionSuitButtonGroup:SetDiscount(isVisible, discount, tagSpri
             self.ImgTagDiscount:SetSprite(tagSprice)
         end
         if discount then
-            self.TxtDiscount.text = discount
+            if XOverseaManager.IsJPRegion() then
+                self.TxtDiscount.text = XUiHelper.GetDiscountTextV2(discount)
+            else
+                self.TxtDiscount.text = discount
+            end
         end
     else
         self.ImgTagDiscount.gameObject:SetActive(false)
@@ -163,6 +168,13 @@ end
 
 ---设置商品下架时间
 function XUiPanelFashionSuitButtonGroup:SetWillBeTakenDown(timeStr)
+    self.BtnBuy:SetButtonState(XUiButtonState.Normal)
+    self.TxtTime.gameObject:SetActiveEx(true)
+    self.TxtTime.text = timeStr
+end
+
+---设置折扣倒计时
+function XUiPanelFashionSuitButtonGroup:SetDiscountCountDown(timeStr)
     self.BtnBuy:SetButtonState(XUiButtonState.Normal)
     self.TxtTime.gameObject:SetActiveEx(true)
     self.TxtTime.text = timeStr
@@ -275,8 +287,7 @@ function XUiPanelFashionSuitButtonGroup:ShowDiscount()
             local disCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(self._ItemData)
             if disCountValue < 1 then
                 if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
-                    local disCountStr = tostring(math.floor((1 - disCountValue) * 100))
-                    tagText = string.format("%s%s", disCountStr, tagText)
+                   tagText = XUiHelper.GetDiscountTextV2(disCountValue)
                 else
                     local disCountStr = string.format("%.1f", disCountValue * 10)
                     if self._ItemData.DiscountShowStr and self._ItemData.DiscountShowStr ~= "" then
@@ -284,9 +295,7 @@ function XUiPanelFashionSuitButtonGroup:ShowDiscount()
                     end
                     tagText = string.format("%s%s", disCountStr, tagText)
                 end
-                if XOverseaManager.IsJPRegion() then
-                    tagText = "お得"
-                end
+             
                 self._IsDisCount = true
             else
                 isShowTag = false
@@ -510,6 +519,8 @@ function XUiPanelFashionSuitButtonGroup:OnPurchaseMoneyNotEnough(skipIndex, left
                 XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
             end)
         end
+    else
+        XLuaUiManager.Open("UiPurchase", skipIndex)
     end
 end
 
@@ -558,28 +569,47 @@ function XUiPanelFashionSuitButtonGroup:ShowGoodsDiscount()
             end
         end
     end
-
+    if self.ActivityOpen then
+        self.Sales = self._GoodsData.ActivityDiscount
+    end
     local hideSales, discount
     if self._GoodsData.Tags == XShopManager.ShopTags.DisCount then
         if self.Sales < 100 then
-            discount = string.format("%s%S", self.Sales / 10, XUiHelper.GetText("Snap"))
+            discount = XUiHelper.GetDiscountText(self.Sales)
         else
             hideSales = true
         end
     end
-
-    if self._GoodsData.Tags == XShopManager.ShopTags.Not or hideSales then
+    if self.ActivityOpen then
+        discount = XUiHelper.GetDiscountText(math.floor(self._GoodsData.ActivityDiscount / 100))
+        self:SetDiscount(true, discount)
+    elseif self._GoodsData.Tags == XShopManager.ShopTags.Not or hideSales then
         self:SetDiscount(false)
     else
         self:SetDiscount(true, discount)
     end
-end
 
+    --显示商店折扣倒计时
+    local shopId = self._GainParams[1]
+    local activityEndTime = XShopManager.GetShopActivityEndTime(shopId)
+    local activityOpen = XShopManager.GetShopActivityIsOpen(shopId)
+    if activityOpen and activityEndTime and activityEndTime > 0 then
+        local gameTime = activityEndTime - XTime.GetServerNowTimestamp()
+        if gameTime > 0 then
+            local leftTimeStr = XUiHelper.GetText("FashionSuitDiscountActivityTip", XUiHelper.GetTime(gameTime, XUiHelper.TimeFormatType.ACTIVITY))
+            self:SetDiscountCountDown(leftTimeStr)
+        end
+    end
+end
 function XUiPanelFashionSuitButtonGroup:ShowGoodsPrice()
     local count = self._GoodsData.ConsumeList[1]
     self:SetConsumeIcon(true, count.Id)
     self:SetOriginalPrice(self.Sales ~= 100, count.Count)
-    self:SetCurPrice(math.floor(count.Count * self.Sales / 100))
+    if self.ActivityOpen then
+        self:SetCurPrice(self.NeedCount)
+    else
+        self:SetCurPrice(math.floor(count.Count * self.Sales / 100))
+    end
 end
 
 function XUiPanelFashionSuitButtonGroup:CheckGoodsRemovalTime()
@@ -592,10 +622,9 @@ function XUiPanelFashionSuitButtonGroup:CheckGoodsRemovalTime()
             local dataTime = XUiHelper.GetTime(self._RemainTime, XUiHelper.TimeFormatType.SHOP)
             self:SetWillBeTakenDown(XUiHelper.GetText("TimeSoldOut", dataTime))
             self._UpdateTimerType = UpdateTimerTypeEnum.SettOff
+            self:UpdateTimer()
             self.Parent:RegisterTimerFun(self._Id, handler(self, self.UpdateTimer))
         end
-    else
-        self:SetHideTime()
     end
 end
 
@@ -620,18 +649,21 @@ end
 
 function XUiPanelFashionSuitButtonGroup:OnShopBuy()
     for _, consume in pairs(self._GoodsData.ConsumeList) do
+        local needCount = self.NeedCount or math.floor(consume.Count * self.Sales / 100)
         if consume.Id == XDataCenter.ItemManager.ItemId.HongKa then
-            local result = XDataCenter.ItemManager.CheckItemCountById(consume.Id, consume.Count)
+            local result = XDataCenter.ItemManager.CheckItemCountById(consume.Id, needCount)
             if not result then
                 local tips = XUiHelper.GetCountNotEnoughTips(consume.Id)
                 XUiManager.TipMsg(tips, XUiManager.UiTipType.Wrong)
+                local payCount = needCount - XDataCenter.ItemManager.GetCount(consume.Id)
+                self:OnPurchaseMoneyNotEnough(XPurchaseConfigs.TabsConfig.Pay, nil, payCount)
                 return
             end
         elseif consume.Id == XDataCenter.ItemManager.ItemId.PaidGem then
-            local result = XDataCenter.ItemManager.CheckItemCountById(consume.Id, consume.Count)
+            local result = XDataCenter.ItemManager.CheckItemCountById(consume.Id, needCount)
             if not result then
                 XUiManager.TipText("ShopItemPaidGemNotEnough")
-                XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.HK)
+                self:OnPurchaseMoneyNotEnough(XPurchaseConfigs.TabsConfig.HK)
                 return
             end
         end
@@ -640,6 +672,7 @@ function XUiPanelFashionSuitButtonGroup:OnShopBuy()
     XShopManager.BuyShop(self._GainParams[1], self._GoodsData.Id, 1, function(res)
         self:UpdateView()
         self.Parent:ShowGift()
+        self.Parent:CallPurchaseCb(res.GoodList)
         local text = XUiHelper.GetText("BuySuccess")
         XUiManager.TipMsg(text, nil, function()
             if res.IsShowBuyResult and not XTool.IsTableEmpty(res.GoodList) then
@@ -650,7 +683,7 @@ function XUiPanelFashionSuitButtonGroup:OnShopBuy()
                 self:ShowWearPopup()
             end
         end)
-    end)
+    end,nil,self.ActivityOpen)
 end
 
 --endregion
@@ -676,4 +709,14 @@ function XUiPanelFashionSuitButtonGroup:SetButtonBg(buyBg, getBg, wearBg)
     self.BtnWear:SetRawImage(wearBg)
 end
 
+--region V4.2商店打折
+function XUiPanelFashionSuitButtonGroup:GetDiscountActivityIsOpen(shopId,goodsData)
+    if not XShopManager.IsShopOpen(shopId) or not XShopManager.GetShopActivityIsOpen(shopId) then
+        return
+    end
+    self.ActivityOpen = XShopManager.GetShopActivityIsOpen(shopId)
+    self.NeedCount = goodsData.ActivityConsumeCount
+end
+
+---endregion
 return XUiPanelFashionSuitButtonGroup

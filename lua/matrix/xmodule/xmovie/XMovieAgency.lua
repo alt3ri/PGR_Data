@@ -76,7 +76,7 @@ function XMovieAgency:RequestAddStageBookmark(cb)
     local stageId = XDataCenter.MovieManager.GetStageId()
     local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
     local actionId = XDataCenter.MovieManager.GetCurPlayingActionId()
-    if XTool.IsNumberValidEx(stageId) or string.IsNilOrEmpty(movieId) or XTool.IsNumberValidEx(actionId) then
+    if not XTool.IsNumberValidEx(stageId) or string.IsNilOrEmpty(movieId) or not XTool.IsNumberValidEx(actionId) then
         return
     end
     

@@ -110,7 +110,7 @@ function XStateMachineController:SwitchState(nextStateEnum)
     self._nextStateEnum = 0
     self._lastStateEnum = self.CurStateEnum
     self.CurStateEnum = nextStateEnum
-    XLog.Warning("[脚本: "..self._proxy.Id.."]XStateMachineController.SwitchState() 切换状态: "..nextStateEnum)
+    --XLog.Error("[脚本: "..self._proxy.Id.."]XStateMachineController.SwitchState() 切换状态: "..nextStateEnum)
     self:AfterSwitchState()
 end
 

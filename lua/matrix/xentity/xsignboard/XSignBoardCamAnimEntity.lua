@@ -3,6 +3,8 @@
 ---@field _SignBoardCamAnimNew XSignBoardCamAnimNew 新组件 卡池和看板共用一套预制体
 local XSignBoardCamAnimEntity = XClass(nil, "XSignBoardCamAnimEntity")
 
+local Status = XEnumConst.Favorability.CameraAnimStatus
+
 function XSignBoardCamAnimEntity:Ctor()
     -- todo:由于原先代码是New出来后一直持有 没有释放 且看板代码杂乱 所以此处也暂时没有释放
     self._SignBoardCamAnim = require("XEntity/XSignBoard/XSignBoardCamAnim").New()
@@ -88,6 +90,7 @@ function XSignBoardCamAnimEntity:Play()
     else
         self._SignBoardCamAnim:Play()
     end
+    self:OnStatusChange(Status.Play)
 end
 
 function XSignBoardCamAnimEntity:Pause()
@@ -96,6 +99,7 @@ function XSignBoardCamAnimEntity:Pause()
     else
         self._SignBoardCamAnim:Pause()
     end
+    self:OnStatusChange(Status.Pause)
 end
 
 function XSignBoardCamAnimEntity:Resume()
@@ -104,6 +108,7 @@ function XSignBoardCamAnimEntity:Resume()
     else
         self._SignBoardCamAnim:Resume()
     end
+    self:OnStatusChange(Status.Resume)
 end
 
 function XSignBoardCamAnimEntity:Close()
@@ -112,6 +117,18 @@ function XSignBoardCamAnimEntity:Close()
     else
         self._SignBoardCamAnim:Close()
     end
+    self:OnStatusChange(Status.Close)
+end
+
+function XSignBoardCamAnimEntity:Destory()
+    if self._IsUseNewCamAnim then
+        self._SignBoardCamAnimNew:Destory()
+    end
+    self:OnStatusChange(Status.Destory)
+end
+
+function XSignBoardCamAnimEntity:OnStatusChange(status)
+    XEventManager.DispatchEvent(XEventId.EVENT_SIGNBOARD_CAMERA_ANIM_STATUS_CHANGE, status, self._IsUseNewCamAnim)
 end
 
 return XSignBoardCamAnimEntity

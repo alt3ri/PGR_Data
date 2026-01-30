@@ -19,6 +19,8 @@ function XUiGachaBiankaStageLine:OnStart(gachaId)
     self._ChapterId = self._GachaCfg.FestivalActivityId
     self._ChapterTemplate = XFestivalActivityConfig.GetFestivalById(self._ChapterId)
     self._Scene = require("XUi/XUiGachaBianka/Grid/XUiPanelGachaBiankaScene").New(self.Transform, self)
+    ---@type XUiPanelSwitchableSceneAnim
+    self._SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
 end
 
 function XUiGachaBiankaStageLine:OnEnable()
@@ -40,12 +42,18 @@ function XUiGachaBiankaStageLine:OnEnable()
 
     self._Scene:PlayEnterStageLine()
     self._Scene:PlayEnableStory()
+    self._SwitchableScene:AutoPlay(self.UiSceneInfo.Transform)
 end
 
 function XUiGachaBiankaStageLine:OnDisable()
     for _, stage in pairs(self._Stages) do
         stage:Close()
     end
+    self._SwitchableScene:Stop()
+end
+
+function XUiGachaBiankaStageLine:OnDestory()
+    self._SwitchableScene:OnDestory()
 end
 
 function XUiGachaBiankaStageLine:InitButton()
@@ -122,11 +130,13 @@ function XUiGachaBiankaStageLine:HandleStageLines()
         self._FestivalStageLine[i] = itemLine
     end
 
-    -- 隐藏多余组件
+    -- 隐藏/显示多余组件
+    local stageInfo = XDataCenter.FubenManager.GetStageInfo(self._StageIds[#self._StageIds])
+    local isAllOpen = stageInfo and stageInfo.IsOpen
     local indexLine = #self._FestivalStageLine
     local extraLine = self.PanelStageContent:Find(string.format("Line%d", indexLine))
     while extraLine do
-        extraLine.gameObject:SetActiveEx(false)
+        extraLine.gameObject:SetActiveEx(isAllOpen)
         indexLine = indexLine + 1
         extraLine = self.PanelStageContent:Find(string.format("Line%d", indexLine))
     end
@@ -146,21 +156,6 @@ function XUiGachaBiankaStageLine:LoadEffect(effectUrl)
 
     self.PanelEffect.gameObject:LoadUiEffect(effectUrl)
     self.PanelEffect.gameObject:SetActiveEx(true)
-end
-
--- 更新刷新
-function XUiGachaBiankaStageLine:RefreshFestivalNodes()
-    if not self._ChapterTemplate or not self._StageIds then
-        return
-    end
-    for i = 1, #self._StageIds do
-        self._Stages[i]:UpdateNode(i, self._ChapterTemplate.Id, self._StageIds[i])
-    end
-    self:UpdateNodeLines()
-    -- 移动至ListView正确的位置
-    if self.PanelStageContentSizeFitter then
-        self.PanelStageContentSizeFitter:SetLayoutHorizontal()
-    end
 end
 
 -- 更新节点线条
@@ -240,7 +235,9 @@ function XUiGachaBiankaStageLine:OnGotoGacha()
     if XLuaUiManager.IsUiLoad("UiGachaBianka402Main") then
         self:Close()
     else
-        XLuaUiManager.Open("UiGachaBianka402Main", self._GachaId, self._IsFirstOpenGachaMain, true)
+        --v4.2优化：从活动打开剧情界面，再第一次进入研发界面时：如果【跳过剧情】则播AnimDisableStory，否则播AnimEnableLong
+        local isSkip = XSaveTool.GetData("UiGachaBianka")
+        XLuaUiManager.Open("UiGachaBianka402Main", self._GachaId, self._IsFirstOpenGachaMain and not isSkip, true)
         self._IsFirstOpenGachaMain = false
     end
 end

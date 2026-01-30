@@ -41,7 +41,7 @@ end
 
 function XBuffScript1052901:OnNpcBrokenAfter(launcherUUID, targetUUID, magicId)
     Base.OnNpcBrokenAfter(self,launcherUUID, targetUUID, magicId)
-    XLog.Warning("怪物破韧时,获得伤害提升")
+    --XLog.Warning("怪物破韧时,获得伤害提升")
     if  self._proxy:CheckBuffByKind(self._uuid,1057015) then
         self._proxy:ApplyMagic(self._uuid,self._uuid,1052809,1)
     else
@@ -51,7 +51,7 @@ end
 function XBuffScript1052901:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId) --创建buff事件
     Base.OnNpcAddBuffEvent(self,casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     if buffId == 105218 then
-        XLog.Warning("加霸体，减伤，破韧效率")
+        --XLog.Warning("加霸体，减伤，破韧效率")
         self._proxy:ApplyMagic(self._uuid,self._uuid,1052805,1) --霸体
         self._proxy:ApplyMagic(self._uuid,self._uuid,1052806,1) --减伤
         self._proxy:ApplyMagic(self._uuid,self._uuid,1052807,1) --破韧提升
@@ -61,7 +61,7 @@ end
 function XBuffScript1052901:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId) --删除buff事件
     Base.OnNpcRemoveBuffEvent(self,casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     if buffId == 105218 then
-        XLog.Warning("移除霸体，减伤，破韧效率")
+        --XLog.Warning("移除霸体，减伤，破韧效率")
         self._proxy:RemoveBuffByKindAndCount(self._uuid,1052805)
         self._proxy:RemoveBuffByKindAndCount(self._uuid,1052806)
         self._proxy:RemoveBuffByKindAndCount(self._uuid,1052807)

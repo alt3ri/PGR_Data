@@ -79,7 +79,6 @@ function XUiGridAssignDeployTeam:Refresh(groupId, teamOrder, teamInfoId, isAuto)
     self.TxtLeaderSkill.text = teamData:GetLeaderSkillDesc()
 
     local obsCarrer, obsPos = teamData:GetObservationActiveCareer()
-
     for i = 1, teamData:GetNeedCharacter() do
         local grid = self.MemberGridList[i]
         if not grid then

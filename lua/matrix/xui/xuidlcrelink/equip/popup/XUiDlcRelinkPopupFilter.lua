@@ -104,13 +104,13 @@ end
 
 function XUiDlcRelinkPopupFilter:SetupDynamicTable()
     local isEmpty = XTool.IsTableEmpty(self.EquipMainFactorIds)
-    if self.TypeCharacteristic then
-        self.TypeCharacteristic.gameObject:SetActiveEx(not isEmpty)
-    end
     if isEmpty then
+        self.DynamicTable:Clear()
+        self.TypeCharacteristic.gameObject:SetActiveEx(false)
         return
     end
 
+    self.TypeCharacteristic.gameObject:SetActiveEx(true)
     self.DynamicTable:SetDataSource(self.EquipMainFactorIds)
     self.DynamicTable:ReloadDataASync()
 end

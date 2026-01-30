@@ -5,9 +5,9 @@ local XBuffScript1056020 = XDlcScriptManager.RegBuffScript(1056020, "XBuffScript
 
 --效果说明：剑损buff逻辑，存在buff时，buff增加2秒，不存在buff时，buff设置为2秒。buff效果为易且每秒造成伤害。
 
-function XBuffScript1056020:Init()
+function XBuffScript1056020:ScriptInit(isGainControl)
     --初始化
-    Base.Init(self)
+    Base.ScriptInit(self, isGainControl)
     ------------配置------------
     self.AddTime = 1
     self.damageTime = 1          --增加时间
@@ -16,6 +16,15 @@ function XBuffScript1056020:Init()
     ------------执行------------
     self.damageTimer = self._proxy:GetFightTime() + self.damageTime    --造成伤害时间
 
+    if isGainControl then
+        local hasKey, val = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid, 1056020)
+        if hasKey then
+            self.damageTimer = val
+        end
+    else
+        self._proxy:RegisterBBSync(XVarDomain.Npc, self._uuid, 1056020)
+        self._proxy:SetBBFloat(XVarDomain.Npc, self._uuid, 1056020, self.damageTimer)
+    end
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
     self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)
 end
@@ -26,8 +35,12 @@ function XBuffScript1056020:Update(dt)
     Base.Update(self, dt)
     ------------执行------------
     if (self._proxy:GetFightTime() > self.damageTimer) then
-        self._proxy:ApplyMagic(self._casterUUID,self._uuid,1056021)
+        if self._proxy:CheckNpc(self._casterUUID) then
+            self._proxy:ApplyMagic(self._casterUUID,self._uuid,1056021)
+            self._proxy:ApplyMagic(self._casterUUID,self._uuid,1056038)
+        end
         self.damageTimer = self._proxy:GetFightTime() + self.damageTime
+        self._proxy:SetBBFloat(XVarDomain.Npc, self._uuid, 1056020, self.damageTimer)
         self._proxy:RemoveBuffByKindAndCount(self._uuid,1056024,1)
         self._proxy:RemoveBuffByKindAndCount(self._uuid,1056025,1)
 

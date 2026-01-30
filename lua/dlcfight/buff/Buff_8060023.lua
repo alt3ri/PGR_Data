@@ -3,19 +3,16 @@ local Base = require("Buff/BuffBase/XBuffBase")
 ---@class XBuffScript8060023 : XBuffBase
 local XBuffScript8060023 = XDlcScriptManager.RegBuffScript(8060023, "XBuffScript8060023", Base)
 --效果说明：加攻击减血量
-
-function XBuffScript8060023:Init()
+function XBuffScript8060023:Ctor()
+    self.magicIds={8060024,8060025,8060043} --各个血量区间的攻击BUFF
+end
+function XBuffScript8060023:ScriptInit(isGainControl)
     --初始化
-    Base.Init(self)
+    Base.ScriptInit(self,isGainControl)
     ------------配置------------
     self.magicLevel=1 --等新接口直接获取自己的BUFF等级
-    self.magicIds={8060024,8060025} --各个血量区间的攻击BUFF
     self.hasLevel=false
-    ------------执行------------
-    self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicIds[1],self.magicLevel)
-    self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicIds[2],self.magicLevel)
 end
-
 ---@param dt number @ delta time
 function XBuffScript8060023:Update(dt)
     --每帧执行
@@ -23,6 +20,9 @@ function XBuffScript8060023:Update(dt)
     ------------执行------------
     if self.hasLevel==false then
         self.hasLevel,self.magicLevel=self._proxy:TryQueryBuffLevel(self._uuid,8060023)--获取自身的BUFF等级
+        self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicIds[1],self.magicLevel)
+        self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicIds[2],self.magicLevel)
+        self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicIds[3],self.magicLevel)
     end
 end
 

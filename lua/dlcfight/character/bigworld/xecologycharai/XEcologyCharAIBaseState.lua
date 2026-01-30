@@ -1,12 +1,15 @@
 local XLevelNpcState = require("Common/StateMachine/State/XLevelNpcState")
+local EmptyVector3 = { x=0, y=0, z=0 }
 
 ---@class XEcologyCharAIStateConfig
 ---@field StateEnum number 状态枚举
----@field StateAnim string 该状态的演出动画
+---@field StateAnim string 该状态的三段演出动画
+---@field StateLoopAnim string 该状态的循环时演出动画
 ---@field ShowOptionId number 该状态显示的交互参数
 ---@field TriggerId number 触发器Id, 用以气泡和靠近等
 ---@field RegisterWorldEventList table<string> 该状态监听的事件
 ---@field BubbleDict table<number, XAiBubbleInfo> 气泡配置字典, key = EEcologyBubbleType, value = 气泡配置
+---@field IgnoreCharCollider bool 进入状态后是否要忽略玩家碰撞
 ---@field PathBubbleName string 寻路气泡
 ---@field PathTargetPosDict table<number, Vector3> 寻路目标点字典, Key = 状态枚举, value = 坐标
 
@@ -24,6 +27,9 @@ function XEcologyCharAIBaseState:OnStateEnter(lastStateEnum)
     end
     self.StateEnum = self.StateConfig.StateEnum
     self._proxy:SetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.CurStateEnum, self.StateConfig.StateEnum)
+    if self.StateConfig.IgnoreCharCollider then
+        self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetLocalPlayerSelfNpcId(),true)
+    end
     self:RegisterWorldEvent()
     self:InitAiBubble()
     self:UpdateOptionActive()
@@ -34,6 +40,9 @@ end
 ---状态进入时
 ---@param nextStateEnum number 下个状态
 function XEcologyCharAIBaseState:OnStateLeave(nextStateEnum)
+    if self.StateConfig.IgnoreCharCollider then
+        self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetLocalPlayerSelfNpcId(),false)
+    end
     self:UnRegisterWorldEvent()
 end
 
@@ -58,6 +67,8 @@ function XEcologyCharAIBaseState:HandleEvent(eventType, eventArgs)
         self:OnActorTrigger(eventArgs)
     elseif eventType == EWorldEvent.NpcInteractStart then
         self:OnNpcInteractStart(eventArgs)
+    elseif eventType == EWorldEvent.NpcInteractComplete then
+        self:OnNpcInteractComplete(eventArgs)
     end
 end
 
@@ -99,10 +110,10 @@ function XEcologyCharAIBaseState:OnActorTrigger(eventArgs)
         return
     end
     if eventArgs.TriggerState == ETriggerState.Enter then
-        self._proxy:StopNpcPerformAnim(self._uuid)
+        --self._proxy:StopNpcPerformAnim(self._uuid)
         self._proxy:EnableNpcLookAt(self._uuid, self._proxy:GetLocalPlayerNpcId())
     elseif eventArgs.TriggerState == ETriggerState.Exit then
-        self:PlayPerformAnim()
+        --self:PlayPerformAnim()
         self._proxy:DisableNpcLookAt(self._uuid, self._proxy:GetLocalPlayerNpcId())
     end
 end
@@ -112,6 +123,15 @@ function XEcologyCharAIBaseState:OnNpcInteractStart(eventArgs)
     if eventArgs.TargetId ~= self._uuid then
         return
     end
+    self:PlayPerformLoopAnim()
+end
+
+function XEcologyCharAIBaseState:OnNpcInteractComplete(eventArgs)
+    -- 被交互的不是自己不走逻辑
+    if eventArgs.TargetId ~= self._uuid then
+        return
+    end
+    self:PlayPerformLoopAnim()
 end
 --endregion
 
@@ -119,6 +139,15 @@ end
 function XEcologyCharAIBaseState:PlayPerformAnim()
     if self.StateConfig and self.StateConfig.StateAnim then
         self._proxy:PlayNpcCustomPerformAnim(self._uuid, self.StateConfig.StateAnim, 0, 0)
+    end
+end
+
+---播放演出循环动画, 用以交互
+---因为交互和idle都没有演出动画配置, 这个时候交互自定义演出状态被交互状态打断了
+---用覆盖的方式不改C# by2026.01.08
+function XEcologyCharAIBaseState:PlayPerformLoopAnim()
+    if self.StateConfig.StateLoopAnim then
+        self._proxy:PlayNpcCustomPerformAnim(self._uuid, self.StateConfig.StateLoopAnim, 0, 0, false, EmptyVector3, true)
     end
 end
 --endregion
@@ -179,17 +208,17 @@ function XEcologyCharAIBaseState:UpdateAiBubble(dt)
     local distance = 0
     local triggerBubbleType = EEcologyBubbleType.None
     local curBubbleInfo = self._bubbleDict[self._curPlayBubbleType]
-    
+
     for bubbleType, bubbleInfo in pairs(self._bubbleDict) do
         if bubbleInfo.TriggerDistance > playerDistance then
-            if distance == 0 or distance < bubbleInfo.TriggerDistance then
+            if distance == 0 or distance > bubbleInfo.TriggerDistance then
                 distance = bubbleInfo.TriggerDistance
                 triggerBubbleType = bubbleType
             end
         end
     end
     -- 离开范围之后气泡照常播放不计入CD
-    if triggerBubbleType == EEcologyBubbleType.None and 
+    if triggerBubbleType == EEcologyBubbleType.None and
             self._curPlayBubbleType ~= EEcologyBubbleType.None and
             curBubbleInfo ~= nil and
             curBubbleInfo.State == EEcologyBubbleState.Playing
@@ -229,6 +258,16 @@ end
 
 ---@private
 function XEcologyCharAIBaseState:SetCurBubbleType(bubbleType)
+    if self._curPlayBubbleType == bubbleType then
+        return
+    end
+    local lastBubble = self._bubbleDict[self._curPlayBubbleType]
+    local change = false
+    -- 恢复上个气泡的时间, 防止下次触发一下子结束
+    if lastBubble then
+        self._proxy:StopDramaBubble(ETargetActorType.Npc, self._uuid)
+        change = true
+    end
     self._curPlayBubbleType = bubbleType
     local aiBubbleInfo = self._bubbleDict[bubbleType]
     if not aiBubbleInfo then
@@ -237,6 +276,9 @@ function XEcologyCharAIBaseState:SetCurBubbleType(bubbleType)
     if aiBubbleInfo.State == EEcologyBubbleState.None then
         aiBubbleInfo.State = EEcologyBubbleState.CD
         aiBubbleInfo.CurTime = aiBubbleInfo.TriggerCD
+        if change then
+            aiBubbleInfo.CurTime = aiBubbleInfo.CurTime - 0.5
+        end
     end
 end
 

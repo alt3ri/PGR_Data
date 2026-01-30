@@ -41,6 +41,15 @@ function XLevelScript1041:Ctor(proxy)
     self._improveTeamSpeedCount = {}                                               --******字典：技能-记录使用 “提升全队移速” 次数---新版技能--1900084-对应传值ID-24
     self._transportBeaconCount = {}                                                --******字典：技能-记录使用 “传送信标” 次数---新版技能--1900085-对应传值ID-25
 
+    self._paceTrackCount = {}                                                   --*****字典：技能-记录使用 “足迹追踪” 次数---新版技能--1900133-对应传值ID-27
+    self._inkBombCount = {}                                                     --*****字典：技能-记录使用 “墨汁炸弹” 次数---新版技能--1900135-对应传值ID-28
+    self._animalAimCount = {}                                                   --*****字典：技能-记录使用 “野兽标记” 次数---新版技能--1900134-对应传值ID-29
+    self._shockCount = {}                                                       --*****字典：技能-记录使用 “震慑” 次数---新版技能--1900138-对应传值ID-30
+    self._phantomCount = {}                                                    --*****字典：技能-记录使用 “幻象” 次数---新版技能--1900153-对应传值ID-31
+    self._shieldCount = {}                                                      --*****字典：技能-记录使用 “防护罩” 次数---新版技能--1900155-对应传值ID-32
+    self._bananaCount = {}                                                      --*****字典：技能-记录使用 “香蕉皮” 次数---新版技能--1900142-对应传值ID-33
+
+
     self._finalBuffForCat = true                                            --用来给猫阵营在最后30秒修改技能冷却BUFF的开关
 
     self._catNumber = 0                                                          --***********************猫猫出生点位记录
@@ -161,8 +170,8 @@ function XLevelScript1041:Ctor(proxy)
     self._scoreCatCheese = 200               --//猫每次获得奶酪的得分
     self._scoreCatCheeseCount = {}          --//猫获得奶酪的得分总量
     self._scoreCatCheeseCountLimit = 2000    --//猫单局奶酪得分上限
-    self._scoreCatSkill = 300               --//猫单次阵营技能得分
-    self._scoreCatCal = 0                   --//计算当前的猫分数
+    self._scoreCatSkill = 2000               --//猫单次阵营技能得分
+    --self._scoreCatCal = 0                   --//计算当前的猫分数
     self._scoreCatFinish = 2000             --//猫猫完赛得分
     --//3.0新道具箱相关
     self._ItemSkillID = 50430133            --//3.0新道具箱子弹ID
@@ -218,12 +227,12 @@ function XLevelScript1041:Init()
         --    self._GroupPlaceId1041[i] = self._proxy:GetSceneObjectPositionByPlaceId(i)
         --end
         -- 四个生成时间点
-        self._spawnTimes = {21, 66, 111, 156}
+        self._spawnTimes = {1, 66, 111, 156}
         self._generated = {} -- 记录已生成的时间点
         self._generateTimes = 1
         -- 猫阵营核心数据
         self._catData = {
-            target = 10,         -- 触发技能所需奶酪数
+            target = 15,         -- 触发技能所需奶酪数
             current = 0,        -- 当前收集进度
             --isActive = false,   -- 技能激活状态，加了冷却后没用了
             cooldown = 20,       -- 冷却时间(秒)
@@ -249,12 +258,12 @@ function XLevelScript1041:Init()
         --    self._allSpots[i-300000] = self._proxy:GetSpot(i)
         --end
         -- 四个生成时间点
-        self._spawnTimes = {21, 66, 111, 156}
+        self._spawnTimes = {1, 66, 111, 156}
         self._generated = {} -- 记录已生成的时间点
         self._generateTimes = 1
         -- 猫阵营核心数据
         self._catData = {
-            target = 10,         -- 触发技能所需奶酪数
+            target = 15,         -- 触发技能所需奶酪数
             current = 0,        -- 当前收集进度
             --isActive = false,   -- 技能激活状态，加了冷却后没用了
             cooldown = 20,       -- 冷却时间(秒)
@@ -271,12 +280,12 @@ function XLevelScript1041:Init()
             self._spawnPoint[i] = self._proxy:GetSpot(i) --获取关卡编辑器中配置好的出生点，1~3是猫，4~9是鼠
         end
         XLog.Debug("1061地图出生点设置完毕")
-        self._spawnTimes = {21, 66, 111, 156}
+        self._spawnTimes = {1, 66, 111, 156}
         self._generated = {} -- 记录已生成的时间点
         self._generateTimes = 1
         -- 猫阵营核心数据
         self._catData = {
-            target = 10,         -- 触发技能所需奶酪数
+            target = 15,         -- 触发技能所需奶酪数
             current = 0,        -- 当前收集进度
             --isActive = false,   -- 技能激活状态，加了冷却后没用了
             cooldown = 20,       -- 冷却时间(秒)
@@ -294,12 +303,12 @@ function XLevelScript1041:Init()
         end
         XLog.Debug("1062地图出生点设置完毕")
 
-        self._spawnTimes = {21, 66, 111, 156}
+        self._spawnTimes = {1, 66, 111, 156}
         self._generated = {} -- 记录已生成的时间点
         self._generateTimes = 1
         -- 猫阵营核心数据
         self._catData = {
-            target = 8,         -- 触发技能所需奶酪数
+            target = 15,         -- 触发技能所需奶酪数
             current = 0,        -- 当前收集进度
             --isActive = false,   -- 技能激活状态，加了冷却后没用了
             cooldown = 20,       -- 冷却时间(秒)
@@ -328,32 +337,32 @@ function XLevelScript1041:Init()
         self._proxy:MouseHunterSetSkillCD(3, 5)              --猫阵营，捕兽夹/陷阱
         self._proxy:MouseHunterSetSkillCD(8, 10)              --猫阵营，脚本跟踪
         self._proxy:MouseHunterSetSkillCD(9, 25)              --猫阵营，鹰眼
-        self._proxy:MouseHunterSetSkillCD(10, 30)             --双方阵营共用，墨汁炸弹
-        self._proxy:MouseHunterSetSkillCD(11, 20)             --猫阵营，操作干扰
-        self._proxy:MouseHunterSetSkillCD(6, 0.5)              --鼠阵营，传送帽一段
-        self._proxy:MouseHunterSetSkillCD(7, 25)              --鼠阵营，传送帽二段
+        self._proxy:MouseHunterSetSkillCD(10, 20)             --双方阵营共用，墨汁炸弹
+        self._proxy:MouseHunterSetSkillCD(11, 25)             --猫阵营，操作干扰
+        self._proxy:MouseHunterSetSkillCD(6, 15)              --鼠阵营，传送帽一段
+        --self._proxy:MouseHunterSetSkillCD(7, 15)              --【废弃，一段的短 cd 放到行为树中单独处理，实际 cd 配置在 6 上】鼠阵营，传送帽二段
         self._proxy:MouseHunterSetSkillCD(12, 30)             --鼠阵营，隐身
         self._proxy:MouseHunterSetSkillCD(13, 6)             --鼠阵营，香蕉皮
-        self._proxy:MouseHunterSetSkillCD(14, 25)             --鼠阵营，发射干扰
-        self._proxy:MouseHunterSetSkillCD(15, 25)             --鼠阵营，防御反击（防护罩）
+        self._proxy:MouseHunterSetSkillCD(14, 15)             --鼠阵营，发射干扰
+        self._proxy:MouseHunterSetSkillCD(15, 20)             --鼠阵营，防御反击（防护罩）
         self._proxy:MouseHunterSetSkillCD(4, 20)              --猫阵营，加速
-        self._proxy:MouseHunterSetSkillCD(16, 30)             --鼠阵营，透视
+        self._proxy:MouseHunterSetSkillCD(16, 20)             --鼠阵营，透视
         --//3.0技能机制新增接口，初始化技能次数上限
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(1, 3)              --猫阵营，扫描
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(3, 4)              --猫阵营，捕兽夹/陷阱
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(8, 2)              --猫阵营，脚本跟踪
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(8, 3)              --猫阵营，脚本跟踪
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(9, 2)              --猫阵营，鹰眼
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(10, 2)             --双方阵营共用，墨汁炸弹
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(10, 3)             --双方阵营共用，墨汁炸弹
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(11, 2)             --猫阵营，操作干扰
 
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(6, 2)              --鼠阵营，传送帽
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(6, 3)              --鼠阵营，传送帽
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(12, 3)             --鼠阵营，隐身
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(13, 4)             --鼠阵营，香蕉皮
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(14, 2)             --鼠阵营，发射干扰
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(15, 2)             --鼠阵营，防御反击（防护罩）
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(13, 5)             --鼠阵营，香蕉皮
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(14, 3)             --鼠阵营，发射干扰
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(15, 3)             --鼠阵营，防御反击（防护罩）
 
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(4, 3)             --猫阵营，加速
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(16, 2)             --鼠阵营，透视
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(16, 3)             --鼠阵营，透视
 
         --//3.0技能机制新增接口，单次充能的次数
         self._proxy:MouseHunterSetSkillChargeTimes(1, 4)              --猫阵营，扫描
@@ -365,7 +374,7 @@ function XLevelScript1041:Init()
 
         self._proxy:MouseHunterSetSkillChargeTimes(6, 4)              --鼠阵营，传送帽
         self._proxy:MouseHunterSetSkillChargeTimes(12, 4)             --鼠阵营，隐身
-        self._proxy:MouseHunterSetSkillChargeTimes(13, 4)             --鼠阵营，香蕉皮
+        self._proxy:MouseHunterSetSkillChargeTimes(13, 5)             --鼠阵营，香蕉皮
         self._proxy:MouseHunterSetSkillChargeTimes(14, 4)             --鼠阵营，发射干扰
         self._proxy:MouseHunterSetSkillChargeTimes(15, 4)             --鼠阵营，防御反击（防护罩）
 
@@ -384,32 +393,32 @@ function XLevelScript1041:Init()
         self._proxy:MouseHunterSetSkillCD(3, 8)              --猫阵营，捕兽夹/陷阱
         self._proxy:MouseHunterSetSkillCD(8, 15)              --猫阵营，脚本跟踪
         self._proxy:MouseHunterSetSkillCD(9, 40)              --猫阵营，鹰眼
-        self._proxy:MouseHunterSetSkillCD(10, 35)             --双方阵营共用，墨汁炸弹
-        self._proxy:MouseHunterSetSkillCD(11, 35)             --猫阵营，操作干扰
-        self._proxy:MouseHunterSetSkillCD(6, 0.5)              --鼠阵营，传送帽一段
-        self._proxy:MouseHunterSetSkillCD(7, 30)              --鼠阵营，传送帽二段
+        self._proxy:MouseHunterSetSkillCD(10, 25)             --双方阵营共用，墨汁炸弹
+        self._proxy:MouseHunterSetSkillCD(11, 40)             --猫阵营，操作干扰
+        self._proxy:MouseHunterSetSkillCD(6, 20)              --鼠阵营，传送帽一段
+        --self._proxy:MouseHunterSetSkillCD(7, 20)              --【废弃，一段的短 cd 放到行为树中单独处理，实际 cd 配置在 6 上】鼠阵营，传送帽二段
         self._proxy:MouseHunterSetSkillCD(12, 30)             --鼠阵营，隐身
         self._proxy:MouseHunterSetSkillCD(13, 7.5)             --鼠阵营，香蕉皮
-        self._proxy:MouseHunterSetSkillCD(14, 30)             --鼠阵营，发射干扰
-        self._proxy:MouseHunterSetSkillCD(15, 30)             --鼠阵营，防御反击（防护罩）
+        self._proxy:MouseHunterSetSkillCD(14, 20)             --鼠阵营，发射干扰
+        self._proxy:MouseHunterSetSkillCD(15, 25)             --鼠阵营，防御反击（防护罩）
         self._proxy:MouseHunterSetSkillCD(4, 35)              --猫阵营，加速
-        self._proxy:MouseHunterSetSkillCD(16, 35)             --鼠阵营，透视
+        self._proxy:MouseHunterSetSkillCD(16, 25)             --鼠阵营，透视
         --//3.0技能机制新增接口，初始化技能次数上限
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(1, 3)              --猫阵营，扫描
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(3, 4)              --猫阵营，捕兽夹/陷阱
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(8, 2)              --猫阵营，脚本跟踪
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(9, 2)              --猫阵营，鹰眼
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(10, 2)             --双方阵营共用，墨汁炸弹
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(10, 3)             --双方阵营共用，墨汁炸弹
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(11, 2)             --猫阵营，操作干扰
 
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(6, 2)              --鼠阵营，传送帽
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(6, 3)              --鼠阵营，传送帽
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(12, 3)             --鼠阵营，隐身
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(13, 4)             --鼠阵营，香蕉皮
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(14, 2)             --鼠阵营，发射干扰
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(15, 2)             --鼠阵营，防御反击（防护罩）
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(13, 5)             --鼠阵营，香蕉皮
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(14, 3)             --鼠阵营，发射干扰
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(15, 3)             --鼠阵营，防御反击（防护罩）
 
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(4, 3)             --猫阵营，加速
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(16, 2)             --鼠阵营，透视
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(16, 3)             --鼠阵营，透视
 
         --//3.0技能机制新增接口，单次充能的次数
         self._proxy:MouseHunterSetSkillChargeTimes(1, 4)              --猫阵营，扫描
@@ -421,7 +430,7 @@ function XLevelScript1041:Init()
 
         self._proxy:MouseHunterSetSkillChargeTimes(6, 4)              --鼠阵营，传送帽
         self._proxy:MouseHunterSetSkillChargeTimes(12, 4)             --鼠阵营，隐身
-        self._proxy:MouseHunterSetSkillChargeTimes(13, 4)             --鼠阵营，香蕉皮
+        self._proxy:MouseHunterSetSkillChargeTimes(13, 5)             --鼠阵营，香蕉皮
         self._proxy:MouseHunterSetSkillChargeTimes(14, 4)             --鼠阵营，发射干扰
         self._proxy:MouseHunterSetSkillChargeTimes(15, 4)             --鼠阵营，防御反击（防护罩）
 
@@ -440,33 +449,33 @@ function XLevelScript1041:Init()
         self._proxy:MouseHunterSetSkillCD(3, 5)              --猫阵营，捕兽夹/陷阱
         self._proxy:MouseHunterSetSkillCD(8, 10)              --猫阵营，脚本跟踪
         self._proxy:MouseHunterSetSkillCD(9, 25)              --猫阵营，鹰眼
-        self._proxy:MouseHunterSetSkillCD(10, 30)             --双方阵营共用，墨汁炸弹
-        self._proxy:MouseHunterSetSkillCD(11, 20)             --猫阵营，操作干扰
-        self._proxy:MouseHunterSetSkillCD(6, 0.5)              --鼠阵营，传送帽一段
-        self._proxy:MouseHunterSetSkillCD(7, 25)              --鼠阵营，传送帽二段
+        self._proxy:MouseHunterSetSkillCD(10, 20)             --双方阵营共用，墨汁炸弹
+        self._proxy:MouseHunterSetSkillCD(11, 25)             --猫阵营，操作干扰
+        self._proxy:MouseHunterSetSkillCD(6, 15)              --鼠阵营，传送帽一段
+        --self._proxy:MouseHunterSetSkillCD(7, 15)              --【废弃，一段的短 cd 放到行为树中单独处理，实际 cd 配置在 6 上】鼠阵营，传送帽二段
         self._proxy:MouseHunterSetSkillCD(12, 30)             --鼠阵营，隐身
         self._proxy:MouseHunterSetSkillCD(13, 6)             --鼠阵营，香蕉皮
-        self._proxy:MouseHunterSetSkillCD(14, 25)             --鼠阵营，发射干扰
-        self._proxy:MouseHunterSetSkillCD(15, 25)             --鼠阵营，防御反击（防护罩）
+        self._proxy:MouseHunterSetSkillCD(14, 15)             --鼠阵营，发射干扰
+        self._proxy:MouseHunterSetSkillCD(15, 20)             --鼠阵营，防御反击（防护罩）
         self._proxy:MouseHunterSetSkillCD(4, 20)              --猫阵营，加速
-        self._proxy:MouseHunterSetSkillCD(16, 30)             --鼠阵营，透视
+        self._proxy:MouseHunterSetSkillCD(16, 20)             --鼠阵营，透视
 
         --//3.0技能机制新增接口，初始化技能次数上限
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(1, 3)              --猫阵营，扫描
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(3, 3)              --猫阵营，捕兽夹/陷阱
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(8, 2)              --猫阵营，脚本跟踪
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(3, 4)              --猫阵营，捕兽夹/陷阱
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(8, 3)              --猫阵营，脚本跟踪
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(9, 2)              --猫阵营，鹰眼
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(10, 2)             --双方阵营共用，墨汁炸弹
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(10, 3)             --双方阵营共用，墨汁炸弹
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(11, 2)             --猫阵营，操作干扰
 
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(6, 2)              --鼠阵营，传送帽
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(6, 3)              --鼠阵营，传送帽
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(12, 3)             --鼠阵营，隐身
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(13, 4)             --鼠阵营，香蕉皮
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(14, 2)             --鼠阵营，发射干扰
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(15, 2)             --鼠阵营，防御反击（防护罩）
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(13, 5)             --鼠阵营，香蕉皮
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(14, 3)             --鼠阵营，发射干扰
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(15, 3)             --鼠阵营，防御反击（防护罩）
 
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(4, 3)             --猫阵营，加速
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(16, 2)             --鼠阵营，透视
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(16, 3)             --鼠阵营，透视
 
         --//3.0技能机制新增接口，单次充能的次数
         self._proxy:MouseHunterSetSkillChargeTimes(1, 4)              --猫阵营，扫描
@@ -496,33 +505,33 @@ function XLevelScript1041:Init()
         self._proxy:MouseHunterSetSkillCD(3, 5)              --猫阵营，捕兽夹/陷阱
         self._proxy:MouseHunterSetSkillCD(8, 10)              --猫阵营，脚本跟踪
         self._proxy:MouseHunterSetSkillCD(9, 20)              --猫阵营，鹰眼
-        self._proxy:MouseHunterSetSkillCD(10, 35)             --双方阵营共用，墨汁炸弹
-        self._proxy:MouseHunterSetSkillCD(11, 15)             --猫阵营，操作干扰
-        self._proxy:MouseHunterSetSkillCD(6, 0.5)              --鼠阵营，传送帽一段
-        self._proxy:MouseHunterSetSkillCD(7, 30)              --鼠阵营，传送帽二段
+        self._proxy:MouseHunterSetSkillCD(10, 20)             --双方阵营共用，墨汁炸弹
+        self._proxy:MouseHunterSetSkillCD(11, 20)             --猫阵营，操作干扰
+        self._proxy:MouseHunterSetSkillCD(6, 15)              --鼠阵营，传送帽一段
+        --self._proxy:MouseHunterSetSkillCD(7, 15)              --【废弃，一段的短 cd 放到行为树中单独处理，实际 cd 配置在 6 上】鼠阵营，传送帽二段
         self._proxy:MouseHunterSetSkillCD(12, 30)             --鼠阵营，隐身
         self._proxy:MouseHunterSetSkillCD(13, 6)             --鼠阵营，香蕉皮
-        self._proxy:MouseHunterSetSkillCD(14, 30)             --鼠阵营，发射干扰
-        self._proxy:MouseHunterSetSkillCD(15, 30)             --鼠阵营，防御反击（防护罩）
+        self._proxy:MouseHunterSetSkillCD(14, 15)             --鼠阵营，发射干扰
+        self._proxy:MouseHunterSetSkillCD(15, 20)             --鼠阵营，防御反击（防护罩）
         self._proxy:MouseHunterSetSkillCD(4, 15)              --猫阵营，加速
-        self._proxy:MouseHunterSetSkillCD(16, 40)             --鼠阵营，透视
+        self._proxy:MouseHunterSetSkillCD(16, 30)             --鼠阵营，透视
 
         --//3.0技能机制新增接口，初始化技能次数上限
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(1, 3)              --猫阵营，扫描
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(3, 5)              --猫阵营，捕兽夹/陷阱
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(8, 3)              --猫阵营，脚本跟踪
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(9, 3)              --猫阵营，鹰眼
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(10, 2)             --双方阵营共用，墨汁炸弹
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(10, 3)             --双方阵营共用，墨汁炸弹
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(11, 3)             --猫阵营，操作干扰
 
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(6, 2)              --鼠阵营，传送帽
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(6, 3)              --鼠阵营，传送帽
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(12, 3)             --鼠阵营，隐身
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(13, 4)             --鼠阵营，香蕉皮
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(14, 2)             --鼠阵营，发射干扰
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(15, 2)             --鼠阵营，防御反击（防护罩）
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(13, 5)             --鼠阵营，香蕉皮
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(14, 3)             --鼠阵营，发射干扰
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(15, 3)             --鼠阵营，防御反击（防护罩）
 
         self._proxy:MouseHunterSetSkillMaxAvailableTimes(4, 3)             --猫阵营，加速
-        self._proxy:MouseHunterSetSkillMaxAvailableTimes(16, 2)             --鼠阵营，透视
+        self._proxy:MouseHunterSetSkillMaxAvailableTimes(16, 3)             --鼠阵营，透视
 
         --//3.0技能机制新增接口，单次充能的次数
         self._proxy:MouseHunterSetSkillChargeTimes(1, 4)              --猫阵营，扫描
@@ -534,7 +543,7 @@ function XLevelScript1041:Init()
 
         self._proxy:MouseHunterSetSkillChargeTimes(6, 4)              --鼠阵营，传送帽
         self._proxy:MouseHunterSetSkillChargeTimes(12, 4)             --鼠阵营，隐身
-        self._proxy:MouseHunterSetSkillChargeTimes(13, 4)             --鼠阵营，香蕉皮
+        self._proxy:MouseHunterSetSkillChargeTimes(13, 5)             --鼠阵营，香蕉皮
         self._proxy:MouseHunterSetSkillChargeTimes(14, 4)             --鼠阵营，发射干扰
         self._proxy:MouseHunterSetSkillChargeTimes(15, 4)             --鼠阵营，防御反击（防护罩）
 
@@ -595,16 +604,17 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
                 local Camp = self._campDictionary[npcuuid]
                 XLog.Debug("阵营为"..Camp.."（1猫2鼠）的角色碰到奶酪了")
                 XLog.Debug(string.format("[条件检查] Camp=%s, isCooling=%s", tostring(Camp), tostring(self._catData.isCooling)))
-                --//3.0处理猫阵营奶酪逻辑
+                --//3.0猫获取奶酪逻辑
                 if Camp and Camp == 1  then
                     self._catData.current = self._catData.current + 1
                     for mouse, _ in pairs(self._campDictionary) do
                         local tempCamp = self._campDictionary[mouse]
                         if tempCamp == 2 then
-                            self._proxy:MouseHunterShowTipWithoutOneArg(mouse, 3 ,self._catData.current)--//鼠鼠阵营技能发动通知
+                            self._proxy:MouseHunterShowTipWithoutOneArg(mouse, 3 ,self._catData.current)--//给鼠鼠提示，猫阵营奶酪的个数通知
                         end
                     end
-                    self._scoreList[npcuuid] = self._scoreList[npcuuid] + self._scoreCatSkill
+                    self._scoreList[npcuuid] = self._scoreList[npcuuid] + self._scoreCatCheese      --//猫获得奶酪分
+                    self._proxy:SetMouseHunterPlayerScore(npcuuid, self._scoreList[npcuuid])        --显示加分
                     self._takeCheeseCount[npcuuid] = self._takeCheeseCount[npcuuid] +1
                     XLog.Debug("ID为"..npcuuid.."的这只猫目前得分为"..self._scoreList[npcuuid].."，本局目前共获得奶酪数"..self._takeCheeseCount[npcuuid])
                     self._proxy:MouseHunterSetCatCheeseCount(self._catData.current,self._catData.target)
@@ -612,21 +622,35 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
                     self._timer:Schedule(0.01, self._proxy, function()
                         self._proxy:UnloadSceneObject(ObjID)
                     end)
+                    --//3.0处理猫阵营奶酪逻辑
                     if self._catData.isCooling == false then
                         XLog.Debug("技能冷却好了")
-                        --//3.0猫阵营奶酪技能UI显示应该需要放入Update中处理，目前只有吃到奶酪时才会状态变更
                         if self._catData.current >= self._catData.target then
                             XLog.Debug("当前奶酪数达到技能使用要求")
-                            self._catData.isCooling = true
                             for cat, _ in pairs(self._campDictionary) do
                                 local tempCamp = self._campDictionary[cat]
                                 if tempCamp == 1 then
                                     self._proxy:ApplyMagic(cat, cat, 1900073, 1, 0)  --//给猫增加鼠鼠全体标点的BUFF
-                                    XLog.Debug("所有的猫猫施加了标点buff")
+                                    self._scoreList[cat] = self._scoreList[cat] + self._scoreCatSkill      --//每只猫获得阵营技能分
+                                    self._proxy:SetMouseHunterPlayerScore(cat, self._scoreList[cat])    --显示加分
+                                    XLog.Debug("所有的猫猫施加了标点buff，并增加了阵营技能得分")
                                 end
                             end
                             self._catData.current = self._catData.current - self._catData.target
                             self._proxy:MouseHunterSetCatCheeseCount(self._catData.current,self._catData.target)
+                            self._proxy:MouseHunterSetCatCheeseEffectState(2, 10)
+                            self._catData.isCooling = true
+                            XLog.Debug("技能进入冷却")
+                            --//持续时间结束后进入冷却
+                            self._timer:Schedule(30, self, function()
+                                XLog.Debug("[定时器回调] 正在重置isCooling为false")
+                                self._catData.isCooling = false
+                                XLog.Debug("禁用变身CD完成，可再次激活")
+                            end)
+                            self._timer:Schedule(10, self, function()
+                                XLog.Debug("[定时器回调] 正在重置isCooling为false")
+                                self._proxy:MouseHunterSetCatCheeseEffectState(3, 20)   --进入冷却状态
+                            end)
                             XLog.Debug("使用阵营技能的奶酪数被扣除了")
                             --//3.0给所有老鼠上禁止变身BUFF
                             for mouseUuid, _ in pairs(self._campDictionary) do
@@ -635,34 +659,28 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
                                     --self._proxy:RemoveBuff(uuid, 1900151)  --//移除鼠鼠身上既有的变身BUFF，战斗已经做了一个BUFF实现移除buff+禁用技能的处理
                                     self._proxy:ApplyMagic(mouseUuid, mouseUuid, 1900151, 1, 0)  --//无法使用变身的技能BUFF
                                     --self._proxy:ApplyMagic(mouseUuid, mouseUuid, 1900166, 1, 0)
-                                    self._proxy:MouseHunterShowTipWithoutOneArg(mouseUuid, 2 ,5)--//鼠鼠阵营技能发动通知
-                                    self._proxy:MouseHunterSetCatCheeseEffectState(2, 10)
+                                    self._proxy:MouseHunterShowTipWithoutOneArg(mouseUuid, 2 ,7)--//鼠鼠阵营技能发动通知
                                     XLog.Debug("所有的鼠鼠施加了禁止变身buff")
                                 end
                             end
-                            --//定时器系统后续需要验证下有无问题
-                            self._timer:Schedule(self._catSkillCD, self, function()
-                                XLog.Debug("[定时器回调] 正在重置isCooling为false")
-                                self._catData.isCooling = false
-                                XLog.Debug("禁用变身CD完成，可再次激活")
-                            end)
                         else
-                            self._proxy:MouseHunterSetCatCheeseEffectState(1, 10)
+                            self._proxy:MouseHunterSetCatCheeseEffectState(1, 999)
                             XLog.Debug("阵营奶酪累积中")
+                            --    end
+                            --elseif self._catData.isCooling == true then
+                            --    self._proxy:MouseHunterSetCatCheeseEffectState(3, 20)
+                            --    XLog.Debug("阵营技能冷却中")
                         end
-                    elseif self._catData.isCooling == true then
-                        self._proxy:MouseHunterSetCatCheeseEffectState(3, 10)
-                        XLog.Debug("阵营技能冷却中")
                     end
                 elseif Camp == 2   then     --//3.0判断撞子弹是奶酪，且为鼠鼠阵营触发
                     if self._proxy:CheckBuffByKind(npcuuid, 1900147) then
                         self._proxy:ApplyMagic(npcuuid, npcuuid, 1900148 , 1)
                         XLog.Debug("[状态升级] 玩家 "..npcuuid.." 首次获得奶酪 | 移除旧BUFF:"..tostring(1900147))
                         XLog.Debug("[BUFF变更] 新BUFFID:"..1900148)
-                        if self._currentPhase == 1 then
-                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,1,3,13/55,-0.1)
+                        if self._currentPhase == 1 or 0 then
+                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,1,3,13/55,-0.015)
                         elseif self._currentPhase == 3 then
-                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,1,3,21/70,-0.1)
+                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,1,3,21/70,-0.015)
                         end
                         self._takeCheeseCount[npcuuid] = self._takeCheeseCount[npcuuid] +1
                         XLog.Debug("ID为"..npcuuid.."的这只猫目前共获得奶酪数"..self._takeCheeseCount[npcuuid])
@@ -673,10 +691,10 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
                         self._proxy:ApplyMagic(npcuuid, npcuuid, 1900149 , 1)
                         XLog.Debug("[状态升级] 玩家 "..npcuuid.." 从1→2奶酪 | 移除旧BUFF:"..tostring(1900148))
                         XLog.Debug("[BUFF变更] 新BUFFID:"..1900149)
-                        if self._currentPhase == 1 then
-                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,2,3,27/55,-0.2)
+                        if self._currentPhase == 1 or 0 then
+                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,2,3,27/55,-0.03)
                         elseif self._currentPhase == 3 then
-                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,2,3,42/70,-0.2)
+                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,2,3,42/70,-0.03)
                         end
                         self._takeCheeseCount[npcuuid] = self._takeCheeseCount[npcuuid] +1
                         XLog.Debug("ID为"..npcuuid.."的这只猫目前共获得奶酪数"..self._takeCheeseCount[npcuuid])
@@ -688,10 +706,10 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
                         self._proxy:ApplyMagic(npcuuid, npcuuid, 1900150 , 1)
                         XLog.Debug("[初始获取] 玩家 "..npcuuid.." 从2→3奶酪 | 移除旧BUFF:"..tostring(1900149))
                         XLog.Debug("[BUFF变更] 新BUFFID:"..1900150)
-                        if self._currentPhase == 1 then
-                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,3,3,41/55,-0.3)
+                        if self._currentPhase == 1 or 0 then
+                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,3,3,41/55,-0.045)
                         elseif self._currentPhase == 3 then
-                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,3,3,63/70,-0.3)
+                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,3,3,63/70,-0.045)
                         end
                         self._takeCheeseCount[npcuuid] = self._takeCheeseCount[npcuuid] +1
                         XLog.Debug("ID为"..npcuuid.."的这只猫目前共获得奶酪数"..self._takeCheeseCount[npcuuid])
@@ -767,6 +785,11 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
             self._proxy:SetFightResultCustomData(player, 18, self._launchMissileCount[npc])  --*****************鼠阵营，使用炸弹 launchMissileCount = 18
             --//3.0新增获取当局奶酪数
             self._proxy:SetFightResultCustomData(player, 26, self._takeCheeseCount[npc])  --*****************整局携带了多少个奶酪
+            --*********第3期新增技能传值
+            self._proxy:SetFightResultCustomData(player, 28, self._inkBombCount[npc])     --*****************鼠阵营，墨汁炸弹 drinkJuiceCount = 28
+            self._proxy:SetFightResultCustomData(player, 31, self._phantomCount[npc])     --*****************鼠阵营，幻象 phantomCount = 31
+            self._proxy:SetFightResultCustomData(player, 32, self._shieldCount[npc])     --*****************鼠阵营，防护罩 shieldCount = 32
+            self._proxy:SetFightResultCustomData(player, 33, self._bananaCount[npc])     --*****************鼠阵营，香蕉皮 bananaCount = 33
 
             local cat = eventArgs.CasterUUID                                              --拿到抓捕此只老鼠的猫
             XLog.Debug(cat .. "这只猫抓到了老鼠")
@@ -780,9 +803,8 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
                 XLog.Error(string.format("cat score delta not found, [newCatchCount:%d]", newCatchCount))
                 scoreDelta = 0
             end
-            self._scoreCatCal = self._scoreCatCal + scoreDelta  --根据抓到第几只老鼠给分
-            self._scoreList[cat] = self._scoreCatCal            --//3.0存入猫的得分列表中
-            if self._proxy:CheckBuffByKind(npc, 1900022) then        --如果鼠是隐身，则记录猫对应的成就
+            self._scoreList[cat] = self._scoreList[cat] + scoreDelta            --//3.0存入猫的得分列表中
+            if self._proxy:CheckBuffByKind(npc, 1900163) then        --如果鼠是隐身，则记录猫对应的成就
                 self._hitHiddenMouseCount[cat] = 1
                 XLog.Debug(cat .. "这只猫抓到了隐身老鼠")
             end
@@ -796,7 +818,7 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
             XLog.Debug(npc .. "这只猫使用了扫描技能")
         elseif (eventArgs.BuffTableId == 1900023) then --鼠-隐身buff
             self._hiddenCount[npc] = self._hiddenCount[npc] + 1
-        elseif (eventArgs.BuffTableId == 10086) then        --*****************猫-透视开始逻辑改buff
+        elseif (eventArgs.BuffTableId == 1900019) then        --*****************鼠-透视开始逻辑改buff
             self._perspectiveCount[npc] = self._perspectiveCount[npc] + 1
         elseif (eventArgs.BuffTableId == 1900051) then --鼠-变身
             self._shapeShiftCount[npc] = self._shapeShiftCount[npc] + 1
@@ -824,6 +846,20 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
             self._launchHookCount[npc] = self._launchHookCount[npc] + 1
         elseif (eventArgs.BuffTableId == 1900070) then        --***********道具使用--渔网
             self._launchFishnetCount[npc] = self._launchFishnetCount[npc] + 1
+        elseif (eventArgs.BuffTableId == 1900133)  then        --***********道具使用--足迹追踪
+            self._paceTrackCount[npc] = self._paceTrackCount[npc] + 1
+        elseif (eventArgs.BuffTableId == 1900135)  then        --***********道具使用--墨汁炸弹
+            self._inkBombCount[npc] = self._inkBombCount[npc] + 1
+        elseif (eventArgs.BuffTableId == 1900134)  then        --***********道具使用--野兽标记
+            self._animalAimCount[npc] = self._animalAimCount[npc] + 1
+        elseif (eventArgs.BuffTableId == 1900138)  then        --***********道具使用--震慑
+            self._shockCount[npc] = self._shockCount[npc] + 1
+        elseif (eventArgs.BuffTableId == 1900153)  then        --***********道具使用--幻象
+            self._phantomCount[npc] = self._phantomCount[npc] + 1
+        elseif (eventArgs.BuffTableId == 1900156)  then        --***********道具使用--防护罩
+            self._shieldCount[npc] = self._shieldCount[npc] + 1
+        elseif (eventArgs.BuffTableId == 1900143)  then        --***********道具使用--香蕉皮
+            self._bananaCount[npc] = self._bananaCount[npc] + 1
             --//3.0给获得道具箱的角色技能充能
             --elseif(eventArgs.BuffTableId == 1900159) then
             --XLog.Debug(npc.."获得了新道具箱")
@@ -1012,13 +1048,13 @@ function XLevelScript1041:Update(dt)
                 --spots[i] = self._GroupPlaceId1041[idx] -- 存储placeID
                 self._proxy:LoadSceneObject(self._GroupPlaceId[idx])
                 --XLog.Debug("输出所有已生成的奶酪坐标:"..tostring(spots[i]))
-                self._proxy:BindSceneObjectEffect(
-                        self._GroupPlaceId[idx],                     -- 物体placeID
-                        "FxHideAndSeek04Nailao02",       -- 特效名
-                        {x = 0, y = 0, z = 0},           -- 位置偏移
-                        {x = 0, y = 0, z = 0},           -- 旋转偏移
-                        {x = 2, y = 2, z = 2}          -- 缩放
-                )
+                --self._proxy:BindSceneObjectEffect(
+                --        self._GroupPlaceId[idx],                     -- 物体placeID
+                --        "FxHideAndSeek04Nailao02",       -- 特效名
+                --        {x = 0, y = 0, z = 0},           -- 位置偏移
+                --        {x = 0, y = 0, z = 0},           -- 旋转偏移
+                --        {x = 2, y = 2, z = 2}          -- 缩放
+                --)
                 --给1041的奶酪挂载特效
             end
 
@@ -1165,7 +1201,8 @@ end
 
 ---@param dt number @ delta time
 function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要一直执行的逻辑在这里实现（一般在这里跳转关卡阶段
-    if self._currentPhase == 0 then
+    --阶段备注 Phase0=准备阶段 Phase1=对战1阶段 Phase2=提前结算 Phase3=最终对战阶段
+    if self._currentPhase == 0 then     --Phase0=准备阶段
         if self._levelTime >= self._settleTime then --准备阶段计时
             XLog.Debug("准备阶段计时到，进入对战阶段")
             self._proxy:SetLevelMemoryInt(4000, 2)
@@ -1205,10 +1242,11 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
                 end
                 self._proxy:SetObstacleActive(1, false)    --**********关闭zone障碍
                 self._proxy:SetObstacleActive(2, false)    --**********关闭zone障碍
+                self._proxy:SetObstacleActive(42, false)    --**********关闭zone障碍
                 XLog.Debug("古城场景开局出生门删除 障碍隐藏")
             end
             self._isBattleBegin = true                          --标记对战阶段开始
-            self._currentPhase = 1
+            self._currentPhase = 1      --Phase1=对战1阶段
         end
     end
     if self._levelTime >= self._missileTime and self._isLaunchMissile == false then --**************************开始生成道具
@@ -1258,7 +1296,7 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
             XLog.Debug("发射道具提示子弹完毕")
         end
     end
-    if self._currentPhase == 1 then
+    if self._currentPhase == 1 then     --Phase1=对战1阶段
         if self._liveCount == 0 then --老鼠被抓完了，猫胜
             if self._isEnd == false then
                 XLog.Debug("老鼠已悉数被捕,开始统一结算")
@@ -1266,7 +1304,7 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
                 --self._timer:Schedule(0, self, self.FinishLevel)    --延迟1帧结算，防止猫的抓捕数据没拿到
                 self._isEnd = true
             end
-            self._currentPhase = 2
+            self._currentPhase = 2      --Phase2=提前结算
         elseif self._levelTime >= (self._settleTime + self._phase2Time) then --对战阶段计时到，进入最终阶段
             if self._isEnd == false then
                 XLog.Debug("对战阶段计时到，进入最终阶段")
@@ -1283,7 +1321,7 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
                             self._proxy:MouseHunterSetSkillCD(8, 10)              --猫阵营，脚本跟踪
                             self._proxy:MouseHunterSetSkillCD(9, 15)              --猫阵营，鹰眼
                             self._proxy:MouseHunterSetSkillCD(3, 3)              --猫阵营，捕兽夹/陷阱
-                            self._proxy:MouseHunterSetSkillCD(11, 10)             --猫阵营，操作干扰
+                            self._proxy:MouseHunterSetSkillCD(11, 15)             --猫阵营，操作干扰
                             self._proxy:MouseHunterSetSkillCD(4, 10)              --猫阵营，加速
                             XLog.Debug("海岛地图猫阵营CD强化生效")
                         elseif self._proxy:CheckBuffByKind(npc, 1900099) then     --宿舍地图标记BUFF
@@ -1291,7 +1329,7 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
                             self._proxy:MouseHunterSetSkillCD(8, 10)              --猫阵营，脚本跟踪
                             self._proxy:MouseHunterSetSkillCD(9, 25)              --猫阵营，鹰眼
                             self._proxy:MouseHunterSetSkillCD(3, 5)              --猫阵营，捕兽夹/陷阱
-                            self._proxy:MouseHunterSetSkillCD(11, 20)             --猫阵营，操作干扰
+                            self._proxy:MouseHunterSetSkillCD(11, 25)             --猫阵营，操作干扰
                             self._proxy:MouseHunterSetSkillCD(4, 20)              --猫阵营，加速
                             XLog.Debug("宿舍地图猫阵营CD强化生效")
                         elseif self._proxy:CheckBuffByKind(npc, 1900100) then     --商场地图标记BUFF
@@ -1299,7 +1337,7 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
                             self._proxy:MouseHunterSetSkillCD(8, 10)              --猫阵营，脚本跟踪
                             self._proxy:MouseHunterSetSkillCD(9, 15)              --猫阵营，鹰眼
                             self._proxy:MouseHunterSetSkillCD(3, 3)              --猫阵营，捕兽夹/陷阱
-                            self._proxy:MouseHunterSetSkillCD(11, 10)             --猫阵营，操作干扰
+                            self._proxy:MouseHunterSetSkillCD(11, 15)             --猫阵营，操作干扰
                             self._proxy:MouseHunterSetSkillCD(4, 10)              --猫阵营，加速
                             XLog.Debug("商场地图猫阵营CD强化生效")
                         elseif self._proxy:CheckBuffByKind(npc, 1900168) then     --古城地图标记BUFF
@@ -1307,7 +1345,7 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
                             self._proxy:MouseHunterSetSkillCD(8, 10)              --猫阵营，脚本跟踪
                             self._proxy:MouseHunterSetSkillCD(9, 10)              --猫阵营，鹰眼
                             self._proxy:MouseHunterSetSkillCD(3, 3)              --猫阵营，捕兽夹/陷阱
-                            self._proxy:MouseHunterSetSkillCD(11, 8)             --猫阵营，操作干扰
+                            self._proxy:MouseHunterSetSkillCD(11, 12)             --猫阵营，操作干扰
                             self._proxy:MouseHunterSetSkillCD(4, 8)              --猫阵营，加速
                             XLog.Debug("商场地图猫阵营CD强化生效")
                         end
@@ -1315,7 +1353,7 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
                     end
                 end
             end
-            self._currentPhase = 3
+            self._currentPhase = 3      --Phase3=最终对战阶段
         elseif self._catCount == 0 then
             if self._isEnd == false then
                 XLog.Debug("猫已全部退出,开始统一结算")
@@ -1330,7 +1368,7 @@ function XLevelScript1041:OnUpdatePhase(dt)         --当前关卡阶段需要�
             self._currentPhase = 21
         end
     end
-    if self._currentPhase == 3 then
+    if self._currentPhase == 3 then     --Phase3=最终对战阶段
         --//3.0给所有猫上特殊BUFF
         if self._liveCount == 0 then --老鼠被抓完了，猫胜
             if self._isEnd == false then
@@ -1476,6 +1514,15 @@ function XLevelScript1041:InitialPlayerSet(npc, index)
     self._launchHookCount[npc] = 0                                                --************************字典：记录使用“钩锁”次数--1900068-对应传值ID-20
     self._launchFishnetCount[npc] = 0                                             --************************字典：记录使用“渔网”次数--1900070-对应传值ID-21
     self._takeCheeseCount[npc] = 0  --3.0//初始化开始获取的奶酪
+
+    self._paceTrackCount[npc] = 0                                               --************************字典：记录使用“足迹追踪"次数--1900133-对应传值ID-27
+    self._inkBombCount[npc] = 0                                                 --************************字典：记录使用“墨汁炸弹"次数--1900135-对应传值ID-28
+    self._animalAimCount[npc] = 0                                               --************************字典：记录使用“野兽标记"次数--1900134-对应传值ID-29
+    self._shockCount[npc] = 0                                                   --************************字典：记录使用“震慑"次数--1900138-对应传值ID-30
+    self._phantomCount[npc] = 0                                                --************************字典：记录使用“幻象"次数--1900153-对应传值ID-31
+    self._shieldCount[npc] = 0                                                  --************************字典：记录使用“防护罩"次数--1900155-对应传值ID-32
+    self._bananaCount[npc] = 0                                                  --************************字典：记录使用“香蕉皮"次数--1900142-对应传值ID-33
+
 
     self._proxy:SetMouseHunterPlayerScore(npc, self._scoreList[npc])                                           --设置分数UI显示
     self._proxy:ApplyMagic(npc, npc, 200023, 1)                                                                --UI显示指令
@@ -1691,6 +1738,9 @@ end
 
 -- 关卡结束
 function XLevelScript1041:FinishLevel()
+    -- 通知战斗对局结束
+    self._proxy:MouseHunterNotifyEndMatch();
+
     --把猫鼠分数分开算排名
     local listCat = {}                          --用于存数组
     local listMouse = {}
@@ -1702,9 +1752,7 @@ function XLevelScript1041:FinishLevel()
         end
         --//3.0新增结算分
         if self._campDictionary[npc] == 1 then
-            self._scoreCatCal = self._scoreList[npc]
-            self._scoreCatCal = self._scoreCatCal + self._scoreCatFinish
-            self._scoreList[npc] = self._scoreCatCal
+            self._scoreList[npc] = self._scoreList[npc] + self._scoreCatFinish
             XLog.Debug(npc.."猫猫获得完赛分了")
             table.insert(listCat, score)
             scoreDictionaryCat[npc] = score
@@ -1757,6 +1805,11 @@ function XLevelScript1041:FinishLevel()
             self._proxy:SetFightResultCustomData(player, 17, self._fastSpeedCount[npc])       --*****************猫阵营，使用冲刺 fastSpeedCount = 17
             self._proxy:SetFightResultCustomData(player, 20, self._launchHookCount[npc])      --*****猫阵营，使用钩锁 HitHiddenMouseCount = 20
             self._proxy:SetFightResultCustomData(player, 21, self._launchFishnetCount[npc])   --*****猫阵营，使用渔网 launchFishnetCount = 21
+            --*********第3期新增技能传值
+            self._proxy:SetFightResultCustomData(player, 27, self._paceTrackCount[npc])   --*****猫阵营，使用足迹追踪 paceTrackCount = 27
+            self._proxy:SetFightResultCustomData(player, 29, self._animalAimCount[npc])   --*****猫阵营，使用野兽标记 animalAimCount = 29
+            self._proxy:SetFightResultCustomData(player, 30, self._shockCount[npc])   --*****猫阵营，使用震慑 shockCount = 30
+            self._proxy:SetFightResultCustomData(player, 24, self._improveTeamSpeedCount[npc])   --*****猫阵营，使用全体增速 improveTeamSpeedCount = 24
 
 
             XLog.Debug(npc .. "这只猫使用了" .. self._scanCount[npc] .. "次扫描技能")
@@ -1806,6 +1859,11 @@ function XLevelScript1041:FinishLevel()
             self._proxy:SetFightResultCustomData(player, 15, self._drinkJuiceCount[npc])     --*****************鼠阵营，使用饮料 drinkJuiceCount = 15
             self._proxy:SetFightResultCustomData(player, 17, self._fastSpeedCount[npc])      --*****************鼠阵营，使用冲刺 fastSpeedCount = 17
             self._proxy:SetFightResultCustomData(player, 18, self._launchMissileCount[npc])  --*****************鼠阵营，使用炸弹 launchMissileCount = 18
+            --*********第3期新增技能传值
+            self._proxy:SetFightResultCustomData(player, 28, self._inkBombCount[npc])     --*****************鼠阵营，墨汁炸弹 drinkJuiceCount = 28
+            self._proxy:SetFightResultCustomData(player, 31, self._phantomCount[npc])     --*****************鼠阵营，幻象 phantomCount = 31
+            self._proxy:SetFightResultCustomData(player, 32, self._shieldCount[npc])     --*****************鼠阵营，防护罩 shieldCount = 32
+            self._proxy:SetFightResultCustomData(player, 33, self._bananaCount[npc])     --*****************鼠阵营，香蕉皮 bananaCount = 33
             local isAlive = 0
             if self._isCaughtDictionary[npc] == 1 then
                 isAlive = 0

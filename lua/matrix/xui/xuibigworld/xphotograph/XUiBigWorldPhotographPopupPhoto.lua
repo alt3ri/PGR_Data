@@ -3,6 +3,7 @@
 local XUiBigWorldPhotographPopupPhoto = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldPhotographPopupPhoto")
 
 function XUiBigWorldPhotographPopupPhoto:OnAwake()
+    self:PlayAnimation("MAnimStart")
     self:_RegisterButtonClicks()
 end
 
@@ -20,19 +21,34 @@ function XUiBigWorldPhotographPopupPhoto:OnStart(isHideOtherBtn, needCloseContro
 
     local t = XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CAMERA_PHOTOGRAPH_DO_TAKE_PHOTO)
     self._IsFinishTask = false
-    if t and t.Completed then
+    self._isNeedUpload = false
+    self._objectiveId = 0
+
+    local finishTask = {}
+    if t and t.CompletedObjectiveIds and table.nums(t.CompletedObjectiveIds) > 0 then
+        local isNeedUpload, objectiveId = XMVCA.XBigWorldQuest:CheckPhotoQuestNeedUpload()
+        self._isNeedUpload = isNeedUpload
+        self._objectiveId = objectiveId
         self._IsFinishTask = true
+        finishTask = t.CompletedObjectiveIds
     end
+
+    local dict = self._Control:GetRecordData(self._recordData)
+    dict.taskIds = finishTask
+    dict.save_cnt = self._Control:GetPhotoCurrentNum()
+    CS.XRecord.Record(dict, "1000015", "BigWorldTakePhotoRecordFinish")
+
     self._NeedCloseFirst = needCloseControl or self._IsFinishTask
     self._DelayTimerId = XScheduleManager.ScheduleOnce(function()
+        if not XLoginManager.IsLogin() then return end
         self._Control:CaptureTextureNow(function()
+            if not XLoginManager.IsLogin() then return end
             self.RawImage.texture = self._Control:GetCaptureTexture()
             self.RawImage2.texture = self.RawImage.texture
 
-            if self._Control:GetAutoSave() then
+            if self._Control:GetAutoSave() or self._isNeedUpload then
                 if not self._Control:IsPhotoFull() then
-                    self._hasUpload = true
-                    self.BtnUpload.gameObject:SetActive(self._hasUpload)
+                    self.BtnUpload.gameObject:SetActive(true)
                 end
                 self:_RemoveDelayTimer()
                 self._DelayTimerId = XScheduleManager.ScheduleOnce(function()
@@ -43,7 +59,7 @@ function XUiBigWorldPhotographPopupPhoto:OnStart(isHideOtherBtn, needCloseContro
                 self:OnTipMsgEnqueue()
                 self:QuestFinishToFight()
             end
-            self:PlayAnimation("Complete")
+            -- self:PlayAnimation("Complete")
         end)
     end, 150)
 end
@@ -64,6 +80,7 @@ function XUiBigWorldPhotographPopupPhoto:OnTipMsgEnqueue()
 end
 
 function XUiBigWorldPhotographPopupPhoto:OnEnable()
+    self:PlayAnimation("MAnimEnable")
     self:Refresh()
 end
 
@@ -150,14 +167,17 @@ function XUiBigWorldPhotographPopupPhoto:OnBtnSaveClick()
 end
 
 function XUiBigWorldPhotographPopupPhoto:OnBtnUploadClick()
-    if self._Control:IsPhotoFull() then
+    if self._Control:IsPhotoFull() and not self._isNeedUpload then
         XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_P_UploadFull"))
         self:QuestFinishToFight()
         return
     end
     local descaleTimes = 6
-    XMVCA.XBigWorldAlbum:UploadTakeTexture(false, self.RawImage.texture, function(photoData)
-        self._hasUpload = true
+    XMVCA.XBigWorldAlbum:UploadTakeTexture(self._isNeedUpload, self._objectiveId, self.RawImage.texture, function(photoData)
+        if not self._isNeedUpload then
+            self._hasUpload = true
+        end
+        self._isNeedUpload = false
         self:Refresh()
         self:OnTipMsgEnqueue()
         self:QuestFinishToFight(photoData.Id)

@@ -855,7 +855,7 @@
         "Function": "InvertCardGame",
         "Describe": "\u6781\u5883\u7edf\u5408",
         "IsShowCourse": 3,
-        "ImageAsset": "['Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo2.png', 'Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo3.png', 'Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo4.png', 'Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo5.png', 'Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo6.png']",
+        "ImageAsset": "['Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp01.png', 'Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp02.png', 'Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp03.png', 'Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp04.png', 'Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp05.png']",
         "TextGroupIds": "[1008301, 1008302, 1008303, 1008304, 1008305]",
         "SubIds": null
     },
@@ -1121,12 +1121,12 @@
     },
     {
         "Id": 10111,
-        "Name": "\u5143\u6625\u6808\u623f",
+        "Name": "\u8be1\u9b47\u8f6e\u9ab0",
         "Function": "DiceGameActivityHelp",
         "Describe": "\u63b7\u9ab0\u5b50\u56fe\u6587",
-        "IsShowCourse": 1,
-        "ImageAsset": "['Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame01.png', 'Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame02.png', 'Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame03.png', 'Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame04.png']",
-        "TextGroupIds": null,
+        "IsShowCourse": 3,
+        "ImageAsset": "['Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame02.png', 'Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame03.png', 'Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame04.png']",
+        "TextGroupIds": "[1011101, 1011102, 1011103]",
         "SubIds": null
     },
     {
@@ -1945,8 +1945,8 @@
         "Function": "DlcMouseHunterHelp",
         "Describe": "\u5367\u732b\u85cf\u9f20\u56fe\u6587\u6559\u7a0b",
         "IsShowCourse": 3,
-        "ImageAsset": "['Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp01.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp02.png']",
-        "TextGroupIds": "[1019301, 1019302]",
+        "ImageAsset": "['Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp01.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp02.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp03.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp04.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp05.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp06.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp07.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp08.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp09.png', 'Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp10.png']",
+        "TextGroupIds": "[1019301, 1019302, 1019303, 1019304, 1019305, 1019306, 1019307, 1019308, 1019309, 1019310]",
         "SubIds": null
     },
     {
@@ -2227,6 +2227,26 @@
         "IsShowCourse": 3,
         "ImageAsset": "['Assets/Product/Texture/Image/UiRace/UiRaceHelp01.png', 'Assets/Product/Texture/Image/UiRace/UiRaceHelp02.png', 'Assets/Product/Texture/Image/UiRace/UiRaceHelp03.png', 'Assets/Product/Texture/Image/UiRace/UiRaceHelp04.png', 'Assets/Product/Texture/Image/UiRace/UiRaceHelp05.png']",
         "TextGroupIds": "[1022001, 1022002, 1022003, 1022004, 1022005]",
+        "SubIds": null
+    },
+    {
+        "Id": 10222,
+        "Name": "\u6297\u6027\u964d\u4f4e\u6548\u679c\u7ec6\u5219",
+        "Function": "UiSkillDetailsHelp",
+        "Describe": "\u88c5\u7532\u578b/\u7834\u7532\u578b\u56fe\u6587\u6559\u7a0b",
+        "IsShowCourse": 3,
+        "ImageAsset": "['Assets/Product/Texture/Image/UiHelp/UiHelpPojia.png']",
+        "TextGroupIds": "[1022201]",
+        "SubIds": null
+    },
+    {
+        "Id": 10223,
+        "Name": "\u8d85\u94fe\u534f\u9635",
+        "Function": "DlcRelink",
+        "Describe": "relink\u56fe\u6587\u6559\u7a0b",
+        "IsShowCourse": 3,
+        "ImageAsset": "['Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp1.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp2.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp3.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp4.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp5.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp6.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp7.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp8.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp9.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp10.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp11.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp12.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp13.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp14.png']",
+        "TextGroupIds": "[1022301, 1022302, 1022303, 1022304, 1022305, 1022306, 1022307, 1022308, 1022309, 1022310, 1022311, 1022312, 1022313, 1022314]",
         "SubIds": null
     }
 ]

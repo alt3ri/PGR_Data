@@ -59,7 +59,15 @@ function XUiBigWorldSettlement:OnStart(settleData)
     self._PlayTime = settleData.PlayTime
     self._IsWin = settleData.IsWin
     self._ShowScore = settleData.ShowScore
-    
+    self.SecondScreen = self.PanelSettleSuccessful:Find("SecondScreen")
+    local successfulEnableTr = self.Transform:Find("Animation/SuccessfulEnable")
+    if successfulEnableTr then
+        self.SuccessfulEnable = successfulEnableTr:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+        self.SuccessfulEnable.playOnAwake = true
+    end
+end
+
+function XUiBigWorldSettlement:OnEnable()
     self:InitView()
 end
 
@@ -101,9 +109,9 @@ function XUiBigWorldSettlement:DoSettleWin()
     --播放完之后显示结算界面
     self.PanelSettleSuccessful.gameObject:SetActiveEx(true)
     self.PanelSettleFail.gameObject:SetActiveEx(false)
-    self.PanelScoreSuccessful.gameObject:SetActiveEx(self._ShowScore)
     self:PlayAnimationWithMask("SuccessfulEnable", function()
         self:PlayScoreAnimation(self.TxtSuccessScore)
+        self.SecondScreen.gameObject:SetActive(true)
         XTool.UpdateDynamicItem(self._GridsObj, self._ObjectiveIds, self.GridTarget, XUiGridBWSettleTarget, self)
         self:PlaySeqAnimation()
     end)
@@ -113,7 +121,6 @@ end
 function XUiBigWorldSettlement:DoSettleLose()
     self.PanelSettleSuccessful.gameObject:SetActiveEx(false)
     self.PanelSettleFail.gameObject:SetActiveEx(true)
-    self.PanelScoreFail.gameObject:SetActiveEx(self._ShowScore)
     --倒计时
     local Cd = 30
     self.TxtCoolDown.text = Cd

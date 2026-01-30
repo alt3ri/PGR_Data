@@ -7,7 +7,7 @@ local XEcologyCharAIFindPathState = XClass(XFindPathState, "XEcologyCharAIFindPa
 ---@overload
 function XEcologyCharAIFindPathState:SetPath(path, checkDistance)
     XFindPathState.SetPath(self, path, checkDistance)
-    self._waitTimeLimit = 120
+    self._waitTimeLimit = 10
     self._curWaitTime = 0
     -- 记录寻路目标状态
     for enum, pos in pairs(self.StateConfig.PathTargetPosDict) do
@@ -45,6 +45,7 @@ function XEcologyCharAIFindPathState:OnStateUpdate(dt)
     end
     
     self:UpdateWait(dt)
+    self:UpdateStop2Move(dt)
     XFindPathState.OnStateUpdate(self, dt)
 end
 
@@ -72,8 +73,10 @@ end
 ---@overload
 function XEcologyCharAIFindPathState:SetMoveState(value)
     self._isMove = value
-    if self._isMove then
+    if not self._isMove then
         self._curWaitTime = self._waitTimeLimit
+    else
+        self._curWaitTime = 0
     end
 end
 
@@ -102,18 +105,7 @@ function XEcologyCharAIFindPathState:OnActorTrigger(eventArgs)
     end
     
     if eventArgs.TriggerState == ETriggerState.Enter then
-        if self.StateConfig.PathBubbleName then
-            self._proxy:PlayDramaBubble(ETargetActorType.Npc, self._uuid, self.StateConfig.PathBubbleName)
-        end
-        self:StopMove()
-        self._proxy:EnableNpcLookAt(self._uuid, self._proxy:GetLocalPlayerNpcId())
-        self._proxy:TurnNpc(self._uuid,self._proxy:GetLocalPlayerNpcId(),"Drama_Stand_01")
-    elseif eventArgs.TriggerState == ETriggerState.Exit then
-        if self.StateConfig.PathBubbleName then
-            self._proxy:StopDramaBubble(ETargetActorType.Npc, self._uuid)
-        end
-        self:ContinueMove()
-        self._proxy:DisableNpcLookAt(self._uuid, self._proxy:GetLocalPlayerNpcId())
+        self:OnMeetCommander()
     end
 end
 
@@ -125,6 +117,7 @@ function XEcologyCharAIFindPathState:OnNpcInteractStart(eventArgs)
     if self.StateConfig.PathBubbleName then
         self._proxy:StopDramaBubble(ETargetActorType.Npc, self._uuid)
     end
+    self:StopMove()
 end
 --endregion
 
@@ -142,13 +135,65 @@ function XEcologyCharAIFindPathState:UpdateOptionActive()
 end
 --endregion
 
+--region 
+function XEcologyCharAIFindPathState:OnMeetCommander()
+    -- 等待结束离开的npc在0.5秒内不停下
+    if self._curWaitTime > 0 then
+        return
+    end
+    -- 行走中的npc在剧情时不停下
+    if not self._isMove or self._proxy:HasRunningDrama() then
+        return
+    end
+    if self.StateConfig.PathBubbleName then
+        self._proxy:PlayDramaBubble(ETargetActorType.Npc, self._uuid, self.StateConfig.PathBubbleName)
+    end
+    self:StopMove()
+    self._proxy:EnableNpcLookAt(self._uuid, self._proxy:GetLocalPlayerNpcId())
+    self._proxy:TurnNpc(self._uuid,self._proxy:GetLocalPlayerNpcId(),"Drama_Stand_01")
+end
+
+function XEcologyCharAIFindPathState:OnLeaveCommander()
+    if self.StateConfig.PathBubbleName then
+        self._proxy:StopDramaBubble(ETargetActorType.Npc, self._uuid)
+    end
+    self:ContinueMove()
+    self._proxy:DisableNpcLookAt(self._uuid, self._proxy:GetLocalPlayerNpcId())
+end
+
+function XEcologyCharAIFindPathState:UpdateStop2Move(dt)
+    if self._isMove then
+        return
+    end
+    
+    if self._proxy:CheckNpcDistance(self._uuid, self._proxy:GetLocalPlayerNpcId(), 3.5) then
+        return
+    end
+    
+    -- 离开后1s选择离开
+    if self._curWaitTime > 1 then
+        self._curWaitTime = 1
+    end
+end
+--endregion
+
 --region 拦路等待计时
 function XEcologyCharAIFindPathState:UpdateWait(dt)
-    if not self._isMove then
-        self._curWaitTime = self._curWaitTime - dt
-        if self._curWaitTime <= 0 then
-            self:ContinueMove()
+    -- 停下时在剧情中则不计时离开
+    if self._isMove then
+        if self._curWaitTime > 0 then
+            self._curWaitTime = self._curWaitTime - dt
         end
+        return
+    end
+    if self._proxy:HasRunningDrama() then
+        return
+    end
+    self._curWaitTime = self._curWaitTime - dt
+    if self._curWaitTime <= 0 then
+        self:OnLeaveCommander()
+        -- 主动离开的有0.5秒的停下冷却
+        self._curWaitTime = 0.5
     end
 end
 --endregion

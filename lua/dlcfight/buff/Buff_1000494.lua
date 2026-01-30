@@ -3,8 +3,8 @@ local Base = require("Buff/BuffBase/XBuffBase")
 ---@class XBuffScript1000494 : XFightBase
 local XBuffScript1000494 = XDlcScriptManager.RegBuffScript(1000494, "XBuffScript1000494", Base)
 
-function XBuffScript1000494:Init()
-    Base.Init(self)
+function XBuffScript1000494:ScriptInit(isGainControl)
+    Base.ScriptInit(self, isGainControl)
 
     --- 破韧可QTE范围(30米)
     self._breakValidRadius = 30

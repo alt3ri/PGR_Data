@@ -243,7 +243,6 @@ end
 
 function XUiGridBWShop:RefreshCommon()
     self._GridItem:Refresh(self._Data.RewardGoods)
-    self._GridItem:RefreshCount()
 end
 
 function XUiGridBWShop:RefreshPrice()

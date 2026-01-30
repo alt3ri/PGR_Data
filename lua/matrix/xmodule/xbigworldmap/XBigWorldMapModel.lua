@@ -469,6 +469,14 @@ function XBigWorldMapModel:UpdatePinPosition(levelId, pinId, position)
     end
 end
 
+function XBigWorldMapModel:UpdatePinOutStatus(levelId, pinId, isOut)
+    local pinData = self:GetPinDataByLevelIdAndPinId(levelId, pinId)
+
+    if pinData then
+        pinData:SetIsOut(isOut)
+    end
+end
+
 function XBigWorldMapModel:ClearMapPinAssistedTrack(levelId, pinId)
     self:UpdateAssistedTrack(levelId, pinId, nil)
 end

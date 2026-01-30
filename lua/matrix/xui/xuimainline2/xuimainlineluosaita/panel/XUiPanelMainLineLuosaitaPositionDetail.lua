@@ -25,17 +25,21 @@ end
 ---@param posId number
 function XUiPanelMainLineLuosaitaPositionDetail:Refresh(posId)
     self.ImgDocTag.gameObject:SetActiveEx(false)
+    self.PanelAttributeArmy.gameObject:SetActiveEx(false)
+    self.PanelAttributeEnemy.gameObject:SetActiveEx(false)
     
     local positionInfo = self._Control:GetPositionInfo(posId)
     local name = ""
     local desc = ""
     local docIds
+    local panelAttribute
     if positionInfo:IsArmy() then
         local armyId = positionInfo:GetArmyId()
         local config = self._Control:GetConfig():GetConfigArmy(armyId)
         name = config.Name
         desc = config.Desc
         self.RImgArmyHead:SetRawImage(config.Head)
+        panelAttribute = self.PanelAttributeArmy
     elseif positionInfo:IsEnemy() then
         local enemyId = positionInfo:GetEnemyId()
         local config = self._Control:GetConfig():GetConfigEnemy(enemyId)
@@ -43,12 +47,14 @@ function XUiPanelMainLineLuosaitaPositionDetail:Refresh(posId)
         desc = config.Desc
         docIds = config.DocIds
         self.RImgEnemyHead:SetRawImage(config.Head)
+        panelAttribute = self.PanelAttributeEnemy
     elseif positionInfo:IsCharacter() then
         local characterId = positionInfo:GetCharacterId()
         local config = self._Control:GetConfig():GetConfigCharacter(characterId)
         name = config.Name
         desc = config.Desc
         self.RImgCharacterHead:SetRawImage(config.Head)
+        self.ImgCharacterHeadCircle:SetSprite(config.HeadCircle)
     end
     self.TxtName.text = name
     self.TxtDetail.text = desc
@@ -57,11 +63,10 @@ function XUiPanelMainLineLuosaitaPositionDetail:Refresh(posId)
     self.ImgBgCharacter.gameObject:SetActiveEx(positionInfo:IsCharacter())
     
     -- 属性
-    local isShowAttr = positionInfo:IsArmy() or positionInfo:IsEnemy()
-    self.PanelAttribute.gameObject:SetActiveEx(isShowAttr)
-    if isShowAttr then
-        self.TxtHP.text = self._Control:GetPositionCurHp(positionInfo:GetPosId())
-        self.TxtAttack.text = self._Control:GetPositionCurAttack(positionInfo:GetPosId())
+    if panelAttribute then
+        panelAttribute.gameObject:SetActiveEx(true)
+        panelAttribute:GetObject("TxtHP").text = self._Control:GetPositionCurHp(positionInfo:GetPosId())
+        panelAttribute:GetObject("TxtAttack").text = self._Control:GetPositionCurAttack(positionInfo:GetPosId())
     end
     
     -- 文件掉落标签

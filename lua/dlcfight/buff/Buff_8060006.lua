@@ -3,11 +3,13 @@ local Base = require("Buff/BuffBase/XBuffBase")
 ---@class XBuffScript8060006 : XBuffBase
 local XBuffScript8060006 = XDlcScriptManager.RegBuffScript(8060006, "XBuffScript8060006", Base)
 --效果说明：治疗别人后，给自己加攻击力
-
-function XBuffScript8060006:Init()
-    Base.Init(self)
-    self.magicLevel=1 --等新接口直接获取自己的BUFF等级
+function XBuffScript8060006:Ctor()
     self.magicId=8060007
+end
+
+function XBuffScript8060006:ScriptInit(isGainControl)
+    Base.ScriptInit(self,isGainControl)
+    self.magicLevel=1 --等新接口直接获取自己的BUFF等级
     self.hasLevel=false
 end
 
@@ -24,8 +26,9 @@ function XBuffScript8060006:InitEventCallBackRegister()
 end
 
 function XBuffScript8060006:AfterCureCalc(eventArgs)
-    if not self._proxy:CheckNpc(self._uuid) and not eventArgs.Launcher==self._uuid then return end
-    self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel)
+    if self._proxy:CheckNpc(self._uuid) and eventArgs.Launcher==self._uuid then
+        self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel)
+    end
 end
 --endregion
 

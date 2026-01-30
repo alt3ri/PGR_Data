@@ -120,6 +120,12 @@ end
 
 function XUiSkyGardenSGDroneStageDetail:OnClickTogDifficulty()
     self._IsCurrentDifficulty = not self._IsCurrentDifficulty
+
+    if self._IsCurrentDifficulty then
+        self.TogDifficulty:SetButtonState(CS.UiButtonState.Select)
+    else
+        self.TogDifficulty:SetButtonState(CS.UiButtonState.Normal)
+    end
 end
 
 function XUiSkyGardenSGDroneStageDetail:_RegisterButtonClicks()

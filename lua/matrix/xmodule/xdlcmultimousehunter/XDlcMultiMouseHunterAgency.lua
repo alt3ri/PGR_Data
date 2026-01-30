@@ -14,7 +14,6 @@ local Protocols = {
     DlcMultiplayerGetBpRewardRequest = "DlcMultiplayerGetBpRewardRequest",
     DlcMultiplayerSelectSkillRequest = "DlcMultiplayerSelectSkillRequest",
     DlcMultiplayerDanmakuRequest = "DlcMultiplayerDanmakuRequest", -- 弹幕请求
-    DlcMultiplayerMonsterClickRequest = "DlcMultiplayerMonsterClickRequest", -- 怪物点击请求
 }
 
 function XDlcMultiMouseHunterAgency:OnInit()
@@ -64,8 +63,11 @@ function XDlcMultiMouseHunterAgency:InitEvent()
 end
 
 function XDlcMultiMouseHunterAgency:OpenMainUi()
+    if self.InCd then
+        return
+    end
     -- 玩法重连检查
-    XMVCA.XDlcRoom:ReqPreCheckReconnect(function()
+    XMVCA.XDlcRoom:ReqPreCheckReconnect(self:DlcGetWorldType(), function()
         -- 重连处理
         if XMVCA.XDlcWorld:OnReconnectFight() then
             return
@@ -76,6 +78,10 @@ function XDlcMultiMouseHunterAgency:OpenMainUi()
             XMVCA.XDlcRoom:CreateRoom(worldId, levelId, 1, true)
         end
     end)
+    XScheduleManager.ScheduleOnce(function()
+        self.InCd = false
+    end, 1000)--增加1s Cd
+    self.InCd = true
 end
 
 -- region Notify
@@ -171,7 +177,7 @@ end
 
 --- 选择讨论阵营投票
 ---@param camp number 阵营
-function XDlcMultiMouseHunterAgency:RequestPlayerDiscussionVote(camp)
+function XDlcMultiMouseHunterAgency:RequestPlayerDiscussionVote(camp, oncall)
     local request = {
         Camp = camp,
     }
@@ -182,6 +188,9 @@ function XDlcMultiMouseHunterAgency:RequestPlayerDiscussionVote(camp)
         end
 
         self._Model:SetDiscussionInfo(res.DiscussionInfo)
+        if oncall then
+            oncall()
+        end
         XEventManager.DispatchEvent(XEventId.EVENT_DLC_MOUSE_HUNTER_REFRESH_DISCUSSION_DATA)
     end)
 end
@@ -259,27 +268,6 @@ function XDlcMultiMouseHunterAgency:RequestDlcMultiplayerDanmaku(callback)
     end)
 end
 
---- 怪物点击请求
----@param count number 点击次数
----@param callBack function 点击成功回调
-function XDlcMultiMouseHunterAgency:RequestDlcMultiplayerMonsterClick(count, callBack)
-    local request = {
-        Clicks = count
-    }
-    XNetwork.Call(Protocols.DlcMultiplayerMonsterClickRequest, request, function(res)
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-
-        self._Model:SetMonsterClickCount(count)
-        if callBack then
-            callBack()
-        end
-    end)
-end
-
--- endregion
 
 -- region Dlc
 

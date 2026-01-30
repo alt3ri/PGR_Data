@@ -4,12 +4,15 @@ local Base = require("Buff/BuffBase/XBuffBase")
 local XBuffScript8060014 = XDlcScriptManager.RegBuffScript(8060014, "XBuffScript8060014", Base)
 --效果说明：对OD状态下的敌人造成更多伤害
 
-function XBuffScript8060014:Init()
+function XBuffScript8060014:Ctor()
+    self.magicId=8060015
+end
+
+function XBuffScript8060014:ScriptInit(isGainControl)
     --初始化
-    Base.Init(self)
+    Base.ScriptInit(self,isGainControl)
     ------------配置------------
     self.magicLevel=1 --等新接口直接获取自己的BUFF等级
-    self.magicId=8060015
     self.hasLevel=false
 end
 

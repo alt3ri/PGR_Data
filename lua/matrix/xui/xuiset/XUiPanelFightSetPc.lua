@@ -52,16 +52,27 @@ function XUiPanelFightSetPc:InitDrdSort()
 
     self.KeyboardDrdSort:ClearOptions()
     self.ControllerDrdSort:ClearOptions()
-
-    local CsDropdown = CS.UnityEngine.UI.Dropdown
-    for _, operationType in ipairs(self.InputMapIdList) do
-        local op = CsDropdown.OptionData()
-        op.text = XSetConfigs.GetInputMapIdStr(operationType)
-        self.KeyboardDrdSort.options:Add(op)
-        self.ControllerDrdSort.options:Add(op)
+    local firstIndex = 1
+    
+    -- V4.2 relink默认选中该玩法的操作类型
+    local worldType
+    local fightBeginData = XMVCA.XDlcRoom:GetFightBeginData()
+    if CS.XFightInterface.IsDLC and not fightBeginData:IsWorldClear() then
+        worldType = XMVCA.XDlcWorld:GetWorldTypeById(fightBeginData:GetWorldData():GetId())
     end
 
-    local firstIndex = 1
+    local CsDropdown = CS.UnityEngine.UI.Dropdown
+    for index, inputMapId in ipairs(self.InputMapIdList) do
+        local op = CsDropdown.OptionData()
+        op.text = XSetConfigs.GetInputMapIdStr(inputMapId)
+        self.KeyboardDrdSort.options:Add(op)
+        self.ControllerDrdSort.options:Add(op)
+
+        if worldType == XEnumConst.DlcWorld.WorldType.Relink and inputMapId == ToInt32(CS.XInputMapId.Relink) then
+            firstIndex = index
+        end
+    end
+    
     self.KeyboardDrdSelectIndex = firstIndex
     self.KeyboardDrdSort.onValueChanged:AddListener(function()
         local CSArrayIndexToLuaTableIndex = function(index)
@@ -69,6 +80,7 @@ function XUiPanelFightSetPc:InitDrdSort()
         end
         self:OnKeyboardDrdSortClick(CSArrayIndexToLuaTableIndex(self.KeyboardDrdSort.value))
     end)
+    self.KeyboardDrdSort.value = firstIndex - 1
 
     self.ControllerDrdSelectIndex = firstIndex
     self.ControllerDrdSort.onValueChanged:AddListener(function()
@@ -77,11 +89,8 @@ function XUiPanelFightSetPc:InitDrdSort()
         end
         self:OnControllerDrdSortClick(CSArrayIndexToLuaTableIndex(self.ControllerDrdSort.value))
     end)
-
-    local operationType = self.InputMapIdList[firstIndex]
-    local firstOptionStr = XSetConfigs.GetInputMapIdStr(operationType)
-    self.KeyboardDrdSort.captionText.text = firstOptionStr
-    self.ControllerDrdSort.captionText.text = firstOptionStr
+    self.ControllerDrdSort.value = firstIndex - 1
+    
     self.IsInitDrdSort = true
 end
 

@@ -4,6 +4,7 @@ local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 local XUiPanelItemList = require("XUi/XUiShop/XUiPanelItemList")
 local XUiPanelFashionList = require("XUi/XUiShop/XUiPanelFashionList")
 local XUiPanelGuildGoodsList = require("XUi/XUiShop/XUiPanelGuildGoodsList")
+local XUiShopFashionDiscountActivity = require("XUi/XUiShop/XUiShopFashionDiscountActivity")
 ---@class XUiShop: XLuaUi
 local XUiShop = XLuaUiManager.Register(XLuaUi, "UiShop")
 local type = type
@@ -63,6 +64,8 @@ function XUiShop:OnStart(typeId, cb, configShopId, screenId)
     self.GuildGoodsList = XUiPanelGuildGoodsList.New(self.PanelGuildGoodsList, self)
     self.ShopPeriod = XUiPanelShopPeriod.New(self.PanelShopPeriod, self)
     self.RefreshTips = require("XUi/XUiShop/XUiShopRefreshTips").New(self.PanelSkillDetails)
+    self.UiShopFashionDiscountActivity = XUiShopFashionDiscountActivity.New(self)
+
 
     self.AssetActivityPanel:HidePanel()
     self.ItemList:HidePanel()
@@ -94,6 +97,7 @@ function XUiShop:OnStart(typeId, cb, configShopId, screenId)
     -- end)
 
     self:SetTitleName(typeId)
+
 end
 
 function XUiShop:OnEnable()
@@ -220,7 +224,10 @@ function XUiShop:OnDestroy()
     self.FashionList:HidePanel()
     self.GuildGoodsList:HidePanel()
     self.ShopPeriod:HidePanel()
-end
+    self.UiShopFashionDiscountActivity:OnDestroy()
+    self.UiShopFashionDiscountActivity = nil
+   
+    end
 
 function XUiShop:SetShopBtn(shopType)
     local btnList = nil
@@ -426,7 +433,7 @@ function XUiShop:UpdateTog()
     end
     self.TabBtnGroup:Init(self.BtnGoList, function(index) self:OnSelectedTog(index) end)
     self.TabBtnGroup:SelectIndex(selectIndex)
-    self:GroupBtnShowActivityTag()
+    self.UiShopFashionDiscountActivity:ResetDiscountActivityTag()
 end
 
 function XUiShop:GetRechargeTagIndex(infoList, rechargeType)
@@ -494,18 +501,9 @@ function XUiShop:UpdateInfo(shopId)
     self:InitScreen(shopId)
     self:RefreshSelectFilter(shopId)
     self:UpdateList(shopId, false)
+    
 
-    self.TxtActivityTimeTip.gameObject:SetActiveEx(XShopManager.GetShopActivityIsOpen(shopId))
-    local activityTime = XShopManager.GetShopActivityEndTime(shopId)
-    if activityTime then
-        local gameTime = activityTime - XTime.GetServerNowTimestamp()
-        local totalDays = gameTime / (3600 * 24)
-        if totalDays >= 1 then
-            self.TxtActivityTimeTip.text = XUiHelper.GetText("FashionActivityRemainDays", math.floor(totalDays))
-        else
-            self.TxtActivityTimeTip.text = XUiHelper.GetText("FashionActivityRemainNotEnoughDay")
-        end
-    end
+    self.UiShopFashionDiscountActivity:ResetDiscountActivityTime(shopId)
 end
 
 function XUiShop:InitScreen(shopId)
@@ -520,8 +518,6 @@ function XUiShop:InitScreen(shopId)
         self.IsHasScreen = false
     end
     self.PanelShaixuan.gameObject:SetActiveEx(self.IsHasScreen)
-
-   
 end
 
 function XUiShop:UpdateList(shopId, is4RequestRefresh)
@@ -647,35 +643,7 @@ function XUiShop:GetSuitScreenDataProvider(ignoreOther)
 end
 
 --endregion
-function XUiShop:GroupBtnShowActivityTag()
-    local shopGroup = {}
-    local groupId = nil
-    for i = 1, #self.BtnGoList do
-        local btnUi = self.BtnGoList[i]
-        local info = self.TagBtnShopGroup[btnUi]
-        if info.IsHasSnd and info.Id == 0 then
-            groupId = btnUi
-            -- btnUi.gameObject:SetActiveEx(false)
-        end
-        local tagTransform = btnUi.transform:Find("ActivityTag")
-        if tagTransform and info.ActivityEndTime ~= -1 then
-            tagTransform.gameObject:SetActiveEx(true)
-            local tagText = tagTransform.gameObject:GetComponentInChildren(typeof(CS.UnityEngine.UI.Text))
-            tagText.text = XUiHelper.GetText("FashionActivitySecondTag")
-            if groupId and not shopGroup[groupId] then
-                shopGroup[groupId] = true
-            end
-        end
-    end
-    for btnUi, isShow in pairs(shopGroup) do
-        local tagTransform = btnUi.transform:Find("ActivityTag")
-        if isShow and tagTransform then
-            tagTransform.gameObject:SetActiveEx(true)
-            local tagText = tagTransform.gameObject:GetComponentInChildren(typeof(CS.UnityEngine.UI.Text))
-            tagText.text = XUiHelper.GetText("FashionActivityFirstTag")
-        end
-    end
-end
+
 
 --region V4.1商店筛选逻辑
 function XUiShop:OpenSuitSelect()
@@ -821,7 +789,6 @@ function XUiShop:CloseFashionSelect(closeData, cb)
         if cb then
             cb()
         end
-
     else
         self.FilterResult[shopId] = nil
     end
@@ -879,6 +846,7 @@ function XUiShop:OnBtnFilterClick()
             end)
         end)
 end
+
 function XUiShop:RefreshSelectFilter(shopId)
     self.BtnFilterSuit.gameObject:SetActiveEx(false)
     self.BtnFilterWeapon.gameObject:SetActiveEx(false)
@@ -936,9 +904,8 @@ function XUiShop:RefreshSelectFilter(shopId)
             self.BtnFilter:SetName(self.FilterResult[shopId].TagText or CS.XTextManager.GetText("ScreenAll"))
         end
     end
-   
 end
 
 --endregion
-
+        
 return XUiShop

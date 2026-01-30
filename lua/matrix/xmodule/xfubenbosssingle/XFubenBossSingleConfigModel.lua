@@ -236,8 +236,8 @@ function XFubenBossSingleConfigModel:GetBossSingleGradeConfigs()
 end
 
 ---@return XTableBossSingleGrade
-function XFubenBossSingleConfigModel:GetBossSingleGradeConfigByLevelType(levelType)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(BossSingleTableKey.BossSingleGrade, levelType, false) or {}
+function XFubenBossSingleConfigModel:GetBossSingleGradeConfigByLevelType(levelType, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(BossSingleTableKey.BossSingleGrade, levelType, noTips) or {}
 end
 
 function XFubenBossSingleConfigModel:GetBossSingleGradeTypeByLevelType(levelType)

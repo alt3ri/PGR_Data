@@ -1081,31 +1081,43 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
     self._PlayState = PlayState.Idle
     self:SetButtonRotationEnabled(true)
 
-    -- 隐藏Video，显示LineGroup
+    -- 隐藏Video
     if self.Video and self.Video.gameObject then
         self.Video.gameObject:SetActiveEx(false)
-    end
-    if self.LineGroup and self.LineGroup.gameObject then
-        self.LineGroup.gameObject:SetActiveEx(true)
     end
 
     -- 根据领奖状态显示不同的UI元素
     if self._CurrentContentConfig then
         local isReceived = self._Control:IsRewardReceived(self._CurrentContentConfig.Id)
         if isReceived then
-            -- 已领奖：隐藏ImgTips和ImageStart，显示ImgMask、BtnPlayAgain和LineGroup
+            -- 已领奖：隐藏ImgTips和ImageStart，显示ImgMask、BtnPlayAgain
             self:SetGameObjectActive(self.ImgTips and self.ImgTips.gameObject, false)
             self:SetGameObjectActive(self.ImageStart and self.ImageStart.gameObject, false)
             self:SetGameObjectActive(self.ImgMask and self.ImgMask.gameObject, true)
             self:SetGameObjectActive(self.BtnPlayAgain and self.BtnPlayAgain.gameObject, true)
-            self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, true)
+            -- 正常播放结束时隐藏LineGroup，错误结束或手动停止时显示LineGroup
+            if isNormalEnd == true then
+                self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, false)
+            else
+                self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, true)
+            end
         else
             -- 未领奖：显示ImgTips和ImageStart，隐藏ImgMask、BtnPlayAgain和LineGroup
             self:SetGameObjectActive(self.ImgTips and self.ImgTips.gameObject, true)
             self:SetGameObjectActive(self.ImageStart and self.ImageStart.gameObject, true)
             self:SetGameObjectActive(self.ImgMask and self.ImgMask.gameObject, false)
             self:SetGameObjectActive(self.BtnPlayAgain and self.BtnPlayAgain.gameObject, false)
+            -- 正常播放结束时隐藏LineGroup
             self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, false)
+        end
+    else
+        -- 没有当前content配置时，根据是否正常播放结束决定LineGroup的显示状态
+        if isNormalEnd == true then
+            -- 正常播放结束：隐藏LineGroup
+            self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, false)
+        else
+            -- 错误结束或手动停止：显示LineGroup
+            self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, true)
         end
     end
 
@@ -1122,7 +1134,17 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
     -- end
 
     -- 视频播放结束后，恢复 RMS 分析器
-    XAudioManager.ReplayCurrentMusic()
+    local musicAudioInfo = XAudioManager.CurrentMusicAudioInfo1
+    if musicAudioInfo ~= nil then
+        -- 安全地检查 Unity 对象是否存在
+        local isValid = true
+        if type(musicAudioInfo.Exist) == "function" then
+            isValid = musicAudioInfo:Exist()
+        end
+        if isValid then
+            XAudioManager.ReplayCurrentMusic()
+        end
+    end
     XAudioManager.StartAnalyzer()
 end
 

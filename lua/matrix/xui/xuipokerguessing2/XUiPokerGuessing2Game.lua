@@ -39,6 +39,11 @@ function XUiPokerGuessing2Game:OnAwake()
     self.TxtOpponentNextNum.text = 0
 
     self._IsPlayingAnimation = false
+
+    self.EnemyChangePanelPos = XUiHelper.TryGetComponent(self.PanelBigCardRight.transform, "EnemyChangePanelPos", "RectTransform")
+    self.SelfChangePanelPos = XUiHelper.TryGetComponent(self.PanelBigCardLeft.transform, "SelfChangePanelPos", "RectTransform")
+
+    self.BtnClose.gameObject:SetActiveEx(false)
 end
 
 function XUiPokerGuessing2Game:OnStart()
@@ -111,7 +116,7 @@ end
 
 function XUiPokerGuessing2Game:PlayAnimationStartRound()
     local duration1 = 1.5
-    local duration2 = 2
+    local duration2 = 1.1
     local duration3 = 0.5
 
     self._IsPlayingAnimation = true
@@ -166,10 +171,16 @@ function XUiPokerGuessing2Game:PlayAnimationConfirmResult(state, roundState, rou
     self:TimerQuick(function()
         if roundState == XPokerGuessing2Enum.RoundState.RoundWin then
             self._Player:SetTheRevealCardWin()
-            self._Player:ShowEffectSuccess()
+            local playerCard = self._Player:GetCardOnGround()
+            if playerCard then
+                playerCard:ShowEffectSuccess()
+            end
         elseif roundState == XPokerGuessing2Enum.RoundState.RoundLose then
             self._Enemy:SetTheRevealCardWin()
-            self._Enemy:ShowEffectSuccess()
+            local enemyCard = self._Enemy:GetCardOnGround()
+            if enemyCard then
+                enemyCard:ShowEffectSuccess()
+            end
         elseif roundState == XPokerGuessing2Enum.RoundState.RoundDrawn then
             self.PanelDraw.gameObject:SetActiveEx(true)
         end
@@ -251,6 +262,10 @@ function XUiPokerGuessing2Game:PlayAnimationConfirmResult(state, roundState, rou
             -- 移除掀开的牌
             self:UpdatePlayer()
             self:UpdateEnemy()
+
+            --  隐藏自己和敌人所有卡牌的特效
+            self._Player:HideAllCardsEffect()
+            self._Enemy:HideAllCardsEffect()
             self._Player:HideCardWin()
             self._Enemy:HideCardWin()
             self._Player:SetAllCardPutOnGroup(false)
@@ -324,6 +339,36 @@ function XUiPokerGuessing2Game:OnBtnShowRuleClick()
 end
 
 function XUiPokerGuessing2Game:OnOpenChangeCardSkillPanel(isPlayer, originId)
+    -- 根据玩家侧或敌人侧，将BtnClose挂到对应的节点上
+    local targetPos = nil
+    if isPlayer then
+        -- 玩家侧，挂到SelfChangePanelPos
+        if self.SelfChangePanelPos then
+            -- 处理可能返回数组的情况
+            if type(self.SelfChangePanelPos) == "table" and #self.SelfChangePanelPos > 0 then
+                targetPos = self.SelfChangePanelPos[1]
+            else
+                targetPos = self.SelfChangePanelPos
+            end
+        end
+    else
+        -- 敌人侧，挂到EnemyChangePanelPos
+        if self.EnemyChangePanelPos then
+            -- 处理可能返回数组的情况
+            if type(self.EnemyChangePanelPos) == "table" and #self.EnemyChangePanelPos > 0 then
+                targetPos = self.EnemyChangePanelPos[1]
+            else
+                targetPos = self.EnemyChangePanelPos
+            end
+        end
+    end
+    
+    -- 如果找到了目标节点，设置BtnClose的父节点并显示
+    if targetPos and not XTool.UObjIsNil(targetPos) and self.BtnClose then
+        self.BtnClose.transform:SetParent(targetPos, false)
+        self.BtnClose.gameObject:SetActiveEx(true)
+    end
+    
     self.PanelChangeCard:Open()
     self.PanelChangeCard:RefreshShowWithSide(isPlayer, originId)
 end

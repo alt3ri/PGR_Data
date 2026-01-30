@@ -77,15 +77,52 @@ function XShopAgency:OpenFashionDetailUi(fashionid, buyData, params)
         XLuaUiManager.Open("UiFashionDetail", fashionid, isWeaponFashion, buyData,isShowFashionIconWithoutGift,isNeedCD,customWeaponFashionId,customDesc)
         return
     end
-    suitId =suitId or XMVCA.XFashionSuit:GetFashionSuitId(fashionid)
+    suitId = suitId or XMVCA.XFashionSuit:GetFashionSuitId(fashionid)
     if suitId then
-        XDataCenter.PurchaseManager.LBInfoDataReq(function()
-            XLuaUiManager.Open("UiFashionSuitDetail", suitId, fashionid, updateCb)
+        --请求商店是否开启
+        XMVCA.XFashionSuit:CheckFashionShopOpen(suitId, function()
+            local hasOpenShopIds = {}
+            local shopIds = XMVCA.XFashionSuit:GetSuitShopIds(suitId)
+            for _, shopId in pairs(shopIds) do
+                if XShopManager.IsShopOpen(shopId) then
+                    table.insert(hasOpenShopIds, shopId)
+                end
+            end
+            --请求商店商品信息
+            self:GetBaseInfo(function()
+                self:GetShopInfoList(hasOpenShopIds, function()
+                    --请求礼包信息
+                    XDataCenter.PurchaseManager.LBInfoDataReq(function()
+                        XLuaUiManager.Open("UiFashionSuitDetail", suitId, fashionid, updateCb)
+                    end)
+                end, XShopManager.ActivityShopType.FashionShop)
+            end)
         end)
     else
         XLuaUiManager.Open("UiFashionDetail", fashionid, false, buyData,isShowFashionIconWithoutGift,isNeedCD,customWeaponFashionId,customDesc)
     end
 end
+
+function XShopAgency:GetShopInfoList(shopIdList, cb, shopType, notTip)
+    if XTool.IsTableEmpty(shopIdList) then
+        if cb then
+            cb()
+        end
+        return
+    end
+    XShopManager.GetShopInfoList(shopIdList, cb, shopType, notTip)
+end
+
+function XShopAgency:GetBaseInfo(cb)
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon) then
+        if cb then
+            cb()
+        end
+        return
+    end
+    XShopManager.GetBaseInfo(cb)
+end
+
 function XShopAgency:OpenFashionDetailShowUi(fashionid,IsWeaponFashion)
     XLuaUiManager.Open("UiFashionDetail", fashionid, IsWeaponFashion)
 end

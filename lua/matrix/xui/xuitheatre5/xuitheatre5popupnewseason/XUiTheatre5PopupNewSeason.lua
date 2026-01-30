@@ -42,19 +42,29 @@ function XUiTheatre5PopupNewSeason:Update()
         local startTime = XFunctionManager.GetStartTimeByTimeId(pvpTimeId)
         local endTime = XFunctionManager.GetEndTimeByTimeId(pvpTimeId)
         local now = XTime.GetServerNowTimestamp()
+
+        -- 显示时间范围（只显示月日）
+        local startYear, startMonth, startDay = XUiHelper.GetTimeYearMonthDayNumber(startTime)
+        local endYear, endMonth, endDay = XUiHelper.GetTimeYearMonthDayNumber(endTime)
+        local timeRangeStr = XUiHelper.FormatText(self._Control:GetClientConfigPVPReasonTimeDuration(), startMonth, startDay, endMonth, endDay)
         
         local leftTimeStr = ''
 
         if now < startTime then
             local startLeftTime = startTime - now
-            leftTimeStr = math.ceil(startLeftTime / Day)
-            leftTimeStr = XUiHelper.FormatText(self._Control:GetClientConfigPVPReasonTips(TipsType.WillStart), leftTimeStr)
+            leftTimeStr = XUiHelper.GetTime(startLeftTime, XUiHelper.TimeFormatType.ACTIVITY)
+            leftTimeStr = XUiHelper.FormatText(self._Control:GetClientConfigPVPReasonTips(TipsType.WillStart), timeRangeStr, leftTimeStr)
         elseif now < endTime then
-            leftTimeStr = self._Control:GetClientConfigPVPReasonTips(TipsType.InTime)
+            leftTimeStr = XUiHelper.FormatText(self._Control:GetClientConfigPVPReasonTips(TipsType.InTime), timeRangeStr)
         else
             leftTimeStr = self._Control:GetClientConfigPVPReasonTips(TipsType.End) or ''
         end
 
+        self.TxtTimeDesc.text = leftTimeStr
+        
+       
+        
+        -- 直接拼接
         self.TxtTimeDesc.text = leftTimeStr
     end
 end

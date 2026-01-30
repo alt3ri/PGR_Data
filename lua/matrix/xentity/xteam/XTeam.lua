@@ -730,6 +730,9 @@ function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
     self:UpdateSelectGeneralSkill(aimSkillId)
 end
 
+-- XTeam.lua
+
+-- [引用定义好的职业分类]
 local TANK_CAREERS = {
     [XEnumConst.CHARACTER.Career.Tank] = true,
     [XEnumConst.CHARACTER.Career.Breaker] = true,
@@ -738,64 +741,80 @@ local AMPLIFIER_CAREERS = {
     [XEnumConst.CHARACTER.Career.Amplifier] = true,
     [XEnumConst.CHARACTER.Career.Support] = true,
 }
+
+---子类需重写此接口，统一返回 {[pos] = entityId} 的简单表
+function XTeam:GetEntityIdListForObservation()
+    return self:GetEntityIds()
+end
+
+---[核心逻辑] 获取侦察职业激活后的转换职业
 function XTeam:GetObservationActiveCareer()
-    local tankCount = 0
-    local tankPos = 0
-    local amplifierCount = 0
-    local amplifierPos = 0
-    local physicalCount = 0
-    local physicalPos = 0
     local obsCount = 0
     local obsPos = 0
-    for i, entityId in pairs(self.EntitiyIds) do
-        if XTool.IsNumberValid(entityId) then
-            local fixedEntityId = self:GetSpecialEntityId(entityId)
-            fixedEntityId = XTool.IsNumberValid(fixedEntityId) and fixedEntityId or entityId
-            entityId = fixedEntityId
+    local physicalCount = 0
+    
+    local supportAmpCount = 0
+    local supportAmpEntityId = 0 
+    local tankBreakerCount = 0
+    local tankBreakerEntityId = 0
 
-            local career = XMVCA.XCharacter:GetCharacterCareer(entityId)
-            local charElement = XMVCA.XCharacter:GetCharacterElement(entityId)
-            local isPhysical = charElement == XEnumConst.CHARACTER.Element.Physical
-            if isPhysical then
-                physicalCount = physicalCount + 1
-                physicalPos = i
-            end
-            if TANK_CAREERS[career] then
-                tankCount = tankCount + 1
-                tankPos = i
-            elseif AMPLIFIER_CAREERS[career] then
-                amplifierCount = amplifierCount + 1
-                amplifierPos = i
-            elseif career == XEnumConst.CHARACTER.Career.Observation then
+    -- 1. 获取标准化后的 ID 列表并统计
+    local idList = self:GetEntityIdListForObservation()
+    for i, entityId in pairs(idList or {}) do
+        if XTool.IsNumberValid(entityId) then
+            -- 处理特殊实体（肉鸽等）拿到原始角色ID
+            local fixedId = self:GetSpecialEntityId(entityId)
+            fixedId = XTool.IsNumberValid(fixedId) and fixedId or entityId
+            
+            local career = XMVCA.XCharacter:GetCharacterCareer(fixedId)
+            local element = XMVCA.XCharacter:GetCharacterElement(fixedId)
+            local isPhysical = (element == XEnumConst.CHARACTER.Element.Physical)
+
+            if career == XEnumConst.CHARACTER.Career.Observation then
                 obsCount = obsCount + 1
                 obsPos = i
+            elseif isPhysical then
+                physicalCount = physicalCount + 1
+            else
+                if AMPLIFIER_CAREERS[career] then
+                    supportAmpCount = supportAmpCount + 1
+                    supportAmpEntityId = fixedId
+                elseif TANK_CAREERS[career] then
+                    tankBreakerCount = tankBreakerCount + 1
+                    tankBreakerEntityId = fixedId
+                end
             end
-
         end
     end
 
     local res = XEnumConst.CHARACTER.Career.None
-    if tankCount + amplifierCount >=2 then
-        return res
+
+    -- 2. 核心屏蔽逻辑
+    if obsCount ~= 1 or physicalCount > 1 then 
+        return res, obsPos 
     end
-    if obsCount ~= 1 then
-        return res
+
+    -- [关键屏蔽]：非物理候选职业总数 >= 2 时不转化
+    if (supportAmpCount + tankBreakerCount) >= 2 then
+        return res, obsPos
     end
-    if physicalCount > 1 then
-        return res
-    end
-    if physicalCount == 1 then
-        if self:GetEntityCount() == 2  then
-            return res
-        elseif self:GetEntityCount() == 3 and (physicalPos == tankPos or physicalPos == amplifierPos) then
-            return res
+
+    -- 3. 按照优先级顺序判定
+    -- 【优先级 1 & 3】：处理 增幅/辅助 触发
+    if supportAmpCount == 1 then
+        local element = XMVCA.XCharacter:GetCharacterElement(supportAmpEntityId)
+        local hasBreaker = XMVCA.XCharacter:CheckHasCareerByElement(element, XEnumConst.CHARACTER.Career.Breaker)
+        
+        if hasBreaker then
+            return XEnumConst.CHARACTER.Career.Breaker, obsPos -- 优先级 1
+        else
+            return XEnumConst.CHARACTER.Career.Tank, obsPos    -- 优先级 3
         end
     end
 
-    if tankCount == 1 and amplifierCount == 0 then
-        res = XEnumConst.CHARACTER.Career.Amplifier
-    elseif tankCount == 0 and amplifierCount == 1 then
-        res = XEnumConst.CHARACTER.Career.Tank
+    -- 【优先级 2】：处理 破甲/装甲 触发
+    if tankBreakerCount == 1 then
+        return XEnumConst.CHARACTER.Career.Amplifier, obsPos -- 优先级 2
     end
 
     return res, obsPos

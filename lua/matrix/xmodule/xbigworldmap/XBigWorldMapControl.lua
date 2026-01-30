@@ -332,7 +332,7 @@ function XBigWorldMapControl:GetQuickGoingPinData(targetPinData, isForce)
 
     if targetPinData and not targetPinData:IsCouldTeleport() and (targetPinData:IsTracking() or isForce) then
         local minDistance = math.maxinteger
-        local targetPosition = targetPinData.WorldPosition
+        local targetPosition = targetPinData:GetAiMemoryWorldPosition()
         local pinDatas = self:GetMapPinDatasByLevelId(targetPinData.LevelId)
         
         if not XTool.IsTableEmpty(pinDatas) then
@@ -340,7 +340,7 @@ function XBigWorldMapControl:GetQuickGoingPinData(targetPinData, isForce)
             local sortDatas = {}
             for pinId, pinData in pairs(pinDatas) do
                 if pinData:IsTeleportInLevel() then
-                    local position = pinData.WorldPosition
+                    local position = pinData:GetAiMemoryWorldPosition()
                     local distance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
                     local groupSortId = math.abs(pinData.MapAreaGroupId - targetPinData.MapAreaGroupId)
                     table.insert(sortDatas, {

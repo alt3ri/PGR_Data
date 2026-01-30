@@ -73,13 +73,6 @@ function XFashionSuitControl:GetSuitShopIds(suitId)
     return self._Model:GetSuitShopIds(suitId)
 end
 
-function XFashionSuitControl:CheckFashionShopOpen(suitId)
-    local shopIds = self:GetSuitShopIds(suitId)
-    if not XTool.IsTableEmpty(shopIds) then
-        XShopManager.RequestShopValidInfo(shopIds)
-    end
-end
-
 ---领取涂装套装奖励
 function XFashionSuitControl:RequestGetSuitReward(suitId, cb)
     local req = {}

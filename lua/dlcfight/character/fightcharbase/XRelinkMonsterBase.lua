@@ -146,14 +146,346 @@ XRelinkMonsterBase.SkillTestType = {
 }
 --endregion
 
+--region 同步和换端管理
+
+--StringKey、Id、值类型、值
+local RelinkMonsterBaseSyncKeyFirstTwoNumMeaningDic = { --怪物同步黑板Key前两个数字代表的含义和拼起来的意思
+    10,--RelinkMonsterBase里自带脚本运行时同步的变量+(变量Key)：值可能是Int、Boll、Float
+    11,--技能CD+（技能ID）：值永远是浮点值:01（初始CD），02（CD），03（Time）
+    12,--NpcTimer+（TimerId）：值永远是浮点值: （）,跟技能Cd一样的结构。
+    13,--继承RelinkMonsterBase以外需要同步的黑板变量
+}
+
+XRelinkMonsterBase.SyncValueType = { --同步值类型
+    bool = 1 ,--默认F
+    int = 2 ,--默认0
+    float = 3 ,--默认0
+}
+
+--变量字典，这里面的变量会在初始化的时候注册和填入黑板（无赋值）
+XRelinkMonsterBase.RelinkMonsterBaseVarSyncValueDic = { --怪物变量需要同步字典 String变量名=黑板Key+值类
+    isAiOpen = {XRelinkMonsterBase.SyncValueType.bool},
+    curODState = {XRelinkMonsterBase.SyncValueType.int},
+    curFightMode = {XRelinkMonsterBase.SyncValueType.int},
+    curPhase = {XRelinkMonsterBase.SyncValueType.int},
+    isOnSoftFury = {XRelinkMonsterBase.SyncValueType.bool},
+    curSkillTarget = {XRelinkMonsterBase.SyncValueType.int}
+}
+
+--怪物变量初始变量
+XRelinkMonsterBase.RelinkMonsterBaseVarSyncKeyDicInitial = { --变量名对应的黑板Key
+    isAiOpen = 1, --AI是否开启
+    curODState = 2, --当前的OD状态
+    curFightMode = 3, --当前的战斗状态
+    curPhase = 4, --当前阶段
+    isOnSoftFury = 5, --是否在软狂暴
+    curSkillTarget = 6, --当前的技能目标
+}
+
+---脚本初始化时处理同步变量
+function XRelinkMonsterBase:MonsterHandleScriptInitSyncValue(isGainControl)
+    --怪物基类黑板处理
+    for valueName,v in pairs(XRelinkMonsterBase.RelinkMonsterBaseVarSyncKeyDicInitial) do 
+        self:RelinkMonsterBaseRegisterVarSync(valueName) --怪物基类注册黑板里的值
+        self:RelinkMonsterBaseTrySyncBBValueToLocal(valueName) --怪物基类尝试将Base里的黑板值同步到本地
+    end
+    
+    self:HandleSkillCdSync(isGainControl) --处理技能Cd同步到本地
+    self:HandleNpcTimerSync(isGainControl) --处理NpcTimer到本地
+    --怪物子类黑板处理
+    if self.monsterSubVarSyncKeyDicInitial then
+        local tableCount = 0
+        for valueName, v in pairs(self.monsterSubVarSyncKeyDicInitial)do
+            tableCount = tableCount + 1
+            self:MonsterSubRegisterVarSync(valueName) --怪物子类注册黑板里的值
+            self:MonsterSubTrySyncBBValueToLocal(valueName) --怪物子类尝试将Base里的黑板值同步到本地
+        end
+        if tableCount >0 then
+            self:MonsterSubTrySyncBBValueToLocalAfter() --怪物子类尝试将Base里的黑板值同步到本地后
+        end
+    end
+    
+    --怪物处理脚本初始化值
+    self:MonsterHandleScriptInitSyncVarAfter(isGainControl)
+    
+end
+
+---脚本处理初始化同步变量后
+function XRelinkMonsterBase:MonsterHandleScriptInitSyncVarAfter(isGainControl)
+    
+end
+
+---处理技能Cd同步到本地
+function XRelinkMonsterBase:HandleSkillCdSync(isGainControl)
+    if not self.monsterScriptInitSyncRegisterSkillCdList then --没有要处理的列表就直接返回
+        return
+    end
+    
+    if not isGainControl then --服务器里注册技能CD同步
+        self:MonsterRegisterSkillCdSync() --怪物注册技能CD同步
+    end
+    
+    local fightTime = self._proxy:GetFightTime() --获取战斗时间
+    for skillId,Value in pairs(self.monsterScriptInitSyncRegisterSkillCdList) do --遍历数组
+        local hasKey1,initCd = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,self:ConcatNumbers(1101,skillId))
+        local hasKey2,cd = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,self:ConcatNumbers(1102,skillId))
+        local hasKey3,time = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,self:ConcatNumbers(1103,skillId))
+        self.SkillCds[skillId] = {} --对应技能创空数组
+
+        if hasKey1 then --有注册同步的情况下直接赋值同步的值
+            self.SkillCds[skillId].initCd = initCd
+            self.SkillCds[skillId].cd = cd
+            self.SkillCds[skillId].time = time
+        else --没注册过就初始化一下
+            self:InitSkillCd(skillId,Value[1],Value[2])
+        end
+    end
+end
+
+---怪物注册技能CD同步
+function XRelinkMonsterBase:MonsterRegisterSkillCdSync()
+
+    local fightTime = self._proxy:GetFightTime() --获取战斗时间
+
+    for skillId , value in pairs(self.monsterScriptInitSyncRegisterSkillCdList)do --遍历要同步的列表
+        local initBBCdKey = self:ConcatNumbers(1101,skillId)
+        local initCdBBValue = value[1]
+        local cdBBKey = self:ConcatNumbers(1102,skillId)
+        local cdBBValue = value[2]
+        local timeBBKey = self:ConcatNumbers(1103,skillId)
+        local timeBBValue = fightTime + initCdBBValue --初始CD
+        self._proxy:RegisterBBSync(XVarDomain.Npc,self._uuid,initBBCdKey)
+        self._proxy:RegisterBBSync(XVarDomain.Npc,self._uuid,cdBBKey)
+        self._proxy:RegisterBBSync(XVarDomain.Npc,self._uuid,timeBBKey)
+        self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,initBBCdKey,initCdBBValue)
+        self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,cdBBKey,cdBBValue)
+        self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,timeBBKey,timeBBValue)
+    end
+
+end
+
+---处理NpcTimer到本地
+function XRelinkMonsterBase:HandleNpcTimerSync(isGainControl)
+    
+    if not self.monsterScriptInitSyncRegisterNpcTimerList then --没有要处理的列表就直接返回
+        return
+    end
+    
+    self:MonsterRegisterNpcTimerSync() --怪物注册NpcTimer同步
+    
+    if not isGainControl then --服务器里注册NpcTimer同步
+        self:MonsterRegisterNpcTimerSync() --怪物注册NpcTimer同步
+    end
+    local fightTime = self._proxy:GetNpcTime(self._uuid) --获取战斗时间
+    for npcTimerId,Value in pairs(self.monsterScriptInitSyncRegisterNpcTimerList) do --遍历需要同步的Npc数组
+        local hasKey1,initCd = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,self:ConcatNumbers(1201,npcTimerId))
+        local hasKey2,cd = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,self:ConcatNumbers(1202,npcTimerId))
+        local hasKey3,time = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,self:ConcatNumbers(1203,npcTimerId))
+        self.timerList[npcTimerId] = {} --对应NpcTimer清空
+
+        if hasKey1 then --有注册同步的情况下直接赋值同步的值
+            self.timerList[npcTimerId].initCd = initCd
+            self.timerList[npcTimerId].cd = cd
+            self.timerList[npcTimerId].time = time
+        else --没注册过就初始化一下
+            self:InitNpcTimer(npcTimerId,Value[1],Value[2])
+        end
+    end
+end
+
+---怪物注册NpcTimer同步
+function XRelinkMonsterBase:MonsterRegisterNpcTimerSync()
+    local fightTime = self._proxy:GetFightTime() --获取战斗时间
+    for timerId , value in pairs(self.monsterScriptInitSyncRegisterNpcTimerList) do
+        local initBBCdKey = self:ConcatNumbers(1201,timerId)
+        local initCdBBValue = value[1]
+        local cdBBKey = self:ConcatNumbers(1202,timerId)
+        local cdBBValue = value[2]
+        local timeBBKey = self:ConcatNumbers(1203,timerId)
+        local timeBBValue = fightTime + initCdBBValue --初始CD
+        self._proxy:RegisterBBSync(XVarDomain.Npc,self._uuid,initBBCdKey)
+        self._proxy:RegisterBBSync(XVarDomain.Npc,self._uuid,cdBBKey)
+        self._proxy:RegisterBBSync(XVarDomain.Npc,self._uuid,timeBBKey)
+        self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,initBBCdKey,initCdBBValue)
+        self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,cdBBKey,cdBBValue)
+        self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,timeBBKey,timeBBValue)
+    end
+end
+
+---Relink怪物基类设置变量同步值
+function XRelinkMonsterBase:RelinkMonsterBaseSetVarSyncValue(VarName,Value)
+    local bbType = XRelinkMonsterBase.RelinkMonsterBaseVarSyncValueDic[VarName][1] --变量类型
+    local key = self:ConcatNumbers(10,XRelinkMonsterBase.RelinkMonsterBaseVarSyncKeyDicInitial[VarName])
+
+    if bbType == XRelinkMonsterBase.SyncValueType.float then
+        self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,key,Value)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.int then
+        self._proxy:SetBBInt(XVarDomain.Npc,self._uuid,key,Value)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.bool then
+        self._proxy:SetBBBoolean(XVarDomain.Npc,self._uuid,key,Value)
+    end
+end
+
+---Relink怪物基类获取同步值(变量名)
+function XRelinkMonsterBase:RelinkMonsterBaseGetVarSyncValue(VarName)
+    local bbType = XRelinkMonsterBase.RelinkMonsterBaseVarSyncValueDic[VarName][1] --变量类型
+    local key = self:ConcatNumbers(10,XRelinkMonsterBase.RelinkMonsterBaseVarSyncKeyDicInitial[VarName])
+    local isHaveKey = nil
+    local value = nil
+
+    if bbType == XRelinkMonsterBase.SyncValueType.float then
+        isHaveKey,value = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,key)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.int then
+        isHaveKey,value = self._proxy:TryGetBBInt(XVarDomain.Npc,self._uuid,key)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.bool then
+        isHaveKey,value = self._proxy:TryGetBBBoolean(XVarDomain.Npc,self._uuid,key)
+    end
+
+    if isHaveKey then --如果成功获得则返回值
+        return value
+    end
+end
+
+---Relink怪物基类尝试将黑板的值同步到本地，如果黑板有值就同步到本地
+function XRelinkMonsterBase:RelinkMonsterBaseTrySyncBBValueToLocal(VarName)
+    local haveKey,value = self:RelinkMonsterBaseTryGetVarSyncValue(VarName)
+    if haveKey then --如果黑板有值就直接赋值
+        self[VarName] =value
+    end
+end
+
+---Relink怪物基类尝试获取同步值，返回是否获取和值
+function XRelinkMonsterBase:RelinkMonsterBaseTryGetVarSyncValue(VarName)
+    local bbType = XRelinkMonsterBase.RelinkMonsterBaseVarSyncValueDic[VarName][1] --变量类型
+    local key = self:ConcatNumbers(10,XRelinkMonsterBase.RelinkMonsterBaseVarSyncKeyDicInitial[VarName])
+    local isHaveKey = nil
+    local value = nil
+
+    if bbType == XRelinkMonsterBase.SyncValueType.float then
+        isHaveKey,value = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,key)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.int then
+        isHaveKey,value = self._proxy:TryGetBBInt(XVarDomain.Npc,self._uuid,key)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.bool then
+        isHaveKey,value = self._proxy:TryGetBBBoolean(XVarDomain.Npc,self._uuid,key)
+    end
+    return isHaveKey,value
+end
+
+---Relink怪物基类注册同步变量
+function XRelinkMonsterBase:RelinkMonsterBaseRegisterVarSync(VarName)
+    local bbType = XRelinkMonsterBase.RelinkMonsterBaseVarSyncValueDic[VarName][1] --变量类型
+    local value = XRelinkMonsterBase.RelinkMonsterBaseVarSyncValueDic[VarName][2] --默认值
+    local key = self:ConcatNumbers(10,XRelinkMonsterBase.RelinkMonsterBaseVarSyncKeyDicInitial[VarName])
+    self._proxy:RegisterBBSync(XVarDomain.Npc,self._uuid,key)
+    if bbType == XRelinkMonsterBase.SyncValueType.float then
+        if value then
+            self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,key,value)
+        end
+    elseif bbType == XRelinkMonsterBase.SyncValueType.int then
+        if value then
+            self._proxy:SetBBInt(XVarDomain.Npc,self._uuid,key,value)
+        end
+    elseif bbType == XRelinkMonsterBase.SyncValueType.bool then
+        if value then
+            self._proxy:SetBBBoolean(XVarDomain.Npc,self._uuid,key,value)
+        end
+    end
+end
+
+---Relink怪物子类设置变量同步值
+function XRelinkMonsterBase:MonsterSubSetVarSyncValue(VarName,Value)
+    local bbType = self.monsterSubSyncValueDic[VarName][1] --变量类型
+    local key = self:ConcatNumbers(13,self.monsterSubVarSyncKeyDicInitial[VarName])
+
+    if bbType == XRelinkMonsterBase.SyncValueType.float then
+        self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,key,Value)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.int then
+        self._proxy:SetBBInt(XVarDomain.Npc,self._uuid,key,Value)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.bool then
+        self._proxy:SetBBBoolean(XVarDomain.Npc,self._uuid,key,Value)
+    end
+end
+
+---Relink怪物子类注册同步变量
+function XRelinkMonsterBase:MonsterSubRegisterVarSync(VarName)
+    local bbType = self.monsterSubSyncValueDic[VarName][1] --变量类型
+    local value = self.monsterSubSyncValueDic[VarName][2] --默认值
+    local key = self:ConcatNumbers(13,self.monsterSubVarSyncKeyDicInitial[VarName])
+    local isHaveKey = false
+
+
+    if bbType == XRelinkMonsterBase.SyncValueType.float then
+        isHaveKey,value = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,key)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.int then
+        isHaveKey,value = self._proxy:TryGetBBInt(XVarDomain.Npc,self._uuid,key)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.bool then
+        isHaveKey,value = self._proxy:TryGetBBBoolean(XVarDomain.Npc,self._uuid,key)
+    end
+
+    if isHaveKey then --如果注册过就不注册了
+        return
+    end
+
+    self._proxy:RegisterBBSync(XVarDomain.Npc,self._uuid,key)
+    
+    if bbType == XRelinkMonsterBase.SyncValueType.float then
+        if value then
+            self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,key,value)
+        end
+    elseif bbType == XRelinkMonsterBase.SyncValueType.int then
+        if value then
+            self._proxy:SetBBInt(XVarDomain.Npc,self._uuid,key,value)
+        end
+    elseif bbType == XRelinkMonsterBase.SyncValueType.bool then
+        if value then
+            self._proxy:SetBBBoolean(XVarDomain.Npc,self._uuid,key,value)
+        end
+    end
+end
+
+---Relink怪物子类尝试将黑板的值同步到本地，如果黑板有值就同步到本地
+function XRelinkMonsterBase:MonsterSubTrySyncBBValueToLocal(VarName)
+    local haveKey,value = self:MonsterSubTryGetVarSyncValue(VarName)
+    
+    if haveKey then --如果黑板有值就直接赋值
+        self[VarName] =value
+    end
+end
+
+---Relink怪物子类尝试将黑板的值同步到本地后
+function XRelinkMonsterBase:MonsterSubTrySyncBBValueToLocalAfter()
+    
+end
+
+---Relink怪物子类尝试获取同步值，返回是否获取和值
+function XRelinkMonsterBase:MonsterSubTryGetVarSyncValue(VarName)
+    local bbType = self.monsterSubSyncValueDic[VarName][1] --变量类型
+    local key = self:ConcatNumbers(13,self.monsterSubVarSyncKeyDicInitial[VarName])
+    local isHaveKey = nil
+    local value = nil
+
+    if bbType == XRelinkMonsterBase.SyncValueType.float then
+        isHaveKey,value = self._proxy:TryGetBBFloat(XVarDomain.Npc,self._uuid,key)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.int then
+        isHaveKey,value = self._proxy:TryGetBBInt(XVarDomain.Npc,self._uuid,key)
+    elseif bbType == XRelinkMonsterBase.SyncValueType.bool then
+        isHaveKey,value = self._proxy:TryGetBBBoolean(XVarDomain.Npc,self._uuid,key)
+    end
+
+    return isHaveKey,value
+end
+
+--endregion
+
 --region 函数: 脚本生命周期
 
 ---脚本创建 或 换端时执行
 function XRelinkMonsterBase:ScriptInit(isGainControl)
     Base.ScriptInit(self, isGainControl)
     self:MonsterRunVarAwake() --怪物运行逻辑初始化构造
-    self:MonsterConfigMain() --怪物配置，用来覆盖初始化好的变量
-    self:MonsterRunInit() --怪物初始化，根据配置会有调整
+    self:MonsterConfigMain(isGainControl) --怪物配置，用来覆盖初始化好的变量
+    self:MonsterRunInit(isGainControl) --怪物初始化，根据配置会有调整
+    self:MonsterHandleScriptInitSyncValue(isGainControl) --处理黑板同步和赋值
 end
 
 ---帧更新
@@ -184,6 +516,15 @@ function XRelinkMonsterBase:MonsterConfigMain()
     self:BreakGaugeConfig()   --韧性系统配置
     self:SkillCastConfig()  --技能释放配置
     self:SkillTestConfig()  --技能测试配置
+    self:SoftFuryConfig() --软狂暴配置
+end
+
+---软狂暴配置
+function XRelinkMonsterBase:SoftFuryConfig()
+end
+
+---技能配置
+function XRelinkMonsterBase:SkillConfig()
 end
 
 ---阶段配置
@@ -208,6 +549,16 @@ end
 
 --endregion
 
+--region 怪物：怪物生命周期
+--当怪物AI自己被创建的时候
+function XRelinkMonsterBase:OnMonsterSelfAIBorn()
+    if self.bornSkill then --有配置出生动画的话
+        self:ForceSkill(self.bornSkill)
+    end
+end
+
+--endregion
+
 --region 怪物流程-Awake
 
 ---创建怪物运行要用的变量
@@ -223,6 +574,25 @@ function XRelinkMonsterBase:MonsterRunVarAwake()
     self:TargetAwake() --目标相关初始化变量
     self:FollowComponentAwake() --跟随组件初始化变量
     self:SkillTestAwake() --技能测试变量初始化
+    self:SoftFuryAwake() --软狂暴变量初始化
+    self:BBSyncAwake()  --黑板同步变量初始化
+end
+
+---黑板变量初始化，这里其实是给子类要同步变量用的。
+function XRelinkMonsterBase:BBSyncAwake()
+    self.monsterScriptInitSyncRegisterSkillCdList=nil --需要同步的技能Cd列表
+    self.monsterScriptInitSyncRegisterNpcTimerList= nil --需要同步的NpcTimerCd列表
+    self.monsterSubVarSyncKeyDicInitial=nil --变量名对应的黑板Key,这里的Key开头会变成13
+    self.monsterSubSyncValueDic =nil --怪物变量需要同步字典,这里的Key开头会变成13
+end
+
+---软狂暴运行初始化
+function XRelinkMonsterBase:SoftFuryAwake()
+    self.isHaveSoftFury = false --是否有软狂暴
+    self.enterSoftFuryFightTime = 600 --战斗时间超过多少秒后进入软狂暴
+    self.isOnSoftFury = false --当前是否在软狂暴状态
+    self.enterSoftFurySkill = nil --进入软狂暴时会执行的技能
+    self.enterSoftFuryMagicList = nil --进入软狂暴的时候会给自己添加的Magic列表
 end
 
 ---自己信息相关变量激活
@@ -236,6 +606,7 @@ function XRelinkMonsterBase:SelfInfoAwake()
     self.timerList={}
     self.curSkillTarget = nil --技能释放目标
     self.lastTarget = nil --上一个目标
+    self.bornSkill = nil -- 出生技能
 end
 
 ---OverDrive变量激活
@@ -446,7 +817,7 @@ end
 
 ---整个AI控制变量激活
 function XRelinkMonsterBase:AiControlAwake()
-    self.isAiOpen = true --总AI开关
+    self.isAiOpen = nil --bool总AI开关
     self.isCombatModeAiOpen = true  --是否调用战斗模式逻辑
     self.isCombatLogicAiOpen = true --是否调用战斗逻辑
     self.isCombatLogicMainOpen = true --Main逻辑是否跑
@@ -481,7 +852,6 @@ end
 
 ---怪物运行前初始化，根据构造变量和配置进行初始化
 function XRelinkMonsterBase:MonsterRunInit()
-    
     self:OverDriveInit() --OD初始化
     self:BreakGaugeInit() --韧性初始化
     self:SkillTestInit()--技能测试初始化
@@ -498,6 +868,7 @@ function XRelinkMonsterBase:OverDriveInit()
     self._proxy:SetNpcOverDriveActive(self._uuid,true)--激活OD功能
     --监听事件
     self._proxy:RegisterEvent(EWorldEvent.NpcEnterOverDrive)       --Npc进入OD
+    self._proxy:RegisterEvent(EWorldEvent.NpcDie)       --Npc死亡
     self._proxy:RegisterEvent(EWorldEvent.NpcOverDriveFull)       --当NpcOD满了
     self._proxy:RegisterEvent(EWorldEvent.NpcODBreakBefore)   --NpcODBreak前
     self._proxy:RegisterEvent(EWorldEvent.NpcODBreakAfter)   --NpcODBreak后
@@ -540,14 +911,13 @@ function XRelinkMonsterBase:UpdateCombatMode(dt)
         return
     end
     
-    self:CombatLogicSelectTarget(dt) --战斗逻辑选择目标，默认一仇
+    self:CombatLogicSelectTarget(dt) --战斗逻辑选择目标，默认选择一仇
 
     if not self:CheckTargetValid() then--检查有没有目标
         return
     end
 
     self:UpdateTargetInfo()  --更新目标相关信息
-
     --2：战斗前置逻辑，当前已有目标，但行为是不确定的
     self:CombatLogicTargetLocked(dt)
     
@@ -587,6 +957,7 @@ end
 ---3：战斗流程：优先战斗逻辑
 function XRelinkMonsterBase:CombatLogicPriority(dt)
     self:CombatModeTryCastOverDriveSpecialSkill()--尝试释放OD机制技能
+    self:CombatModeTryEnterSoftFury() --尝试进入软狂暴
     self:CombatModeTryEnterOverDrive()--尝试进入OD
 end
 
@@ -650,16 +1021,20 @@ end
 
 ---检查Npc成为目标的合法性
 function XRelinkMonsterBase:CheckTargetValidByNpc(npc)
+
+    if not self._proxy:CheckNpc(npc) then --是否存在
+        return
+    end
     
-    if self._proxy:CheckNpcFullActionState(npc,ENpcAction.Dying) then --死亡中
+    if self._proxy:CheckNpcFullActionState(npc,ENpcAction.Dying,-1) then --死亡中
         return false
     end
 
-    if self._proxy:CheckNpcFullActionState(npc,ENpcAction.Death) then --死亡
+    if self._proxy:CheckNpcFullActionState(npc,ENpcAction.Death,-1) then --死亡
         return false
     end
 
-    if self._proxy:CheckNpcFullActionState(npc,ENpcAction.Reboot) then --复活中
+    if self._proxy:CheckNpcFullActionState(npc,ENpcAction.Reboot,-1) then --复活中
         return false
     end
 
@@ -706,7 +1081,7 @@ function XRelinkMonsterBase:UpdateVigilantRangePlayerList()
     end
     --搜索周围敌人列表
     self.vigilantRangePlayerList = {}--清空周围敌人列表
-    self.vigilantRangePlayerList = self:GetPlayerListInRange(self.vigilantRange)--设置为警戒范围内的敌人
+    self.vigilantRangePlayerList = self:GetPlayerListInRange(self.vigilantRange,true)--设置为警戒范围内的活人
     if self.curFightMode == XRelinkMonsterBase.FightMode.Combat then
         --设置刷新警戒范围内敌人列表的时间，战斗模式下的CD
         self.vigilantRangePlayerListUpdateTimer = self.fightTime + self.vigilantRangePlayerListUpdateTimeOnCombatMode --战斗时更新警戒范围敌人列表的CD
@@ -731,13 +1106,19 @@ function XRelinkMonsterBase:GetRandomPlayerInRange(near,far)
 end
 
 ---获取范围内的玩家列表
-function XRelinkMonsterBase:GetPlayerListInRange(range)
+function XRelinkMonsterBase:GetPlayerListInRange(range,needAlive)
     local npcList = self._proxy:GetPlayerNpcList()
     local tempNpcList = {}
     for i, npc in pairs(npcList) do
         local distance = self._proxy:CalcNpcDistance(self._uuid, npc) --计算和目标的距离
-        if distance < range and self:CheckTargetValidByNpc(npc) then --在范围内活人
-            table.insert(tempNpcList, npc) --插入Npc
+        if distance < range then --在范围内
+            if needAlive then --是否需要检查存活
+                if self:CheckTargetValidByNpc(npc) then --需要存活并确实存活就插入
+                    table.insert(tempNpcList, npc)
+                end
+            else--不需要就直接插入
+                table.insert(tempNpcList, npc) --插入Npc
+            end
         end
     end
     return tempNpcList
@@ -855,7 +1236,7 @@ function XRelinkMonsterBase:EnterCombatCheck()
         --周围没有敌人时进入战斗失败
         return false
     end
-    local nearestPlayer = self:GetNearestPlayer()--从警戒列表里找到最近的目标
+    local nearestPlayer = self:GetNearestValidTarget()--玩家列表里找一个存活的玩家
     if nearestPlayer then --如果找到了最近的玩家就被Npc触发。
         self:EnterCombatByNpc(nearestPlayer) 
     end
@@ -865,6 +1246,7 @@ end
 ---没有一点点防备,也没有一丝顾虑，私自入战
 function XRelinkMonsterBase:EnterCombat()
     self.curFightMode = XRelinkMonsterBase.FightMode.Combat --战斗模式设置为入战
+    self:RelinkMonsterBaseSetVarSyncValue("curFightMode",self.curFightMode)--同步当前战斗模式
     if self.enterCombatSkill then
         --有入战技能的时候使用入战斗技能：吼叫
         self._proxy:CastAction(self._uuid, self.enterCombatSkill)
@@ -874,7 +1256,7 @@ end
 --被Npc触发战斗了，需要做点什么
 function XRelinkMonsterBase:EnterCombatByNpc(triggerNpc)
     self.curFightMode = XRelinkMonsterBase.FightMode.Combat  --进入战斗模式
-
+    self:RelinkMonsterBaseSetVarSyncValue("curFightMode",self.curFightMode)--同步当前战斗模式
     if self.enterCombatSkill and self._proxy:CheckCanCastSkill(self._uuid) then
         --有配置技能且可释放技能的情况下，释放入战技能。
         self._proxy:CastActionToTarget(self._uuid, self.enterCombatSkill, triggerNpc)
@@ -885,8 +1267,8 @@ function XRelinkMonsterBase:EnterCombatByNpc(triggerNpc)
     -----进入战斗时把其他玩家一起拉进战斗---------------------------------------
     local npcList = self._proxy:GetPlayerNpcList()
     for i, npcUUID in pairs(npcList) do
-        --把没有在仇恨列表的玩家拉进仇恨列表
-        if not self._proxy:CheckNpcInThreatList(self._uuid, npcUUID)then
+        --把没有在仇恨列表的合法玩家拉进仇恨列表
+        if not self._proxy:CheckNpcInThreatList(self._uuid, npcUUID) and self:CheckTargetValidByNpc(npcUUID)then
             self:AddNpcToThreatValueList(npcUUID)--添加进仇恨列表
         end
     end
@@ -894,9 +1276,12 @@ function XRelinkMonsterBase:EnterCombatByNpc(triggerNpc)
 end
 
 ---寻找最近目标
-function XRelinkMonsterBase:GetNearestPlayer(range)
+function XRelinkMonsterBase:GetNearestValidTarget(range)
     local target = nil
     local lastDistance = 0
+    local isInRange = false
+    local isValidTarget = false
+    local distance = nil
     
     if #self.vigilantRangePlayerList < 1 then
         --没有Npc了
@@ -904,22 +1289,25 @@ function XRelinkMonsterBase:GetNearestPlayer(range)
     end
     for i, npc in pairs(self.vigilantRangePlayerList) do
         --遍历警戒范围内的敌人，找到最近的
-        local distance = self._proxy:CalcNpcDistance(self._uuid, npc) --计算和目标的距离
-        if range then --如果有范围需求，检查是否在范围内
-            if distance > range then
+        distance = self._proxy:CalcNpcDistance(self._uuid, npc) --计算和目标的距离
+        if range then --范围要求
+            isInRange = distance < range
+        else
+            isInRange = true
+        end
+        isValidTarget = self:CheckTargetValidByNpc(npc)
+        if isInRange and isValidTarget then
+            if lastDistance == 0 then
+                --初始第一个
+                lastDistance = distance
+                target = npc
                 break
             end
-        end
-        if lastDistance == 0 then
-            --初始第一个
-            lastDistance = distance
-            target = npc
-            break
-        end
-        if distance < lastDistance then
-            --如果比上一个更近，就更新距离和Npc
-            lastDistance = distance
-            target = npc
+            if distance < lastDistance then
+                --如果比上一个更近，就更新距离和Npc
+                lastDistance = distance
+                target = npc
+            end
         end
     end
     return target
@@ -957,8 +1345,8 @@ function XRelinkMonsterBase:SetTarget(npc)
         XLog.Warning("设置目标非法")
         return
     end
-    if not self.lastTarget or self.target~=self.lastTarget then --没有上一个目标且当前目标和之前目标不一样的时候
-        XLog.Warning("设置目标？")
+    if not self.lastTarget or npc~=self.lastTarget then --没有上一个目标且当前目标和之前目标不一样的时候
+        --XLog.Warning("设置目标？")
         self.target = npc --当前目标设置为这个
         self._proxy:SetFightTarget(self._uuid, npc)
         self.lastTarget = self.target
@@ -1012,8 +1400,9 @@ end
 function XRelinkMonsterBase:OutCombat()
     --搜索周围敌人列表
     self.vigilantRangePlayerList = {}--清空周围敌人列表
-    self.vigilantRangePlayerList = self:GetPlayerListInRange(self.vigilantRange)--更新警戒范围内玩家
+    self.vigilantRangePlayerList = self:GetPlayerListInRange(self.vigilantRange,true)--更新警戒范围内玩家
     self.curFightMode = XRelinkMonsterBase.FightMode.NonCombat
+    self:RelinkMonsterBaseSetVarSyncValue("curFightMode",self.curFightMode)--同步当前战斗模式
     self:ClearTarget() --清除目标相关东西
 end
 --endregion
@@ -1350,6 +1739,7 @@ function XRelinkMonsterBase:TrySetCurPhase(phase)
         return false
     end
     self.curPhase = phase
+    self:RelinkMonsterBaseSetVarSyncValue("curPhase",self.curPhase) --同步当前阶段
     return true
     
 end
@@ -1379,14 +1769,17 @@ function XRelinkMonsterBase:SetBreakGaugeClear()
 end
 
 ---当自己受伤时处理韧性系统
-function XRelinkMonsterBase:HandleBrokenGaugeOnGetDamage(triggerNpc,magicTags)
+function XRelinkMonsterBase:HandleMonsterBrokenGaugeOnGetDamage(triggerNpc,magicTags)
+    if self._proxy:CheckBuffByKind(self._uuid,8052135) then --有屏蔽逻辑时直接跳过
+        return
+    end
     if GameplayTag.CSMatchNoTag(magicTags,{EGameplayTag.Magic_RelinkDamage_HitType_Break}) then --非QTE就Return
         return
     end
     if not self._proxy:CheckBuffByKind(self._uuid,1000494) then--判断自己是否不存在破韧可QTE的标记
         return
     end
-    self:BeHitBroken(triggerNpc) --被触发破韧受击
+    self:MonsterOnBeHitBroken(triggerNpc) --被触发破韧受击
 end
 
 ---被破韧后
@@ -1396,11 +1789,11 @@ function XRelinkMonsterBase:OnNpcBrokenAfter(launcherUUID, targetUUID, magicId)
     end
     self._proxy:ApplyMagic(self._uuid,self._uuid,1000494,1) --给自己加一个破韧状态标记
     self._proxy:ApplyMagic(self._uuid,self._uuid,8005566,1) --给自己上破韧畏缩状态，Relink数值要的一个易伤
-    self:BeHitBroken(launcherUUID) --破韧受击
+    self:MonsterOnBeHitBroken(launcherUUID) --破韧受击
 end
 
 ---被破韧受击了，向被破韧时的Npc位置释放技能
-function XRelinkMonsterBase:BeHitBroken(triggerNpc)
+function XRelinkMonsterBase:MonsterOnBeHitBroken(triggerNpc)
     local triggerNpcAngle = self:GetNpcTargetAngle(self._uuid,triggerNpc)--角度判断
     local triggerDirection = self:GetNpcTargetDirection(self._uuid,triggerNpc) --左右方位判断
     local triggerPos = self._proxy:GetNpcPosition(triggerNpc)
@@ -1568,11 +1961,6 @@ function XRelinkMonsterBase:OnNpcODExitBreakAfter(targetUUID)
     self:OnMonsterExitBreak()--退出Break
 end
 
----设置OD状态
-function XRelinkMonsterBase:SetOverDriveState(state)
-    self.curODState = state
-end
-
 ---获取当前的ODState
 function XRelinkMonsterBase:GetCurOverDriveState()
     return self.curODState
@@ -1585,7 +1973,8 @@ end
 
 ---获取当前的ODState
 function XRelinkMonsterBase:SetCurOverDriveState(state)
-    self.curODState =state
+    self.curODState = state
+    self:RelinkMonsterBaseSetVarSyncValue("curODState",self.curODState)
 end
 
 --检查是否要进入OD吧
@@ -1618,7 +2007,7 @@ function XRelinkMonsterBase:OnMonsterEnterOverDrive()
     self.isODValueFull = false
     self:SetOverDriveSpecialSkillSwitch(true)--将OD特殊技能开启。
     self:TryRiseCurPhaseOnEnterOverDrive()--尝试进OD时提升阶段
-    self:SetOverDriveState(XRelinkMonsterBase.OverDriveState.ODState)--进入OD
+    self:SetCurOverDriveState(XRelinkMonsterBase.OverDriveState.ODState)--进入OD
     self:ApplyMagicsToSelf(self.enterOverDriveMagics)--给自己挂上进入时的Magic列表
     self:LockBroken() --锁定削韧
     self:MonsterEnterOverDriveAfter()--自定义编辑的地方
@@ -1642,6 +2031,7 @@ function XRelinkMonsterBase:MonsterEnterBreak(targetUUID)
     --XLog.Warning("释放BreakStart，进入BKS阶段")
     self._proxy:ApplyMagic(self._uuid,self._uuid,8052035,1) --去掉OD的通用特效
     self._proxy:ApplyMagic(self._uuid,self._uuid,1000469,1) --锁定削韧
+    self._proxy:ApplyMagic(self._uuid,self._uuid,8052135,1) --免疫伤害受击
     self:ApplyMagicToPlayerInRange(8005201,1,999) ---给敌人上特效
     self:ApplyMagicToPlayerInRange(8052070,1,999) ---999范围内的敌人上卡肉
 end
@@ -1654,9 +2044,10 @@ end
 
 ---退出虚弱状态
 function XRelinkMonsterBase:OnMonsterExitBreak()
-    XLog.Warning("退出Break")
+    --XLog.Warning("退出Break")
     self:ForceSkill(self.breakEndSkill)
-    self:SetOverDriveState(XRelinkMonsterBase.OverDriveState.None)--切换到没有任何OD的状态
+    self:SetCurOverDriveState(XRelinkMonsterBase.OverDriveState.None)--切换到没有任何OD的状态
+    self._proxy:RemoveBuff(self._uuid,8052136) --移除免疫伤害受击
     self:UnLockBroken()--解除削韧
     self:OnMonsterExitBreakAfter()
     --退出虚弱
@@ -1679,6 +2070,7 @@ end
 ---是否关闭Ai总开关，不包括测试技能AI
 function XRelinkMonsterBase:SetAiActive(isActive)
     self.isAiOpen = isActive   --是否关闭战斗Ai：指会对玩家造成威胁的Ai
+    self:RelinkMonsterBaseSetVarSyncValue("isAiOpen",self.isAiOpen) --设置AI时同步黑板
 end
 
 ---设置战斗逻辑Main是否跑
@@ -1707,18 +2099,49 @@ function XRelinkMonsterBase:InitEventCallBackRegister()
     --self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)            -- 退出Action时
     self._proxy:RegisterEvent(EWorldEvent.NpcDie)            -- Npc死亡时
     self._proxy:RegisterEvent(EWorldEvent.NpcRevive)            -- Npc复活时
+
+    -----Lua相关的事件-----------------------------------
+    self._proxy:RegisterLuaEvent(EFightLuaEvent.RelinkAIBorn) --RelinkAI出生的时候
+    --self._proxy:RegisterLuaEvent(EFightLuaEvent.RelinkSetAIActivate) --RelinkSetAIActivate
+   
 end
 --endregion
 
 --region 事件执行处理
 
-function XRelinkMonsterBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
-   
+function XRelinkMonsterBase:HandleLuaEvent(eventType, eventArgs)
+    if eventType == EFightLuaEvent.RelinkAIBorn then
+        if eventArgs.NpcUUid == self._uuid then --自己出生了
+            self:OnMonsterSelfAIBorn()
+        end
+    end
+
+    if eventType == EFightLuaEvent.RelinkSetAIActivate then
+        if eventArgs.NpcUUid == self._uuid then 
+            self:SetAiActive(eventArgs.IsActivated)
+            if eventArgs.IsActivated then
+            end
+        end
+    end
+    
 end
 
 ---Npc复活时
 function XRelinkMonsterBase:OnNpcReviveEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
     self:TryAddNpcToThreatValueList(npcUUID)
+end
+
+---NpcDie
+function XRelinkMonsterBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
+    if not npcUUID ==self._uuid then
+        return
+    end
+    self:OnMonsterSelfDie()
+end
+
+---怪物自己死亡
+function XRelinkMonsterBase:OnMonsterSelfDie()
+    
 end
 
 ---尝试执行事件，默认执行了一次就清空事件列表
@@ -1799,16 +2222,57 @@ end
 
 ---受伤时事件
 function XRelinkMonsterBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
-    Base.OnNpcDamageEvent(self,launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)
+    Base.OnNpcDamageEvent(self,launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
     if targetId ~= self._uuid then --只监听自己受到的伤害
         return
     end
-    self:HandleBrokenGaugeOnGetDamage(launcherId,magicTags) --受伤时处理破韧系统
+    self:HandleMonsterSelfOnGetDamage(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags) --怪物自己受伤的时候会调用
+end
+
+---怪物自己受伤事件
+function XRelinkMonsterBase:HandleMonsterSelfOnGetDamage(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
+    self:HandleMonsterBrokenGaugeOnGetDamage(launcherId,magicTags) --受伤时处理破韧系统
+    self:HandleMonsterBeHitOnGetDamage(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags) --受伤时处理受击（不包括破韧）
+end
+
+---处理怪物受到伤害时的受击
+function XRelinkMonsterBase:HandleMonsterBeHitOnGetDamage(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
+    if self._proxy:CheckBuffByKind(self._uuid,8052135) then --有屏蔽逻辑时直接跳过
+        return
+    end
+    if GameplayTag.CSMatchNoTag(magicTags,{EGameplayTag.Magic_RelinkDamage_HitType_Ultra}) then --现在只有大招类型的可以触发
+        return
+    end
+    self:OnMonsterGetDamageBeHit(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags) --怪物受伤受击
+end
+
+---怪物受到受击伤害时
+function XRelinkMonsterBase:OnMonsterGetDamageBeHit(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags) --怪物受伤受击
+    
 end
 
 --endregion
 
 --region 怪物本身脚本的工具函数
+
+---获取数字里的前几个数字
+function XRelinkMonsterBase:GetFirstDigits(num,n)
+    -- 将数字转换为字符串
+    local str = tostring(num)
+    -- 截取前n个字符
+    local firstPart = string.sub(str, 1, n)
+    -- 转换回数字
+    return tonumber(firstPart)
+end
+
+--连接两串数字
+function XRelinkMonsterBase:ConcatNumbers(num1,num2)
+    -- 将两个数字转换为字符串，然后拼接
+    local result = tostring(num1) .. tostring(num2)
+    -- 转换为数字返回
+    return tonumber(result)
+end
+
 ---获取关卡场景中心点
 function XRelinkMonsterBase:GetLevelCenterPoint()
     return self.levelCenterPoint
@@ -1844,6 +2308,16 @@ function XRelinkMonsterBase:ApplyMagicAllPlayer(magicId,level)
     end
     for i, npc in pairs(npcList) do
         self._proxy:ApplyMagic(self._uuid,npc,magicId,tempLevel)
+    end
+end
+
+
+---打断所有玩家Action
+function XRelinkMonsterBase:AbortActionAllPlayer()
+    local tempLevel = 1
+    local npcList = self:GetPlayerListInRange(99999)
+    for i, npc in pairs(npcList) do
+        self._proxy:AbortAction(npc,true)
     end
 end
 
@@ -1994,12 +2468,12 @@ function XRelinkMonsterBase:CheckSkillConditionByNpc(skill,npc)
 
 ---对自己OD状态有效性判断
 function XRelinkMonsterBase:IsSkillODStateValid(skill)
-    local config = SkillConfigs[skill]
+    local config = self.skillConfigs[skill]
     if not config then--没有配置条件直接返回True
         return true
     end
     if config.IsLockInODState and self:CheckCurIsOverDrive() then --OD锁定且在OD,返回F
-        XLog.Warning("技能"..skill.."释放失败，因为OD锁定且当前在OD")
+        --XLog.Warning("技能"..skill.."释放失败，因为OD锁定且当前在OD")
         return false
     end
     if config.IsNeedODState and (not self:CheckCurIsOverDrive())then --需要OD且不在OD,返回F
@@ -2010,7 +2484,7 @@ end
 
 ---对自己阶段有效性判断
 function XRelinkMonsterBase:IsSkillPhaseValid(skill)
-    local config = SkillConfigs[skill]
+    local config = self.skillConfigs[skill]
     if not config then
         return true
     end
@@ -2034,7 +2508,7 @@ end
 
 ---自己血量有效性判断
 function XRelinkMonsterBase:IsSkillHpValid(skill)
-    local config = SkillConfigs[skill]
+    local config = self.skillConfigs[skill]
     if not config then
         return true
     end
@@ -2070,7 +2544,7 @@ end
 --传入技能和距离检查距离是否满足技能配置的释放条件
 function XRelinkMonsterBase:CheckSkillDistance(skill, distances)
     
-    local config = SkillConfigs[skill]
+    local config = self.skillConfigs[skill]
     if not config then
         --没有这个技能配置
         return true
@@ -2114,7 +2588,7 @@ end
 
 --释放角度有效性判断
 function XRelinkMonsterBase:IsSkillAngleValid(skill)
-    local config = SkillConfigs[skill]
+    local config = self.skillConfigs[skill]
     if not config then
         return true
     end
@@ -2139,7 +2613,7 @@ function XRelinkMonsterBase:IsSkillTurnFixValid(skill)
         return false
     end
 
-    local config = SkillConfigs[skill]
+    local config = self.skillConfigs[skill]
     if not config then
         --没有配置转向也不转
         return false
@@ -2180,13 +2654,14 @@ end
 
 ---尝试把Npc送进仇恨值列表
 function XRelinkMonsterBase:TryAddNpcToThreatValueList(npc)
-    if self:CheckNpcIsPlayer(npc) and (not self._proxy:CheckNpcInThreatList(self._uuid,npc)) then
+    if self:CheckNpcIsPlayer(npc) then
         self:AddNpcToThreatValueList(npc)
     end
 end
 
 ---Npc添加进仇恨列表
 function XRelinkMonsterBase:AddNpcToThreatValueList(npc)
+    --XLog.Warning("将"..npc.."添加进仇恨列表")
     self._proxy:ApplyMagic(self._uuid, npc, 8052000, 1) --触发的Npc给自己添加1仇恨，用来添加进仇恨列表
 end
 
@@ -2204,12 +2679,12 @@ end
 ---获取NpcA向前朝向和NpcB的夹角
 function XRelinkMonsterBase:GetNpcTargetAngle(npc,target)
     local npcAPos = self._proxy:GetNpcPosition(npc)
-    XLog.Warning("获取目标的朝向2")
-    XLog.Warning("npc1是："..npc)
-    XLog.Warning("目标是："..target)
+    --XLog.Warning("获取目标的朝向2")
+    --XLog.Warning("npc1是："..npc)
+    --XLog.Warning("目标是："..target)
+    --XLog.Warning(npcAFace)
+    --XLog.Warning("获取完毕")
     local npcAFace = self._proxy:GetNpcOffsetPositionByFacing(npc,{x=0,y=0,z=0},1) - npcAPos --NpcA的朝向
-    XLog.Warning(npcAFace)
-    XLog.Warning("获取完毕")
     local npcBPos =self._proxy:GetNpcPosition(target)
     return self:GetAngleByPosFace(npcAPos,npcAFace,npcBPos)
 end
@@ -2401,7 +2876,7 @@ function XRelinkMonsterBase:SkillTestInit()
     end
     self.skillTestTimer = self._proxy:GetFightTime() + self.skillTestInitialCd --设置初始CD
     self:UpdateVigilantRangePlayerList()--更新警戒范围敌人列表
-    self:SetTarget(self:GetNearestPlayer()) --找到最近的敌人作为战斗目标
+    self:SetTarget(self:GetNearestValidTarget()) --找到最近的敌人作为战斗目标
 end
 
 ---技能配置测试模块
@@ -2443,6 +2918,35 @@ function XRelinkMonsterBase:InitNpcTimer(index,initCd,cd)
     self.timerList[index].initCd = initCd
     self:SetNpcTimerCd(index,cd)
     self:SetNpcTimerTime(index,initCd)
+    self:MonsterSyncLocalNpcTimerInfo(index) --同步NpcTimer到黑板
+end
+
+---怪物同步本地NpcTimer信息
+function XRelinkMonsterBase:MonsterSyncLocalNpcTimerInfo(index)
+    self:MonsterSyncLocalNpcTimerInfoInitCd(index) --同步本地NpcTimer信息初始Cd
+    self:MonsterSyncLocalNpcTimerInfoCd(index) --同步本地NpcTimer信息Cd
+    self:MonsterSyncLocalNpcTimerInfoTime(index)--同步本地NpcTimer信息Time
+end
+
+---同步本地NpcTimer信息初始Cd
+function XRelinkMonsterBase:MonsterSyncLocalNpcTimerInfoInitCd(index)
+    local initBBCdKey = self:ConcatNumbers(1201,index)
+    local initCdBBValue = self.timerList[index].initCd
+    self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,initBBCdKey,initCdBBValue)
+end
+
+---同步本地NpcTimer信息Cd
+function XRelinkMonsterBase:MonsterSyncLocalNpcTimerInfoCd(index)
+    local cdBBKey = self:ConcatNumbers(1202,index)
+    local cdBBValue = self.timerList[index].cd
+    self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,cdBBKey,cdBBValue)
+end
+
+---同步本地NpcTimer信息Time
+function XRelinkMonsterBase:MonsterSyncLocalNpcTimerInfoTime(index)
+    local timeBBKey = self:ConcatNumbers(1203,index)
+    local timeBBValue = self.timerList[index].time
+    self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,timeBBKey,timeBBValue)
 end
 
 --设置NpcTimer的Cd
@@ -2455,15 +2959,26 @@ function XRelinkMonsterBase:SetNpcTimerTime(index,time)
     if time then
         self.timerList[index].time = self.npcTime + time
     end
+    self:MonsterSyncLocalNpcTimerInfo(index)
 end
 
---NpcTimer进入CD
+--NpcTimer进入CD(带同步)
 function XRelinkMonsterBase:NpcTimerEnterCd(index)
     local cd = self.timerList[index].cd
     if not cd then
         self.timerList[index].cd = 0
     end
     self.timerList[index].time = self.npcTime + self.timerList[index].cd
+    self:MonsterSyncLocalNpcTimerInfoTime(index)
+end
+
+--NpcTimer进入CD(带同步)
+function XRelinkMonsterBase:NpcTimerEnterGiveCd(index,giveCd)
+    if not self.timerList[index] then
+        self.timerList[index] = { }
+    end
+    self.timerList[index].time = self.npcTime + giveCd
+    self:MonsterSyncLocalNpcTimerInfoTime(index)
 end
 
 --获取TimerCd
@@ -2486,6 +3001,65 @@ end
 --设置对应Index的Timer清空时间
 function XRelinkMonsterBase:ClearNpcTimer(index)
     self.timerList[index].time = self.npcTime
+end
+
+--endregion
+
+--region 软狂暴系统
+
+---尝试进入软狂暴
+function XRelinkMonsterBase:CombatModeTryEnterSoftFury()
+    if not self.isHaveSoftFury then --没有软狂暴这里的逻辑就不用看
+        return false
+    end
+
+    if self.isOnSoftFury then --在软狂暴就不用管了
+        return
+    end
+    local canEnterSoftFury = self.fightTime >= self.enterSoftFuryFightTime
+    if not canEnterSoftFury then
+        return false
+    end
+    
+    if self.enterSoftFurySkill then --有软狂暴技能的话要等放技能出来才算进入
+        local isSuccess =self:ForceSkill(805280)
+        if isSuccess then
+            self:EnterSoftFury() --进入软狂暴
+        end
+        return
+    end
+    
+    --没有配置技能的话就直接进入吧
+    self:EnterSoftFury() --直接进入
+    
+end
+
+--进入软狂暴
+function XRelinkMonsterBase:EnterSoftFury()
+
+    if self.enterSoftFuryMagicList then --给自己Magic一个列表
+        for i,magicId in pairs(self.enterSoftFuryMagicList) do
+            self._proxy:ApplyMagic(self._uuid,self._uuid,magicId)
+        end
+    end
+    self.isOnSoftFury = true
+    self:RelinkMonsterBaseSetVarSyncValue("isOnSoftFury",self.isOnSoftFury) --同步是否软狂暴
+    self:OnEnterSoftFuryAfter() --进入软狂暴后要执行的东西
+end
+
+--退出软狂暴
+function XRelinkMonsterBase:ExitSoftFury()
+    
+end
+
+--进入软狂暴后
+function XRelinkMonsterBase:OnEnterSoftFuryAfter()
+
+end
+
+--检查是否在软狂暴种
+function XRelinkMonsterBase:CheckIsOnSoftFury()
+    return self.isOnSoftFury
 end
 
 --endregion
@@ -2553,6 +3127,9 @@ function XRelinkMonsterBase:ForceSkillToNpc(skill, npc)
         --目标不合法
         return false
     end
+    if not skill or skill == 0 then
+        XLog.Warning("ForceSkillToNpc的技能非法")
+    end
     self._proxy:AbortAction(self._uuid, true)--打断Npc
     isSuccess = self._proxy:CastActionToTarget(self._uuid, skill, npc)--放技能
     self:HandleAfterCastSkill(skill, isSuccess,npc)--放完技能后处理CD
@@ -2568,7 +3145,9 @@ function XRelinkMonsterBase:GetAbleSkillByWeightsToNpc(skills,npc)
         if self:CheckSkillConditionByNpc(skill, npc) then
             --判断对这个Npc放技能是否满足条件
             newGroup[skill] = w
-            totalW = totalW + w --总权重
+            if w then --判断w的合法性
+                totalW = totalW + w --总权重
+            end
         end
     end
     return self:GetWeightsKeyByTotalWeight(newGroup, totalW)
@@ -2586,6 +3165,7 @@ end
 
 ---对战斗目标根据权重组放技能（技能组，是否忽略技能完成）
 function XRelinkMonsterBase:TryCastSkillToTargetByWeights(skills)
+    XLog.Warning(skills)
     local target = self.target
     local isSuccess = false
     local skill = self:GetAbleSkillByWeightsToNpc(skills,target) --从权重组里找到适合可以放的技能
@@ -2646,6 +3226,7 @@ function XRelinkMonsterBase:HandleAfterCastSkill(skill, isSuccess,target)
         return
     end
     self.curSkillTarget = target --设置当前技能目标
+    self:RelinkMonsterBaseSetVarSyncValue("curSkillTarget",self.curSkillTarget)
     self:EnterSkillCd(skill) --技能进入CD
     self:OnMonsterCastSkillSuccessAfter(skill)
 end
@@ -2656,7 +3237,7 @@ end
 
 ---设置技能CD直接完成
 function XRelinkMonsterBase:SetSkillCdDone(skill)
-    local cd = SkillConfigs[skill].Cd
+    local cd = self.skillConfigs[skill].Cd
     if not cd then
         return
     end
@@ -2669,23 +3250,54 @@ function XRelinkMonsterBase:EnterSkillGiveCd(skill,cd)
         self.SkillCds[skill] = {}
     end
     self.SkillCds[skill].time = self.fightTime + cd
+    self:MonsterSyncLocalSKillCdInfoTime(skill)--同步本地技能Cd
 end
 
----初始化技能cd。
+---初始化技能cd。(带同步)
 function XRelinkMonsterBase:InitSkillCd(skill,initCd,cd)
     self.SkillCds[skill] = {}
     self.SkillCds[skill].initCd = initCd
     self.SkillCds[skill].cd = cd
-    self.SkillCds[skill].time = self.fightTime + initCd 
+    self.SkillCds[skill].time = self.fightTime + initCd
+    self:MonsterSyncLocalSKillCdInfo(skill)--初始化技能Cd需要同步黑板
 end
 
----重置技能CD
+---怪物同步本地技能信息
+function XRelinkMonsterBase:MonsterSyncLocalSKillCdInfo(skill)
+    self:MonsterSyncLocalSKillCdInfoInitCd(skill) --同步本地技能Cd信息初始Cd
+    self:MonsterSyncLocalSKillCdInfoCd(skill) --同步本地技能Cd信息Cd
+    self:MonsterSyncLocalSKillCdInfoTime(skill)--同步本地技能Cd信息Time
+end
+
+---同步本地技能Cd信息初始Cd
+function XRelinkMonsterBase:MonsterSyncLocalSKillCdInfoInitCd(skill)
+    local initBBCdKey = self:ConcatNumbers(1101,skill)
+    local initCdBBValue = self.SkillCds[skill].initCd
+    self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,initBBCdKey,initCdBBValue)
+end
+
+---同步本地技能Cd信息Cd
+function XRelinkMonsterBase:MonsterSyncLocalSKillCdInfoCd(skill)
+    local cdBBKey = self:ConcatNumbers(1102,skill)
+    local cdBBValue = self.SkillCds[skill].cd
+    self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,cdBBKey,cdBBValue)
+end
+
+---同步本地技能Cd信息Time
+function XRelinkMonsterBase:MonsterSyncLocalSKillCdInfoTime(skill)
+    local timeBBKey = self:ConcatNumbers(1103,skill)
+    local timeBBValue = self.SkillCds[skill].time
+    self._proxy:SetBBFloat(XVarDomain.Npc,self._uuid,timeBBKey,timeBBValue)
+end
+
+---重置技能CD（带同步）
 function XRelinkMonsterBase:EnterSkillCd(skill)
     if not self.SkillCds[skill] then
         self:InitSkillCd(skill,0,0)
         return
     end
     self.SkillCds[skill].time = self.fightTime + self.SkillCds[skill].cd
+    self:MonsterSyncLocalSKillCdInfoTime(skill)--同步技能CdTime
 end
 
 ---检查技能Cd好了没有

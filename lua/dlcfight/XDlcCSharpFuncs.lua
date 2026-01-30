@@ -207,10 +207,9 @@ end
 ---@param camp int
 ---@param position Vector3
 ---@param rotation Vector3
----@param canLaunchInteraction bool 默认值:false
 ---@param skipBornState bool 默认值:false
 ---@return int 
-function XDlcCSharpFuncs:GenerateNpc(templateId, camp, position, rotation, canLaunchInteraction, skipBornState)
+function XDlcCSharpFuncs:GenerateNpc(templateId, camp, position, rotation, skipBornState)
 end
 
 ---@desc 设置Npc显隐，会将角色控制器、角色碰撞一同显隐
@@ -720,11 +719,10 @@ end
 function XDlcCSharpFuncs:GetSkillBallCount(npcId, countBackend)
 end
 
----@desc 设置Npc作为交互发起者进行交互时是否转身面向交互目标
----@param uuid int Npc对象的UUID
+---@desc 设置玩家交互时是否可以转身面向交互目标
 ---@param enable bool 是否允许
 ---@return void 
-function XDlcCSharpFuncs:SetNpcInteractTurnEnable(uuid, enable)
+function XDlcCSharpFuncs:SetPlayerInteractTurnEnable(enable)
 end
 
 ---@desc 设置Npc重力
@@ -804,27 +802,6 @@ end
 ---@param fstNpcUUID int 要注视其它人的Npc对象的UUID
 ---@return void 
 function XDlcCSharpFuncs:DisableNpcLookAt(fstNpcUUID)
-end
-
----@desc 获取目标Actor的交互发起者点位 （每个可以交互的Actor，如果要响应库洛洛这种“助理NPC”的交互，则需要配置相应的坐标点位供他们使用）
----@param targetUUID int 目标Actor的UUID
----@return Vector3 
-function XDlcCSharpFuncs:GetActorInteractionLauncherSpot(targetUUID)
-end
-
----@desc 使NPC向指定目标发起交互
----@param launcherNpcUUID int 交互发起者UUID
----@param targetActorUUID int 目标ActorUUID
----@param optionId int 交互选项ID
----@return bool 
-function XDlcCSharpFuncs:NpcStartInteractWith(launcherNpcUUID, targetActorUUID, optionId)
-end
-
----@desc 设置Actor的交互响应回调 （可交互Actor一般有默认的交互响应逻辑，当你不希望它们执行时，使用此函数进行“重写”以替换响应逻辑）
----@param uuid int 目标actor的UUID
----@param callback Action<int, int, int> ：回调函数，其参数为：（launcherUUID）交互发起者UUID，（optionId）交互选项ID，（phase）交互阶段。
----@return bool 
-function XDlcCSharpFuncs:SetActorInteractionReactCallback(uuid, callback)
 end
 
 ---@desc 设置Npc忽略其他Npc的所有碰撞
@@ -1377,7 +1354,7 @@ end
 function XDlcCSharpFuncs:SetNpcJointActive(npcUUID, jointName, active)
 end
 
----@desc 设置 Npc 锁定骨骼点跟随目标 Npc
+---@desc 设置 Npc 锁定骨骼点跟随目标 Npc，仅客户端使用
 ---@param npcPlaceId int 要进行跟随的NpcPlaceId
 ---@param lockJointName string 锁定的骨骼名
 ---@param posOffset Vector3 坐标偏移量
@@ -1387,7 +1364,7 @@ end
 function XDlcCSharpFuncs:SetNpcNodeLockFollow(npcPlaceId, lockJointName, posOffset, isFollowMasterPlayer, followTargetNpcPlaceId)
 end
 
----@desc 设置 Npc 直接跟随目标 Npc
+---@desc 设置 Npc 直接跟随目标 Npc，仅客户端使用
 ---@param npcUUID int 要进行跟随的NpcUUID
 ---@param maxIdleRange float 最大闲置半径
 ---@param startFollowRange float 开始跟随半径
@@ -1451,7 +1428,7 @@ end
 function XDlcCSharpFuncs:SetNpcInteractOneOptionActive(placeId, optionId)
 end
 
----@desc 判断npc是否在交互中
+---@desc 判断npc是否在与玩家交互中
 ---@param placeId int
 ---@return bool 
 function XDlcCSharpFuncs:CheckNpcIsInInteract(placeId)
@@ -2896,13 +2873,6 @@ function XDlcCSharpFuncs:PlayDramaCaption(captionName, isSequential)
 end
 
 ---@desc 播放插卡字幕
----@param interTitleDialogId int 插卡字幕Id
----@param isSequential bool 默认值:false 是否采用流水线播放模式
----@return void 
-function XDlcCSharpFuncs:PlayDramaInterTitleDialog(interTitleDialogId, isSequential)
-end
-
----@desc 播放气泡
 ---@param actorType int ETargetActorType
 ---@param uuid int
 ---@param bubbleName string
@@ -3045,9 +3015,10 @@ end
 
 ---@desc 显示CV提示
 ---@param npcId int
----@param type int
+---@param npcUUId int
+---@param actionId int
 ---@return void 
-function XDlcCSharpFuncs:ShowCvTips(npcId, type)
+function XDlcCSharpFuncs:ShowCvTips(npcId, npcUUId, actionId)
 end
 
 ---@desc 显示关卡信息
@@ -3541,6 +3512,11 @@ end
 ---@param arg0 int
 ---@return void 
 function XDlcCSharpFuncs:MouseHunterShowTipWithoutOneArg(uuid, tipId, arg0)
+end
+
+---@desc 躲猫猫通知对局结束
+---@return void 
+function XDlcCSharpFuncs:MouseHunterNotifyEndMatch()
 end
 
 ---@desc 检查任务目标进度是否完成
@@ -4119,6 +4095,12 @@ end
 ---@param npcUUID int
 ---@return bool 
 function XDlcCSharpFuncs:GetNpcIsAid(npcUUID)
+end
+
+---@desc 查询所有救援中的Npc
+---@param npcUUID int
+---@return List<int> 
+function XDlcCSharpFuncs:GetNpcAidsList(npcUUID)
 end
 
 return XDlcCSharpFuncs;

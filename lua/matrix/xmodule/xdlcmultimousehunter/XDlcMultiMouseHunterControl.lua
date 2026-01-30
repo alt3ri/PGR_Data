@@ -113,7 +113,10 @@ end
 
 function XDlcMultiMouseHunterControl:OpenUiDlcMultiPlayerCompetition(matchingTime)
     self:OpenMatchingPopupUi(matchingTime)
-    XLuaUiManager.Open("UiDlcMultiPlayerCompetition")
+    if not XLuaUiManager.IsUiShow("UiDlcMultiPlayerRoomCute") then
+        return
+    end
+        XLuaUiManager.Open("UiDlcMultiPlayerCompetition")
 end
 
 function XDlcMultiMouseHunterControl:OpenShopUi(matchingTime)

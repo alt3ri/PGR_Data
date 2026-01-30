@@ -194,7 +194,7 @@ function XUiDlcRelinkLvReward:UpdateBuy(data, cb)
             cb()
         end
         self:RefreshRedPoint()
-    end, self._Control:GetClientConfig("ShopCanBuyColor"))
+    end)
 end
 
 function XUiDlcRelinkLvReward:GetCurShopId()

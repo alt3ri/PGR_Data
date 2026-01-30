@@ -97,6 +97,7 @@ function XUiFavorabilityNew:OnDestroy()
         self.SignBoard:OnDestroy()
     end
 
+    self.SwitchableScene:OnDestory()
     self.FavorabilityMain:OnClose()
     self.CurrentCharacterId = nil
 end
@@ -420,6 +421,10 @@ function XUiFavorabilityNew:UpdateBatteryMode() -- editor模式下 BatteryCompon
     --if XQualityManager.IsSimulator and not BatteryComponent.DebugMode then
     --    return
     --end
+
+    if XMVCA.XSwitchableScene:IsCurSceneGyro() then
+        return
+    end
 
     local animationRoot = self.UiSceneInfo.Transform:Find("Animations")
     if XTool.UObjIsNil(animationRoot) then return end

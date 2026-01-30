@@ -180,7 +180,7 @@ function XUiPhotograph:OnDestroy()
     if self.SignBoardPlayer then
         self.SignBoardPlayer:OnDestroy()
     end
-
+    self.SwitchableScene:OnDestory()
     XDataCenter.PhotographManager.ClearTextureCache()
     CsXGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_HOMECHAR_ACTION_ENTER, self.OnAnimationEnterCb)
 end
@@ -610,10 +610,11 @@ function XUiPhotograph:Photograph()
     end
     self.IsForbidExit = true -- 避免拍照瞬间点Esc离开界面时UI显示错误
     XCameraHelper.ScreenShotNew(self.ImgPicture, shotCamera, function(screenShot)
+        self:AddCacheTexture(screenShot, 1)
         -- 截图后操作
         XCameraHelper.ScreenShotNew(self.CapturePanel.ImagePhoto, self.CameraCupture, function(shot) -- 把合成后的图片渲染到游戏UI中的照片展示(最终要分享的图片)
             CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Normal, CS.XUiManager.Instance.UiCamera)
-            self.ShareTexture = shot
+            self:AddCacheTexture(shot, 2)
             self.PhotoName = "[" .. tostring(XPlayer.Id) .. "]" .. XTime.GetServerNowTimestamp()
             self:PlayAnimation("Shanguang", function()
                 if not XTool.UObjIsNil(self.ImgPicture.mainTexture) and self.ImgPicture.mainTexture.name ~= "UnityWhite" then -- 销毁texture2d (UnityWhite为默认的texture2d)
@@ -686,6 +687,11 @@ function XUiPhotograph:UpdateBatteryMode() -- editor模式下 BatteryComponent.B
     --    return
     --end
 
+    local curSelectSceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
+    if XMVCA.XSwitchableScene:IsSceneGyro(curSelectSceneId) then
+        return
+    end
+
     local animationRoot = self.UiSceneInfo.Transform:Find("Animations")
     if XTool.UObjIsNil(animationRoot) then return end
 
@@ -699,7 +705,6 @@ function XUiPhotograph:UpdateBatteryMode() -- editor模式下 BatteryComponent.B
     fullTimeLine.gameObject:SetActiveEx(false)
     chargeTimeLine.gameObject:SetActiveEx(false)
 
-    local curSelectSceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
     local particleGroupName = XDataCenter.PhotographManager.GetSceneTemplateById(curSelectSceneId).ParticleGroupName
     local chargeAnimator = nil
     if particleGroupName and particleGroupName ~= "" then

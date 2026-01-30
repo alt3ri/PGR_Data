@@ -486,10 +486,10 @@ function XUiHelper.GetTime(second, timeFormatType)
             return stringFormat("%d%s", sumDas, STR_DAY)
         end
         if days >= 1 then
-            if not XOverseaManager.IsENRegion() then
-                return stringFormat("%d%s%d%s", days, STR_DAY, hours, STR_HOUR)
-            else
+            if XOverseaManager.IsENRegion() then
                 return stringFormat("%d%s", days, STR_DAY)
+            else
+                return stringFormat("%d%s%d%s", days, STR_DAY, hours, STR_HOUR)
             end
         end
         return stringFormat("%02d:%02d:%02d", hours, minutes, seconds)
@@ -2217,8 +2217,21 @@ end
 function XUiHelper.GetTimeMonthDay(time)
     time = time or XTime.GetServerNowTimestamp()
     local dt = CS.XDateUtil.GetLocalDateTime(time)
-    local timeStr = string.format("%d%s%d%s", dt.Month, XUiHelper.GetText("Monthly"), dt.Day, XUiHelper.GetText("Diary"))
+    local timeStr
+    if XOverseaManager.IsENRegion() then
+        timeStr = string.format("%d/%d", dt.Month, dt.Day)
+    else
+        timeStr = string.format("%d%s%d%s", dt.Month, XUiHelper.GetText("Monthly"), dt.Day, XUiHelper.GetText("Diary"))
+    end
     return timeStr
+end
+
+---@return number, number, number @返回年月日的数值，用于需要自定义文本描述
+function XUiHelper.GetTimeYearMonthDayNumber(time)
+    time = time or XTime.GetServerNowTimestamp()
+    local dt = CS.XDateUtil.GetLocalDateTime(time)
+
+    return dt.Year, dt.Month, dt.Day
 end
 
 ---设置图片

@@ -178,6 +178,8 @@ end
 function XMainLineLuosaitaControl:GetSectionMessageId(sectionId)
     local messageIds = {}
     local sectionInfo = self:GetSectionInfo(sectionId)
+    if not sectionInfo then return end
+    
     local armyPosInfos = sectionInfo:GetPositionInfosByType(XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.ARMY)
     local posInfoDic = sectionInfo:GetPositionInfoDic()
     for _, posInfo in pairs(posInfoDic) do
@@ -219,6 +221,12 @@ end
 
 -- 敌军是否可以被攻击
 function XMainLineLuosaitaControl:IsEnemyCanAttack(sectionId, enemyInfo)
+    local enemyId = enemyInfo:GetEnemyId()
+    local isShow = self:IsEnemyShow(enemyId)
+    if not isShow then 
+        return false 
+    end
+
     local sectionInfo = self:GetSectionInfo(sectionId)
     local armyPosInfos = sectionInfo:GetPositionInfosByType(XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.ARMY)
     for _, armyPosInfo in pairs(armyPosInfos) do
@@ -229,18 +237,39 @@ function XMainLineLuosaitaControl:IsEnemyCanAttack(sectionId, enemyInfo)
     end
     return false
 end
+
+-- 阶段是否存在解锁关卡未首通
+function XMainLineLuosaitaControl:IsSectionExitUnlockAndUnPassedStage(sectionId)
+    local sectionInfo = self:GetSectionInfo(sectionId)
+    local posInfoDic = sectionInfo:GetPositionInfoDic()
+    for _, posInfo in pairs(posInfoDic) do
+        if posInfo:IsStage() then
+            local stageId = posInfo:GetStageId()
+            if self:IsStageShow(stageId) and self:IsStageUnlock(stageId) and not XMVCA.XFuben:CheckStageIsPass(stageId) then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+-- 增加文件回顾蓝点
+function XMainLineLuosaitaControl:SetDocumentReviewRed(isRed)
+    self._Model:SetDocumentReviewRed(isRed)
+end
+
+-- 获取文件回顾蓝点
+function XMainLineLuosaitaControl:GetDocumentReviewRed()
+    return self._Model:GetDocumentReviewRed()
+end
 --endregion
 
 --region 块
--- 块是否全部通过
-function XMainLineLuosaitaControl:IsBlockPassed(blockId)
-    local posConfigs = self._Model:GetConfig():GetConfigPositionsByBlockId(blockId)
-    for _, posConfig in pairs(posConfigs) do
-        if not self:IsPositionPassed(posConfig.Id) then
-            return false
-        end
-    end
-    return true
+-- 块是否占领
+function XMainLineLuosaitaControl:IsBlockOccupied(blockId)
+    local sectionId = self:GetConfig():GetBlockSectionId(blockId)
+    local sectionInfo = self:GetSectionInfo(sectionId)
+    return sectionInfo:IsBlockOccupied(blockId)
 end
 
 -- 地块是否相邻
@@ -318,8 +347,8 @@ function XMainLineLuosaitaControl:IsCanMovePosition(startPosInfo, endPosInfo)
     
     -- 不同地块
     if startBlockId ~= endBlockId then
-        -- 当前地块未通关不可移去其他地块
-        if not self:IsBlockPassed(startBlockId) then
+        -- 当前地块未占领不可移去其他地块
+        if not self:IsBlockOccupied(startBlockId) then
             return false, self:GetConfig():GetConfigString("DragTips2", 1)
         end
 
@@ -327,7 +356,7 @@ function XMainLineLuosaitaControl:IsCanMovePosition(startPosInfo, endPosInfo)
         local isEdgPassed = false
         local edgBlockIds = self._Model:GetConfig():GetBlockEdgeBlocks(endBlockId)
         for _, edgBlockId in pairs(edgBlockIds) do
-            if self:IsBlockPassed(edgBlockId) then
+            if self:IsBlockOccupied(edgBlockId) then
                 isEdgPassed = true
                 break
             end
@@ -370,6 +399,9 @@ end
 
 -- 关卡是否解锁
 function XMainLineLuosaitaControl:IsStageUnlock(stageId)
+    if XMVCA.XFuben:CheckStageIsPass(stageId) then
+        return true, ""
+    end
     return XMVCA.XMainLine2:IsStageUnlock(stageId)
 end
 --endregion
@@ -382,6 +414,18 @@ function XMainLineLuosaitaControl:IsEnemyShow(enemyId)
         return isShow
     end
     return true
+end
+--endregion
+
+--region 登陆缓存
+-- 设置缓存
+function XMainLineLuosaitaControl:SetCacheData(key, value)
+    self._Model:SetCacheData(key, value)
+end
+
+-- 获取缓存
+function XMainLineLuosaitaControl:GetCacheData(key)
+    return self._Model:GetCacheData(key)
 end
 --endregion
 

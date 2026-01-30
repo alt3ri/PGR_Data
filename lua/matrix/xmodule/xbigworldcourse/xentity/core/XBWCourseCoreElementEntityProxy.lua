@@ -48,6 +48,10 @@ function XBWCourseCoreElementEntityProxy:GetName()
     return self._Model:GetBigWorldCourseCoreElementNameById(self._ElementId)
 end
 
+function XBWCourseCoreElementEntityProxy:GetProgressTitle()
+    return self._Model:GetBigWorldCourseCoreElementProgressTitleById(self._ElementId)
+end
+
 function XBWCourseCoreElementEntityProxy:GetRewards()
     local rewardId = self._Model:GetBigWorldCourseCoreElementDisplayRewardIdById(self._ElementId)
     if not XTool.IsNumberValid(rewardId) then
@@ -255,7 +259,7 @@ function XBWCourseCoreElementEntityMultiQuestProxy:GetProgressTipData()
     end
     return {
         [1] = {
-            Title = XMVCA.XBigWorldService:GetText("CourseCoreQuestProgressText", self:GetName()),
+            Title = self:GetProgressTitle(),
             Progress = string.format("%s/%s", cur, sum),
             IsComplete = self:IsComplete(),
         }
@@ -303,7 +307,7 @@ function XBWCourseCoreElementEntitySingleQuestProxy:GetProgressTipData()
     local cur, sum = complete and 1 or 0, 1
     return {
         [1] = {
-            Title = XMVCA.XBigWorldService:GetText("CourseCoreQuestProgressText", self:GetName()),
+            Title = self:GetProgressTitle(),
             Progress = string.format("%s/%s", cur, sum),
             IsComplete = complete,
         }

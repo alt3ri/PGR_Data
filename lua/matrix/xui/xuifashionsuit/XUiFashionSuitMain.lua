@@ -26,7 +26,7 @@ function XUiFashionSuitMain:OnStart()
     self._SuitView:SetSuitId(suitId)
 
     --请求商店开启信息
-    self._Control:CheckFashionShopOpen(suitId)
+    XMVCA.XFashionSuit:CheckFashionShopOpen(suitId)
 end
 
 function XUiFashionSuitMain:OnEnable()

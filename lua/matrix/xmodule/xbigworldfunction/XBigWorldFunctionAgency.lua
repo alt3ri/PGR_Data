@@ -184,7 +184,7 @@ function XBigWorldFunctionAgency:OnFunctionEventChanged()
     --尝试开启新功能
     self:TryOpenFunction()
 
-    if not self:IsFunctionEventFree() or XMVCA.XBigWorldLoading:IsShowLoading() then
+    if not self:IsFunctionEventFree() or XMVCA.XBigWorldLoading:IsShowAnyLoading() then
         return
     end
     XEventManager.DispatchEvent(DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_BEGIN)

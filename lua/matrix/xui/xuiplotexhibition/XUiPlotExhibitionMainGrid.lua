@@ -18,6 +18,12 @@ function XUiPlotExhibitionMainGrid:Update(data)
     if self.ImgPercentNormal then
         self.ImgPercentNormal.fillAmount = data.Progress / 100
     end
+    
+    -- 如果角色只配了一个封面，隐藏换封面按钮
+    if self.BtnChangeCover then
+        local coverCount = data.Amount or 0
+        self.BtnChangeCover.gameObject:SetActiveEx(coverCount > 1)
+    end
 end
 
 function XUiPlotExhibitionMainGrid:GetRoleId()

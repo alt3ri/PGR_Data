@@ -13,18 +13,17 @@ local UnlockType = {
 local inputSpeed = 0.02
 
 function XUiBigWorldPhotographControl:OnAwake()
+    XEventManager.AddEventListener(XEventId.EVENT_LOGIN_UI_OPEN, self.OnNotify, self)
     self:_RegisterButtonClicks()
+    self._recordData = {}
 end
 
-function XUiBigWorldPhotographControl:OnGetLuaEvents()
-    return { XEventId.EVENT_NETWORK_DISCONNECT, }
-end
-
-function XUiBigWorldPhotographControl:OnNotify(eventId, ...)
-    if eventId == XEventId.EVENT_NETWORK_DISCONNECT then
-        XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
-        self._X3CExit = true
+function XUiBigWorldPhotographControl:OnNotify()
+    if self._X3CExit then
+        return
     end
+    self:X3CCameraPhotographExit()
+    self:Close()
 end
 
 function XUiBigWorldPhotographControl:OnStart(data)
@@ -84,6 +83,7 @@ function XUiBigWorldPhotographControl:OnStart(data)
     self.BtnMinus.gameObject:SetActive(not self._DisableCameraOperation)
     self.BtnAdd.gameObject:SetActive(not self._DisableCameraOperation)
     self.BtnRestore.gameObject:SetActive(not self._ParamConfig.HideReset)
+    self._HideSwitchPersonButton = not self._ParamConfig.HidePersonSwitch
 
     self.ImgBg.gameObject:SetActive(false)
     self._isShowMenu = self.ImgBg.gameObject.activeSelf
@@ -122,6 +122,7 @@ function XUiBigWorldPhotographControl:OnAnimSetClick(index)
     end
     -- 触发效果
     XMVCA.XBigWorldAlbum:X3CPlayAnimation(curCfg.AnimationName)
+    self._recordData["animId"] = curCfg.Id
 end
 
 function XUiBigWorldPhotographControl:GetAnimationSelectIndex()
@@ -140,6 +141,7 @@ function XUiBigWorldPhotographControl:OnFilterSetClick(index)
     end
     -- 触发效果
     XMVCA.XBigWorldAlbum:X3CChangeFilter(curCfg.FilterId, curCfg.Id)
+    self._recordData["filterId"] = curCfg.FilterId
 end
 
 function XUiBigWorldPhotographControl:GetFilterSelectIndex()
@@ -206,9 +208,12 @@ function XUiBigWorldPhotographControl:InitSetting()
         local configA = {}
         configA.Name = XMVCA.XBigWorldService:GetText("SG_P_HideNpc")
         configA.IsOn = false
+        self._recordData["is_hide_npc"] = configA.IsOn and 1 or 0
         configA.Callback = function(isOn)
+            self._NpcAciveIsOn = isOn
             configA.IsOn = isOn
-            XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(not isOn)
+            self._recordData["is_hide_npc"] = configA.IsOn and 1 or 0
+            XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(not self._NpcAciveIsOn)
         end
         table.insert(self._SettingConfig, configA)
     end
@@ -219,9 +224,11 @@ function XUiBigWorldPhotographControl:InitSetting()
         configB = {}
         configB.Name = XMVCA.XBigWorldService:GetText("SG_P_HideSelf")
         configB.IsOn = false
+        self._recordData["is_hide_char"] = configB.IsOn and 1 or 0
         configB.IsThirdPersonOnly = true
         configB.Callback = function(isOn)
             configB.IsOn = isOn
+            self._recordData["is_hide_char"] = configB.IsOn and 1 or 0
             XMVCA.XBigWorldGamePlay:SetCurNpcActive(not isOn)
             self._HideCharTag = isOn
             self:ShowPersonButton()
@@ -232,9 +239,11 @@ function XUiBigWorldPhotographControl:InitSetting()
     local configC = {}
     configC.Name = XMVCA.XBigWorldService:GetText("SG_P_LookAt")
     configC.IsOn = false
+    self._recordData["is_look_at"] = configC.IsOn and 1 or 0
     configC.IsThirdPersonOnly = true
     configC.Callback = function(isOn)
         configC.IsOn = isOn
+        self._recordData["is_look_at"] = configC.IsOn and 1 or 0
         XMVCA.XBigWorldAlbum:X3CCameraPhotographLookAtCam(isOn)
     end
     table.insert(self._SettingConfig, configC)
@@ -270,8 +279,10 @@ function XUiBigWorldPhotographControl:InitSetting()
         local configF = {}
         configF.Name = XMVCA.XBigWorldService:GetText("SG_P_FakeSet")
         configF.IsOn = XMVCA.XBigWorldAlbum:IsFakeOn()
+        self._recordData["is_fade"] = configF.IsOn and 1 or 0
         configF.Callback = function(isOn, target)
             configF.IsOn = isOn
+            self._recordData["is_fade"] = configF.IsOn and 1 or 0
             configF.BaseValue = XMVCA.XBigWorldAlbum:GetFakeValue()
             if target then
                 target:ShowSlider(configF.BaseValue, isOn)
@@ -390,9 +401,10 @@ end
 
 function XUiBigWorldPhotographControl:InitFightConfig(detectionNpcPlaceIdList, detectionSceneObjectPlaceIdList)
     self._ThirdPersonMode = not self._Control:GetDefaultFirstPerson()
-    if self._ParamConfig.ThirdPersonMode then
-        self._ThirdPersonMode = self._ParamConfig.ThirdPersonMode
+    if self._ParamConfig.ThirdPersonMode ~= 0 then
+        self._ThirdPersonMode = self._ParamConfig.ThirdPersonMode == 2
     end
+    self._recordData["is_first_person"] = self._ThirdPersonMode and 0 or 1
 
     local widthDetectionRatio = self._ParamConfig.WidthDetectionRatio
     local heightDetectionRatio = self._ParamConfig.HeightDetectionRatio
@@ -452,7 +464,7 @@ end
 
 function XUiBigWorldPhotographControl:_AddUpdateTimerLoop()
     if self._TimerId then return end
-    self._TimerId = XScheduleManager.ScheduleForever(function() self:_UpdateFollowUi() end, 500)
+    self._TimerId = XScheduleManager.ScheduleForever(function() self:_UpdateFollowUi() end, 30)
 end
 
 function XUiBigWorldPhotographControl:_RemoveUpdateTimerLoop()
@@ -540,12 +552,14 @@ function XUiBigWorldPhotographControl:OnDisable()
 end
 
 function XUiBigWorldPhotographControl:OnDestroy()
+    XEventManager.RemoveEventListener(XEventId.EVENT_LOGIN_UI_OPEN, self.OnNotify, self)
     self:RemoveAnimTimer()
+    if not XLoginManager.IsLogin() then return end
     XMVCA.XBigWorldAlbum:X3CCameraPhotographLookAtCam(false)
-    if not self._X3CExit then
-        XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
+    self:X3CCameraPhotographExit()
+    if self._NpcAciveIsOn then
+        XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(self._NpcAciveIsOn)
     end
-    XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(true)
     XMVCA.XBigWorldGamePlay:SetCurNpcActive(self._LastNpcActiveStatus)
     -- XMVCA.XBigWorldLoading:CloseBlackMaskLoading()
 end
@@ -631,6 +645,7 @@ function XUiBigWorldPhotographControl:OnBtnPhotographClick()
             self._ActorLuaRefDic = nil
         end
     end
+    self._Control:SetRecordData(self._recordData)
     self._Control:CaptureTexture(false, needCloseControl)
 
     local dict = {}
@@ -693,12 +708,20 @@ function XUiBigWorldPhotographControl:OnBtnRestoreClick()
     XMVCA.XBigWorldAlbum:X3CCameraPhotographReset()
 end
 
+function XUiBigWorldPhotographControl:X3CCameraPhotographExit()
+    if not self._X3CExit then
+        XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
+        self._X3CExit = true
+    end
+end
+
 function XUiBigWorldPhotographControl:OnBtnQuitClick()
+    if self._isQuit or self._X3CExit then return end
+    self._isQuit = true
     self:PlayAnimation("Disable")
     self:RemoveAnimTimer()
     XScheduleManager.ScheduleOnce(function()
-        XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
-        self._X3CExit = true
+        self:X3CCameraPhotographExit()
     end, 200)
     self._AnimTimerId = XScheduleManager.ScheduleOnce(function()
         self:Close()
@@ -707,8 +730,8 @@ end
 
 function XUiBigWorldPhotographControl:ShowPersonButton(isInit)
     local isUnlock, isShowRedDot = self._Control:IsShowRedDotContent(UnlockType.FirstPerson)
-    self.BtnFirstPerson.gameObject:SetActive(not self._ThirdPersonMode and isUnlock)
-    self.BtnThirdPerson.gameObject:SetActive(self._ThirdPersonMode and isUnlock)
+    self.BtnFirstPerson.gameObject:SetActive(not self._ThirdPersonMode and isUnlock and self._HideSwitchPersonButton)
+    self.BtnThirdPerson.gameObject:SetActive(self._ThirdPersonMode and isUnlock and self._HideSwitchPersonButton)
     self.BtnFirstPerson:ShowReddot(isShowRedDot)
     self.BtnThirdPerson:ShowReddot(isShowRedDot)
 
@@ -738,6 +761,7 @@ function XUiBigWorldPhotographControl:OnBtnFirstPersonClick()
             self._PersonSwitchFake = false
         end
         self._ThirdPersonMode = true
+        self._recordData["is_first_person"] = self._ThirdPersonMode and 0 or 1
         self._Control:ReadUnlock(UnlockType.FirstPerson)
         local t = XMVCA.XBigWorldAlbum:X3CChangePerspective(self._ThirdPersonMode)
         if t and t.InitZoom then
@@ -763,6 +787,7 @@ function XUiBigWorldPhotographControl:OnBtnThirdPersonClick()
         end
 
         self._ThirdPersonMode = false
+        self._recordData["is_first_person"] = self._ThirdPersonMode and 0 or 1
         self._Control:ReadUnlock(UnlockType.FirstPerson)
         self:ShowPersonButton()
         local t = XMVCA.XBigWorldAlbum:X3CChangePerspective(self._ThirdPersonMode)
@@ -839,25 +864,34 @@ function XUiBigWorldPhotographControl:UpdateTargetDetection(detectedActorIdsDic,
         end
     end
 
-    for uid, isDetected in pairs(detectedActorIdsDic) do
+    local halfVec2 = CS.UnityEngine.Vector2(0.5, 0.5)
+    for uid, detectedType in pairs(detectedActorIdsDic) do
+        local actorRef = self._ActorLuaRefDic[uid]
         if not self._DetectedActorList[uid] then
             local go = CS.UnityEngine.Object.Instantiate(self.ImgViewLine.gameObject, self.ImgViewLine.transform.parent)
             local followCom = XUiHelper.TryAddComponent(go, typeof(CS.SetUiFollowTarget))
-            local actorRef = self._ActorLuaRefDic[uid]
             local pos = actorRef:GetPhotographCameraDetectionPosition()
-            followCom:StartFollowByPos(XMVCA.XBigWorldGamePlay:GetCamera(), pos, CS.UnityEngine.Vector3.zero, CS.UnityEngine.Vector2(0.5, 0.5))
-            local viewTxt = go.transform:Find("ViewTxt").gameObject:GetComponent(typeof(CS.UnityEngine.UI.Text))
-            viewTxt.text = actorRef:GetName()
+            followCom:StartFollowByPos(XMVCA.XBigWorldGamePlay:GetCamera(), pos, CS.UnityEngine.Vector3.zero, halfVec2)
             self._DetectedActorList[uid] = followCom
         end
 
+        if detectedType > 0 then
+            local go = self._DetectedActorList[uid].gameObject
+            local viewTxt = go.transform:Find("ViewTxt").gameObject:GetComponent(typeof(CS.UnityEngine.UI.Text))
+            if detectedType == 1 then
+                viewTxt.text = actorRef:GetName()
+            elseif detectedType == 2 then
+                viewTxt.text = XMVCA.XBigWorldService:GetText("SG_P_QuestionTarget")
+            end
+        end
+
         local baseGo = self._DetectedActorList[uid].gameObject
-        if isDetected then
-            baseGo:SetActive(isDetected)
+        if detectedType > 0 then
+            baseGo:SetActive(true)
             local enableImgAnimGo = baseGo.transform:Find("Animation/ImgViewLineEnable").gameObject
             enableImgAnimGo:PlayTimelineAnimation(nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Hold)
         else
-            baseGo:SetActive(isDetected)
+            baseGo:SetActive(false)
         end
     end
 

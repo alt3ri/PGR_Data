@@ -188,6 +188,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseTypeConditionIdsByContentId
     return config.ConditionIds
 end
 
+function XBigWorldCourseConfigModel:GetBigWorldCourseTypeContentTipByContentId(contentId)
+    local config = self:GetBigWorldCourseContentConfigByContentId(contentId)
+
+    return config.ContentTip
+end
+
 ---@return XTableBigWorldCourseVersion[]
 function XBigWorldCourseConfigModel:GetBigWorldCourseVersionConfigs()
     return self._ConfigUtil:GetByTableKey(CourseTableKey.BigWorldCourseVersion) or {}
@@ -436,6 +442,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementNameById(id)
     return config.Name
 end
 
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementProgressTitleById(id)
+    local config = self:GetBigWorldCourseCoreElementConfigById(id)
+
+    return config.ProgressTitle
+end
+
 function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementBackgroundById(id)
     local config = self:GetBigWorldCourseCoreElementConfigById(id)
 
@@ -476,6 +488,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementLockSkipConditio
     local config = self:GetBigWorldCourseCoreElementConfigById(id)
 
     return config.LockSkipConditionIds
+end
+
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementSortIndexById(id)
+    local config = self:GetBigWorldCourseCoreElementConfigById(id)
+
+    return config.SortIndex
 end
 
 function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementEarlyAccessSkipIdsById(id)

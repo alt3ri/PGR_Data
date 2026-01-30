@@ -46,6 +46,14 @@ function XBigWorldAlbumControl:GetCaptureTexture()
     return self._TextureCache
 end
 
+function XBigWorldAlbumControl:SetRecordData(data)
+    self._RecordDataCache = data
+end
+
+function XBigWorldAlbumControl:GetRecordData()
+    return self._RecordDataCache
+end
+
 function XBigWorldAlbumControl:GetPhotoTexture(photoData, isSmall)
     if not photoData then return end
     return CS.XTool.GetPhotoImage(XPlayer.Id, photoData.Id, photoData.CheckSalt, isSmall or false)
